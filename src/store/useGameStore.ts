@@ -60,6 +60,42 @@ import { registerNeighbor09Data } from '../data/claimPolicies/neighbor-09'
 import { registerNeighbor10Data } from '../data/claimPolicies/neighbor-10'
 import { registerNeighbor11Data } from '../data/claimPolicies/neighbor-11'
 import { registerNeighbor12Data } from '../data/claimPolicies/neighbor-12'
+import { registerPartnership01Data } from '../data/claimPolicies/partnership-01'
+import { registerPartnership02Data } from '../data/claimPolicies/partnership-02'
+import { registerPartnership03Data } from '../data/claimPolicies/partnership-03'
+import { registerPartnership04Data } from '../data/claimPolicies/partnership-04'
+import { registerPartnership05Data } from '../data/claimPolicies/partnership-05'
+import { registerPartnership06Data } from '../data/claimPolicies/partnership-06'
+import { registerPartnership07Data } from '../data/claimPolicies/partnership-07'
+import { registerPartnership08Data } from '../data/claimPolicies/partnership-08'
+import { registerPartnership09Data } from '../data/claimPolicies/partnership-09'
+import { registerPartnership10Data } from '../data/claimPolicies/partnership-10'
+import { registerPartnership11Data } from '../data/claimPolicies/partnership-11'
+import { registerPartnership12Data } from '../data/claimPolicies/partnership-12'
+import { registerWorkplace01Data } from '../data/claimPolicies/workplace-01'
+import { registerWorkplace02Data } from '../data/claimPolicies/workplace-02'
+import { registerWorkplace03Data } from '../data/claimPolicies/workplace-03'
+import { registerWorkplace04Data } from '../data/claimPolicies/workplace-04'
+import { registerWorkplace05Data } from '../data/claimPolicies/workplace-05'
+import { registerWorkplace06Data } from '../data/claimPolicies/workplace-06'
+import { registerWorkplace07Data } from '../data/claimPolicies/workplace-07'
+import { registerWorkplace08Data } from '../data/claimPolicies/workplace-08'
+import { registerWorkplace09Data } from '../data/claimPolicies/workplace-09'
+import { registerWorkplace10Data } from '../data/claimPolicies/workplace-10'
+import { registerWorkplace11Data } from '../data/claimPolicies/workplace-11'
+import { registerWorkplace12Data } from '../data/claimPolicies/workplace-12'
+import { registerTenant01Data } from '../data/claimPolicies/tenant-01'
+import { registerTenant02Data } from '../data/claimPolicies/tenant-02'
+import { registerTenant03Data } from '../data/claimPolicies/tenant-03'
+import { registerTenant04Data } from '../data/claimPolicies/tenant-04'
+import { registerTenant05Data } from '../data/claimPolicies/tenant-05'
+import { registerTenant06Data } from '../data/claimPolicies/tenant-06'
+import { registerTenant07Data } from '../data/claimPolicies/tenant-07'
+import { registerTenant08Data } from '../data/claimPolicies/tenant-08'
+import { registerTenant09Data } from '../data/claimPolicies/tenant-09'
+import { registerTenant10Data } from '../data/claimPolicies/tenant-10'
+import { registerTenant11Data } from '../data/claimPolicies/tenant-11'
+import { registerTenant12Data } from '../data/claimPolicies/tenant-12'
 import { aggregateReadiness } from '../engine/readinessEngine'
 import { resetTellTracker } from '../engine/tellValidator'
 import { getReadinessSets } from '../engine/evidenceChallengeEngine'
@@ -521,6 +557,42 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       if (caseKey === 'neighbor-10') registerNeighbor10Data()
       if (caseKey === 'neighbor-11') registerNeighbor11Data()
       if (caseKey === 'neighbor-12') registerNeighbor12Data()
+      if (caseKey === 'partnership-01') registerPartnership01Data()
+      if (caseKey === 'partnership-02') registerPartnership02Data()
+      if (caseKey === 'partnership-03') registerPartnership03Data()
+      if (caseKey === 'partnership-04') registerPartnership04Data()
+      if (caseKey === 'partnership-05') registerPartnership05Data()
+      if (caseKey === 'partnership-06') registerPartnership06Data()
+      if (caseKey === 'partnership-07') registerPartnership07Data()
+      if (caseKey === 'partnership-08') registerPartnership08Data()
+      if (caseKey === 'partnership-09') registerPartnership09Data()
+      if (caseKey === 'partnership-10') registerPartnership10Data()
+      if (caseKey === 'partnership-11') registerPartnership11Data()
+      if (caseKey === 'partnership-12') registerPartnership12Data()
+      if (caseKey === 'tenant-01') registerTenant01Data()
+      if (caseKey === 'tenant-02') registerTenant02Data()
+      if (caseKey === 'tenant-03') registerTenant03Data()
+      if (caseKey === 'tenant-04') registerTenant04Data()
+      if (caseKey === 'tenant-05') registerTenant05Data()
+      if (caseKey === 'tenant-06') registerTenant06Data()
+      if (caseKey === 'tenant-07') registerTenant07Data()
+      if (caseKey === 'tenant-08') registerTenant08Data()
+      if (caseKey === 'tenant-09') registerTenant09Data()
+      if (caseKey === 'tenant-10') registerTenant10Data()
+      if (caseKey === 'tenant-11') registerTenant11Data()
+      if (caseKey === 'tenant-12') registerTenant12Data()
+      if (caseKey === 'workplace-01') registerWorkplace01Data()
+      if (caseKey === 'workplace-02') registerWorkplace02Data()
+      if (caseKey === 'workplace-03') registerWorkplace03Data()
+      if (caseKey === 'workplace-04') registerWorkplace04Data()
+      if (caseKey === 'workplace-05') registerWorkplace05Data()
+      if (caseKey === 'workplace-06') registerWorkplace06Data()
+      if (caseKey === 'workplace-07') registerWorkplace07Data()
+      if (caseKey === 'workplace-08') registerWorkplace08Data()
+      if (caseKey === 'workplace-09') registerWorkplace09Data()
+      if (caseKey === 'workplace-10') registerWorkplace10Data()
+      if (caseKey === 'workplace-11') registerWorkplace11Data()
+      if (caseKey === 'workplace-12') registerWorkplace12Data()
 
       // 리소스 초기화
       store.initResources()

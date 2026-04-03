@@ -1,0 +1,4507 @@
+export const workplace11V2Atoms = {
+  "caseId": "workplace-11",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "발명자 표기와 대표 브리핑은 다른 층위이고, 잠정출원 직전 정리 과정에서 제가 노서린 씨 이름을 의도적으로 지운 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "상대방이 설계한 핵심 청구항과 실험표가 초안의 뼈대였다는 점을 알고 있었다.",
+            "최종 브리핑 직전에 자신의 계정으로 발명자 표기 열과 대표 슬라이드를 수정하도록 승인했다."
+          ],
+          "suppressions": [
+            "발명자 삭제가 대표 성과와 승진 라인을 지키려는 계산이었다는 점",
+            "조직 소유라는 표현을 공로 삭제의 핑계로 사용했다는 점",
+            "이 삭제가 이후 공모 은폐 구도와 연결되었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-1:rule:0",
+              "factText": "발명자 표기와 대표 브리핑을 구분해야 한다는 주장",
+              "tags": [
+                "rule",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대 연구원"
+                },
+                "time": {
+                  "exact": "브리핑 직전",
+                  "neutral": "그 직전",
+                  "period": "잠정출원 직전"
+                },
+                "scope": {
+                  "exact": "발명자 기여표와 대표 슬라이드",
+                  "neutral": "해당 문서 묶음"
+                },
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-1:context:1",
+              "factText": "잠정출원 직전 문서 정리 국면이었다는 설명",
+              "tags": [
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브리핑 직전",
+                  "neutral": "그 직전",
+                  "period": "잠정출원 직전"
+                },
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "기획, 실험, 청구항을 구분해 대표 표기를 맞춘 것이지, 노서린 씨 공로 자체를 없애려 한 건 아니라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "상대방이 설계한 핵심 청구항과 실험표가 초안의 뼈대였다는 점을 알고 있었다.",
+            "최종 브리핑 직전에 자신의 계정으로 발명자 표기 열과 대표 슬라이드를 수정하도록 승인했다."
+          ],
+          "suppressions": [
+            "발명자 삭제가 대표 성과와 승진 라인을 지키려는 계산이었다는 점",
+            "조직 소유라는 표현을 공로 삭제의 핑계로 사용했다는 점",
+            "이 삭제가 이후 공모 은폐 구도와 연결되었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-1:rule:0",
+              "factText": "발명자 표기와 대표 브리핑을 구분해야 한다는 주장",
+              "tags": [
+                "rule",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대 연구원"
+                },
+                "time": {
+                  "exact": "브리핑 직전",
+                  "neutral": "그 직전",
+                  "period": "잠정출원 직전"
+                },
+                "scope": {
+                  "exact": "발명자 기여표와 대표 슬라이드",
+                  "neutral": "해당 문서 묶음"
+                },
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-1:context:1",
+              "factText": "잠정출원 직전 문서 정리 국면이었다는 설명",
+              "tags": [
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브리핑 직전",
+                  "neutral": "그 직전",
+                  "period": "잠정출원 직전"
+                },
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "최종 버전에서 제 계정으로 이름 열을 확인한 건 맞지만, 다만 회사 자산 기준에 맞춰 대표 표기를 단순화한 것이라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "상대방이 설계한 핵심 청구항과 실험표가 초안의 뼈대였다는 점을 알고 있었다.",
+            "최종 브리핑 직전에 자신의 계정으로 발명자 표기 열과 대표 슬라이드를 수정하도록 승인했다."
+          ],
+          "suppressions": [
+            "조직 소유라는 표현을 공로 삭제의 핑계로 사용했다는 점",
+            "이 삭제가 이후 공모 은폐 구도와 연결되었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-1:context:1",
+              "factText": "잠정출원 직전 문서 정리 국면이었다는 설명",
+              "tags": [
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브리핑 직전",
+                  "neutral": "그 직전",
+                  "period": "잠정출원 직전"
+                },
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-1:admission:2",
+              "factText": "최종 버전에서 발명자 이름 열 확인과 수정 승인에 관여한 사실",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브리핑 직전",
+                  "neutral": "그 직전",
+                  "period": "잠정출원 직전"
+                },
+                "scope": {
+                  "exact": "발명자 기여표와 대표 슬라이드",
+                  "neutral": "해당 문서 묶음"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "대표 슬라이드를 제가 단독 성과처럼 보이게 만든 책임은 있습니다만, 노서린 씨 쪽도 외부 검토 리스크를 숨긴 채 공로만 앞세워 혼선을 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "상대방이 설계한 핵심 청구항과 실험표가 초안의 뼈대였다는 점을 알고 있었다.",
+            "최종 브리핑 직전에 자신의 계정으로 발명자 표기 열과 대표 슬라이드를 수정하도록 승인했다."
+          ],
+          "suppressions": [
+            "조직 소유라는 표현을 공로 삭제의 핑계로 사용했다는 점",
+            "이 삭제가 이후 공모 은폐 구도와 연결되었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-1:admission:2",
+              "factText": "최종 버전에서 발명자 이름 열 확인과 수정 승인에 관여한 사실",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브리핑 직전",
+                  "neutral": "그 직전",
+                  "period": "잠정출원 직전"
+                },
+                "scope": {
+                  "exact": "발명자 기여표와 대표 슬라이드",
+                  "neutral": "해당 문서 묶음"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-1:responsibility:3",
+              "factText": "대표 성과 확보를 위해 상대방 공로를 뒤로 밀었다는 책임",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대 연구원"
+                },
+                "scope": {
+                  "exact": "발명자 기여표와 대표 슬라이드",
+                  "neutral": "해당 문서 묶음"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "조직 소유라는 말 뒤에 숨어 제가 공로 압박을 밀어붙였고, 그 과정에서 노서린 씨 이름이 빠져도 된다고 스스로 합리화했습니다."
+          ],
+          "privateKnowledge": [
+            "상대방이 설계한 핵심 청구항과 실험표가 초안의 뼈대였다는 점을 알고 있었다.",
+            "최종 브리핑 직전에 자신의 계정으로 발명자 표기 열과 대표 슬라이드를 수정하도록 승인했다."
+          ],
+          "suppressions": [
+            "이 삭제가 이후 공모 은폐 구도와 연결되었다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-1:responsibility:3",
+              "factText": "대표 성과 확보를 위해 상대방 공로를 뒤로 밀었다는 책임",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대 연구원"
+                },
+                "scope": {
+                  "exact": "발명자 기여표와 대표 슬라이드",
+                  "neutral": "해당 문서 묶음"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-1:emotion:4",
+              "factText": "조직 소유 논리 뒤에 공로 압박과 자기합리화가 있었다는 심리",
+              "tags": [
+                "emotion",
+                "motive"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "제가 노서린 씨의 청구항 기여를 알고도 발명자 표기에서 빼고 제 대표 성과처럼 제시했습니다. 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "상대방이 설계한 핵심 청구항과 실험표가 초안의 뼈대였다는 점을 알고 있었다.",
+            "최종 브리핑 직전에 자신의 계정으로 발명자 표기 열과 대표 슬라이드를 수정하도록 승인했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-1:emotion:4",
+              "factText": "조직 소유 논리 뒤에 공로 압박과 자기합리화가 있었다는 심리",
+              "tags": [
+                "emotion",
+                "motive"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-1:admission:5",
+              "factText": "상대방의 청구항 기여를 알고도 발명자 표기에서 제외한 사실",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대 연구원"
+                },
+                "scope": {
+                  "exact": "발명자 기여표와 대표 슬라이드",
+                  "neutral": "해당 문서 묶음"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "노서린 씨의 외부 브로커 접촉은 회사 승인 절차 밖에서 이뤄진 일이고, 저는 공식 검토 라인만 있는 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "상대방의 외부 브로커 접촉 가능성을 사전에 알고도 강하게 막지 않았다.",
+            "외부 검토에서 얻을 수 있는 정보와 이익 가능성을 자신도 기대했다."
+          ],
+          "suppressions": [
+            "브로커 접촉을 사실상 묵인했다는 점",
+            "개인 채널 접촉이 공모 구조와 이어져 있었다는 점",
+            "외부 검토 결과를 내부 전략에 이용하려 했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-2:rule:0",
+              "factText": "외부 브로커 접촉은 공식 승인 절차 밖이었다는 주장",
+              "tags": [
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "외부 브로커"
+                },
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-2:context:1",
+              "factText": "자신은 공식 검토 선 정도로만 이해하고 있었다는 설명",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "내부검토 전날 밤",
+                  "neutral": "그 무렵",
+                  "period": "발송 직전"
+                },
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "정리본이 오갈 수 있다는 정도는 들었지만, 개인메일과 텔레그램까지 쓴 외부 접촉을 제가 지시한 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "상대방의 외부 브로커 접촉 가능성을 사전에 알고도 강하게 막지 않았다.",
+            "외부 검토에서 얻을 수 있는 정보와 이익 가능성을 자신도 기대했다."
+          ],
+          "suppressions": [
+            "브로커 접촉을 사실상 묵인했다는 점",
+            "개인 채널 접촉이 공모 구조와 이어져 있었다는 점",
+            "외부 검토 결과를 내부 전략에 이용하려 했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-2:rule:0",
+              "factText": "외부 브로커 접촉은 공식 승인 절차 밖이었다는 주장",
+              "tags": [
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "외부 브로커"
+                },
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-2:context:1",
+              "factText": "자신은 공식 검토 선 정도로만 이해하고 있었다는 설명",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "내부검토 전날 밤",
+                  "neutral": "그 무렵",
+                  "period": "발송 직전"
+                },
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "브로커 검토 가능성을 안 건 맞지만, 다만 실제 발송 수단과 수수료 대화까지는 노서린 씨가 따로 움직인 영역이라고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "상대방의 외부 브로커 접촉 가능성을 사전에 알고도 강하게 막지 않았다.",
+            "외부 검토에서 얻을 수 있는 정보와 이익 가능성을 자신도 기대했다."
+          ],
+          "suppressions": [
+            "개인 채널 접촉이 공모 구조와 이어져 있었다는 점",
+            "외부 검토 결과를 내부 전략에 이용하려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-2:context:1",
+              "factText": "자신은 공식 검토 선 정도로만 이해하고 있었다는 설명",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "내부검토 전날 밤",
+                  "neutral": "그 무렵",
+                  "period": "발송 직전"
+                },
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-2:admission:2",
+              "factText": "브로커 검토 가능성을 알고도 실질 차단은 하지 않은 사실",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "외부 브로커"
+                },
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 묵인한 책임은 있어도, 노서린 씨 쪽도 승인 없는 개인 채널과 대가 논의를 먼저 실행해 사안을 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "상대방의 외부 브로커 접촉 가능성을 사전에 알고도 강하게 막지 않았다.",
+            "외부 검토에서 얻을 수 있는 정보와 이익 가능성을 자신도 기대했다."
+          ],
+          "suppressions": [
+            "개인 채널 접촉이 공모 구조와 이어져 있었다는 점",
+            "외부 검토 결과를 내부 전략에 이용하려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-2:admission:2",
+              "factText": "브로커 검토 가능성을 알고도 실질 차단은 하지 않은 사실",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "외부 브로커"
+                },
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-2:responsibility:3",
+              "factText": "상대방이 개인 채널과 대가 논의를 실행해 사안을 키웠다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                },
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "발명자 다툼에 시선이 쏠리길 바라며 외부 접촉을 강하게 막지 않았고, 그 점은 제 판단이 비겁했습니다."
+          ],
+          "privateKnowledge": [
+            "상대방의 외부 브로커 접촉 가능성을 사전에 알고도 강하게 막지 않았다.",
+            "외부 검토에서 얻을 수 있는 정보와 이익 가능성을 자신도 기대했다."
+          ],
+          "suppressions": [
+            "외부 검토 결과를 내부 전략에 이용하려 했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-2:responsibility:3",
+              "factText": "상대방이 개인 채널과 대가 논의를 실행해 사안을 키웠다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                },
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-2:emotion:4",
+              "factText": "발명자 다툼 뒤에 시선을 묶어 두려는 비겁한 계산이 있었다는 심리",
+              "tags": [
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "제가 노서린 씨의 브로커 접촉을 알고도 사실상 허용했고, 나온 자료와 이익 가능성을 이용하려 했습니다. 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "상대방의 외부 브로커 접촉 가능성을 사전에 알고도 강하게 막지 않았다.",
+            "외부 검토에서 얻을 수 있는 정보와 이익 가능성을 자신도 기대했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-2:emotion:4",
+              "factText": "발명자 다툼 뒤에 시선을 묶어 두려는 비겁한 계산이 있었다는 심리",
+              "tags": [
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-2:admission:5",
+              "factText": "상대방의 외부 브로커 접촉을 알고도 이용 가치 때문에 허용한 사실",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "외부 브로커"
+                },
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "외부로 나간 건 브로커 한 건의 제한적 검토뿐이라고 들었고, 제3자 폴더까지 퍼질 상황은 전혀 인식하지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "브로커 검토를 위해 재공유 가능한 링크 구성을 묵인했다.",
+            "잘린 DLP 캡처만 제시하면 상대방 단독 유출처럼 보일 수 있다는 점을 알았다."
+          ],
+          "suppressions": [
+            "자신도 링크 통제 실패의 책임이 있다는 점",
+            "제3자 재전송 범위를 확인하기보다 상대방 책임으로 몰았다는 점",
+            "경쟁사 자문 폴더 도달 뒤에도 단독 유출 프레임을 유지했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-3:uncertainty:0",
+              "factText": "브로커 한 건의 제한적 외부 검토만 있었다고 이해했다는 주장",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브로커 수신 직후",
+                  "neutral": "그 직후",
+                  "period": "재전송 시작 시점"
+                },
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "브로커 측"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-3:evidence:1",
+              "factText": "잘린 경보 자료만으로 범위를 단정할 수 없다는 설명",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "메일 게이트웨이 원본 로그",
+                  "neutral": "원본 로그"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "제가 본 DLP 자료만으로는 범위를 단정할 수 없었고, 외부 검토 한 번 정도로 이해했습니다."
+          ],
+          "privateKnowledge": [
+            "브로커 검토를 위해 재공유 가능한 링크 구성을 묵인했다.",
+            "잘린 DLP 캡처만 제시하면 상대방 단독 유출처럼 보일 수 있다는 점을 알았다."
+          ],
+          "suppressions": [
+            "자신도 링크 통제 실패의 책임이 있다는 점",
+            "제3자 재전송 범위를 확인하기보다 상대방 책임으로 몰았다는 점",
+            "경쟁사 자문 폴더 도달 뒤에도 단독 유출 프레임을 유지했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-3:uncertainty:0",
+              "factText": "브로커 한 건의 제한적 외부 검토만 있었다고 이해했다는 주장",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브로커 수신 직후",
+                  "neutral": "그 직후",
+                  "period": "재전송 시작 시점"
+                },
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "브로커 측"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-3:evidence:1",
+              "factText": "잘린 경보 자료만으로 범위를 단정할 수 없다는 설명",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "메일 게이트웨이 원본 로그",
+                  "neutral": "원본 로그"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "재공유 가능한 링크 설정을 제가 끝까지 확인하지 않은 건 맞지만, 다만 그때는 브로커 외 확산이 생길 거라곤 생각하지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "브로커 검토를 위해 재공유 가능한 링크 구성을 묵인했다.",
+            "잘린 DLP 캡처만 제시하면 상대방 단독 유출처럼 보일 수 있다는 점을 알았다."
+          ],
+          "suppressions": [
+            "제3자 재전송 범위를 확인하기보다 상대방 책임으로 몰았다는 점",
+            "경쟁사 자문 폴더 도달 뒤에도 단독 유출 프레임을 유지했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-3:evidence:1",
+              "factText": "잘린 경보 자료만으로 범위를 단정할 수 없다는 설명",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "메일 게이트웨이 원본 로그",
+                  "neutral": "원본 로그"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-3:admission:2",
+              "factText": "재공유 가능한 링크 설정을 끝까지 확인하지 않은 사실",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "링크 통제를 소홀히 한 제 책임은 있어도, 브로커와 파라리걸 쪽도 재전송을 하면서 범위를 급격히 넓혔습니다."
+          ],
+          "privateKnowledge": [
+            "브로커 검토를 위해 재공유 가능한 링크 구성을 묵인했다.",
+            "잘린 DLP 캡처만 제시하면 상대방 단독 유출처럼 보일 수 있다는 점을 알았다."
+          ],
+          "suppressions": [
+            "제3자 재전송 범위를 확인하기보다 상대방 책임으로 몰았다는 점",
+            "경쟁사 자문 폴더 도달 뒤에도 단독 유출 프레임을 유지했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-3:admission:2",
+              "factText": "재공유 가능한 링크 설정을 끝까지 확인하지 않은 사실",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-3:responsibility:3",
+              "factText": "브로커 측 재전송도 범위 확대에 관여했다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "브로커 측"
+                },
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "잘린 경보 캡처로 노서린 씨 단독 문제처럼 보이게 한 건 제가 사안을 통제하지 못한 불안을 가리려던 행동이었습니다."
+          ],
+          "privateKnowledge": [
+            "브로커 검토를 위해 재공유 가능한 링크 구성을 묵인했다.",
+            "잘린 DLP 캡처만 제시하면 상대방 단독 유출처럼 보일 수 있다는 점을 알았다."
+          ],
+          "suppressions": [
+            "경쟁사 자문 폴더 도달 뒤에도 단독 유출 프레임을 유지했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-3:responsibility:3",
+              "factText": "브로커 측 재전송도 범위 확대에 관여했다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "브로커 측"
+                },
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-3:emotion:4",
+              "factText": "통제 실패의 불안을 가리기 위해 상대방 단독 유출처럼 보이게 했다는 심리",
+              "tags": [
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "메일 게이트웨이 원본 로그",
+                  "neutral": "원본 로그"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "제가 외부 공유 링크의 통제를 소홀히 해 자료가 경쟁사 자문 폴더까지 퍼지는 결과를 막지 못했습니다. 제 책임이 있습니다."
+          ],
+          "privateKnowledge": [
+            "브로커 검토를 위해 재공유 가능한 링크 구성을 묵인했다.",
+            "잘린 DLP 캡처만 제시하면 상대방 단독 유출처럼 보일 수 있다는 점을 알았다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-3:emotion:4",
+              "factText": "통제 실패의 불안을 가리기 위해 상대방 단독 유출처럼 보이게 했다는 심리",
+              "tags": [
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "메일 게이트웨이 원본 로그",
+                  "neutral": "원본 로그"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-3:admission:5",
+              "factText": "외부 공유 링크 통제 실패로 제3자 자문 폴더 확산을 막지 못한 사실",
+              "tags": [
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                },
+                "institution": {
+                  "exact": "메일 게이트웨이 원본 로그",
+                  "neutral": "원본 로그"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "보안 위험 메모는 당시 절차상 예방 기록이었을 뿐이고, 포렌식 전부터 노서린 씨를 낙인찍으려던 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "포렌식 결과 이전에 상대방을 기밀위험 인원으로 기록했다.",
+            "발표 제외와 평가 코멘트가 발명자 분쟁과 연결되어 있었다."
+          ],
+          "suppressions": [
+            "승진과 보안 감사 압박 때문에 선제 낙인을 찍었다는 점",
+            "발명자 삭제와 인사 개입을 연동했다는 점",
+            "공모 흔적이 나오기 전부터 상대방 평판을 깎으려 했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-4:rule:0",
+              "factText": "보안 위험 메모는 예방 절차였다는 주장",
+              "tags": [
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                },
+                "time": {
+                  "exact": "포렌식 전",
+                  "neutral": "그 전",
+                  "period": "사실확인 이전"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-4:context:1",
+              "factText": "투자사 데모와 보안 감사가 겹친 압박 국면이었다는 설명",
+              "tags": [
+                "context",
+                "fear"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "포렌식 전",
+                  "neutral": "그 전",
+                  "period": "사실확인 이전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "투자사 데모와 보안 감사가 겹친 상황에서 임시 메모를 남긴 것이지, 인사에 불이익을 주려는 의도는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "포렌식 결과 이전에 상대방을 기밀위험 인원으로 기록했다.",
+            "발표 제외와 평가 코멘트가 발명자 분쟁과 연결되어 있었다."
+          ],
+          "suppressions": [
+            "승진과 보안 감사 압박 때문에 선제 낙인을 찍었다는 점",
+            "발명자 삭제와 인사 개입을 연동했다는 점",
+            "공모 흔적이 나오기 전부터 상대방 평판을 깎으려 했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-4:rule:0",
+              "factText": "보안 위험 메모는 예방 절차였다는 주장",
+              "tags": [
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                },
+                "time": {
+                  "exact": "포렌식 전",
+                  "neutral": "그 전",
+                  "period": "사실확인 이전"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-4:context:1",
+              "factText": "투자사 데모와 보안 감사가 겹친 압박 국면이었다는 설명",
+              "tags": [
+                "context",
+                "fear"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "포렌식 전",
+                  "neutral": "그 전",
+                  "period": "사실확인 이전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "포렌식 전에 위험 코멘트를 먼저 입력한 건 맞지만, 다만 발표 리스크를 줄이려는 선제 대응이라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "포렌식 결과 이전에 상대방을 기밀위험 인원으로 기록했다.",
+            "발표 제외와 평가 코멘트가 발명자 분쟁과 연결되어 있었다."
+          ],
+          "suppressions": [
+            "발명자 삭제와 인사 개입을 연동했다는 점",
+            "공모 흔적이 나오기 전부터 상대방 평판을 깎으려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-4:context:1",
+              "factText": "투자사 데모와 보안 감사가 겹친 압박 국면이었다는 설명",
+              "tags": [
+                "context",
+                "fear"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "포렌식 전",
+                  "neutral": "그 전",
+                  "period": "사실확인 이전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-4:admission:2",
+              "factText": "포렌식 전에 위험 코멘트를 먼저 입력한 사실",
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                },
+                "time": {
+                  "exact": "포렌식 전",
+                  "neutral": "그 전",
+                  "period": "사실확인 이전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "제가 먼저 코멘트를 넣은 책임은 있으나, 노서린 씨 쪽도 개인 보관 습관과 외부 접촉 정황으로 의심을 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "포렌식 결과 이전에 상대방을 기밀위험 인원으로 기록했다.",
+            "발표 제외와 평가 코멘트가 발명자 분쟁과 연결되어 있었다."
+          ],
+          "suppressions": [
+            "발명자 삭제와 인사 개입을 연동했다는 점",
+            "공모 흔적이 나오기 전부터 상대방 평판을 깎으려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-4:admission:2",
+              "factText": "포렌식 전에 위험 코멘트를 먼저 입력한 사실",
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                },
+                "time": {
+                  "exact": "포렌식 전",
+                  "neutral": "그 전",
+                  "period": "사실확인 이전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-4:responsibility:3",
+              "factText": "상대방의 외부 접촉 정황을 명분으로 선행 조치를 밀어붙였다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대 연구원"
+                },
+                "scope": {
+                  "exact": "발표 제외와 위험 코멘트",
+                  "neutral": "선행 조치"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "승진 심사와 보안 감사 압박 때문에 사실 확인보다 통제부터 하려 했고, 그 과정에서 노서린 씨를 먼저 위험 인원으로 굳혀 버렸습니다."
+          ],
+          "privateKnowledge": [
+            "포렌식 결과 이전에 상대방을 기밀위험 인원으로 기록했다.",
+            "발표 제외와 평가 코멘트가 발명자 분쟁과 연결되어 있었다."
+          ],
+          "suppressions": [
+            "공모 흔적이 나오기 전부터 상대방 평판을 깎으려 했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-4:responsibility:3",
+              "factText": "상대방의 외부 접촉 정황을 명분으로 선행 조치를 밀어붙였다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대 연구원"
+                },
+                "scope": {
+                  "exact": "발표 제외와 위험 코멘트",
+                  "neutral": "선행 조치"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-4:emotion:4",
+              "factText": "승진 심사와 보안 감사 압박 때문에 통제부터 선택했다는 심리",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "제가 사실관계가 나오기 전에 노서린 씨를 기밀위험 인원으로 적고 발표 권한까지 줄였습니다. 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "포렌식 결과 이전에 상대방을 기밀위험 인원으로 기록했다.",
+            "발표 제외와 평가 코멘트가 발명자 분쟁과 연결되어 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-4:emotion:4",
+              "factText": "승진 심사와 보안 감사 압박 때문에 통제부터 선택했다는 심리",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-4:admission:5",
+              "factText": "사실관계 이전에 상대방을 기밀위험 인원으로 낙인찍고 발표 권한을 줄인 사실",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대 연구원"
+                },
+                "scope": {
+                  "exact": "발표 제외와 위험 코멘트",
+                  "neutral": "선행 조치"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "발명자 다툼은 실제 갈등이었지, 공모를 숨기기 위해 설계한 장면은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "외부 브로커에게 자료를 넘기고 대가를 나누는 구도를 상대방과 공유했다.",
+            "발명자 다툼이 시선을 분산시킬 수 있다는 계산을 알고 있었다."
+          ],
+          "suppressions": [
+            "갈등 연출이 공모 은폐 장치였다는 점",
+            "브로커 수수료와 추가 청구항 전달을 함께 논의했다는 점",
+            "둘 다 책임을 갈라 떠넘길 계획을 세웠다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-5:denial:0",
+              "factText": "발명자 다툼은 실제 갈등이었지 연출이 아니었다는 주장",
+              "tags": [
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                },
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대측"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-5:context:1",
+              "factText": "외부 검토 이야기가 있었어도 고발 구도와 연결하진 않았다는 설명",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "외부 브로커 송장과 지갑 메모",
+                  "neutral": "외부 대가 흔적"
+                },
+                "time": {
+                  "exact": "고발 구도 형성 직전",
+                  "neutral": "그 시점",
+                  "period": "분쟁 연출 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "외부 검토 이야기가 있던 건 맞아도, 그걸 서로 고발 구도와 묶어 연출했다고 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "외부 브로커에게 자료를 넘기고 대가를 나누는 구도를 상대방과 공유했다.",
+            "발명자 다툼이 시선을 분산시킬 수 있다는 계산을 알고 있었다."
+          ],
+          "suppressions": [
+            "갈등 연출이 공모 은폐 장치였다는 점",
+            "브로커 수수료와 추가 청구항 전달을 함께 논의했다는 점",
+            "둘 다 책임을 갈라 떠넘길 계획을 세웠다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-5:denial:0",
+              "factText": "발명자 다툼은 실제 갈등이었지 연출이 아니었다는 주장",
+              "tags": [
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                },
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대측"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-5:context:1",
+              "factText": "외부 검토 이야기가 있었어도 고발 구도와 연결하진 않았다는 설명",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "외부 브로커 송장과 지갑 메모",
+                  "neutral": "외부 대가 흔적"
+                },
+                "time": {
+                  "exact": "고발 구도 형성 직전",
+                  "neutral": "그 시점",
+                  "period": "분쟁 연출 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "분쟁이 외부 시선을 돌리는 효과가 있다는 점은 알았지만, 다만 처음부터 은폐용 각본으로 짠 건 아니라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "외부 브로커에게 자료를 넘기고 대가를 나누는 구도를 상대방과 공유했다.",
+            "발명자 다툼이 시선을 분산시킬 수 있다는 계산을 알고 있었다."
+          ],
+          "suppressions": [
+            "브로커 수수료와 추가 청구항 전달을 함께 논의했다는 점",
+            "둘 다 책임을 갈라 떠넘길 계획을 세웠다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-5:context:1",
+              "factText": "외부 검토 이야기가 있었어도 고발 구도와 연결하진 않았다는 설명",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "외부 브로커 송장과 지갑 메모",
+                  "neutral": "외부 대가 흔적"
+                },
+                "time": {
+                  "exact": "고발 구도 형성 직전",
+                  "neutral": "그 시점",
+                  "period": "분쟁 연출 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-5:admission:2",
+              "factText": "분쟁이 시선을 돌리는 효과가 있다는 점을 알고 있었다는 사실",
+              "tags": [
+                "admission",
+                "motive"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "제가 갈등 구도를 이용한 책임은 있어도, 노서린 씨 쪽도 브로커 수수료와 추가 청구항 전달을 먼저 실무로 굴렸습니다."
+          ],
+          "privateKnowledge": [
+            "외부 브로커에게 자료를 넘기고 대가를 나누는 구도를 상대방과 공유했다.",
+            "발명자 다툼이 시선을 분산시킬 수 있다는 계산을 알고 있었다."
+          ],
+          "suppressions": [
+            "브로커 수수료와 추가 청구항 전달을 함께 논의했다는 점",
+            "둘 다 책임을 갈라 떠넘길 계획을 세웠다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-5:admission:2",
+              "factText": "분쟁이 시선을 돌리는 효과가 있다는 점을 알고 있었다는 사실",
+              "tags": [
+                "admission",
+                "motive"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-5:responsibility:3",
+              "factText": "상대방도 브로커 실무와 대가 논의를 굴렸다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대측"
+                },
+                "institution": {
+                  "exact": "외부 브로커 송장과 지갑 메모",
+                  "neutral": "외부 대가 흔적"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "서로 다투는 모양을 만들면 조직과 감사 시선이 갈라질 거라고 기대했고, 그 계산을 제가 멈추지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "외부 브로커에게 자료를 넘기고 대가를 나누는 구도를 상대방과 공유했다.",
+            "발명자 다툼이 시선을 분산시킬 수 있다는 계산을 알고 있었다."
+          ],
+          "suppressions": [
+            "둘 다 책임을 갈라 떠넘길 계획을 세웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-5:responsibility:3",
+              "factText": "상대방도 브로커 실무와 대가 논의를 굴렸다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대측"
+                },
+                "institution": {
+                  "exact": "외부 브로커 송장과 지갑 메모",
+                  "neutral": "외부 대가 흔적"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-5:emotion:4",
+              "factText": "시선을 갈라 두려는 계산을 멈추지 못한 자기보호 심리",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "고발 구도 형성 직전",
+                  "neutral": "그 시점",
+                  "period": "분쟁 연출 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "제가 노서린 씨와 발명자 다툼을 연출해 외부 브로커 공모를 가리려 했습니다. 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "외부 브로커에게 자료를 넘기고 대가를 나누는 구도를 상대방과 공유했다.",
+            "발명자 다툼이 시선을 분산시킬 수 있다는 계산을 알고 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:a:tell:asset_merge",
+            "workplace-11:a:tell:layer_split",
+            "workplace-11:a:tell:subject_fog"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:a:d-5:emotion:4",
+              "factText": "시선을 갈라 두려는 계산을 멈추지 못한 자기보호 심리",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "고발 구도 형성 직전",
+                  "neutral": "그 시점",
+                  "period": "분쟁 연출 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:a:d-5:admission:5",
+              "factText": "상대방과 갈등을 연출해 외부 브로커 공모를 가리려 한 사실",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "노서린",
+                  "fullName": "노서린",
+                  "judgeRef": "노서린 씨",
+                  "neutral": "상대측"
+                },
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "권태준 팀장이 제 청구항과 실험표를 쓰고도 발명자 표기에서 제 이름을 빼 버린 건 분명합니다."
+          ],
+          "privateKnowledge": [
+            "자신의 청구항과 실험표가 최종 브리핑에 반영됐지만 이름이 빠졌다는 점을 안다.",
+            "그 삭제 사실을 이후 외부 접촉과 갈등 연출의 방패로 사용했다."
+          ],
+          "suppressions": [
+            "피해 서사를 앞세워 외부 접촉 질문을 지연시켰다는 점",
+            "발명자 삭제를 공모 은폐에 일부 활용했다는 점",
+            "대가 수수 문제를 분쟁 뒤로 숨겼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-1:identity:0",
+              "factText": "상대방이 자신의 청구항과 실험표를 쓰고도 이름을 뺐다는 주장",
+              "tags": [
+                "identity",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "scope": {
+                  "exact": "발명자 기여표와 대표 슬라이드",
+                  "neutral": "해당 문서 묶음"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-1:evidence:1",
+              "factText": "버전 이력과 연구노트가 삭제 순서를 보여 준다는 설명",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브리핑 직전",
+                  "neutral": "그 직전",
+                  "period": "잠정출원 직전"
+                },
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "버전 이력과 연구노트를 보면 제가 먼저 지워졌고, 그 뒤에 대표 슬라이드에서 공로가 한 사람 몫처럼 정리됐습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 청구항과 실험표가 최종 브리핑에 반영됐지만 이름이 빠졌다는 점을 안다.",
+            "그 삭제 사실을 이후 외부 접촉과 갈등 연출의 방패로 사용했다."
+          ],
+          "suppressions": [
+            "피해 서사를 앞세워 외부 접촉 질문을 지연시켰다는 점",
+            "발명자 삭제를 공모 은폐에 일부 활용했다는 점",
+            "대가 수수 문제를 분쟁 뒤로 숨겼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-1:identity:0",
+              "factText": "상대방이 자신의 청구항과 실험표를 쓰고도 이름을 뺐다는 주장",
+              "tags": [
+                "identity",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "scope": {
+                  "exact": "발명자 기여표와 대표 슬라이드",
+                  "neutral": "해당 문서 묶음"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-1:evidence:1",
+              "factText": "버전 이력과 연구노트가 삭제 순서를 보여 준다는 설명",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브리핑 직전",
+                  "neutral": "그 직전",
+                  "period": "잠정출원 직전"
+                },
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "제 이름이 빠진 뒤 그 갈등을 크게 드러낸 건 맞지만, 다만 삭제 자체는 권태준 팀장 쪽에서 먼저 일어난 일입니다."
+          ],
+          "privateKnowledge": [
+            "자신의 청구항과 실험표가 최종 브리핑에 반영됐지만 이름이 빠졌다는 점을 안다.",
+            "그 삭제 사실을 이후 외부 접촉과 갈등 연출의 방패로 사용했다."
+          ],
+          "suppressions": [
+            "발명자 삭제를 공모 은폐에 일부 활용했다는 점",
+            "대가 수수 문제를 분쟁 뒤로 숨겼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-1:evidence:1",
+              "factText": "버전 이력과 연구노트가 삭제 순서를 보여 준다는 설명",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브리핑 직전",
+                  "neutral": "그 직전",
+                  "period": "잠정출원 직전"
+                },
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-1:admission:2",
+              "factText": "삭제 이후 갈등을 더 크게 드러낸 사실",
+              "tags": [
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotion"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "제가 그 분쟁을 제 방패처럼 쓴 책임도 있지만, 권태준 팀장 쪽도 제 공로를 지워 놓고 조직 논리로 덮으려 했습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 청구항과 실험표가 최종 브리핑에 반영됐지만 이름이 빠졌다는 점을 안다.",
+            "그 삭제 사실을 이후 외부 접촉과 갈등 연출의 방패로 사용했다."
+          ],
+          "suppressions": [
+            "발명자 삭제를 공모 은폐에 일부 활용했다는 점",
+            "대가 수수 문제를 분쟁 뒤로 숨겼다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-1:admission:2",
+              "factText": "삭제 이후 갈등을 더 크게 드러낸 사실",
+              "tags": [
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotion"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-1:responsibility:3",
+              "factText": "상대방이 조직 논리로 공로 삭제를 덮으려 했다는 책임 추궁",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "제가 먼저 지워졌고 몇 달을 참았다는 감정이 너무 커서, 그 억울함을 다른 문제를 가리는 데까지 끌고 갔습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 청구항과 실험표가 최종 브리핑에 반영됐지만 이름이 빠졌다는 점을 안다.",
+            "그 삭제 사실을 이후 외부 접촉과 갈등 연출의 방패로 사용했다."
+          ],
+          "suppressions": [
+            "대가 수수 문제를 분쟁 뒤로 숨겼다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-1:responsibility:3",
+              "factText": "상대방이 조직 논리로 공로 삭제를 덮으려 했다는 책임 추궁",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "institution": {
+                  "exact": "특허관리 시스템",
+                  "neutral": "사내 특허 시스템"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-1:emotion:4",
+              "factText": "지워진 뒤 오래 참은 억울함이 다른 문제를 가리는 데까지 번졌다는 심리",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "권태준 팀장이 제 이름을 지운 건 사실이고, 저도 그 피해를 이용해 외부 접촉을 숨기는 데 썼습니다. 제 책임도 있습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 청구항과 실험표가 최종 브리핑에 반영됐지만 이름이 빠졌다는 점을 안다.",
+            "그 삭제 사실을 이후 외부 접촉과 갈등 연출의 방패로 사용했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-1:emotion:4",
+              "factText": "지워진 뒤 오래 참은 억울함이 다른 문제를 가리는 데까지 번졌다는 심리",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-1:admission:5",
+              "factText": "상대방의 공로 삭제 피해를 외부 접촉 은폐의 방패로도 사용한 사실",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "제가 보낸 건 전체 패키지가 아니라 정리본이었고, 승인 없는 판매 같은 건 아니었어요."
+          ],
+          "privateKnowledge": [
+            "개인메일과 텔레그램으로 브로커에게 정리본을 보냈다.",
+            "대가성 수수료 논의를 스스로 이어 갔다."
+          ],
+          "suppressions": [
+            "정리본에 청구항과 실험 요약이 포함돼 있었다는 점",
+            "승인 없는 외부 접촉이 공모와 연결됐다는 점",
+            "피해자 프레임으로 수수료 논의를 뒤로 미뤘다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-2:denial:0",
+              "factText": "보낸 것은 전체 패키지가 아니라 정리본이었다는 주장",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                },
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-2:context:1",
+              "factText": "아이디어 설명용 외부 검토라고 생각했다는 설명",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "외부 브로커"
+                },
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "아이디어 설명용 정리본을 외부 변리사 쪽 검토처럼 생각한 거지, 청구항과 실험 요약을 넘겨 돈 얘기까지 한 건 아니라는 입장이에요."
+          ],
+          "privateKnowledge": [
+            "개인메일과 텔레그램으로 브로커에게 정리본을 보냈다.",
+            "대가성 수수료 논의를 스스로 이어 갔다."
+          ],
+          "suppressions": [
+            "정리본에 청구항과 실험 요약이 포함돼 있었다는 점",
+            "승인 없는 외부 접촉이 공모와 연결됐다는 점",
+            "피해자 프레임으로 수수료 논의를 뒤로 미뤘다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-2:denial:0",
+              "factText": "보낸 것은 전체 패키지가 아니라 정리본이었다는 주장",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                },
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-2:context:1",
+              "factText": "아이디어 설명용 외부 검토라고 생각했다는 설명",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "외부 브로커"
+                },
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "개인메일과 텔레그램을 쓴 건 맞아요. 다만 제가 먼저 지워졌고 몇 달을 참은 끝에 정리본 정도는 확인받아도 된다고 스스로 합리화했어요."
+          ],
+          "privateKnowledge": [
+            "개인메일과 텔레그램으로 브로커에게 정리본을 보냈다.",
+            "대가성 수수료 논의를 스스로 이어 갔다."
+          ],
+          "suppressions": [
+            "승인 없는 외부 접촉이 공모와 연결됐다는 점",
+            "피해자 프레임으로 수수료 논의를 뒤로 미뤘다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-2:context:1",
+              "factText": "아이디어 설명용 외부 검토라고 생각했다는 설명",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "외부 브로커"
+                },
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-2:admission:2",
+              "factText": "개인메일과 텔레그램을 사용한 사실",
+              "tags": [
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                },
+                "time": {
+                  "exact": "내부검토 전날 밤",
+                  "neutral": "그 무렵",
+                  "period": "발송 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 선을 넘은 책임은 있지만, 권태준 팀장 쪽도 내부 채널을 막고 발명자 문제를 틀어쥔 채 저를 밖으로 밀어낸 면이 있어요."
+          ],
+          "privateKnowledge": [
+            "개인메일과 텔레그램으로 브로커에게 정리본을 보냈다.",
+            "대가성 수수료 논의를 스스로 이어 갔다."
+          ],
+          "suppressions": [
+            "승인 없는 외부 접촉이 공모와 연결됐다는 점",
+            "피해자 프레임으로 수수료 논의를 뒤로 미뤘다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-2:admission:2",
+              "factText": "개인메일과 텔레그램을 사용한 사실",
+              "tags": [
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                },
+                "time": {
+                  "exact": "내부검토 전날 밤",
+                  "neutral": "그 무렵",
+                  "period": "발송 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-2:responsibility:3",
+              "factText": "상대방이 내부 채널을 막아 바깥으로 밀어냈다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "제가 먼저 지워졌다고 느낀 분노 때문에 정리본, 아이디어 설명용, 외부 변리사라는 말로 제 행동을 계속 줄여 말했어요."
+          ],
+          "privateKnowledge": [
+            "개인메일과 텔레그램으로 브로커에게 정리본을 보냈다.",
+            "대가성 수수료 논의를 스스로 이어 갔다."
+          ],
+          "suppressions": [
+            "피해자 프레임으로 수수료 논의를 뒤로 미뤘다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-2:responsibility:3",
+              "factText": "상대방이 내부 채널을 막아 바깥으로 밀어냈다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-2:emotion:4",
+              "factText": "지워졌다는 분노 때문에 표현을 줄여 말하며 스스로 합리화한 심리",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "제가 승인 없이 브로커에게 청구항 정리본과 실험 요약을 보내고 대가까지 논의했습니다. 제 잘못이에요."
+          ],
+          "privateKnowledge": [
+            "개인메일과 텔레그램으로 브로커에게 정리본을 보냈다.",
+            "대가성 수수료 논의를 스스로 이어 갔다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-2:emotion:4",
+              "factText": "지워졌다는 분노 때문에 표현을 줄여 말하며 스스로 합리화한 심리",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-2:admission:5",
+              "factText": "승인 없이 브로커에게 청구항 정리본과 실험 요약을 보내고 대가를 논의한 사실",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "외부 브로커"
+                },
+                "scope": {
+                  "exact": "청구항 정리본과 실험 요약",
+                  "neutral": "정리본"
+                },
+                "channel": {
+                  "exact": "개인메일과 텔레그램",
+                  "neutral": "사설 외부 채널"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "저는 브로커 한 곳에 설명용으로만 보낸다고 생각했고, 제3자 자문 폴더까지 퍼질 거라고는 전혀 몰랐어요."
+          ],
+          "privateKnowledge": [
+            "브로커에게 보낸 링크가 재공유 가능한 설정이었음을 뒤늦게 인식했다.",
+            "제한적 검토만 기대했지만 구조적으로 더 퍼질 수 있었다."
+          ],
+          "suppressions": [
+            "링크 범위를 제대로 확인하지 않았다는 점",
+            "캡처 PDF가 한쪽만 보이도록 잘려 있다는 걸 이용했다는 점",
+            "제3자 확산 후에도 한 건 검토라고 버텼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-3:denial:0",
+              "factText": "브로커 한 곳의 설명용 공유만 생각했다는 주장",
+              "tags": [
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "브로커 측"
+                },
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-3:evidence:1",
+              "factText": "잘린 DLP 캡처만으로 범위를 단정할 수 없다는 설명",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "메일 게이트웨이 원본 로그",
+                  "neutral": "원본 로그"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "DLP 캡처만 보면 제가 다 한 것처럼 보이지만, 그 자료만으로 외부 도달 범위를 단정하는 건 무리라고 생각해요."
+          ],
+          "privateKnowledge": [
+            "브로커에게 보낸 링크가 재공유 가능한 설정이었음을 뒤늦게 인식했다.",
+            "제한적 검토만 기대했지만 구조적으로 더 퍼질 수 있었다."
+          ],
+          "suppressions": [
+            "링크 범위를 제대로 확인하지 않았다는 점",
+            "캡처 PDF가 한쪽만 보이도록 잘려 있다는 걸 이용했다는 점",
+            "제3자 확산 후에도 한 건 검토라고 버텼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-3:denial:0",
+              "factText": "브로커 한 곳의 설명용 공유만 생각했다는 주장",
+              "tags": [
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "유다인",
+                  "fullName": "유다인",
+                  "judgeRef": "유다인 씨",
+                  "neutral": "브로커 측"
+                },
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-3:evidence:1",
+              "factText": "잘린 DLP 캡처만으로 범위를 단정할 수 없다는 설명",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "메일 게이트웨이 원본 로그",
+                  "neutral": "원본 로그"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "재공유 가능한 링크와 ZIP 범위를 제가 가볍게 본 건 맞아요. 다만 그때는 한 번 검토만 받고 끝날 줄 알았어요."
+          ],
+          "privateKnowledge": [
+            "브로커에게 보낸 링크가 재공유 가능한 설정이었음을 뒤늦게 인식했다.",
+            "제한적 검토만 기대했지만 구조적으로 더 퍼질 수 있었다."
+          ],
+          "suppressions": [
+            "캡처 PDF가 한쪽만 보이도록 잘려 있다는 걸 이용했다는 점",
+            "제3자 확산 후에도 한 건 검토라고 버텼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-3:evidence:1",
+              "factText": "잘린 DLP 캡처만으로 범위를 단정할 수 없다는 설명",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "메일 게이트웨이 원본 로그",
+                  "neutral": "원본 로그"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-3:admission:2",
+              "factText": "재공유 가능한 링크와 ZIP 범위를 가볍게 본 사실",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "제가 링크를 느슨하게 다룬 책임은 있지만, 브로커 쪽도 다시 돌렸고 권태준 팀장 쪽도 제한적 공유라는 말로 안심시켰어요."
+          ],
+          "privateKnowledge": [
+            "브로커에게 보낸 링크가 재공유 가능한 설정이었음을 뒤늦게 인식했다.",
+            "제한적 검토만 기대했지만 구조적으로 더 퍼질 수 있었다."
+          ],
+          "suppressions": [
+            "캡처 PDF가 한쪽만 보이도록 잘려 있다는 걸 이용했다는 점",
+            "제3자 확산 후에도 한 건 검토라고 버텼다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-3:admission:2",
+              "factText": "재공유 가능한 링크와 ZIP 범위를 가볍게 본 사실",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-3:responsibility:3",
+              "factText": "브로커 측 재전송과 상대방의 안심시키는 말도 범위 확대에 관여했다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 먼저 지워졌고 몇 달을 참았다는 생각에 브로커 한 건이면 된다고 스스로 눌러 놓았지, 제3자 확산까지는 상상하지 못했어요."
+          ],
+          "privateKnowledge": [
+            "브로커에게 보낸 링크가 재공유 가능한 설정이었음을 뒤늦게 인식했다.",
+            "제한적 검토만 기대했지만 구조적으로 더 퍼질 수 있었다."
+          ],
+          "suppressions": [
+            "제3자 확산 후에도 한 건 검토라고 버텼다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-3:responsibility:3",
+              "factText": "브로커 측 재전송과 상대방의 안심시키는 말도 범위 확대에 관여했다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-3:emotion:4",
+              "factText": "피해감에 기대어 제3자 확산 가능성을 스스로 눌러 본 심리",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브로커 수신 직후",
+                  "neutral": "그 직후",
+                  "period": "재전송 시작 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "제가 제한적일 거라 믿고 자료를 보냈지만 재전송 가능 구조를 방치해서 제3자 자문 폴더 확산을 막지 못했습니다. 제 책임이 있어요."
+          ],
+          "privateKnowledge": [
+            "브로커에게 보낸 링크가 재공유 가능한 설정이었음을 뒤늦게 인식했다.",
+            "제한적 검토만 기대했지만 구조적으로 더 퍼질 수 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-3:emotion:4",
+              "factText": "피해감에 기대어 제3자 확산 가능성을 스스로 눌러 본 심리",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "브로커 수신 직후",
+                  "neutral": "그 직후",
+                  "period": "재전송 시작 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-3:admission:5",
+              "factText": "재전송 가능 구조를 방치해 제3자 자문 폴더 확산을 막지 못한 사실",
+              "tags": [
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "재공유 가능한 작업 링크",
+                  "neutral": "외부 공유 링크"
+                },
+                "institution": {
+                  "exact": "메일 게이트웨이 원본 로그",
+                  "neutral": "원본 로그"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "권태준 팀장은 사실확인도 끝나기 전에 저를 기밀위험 인원처럼 적어 놓고 발표에서 빼려 했어요."
+          ],
+          "privateKnowledge": [
+            "상대방이 포렌식 전부터 자신을 위험 인원으로 기록했다는 걸 안다.",
+            "자신의 개인 저장 습관과 외부 접촉이 의심의 빌미를 준 것도 안다."
+          ],
+          "suppressions": [
+            "자신의 외부 접촉이 낙인의 명분으로 쓰였다는 점",
+            "평판 하락 공포 때문에 사실과 감정을 섞어 말한다는 점",
+            "선행 낙인을 발명자 분쟁과 함께 방어막으로 활용했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-4:identity:0",
+              "factText": "상대방이 사실확인 전에 자신을 기밀위험 인원처럼 적어 놓았다는 주장",
+              "tags": [
+                "identity",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-4:evidence:1",
+              "factText": "평가 초안과 보안 메모가 선행 코멘트 시점을 보여 준다는 설명",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                },
+                "time": {
+                  "exact": "포렌식 전",
+                  "neutral": "그 전",
+                  "period": "사실확인 이전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "평가 초안과 보안 메모를 보면 포렌식 전에 이미 제 이름 옆에 위험 코멘트가 들어가 있었어요."
+          ],
+          "privateKnowledge": [
+            "상대방이 포렌식 전부터 자신을 위험 인원으로 기록했다는 걸 안다.",
+            "자신의 개인 저장 습관과 외부 접촉이 의심의 빌미를 준 것도 안다."
+          ],
+          "suppressions": [
+            "자신의 외부 접촉이 낙인의 명분으로 쓰였다는 점",
+            "평판 하락 공포 때문에 사실과 감정을 섞어 말한다는 점",
+            "선행 낙인을 발명자 분쟁과 함께 방어막으로 활용했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-4:identity:0",
+              "factText": "상대방이 사실확인 전에 자신을 기밀위험 인원처럼 적어 놓았다는 주장",
+              "tags": [
+                "identity",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-4:evidence:1",
+              "factText": "평가 초안과 보안 메모가 선행 코멘트 시점을 보여 준다는 설명",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                },
+                "time": {
+                  "exact": "포렌식 전",
+                  "neutral": "그 전",
+                  "period": "사실확인 이전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "제 개인 보관 습관이 의심을 부를 여지는 있었어요. 다만 낙인과 발표 제외는 권태준 팀장 쪽이 먼저 밀어 넣은 조치였어요."
+          ],
+          "privateKnowledge": [
+            "상대방이 포렌식 전부터 자신을 위험 인원으로 기록했다는 걸 안다.",
+            "자신의 개인 저장 습관과 외부 접촉이 의심의 빌미를 준 것도 안다."
+          ],
+          "suppressions": [
+            "평판 하락 공포 때문에 사실과 감정을 섞어 말한다는 점",
+            "선행 낙인을 발명자 분쟁과 함께 방어막으로 활용했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-4:evidence:1",
+              "factText": "평가 초안과 보안 메모가 선행 코멘트 시점을 보여 준다는 설명",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                },
+                "time": {
+                  "exact": "포렌식 전",
+                  "neutral": "그 전",
+                  "period": "사실확인 이전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "evidence_hit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-4:admission:2",
+              "factText": "자신의 개인 보관 습관이 의심의 여지를 만든 사실",
+              "tags": [
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "개인 노트와 비공식 메일 저장 습관",
+                  "neutral": "개인 저장 습관"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "제가 스스로 리스크를 만든 책임도 있지만, 권태준 팀장 쪽도 사실 확인 전에 인사와 브리핑에서 저를 밀어내며 판을 굳혔어요."
+          ],
+          "privateKnowledge": [
+            "상대방이 포렌식 전부터 자신을 위험 인원으로 기록했다는 걸 안다.",
+            "자신의 개인 저장 습관과 외부 접촉이 의심의 빌미를 준 것도 안다."
+          ],
+          "suppressions": [
+            "평판 하락 공포 때문에 사실과 감정을 섞어 말한다는 점",
+            "선행 낙인을 발명자 분쟁과 함께 방어막으로 활용했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-4:admission:2",
+              "factText": "자신의 개인 보관 습관이 의심의 여지를 만든 사실",
+              "tags": [
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "개인 노트와 비공식 메일 저장 습관",
+                  "neutral": "개인 저장 습관"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-4:responsibility:3",
+              "factText": "상대방이 사실 확인 전에 인사와 브리핑에서 자신을 밀어냈다는 책임 추궁",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "scope": {
+                  "exact": "발표 제외와 위험 코멘트",
+                  "neutral": "선행 조치"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "제가 먼저 지워졌고 몇 달을 참았는데 연구실 평판까지 잃을까 봐, 그 선행 낙인이 얼마나 모욕적이었는지 아직도 잊히지 않아요."
+          ],
+          "privateKnowledge": [
+            "상대방이 포렌식 전부터 자신을 위험 인원으로 기록했다는 걸 안다.",
+            "자신의 개인 저장 습관과 외부 접촉이 의심의 빌미를 준 것도 안다."
+          ],
+          "suppressions": [
+            "선행 낙인을 발명자 분쟁과 함께 방어막으로 활용했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-4:responsibility:3",
+              "factText": "상대방이 사실 확인 전에 인사와 브리핑에서 자신을 밀어냈다는 책임 추궁",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "scope": {
+                  "exact": "발표 제외와 위험 코멘트",
+                  "neutral": "선행 조치"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-4:emotion:4",
+              "factText": "연구실 평판까지 잃을까 두려워 선행 낙인을 더 크게 느끼는 심리",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "제가 위험한 외부 접촉을 만든 건 맞지만, 권태준 팀장이 사실 확인 전에 저를 기밀위험 인원으로 낙인찍은 것도 사실입니다."
+          ],
+          "privateKnowledge": [
+            "상대방이 포렌식 전부터 자신을 위험 인원으로 기록했다는 걸 안다.",
+            "자신의 개인 저장 습관과 외부 접촉이 의심의 빌미를 준 것도 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-4:emotion:4",
+              "factText": "연구실 평판까지 잃을까 두려워 선행 낙인을 더 크게 느끼는 심리",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-4:admission:5",
+              "factText": "자신의 위험한 외부 접촉과 상대방의 선행 낙인이 동시에 사실이라는 고백",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "institution": {
+                  "exact": "HR 평가 초안과 기밀위험 메모",
+                  "neutral": "인사·보안 메모"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저희가 일부러 싸움을 꾸며서 공모를 숨겼다는 말은 너무 과해요. 제 억울함은 실제였어요."
+          ],
+          "privateKnowledge": [
+            "발명자 삭제에 대한 분노와 복수심을 공모 은폐와 섞었다.",
+            "상대방과 갈등을 키우면 서로 책임을 갈라 숨길 수 있다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "브로커 대가와 갈등 연출이 연결돼 있었다는 점",
+            "상대방과 사전에 책임 분산을 계산했다는 점",
+            "피해자 서사를 공모 방패로 사용했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-5:denial:0",
+              "factText": "싸움은 실제 억울함이지 공모 은폐 연출은 아니었다는 주장",
+              "tags": [
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-5:context:1",
+              "factText": "지워진 감정은 실제였기에 전체를 각본이라고 보긴 어렵다는 설명",
+              "tags": [
+                "context",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "time": {
+                  "exact": "고발 구도 형성 직전",
+                  "neutral": "그 시점",
+                  "period": "분쟁 연출 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "제가 먼저 지워졌고 몇 달을 참았다는 건 사실이고, 그 감정이 있었다고 해서 싸움 전체를 연출이라고 단정할 수는 없어요."
+          ],
+          "privateKnowledge": [
+            "발명자 삭제에 대한 분노와 복수심을 공모 은폐와 섞었다.",
+            "상대방과 갈등을 키우면 서로 책임을 갈라 숨길 수 있다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "브로커 대가와 갈등 연출이 연결돼 있었다는 점",
+            "상대방과 사전에 책임 분산을 계산했다는 점",
+            "피해자 서사를 공모 방패로 사용했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-5:denial:0",
+              "factText": "싸움은 실제 억울함이지 공모 은폐 연출은 아니었다는 주장",
+              "tags": [
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-5:context:1",
+              "factText": "지워진 감정은 실제였기에 전체를 각본이라고 보긴 어렵다는 설명",
+              "tags": [
+                "context",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "time": {
+                  "exact": "고발 구도 형성 직전",
+                  "neutral": "그 시점",
+                  "period": "분쟁 연출 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "그 갈등이 가리개가 될 수 있다는 걸 모른 건 아니에요. 다만 처음부터 브로커 공모를 숨기려고 각본처럼 굴린 건 아니라고 버텼어요."
+          ],
+          "privateKnowledge": [
+            "발명자 삭제에 대한 분노와 복수심을 공모 은폐와 섞었다.",
+            "상대방과 갈등을 키우면 서로 책임을 갈라 숨길 수 있다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "상대방과 사전에 책임 분산을 계산했다는 점",
+            "피해자 서사를 공모 방패로 사용했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-5:context:1",
+              "factText": "지워진 감정은 실제였기에 전체를 각본이라고 보긴 어렵다는 설명",
+              "tags": [
+                "context",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "time": {
+                  "exact": "고발 구도 형성 직전",
+                  "neutral": "그 시점",
+                  "period": "분쟁 연출 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-5:admission:2",
+              "factText": "갈등이 가리개가 될 수 있다는 점을 알고 있었다는 사실",
+              "tags": [
+                "admission",
+                "motive"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "제가 복수심으로 판을 키운 책임은 있지만, 권태준 팀장 쪽도 수수료와 청구항 추가를 계산하면서 갈등을 같이 이용했어요."
+          ],
+          "privateKnowledge": [
+            "발명자 삭제에 대한 분노와 복수심을 공모 은폐와 섞었다.",
+            "상대방과 갈등을 키우면 서로 책임을 갈라 숨길 수 있다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "상대방과 사전에 책임 분산을 계산했다는 점",
+            "피해자 서사를 공모 방패로 사용했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-5:admission:2",
+              "factText": "갈등이 가리개가 될 수 있다는 점을 알고 있었다는 사실",
+              "tags": [
+                "admission",
+                "motive"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-5:responsibility:3",
+              "factText": "상대방도 수수료와 청구항 추가를 계산하며 갈등을 이용했다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "institution": {
+                  "exact": "외부 브로커 송장과 지갑 메모",
+                  "neutral": "외부 대가 흔적"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "제가 먼저 지워졌다는 피해감과 복수심 때문에, 정리본과 외부 변리사 얘기 뒤에 공모 흔적을 숨기려 든 건 사실이에요."
+          ],
+          "privateKnowledge": [
+            "발명자 삭제에 대한 분노와 복수심을 공모 은폐와 섞었다.",
+            "상대방과 갈등을 키우면 서로 책임을 갈라 숨길 수 있다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "피해자 서사를 공모 방패로 사용했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-5:responsibility:3",
+              "factText": "상대방도 수수료와 청구항 추가를 계산하며 갈등을 이용했다는 전가",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "institution": {
+                  "exact": "외부 브로커 송장과 지갑 메모",
+                  "neutral": "외부 대가 흔적"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-5:emotion:4",
+              "factText": "피해감과 복수심 때문에 공모 흔적을 피해 서사 뒤에 숨긴 심리",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "제가 권태준 팀장과 갈등을 일부러 키워 공모를 가렸습니다. 제 책임이고, 복수심까지 섞여 있었습니다."
+          ],
+          "privateKnowledge": [
+            "발명자 삭제에 대한 분노와 복수심을 공모 은폐와 섞었다.",
+            "상대방과 갈등을 키우면 서로 책임을 갈라 숨길 수 있다는 걸 알고 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-11:b:tell:hurt_stack",
+            "workplace-11:b:tell:scope_minimize",
+            "workplace-11:b:tell:ally_invocation"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-11:b:d-5:emotion:4",
+              "factText": "피해감과 복수심 때문에 공모 흔적을 피해 서사 뒤에 숨긴 심리",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-11:b:d-5:admission:5",
+              "factText": "상대방과 갈등을 일부러 키워 공모를 가린 사실",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "권태준",
+                  "fullName": "권태준",
+                  "judgeRef": "권태준 팀장",
+                  "neutral": "상대 팀장"
+                },
+                "scope": {
+                  "exact": "발명자 다툼과 외부 브로커 접촉",
+                  "neutral": "그 갈등 구도"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+

@@ -367,7 +367,7 @@ export const family10TellsBeats = {
       "party": "b",
       "disputeId": "d-1",
       "beatType": "blame",
-      "line": "조건부 문장이었는데 누나가 확정 약속처럼 받아들였어요. 다만 저도 그 기대를 바로 끊지는 못했습니다.",
+      "line": "조건부 문장이었는데 누나가 확정 약속처럼 받아들였어요. 저도 그 기대를 바로 끊지는 못했습니다.",
       "behaviorHint": "처음엔 단호하다가 마지막 문장에서 볼륨이 떨어진다.",
       "applicableStates": [
         "S3"
@@ -441,7 +441,7 @@ export const family10TellsBeats = {
       "party": "b",
       "disputeId": "d-2",
       "beatType": "blame",
-      "line": "18시 08분에 일정이 끝났다고 바로 판단이 끝나는 건 아니었습니다. 차 막힘이랑 거래처 마무리까지 있어서 제가 미룬 거예요.",
+      "line": "18시 08분에 일정이 끝났다고 바로 판단이 끝나는 건 아니었습니다. 차 막힘이랑 거래처 마무리까지 있어서 제가 미룬 거예요. 누나 쪽도 메뉴를 먼저 늘려 놓고 공유를 안 했잖아요.",
       "behaviorHint": "숫자를 먼저 말한 뒤 사정을 길게 덧붙인다.",
       "applicableStates": [
         "S3"

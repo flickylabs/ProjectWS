@@ -129,7 +129,7 @@ export const spouse09TellsBeats = {
       "party": "a",
       "disputeId": "d-2",
       "beatType": "hedge",
-      "line": "보험금이 들어온 건 맞아요. 다만 그걸 곧바로 공동자금처럼 풀기엔 불안해서 보관만 한 거예요.",
+      "line": "보험금이 들어온 건 맞아요. 그걸 곧바로 공동자금처럼 풀기엔 불안해서 보관만 한 거예요.",
       "behaviorHint": "시선을 아래로 두고 단어를 고르며 범위를 잘게 쪼갠다.",
       "applicableStates": [
         "S1"
@@ -155,7 +155,7 @@ export const spouse09TellsBeats = {
       "party": "a",
       "disputeId": "d-2",
       "beatType": "blame",
-      "line": "왜 그렇게까지 했는지 묻는다면, 2022년 일 이후 같은 계좌에 두는 게 더 무서웠기 때문입니다.",
+      "line": "왜 그렇게까지 했는지 묻는다면, 2022년 일 이후 같은 계좌에 두는 게 더 무서웠기 때문입니다. 도현 씨 쪽도 먼저 부채를 숨긴 전력이 있잖아요.",
       "behaviorHint": "입술을 다문 채 짧게 웃고, 마지막 문장만 단단하게 눌러 말한다.",
       "applicableStates": [
         "S3"

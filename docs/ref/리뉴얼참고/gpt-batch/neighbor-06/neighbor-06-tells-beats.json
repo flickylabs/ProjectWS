@@ -245,7 +245,7 @@
       "party": "a",
       "disputeId": "d-3",
       "beatType": "confession",
-      "line": "결국 제 손수레도 누적 원인 중 하나였습니다. 다만 한쪽 단독이 아니라 공동 과실입니다.",
+      "line": "결국 제 손수레도 누적 원인 중 하나였습니다. 한쪽 단독이 아니라 공동 과실입니다.",
       "behaviorHint": "말 끝을 낮추고 마지막 문장에서 힘을 뺀다.",
       "applicableStates": [
         "S5"

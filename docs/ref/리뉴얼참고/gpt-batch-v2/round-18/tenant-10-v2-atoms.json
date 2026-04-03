@@ -1,0 +1,4367 @@
+{
+  "caseId": "tenant-10",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "브로커를 통해 반려견 사진까지 미리 보냈고 관리만 잘하면 된다는 취지로 들어서, 저는 반려견 동거가 정리된 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "명확한 승인 문장을 직접 받은 것은 아니었다.",
+            "강아지 호텔 장기 보관을 이미 취소해 입주를 더 미루기 어려웠다."
+          ],
+          "suppressions": [
+            "'승인합니다'라는 직접 표현이 없었다는 점",
+            "내가 애매한 답을 허락으로 먼저 받아들였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-1:act:0",
+              "factText": "브로커를 통해 입주 전에 반려견 사진을 전달했다는 점",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 이틀 전 밤",
+                  "neutral": "입주 전",
+                  "dateExact": "입주 이틀 전 밤",
+                  "period": "입주 직전"
+                },
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                },
+                "person": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-1:rule:0",
+              "factText": "관리만 잘 해 달라는 회신을 허락으로 이해했다는 점",
+              "tags": [
+                "rule",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "관리만 잘 해 달라",
+                  "neutral": "애매한 관리 요청"
+                },
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "특약이 무조건 금지처럼 읽히진 않았고 사진까지 확인됐으니, 별도 반대가 없는 줄 알고 움직였습니다."
+          ],
+          "privateKnowledge": [
+            "특약에 '사전 협의'에 가까운 뉘앙스가 있다는 건 알았지만, 그 협의가 끝났는지는 분명하지 않았다.",
+            "상훈의 짧은 문자 한 줄을 내가 끝난 답처럼 붙잡았다."
+          ],
+          "suppressions": [
+            "협의가 완료됐다는 확답은 없었다는 점",
+            "사진 확인과 승인 확인이 같은 단계가 아니라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-1:rule:1",
+              "factText": "특약이 전면 자동 금지로만 보이지 않았다는 점",
+              "tags": [
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "반려동물 제한 특약",
+                  "neutral": "계약 특약"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-1:uncertainty:0",
+              "factText": "사진 확인 이후 별도 반대가 없으니 허용으로 받아들였다는 점",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사진 전송 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "dateExact": "사진 전송 다음 날 오전",
+                  "period": "입주 직전"
+                },
+                "message": {
+                  "exact": "관리만 잘 해 달라",
+                  "neutral": "애매한 관리 요청"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "지금 보면 승인 문장이 분명하진 않았지만, 저는 협의가 끝났다고 너무 빨리 믿고 움직인 것 같습니다."
+          ],
+          "privateKnowledge": [
+            "문자 원문만 놓고 보면 '허락'보다 '관리 조건 확인'에 가까웠다.",
+            "그래도 사진을 보게 한 쪽에서 분명히 막지는 않았다는 생각이 남아 있다."
+          ],
+          "suppressions": [
+            "내가 승인 문장을 확인하지 않았다는 점",
+            "오해가 생길 여지를 인정하는 표현"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield",
+            "tenant10:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-1:admission:0",
+              "factText": "명시적 승인 없이 협의가 끝났다고 앞질러 판단한 점",
+              "tags": [
+                "admission",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사진 전송 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "dateExact": "사진 전송 다음 날 오전",
+                  "period": "입주 직전"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-1:counter:0",
+              "factText": "상대의 회신도 승인과 보류 사이로 읽힐 만큼 애매했다는 점",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "관리만 잘 해 달라",
+                  "neutral": "애매한 관리 요청"
+                },
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "허락을 제가 앞질러 해석한 건 맞지만, 상훈 씨 답도 승인과 보류 사이에 걸쳐 있어서 그대로 믿어 버렸습니다."
+          ],
+          "privateKnowledge": [
+            "반려견을 다시 맡길 곳이 없다는 압박 때문에 더 유리하게 읽었다.",
+            "문제를 키우고 싶지 않아 '애매하다'는 표현을 일부러 피했다."
+          ],
+          "suppressions": [
+            "반려견 보관 문제로 조급했다는 점",
+            "문자 의미를 스스로 유리하게 해석했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield",
+            "tenant10:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-1:self_justification:0",
+              "factText": "입주 압박 때문에 회신을 자신에게 유리하게 해석한 점",
+              "tags": [
+                "self_justification",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 직전",
+                  "neutral": "그 무렵",
+                  "period": "입주 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-1:counter:1",
+              "factText": "임대인의 짧은 답이 협의 완료처럼 비칠 여지를 남겼다는 점",
+              "tags": [
+                "counter",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                },
+                "message": {
+                  "exact": "관리만 잘 해 달라",
+                  "neutral": "애매한 관리 요청"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "그때는 강아지를 다시 맡길 곳도 없고 호텔도 취소한 상태라, 그 한 줄을 허락처럼 붙잡을 수밖에 없다고 느꼈습니다."
+          ],
+          "privateKnowledge": [
+            "입주를 앞두고 반려견 때문에 문제 세입자로 낙인찍힐까 겁이 났다.",
+            "그래서 '확답이 없다'는 사실을 스스로 덜 보려 했다."
+          ],
+          "suppressions": [
+            "불안 때문에 사실을 축소했다는 점",
+            "허락이 아니라 희망으로 읽은 부분"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:a:tell:photo_stack",
+            "tenant10:a:tell:quiet_overflow"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-1:fear:0",
+              "factText": "반려견을 맡길 곳이 없어 입주 직전 불안이 커졌다는 점",
+              "tags": [
+                "fear",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 직전",
+                  "neutral": "그 무렵",
+                  "period": "입주 직전"
+                },
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-1:shame:0",
+              "factText": "문제 세입자로 보일까 두려워 승인 부족을 곧바로 말하지 못한 점",
+              "tags": [
+                "shame",
+                "identity",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "명확한 허락을 받기 전에 함께 입주한 건 제 잘못입니다. 다만 그 답을 분명하게 남기지 않은 책임도 반씩 있다고 생각합니다."
+          ],
+          "privateKnowledge": [
+            "결국 승인 없는 입주가 있었다는 핵심을 더는 부정하기 어렵다.",
+            "그래도 상훈의 애매한 회신이 오해를 키웠다는 감정은 남아 있다."
+          ],
+          "suppressions": [
+            "내 책임과 상대 책임을 따로 나눠 말해야 한다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:a:tell:quiet_overflow"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-1:admission:1",
+              "factText": "명확한 허락 전에 반려견과 함께 입주한 책임을 인정하는 점",
+              "tags": [
+                "admission",
+                "responsibility",
+                "act"
+              ],
+              "slots": {
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                },
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-1:counter:2",
+              "factText": "임대인의 애매한 회신도 오해를 키운 원인이라고 보는 점",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                },
+                "message": {
+                  "exact": "관리만 잘 해 달라",
+                  "neutral": "애매한 관리 요청"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "입주 전에 반려견 사진과 질문을 다 보냈고, 브로커도 집주인께 전달했다고 해서 저는 필요한 고지는 했다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "집주인의 명확한 승인 메시지는 끝내 받지 못했다.",
+            "처음 제출한 캡처에는 '아직 답이 없다'는 앞문장이 빠져 있었다."
+          ],
+          "suppressions": [
+            "최종 승인 확인이 남아 있었다는 점",
+            "내가 먼저 유리한 캡처를 내밀었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-2:act:0",
+              "factText": "입주 전에 반려견 사진과 질문을 브로커 채널로 보냈다는 점",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 이틀 전 밤",
+                  "neutral": "입주 전",
+                  "dateExact": "입주 이틀 전 밤",
+                  "period": "입주 직전"
+                },
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                },
+                "person": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-2:self_justification:0",
+              "factText": "전달됐다는 말만으로 필요한 고지가 끝났다고 생각한 점",
+              "tags": [
+                "self_justification",
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "사진이 전달됐고 별도 거절도 없어서, 저는 허락 단계가 거의 끝났다고 이해했습니다."
+          ],
+          "privateKnowledge": [
+            "원문 대화에는 집주인 답이 아직이라는 문장이 분명히 있었다.",
+            "내가 무응답을 사실상 승인처럼 해석했다."
+          ],
+          "suppressions": [
+            "상대의 최종 답을 직접 확인하지 않았다는 점",
+            "무응답과 승인 사이를 스스로 메웠다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-2:uncertainty:0",
+              "factText": "별도 거절이 없다는 점을 사실상 승인 단계로 이해한 점",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사진 전송 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "dateExact": "사진 전송 다음 날 오전",
+                  "period": "입주 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-2:evidence:0",
+              "factText": "사진 전달 사실 자체를 고지의 핵심 근거로 내세우는 점",
+              "tags": [
+                "evidence",
+                "act",
+                "context"
+              ],
+              "slots": {
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                },
+                "person": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "원문에 아직 답이 없다는 문장이 있었는데도, 저는 잘린 캡처 쪽을 먼저 내세워 제가 다 알린 것처럼 보이게 했습니다."
+          ],
+          "privateKnowledge": [
+            "내가 제시한 잘린 화면이 나에게 유리하다는 걸 알고 있었다.",
+            "완전 무단으로 보이는 건 두려워서 고지 절차를 더 크게 말하고 싶었다."
+          ],
+          "suppressions": [
+            "캡처를 선택적으로 제시했다는 점",
+            "허락 미확정 상태를 일부러 흐렸다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield",
+            "tenant10:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-2:evidence:1",
+              "factText": "처음 제시한 단톡방 캡처가 원문보다 유리하게 잘려 있었다는 점",
+              "tags": [
+                "evidence",
+                "privacy",
+                "uncertainty"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "잘라 낸 단톡방 캡처",
+                  "neutral": "잘린 대화 캡처"
+                },
+                "time": {
+                  "exact": "입주 이틀 전 밤",
+                  "neutral": "입주 전",
+                  "dateExact": "입주 이틀 전 밤",
+                  "period": "입주 직전"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-2:admission:0",
+              "factText": "명확한 승인 부재를 덮으려 고지 사실을 더 강하게 말한 점",
+              "tags": [
+                "admission",
+                "self_justification",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "명확한 승인 확인 없이 들어온 건 제 성급함입니다. 그래도 사진과 질문을 먼저 보낸 이상 완전한 무단 반입이라고만 말하는 건 억울합니다."
+          ],
+          "privateKnowledge": [
+            "나는 '사전 고지'와 '최종 승인'을 일부러 같은 말처럼 섞었다.",
+            "절차상 내 잘못을 인정하면 반려견까지 당장 빼야 할까 봐 겁났다."
+          ],
+          "suppressions": [
+            "사전 고지와 승인 확인을 다른 단계로 분리하지 않았다는 점",
+            "무단 반입 낙인을 두려워했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield",
+            "tenant10:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-2:admission:1",
+              "factText": "명확한 승인 확인 전 입주한 성급함을 인정하는 점",
+              "tags": [
+                "admission",
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 직전",
+                  "neutral": "그 무렵",
+                  "period": "입주 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-2:counter:0",
+              "factText": "사전 고지 자체는 있었으므로 완전 무단 반입으로만 볼 수 없다고 주장하는 점",
+              "tags": [
+                "counter",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                },
+                "person": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "이사 날짜는 정해져 있고 강아지 호텔도 취소한 상태였어서, 저는 무응답을 끝까지 보류로 받아들이기가 너무 무서웠습니다."
+          ],
+          "privateKnowledge": [
+            "당시의 압박 때문에 '아직 답이 없다'는 문장을 스스로 덜 중요하게 봤다.",
+            "절차보다 당장 같이 들어갈 방법부터 찾고 있었다."
+          ],
+          "suppressions": [
+            "생활 압박이 판단을 밀었다는 점",
+            "허락을 확인하지 않은 불안을 감췄다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:a:tell:photo_stack",
+            "tenant10:a:tell:quiet_overflow"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-2:fear:0",
+              "factText": "이사 일정과 반려견 보관 문제 때문에 답을 기다리기 어려웠다는 점",
+              "tags": [
+                "fear",
+                "context",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 직전",
+                  "neutral": "그 무렵",
+                  "period": "입주 직전"
+                },
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-2:shame:0",
+              "factText": "무응답을 허락처럼 붙잡은 판단을 문제 세입자 낙인 두려움으로 감췄다는 점",
+              "tags": [
+                "shame",
+                "identity",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "사전 고지는 했지만, 최종 승인을 확인하지 않은 채 입주한 건 맞습니다. 제가 허락으로 단정한 부분은 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "고지 사실과 승인 부재를 이제는 분리해서 말해야 한다.",
+            "그럼에도 애초에 명확한 답을 주지 않은 상대의 책임이 완전히 사라지진 않는다고 본다."
+          ],
+          "suppressions": [
+            "고지와 승인을 구분해야 한다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:a:tell:quiet_overflow"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-2:admission:2",
+              "factText": "사전 고지는 있었지만 최종 승인 확인 없이 입주한 책임을 인정하는 점",
+              "tags": [
+                "admission",
+                "responsibility",
+                "act"
+              ],
+              "slots": {
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                },
+                "time": {
+                  "exact": "입주 직전",
+                  "neutral": "그 무렵",
+                  "period": "입주 직전"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-2:context:0",
+              "factText": "사전 고지 자체는 실제로 있었음을 별도로 유지하려는 점",
+              "tags": [
+                "context",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 이틀 전 밤",
+                  "neutral": "입주 전",
+                  "dateExact": "입주 이틀 전 밤",
+                  "period": "입주 직전"
+                },
+                "person": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "상훈 씨는 갑자기 계약 위반이라고 단정하면서 24시간 안에 강아지를 빼거나 50만원 예치금을 내라고 했습니다."
+          ],
+          "privateKnowledge": [
+            "택배 시간대 짧은 짖음 민원이 두 건 있었던 건 안다.",
+            "내 허락 확인 부족이 상대를 더 강하게 만들었을 수 있다는 불안도 있다."
+          ],
+          "suppressions": [
+            "민원이 아예 없었던 건 아니라는 점",
+            "내 절차상 허점이 갈등을 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-3:act:0",
+              "factText": "임대인이 24시간 반출 또는 특별청소 예치금을 요구했다는 점",
+              "tags": [
+                "act",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "24시간",
+                  "neutral": "즉시 기한"
+                },
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                },
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-3:rule:0",
+              "factText": "그 요구가 계약 위반 단정과 함께 통보됐다는 점",
+              "tags": [
+                "rule",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "계약 위반 통보 문자",
+                  "neutral": "위반 통보"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "계약 해석이 애매했다고 해도, 하루 안에 반려견을 내보내거나 큰돈을 맡기라는 건 과한 조치였습니다."
+          ],
+          "privateKnowledge": [
+            "상대가 이전 민원 기억 때문에 예민했다는 건 나중에 알았다.",
+            "그래도 실제 손상 확인 전에 저 정도 수위를 먼저 꺼낼 일은 아니라고 본다."
+          ],
+          "suppressions": [
+            "상대의 불안 배경이 있었다는 점",
+            "갈등 시작점에 내 확인 부족이 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-3:harm:0",
+              "factText": "하루 안에 반려견을 빼라는 요구가 생활 전체를 흔드는 조치였다는 점",
+              "tags": [
+                "harm",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "24시간",
+                  "neutral": "즉시 기한"
+                },
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-3:threshold:0",
+              "factText": "특별청소 예치금 50만원이 실제 확인 전 선요구였다는 점",
+              "tags": [
+                "threshold",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "민원이 생겼다고 바로 반출·예치금을 통보받은 건 사실이고, 그 수위는 당시 확인된 하자보다 컸습니다."
+          ],
+          "privateKnowledge": [
+            "짖음 민원 두 건과 매트 세척 정도는 있었지만 바닥 보수나 전문 탈취까지 필요한 상태는 아니었다.",
+            "이 부분만큼은 자료를 보면 내가 과장할 필요가 없다는 걸 안다."
+          ],
+          "suppressions": [
+            "작은 관리 이슈가 전혀 없었던 건 아니라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield",
+            "tenant10:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-3:evidence:0",
+              "factText": "당시 확인된 건 짧은 민원과 가벼운 세척 수준이었다는 점",
+              "tags": [
+                "evidence",
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2건",
+                  "neutral": "몇 건의 민원"
+                },
+                "cleaning": {
+                  "exact": "현관매트 세탁",
+                  "neutral": "가벼운 청소"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-3:counter:0",
+              "factText": "그런 상황에서 즉시 반출과 예치금 요구는 수위가 지나쳤다는 점",
+              "tags": [
+                "counter",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "24시간",
+                  "neutral": "즉시 기한"
+                },
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "제가 허락 문제를 깔끔히 끝내지 못한 책임은 있어도, 그걸 이유로 즉시 퇴거와 선예치금까지 붙인 건 별개의 과잉 대응이라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "상대가 내 절차상 허점을 잡고 더 센 요구를 밀어붙였다고 느꼈다.",
+            "내 잘못 일부를 인정하면 저 요구까지 정당화될까 봐 방어적으로 말했다."
+          ],
+          "suppressions": [
+            "내 책임 일부를 인정하면 상대 조치도 정당해 보일까 두려웠다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield",
+            "tenant10:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-3:admission:0",
+              "factText": "허락 확인을 끝내지 못한 자신의 책임 일부를 인정하는 점",
+              "tags": [
+                "admission",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-3:counter:1",
+              "factText": "그 책임과 즉시 퇴거·선예치금 요구는 분리해 봐야 한다는 점",
+              "tags": [
+                "counter",
+                "rule",
+                "threshold"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "24시간",
+                  "neutral": "즉시 기한"
+                },
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "반려견을 하루 안에 빼라는 말은 제 생활을 통째로 끊으라는 것처럼 들렸습니다. 그래서 더 격하게 방어했습니다."
+          ],
+          "privateKnowledge": [
+            "그 문자 하나로 내가 규칙도 안 지키는 세입자로 낙인찍힐까 겁났다.",
+            "감정이 앞서면서 상대 요구의 위법성만 강조하고 내 허점은 덜 말했다."
+          ],
+          "suppressions": [
+            "감정적으로 과잉 방어했다는 점",
+            "낙인 두려움이 반응을 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:a:tell:photo_stack",
+            "tenant10:a:tell:quiet_overflow"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-3:emotion:0",
+              "factText": "즉시 반출 통보가 생활 전체를 무너뜨리는 위협처럼 느껴졌다는 점",
+              "tags": [
+                "emotion",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "24시간",
+                  "neutral": "즉시 기한"
+                },
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-3:identity:0",
+              "factText": "문제 세입자로 낙인찍힐까 두려워 더 강하게 반발한 점",
+              "tags": [
+                "identity",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "제 고지 확인이 부족했던 것과 별개로, 상훈 씨의 24시간 반출과 50만원 예치금 요구는 계약과 확인된 손상 범위를 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "이 쟁점에서는 자료가 상대 요구의 과잉을 더 선명하게 보여 준다.",
+            "그래서 내 잘못 일부를 인정해도 결론은 달라지지 않는다고 본다."
+          ],
+          "suppressions": [
+            "내 절차상 잘못을 이미 인정했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:a:tell:quiet_overflow"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-3:admission:1",
+              "factText": "자신의 확인 부족과 임대인의 과잉 요구를 분리해 말하는 점",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                },
+                "person2": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-3:rule:1",
+              "factText": "즉시 반출과 선예치금 요구가 계약 문구와 확인된 하자 범위를 넘었다는 점",
+              "tags": [
+                "rule",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "24시간",
+                  "neutral": "즉시 기한"
+                },
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "저희 강아지는 거의 안 짖었고 복도도 어지럽힌 적이 없습니다."
+          ],
+          "privateKnowledge": [
+            "택배나 초인종 때 짧게 짖은 적은 두어 번 있었다.",
+            "현관매트 세척이 필요했던 날도 있었다."
+          ],
+          "suppressions": [
+            "짧은 짖음 민원 두 건",
+            "매트 세척 기록"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-4:denial:0",
+              "factText": "반려견 짖음과 공용부 불편이 거의 없었다고 말하는 점",
+              "tags": [
+                "denial",
+                "act",
+                "context"
+              ],
+              "slots": {
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-4:identity:0",
+              "factText": "반려견 때문에 문제 세입자로 보이는 걸 피하려는 점",
+              "tags": [
+                "identity",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "있었다고 해도 잠깐 수준이었고, 남들이 계속 불편할 정도는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "'전혀 없었다'고 하면 바로 들통날 수 있다는 건 안다.",
+            "그래서 표현을 잠깐 수준으로 낮춰 말한다."
+          ],
+          "suppressions": [
+            "완전 부정은 어렵다는 점",
+            "짧은 짖음이 실제로 있었던 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-4:uncertainty:0",
+              "factText": "소음이 있었다 해도 잠깐 수준이었다고 줄여 말하는 점",
+              "tags": [
+                "uncertainty",
+                "act",
+                "context"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "두세 번 짧게 짖음",
+                  "neutral": "짧은 짖음"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-4:counter:0",
+              "factText": "반복적 불편은 아니었다고 선을 긋는 점",
+              "tags": [
+                "counter",
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2건",
+                  "neutral": "몇 건의 민원"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "택배나 초인종 때 두세 번 짧게 짖은 적은 있습니다. 다만 그게 상습 민원으로 이어진 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "관리실 기록이 두 건이라는 건 알고 있다.",
+            "짧은 짖음까지 다 인정하면 전체 책임이 커질까 봐 처음엔 숨겼다."
+          ],
+          "suppressions": [
+            "초기에는 짖음 자체를 거의 없다고 한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield",
+            "tenant10:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-4:admission:0",
+              "factText": "택배나 초인종 때 짧은 짖음이 있었다고 인정하는 점",
+              "tags": [
+                "admission",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "두세 번 짧게 짖음",
+                  "neutral": "짧은 짖음"
+                },
+                "count": {
+                  "exact": "2건",
+                  "neutral": "몇 건의 민원"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-4:counter:1",
+              "factText": "그 짖음이 상습 민원 수준은 아니었다고 구분하는 점",
+              "tags": [
+                "counter",
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2건",
+                  "neutral": "몇 건의 민원"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "현관매트 세척할 정도의 흔적은 있었지만, 반복 오염이나 복도 훼손으로 커지진 않았습니다."
+          ],
+          "privateKnowledge": [
+            "매트 세척 기록을 아예 없던 일처럼 말하면 방어가 안 된다.",
+            "그래도 복도 전체 오염처럼 부풀려지는 건 억울하다."
+          ],
+          "suppressions": [
+            "작은 청소 필요가 있었던 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield",
+            "tenant10:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-4:context:0",
+              "factText": "현관매트 세척이 필요했던 적은 있다는 점",
+              "tags": [
+                "context",
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "cleaning": {
+                  "exact": "현관매트 세탁",
+                  "neutral": "가벼운 청소"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-4:counter:2",
+              "factText": "반복 오염이나 공용부 훼손까지는 아니었다는 점",
+              "tags": [
+                "counter",
+                "harm",
+                "threshold"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "관리사무소 일지",
+                  "neutral": "관리실 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "짧은 소음 몇 번을 두고 제가 규칙도 안 지키는 세입자인 것처럼 몰아가는 게 너무 억울했습니다."
+          ],
+          "privateKnowledge": [
+            "반려견 문제로 낙인찍힐까 두려워서 처음엔 짖음 자체를 더 세게 부정했다.",
+            "서운함이 커지면서 자료를 한꺼번에 들이밀고 싶어졌다."
+          ],
+          "suppressions": [
+            "감정 때문에 사실을 더 강하게 부정한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:a:tell:photo_stack",
+            "tenant10:a:tell:quiet_overflow"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-4:emotion:0",
+              "factText": "짧은 소음이 전체 인성 문제처럼 해석되는 데 억울함을 느낀 점",
+              "tags": [
+                "emotion",
+                "identity",
+                "shame"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "두세 번 짧게 짖음",
+                  "neutral": "짧은 짖음"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-4:shame:0",
+              "factText": "문제 세입자 이미지가 두려워 처음엔 소음 사실을 더 부정한 점",
+              "tags": [
+                "shame",
+                "fear",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "완전히 없었다고 한 건 과장이었습니다. 두세 번 짧게 짖은 적과 매트 세척 정도는 있었지만, 반복 민원이나 심한 공용부 불편은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "이 쟁점에서는 '전혀 없음'보다 '짧고 제한적'이 진실에 가깝다.",
+            "처음의 완전 부정은 체면 때문이었다."
+          ],
+          "suppressions": [
+            "체면 때문에 처음에 과장 부정한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:a:tell:quiet_overflow"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-4:admission:1",
+              "factText": "짧은 짖음과 매트 세척 정도는 있었다고 인정하는 점",
+              "tags": [
+                "admission",
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "두세 번 짧게 짖음",
+                  "neutral": "짧은 짖음"
+                },
+                "cleaning": {
+                  "exact": "현관매트 세탁",
+                  "neutral": "가벼운 청소"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-4:counter:3",
+              "factText": "그 정도가 반복 민원이나 상습 불편까지는 아니었다고 정리하는 점",
+              "tags": [
+                "counter",
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2건",
+                  "neutral": "몇 건의 민원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "전문 청소나 바닥보수 선공제는 전혀 필요 없습니다."
+          ],
+          "privateKnowledge": [
+            "현관매트 세탁이나 간단한 소독 정도는 이해할 수 있다.",
+            "큰 보수비를 먼저 막아야 한다는 마음에 작은 청소 필요까지 한데 묶어 부정했다."
+          ],
+          "suppressions": [
+            "소액 청소 가능성",
+            "매트 오염 기록"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-5:denial:0",
+              "factText": "전문 청소와 바닥보수 선공제가 필요 없다고 전면 부정하는 점",
+              "tags": [
+                "denial",
+                "threshold",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-5:counter:0",
+              "factText": "반려동물이라는 이유만으로 큰 비용이 선청구됐다고 보는 점",
+              "tags": [
+                "counter",
+                "beneficiary",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "지금 자료로 보이는 건 현관매트 오염 정도뿐이라, 선공제로 큰 금액을 잡을 단계는 아닙니다."
+          ],
+          "privateKnowledge": [
+            "작은 청소와 전문 탈취·보수를 구분해서 말해야 한다.",
+            "처음에는 둘을 한꺼번에 부정했다."
+          ],
+          "suppressions": [
+            "가벼운 청소 필요를 완전히 지웠다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-5:evidence:0",
+              "factText": "현재 확인되는 것은 현관매트 오염 정도라는 점",
+              "tags": [
+                "evidence",
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "cleaning": {
+                  "exact": "현관매트 세탁",
+                  "neutral": "가벼운 청소"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-5:threshold:0",
+              "factText": "그 상태로는 전문 청소나 보수 선공제 단계가 아니라는 점",
+              "tags": [
+                "threshold",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "견적 비교서",
+                  "neutral": "비교 견적"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "세탁이나 소독 정도는 이해하지만, 전문 탈취와 바닥보수를 미리 떼어 두는 건 과합니다."
+          ],
+          "privateKnowledge": [
+            "청소 필요를 전부 없던 일처럼 말하긴 어렵다.",
+            "하지만 현재 자료가 큰 손상을 뒷받침하지 않는 것도 분명하다."
+          ],
+          "suppressions": [
+            "최소한의 청소 가능성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield",
+            "tenant10:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-5:admission:0",
+              "factText": "세탁이나 소독 정도의 최소 청소는 가능하다고 인정하는 점",
+              "tags": [
+                "admission",
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "cleaning": {
+                  "exact": "현관매트 세탁",
+                  "neutral": "가벼운 청소"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-5:counter:1",
+              "factText": "전문 탈취와 바닥보수 선공제는 현재 자료상 과하다고 보는 점",
+              "tags": [
+                "counter",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전문 탈취·보수 견적",
+                  "neutral": "고액 견적"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "나중에 실제 손상이 생기면 증빙 정산은 받을 수 있겠지만, 지금 선공제로 큰 비용을 잡는 건 다른 문제입니다."
+          ],
+          "privateKnowledge": [
+            "이 쟁점에서는 내 입장이 비교적 안정적이라 오히려 차분히 말하려 한다.",
+            "실제 손상과 선공제를 분리하면 상대 논리가 약해진다고 본다."
+          ],
+          "suppressions": [
+            "추후 실제 손상 정산 가능성을 인정하는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:a:tell:broker_shield",
+            "tenant10:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-5:rule:0",
+              "factText": "추후 실제 손상 정산과 현재 선공제를 구분해야 한다는 점",
+              "tags": [
+                "rule",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "퇴거 후 증빙 정산",
+                  "neutral": "사후 정산 기준"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-5:counter:2",
+              "factText": "현재 단계의 고액 선공제는 자료상 정당화되지 않는다는 점",
+              "tags": [
+                "counter",
+                "threshold",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "반려견이 있다는 이유만으로 큰 보수비를 먼저 덮어씌우는 것 같아 너무 억울했습니다."
+          ],
+          "privateKnowledge": [
+            "실제론 작은 청소 흔적은 있지만, 반려견이라는 이유만으로 비용이 커지는 구조가 무서웠다.",
+            "그래서 더 단호하게 밀어냈다."
+          ],
+          "suppressions": [
+            "감정 때문에 작은 청소 가능성까지 세게 부정한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:a:tell:photo_stack",
+            "tenant10:a:tell:quiet_overflow"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-5:emotion:0",
+              "factText": "반려동물 존재만으로 고액 비용이 붙는 듯한 억울함을 느낀 점",
+              "tags": [
+                "emotion",
+                "identity",
+                "harm"
+              ],
+              "slots": {
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                },
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-5:fear:0",
+              "factText": "작은 흔적이 큰 보수비로 번질까 두려워 더 강하게 반발한 점",
+              "tags": [
+                "fear",
+                "threshold",
+                "motive"
+              ],
+              "slots": {
+                "cleaning": {
+                  "exact": "현관매트 세탁",
+                  "neutral": "가벼운 청소"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "현 단계에서는 선공제가 필요 없고, 추후 실제 손상이 확인되면 그때 증빙 정산하는 게 맞습니다."
+          ],
+          "privateKnowledge": [
+            "작은 청소 가능성과 고액 선공제 부당성을 이제는 분리해서 말할 수 있다.",
+            "이 구분이 처음부터 됐으면 싸움이 덜 커졌을 것이다."
+          ],
+          "suppressions": [
+            "작은 청소와 고액 선공제를 별개로 봐야 한다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:a:tell:quiet_overflow"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:a:d-5:admission:1",
+              "factText": "가벼운 청소 가능성은 인정하되 선공제는 부정하는 점",
+              "tags": [
+                "admission",
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "cleaning": {
+                  "exact": "현관매트 세탁",
+                  "neutral": "가벼운 청소"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:a:d-5:threshold:1",
+              "factText": "실제 손상 확인 전 고액 선공제는 맞지 않는다고 정리하는 점",
+              "tags": [
+                "threshold",
+                "evidence",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "특약상 반려동물은 허용된 게 아닙니다. 사진 확인은 승인과 전혀 다른 절차입니다."
+          ],
+          "privateKnowledge": [
+            "특약 문구가 자동 금지 하나로만 고정된 건 아니라는 걸 안다.",
+            "이전 세입자 반려동물 냄새 민원 때문에 처음부터 방어적으로 보고 있었다."
+          ],
+          "suppressions": [
+            "문구에 협의 여지가 남아 있다는 점",
+            "내가 불허를 분명히 쓰지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-1:rule:0",
+              "factText": "특약 해석상 사진 확인과 승인은 다른 단계라고 선을 긋는 점",
+              "tags": [
+                "rule",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "반려동물 특약 문구",
+                  "neutral": "계약 특약"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-1:denial:0",
+              "factText": "사진 확인만으로는 허용이 성립하지 않는다고 단정하는 점",
+              "tags": [
+                "denial",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                },
+                "person": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "저는 명확히 허가한 적이 없고, 그 단계는 아직 협의 중이었다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "'관리만 잘 해 달라'는 답이 승인처럼 읽힐 수 있다는 것도 알고 있다.",
+            "그래도 이전 민원 기억 때문에 확답을 미루며 경계를 세우고 싶었다."
+          ],
+          "suppressions": [
+            "내 답장이 애매했다는 점",
+            "협의 중이라는 표현을 당시 직접 쓰지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-1:uncertainty:0",
+              "factText": "당시 상황을 협의 중 단계로 규정하는 점",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사진 전송 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "dateExact": "사진 전송 다음 날 오전",
+                  "period": "입주 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-1:denial:1",
+              "factText": "명확한 허가를 준 적은 없다고 거듭 말하는 점",
+              "tags": [
+                "denial",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "문구가 자동 금지까지는 아니더라도, 적어도 제 명확한 승인 전제로 봤습니다."
+          ],
+          "privateKnowledge": [
+            "사진을 먼저 보자고 한 것 자체가 완전 금지 입장과는 다르다는 걸 안다.",
+            "하지만 그 여지를 끝내 정리하지 않은 채 모호하게 남겼다."
+          ],
+          "suppressions": [
+            "특약에 협의 여지가 있었던 점",
+            "내가 결론을 미뤘다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate",
+            "tenant10:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-1:admission:0",
+              "factText": "특약이 자동 금지 하나로만 작동한 건 아니라고 인정하는 점",
+              "tags": [
+                "admission",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "협의 예외가 남은 특약",
+                  "neutral": "협의형 특약"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-1:responsibility:0",
+              "factText": "그래도 최종적으로는 자신의 명확한 승인 절차가 필요했다고 주장하는 점",
+              "tags": [
+                "responsibility",
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "이전 세입자 냄새 민원 때문에 제가 분명히 거절하지도, 허락하지도 못하고 애매하게 남겼던 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "예외 하나가 다른 세입자 관리 전체를 흔들 수 있다는 걱정이 컸다.",
+            "그 걱정을 솔직히 설명하면 내가 처음부터 애매했다는 점도 드러난다."
+          ],
+          "suppressions": [
+            "이전 민원 기억이 내 판단을 흔들었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate",
+            "tenant10:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-1:motive:0",
+              "factText": "이전 세입자 반려동물 냄새 민원 기억이 판단 배경이 된 점",
+              "tags": [
+                "motive",
+                "context",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-1:admission:1",
+              "factText": "거절도 허락도 분명히 쓰지 못하고 애매한 답을 남긴 점",
+              "tags": [
+                "admission",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "관리만 잘 해 달라",
+                  "neutral": "애매한 관리 요청"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "예외를 하나 열어 주면 다른 세입자 민원과 냄새 문제까지 제가 통제 못 하는 집주인처럼 보일까 걱정했습니다."
+          ],
+          "privateKnowledge": [
+            "그 불안 때문에 문구만 남기고 결론을 미루는 방식으로 책임을 피했다.",
+            "내 두려움을 먼저 설명하지 않은 채 원칙만 앞세웠다."
+          ],
+          "suppressions": [
+            "두려움 때문에 책임을 미뤘다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:b:tell:condition_backfill",
+            "tenant10:b:tell:rule_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-1:fear:0",
+              "factText": "예외 허용이 건물 전체 관리 실패로 보일까 두려웠던 점",
+              "tags": [
+                "fear",
+                "institution",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-1:rule:1",
+              "factText": "그 두려움을 숨기고 원칙 문구만 앞세웠던 점",
+              "tags": [
+                "rule",
+                "privacy",
+                "self_justification"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "건물 전체 규칙",
+                  "neutral": "건물 원칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "승인도 거절도 분명히 하지 않은 채 관리 조건만 남긴 책임은 제게도 있습니다. 이 해석 충돌은 저도 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "결국 문구만 반복하며 책임을 피해 온 부분이 있다.",
+            "민주의 오해를 비난만 할 수 없는 이유도 여기 있다."
+          ],
+          "suppressions": [
+            "내 애매한 답이 오해를 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:b:tell:rule_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-1:admission:2",
+              "factText": "승인과 거절을 분명히 하지 않은 자신의 책임을 인정하는 점",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                },
+                "message": {
+                  "exact": "관리만 잘 해 달라",
+                  "neutral": "애매한 관리 요청"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-1:counter:0",
+              "factText": "상대의 오해와 자신의 애매한 답이 함께 충돌을 만들었다고 정리하는 점",
+              "tags": [
+                "counter",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                },
+                "person2": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "민주 씨는 허락도 없이 반려견을 데려온 겁니다."
+          ],
+          "privateKnowledge": [
+            "사진과 질문이 입주 전에 브로커 채널로 전달된 사실은 안다.",
+            "내가 답을 미뤄 놓은 사이 그 무응답이 허락처럼 읽힐 수 있었다."
+          ],
+          "suppressions": [
+            "사전 통지가 실제로 있었다는 점",
+            "내 답변 지연이 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-2:denial:0",
+              "factText": "상대를 허락 없는 반입으로 규정하는 점",
+              "tags": [
+                "denial",
+                "responsibility",
+                "act"
+              ],
+              "slots": {
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                },
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-2:rule:0",
+              "factText": "승인 없는 입주는 절차 위반이라고 단순화하는 점",
+              "tags": [
+                "rule",
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "사전 승인 절차",
+                  "neutral": "승인 절차"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "고지했다 해도, 제 승인 확인 전 입주면 절차를 지킨 건 아니라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "고지와 승인이라는 두 단계를 내가 그때 명확히 구분해 설명하진 않았다.",
+            "그래도 책임을 입주자 쪽으로 더 크게 두고 싶다."
+          ],
+          "suppressions": [
+            "당시 절차 설명이 모호했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-2:rule:1",
+              "factText": "고지와 승인 확인을 다른 단계로 보는 점",
+              "tags": [
+                "rule",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "고지와 승인",
+                  "neutral": "절차 단계"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-2:counter:0",
+              "factText": "사전 연락이 있어도 승인 전 입주는 절차 미완료라고 주장하는 점",
+              "tags": [
+                "counter",
+                "timeline",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 직전",
+                  "neutral": "그 무렵",
+                  "period": "입주 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "사진 전송과 브로커 전달 사실은 알고 있습니다. 다만 그걸 승인 완료로 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "처음부터 통지 자체를 부정하는 건 자료상 버티기 어렵다.",
+            "그래서 통지는 인정하고 승인 부재 쪽으로 이동한다."
+          ],
+          "suppressions": [
+            "통지를 부정할 수 없다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate",
+            "tenant10:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-2:admission:0",
+              "factText": "입주 전 사진 전송과 브로커 전달 사실을 인정하는 점",
+              "tags": [
+                "admission",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 이틀 전 밤",
+                  "neutral": "입주 전",
+                  "dateExact": "입주 이틀 전 밤",
+                  "period": "입주 직전"
+                },
+                "person": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-2:rule:2",
+              "factText": "그 통지가 승인 완료와 같은 것은 아니라고 구분하는 점",
+              "tags": [
+                "rule",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 답을 미루며 무응답을 허락처럼 남긴 점은 있습니다. 그래서 완전한 무단 반입이라고만 몰아붙이는 것도 정확하진 않습니다."
+          ],
+          "privateKnowledge": [
+            "브로커 채널에만 기대다가 당사자 확인을 끝내지 못했다.",
+            "상대에게 절차 책임을 묻고 싶지만 내 지연도 남는다."
+          ],
+          "suppressions": [
+            "내 지연이 무응답 오해를 만들었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate",
+            "tenant10:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-2:admission:1",
+              "factText": "답을 미루며 무응답 상태를 남긴 자신의 책임을 인정하는 점",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                },
+                "person2": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-2:counter:1",
+              "factText": "그럼에도 최종 승인 확인 없이 입주한 상대 책임은 남는다고 보는 점",
+              "tags": [
+                "counter",
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                },
+                "time": {
+                  "exact": "입주 직전",
+                  "neutral": "그 무렵",
+                  "period": "입주 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "브로커 채널에만 기대다 보니 직접 정리해야 할 답을 끝내지 못했습니다. 그게 지금 와서 가장 곤란한 부분입니다."
+          ],
+          "privateKnowledge": [
+            "문서 없는 승인으로 보일까 두려워 더 애매하게 굴었다.",
+            "책임이 커질까 봐 통지 사실을 축소하고 싶었다."
+          ],
+          "suppressions": [
+            "문서 없는 승인처럼 보일까 두려웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:b:tell:condition_backfill",
+            "tenant10:b:tell:rule_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-2:fear:0",
+              "factText": "문서 없는 승인처럼 남을까 두려워 직접 답을 미뤘던 점",
+              "tags": [
+                "fear",
+                "institution",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-2:relationship:0",
+              "factText": "브로커 채널에 기대며 당사자 확인을 끝내지 못한 점",
+              "tags": [
+                "relationship",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                },
+                "person2": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "민주 씨가 성급하게 입주한 건 맞지만, 사전 통지 자체는 있었습니다. 그 통지를 제가 애매하게 방치한 책임도 인정합니다."
+          ],
+          "privateKnowledge": [
+            "이제는 통지 존재와 승인 부재를 동시에 인정하는 편이 가장 정확하다.",
+            "완전 무단으로 몰아온 초기 입장은 과했다."
+          ],
+          "suppressions": [
+            "초기의 완전 무단 프레임이 과했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:b:tell:rule_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-2:admission:2",
+              "factText": "사전 통지가 있었음을 인정하는 점",
+              "tags": [
+                "admission",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 이틀 전 밤",
+                  "neutral": "입주 전",
+                  "dateExact": "입주 이틀 전 밤",
+                  "period": "입주 직전"
+                },
+                "person": {
+                  "exact": "김하은",
+                  "neutral": "중개사",
+                  "fullName": "김하은",
+                  "judgeRef": "브로커"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-2:responsibility:0",
+              "factText": "통지를 애매하게 방치한 자신의 책임과 상대의 성급함을 함께 말하는 점",
+              "tags": [
+                "responsibility",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤민주",
+                  "neutral": "세입자",
+                  "fullName": "윤민주",
+                  "judgeRef": "세입자"
+                },
+                "person2": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "계약 위반 상황이라고 판단했으니 즉시 반출을 요구할 수 있다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "실제 계약 문구에 24시간 반출이나 50만원 선예치금이 직접 적힌 건 아니다.",
+            "이전 민원 기억 때문에 먼저 강하게 눌러야 한다는 생각이 컸다."
+          ],
+          "suppressions": [
+            "계약서에 그 수위가 명시돼 있지 않다는 점",
+            "실제 손상 확인 전에 요구했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-3:rule:0",
+              "factText": "계약 위반 판단에 근거해 즉시 반출 요구를 정당화하는 점",
+              "tags": [
+                "rule",
+                "responsibility",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "24시간",
+                  "neutral": "즉시 기한"
+                },
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-3:threshold:0",
+              "factText": "강한 선조치가 필요했다고 주장하는 점",
+              "tags": [
+                "threshold",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "다른 세입자 민원과 건물 관리 문제를 생각하면 빠른 조치가 필요했습니다."
+          ],
+          "privateKnowledge": [
+            "민원 강도가 자료상 아주 크지 않다는 건 안다.",
+            "그래도 초기에 세게 대응해야 통제가 된다고 믿었다."
+          ],
+          "suppressions": [
+            "민원이 심각한 반복 수준은 아니라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-3:context:0",
+              "factText": "다른 세입자 민원과 건물 관리 명분으로 빠른 조치를 강조하는 점",
+              "tags": [
+                "context",
+                "institution",
+                "self_justification"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2건",
+                  "neutral": "몇 건의 민원"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-3:rule:1",
+              "factText": "신속한 조치가 관리 책임에 맞는다고 보는 점",
+              "tags": [
+                "rule",
+                "responsibility",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "24시간 반출과 50만원 예치금 통보는 제가 보낸 게 맞습니다."
+          ],
+          "privateKnowledge": [
+            "그 수위가 실제 확인된 하자보다 앞서 나갔다는 것도 안다.",
+            "하지만 문자로 한 번 세게 못 박아야 상황이 멈출 거라 생각했다."
+          ],
+          "suppressions": [
+            "내가 직접 그 요구를 보냈다는 점",
+            "실제 확인보다 먼저 나간 요구였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate",
+            "tenant10:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-3:admission:0",
+              "factText": "24시간 반출과 50만원 예치금 통보를 직접 보낸 점",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "24시간",
+                  "neutral": "즉시 기한"
+                },
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-3:self_justification:0",
+              "factText": "상황을 멈추게 하려면 세게 못 박아야 한다고 생각한 점",
+              "tags": [
+                "self_justification",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "정당화를 하려다 보니 냄새, 털, 알레르기 같은 조건을 뒤늦게 많이 붙인 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "처음 문자에는 그 조건들이 충분히 적혀 있지 않았다.",
+            "불리해지자 원래부터 그랬던 것처럼 말을 보탰다."
+          ],
+          "suppressions": [
+            "조건을 뒤늦게 보강했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate",
+            "tenant10:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-3:admission:1",
+              "factText": "냄새·털·알레르기 같은 조건을 뒤늦게 덧붙인 점",
+              "tags": [
+                "admission",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "추가 조건 언급",
+                  "neutral": "뒤늦은 조건 설명"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-3:motive:0",
+              "factText": "강한 요구를 정당화하려는 마음이 조건 보강의 배경이었다는 점",
+              "tags": [
+                "motive",
+                "fear",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "이전 반려동물 냄새 민원 기억 때문에, 실제 손상 확인 전에도 먼저 강하게 제재해야 한다는 생각이 앞섰습니다."
+          ],
+          "privateKnowledge": [
+            "예전 경험이 지금 상황의 증거보다 더 크게 작동했다.",
+            "그 불안이 제 요구 수위를 끌어올렸다."
+          ],
+          "suppressions": [
+            "이전 경험이 현재 판단을 과도하게 지배했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:b:tell:condition_backfill",
+            "tenant10:b:tell:rule_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-3:fear:0",
+              "factText": "이전 냄새 민원 기억이 실제 확인 전 강한 제재를 부른 점",
+              "tags": [
+                "fear",
+                "context",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-3:harm:0",
+              "factText": "그 불안 때문에 요구 수위가 실제 손상보다 먼저 커진 점",
+              "tags": [
+                "harm",
+                "threshold",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "24시간",
+                  "neutral": "즉시 기한"
+                },
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "즉시 퇴거와 선예치금 요구는 계약 문구와 확인된 손상 범위를 넘어섰습니다. 그 점은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "이 쟁점에서는 내 요구 수위가 가장 방어하기 어렵다.",
+            "결국 관리 명분이 있었어도 수단은 과했다."
+          ],
+          "suppressions": [
+            "수단이 과했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:b:tell:rule_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-3:admission:2",
+              "factText": "즉시 퇴거와 선예치금 요구가 과했다는 점을 인정하는 것",
+              "tags": [
+                "admission",
+                "threshold",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "24시간",
+                  "neutral": "즉시 기한"
+                },
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-3:rule:2",
+              "factText": "계약 문구와 확인된 손상 범위를 넘는 요구였다고 정리하는 점",
+              "tags": [
+                "rule",
+                "evidence",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "계약서와 점검 사진",
+                  "neutral": "계약·점검 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "짖음과 공용부 불편이 꽤 있었습니다. 그냥 넘어갈 수 있는 수준은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "실제 관리실 접수는 두 건이고, 공용부 오염도 매트 세척 수준이라는 걸 안다.",
+            "하지만 초기에 세게 말해야 통제가 된다고 믿었다."
+          ],
+          "suppressions": [
+            "민원 횟수가 많지 않다는 점",
+            "심한 훼손이 없다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-4:denial:0",
+              "factText": "소음과 공용부 불편을 꽤 큰 문제로 묘사하는 점",
+              "tags": [
+                "denial",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2건",
+                  "neutral": "몇 건의 민원"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-4:rule:0",
+              "factText": "그 정도면 그냥 둘 수 없다고 선을 긋는 점",
+              "tags": [
+                "rule",
+                "threshold",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "건물 관리 기준",
+                  "neutral": "관리 기준"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "반복될 가능성이 보여서 초기에 선제 관리가 필요했습니다."
+          ],
+          "privateKnowledge": [
+            "'이미 심각했다'고 단정하면 자료와 맞지 않는다.",
+            "그래서 현재 피해보다 반복 가능성을 앞세운다."
+          ],
+          "suppressions": [
+            "실제 피해보다 가능성을 더 크게 말하고 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-4:uncertainty:0",
+              "factText": "현재 피해보다 반복 가능성을 더 근거로 내세우는 점",
+              "tags": [
+                "uncertainty",
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2건",
+                  "neutral": "몇 건의 민원"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-4:institution:0",
+              "factText": "건물 관리 차원에서 선제 관리가 필요했다고 주장하는 점",
+              "tags": [
+                "institution",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "실제 접수는 택배 시간대 민원 두 건이었습니다. 다만 저는 초기에 커질 수 있다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "자료상 반복 민원으로 누적되진 않았다.",
+            "그래서 이제는 횟수는 인정하고 위험 예측 쪽으로 물러선다."
+          ],
+          "suppressions": [
+            "반복 민원이 아니었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate",
+            "tenant10:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-4:admission:0",
+              "factText": "실제 관리실 접수가 두 건이었다고 인정하는 점",
+              "tags": [
+                "admission",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2건",
+                  "neutral": "몇 건의 민원"
+                },
+                "noise": {
+                  "exact": "두세 번 짧게 짖음",
+                  "neutral": "짧은 짖음"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-4:self_justification:0",
+              "factText": "초기에 커질 수 있다고 판단해 더 민감하게 봤다는 점",
+              "tags": [
+                "self_justification",
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "상습 수준은 아니었지만, 저는 초기에 잡지 않으면 건물 전체 관리가 흐트러질 수 있다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "실제 확인된 사실과 내가 우려한 가능성이 섞여 있었다.",
+            "그래서 상대는 과장으로 느꼈을 것이다."
+          ],
+          "suppressions": [
+            "확인된 사실보다 우려를 더 크게 섞었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate",
+            "tenant10:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-4:counter:0",
+              "factText": "상습은 아니어도 관리 차원에서 민감하게 볼 수 있다고 주장하는 점",
+              "tags": [
+                "counter",
+                "institution",
+                "threshold"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "건물 전체 관리",
+                  "neutral": "건물 관리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-4:admission:1",
+              "factText": "확인된 사실과 우려를 함께 섞어 말한 점",
+              "tags": [
+                "admission",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2건",
+                  "neutral": "몇 건의 민원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "한 번 예외를 두면 건물 전체 규칙이 흔들릴까 민감했습니다. 그래서 짧은 소음도 더 크게 받아들였습니다."
+          ],
+          "privateKnowledge": [
+            "실제 민원 자체보다 내 통제 상실 두려움이 컸다.",
+            "그걸 솔직히 인정하면 초기 과장도 설명된다."
+          ],
+          "suppressions": [
+            "통제 상실 두려움이 해석을 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:b:tell:condition_backfill",
+            "tenant10:b:tell:rule_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-4:fear:0",
+              "factText": "예외 허용이 건물 전체 통제를 흔들까 두려웠던 점",
+              "tags": [
+                "fear",
+                "institution",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-4:self_justification:1",
+              "factText": "그 두려움 때문에 짧은 소음도 크게 받아들인 점",
+              "tags": [
+                "self_justification",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "두세 번 짧게 짖음",
+                  "neutral": "짧은 짖음"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "확인된 소음은 짧은 짖음 몇 차례와 매트 세척 수준이었습니다. 제가 느낀 관리 불안이 그 위에 더 얹혀 있었습니다."
+          ],
+          "privateKnowledge": [
+            "자료상 결론은 상습 민원보다 제한적 불편에 가깝다.",
+            "초기의 과장 표현은 이제 유지하기 어렵다."
+          ],
+          "suppressions": [
+            "초기 과장 표현이 남기 어렵다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:b:tell:rule_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-4:admission:2",
+              "factText": "확인된 소음과 오염이 제한적 수준이었다고 인정하는 점",
+              "tags": [
+                "admission",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "두세 번 짧게 짖음",
+                  "neutral": "짧은 짖음"
+                },
+                "cleaning": {
+                  "exact": "현관매트 세탁",
+                  "neutral": "가벼운 청소"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-4:emotion:0",
+              "factText": "관리 불안이 사실 판단 위에 더 얹혀 있었다고 인정하는 점",
+              "tags": [
+                "emotion",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "전문 청소와 바닥보수 선공제는 당연히 필요하다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "현재 사진만으로는 큰 손상이 분명하지 않다는 걸 안다.",
+            "이전 냄새 민원 기억이 현재 피해보다 크게 작동했다."
+          ],
+          "suppressions": [
+            "현시점 대형 손상이 확인되지 않았다는 점",
+            "예전 경험을 현재 사실 위에 덧씌웠다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-5:threshold:0",
+              "factText": "전문 청소와 바닥보수 선공제가 당연하다고 주장하는 점",
+              "tags": [
+                "threshold",
+                "rule",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                },
+                "document": {
+                  "exact": "전문 탈취·보수 견적",
+                  "neutral": "고액 견적"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-5:rule:0",
+              "factText": "반려동물이 있었으니 선제 비용 확보가 필요하다고 보는 점",
+              "tags": [
+                "rule",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "animal": {
+                  "exact": "3.2kg 말티즈",
+                  "neutral": "소형 반려견",
+                  "rounded": "3kg대",
+                  "fullName": "3.2kg 말티즈"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "동물 냄새는 뒤늦게 커질 수 있어서 미리 비용을 잡아 두는 게 안전하다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "냄새가 실제로 확인됐다는 직접 자료는 아직 약하다.",
+            "그래서 현재 손상보다 미래 우려를 앞세운다."
+          ],
+          "suppressions": [
+            "현재 확인보다 미래 우려에 더 기대고 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-5:uncertainty:0",
+              "factText": "현재 손상보다 뒤늦게 커질 수 있는 냄새 우려를 근거로 삼는 점",
+              "tags": [
+                "uncertainty",
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "뒤늦은 냄새 우려",
+                  "neutral": "냄새 우려"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-5:threshold:1",
+              "factText": "미리 비용을 확보해야 안전하다고 보는 점",
+              "tags": [
+                "threshold",
+                "self_justification",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "관리실 기록과 현장 사진상 현재 보이는 건 현관매트 오염 정도라는 건 압니다."
+          ],
+          "privateKnowledge": [
+            "전문 탈취와 바닥보수까지는 아직 자료가 못 미친다.",
+            "그래서 이제는 현재 사실을 일부 인정해야 한다."
+          ],
+          "suppressions": [
+            "현재 자료가 제한적이라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate",
+            "tenant10:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-5:admission:0",
+              "factText": "현재 확인되는 것이 현관매트 오염 정도라는 점을 인정하는 것",
+              "tags": [
+                "admission",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "cleaning": {
+                  "exact": "현관매트 세탁",
+                  "neutral": "가벼운 청소"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-5:uncertainty:1",
+              "factText": "그럼에도 향후 냄새 문제 가능성을 남겨 두는 점",
+              "tags": [
+                "uncertainty",
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "향후 냄새 가능성",
+                  "neutral": "후속 우려"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "전문 탈취와 바닥보수까지는 확인되지 않았는데도, 제가 비용을 크게 잡은 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "비용을 크게 잡으면 협상 주도권을 잃지 않을 거라 생각했다.",
+            "실제 손상보다 협상 포지션이 먼저 앞섰다."
+          ],
+          "suppressions": [
+            "협상 주도권을 위해 비용을 키운 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant10:b:tell:clause_gate",
+            "tenant10:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-5:admission:1",
+              "factText": "전문 탈취와 바닥보수까지는 확인되지 않았다고 인정하는 점",
+              "tags": [
+                "admission",
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "비교 견적서",
+                  "neutral": "견적 비교 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-5:beneficiary:0",
+              "factText": "협상에서 우위를 잡기 위해 비용을 크게 잡은 점",
+              "tags": [
+                "beneficiary",
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "반려동물 예외를 한 번 두면 나중에 손해를 제가 다 떠안을까 봐, 실제 확인보다 큰 비용을 먼저 떠올렸습니다."
+          ],
+          "privateKnowledge": [
+            "예전 냄새 민원 기억과 손해 우려가 섞였다.",
+            "그 감정이 현재 자료 판단을 흐렸다."
+          ],
+          "suppressions": [
+            "손해 우려가 자료 판단을 앞질렀다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:b:tell:condition_backfill",
+            "tenant10:b:tell:rule_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-5:fear:0",
+              "factText": "반려동물 예외로 향후 손해를 떠안을까 두려웠던 점",
+              "tags": [
+                "fear",
+                "beneficiary",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최상훈",
+                  "neutral": "임대인",
+                  "fullName": "최상훈",
+                  "judgeRef": "집주인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-5:emotion:0",
+              "factText": "그 불안이 실제 확인보다 큰 비용 상정을 부른 점",
+              "tags": [
+                "emotion",
+                "threshold",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "현 단계에서는 선공제보다, 추후 실제 손상이 생기면 그때 증빙 정산하는 방식이 맞습니다."
+          ],
+          "privateKnowledge": [
+            "지금 자료만으로는 선공제를 밀기 어렵다.",
+            "예전 기억 때문에 앞서간 요구였다는 결론을 받아들여야 한다."
+          ],
+          "suppressions": [
+            "앞서간 요구였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant10:b:tell:rule_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant10:b:d-5:admission:2",
+              "factText": "현 단계 선공제가 아니라 사후 증빙 정산이 맞다고 인정하는 점",
+              "tags": [
+                "admission",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "사후 증빙 정산",
+                  "neutral": "사후 정산 기준"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant10:b:d-5:threshold:2",
+              "factText": "현재 자료로는 고액 선공제를 정당화할 수 없다고 정리하는 점",
+              "tags": [
+                "threshold",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "500,000원",
+                  "neutral": "특별청소 예치금",
+                  "rounded": "50만원"
+                },
+                "cleaning": {
+                  "exact": "현관매트 세탁",
+                  "neutral": "가벼운 청소"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+

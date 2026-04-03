@@ -1,0 +1,559 @@
+export const friend06TellsBeats = {
+  "caseId": "friend-06",
+  "executableTells": {
+    "a": [
+      {
+        "id": "friend06:a:tell:tab_pointing",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "기록상",
+          "시간표시",
+          "로그"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "불리한 질문이 나오면 버전기록 탭과 시간표시를 번갈아 가리키며 형식적 로그 설명으로 본론을 늦춘다."
+      },
+      {
+        "id": "friend06:a:tell:scope_freeze",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "범위",
+          "그건",
+          "수정권"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "'그건 수정권이지 발행권은 아니었어'처럼 권한 범위를 뒤늦게 더 좁게 정의한다."
+      },
+      {
+        "id": "friend06:a:tell:low_tempo",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "정리하면",
+          "아니요",
+          "그건 아니고"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "화가 날수록 오히려 속도를 늦추고 짧은 문장을 낮게 끊어 말한다."
+      }
+    ],
+    "b": [
+      {
+        "id": "friend06:b:tell:rescue_stack",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "내가",
+          "밤에",
+          "다시"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "'내가 밤에 디스클로저도 넣고 링크도 다시 살리고'처럼 자신이 수습한 목록을 길게 쌓아 핵심 질문을 미룬다."
+      },
+      {
+        "id": "friend06:b:tell:intent_shield",
+        "appliesWhen": [
+          "cornered",
+          "shame",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "망치려던",
+          "살리려던",
+          "의도는"
+        ],
+        "sentenceShape": "conditional",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "문제 수정을 지적받으면 '망치려던 게 아니라 살리려던 거야'라고 의도를 먼저 꺼낸다."
+      },
+      {
+        "id": "friend06:b:tell:wounded_laugh",
+        "appliesWhen": [
+          "emotional",
+          "defensive",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "하",
+          "그럼",
+          "그냥"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "억울할 때 짧게 웃어넘긴 뒤 '그럼 그냥 두라고 했어야지'라고 반문한다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "첫째, 단톡에 올린 건 공개 비난이라기보다 이상 징후 공유였어요. 그때 화면상으론 무단 침범처럼 보여서 먼저 멈춰 세우는 게 맞다고 생각했어요.",
+      "behaviorHint": "버전기록 탭과 시간표시를 번갈아 짚으며 감정어를 줄이고 말머리를 '첫째'로 연다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend06:beat:a:d-2:deny"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "비교 캡처를 올린 건 맞지만 다솔을 확정적으로 매도하려던 의도는 아니었어요. 접근권 회수도 감정 폭발이 아니라 손상 확산을 막는 임시 조치라고 여겼어요.",
+      "behaviorHint": "짧은 부정을 두 번 반복한 뒤 권한 범위를 더 좁게 정의하려 든다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend06:beat:a:d-2:hedge"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "기록상 권한 범위를 확인하기 전에 비교 캡처부터 단톡에 올린 건 맞아요. 다만 바뀐 썸네일과 사라진 핀댓글을 본 순간 채널 통제권이 무너졌다는 감각이 먼저 올라왔어요.",
+      "behaviorHint": "시선을 내리지 않고 사실과 해석을 분리하듯 낮은 톤으로 끊어 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend06:beat:a:d-2:partial"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "다솔이 공동 스레드만 지켰다면 제가 업계 단톡까지 끌고 갈 일도 줄었을 거예요. 그리고 회수는 문제 게시물 하나가 아니라 블로그와 채널 전체에 걸렸어요.",
+      "behaviorHint": "어깨를 굳힌 채 '그래도'를 앞세우며 상대의 절차 위반을 다시 끌어온다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend06:beat:a:d-2:blame"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "공개 비난부터 하고 채널 전체 접근권을 끊은 건 제 잘못이에요. 사실 확인보다 체면과 통제권 회복을 앞세웠어요.",
+      "behaviorHint": "한 박자 쉬고 탭에서 손을 떼며 단문으로 책임을 인정한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend06:beat:a:d-2:confession"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "로그가 저렇게 맞물리면 더는 기술적으로 돌릴 수는 없네요. 이 증거가 나온 이상 임시 조치였다는 말은 접겠어요.",
+      "behaviorHint": "스크린을 보다가 잠깐 멈추고 말수와 속도가 눈에 띄게 줄어든다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-6",
+      "id": "friend06:beat:a:d-2:evidence_hit"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "첫째, 다솔에게 공개 수정까지 허용한 적은 없었어요. 제가 준 건 함께 검토하자는 초대에 가까웠지 라이브 게시물을 바꾸라는 뜻은 아니었어요.",
+      "behaviorHint": "버전기록 탭과 시간표시를 번갈아 짚으며 감정어를 줄이고 말머리를 '첫째'로 연다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend06:beat:a:d-3:deny"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "형식상 편집자나 매니저로 보일 수는 있어도 실제 운용 범위는 훨씬 좁게 이해했어요. 모바일의 '함께 수정' 같은 라벨이 제안권처럼 읽혀서 그렇게 받아들였어요.",
+      "behaviorHint": "짧은 부정을 두 번 반복한 뒤 권한 범위를 더 좁게 정의하려 든다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend06:beat:a:d-3:hedge"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "기록상 블로그 편집자 초대와 유튜브 매니저 권한이 실제로 부여된 건 맞아요. 다만 문제는 그 범위를 둘 다 제대로 확인하지 않았다는 점이에요.",
+      "behaviorHint": "시선을 내리지 않고 사실과 해석을 분리하듯 낮은 톤으로 끊어 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend06:beat:a:d-3:partial"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "그래도 브랜드 요청이 오면 공동 스레드부터 열어서 범위를 맞췄어야 했어요. 그리고 예전에 다솔이 라이브 상태에서 깨진 링크를 고쳤을 때도 저는 경계를 분명히 말로 정리하지 못했어요.",
+      "behaviorHint": "어깨를 굳힌 채 '그래도'를 앞세우며 상대의 절차 위반을 다시 끌어온다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend06:beat:a:d-3:blame"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "무단 침입이라고 단정한 제 말은 틀렸어요. 더 넓은 권한을 주고도 범위를 명확히 설명하지 않은 책임이 저한테 있어요.",
+      "behaviorHint": "한 박자 쉬고 탭에서 손을 떼며 단문으로 책임을 인정한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend06:beat:a:d-3:confession"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "로그가 저렇게 맞물리면 더는 기술적으로 돌릴 수는 없네요. 더 이상 부정하기 어렵고, 권한 범위를 제가 잘못 읽었다는 걸 인정해야겠어요.",
+      "behaviorHint": "스크린을 보다가 잠깐 멈추고 말수와 속도가 눈에 띄게 줄어든다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-3",
+      "id": "friend06:beat:a:d-3:evidence_hit"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "첫째, 원칙을 먼저 깬 건 직접 수정에 들어간 다솔 쪽이었어요. 제 차단은 그 뒤에 벌어진 방어적 대응이지 공동 규칙을 무시하려던 건 아니었어요.",
+      "behaviorHint": "버전기록 탭과 시간표시를 번갈아 짚으며 감정어를 줄이고 말머리를 '첫째'로 연다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend06:beat:a:d-5:deny"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "공동 스레드를 밟지 않은 건 맞지만 그 상황을 평시 절차 위반과 똑같이 보긴 어려워요. 문제가 공개 상태였기 때문에 일단 멈추는 선택이 우선이라고 스스로 정리했어요.",
+      "behaviorHint": "짧은 부정을 두 번 반복한 뒤 권한 범위를 더 좁게 정의하려 든다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend06:beat:a:d-5:hedge"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "기록상 노션에 적힌 상호 확인과 공동 스레드 규칙을 알고도 단톡 공개와 즉시 차단으로 건너뛴 건 맞아요. 다만 통제권을 다시 잡아야 한다는 생각이 규칙 기억보다 빨랐어요.",
+      "behaviorHint": "시선을 내리지 않고 사실과 해석을 분리하듯 낮은 톤으로 끊어 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend06:beat:a:d-5:partial"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "그래도 다솔이 먼저 공동 스레드 없이 라이브 수정하지 않았다면 이 연쇄가 덜 컸을 거예요. 그리고 제 차단은 단일 게시물 잠금이 아니라 전체 편집권 회수로 이어졌어요.",
+      "behaviorHint": "어깨를 굳힌 채 '그래도'를 앞세우며 상대의 절차 위반을 다시 끌어온다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend06:beat:a:d-5:blame"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "공동 확인 원칙을 저도 깼어요. 다솔의 위반을 탓하면서 같은 규칙을 제 손으로 무너뜨렸어요.",
+      "behaviorHint": "한 박자 쉬고 탭에서 손을 떼며 단문으로 책임을 인정한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend06:beat:a:d-5:confession"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "로그가 저렇게 맞물리면 더는 기술적으로 돌릴 수는 없네요. 이 증거 앞에서 방어적 대응이었다는 말은 더 이상 안 통하겠어요.",
+      "behaviorHint": "스크린을 보다가 잠깐 멈추고 말수와 속도가 눈에 띄게 줄어든다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S4"
+      ],
+      "afterEvidence": "e-5",
+      "id": "friend06:beat:a:d-5:evidence_hit"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "내가 밤에 이것저것 맞추느라 들어간 건 맞는데, 나는 광고 표기와 가격 문구를 맞추느라 본문과 설명란을 정리한 거지 채널을 접수하려던 게 아니다. 핀댓글은 일부러 지웠다기보다 수정 세션에서 같이 빠진 줄 알았다.",
+      "behaviorHint": "손가락으로 밤새 한 일을 세듯 나열하며 구조자 위치를 먼저 잡는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend06:beat:b:d-1:deny"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "직접 들어가 손본 건 맞지만 그걸 무단 점령처럼 부르는 건 과하다고 느꼈다. 그러니까 그때는 브랜드 요청이 급해서 공개 상태를 먼저 살려야 한다고 봤다.",
+      "behaviorHint": "짧게 웃어 넘긴 뒤 문장 끝을 올려 되묻듯 책임을 희석한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend06:beat:b:d-1:hedge"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "본문과 설명란을 직접 수정한 건 맞다. 안 그러면 진짜 큰일 날 것 같아서, 해온이 여섯 시간째 답이 없으니 내가 처리하지 않으면 광고가 내려갈 것처럼 느껴졌다.",
+      "behaviorHint": "목이 잠긴 채 의도와 결과를 번갈아 붙이며 급박했던 밤을 길게 설명한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend06:beat:b:d-1:partial"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "해온이 바로 답을 줬다면 나는 거기까지 안 갔을 거다. 그래서 그때는 핀댓글 삭제까지 같은 세션에서 일어난 건 내 쪽 작업 책임으로 봐야 한다도 크게 안 보였어요.",
+      "behaviorHint": "자신이 수습하던 목록을 늘어놓다가 상대 침묵을 끼워 넣어 되받아친다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend06:beat:b:d-1:blame"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "직접 수정하고 핀댓글까지 없앤 건 내 판단 미스다. 급했다는 이유로 먼저 묻지 않은 책임은 피할 수 없다.",
+      "behaviorHint": "숨을 크게 삼킨 뒤 '살리려던 거였다'를 접고 책임 문장으로 마무리한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend06:beat:b:d-1:confession"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "원문과 로그가 같이 나오면 저도 더는 '살리려던 거였다'만 반복하긴 어렵죠. 이 기록이 나온 이상 응급 수정이라는 명분은 버텨지지 않아요.",
+      "behaviorHint": "로그가 제시되면 웃음기가 사라지고 말끝이 짧아지다가 갑자기 느려진다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-1",
+      "id": "friend06:beat:b:d-1:evidence_hit"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "내가 밤에 이것저것 맞추느라 들어간 건 맞는데, 브랜드가 급하다고 해서 보이는 부분을 한 번에 정리한 거다. 제목이랑 썸네일까지 맞춘 건 광고 문구만 따로 튀지 않게 하려던 판단이었다.",
+      "behaviorHint": "손가락으로 밤새 한 일을 세듯 나열하며 구조자 위치를 먼저 잡는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend06:beat:b:d-4:deny"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "요청서에 그 항목이 직접 적히진 않았지만 결과를 살리려면 연결해서 보정해야 한다고 느꼈다. 그러니까 나는 그걸 새 창작이라기보다 게시물 정리라고 스스로 불렀다.",
+      "behaviorHint": "짧게 웃어 넘긴 뒤 문장 끝을 올려 되묻듯 책임을 희석한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend06:beat:b:d-4:hedge"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "코디네이터 요청 범위에 제목, 썸네일, 핀댓글은 없었다. 안 그러면 진짜 큰일 날 것 같아서, 그런데도 광고를 살려야 한다는 생각으로 범위를 넓혀 잡았다.",
+      "behaviorHint": "목이 잠긴 채 의도와 결과를 번갈아 붙이며 급박했던 밤을 길게 설명한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend06:beat:b:d-4:partial"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "해온이 바로 답했더라면 내가 그 선까지 넘을 일은 적었을 것이다. 그래서 그때는 결과적으로 광고 표기 정정을 넘어 채널의 표면 문구 전체를 건드렸다도 크게 안 보였어요.",
+      "behaviorHint": "자신이 수습하던 목록을 늘어놓다가 상대 침묵을 끼워 넣어 되받아친다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend06:beat:b:d-4:blame"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "브랜드 요청 범위를 넘겨 편집한 건 맞다. 결과를 살리겠다는 명분으로 절차 위반을 희석했다.",
+      "behaviorHint": "숨을 크게 삼킨 뒤 '살리려던 거였다'를 접고 책임 문장으로 마무리한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend06:beat:b:d-4:confession"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "원문과 로그가 같이 나오면 저도 더는 '살리려던 거였다'만 반복하긴 어렵죠. 요청서 밖 항목까지 손댄 건 부정할 수 없어요.",
+      "behaviorHint": "로그가 제시되면 웃음기가 사라지고 말끝이 짧아지다가 갑자기 느려진다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-4",
+      "id": "friend06:beat:b:d-4:evidence_hit"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "내가 밤에 이것저것 맞추느라 들어간 건 맞는데, 그날 건 응급 수정에 가까웠지 공동 규칙을 대놓고 무시한 건 아니었다. 해온이 안 보이는 동안 게시물을 살려 놓으려다 보니 스레드보다 손이 먼저 갔다.",
+      "behaviorHint": "손가락으로 밤새 한 일을 세듯 나열하며 구조자 위치를 먼저 잡는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend06:beat:b:d-5:deny"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "공동 스레드에 먼저 올렸어야 했다는 건 안다. 그러니까 그래도 예전처럼 라이브 상태에서 바로 고친 전례가 머리에 남아 있었다.",
+      "behaviorHint": "짧게 웃어 넘긴 뒤 문장 끝을 올려 되묻듯 책임을 희석한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend06:beat:b:d-5:hedge"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "상호 확인과 공동 스레드 규칙을 알고도 내가 직접 수정부터 한 건 맞다. 안 그러면 진짜 큰일 날 것 같아서, 광고가 끊길 수 있다는 압박에 그 규칙이 예외 없이 적용된다고 끝까지 붙들지 못했다.",
+      "behaviorHint": "목이 잠긴 채 의도와 결과를 번갈아 붙이며 급박했던 밤을 길게 설명한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend06:beat:b:d-5:partial"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "해온도 그다음 단톡 공개와 전체 차단으로 같은 원칙을 무너뜨렸다. 그래서 그때는 규칙을 지키려 했다면 최소한 공동 스레드에 요청 원문부터 남겼어야 했다도 크게 안 보였어요.",
+      "behaviorHint": "자신이 수습하던 목록을 늘어놓다가 상대 침묵을 끼워 넣어 되받아친다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend06:beat:b:d-5:blame"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "급했다는 이유로 공동 확인 규칙을 건너뛴 건 내 잘못이다. 관계를 지키고 싶었다면 절차부터 지켰어야 했다.",
+      "behaviorHint": "숨을 크게 삼킨 뒤 '살리려던 거였다'를 접고 책임 문장으로 마무리한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend06:beat:b:d-5:confession"
+    },
+    {
+      "caseId": "friend-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "원문과 로그가 같이 나오면 저도 더는 '살리려던 거였다'만 반복하긴 어렵죠. 이 증거까지 나오면 예외였다는 말은 더 이상 안 되겠어요.",
+      "behaviorHint": "로그가 제시되면 웃음기가 사라지고 말끝이 짧아지다가 갑자기 느려진다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S4"
+      ],
+      "afterEvidence": "e-5",
+      "id": "friend06:beat:b:d-5:evidence_hit"
+    }
+  ]
+}

@@ -316,7 +316,7 @@ export const neighbor05TellsBeats = {
       "party": "a",
       "disputeId": "d-5",
       "beatType": "blame",
-      "line": "약속 문언으로 보면 제가 먼저 어긴 걸 수 있어요. 다만 그 순간엔 공개가 아니라 도움 요청이라고 스스로 합리화했습니다.",
+      "line": "약속 문언으로 보면 제가 먼저 어긴 걸 수 있어요. 그 순간엔 공개가 아니라 도움 요청이라고 스스로 합리화했습니다.",
       "behaviorHint": "시선을 피하다가 마지막 문장에서 자책 섞인 웃음을 보인다.",
       "applicableStates": [
         "S3"
@@ -472,7 +472,7 @@ export const neighbor05TellsBeats = {
       "party": "b",
       "disputeId": "d-4",
       "beatType": "blame",
-      "line": "그 상자까지 제 것이 아니면 제 반박 전체가 약해지니까, 제가 그 동일성을 더 붙잡았던 겁니다.",
+      "line": "그 상자까지 제 것이 아니면 제 반박 전체가 약해지니까, 제가 그 동일성을 더 붙잡았던 겁니다. 서윤 쪽도 먼저 잘린 캡처를 돌리며 절도 프레임을 만든 건 아닌가요.",
       "behaviorHint": "턱을 만지며 계산적인 표정이 잠깐 드러난다.",
       "applicableStates": [
         "S3"

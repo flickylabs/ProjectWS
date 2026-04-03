@@ -1,0 +1,5066 @@
+export const partnership05V2Atoms = {
+  "caseId": "partnership-05",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그 2,400만원은 개인 용도가 아니라 세무조사 대응 자문을 먼저 붙이기 위한 선급 처리였다.",
+            "그 시점에는 승인 절차보다 장부와 자료 정리가 먼저 무너지지 않게 하는 게 급했다."
+          ],
+          "privateKnowledge": [
+            "공동 전자승인 토큰 없이 제 노트북에서 이체를 실행했다.",
+            "ERP 적요의 첫 문구가 '조사대응 자문 선급'이었고 뒤에 일반 관리비성 표현이 덧붙었다."
+          ],
+          "suppressions": [
+            "소라의 최종 승인 없이 집행한 사실",
+            "적요를 완화해 흔적을 흐린 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-1:denial:0",
+              "factText": "그 2,400만원은 개인 용도가 아니라 세무조사 대응 자문을 먼저 붙이기 위한 선급 처리였다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-1:context:1",
+              "factText": "그 시점에는 승인 절차보다 장부와 자료 정리가 먼저 무너지지 않게 하는 게 급했다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "최종 승인 확인이 완전히 찍히기 전 집행된 건 맞지만, 이미 세무사 제안과 자료요청이 돌아가고 있었다.",
+            "나는 독단으로 돈을 뺀 게 아니라 급한 조사 대응 흐름을 먼저 연결한 거라고 봤다."
+          ],
+          "privateKnowledge": [
+            "사후 보고를 염두에 두고 먼저 이체한 판단이었다.",
+            "승인 누락이 문제라는 걸 알면서도 질문이 늦어지길 바랐다."
+          ],
+          "suppressions": [
+            "승인 누락을 의식하고도 강행한 판단",
+            "자금 이동이 비자금처럼 보일 수 있다는 우려"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-1:uncertainty:2",
+              "factText": "최종 승인 확인이 완전히 찍히기 전 집행된 건 맞지만, 이미 세무사 제안과 자료요청이 돌아가고 있었다.",
+              "tags": [
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-1:self_justification:3",
+              "factText": "나는 독단으로 돈을 뺀 게 아니라 급한 조사 대응 흐름을 먼저 연결한 거라고 봤다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "내가 공동 승인 없이 2,400만원을 먼저 보낸 건 맞다.",
+            "다만 박태성 세무사가 선급 집행과 계정 임시 정리를 함께 권했고, 나는 그걸 조사 대응상 불가피한 조치로 받아들였다."
+          ],
+          "privateKnowledge": [
+            "자금 이동이 개인 비자금처럼 보일 수 있다는 점을 알았다.",
+            "소라가 나중에라도 동의해 줄 거라고 스스로 합리화했다."
+          ],
+          "suppressions": [
+            "사전에 소라 반응을 피하려 했던 마음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:a:tell:necessity_frame",
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-1:admission:4",
+              "factText": "내가 공동 승인 없이 2,400만원을 먼저 보낸 건 맞다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-1:self_justification:5",
+              "factText": "다만 박태성 세무사가 선급 집행과 계정 임시 정리를 함께 권했고, 나는 그걸 조사 대응상 불가피한 조치로 받아들였다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "절차를 어긴 책임은 내게 있지만, 구조를 세무사가 짜고 소라도 메일을 같이 받은 상태라 나만 단독으로 설계한 그림은 아니다.",
+            "나는 승인 누락을 덮으려 했다기보다 조사 리스크가 먼저 터질까 봐 밀어붙였다."
+          ],
+          "privateKnowledge": [
+            "소라가 메일을 읽었을 거라는 추정에 기대 책임을 분산하고 있다.",
+            "통제 실패 대표로 보일까 두려웠다."
+          ],
+          "suppressions": [
+            "불리한 설명을 뒤로 미루려 계정 흐름만 반복한 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-1:responsibility:6",
+              "factText": "절차를 어긴 책임은 내게 있지만, 구조를 세무사가 짜고 소라도 메일을 같이 받은 상태라 나만 단독으로 설계한 그림은 아니다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-1:counter:7",
+              "factText": "나는 승인 누락을 덮으려 했다기보다 조사 리스크가 먼저 터질까 봐 밀어붙였다.",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 말하면, 운영총괄인 내가 기본 통제를 무너뜨렸다는 말을 듣는 게 무서워 먼저 숫자와 전표 뒤로 숨었다.",
+            "그래도 그 돈을 개인적으로 돌리려던 건 아니었고, 조사 직전 공포 속에서 절차보다 대응을 앞세웠다."
+          ],
+          "privateKnowledge": [
+            "배신감 이야기만 나오면 감정을 잘라내며 방어했다.",
+            "사과보다 정당화부터 꺼낸 걸 후회한다."
+          ],
+          "suppressions": [
+            "소라에게 먼저 미안하다고 말하지 않은 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:a:tell:affect_pruning",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-1:emotion:8",
+              "factText": "솔직히 말하면, 운영총괄인 내가 기본 통제를 무너뜨렸다는 말을 듣는 게 무서워 먼저 숫자와 전표 뒤로 숨었다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-1:admission:9",
+              "factText": "그래도 그 돈을 개인적으로 돌리려던 건 아니었고, 조사 직전 공포 속에서 절차보다 대응을 앞세웠다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "나는 소라의 최종 승인 없이 법인 운영계좌에서 2,400만원을 제휴 자문사로 선급 이체했다.",
+            "개인 유용은 아니었지만 승인 누락과 적요 완화는 분명 내 잘못이고, 그 책임을 인정합니다."
+          ],
+          "privateKnowledge": [
+            "세무사 권유가 있었어도 최종 판단은 제가 했다.",
+            "신뢰 훼손의 시작점이 제 비문서화였음을 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-1:admission:10",
+              "factText": "나는 소라의 최종 승인 없이 법인 운영계좌에서 2,400만원을 제휴 자문사로 선급 이체했다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-1:responsibility:11",
+              "factText": "개인 유용은 아니었지만 승인 누락과 적요 완화는 분명 내 잘못이고, 그 책임을 인정합니다.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "소라는 공동으로 받은 제안 메일이 있었는데도 내가 개인 비자금을 만든 것처럼 몰았다.",
+            "그 프레임은 사실 확인보다 협상 우위를 잡는 말이 먼저였다."
+          ],
+          "privateKnowledge": [
+            "저도 설명을 늦춰 의심이 자라기 쉬운 환경을 만들었다.",
+            "소라의 초안과 회의 메모가 나오기 전까지는 확신보다 추정이 섞여 있다."
+          ],
+          "suppressions": [
+            "제 보고 누락이 프레임 고착의 빌미가 된 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-2:denial:0",
+              "factText": "소라는 공동으로 받은 제안 메일이 있었는데도 내가 개인 비자금을 만든 것처럼 몰았다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "그 사람",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-2:context:1",
+              "factText": "그 프레임은 사실 확인보다 협상 우위를 잡는 말이 먼저였다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "소라가 정말 아무것도 몰랐다면 그렇게까지 '개인 비자금'이라는 말을 반복하기 어렵다.",
+            "적어도 공동 메일과 장부 흐름 일부를 본 채 의심을 굳힌 건 맞다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "소라가 어디까지 읽었는지 당시에는 단정 못 했다.",
+            "저도 감정적으로 맞받아쳤다."
+          ],
+          "suppressions": [
+            "확인 전에도 소라의 악의를 먼저 의심한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-2:uncertainty:2",
+              "factText": "소라가 정말 아무것도 몰랐다면 그렇게까지 '개인 비자금'이라는 말을 반복하기 어렵다.",
+              "tags": [
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "그 사람",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-2:self_justification:3",
+              "factText": "적어도 공동 메일과 장부 흐름 일부를 본 채 의심을 굳힌 건 맞다고 봅니다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "이제 보니 소라는 제안 메일을 읽고 드래프트까지 남겼는데, 그 사실을 말하지 않은 채 내 행위를 개인 유용처럼 포장했다.",
+            "다만 내가 먼저 문서화를 빼먹고 심야 이체를 한 탓에 그 프레임이 먹힐 여지를 만든 것도 사실이다."
+          ],
+          "privateKnowledge": [
+            "소라가 겁과 분노를 섞어 해석했을 가능성을 안다.",
+            "제가 느낀 배신감을 공격으로 되갚고 싶었다."
+          ],
+          "suppressions": [
+            "감정적으로 소라를 '악의적'이라고 단정한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:a:tell:necessity_frame",
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-2:admission:4",
+              "factText": "이제 보니 소라는 제안 메일을 읽고 드래프트까지 남겼는데, 그 사실을 말하지 않은 채 내 행위를 개인 유용처럼 포장했다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "그 사람",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-2:self_justification:5",
+              "factText": "다만 내가 먼저 문서화를 빼먹고 심야 이체를 한 탓에 그 프레임이 먹힐 여지를 만든 것도 사실이다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "소라가 프레임을 고착한 책임은 크지만, 나도 설명을 늦추고 적요를 완화해 그녀가 공격할 언어를 제공했다.",
+            "결국 우리는 둘 다 세무사 메일보다 서로에 대한 불신을 먼저 믿었다."
+          ],
+          "privateKnowledge": [
+            "제가 소라의 과거 누락 기억을 가볍게 본 점",
+            "상호 불신이 이미 누적돼 있었다."
+          ],
+          "suppressions": [
+            "소라의 프레임을 되돌릴 방법을 늦게 찾은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-2:responsibility:6",
+              "factText": "소라가 프레임을 고착한 책임은 크지만, 나도 설명을 늦추고 적요를 완화해 그녀가 공격할 언어를 제공했다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "그 사람",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-2:counter:7",
+              "factText": "결국 우리는 둘 다 세무사 메일보다 서로에 대한 불신을 먼저 믿었다.",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "가장 억울했던 건 돈의 실질보다 내가 횡령한 사람처럼 불렸다는 점이었다.",
+            "그래서 소라의 왜곡을 바로잡기보다 내 결백만 계산적으로 입증하려고 들었다."
+          ],
+          "privateKnowledge": [
+            "상대의 공포보다 제 오명부터 지웠다.",
+            "그 태도가 더 냉정한 사람처럼 보이게 했다."
+          ],
+          "suppressions": [
+            "상대가 왜 그렇게 겁먹었는지 충분히 듣지 않은 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:a:tell:affect_pruning",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-2:emotion:8",
+              "factText": "가장 억울했던 건 돈의 실질보다 내가 횡령한 사람처럼 불렸다는 점이었다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "그 사람",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-2:admission:9",
+              "factText": "그래서 소라의 왜곡을 바로잡기보다 내 결백만 계산적으로 입증하려고 들었다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "소라는 공동 메일과 드래프트 흔적이 있었는데도 내 이체를 개인 비자금처럼 몰아간 게 맞다.",
+            "하지만 내가 절차를 어기고 설명을 늦춘 탓에 그 왜곡이 힘을 얻었고, 그 책임 일부는 나에게도 있다."
+          ],
+          "privateKnowledge": [
+            "프레임 철회와 제 사과가 함께 가야 풀린다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-2:admission:10",
+              "factText": "소라는 공동 메일과 드래프트 흔적이 있었는데도 내 이체를 개인 비자금처럼 몰아간 게 맞다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "그 사람",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-2:responsibility:11",
+              "factText": "하지만 내가 절차를 어기고 설명을 늦춘 탓에 그 왜곡이 힘을 얻었고, 그 책임 일부는 나에게도 있다.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "선급금 구조를 처음 밀어붙인 건 소라 쪽 분위기였다고 나는 봤다.",
+            "장부 리스크를 덮자고 한 사람도, 적어도 그 방향을 반기던 사람도 소라였다."
+          ],
+          "privateKnowledge": [
+            "박태성 메일의 구체 문구가 먼저였다는 점을 떠올리고 있다.",
+            "제가 책임을 덜기 위해 소라 쪽 의도를 크게 읽고 있다."
+          ],
+          "suppressions": [
+            "세무사의 선제 제안",
+            "제가 그 편한 해석에 올라탄 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-3:denial:0",
+              "factText": "선급금 구조를 처음 밀어붙인 건 소라 쪽 분위기였다고 나는 봤다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "정소라",
+                  "neutral": "상대 공동대표",
+                  "fullName": "정소라",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-3:context:1",
+              "factText": "장부 리스크를 덮자고 한 사람도, 적어도 그 방향을 반기던 사람도 소라였다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "정확한 표현 하나하나야 세무사 메일에 있었을 수 있어도, 실행 쪽으로 기울게 만든 건 소라의 침묵과 반대 부재였다.",
+            "나는 그때 그녀도 같은 판단을 한다고 읽었다."
+          ],
+          "privateKnowledge": [
+            "소라가 명시 동의한 적은 없었다.",
+            "제가 침묵을 동의로 과잉 해석했다."
+          ],
+          "suppressions": [
+            "구조 설계자와 실행자를 섞어 말한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-3:uncertainty:2",
+              "factText": "정확한 표현 하나하나야 세무사 메일에 있었을 수 있어도, 실행 쪽으로 기울게 만든 건 소라의 침묵과 반대 부재였다.",
+              "tags": [
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "정소라",
+                  "neutral": "상대 공동대표",
+                  "fullName": "정소라",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-3:self_justification:3",
+              "factText": "나는 그때 그녀도 같은 판단을 한다고 읽었다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "지금 보면 선급금 구조와 계정명 완화의 첫 문구는 박태성 세무사 쪽에서 나왔다.",
+            "다만 나는 소라가 그 흐름을 막지 않는다고 보고 더 쉽게 밀어붙였다."
+          ],
+          "privateKnowledge": [
+            "제가 '상대도 원했다'는 이야기로 체면을 세우고 싶었다.",
+            "동문 캡처 같은 함정 자료에 소라가 끌린 걸 나중에 알았다."
+          ],
+          "suppressions": [
+            "세무사 제안이 더 결정적이었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:a:tell:necessity_frame",
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-3:admission:4",
+              "factText": "지금 보면 선급금 구조와 계정명 완화의 첫 문구는 박태성 세무사 쪽에서 나왔다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "정소라",
+                  "neutral": "상대 공동대표",
+                  "fullName": "정소라",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-3:self_justification:5",
+              "factText": "다만 나는 소라가 그 흐름을 막지 않는다고 보고 더 쉽게 밀어붙였다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "배후 제안자를 소라로 단정한 건 과했다.",
+            "세무사가 판을 짰고 나는 그 판을 탔는데, 책임이 내게 몰릴까 봐 소라를 공동 설계자처럼 밀어 넣었다."
+          ],
+          "privateKnowledge": [
+            "면피 심리가 강했다.",
+            "소라 탓을 하면 제 통제 실패가 덜 도드라진다고 느꼈다."
+          ],
+          "suppressions": [
+            "세무사에게 쉽게 기대려 한 제 판단"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-3:responsibility:6",
+              "factText": "배후 제안자를 소라로 단정한 건 과했다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "정소라",
+                  "neutral": "상대 공동대표",
+                  "fullName": "정소라",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-3:counter:7",
+              "factText": "세무사가 판을 짰고 나는 그 판을 탔는데, 책임이 내게 몰릴까 봐 소라를 공동 설계자처럼 밀어 넣었다.",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 외부 세무사에게 둘 다 흔들렸다는 사실보다 소라가 시켰다고 말하는 편이 내 체면엔 쉬웠다.",
+            "그래서 '누가 시작했냐'는 질문에 박태성보다 소라를 먼저 떠올리게 만들었다."
+          ],
+          "privateKnowledge": [
+            "정확한 원인보다 체면 방어가 앞섰다.",
+            "상호 오해를 바로잡을 기회를 놓쳤다."
+          ],
+          "suppressions": [
+            "본인이 서둘러 결론 내린 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:a:tell:affect_pruning",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-3:emotion:8",
+              "factText": "솔직히 외부 세무사에게 둘 다 흔들렸다는 사실보다 소라가 시켰다고 말하는 편이 내 체면엔 쉬웠다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "정소라",
+                  "neutral": "상대 공동대표",
+                  "fullName": "정소라",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-3:admission:9",
+              "factText": "그래서 '누가 시작했냐'는 질문에 박태성보다 소라를 먼저 떠올리게 만들었다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "선급금 구조의 최초 제안자와 계정명 방향을 먼저 꺼낸 사람은 소라가 아니라 박태성 세무사였다.",
+            "나는 그 사실을 알면서도, 혹은 적어도 떠올리면서도 소라 책임을 부풀려 말해 내 체면을 지키려 했다."
+          ],
+          "privateKnowledge": [
+            "소라도 오해했을 뿐 설계자는 아니었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-3:admission:10",
+              "factText": "선급금 구조의 최초 제안자와 계정명 방향을 먼저 꺼낸 사람은 소라가 아니라 박태성 세무사였다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "정소라",
+                  "neutral": "상대 공동대표",
+                  "fullName": "정소라",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-3:responsibility:11",
+              "factText": "나는 그 사실을 알면서도, 혹은 적어도 떠올리면서도 소라 책임을 부풀려 말해 내 체면을 지키려 했다.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "팀에 일반 관리비성 설명만 간 건 당시 불안을 막기 위한 표현 정리였지, 숨기려는 의도는 아니었다.",
+            "조사대응이라는 말을 바로 꺼내면 거래처와 직원이 먼저 흔들릴 상황이었다."
+          ],
+          "privateKnowledge": [
+            "실제 목적을 의도적으로 축소했다.",
+            "소라도 최종 문구를 봤다."
+          ],
+          "suppressions": [
+            "조사대응 자문 목적을 흐린 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-4:denial:0",
+              "factText": "팀에 일반 관리비성 설명만 간 건 당시 불안을 막기 위한 표현 정리였지, 숨기려는 의도는 아니었다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-4:context:1",
+              "factText": "조사대응이라는 말을 바로 꺼내면 거래처와 직원이 먼저 흔들릴 상황이었다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "표현을 완화한 건 맞지만 비용 성격 자체를 뒤집은 건 아니라고 생각했다.",
+            "나는 최소한 운영 혼선을 막기 위해 임시로 그렇게 적었다."
+          ],
+          "privateKnowledge": [
+            "서버 이전·관리비 선급 같은 표현이 더 무해해 보인다는 걸 알았다.",
+            "나중에 원복할 계획을 문서화하지 않았다."
+          ],
+          "suppressions": [
+            "의도적 축소"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-4:uncertainty:2",
+              "factText": "표현을 완화한 건 맞지만 비용 성격 자체를 뒤집은 건 아니라고 생각했다.",
+              "tags": [
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-4:self_justification:3",
+              "factText": "나는 최소한 운영 혼선을 막기 위해 임시로 그렇게 적었다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "회의 메모와 공지 초안대로라면, 우리 둘 다 팀에는 일반 관리비처럼 보이게 정리하자는 데 동의했다.",
+            "완전한 허위 공지는 아니어도 실제 목적을 숨긴 축소 설명이었다."
+          ],
+          "privateKnowledge": [
+            "대출 연장과 가맹점 불안을 의식했다.",
+            "직원에게 진짜 목적 범주까지 말할 용기가 없었다."
+          ],
+          "suppressions": [
+            "제가 문구를 더 건조하게 다듬은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:a:tell:necessity_frame",
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-4:admission:4",
+              "factText": "회의 메모와 공지 초안대로라면, 우리 둘 다 팀에는 일반 관리비처럼 보이게 정리하자는 데 동의했다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-4:self_justification:5",
+              "factText": "완전한 허위 공지는 아니어도 실제 목적을 숨긴 축소 설명이었다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "이건 내 단독 은폐가 아니라 소라와 함께 확인한 표현 축소였다.",
+            "그래도 운영총괄인 내가 '일반 관리비' 쪽으로 밀어 넣은 책임을 피할 수는 없다."
+          ],
+          "privateKnowledge": [
+            "책임을 반반으로 맞추려는 마음이 있다.",
+            "관계 유지를 이유로 처음엔 강하게 부인했다."
+          ],
+          "suppressions": [
+            "은폐라는 단어를 피하려 한 태도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-4:responsibility:6",
+              "factText": "이건 내 단독 은폐가 아니라 소라와 함께 확인한 표현 축소였다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-4:counter:7",
+              "factText": "그래도 운영총괄인 내가 '일반 관리비' 쪽으로 밀어 넣은 책임을 피할 수는 없다.",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "나는 직원들이 불안해할까 봐 비용 목적을 잘라 말했고, 그게 결국 더 큰 불신을 만들었다.",
+            "감정과 절차를 분리하려던 버릇 때문에, 왜 숨겼는지보다 어떻게 적었는지만 붙잡고 있었다."
+          ],
+          "privateKnowledge": [
+            "배신감이 아니라 공포가 동기였음을 인정하기 싫었다.",
+            "소라에게도 같은 부담을 넘겼다."
+          ],
+          "suppressions": [
+            "먼저 사과하지 않은 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:a:tell:affect_pruning",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-4:emotion:8",
+              "factText": "나는 직원들이 불안해할까 봐 비용 목적을 잘라 말했고, 그게 결국 더 큰 불신을 만들었다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-4:admission:9",
+              "factText": "감정과 절차를 분리하려던 버릇 때문에, 왜 숨겼는지보다 어떻게 적었는지만 붙잡고 있었다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "우리 둘은 조사대응 자문 성격의 비용을 팀과 일부 거래처에 '서버 이전·관리비 선급'처럼 완화해 설명했다.",
+            "의도적 축소였고, 그 은폐성 판단에서 내 책임을 인정합니다."
+          ],
+          "privateKnowledge": [
+            "정리 후 바로 원복하지 않아 오해를 키웠다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-4:admission:10",
+              "factText": "우리 둘은 조사대응 자문 성격의 비용을 팀과 일부 거래처에 '서버 이전·관리비 선급'처럼 완화해 설명했다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-4:responsibility:11",
+              "factText": "의도적 축소였고, 그 은폐성 판단에서 내 책임을 인정합니다.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "당시엔 박태성 세무사가 제휴 자문사와 별도 이해관계를 맺고 있다는 사실을 알지 못했다.",
+            "동문 캡처나 이름 겹침만으로는 사적 이익 구조까지 단정하기 어려웠다."
+          ],
+          "privateKnowledge": [
+            "추천 경로가 매끄럽다는 찜찜함은 있었다.",
+            "급한 상황이라 검증을 미뤘다."
+          ],
+          "suppressions": [
+            "검증을 포기한 제 안일함"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-5:denial:0",
+              "factText": "당시엔 박태성 세무사가 제휴 자문사와 별도 이해관계를 맺고 있다는 사실을 알지 못했다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-5:context:1",
+              "factText": "동문 캡처나 이름 겹침만으로는 사적 이익 구조까지 단정하기 어려웠다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "세무사가 추천한 자문사라는 점은 봤지만, 소개수수료까지 걸려 있다고는 생각하지 못했다.",
+            "나는 그를 외부 전문가로 전제하고 절차만 맞추면 된다고 봤다."
+          ],
+          "privateKnowledge": [
+            "동문 법인 이슈가 불편했지만 억지 의혹 취급했다.",
+            "이해충돌 고지를 요구하지 않았다."
+          ],
+          "suppressions": [
+            "확인 의무를 넘긴 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-5:uncertainty:2",
+              "factText": "세무사가 추천한 자문사라는 점은 봤지만, 소개수수료까지 걸려 있다고는 생각하지 못했다.",
+              "tags": [
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-5:self_justification:3",
+              "factText": "나는 그를 외부 전문가로 전제하고 절차만 맞추면 된다고 봤다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "이제 보면 제안 메일의 방향성과 추천 속도가 지나치게 한쪽으로 정렬돼 있었다.",
+            "나는 그 이상 신호를 보고도 조사 대응이 급하다는 이유로 넘겼다."
+          ],
+          "privateKnowledge": [
+            "문서 한 세트만 더 확인했어도 걸렀을지 모른다.",
+            "세무사의 말에 기대 제 판단 부담을 덜었다."
+          ],
+          "suppressions": [
+            "전문가 뒤에 숨은 심리"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:a:tell:necessity_frame",
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-5:admission:4",
+              "factText": "이제 보면 제안 메일의 방향성과 추천 속도가 지나치게 한쪽으로 정렬돼 있었다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-5:self_justification:5",
+              "factText": "나는 그 이상 신호를 보고도 조사 대응이 급하다는 이유로 넘겼다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "이해충돌을 밝히지 않은 박태성의 책임이 먼저지만, 그 관계를 묻지 않고 돈부터 보낸 내 과실도 있다.",
+            "외부 조언자에게 실무와 면책을 동시에 맡기려 한 게 문제였다."
+          ],
+          "privateKnowledge": [
+            "제가 반쯤 면피 수단으로 전문가를 소비했다.",
+            "소라도 같은 맹신에 있었다."
+          ],
+          "suppressions": [
+            "둘 다 검증을 미뤘다는 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:a:tell:account_chain_recital",
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-5:responsibility:6",
+              "factText": "이해충돌을 밝히지 않은 박태성의 책임이 먼저지만, 그 관계를 묻지 않고 돈부터 보낸 내 과실도 있다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-5:counter:7",
+              "factText": "외부 조언자에게 실무와 면책을 동시에 맡기려 한 게 문제였다.",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "결국 우리는 세무사에게 조언을 산 게 아니라 그의 이해관계가 얹힌 방향으로 몰린 셈이었다.",
+            "나는 그 구조에 이용됐다는 분노보다, 그걸 검증하지 못한 내 무능이 더 부끄럽다."
+          ],
+          "privateKnowledge": [
+            "오판의 출발점이 외부 권위에 기대고 싶었던 마음이었다.",
+            "소라를 먼저 의심한 시간을 후회한다."
+          ],
+          "suppressions": [
+            "자기 혐오감"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:a:tell:affect_pruning",
+            "partnership-05:a:tell:necessity_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-5:emotion:8",
+              "factText": "결국 우리는 세무사에게 조언을 산 게 아니라 그의 이해관계가 얹힌 방향으로 몰린 셈이었다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-5:admission:9",
+              "factText": "나는 그 구조에 이용됐다는 분노보다, 그걸 검증하지 못한 내 무능이 더 부끄럽다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "박태성 세무사는 제가 추천한 세움조세자문과 소개수수료 약정을 맺고 있었고 그 사실을 명확히 알리지 않았다.",
+            "우리는 그걸 모르고 따랐지만, 나는 그 관계를 검증하지 않은 채 거액을 집행한 책임을 인정합니다."
+          ],
+          "privateKnowledge": [
+            "외부 자문사 선정 절차 재설계가 필요함을 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:a:tell:affect_pruning"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:a:d-5:admission:10",
+              "factText": "박태성 세무사는 제가 추천한 세움조세자문과 소개수수료 약정을 맺고 있었고 그 사실을 명확히 알리지 않았다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:a:d-5:responsibility:11",
+              "factText": "우리는 그걸 모르고 따랐지만, 나는 그 관계를 검증하지 않은 채 거액을 집행한 책임을 인정합니다.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "공동 승인도 없이 조사 직전 심야에 2,400만원이 빠져나가면 개인 비자금처럼 보일 수밖에 없었다.",
+            "나는 최종 승인도, 충분한 설명도 받지 못한 상태였다."
+          ],
+          "privateKnowledge": [
+            "저도 박태성 메일을 받은 사실이 있다.",
+            "개인 유용이라고 단정한 데 감정이 섞였다."
+          ],
+          "suppressions": [
+            "조사대응 선급 제안 메일을 읽은 정황"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:proof_dramatization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-1:denial:0",
+              "factText": "공동 승인도 없이 조사 직전 심야에 2,400만원이 빠져나가면 개인 비자금처럼 보일 수밖에 없었다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                },
+                "frame": {
+                  "exact": "개인 비자금",
+                  "neutral": "개인 유용 의심"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-1:context:1",
+              "factText": "나는 최종 승인도, 충분한 설명도 받지 못한 상태였다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 무단 이체였다는 점은 분명했고, 그 순간 내게는 공적 대응인지 개인 빼돌리기인지 구분할 근거가 부족했다.",
+            "그래서 나는 최악의 해석부터 떠올렸다."
+          ],
+          "privateKnowledge": [
+            "드래프트까지 남기고도 최종 답장을 보내지 않았다.",
+            "상대를 믿지 못해 더 자극적인 표현을 골랐다."
+          ],
+          "suppressions": [
+            "이체의 조사대응 맥락을 일부 알았던 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:proof_dramatization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-1:uncertainty:2",
+              "factText": "적어도 무단 이체였다는 점은 분명했고, 그 순간 내게는 공적 대응인지 개인 빼돌리기인지 구분할 근거가 부족했다.",
+              "tags": [
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                },
+                "frame": {
+                  "exact": "개인 비자금",
+                  "neutral": "개인 유용 의심"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-1:self_justification:3",
+              "factText": "그래서 나는 최악의 해석부터 떠올렸다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "나는 박태성의 제안 메일을 받은 적이 있고 조사대응 선급이라는 문구도 봤다.",
+            "그래도 현우가 최종 승인 없이 집행한 이상, 당시 내 눈엔 개인 유용까지 의심할 정도로 위험한 행동이었다."
+          ],
+          "privateKnowledge": [
+            "메일을 봤다는 사실을 일부러 말하지 않았다.",
+            "공포가 사실판단을 과장시켰다."
+          ],
+          "suppressions": [
+            "개인 비자금 프레임을 전략적으로 쓴 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:b:tell:proof_dramatization",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-1:admission:4",
+              "factText": "나는 박태성의 제안 메일을 받은 적이 있고 조사대응 선급이라는 문구도 봤다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                },
+                "frame": {
+                  "exact": "개인 비자금",
+                  "neutral": "개인 유용 의심"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-1:self_justification:5",
+              "factText": "그래도 현우가 최종 승인 없이 집행한 이상, 당시 내 눈엔 개인 유용까지 의심할 정도로 위험한 행동이었다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "무단 이체라는 사실은 맞지만, 내가 그걸 곧장 개인 비자금 의혹으로 키운 건 분노와 불신이 섞인 선택이었다.",
+            "현우의 절차 위반과 내 프레임 고착이 함께 사건을 더 나쁘게 만들었다."
+          ],
+          "privateKnowledge": [
+            "협상 테이블에서 유리한 위치를 잡고 싶었다.",
+            "과거 누락 기억을 현재 증거처럼 묶었다."
+          ],
+          "suppressions": [
+            "보복 심리"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-1:responsibility:6",
+              "factText": "무단 이체라는 사실은 맞지만, 내가 그걸 곧장 개인 비자금 의혹으로 키운 건 분노와 불신이 섞인 선택이었다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                },
+                "frame": {
+                  "exact": "개인 비자금",
+                  "neutral": "개인 유용 의심"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-1:counter:7",
+              "factText": "현우의 절차 위반과 내 프레임 고착이 함께 사건을 더 나쁘게 만들었다.",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "나는 또 숫자와 문서에 속는 사람이 될까 봐 무단 이체를 보자마자 횡령부터 떠올렸다.",
+            "그래서 선급금 맥락을 확인하기보다 의심을 먼저 확정했다."
+          ],
+          "privateKnowledge": [
+            "피해자처럼 보이면 제 판단 실패가 덜 드러난다고 느꼈다.",
+            "현우의 설명을 끝까지 듣지 않았다."
+          ],
+          "suppressions": [
+            "자기 방어 심리"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-1:emotion:8",
+              "factText": "나는 또 숫자와 문서에 속는 사람이 될까 봐 무단 이체를 보자마자 횡령부터 떠올렸다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                },
+                "frame": {
+                  "exact": "개인 비자금",
+                  "neutral": "개인 유용 의심"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-1:admission:9",
+              "factText": "그래서 선급금 맥락을 확인하기보다 의심을 먼저 확정했다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "현우는 실제로 무단 선급 이체를 했지만, 그 돈이 곧바로 개인 비자금이었다고 단정한 건 내 과장이었다.",
+            "나는 공동 메일을 본 사실을 숨긴 채 그 프레임을 밀었고, 그 잘못을 인정해요."
+          ],
+          "privateKnowledge": [
+            "의심을 철회해야 한다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-1:admission:10",
+              "factText": "현우는 실제로 무단 선급 이체를 했지만, 그 돈이 곧바로 개인 비자금이었다고 단정한 건 내 과장이었다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "24,000,000원",
+                  "neutral": "그 금액",
+                  "rounded": "2,400만원"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 선급",
+                  "neutral": "그 선급 처리"
+                },
+                "frame": {
+                  "exact": "개인 비자금",
+                  "neutral": "개인 유용 의심"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-1:responsibility:11",
+              "factText": "나는 공동 메일을 본 사실을 숨긴 채 그 프레임을 밀었고, 그 잘못을 인정해요.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "세무조사 통지 이틀 뒤",
+                  "neutral": "그 시점",
+                  "period": "조사 직전"
+                },
+                "approval": {
+                  "exact": "공동 전자승인 토큰 미사용",
+                  "neutral": "승인 절차"
+                },
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 전문가",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "나는 보이는 자료대로 위험하다고 말했을 뿐, 일부러 개인 유용 프레임을 만든 게 아니다.",
+            "그렇게 의심하게 된 데는 현우 쪽 누락과 심야 이체가 먼저 있었다."
+          ],
+          "privateKnowledge": [
+            "공동 받은 메일과 드래프트를 숨기고 있다.",
+            "개인 비자금이라는 말이 더 강하게 먹힌다는 걸 안다."
+          ],
+          "suppressions": [
+            "관련 메일을 읽은 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:proof_dramatization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-2:denial:0",
+              "factText": "나는 보이는 자료대로 위험하다고 말했을 뿐, 일부러 개인 유용 프레임을 만든 게 아니다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "상대",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-2:context:1",
+              "factText": "그렇게 의심하게 된 데는 현우 쪽 누락과 심야 이체가 먼저 있었다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "동문 캡처, 등기부, 심야 이체가 겹치는데 내가 어떻게 그냥 넘기겠느냐.",
+            "나는 적어도 회삿돈이 사적으로 새는지 의심할 정당한 이유가 있었다."
+          ],
+          "privateKnowledge": [
+            "e-3가 함정성 자료일 수 있음을 알고도 확대했다.",
+            "증거의 진위보다 의심의 서사를 우선했다."
+          ],
+          "suppressions": [
+            "캡처의 맥락 부족"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:proof_dramatization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-2:uncertainty:2",
+              "factText": "동문 캡처, 등기부, 심야 이체가 겹치는데 내가 어떻게 그냥 넘기겠느냐.",
+              "tags": [
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "상대",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-2:self_justification:3",
+              "factText": "나는 적어도 회삿돈이 사적으로 새는지 의심할 정당한 이유가 있었다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "맞다, 나는 조사대응 선급금 제안 메일을 받고 일부 내용을 읽었다.",
+            "그런데도 현우를 믿지 못해 그 사실을 빼고 개인 유용 의혹을 더 앞세웠다."
+          ],
+          "privateKnowledge": [
+            "상대를 벌주고 싶은 마음이 섞였다.",
+            "제 판단 실패를 숨기고 싶었다."
+          ],
+          "suppressions": [
+            "의도적 누락"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:b:tell:proof_dramatization",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-2:admission:4",
+              "factText": "맞다, 나는 조사대응 선급금 제안 메일을 받고 일부 내용을 읽었다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "상대",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-2:self_justification:5",
+              "factText": "그런데도 현우를 믿지 못해 그 사실을 빼고 개인 유용 의혹을 더 앞세웠다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "나는 해지 협상과 임원 회의에서 개인 비자금 의혹이라는 말을 일부러 강하게 썼다.",
+            "현우가 먼저 의심을 불렀다고 생각했지만, 그 표현을 고착한 건 내 선택이었다."
+          ],
+          "privateKnowledge": [
+            "revenge 성향이 작동했다.",
+            "과거 누락 사례를 한꺼번에 꺼내 분위기를 만들었다."
+          ],
+          "suppressions": [
+            "보복 동기"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-2:responsibility:6",
+              "factText": "나는 해지 협상과 임원 회의에서 개인 비자금 의혹이라는 말을 일부러 강하게 썼다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "상대",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-2:counter:7",
+              "factText": "현우가 먼저 의심을 불렀다고 생각했지만, 그 표현을 고착한 건 내 선택이었다.",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "또 속은 사람처럼 보이고 싶었던 것도 있다.",
+            "내가 메일을 봤다는 사실이 드러나면 재무를 맡은 내가 경고 신호를 놓친 사람처럼 보일까 봐, 의심을 더 크게 밀었다."
+          ],
+          "privateKnowledge": [
+            "피해자 프레임으로 자기 책임을 덜었다.",
+            "목소리와 도덕 판단으로 사실질문을 돌렸다."
+          ],
+          "suppressions": [
+            "체면 방어"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-2:emotion:8",
+              "factText": "또 속은 사람처럼 보이고 싶었던 것도 있다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "상대",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-2:admission:9",
+              "factText": "내가 메일을 봤다는 사실이 드러나면 재무를 맡은 내가 경고 신호를 놓친 사람처럼 보일까 봐, 의심을 더 크게 밀었다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "나는 공동 메일과 드래프트 흔적이 있었는데도 그 사실을 숨기고 현우를 개인 비자금 의혹으로 몰아갔다.",
+            "그건 사실 확인보다 보복과 자기보호가 앞선 프레임 고착이었다."
+          ],
+          "privateKnowledge": [
+            "팀 앞에서 프레임을 철회해야 함을 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-2:admission:10",
+              "factText": "나는 공동 메일과 드래프트 흔적이 있었는데도 그 사실을 숨기고 현우를 개인 비자금 의혹으로 몰아갔다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최현우",
+                  "neutral": "상대",
+                  "fullName": "최현우",
+                  "judgeRef": "상대 공동대표"
+                },
+                "frame": {
+                  "exact": "개인 비자금 의혹",
+                  "neutral": "개인 유용 프레임"
+                },
+                "forum": {
+                  "exact": "해지 협상 테이블과 임원 회의",
+                  "neutral": "공식 논의 자리"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-2:responsibility:11",
+              "factText": "그건 사실 확인보다 보복과 자기보호가 앞선 프레임 고착이었다.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공동 받은 메일 스레드와 드래프트",
+                  "neutral": "공동 수신 자료"
+                },
+                "trap": {
+                  "exact": "동문 단체방 캡처",
+                  "neutral": "그 캡처"
+                },
+                "context": {
+                  "exact": "조사대응 선급금 제안",
+                  "neutral": "그 제안 맥락"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 선급금 구조는 현우가 자기 식으로 짜서 밀어붙였다고 나는 믿었다.",
+            "동문 관계와 심야 집행까지 겹치니 더 그렇게 보였다."
+          ],
+          "privateKnowledge": [
+            "박태성 메일에 구체 제안이 있었다.",
+            "함정 증거 e-3에 과하게 기대고 있다."
+          ],
+          "suppressions": [
+            "세무사의 선제 제안"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:proof_dramatization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-3:denial:0",
+              "factText": "그 선급금 구조는 현우가 자기 식으로 짜서 밀어붙였다고 나는 믿었다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "최현우",
+                  "neutral": "상대 공동대표",
+                  "fullName": "최현우",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-3:context:1",
+              "factText": "동문 관계와 심야 집행까지 겹치니 더 그렇게 보였다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 실행의 방향을 굳힌 건 현우였고, 나는 뒤늦게 끌려간 쪽이라고 봤다.",
+            "세무사 문구가 있었다 해도, 현우가 그걸 자기 계산에 맞게 받아쓴 것처럼 느꼈다."
+          ],
+          "privateKnowledge": [
+            "느낌과 사실을 섞고 있다.",
+            "저도 대응 필요성엔 흔들렸다."
+          ],
+          "suppressions": [
+            "박태성의 더 직접적인 역할"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:proof_dramatization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-3:uncertainty:2",
+              "factText": "적어도 실행의 방향을 굳힌 건 현우였고, 나는 뒤늦게 끌려간 쪽이라고 봤다.",
+              "tags": [
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "최현우",
+                  "neutral": "상대 공동대표",
+                  "fullName": "최현우",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-3:self_justification:3",
+              "factText": "세무사 문구가 있었다 해도, 현우가 그걸 자기 계산에 맞게 받아쓴 것처럼 느꼈다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "지금 보면 선급금과 계정명 완화의 구체 문구는 박태성 메일에서 먼저 왔다.",
+            "하지만 나는 현우가 너무 빠르게 실행한 탓에 그가 설계자라고 믿어 버렸다."
+          ],
+          "privateKnowledge": [
+            "제가 outsider 대신 현우를 원인으로 지목하면 정서적으로 쉬웠다.",
+            "e-3의 맥락 부족을 알면서도 버리지 않았다."
+          ],
+          "suppressions": [
+            "상대를 설계자로 단정한 과잉"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:b:tell:proof_dramatization",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-3:admission:4",
+              "factText": "지금 보면 선급금과 계정명 완화의 구체 문구는 박태성 메일에서 먼저 왔다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "최현우",
+                  "neutral": "상대 공동대표",
+                  "fullName": "최현우",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-3:self_justification:5",
+              "factText": "하지만 나는 현우가 너무 빠르게 실행한 탓에 그가 설계자라고 믿어 버렸다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "현우를 배후 제안자로 단정한 건 내 오판이었다.",
+            "나는 세무사에게 속았다는 사실보다 또 현우에게 당했다는 서사가 더 익숙해서 그쪽으로 몰았다."
+          ],
+          "privateKnowledge": [
+            "피해자 서사를 스스로 강화했다.",
+            "증거 진위보다 심리적 납득을 택했다."
+          ],
+          "suppressions": [
+            "자기 서사에 취한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-3:responsibility:6",
+              "factText": "현우를 배후 제안자로 단정한 건 내 오판이었다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "최현우",
+                  "neutral": "상대 공동대표",
+                  "fullName": "최현우",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-3:counter:7",
+              "factText": "나는 세무사에게 속았다는 사실보다 또 현우에게 당했다는 서사가 더 익숙해서 그쪽으로 몰았다.",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "사실 둘 다 박태성의 말에 흔들린 건데, 그걸 인정하면 내가 너무 쉽게 속은 재무책임자처럼 보였다.",
+            "그래서 누가 시작했냐는 질문에 세무사보다 현우를 먼저 범인처럼 세웠다."
+          ],
+          "privateKnowledge": [
+            "체면과 상처가 사실 판단을 덮었다.",
+            "현우 개인 악의로 이야기하는 편이 쉬웠다."
+          ],
+          "suppressions": [
+            "자기 보호 심리"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-3:emotion:8",
+              "factText": "사실 둘 다 박태성의 말에 흔들린 건데, 그걸 인정하면 내가 너무 쉽게 속은 재무책임자처럼 보였다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "최현우",
+                  "neutral": "상대 공동대표",
+                  "fullName": "최현우",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-3:admission:9",
+              "factText": "그래서 누가 시작했냐는 질문에 세무사보다 현우를 먼저 범인처럼 세웠다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "선급금 구조의 최초 제안자는 현우가 아니라 박태성 세무사였다.",
+            "나는 그 사실을 볼 수 있었는데도 현우를 배후 설계자처럼 말해 내 오해와 자기보호를 정당화했다."
+          ],
+          "privateKnowledge": [
+            "함정 증거에 기대 상대를 오판했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-3:admission:10",
+              "factText": "선급금 구조의 최초 제안자는 현우가 아니라 박태성 세무사였다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "structure": {
+                  "exact": "선급금 구조",
+                  "neutral": "그 구조"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "추천 자문사"
+                },
+                "person2": {
+                  "exact": "최현우",
+                  "neutral": "상대 공동대표",
+                  "fullName": "최현우",
+                  "judgeRef": "상대"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-3:responsibility:11",
+              "factText": "나는 그 사실을 볼 수 있었는데도 현우를 배후 설계자처럼 말해 내 오해와 자기보호를 정당화했다.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "조사대응 제안 메일",
+                  "neutral": "제안 메일"
+                },
+                "label": {
+                  "exact": "일반 관리비 계정",
+                  "neutral": "완화된 계정명"
+                },
+                "trap": {
+                  "exact": "등기부 캡처와 동문 스크린샷",
+                  "neutral": "그 캡처 자료"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "팀 공지에서 비용 목적을 넓게 적은 건 혼란을 막기 위한 임시 표현이지 은폐는 아니었다.",
+            "당시엔 조사대응이라는 말이 내부에 퍼지는 순간 더 큰 불안이 번질 상황이었다."
+          ],
+          "privateKnowledge": [
+            "저도 완화 문구를 확인했다.",
+            "실제 목적을 축소한다는 자각이 있었다."
+          ],
+          "suppressions": [
+            "의도적 축소"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:proof_dramatization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-4:denial:0",
+              "factText": "팀 공지에서 비용 목적을 넓게 적은 건 혼란을 막기 위한 임시 표현이지 은폐는 아니었다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-4:context:1",
+              "factText": "당시엔 조사대응이라는 말이 내부에 퍼지는 순간 더 큰 불안이 번질 상황이었다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "나는 아직 확정되지 않은 대응비라서 일반 관리비처럼 적어 둔 거라고 생각했다.",
+            "적어도 직원들 앞에서 조사 얘기를 꺼내지 않겠다는 판단은 공동의 분위기였다."
+          ],
+          "privateKnowledge": [
+            "현우와 자신 둘 다 최종 문구를 봤다.",
+            "대출 연장과 거래처 반응을 걱정했다."
+          ],
+          "suppressions": [
+            "실제 목적 범주를 뺀 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:proof_dramatization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-4:uncertainty:2",
+              "factText": "나는 아직 확정되지 않은 대응비라서 일반 관리비처럼 적어 둔 거라고 생각했다.",
+              "tags": [
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-4:self_justification:3",
+              "factText": "적어도 직원들 앞에서 조사 얘기를 꺼내지 않겠다는 판단은 공동의 분위기였다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "회의 메모와 공지 초안을 보면, 나도 비용 성격을 완화한 문구를 확인했고 그대로 흘러가게 뒀다.",
+            "이건 단순 축약이 아니라 조사대응 목적을 숨긴 축소 설명이었다."
+          ],
+          "privateKnowledge": [
+            "재무총괄인 제가 더 빨리 바로잡을 수 있었다.",
+            "처음엔 그 책임을 피하려 했다."
+          ],
+          "suppressions": [
+            "재무 책임자로서의 실패"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:b:tell:proof_dramatization",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-4:admission:4",
+              "factText": "회의 메모와 공지 초안을 보면, 나도 비용 성격을 완화한 문구를 확인했고 그대로 흘러가게 뒀다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-4:self_justification:5",
+              "factText": "이건 단순 축약이 아니라 조사대응 목적을 숨긴 축소 설명이었다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "은폐성 표현은 현우 혼자 만든 게 아니라 나도 동의했다.",
+            "다만 나는 그걸 회사 방어라고 합리화했고, 그래서 초반엔 부인으로 버텼다."
+          ],
+          "privateKnowledge": [
+            "체면을 지키려 얼굴을 세웠다.",
+            "직원 신뢰 훼손을 과소평가했다."
+          ],
+          "suppressions": [
+            "제 주도적 동의"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-4:responsibility:6",
+              "factText": "은폐성 표현은 현우 혼자 만든 게 아니라 나도 동의했다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-4:counter:7",
+              "factText": "다만 나는 그걸 회사 방어라고 합리화했고, 그래서 초반엔 부인으로 버텼다.",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "재무를 맡은 내가 비용 목적을 흐린 문구를 그대로 통과시킨 건 부끄러운 일이다.",
+            "직원들 불안을 막는다는 말 뒤에, 내 판단 실패가 드러나는 걸 피하고 싶었던 마음도 있었다."
+          ],
+          "privateKnowledge": [
+            "피해자 프레임으로 이 책임을 덜어 왔다.",
+            "현우만 탓하면 편했다."
+          ],
+          "suppressions": [
+            "자기 책임 회피"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-4:emotion:8",
+              "factText": "재무를 맡은 내가 비용 목적을 흐린 문구를 그대로 통과시킨 건 부끄러운 일이다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-4:admission:9",
+              "factText": "직원들 불안을 막는다는 말 뒤에, 내 판단 실패가 드러나는 걸 피하고 싶었던 마음도 있었다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "우리 둘은 조사대응 자문 성격의 비용을 팀에는 일반 관리비처럼 축소해 설명했다.",
+            "나는 그 문구를 확인하고도 고치지 않았고, 그 은폐 책임을 인정해요."
+          ],
+          "privateKnowledge": [
+            "팀과 거래처에 공동 사실표가 필요함을 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-4:admission:10",
+              "factText": "우리 둘은 조사대응 자문 성격의 비용을 팀에는 일반 관리비처럼 축소해 설명했다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "서버 이전·관리비 선급",
+                  "neutral": "완화된 비용 설명"
+                },
+                "purpose": {
+                  "exact": "조사대응 자문 비용",
+                  "neutral": "실제 비용 목적"
+                },
+                "audience": {
+                  "exact": "직원과 일부 거래처",
+                  "neutral": "내부와 외부 문의처"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-4:responsibility:11",
+              "factText": "나는 그 문구를 확인하고도 고치지 않았고, 그 은폐 책임을 인정해요.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "회의 메모와 팀 공지 초안",
+                  "neutral": "내부 문서"
+                },
+                "motive": {
+                  "exact": "팀 불안과 조사 노출 방지",
+                  "neutral": "불안 방지 이유"
+                },
+                "person": {
+                  "exact": "노지훈 재무대리",
+                  "neutral": "실무자",
+                  "fullName": "노지훈",
+                  "judgeRef": "재무대리"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "당시엔 박태성 세무사가 제휴 자문사와 수수료 약정을 맺고 있다는 건 전혀 몰랐다.",
+            "내가 본 건 동문 캡처뿐이었지, 세무사의 이해충돌 구조는 아니었다."
+          ],
+          "privateKnowledge": [
+            "누군가가 숨기고 있다는 감각은 있었다.",
+            "그 불안이 현우 의심으로 바로 번졌다."
+          ],
+          "suppressions": [
+            "검증보다 의심에 먼저 매달린 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:proof_dramatization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-5:denial:0",
+              "factText": "당시엔 박태성 세무사가 제휴 자문사와 수수료 약정을 맺고 있다는 건 전혀 몰랐다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-5:context:1",
+              "factText": "내가 본 건 동문 캡처뿐이었지, 세무사의 이해충돌 구조는 아니었다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "지금도 그 시점의 내 정보만으로는 세무사-자문사 금전 관계까지 알기 어려웠다고 봐요.",
+            "다만 추천과 집행이 너무 빨라서 이상하다는 느낌은 분명 있었다."
+          ],
+          "privateKnowledge": [
+            "이상 신호를 현우 개인 문제로 좁혀 읽었다.",
+            "세무사 고지 의무를 묻지 않았다."
+          ],
+          "suppressions": [
+            "검증 실패"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:proof_dramatization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-5:uncertainty:2",
+              "factText": "지금도 그 시점의 내 정보만으로는 세무사-자문사 금전 관계까지 알기 어려웠다고 봐요.",
+              "tags": [
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-5:self_justification:3",
+              "factText": "다만 추천과 집행이 너무 빨라서 이상하다는 느낌은 분명 있었다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "이제 보면 박태성이 중립 조언자라기보다 자기 이해가 걸린 구조를 먼저 던졌을 가능성이 크다.",
+            "나는 그 가능성을 보지 못하고, 또는 보지 않으려 하고 현우만 의심했다."
+          ],
+          "privateKnowledge": [
+            "대상을 잘못 골랐다.",
+            "외부 전문가 권위에 휘둘렸다."
+          ],
+          "suppressions": [
+            "제 성급한 귀인"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:b:tell:proof_dramatization",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-5:admission:4",
+              "factText": "이제 보면 박태성이 중립 조언자라기보다 자기 이해가 걸린 구조를 먼저 던졌을 가능성이 크다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-5:self_justification:5",
+              "factText": "나는 그 가능성을 보지 못하고, 또는 보지 않으려 하고 현우만 의심했다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "이해충돌을 숨긴 세무사의 책임이 가장 크다.",
+            "하지만 재무를 맡은 내가 그 고지를 요구하지 않고 사람부터 범인으로 지목한 책임도 있다."
+          ],
+          "privateKnowledge": [
+            "노출된 자기 무능감이 부끄럽다.",
+            "현우에게 미안함이 생긴다."
+          ],
+          "suppressions": [
+            "사과 감정"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-5:responsibility:6",
+              "factText": "이해충돌을 숨긴 세무사의 책임이 가장 크다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-5:counter:7",
+              "factText": "하지만 재무를 맡은 내가 그 고지를 요구하지 않고 사람부터 범인으로 지목한 책임도 있다.",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "나는 세무사의 비공개 이해관계에 이용됐다는 사실보다, 그걸 못 보고 또 사람을 잘못 의심한 내가 더 수치스럽다.",
+            "그래서 처음엔 구조를 본 게 아니라 상처를 줄 대상을 찾았다."
+          ],
+          "privateKnowledge": [
+            "상대에게 씌운 프레임을 벗겨야 한다.",
+            "외부 자문 선택 절차를 바꿔야 한다."
+          ],
+          "suppressions": [
+            "공개 사과 필요성"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack",
+            "partnership-05:b:tell:moral_redirect"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-5:emotion:8",
+              "factText": "나는 세무사의 비공개 이해관계에 이용됐다는 사실보다, 그걸 못 보고 또 사람을 잘못 의심한 내가 더 수치스럽다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-5:admission:9",
+              "factText": "그래서 처음엔 구조를 본 게 아니라 상처를 줄 대상을 찾았다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "박태성 세무사는 세움조세자문과 소개수수료 약정을 맺고 있었고 그 이해충돌을 우리에게 명확히 밝히지 않았다.",
+            "나는 그걸 모르고 현우만 의심했으며, 그 검증 실패와 오판의 책임을 인정해요."
+          ],
+          "privateKnowledge": [
+            "향후 고지 절차를 요구해야 한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-05:b:tell:injury_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-05:b:d-5:admission:10",
+              "factText": "박태성 세무사는 세움조세자문과 소개수수료 약정을 맺고 있었고 그 이해충돌을 우리에게 명확히 밝히지 않았다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박태성 세무사",
+                  "neutral": "외부 세무사",
+                  "fullName": "박태성",
+                  "judgeRef": "세무사"
+                },
+                "institution": {
+                  "exact": "세움조세자문",
+                  "neutral": "제휴 자문사"
+                },
+                "contract": {
+                  "exact": "소개수수료 약정",
+                  "neutral": "그 수수료 약정"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-05:b:d-5:responsibility:11",
+              "factText": "나는 그걸 모르고 현우만 의심했으며, 그 검증 실패와 오판의 책임을 인정해요.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "제안 메일 발송 3일 전",
+                  "neutral": "그 이전 시점",
+                  "period": "제안 직전"
+                },
+                "document": {
+                  "exact": "회계메모와 송장 초안",
+                  "neutral": "보조 문서"
+                },
+                "duty": {
+                  "exact": "이해충돌 고지",
+                  "neutral": "고지 의무"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+

@@ -1,0 +1,599 @@
+{
+  "caseId": "friend-09",
+  "executableTells": {
+    "a": [
+      {
+        "id": "friend09:a:tell:quote_reassembly",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "원문",
+          "그 문장",
+          "순서대로",
+          "그대로 읽으면"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "불리한 질문이 나오면 상대 문장을 한 줄씩 다시 읽으며 자기 해석이 아니라 원문이라는 인상을 만든다."
+      },
+      {
+        "id": "friend09:a:tell:term_downgrade",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "정리",
+          "공유",
+          "표시",
+          "재배열"
+        ],
+        "sentenceShape": "conditional",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "'조언'과 '공유', '정리'와 '편집'을 구분하며 행위의 수위를 낮추려 한다."
+      },
+      {
+        "id": "friend09:a:tell:cool_pause",
+        "appliesWhen": [
+          "emotional",
+          "shame",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "파일명",
+          "날짜",
+          "시각",
+          "그 캡처"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "on_trigger_only",
+        "originalPattern": "화가 날수록 말을 줄이고 파일명과 날짜만 또박또박 읊는다."
+      }
+    ],
+    "b": [
+      {
+        "id": "friend09:b:tell:pressure_preface",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "그때 분위기가",
+          "이미 이상했고",
+          "제가 받은 압박이",
+          "그 흐름에서"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "질문을 받으면 '그때 공구방 분위기가 이미 이상했고'라고 먼저 말해 자신의 행동이 반응일 뿐이었다는 틀을 만든다."
+      },
+      {
+        "id": "friend09:b:tell:tool_minimizing",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "lying"
+        ],
+        "lexicalHooks": [
+          "계정 하나",
+          "도구만",
+          "올린 건",
+          "그건 별개잖아요"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "익명계정 개설을 묻으면 '계정 하나 판 거지 글 내용은 따로였잖아'라며 도구와 책임을 분리한다."
+      },
+      {
+        "id": "friend09:b:tell:wounded_pause",
+        "appliesWhen": [
+          "emotional",
+          "shame",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "제가 좀",
+          "억울한 건",
+          "숨 좀 고르고",
+          "이용당한 느낌"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "억울할 때 대답 전 숨을 길게 쉬고 자신이 이용당했다는 정서를 먼저 깐다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "원문을 그대로 읽으면 그 문장 배열이 곧바로 제 제작이라고 나오지 않습니다. 저는 가람 씨를 왜곡할 콜라주를 만든 적이 없습니다.",
+      "behaviorHint": "손가락으로 허공에 항목을 세듯 끊어 말하며, '정리'와 '편집'을 구분하는 어조를 유지한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-2:deny"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "여러 캡처를 한 파일에 정리해 둔 것은 사실입니다. 다만 그건 외부 유포용 편집이 아니라 공유 전 검토를 위한 재배열이었습니다.",
+      "behaviorHint": "상대 표현을 짧게 되풀이한 뒤, 파일명이나 날짜처럼 차가운 정보로 말을 흘린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-2:hedge"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "후기와 DM 일부를 한 장으로 붙인 것은 사실입니다. 다만 그 캡처를 상습 문제 사례 표시로 쓰려던 것은 아니고, 비교용 정리라고 판단했습니다.",
+      "behaviorHint": "시선은 자료에 두고 인정할 부분만 잘게 끊어 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-2:partial"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "말풍선과 환불 뒤 문장을 제가 덜어 낸 것은 인정합니다. 다만 도건 씨 쪽도 그 재배열된 이미지를 익명 글과 함께 밀어 넣어, 가람 씨가 더 악성으로 읽히게 만들었습니다.",
+      "behaviorHint": "말수는 줄이되 끝 문장에서만 상대 책임을 건조하게 밀어 넣는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-2:blame"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "제가 후기와 구매자 DM을 골라 콜라주 이미지를 만들고, 어떤 문장을 남길지 직접 잘랐습니다. 제 잘못입니다. 그 편집본을 오픈채팅과 지인에게 공유해 가람 씨가 상습 문제 셀러처럼 읽히도록 의도했습니다.",
+      "behaviorHint": "잠깐 멈춘 뒤 날짜와 파일명을 먼저 읊고, 마지막 문장에서 의도를 인정한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-2:confession"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "편집앱 프로젝트 파일명, 생성 날짜, 시각이 모두 맞으면 더는 '정리'라고만 부를 수 없습니다. 그 캡처가 단순 보관본이 아니라 제가 만든 재배열이라는 점은 부정하기 어렵습니다.",
+      "behaviorHint": "증거를 보는 순간 표정이 굳고, 곧바로 용어를 낮추려다 결국 핵심을 인정한다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-5",
+      "id": "friend09:beat:a:d-2:evidence_hit"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "시즌마켓 직전에 가람 씨 평판을 떨어뜨리자고 설계한 적 없습니다. 원문과 날짜를 순서대로 보시면, 그 시기 대화는 불만 표출이지 제거 계획의 합의가 아닙니다.",
+      "behaviorHint": "손가락으로 허공에 항목을 세듯 끊어 말하며, '정리'와 '편집'을 구분하는 어조를 유지한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-4:deny"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "가람 씨 이야기를 도건 씨와 주고받은 것은 있습니다. 그러나 그 문장을 그대로 읽으면 공모라기보다 감정 섞인 공유에 가깝습니다.",
+      "behaviorHint": "상대 표현을 짧게 되풀이한 뒤, 파일명이나 날짜처럼 차가운 정보로 말을 흘린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-4:hedge"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "부스 심사 전 자료를 모아 둔 건 부인하지 않겠습니다. 다만 그 시각에 맞춰 모든 타격을 계산한 냉정한 설계라고 보기는 어렵습니다.",
+      "behaviorHint": "시선은 자료에 두고 인정할 부분만 잘게 끊어 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-4:partial"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "예전 분쟁의 앙금은 제 안에도 남아 있었습니다. 다만 도건 씨 쪽도 그 흐름을 알고 계정과 업로드 타이밍을 맡아, 친구 사이 푸념을 실제 공모로 바꾸었습니다.",
+      "behaviorHint": "말수는 줄이되 끝 문장에서만 상대 책임을 건조하게 밀어 넣는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-4:blame"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "제가 도건 씨와 역할을 나눠 시즌마켓 심사 직전에 가람 씨 신뢰를 흔들 계획을 세웠습니다. 제 책임입니다. 예전 앙금과 손실 기억을 동력으로 삼아 판을 흔들려 했음을 인정합니다.",
+      "behaviorHint": "잠깐 멈춘 뒤 날짜와 파일명을 먼저 읊고, 마지막 문장에서 의도를 인정한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-4:confession"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "원본 메신저와 음성메모의 날짜가 맞물리면 더는 우연한 감정 발화라고 설명할 수 없습니다. 그 시각의 대화를 보면 심사 직전 파장을 계산한 정황이 분명합니다.",
+      "behaviorHint": "증거를 보는 순간 표정이 굳고, 곧바로 용어를 낮추려다 결국 핵심을 인정한다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-2",
+      "id": "friend09:beat:a:d-4:evidence_hit"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "운영자 소명에서 과거 분쟁을 숨기며 책임을 넘긴 적 없습니다. 제가 보낸 문장은 사실표를 정리한 것이지, 도건 씨를 단독 주범으로 재배열한 것이 아닙니다.",
+      "behaviorHint": "손가락으로 허공에 항목을 세듯 끊어 말하며, '정리'와 '편집'을 구분하는 어조를 유지한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-5:deny"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "가람 씨와 예전에 마찰이 있었던 사실을 소명에 표시하지 않은 것은 맞습니다. 그러나 그건 핵심 쟁점을 먼저 공유하려 한 선택이지, 책임전가를 설계한 것은 아니었습니다.",
+      "behaviorHint": "상대 표현을 짧게 되풀이한 뒤, 파일명이나 날짜처럼 차가운 정보로 말을 흘린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-5:hedge"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "운영자와 친구들 설명에서 빠진 부분이 있었던 건 사실입니다. 다만 날짜가 다시 드러나면 제가 사적인 앙금으로 움직였다는 해석이 굳을까 두려웠습니다.",
+      "behaviorHint": "시선은 자료에 두고 인정할 부분만 잘게 끊어 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-5:partial"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "사실표를 축소한 것은 제 몫입니다. 다만 도건 씨 쪽도 서로 다른 소명을 보내며 저를 먼저 끌려간 사람으로 재배열해, 책임선이 더 흐려지게 만들었습니다.",
+      "behaviorHint": "말수는 줄이되 끝 문장에서만 상대 책임을 건조하게 밀어 넣는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-5:blame"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "제가 운영자와 공통 친구들에게 과거 가람 씨 분쟁과 공동 준비 사실을 빼고, 도건 씨를 더 앞선 사람처럼 설명했습니다. 제 잘못입니다. 그것은 사후 정리가 아니라 책임전가였고 친구 사이 신뢰를 끝까지 훼손한 행동이었습니다.",
+      "behaviorHint": "잠깐 멈춘 뒤 날짜와 파일명을 먼저 읊고, 마지막 문장에서 의도를 인정한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:a:d-5:confession"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "운영자 소명 DM의 날짜와 대화 순서가 맞으면 더는 누락을 단순 정리라고 부를 수 없습니다. 그 기록은 제가 사실표보다 변명을 먼저 만들었다는 점을 보여 줍니다.",
+      "behaviorHint": "증거를 보는 순간 표정이 굳고, 곧바로 용어를 낮추려다 결국 핵심을 인정한다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-6",
+      "id": "friend09:beat:a:d-5:evidence_hit"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "그때 분위기가 이미 이상했고요, 문제 계정이 제 거라고 바로 단정하긴 어려워요. 계정 하나 흔적이 있다고 해서 글까지 제가 올린 건, 그건 별개잖아요.",
+      "behaviorHint": "숨을 한번 길게 들이쉰 뒤 커뮤니티 분위기와 압박을 먼저 늘어놓는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-1:deny"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "숨 좀 고르고 말씀드리면, 보조 메일로 새 계정 하나를 만든 정황은 있어 보여요. 그래도 그 흐름에서 최종 글까지 제가 다 쥐었다고 보긴 어렵고, 제가 받은 압박이 너무 컸어요.",
+      "behaviorHint": "질문 끝을 되묻듯 받아치며 행동과 도구를 분리해 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-1:hedge"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "계정 생성과 로그인은 제가 했어요. 다만 올린 건 저 혼자 튀어나온 글이 아니라 유리 씨가 건넨 자료와, 그때 분위기가 이미 이상했던 흐름에서 밀린 결과였어요.",
+      "behaviorHint": "어깨를 움츠리고 자기 몫을 인정하되 곧바로 상대 준비물을 끌어온다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-1:partial"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "최종 폭로글과 첫 댓글이 제 손에서 나간 건 맞아요. 그래도 유리 씨 쪽도 문구와 자료를 같이 맞췄고, 저는 도구만 쥔 사람처럼 남길 수 있게 그 틀을 먼저 만들었어요.",
+      "behaviorHint": "억울한 표정을 유지한 채 자신은 실행 도구였다는 프레임을 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-1:blame"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "익명 계정은 제가 보조 메일과 기기로 만들었고, 폭로글과 첫 댓글도 제가 올렸어요. 제 잘못이에요. 운영자 문의가 오기 전부터 지울 준비까지 하면서도 멈추지 않은 건 제 책임이에요.",
+      "behaviorHint": "목이 잠긴 듯 한 박자 쉬고, 자신이 숨긴 결정 장면을 낮게 털어놓는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-1:confession"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "운영자 로그가 가입, 로그인, 삭제 시도까지 찍으면 더는 도구만이었다고 못 하겠어요. 그 기록 앞에서는 계정 하나였다는 말도, 그건 별개잖아요라는 핑계도 안 서요.",
+      "behaviorHint": "증거가 들이밀리면 먼저 숨을 고르고, 더는 잘라 말할 수 없다는 듯 시선을 떨군다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-4",
+      "id": "friend09:beat:b:d-1:evidence_hit"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "이걸 제 단독 범행으로만 묶는 건 아니에요. 그때 분위기가 이미 이상했고, 유리 씨 자료와 말투가 먼저 깔려 있었는데 제가 혼자 설계한 사람처럼 보이잖아요.",
+      "behaviorHint": "숨을 한번 길게 들이쉰 뒤 커뮤니티 분위기와 압박을 먼저 늘어놓는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-3:deny"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "제가 받은 압박이 컸다는 걸 먼저 말씀드려야 할 것 같아요. 그 흐름에서 최종 버튼은 제가 눌렀어도 내용 뼈대는 이미 유리 씨 쪽에서 와 있었어요.",
+      "behaviorHint": "질문 끝을 되묻듯 받아치며 행동과 도구를 분리해 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-3:hedge"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "유리 씨와 문구를 주고받으며 역할을 나눈 건 맞아요. 다만 계정과 올린 건 제가 맡았어도, 이미지와 확산은 유리 씨 쪽도 같이 밀었어요.",
+      "behaviorHint": "어깨를 움츠리고 자기 몫을 인정하되 곧바로 상대 준비물을 끌어온다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-3:partial"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "공모였는데도 제가 도구만 잡은 사람처럼 잘라 말한 건 맞아요. 그래도 유리 씨 쪽도 후기 이미지와 타이밍을 먼저 짜 놓고, 저는 그 흐름에서 실행만 한 사람처럼 보이게 놔뒀어요.",
+      "behaviorHint": "억울한 표정을 유지한 채 자신은 실행 도구였다는 프레임을 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-3:blame"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "이 명예훼손은 제 단독이 아니라 유리 씨와 함께 벌인 공모였어요. 제 책임이에요. 제가 계정과 업로드를 맡아 실행했고, 그 역할을 알고도 멈추지 않은 걸 인정해요.",
+      "behaviorHint": "목이 잠긴 듯 한 박자 쉬고, 자신이 숨긴 결정 장면을 낮게 털어놓는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-3:confession"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "원본 메신저가 역할 분담까지 보여 주면 더는 이용당한 느낌만 앞세울 수 없어요. 그 대화를 보면 제가 유리 씨 뒤에 숨으며 제 몫을 일부러 줄여 말한 게 드러나요.",
+      "behaviorHint": "증거가 들이밀리면 먼저 숨을 고르고, 더는 잘라 말할 수 없다는 듯 시선을 떨군다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-2",
+      "id": "friend09:beat:b:d-3:evidence_hit"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "운영자님께 보낸 말이 책임전가는 아니에요. 그때 분위기가 이미 이상했고, 예전 가람 씨 이야기까지 꺼내면 더 엉킬 것 같았어요.",
+      "behaviorHint": "숨을 한번 길게 들이쉰 뒤 커뮤니티 분위기와 압박을 먼저 늘어놓는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-5:deny"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "제가 좀, 숨 좀 고르고 말씀드리면 과거 분쟁을 소명에 바로 붙이지 않은 건 맞아요. 그래도 그 흐름에서 핵심만 먼저 말한 거지, 책임을 밀어내려던 건 아니었어요.",
+      "behaviorHint": "질문 끝을 되묻듯 받아치며 행동과 도구를 분리해 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-5:hedge"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "예전 앙금과 공동 준비 사실을 뺀 채 제가 끌려갔다고 말한 건 사실이에요. 다만 억울한 건, 그걸 안 넣으면 제가 조금이라도 덜 악질처럼 보일 거라고 믿었다는 거예요.",
+      "behaviorHint": "어깨를 움츠리고 자기 몫을 인정하되 곧바로 상대 준비물을 끌어온다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-5:partial"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "제가 이용당한 느낌만 앞세운 건 맞아요. 그래도 유리 씨 쪽도 '이전 얘기는 빼자'고 맞추면서, 운영자 앞에서는 저를 더 앞선 사람처럼 세웠어요.",
+      "behaviorHint": "억울한 표정을 유지한 채 자신은 실행 도구였다는 프레임을 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-5:blame"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "폭로가 들통난 뒤 제가 과거 가람 씨 분쟁과 공동 준비 사실을 숨기고, 유리 씨를 더 앞선 사람처럼 말했습니다. 제 잘못이에요. 그건 면피용 책임전가였고 친구 사이 의리까지 망가뜨린 행동이었어요.",
+      "behaviorHint": "목이 잠긴 듯 한 박자 쉬고, 자신이 숨긴 결정 장면을 낮게 털어놓는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "friend09:beat:b:d-5:confession"
+    },
+    {
+      "caseId": "friend-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "운영자 소명과 후속 대화가 같이 나오면 더는 억울한 건만 말할 수 없어요. 그 기록을 보면 제가 받은 압박이 있었다 해도, 먼저 면피 문장부터 찾은 건 제 선택이네요.",
+      "behaviorHint": "증거가 들이밀리면 먼저 숨을 고르고, 더는 잘라 말할 수 없다는 듯 시선을 떨군다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-6",
+      "id": "friend09:beat:b:d-5:evidence_hit"
+    }
+  ]
+}

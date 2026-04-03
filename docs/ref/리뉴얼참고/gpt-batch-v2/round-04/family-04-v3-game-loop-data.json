@@ -1,0 +1,1753 @@
+{
+  "caseId": "family-04",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "잘린 화면과 원본 송금의 간극",
+      "description": "부분 캡처와 은행 원본을 함께 대조해, 누가 무엇을 보고도 무엇을 숨겼는지 묻는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "서하린 씨, 이 잘린 캡처를 보낼 때 원본 거래내역도 이미 확인하고 있었습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.unlock.s2.a.context_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "상단 메모가 일부라도 보이는 원본을 두고, 왜 민규에게는 잔액만 보이게 잘라 보냈습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.unlock.s3.a.responsibility_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "개인계좌 유입이 아니라 기관 이체 가능성이 보였는데도, 왜 먼저 횡령 의심으로 좁혔는지 설명하십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.unlock.s3.a.responsibility_0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "서민규 씨, '정리본' 류 파일명이 누나의 잘린 캡처보다 먼저 바뀐 사실은 인정합니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d4.unlock.s2.b.context_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "기부 자료 파일명을 흐리게 바꿔 놓고도, 왜 오해의 전부를 누나 캡처 탓으로만 돌렸습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d1.unlock.s2.b.context_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "원본을 더 요구하기 전에 누나를 먼저 횡령 쪽으로 읽은 건, 화면 때문입니까 아니면 이미 있던 두려움 때문입니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d2.unlock.s4.b.emotion_0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "사라진 원본과 흐려진 폴더",
+      "description": "원본 반출과 클라우드 변경 이력을 겹쳐, 누가 절차를 먼저 무너뜨렸는지 파고드는 카드.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "서하린 씨, 도어락 기록이 곧바로 횡령 의도까지 증명하진 않는데, 왜 그 반출을 재산 선점으로 확장해 해석했습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d3.unlock.s5.a.truth_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "민규의 불안을 키운 본인의 문서 통제 태도는 이 반출과 완전히 무관하다고 보십니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.unlock.s3.a.relationship_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "공동 폴더가 이미 흐려진 상태였더라도, 왜 원본 스캔이 아니라 잘린 화면으로 응수했는지 답하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d4.unlock.s4.a.emotion_0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "서민규 씨, 도어락 기록과 금고 사진이 이어질 때도 이걸 단순 보관이라고만 말씀하시겠습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.s2.b.context_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "보관 목적이었다면, 사흘 동안 즉시 알리지 않은 이유를 절차상으로 설명해 보십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d3.unlock.s3.b.responsibility_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "파일명 변경도 본인, 원본 반출도 본인인데, 왜 아직도 폴더 혼선의 주된 책임을 누나 쪽에만 둡니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d4.unlock.s3.b.responsibility_0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "기부 진실과 바깥으로 번진 의심",
+      "description": "장학재단 영수증과 외부 문의 내역을 겹쳐, 오해의 종착점과 의심 확산의 책임을 묻는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "서하린 씨, 장학재단 영수증이 확인되면 3,200만원 횡령 단정은 바로 철회하실 겁니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.unlock.s5.a.truth_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "세무 지인 문의가 부모님 확인보다 앞선 건, 사실 확인보다 방어가 먼저였기 때문 아닙니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.unlock.s3.a.responsibility_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "예전 차용금 기억이 다시 반복될까 두려워 민규를 먼저 막아야 한다고 느낀 적이 있습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d5.unlock.s4.a.emotion_0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "서민규 씨, 장학재단 영수증이 원본으로 확인되면 누나를 향한 횡령 의심도 함께 거두시겠습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.unlock.s5.b.truth_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "부동산 지인 문의가 부모님 확인보다 먼저였다는 사실은 인정하십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.unlock.s2.b.context_0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "또 본인이 먼저 도둑 취급받을까 두려워 누나를 선제적으로 의심한 건 아닌지 답하십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d5.unlock.s4.b.emotion_0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.s2.a.context_0",
+            "factText": "하린은 메모 상단의 '향토장학기금' 단서를 보고도 파일명 혼선 쪽에 더 무게를 실었다.",
+            "tags": [
+              "context",
+              "evidence",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "memo": {
+                "exact": "향토장학기금",
+                "neutral": "기부 목적 메모",
+                "judgeRef": "장학기금 메모"
+              },
+              "fileName": {
+                "exact": "정리본-2 / 보낸 것",
+                "neutral": "모호한 파일명",
+                "judgeRef": "'정리본' 류 이름"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.s3.a.responsibility_0",
+            "factText": "하린은 민규 개인계좌로 돈이 갔다는 확인 없이도 횡령 서사를 먼저 만들었다.",
+            "tags": [
+              "responsibility",
+              "harm",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "서민규",
+                "judgeRef": "동생",
+                "neutral": "상대"
+              },
+              "amount": {
+                "exact": "32,000,000원",
+                "rounded": "3,200만원",
+                "neutral": "해당 금액"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.s4.a.emotion_0",
+            "factText": "하린의 단정은 부모 재산 정리에서 배제될 수 있다는 공포와 맞물려 있었다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.s5.a.truth_0",
+            "factText": "3,200만원은 형제 누구의 횡령이 아니라 부모의 향토장학재단 기부였다.",
+            "tags": [
+              "institution",
+              "beneficiary",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "32,000,000원",
+                "rounded": "3,200만원",
+                "neutral": "해당 금액"
+              },
+              "institution": {
+                "fullName": "향토장학재단",
+                "judgeRef": "장학재단",
+                "neutral": "외부 기관"
+              },
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.s2.a.context_0",
+            "factText": "하린 휴대폰에는 잘린 잔액 화면을 연속 저장한 기록이 남아 있어, 부분 캡처가 우발적 실수만은 아니었음이 드러난다.",
+            "tags": [
+              "evidence",
+              "act",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "dateExact": "추궁 11분 전",
+                "period": "같은 날 오전",
+                "neutral": "그 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.s3.a.responsibility_0",
+            "factText": "하린은 원본 거래내역을 보고도 민규에게는 잘린 화면만 먼저 보내 해석의 주도권을 잡으려 했다.",
+            "tags": [
+              "responsibility",
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "memo": {
+                "exact": "향토장학기금",
+                "neutral": "기부 목적 메모",
+                "judgeRef": "장학기금 메모"
+              },
+              "person": {
+                "fullName": "서민규",
+                "judgeRef": "동생",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.s4.a.emotion_0",
+            "factText": "하린은 '문서를 맡은 사람이 방심했다'는 평가를 피하려고 가장 의심이 또렷한 장면을 골랐다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.s5.a.truth_0",
+            "factText": "부분 캡처 공유는 텍스트 위조는 아니었지만 맥락을 의도적으로 비틀어 민규의 의심을 키운 행위로 정리된다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "서민규",
+                "judgeRef": "동생",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.s2.a.context_0",
+            "factText": "도어락 기록과 금고 사진은 민규가 인감·등기 원본을 작업실 금고로 옮겼고 같은 날 되돌리지 않았음을 보여 준다.",
+            "tags": [
+              "evidence",
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "인감과 부동산 등기 원본",
+                "neutral": "원본 서류",
+                "judgeRef": "인감·등기 원본"
+              },
+              "location": {
+                "exact": "민규 작업실 금고",
+                "neutral": "외부 보관 장소",
+                "judgeRef": "작업실 금고"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.s3.a.relationship_0",
+            "factText": "하린의 강한 문서 통제 태도는 민규에게 '누나가 먼저 처리할 수 있다'는 불안을 키웠다.",
+            "tags": [
+              "relationship",
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "서민규",
+                "judgeRef": "동생",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.s4.a.emotion_0",
+            "factText": "하린은 원본 반출을 보자마자 자신이 상속 정리에서 밀릴 수 있다는 공포를 느꼈다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.s5.a.truth_0",
+            "factText": "민규의 행위는 무단 반출이지만, 하린이 그것을 즉시 횡령 의도까지 확장한 건 과장이었다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "서민규",
+                "judgeRef": "동생",
+                "neutral": "상대"
+              },
+              "document": {
+                "exact": "인감과 부동산 등기 원본",
+                "neutral": "원본 서류",
+                "judgeRef": "인감·등기 원본"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.s2.a.context_0",
+            "factText": "하린은 공동 폴더에 원본 대신 잘린 캡처만 먼저 올리고 설명란도 채우지 않았다.",
+            "tags": [
+              "rule",
+              "act",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "platform": {
+                "exact": "공동 폴더",
+                "neutral": "공유 공간",
+                "judgeRef": "공동 폴더"
+              },
+              "time": {
+                "dateExact": "추궁 11분 전",
+                "period": "같은 날 오전",
+                "neutral": "그 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.s3.a.context_0",
+            "factText": "민규의 파일명 변경이 선행했더라도, 하린이 원본 공개를 미루며 오해의 프레임을 강화한 책임은 남는다.",
+            "tags": [
+              "context",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "fileName": {
+                "exact": "정리본-2 / 보낸 것",
+                "neutral": "모호한 파일명",
+                "judgeRef": "'정리본' 류 이름"
+              },
+              "platform": {
+                "exact": "공동 폴더",
+                "neutral": "공유 공간",
+                "judgeRef": "공동 폴더"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.s4.a.emotion_0",
+            "factText": "하린은 공동 폴더에서도 자신의 해석이 먼저 서도록 만들고 싶어 규칙보다 통제감을 택했다.",
+            "tags": [
+              "emotion",
+              "motive",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "platform": {
+                "exact": "공동 폴더",
+                "neutral": "공유 공간",
+                "judgeRef": "공동 폴더"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.s5.a.truth_0",
+            "factText": "공동 폴더 원칙 위반은 하린의 크롭 업로드와 민규의 모호한 파일명 변경이 함께 만든 결과다.",
+            "tags": [
+              "rule",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "서민규",
+                "judgeRef": "동생",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.s2.a.context_0",
+            "factText": "하린의 세무 문의는 민규의 예전 차용금 기억을 배경으로 시작됐고, 이미 동생 책임을 상정하고 있었다.",
+            "tags": [
+              "context",
+              "motive",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "10,000,000원",
+                "rounded": "1,000만원",
+                "neutral": "예전 차용금"
+              },
+              "time": {
+                "dateExact": "2022년",
+                "period": "사업대금이 막혔던 때",
+                "neutral": "예전 그 시기"
+              },
+              "institution": {
+                "fullName": "세무·부동산 지인",
+                "judgeRef": "외부 지인",
+                "neutral": "제3자"
+              },
+              "person": {
+                "fullName": "서민규",
+                "judgeRef": "동생",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.s3.a.responsibility_0",
+            "factText": "하린은 메시지 문구에서 '가족 간 증여 회수'를 먼저 물으며 부모 확인 전 의심을 외부 권위로 굳히려 했다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "institution": {
+                "fullName": "세무·부동산 지인",
+                "judgeRef": "외부 지인",
+                "neutral": "제3자"
+              },
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.s4.a.emotion_0",
+            "factText": "하린은 차용금 문제가 반복될까 두려워, 부모 앞에서도 냉정한 질문보다 선제 견제를 택했다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "10,000,000원",
+                "rounded": "1,000만원",
+                "neutral": "예전 차용금"
+              },
+              "time": {
+                "dateExact": "2022년",
+                "period": "사업대금이 막혔던 때",
+                "neutral": "예전 그 시기"
+              },
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.s5.a.truth_0",
+            "factText": "하린은 부모 확인보다 외부 문의와 의심 제기를 먼저 선택해 관계 회복보다 방어를 앞세웠다.",
+            "tags": [
+              "timeline",
+              "relationship",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "institution": {
+                "fullName": "세무·부동산 지인",
+                "judgeRef": "외부 지인",
+                "neutral": "제3자"
+              },
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.s2.b.context_0",
+            "factText": "민규 계정의 파일명 변경은 누나의 잘린 캡처보다 두 시간 먼저 있었고, 그 모호함이 오해의 배경이 됐다.",
+            "tags": [
+              "context",
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "fileName": {
+                "exact": "정리본-2 / 보낸 것",
+                "neutral": "모호한 파일명",
+                "judgeRef": "'정리본' 류 이름"
+              },
+              "time": {
+                "dateExact": "잘린 캡처보다 2시간 전",
+                "period": "같은 날 이른 시각",
+                "neutral": "조금 앞선 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.s3.b.responsibility_0",
+            "factText": "민규 역시 누나가 돈을 가져갔다는 직접 증거 없이 문서 통제 이미지를 혐의 근거로 삼았다.",
+            "tags": [
+              "responsibility",
+              "harm",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "서하린",
+                "judgeRef": "누나",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.s4.b.emotion_0",
+            "factText": "민규는 가까이 산다는 이유와 예전 빚 때문에 자신이 먼저 범인 취급될까 두려워했다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "10,000,000원",
+                "rounded": "1,000만원",
+                "neutral": "예전 차용금"
+              },
+              "time": {
+                "dateExact": "2022년",
+                "period": "사업대금이 막혔던 때",
+                "neutral": "예전 그 시기"
+              },
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.s5.b.truth_0",
+            "factText": "누나를 향한 횡령 의심 역시 장학재단 기부라는 진실 앞에서 무너진다.",
+            "tags": [
+              "institution",
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "institution": {
+                "fullName": "향토장학재단",
+                "judgeRef": "장학재단",
+                "neutral": "외부 기관"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.s2.b.context_0",
+            "factText": "원본을 확인한 뒤에도 민규는 텍스트 조작은 없었다는 사실과 별개로 크롭이 만든 인상을 계속 붙잡고 있었다.",
+            "tags": [
+              "evidence",
+              "context",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "memo": {
+                "exact": "향토장학기금",
+                "neutral": "기부 목적 메모",
+                "judgeRef": "장학기금 메모"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.s3.b.responsibility_0",
+            "factText": "민규는 부분 캡처를 본 직후 원본 요구보다 '또 나부터냐'는 감정으로 먼저 반응했다.",
+            "tags": [
+              "responsibility",
+              "emotion",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {},
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.s4.b.emotion_0",
+            "factText": "민규는 예전 빚 때문에 자신이 또 도둑 취급받는다고 느껴 누나의 크롭을 더 악의적으로 읽었다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "10,000,000원",
+                "rounded": "1,000만원",
+                "neutral": "예전 차용금"
+              },
+              "time": {
+                "dateExact": "2022년",
+                "period": "사업대금이 막혔던 때",
+                "neutral": "예전 그 시기"
+              },
+              "person": {
+                "fullName": "서하린",
+                "judgeRef": "누나",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.s5.b.truth_0",
+            "factText": "하린의 크롭은 잘못이지만, 민규 역시 그 화면 하나로 횡령 확신을 키운 책임을 진다.",
+            "tags": [
+              "responsibility",
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "서하린",
+                "judgeRef": "누나",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.s2.b.context_0",
+            "factText": "민규는 누나 불신 때문에 인감과 등기 원본을 부모 집이 아니라 자기 작업실 금고로 옮겼다.",
+            "tags": [
+              "act",
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "인감과 부동산 등기 원본",
+                "neutral": "원본 서류",
+                "judgeRef": "인감·등기 원본"
+              },
+              "location": {
+                "exact": "민규 작업실 금고",
+                "neutral": "외부 보관 장소",
+                "judgeRef": "작업실 금고"
+              },
+              "person": {
+                "fullName": "서하린",
+                "judgeRef": "누나",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.s3.b.responsibility_0",
+            "factText": "민규는 사흘 동안 누구에게도 반출 사실을 명확히 알리지 않아 보관 명분을 스스로 무너뜨렸다.",
+            "tags": [
+              "timeline",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "dateExact": "사흘간",
+                "period": "며칠 동안",
+                "neutral": "그 기간"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.s4.b.emotion_0",
+            "factText": "민규는 예전 빚 때문에 상속 논의에서 밀릴까 봐 원본을 손에 쥐고 있어야 안심된다고 느꼈다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "10,000,000원",
+                "rounded": "1,000만원",
+                "neutral": "예전 차용금"
+              },
+              "time": {
+                "dateExact": "2022년",
+                "period": "사업대금이 막혔던 때",
+                "neutral": "예전 그 시기"
+              },
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.s5.b.truth_0",
+            "factText": "보관 목적이 있었다 해도 무단 반출과 무통지는 절차 위반으로 남는다.",
+            "tags": [
+              "rule",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "document": {
+                "exact": "인감과 부동산 등기 원본",
+                "neutral": "원본 서류",
+                "judgeRef": "인감·등기 원본"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.s2.b.context_0",
+            "factText": "민규 계정은 기부 자료 파일명을 '정리본-2'처럼 바꿨고 설명란을 비워 두어 맥락을 흐렸다.",
+            "tags": [
+              "rule",
+              "act",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "platform": {
+                "exact": "공동 폴더",
+                "neutral": "공유 공간",
+                "judgeRef": "공동 폴더"
+              },
+              "fileName": {
+                "exact": "정리본-2 / 보낸 것",
+                "neutral": "모호한 파일명",
+                "judgeRef": "'정리본' 류 이름"
+              },
+              "time": {
+                "dateExact": "잘린 캡처보다 2시간 전",
+                "period": "같은 날 이른 시각",
+                "neutral": "조금 앞선 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.s3.b.responsibility_0",
+            "factText": "민규의 파일명 변경은 누나 크롭 이전에 오해의 첫 단추를 만들었지만, 그는 계속 누나 잘못 뒤에 숨으려 했다.",
+            "tags": [
+              "responsibility",
+              "timeline",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "서하린",
+                "judgeRef": "누나",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.s4.b.emotion_0",
+            "factText": "민규는 공동 폴더가 누나 방식대로만 돌아가는 데 대한 반감으로 대충 아는 표현을 골랐다.",
+            "tags": [
+              "emotion",
+              "relationship",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "서하린",
+                "judgeRef": "누나",
+                "neutral": "상대"
+              },
+              "fileName": {
+                "exact": "정리본-2 / 보낸 것",
+                "neutral": "모호한 파일명",
+                "judgeRef": "'정리본' 류 이름"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.s5.b.truth_0",
+            "factText": "정리 습관이라는 변명과 별개로, 민규의 모호한 파일명 변경은 공동 폴더 원칙 위반으로 확정된다.",
+            "tags": [
+              "rule",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "platform": {
+                "exact": "공동 폴더",
+                "neutral": "공유 공간",
+                "judgeRef": "공동 폴더"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.s2.b.context_0",
+            "factText": "민규는 같은 날 오후 부동산 지인에게 누나의 선처분 가능성을 먼저 물었고, 그 시점엔 부모 확인이 아직 없었다.",
+            "tags": [
+              "timeline",
+              "act",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "institution": {
+                "fullName": "세무·부동산 지인",
+                "judgeRef": "외부 지인",
+                "neutral": "제3자"
+              },
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.s3.b.responsibility_0",
+            "factText": "민규의 통화·문자 내용은 누나가 먼저 움직일 수 있다는 전제를 깔고 있어 중립적 확인 문의로 보기 어렵다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "institution": {
+                "fullName": "세무·부동산 지인",
+                "judgeRef": "외부 지인",
+                "neutral": "제3자"
+              },
+              "person": {
+                "fullName": "서하린",
+                "judgeRef": "누나",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.s4.b.emotion_0",
+            "factText": "민규는 자신이 또 도둑 취급받을까 봐 누나를 먼저 의심해야 덜 무너진다고 느꼈다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.s5.b.truth_0",
+            "factText": "민규도 부모보다 외부 확인과 의심 확산을 먼저 택해 가족대화를 더 악화시켰다.",
+            "tags": [
+              "timeline",
+              "relationship",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "institution": {
+                "fullName": "세무·부동산 지인",
+                "judgeRef": "외부 지인",
+                "neutral": "제3자"
+              },
+              "person": {
+                "fullName": "서영복 부부",
+                "judgeRef": "부모님",
+                "neutral": "부모"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "contradiction-1",
+        "targetParty": "a",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ],
+        "text": "하린이 '확인용 화면'이었다고 말한 직후, 잘라 저장한 기록과 공동 폴더 공백 설명이 함께 드러나면 말의 범위가 스스로 무너진다."
+      },
+      {
+        "id": "contradiction-2",
+        "targetParty": "b",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "text": "민규가 '잠깐 보관'이라고 말해도, 사흘간 무통지와 작업실 금고 사진이 이어지면 보관 명분이 곧바로 흔들린다."
+      },
+      {
+        "id": "contradiction-3",
+        "targetParty": "both",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "text": "두 사람 모두 '확인 차원'이라고 말하지만, 외부 문의 문구에는 이미 상대 책임이 전제로 깔려 있어 확인과 단정의 경계가 무너진다."
+      },
+      {
+        "id": "contradiction-4",
+        "targetParty": "both",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "text": "하린은 민규의 모호한 파일명을, 민규는 하린의 잘린 캡처를 탓하지만, 두 흔적이 같은 오해를 서로 밀어 올린다는 점에서 각자의 방패가 동시에 약해진다."
+      }
+    ],
+    "interjections": [
+      {
+        "id": "interjection-1",
+        "speaker": "a",
+        "trigger": "b가 '정리하려고 바꿨다'고 말할 때",
+        "line": "정리는요, 설명을 지운 거죠. 날짜하고 원본명을 같이 보십시오.",
+        "behaviorHint": "하린이 바로 파일명 변경 로그를 가리키며 짧게 끊어든다."
+      },
+      {
+        "id": "interjection-2",
+        "speaker": "b",
+        "trigger": "a가 '확인하려고 보냈다'고 말할 때",
+        "line": "확인하려고요? 왜 하필 메모는 안 보이게 잘라서요.",
+        "behaviorHint": "민규가 웃음 섞인 억울한 톤으로 되받는다."
+      },
+      {
+        "id": "interjection-3",
+        "speaker": "both",
+        "trigger": "장학재단 영수증이 제시될 때",
+        "line": "그걸 왜 우리한테 바로 안 알려 주셨는지부터 다시 물어야 합니다.",
+        "behaviorHint": "두 사람이 거의 동시에 말문을 열어, 분노의 방향이 서로에게서 부모 결정의 비공개로 잠깐 이동한다."
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "outburst-a-1",
+        "speaker": "a",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "triggerState": "S4",
+        "line": "제가 욕심내 보일까 봐 먼저 막으려 했던 겁니다. 그게 이렇게까지 비틀어질 줄은 몰랐습니다.",
+        "behaviorHint": "하린이 처음으로 문장 중간에 숨을 고르며 목소리의 단단함이 무너진다."
+      },
+      {
+        "id": "outburst-a-2",
+        "speaker": "a",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ],
+        "triggerState": "S4",
+        "line": "문서를 제가 정리해 왔다고 해서 다 제가 통제하려던 사람처럼 보이는 게 제일 억울합니다.",
+        "behaviorHint": "서류를 정리하던 손이 멈추고, 눈가가 잠깐 굳는다."
+      },
+      {
+        "id": "outburst-b-1",
+        "speaker": "b",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "triggerState": "S4",
+        "line": "결국 또 저부터 도둑 취급이잖아요. 그래서 저도 먼저 물어볼 수밖에 없었던 겁니다.",
+        "behaviorHint": "민규가 되묻듯 소리를 높였다가 마지막엔 쉰 목소리로 떨어진다."
+      },
+      {
+        "id": "outburst-b-2",
+        "speaker": "b",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ],
+        "triggerState": "S4",
+        "line": "누나가 다 쥐고 가는 것 같으니까 저라도 뭘 붙들고 있어야 안 무너질 것 같았어요.",
+        "behaviorHint": "민규가 손을 모았다 폈다 하며 방어 자세를 풀지 못한다."
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "family04:transition:a:d-2:s0_s1",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "partial_screenshot_question",
+      "line": "그 화면이 전부는 아니었습니다. 다만 그때는 잔액 확인이 먼저라고 판단했습니다.",
+      "behaviorHint": "하린이 바로 '그 시점만 보면'으로 문장을 좁힌다."
+    },
+    {
+      "id": "family04:transition:a:d-2:s1_s2",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "잘린 캡처를 따로 저장해 보낸 건 맞습니다. 그 점까지는 부인하지 않겠습니다.",
+      "behaviorHint": "크롭 흔적이 제시되자 하린의 답이 더 짧고 단단해진다.",
+      "revealAtom": "d2.unlock.s2.a.context_0",
+      "afterEvidence": "e-1"
+    },
+    {
+      "id": "family04:transition:a:d-2:s2_s3",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "original_statement_followup",
+      "line": "원본을 보고도 그 화면을 먼저 보냈다는 지적은 받아들입니다. 대신 폴더 맥락이 이미 흐려져 있었다는 점도 보셔야 합니다.",
+      "behaviorHint": "하린이 인정 뒤 곧바로 민규의 파일명 변경으로 논점을 밀어낸다.",
+      "revealAtom": "d2.unlock.s3.a.responsibility_0"
+    },
+    {
+      "id": "family04:transition:a:d-2:s3_s5",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_presented",
+      "line": "은행 원본까지 확인되면 더는 돌릴 수 없네요. 제가 맥락을 잘라 의심을 키운 겁니다.",
+      "behaviorHint": "원본 거래내역이 놓이는 순간 하린이 서류를 내려놓고 결론만 말한다.",
+      "revealAtom": "d2.unlock.s5.a.truth_0",
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "family04:transition:a:d-4:s0_s1",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "shared_folder_rule_question",
+      "line": "임시로 올린 자료였습니다. 원칙 전체를 깨려던 건 아니었습니다.",
+      "behaviorHint": "하린이 규칙 위반을 '임시'라는 말로 축소한다."
+    },
+    {
+      "id": "family04:transition:a:d-4:s1_s2",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "로그가 그렇게 남아 있다면, 제가 원본 대신 크롭본을 올린 사실은 인정하겠습니다.",
+      "behaviorHint": "공동 폴더 이력이 나오자 하린이 더 이상 의도 부인보다 사실 축소로 옮겨간다.",
+      "revealAtom": "d4.unlock.s2.a.context_0",
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "family04:transition:a:d-4:s2_s3",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "crop_reason_followup",
+      "line": "제 위반은 맞습니다. 다만 민규가 먼저 파일명을 흐려 놓은 상태였다는 점까지 같이 봐야 합니다.",
+      "behaviorHint": "하린이 책임을 인정하면서도 선행 맥락을 빼놓지 않는다.",
+      "revealAtom": "d4.unlock.s3.a.context_0"
+    },
+    {
+      "id": "family04:transition:a:d-4:s3_s5",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 공동 폴더 규칙은 저도 어겼습니다. 제 크롭 업로드가 오해를 키웠습니다.",
+      "behaviorHint": "마지막엔 변명 대신 짧은 시인으로 정리된다.",
+      "revealAtom": "d4.unlock.s5.a.truth_0"
+    },
+    {
+      "id": "family04:transition:a:d-5:s0_s1",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "accusation_before_parents_question",
+      "line": "단정이라기보다 가능성을 먼저 본 겁니다. 부모님 앞에서도 확정 표현은 피하려고 했습니다.",
+      "behaviorHint": "하린이 질문형 언어를 방패처럼 세운다."
+    },
+    {
+      "id": "family04:transition:a:d-5:s1_s4",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_old_loan_fear",
+      "line": "예전 차용금이 다시 반복될까 봐 겁났습니다. 그래서 확인보다 견제가 먼저 나갔습니다.",
+      "behaviorHint": "비판 없는 질문이 들어오자 하린의 문장에 처음으로 감정이 섞인다.",
+      "revealAtom": "d5.unlock.s4.a.emotion_0"
+    },
+    {
+      "id": "family04:transition:a:d-5:s4_s3",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S3",
+      "trigger": "e-6_presented",
+      "line": "메시지가 남아 있다면 제 문의가 중립적이었다고 하긴 어렵겠습니다. 이미 민규 쪽을 전제로 묻고 있었네요.",
+      "behaviorHint": "증거가 제시되자 감정 고백이 다시 구조화된 인정으로 접힌다.",
+      "revealAtom": "d5.unlock.s3.a.responsibility_0",
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "family04:transition:a:d-5:s3_s5",
+      "caseId": "family-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "부모님보다 외부 문의와 의심 제기를 먼저 택한 건 제 잘못입니다. 관계 유지를 핑계로 질문형 단정을 썼습니다.",
+      "behaviorHint": "하린이 더 이상 제도 언어 뒤로 숨지 않고 책임 문장만 남긴다.",
+      "revealAtom": "d5.unlock.s5.a.truth_0"
+    },
+    {
+      "id": "family04:transition:b:d-3:s0_s1",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "seal_document_question",
+      "line": "훔친 게 아니라 잠깐 안전한 데 둔 겁니다. 바로 말 못 한 건 싸움이 커질까 봐서였고요.",
+      "behaviorHint": "민규가 억울함을 내세우면서도 보관 논리로 한 걸음 물러난다."
+    },
+    {
+      "id": "family04:transition:b:d-3:s1_s2",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "네, 제가 작업실 금고로 옮긴 건 맞습니다. 다만 제 이익보다 보관이 먼저였습니다.",
+      "behaviorHint": "도어락 기록과 사진이 맞물리자 민규가 사실 부인을 접는다.",
+      "revealAtom": "d3.unlock.s2.b.context_0",
+      "afterEvidence": "e-3"
+    },
+    {
+      "id": "family04:transition:b:d-3:s2_s3",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "workshop_safe_followup",
+      "line": "사흘간 바로 알리지 않은 건 잘못입니다. 누나가 문서를 먼저 쥘까 봐 겁이 났습니다.",
+      "behaviorHint": "민규의 변명이 절차 위반 인정으로 바뀌면서 누나 불신이 섞여 나온다.",
+      "revealAtom": "d3.unlock.s3.b.responsibility_0"
+    },
+    {
+      "id": "family04:transition:b:d-3:s3_s5",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "보관 목적이 있었다 해도 무단 반출은 무단 반출입니다. 그 부분은 제 잘못으로 남습니다.",
+      "behaviorHint": "민규가 끝내 보관 명분보다 절차 위반을 앞에 둔다.",
+      "revealAtom": "d3.unlock.s5.b.truth_0"
+    },
+    {
+      "id": "family04:transition:b:d-4:s0_s1",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "shared_folder_rule_question",
+      "line": "정리본은 임시 제목이었습니다. 설명은 나중에 달 생각이었어요.",
+      "behaviorHint": "민규가 은폐 의도를 부인하며 '임시'로 무게를 낮춘다."
+    },
+    {
+      "id": "family04:transition:b:d-4:s1_s2",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "로그에 제 계정이 찍혀 있으면, 파일명을 바꾼 사실은 인정하겠습니다. 설명을 비워 둔 것도요.",
+      "behaviorHint": "증거가 제시되자 민규가 실무 사실부터 하나씩 내놓는다.",
+      "revealAtom": "d4.unlock.s2.b.context_0",
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "family04:transition:b:d-4:s2_s3",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "vague_filename_question",
+      "line": "제가 흐린 건 맞지만 누나도 잘린 화면을 올렸잖아요. 이건 저 혼자 만든 혼선이 아닙니다.",
+      "behaviorHint": "인정 직후 다시 누나 쪽 책임을 크게 꺼내 든다.",
+      "revealAtom": "d4.unlock.s3.b.responsibility_0"
+    },
+    {
+      "id": "family04:transition:b:d-4:s3_s5",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "정리 습관이라는 말로 덮을 일은 아니네요. 제 파일명 변경도 공동 폴더 규칙 위반이 맞습니다.",
+      "behaviorHint": "마지막엔 억울함을 낮추고 규칙 위반을 직접 말한다.",
+      "revealAtom": "d4.unlock.s5.b.truth_0"
+    },
+    {
+      "id": "family04:transition:b:d-5:s0_s1",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "realtor_consult_question",
+      "line": "혹시 누나가 먼저 움직일 수 있는지만 물어본 겁니다. 확정하려던 건 아니었어요.",
+      "behaviorHint": "민규가 질문형 표현을 반복하며 단정 의도를 부인한다."
+    },
+    {
+      "id": "family04:transition:b:d-5:s1_s2",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "네, 부모님보다 먼저 부동산 지인에게 물은 건 맞습니다. 그 순서는 제가 잘못 잡았습니다.",
+      "behaviorHint": "통화·문자 내역이 나오자 민규가 순서 문제부터 인정한다.",
+      "revealAtom": "d5.unlock.s2.b.context_0",
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "family04:transition:b:d-5:s2_s3",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "suspicion_reason_followup",
+      "line": "누나가 문서를 쥐고 있고 잘린 화면까지 있었으니 제가 겁을 먹은 겁니다. 그래도 먼저 밖에 물은 건 제 선택이었죠.",
+      "behaviorHint": "민규가 억울함 서사 속에 자기 선택 책임을 겨우 끼워 넣는다.",
+      "revealAtom": "d5.unlock.s3.b.responsibility_0"
+    },
+    {
+      "id": "family04:transition:b:d-5:s3_s5",
+      "caseId": "family-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "제가 부모님보다 밖으로 의심을 먼저 꺼냈습니다. 억울함을 방패로 일을 더 키운 셈입니다.",
+      "behaviorHint": "민규의 말이 길어지지 않고, 마지막엔 낮은 톤의 시인으로 끝난다.",
+      "revealAtom": "d5.unlock.s5.b.truth_0"
+    }
+  ]
+}

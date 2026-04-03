@@ -1,0 +1,793 @@
+{
+  "caseId": "case-partner-07",
+  "meta": {
+    "relationshipType": "partnership",
+    "conflictSeed": "CS-5",
+    "variableModules": [
+      "VM-C",
+      "VM-A"
+    ],
+    "twistModule": "TW-6",
+    "difficulty": "medium",
+    "anchorTruth": "경쟁사에 넘어간 것으로 보인 도매단가·팝업 일정 자료는 동업자 중 누가 판 것이 아니라, 업계 모임 운영사 AE가 후속메일에 잘못 첨부한 백업 파일이었다.",
+    "emotionalBait": "경쟁사가 곧바로 같은 백화점 일정과 할인율을 언급했고, 태경의 '자료 넘겼어' 크롭 캡처와 전 직장 인맥 정황이 겹치며 고의 유출처럼 보인다.",
+    "resolutionDilemma": "유나가 업계에 태경을 누설자로 몰아간 명예훼손은 무겁지만, 동시에 태경도 비식별 처리 없는 전체 덱을 외부 운영사에 넘겨 오해의 조건을 만든 만큼 누구의 책임을 더 크게 볼지 판단이 까다롭다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "문태경",
+      "age": 34,
+      "occupation": "스페셜티 원두 브랜드 공동대표 겸 로스팅·소싱총괄",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "문제가 생기면 사람보다 파일 흐름과 발신 시각부터 정리해 말한다. 불리해질수록 '유출 의도와 자료 전달은 다른 문제'라고 선을 그으며, 평판 훼손에 대한 감정적 호소를 운영 실수의 층위로 낮추려 한다.",
+      "pride": 7,
+      "fear": "전 직장 인맥 때문에 경쟁사에 자료를 넘긴 사람으로 업계에 찍히거나, 생산총괄인데도 기본 보안 통제를 지키지 못한 대표로 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "drive_links_and_sent_mail",
+      "dailyRoutine": "아침에는 로스팅 배치와 원두 수급표를 확인하고, 오후에는 납품처와 샘플 일정을 조율하며, 밤에는 제안서와 행사 자료 링크 권한을 다시 점검한다.",
+      "sensitivePoints": [
+        "경쟁사와의 과거 인맥",
+        "자료 유출 의심",
+        "행사 준비 보안"
+      ],
+      "verbalTells": [
+        {
+          "type": "mail_chain_recital",
+          "trigger": "lying",
+          "pattern": "의도를 묻는 질문에도 메일 제목과 발신 시각, 첨부파일명을 차례로 외워 말하며 핵심 판단을 늦춘다."
+        },
+        {
+          "type": "risk_separation",
+          "trigger": "cornered",
+          "pattern": "상대가 배신을 말하면 '부주의와 유출은 다르다'며 도덕 문제를 절차 구분으로 바꾸려 한다."
+        },
+        {
+          "type": "affect_trim",
+          "trigger": "avoiding",
+          "pattern": "명예 실추 이야기가 나오면 '감정은 알겠는데 로그를 보자'며 정서 반응을 잘라낸다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "유나씨",
+        "toJudge": "제 동업자",
+        "angry": "서유나 씨!"
+      }
+    },
+    "partyB": {
+      "name": "서유나",
+      "age": 32,
+      "occupation": "스페셜티 원두 브랜드 공동대표 겸 세일즈PR총괄",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "상황을 빠르게 의도 문제로 묶어 결론부터 말한다. 조금이라도 배신처럼 보이는 정황을 잡으면 주변 맥락을 잘라내고 '결국 네가 넘긴 거잖아' 같은 문장으로 상대를 몰아붙인다.",
+      "pride": 8,
+      "fear": "영업총괄인데도 거래처 정보와 단가표를 지키지 못한 사람처럼 보이거나, 업계에서 느슨한 대표로 평가받는 것 — 그것이 두렵다.",
+      "riskAppetite": 7,
+      "digitalHabit": "crm_notes_and_group_chats",
+      "dailyRoutine": "오전에는 바이어 응답과 납품 일정을 확인하고, 오후에는 카페·백화점 미팅을 돌며, 밤에는 업계 단톡과 후속메일을 훑으면서 거래처 반응을 체크한다.",
+      "sensitivePoints": [
+        "도매단가 노출",
+        "백화점 팝업 일정 유출",
+        "업계 체면"
+      ],
+      "verbalTells": [
+        {
+          "type": "headline_accusation",
+          "trigger": "lying",
+          "pattern": "세부 사실보다 '자료를 판 건 결국 내부라는 거네' 같은 결론 문장을 먼저 던진다."
+        },
+        {
+          "type": "pressure_repeat",
+          "trigger": "cornered",
+          "pattern": "같은 질문을 짧게 되풀이하며 상대 표정이 흔들리는 순간을 잡으려 한다."
+        },
+        {
+          "type": "proof_magnification",
+          "trigger": "emotional",
+          "pattern": "캡처 한 장이나 이름 하나를 전체 배신의 증거처럼 키워 해석한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "태경씨",
+        "toJudge": "제 동업자",
+        "angry": "문태경 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "작년 샘플북 오발송 이후 두 사람은 외부 행사 자료는 반드시 비식별 덱과 추적 링크 버전으로만 공유하고, 첨부파일 직접 발송은 피하기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "봄 편집숍 입점 제안 때 누가 먼저 할인율을 과하게 노출했는지를 두 사람 모두 상대 탓 중심으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '유나가 영업 욕심에 단가를 너무 빨리 깠다' / B: '태경이 생산원가를 자세히 적은 자료를 먼저 돌렸다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "경쟁사 영업팀장 중 한 명이 태경의 전 직장 동료가 된 뒤, 행사장에서 어디까지 인사하고 어떤 자료를 보여줄지 기준을 명확히 정하지 못한 채 넘겼다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "서민아 (유나의 언니, 식음료 PR 프리랜서)",
+        "relationTo": "b",
+        "knowledgeScope": "유나가 업계 모임 다음 날 경쟁사가 같은 일정과 단가를 언급하자 태경을 사실상 범인으로 확신했고, 자신이 영업총괄로서 체면을 잃을까 극도로 불안해했다는 점을 안다.",
+        "witnessedDirectly": false,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 35,
+          "occupation": "유나의 언니, 식음료 PR 프리랜서",
+          "relationToA": "문태경와는 이 사건을 통해 알게 됨",
+          "relationToB": "유나의 언니, 식음료 PR 프리랜서",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "동생 걱정이 앞서지만 사실은 사실대로 말하려 한다. 감정이 올라오면 직설적이 된다.",
+          "addressJudge": "재판관님",
+          "addressA": "태경씨",
+          "addressB": "유나씨"
+        },
+        "addressA": "태경",
+        "addressB": "유나"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "박수민 (업계 모임 운영사 AE)",
+        "relationTo": "both",
+        "knowledgeScope": "프로젝터 점검용 백업 파일을 받은 뒤 후속메일에 잘못 첨부한 사람으로, 실제 발송 경위와 실수가 어디서 생겼는지 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 35,
+          "occupation": "업계 모임 운영사 AE",
+          "relationToA": "문태경을 업무상 알고 있음",
+          "relationToB": "서유나을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "태경씨",
+          "addressB": "유나씨"
+        },
+        "addressA": "문태경씨",
+        "addressB": "서유나씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "윤세아 (커피산업협회 사무국 팀장)",
+        "relationTo": "both",
+        "knowledgeScope": "행사 후 공식 후속메일의 수신자 목록, 첨부파일 해시, 그리고 유나가 사무국에 태경 의심을 전달한 시점을 원본 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 38,
+          "occupation": "커피산업협회 사무국 팀장",
+          "relationToA": "문태경을 업무상 알고 있음",
+          "relationToB": "서유나을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "문태경씨",
+          "addressB": "서유나씨"
+        },
+        "addressA": "태경씨",
+        "addressB": "유나씨"
+      }
+    ],
+    "relationshipType": "partnership"
+  },
+  "context": {
+    "contextType": "post_industry_meetup",
+    "description": "대형 카페·유통 바이어가 모이는 업계 모임 직후라 follow-up 한 통이 곧 납품 기회와 평판으로 이어지는 시점이었다. 그런데 경쟁사가 곧바로 그들의 백화점 팝업 주간과 도매 할인표를 언급하자, 두 사람은 자료 유출 여부보다 먼저 내부 배신 가능성부터 의심하게 됐다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "업계가 좁아 한 번 붙은 소문이 바로 거래처 신뢰와 연결되고, 특히 전 직장 인맥·행사 자료·후속메일이 겹치면 작은 실수도 의도적 누설처럼 읽히기 쉬웠다.",
+    "caseNumber": "E-PT-N-0007",
+    "caseName": "내부 배신 의혹"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "유나의 업계 내 누설자 낙인",
+      "truth": true,
+      "truthDescription": "유나는 바이어와 협회 사무국 쪽에 태경이 경쟁사로 자료를 흘린 것 같다고 반복적으로 말해, 실제 확인 전부터 태경을 사실상 누설자로 낙인찍었다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 21,
+        "b": 79
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "명예회복",
+      "legitimacyIssue": false,
+      "judgmentStatement": "유나는 태경을 누설자로 낙인찍었다."
+    },
+    {
+      "id": "d-2",
+      "name": "태경의 비식별 없는 전체 덱 외부 전달",
+      "truth": true,
+      "truthDescription": "태경은 유나에게 다시 묻지 않고 행사 운영사의 프로젝터 점검 요청에 전체 도매단가와 팝업 일정이 포함된 덱을 첨부로 보냈다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 69,
+        "b": 31
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "행사보안프로토콜",
+      "legitimacyIssue": false,
+      "judgmentStatement": "태경은 전체 덱을 외부에 전달했다."
+    },
+    {
+      "id": "d-3",
+      "name": "동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가",
+      "truth": false,
+      "truthDescription": "두 사람 모두 내부 고의 유출을 의심했지만, 실제 경쟁사 유입 경로는 박수민 AE의 후속메일 오발송이었고 동업자 어느 쪽도 경쟁사에 직접 자료를 넘기지 않았다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 48,
+        "b": 52
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "대외소통복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "동업자는 경쟁사에 정보를 유출하지 않았다."
+    },
+    {
+      "id": "d-4",
+      "name": "행사 자료 통제 원칙의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "태경은 전체 덱을 첨부로 보냈고, 유나는 추적 링크가 걸린 축약본 대신 최신 단가가 포함된 전체 파일을 QR 후속자료 폴더에 올려 기존 행사 보안 원칙을 둘 다 어겼다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 53,
+        "b": 47
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "자료통제재설계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "태경과 유나는 행사 자료를 위반했다."
+    },
+    {
+      "id": "d-5",
+      "name": "실제 유출 경로는 운영사의 단순 오발송",
+      "truth": true,
+      "truthDescription": "운영사 AE는 스피커용 백업 폴더를 참석자 follow-up 메일에 잘못 붙였고, 그 결과 경쟁사 바이어도 동일한 파일을 받았다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "대외소통복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "운영사 AE의 오발송이다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "프로젝터 점검 요청 메일과 전체 덱 첨부본",
+      "description": "행사 전날 운영사가 요청한 프로젝터 점검 메일, 그리고 태경이 도매단가·백화점 팝업 일정이 모두 들어간 전체 덱을 첨부해 회신한 원본 메일이다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "태경 발신 메일 원본과 운영사 수신 서버 보관본이 함께 확보됐다.",
+        "check_metadata": "발신 시각은 행사 전날 밤이며 첨부파일명은 'final_all_v3'로, 비식별 축약본이 아닌 전체 덱이었다.",
+        "restore_context": "운영사의 요청은 단순 프로젝터 테스트였는데, 태경은 링크가 아닌 파일 첨부 방식으로 전체 자료를 넘겼다.",
+        "verify_source": "양측 메일 헤더와 첨부파일 해시가 서로 일치한다.",
+        "check_edits": "헤더 포함 원본이라 후편집 흔적이 없다.",
+        "question_acquisition": "공동대표 업무 메일과 행사 운영 메일이라 제출 정당성은 높다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "문태경에게: \"태경의 비식별 없는 전체 덱 외부 전달\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 문태경의 \"태경의 비식별 없는 전체 덱 외부 전달\" 쟁점과 관련된다. 문태경은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서유나에게: \"행사 자료 통제 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 서유나의 \"행사 자료 통제 원칙의 쌍방 위반\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "유나의 바이어 메시지와 협회 문의 메모",
+      "description": "유나가 바이어 두 곳과 협회 사무국에 '태경 쪽에서 샌 것 같다'고 말한 메시지, 그리고 사무국이 남긴 문의 대응 메모다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "메신저 원본 내보내기와 협회 사무국 통화 메모가 함께 제출됐다.",
+        "check_metadata": "첫 메시지는 경쟁사가 동일 정보를 언급한 지 2시간 이내에 발송됐다.",
+        "restore_context": "유나는 단순 의심을 넘어 태경의 전 직장 인맥을 근거로 사실상 내부 유출자로 특정하는 어조를 사용했다.",
+        "verify_source": "바이어 수신 화면과 협회 메모 시각이 서로 맞아떨어진다.",
+        "check_edits": "원본 내보내기와 기관 메모에 조작 흔적이 없다.",
+        "question_acquisition": "업무상 대화와 협회 기록으로 적법하지만 대외 유포 범위는 제한돼야 한다."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-3",
+      "name": "크롭된 메신저 캡처",
+      "description": "태경이 '자료 넘겼어. 저쪽도 알 거야'라고 말한 부분만 남은 캡처로, 수신자와 앞뒤 문맥이 잘려 있어 경쟁사 전달처럼 보이게 만든다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 대화가 아니라 저장된 화면 캡처 한 장만 제출됐다.",
+        "check_metadata": "캡처 저장 시각은 행사 다음 날 새벽이며, 다른 대화 알림 일부가 잘린 흔적이 있다.",
+        "restore_context": "이 문장만으로는 운영사 전달인지 경쟁사 전달인지 구별할 수 없고, '저쪽'이 누구인지도 확인되지 않는다.",
+        "verify_source": "태경 계정 대화창 화면은 맞지만 원본 전문은 따로 제출되지 않았다.",
+        "check_edits": "문자열 조작 흔적은 없으나 선택적 크롭이 뚜렷하다.",
+        "question_acquisition": "개인 기기 캡처라 사생활 보호와 맥락 훼손 문제가 있다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "문태경에게: \"태경의 비식별 없는 전체 덱 외부 전달\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 문태경의 \"태경의 비식별 없는 전체 덱 외부 전달\" 쟁점과 관련된다. 문태경은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서유나에게: \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 서유나의 \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "원본 단톡과 발신메일 로그",
+      "description": "문제의 '자료 넘겼어'가 운영사의 프로젝터 체크 요청을 가리킨다는 점, 그리고 유나도 해당 흐름을 읽고 있었다는 원본 단톡과 발신 로그다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "단톡 내보내기 파일과 태경의 발신함 로그 원본이 함께 확보됐다.",
+        "check_metadata": "문제 문장은 운영사 메일 직후 3분 안에 작성됐고, 바로 아래에 '프로젝터 테스트용'이라는 후속 문장이 이어진다.",
+        "restore_context": "유나도 같은 대화 흐름에서 운영사 백업 요청을 인지하고 있었으므로, 경쟁사 직접 전달 정황은 약화된다.",
+        "verify_source": "메신저 타임스탬프와 메일 발신 시각이 정확히 연동된다.",
+        "check_edits": "원본 내보내기와 서버 로그에 변조 흔적이 없다.",
+        "question_acquisition": "공동대표 업무용 대화라 제출 정당성은 높다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "문태경에게: \"태경의 비식별 없는 전체 덱 외부 전달\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 문태경의 \"태경의 비식별 없는 전체 덱 외부 전달\" 쟁점과 관련된다. 문태경은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서유나에게: \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 서유나의 \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "행사 보안 가이드와 QR 후속자료 링크 수정 이력",
+      "description": "비식별 축약본과 추적 링크만 쓰기로 한 행사 보안 가이드, 그리고 유나가 QR 후속자료 폴더를 최신 전체 덱 링크로 바꾼 기록이다.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "행사 준비 노션 원본과 드라이브 링크 권한 변경 로그가 함께 확보됐다.",
+        "check_metadata": "유나는 행사 당일 아침 redacted 링크를 비활성화하고 최신 전체 덱 링크를 QR 폴더에 연결했다.",
+        "restore_context": "유나는 영업 설명 업데이트를 이유로 들었지만, 결과적으로 두 사람 모두 기존 보안 원칙을 각자 다른 방식으로 무너뜨렸다.",
+        "verify_source": "노션 히스토리와 드라이브 권한 변경 로그가 일치한다.",
+        "check_edits": "클라우드 버전 기록상 후편집 흔적 없이 변경 흐름이 남아 있다.",
+        "question_acquisition": "회사 공용 자료 관리 기록이라 적법하게 확보됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "문태경에게: \"행사 자료 통제 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 문태경의 \"행사 자료 통제 원칙의 쌍방 위반\" 쟁점과 관련된다. 문태경은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서유나에게: \"행사 자료 통제 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 서유나의 \"행사 자료 통제 원칙의 쌍방 위반\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "운영사 AE 사과 메일과 후속메일 감사로그",
+      "description": "박수민 AE가 후속메일에 스피커용 백업 폴더를 잘못 첨부했다고 인정한 사과 메일과, 경쟁사 바이어가 동일 첨부파일을 수신한 발송 감사로그다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "사과 메일 원본, 협회 전달 로그, 후속메일 발송 감사리포트가 함께 제출됐다.",
+        "check_metadata": "오발송은 행사 다음 날 오전 일괄 발송 과정에서 발생했고, 경쟁사 담당자도 일반 참석자 리스트에 포함돼 있었다.",
+        "restore_context": "경쟁사 정보 유입은 내부 공모가 아니라 운영사의 단순 첨부 실수로 설명되며, 유나의 누설자 프레임은 사실관계를 넘어서 있었다.",
+        "verify_source": "운영사 메일 서버 헤더와 협회 측 수신 기록이 일치한다.",
+        "check_edits": "헤더 포함 원본과 감사로그에 편집 흔적이 없다.",
+        "question_acquisition": "제3자 행사 운영 자료지만 분쟁 해결 목적 제출은 허용됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "문태경에게: \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 문태경의 \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 쟁점과 관련된다. 문태경은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서유나에게: \"유나의 업계 내 누설자 낙인\" 관련 해명 요구 (방어 동기: 복수심)",
+          "implication": "이 증거는 서유나의 \"유나의 업계 내 누설자 낙인\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "유나는 실제 확인 전부터 태경을 업계에 누설자로 특정하는 말을 반복했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "태경은 유나에게 다시 승인받지 않고 전체 덱을 외부 운영사에 첨부로 보냈다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "동업자 중 누군가 경쟁사에 고의로 자료를 흘렸다는 믿음은 거짓이며, 실제 경로는 운영사 AE의 오발송이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "두 사람 모두 외부 행사 자료는 비식별 축약본과 추적 링크만 쓰기로 한 원칙을 어겼다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "실제 유출처럼 보였던 정보 이동은 제3자의 가벼운 첨부 실수에서 시작됐다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "full_deck_attachment_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "approval_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-7",
+      "lieIntensity": "L2",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "intentional_leak_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_event_backup_file"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "event_security_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "shared_breach_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "who_did_you_name_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "did_you_verify_first_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_or_apology_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "sabotage_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_shared_confusion"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-2",
+      "lieIntensity": "L1",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "redacted_link_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_replace_qr_link_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "명예회복": [
+      "유나는 바이어와 협회 사무국에 태경을 특정한 발언을 정정하고, 태경은 전체 덱을 외부 첨부로 보낸 절차 위반을 따로 사과해 책임의 성격을 분리한다.",
+      "업계 내에는 '내부 고의 유출'이 아니라 행사 운영 오발송과 내부 통제 미흡이 함께 있었음을 공동 명의 정정문으로 알린다.",
+      "원본 확인 전 상대를 누설자나 배신자로 규정하는 발언이 재발하면 내부 해명이 아니라 외부 조정 절차를 먼저 개시한다."
+    ],
+    "행사보안프로토콜": [
+      "외부 행사 자료는 첨부파일 직접 발송을 금지하고, 만료기한이 있는 추적 링크와 비식별 축약본만 사용한다.",
+      "프로젝터 테스트·운영사 전달·바이어 follow-up 자료를 한 폴더로 섞지 말고, 목적별 접근권한을 분리한다.",
+      "긴급 상황이라도 전체 덱을 외부에 보낼 때는 두 대표 중 다른 한 명의 확인 체크를 거치도록 고정한다."
+    ],
+    "자료통제재설계": [
+      "영업 업데이트가 필요해도 행사 전 합의된 redacted 버전을 임의로 교체하지 못하게 하고, 최신 전체 덱은 내부 전용으로만 관리한다.",
+      "QR 후속자료, 운영사 백업 파일, 바이어 제안자료를 각각 별도 링크와 별도 폴더로 운영해 하나의 실수가 전체 노출로 이어지지 않게 한다.",
+      "변경 이력이 생기면 두 대표와 실무자에게 동시에 알림이 가도록 드라이브 워크플로를 다시 설정한다."
+    ],
+    "대외소통복구": [
+      "협회와 운영사, 주요 바이어에게 동일한 타임라인을 공유해 경쟁사 유입 경로가 내부 배신이 아니었다는 사실을 빠르게 복구한다.",
+      "운영사에는 향후 스피커 백업 자료를 개별 수신함으로만 받도록 요구하고, 대량 follow-up 메일에는 첨부 대신 링크만 쓰도록 요청한다.",
+      "경쟁사와 직접 충돌하기보다 이번 자료는 오발송 산물이었다는 점을 문서로 남기고 추가 확산을 막는 데 집중한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

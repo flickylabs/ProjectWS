@@ -1,0 +1,1715 @@
+{
+  "caseId": "spouse-07",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "기록 비교: 상담 문구와 체크리스트 원본",
+      "description": "보이는 아침 기여와 선택 편집된 자료를 원본 기준으로 맞대는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "원본 이력과 내보내기 파일을 같이 보면, 왜 아침 카테고리만 빠졌습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse07:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "가족 단톡 말다툼 직후 22분 뒤에 PDF를 만든 이유를 설명해 보십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse07:a:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "그 파일로 벗어나고 싶었던 평판은 무엇이었습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse07:a:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "상담 메모와 가족 단톡 문구가 비슷한데, 왜 아침 비중을 평일 전체처럼 말했습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse07:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "등하원 기록에는 긴급연락과 하원 변경에 태준 씨 이름이 반복됩니다. 왜 그 부분은 빠졌습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse07:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "칭찬받는 순간 멈추지 못한 이유가 인정 욕구였습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse07:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "장면과 총량: 사진 밖 노동의 복원",
+      "description": "상담 직후 장면과 보이지 않는 생활행정 기록을 맞대어 과장과 누락을 가른다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "병원 예약·세탁 수거·주문 기록을 따로 들이밀면서도, 왜 냉장고에는 횟수부터 적기 시작했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse07:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "그 메모가 아이 눈에 띄는 자리라는 걸 알면서도 멈추지 못한 이유는 무엇입니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse07:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "한 사람의 태만보다 구조 압박이 있었다면, 왜 그 부담을 먼저 다혜 씨 책임으로 읽었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse07:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "상담 직후 사진까지 올린 건, 그 한 장면을 평일 전체 증거처럼 굳히려는 뜻이었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse07:b:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "병원 예약과 세탁 기록을 보면 태준 씨가 거의 안 한 건 아닌데, 왜 아침 장면 설명이 먼저 나왔습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse07:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "그 시기엔 누가 게으른지보다 구조 공백이 컸는데도, 왜 '태준 씨가 안 움직인다'는 감정이 먼저였습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse07:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "점수판 언어와 붕괴의 구조",
+      "description": "공동 공간의 숫자 언어와 도우미 종료 이후의 일정 충돌을 함께 드러낸다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "메모 사진이 사흘 동안 세 번 갱신됐습니다. 그 숫자를 계속 붙잡은 진짜 이유가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse07:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "도우미 종료와 야근 겹침이 확인되는데, 왜 사건 리뷰보다 사람 평가를 먼저 했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse07:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "지금 다시 보면 최근 붕괴의 책임을 어떻게 나눠 말해야 합니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse07:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "메신저에 '오늘 아침만 4번'이라고 적던 순간, 이미 점수판 언어가 됐다는 걸 알고 있었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse07:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "아이 앞에서도 그 언어를 멈추지 못한 이유는 인정이 사라질까 두려웠기 때문입니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse07:b:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "도우미 종료와 일정 충돌이 드러난 지금, 그 시기를 여전히 태준 씨 한 사람 탓으로 보십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse07:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "spouse07:a:d-1:unlock:s2:0",
+            "factText": "다혜의 아침 부담은 인정하지만 상담·단톡 표현은 태준의 밤 준비와 생활행정을 빠뜨린 채 굳어졌다.",
+            "tags": [
+              "counter",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "channel": {
+                "exact": "어린이집 상담과 가족 단톡",
+                "neutral": "그 공개 자리"
+              },
+              "hidden": {
+                "exact": "밤 준비·병원 일정·세탁 수거",
+                "neutral": "보이지 않는 영역"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse07:a:d-1:unlock:s3:0",
+            "factText": "상담 자리의 칭찬 이후 태준은 자신이 무심한 아빠처럼 보인다고 느끼며 사건을 체면 문제로 받아들였다.",
+            "tags": [
+              "fear",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "praise": {
+                "exact": "상담 자리의 칭찬",
+                "neutral": "그 칭찬"
+              },
+              "role": {
+                "exact": "무심한 아빠",
+                "neutral": "그 낙인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse07:a:d-1:unlock:s4:0",
+            "factText": "태준이 기록을 한꺼번에 내민 배경에는 아이에게 무심한 아빠로 남을까 두려워한 감정이 있었다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "role": {
+                "exact": "무심한 아빠",
+                "neutral": "그 낙인"
+              },
+              "hidden": {
+                "exact": "밤 준비·병원 일정·세탁 수거",
+                "neutral": "보이지 않는 영역"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse07:a:d-1:unlock:s5:0",
+            "factText": "태준은 공개 정정이 필요하다는 점과, 자신도 숫자와 자료로 보복적으로 맞섰다는 점을 함께 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "channel": {
+                "exact": "어린이집 상담과 가족 단톡",
+                "neutral": "그 공개 자리"
+              },
+              "hidden": {
+                "exact": "밤 준비·병원 일정·세탁 수거",
+                "neutral": "보이지 않는 영역"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse07:a:d-2:unlock:s2:0",
+            "factText": "태준의 PDF 내보내기는 원본 전체가 아니라 밤·주말 항목만 남긴 선택 내보내기였다.",
+            "tags": [
+              "evidence",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "scope": {
+                "exact": "밤·주말 항목만",
+                "neutral": "선택된 일부 항목"
+              },
+              "original": {
+                "exact": "공유 체크리스트 원본 전체",
+                "neutral": "원본 전체"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse07:a:d-2:unlock:s3:0",
+            "factText": "그 선택 내보내기는 가족 단톡 말다툼이 있은 지 22분 뒤, 억울함과 체면을 지키기 위해 급히 만들어졌다.",
+            "tags": [
+              "timeline",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "가족 단톡 말다툼 직후 22분 뒤",
+                "dateExact": "가족 단톡 말다툼 직후 22분 뒤",
+                "period": "그 직후",
+                "neutral": "그때"
+              },
+              "scope": {
+                "exact": "밤·주말 항목만",
+                "neutral": "선택된 일부 항목"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse07:a:d-2:unlock:s4:0",
+            "factText": "태준은 집안일 안 하는 남편으로 굳어질까 두려워 전체 기록을 쥐고도 일부만 내밀었다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "image": {
+                "exact": "집안일 안 하는 남편",
+                "neutral": "그 이미지"
+              },
+              "original": {
+                "exact": "공유 체크리스트 원본 전체",
+                "neutral": "원본 전체"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse07:a:d-2:unlock:s5:0",
+            "factText": "태준은 공정한 비교를 하려면 선택 PDF가 아니라 원본 전체를 기준으로 다시 봐야 한다고 인정한다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "original": {
+                "exact": "공유 체크리스트 원본 전체",
+                "neutral": "원본 전체"
+              },
+              "scope": {
+                "exact": "밤·주말 항목만",
+                "neutral": "선택된 일부 항목"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse07:a:d-3:unlock:s2:0",
+            "factText": "등하원 기록의 긴급연락 대응과 하원 변경 요청, 병원·세탁·주문 기록을 합치면 태준의 총 기여는 '거의 안 했다'와 거리가 멀다.",
+            "tags": [
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "records": {
+                "exact": "긴급연락 대응과 하원 변경 요청",
+                "neutral": "그 기록"
+              },
+              "hidden": {
+                "exact": "밤 준비·병원 예약·세탁·행정노동",
+                "neutral": "보이지 않는 영역"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse07:a:d-3:unlock:s3:0",
+            "factText": "태준은 자신의 보이지 않는 기여가 지워졌다는 서운함 때문에 기록을 해명보다 반격에 가깝게 사용했다.",
+            "tags": [
+              "harm",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "hidden": {
+                "exact": "밤 준비·병원 예약·세탁·행정노동",
+                "neutral": "보이지 않는 영역"
+              },
+              "place": {
+                "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                "neutral": "그 점수판 자리"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse07:a:d-3:unlock:s4:0",
+            "factText": "태준이 이 쟁점에 예민한 이유는 스스로도 좋은 아빠인지 불안한 마음이 있기 때문이다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "role": {
+                "exact": "좋은 아빠",
+                "neutral": "그 역할"
+              },
+              "a": {
+                "exact": "이태준",
+                "fullName": "이태준",
+                "judgeRef": "이태준 씨",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse07:a:d-3:unlock:s5:0",
+            "factText": "태준은 자신의 총 기여가 작지 않았음을 주장하면서도, 그 사실을 설명하는 방식이 공격적이었다는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "hidden": {
+                "exact": "밤 준비·병원 예약·세탁·행정노동",
+                "neutral": "보이지 않는 영역"
+              },
+              "morning": {
+                "exact": "등원과 행사 준비",
+                "neutral": "보이는 아침 영역"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse07:a:d-4:unlock:s2:0",
+            "factText": "태준은 다혜의 공개 발언 이후 냉장고 메모와 메신저에서 '이번 주 11건' 식의 숫자 대응을 시작했다.",
+            "tags": [
+              "admission",
+              "counter"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "count": {
+                "exact": "이번 주 11건",
+                "neutral": "그 횟수"
+              },
+              "place": {
+                "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                "neutral": "그 점수판 자리"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse07:a:d-4:unlock:s3:0",
+            "factText": "그 숫자 메모는 아이가 보는 공동 공간에 놓였고, 태준은 억울함을 말 대신 점수판으로 바꿨다.",
+            "tags": [
+              "harm",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "child": {
+                "exact": "아이 앞",
+                "neutral": "그 자리"
+              },
+              "place": {
+                "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                "neutral": "그 점수판 자리"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse07:a:d-4:unlock:s4:0",
+            "factText": "태준이 점수판을 놓지 못한 건 상처를 바로 말하면 더 약해 보일까 봐 숫자로 숨으려 했기 때문이다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "place": {
+                "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                "neutral": "그 점수판 자리"
+              },
+              "count": {
+                "exact": "이번 주 11건",
+                "neutral": "그 횟수"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse07:a:d-4:unlock:s5:0",
+            "factText": "태준은 반박의 명분과 별개로, 아이와 가족 앞에서 상대를 횟수로 재단한 책임을 인정한다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "child": {
+                "exact": "아이 앞",
+                "neutral": "그 자리"
+              },
+              "count": {
+                "exact": "이번 주 11건",
+                "neutral": "그 횟수"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse07:a:d-5:unlock:s2:0",
+            "factText": "도우미 종료와 병원 일정 급증이 겹치면서 이미 운영 한계선이 무너지고 있었지만, 태준은 그 압박을 먼저 다혜 발언 탓으로 읽었다.",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "cause1": {
+                "exact": "야간 도우미 종료",
+                "neutral": "그 공백"
+              },
+              "cause3": {
+                "exact": "병원 일정 급증",
+                "neutral": "그 추가 부담"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse07:a:d-5:unlock:s3:0",
+            "factText": "야간 도우미 종료, 겹치는 야근, 병원 일정이 한꺼번에 온 구조 문제가 최근 붕괴의 바닥에 깔려 있었다.",
+            "tags": [
+              "threshold",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "cause1": {
+                "exact": "야간 도우미 종료",
+                "neutral": "그 공백"
+              },
+              "cause2": {
+                "exact": "겹치는 야근 일정",
+                "neutral": "그 일정 충돌"
+              },
+              "cause3": {
+                "exact": "병원 일정 급증",
+                "neutral": "그 추가 부담"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse07:a:d-5:unlock:s4:0",
+            "factText": "태준은 둘 다 버틸 힘이 없어진 공포를 다혜 책임으로 번역하며 사람 문제처럼 몰아갔다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "system": {
+                "exact": "운영 구조 문제",
+                "neutral": "그 구조 문제"
+              },
+              "b": {
+                "exact": "정다혜",
+                "fullName": "정다혜",
+                "judgeRef": "정다혜 씨",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse07:a:d-5:unlock:s5:0",
+            "factText": "태준은 최근 붕괴가 한 사람의 태만이 아니라 운영 구조 문제였고, 자신이 그 구조를 상대 책임으로 몰아 악화시켰다고 인정한다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "system": {
+                "exact": "운영 구조 문제",
+                "neutral": "그 구조 문제"
+              },
+              "cause1": {
+                "exact": "야간 도우미 종료",
+                "neutral": "그 공백"
+              },
+              "cause2": {
+                "exact": "겹치는 야근 일정",
+                "neutral": "그 일정 충돌"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "spouse07:b:d-1:unlock:s2:0",
+            "factText": "다혜는 등원 비중을 말하려다 상담 메모와 가족 단톡에서 비슷한 표현으로 평일 전체 기여처럼 들리게 만들었다.",
+            "tags": [
+              "quote",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "평일은 거의 내가 돌린다",
+                "neutral": "그 표현"
+              },
+              "channel": {
+                "exact": "어린이집 상담과 가족 단톡",
+                "neutral": "그 공개 자리"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse07:b:d-1:unlock:s3:0",
+            "factText": "다혜는 상담 자리의 칭찬이 좋았고, 그래서 태준 쪽 기여가 빠진 표현을 바로 정정하지 못했다.",
+            "tags": [
+              "motive",
+              "shame"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "praise": {
+                "exact": "상담 자리의 칭찬",
+                "neutral": "그 칭찬"
+              },
+              "channel": {
+                "exact": "어린이집 상담과 가족 단톡",
+                "neutral": "그 공개 자리"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse07:b:d-1:unlock:s4:0",
+            "factText": "다혜의 과장에는 '드디어 알아준다'는 인정 욕구가 강하게 작동했고, 그 때문에 상대 기여 누락을 외면했다.",
+            "tags": [
+              "emotion",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "praise": {
+                "exact": "드디어 알아준다",
+                "neutral": "그 인정"
+              },
+              "a": {
+                "exact": "이태준",
+                "fullName": "이태준",
+                "judgeRef": "이태준 씨",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse07:b:d-1:unlock:s5:0",
+            "factText": "다혜는 같은 채널에서 태준의 밤 준비와 행정노동을 함께 언급하며 공개 발언을 정정해야 한다는 점을 받아들인다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "channel": {
+                "exact": "어린이집 상담과 가족 단톡",
+                "neutral": "그 공개 자리"
+              },
+              "hidden": {
+                "exact": "밤 준비·병원 일정·세탁 수거",
+                "neutral": "보이지 않는 영역"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse07:b:d-2:unlock:s2:0",
+            "factText": "다혜는 PDF 자체가 위조는 아니지만, 아침 카테고리가 빠진 선택 내보내기라 맥락이 잘렸다고 본다.",
+            "tags": [
+              "counter",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "scope": {
+                "exact": "밤·주말 항목만",
+                "neutral": "선택된 일부 항목"
+              },
+              "morning": {
+                "exact": "아침 루틴 카테고리",
+                "neutral": "빠진 아침 영역"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse07:b:d-2:unlock:s3:0",
+            "factText": "다혜는 태준의 편집이 자신의 공개 과장에 대한 반격이었다는 점을 알고도 그 부분을 쉽게 말하지 못한다.",
+            "tags": [
+              "motive",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "a": {
+                "exact": "이태준",
+                "fullName": "이태준",
+                "judgeRef": "이태준 씨",
+                "neutral": "본인"
+              },
+              "channel": {
+                "exact": "어린이집 상담과 가족 단톡",
+                "neutral": "그 공개 자리"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse07:b:d-2:unlock:s4:0",
+            "factText": "다혜는 아침 전쟁이 지워졌다는 분노와, 자신이 먼저 태준 기여를 지웠다는 죄책감을 동시에 느꼈다.",
+            "tags": [
+              "emotion",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "morning": {
+                "exact": "아침 전쟁",
+                "neutral": "그 아침 부담"
+              },
+              "a": {
+                "exact": "이태준",
+                "fullName": "이태준",
+                "judgeRef": "이태준 씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse07:b:d-2:unlock:s5:0",
+            "factText": "다혜는 태준의 선택 편집과 자신의 선행 누락이 같은 점수판 싸움의 양면이었다는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "scope": {
+                "exact": "밤·주말 항목만",
+                "neutral": "선택된 일부 항목"
+              },
+              "channel": {
+                "exact": "어린이집 상담과 가족 단톡",
+                "neutral": "그 공개 자리"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse07:b:d-3:unlock:s2:0",
+            "factText": "다혜는 아침 루틴의 강도를 전체 기여처럼 말하며 태준의 밤 준비와 생활행정을 과소평가했다.",
+            "tags": [
+              "admission",
+              "counter"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "morning": {
+                "exact": "등원과 행사 준비",
+                "neutral": "보이는 아침 영역"
+              },
+              "hidden": {
+                "exact": "밤 준비·병원 예약·세탁·행정노동",
+                "neutral": "보이지 않는 영역"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse07:b:d-3:unlock:s3:0",
+            "factText": "다혜는 늘 보이는 장면부터 길게 설명했고, 그래서 태준의 보이지 않는 노동을 계속 뒤로 밀었다.",
+            "tags": [
+              "legacy_sentence",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "morning": {
+                "exact": "눈앞 전쟁 같은 아침",
+                "neutral": "그 장면"
+              },
+              "hidden": {
+                "exact": "밤 준비·병원 예약·세탁·행정노동",
+                "neutral": "보이지 않는 영역"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse07:b:d-3:unlock:s4:0",
+            "factText": "다혜는 인정 욕구와 관계 유지 욕구가 함께 작동해 처음엔 수위를 낮추면서도 마음속 비교는 계속 키웠다.",
+            "tags": [
+              "relationship",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "a": {
+                "exact": "이태준",
+                "fullName": "이태준",
+                "judgeRef": "이태준 씨",
+                "neutral": "상대방"
+              },
+              "morning": {
+                "exact": "등원과 행사 준비",
+                "neutral": "보이는 아침 영역"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse07:b:d-3:unlock:s5:0",
+            "factText": "다혜는 태준의 총 기여가 자신과 크게 다르지 않았고, 자신이 보이는 아침 전쟁을 전체처럼 말했다는 점을 받아들인다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "morning": {
+                "exact": "등원과 행사 준비",
+                "neutral": "보이는 아침 영역"
+              },
+              "hidden": {
+                "exact": "밤 준비·병원 예약·세탁·행정노동",
+                "neutral": "보이지 않는 영역"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse07:b:d-4:unlock:s2:0",
+            "factText": "다혜도 '오늘 아침만 4번'처럼 자신의 몫을 세기 시작하며 점수판 언어에 올라탔다.",
+            "tags": [
+              "admission",
+              "counter"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "count": {
+                "exact": "오늘 아침만 4번",
+                "neutral": "그 횟수"
+              },
+              "place": {
+                "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                "neutral": "그 점수판 자리"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse07:b:d-4:unlock:s3:0",
+            "factText": "다혜는 가족 앞에서까지 숫자로 인정받으려 했고, 그 경쟁 구도를 스스로도 멈추지 못했다.",
+            "tags": [
+              "motive",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "family_chat": {
+                "exact": "가족 단톡",
+                "neutral": "그 공개 채널"
+              },
+              "count": {
+                "exact": "오늘 아침만 4번",
+                "neutral": "그 횟수"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse07:b:d-4:unlock:s4:0",
+            "factText": "다혜에게 점수판은 고생이 사라질까 두려울 때 꺼내는 언어였고, 그래서 아이 앞에서도 제어가 어려웠다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "child": {
+                "exact": "아이 앞",
+                "neutral": "그 자리"
+              },
+              "count": {
+                "exact": "오늘 아침만 4번",
+                "neutral": "그 횟수"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse07:b:d-4:unlock:s5:0",
+            "factText": "다혜는 태준이 먼저였는지와 별개로, 자신도 아이와 가족 앞에서 기여를 숫자로 세게 만든 책임을 진다고 인정한다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "child": {
+                "exact": "아이 앞",
+                "neutral": "그 자리"
+              },
+              "count": {
+                "exact": "오늘 아침만 4번",
+                "neutral": "그 횟수"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse07:b:d-5:unlock:s2:0",
+            "factText": "도우미 종료 뒤 양측 야근이 겹친 주간이 늘면서, 다혜가 느낀 '또 내가 뛴다'는 감정은 구조 공백 위에서 커졌다.",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "cause1": {
+                "exact": "야간 도우미 종료",
+                "neutral": "그 공백"
+              },
+              "cause2": {
+                "exact": "겹치는 야근 일정",
+                "neutral": "그 일정 충돌"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse07:b:d-5:unlock:s3:0",
+            "factText": "다혜는 운영 문제를 태준의 무심함이라는 성향 판단으로 번역해 갈등을 더 키웠다.",
+            "tags": [
+              "threshold",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "a": {
+                "exact": "이태준",
+                "fullName": "이태준",
+                "judgeRef": "이태준 씨",
+                "neutral": "상대방"
+              },
+              "system": {
+                "exact": "운영 구조 문제",
+                "neutral": "그 구조 문제"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse07:b:d-5:unlock:s4:0",
+            "factText": "다혜가 그 시기를 사람 문제처럼 느낀 배경에는 아침 전쟁 속 외로움과 피로가 크게 작동했다.",
+            "tags": [
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "morning": {
+                "exact": "아침 전쟁",
+                "neutral": "그 아침 부담"
+              },
+              "a": {
+                "exact": "이태준",
+                "fullName": "이태준",
+                "judgeRef": "이태준 씨",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse07:b:d-5:unlock:s5:0",
+            "factText": "다혜는 최근 붕괴가 태준 한 사람의 태만이 아니라 구조 문제였고, 자신이 그것을 성향 비난으로 말해 갈등을 키웠다는 점을 인정한다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "system": {
+                "exact": "운영 구조 문제",
+                "neutral": "그 구조 문제"
+              },
+              "cause1": {
+                "exact": "야간 도우미 종료",
+                "neutral": "그 공백"
+              },
+              "cause2": {
+                "exact": "겹치는 야근 일정",
+                "neutral": "그 일정 충돌"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "spouse07:contradiction:0",
+        "targetParty": "b",
+        "trigger": "정다혜가 '평일 돌봄은 거의 내가 했다'는 취지의 말을 유지한 채 e-1 원본 기록이 제시될 때",
+        "text": "등원 비중이 높았다는 사실과, 태준의 긴급연락 대응·하원 변경 기록이 반복된다는 사실은 동시에 성립합니다. 그런데 왜 공개 표현에서는 뒤쪽이 사라졌습니까?",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "spouse07:contradiction:1",
+        "targetParty": "a",
+        "trigger": "이태준이 내보내기 PDF가 전체 맥락이라고 주장한 채 e-2 원본 이력과 비교될 때",
+        "text": "원본에는 아침 루틴도 다수 있는데, 내보내기 파일에는 밤·주말만 남아 있습니다. 맥락을 복원하려는 자료가 왜 먼저 맥락을 잘랐습니까?",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "spouse07:contradiction:2",
+        "targetParty": "a",
+        "trigger": "이태준이 점수판을 '해명 메모'라고만 부를 때 e-5 공동 공간 기록이 제시될 때",
+        "text": "개인 정리라면 왜 냉장고와 메신저처럼 공유 공간에서 사흘이나 갱신됐습니까? 해명은 사적인데 점수판은 공개적이었습니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      },
+      {
+        "id": "spouse07:contradiction:3",
+        "targetParty": "b",
+        "trigger": "정다혜가 최근 붕괴를 계속 이태준 한 사람의 태만으로 몰 때 e-6 구조 자료가 제시될 때",
+        "text": "도우미 종료와 겹치는 야근 일정이 열흘 전부터 확인됩니다. 이런 구조 공백이 있는데도, 왜 여전히 한 사람 성향 문제처럼만 말합니까?",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "spouse07:interjection:0",
+        "speaker": "a",
+        "trigger": "정다혜가 아침 장면을 길게 묘사하며 전체 기여처럼 밀어붙일 때",
+        "text": "그 장면만 말하면 밤 준비랑 병원 일정은 또 없는 일이 되잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "spouse07:interjection:1",
+        "speaker": "b",
+        "trigger": "이태준이 숫자와 영수증만 연속으로 꺼내며 감정 설명을 피할 때",
+        "text": "숫자만 들이밀면 그날 아침이 얼마나 전쟁이었는지는 또 사라지죠.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "spouse07:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 '몇 건'과 '누가 더'로만 공방을 반복할 때",
+        "text": "지금 필요한 건 점수 합산이 아니라 범위 구분입니다. 보이는 노동과 보이지 않는 노동을 같은 표에 올리십시오.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "spouse07:outburst:a:0",
+        "party": "a",
+        "trigger": "정다혜의 공개 발언과 가족 반응이 반복되며 '무심한 아빠' 이미지가 고정된다고 느낄 때",
+        "text": "저를 아이한테 무심한 사람으로 만들어 놓고, 이제 와서 숫자 꺼냈다고만 하면 저는 뭘로 증명합니까?",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "spouse07:outburst:a:1",
+        "party": "a",
+        "trigger": "냉장고 메모와 아이 앞 점수판 장면이 재소환될 때",
+        "text": "창피한 줄 압니다. 그런데 그때는 말로 하면 또 제 몫이 사라질 것 같았어요.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse07:outburst:b:0",
+        "party": "b",
+        "trigger": "아침 루틴의 강도가 단순한 '보이는 장면'으로만 취급될 때",
+        "text": "그날 아침이 얼마나 전쟁이었는지 아세요? 그걸 버틴 사람도 결국 인정받고 싶을 수 있잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "spouse07:outburst:b:1",
+        "party": "b",
+        "trigger": "도우미 종료와 일정 충돌을 설명해도 여전히 사람 성향 문제로 몰릴 때",
+        "text": "그 시기엔 누가 게을러서가 아니라 둘 다 숨이 찼어요. 그런데 저는 계속 혼자 뛰는 사람처럼 느껴졌다고요.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "spouse07:transition:a:d-2:s0_s1",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "checklist_export_question",
+      "line": "그건 편집이라기보다 제가 맡은 쪽을 따로 본 겁니다. 다 보여 주자는 얘기는 아니었어요.",
+      "behaviorHint": "말을 고르며 범위를 좁혀 말한다."
+    },
+    {
+      "id": "spouse07:transition:a:d-2:s1_s2",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "원본까지 같이 보면 제가 밤·주말만 뽑은 건 맞습니다. 다만 안 보이는 일을 보여 주고 싶었습니다.",
+      "behaviorHint": "짧게 인정하고 바로 이유를 붙인다."
+    },
+    {
+      "id": "spouse07:transition:a:d-2:s2_s3",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "morning_tasks_followup",
+      "line": "네, 아침 카테고리를 뺀 건 다혜 씨 말에 바로 맞서려던 마음도 있었습니다.",
+      "behaviorHint": "손끝으로 책상 위를 두 번 두드린다."
+    },
+    {
+      "id": "spouse07:transition:a:d-2:s3_s5",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 선택 편집이었죠. 제 불안을 자료로 막으려다 맥락을 잘랐습니다.",
+      "behaviorHint": "파일을 내려놓고 시선을 내린다."
+    },
+    {
+      "id": "spouse07:transition:a:d-4:s0_s1",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "scorekeeping_question",
+      "line": "제가 먼저 점수판을 꺼낸 건 아니지만, 정산하려고 적기 시작한 건 맞습니다.",
+      "behaviorHint": "자신도 모르게 손가락으로 횟수를 세는 듯 움직인다."
+    },
+    {
+      "id": "spouse07:transition:a:d-4:s1_s2",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "메모와 대화가 남아 있으니 부인하긴 어렵네요. 저도 숫자로 대응했습니다.",
+      "behaviorHint": "고개를 한 번 숙였다 든다."
+    },
+    {
+      "id": "spouse07:transition:a:d-4:s2_s3",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "child_presence_followup",
+      "line": "아이 앞에 놓인다는 걸 알면서도, 억울함이 더 앞섰습니다.",
+      "behaviorHint": "입술을 깨물고 잠시 말을 멈춘다."
+    },
+    {
+      "id": "spouse07:transition:a:d-4:s3_s5",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "반박이라는 이유로 버틴 거지, 결국 저도 아이와 가족 앞에서 점수판을 꺼낸 겁니다.",
+      "behaviorHint": "어깨가 내려앉고 말끝이 흐려진다."
+    },
+    {
+      "id": "spouse07:transition:a:d-5:s0_s1",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "burnout_cause_question",
+      "line": "다혜 씨 말이 불을 붙인 건 맞지만, 그 주간 일정이 유난히 꼬였던 것도 있습니다.",
+      "behaviorHint": "비난과 설명 사이를 오가며 손을 모은다."
+    },
+    {
+      "id": "spouse07:transition:a:d-5:s1_s2",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "병원 예약과 생활행정이 몰린 걸 보면, 이걸 한 사람 태만으로만 보긴 어렵겠습니다.",
+      "behaviorHint": "자료를 보고 나서야 문장 끝 힘이 빠진다."
+    },
+    {
+      "id": "spouse07:transition:a:d-5:s2_s3",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "system_pressure_followup",
+      "line": "도우미 종료와 겹치는 야근까지 한꺼번에 왔는데, 저는 그 압박을 사람 탓으로 단순화했습니다.",
+      "behaviorHint": "시계를 보듯 허공을 한번 훑는다."
+    },
+    {
+      "id": "spouse07:transition:a:d-5:s3_s5",
+      "caseId": "spouse-07",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "맞습니다. 최근 붕괴는 구조 문제였고, 저는 그걸 다혜 씨 책임으로 몰아 더 키웠습니다.",
+      "behaviorHint": "한숨 뒤에 차분히 시인한다."
+    },
+    {
+      "id": "spouse07:transition:b:d-1:s0_s1",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "public_credit_question",
+      "line": "제가 그렇게 말한 건 아침이 정말 전쟁 같았기 때문이에요. 표현이 세긴 했을 수 있어요.",
+      "behaviorHint": "당시 장면을 길게 풀어놓으며 속도를 늦춘다."
+    },
+    {
+      "id": "spouse07:transition:b:d-1:s1_s2",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "사진과 단톡이 같이 나오면, 제가 평일 전체처럼 들리게 말한 건 인정해요.",
+      "behaviorHint": "고개를 끄덕이면서도 손은 꼭 쥔다."
+    },
+    {
+      "id": "spouse07:transition:b:d-1:s2_s3",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "consultation_wording_followup",
+      "line": "칭찬받는 자리라 더 멈추기 싫었던 것도 있어요. 제가 한 장면을 너무 크게 펼쳤죠.",
+      "behaviorHint": "시선이 옆으로 새고 목소리가 낮아진다."
+    },
+    {
+      "id": "spouse07:transition:b:d-1:s3_s5",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-1_or_responsibility_question",
+      "line": "상담과 단톡에서 제가 공을 너무 단수형으로 말했습니다. 같은 자리에서 다시 바로잡아야 했어요.",
+      "behaviorHint": "짧게 숨을 들이마시고 또렷하게 시인한다."
+    },
+    {
+      "id": "spouse07:transition:b:d-3:s0_s1",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "who_does_more_question",
+      "line": "단정하려던 건 아니어도, 적어도 아침과 행사 쪽은 제가 거의 다 뛰었다고 느꼈어요.",
+      "behaviorHint": "한 장면을 반복해서 세세히 묘사한다."
+    },
+    {
+      "id": "spouse07:transition:b:d-3:s1_s2",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "등하원 기록까지 보면 제가 너무 크게 말한 건 맞네요. 아침 강도를 전체처럼 말했습니다.",
+      "behaviorHint": "말끝이 약해지며 기록을 다시 본다."
+    },
+    {
+      "id": "spouse07:transition:b:d-3:s2_s4",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_morning_burden",
+      "line": "사실은 너무 힘들어서 다른 영역을 볼 여유가 없었어요. 그렇다고 태준 씨를 거의 안 한 사람처럼 말한 건 미안합니다.",
+      "behaviorHint": "어깨가 풀리고 감정이 먼저 새어 나온다."
+    },
+    {
+      "id": "spouse07:transition:b:d-3:s4_s5",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-4_or_emotion_threshold",
+      "line": "병원과 세탁 기록까지 보니 더 분명해요. 제가 보이는 아침 전쟁을 전체로 말했습니다.",
+      "behaviorHint": "눈시울이 젖지만 끝까지 문장을 마친다."
+    },
+    {
+      "id": "spouse07:transition:b:d-5:s0_s1",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "burnout_cause_question",
+      "line": "태준 씨 대응이 느렸다고 느낀 건 맞지만, 일정이 한꺼번에 꼬였던 것도 사실이에요.",
+      "behaviorHint": "손을 펼쳤다 접으며 말을 정리한다."
+    },
+    {
+      "id": "spouse07:transition:b:d-5:s1_s2",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "도우미 종료 뒤 야근이 겹친 걸 보면, 이걸 한 사람 게으름으로만 몰긴 어렵네요.",
+      "behaviorHint": "캘린더를 보며 목소리가 한 톤 내려간다."
+    },
+    {
+      "id": "spouse07:transition:b:d-5:s2_s3",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "system_pressure_followup",
+      "line": "그래도 그때 저는 그 피로를 태준 씨가 무심하다는 말로 바꿔 버렸어요.",
+      "behaviorHint": "씁쓸한 웃음이 잠깐 스친다."
+    },
+    {
+      "id": "spouse07:transition:b:d-5:s3_s5",
+      "caseId": "spouse-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 최근 붕괴는 구조 문제였고, 제가 그 압박을 사람 문제처럼 말해 갈등을 키운 겁니다.",
+      "behaviorHint": "천천히 고개를 끄덕이며 수긍한다."
+    }
+  ]
+}

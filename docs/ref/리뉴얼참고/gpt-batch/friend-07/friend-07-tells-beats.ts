@@ -176,7 +176,7 @@ export const friend07TellsBeats = {
       "party": "a",
       "disputeId": "d-2",
       "beatType": "evidence_hit",
-      "line": "e-1하고 e-2를 붙여 보면 제가 순서를 바꾼 건 부정 못 하겠네요. 대신 그때 왜 그렇게까지 몰렸는지도 같이 봐 주세요.",
+      "line": "진아가 양소라와 운영진에게 보낸 편집 캡처하고 진아-성호 원본 메신저 export를 붙여 보면 제가 순서를 바꾼 건 부정 못 하겠네요. 대신 그때 왜 그렇게까지 몰렸는지도 같이 봐 주세요.",
       "behaviorHint": "원본을 보는 순간 잠깐 말이 멎었다가 변명보다 이유를 먼저 꺼낸다.",
       "applicableStates": [
         "S2",
@@ -326,7 +326,7 @@ export const friend07TellsBeats = {
       "party": "a",
       "disputeId": "d-4",
       "beatType": "evidence_hit",
-      "line": "e-3를 다시 보면 빠져나갈 구멍이 없네요. 지정 운영진 1명, 그 조항을 알면서도 저는 다른 길을 택했습니다.",
+      "line": "작년 소문 사태 뒤 작성한 제한 공개 합의 노션을 다시 보면 빠져나갈 구멍이 없네요. 지정 운영진 1명, 그 조항을 알면서도 저는 다른 길을 택했습니다.",
       "behaviorHint": "노션 문구를 보고 눈을 피한다.",
       "applicableStates": [
         "S2",
@@ -401,7 +401,7 @@ export const friend07TellsBeats = {
       "party": "b",
       "disputeId": "d-1",
       "beatType": "evidence_hit",
-      "line": "e-6까지 붙으면 제가 빠져나갈 말은 없네요. 진아가 그 시간을 메우는 동안 저는 제 일부터 숨기고 있었습니다.",
+      "line": "연습 스케줄 변경표와 택시 영수증까지 붙으면 제가 빠져나갈 말은 없네요. 진아가 그 시간을 메우는 동안 저는 제 일부터 숨기고 있었습니다.",
       "behaviorHint": "자료를 보다가 말을 멈추고 목을 축인다.",
       "applicableStates": [
         "S3",
@@ -476,7 +476,7 @@ export const friend07TellsBeats = {
       "party": "b",
       "disputeId": "d-4",
       "beatType": "evidence_hit",
-      "line": "e-3를 보면 제가 모른 척할 수는 없네요. 그 조항을 알면서도 진아를 먼저 찾았다는 게 제일 크죠.",
+      "line": "제한 공개 합의 노션을 보면 제가 모른 척할 수는 없네요. 그 조항을 알면서도 진아를 먼저 찾았다는 게 제일 크죠.",
       "behaviorHint": "합의 문서를 보며 고개를 천천히 젓는다.",
       "applicableStates": [
         "S2",
@@ -526,7 +526,7 @@ export const friend07TellsBeats = {
       "party": "b",
       "disputeId": "d-5",
       "beatType": "blame",
-      "line": "기록이 늦게 남은 건 맞지만 저는 일이 터진 뒤라도 맞추려 했습니다. 숨기려던 것보다 수습하려던 쪽이었어요.",
+      "line": "기록이 늦게 남은 건 맞지만 저는 일이 터진 뒤라도 맞추려 했습니다. 숨기려던 것보다 수습하려던 쪽이었어요. 진아 쪽도 지정 경로를 건너뛰고 여러 채널로 먼저 퍼뜨렸잖아요.",
       "behaviorHint": "사후 정리를 선의처럼 포장하며 양손을 모은다.",
       "applicableStates": [
         "S3"
@@ -551,7 +551,7 @@ export const friend07TellsBeats = {
       "party": "b",
       "disputeId": "d-5",
       "beatType": "evidence_hit",
-      "line": "e-4 타임스탬프가 나오면 더는 못 버티죠. 실제 신고는 뒤였고, 저는 시간을 앞당겨 말했습니다.",
+      "line": "연합공연제 리더 선발 점수표 타임스탬프가 나오면 더는 못 버티죠. 실제 신고는 뒤였고, 저는 시간을 앞당겨 말했습니다.",
       "behaviorHint": "기록 화면을 보자마자 어깨가 굳는다.",
       "applicableStates": [
         "S3",

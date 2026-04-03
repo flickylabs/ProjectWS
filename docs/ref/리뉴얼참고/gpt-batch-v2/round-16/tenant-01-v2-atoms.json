@@ -1,0 +1,4005 @@
+{
+  "caseId": "tenant-01",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "월세를 크게 밀린 건 아니에요.",
+            "그 주 안에 정리됐고 그냥 며칠 어긋난 정도였습니다."
+          ],
+          "privateKnowledge": [
+            "자동이체 한도 문제로 약정일을 넘긴 건 맞다.",
+            "연체 세입자로 보이면 보증금 정산에서 더 불리할까 걱정했다."
+          ],
+          "suppressions": [
+            "정확히 5일 늦었다는 숫자",
+            "자기 계좌 설정 문제였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:a:tell:file_referral",
+            "tenant01:a:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-1:denial:0",
+              "factText": "월세 지연의 크기를 축소해 말한다.",
+              "tags": [
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                },
+                "time": {
+                  "exact": "계약 종료 한 달 전 약정일",
+                  "neutral": "그 시점",
+                  "period": "계약 종료 한 달 전 약정일"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-1:self_justification:0",
+              "factText": "같은 주 안에 정리됐다는 점을 앞세워 심각성을 낮춘다.",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "status": {
+                  "exact": "같은 주 안에 정리",
+                  "neutral": "곧 정리된 상태"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "은행 한도 쪽 문제가 있어서 바로 못 들어갔던 거예요.",
+            "며칠 차이였고 관리비도 같은 주에 맞췄어요."
+          ],
+          "privateKnowledge": [
+            "지연 원인은 자기 계좌의 자동이체 한도 설정이었다.",
+            "상우에게 미리 설명을 길게 하지 못했다."
+          ],
+          "suppressions": [
+            "정확한 5일 지연",
+            "자신 책임 비중"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:a:tell:file_referral",
+            "tenant01:a:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-1:timeline:0",
+              "factText": "약정일을 넘긴 건 맞지만 은행 설정 문제였다고 설명한다.",
+              "tags": [
+                "timeline",
+                "act"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                },
+                "cause": {
+                  "exact": "자동이체 한도 문제",
+                  "neutral": "계좌 설정 문제"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-1:context:0",
+              "factText": "관리비까지 같은 주에 정산됐다는 점으로 장기 미납 이미지를 피하려 한다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "status": {
+                  "exact": "같은 주 안에 정리",
+                  "neutral": "곧 정리된 상태"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "네, 월세가 5일 늦은 건 맞아요.",
+            "다만 자동이체 한도 문제였고 장기 미납처럼 끌진 않았습니다."
+          ],
+          "privateKnowledge": [
+            "한도 알림을 미리 확인하지 못한 자신의 실수였다.",
+            "숫자가 찍힌 거래내역이 나오면 더는 부정하기 어렵다고 안다."
+          ],
+          "suppressions": [
+            "연체 책임을 전적으로 인정하는 표현"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:scope_narrowing",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-1:admission:0",
+              "factText": "월세가 정확히 5일 늦었다는 사실을 인정한다.",
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                },
+                "time": {
+                  "exact": "계약 종료 한 달 전 약정일",
+                  "neutral": "그 시점",
+                  "period": "계약 종료 한 달 전 약정일"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-1:self_justification:1",
+              "factText": "자동이체 한도 문제와 빠른 정리 여부를 들어 고의 지연은 아니었다고 선을 긋는다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "자동이체 한도 문제",
+                  "neutral": "계좌 설정 문제"
+                },
+                "status": {
+                  "exact": "같은 주 안에 정리",
+                  "neutral": "곧 정리된 상태"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "제 실수로 5일 늦었습니다.",
+            "그래도 같은 주에 월세와 관리비를 정리했고, 일부러 미룬 건 아니었어요."
+          ],
+          "privateKnowledge": [
+            "보증금 정산에서 불성실한 세입자로 찍힐까 봐 처음엔 말을 줄였다.",
+            "지연 사실 자체는 부인할 수 없다고 받아들인다."
+          ],
+          "suppressions": [
+            "보증금이 급해 더 민감했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-1:responsibility:0",
+              "factText": "지연 자체는 자신의 실수라고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-1:motive:0",
+              "factText": "고의가 아니라 체면과 정산 불안을 의식해 축소했다는 속내가 드러난다.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "status": {
+                  "exact": "같은 주 안에 정리",
+                  "neutral": "곧 정리된 상태"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "그때 새 집 계약금 일정이 겹쳐서 더 겁이 났어요.",
+            "늦은 건 제 책임인데, 그 며칠 때문에 상습 미납처럼 보일까 봐 말을 줄였습니다."
+          ],
+          "privateKnowledge": [
+            "이사 일정이 흔들리면 새 집 계약금을 맞추지 못할까 두려웠다.",
+            "그래서 숫자보다 사정을 먼저 숨기려 했다."
+          ],
+          "suppressions": [
+            "언니에게 돈 일정까지 상의했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-1:fear:0",
+              "factText": "새 집 계약금 일정 때문에 지연 납부 사실이 더 무겁게 보일까 두려워했다.",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "계약 종료 한 달 전 약정일",
+                  "neutral": "그 시점",
+                  "period": "계약 종료 한 달 전 약정일"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-1:shame:0",
+              "factText": "5일 지연 숫자보다 연체 세입자로 보일까 봐 체면을 지키려 했다고 털어놓는다.",
+              "tags": [
+                "shame",
+                "self_justification"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "월세는 제 실수로 정확히 5일 늦었습니다.",
+            "자동이체 한도를 못 챙겼고, 같은 주에 바로 정리했지만 그 책임은 제가 집니다."
+          ],
+          "privateKnowledge": [
+            "보증금 일정이 급해 체면을 지키려 축소 발언을 했다.",
+            "이 지연과 다른 공제 범위 문제는 구분해서 봐야 한다고 생각한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-1:admission:1",
+              "factText": "월세가 정확히 5일 늦었다는 점과 원인이 자신의 설정 실수였다는 점을 모두 시인한다.",
+              "tags": [
+                "admission",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                },
+                "cause": {
+                  "exact": "자동이체 한도 문제",
+                  "neutral": "계좌 설정 문제"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-1:responsibility:1",
+              "factText": "빠르게 정리했더라도 지연 책임은 자신이 진다고 정리한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "status": {
+                  "exact": "같은 주 안에 정리",
+                  "neutral": "곧 정리된 상태"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "사진 보시면 알아요.",
+            "벽지는 원래부터 뜨고 변색된 데가 있어서 제가 전부 망가뜨린 것처럼 볼 일은 아니에요."
+          ],
+          "privateKnowledge": [
+            "반려묘가 거실 한 면을 긁은 건 알고 있다.",
+            "전면 도배비가 나오면 보증금에서 감당하기 어렵다."
+          ],
+          "suppressions": [
+            "반려묘 긁힘이 있는 정확한 위치",
+            "부분 보수 정도는 자신의 책임일 수 있다는 생각"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:a:tell:file_referral",
+            "tenant01:a:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-2:evidence:0",
+              "factText": "입주·퇴거 비교 사진을 먼저 내세워 기존 변색과 들뜸을 강조한다.",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "입주·퇴거 비교 사진",
+                  "neutral": "사진 자료"
+                },
+                "condition": {
+                  "exact": "기존 변색과 들뜸",
+                  "neutral": "기존 흔적"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-2:denial:0",
+              "factText": "자신 책임이 전면 도배 수준이라는 해석을 전면 부정한다.",
+              "tags": [
+                "denial",
+                "counter"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배",
+                  "neutral": "그 정도 공사"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "문제 되는 건 딱 그 부분 정도였어요.",
+            "나머지는 입주 때 사진에도 이미 보여요."
+          ],
+          "privateKnowledge": [
+            "고양이 흔적이 거실 한 면에 몰려 있다는 걸 안다.",
+            "초반에는 그 한 면 책임도 바로 인정하고 싶지 않았다."
+          ],
+          "suppressions": [
+            "그 한 면은 자기 책임 범위일 수 있다는 말",
+            "처음엔 사진 뒤로 숨으려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:file_referral",
+            "tenant01:a:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-2:counter:0",
+              "factText": "손상 범위를 거실 한 면으로 급히 좁혀 말한다.",
+              "tags": [
+                "counter",
+                "act"
+              ],
+              "slots": {
+                "area": {
+                  "exact": "거실 한 면",
+                  "neutral": "그 부분"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-2:context:0",
+              "factText": "나머지 벽 상태는 입주 당시부터 있던 흔적이라고 선을 긋는다.",
+              "tags": [
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "기존 변색과 들뜸",
+                  "neutral": "기존 흔적"
+                },
+                "evidence": {
+                  "exact": "입주·퇴거 비교 사진",
+                  "neutral": "사진 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "제가 전부 부정하는 건 아니고, 반려묘가 긁은 거실 한 면은 제 책임 범위일 수 있어요.",
+            "다만 전면 교체까지는 아니라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "부분 보수 견적이면 감당할 수 있다고 계산하고 있다.",
+            "처음엔 책임 범위를 일부러 더 좁게 말했다."
+          ],
+          "suppressions": [
+            "초기 부인의 강도",
+            "고양이 흔적을 보고 바로 불안해졌다는 감정"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:scope_narrowing",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-2:admission:0",
+              "factText": "반려묘가 긁은 거실 한 면의 손상 가능성은 인정한다.",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "area": {
+                  "exact": "거실 한 면",
+                  "neutral": "그 부분"
+                },
+                "cause": {
+                  "exact": "반려묘 긁힘",
+                  "neutral": "해당 흔적"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-2:counter:1",
+              "factText": "그러나 책임 범위는 부분 보수이지 전면 도배가 아니라고 주장한다.",
+              "tags": [
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "area": {
+                  "exact": "거실 한 면",
+                  "neutral": "그 부분"
+                },
+                "scope": {
+                  "exact": "전면 도배",
+                  "neutral": "그 정도 공사"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "긁힌 한 면은 인정하지만, 나머지 변색과 들뜸까지 제 탓으로 묶이는 건 억울해요.",
+            "입주 전 상태를 같이 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "전면 도배비가 보증금에서 빠질까 봐 계속 범위를 좁혀 말했다.",
+            "사진이 나오면 기존 상태를 입증할 수 있다고 믿는다."
+          ],
+          "suppressions": [
+            "자료를 보여주기 전엔 책임 인정을 늦췄다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:scope_narrowing",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-2:responsibility:0",
+              "factText": "자신 책임 범위가 한 면 손상에 한정된다는 점을 분명히 한다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "area": {
+                  "exact": "거실 한 면",
+                  "neutral": "그 부분"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-2:evidence:1",
+              "factText": "입주 전 사진으로 기존 변색과 들뜸을 함께 봐야 한다고 요구한다.",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "입주·퇴거 비교 사진",
+                  "neutral": "사진 자료"
+                },
+                "condition": {
+                  "exact": "기존 변색과 들뜸",
+                  "neutral": "기존 흔적"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "반려묘 얘기가 나오면 제가 다 망가뜨린 사람처럼 보일까 봐 겁났어요.",
+            "그래서 '딱 거기만'이라고만 말했는데, 실제로 인정하는 범위도 그 한 면 보수까지예요."
+          ],
+          "privateKnowledge": [
+            "반려묘로 인한 손상을 인정하면 보증금 전반이 흔들릴까 불안했다.",
+            "손해를 줄이려 범위를 급히 축소하는 습관이 나왔다."
+          ],
+          "suppressions": [
+            "초반에는 고양이 흔적 자체를 더 흐리게 말했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:scope_narrowing",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-2:fear:0",
+              "factText": "반려묘 손상 때문에 집을 망가뜨린 세입자로 보일까 두려워했다.",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "반려묘 긁힘",
+                  "neutral": "해당 흔적"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-2:self_justification:0",
+              "factText": "그래서 실제 책임 범위보다도 더 좁게 말하며 방어했다고 설명한다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "area": {
+                  "exact": "거실 한 면",
+                  "neutral": "그 부분"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "거실 한 면의 긁힘은 제 책임입니다.",
+            "그렇지만 입주 전부터 있던 변색과 들뜸까지 합쳐 전면 교체를 청구하는 건 과하다고 생각합니다."
+          ],
+          "privateKnowledge": [
+            "처음엔 부분 보수 책임도 곧바로 인정하지 못했다.",
+            "사진과 견적을 함께 보면 자신의 부담 범위가 더 선명하다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:scope_narrowing",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-2:admission:1",
+              "factText": "반려묘가 남긴 거실 한 면 손상은 자신의 책임이라고 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "area": {
+                  "exact": "거실 한 면",
+                  "neutral": "그 부분"
+                },
+                "cause": {
+                  "exact": "반려묘 긁힘",
+                  "neutral": "해당 흔적"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-2:counter:2",
+              "factText": "하지만 전면 도배 청구는 기존 상태와 견적 범위를 넘는다고 정리한다.",
+              "tags": [
+                "counter",
+                "evidence",
+                "rule"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배",
+                  "neutral": "그 정도 공사"
+                },
+                "condition": {
+                  "exact": "기존 변색과 들뜸",
+                  "neutral": "기존 흔적"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "수전은 제가 험하게 써서 그런 게 아니라 계속 새던 문제였어요."
+          ],
+          "privateKnowledge": [
+            "봄부터 조금씩 샌다는 걸 알았지만 크게 다시 밀어붙이지는 않았다.",
+            "곧 나갈 집이라 괜히 예민한 세입자로 보일까 참았다."
+          ],
+          "suppressions": [
+            "재통지를 늦춘 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:a:tell:file_referral",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-3:denial:0",
+              "factText": "수전 누수 원인이 자신의 사용 습관이라는 해석을 부정한다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "item": {
+                  "exact": "욕실 수전",
+                  "neutral": "그 설비"
+                },
+                "issue": {
+                  "exact": "누수",
+                  "neutral": "그 문제"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-3:context:0",
+              "factText": "누수가 반복된 기존 문제였다는 인상만 먼저 내세운다.",
+              "tags": [
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "노후 부품",
+                  "neutral": "기존 하자"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "처음부터 조금씩 샜고, 제가 나가게 될 줄 알아서 계속 크게 다투진 않았어요."
+          ],
+          "privateKnowledge": [
+            "문제를 키우기 싫어 하자 신고를 미뤘다.",
+            "입주 전 기록까지는 직접 확인하지 못했다."
+          ],
+          "suppressions": [
+            "관리실에 더 강하게 재통지하지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-3:timeline:0",
+              "factText": "누수는 갑자기 생긴 게 아니라 이전부터 이어진 흐름처럼 설명한다.",
+              "tags": [
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "누수",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "입주 이전 접수 시점",
+                  "neutral": "그 전 기록",
+                  "period": "입주 이전"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-3:fear:0",
+              "factText": "곧 이사할 세입자로 보이며 갈등을 키우기 싫어 신고 강도를 낮췄다고 드러낸다.",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "재통지 지연",
+                  "neutral": "늦은 알림"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "관리실 기록까지 보면 입주 전부터 이어진 문제더라고요.",
+            "제가 다시 세게 말한 건 늦었지만, 원인은 제 사용 습관이 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "입주 전 접수 기록이 나오면 자신의 주장에 힘이 실린다고 안다.",
+            "재통지가 늦었다는 약점도 인정해야 한다고 느낀다."
+          ],
+          "suppressions": [
+            "지연된 재통지로 수리가 더 늦어진 측면"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:file_referral",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-3:evidence:0",
+              "factText": "입주 전 접수 기록이 노후 문제 가능성을 뒷받침한다고 말한다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 이전 접수 시점",
+                  "neutral": "그 전 기록",
+                  "period": "입주 이전"
+                },
+                "cause": {
+                  "exact": "노후 부품",
+                  "neutral": "기존 하자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-3:admission:0",
+              "factText": "다시 강하게 알린 시점이 늦었다는 자신의 약점도 함께 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "재통지 지연",
+                  "neutral": "늦은 알림"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "제가 미룬 책임은 조금 있지만, 본수리를 미룬 건 임대인 쪽이었어요."
+          ],
+          "privateKnowledge": [
+            "수리를 미뤄 두자는 분위기에 자신도 끌려갔다.",
+            "노후 설비 책임까지 자신에게 돌리면 부당하다고 본다."
+          ],
+          "suppressions": [
+            "공실 때 고치자는 말에 그냥 넘어간 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-3:responsibility:0",
+              "factText": "재통지를 늦춘 자신의 몫은 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "재통지 지연",
+                  "neutral": "늦은 알림"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-3:counter:0",
+              "factText": "그러나 본수리를 미룬 주된 판단은 임대인에게 있었다고 선을 긋는다.",
+              "tags": [
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "item": {
+                  "exact": "욕실 수전",
+                  "neutral": "그 설비"
+                },
+                "cause": {
+                  "exact": "노후 부품",
+                  "neutral": "기존 하자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "곧 나갈 집이라 괜히 예민한 세입자로 보일까 참은 것도 있어요.",
+            "그래서 늦게 다시 말한 건 제 몫이지만, 노후 설비 책임까지 떠안을 순 없어요."
+          ],
+          "privateKnowledge": [
+            "작은 민원을 반복하는 사람으로 찍히기 싫었다.",
+            "그래서 자신의 지연이 책임 전가의 빌미가 될까 불안하다."
+          ],
+          "suppressions": [
+            "처음엔 '나중에 고치면 되겠지' 하고 넘긴 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-3:fear:1",
+              "factText": "민원 많은 세입자로 보일까 봐 누수 문제를 세게 밀어붙이지 못했다고 털어놓는다.",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "item": {
+                  "exact": "욕실 수전",
+                  "neutral": "그 설비"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-3:counter:1",
+              "factText": "그 감정과 별개로 노후 설비의 주된 책임은 임대인 쪽이라고 정리한다.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "노후 부품",
+                  "neutral": "기존 하자"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "재통지를 늦춘 점은 인정하지만, 누수 원인은 노후 부품이었고 주된 수리 책임은 임대인에게 있다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "다툼을 키우기 싫어 미뤘던 태도가 자신에게도 약점이 된다고 안다.",
+            "기록이 나오면 하자 원인은 분명해진다고 확신한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-3:admission:1",
+              "factText": "재통지를 늦춘 자신의 몫을 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "재통지 지연",
+                  "neutral": "늦은 알림"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-3:rule:0",
+              "factText": "하지만 누수의 주된 원인은 노후 부품이므로 수리 책임 중심은 임대인에게 있다고 정리한다.",
+              "tags": [
+                "rule",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "노후 부품",
+                  "neutral": "기존 하자"
+                },
+                "item": {
+                  "exact": "욕실 수전",
+                  "neutral": "그 설비"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "중개사 있는 데서 퇴거 당일 보내주신다고 하셨어요."
+          ],
+          "privateKnowledge": [
+            "정확한 문장은 '미납 월세와 실제 복구비만 정산하면 나머지를 이사 당일 보내겠다'는 조건부 약속이었다.",
+            "급한 이사 일정 때문에 날짜 부분만 더 크게 붙잡았다."
+          ],
+          "suppressions": [
+            "미납 월세와 실제 복구비 정산 조건",
+            "조건부 약속이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:a:tell:file_referral",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-4:quote:0",
+              "factText": "퇴거 당일 보증금을 보내주겠다는 말만 앞세워 기억한다.",
+              "tags": [
+                "quote",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                },
+                "channel": {
+                  "exact": "중개사 포함 대화",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-4:privacy:0",
+              "factText": "정산 조건 문구는 뒤로 밀어 놓는다.",
+              "tags": [
+                "privacy",
+                "context"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "그날 바로 보내준다는 취지로 저는 들었어요.",
+            "그래서 이사 일정도 거기에 맞춘 거예요."
+          ],
+          "privateKnowledge": [
+            "자신도 정산 조건을 알고 있었지만, 새 집 계약금 때문에 날짜를 우선으로 받아들였다.",
+            "상대가 그 조건을 더 세게 들고 나올까 불안했다."
+          ],
+          "suppressions": [
+            "자신이 조건 문장을 축소해서 기억한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:file_referral",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-4:timeline:0",
+              "factText": "약속의 핵심을 날짜 중심으로 해석해 이사 일정을 맞췄다고 말한다.",
+              "tags": [
+                "timeline",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-4:fear:0",
+              "factText": "새 집 일정 때문에 날짜를 더 강하게 붙든 사정이 숨어 있다.",
+              "tags": [
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "네, 정확히는 미납 월세와 실제 복구비를 정산하면 나머지를 그날 주겠다는 말이었어요.",
+            "제가 그 조건을 앞보다 날짜만 크게 말한 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "크롭된 대화 캡처가 자기에게 유리한 오해를 키운다는 걸 안다.",
+            "조건 문장을 의도적으로 약하게 꺼냈다."
+          ],
+          "suppressions": [
+            "조건을 뺀 채 먼저 말한 의도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:file_referral",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-4:admission:0",
+              "factText": "보증금 반환 약속이 정산 조건이 붙은 조건부 약속이었다는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "quote",
+                "rule"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                },
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-4:self_justification:0",
+              "factText": "급한 일정 탓에 날짜만 크게 받아들였다고 설명한다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "제가 급해서 '당일 반환'만 크게 받아들였어요.",
+            "조건이 있다는 것도 알았지만, 전면 공제 통보가 나올 줄은 몰랐습니다."
+          ],
+          "privateKnowledge": [
+            "조건은 있었지만, 실제 복구비 범위가 넓게 잡힐 거라고는 예상하지 못했다.",
+            "자신에게 유리한 부분만 먼저 말한 건 사실이다."
+          ],
+          "suppressions": [
+            "초기 발언이 상대 약속을 더 단정적으로 보이게 만든 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-4:motive:0",
+              "factText": "보증금 일정이 급해 날짜를 과도하게 붙들었다고 털어놓는다.",
+              "tags": [
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-4:counter:0",
+              "factText": "다만 조건부 약속이 실제로 있었다는 점 자체는 유지한다.",
+              "tags": [
+                "counter",
+                "quote"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                },
+                "channel": {
+                  "exact": "중개사 포함 대화",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "그날 돈이 꼭 필요해서 조건보다 날짜만 붙잡았어요.",
+            "그래서 약속을 말할 때도 제게 유리한 부분만 먼저 꺼냈습니다."
+          ],
+          "privateKnowledge": [
+            "새 집 계약금을 못 맞추면 이사가 미뤄질 수 있었다.",
+            "중개사 앞 약속을 믿고 싶어서 불리한 문구를 의식적으로 줄였다."
+          ],
+          "suppressions": [
+            "언니와 계약금 문제를 상의한 정도의 절박함"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-4:fear:1",
+              "factText": "새 집 계약금 때문에 당일 반환 여부에 집착했다고 드러낸다.",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-4:shame:0",
+              "factText": "자신에게 유리한 부분만 먼저 꺼낸 점을 부끄럽게 인정한다.",
+              "tags": [
+                "shame",
+                "admission"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "상우 씨가 '미납 월세와 실제 복구비만 정산하면 나머지를 이사 당일 보내겠다'고 말한 게 정확합니다.",
+            "저는 급해서 조건을 줄이고 말했습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 축약된 설명이 오해를 키운 걸 안다.",
+            "그래도 실제 약속의 골자는 남아 있다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-4:quote:1",
+              "factText": "조건부 당일 반환 약속의 문장을 거의 그대로 인정한다.",
+              "tags": [
+                "quote",
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                },
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-4:admission:1",
+              "factText": "자신이 그 조건을 줄여 말한 책임을 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "처음엔 거의 다 공제하겠다는 식으로 들렸어요."
+          ],
+          "privateKnowledge": [
+            "늦은 월세와 거실 한 면 보수 정도는 일부 부담할 수 있다고 생각했다.",
+            "전면 도배와 수전까지 넣은 통보를 보고 겁이 났다."
+          ],
+          "suppressions": [
+            "자기 부담으로 인정 가능한 항목"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:a:tell:scope_narrowing",
+            "tenant01:a:tell:file_referral"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-5:counter:0",
+              "factText": "공제 통보 범위가 지나치게 넓었다는 인상부터 말한다.",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "일괄 공제 통보",
+                  "neutral": "그 통보"
+                },
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-5:fear:0",
+              "factText": "보증금 전체가 흔들릴까 불안해 통보를 과장되게 받아들인 면도 있다.",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "일괄 공제 통보",
+                  "neutral": "그 통보"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "월세 지연분이나 거실 한 면 보수 정도는 모르겠지만, 전면 도배랑 수전까지 한꺼번에 넣은 건 너무 넓었어요."
+          ],
+          "privateKnowledge": [
+            "자신 부담이 전혀 없다고 말하고 싶지는 않다.",
+            "계약 특약상 노후 설비는 자신의 범위가 아니라는 확신이 있다."
+          ],
+          "suppressions": [
+            "정확히 어디까지는 인정 가능하다는 세부 계산"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:scope_narrowing",
+            "tenant01:a:tell:file_referral"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-5:responsibility:0",
+              "factText": "지연 월세와 부분 보수는 일정 부분 인정 가능하다고 선을 긋는다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "부분 보수 견적 범위",
+                  "neutral": "실제 범위"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-5:rule:0",
+              "factText": "전면 도배와 노후 수전까지 한꺼번에 넣은 건 계약 기준을 넘는다고 주장한다.",
+              "tags": [
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                },
+                "rule": {
+                  "exact": "고의·과실 손상과 미납액만 세입자 정산",
+                  "neutral": "계약 기준"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "실제 필요한 범위보다 넓은 항목이 같이 들어왔습니다.",
+            "계약 특약상 제 부담은 고의·과실 손상과 미납액까지라고 이해했어요."
+          ],
+          "privateKnowledge": [
+            "상우가 넓게 통보한 항목을 협상 카드처럼 쓴다고 느꼈다.",
+            "자신도 늦은 월세와 한 면 보수는 피할 수 없다고 안다."
+          ],
+          "suppressions": [
+            "초반에는 통보 전체를 '전부 부당'처럼 말한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:file_referral",
+            "tenant01:a:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-5:context:0",
+              "factText": "공제 통보에 실제 범위를 넘는 항목이 묶여 있었다고 지적한다.",
+              "tags": [
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "일괄 공제 통보",
+                  "neutral": "그 통보"
+                },
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-5:rule:1",
+              "factText": "특약상 자신의 부담 범위는 고의·과실 손상과 미납액까지라고 정리한다.",
+              "tags": [
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "고의·과실 손상과 미납액만 세입자 정산",
+                  "neutral": "계약 기준"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "제가 부담할 부분이 아예 없다는 뜻은 아니에요.",
+            "다만 부분 보수로 끝날 항목과 노후 설비까지 한꺼번에 공제한 게 문제였어요."
+          ],
+          "privateKnowledge": [
+            "자기 몫을 조금 인정해야 전체 주장이 더 설득력 있다고 안다.",
+            "노후 수전까지 넣은 건 분명히 과하다고 느낀다."
+          ],
+          "suppressions": [
+            "처음엔 자기 부담 가능 항목도 세게 감춘 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:a:tell:scope_narrowing",
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-5:admission:0",
+              "factText": "자기 부담 항목이 전혀 없지는 않다고 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "부분 보수 견적 범위",
+                  "neutral": "실제 범위"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-5:counter:1",
+              "factText": "하지만 부분 보수와 노후 설비를 한 덩어리로 공제한 건 문제라고 짚는다.",
+              "tags": [
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "부분 보수 견적 범위",
+                  "neutral": "실제 범위"
+                },
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "보증금이 급해서 더 크게 느껴진 것도 있지만, 범위를 넓혀 통보받았다는 불안은 실제였어요."
+          ],
+          "privateKnowledge": [
+            "새 집 계약금 때문에 공제 통보 하나하나가 더 크게 다가왔다.",
+            "그래도 계약과 견적을 보면 넓어진 항목이 분명하다고 믿는다."
+          ],
+          "suppressions": [
+            "공제 통보를 처음엔 감정적으로 받아들인 부분"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-5:fear:1",
+              "factText": "보증금이 급한 상황이라 넓은 공제 통보가 더 위협적으로 느껴졌다고 말한다.",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "일괄 공제 통보",
+                  "neutral": "그 통보"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-5:counter:2",
+              "factText": "감정과 별개로 계약과 견적 범위를 넘는 항목이 있었다고 유지한다.",
+              "tags": [
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "고의·과실 손상과 미납액만 세입자 정산",
+                  "neutral": "계약 기준"
+                },
+                "estimate": {
+                  "exact": "부분 보수 견적 범위",
+                  "neutral": "실제 범위"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "제 부담은 지연 월세와 거실 한 면 보수 정도로 봅니다.",
+            "전면 도배와 노후 수전 교체까지 공제 항목에 넣은 건 계약과 견적 범위를 넘었다고 생각합니다."
+          ],
+          "privateKnowledge": [
+            "초반에는 자기 부담 항목도 더 흐리게 말했다.",
+            "지금은 항목별로 나눠 정리해야 한다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:a:tell:soft_voice_delay",
+            "tenant01:a:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:a:d-5:responsibility:1",
+              "factText": "지연 월세와 거실 한 면 보수는 자신의 부담 범위라고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "부분 보수 견적 범위",
+                  "neutral": "실제 범위"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:a:d-5:counter:3",
+              "factText": "전면 도배와 노후 수전 공제는 계약과 실제 견적 범위를 넘는다고 최종 정리한다.",
+              "tags": [
+                "counter",
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                },
+                "rule": {
+                  "exact": "고의·과실 손상과 미납액만 세입자 정산",
+                  "neutral": "계약 기준"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "월세는 약정일을 넘겼습니다.",
+            "원칙상 늦으면 늦은 겁니다."
+          ],
+          "privateKnowledge": [
+            "정확히는 5일 지연이고 장기 미납은 아니었다.",
+            "그 지연이 정산 전반에 대한 불신을 키웠다."
+          ],
+          "suppressions": [
+            "같은 주 안에 정리됐다는 완화 사정"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:receipt_challenge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-1:timeline:0",
+              "factText": "월세가 약정일을 넘긴 사실을 숫자 중심으로 단정한다.",
+              "tags": [
+                "timeline",
+                "act"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                },
+                "time": {
+                  "exact": "계약 종료 한 달 전 약정일",
+                  "neutral": "그 시점",
+                  "period": "계약 종료 한 달 전 약정일"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-1:rule:0",
+              "factText": "약정일 위반 자체가 중요하다고 원칙론으로 밀어붙인다.",
+              "tags": [
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "정확히 5일 늦었고 관리비도 같은 주에 들어왔습니다.",
+            "금액보다 약정 위반 여부를 본 겁니다."
+          ],
+          "privateKnowledge": [
+            "상습 미납으로 보긴 어렵다는 걸 안다.",
+            "그래도 마지막 달 지연은 자신의 경계심을 자극했다."
+          ],
+          "suppressions": [
+            "장기 미납이 아니라는 평가"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:receipt_challenge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-1:timeline:1",
+              "factText": "지연 사실과 같은 주 정산 사실을 함께 숫자로 정리한다.",
+              "tags": [
+                "timeline",
+                "act"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                },
+                "status": {
+                  "exact": "같은 주 안에 정리",
+                  "neutral": "곧 정리된 상태"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-1:self_justification:0",
+              "factText": "핵심은 금액보다 약정 위반이었다고 해석한다.",
+              "tags": [
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "계약 종료 한 달 전 약정일",
+                  "neutral": "그 시점",
+                  "period": "계약 종료 한 달 전 약정일"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "상습 미납으로 본 건 아닙니다.",
+            "다만 마지막 달에 늦으면 정산 신뢰가 떨어지는 건 사실입니다."
+          ],
+          "privateKnowledge": [
+            "5일 지연만으로 전면 공제까지 정당화되진 않는다는 걸 안다.",
+            "하지만 그 일이 자신의 태도를 강경하게 만들었다."
+          ],
+          "suppressions": [
+            "그 지연을 다른 항목 확대의 근거로 삼은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-1:admission:0",
+              "factText": "장기 미납이나 상습 연체는 아니었다고 인정한다.",
+              "tags": [
+                "admission",
+                "counter"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-1:context:0",
+              "factText": "마지막 달 지연이 정산 전반의 불신으로 이어졌다고 설명한다.",
+              "tags": [
+                "context",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "계약 종료 한 달 전 약정일",
+                  "neutral": "그 시점",
+                  "period": "계약 종료 한 달 전 약정일"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "길게 끈 연체는 아니었지만, 제가 공제 범위를 넓게 잡는 데 그 일이 영향을 줬습니다."
+          ],
+          "privateKnowledge": [
+            "월세 지연과 원상복구 범위를 구분하지 못했다는 생각이 스친다.",
+            "통제력을 잃지 않으려 더 강하게 통보했다."
+          ],
+          "suppressions": [
+            "감정적 경계심이 공제 범위 판단에 섞인 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-1:motive:0",
+              "factText": "월세 지연이 자신의 강경한 태도를 부채질했다고 인정한다.",
+              "tags": [
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-1:responsibility:0",
+              "factText": "그 불신이 공제 범위를 넓게 잡는 판단으로 이어졌다고 시사한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "status": {
+                  "exact": "같은 주 안에 정리",
+                  "neutral": "곧 정리된 상태"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 마지막 달 지연을 보고 '이번 정산도 흐려지겠구나' 하는 경계심이 커졌습니다."
+          ],
+          "privateKnowledge": [
+            "세입자를 한 번 봐주면 다음 관리까지 흔들린다고 믿는다.",
+            "그래서 숫자를 더 앞세웠다."
+          ],
+          "suppressions": [
+            "실제 지연 정도보다 감정적 불신이 더 컸던 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-1:fear:0",
+              "factText": "정산 통제력이 흔들릴까 봐 경계심이 커졌다고 털어놓는다.",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-1:self_justification:1",
+              "factText": "그 불안을 원칙과 숫자로 포장했다.",
+              "tags": [
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "계약 종료 한 달 전 약정일",
+                  "neutral": "그 시점",
+                  "period": "계약 종료 한 달 전 약정일"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "월세는 5일 늦게 들어왔지만 곧 정리됐습니다.",
+            "그 지연 사실과 별개로 다른 공제 항목까지 과하게 넓힌 건 제가 구분했어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "월세 지연을 다른 분쟁 확대의 근거처럼 쓴 점을 인정한다.",
+            "결국 항목별로 따로 봤어야 한다고 생각한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-1:admission:1",
+              "factText": "월세 지연이 5일에 그쳤고 곧 정리됐다는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                },
+                "status": {
+                  "exact": "같은 주 안에 정리",
+                  "neutral": "곧 정리된 상태"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-1:responsibility:1",
+              "factText": "그 지연과 별개 항목을 섞어 공제 범위를 넓힌 판단은 자신의 몫이라고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5일",
+                  "neutral": "그 기간",
+                  "rounded": "5일"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "반려동물 흔적이 보이면 다음 임차인을 생각해 전면 정비를 검토할 수밖에 없습니다."
+          ],
+          "privateKnowledge": [
+            "입주 전부터 변색과 들뜸이 있었던 걸 사진으로 확인하면 불리하다.",
+            "그래도 다음 임차인 관리 기준을 내세우고 싶다."
+          ],
+          "suppressions": [
+            "기존 변색과 들뜸 존재",
+            "부분 보수 견적도 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:receipt_challenge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-2:rule:0",
+              "factText": "반려동물 흔적이 있으면 전면 정비를 검토할 수밖에 없다는 관리 논리를 앞세운다.",
+              "tags": [
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "반려묘 긁힘",
+                  "neutral": "해당 흔적"
+                },
+                "scope": {
+                  "exact": "전면 도배",
+                  "neutral": "그 정도 공사"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-2:self_justification:0",
+              "factText": "다음 임차인 기준을 이유로 범위를 넓게 잡는다.",
+              "tags": [
+                "self_justification",
+                "beneficiary"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배",
+                  "neutral": "그 정도 공사"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "사진만으로는 범위를 단정하기 어렵고, 벽지는 연결 면이라 한 곳만 손보면 색이 뜹니다."
+          ],
+          "privateKnowledge": [
+            "부분 보수 견적이 더 직접적이라는 걸 안다.",
+            "입주 전 사진이 나오면 자기 주장이 약해질 수 있다고 느낀다."
+          ],
+          "suppressions": [
+            "기존 변색이 사진에 찍혀 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:receipt_challenge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-2:uncertainty:0",
+              "factText": "사진만으로 범위를 단정하기 어렵다고 물러서면서도 전면 공사 가능성을 남긴다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "입주·퇴거 비교 사진",
+                  "neutral": "사진 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-2:rule:1",
+              "factText": "벽지가 연결 면이라 부분 보수보다 전면 정비가 자연스럽다고 주장한다.",
+              "tags": [
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "area": {
+                  "exact": "거실 한 면",
+                  "neutral": "그 부분"
+                },
+                "scope": {
+                  "exact": "전면 도배",
+                  "neutral": "그 정도 공사"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "입주 전 사진을 보니 기존 변색이 있던 건 맞습니다.",
+            "그래도 긁힌 면은 손을 봐야 한다고 판단했습니다."
+          ],
+          "privateKnowledge": [
+            "입주 전 상태가 전면 교체 논리를 약하게 만든다는 걸 인정한다.",
+            "세입자 책임은 적어도 한 면 보수 쪽이라는 생각이 든다."
+          ],
+          "suppressions": [
+            "전면 도배 필요성을 더 세게 말해 온 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-2:admission:0",
+              "factText": "입주 전부터 기존 변색과 들뜸이 있었다는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "기존 변색과 들뜸",
+                  "neutral": "기존 흔적"
+                },
+                "evidence": {
+                  "exact": "입주·퇴거 비교 사진",
+                  "neutral": "사진 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-2:responsibility:0",
+              "factText": "그래도 긁힌 면에 대한 보수 필요성만은 유지한다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "area": {
+                  "exact": "거실 한 면",
+                  "neutral": "그 부분"
+                },
+                "cause": {
+                  "exact": "반려묘 긁힘",
+                  "neutral": "해당 흔적"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "전면 교체가 유일한 답은 아닐 수 있습니다.",
+            "다만 반려동물 손상은 다음 세입자 기준으로 민감하게 본 겁니다."
+          ],
+          "privateKnowledge": [
+            "실제 범위보다 관리 원칙을 앞세웠다는 자각이 있다.",
+            "색 차이 문제를 이유로 넓게 잡았다."
+          ],
+          "suppressions": [
+            "관리 원칙이 실제 견적보다 앞섰다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-2:admission:1",
+              "factText": "전면 교체가 유일한 답은 아니었다고 인정한다.",
+              "tags": [
+                "admission",
+                "counter"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배",
+                  "neutral": "그 정도 공사"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-2:beneficiary:0",
+              "factText": "다음 임차인 기준을 앞세워 범위를 넓게 본 이유를 설명한다.",
+              "tags": [
+                "beneficiary",
+                "motive"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "반려묘 긁힘",
+                  "neutral": "해당 흔적"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "한 번 느슨하게 보이면 이후 관리가 무너진다고 생각해 범위를 넓게 잡았습니다."
+          ],
+          "privateKnowledge": [
+            "반려동물 손상에 약하게 대응하면 통제력이 무너진다고 느낀다.",
+            "그 불안이 실제 견적보다 앞섰다."
+          ],
+          "suppressions": [
+            "자신의 통제 욕구"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-2:fear:0",
+              "factText": "반려동물 손상을 느슨하게 처리하면 이후 관리가 흔들릴까 두려워했다.",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "반려묘 긁힘",
+                  "neutral": "해당 흔적"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-2:self_justification:1",
+              "factText": "그 불안을 이유로 전면 정비 쪽에 무게를 실었다.",
+              "tags": [
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배",
+                  "neutral": "그 정도 공사"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "입주 전 상태를 감안하면 세입자 책임은 거실 한 면 보수 수준이 더 맞습니다.",
+            "제가 전면 교체 쪽으로 무게를 너무 실었습니다."
+          ],
+          "privateKnowledge": [
+            "처음엔 관리 원칙 때문에 전면 교체를 더 강하게 주장했다.",
+            "이제는 부분 보수 쪽이 맞다는 걸 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-2:responsibility:1",
+              "factText": "세입자 책임 범위는 거실 한 면 보수 수준이라고 최종 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "area": {
+                  "exact": "거실 한 면",
+                  "neutral": "그 부분"
+                },
+                "cause": {
+                  "exact": "반려묘 긁힘",
+                  "neutral": "해당 흔적"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-2:admission:2",
+              "factText": "전면 교체 쪽으로 무게를 실은 판단이 과했다는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배",
+                  "neutral": "그 정도 공사"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "수전 누수는 거주 중 관리 문제로 커진 겁니다.",
+            "세입자가 바로 말했으면 이렇게 안 됐습니다."
+          ],
+          "privateKnowledge": [
+            "입주 전 접수 흔적이 있을 수 있다는 걸 안다.",
+            "공실 때 고치려다 본수리를 미뤘다."
+          ],
+          "suppressions": [
+            "입주 전 접수 기록",
+            "본수리를 미룬 자신의 판단"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:receipt_challenge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-3:denial:0",
+              "factText": "수전 누수의 주된 원인을 세입자 관리 문제처럼 몰아간다.",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "item": {
+                  "exact": "욕실 수전",
+                  "neutral": "그 설비"
+                },
+                "issue": {
+                  "exact": "누수",
+                  "neutral": "그 문제"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-3:responsibility:0",
+              "factText": "즉시 알렸으면 커지지 않았다고 세입자 쪽으로 책임을 돌린다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "재통지 지연",
+                  "neutral": "늦은 알림"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "정확한 원인은 뜯어봐야 알지만, 늦게 알려서 피해가 커진 건 분명합니다."
+          ],
+          "privateKnowledge": [
+            "노후 부품 가능성을 의식한다.",
+            "원인 단정보다는 신고 지연을 강조하면 방어가 된다고 본다."
+          ],
+          "suppressions": [
+            "입주 전부터 이어졌을 가능성",
+            "본인 수리 지연"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:receipt_challenge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-3:uncertainty:0",
+              "factText": "원인은 단정하지 않으면서도 세입자 지연 신고를 중심축으로 세운다.",
+              "tags": [
+                "uncertainty",
+                "timeline"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "재통지 지연",
+                  "neutral": "늦은 알림"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-3:counter:0",
+              "factText": "피해 확산의 책임을 세입자에게 더 묶어 두려 한다.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "누수",
+                  "neutral": "그 문제"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "관리실 기록을 보니 예전 접수 흔적이 있는 건 맞더군요.",
+            "그래도 하림 씨가 다시 강하게 알린 시점은 늦었습니다."
+          ],
+          "privateKnowledge": [
+            "입주 전부터 노후 문제가 있었다는 사실을 더는 부정할 수 없다.",
+            "그래도 자신의 부담을 줄이려 재통지 지연을 붙들고 있다."
+          ],
+          "suppressions": [
+            "본수리를 미룬 기간"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-3:admission:0",
+              "factText": "입주 전 접수 흔적이 있다는 점은 인정한다.",
+              "tags": [
+                "admission",
+                "timeline",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "입주 이전 접수 시점",
+                  "neutral": "그 전 기록",
+                  "period": "입주 이전"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-3:counter:1",
+              "factText": "그럼에도 재통지 지연을 근거로 세입자 몫을 남기려 한다.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "재통지 지연",
+                  "neutral": "늦은 알림"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "입주 전부터 노후가 있었고 본수리를 미룬 건 제 쪽입니다.",
+            "다만 재통지가 늦어진 점까지 완전히 없는 일로 볼 순 없습니다."
+          ],
+          "privateKnowledge": [
+            "공실 때 한 번에 처리하려던 계산이 있었다.",
+            "세입자 책임이 조금이라도 남아야 자신 손실이 줄어든다."
+          ],
+          "suppressions": [
+            "처음엔 노후 원인을 더 강하게 가렸다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-3:responsibility:1",
+              "factText": "입주 전 노후와 본수리 지연 책임이 자기 쪽에 있다는 점을 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "노후 부품",
+                  "neutral": "기존 하자"
+                },
+                "time": {
+                  "exact": "입주 이전 접수 시점",
+                  "neutral": "그 전 기록",
+                  "period": "입주 이전"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-3:motive:0",
+              "factText": "그래도 세입자 재통지 지연을 붙들어 자신의 부담을 줄이려 한다.",
+              "tags": [
+                "motive",
+                "counter"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "재통지 지연",
+                  "neutral": "늦은 알림"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "공실 때 한 번에 고치려 했던 계산이 있었습니다.",
+            "비용을 떠안기 싫어서 세입자 책임 쪽으로 더 밀었습니다."
+          ],
+          "privateKnowledge": [
+            "노후 설비 비용을 전부 감당하고 싶지 않았다.",
+            "그래서 신고 지연을 더 크게 부풀렸다."
+          ],
+          "suppressions": [
+            "비용 회피 의도"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-3:motive:1",
+              "factText": "공실 때 한 번에 수리하려던 계산 때문에 본수리를 미뤘다고 인정한다.",
+              "tags": [
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "item": {
+                  "exact": "욕실 수전",
+                  "neutral": "그 설비"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-3:admission:1",
+              "factText": "비용을 줄이려 세입자 책임을 더 강하게 밀었다고 시인한다.",
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "재통지 지연",
+                  "neutral": "늦은 알림"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "수전 누수의 주된 원인은 노후 부품이었습니다.",
+            "하림 씨 재통지가 늦은 부분은 있어도, 주된 수리 책임은 제게 있습니다."
+          ],
+          "privateKnowledge": [
+            "처음엔 손실을 줄이려 원인을 세입자 쪽으로 돌렸다.",
+            "이제는 주된 책임을 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-3:admission:2",
+              "factText": "누수의 주된 원인이 노후 부품이었다는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "노후 부품",
+                  "neutral": "기존 하자"
+                },
+                "item": {
+                  "exact": "욕실 수전",
+                  "neutral": "그 설비"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-3:responsibility:2",
+              "factText": "재통지 지연이 일부 있어도 주된 수리 책임은 자신에게 있다고 정리한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "재통지 지연",
+                  "neutral": "늦은 알림"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "보증금은 정산 끝나야 나가는 겁니다.",
+            "제가 무조건 당일 송금하겠다고 한 적은 없습니다."
+          ],
+          "privateKnowledge": [
+            "중개사 있는 자리에서 '정산하면 그날 보내겠다'고 말한 기억이 있다.",
+            "날짜를 확정 약속처럼 들리게 한 건 부담스럽다."
+          ],
+          "suppressions": [
+            "정산 후 이사 당일 송금 취지의 발언",
+            "중개사 동석 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:receipt_challenge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-4:denial:0",
+              "factText": "무조건적인 당일 송금 약속은 없었다고 잘라 말한다.",
+              "tags": [
+                "denial",
+                "quote"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-4:rule:0",
+              "factText": "보증금은 정산이 끝나야 나간다는 원칙을 앞세워 날짜 문제를 지운다.",
+              "tags": [
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "원칙상 정산이 먼저고, 저는 그 취지로 말했습니다.",
+            "날짜를 확정 약속처럼 받아들인 건 상대 쪽입니다."
+          ],
+          "privateKnowledge": [
+            "같은 날 보내겠다는 어감이 있었음을 안다.",
+            "원칙론을 앞세우면 대화를 규정 문제로 되돌릴 수 있다고 본다."
+          ],
+          "suppressions": [
+            "중개사 앞에서 말이 더 단정적으로 들렸을 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:receipt_challenge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-4:rule:1",
+              "factText": "정산 우선 원칙을 반복해 날짜 약속의 무게를 줄인다.",
+              "tags": [
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-4:counter:0",
+              "factText": "상대가 날짜를 과하게 확정 약속으로 받아들였다고 책임을 넘긴다.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "같은 날 정산이 되면 그날 보내겠다는 취지로 말한 건 맞습니다.",
+            "다만 조건 없이 전액을 준다는 뜻은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "메시지와 통화 요약이 나오면 전면 부정은 어렵다.",
+            "조건을 강조해 체면 손상을 줄이려 한다."
+          ],
+          "suppressions": [
+            "초반에 날짜 약속 자체를 부인한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-4:admission:0",
+              "factText": "정산이 되면 이사 당일 보낸다는 취지의 말은 했다고 인정한다.",
+              "tags": [
+                "admission",
+                "quote",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                },
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-4:counter:1",
+              "factText": "그러나 조건 없는 전액 반환 약속은 아니었다고 다시 경계를 긋는다.",
+              "tags": [
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "말을 짧게 해서 기대를 키운 건 있습니다.",
+            "중개사 있는 자리라 더 단정적으로 들렸을 수 있습니다."
+          ],
+          "privateKnowledge": [
+            "정산 주도권을 잃지 않으려 말을 애매하게 남겼다.",
+            "중개사 앞 발언이 증거화될 가능성을 신경 쓴다."
+          ],
+          "suppressions": [
+            "정산 주도권을 잡으려 일부러 여지를 남긴 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-4:admission:1",
+              "factText": "자신의 짧은 표현이 기대를 키웠을 수 있다고 인정한다.",
+              "tags": [
+                "admission",
+                "quote"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "중개사 포함 대화",
+                  "neutral": "그 대화"
+                },
+                "broker": {
+                  "exact": "김도현",
+                  "neutral": "그 중개사",
+                  "fullName": "김도현 (공인중개사)",
+                  "judgeRef": "중개사"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-4:motive:0",
+              "factText": "정산 주도권을 유지하려 말을 애매하게 남긴 속내가 비친다.",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "보증금을 바로 내주면 공제 다툼에서 제가 밀릴까 봐 여지를 남겨두고 싶었습니다."
+          ],
+          "privateKnowledge": [
+            "당일 송금 약속을 지키면 공제 협상력이 약해질까 두려웠다.",
+            "그래서 원칙이라는 말을 더 많이 꺼냈다."
+          ],
+          "suppressions": [
+            "협상력을 의식한 계산"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-4:fear:0",
+              "factText": "보증금을 바로 내주면 공제 협상에서 밀릴까 두려웠다고 털어놓는다.",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-4:self_justification:0",
+              "factText": "그 불안을 원칙과 정산 순서라는 말로 포장했다.",
+              "tags": [
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "제가 한 말은 '미납 월세와 실제 복구비만 정산하면 나머지는 이사 당일 보내겠다'는 취지였습니다.",
+            "그 약속을 뒤집을 정도로 범위를 넓힌 건 제 판단이었습니다."
+          ],
+          "privateKnowledge": [
+            "체면을 지키려 당일 약속의 무게를 낮춰 말해 왔다.",
+            "실제 범위를 넘긴 공제 통보가 약속 이행을 어긋나게 만들었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-4:quote:0",
+              "factText": "조건부 당일 반환 약속의 취지를 그대로 인정한다.",
+              "tags": [
+                "quote",
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "미납 월세와 실제 복구비만 정산 후",
+                  "neutral": "정산 조건"
+                },
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-4:responsibility:0",
+              "factText": "그 약속과 어긋나게 범위를 넓힌 판단은 자신의 책임이라고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이사 당일",
+                  "neutral": "그날",
+                  "dateExact": "이사 당일"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "공제 통보는 보수적으로 넓게 잡는 게 원칙입니다.",
+            "전면 도배와 수전 교체까지 검토한 건 이상한 일이 아닙니다."
+          ],
+          "privateKnowledge": [
+            "부분 보수 견적과 계약 특약을 알고 있어도 처음 통보는 세게 하고 싶다.",
+            "전면 공제 통보가 협상력을 준다고 믿는다."
+          ],
+          "suppressions": [
+            "부분 보수 견적 존재",
+            "노후 수전이 세입자 책임 범위를 넘는다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:receipt_challenge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-5:rule:0",
+              "factText": "처음 공제 통보는 넓게 잡는 게 원칙이라고 주장한다.",
+              "tags": [
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "일괄 공제 통보",
+                  "neutral": "그 통보"
+                },
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-5:context:0",
+              "factText": "전면 도배와 수전 교체 항목까지 넣은 것을 통상적 검토라고 포장한다.",
+              "tags": [
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "견적은 최악 기준도 받아봐야 합니다.",
+            "영수증과 특약이 정리되기 전엔 넓게 잡아 통보할 수 있습니다."
+          ],
+          "privateKnowledge": [
+            "실제 직접 견적은 부분 보수 쪽이라는 걸 안다.",
+            "계약 기준보다 먼저 협상 범위를 키우려 한다."
+          ],
+          "suppressions": [
+            "특약이 세입자 부담 범위를 제한한다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:receipt_challenge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-5:uncertainty:0",
+              "factText": "최악 기준 견적도 받아봐야 한다며 넓은 범위를 잠정안처럼 유지한다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "부분 보수 견적 범위",
+                  "neutral": "실제 범위"
+                },
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-5:rule:1",
+              "factText": "특약 정리 전에는 넓게 통보할 수 있다고 절차 논리를 편다.",
+              "tags": [
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "고의·과실 손상과 미납액만 세입자 정산",
+                  "neutral": "계약 기준"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "부분 보수 견적이 더 직접적인 기준인 건 맞습니다.",
+            "그래도 저는 다음 임차인 일정 때문에 넓게 통보해 둔 겁니다."
+          ],
+          "privateKnowledge": [
+            "부분 보수만으로도 정산이 가능하다는 걸 인정한다.",
+            "하지만 다음 임차인 일정을 핑계로 넓은 통보를 유지한다."
+          ],
+          "suppressions": [
+            "협상용으로 범위를 넓혔다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:clause_recital",
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-5:admission:0",
+              "factText": "부분 보수 견적이 더 직접적인 기준이라는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "부분 보수 견적 범위",
+                  "neutral": "실제 범위"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-5:beneficiary:0",
+              "factText": "다음 임차인 일정과 공실 관리 기준을 이유로 통보 범위를 넓혔다고 설명한다.",
+              "tags": [
+                "beneficiary",
+                "motive"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "일괄 공제 통보",
+                  "neutral": "그 통보"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "계약상 세입자 부담이 아닌 항목까지 일단 넣은 건 사실입니다.",
+            "협상 여지를 남기려 넓게 잡았습니다."
+          ],
+          "privateKnowledge": [
+            "특약을 넘는다는 걸 알면서도 세게 통보하면 유리하다고 계산했다.",
+            "노후 수전까지 넣은 건 지나쳤다는 생각이 든다."
+          ],
+          "suppressions": [
+            "계약 범위를 넘는다는 자각"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-5:admission:1",
+              "factText": "계약상 세입자 부담이 아닌 항목까지 처음 통보에 넣었다고 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                },
+                "rule": {
+                  "exact": "고의·과실 손상과 미납액만 세입자 정산",
+                  "neutral": "계약 기준"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-5:motive:0",
+              "factText": "협상 여지를 남기려 일부러 넓게 잡았다고 설명한다.",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "일괄 공제 통보",
+                  "neutral": "그 통보"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "한 번 봐주면 관리가 흔들린다는 생각에, 처음 통보는 일부러 세게 했습니다."
+          ],
+          "privateKnowledge": [
+            "세입자에게 물러나 보이면 다음 임차인 관리에도 영향이 간다고 믿는다.",
+            "그 두려움이 계약 범위 판단을 흐렸다."
+          ],
+          "suppressions": [
+            "통제력에 대한 집착"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-5:fear:0",
+              "factText": "한 번 봐주면 건물 관리 전반이 흔들릴까 두려워했다고 털어놓는다.",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "일괄 공제 통보",
+                  "neutral": "그 통보"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-5:self_justification:0",
+              "factText": "그 불안 때문에 처음 통보를 일부러 세게 했다고 인정한다.",
+              "tags": [
+                "self_justification",
+                "admission"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "전면 도배와 노후 수전 교체까지 한꺼번에 공제 항목에 넣은 건 과했습니다.",
+            "실제 필요한 범위와 계약 특약을 넘은 통보였습니다."
+          ],
+          "privateKnowledge": [
+            "처음엔 체면과 관리 원칙 때문에 범위를 줄이지 않았다.",
+            "이제는 부분 보수 범위와 특약 기준을 따라야 한다고 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant01:b:tell:emotional_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant01:b:d-5:admission:2",
+              "factText": "전면 도배와 노후 수전 교체까지 넣은 통보가 과했다는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "전면 도배와 노후 수전 교체",
+                  "neutral": "넓은 공제 항목"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant01:b:d-5:rule:2",
+              "factText": "실제 필요한 범위와 계약 특약을 넘은 통보였다고 최종 정리한다.",
+              "tags": [
+                "rule",
+                "evidence",
+                "admission"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "부분 보수 견적 범위",
+                  "neutral": "실제 범위"
+                },
+                "rule": {
+                  "exact": "고의·과실 손상과 미납액만 세입자 정산",
+                  "neutral": "계약 기준"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+

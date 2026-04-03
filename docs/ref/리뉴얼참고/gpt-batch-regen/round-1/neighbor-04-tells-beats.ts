@@ -1,0 +1,577 @@
+export const neighbor04TellsBeats = {
+  "caseId": "neighbor-04",
+  "executableTells": {
+    "a": [
+      {
+        "id": "neighbor04:a:tell:sympathy_stack",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "lying",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "그때도",
+          "아버지가",
+          "제가 뛰어다녔고"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "본론 전에 '그때도 아버지가 힘들었고, 아침마다 내가 뛰었고'처럼 고생 장면을 먼저 길게 쌓는다."
+      },
+      {
+        "id": "neighbor04:a:tell:omission_wrap",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "쪽지부터",
+          "시선이",
+          "그 말투가"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "자신에게 불리한 시간 약속이나 종료 시점을 빼고, 남이 남긴 쪽지와 태도만 전면에 둔다."
+      },
+      {
+        "id": "neighbor04:a:tell:accusation_echo",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "그러는 그쪽은",
+          "왜 콘을",
+          "그건요"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "추궁을 받으면 '그러는 그쪽은 왜 콘을 세웠는데요'처럼 질문을 그대로 되돌린다."
+      }
+    ],
+    "b": [
+      {
+        "id": "neighbor04:b:tell:clause_recital",
+        "appliesWhen": [
+          "lying",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "관리규약상",
+          "원칙적으로",
+          "공용면은"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "자신의 과한 대응을 묻는 질문에는 관리규약 문장을 길게 읽으며 행동의 수위를 흐린다."
+      },
+      {
+        "id": "neighbor04:b:tell:timestamp_wall",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "7시 21분",
+          "102동 앞",
+          "열한 차례"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "몇 시 몇 분에 몇 번 칸이 비지 않았는지를 연속으로 말해 감정 논의를 차단한다."
+      },
+      {
+        "id": "neighbor04:b:tell:affect_flattening",
+        "appliesWhen": [
+          "avoiding",
+          "emotional",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "사정은 이해합니다만",
+          "그건 별개고",
+          "규정대로"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "every_turn",
+        "originalPattern": "상대 가족 사정을 물어도 어조를 거의 바꾸지 않아 공감 부족으로 보이게 만든다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "neighbor04:beat:a:d-1:deny",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "그때도 아버지가 병원 동선이 계속 바뀌는 시기였습니다. 제가 뛰어다녔고요. 몇 분 차이로 약속을 어겼다고 단정하시는 건 너무 단단하게 보시는 거 아닌가요?",
+      "behaviorHint": "손가락을 맞잡고 길게 설명하다가 끝에 되묻듯 고개를 든다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-1:hedge",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "2월 말 뒤에도 병원 일정이 완전히 끝난 건 아니어서 예외가 조금 이어진 줄 알았습니다. 제가 일부러 칸을 붙잡은 건 아니에요.",
+      "behaviorHint": "시선을 피하며 문장 앞부분을 길게 늘인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-1:partial",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "몇 번 늦은 건 맞습니다. 다만 그날그날 아버지 상태 확인이 겹쳐 차를 바로 못 뺀 날이 있었습니다.",
+      "behaviorHint": "한숨을 짧게 쉬고 인정하는 대목만 낮게 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-1:blame",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "약속을 다시 정리했어야 했던 건 맞지만, 도윤 씨도 매번 몰아붙이듯 반응했잖아요. 처음부터 관리사무소로 갔으면 이렇게 안 됐습니다.",
+      "behaviorHint": "입술을 깨물었다가 상대 쪽을 흘겨본다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-1:confession",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "제가 7시 20분 전에 비워주기로 한 약속을 반복해서 어겼습니다. 아버지 사정을 앞세워 원상복구를 미룬 건 제 책임입니다.",
+      "behaviorHint": "어깨가 내려앉고 마지막 문장을 거의 체념하듯 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-1:evidence_hit",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "출입기록이 그렇게 남아 있으면 제가 '가끔'이라고만 말하긴 어렵네요. 생각보다 늦어진 날이 많았던 건 인정하겠습니다.",
+      "behaviorHint": "자료를 보자마자 입술을 다물고 시선이 아래로 떨어진다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "neighbor04:beat:a:d-3:deny",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "쪽지부터 범퍼까지 같이 봤으면 누구라도 그렇게 의심했을 겁니다. 그 아침엔 정말 도윤 씨 보복처럼 보였어요.",
+      "behaviorHint": "사진을 떠올리듯 손으로 공중을 짚으며 감정을 앞세운다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-3:hedge",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "직접 본 건 아니지만 메모까지 남긴 사람이면 차에 손댔을 가능성도 있다고 본 거예요. 그 전에 난 흠집인지 제가 바로 알 수는 없었고요.",
+      "behaviorHint": "말끝을 흐리면서도 억울한 표정을 유지한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-3:partial",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "확실한 증거가 있었던 건 아니고, 그날 분위기 때문에 제가 그렇게 연결해서 본 건 맞습니다. 메모와 콘을 본 직후라 감정이 먼저 튀었어요.",
+      "behaviorHint": "손으로 목을 한번 쓸고 난 뒤 조심스럽게 수위를 낮춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-3:blame",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "도윤 씨가 그 말투가 그렇게까지 압박하지 않았으면 저도 범퍼 얘기까지 꺼내진 않았을 겁니다. 제 의심이 과했던 건 인정하지만 상황을 만든 쪽도 도윤 씨였어요.",
+      "behaviorHint": "한 번 인정했다가 바로 상대 책임을 덧붙인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-3:confession",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "범퍼 흠집을 도윤 씨 보복이라고 단정한 건 제 잘못이었습니다. 일주일 전 손상 가능성을 알고도 그날 분노에 기대 더 강하게 몰아갔습니다.",
+      "behaviorHint": "눈을 감았다 뜨며 단정하듯 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-3:evidence_hit",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "이 사진만으로는 제가 너무 바로 연결해 버린 셈이네요. 흠집 시점을 확인하지도 않고 말이 앞섰습니다.",
+      "behaviorHint": "사진과 자료를 번갈아 보다가 목소리가 급격히 낮아진다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-1"
+    },
+    {
+      "id": "neighbor04:beat:a:d-5:deny",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "저는 괴롭힘받는 상황을 알리려던 거였지 먼저 망신주려던 건 아니었습니다. 확인 전 약속을 제가 깼다고만 보긴 어렵습니다.",
+      "behaviorHint": "손을 모은 채 억울함을 앞세워 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-5:hedge",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "사진과 쪽지를 보고 너무 놀라서 도움을 구한 것뿐입니다. 사실관계를 다 못 적은 건 맞지만 의도까지 그렇게 보실 건 아니에요.",
+      "behaviorHint": "목이 잠긴 듯 속도를 늦춘다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-5:partial",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "제가 단체방에 먼저 올린 건 사실이지만 그때는 콘과 메모를 본 직후라 제정신이 아니었습니다. 다만 도윤 씨도 공개 압박을 먼저 시작했잖아요.",
+      "behaviorHint": "인정 후 바로 반문하는 어조로 전환한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-5:blame",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "확인 전 공개글을 올린 건 제가 약속을 어긴 셈입니다. 그러는 그쪽은 왜 콘을 세우고 쪽지로 먼저 몰아붙였는데요, 그게 없었다면 그렇게까지 하진 않았을 겁니다.",
+      "behaviorHint": "울컥한 표정으로 책임을 나눠 말한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-5:confession",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "관리사무소 확인 전에 단체방에 피해자처럼 글을 올린 건 제 잘못입니다. 종료된 합의와 제 반복 위반을 빼고 써서 공개 비난 금지 약속을 제가 먼저 깨뜨렸습니다.",
+      "behaviorHint": "시선을 떨군 채 문장을 끊어 읽듯 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:a:d-5:evidence_hit",
+      "caseId": "neighbor-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "게시 시각이 공식 민원보다 앞섰다면 제가 '도움 요청'이라고만 말하기는 어렵겠네요. 제 글이 먼저 여론을 움직인 건 맞습니다.",
+      "behaviorHint": "게시 시간 부분에서 손끝이 굳고 호흡이 짧아진다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "neighbor04:beat:b:d-2:deny",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "관리규약상 차를 막으려고 콘을 둔 게 아닙니다. 또 비워지지 않았다는 걸 표시만 해둔 거고, 메모도 위협이 아니라 약속 상기 수준이었습니다.",
+      "behaviorHint": "턱을 약간 들고 건조하게 문장을 끊는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-2:hedge",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "잠깐 둔 개인 물건이었고 통행을 완전히 막을 생각은 없었습니다. 감정적으로 보였을 수는 있어도 자력 제재라고까지 할 건 아니라고 봅니다.",
+      "behaviorHint": "규정서를 읽듯 담담하게 말하지만 손끝이 굳어 있다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-2:partial",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "공식 신고 전에 콘과 메모를 둔 건 맞습니다. 그건 별개고, 반복 위반이 계속돼 순간적으로 선을 넘은 겁니다.",
+      "behaviorHint": "짧게 인정한 뒤 바로 이유를 숫자처럼 덧붙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-2:blame",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "개인 콘을 세운 건 제 잘못이지만, 몇 차례고 같은 일이 반복되다 보니 관리사무소만 기다리기 어렵다고 느꼈습니다. 먼저 약속이 지켜졌다면 저는 그렇게까지 안 했을 겁니다.",
+      "behaviorHint": "어조는 평평하지만 마지막 문장에서 상대를 똑바로 본다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-2:confession",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "관리사무소 신고 전에 개인 콘과 경고문으로 압박한 건 제 책임입니다. 반복 위반에 화가 났더라도 공용공간을 사적으로 제재하면 안 됐습니다.",
+      "behaviorHint": "어깨를 고정한 채 짧고 분명하게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-2:evidence_hit",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "순찰일지까지 있으면 이건 '표시'라고만 부르기 어렵겠군요. 공식 절차 전에 제가 먼저 움직인 건 인정합니다.",
+      "behaviorHint": "자료를 읽고 잠깐 말을 멈춘 뒤 더 짧게 답한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "neighbor04:beat:b:d-4:deny",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "서로 편의 보자는 얘기는 있었지만 7시 21분 기록처럼 그걸 딱 끊기는 계약으로 받아들이진 않았습니다. 상황이 좀 더 안정될 때까지 유연하게 가는 줄 알았습니다.",
+      "behaviorHint": "의자에 등을 붙인 채 규정 해석처럼 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-4:hedge",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "문자에 종료 시점이 적혀 있었던 건 맞지만 실제 생활에선 서로 조금씩 봐주자는 뉘앙스도 있었습니다. 그래서 완전 원상복구 시점을 단정하기 어렵다고 봤습니다.",
+      "behaviorHint": "문장 앞부분을 또렷하게, 결론은 모호하게 처리한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-4:partial",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "사정은 이해합니다만, 재활 종료 후 원래 순서로 돌아가자는 문구가 있었던 건 사실입니다. 다만 저는 그걸 갑자기 하루아침에 끊으라는 뜻보다는 정리 단계로 이해했습니다.",
+      "behaviorHint": "인정과 해석을 한 문장 안에서 붙여 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-4:blame",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "합의 종료가 명시됐다는 점은 인정합니다. 그래도 서림 씨가 열한 차례나 같은 일을 반복한 뒤의 사정 설명이었고, 저도 그때 더 분명히 선을 다시 그었어야 했습니다.",
+      "behaviorHint": "말은 차분하지만 인정 범위를 최소화하려 한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-4:confession",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "지난가을 임시 배려는 재활 종료와 함께 끝나는 약속이 맞았습니다. 저는 그 사실을 알고도 나중에 문제 제기할 근거처럼만 들고 있었고 즉시 정리하진 못했습니다.",
+      "behaviorHint": "입술을 굳게 다문 채 계산적이었던 대목을 낮게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-4:evidence_hit",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "문자가 두 차례나 반복됐다면 '모호했다'고만 하긴 어렵겠습니다. 종료 조건을 알고 있었다는 점은 인정합니다.",
+      "behaviorHint": "대화 캡처를 보고 눈썹이 아주 잠깐 움직인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-3"
+    },
+    {
+      "id": "neighbor04:beat:b:d-5:deny",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "공개 비난을 먼저 시작한 건 제가 아니라 서림 씨였습니다. 저는 확인 전에 공개글을 쓰지 말자는 약속을 깨려 한 적 없습니다.",
+      "behaviorHint": "짧은 부정을 두 번 나눠 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-5:hedge",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "단체방 글이 먼저 올라왔으니 적어도 공개 망신은 그쪽에서 먼저 시작된 셈입니다. 제 행동은 현장 대응이었지 공개 비난은 아니었습니다.",
+      "behaviorHint": "차갑게 선을 긋듯 말하며 감정을 억누른다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-5:partial",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "자력 제재를 하지 않기로 한 약속이 있었는데도 제가 콘과 메모를 쓴 건 맞습니다. 다만 공개글을 먼저 올린 건 서림 씨였고 저는 그 전에 현장에서 끝내려 했습니다.",
+      "behaviorHint": "책임을 인정하면서도 곧장 순서를 숫자처럼 정리한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-5:blame",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "절차를 어긴 건 저도 같습니다. 하지만 공식 확인 전에 단체방으로 여론을 돌린 책임까지 제 것과 같다고 보긴 어렵습니다.",
+      "behaviorHint": "목소리는 평평하지만 문장 끝이 단단해진다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-5:confession",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "관리사무소 확인 전 공개 압박과 자력 제재를 하지 않기로 한 약속은 저도 깼습니다. 단체방 글이 먼저였더라도 개인 콘과 쪽지로 압박한 제 책임이 분명합니다.",
+      "behaviorHint": "자세를 바로 세운 채 짧고 단호하게 마무리한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor04:beat:b:d-5:evidence_hit",
+      "caseId": "neighbor-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "통화 순서와 콘 배치 시각을 같이 보면 제가 먼저 현장을 통제하려 든 흔적이 남네요. 그 부분은 변명하기 어렵습니다.",
+      "behaviorHint": "시간표를 읽다가 한 박자 늦게 답한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-6"
+    }
+  ]
+}

@@ -1,0 +1,808 @@
+{
+  "caseId": "case-tenant-06",
+  "meta": {
+    "relationshipType": "tenant_landlord",
+    "conflictSeed": "CS-3",
+    "variableModules": [
+      "VM-D",
+      "VM-C"
+    ],
+    "twistModule": "",
+    "difficulty": "medium",
+    "anchorTruth": "계약서와 초기 메시지를 종합하면 옥상은 세대 공용의 단시간 건조 공간이었고, 지하는 왼쪽 선반 한 칸만 사전 고지 하에 계절 물품 보관이 가능했다. 하지만 유진은 이를 사실상 전용권으로, 기성은 단순한 호의로 이해해 서로의 물건 이동과 잠금 교체를 정당화했다.",
+    "emotionalBait": "옥상 통로를 막은 화분대 사진, 눅눅해진 지하 박스, 그리고 바뀐 옥상 출입 비밀번호가 겹치며 처음에는 세입자가 공용공간을 제멋대로 점유한 사람처럼 보인다.",
+    "resolutionDilemma": "유진의 상시 적치와 기성의 무단 잠금 교체·물건 이동이 모두 문제라서 어느 한쪽만 가해자로 보기 어렵다. 애매한 허용 문구를 어떻게 다시 해석해 실제 사용 규칙으로 바꾸고, 이미 훼손된 물건과 불편 기간을 어떤 기준으로 정산할지가 어렵다.",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "relationshipSubtype": "tenant_landlord"
+  },
+  "duo": {
+    "partyA": {
+      "name": "오유진",
+      "age": 36,
+      "occupation": "프리랜서 플로리스트",
+      "incomeBracket": "mid",
+      "archetype": "avoidant",
+      "speechStyle": "직접 충돌을 피하려고 처음에는 '편하게 쓰라 하셔서 그런 줄 알았다'며 완곡하게 말한다. 하지만 자신의 물건이 움직여졌다고 느끼면 그동안 쌓인 서운함을 한 번에 길게 꺼낸다.",
+      "pride": 6,
+      "fear": "결혼 시즌 작업 물품 때문에 건물에 민폐를 끼친 세입자로만 기억되는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "voice_memo_and_album",
+      "dailyRoutine": "낮에는 꽃시장을 돌고 오후부터 밤까지 작업실과 집을 오가며, 비 오는 날에는 옥상 건조 공간을 자주 확인한다.",
+      "sensitivePoints": [
+        "작업 물품 보관",
+        "옥상 사용 허용 범위",
+        "예고 없는 물건 이동"
+      ],
+      "verbalTells": [
+        {
+          "type": "memory_softener",
+          "trigger": "lying",
+          "pattern": "정확한 문구를 묻는 질문엔 '대충 그런 뉘앙스였다'며 기억을 둥글게 만든다."
+        },
+        {
+          "type": "photo_stack",
+          "trigger": "cornered",
+          "pattern": "설명 대신 같은 각도의 사진 여러 장을 빠르게 보여주며 자기 해석이 맞다는 분위기를 만든다."
+        },
+        {
+          "type": "quiet_surge",
+          "trigger": "emotional",
+          "pattern": "처음엔 조용히 말하다가 억울한 지점에 오면 문장이 길어지고 쉬지 않고 말한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "기성씨",
+        "toJudge": "집주인분",
+        "angry": "황기성 씨!"
+      }
+    },
+    "partyB": {
+      "name": "황기성",
+      "age": 62,
+      "occupation": "상가 겸 주택 임대인",
+      "incomeBracket": "high",
+      "archetype": "cold_logic",
+      "speechStyle": "대화를 금액, 안전, 공용 규칙으로 잘라 설명하며 감정 표현을 피한다. 그러나 불리해지면 처음엔 말하지 않았던 전제조건을 뒤늦게 덧붙여 원래부터 조건부였던 것처럼 정리한다.",
+      "pride": 8,
+      "fear": "세입자에게 공용공간 통제권을 빼앗긴 집주인으로 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "calendar_and_notice_text",
+      "dailyRoutine": "아침에는 건물 순회와 공용구역 확인을 하고, 낮엔 자재 창고와 임대 일정표를 정리하며, 밤에는 민원 메시지를 모아 답한다.",
+      "sensitivePoints": [
+        "공용공간 통제",
+        "안전 점검 지적",
+        "문서 없는 구두 허용"
+      ],
+      "verbalTells": [
+        {
+          "type": "document_gate",
+          "trigger": "lying",
+          "pattern": "자신의 말이 불리해지면 '문서로 확정된 건 아니잖아요'라는 문장을 반복해 구두 허용의 무게를 줄인다."
+        },
+        {
+          "type": "condition_backfill",
+          "trigger": "cornered",
+          "pattern": "처음엔 말하지 않았던 '잠깐만' '한 칸만' 같은 조건을 나중에 덧붙인다."
+        },
+        {
+          "type": "numeric_reset",
+          "trigger": "emotional",
+          "pattern": "감정이 격해질수록 날짜, 칸 수, 통로 폭 같은 숫자를 다시 읽으며 대화를 수치 문제로 재설정한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "유진씨",
+        "toJudge": "세입자분",
+        "angry": "오유진 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "입주 초기 기성은 유진에게 옥상에서 빨래나 짐을 잠깐 말릴 수 있고, 지하 왼쪽 선반 일부도 비어 있을 때는 써도 된다고 말했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "봄 장마 직전 기성이 카카오톡으로 보낸 '편하게 쓰세요'라는 문장을 두 사람은 전혀 다르게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '계속 놓아도 된다는 뜻이었다' / B: '필요할 때 잠깐 쓰라는 의미였다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "유진은 꽃자재와 캠핑 박스가 점점 늘어도 경계를 다시 묻지 않았고, 기성은 소방 점검과 공용창고 정리 일정이 다가오는데도 정확한 사용 범위를 선으로 표시하지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "송지훈 (유진의 약혼자)",
+        "relationTo": "a",
+        "knowledgeScope": "유진이 결혼 시즌 작업 자재와 캠핑 물품을 옥상과 지하에 함께 보관해 온 사정, 그리고 비밀번호가 바뀐 날 박스를 다시 옮겼던 상황을 안다.",
+        "witnessedDirectly": false,
+        "bias": "pro_a",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "유진의 약혼자",
+          "relationToA": "유진의 약혼자",
+          "relationToB": "황기성와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "유진씨",
+          "addressB": "기성씨"
+        },
+        "addressA": "오유진씨",
+        "addressB": "황기성씨"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "최나라 (공인중개사)",
+        "relationTo": "both",
+        "knowledgeScope": "입주 당시 공용공간 허용을 어떤 표현으로 설명했는지와, 나중에 기성이 보낸 사용범위 정리 메시지의 초안을 기억한다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 51,
+          "occupation": "공인중개사",
+          "relationToA": "오유진을 업무상 알고 있음",
+          "relationToB": "황기성을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "유진씨",
+          "addressB": "기성씨"
+        },
+        "addressA": "오유진씨",
+        "addressB": "황기성씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "임채훈 (소방안전 점검 기사)",
+        "relationTo": "both",
+        "knowledgeScope": "옥상 통로와 지하 배수로 주변 적치가 실제로 어느 정도 위험이었는지, 그리고 점검 전후 사진이 무엇을 보여주는지 기준대로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 54,
+          "occupation": "소방안전 점검 기사",
+          "relationToA": "오유진을 업무상 알고 있음",
+          "relationToB": "황기성을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "오유진씨",
+          "addressB": "황기성씨"
+        },
+        "addressA": "오유진씨",
+        "addressB": "황기성씨"
+      }
+    ],
+    "relationshipType": "tenant_landlord"
+  },
+  "context": {
+    "contextType": "shared_space_conflict",
+    "description": "장마가 시작되기 전 유진은 꽃자재와 천, 캠핑 장비를 옥상과 지하에 자주 내놓기 시작했고, 기성은 소방 점검과 공용창고 정리를 준비하고 있었다. 서로 처음 들었던 '편하게 써도 된다'는 말을 각자 유리한 쪽으로 이해한 채 선을 다시 긋지 않았고, 그 결과 옥상 비밀번호 교체와 지하 박스 이동이 연달아 벌어졌다.",
+    "emotionalPressure": 7,
+    "affects": "both",
+    "triggerAmplifier": "유진에게는 장마철 작업 물품 손상과 결혼 시즌 일정이 걸려 있었고, 기성에게는 공용공간 안전 점검과 다른 세입자 민원이 동시에 걸려 있었다. 애매한 허용 문구가 곧 점유권과 통제권 다툼으로 커졌다.",
+    "caseNumber": "E-TN-N-0006",
+    "caseName": "옥상 사용 분쟁"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "옥상·지하 사용 허용 범위의 해석",
+      "truth": false,
+      "truthDescription": "옥상과 지하는 유진의 전용 공간도, 완전 금지 공간도 아니었다. 실제로는 공용공간의 단시간 사용과 제한된 선반 보관만 허용됐는데, 두 사람 모두 자기 방식으로 지나치게 넓거나 좁게 해석했다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "사용범위재설정",
+      "legitimacyIssue": false,
+      "judgmentStatement": "옥상·지하 사용은 제한적 허용이다."
+    },
+    {
+      "id": "d-2",
+      "name": "유진의 옥상 상시 적치",
+      "truth": true,
+      "truthDescription": "유진은 화분대, 접이식 테이블, 방수포, 꽃포장 박스를 며칠이 아니라 몇 주씩 옥상에 남겨 두었고, 그 결과 통로 폭이 줄고 배수구 주변도 일부 가려졌다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "공용공간복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "유진은 옥상에 물건을 상시 적치했다."
+    },
+    {
+      "id": "d-3",
+      "name": "기성의 무단 잠금 교체와 물건 이동",
+      "truth": true,
+      "truthDescription": "기성은 유진에게 사전 합의 없이 옥상 출입 비밀번호를 바꾸고, 지하 선반의 박스를 복도로 옮겨 둔 뒤 나중에야 문자로 통보했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "경계회복",
+      "legitimacyIssue": true,
+      "judgmentStatement": "기성은 유진에게 무단으로 비밀번호를 변경했다."
+    },
+    {
+      "id": "d-4",
+      "name": "비상통로와 배수 위험의 실제 정도",
+      "truth": true,
+      "truthDescription": "옥상과 지하에 실제 위험요소가 있었던 것은 맞지만, 유진이 주장한 '전혀 문제 없는 사용'도, 기성이 주장한 '즉시 전면 금지 수준의 위반'도 모두 과장됐다. 일부 통로와 배수구 주변 정리가 필요한 정도에 가까웠다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 40,
+        "b": 60
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공용공간복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "옥상과 지하에 위험요소가 있었다."
+    },
+    {
+      "id": "d-5",
+      "name": "이동 과정에서 생긴 보관물 손상 정산",
+      "truth": true,
+      "truthDescription": "기성이 예고 없이 박스를 옮기는 과정에서 캔버스 가방 두 개가 젖고 스프레이 호스 하나가 사라졌지만, 일부 젖음은 유진이 비닐 덮개를 제대로 닫지 않은 탓도 겹쳤다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "정산복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "기성이 박스를 옮기다 손상을 초래했다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "임대차계약서와 공용공간 특약 메모",
+      "description": "공용공간 전용 사용 금지 문구, 지하 선반 사용 관련 손글씨 메모, 옥상은 안전 범위 내 단시간 건조 용도로 본다는 특약이 적힌 계약서다.",
+      "type": "contract",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "당사자 원본과 중개사 보관 사본이 함께 제출돼 특약란을 그대로 비교할 수 있었다.",
+        "check_metadata": "손글씨 메모는 입주 계약 당일 같은 필기구로 적혔고 별도 추가 작성 흔적이 없다.",
+        "restore_context": "문구는 전용 사용을 허락하지 않으면서도 일정 범위의 편의 사용은 남겨 둔 애매한 구조다.",
+        "verify_source": "중개사 사본과 원본의 문구, 도장, 서명 위치가 모두 일치한다.",
+        "check_edits": "특약란 덧붙임이나 지움 흔적 없이 최초 작성 상태가 유지돼 있다.",
+        "question_acquisition": "당사자 계약 문서라 제출 절차상 문제는 낮다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오유진에게: \"옥상·지하 사용 허용 범위의 해석\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오유진의 \"옥상·지하 사용 허용 범위의 해석\" 쟁점과 관련된다. 오유진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "황기성에게: \"옥상·지하 사용 허용 범위의 해석\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 황기성의 \"옥상·지하 사용 허용 범위의 해석\" 쟁점과 관련된다. 황기성은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "초기 카카오톡과 중개사 전달 메시지",
+      "description": "기성이 유진에게 '옥상이랑 지하 편하게 쓰세요'라고 보낸 초기 메시지와, 바로 뒤 이어진 '안전하게만, 필요할 때 말해요' 부분이 포함된 대화 일부다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-2"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "처음엔 유진이 보관한 한 줄 캡처만 있었고, 이후 전체 대화방 원문 일부가 추가 제출됐다.",
+        "check_metadata": "문제의 메시지는 입주 이틀 뒤 밤 시간대에 연속으로 발신된 것으로 확인된다.",
+        "restore_context": "처음 제출본에선 '편하게 쓰세요'만 보였지만, 이어지는 문장에는 안전과 사전 고지 조건이 붙어 있었다.",
+        "verify_source": "유진 휴대폰 원본과 중개사 전달 캡처의 발신 시각이 서로 맞는다.",
+        "check_edits": "문장 본문 편집은 없지만 앞뒤 두 줄이 빠져 해석이 달라지는 선택적 크롭이 확인됐다.",
+        "question_acquisition": "사적 메신저 내용이라 공개 범위는 분쟁 해결에 필요한 부분으로 제한돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오유진에게: \"옥상·지하 사용 허용 범위의 해석\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오유진의 \"옥상·지하 사용 허용 범위의 해석\" 쟁점과 관련된다. 오유진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "황기성에게: \"옥상·지하 사용 허용 범위의 해석\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 황기성의 \"옥상·지하 사용 허용 범위의 해석\" 쟁점과 관련된다. 황기성은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "비밀번호 변경 문자와 복도에 나온 박스 사진",
+      "description": "기성이 옥상 비밀번호를 바꾼 뒤 보낸 안내 문자와, 유진의 지하 박스가 복도에 임시로 나온 상태를 찍은 사진들이다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "문자 원본과 사진 원본의 촬영 파일이 함께 제출됐다.",
+        "check_metadata": "비밀번호 변경 문자는 실제 잠금 교체 약 18분 뒤에 발송됐고, 박스 사진은 그보다 7분 후로 저장돼 있다.",
+        "restore_context": "문자에는 이미 교체가 끝난 뒤 '점검 때문에 잠깐 막는다'는 사후 통보 표현이 들어 있다.",
+        "verify_source": "기성 발신 번호와 유진 휴대폰의 수신 기록이 일치한다.",
+        "check_edits": "사진은 원본 촬영 파일 기준으로 비교해도 색보정 외 편집 흔적이 없다.",
+        "question_acquisition": "당사자 간 문자와 본인 촬영 사진이라 적법성 문제는 낮다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오유진에게: \"이동 과정에서 생긴 보관물 손상 정산\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오유진의 \"이동 과정에서 생긴 보관물 손상 정산\" 쟁점과 관련된다. 오유진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "황기성에게: \"기성의 무단 잠금 교체와 물건 이동\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 황기성의 \"기성의 무단 잠금 교체와 물건 이동\" 쟁점과 관련된다. 황기성은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "소방점검 사진과 관리실 순찰기록",
+      "description": "점검 기사와 관리실이 남긴 옥상 통로 폭, 지하 배수구 주변 적치 사진, 순찰 코멘트가 적힌 기록이다.",
+      "type": "record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "점검 당시 원본 사진과 관리실 순찰일지 원장이 같이 제출됐다.",
+        "check_metadata": "사진 촬영 시각은 비밀번호 교체 전날 오후와 점검 당일 오전으로 두 차례 남아 있다.",
+        "restore_context": "통로가 완전히 막힌 것은 아니지만 일부 구간의 폭이 줄고 배수구 주변에 가벼운 적치가 있었음이 보인다.",
+        "verify_source": "기사 보고서와 관리실 순찰기록의 위치 설명이 서로 일치한다.",
+        "check_edits": "기관 촬영 원본이라 각도와 날짜가 연속적이며 편집 흔적이 없다.",
+        "question_acquisition": "공용공간 안전 점검 자료라 분쟁 해결 목적 사용 정당성이 충분하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오유진에게: \"유진의 옥상 상시 적치\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 오유진의 \"유진의 옥상 상시 적치\" 쟁점과 관련된다. 오유진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "황기성에게: \"이동 과정에서 생긴 보관물 손상 정산\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 황기성의 \"이동 과정에서 생긴 보관물 손상 정산\" 쟁점과 관련된다. 황기성은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "지하 복도 CCTV와 물건 이동 시간표",
+      "description": "기성이 유진의 박스를 선반에서 내려 복도로 옮기는 장면과, 같은 시간대에 스프레이 호스가 분리돼 따로 놓인 흐름이 남은 CCTV 기록이다.",
+      "type": "record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "관리실 서버의 원본 영상과 시간대별 이벤트 로그가 함께 제출됐다.",
+        "check_metadata": "박스 이동은 e-3 문자보다 먼저 이뤄졌고, 호스가 바닥에 잠시 남겨진 시각도 따로 확인된다.",
+        "restore_context": "기성이 관리실 카트와 함께 여러 상자를 옮기며 한 번에 정리한 흐름이 보여 예고 없는 일괄 이동이었음이 드러난다.",
+        "verify_source": "영상 타임코드와 관리실 출입기록이 같은 분 단위로 일치한다.",
+        "check_edits": "프레임 누락이나 합성 흔적 없이 연속 장면으로 저장돼 있다.",
+        "question_acquisition": "공용 복도 CCTV 자료라 사용 범위는 분쟁 해결에 한정되지만 적법성 문제는 낮다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오유진에게: \"이동 과정에서 생긴 보관물 손상 정산\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오유진의 \"이동 과정에서 생긴 보관물 손상 정산\" 쟁점과 관련된다. 오유진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "황기성에게: \"기성의 무단 잠금 교체와 물건 이동\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 황기성의 \"기성의 무단 잠금 교체와 물건 이동\" 쟁점과 관련된다. 황기성은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "주민센터 상담 메모와 중개사 확인서",
+      "description": "공용공간 사용 갈등으로 주민센터에 문의한 상담 메모와, 입주 당시 중개사가 설명한 '잠깐 사용·한 칸 보관' 취지를 적은 확인서다.",
+      "type": "record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "주민센터 상담 접수 원문과 중개사 서명 확인서 원본이 함께 제출됐다.",
+        "check_metadata": "상담 접수는 비밀번호 교체 다음 날 오전이고, 확인서는 그 주 안에 작성돼 초기 계약 문구와 비교 가능하다.",
+        "restore_context": "상담 메모는 공용공간의 일부 허용은 인정하면서도 전용 점유로 보이면 안 된다고 정리한다.",
+        "verify_source": "주민센터 접수번호와 중개사 사무실 문서등록번호가 실제 기록과 맞는다.",
+        "check_edits": "문구 삭제나 재작성 흔적이 없이 최초 발행본 그대로 남아 있다.",
+        "question_acquisition": "분쟁 상담과 계약 설명 확인 자료라 제출 정당성이 충분하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오유진에게: \"옥상·지하 사용 허용 범위의 해석\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오유진의 \"옥상·지하 사용 허용 범위의 해석\" 쟁점과 관련된다. 오유진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "황기성에게: \"옥상·지하 사용 허용 범위의 해석\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 황기성의 \"옥상·지하 사용 허용 범위의 해석\" 쟁점과 관련된다. 황기성은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-2",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "처음 허용된 것은 공용공간의 제한적 편의 사용이었지, 유진의 전용 사용권이나 전면 금지는 아니었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-2",
+      "fact": "유진은 화분대와 박스를 몇 주씩 옥상에 두어 통로와 배수구 주변을 부분적으로 좁혔다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "기성은 사전 합의 없이 비밀번호를 바꾸고 지하 박스를 먼저 옮겼다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "실제 위험은 일부 정리가 필요한 수준이었고, 양쪽 모두 자신의 주장을 위해 이를 과장했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "보관물 손상은 무단 이동이 직접 계기였지만, 일부 젖음은 유진의 포장 미흡도 겹쳤다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "use_scope_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_wedding_season_pressure"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "permanent_storage_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "duration_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-2_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-6",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "damaged_item_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "covering_condition_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "contract_clause_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "broker_reference"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "lock_change_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_fire_inspection_fear"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "loss_scope_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "inventory_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "사용범위재설정": [
+      "옥상은 단시간 건조, 지하는 선반 한 칸 보관처럼 허용 범위를 도면과 사진으로 다시 표시해 문자 합의로 남긴다.",
+      "중개사와 관리실이 함께 공용공간 경계선을 표시하고, 상시 적치와 단기 사용의 기준 시간을 정한다.",
+      "합의가 안 되면 공용공간 전용 사용을 전면 중지하고 제3자 조정안이 나올 때까지 중립 규칙만 적용한다."
+    ],
+    "공용공간복구": [
+      "유진은 옥상 화분대와 방수포를 즉시 줄이고, 기성은 지하의 자기 자재도 같은 기준으로 함께 정리한다.",
+      "소방점검 사진을 기준으로 통로 폭과 배수구 주변 최소 비움 범위를 정기 체크리스트로 만든다.",
+      "다시 통로를 좁히는 적치가 반복되면 공용공간 사용 권한을 기간 제한 방식으로 조절한다."
+    ],
+    "경계회복": [
+      "기성은 잠금 교체와 물건 이동을 사후 통보한 점을 인정하고, 앞으로는 최소 24시간 전 안내 후 조정하도록 규칙을 세운다.",
+      "유진의 박스 이동이나 점검이 필요하면 관리실 입회 아래 사진 기록을 남기고 양쪽이 동시에 확인한다.",
+      "예고 없는 잠금 변경이나 무단 이동이 재발하면 공용공간 접근 절차를 별도 합의서로 엄격히 제한한다."
+    ],
+    "정산복구": [
+      "젖은 캔버스 가방과 분실 호스는 실제 시가와 사용연한을 기준으로 부분 배상하고, 포장 미흡 부분은 감액 반영한다.",
+      "손상 정산은 이동 전후 사진과 CCTV 시간대를 기준으로 품목별로 분리해 계산한다.",
+      "분쟁이 길어지면 다투는 물품가액만 예치하고, 나머지 사용료·보관료 주장은 잠정 중지한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-2",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

@@ -1,0 +1,5270 @@
+{
+  "caseId": "family-05",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "나는 소현 방을 뒤진 게 아니라 집 상태만 확인했다.",
+            "임대인에게도 취소를 강요한 게 아니라 위험한 계약인지 물어본 것이다."
+          ],
+          "privateKnowledge": [
+            "소현이 없는 낮 시간에 집에 들어가 딸 방 문을 열고 계약 관련 서류까지 확인했다.",
+            "소현의 계약금 송금 뒤 47분 안에 임대인 최연우에게 전화했고, 직후 3분 안에 취소 요청 문자를 보냈다.",
+            "과거 전세사기 직전 사건이 겹쳐 보여 보호와 통제를 구분하지 못했다."
+          ],
+          "suppressions": [
+            "방 문 센서 반응 뒤 실제로 방 안 서류까지 확인한 점",
+            "'가족이 책임 못 진다'는 문장으로 사실상 계약 중단 압박을 넣은 점",
+            "보호와 통제를 스스로 구분하지 못했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:public_scold_mode"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-1:s0:claim:0",
+              "factText": "나는 소현 방을 뒤진 게 아니라 집 상태만 확인했다.",
+              "tags": [
+                "denial",
+                "act",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "period": "소현이 비운 낮 시간",
+                  "neutral": "그때"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-1:s0:claim:1",
+              "factText": "임대인에게도 취소를 강요한 게 아니라 위험한 계약인지 물어본 것이다.",
+              "tags": [
+                "denial",
+                "institution",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "time": {
+                  "exact": "계약금 송금 47분 뒤",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "문턱 안쪽까지 오래 본 건 아니고 문 열림이 이상해서 잠깐 본 거다.",
+            "과거 일 생각나서 임대인에게 조심시키려 한 말이 과하게 들렸을 수 있다."
+          ],
+          "privateKnowledge": [
+            "소현이 없는 낮 시간에 집에 들어가 딸 방 문을 열고 계약 관련 서류까지 확인했다.",
+            "소현의 계약금 송금 뒤 47분 안에 임대인 최연우에게 전화했고, 직후 3분 안에 취소 요청 문자를 보냈다.",
+            "과거 전세사기 직전 사건이 겹쳐 보여 보호와 통제를 구분하지 못했다."
+          ],
+          "suppressions": [
+            "방 문 센서 반응 뒤 실제로 방 안 서류까지 확인한 점",
+            "'가족이 책임 못 진다'는 문장으로 사실상 계약 중단 압박을 넣은 점",
+            "보호와 통제를 스스로 구분하지 못했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:public_scold_mode"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-1:s1:claim:0",
+              "factText": "문턱 안쪽까지 오래 본 건 아니고 문 열림이 이상해서 잠깐 본 거다.",
+              "tags": [
+                "uncertainty",
+                "act",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "period": "소현이 비운 낮 시간",
+                  "neutral": "그때"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-1:s1:claim:1",
+              "factText": "과거 일 생각나서 임대인에게 조심시키려 한 말이 과하게 들렸을 수 있다.",
+              "tags": [
+                "uncertainty",
+                "institution",
+                "responsibility",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "time": {
+                  "exact": "계약금 송금 47분 뒤",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "방에 들어간 건 맞지만 계약서가 눈에 띄어 본 정도다.",
+            "임대인 연락도 계약을 망치려는 의도까지는 아니었다."
+          ],
+          "privateKnowledge": [
+            "소현이 없는 낮 시간에 집에 들어가 딸 방 문을 열고 계약 관련 서류까지 확인했다.",
+            "소현의 계약금 송금 뒤 47분 안에 임대인 최연우에게 전화했고, 직후 3분 안에 취소 요청 문자를 보냈다.",
+            "과거 전세사기 직전 사건이 겹쳐 보여 보호와 통제를 구분하지 못했다."
+          ],
+          "suppressions": [
+            "'가족이 책임 못 진다'는 문장으로 사실상 계약 중단 압박을 넣은 점",
+            "보호와 통제를 스스로 구분하지 못했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-1:s2:claim:0",
+              "factText": "방에 들어간 건 맞지만 계약서가 눈에 띄어 본 정도다.",
+              "tags": [
+                "admission",
+                "act",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "period": "소현이 비운 낮 시간",
+                  "neutral": "그때"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-1:s2:claim:1",
+              "factText": "임대인 연락도 계약을 망치려는 의도까지는 아니었다.",
+              "tags": [
+                "admission",
+                "institution",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "time": {
+                  "exact": "계약금 송금 47분 뒤",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "상담 전에 계약금부터 보낸 걸 보고 내가 먼저 막아야 한다고 판단했다.",
+            "내가 연락한 건 맞지만 소현이 단독 원룸처럼 말한 것도 일을 키웠다."
+          ],
+          "privateKnowledge": [
+            "소현이 없는 낮 시간에 집에 들어가 딸 방 문을 열고 계약 관련 서류까지 확인했다.",
+            "소현의 계약금 송금 뒤 47분 안에 임대인 최연우에게 전화했고, 직후 3분 안에 취소 요청 문자를 보냈다.",
+            "과거 전세사기 직전 사건이 겹쳐 보여 보호와 통제를 구분하지 못했다."
+          ],
+          "suppressions": [
+            "'가족이 책임 못 진다'는 문장으로 사실상 계약 중단 압박을 넣은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:a:tell:public_scold_mode",
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-1:s3:claim:0",
+              "factText": "상담 전에 계약금부터 보낸 걸 보고 내가 먼저 막아야 한다고 판단했다.",
+              "tags": [
+                "responsibility",
+                "act",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "period": "소현이 비운 낮 시간",
+                  "neutral": "그때"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-1:s3:claim:1",
+              "factText": "내가 연락한 건 맞지만 소현이 단독 원룸처럼 말한 것도 일을 키웠다.",
+              "tags": [
+                "responsibility",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "time": {
+                  "exact": "계약금 송금 47분 뒤",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "또 전세사기 비슷한 일 겪게 할까 봐 눈이 뒤집혀서 선을 넘었다.",
+            "통제가 아니라 보호라고 믿고 움직였지만, 그 믿음으로 소현 방과 계약에 손댔다."
+          ],
+          "privateKnowledge": [
+            "소현이 없는 낮 시간에 집에 들어가 딸 방 문을 열고 계약 관련 서류까지 확인했다.",
+            "소현의 계약금 송금 뒤 47분 안에 임대인 최연우에게 전화했고, 직후 3분 안에 취소 요청 문자를 보냈다.",
+            "과거 전세사기 직전 사건이 겹쳐 보여 보호와 통제를 구분하지 못했다."
+          ],
+          "suppressions": [
+            "보호와 통제를 스스로 구분하지 못했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-1:s4:claim:0",
+              "factText": "또 전세사기 비슷한 일 겪게 할까 봐 눈이 뒤집혀서 선을 넘었다.",
+              "tags": [
+                "emotion",
+                "act",
+                "privacy",
+                "legacy_sentence",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "period": "소현이 비운 낮 시간",
+                  "neutral": "그때"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-1:s4:claim:1",
+              "factText": "통제가 아니라 보호라고 믿고 움직였지만, 그 믿음으로 소현 방과 계약에 손댔다.",
+              "tags": [
+                "emotion",
+                "institution",
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "time": {
+                  "exact": "계약금 송금 47분 뒤",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "내가 소현 없는 시간에 방에 들어가 서류를 확인했고 임대인에게 사실상 계약 중단을 요구했다.",
+            "보호라는 말 뒤에 숨어 성인 딸의 공간과 계약을 통제했다."
+          ],
+          "privateKnowledge": [
+            "소현이 없는 낮 시간에 집에 들어가 딸 방 문을 열고 계약 관련 서류까지 확인했다.",
+            "소현의 계약금 송금 뒤 47분 안에 임대인 최연우에게 전화했고, 직후 3분 안에 취소 요청 문자를 보냈다.",
+            "과거 전세사기 직전 사건이 겹쳐 보여 보호와 통제를 구분하지 못했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-1:s5:claim:0",
+              "factText": "내가 소현 없는 시간에 방에 들어가 서류를 확인했고 임대인에게 사실상 계약 중단을 요구했다.",
+              "tags": [
+                "admission",
+                "act",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "period": "소현이 비운 낮 시간",
+                  "neutral": "그때"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-1:s5:claim:1",
+              "factText": "보호라는 말 뒤에 숨어 성인 딸의 공간과 계약을 통제했다.",
+              "tags": [
+                "admission",
+                "institution",
+                "responsibility",
+                "identity",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "time": {
+                  "exact": "계약금 송금 47분 뒤",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "소현은 처음부터 단독 원룸처럼만 말했고 나는 그렇게 믿었다.",
+            "공유주거 얘기가 있었다면 내가 저렇게 놀라진 않았을 거다."
+          ],
+          "privateKnowledge": [
+            "소현이 부모에게는 단독 원룸처럼 설명했지만 실제 초안에는 공용 주방과 룸메이트 조항이 있었다.",
+            "상담 예약 전날 초안이 저장됐고, 같은 날 저녁 계약금이 먼저 송금됐다.",
+            "이 축소 설명을 자신의 개입을 정당화하는 근거로 삼았다."
+          ],
+          "suppressions": [
+            "축소 설명을 자신의 개입 명분으로 삼은 점",
+            "상담 전날 초안과 계약금 타이밍을 이미 알고 있었던 점",
+            "속였다는 감정이 불안을 증폭시킨 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:public_scold_mode"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-2:s0:claim:0",
+              "factText": "소현은 처음부터 단독 원룸처럼만 말했고 나는 그렇게 믿었다.",
+              "tags": [
+                "denial",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-2:s0:claim:1",
+              "factText": "공유주거 얘기가 있었다면 내가 저렇게 놀라진 않았을 거다.",
+              "tags": [
+                "denial",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "exact": "상담 예약 하루 전",
+                  "neutral": "상담 전"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "나중에 보니 설명이 반 토막이더라.",
+            "적어도 룸메이트 조항 같은 건 숨긴 셈 아닌가."
+          ],
+          "privateKnowledge": [
+            "소현이 부모에게는 단독 원룸처럼 설명했지만 실제 초안에는 공용 주방과 룸메이트 조항이 있었다.",
+            "상담 예약 전날 초안이 저장됐고, 같은 날 저녁 계약금이 먼저 송금됐다.",
+            "이 축소 설명을 자신의 개입을 정당화하는 근거로 삼았다."
+          ],
+          "suppressions": [
+            "축소 설명을 자신의 개입 명분으로 삼은 점",
+            "상담 전날 초안과 계약금 타이밍을 이미 알고 있었던 점",
+            "속였다는 감정이 불안을 증폭시킨 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:public_scold_mode"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-2:s1:claim:0",
+              "factText": "나중에 보니 설명이 반 토막이더라.",
+              "tags": [
+                "uncertainty",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-2:s1:claim:1",
+              "factText": "적어도 룸메이트 조항 같은 건 숨긴 셈 아닌가.",
+              "tags": [
+                "uncertainty",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "exact": "상담 예약 하루 전",
+                  "neutral": "상담 전"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "계약 초안엔 공용 주방이랑 다른 입주자 조항이 있었다.",
+            "상담도 전에 계약금부터 걸어 놓고 단독처럼 말한 건 축소 설명이다."
+          ],
+          "privateKnowledge": [
+            "소현이 부모에게는 단독 원룸처럼 설명했지만 실제 초안에는 공용 주방과 룸메이트 조항이 있었다.",
+            "상담 예약 전날 초안이 저장됐고, 같은 날 저녁 계약금이 먼저 송금됐다.",
+            "이 축소 설명을 자신의 개입을 정당화하는 근거로 삼았다."
+          ],
+          "suppressions": [
+            "상담 전날 초안과 계약금 타이밍을 이미 알고 있었던 점",
+            "속였다는 감정이 불안을 증폭시킨 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-2:s2:claim:0",
+              "factText": "계약 초안엔 공용 주방이랑 다른 입주자 조항이 있었다.",
+              "tags": [
+                "admission",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-2:s2:claim:1",
+              "factText": "상담도 전에 계약금부터 걸어 놓고 단독처럼 말한 건 축소 설명이다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "exact": "상담 예약 하루 전",
+                  "neutral": "상담 전"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "소현이 먼저 사실을 줄여 말했으니 내가 불안해진 것도 사실이다.",
+            "다만 그게 방 출입까지 정당화되진 않는다는 건 안다."
+          ],
+          "privateKnowledge": [
+            "소현이 부모에게는 단독 원룸처럼 설명했지만 실제 초안에는 공용 주방과 룸메이트 조항이 있었다.",
+            "상담 예약 전날 초안이 저장됐고, 같은 날 저녁 계약금이 먼저 송금됐다.",
+            "이 축소 설명을 자신의 개입을 정당화하는 근거로 삼았다."
+          ],
+          "suppressions": [
+            "상담 전날 초안과 계약금 타이밍을 이미 알고 있었던 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:a:tell:public_scold_mode",
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-2:s3:claim:0",
+              "factText": "소현이 먼저 사실을 줄여 말했으니 내가 불안해진 것도 사실이다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "counter",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-2:s3:claim:1",
+              "factText": "다만 그게 방 출입까지 정당화되진 않는다는 건 안다.",
+              "tags": [
+                "responsibility",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "exact": "상담 예약 하루 전",
+                  "neutral": "상담 전"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "얘가 또 급하게 들어가다 다칠까 봐, 공유주거라는 말만 봐도 예전 일이 겹쳐 보였다.",
+            "속였다는 생각에 더 세게 통제하려 든 건 있다."
+          ],
+          "privateKnowledge": [
+            "소현이 부모에게는 단독 원룸처럼 설명했지만 실제 초안에는 공용 주방과 룸메이트 조항이 있었다.",
+            "상담 예약 전날 초안이 저장됐고, 같은 날 저녁 계약금이 먼저 송금됐다.",
+            "이 축소 설명을 자신의 개입을 정당화하는 근거로 삼았다."
+          ],
+          "suppressions": [
+            "속였다는 감정이 불안을 증폭시킨 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-2:s4:claim:0",
+              "factText": "얘가 또 급하게 들어가다 다칠까 봐, 공유주거라는 말만 봐도 예전 일이 겹쳐 보였다.",
+              "tags": [
+                "emotion",
+                "context",
+                "counter",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-2:s4:claim:1",
+              "factText": "속였다는 생각에 더 세게 통제하려 든 건 있다.",
+              "tags": [
+                "emotion",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "exact": "상담 예약 하루 전",
+                  "neutral": "상담 전"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "소현은 부모에게 단독 원룸처럼 말하면서 실제론 공유주거 계약 초안과 계약금을 진행했다.",
+            "그 축소 설명은 사실이지만, 그래서 내가 한 개입이 자동으로 옳아지는 건 아니다."
+          ],
+          "privateKnowledge": [
+            "소현이 부모에게는 단독 원룸처럼 설명했지만 실제 초안에는 공용 주방과 룸메이트 조항이 있었다.",
+            "상담 예약 전날 초안이 저장됐고, 같은 날 저녁 계약금이 먼저 송금됐다.",
+            "이 축소 설명을 자신의 개입을 정당화하는 근거로 삼았다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-2:s5:claim:0",
+              "factText": "소현은 부모에게 단독 원룸처럼 말하면서 실제론 공유주거 계약 초안과 계약금을 진행했다.",
+              "tags": [
+                "admission",
+                "context",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-2:s5:claim:1",
+              "factText": "그 축소 설명은 사실이지만, 그래서 내가 한 개입이 자동으로 옳아지는 건 아니다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "time": {
+                  "exact": "상담 예약 하루 전",
+                  "neutral": "상담 전"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 31초 파일은 있는 그대로 들려준 거지 내가 꾸민 게 아니다.",
+            "소현이 한 말이 거칠어서 짧게 보여준 것뿐이다."
+          ],
+          "privateKnowledge": [
+            "31초 파일은 은주 휴대폰 편집 앱 폴더에서 재저장된 클립이며 전체 통화 파일이 아니다.",
+            "'엄마 카드' 구절은 7개월 전 다른 통화에서 가져온 음성조각이다.",
+            "창피함과 불안 때문에 임대인에게도 이 클립을 보내 상황을 키웠다."
+          ],
+          "suppressions": [
+            "편집 앱에서 31초 클립을 재저장한 점",
+            "7개월 전 다른 통화 조각을 섞은 점",
+            "그 파일을 임대인에게 전달한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:public_scold_mode"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-3:s0:claim:0",
+              "factText": "그 31초 파일은 있는 그대로 들려준 거지 내가 꾸민 게 아니다.",
+              "tags": [
+                "denial",
+                "evidence",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "time": {
+                  "exact": "7개월 전",
+                  "neutral": "예전"
+                },
+                "quote": {
+                  "exact": "엄마 카드",
+                  "neutral": "문제 구절"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:a:d-3:s0:claim:1",
+              "factText": "소현이 한 말이 거칠어서 짧게 보여준 것뿐이다.",
+              "tags": [
+                "denial",
+                "motive",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "subjectPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "전체를 다 안 낸 건 맞아도 핵심 뜻은 같다고 봤다.",
+            "길게 틀면 또 다른 얘기로 흐려질까 봐 필요한 부분만 보낸 거다."
+          ],
+          "privateKnowledge": [
+            "31초 파일은 은주 휴대폰 편집 앱 폴더에서 재저장된 클립이며 전체 통화 파일이 아니다.",
+            "'엄마 카드' 구절은 7개월 전 다른 통화에서 가져온 음성조각이다.",
+            "창피함과 불안 때문에 임대인에게도 이 클립을 보내 상황을 키웠다."
+          ],
+          "suppressions": [
+            "편집 앱에서 31초 클립을 재저장한 점",
+            "7개월 전 다른 통화 조각을 섞은 점",
+            "그 파일을 임대인에게 전달한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:public_scold_mode"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-3:s1:claim:0",
+              "factText": "전체를 다 안 낸 건 맞아도 핵심 뜻은 같다고 봤다.",
+              "tags": [
+                "uncertainty",
+                "evidence",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "time": {
+                  "exact": "7개월 전",
+                  "neutral": "예전"
+                },
+                "quote": {
+                  "exact": "엄마 카드",
+                  "neutral": "문제 구절"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:a:d-3:s1:claim:1",
+              "factText": "길게 틀면 또 다른 얘기로 흐려질까 봐 필요한 부분만 보낸 거다.",
+              "tags": [
+                "uncertainty",
+                "motive",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "subjectPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "클립을 다시 저장하고 앞뒤를 자른 건 인정한다.",
+            "그래도 자백 취지를 완전히 새로 만든 건 아니라 생각했다."
+          ],
+          "privateKnowledge": [
+            "31초 파일은 은주 휴대폰 편집 앱 폴더에서 재저장된 클립이며 전체 통화 파일이 아니다.",
+            "'엄마 카드' 구절은 7개월 전 다른 통화에서 가져온 음성조각이다.",
+            "창피함과 불안 때문에 임대인에게도 이 클립을 보내 상황을 키웠다."
+          ],
+          "suppressions": [
+            "7개월 전 다른 통화 조각을 섞은 점",
+            "그 파일을 임대인에게 전달한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-3:s2:claim:0",
+              "factText": "클립을 다시 저장하고 앞뒤를 자른 건 인정한다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "time": {
+                  "exact": "7개월 전",
+                  "neutral": "예전"
+                },
+                "quote": {
+                  "exact": "엄마 카드",
+                  "neutral": "문제 구절"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:a:d-3:s2:claim:1",
+              "factText": "그래도 자백 취지를 완전히 새로 만든 건 아니라 생각했다.",
+              "tags": [
+                "admission",
+                "motive",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "subjectPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "예전 통화 조각이 섞인 건 맞지만 그때 난 진짜로 소현이 집을 뛰쳐나가려는 줄 알았다.",
+            "창피했고, 내 말만으론 아무도 안 믿을까 봐 파일에 매달렸다."
+          ],
+          "privateKnowledge": [
+            "31초 파일은 은주 휴대폰 편집 앱 폴더에서 재저장된 클립이며 전체 통화 파일이 아니다.",
+            "'엄마 카드' 구절은 7개월 전 다른 통화에서 가져온 음성조각이다.",
+            "창피함과 불안 때문에 임대인에게도 이 클립을 보내 상황을 키웠다."
+          ],
+          "suppressions": [
+            "7개월 전 다른 통화 조각을 섞은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:a:tell:public_scold_mode",
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-3:s3:claim:0",
+              "factText": "예전 통화 조각이 섞인 건 맞지만 그때 난 진짜로 소현이 집을 뛰쳐나가려는 줄 알았다.",
+              "tags": [
+                "responsibility",
+                "evidence",
+                "quote",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "time": {
+                  "exact": "7개월 전",
+                  "neutral": "예전"
+                },
+                "quote": {
+                  "exact": "엄마 카드",
+                  "neutral": "문제 구절"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:a:d-3:s3:claim:1",
+              "factText": "창피했고, 내 말만으론 아무도 안 믿을까 봐 파일에 매달렸다.",
+              "tags": [
+                "responsibility",
+                "motive",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "subjectPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "무서워서 그랬다. 또 사고가 나면 다 내 탓일까 봐, 내가 본 불안을 남도 듣게 만들고 싶었다.",
+            "그 과정에서 듣는 사람을 속였다는 걸 이제 안다."
+          ],
+          "privateKnowledge": [
+            "31초 파일은 은주 휴대폰 편집 앱 폴더에서 재저장된 클립이며 전체 통화 파일이 아니다.",
+            "'엄마 카드' 구절은 7개월 전 다른 통화에서 가져온 음성조각이다.",
+            "창피함과 불안 때문에 임대인에게도 이 클립을 보내 상황을 키웠다."
+          ],
+          "suppressions": [
+            "그 파일을 임대인에게 전달한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-3:s4:claim:0",
+              "factText": "무서워서 그랬다. 또 사고가 나면 다 내 탓일까 봐, 내가 본 불안을 남도 듣게 만들고 싶었다.",
+              "tags": [
+                "emotion",
+                "evidence",
+                "quote",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "time": {
+                  "exact": "7개월 전",
+                  "neutral": "예전"
+                },
+                "quote": {
+                  "exact": "엄마 카드",
+                  "neutral": "문제 구절"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:a:d-3:s4:claim:1",
+              "factText": "그 과정에서 듣는 사람을 속였다는 걸 이제 안다.",
+              "tags": [
+                "emotion",
+                "motive",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "subjectPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "31초 클립은 내가 세 통화를 잘라 붙이고, 7개월 전 다른 통화의 '엄마 카드' 구절까지 끼워 만든 위조본이다.",
+            "임대인에게 그걸 보내 소현이 자백한 것처럼 보이게 했다."
+          ],
+          "privateKnowledge": [
+            "31초 파일은 은주 휴대폰 편집 앱 폴더에서 재저장된 클립이며 전체 통화 파일이 아니다.",
+            "'엄마 카드' 구절은 7개월 전 다른 통화에서 가져온 음성조각이다.",
+            "창피함과 불안 때문에 임대인에게도 이 클립을 보내 상황을 키웠다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-3:s5:claim:0",
+              "factText": "31초 클립은 내가 세 통화를 잘라 붙이고, 7개월 전 다른 통화의 '엄마 카드' 구절까지 끼워 만든 위조본이다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "quote",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "time": {
+                  "exact": "7개월 전",
+                  "neutral": "예전"
+                },
+                "quote": {
+                  "exact": "엄마 카드",
+                  "neutral": "문제 구절"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:a:d-3:s5:claim:1",
+              "factText": "임대인에게 그걸 보내 소현이 자백한 것처럼 보이게 했다.",
+              "tags": [
+                "admission",
+                "motive",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "subjectPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "상담 후에 보자고 한 건 맞지만, 그 전에 이상한 낌새가 있으면 부모가 확인할 수는 있다고 봤다.",
+            "완전히 약속을 깬 건 아니었다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 청년주거상담센터 상담 후 계약 여부를 정하기로 합의했다.",
+            "은주는 상담 전에 이미 방 출입과 임대인 연락을 실행했다.",
+            "예전 전세사기 직전 사건의 기억 때문에 약속보다 불안이 먼저 움직였다."
+          ],
+          "suppressions": [
+            "상담 전 방 출입과 임대인 연락을 이미 했다는 점",
+            "약속을 스스로 느슨하게 해석한 점",
+            "예전 사건 공포가 약속보다 앞섰다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:public_scold_mode"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-4:s0:claim:0",
+              "factText": "상담 후에 보자고 한 건 맞지만, 그 전에 이상한 낌새가 있으면 부모가 확인할 수는 있다고 봤다.",
+              "tags": [
+                "denial",
+                "rule",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-4:s0:claim:1",
+              "factText": "완전히 약속을 깬 건 아니었다.",
+              "tags": [
+                "denial",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "그 약속이 계약금도 절대 넣지 말라는 수준은 아니었다.",
+            "나도 상담 전까지는 단순 확인 선에서 멈추려 했다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 청년주거상담센터 상담 후 계약 여부를 정하기로 합의했다.",
+            "은주는 상담 전에 이미 방 출입과 임대인 연락을 실행했다.",
+            "예전 전세사기 직전 사건의 기억 때문에 약속보다 불안이 먼저 움직였다."
+          ],
+          "suppressions": [
+            "상담 전 방 출입과 임대인 연락을 이미 했다는 점",
+            "약속을 스스로 느슨하게 해석한 점",
+            "예전 사건 공포가 약속보다 앞섰다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:public_scold_mode"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-4:s1:claim:0",
+              "factText": "그 약속이 계약금도 절대 넣지 말라는 수준은 아니었다.",
+              "tags": [
+                "uncertainty",
+                "rule"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-4:s1:claim:1",
+              "factText": "나도 상담 전까지는 단순 확인 선에서 멈추려 했다.",
+              "tags": [
+                "uncertainty",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "내가 먼저 선을 넘은 부분은 있지만, 소현도 이미 계약을 움직이고 있었다.",
+            "둘 다 약속을 느슨하게 본 셈이지 한쪽만 깬 건 아니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 청년주거상담센터 상담 후 계약 여부를 정하기로 합의했다.",
+            "은주는 상담 전에 이미 방 출입과 임대인 연락을 실행했다.",
+            "예전 전세사기 직전 사건의 기억 때문에 약속보다 불안이 먼저 움직였다."
+          ],
+          "suppressions": [
+            "약속을 스스로 느슨하게 해석한 점",
+            "예전 사건 공포가 약속보다 앞섰다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-4:s2:claim:0",
+              "factText": "내가 먼저 선을 넘은 부분은 있지만, 소현도 이미 계약을 움직이고 있었다.",
+              "tags": [
+                "admission",
+                "rule",
+                "uncertainty"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-4:s2:claim:1",
+              "factText": "둘 다 약속을 느슨하게 본 셈이지 한쪽만 깬 건 아니다.",
+              "tags": [
+                "admission",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "상담 전에 방에 들어가고 임대인에게 연락한 건 내 잘못이다.",
+            "그래도 소현이 계약금을 먼저 넣은 것도 같은 약속 파기였다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 청년주거상담센터 상담 후 계약 여부를 정하기로 합의했다.",
+            "은주는 상담 전에 이미 방 출입과 임대인 연락을 실행했다.",
+            "예전 전세사기 직전 사건의 기억 때문에 약속보다 불안이 먼저 움직였다."
+          ],
+          "suppressions": [
+            "약속을 스스로 느슨하게 해석한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:a:tell:public_scold_mode",
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-4:s3:claim:0",
+              "factText": "상담 전에 방에 들어가고 임대인에게 연락한 건 내 잘못이다.",
+              "tags": [
+                "responsibility",
+                "rule",
+                "uncertainty"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-4:s3:claim:1",
+              "factText": "그래도 소현이 계약금을 먼저 넣은 것도 같은 약속 파기였다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "예전 전세사기 직전 일만 떠오르면 약속보다 먼저 손이 나간다.",
+            "좋게 말해 보호였지만, 실제론 불안 때문에 약속을 밀어냈다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 청년주거상담센터 상담 후 계약 여부를 정하기로 합의했다.",
+            "은주는 상담 전에 이미 방 출입과 임대인 연락을 실행했다.",
+            "예전 전세사기 직전 사건의 기억 때문에 약속보다 불안이 먼저 움직였다."
+          ],
+          "suppressions": [
+            "예전 사건 공포가 약속보다 앞섰다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-4:s4:claim:0",
+              "factText": "예전 전세사기 직전 일만 떠오르면 약속보다 먼저 손이 나간다.",
+              "tags": [
+                "emotion",
+                "rule",
+                "uncertainty",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-4:s4:claim:1",
+              "factText": "좋게 말해 보호였지만, 실제론 불안 때문에 약속을 밀어냈다.",
+              "tags": [
+                "emotion",
+                "counter",
+                "responsibility",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "우리는 상담 후 결정하기로 했는데, 나는 상담 전에 개입했고 소현은 상담 전에 계약금을 넣었다.",
+            "약속은 쌍방이 깼고 내 개입이 갈등을 더 크게 만들었다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 청년주거상담센터 상담 후 계약 여부를 정하기로 합의했다.",
+            "은주는 상담 전에 이미 방 출입과 임대인 연락을 실행했다.",
+            "예전 전세사기 직전 사건의 기억 때문에 약속보다 불안이 먼저 움직였다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-4:s5:claim:0",
+              "factText": "우리는 상담 후 결정하기로 했는데, 나는 상담 전에 개입했고 소현은 상담 전에 계약금을 넣었다.",
+              "tags": [
+                "admission",
+                "rule",
+                "uncertainty"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "legacy": {
+                  "exact": "2년 전 전세사기 직전 사건",
+                  "neutral": "예전 일"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:a:d-4:s5:claim:1",
+              "factText": "약속은 쌍방이 깼고 내 개입이 갈등을 더 크게 만들었다.",
+              "tags": [
+                "admission",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "임대인이 최종으로 물러난 건 소현 수입이나 계약 구조가 불안해 보여서일 거다.",
+            "내 연락 하나로 계약이 깨졌다고는 생각하지 않는다."
+          ],
+          "privateKnowledge": [
+            "은주는 임대인에게 취소 연락과 편집 클립을 직접 전달했다.",
+            "자신의 행동이 임대인에게 가족 분쟁 신호로 보였을 수 있다는 불안을 갖고 있다.",
+            "그럼에도 공개적으로는 소현의 수입과 계약 구조 탓을 더 앞세운다."
+          ],
+          "suppressions": [
+            "임대인 거절에 자신의 연락과 편집 파일이 크게 작용했을 가능성",
+            "가족 분쟁처럼 보이게 만든 주체가 자신이라는 점",
+            "소현 수입 탓만으로는 설명되지 않는다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:public_scold_mode"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-5:s0:claim:0",
+              "factText": "임대인이 최종으로 물러난 건 소현 수입이나 계약 구조가 불안해 보여서일 거다.",
+              "tags": [
+                "denial",
+                "context",
+                "institution",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-5:s0:claim:1",
+              "factText": "내 연락 하나로 계약이 깨졌다고는 생각하지 않는다.",
+              "tags": [
+                "denial",
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "편집 파일"
+                },
+                "quote": {
+                  "exact": "가족이 책임 못 진다",
+                  "neutral": "취소 압박 문구"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "가족이 걱정하는 연락이 보태졌을 수는 있어도, 원래 위험한 계약이었던 건 맞다.",
+            "임대인도 그런 점을 보고 판단했을 거다."
+          ],
+          "privateKnowledge": [
+            "은주는 임대인에게 취소 연락과 편집 클립을 직접 전달했다.",
+            "자신의 행동이 임대인에게 가족 분쟁 신호로 보였을 수 있다는 불안을 갖고 있다.",
+            "그럼에도 공개적으로는 소현의 수입과 계약 구조 탓을 더 앞세운다."
+          ],
+          "suppressions": [
+            "임대인 거절에 자신의 연락과 편집 파일이 크게 작용했을 가능성",
+            "가족 분쟁처럼 보이게 만든 주체가 자신이라는 점",
+            "소현 수입 탓만으로는 설명되지 않는다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:public_scold_mode"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-5:s1:claim:0",
+              "factText": "가족이 걱정하는 연락이 보태졌을 수는 있어도, 원래 위험한 계약이었던 건 맞다.",
+              "tags": [
+                "uncertainty",
+                "context",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-5:s1:claim:1",
+              "factText": "임대인도 그런 점을 보고 판단했을 거다.",
+              "tags": [
+                "uncertainty",
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "편집 파일"
+                },
+                "quote": {
+                  "exact": "가족이 책임 못 진다",
+                  "neutral": "취소 압박 문구"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "내 취소 연락이 부담이 됐을 가능성은 인정한다.",
+            "그래도 공유주거 축소 설명과 수입 불안이 먼저 문제였다고 봤다."
+          ],
+          "privateKnowledge": [
+            "은주는 임대인에게 취소 연락과 편집 클립을 직접 전달했다.",
+            "자신의 행동이 임대인에게 가족 분쟁 신호로 보였을 수 있다는 불안을 갖고 있다.",
+            "그럼에도 공개적으로는 소현의 수입과 계약 구조 탓을 더 앞세운다."
+          ],
+          "suppressions": [
+            "가족 분쟁처럼 보이게 만든 주체가 자신이라는 점",
+            "소현 수입 탓만으로는 설명되지 않는다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:a:tell:protective_overclaim",
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-5:s2:claim:0",
+              "factText": "내 취소 연락이 부담이 됐을 가능성은 인정한다.",
+              "tags": [
+                "admission",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-5:s2:claim:1",
+              "factText": "그래도 공유주거 축소 설명과 수입 불안이 먼저 문제였다고 봤다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "evidence",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "편집 파일"
+                },
+                "quote": {
+                  "exact": "가족이 책임 못 진다",
+                  "neutral": "취소 압박 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "임대인이 가족 분쟁을 크게 본 건 맞는 것 같다.",
+            "하지만 그런 상황을 만든 데엔 소현의 축소 설명도 있었다."
+          ],
+          "privateKnowledge": [
+            "은주는 임대인에게 취소 연락과 편집 클립을 직접 전달했다.",
+            "자신의 행동이 임대인에게 가족 분쟁 신호로 보였을 수 있다는 불안을 갖고 있다.",
+            "그럼에도 공개적으로는 소현의 수입과 계약 구조 탓을 더 앞세운다."
+          ],
+          "suppressions": [
+            "가족 분쟁처럼 보이게 만든 주체가 자신이라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:a:tell:public_scold_mode",
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-5:s3:claim:0",
+              "factText": "임대인이 가족 분쟁을 크게 본 건 맞는 것 같다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-5:s3:claim:1",
+              "factText": "하지만 그런 상황을 만든 데엔 소현의 축소 설명도 있었다.",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "편집 파일"
+                },
+                "quote": {
+                  "exact": "가족이 책임 못 진다",
+                  "neutral": "취소 압박 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "내가 보낸 말과 클립이 남한테는 집안이 위험한 분쟁처럼 보였을 거라는 생각이 이제 든다.",
+            "그게 제일 부끄럽다."
+          ],
+          "privateKnowledge": [
+            "은주는 임대인에게 취소 연락과 편집 클립을 직접 전달했다.",
+            "자신의 행동이 임대인에게 가족 분쟁 신호로 보였을 수 있다는 불안을 갖고 있다.",
+            "그럼에도 공개적으로는 소현의 수입과 계약 구조 탓을 더 앞세운다."
+          ],
+          "suppressions": [
+            "소현 수입 탓만으로는 설명되지 않는다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-5:s4:claim:0",
+              "factText": "내가 보낸 말과 클립이 남한테는 집안이 위험한 분쟁처럼 보였을 거라는 생각이 이제 든다.",
+              "tags": [
+                "emotion",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-5:s4:claim:1",
+              "factText": "그게 제일 부끄럽다.",
+              "tags": [
+                "emotion",
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "편집 파일"
+                },
+                "quote": {
+                  "exact": "가족이 책임 못 진다",
+                  "neutral": "취소 압박 문구"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "임대인이 최종 계약을 거절한 데엔 내 취소 연락과 편집 녹취 전달이 크게 작용했다.",
+            "소현의 수입 문제만 탓하며 내 책임을 가린 건 사실이다."
+          ],
+          "privateKnowledge": [
+            "은주는 임대인에게 취소 연락과 편집 클립을 직접 전달했다.",
+            "자신의 행동이 임대인에게 가족 분쟁 신호로 보였을 수 있다는 불안을 갖고 있다.",
+            "그럼에도 공개적으로는 소현의 수입과 계약 구조 탓을 더 앞세운다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:a:tell:fear_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:a:d-5:s5:claim:0",
+              "factText": "임대인이 최종 계약을 거절한 데엔 내 취소 연락과 편집 녹취 전달이 크게 작용했다.",
+              "tags": [
+                "admission",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:a:d-5:s5:claim:1",
+              "factText": "소현의 수입 문제만 탓하며 내 책임을 가린 건 사실이다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "audioDuration": {
+                  "exact": "31초",
+                  "neutral": "편집 파일"
+                },
+                "quote": {
+                  "exact": "가족이 책임 못 진다",
+                  "neutral": "취소 압박 문구"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "엄마가 간섭은 했지만 처음부터 다 설명하고 싶진 않았다.",
+            "적어도 내 방을 마음대로 볼 일은 아니었다."
+          ],
+          "privateKnowledge": [
+            "홈앱 로그상 은주 휴대폰으로 현관이 열리고 방 문 센서가 같은 분 단위로 이어서 반응했다.",
+            "임대인과의 분위기는 어머니의 연락 뒤 눈에 띄게 달라졌다.",
+            "비밀번호와 예비열쇠를 정리하지 못한 자기 허점이 있었지만 그걸 출입 허락으로 준 적은 없다."
+          ],
+          "suppressions": [
+            "로그를 이미 확보하고도 처음엔 전부 말하지 않은 점",
+            "비밀번호와 예비열쇠를 정리하지 못한 자기 허점",
+            "엄마 연락 뒤 임대인 분위기가 변한 시점을 체감한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:late_context_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-1:s0:claim:0",
+              "factText": "엄마가 간섭은 했지만 처음부터 다 설명하고 싶진 않았다.",
+              "tags": [
+                "denial",
+                "evidence",
+                "privacy",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-1:s0:claim:1",
+              "factText": "적어도 내 방을 마음대로 볼 일은 아니었다.",
+              "tags": [
+                "denial",
+                "institution",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "내가 없을 때 집 기록이 이상하게 남아서 방까지 본 거 아닌가 의심했다.",
+            "임대인 쪽도 엄마 연락 뒤에 태도가 달라졌다."
+          ],
+          "privateKnowledge": [
+            "홈앱 로그상 은주 휴대폰으로 현관이 열리고 방 문 센서가 같은 분 단위로 이어서 반응했다.",
+            "임대인과의 분위기는 어머니의 연락 뒤 눈에 띄게 달라졌다.",
+            "비밀번호와 예비열쇠를 정리하지 못한 자기 허점이 있었지만 그걸 출입 허락으로 준 적은 없다."
+          ],
+          "suppressions": [
+            "로그를 이미 확보하고도 처음엔 전부 말하지 않은 점",
+            "비밀번호와 예비열쇠를 정리하지 못한 자기 허점",
+            "엄마 연락 뒤 임대인 분위기가 변한 시점을 체감한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:late_context_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-1:s1:claim:0",
+              "factText": "내가 없을 때 집 기록이 이상하게 남아서 방까지 본 거 아닌가 의심했다.",
+              "tags": [
+                "uncertainty",
+                "evidence",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-1:s1:claim:1",
+              "factText": "임대인 쪽도 엄마 연락 뒤에 태도가 달라졌다.",
+              "tags": [
+                "uncertainty",
+                "institution",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "홈앱 기록상 엄마 휴대폰으로 현관이 열리고 바로 방 문 센서가 반응했다.",
+            "그날 이후 계약 얘기가 내 손이 아니라 엄마 손으로 넘어간 느낌이었다."
+          ],
+          "privateKnowledge": [
+            "홈앱 로그상 은주 휴대폰으로 현관이 열리고 방 문 센서가 같은 분 단위로 이어서 반응했다.",
+            "임대인과의 분위기는 어머니의 연락 뒤 눈에 띄게 달라졌다.",
+            "비밀번호와 예비열쇠를 정리하지 못한 자기 허점이 있었지만 그걸 출입 허락으로 준 적은 없다."
+          ],
+          "suppressions": [
+            "비밀번호와 예비열쇠를 정리하지 못한 자기 허점",
+            "엄마 연락 뒤 임대인 분위기가 변한 시점을 체감한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-1:s2:claim:0",
+              "factText": "홈앱 기록상 엄마 휴대폰으로 현관이 열리고 바로 방 문 센서가 반응했다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "privacy",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-1:s2:claim:1",
+              "factText": "그날 이후 계약 얘기가 내 손이 아니라 엄마 손으로 넘어간 느낌이었다.",
+              "tags": [
+                "admission",
+                "institution",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "엄마는 보호라고 했지만, 성인인 내 방과 계약서에 허락 없이 손댄 거다.",
+            "내가 설명을 깔끔히 못 한 책임이 조금 있어도, 출입과 임대인 압박은 엄마 책임이 더 크다."
+          ],
+          "privateKnowledge": [
+            "홈앱 로그상 은주 휴대폰으로 현관이 열리고 방 문 센서가 같은 분 단위로 이어서 반응했다.",
+            "임대인과의 분위기는 어머니의 연락 뒤 눈에 띄게 달라졌다.",
+            "비밀번호와 예비열쇠를 정리하지 못한 자기 허점이 있었지만 그걸 출입 허락으로 준 적은 없다."
+          ],
+          "suppressions": [
+            "비밀번호와 예비열쇠를 정리하지 못한 자기 허점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:b:tell:late_context_dump",
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-1:s3:claim:0",
+              "factText": "엄마는 보호라고 했지만, 성인인 내 방과 계약서에 허락 없이 손댄 거다.",
+              "tags": [
+                "responsibility",
+                "evidence",
+                "privacy",
+                "identity",
+                "relationship",
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-1:s3:claim:1",
+              "factText": "내가 설명을 깔끔히 못 한 책임이 조금 있어도, 출입과 임대인 압박은 엄마 책임이 더 크다.",
+              "tags": [
+                "responsibility",
+                "institution",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "그래서 또 내가 애 취급이잖아. 방까지 열어보면 내가 어떻게 독립을 믿고 준비해.",
+            "과거 실수 하나로 지금도 계속 감시받는 기분이었다."
+          ],
+          "privateKnowledge": [
+            "홈앱 로그상 은주 휴대폰으로 현관이 열리고 방 문 센서가 같은 분 단위로 이어서 반응했다.",
+            "임대인과의 분위기는 어머니의 연락 뒤 눈에 띄게 달라졌다.",
+            "비밀번호와 예비열쇠를 정리하지 못한 자기 허점이 있었지만 그걸 출입 허락으로 준 적은 없다."
+          ],
+          "suppressions": [
+            "엄마 연락 뒤 임대인 분위기가 변한 시점을 체감한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-1:s4:claim:0",
+              "factText": "그래서 또 내가 애 취급이잖아. 방까지 열어보면 내가 어떻게 독립을 믿고 준비해.",
+              "tags": [
+                "emotion",
+                "evidence",
+                "privacy",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-1:s4:claim:1",
+              "factText": "과거 실수 하나로 지금도 계속 감시받는 기분이었다.",
+              "tags": [
+                "emotion",
+                "institution",
+                "harm",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "엄마는 내가 없는 낮 시간에 방에 들어갔고, 임대인에게 직접 연락해 계약을 흔들었다.",
+            "나는 비밀번호를 정리하지 못한 잘못이 있지만, 그걸 엄마 개입 허락으로 준 적은 없다."
+          ],
+          "privateKnowledge": [
+            "홈앱 로그상 은주 휴대폰으로 현관이 열리고 방 문 센서가 같은 분 단위로 이어서 반응했다.",
+            "임대인과의 분위기는 어머니의 연락 뒤 눈에 띄게 달라졌다.",
+            "비밀번호와 예비열쇠를 정리하지 못한 자기 허점이 있었지만 그걸 출입 허락으로 준 적은 없다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-1:s5:claim:0",
+              "factText": "엄마는 내가 없는 낮 시간에 방에 들어갔고, 임대인에게 직접 연락해 계약을 흔들었다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "privacy",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-1:s5:claim:1",
+              "factText": "나는 비밀번호를 정리하지 못한 잘못이 있지만, 그걸 엄마 개입 허락으로 준 적은 없다.",
+              "tags": [
+                "admission",
+                "institution",
+                "harm",
+                "relationship",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "그 방은 그냥 후보 중 하나였고, 부모님께 굳이 세세하게 설명할 단계는 아니었다.",
+            "단독으로 쓸 수 있는 느낌에 가까워서 그렇게 말한 거다."
+          ],
+          "privateKnowledge": [
+            "부모에게는 단독 원룸처럼 설명했지만 실제로는 공유주거 초안과 룸메이트 조항이 있었다.",
+            "상담 전 계약금을 먼저 보내 자리를 묶어 두려 했다.",
+            "체면을 지키려 범위를 잘게 쪼개 설명했다."
+          ],
+          "suppressions": [
+            "공유주거와 룸메이트 조항을 부모에게 단독 원룸처럼 들리게 만든 점",
+            "상담 전에 계약금을 먼저 송금한 점",
+            "체면 때문에 설명 범위를 잘라 말한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:late_context_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-2:s0:claim:0",
+              "factText": "그 방은 그냥 후보 중 하나였고, 부모님께 굳이 세세하게 설명할 단계는 아니었다.",
+              "tags": [
+                "denial",
+                "self_justification",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-2:s0:claim:1",
+              "factText": "단독으로 쓸 수 있는 느낌에 가까워서 그렇게 말한 거다.",
+              "tags": [
+                "denial",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "그 시점만 보면 내 방처럼 보였고 공용 부분은 아직 확정 전이었다.",
+            "계약서 초안이라고 해도 다 그대로 가는 건 아니잖아요?"
+          ],
+          "privateKnowledge": [
+            "부모에게는 단독 원룸처럼 설명했지만 실제로는 공유주거 초안과 룸메이트 조항이 있었다.",
+            "상담 전 계약금을 먼저 보내 자리를 묶어 두려 했다.",
+            "체면을 지키려 범위를 잘게 쪼개 설명했다."
+          ],
+          "suppressions": [
+            "공유주거와 룸메이트 조항을 부모에게 단독 원룸처럼 들리게 만든 점",
+            "상담 전에 계약금을 먼저 송금한 점",
+            "체면 때문에 설명 범위를 잘라 말한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:late_context_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-2:s1:claim:0",
+              "factText": "그 시점만 보면 내 방처럼 보였고 공용 부분은 아직 확정 전이었다.",
+              "tags": [
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-2:s1:claim:1",
+              "factText": "계약서 초안이라고 해도 다 그대로 가는 건 아니잖아요?",
+              "tags": [
+                "uncertainty",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "공유주거 초안이 있었고 계약금을 먼저 보낸 건 맞다.",
+            "그래도 최종 확정 전에 설명하려고 했지 일부러 속여 끝내려던 건 아니다."
+          ],
+          "privateKnowledge": [
+            "부모에게는 단독 원룸처럼 설명했지만 실제로는 공유주거 초안과 룸메이트 조항이 있었다.",
+            "상담 전 계약금을 먼저 보내 자리를 묶어 두려 했다.",
+            "체면을 지키려 범위를 잘게 쪼개 설명했다."
+          ],
+          "suppressions": [
+            "상담 전에 계약금을 먼저 송금한 점",
+            "체면 때문에 설명 범위를 잘라 말한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-2:s2:claim:0",
+              "factText": "공유주거 초안이 있었고 계약금을 먼저 보낸 건 맞다.",
+              "tags": [
+                "admission",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-2:s2:claim:1",
+              "factText": "그래도 최종 확정 전에 설명하려고 했지 일부러 속여 끝내려던 건 아니다.",
+              "tags": [
+                "admission",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "내가 단독 원룸처럼만 들리게 말한 책임은 있다.",
+            "하지만 엄마가 중간에 뛰어들지 않았으면 설명을 정리할 시간은 있었을 거다."
+          ],
+          "privateKnowledge": [
+            "부모에게는 단독 원룸처럼 설명했지만 실제로는 공유주거 초안과 룸메이트 조항이 있었다.",
+            "상담 전 계약금을 먼저 보내 자리를 묶어 두려 했다.",
+            "체면을 지키려 범위를 잘게 쪼개 설명했다."
+          ],
+          "suppressions": [
+            "상담 전에 계약금을 먼저 송금한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:b:tell:late_context_dump",
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-2:s3:claim:0",
+              "factText": "내가 단독 원룸처럼만 들리게 말한 책임은 있다.",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-2:s3:claim:1",
+              "factText": "하지만 엄마가 중간에 뛰어들지 않았으면 설명을 정리할 시간은 있었을 거다.",
+              "tags": [
+                "responsibility",
+                "act",
+                "timeline",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "나는 스물여섯이고, 독립 방식까지 전부 허락받는 사람처럼 보이고 싶지 않았다.",
+            "그래서 체면 세우려다 범위를 잘게 잘라 말해 버렸다."
+          ],
+          "privateKnowledge": [
+            "부모에게는 단독 원룸처럼 설명했지만 실제로는 공유주거 초안과 룸메이트 조항이 있었다.",
+            "상담 전 계약금을 먼저 보내 자리를 묶어 두려 했다.",
+            "체면을 지키려 범위를 잘게 쪼개 설명했다."
+          ],
+          "suppressions": [
+            "체면 때문에 설명 범위를 잘라 말한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-2:s4:claim:0",
+              "factText": "나는 스물여섯이고, 독립 방식까지 전부 허락받는 사람처럼 보이고 싶지 않았다.",
+              "tags": [
+                "emotion",
+                "self_justification",
+                "uncertainty",
+                "identity",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-2:s4:claim:1",
+              "factText": "그래서 체면 세우려다 범위를 잘게 잘라 말해 버렸다.",
+              "tags": [
+                "emotion",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "나는 부모에게 단독 원룸처럼 설명하면서 실제로는 룸메이트가 있는 공유주거 계약 초안에 계약금을 먼저 넣었다.",
+            "갈등 피하려고 축소 설명한 건 내 책임이다."
+          ],
+          "privateKnowledge": [
+            "부모에게는 단독 원룸처럼 설명했지만 실제로는 공유주거 초안과 룸메이트 조항이 있었다.",
+            "상담 전 계약금을 먼저 보내 자리를 묶어 두려 했다.",
+            "체면을 지키려 범위를 잘게 쪼개 설명했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-2:s5:claim:0",
+              "factText": "나는 부모에게 단독 원룸처럼 설명하면서 실제로는 룸메이트가 있는 공유주거 계약 초안에 계약금을 먼저 넣었다.",
+              "tags": [
+                "admission",
+                "self_justification",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "age": {
+                  "exact": "26세",
+                  "neutral": "성인"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-2:s5:claim:1",
+              "factText": "갈등 피하려고 축소 설명한 건 내 책임이다.",
+              "tags": [
+                "admission",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 클립은 내 자백이 아니라 앞뒤가 잘린 이상한 조각이다.",
+            "적어도 그 말만 듣고 내가 카드나 가출을 인정했다고 볼 수는 없다."
+          ],
+          "privateKnowledge": [
+            "11분 원본 통화에서 자신은 오히려 '엄마 카드 같은 건 안 건드려'라고 말했다.",
+            "31초 클립은 앞뒤 맥락이 잘렸고 파형상 절단 흔적이 있다.",
+            "그 편집 파일 때문에 임대인에게 문제 있는 사람처럼 보였다는 수치심이 남아 있다."
+          ],
+          "suppressions": [
+            "31초 클립이 이상하다고 느끼고도 처음엔 혼란 때문에 강하게 반박하지 못한 점",
+            "11분 원본 통화가 자신의 반대 취지 발화까지 담고 있는 점",
+            "임대인에게 문제 인물처럼 보였다는 굴욕감"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:late_context_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-3:s0:claim:0",
+              "factText": "그 클립은 내 자백이 아니라 앞뒤가 잘린 이상한 조각이다.",
+              "tags": [
+                "denial",
+                "counter",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "audioDuration": {
+                  "exact": "11분",
+                  "neutral": "전체 통화"
+                },
+                "audioShort": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "quote": {
+                  "exact": "엄마 카드 같은 건 안 건드려",
+                  "neutral": "반대 취지 발화"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-3:s0:claim:1",
+              "factText": "적어도 그 말만 듣고 내가 카드나 가출을 인정했다고 볼 수는 없다.",
+              "tags": [
+                "denial",
+                "evidence",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "목소리는 내 거여도 문맥이 끊겨서 다른 뜻처럼 들린다.",
+            "전체 통화를 들어 보면 오히려 반대 취지다."
+          ],
+          "privateKnowledge": [
+            "11분 원본 통화에서 자신은 오히려 '엄마 카드 같은 건 안 건드려'라고 말했다.",
+            "31초 클립은 앞뒤 맥락이 잘렸고 파형상 절단 흔적이 있다.",
+            "그 편집 파일 때문에 임대인에게 문제 있는 사람처럼 보였다는 수치심이 남아 있다."
+          ],
+          "suppressions": [
+            "31초 클립이 이상하다고 느끼고도 처음엔 혼란 때문에 강하게 반박하지 못한 점",
+            "11분 원본 통화가 자신의 반대 취지 발화까지 담고 있는 점",
+            "임대인에게 문제 인물처럼 보였다는 굴욕감"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:late_context_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-3:s1:claim:0",
+              "factText": "목소리는 내 거여도 문맥이 끊겨서 다른 뜻처럼 들린다.",
+              "tags": [
+                "uncertainty",
+                "counter",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "audioDuration": {
+                  "exact": "11분",
+                  "neutral": "전체 통화"
+                },
+                "audioShort": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "quote": {
+                  "exact": "엄마 카드 같은 건 안 건드려",
+                  "neutral": "반대 취지 발화"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-3:s1:claim:1",
+              "factText": "전체 통화를 들어 보면 오히려 반대 취지다.",
+              "tags": [
+                "uncertainty",
+                "evidence",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "원본 통화에선 내가 '엄마 카드 같은 건 안 건드려'라고 말한다.",
+            "31초 파일은 세 구간이 비정상적으로 끊겨 있어서 그대로 믿기 어렵다."
+          ],
+          "privateKnowledge": [
+            "11분 원본 통화에서 자신은 오히려 '엄마 카드 같은 건 안 건드려'라고 말했다.",
+            "31초 클립은 앞뒤 맥락이 잘렸고 파형상 절단 흔적이 있다.",
+            "그 편집 파일 때문에 임대인에게 문제 있는 사람처럼 보였다는 수치심이 남아 있다."
+          ],
+          "suppressions": [
+            "11분 원본 통화가 자신의 반대 취지 발화까지 담고 있는 점",
+            "임대인에게 문제 인물처럼 보였다는 굴욕감"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-3:s2:claim:0",
+              "factText": "원본 통화에선 내가 '엄마 카드 같은 건 안 건드려'라고 말한다.",
+              "tags": [
+                "admission",
+                "counter",
+                "quote",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "audioDuration": {
+                  "exact": "11분",
+                  "neutral": "전체 통화"
+                },
+                "audioShort": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "quote": {
+                  "exact": "엄마 카드 같은 건 안 건드려",
+                  "neutral": "반대 취지 발화"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-3:s2:claim:1",
+              "factText": "31초 파일은 세 구간이 비정상적으로 끊겨 있어서 그대로 믿기 어렵다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "엄마는 필요한 부분만 잘랐다고 하지만, 오래된 구절을 섞으면 사실이 아니라 제작이 된다.",
+            "그 파일 때문에 임대인까지 내가 문제 있는 사람처럼 봤다."
+          ],
+          "privateKnowledge": [
+            "11분 원본 통화에서 자신은 오히려 '엄마 카드 같은 건 안 건드려'라고 말했다.",
+            "31초 클립은 앞뒤 맥락이 잘렸고 파형상 절단 흔적이 있다.",
+            "그 편집 파일 때문에 임대인에게 문제 있는 사람처럼 보였다는 수치심이 남아 있다."
+          ],
+          "suppressions": [
+            "11분 원본 통화가 자신의 반대 취지 발화까지 담고 있는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:b:tell:late_context_dump",
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-3:s3:claim:0",
+              "factText": "엄마는 필요한 부분만 잘랐다고 하지만, 오래된 구절을 섞으면 사실이 아니라 제작이 된다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "quote",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "audioDuration": {
+                  "exact": "11분",
+                  "neutral": "전체 통화"
+                },
+                "audioShort": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "quote": {
+                  "exact": "엄마 카드 같은 건 안 건드려",
+                  "neutral": "반대 취지 발화"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-3:s3:claim:1",
+              "factText": "그 파일 때문에 임대인까지 내가 문제 있는 사람처럼 봤다.",
+              "tags": [
+                "responsibility",
+                "evidence",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "그래서 또 내가 애 취급이잖아. 말까지 잘라 붙여서 내가 도망갈 사람처럼 만들면 난 뭘로 설명해.",
+            "억울한데도 가족이라 바로 신고도 못 하고 버텼다."
+          ],
+          "privateKnowledge": [
+            "11분 원본 통화에서 자신은 오히려 '엄마 카드 같은 건 안 건드려'라고 말했다.",
+            "31초 클립은 앞뒤 맥락이 잘렸고 파형상 절단 흔적이 있다.",
+            "그 편집 파일 때문에 임대인에게 문제 있는 사람처럼 보였다는 수치심이 남아 있다."
+          ],
+          "suppressions": [
+            "임대인에게 문제 인물처럼 보였다는 굴욕감"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-3:s4:claim:0",
+              "factText": "그래서 또 내가 애 취급이잖아. 말까지 잘라 붙여서 내가 도망갈 사람처럼 만들면 난 뭘로 설명해.",
+              "tags": [
+                "emotion",
+                "counter",
+                "quote",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "audioDuration": {
+                  "exact": "11분",
+                  "neutral": "전체 통화"
+                },
+                "audioShort": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "quote": {
+                  "exact": "엄마 카드 같은 건 안 건드려",
+                  "neutral": "반대 취지 발화"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-3:s4:claim:1",
+              "factText": "억울한데도 가족이라 바로 신고도 못 하고 버텼다.",
+              "tags": [
+                "emotion",
+                "evidence",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "31초 클립은 내 자백이 아니라 편집 앱으로 재저장된 위조 음성이고, 11분 원본과 포렌식이 그걸 보여 준다.",
+            "내 말의 일부가 아니라 서로 다른 시점의 음성이 붙은 결과다."
+          ],
+          "privateKnowledge": [
+            "11분 원본 통화에서 자신은 오히려 '엄마 카드 같은 건 안 건드려'라고 말했다.",
+            "31초 클립은 앞뒤 맥락이 잘렸고 파형상 절단 흔적이 있다.",
+            "그 편집 파일 때문에 임대인에게 문제 있는 사람처럼 보였다는 수치심이 남아 있다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-3:s5:claim:0",
+              "factText": "31초 클립은 내 자백이 아니라 편집 앱으로 재저장된 위조 음성이고, 11분 원본과 포렌식이 그걸 보여 준다.",
+              "tags": [
+                "admission",
+                "counter",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "audioDuration": {
+                  "exact": "11분",
+                  "neutral": "전체 통화"
+                },
+                "audioShort": {
+                  "exact": "31초",
+                  "neutral": "짧은 클립"
+                },
+                "quote": {
+                  "exact": "엄마 카드 같은 건 안 건드려",
+                  "neutral": "반대 취지 발화"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family05:b:d-3:s5:claim:1",
+              "factText": "내 말의 일부가 아니라 서로 다른 시점의 음성이 붙은 결과다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "상담 예약만 먼저 잡아 둔 거지, 계약 관련 행동을 전부 멈추기로 딱 잘라 말한 건 아니었다.",
+            "나는 일정 맞추느라 우선순위만 정한 거다."
+          ],
+          "privateKnowledge": [
+            "상담 후 결정하기로 한 약속이 있었는데 상담 전에 계약금을 먼저 넣었다.",
+            "엄마가 먼저 들여다보고 개입할까 봐 서둘러 행동했다.",
+            "미성숙해 보일까 두려워 계약금 사실을 늦게 말했다."
+          ],
+          "suppressions": [
+            "상담 전 계약금을 먼저 보낸 점",
+            "'자리만 묶는 것'이라며 자기 행동을 축소한 점",
+            "미성숙해 보일까 두려워 계약금 사실을 늦게 말한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:late_context_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-4:s0:claim:0",
+              "factText": "상담 예약만 먼저 잡아 둔 거지, 계약 관련 행동을 전부 멈추기로 딱 잘라 말한 건 아니었다.",
+              "tags": [
+                "denial",
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:b:d-4:s0:claim:1",
+              "factText": "나는 일정 맞추느라 우선순위만 정한 거다.",
+              "tags": [
+                "denial",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "계약금은 방을 묶어 두는 의미였고 최종 계약은 상담 뒤에 정리하려 했다.",
+            "그래서 약속 위반이라고 단정하긴 억울하다."
+          ],
+          "privateKnowledge": [
+            "상담 후 결정하기로 한 약속이 있었는데 상담 전에 계약금을 먼저 넣었다.",
+            "엄마가 먼저 들여다보고 개입할까 봐 서둘러 행동했다.",
+            "미성숙해 보일까 두려워 계약금 사실을 늦게 말했다."
+          ],
+          "suppressions": [
+            "상담 전 계약금을 먼저 보낸 점",
+            "'자리만 묶는 것'이라며 자기 행동을 축소한 점",
+            "미성숙해 보일까 두려워 계약금 사실을 늦게 말한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:late_context_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-4:s1:claim:0",
+              "factText": "계약금은 방을 묶어 두는 의미였고 최종 계약은 상담 뒤에 정리하려 했다.",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:b:d-4:s1:claim:1",
+              "factText": "그래서 약속 위반이라고 단정하긴 억울하다.",
+              "tags": [
+                "uncertainty",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "상담 전에 계약금을 보낸 건 맞다.",
+            "다만 나도 엄마가 먼저 들여다보고 개입할 줄은 몰라서 서둘렀다."
+          ],
+          "privateKnowledge": [
+            "상담 후 결정하기로 한 약속이 있었는데 상담 전에 계약금을 먼저 넣었다.",
+            "엄마가 먼저 들여다보고 개입할까 봐 서둘러 행동했다.",
+            "미성숙해 보일까 두려워 계약금 사실을 늦게 말했다."
+          ],
+          "suppressions": [
+            "'자리만 묶는 것'이라며 자기 행동을 축소한 점",
+            "미성숙해 보일까 두려워 계약금 사실을 늦게 말한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-4:s2:claim:0",
+              "factText": "상담 전에 계약금을 보낸 건 맞다.",
+              "tags": [
+                "admission",
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:b:d-4:s2:claim:1",
+              "factText": "다만 나도 엄마가 먼저 들여다보고 개입할 줄은 몰라서 서둘렀다.",
+              "tags": [
+                "admission",
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "결과적으로 나는 상담 전 선계약 쪽으로 움직였고, 엄마는 선개입 쪽으로 움직였다.",
+            "둘 다 약속을 깬 건 사실이다."
+          ],
+          "privateKnowledge": [
+            "상담 후 결정하기로 한 약속이 있었는데 상담 전에 계약금을 먼저 넣었다.",
+            "엄마가 먼저 들여다보고 개입할까 봐 서둘러 행동했다.",
+            "미성숙해 보일까 두려워 계약금 사실을 늦게 말했다."
+          ],
+          "suppressions": [
+            "'자리만 묶는 것'이라며 자기 행동을 축소한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:b:tell:late_context_dump",
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-4:s3:claim:0",
+              "factText": "결과적으로 나는 상담 전 선계약 쪽으로 움직였고, 엄마는 선개입 쪽으로 움직였다.",
+              "tags": [
+                "responsibility",
+                "rule",
+                "self_justification",
+                "relationship"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:b:d-4:s3:claim:1",
+              "factText": "둘 다 약속을 깬 건 사실이다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "또 내가 미성숙해서 일정도 못 지킨 사람처럼 보일까 봐, 계약금부터 넣은 말을 늦췄다.",
+            "창피해서 '아직 확정 아냐'라는 말 뒤에 숨었다."
+          ],
+          "privateKnowledge": [
+            "상담 후 결정하기로 한 약속이 있었는데 상담 전에 계약금을 먼저 넣었다.",
+            "엄마가 먼저 들여다보고 개입할까 봐 서둘러 행동했다.",
+            "미성숙해 보일까 두려워 계약금 사실을 늦게 말했다."
+          ],
+          "suppressions": [
+            "미성숙해 보일까 두려워 계약금 사실을 늦게 말한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-4:s4:claim:0",
+              "factText": "또 내가 미성숙해서 일정도 못 지킨 사람처럼 보일까 봐, 계약금부터 넣은 말을 늦췄다.",
+              "tags": [
+                "emotion",
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:b:d-4:s4:claim:1",
+              "factText": "창피해서 '아직 확정 아냐'라는 말 뒤에 숨었다.",
+              "tags": [
+                "emotion",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "우리는 상담 후 결정하기로 했는데, 나는 상담 전에 계약금을 넣어 그 약속을 먼저 흔들었다.",
+            "엄마 잘못과 별개로 이 부분은 내가 책임져야 한다."
+          ],
+          "privateKnowledge": [
+            "상담 후 결정하기로 한 약속이 있었는데 상담 전에 계약금을 먼저 넣었다.",
+            "엄마가 먼저 들여다보고 개입할까 봐 서둘러 행동했다.",
+            "미성숙해 보일까 두려워 계약금 사실을 늦게 말했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-4:s5:claim:0",
+              "factText": "우리는 상담 후 결정하기로 했는데, 나는 상담 전에 계약금을 넣어 그 약속을 먼저 흔들었다.",
+              "tags": [
+                "admission",
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "amount": {
+                  "neutral": "계약금"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family05:b:d-4:s5:claim:1",
+              "factText": "엄마 잘못과 별개로 이 부분은 내가 책임져야 한다.",
+              "tags": [
+                "admission",
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "청년주거상담센터",
+                  "judgeRef": "상담센터",
+                  "neutral": "상담기관"
+                },
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "박은주",
+                  "judgeRef": "은주 씨",
+                  "neutral": "어머니"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "임대인이 망설인 건 제 수입이 일정치 않고 계약 구조가 애매해서라고 생각했다.",
+            "엄마 연락은 있었어도 결정적이진 않았을 거다."
+          ],
+          "privateKnowledge": [
+            "임대인 태도는 엄마 연락 뒤에 분명히 바뀌었다.",
+            "회신 메일을 보면 수입보다 가족 갈등과 편집 파일이 더 큰 부담 사유다.",
+            "하지만 공개적으로는 수입 문제를 더 앞세워 말해 체면을 지키려 했다."
+          ],
+          "suppressions": [
+            "엄마 연락 뒤 분위기가 바뀐 걸 알고도 수입 문제만 앞세운 점",
+            "회신 메일상 진짜 부담은 가족 갈등이었다는 점",
+            "체면 때문에 덜 창피한 이유를 골라 말한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:late_context_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-5:s0:claim:0",
+              "factText": "임대인이 망설인 건 제 수입이 일정치 않고 계약 구조가 애매해서라고 생각했다.",
+              "tags": [
+                "denial",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-5:s0:claim:1",
+              "factText": "엄마 연락은 있었어도 결정적이진 않았을 거다.",
+              "tags": [
+                "denial",
+                "shame",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "그분이 가족 얘기를 불편해하긴 했지만, 결국 프리랜서 수입을 더 크게 본 줄 알았다.",
+            "그래서 나도 그렇게 받아들였다."
+          ],
+          "privateKnowledge": [
+            "임대인 태도는 엄마 연락 뒤에 분명히 바뀌었다.",
+            "회신 메일을 보면 수입보다 가족 갈등과 편집 파일이 더 큰 부담 사유다.",
+            "하지만 공개적으로는 수입 문제를 더 앞세워 말해 체면을 지키려 했다."
+          ],
+          "suppressions": [
+            "엄마 연락 뒤 분위기가 바뀐 걸 알고도 수입 문제만 앞세운 점",
+            "회신 메일상 진짜 부담은 가족 갈등이었다는 점",
+            "체면 때문에 덜 창피한 이유를 골라 말한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:late_context_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-5:s1:claim:0",
+              "factText": "그분이 가족 얘기를 불편해하긴 했지만, 결국 프리랜서 수입을 더 크게 본 줄 알았다.",
+              "tags": [
+                "uncertainty",
+                "context",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-5:s1:claim:1",
+              "factText": "그래서 나도 그렇게 받아들였다.",
+              "tags": [
+                "uncertainty",
+                "shame",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "엄마가 임대인에게 연락한 뒤 분위기가 바뀐 건 맞다.",
+            "그래도 나는 그때까지도 수입 문제가 주된 이유라고 말하고 다녔다."
+          ],
+          "privateKnowledge": [
+            "임대인 태도는 엄마 연락 뒤에 분명히 바뀌었다.",
+            "회신 메일을 보면 수입보다 가족 갈등과 편집 파일이 더 큰 부담 사유다.",
+            "하지만 공개적으로는 수입 문제를 더 앞세워 말해 체면을 지키려 했다."
+          ],
+          "suppressions": [
+            "회신 메일상 진짜 부담은 가족 갈등이었다는 점",
+            "체면 때문에 덜 창피한 이유를 골라 말한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:b:tell:scope_narrowing",
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-5:s2:claim:0",
+              "factText": "엄마가 임대인에게 연락한 뒤 분위기가 바뀐 건 맞다.",
+              "tags": [
+                "admission",
+                "context",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-5:s2:claim:1",
+              "factText": "그래도 나는 그때까지도 수입 문제가 주된 이유라고 말하고 다녔다.",
+              "tags": [
+                "admission",
+                "shame",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "회신 내용을 보면 가족 갈등과 취소 연락이 계약 부담으로 크게 보였다.",
+            "내가 체면 때문에 수입 문제만 앞세워 말한 셈이다."
+          ],
+          "privateKnowledge": [
+            "임대인 태도는 엄마 연락 뒤에 분명히 바뀌었다.",
+            "회신 메일을 보면 수입보다 가족 갈등과 편집 파일이 더 큰 부담 사유다.",
+            "하지만 공개적으로는 수입 문제를 더 앞세워 말해 체면을 지키려 했다."
+          ],
+          "suppressions": [
+            "회신 메일상 진짜 부담은 가족 갈등이었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family05:b:tell:late_context_dump",
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-5:s3:claim:0",
+              "factText": "회신 내용을 보면 가족 갈등과 취소 연락이 계약 부담으로 크게 보였다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-5:s3:claim:1",
+              "factText": "내가 체면 때문에 수입 문제만 앞세워 말한 셈이다.",
+              "tags": [
+                "responsibility",
+                "shame",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "엄마 일 때문에 깨졌다고 말하면 또 내가 집안 통제도 못 끊은 사람처럼 보여서 싫었다.",
+            "그래서 덜 창피한 이유인 수입 문제 쪽으로 말이 갔다."
+          ],
+          "privateKnowledge": [
+            "임대인 태도는 엄마 연락 뒤에 분명히 바뀌었다.",
+            "회신 메일을 보면 수입보다 가족 갈등과 편집 파일이 더 큰 부담 사유다.",
+            "하지만 공개적으로는 수입 문제를 더 앞세워 말해 체면을 지키려 했다."
+          ],
+          "suppressions": [
+            "체면 때문에 덜 창피한 이유를 골라 말한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-5:s4:claim:0",
+              "factText": "엄마 일 때문에 깨졌다고 말하면 또 내가 집안 통제도 못 끊은 사람처럼 보여서 싫었다.",
+              "tags": [
+                "emotion",
+                "context",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-5:s4:claim:1",
+              "factText": "그래서 덜 창피한 이유인 수입 문제 쪽으로 말이 갔다.",
+              "tags": [
+                "emotion",
+                "shame",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "임대인의 최종 거절 사유는 내 수입 자체보다 엄마의 취소 연락과 편집 녹취 때문에 가족 분쟁 위험이 커 보였기 때문이다.",
+            "나는 그걸 알게 된 뒤에도 체면 때문에 수입 문제만 더 앞세웠다."
+          ],
+          "privateKnowledge": [
+            "임대인 태도는 엄마 연락 뒤에 분명히 바뀌었다.",
+            "회신 메일을 보면 수입보다 가족 갈등과 편집 파일이 더 큰 부담 사유다.",
+            "하지만 공개적으로는 수입 문제를 더 앞세워 말해 체면을 지키려 했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family05:b:tell:adult_status_assertion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family05:b:d-5:s5:claim:0",
+              "factText": "임대인의 최종 거절 사유는 내 수입 자체보다 엄마의 취소 연락과 편집 녹취 때문에 가족 분쟁 위험이 커 보였기 때문이다.",
+              "tags": [
+                "admission",
+                "context",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family05:b:d-5:s5:claim:1",
+              "factText": "나는 그걸 알게 된 뒤에도 체면 때문에 수입 문제만 더 앞세웠다.",
+              "tags": [
+                "admission",
+                "shame",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박소현",
+                  "judgeRef": "소현 씨",
+                  "neutral": "딸"
+                },
+                "otherPerson": {
+                  "fullName": "최연우",
+                  "judgeRef": "임대인",
+                  "neutral": "임대인"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

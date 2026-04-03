@@ -1,0 +1,5098 @@
+export const partnership12V2Atoms = {
+  "caseId": "partnership-12",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "저는 장수진 대표를 깎아내리려는 말을 한 적이 없습니다.",
+            "그때 정리한 건 샘플 승인 시각과 출고 가능 수량보다 앞서 약속이 나간다고 느낀 압박 같은 운영 혼선뿐입니다."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "실무 하소연이라는 말로 자신의 발화 수위를 낮추고 있다."
+          ],
+          "suppressions": [
+            "장수진 대표를 사실상 지목한 발화였다는 점",
+            "원칙 위반이라는 자각이 있었던 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-1:act:0",
+              "factText": "류선우가 외부 프리랜서 채널에서 장수진 관련 불만이 아니라 납기 약속 문제만 말했다고 부인하는 상태",
+              "tags": [
+                "act",
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                },
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 2차 미팅 직후",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-1:self_justification:0",
+              "factText": "발화의 의미를 평판 훼손이 아닌 운영 정리로 낮추려는 자기정당화",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 2차 미팅 직후",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "홍세진에게 납기 약속 문제를 말한 건 맞지만, 사람을 험담한 건 아닙니다.",
+            "그걸 대외 평판 문제로 곧장 키우는 건 과합니다."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "장수진 대표를 직접 지목하는 뉘앙스를 숨기고 있다."
+          ],
+          "suppressions": [
+            "외부 프리랜서/스태프 채널을 선택한 경솔함",
+            "발화를 실무 설명으로 축소하는 의도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-1:act:1",
+              "factText": "외부 프리랜서 채널에서 납기 약속 문제를 말했다는 사실은 일부 인정하지만 험담은 부정함",
+              "tags": [
+                "act",
+                "uncertainty",
+                "denial"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                },
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 2차 미팅 직후",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-1:self_justification:1",
+              "factText": "대외 평판 훼손 의도를 부인하며 발화를 실무 설명으로 축소함",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "네, 외부 채널에서 장수진 대표 관련 불만을 말했습니다.",
+            "다만 바이어에게 돌리려던 건 아니고, 저는 그걸 실무 하소연으로 낮춰 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "바이어에게 직접 말하지 않았다는 점으로 책임 범위를 줄이려 한다."
+          ],
+          "suppressions": [
+            "상대에게 직접 말하지 않고 제3자에게 먼저 토로한 점",
+            "외부 전달 가능성을 알면서도 멈추지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-1:admission:0",
+              "factText": "류선우가 외부 프리랜서 채널에서 장수진 관련 불만을 말했다는 사실을 인정함",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                },
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 2차 미팅 직후",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-1:responsibility:0",
+              "factText": "직접 바이어가 아닌 외부 인력 채널이었다는 점으로 책임 범위를 줄이려 함",
+              "tags": [
+                "responsibility",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                },
+                "audience": {
+                  "exact": "바이어 직접 발화가 아님",
+                  "neutral": "그 경로"
+                },
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "그날은 샘플 승인 시각과 출고 가능 수량보다 앞서 약속이 나간다고 느낀 압박 때문에 생산 부담이 한쪽으로 몰렸습니다.",
+            "그 압박이 밖으로 새면 안 됐는데, 저는 그 배경을 먼저 말하고 싶었습니다."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "상대를 직접 설득하기보다 제3자에게 공감받고 싶었던 심리가 섞여 있다."
+          ],
+          "suppressions": [
+            "공감과 지지를 외부에서 얻고 싶었던 심리",
+            "상대 책임을 배경으로 세워 자신의 선 넘음을 흐리는 태도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:venting_downgrade",
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-1:motive:0",
+              "factText": "샘플 승인 시각과 출고 가능 수량보다 앞서 약속이 나간다고 느낀 압박을 배경으로 외부에서 말을 흘렸다고 맥락을 제시함",
+              "tags": [
+                "motive",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 2차 미팅 직후",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                },
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-1:counter:0",
+              "factText": "문제의 출발을 장수진 쪽 납기 약속 문제에서 찾으며 자신의 선 넘음을 배경화함",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "실무라는 말로 눌러도 결국 외부 사람 앞에서 상대 불만을 꺼낸 겁니다.",
+            "그 순간부터 평판 손상의 재료를 제가 만든 셈입니다."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "생산을 맡은 대표가 바이어 앞에서 불안정한 사람처럼 보이거나, 반대로 동업자를 뒤에서 험담한 사람으로 업계 평판을 잃는 것에 대한 두려움 때문에 더 축소해 왔다."
+          ],
+          "suppressions": [
+            "평판 손상에 대한 자신의 공포",
+            "동업자를 뒤에서 말한 사람으로 보일 수 있다는 수치심"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:a:tell:venting_downgrade",
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-1:emotion:0",
+              "factText": "외부 발화가 평판 손상의 재료가 되었다는 점에서 수치심과 두려움이 드러남",
+              "tags": [
+                "emotion",
+                "shame",
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "fear": {
+                  "exact": "생산을 맡은 대표가 바이어 앞에서 불안정한 사람처럼 보이거나, 반대로 동업자를 뒤에서 험담한 사람으로 업계 평판을 잃는 것",
+                  "neutral": "그 두려움"
+                },
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-1:responsibility:1",
+              "factText": "실무 하소연이라는 표현으로 책임을 줄이려 했다는 사실을 스스로 의식함",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "admission"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "저는 외부 인력에게 장수진 대표 불만을 흘렸습니다.",
+            "직접 바이어 험담은 아니어도 상호 비방 금지 원칙을 어긴 책임은 제게 있습니다."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "외부 발화가 와전의 재료가 됐고, 평판 복구가 필요하다는 점을 안다."
+          ],
+          "suppressions": [
+            "사건 이후 복구 조치를 바로 하지 못한 점",
+            "자신의 발화가 와전의 재료가 됐다는 무게"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-1:admission:1",
+              "factText": "류선우가 외부 프리랜서 채널에게 장수진 불만을 외부로 흘렸다는 전면 시인",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                },
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 2차 미팅 직후",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-1:rule:0",
+              "factText": "직접 바이어 험담은 아니어도 외부 비방 금지 원칙을 어겼다는 인정",
+              "tags": [
+                "rule",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "장수진 대표 쪽에서도 제 승인 지연과 출고 문제가 밖으로 나갔다고 봤습니다.",
+            "현장 반응이 그렇게 움직였습니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "자신도 류선우의 외부 발화를 숨기고 싶어 한다."
+          ],
+          "suppressions": [
+            "직접 본 장면보다 추정이 많다는 점",
+            "자신도 장수진 관련 불만을 밖에 흘렸다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-2:counter:0",
+              "factText": "장수진이 밖에서 자신의 승인 지연과 출고 문제를 문제처럼 말했다고 의심함",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 상담 직전",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "accuse",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-2:harm:0",
+              "factText": "바깥 반응을 근거로 자신의 운영 신뢰나 영업 평판이 흔들렸다고 느끼는 피해감",
+              "tags": [
+                "harm",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "impact": {
+                  "exact": "바이어 반응과 현장 분위기",
+                  "neutral": "그 반응"
+                }
+              },
+              "stanceHints": [
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "직접 원문을 본 건 아니지만, 외부 인력에게 제 얘기가 전달된 정황은 충분했습니다.",
+            "당시엔 그 정황만으로도 운영 신뢰가 흔들린다고 느꼈습니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "확정적 증거 없이 배신감이 판단을 앞질렀다."
+          ],
+          "suppressions": [
+            "정황 해석이 감정에 크게 끌렸다는 점",
+            "원본 없는 확신이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-2:uncertainty:0",
+              "factText": "직접 원문은 없지만 정황상 외부 인력에게 자신의 문제가 전달됐다고 보는 상태",
+              "tags": [
+                "uncertainty",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                },
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 상담 직전",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-2:emotion:0",
+              "factText": "정황만으로도 배신과 평판 손상을 먼저 느낀 감정 반응",
+              "tags": [
+                "emotion",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "impact": {
+                  "exact": "배신처럼 느껴진 현장 반응",
+                  "neutral": "그 감정"
+                },
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "원본을 보면 장수진 대표가 홍세진과 보조 스태프에게 제 승인 지연과 출고 문제를 말한 건 맞습니다.",
+            "다만 바이어 직접 험담과는 층위가 다르다는 점은 구분해야 합니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "원본을 보면 외부 인력 대상 불만과 직접 거래처 험담을 구분해야 한다는 점을 안다."
+          ],
+          "suppressions": [
+            "직접 험담과 외부 인력 대상 불만을 구분해야 한다는 점",
+            "상대의 행동만으로 사건 전체를 설명할 수 없다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-2:evidence:0",
+              "factText": "원본상 장수진이 외부 인력에게 자신의 승인 지연과 출고 문제를 말한 사실은 인정함",
+              "tags": [
+                "evidence",
+                "act",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                },
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "evidence": {
+                  "exact": "e-2 원본 자료",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-2:context:0",
+              "factText": "외부 인력 대상 불만과 직접 바이어 험담을 구분하려는 인식이 생김",
+              "tags": [
+                "context",
+                "responsibility",
+                "uncertainty"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                },
+                "audience": {
+                  "exact": "바이어 직접 발화와는 다른 층위",
+                  "neutral": "그 차이"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "저한텐 그 말이 곧 제 운영 신뢰를 건드리는 문제였습니다.",
+            "그래서 더 직선적으로 받아들였습니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "상대의 발화보다 자신의 운영 신뢰 손상 감정이 더 크게 작동했다."
+          ],
+          "suppressions": [
+            "배신감이 판단을 증폭했다는 점",
+            "일부는 자신의 피해감정 서사라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:venting_downgrade",
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-2:emotion:1",
+              "factText": "상대의 외부 발화보다 자신의 신뢰 손상과 배신감이 더 크게 작동했음을 드러냄",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "impact": {
+                  "exact": "운영 신뢰 손상과 배신감",
+                  "neutral": "그 상처"
+                },
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-2:counter:1",
+              "factText": "상대의 잘못을 강조하면서도 자신의 과잉 해석 가능성을 완전히 버리진 못함",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "제 쪽도 밖에 불만을 남겼기 때문에 일방 피해자처럼만 말할 수는 없습니다.",
+            "그 점은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "일방 피해자 서사를 유지하기 어렵다는 점을 받아들인다."
+          ],
+          "suppressions": [
+            "공동 책임 구조",
+            "상대만 문제 삼기 어려운 자신의 외부 발화"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:a:tell:venting_downgrade",
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-2:admission:0",
+              "factText": "자신도 밖에서 불만을 남겼기에 일방 피해자 서사를 유지하기 어렵다고 인정함",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                },
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-2:shame:0",
+              "factText": "상처만 앞세우면 공정하지 않다는 자각과 체면 손상이 동시에 드러남",
+              "tags": [
+                "shame",
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "impact": {
+                  "exact": "일방 피해자처럼 보이기 어렵다는 자각",
+                  "neutral": "그 자각"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "장수진 대표도 외부 인력에게 제 문제를 말했습니다.",
+            "결국 둘 다 원칙을 어긴 쪽으로 보는 게 맞습니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "상대 비난만으로는 사건을 설명할 수 없고, 공동 책임이 남는다는 점을 안다."
+          ],
+          "suppressions": [
+            "재발 방지 논의가 필요하다는 점",
+            "상대의 잘못과 자신의 잘못이 동시에 성립한다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-2:admission:1",
+              "factText": "상대의 외부 발화와 자신의 외부 발화가 함께 사건을 키웠다는 최종 인정",
+              "tags": [
+                "admission",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-2:rule:0",
+              "factText": "한쪽만의 잘못으로 밀어붙일 수 없고 공동 원칙 위반으로 봐야 한다는 정리",
+              "tags": [
+                "rule",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "당시엔 장수진 대표가 바이어에게 직접 제 얘길 흘렸다고 봤습니다.",
+            "크롭 전사랑 거래처 반응이 그쪽으로 읽혔습니다."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "자신도 장수진에게 밖에서 불만을 말한 적이 있어 더 예민해져 있었다."
+          ],
+          "suppressions": [
+            "직접 발신 원문이 없다는 점",
+            "캡처가 선택적으로 잘렸다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:schedule_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-3:counter:0",
+              "factText": "장수진이 바이어에게 직접 자신을 험담했다고 단정하는 초기 오해",
+              "tags": [
+                "counter",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "evidence": {
+                  "exact": "크롭된 음성전사 캡처",
+                  "neutral": "그 자료"
+                },
+                "reaction": {
+                  "exact": "바이어 반응 한 줄",
+                  "neutral": "그 반응"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-3:evidence:0",
+              "factText": "크롭된 전사 캡처와 거래처 반응을 직접 험담의 근거로 키워 해석함",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "quote"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 음성전사 캡처",
+                  "neutral": "그 자료"
+                },
+                "reaction": {
+                  "exact": "바이어 반응 한 줄",
+                  "neutral": "그 반응"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 표현",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "직접 발신 원문은 없었지만, 그때는 그렇게 믿을 수밖에 없었습니다.",
+            "상황이 그만큼 비틀려 보였습니다."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "증거보다 배신감이 판단을 선도했다."
+          ],
+          "suppressions": [
+            "배신감이 결론을 앞질렀다는 점",
+            "제3자 개입 가능성을 충분히 보지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:schedule_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-3:uncertainty:0",
+              "factText": "완전한 발신 원문 없이도 직접 험담이었다고 믿어 버린 상태",
+              "tags": [
+                "uncertainty",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 음성전사 캡처",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                },
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-3:emotion:0",
+              "factText": "증거 부족을 감정적 배신감으로 메우는 반응",
+              "tags": [
+                "emotion",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "reaction": {
+                  "exact": "바이어 반응 한 줄",
+                  "neutral": "그 반응"
+                },
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "지금 보면 그 캡처만으로는 수신자가 바이어인지 외부 스태프인지 확정할 수 없습니다.",
+            "문장 앞뒤도 빠져 있습니다."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "크롭 캡처만으로는 수신자와 맥락을 확정할 수 없다는 점을 안다."
+          ],
+          "suppressions": [
+            "수신자 불명이라는 핵심 한계",
+            "증거가 soft trap이라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-3:evidence:1",
+              "factText": "크롭 캡처만으로는 수신자와 문장 앞뒤를 확정할 수 없다는 인정",
+              "tags": [
+                "evidence",
+                "admission",
+                "uncertainty"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 음성전사 캡처",
+                  "neutral": "그 자료"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 표현",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-3:context:0",
+              "factText": "직접 험담 여부보다 증거의 불완전성이 핵심임을 보기 시작함",
+              "tags": [
+                "context",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 음성전사 캡처",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 행사 직후 반응을 겪은 입장에선 누군가 의도적으로 그 인상을 만들었다고 느꼈습니다.",
+            "제 판단이 완전히 식지는 않았습니다."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "여전히 자신의 상처를 정당화하고 싶어 결론을 완전히 내려놓지 못한다."
+          ],
+          "suppressions": [
+            "상처와 체면이 판단을 붙들고 있다는 점",
+            "직접 험담 서사를 완전히 놓지 못한다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:schedule_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-3:emotion:1",
+              "factText": "상처와 체면 때문에 직접 험담 서사를 완전히 놓지 못하는 상태",
+              "tags": [
+                "emotion",
+                "relationship",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "reaction": {
+                  "exact": "바이어 반응 한 줄",
+                  "neutral": "그 반응"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-3:counter:1",
+              "factText": "누군가 의도적으로 그런 인상을 만들었다고 느끼며 결론을 붙들고 있음",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 표현",
+                  "neutral": "그 문장"
+                },
+                "source": {
+                  "exact": "홍세진 buyer recap",
+                  "neutral": "그 후속 요약"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 경로보다 배신감부터 먼저 읽은 건 인정합니다.",
+            "스트레스가 큰 상태에서 악의로 단정했습니다."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "행사 직후의 스트레스와 좁은 업계 구조가 과잉 해석을 키웠다는 점을 자각한다."
+          ],
+          "suppressions": [
+            "악의 단정이 자신의 해석이었다는 점",
+            "업계 평판 공포가 오해를 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-3:admission:0",
+              "factText": "경로 확인보다 배신감과 악의 단정을 앞세웠다는 자각",
+              "tags": [
+                "admission",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "reaction": {
+                  "exact": "바이어 반응 한 줄",
+                  "neutral": "그 반응"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-3:harm:0",
+              "factText": "좁은 업계 평판 공포가 오해를 확대했다는 인식",
+              "tags": [
+                "harm",
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "fear": {
+                  "exact": "생산을 맡은 대표가 바이어 앞에서 불안정한 사람처럼 보이거나, 반대로 동업자를 뒤에서 험담한 사람으로 업계 평판을 잃는 것",
+                  "neutral": "그 공포"
+                },
+                "source": {
+                  "exact": "홍세진 buyer recap",
+                  "neutral": "그 후속 요약"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "장수진 대표가 바이어에게 직접 험담한 건 아니었습니다.",
+            "홍세진이 양쪽 불만을 섞어 buyer recap으로 과장한 게 핵심이었습니다."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "홍세진이 양측 불만을 섞어 buyer recap을 만든 것이 핵심이라는 사실을 받아들인다."
+          ],
+          "suppressions": [
+            "상대에 대한 단정이 사실이 아니었다는 점",
+            "홍세진 buyer recap이 핵심 경로였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-3:admission:1",
+              "factText": "장수진이 바이어에게 직접 험담한 것이 아니라 홍세진이 양측 불만을 섞어 요약했다는 최종 인정",
+              "tags": [
+                "admission",
+                "quote",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "source": {
+                  "exact": "홍세진 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 표현",
+                  "neutral": "그 문장"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-3:timeline:0",
+              "factText": "문제의 문장이 행사 직후 홍세진 후속 요약에서 처음 등장했다는 경로 정리",
+              "tags": [
+                "timeline",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 표현",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "그 규칙 자체를 무시하려던 건 아닙니다.",
+            "저는 행사 혼선 설명과 비방을 분리해 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "규칙과 현장 설명을 억지로 분리해 자기합리화하고 있다."
+          ],
+          "suppressions": [
+            "문서 체크 사실",
+            "합의를 자의적으로 해석했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-4:rule:0",
+              "factText": "비방 금지 원칙을 무시한 것이 아니라 현장 설명과 비방을 분리했다고 주장함",
+              "tags": [
+                "rule",
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "행사 전날 밤 체크 후 행사 당일",
+                  "neutral": "그 행사 기간",
+                  "period": "행사 기간"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-4:self_justification:0",
+              "factText": "합의를 자의적으로 해석해 자신의 발화를 예외로 두려는 태도",
+              "tags": [
+                "self_justification",
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "문서는 알고 있었고 선도 압니다.",
+            "다만 당시엔 실무 얘기 정도는 괜찮다고 스스로 낮췄습니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "실무 설명 정도는 괜찮다는 자의적 해석을 한 점을 숨긴다."
+          ],
+          "suppressions": [
+            "실무 설명 예외를 스스로 만들어낸 점",
+            "상대 평가와 현장 설명을 섞은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-4:rule:1",
+              "factText": "문서와 선은 알지만 실무 얘기 정도는 괜찮다고 스스로 낮춘 상태",
+              "tags": [
+                "rule",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "행사 전날 밤 체크 후 행사 당일",
+                  "neutral": "그 행사 기간",
+                  "period": "행사 기간"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-4:self_justification:1",
+              "factText": "상대 평가와 현장 설명을 섞으면서도 예외라고 믿으려는 자기합리화",
+              "tags": [
+                "self_justification",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "네, 외부 인력 앞에서 상대 불만을 꺼낸 순간 규칙 위반이 됩니다.",
+            "그 점은 부인하기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "상대를 말한 순간 합의 위반이 된다는 점을 이미 알고 있다."
+          ],
+          "suppressions": [
+            "규칙 위반 인식",
+            "상대도 같은 위반을 했다는 생각으로 스스로를 완화하는 태도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-4:admission:0",
+              "factText": "외부 인력 앞에서 상대 불만을 꺼낸 순간 규칙 위반이 된다는 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                },
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-4:responsibility:0",
+              "factText": "합의 위반 사실은 인정하지만 구체적 책임 비율은 좁히려는 태도",
+              "tags": [
+                "responsibility",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "그 원칙은 양쪽 모두 깼습니다.",
+            "제 잘못이 줄진 않지만, 사건 구조는 그쪽이 맞습니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "양측 모두 같은 규칙을 깼다는 점을 방패로 쓴다."
+          ],
+          "suppressions": [
+            "공동 위반을 방패로 쓰는 점",
+            "자신의 선 넘음을 상대 행위로 희석하는 태도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:a:tell:schedule_recital",
+            "partnership-12:a:tell:venting_downgrade",
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-4:counter:0",
+              "factText": "양측 모두 같은 원칙을 깼다는 점을 들어 자신의 위반을 배경화함",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-4:context:0",
+              "factText": "개별 잘못보다 사건 구조가 공동 위반이라는 방향으로 논점을 옮김",
+              "tags": [
+                "context",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "행사 전날 밤 체크 후 행사 당일",
+                  "neutral": "그 행사 기간",
+                  "period": "행사 기간"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "서류에 체크까지 해놓고 현장에서 선을 넘었다는 게 가장 부끄럽습니다.",
+            "합의 위반이었다는 걸 압니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "체크 후 위반이라는 점이 특히 수치심을 자극한다."
+          ],
+          "suppressions": [
+            "체크 후 위반의 수치심",
+            "외부 인력 통제 실패에 대한 자책"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:a:tell:venting_downgrade",
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-4:shame:0",
+              "factText": "체크 후 위반이라는 점에서 강한 수치심이 드러남",
+              "tags": [
+                "shame",
+                "emotion",
+                "rule"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "행사 전날 밤 체크 후 행사 당일",
+                  "neutral": "그 행사 기간",
+                  "period": "행사 기간"
+                },
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-4:admission:1",
+              "factText": "합의 위반이었다는 사실 자체를 감정적으로 받아들이기 시작함",
+              "tags": [
+                "admission",
+                "emotion",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "우리는 둘 다 상호 비방 금지 원칙을 어겼습니다.",
+            "외부 인력 채널을 통제하지 못한 공동 실패였습니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "이제 핵심이 책임 비율보다 재발 방지 구조라는 점을 안다."
+          ],
+          "suppressions": [
+            "규칙 재설계 필요성",
+            "누가 더 먼저냐보다 구조 문제라는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-4:admission:2",
+              "factText": "둘 다 상호 비방 금지 원칙을 어겼고 외부 채널 통제에 실패했다는 최종 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                },
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "time": {
+                  "exact": "행사 전날 밤 체크 후 행사 당일",
+                  "neutral": "그 행사 기간",
+                  "period": "행사 기간"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-4:relationship:0",
+              "factText": "누가 더 먼저냐보다 재발 방지를 위한 커뮤니케이션 재설계가 남았다는 정리",
+              "tags": [
+                "relationship",
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "소문 시작점은 장수진 쪽 직접 발화라고 생각했습니다.",
+            "당시엔 그렇게 계산이 맞아떨어졌습니다."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "처음에는 장수진의 직접 발화를 출발점으로 믿고 싶었다."
+          ],
+          "suppressions": [
+            "장수진 직접 발화를 먼저 상정했다는 점",
+            "홍세진 개입 가능성을 낮게 봤다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:schedule_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-5:counter:0",
+              "factText": "소문 시작점을 장수진의 직접 발화로 상정하는 초기 추정",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-5:timeline:0",
+              "factText": "당시에는 소문 전파 시점과 발화 경로를 아직 분리하지 못한 상태",
+              "tags": [
+                "timeline",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "다만 바이어 반응을 보면 누군가 한 번 더 요약한 문장이 돈 듯했습니다.",
+            "그 속도가 이상했습니다."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "반응 속도와 문장 구조가 2차 요약 같다는 점을 눈치챘다."
+          ],
+          "suppressions": [
+            "문장 구조상 요약 흔적을 눈치챘다는 점",
+            "소문 전파 속도가 직접 발화치고 비정상적이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:schedule_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-5:uncertainty:0",
+              "factText": "반응 속도와 문장 구조를 보고 누군가 한 번 더 요약했을 가능성을 감지함",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-5:quote:0",
+              "factText": "직접 발화보다 요약 문장처럼 보이는 표현이라는 인식이 생김",
+              "tags": [
+                "quote",
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                },
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "홍세진 follow-up 같은 2차 정리가 출발점일 수 있다는 점은 보입니다.",
+            "직접 발화와 요약 문장을 구분해야 합니다."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "follow-up과 buyer recap의 구분이 핵심이라는 점을 이해하기 시작했다."
+          ],
+          "suppressions": [
+            "follow-up 발신자 확인의 필요성",
+            "직접 발언과 recap 문장을 구분해야 한다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-5:evidence:0",
+              "factText": "홍세진 follow-up과 buyer recap이 출발점일 수 있다는 점을 인정함",
+              "tags": [
+                "evidence",
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-5:context:0",
+              "factText": "직접 발화와 2차 요약 문장을 분리해서 봐야 한다는 인식",
+              "tags": [
+                "context",
+                "responsibility",
+                "uncertainty"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "저와 장수진 대표의 개별 불만이 그 요약 과정에서 섞였을 가능성이 큽니다.",
+            "그렇게 보면 소문의 문장 구조가 설명됩니다."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "양측 발화가 섞였을 가능성을 인정하면 자신의 통제 상실도 드러난다."
+          ],
+          "suppressions": [
+            "양측 불만이 섞였을 수 있다는 점",
+            "자신의 외부 발화가 재료였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:schedule_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-5:relationship:0",
+              "factText": "양측의 개별 불만이 recap 과정에서 뒤섞였을 가능성을 인정함",
+              "tags": [
+                "relationship",
+                "context",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-5:responsibility:0",
+              "factText": "상대 한쪽의 직접 발언이 아니라 공동 누수와 제3자 요약이 만든 결과일 수 있다고 봄",
+              "tags": [
+                "responsibility",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "밖에 말을 남긴 순간 해석권을 넘겼다는 사실이 가장 아픕니다.",
+            "그때부터 누가 문장을 대신 써도 막기 어려웠습니다."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "외부 인력에게 말한 순간 해석권을 넘겼다는 후회가 크다."
+          ],
+          "suppressions": [
+            "해석권 상실에 대한 후회",
+            "바깥에서 말한 순간 통제가 끝났다는 인식"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut",
+            "partnership-12:a:tell:venting_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-5:emotion:0",
+              "factText": "외부 인력에게 말을 남긴 순간 해석권을 잃었다는 후회와 무력감",
+              "tags": [
+                "emotion",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-5:admission:0",
+              "factText": "소문 문장을 누가 대신 써버릴 틈을 자신도 제공했다는 자각",
+              "tags": [
+                "admission",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "문제의 문장은 애프터파티 후 홍세진 계정의 buyer recap에서 처음 등장했습니다.",
+            "제 발화도, 장수진 대표 발화도 그 문장 자체는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "홍세진 계정의 발신 시각과 라운지 동선이 출발점을 확정한다는 점을 안다."
+          ],
+          "suppressions": [
+            "홍세진 buyer recap이 출발점이라는 사실",
+            "직접 험담이 아니라 재가공된 문장이라는 사실"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:a:tell:emotion_cut"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:a:d-5:timeline:1",
+              "factText": "문제의 문장이 애프터파티 후 홍세진 계정의 buyer recap에서 처음 등장했다는 최종 인정",
+              "tags": [
+                "timeline",
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                },
+                "location": {
+                  "exact": "바이어 라운지",
+                  "neutral": "그 장소"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:a:d-5:quote:1",
+              "factText": "그 문장 자체는 어느 한쪽의 직접 발화가 아니라 제3자 요약에서 과장된 표현이라는 정리",
+              "tags": [
+                "quote",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장수진",
+                  "neutral": "그 사람",
+                  "fullName": "장수진",
+                  "judgeRef": "상대 대표"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                },
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "결국 류선우 대표도 밖에서 제 욕을 한 거라고 봤습니다.",
+            "아니면 바이어 반응이 그렇게 돌아올 이유가 없어요."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "자신도 장수진의 외부 발화를 숨기고 싶어 한다."
+          ],
+          "suppressions": [
+            "직접 본 장면보다 추정이 많다는 점",
+            "자신도 류선우 관련 불만을 밖에 흘렸다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-1:counter:0",
+              "factText": "류선우가 밖에서 자신의 납기 약속 문제를 문제처럼 말했다고 의심함",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 2차 미팅 직후",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "accuse",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-1:harm:0",
+              "factText": "바깥 반응을 근거로 자신의 운영 신뢰나 영업 평판이 흔들렸다고 느끼는 피해감",
+              "tags": [
+                "harm",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "impact": {
+                  "exact": "바이어 반응과 현장 분위기",
+                  "neutral": "그 반응"
+                }
+              },
+              "stanceHints": [
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "직접 바이어 앞 장면을 본 건 아니어도 홍세진 쪽에 제 얘기가 풀린 건 분명해 보였습니다.",
+            "그때 제 기준에선 이미 배신이었어요."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "확정적 증거 없이 배신감이 판단을 앞질렀다."
+          ],
+          "suppressions": [
+            "정황 해석이 감정에 크게 끌렸다는 점",
+            "원본 없는 확신이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-1:uncertainty:0",
+              "factText": "직접 원문은 없지만 정황상 외부 인력에게 자신의 문제가 전달됐다고 보는 상태",
+              "tags": [
+                "uncertainty",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                },
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 2차 미팅 직후",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-1:emotion:0",
+              "factText": "정황만으로도 배신과 평판 손상을 먼저 느낀 감정 반응",
+              "tags": [
+                "emotion",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "impact": {
+                  "exact": "배신처럼 느껴진 현장 반응",
+                  "neutral": "그 감정"
+                },
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "원본상 류선우 대표가 홍세진에게 제 납기 약속 문제를 불만으로 말한 건 맞아요.",
+            "다만 그게 곧바로 바이어 직접 험담이었다고 단정하긴 어렵죠."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "원본을 보면 외부 인력 대상 불만과 직접 거래처 험담을 구분해야 한다는 점을 안다."
+          ],
+          "suppressions": [
+            "직접 험담과 외부 인력 대상 불만을 구분해야 한다는 점",
+            "상대의 행동만으로 사건 전체를 설명할 수 없다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:b:tell:proof_zoom",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-1:evidence:0",
+              "factText": "원본상 류선우가 외부 인력에게 자신의 납기 약속 문제를 말한 사실은 인정함",
+              "tags": [
+                "evidence",
+                "act",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                },
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "evidence": {
+                  "exact": "e-1 원본 자료",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-1:context:0",
+              "factText": "외부 인력 대상 불만과 직접 바이어 험담을 구분하려는 인식이 생김",
+              "tags": [
+                "context",
+                "responsibility",
+                "uncertainty"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                },
+                "audience": {
+                  "exact": "바이어 직접 발화와는 다른 층위",
+                  "neutral": "그 차이"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 제 입장에선 바깥에서 제 이름이 문제처럼 떠돈 순간 이미 배신으로 느껴졌습니다.",
+            "그래서 더 세게 몰아붙였습니다."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "상대의 발화보다 자신의 운영 신뢰 손상 감정이 더 크게 작동했다."
+          ],
+          "suppressions": [
+            "배신감이 판단을 증폭했다는 점",
+            "일부는 자신의 피해감정 서사라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-1:emotion:1",
+              "factText": "상대의 외부 발화보다 자신의 신뢰 손상과 배신감이 더 크게 작동했음을 드러냄",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "impact": {
+                  "exact": "운영 신뢰 손상과 배신감",
+                  "neutral": "그 상처"
+                },
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-1:counter:1",
+              "factText": "상대의 잘못을 강조하면서도 자신의 과잉 해석 가능성을 완전히 버리진 못함",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "저도 밖에서 류선우 대표 불만을 말했으니, 상처만 앞세우면 공정하지 않습니다.",
+            "제 몫도 남아 있습니다."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "일방 피해자 서사를 유지하기 어렵다는 점을 받아들인다."
+          ],
+          "suppressions": [
+            "공동 책임 구조",
+            "상대만 문제 삼기 어려운 자신의 외부 발화"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-1:admission:0",
+              "factText": "자신도 밖에서 불만을 남겼기에 일방 피해자 서사를 유지하기 어렵다고 인정함",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                },
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-1:shame:0",
+              "factText": "상처만 앞세우면 공정하지 않다는 자각과 체면 손상이 동시에 드러남",
+              "tags": [
+                "shame",
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "impact": {
+                  "exact": "일방 피해자처럼 보이기 어렵다는 자각",
+                  "neutral": "그 자각"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "류선우 대표는 외부 프리랜서에게 제 불만을 말했고 저도 비슷한 잘못을 했습니다.",
+            "한쪽만 피해자라고 밀어붙이긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+            "직접 바이어에게 들은 장면이나 원본 발신 기록 없이 정황과 반응으로 해석한 부분이 있었다.",
+            "상대 비난만으로는 사건을 설명할 수 없고, 공동 책임이 남는다는 점을 안다."
+          ],
+          "suppressions": [
+            "재발 방지 논의가 필요하다는 점",
+            "상대의 잘못과 자신의 잘못이 동시에 성립한다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-1:admission:1",
+              "factText": "상대의 외부 발화와 자신의 외부 발화가 함께 사건을 키웠다는 최종 인정",
+              "tags": [
+                "admission",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "issue": {
+                  "exact": "수진의 납기 약속이 너무 쉽게 잡힌다는 불만",
+                  "neutral": "그 문제"
+                },
+                "channel": {
+                  "exact": "홍세진 개인 카톡과 짧은 음성메모",
+                  "neutral": "외부 프리랜서 채널"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-1:rule:0",
+              "factText": "한쪽만의 잘못으로 밀어붙일 수 없고 공동 원칙 위반으로 봐야 한다는 정리",
+              "tags": [
+                "rule",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "저는 류선우 대표를 깎아내리려고 밖에서 판을 벌인 적 없습니다.",
+            "현장 설명이었지, 뒤에서 사람 하나 찍어내리려던 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "실무 하소연이라는 말로 자신의 발화 수위를 낮추고 있다."
+          ],
+          "suppressions": [
+            "류선우 대표를 사실상 지목한 발화였다는 점",
+            "원칙 위반이라는 자각이 있었던 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-2:act:0",
+              "factText": "장수진이 외부 인력 채널에서 류선우 관련 불만이 아니라 승인 지연과 출고 문제만 말했다고 부인하는 상태",
+              "tags": [
+                "act",
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                },
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 상담 직전",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-2:self_justification:0",
+              "factText": "발화의 의미를 평판 훼손이 아닌 운영 정리로 낮추려는 자기정당화",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 상담 직전",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "보조 스태프랑 홍세진에게 답답하다고 말한 건 맞아요.",
+            "그래도 그걸 바로 평판 훼손 의도라고 몰아가는 건 순서를 건너뛴 겁니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "류선우 대표를 직접 지목하는 뉘앙스를 숨기고 있다."
+          ],
+          "suppressions": [
+            "외부 프리랜서/스태프 채널을 선택한 경솔함",
+            "발화를 실무 설명으로 축소하는 의도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-2:act:1",
+              "factText": "외부 인력 채널에서 승인 지연과 출고 문제를 말했다는 사실은 일부 인정하지만 험담은 부정함",
+              "tags": [
+                "act",
+                "uncertainty",
+                "denial"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                },
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 상담 직전",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-2:self_justification:1",
+              "factText": "대외 평판 훼손 의도를 부인하며 발화를 실무 설명으로 축소함",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "네, 밖에서 류선우 대표 승인 지연과 출고 문제 얘기를 꺼냈습니다.",
+            "하지만 바이어한테 직접 던진 건 아니고, 그때 저는 현장 수습이라고 생각했어요."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "바이어에게 직접 말하지 않았다는 점으로 책임 범위를 줄이려 한다."
+          ],
+          "suppressions": [
+            "상대에게 직접 말하지 않고 제3자에게 먼저 토로한 점",
+            "외부 전달 가능성을 알면서도 멈추지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:b:tell:proof_zoom",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-2:admission:0",
+              "factText": "장수진이 외부 인력 채널에서 류선우 관련 불만을 말했다는 사실을 인정함",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                },
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 상담 직전",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-2:responsibility:0",
+              "factText": "직접 바이어가 아닌 외부 인력 채널이었다는 점으로 책임 범위를 줄이려 함",
+              "tags": [
+                "responsibility",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                },
+                "audience": {
+                  "exact": "바이어 직접 발화가 아님",
+                  "neutral": "그 경로"
+                },
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "그날 상담 직전마다 승인 지연과 출고 문제가 막히니까 누군가는 왜 오더가 흔들리는지 설명해야 했습니다.",
+            "제가 선을 넘은 건 맞지만, 원인 쪽 책임까지 지워지진 않습니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "상대를 직접 설득하기보다 제3자에게 공감받고 싶었던 심리가 섞여 있다."
+          ],
+          "suppressions": [
+            "공감과 지지를 외부에서 얻고 싶었던 심리",
+            "상대 책임을 배경으로 세워 자신의 선 넘음을 흐리는 태도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:b:tell:proof_zoom",
+            "partnership-12:b:tell:betrayal_headline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-2:motive:0",
+              "factText": "바이어 상담 직전마다 승인과 출고 설명이 막힌다고 느낀 압박을 배경으로 외부에서 말을 흘렸다고 맥락을 제시함",
+              "tags": [
+                "motive",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 상담 직전",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                },
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-2:counter:0",
+              "factText": "문제의 출발을 류선우 쪽 승인 지연과 출고 문제에서 찾으며 자신의 선 넘음을 배경화함",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "결국 제 말도 밖에서 재료가 됐죠.",
+            "배신처럼 느껴져서 더 세게 말했지만, 규칙을 어긴 건 저도 같습니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "자신이 만든 바이어 관계가 내부 분열 이미지로 무너지거나, 영업총괄인데도 대표 간 신뢰를 지키지 못한 사람처럼 보이는 것에 대한 두려움 때문에 더 축소해 왔다."
+          ],
+          "suppressions": [
+            "평판 손상에 대한 자신의 공포",
+            "동업자를 뒤에서 말한 사람으로 보일 수 있다는 수치심"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-2:emotion:0",
+              "factText": "외부 발화가 평판 손상의 재료가 되었다는 점에서 수치심과 두려움이 드러남",
+              "tags": [
+                "emotion",
+                "shame",
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "fear": {
+                  "exact": "자신이 만든 바이어 관계가 내부 분열 이미지로 무너지거나, 영업총괄인데도 대표 간 신뢰를 지키지 못한 사람처럼 보이는 것",
+                  "neutral": "그 두려움"
+                },
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-2:responsibility:1",
+              "factText": "실무 하소연이라는 표현으로 책임을 줄이려 했다는 사실을 스스로 의식함",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "admission"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "저도 외부 인력에게 류선우 대표 불만을 흘렸습니다.",
+            "직접 바이어에게 험담한 건 아니어도 금지 원칙을 깬 책임은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+            "외부 인력 앞 상호 비방 금지 원칙을 떠올렸지만 그 순간 발화를 멈추지 못했다.",
+            "외부 발화가 와전의 재료가 됐고, 평판 복구가 필요하다는 점을 안다."
+          ],
+          "suppressions": [
+            "사건 이후 복구 조치를 바로 하지 못한 점",
+            "자신의 발화가 와전의 재료가 됐다는 무게"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-2:admission:1",
+              "factText": "장수진이 외부 인력 채널에게 류선우 불만을 외부로 흘렸다는 전면 시인",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                },
+                "issue": {
+                  "exact": "선우의 승인 지연과 출고 불안정에 대한 불만",
+                  "neutral": "그 문제"
+                },
+                "time": {
+                  "exact": "바이어 상담 직전",
+                  "neutral": "행사 중 그 시점",
+                  "period": "리빙페어 행사 중"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-2:rule:0",
+              "factText": "직접 바이어 험담은 아니어도 외부 비방 금지 원칙을 어겼다는 인정",
+              "tags": [
+                "rule",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "보조 스태프와 홍세진 대화 원본",
+                  "neutral": "외부 인력 채널"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "결국 류선우 대표가 바이어 앞에서 제 평판을 깎았다고 믿었습니다.",
+            "그 캡처 한 줄이랑 반응이 딱 그렇게 붙었으니까요."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "자신도 류선우에게 밖에서 불만을 말한 적이 있어 더 예민해져 있었다."
+          ],
+          "suppressions": [
+            "직접 발신 원문이 없다는 점",
+            "캡처가 선택적으로 잘렸다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-3:counter:0",
+              "factText": "류선우가 바이어에게 직접 자신을 험담했다고 단정하는 초기 오해",
+              "tags": [
+                "counter",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "evidence": {
+                  "exact": "크롭된 음성전사 캡처",
+                  "neutral": "그 자료"
+                },
+                "reaction": {
+                  "exact": "바이어 반응 한 줄",
+                  "neutral": "그 반응"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-3:evidence:0",
+              "factText": "크롭된 전사 캡처와 거래처 반응을 직접 험담의 근거로 키워 해석함",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "quote"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 음성전사 캡처",
+                  "neutral": "그 자료"
+                },
+                "reaction": {
+                  "exact": "바이어 반응 한 줄",
+                  "neutral": "그 반응"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 표현",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "원문 전부를 본 건 아니어도, 그때 제겐 직접 험담 말고는 설명이 안 됐어요.",
+            "그래서 결론부터 먼저 갔습니다."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "증거보다 배신감이 판단을 선도했다."
+          ],
+          "suppressions": [
+            "배신감이 결론을 앞질렀다는 점",
+            "제3자 개입 가능성을 충분히 보지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-3:uncertainty:0",
+              "factText": "완전한 발신 원문 없이도 직접 험담이었다고 믿어 버린 상태",
+              "tags": [
+                "uncertainty",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 음성전사 캡처",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                },
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-3:emotion:0",
+              "factText": "증거 부족을 감정적 배신감으로 메우는 반응",
+              "tags": [
+                "emotion",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "reaction": {
+                  "exact": "바이어 반응 한 줄",
+                  "neutral": "그 반응"
+                },
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "지금은 압니다. 그 캡처만으론 수신자도, 문장 앞뒤도 안 보입니다.",
+            "그 한 장으로는 직접 험담을 못 박을 수 없어요."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "크롭 캡처만으로는 수신자와 맥락을 확정할 수 없다는 점을 안다."
+          ],
+          "suppressions": [
+            "수신자 불명이라는 핵심 한계",
+            "증거가 soft trap이라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:b:tell:proof_zoom",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-3:evidence:1",
+              "factText": "크롭 캡처만으로는 수신자와 문장 앞뒤를 확정할 수 없다는 인정",
+              "tags": [
+                "evidence",
+                "admission",
+                "uncertainty"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 음성전사 캡처",
+                  "neutral": "그 자료"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 표현",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-3:context:0",
+              "factText": "직접 험담 여부보다 증거의 불완전성이 핵심임을 보기 시작함",
+              "tags": [
+                "context",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 음성전사 캡처",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 그 시점의 저는 누가 제 이름을 건너뛰어 설명했다고 느꼈고, 그래서 더 몰아붙였습니다.",
+            "배신감이 너무 먼저 왔어요."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "여전히 자신의 상처를 정당화하고 싶어 결론을 완전히 내려놓지 못한다."
+          ],
+          "suppressions": [
+            "상처와 체면이 판단을 붙들고 있다는 점",
+            "직접 험담 서사를 완전히 놓지 못한다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-3:emotion:1",
+              "factText": "상처와 체면 때문에 직접 험담 서사를 완전히 놓지 못하는 상태",
+              "tags": [
+                "emotion",
+                "relationship",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "reaction": {
+                  "exact": "바이어 반응 한 줄",
+                  "neutral": "그 반응"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-3:counter:1",
+              "factText": "누군가 의도적으로 그런 인상을 만들었다고 느끼며 결론을 붙들고 있음",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 표현",
+                  "neutral": "그 문장"
+                },
+                "source": {
+                  "exact": "홍세진 buyer recap",
+                  "neutral": "그 후속 요약"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 의도부터 먼저 단정했습니다.",
+            "배신감이 커서 경로 확인보다 결론을 앞세웠어요."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "행사 직후의 스트레스와 좁은 업계 구조가 과잉 해석을 키웠다는 점을 자각한다."
+          ],
+          "suppressions": [
+            "악의 단정이 자신의 해석이었다는 점",
+            "업계 평판 공포가 오해를 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-3:admission:0",
+              "factText": "경로 확인보다 배신감과 악의 단정을 앞세웠다는 자각",
+              "tags": [
+                "admission",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "reaction": {
+                  "exact": "바이어 반응 한 줄",
+                  "neutral": "그 반응"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-3:harm:0",
+              "factText": "좁은 업계 평판 공포가 오해를 확대했다는 인식",
+              "tags": [
+                "harm",
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "fear": {
+                  "exact": "자신이 만든 바이어 관계가 내부 분열 이미지로 무너지거나, 영업총괄인데도 대표 간 신뢰를 지키지 못한 사람처럼 보이는 것",
+                  "neutral": "그 공포"
+                },
+                "source": {
+                  "exact": "홍세진 buyer recap",
+                  "neutral": "그 후속 요약"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "류선우 대표가 바이어에게 직접 험담한 건 아니었습니다.",
+            "홍세진이 양쪽 불만을 섞어 과장한 요약을 돌린 겁니다."
+          ],
+          "privateKnowledge": [
+            "직접 험담 장면이나 완전한 발신 원문은 없었다.",
+            "크롭된 전사 캡처와 거래처 반응이 결합되면서 악의적 결론을 먼저 내렸다.",
+            "홍세진이 양측 불만을 섞어 buyer recap을 만든 것이 핵심이라는 사실을 받아들인다."
+          ],
+          "suppressions": [
+            "상대에 대한 단정이 사실이 아니었다는 점",
+            "홍세진 buyer recap이 핵심 경로였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-3:admission:1",
+              "factText": "류선우가 바이어에게 직접 험담한 것이 아니라 홍세진이 양측 불만을 섞어 요약했다는 최종 인정",
+              "tags": [
+                "admission",
+                "quote",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "source": {
+                  "exact": "홍세진 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 표현",
+                  "neutral": "그 문장"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-3:timeline:0",
+              "factText": "문제의 문장이 행사 직후 홍세진 후속 요약에서 처음 등장했다는 경로 정리",
+              "tags": [
+                "timeline",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "time": {
+                  "exact": "소문이 퍼진 다음 날 새벽과 행사 직후",
+                  "neutral": "그 무렵",
+                  "period": "행사 직후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 표현",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "규칙이 있었다고 해서 현장 문제까지 입 다물라는 뜻은 아니었다고 봤어요.",
+            "그때 저는 그렇게 합리화했습니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "규칙과 현장 설명을 억지로 분리해 자기합리화하고 있다."
+          ],
+          "suppressions": [
+            "문서 체크 사실",
+            "합의를 자의적으로 해석했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-4:rule:0",
+              "factText": "비방 금지 원칙을 무시한 것이 아니라 현장 설명과 비방을 분리했다고 주장함",
+              "tags": [
+                "rule",
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "행사 전날 밤 체크 후 행사 당일",
+                  "neutral": "그 행사 기간",
+                  "period": "행사 기간"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-4:self_justification:0",
+              "factText": "합의를 자의적으로 해석해 자신의 발화를 예외로 두려는 태도",
+              "tags": [
+                "self_justification",
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "문서 체크는 했죠.",
+            "그런데 막상 상담이 흔들리니까 선우 대표 얘기를 밖으로 꺼내도 된다고 저부터 선을 낮췄습니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "실무 설명 정도는 괜찮다는 자의적 해석을 한 점을 숨긴다."
+          ],
+          "suppressions": [
+            "실무 설명 예외를 스스로 만들어낸 점",
+            "상대 평가와 현장 설명을 섞은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-4:rule:1",
+              "factText": "문서와 선은 알지만 실무 얘기 정도는 괜찮다고 스스로 낮춘 상태",
+              "tags": [
+                "rule",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "행사 전날 밤 체크 후 행사 당일",
+                  "neutral": "그 행사 기간",
+                  "period": "행사 기간"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-4:self_justification:1",
+              "factText": "상대 평가와 현장 설명을 섞으면서도 예외라고 믿으려는 자기합리화",
+              "tags": [
+                "self_justification",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "맞아요. 외부 인력 앞에서 상대 얘기를 꺼낸 순간 이미 규칙 위반입니다.",
+            "그 선을 제가 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "상대를 말한 순간 합의 위반이 된다는 점을 이미 알고 있다."
+          ],
+          "suppressions": [
+            "규칙 위반 인식",
+            "상대도 같은 위반을 했다는 생각으로 스스로를 완화하는 태도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:b:tell:proof_zoom",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-4:admission:0",
+              "factText": "외부 인력 앞에서 상대 불만을 꺼낸 순간 규칙 위반이 된다는 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                },
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-4:responsibility:0",
+              "factText": "합의 위반 사실은 인정하지만 구체적 책임 비율은 좁히려는 태도",
+              "tags": [
+                "responsibility",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "저만 어긴 건 아닙니다.",
+            "선우 대표도 같은 선을 넘었고, 그래서 소문 재료가 양쪽에서 생겼어요."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "양측 모두 같은 규칙을 깼다는 점을 방패로 쓴다."
+          ],
+          "suppressions": [
+            "공동 위반을 방패로 쓰는 점",
+            "자신의 선 넘음을 상대 행위로 희석하는 태도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-4:counter:0",
+              "factText": "양측 모두 같은 원칙을 깼다는 점을 들어 자신의 위반을 배경화함",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-4:context:0",
+              "factText": "개별 잘못보다 사건 구조가 공동 위반이라는 방향으로 논점을 옮김",
+              "tags": [
+                "context",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "행사 전날 밤 체크 후 행사 당일",
+                  "neutral": "그 행사 기간",
+                  "period": "행사 기간"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "확인 체크까지 해놓고도 감정이 올라오자 규칙을 접었다는 게 제일 창피합니다.",
+            "지금 보면 너무 얕게 봤어요."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "체크 후 위반이라는 점이 특히 수치심을 자극한다."
+          ],
+          "suppressions": [
+            "체크 후 위반의 수치심",
+            "외부 인력 통제 실패에 대한 자책"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-4:shame:0",
+              "factText": "체크 후 위반이라는 점에서 강한 수치심이 드러남",
+              "tags": [
+                "shame",
+                "emotion",
+                "rule"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "행사 전날 밤 체크 후 행사 당일",
+                  "neutral": "그 행사 기간",
+                  "period": "행사 기간"
+                },
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-4:admission:1",
+              "factText": "합의 위반이었다는 사실 자체를 감정적으로 받아들이기 시작함",
+              "tags": [
+                "admission",
+                "emotion",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "둘 다 상호 비방 금지 원칙을 깼습니다.",
+            "누가 더 먼저냐보다 다시는 밖으로 새지 않게 막는 게 남은 과제입니다."
+          ],
+          "privateKnowledge": [
+            "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+            "행사 전날 밤 문서를 열람하고 비방 금지 항목에 체크까지 했다.",
+            "이제 핵심이 책임 비율보다 재발 방지 구조라는 점을 안다."
+          ],
+          "suppressions": [
+            "규칙 재설계 필요성",
+            "누가 더 먼저냐보다 구조 문제라는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-4:admission:2",
+              "factText": "둘 다 상호 비방 금지 원칙을 어겼고 외부 채널 통제에 실패했다는 최종 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "channel": {
+                  "exact": "홍세진·보조 스태프 등 외부 인력 채널",
+                  "neutral": "그 채널"
+                },
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "time": {
+                  "exact": "행사 전날 밤 체크 후 행사 당일",
+                  "neutral": "그 행사 기간",
+                  "period": "행사 기간"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-4:relationship:0",
+              "factText": "누가 더 먼저냐보다 재발 방지를 위한 커뮤니케이션 재설계가 남았다는 정리",
+              "tags": [
+                "relationship",
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+                  "neutral": "그 규칙"
+                },
+                "document": {
+                  "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저는 처음엔 류선우 대표 입에서 바로 나간 말이 돌아온 줄 알았어요.",
+            "그래서 바로 직접 험담이라고 본 겁니다."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "처음에는 류선우의 직접 발화를 출발점으로 믿고 싶었다."
+          ],
+          "suppressions": [
+            "류선우 직접 발화를 먼저 상정했다는 점",
+            "홍세진 개입 가능성을 낮게 봤다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-5:counter:0",
+              "factText": "소문 시작점을 류선우의 직접 발화로 상정하는 초기 추정",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-5:timeline:0",
+              "factText": "당시에는 소문 전파 시점과 발화 경로를 아직 분리하지 못한 상태",
+              "tags": [
+                "timeline",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "그런데 반응 속도가 이상했습니다.",
+            "누군가 정리해서 퍼뜨린 말처럼 움직였죠."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "반응 속도와 문장 구조가 2차 요약 같다는 점을 눈치챘다."
+          ],
+          "suppressions": [
+            "문장 구조상 요약 흔적을 눈치챘다는 점",
+            "소문 전파 속도가 직접 발화치고 비정상적이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-5:uncertainty:0",
+              "factText": "반응 속도와 문장 구조를 보고 누군가 한 번 더 요약했을 가능성을 감지함",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-5:quote:0",
+              "factText": "직접 발화보다 요약 문장처럼 보이는 표현이라는 인식이 생김",
+              "tags": [
+                "quote",
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                },
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "지금 보면 홍세진 후속 메시지에서 표현이 커졌을 가능성이 높습니다.",
+            "직접 발화와 buyer recap을 분리해서 봐야 해요."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "follow-up과 buyer recap의 구분이 핵심이라는 점을 이해하기 시작했다."
+          ],
+          "suppressions": [
+            "follow-up 발신자 확인의 필요성",
+            "직접 발언과 recap 문장을 구분해야 한다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:b:tell:proof_zoom",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-5:evidence:0",
+              "factText": "홍세진 follow-up과 buyer recap이 출발점일 수 있다는 점을 인정함",
+              "tags": [
+                "evidence",
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-5:context:0",
+              "factText": "직접 발화와 2차 요약 문장을 분리해서 봐야 한다는 인식",
+              "tags": [
+                "context",
+                "responsibility",
+                "uncertainty"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "제 불만도, 류선우 대표 불만도 그 recap 안에서 뒤섞였을 수 있어요.",
+            "그래서 누구 한쪽 입으로만 생긴 소문처럼 보였던 거죠."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "양측 발화가 섞였을 가능성을 인정하면 자신의 통제 상실도 드러난다."
+          ],
+          "suppressions": [
+            "양측 불만이 섞였을 수 있다는 점",
+            "자신의 외부 발화가 재료였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-5:relationship:0",
+              "factText": "양측의 개별 불만이 recap 과정에서 뒤섞였을 가능성을 인정함",
+              "tags": [
+                "relationship",
+                "context",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-5:responsibility:0",
+              "factText": "상대 한쪽의 직접 발언이 아니라 공동 누수와 제3자 요약이 만든 결과일 수 있다고 봄",
+              "tags": [
+                "responsibility",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "제가 밖에서 불만을 말한 순간 누가 결론을 대신 써버릴 틈을 준 셈입니다.",
+            "그게 제일 뼈아파요."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "외부 인력에게 말한 순간 해석권을 넘겼다는 후회가 크다."
+          ],
+          "suppressions": [
+            "해석권 상실에 대한 후회",
+            "바깥에서 말한 순간 통제가 끝났다는 인식"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:b:tell:betrayal_headline",
+            "partnership-12:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-5:emotion:0",
+              "factText": "외부 인력에게 말을 남긴 순간 해석권을 잃었다는 후회와 무력감",
+              "tags": [
+                "emotion",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-5:admission:0",
+              "factText": "소문 문장을 누가 대신 써버릴 틈을 자신도 제공했다는 자각",
+              "tags": [
+                "admission",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "소문의 첫 문장은 홍세진 buyer recap이었습니다.",
+            "직접 험담이 아니라, 외부로 샌 불만이 제3자 요약에서 과장된 거예요."
+          ],
+          "privateKnowledge": [
+            "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+            "자신의 외부 불만도 그 buyer recap이 설득력을 얻는 재료가 됐다는 점을 안다.",
+            "홍세진 계정의 발신 시각과 라운지 동선이 출발점을 확정한다는 점을 안다."
+          ],
+          "suppressions": [
+            "홍세진 buyer recap이 출발점이라는 사실",
+            "직접 험담이 아니라 재가공된 문장이라는 사실"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-12:b:tell:pressure_echo",
+            "partnership-12:b:tell:proof_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-12:b:d-5:timeline:1",
+              "factText": "문제의 문장이 애프터파티 후 홍세진 계정의 buyer recap에서 처음 등장했다는 최종 인정",
+              "tags": [
+                "timeline",
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                },
+                "time": {
+                  "exact": "애프터파티 종료 50분 뒤",
+                  "neutral": "행사 직후",
+                  "period": "애프터파티 이후"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                },
+                "location": {
+                  "exact": "바이어 라운지",
+                  "neutral": "그 장소"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-12:b:d-5:quote:1",
+              "factText": "그 문장 자체는 어느 한쪽의 직접 발화가 아니라 제3자 요약에서 과장된 표현이라는 정리",
+              "tags": [
+                "quote",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "류선우",
+                  "neutral": "그 사람",
+                  "fullName": "류선우",
+                  "judgeRef": "상대 대표"
+                },
+                "phrase": {
+                  "exact": "'둘이 서로 못 믿는다'는 문장",
+                  "neutral": "그 문장"
+                },
+                "source": {
+                  "exact": "홍세진 계정의 follow-up과 buyer recap",
+                  "neutral": "그 후속 요약"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+

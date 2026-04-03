@@ -1,0 +1,13 @@
+[partnership-08]
+- caseId: partnership-08
+- executableTells: 6
+- beatScripts: 36
+- tellPool missing refs: 0
+- beat coverage mismatch: missing=0, extra=0
+
+[partnership-09]
+- caseId: partnership-09
+- executableTells: 6
+- beatScripts: 36
+- tellPool missing refs: 0
+- beat coverage mismatch: missing=0, extra=0

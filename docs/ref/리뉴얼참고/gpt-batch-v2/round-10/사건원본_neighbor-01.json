@@ -1,0 +1,771 @@
+{
+  "caseId": "case-neighbor-01",
+  "meta": {
+    "relationshipType": "neighbor",
+    "conflictSeed": "CS-3",
+    "variableModules": [
+      "VM-C"
+    ],
+    "twistModule": "",
+    "difficulty": "easy",
+    "anchorTruth": "한결 집 욕실 천장에서 떨어진 물은 윗집 배수가 아니었다. 옥상 우수관에 낙엽이 뭉쳐 역류한 빗물이 삭은 외벽 실리콘 틈을 타고 스며든 것이다.",
+    "emotionalBait": "새벽 0시 48분, 쿵 소리에 깬 한결이 복도로 나가자 504호 앞에 제습기와 물받이 통이 놓여 있었다. 욕실 천장엔 이미 누런 물자국. 윗집이 알면서 숨긴 것처럼 보인다.",
+    "resolutionDilemma": "누수 원인은 건물 하자였지만, 한결은 504호 현관을 무단 촬영했고 주연은 제습기를 이틀간 복도에 방치하며 아래층 공지를 31시간 미뤘다. 서로 다른 잘못의 무게를 어떻게 나눌지가 쟁점이다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "정한결",
+      "age": 42,
+      "occupation": "세무사 사무실 재택 회계담당",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "\"결론부터 말해요, 통 놓고 안 놓고?\" 식으로 상대 설명을 끊는다. 확신이 서면 '통이 있었고, 소리가 났고, 물이 내렸고'처럼 장면을 쌓아 인과를 기정사실화한다.",
+      "pride": 6,
+      "fear": "딸이 새벽마다 물소리에 깨는데도 윗집 눈치만 보는 아빠로 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 7,
+      "digitalHabit": "apartment_chat_and_recording",
+      "dailyRoutine": "오전엔 재택으로 장부를 보고 오후엔 아이 하교 시간을 맞춘다. 밤에는 집안 습도와 소음 변화를 유난히 민감하게 체크한다.",
+      "sensitivePoints": [
+        "가정집 안전",
+        "딸 수면 방해",
+        "타인에게 무시당하는 느낌"
+      ],
+      "verbalTells": [
+        {
+          "type": "visual_stack",
+          "trigger": "lying",
+          "pattern": "'통이 있었고, 소리가 났고, 물이 내렸고'—불리할수록 장면을 나열해 인과가 이미 증명된 듯 쌓는다. 반박 틈을 주지 않으려는 방어 습관."
+        },
+        {
+          "type": "interruption_push",
+          "trigger": "cornered",
+          "pattern": "반문이 돌아오면 \"예 아니오로만 대답해봐요\"라고 끊는다. 맥락 설명을 차단해 자기 프레임 안에 가두려는 것."
+        },
+        {
+          "type": "volume_jump",
+          "trigger": "emotional",
+          "pattern": "억울함이 차면 \"504호! 7월 12일!\" 식으로 호수와 날짜를 반복하며 목소리가 갑자기 커진다. 사실을 박제해 상대를 압도하려는 패턴."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "주연씨",
+        "toJudge": "옆집 분",
+        "angry": "이주연 씨!"
+      }
+    },
+    "partyB": {
+      "name": "이주연",
+      "age": 36,
+      "occupation": "온라인 식물소품 판매자",
+      "incomeBracket": "mid",
+      "archetype": "avoidant",
+      "speechStyle": "\"죄송하긴 한데요\" 를 먼저 깔아 공격 수위를 낮춘 뒤, 핵심 인정은 빼고 \"제습기는 잠깐이었어요\"처럼 시간·수량을 흐리게 잘라 말한다.",
+      "pride": 5,
+      "fear": "단체방에 '504호 또 민폐'라는 글이 올라와 동네 전체가 자기를 피하는 상황 — 그것이 두렵다.",
+      "riskAppetite": 3,
+      "digitalHabit": "messenger_and_home_cam",
+      "dailyRoutine": "오전에 택배 포장을 하고 비 오는 날엔 베란다 식물과 제습기를 번갈아 관리한다. 밤에는 주문 문의를 처리하느라 늦게까지 깨어 있는 편이다.",
+      "sensitivePoints": [
+        "반려식물 관리",
+        "공용복도 민원",
+        "야간 생활패턴"
+      ],
+      "verbalTells": [
+        {
+          "type": "premature_apology",
+          "trigger": "cornered",
+          "pattern": "\"죄송하긴 한데\"를 먼저 깔아 상대 공격 수위를 낮춘 뒤 핵심 인정은 뒤로 미룬다. 사과의 형식으로 방어하는 패턴."
+        },
+        {
+          "type": "detail_thinning",
+          "trigger": "lying",
+          "pattern": "이틀을 '잠깐', 세 개를 '조금'으로 바꿔 말한다. 불리한 시간·수량을 흐린 단어로 축소해 책임 크기를 줄이려는 습관."
+        },
+        {
+          "type": "subject_shift",
+          "trigger": "avoiding",
+          "pattern": "누수 책임을 물으면 \"식물 물 주다 보면…\" \"택배 포장 때문에…\" 식으로 화제를 옮긴다. 직접 답변을 피해 책임 초점을 흐리는 패턴."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "한결씨",
+        "toJudge": "옆집 분",
+        "angry": "정한결 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "지난 겨울 주차 다툼 뒤 '단체방에 호수 올리기 전에 관리사무소부터 통하자'고 합의했다. 이번에 둘 다 어겼다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "봄에 주연이 건넨 실내 슬리퍼를 한결은 '발망치 시인'으로, 주연은 '습한 날 예의상 선물'로 기억한다. 같은 물건, 다른 의미.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '그때 이미 본인 소음을 인정했다' / B: '습해 보이길래 예의상 건넨 것일 뿐 고의 소음 인정은 아니었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "초여름 '4라인 외벽 실리콘 삭음' 공지를 둘 다 읽고도 '우리 집 문제는 아니다'며 무시했다. 지금 누수의 원인이 바로 그 틈이다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "박은서 (맞은편 503호 주민)",
+        "relationTo": "both",
+        "knowledgeScope": "그날 밤 기사가 올라가는 장면, 복도 물받이 통, 다음 날 한결의 고성을 직접 봤다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "맞은편 503호 주민",
+          "relationToA": "정한결을 업무상 알고 있음",
+          "relationToB": "이주연을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "한결씨",
+          "addressB": "주연씨"
+        },
+        "addressA": "정한결씨",
+        "addressB": "이주연씨"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_2",
+        "name": "김태호 (야간 경비원)",
+        "relationTo": "both",
+        "knowledgeScope": "23시 58분 기사 출입 기록, 경비실 통화 내역, 복도 CCTV 원본 확보 절차를 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "야간 경비원",
+          "relationToA": "정한결을 업무상 알고 있음",
+          "relationToB": "이주연을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "한결씨",
+          "addressB": "주연씨"
+        },
+        "addressA": "정한결씨",
+        "addressB": "이주연씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "최선미 (관리사무소 시설주임)",
+        "relationTo": "both",
+        "knowledgeScope": "누수 점검 보고서 원본, 우수관 낙엽 막힘 사진, 양측 민원 접수 시각을 대조할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 44,
+          "occupation": "관리사무소 시설주임",
+          "relationToA": "정한결을 업무상 알고 있음",
+          "relationToB": "이주연을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "정한결씨",
+          "addressB": "이주연씨"
+        },
+        "addressA": "정한결씨",
+        "addressB": "이주연씨"
+      }
+    ],
+    "relationshipType": "neighbor"
+  },
+  "context": {
+    "contextType": "rainy_season",
+    "description": "7월 장마 셋째 주, 4라인 세대마다 습기 민원이 쏟아지던 때였다. 한결 집 욕실 천장에서 누런 물이 떨어지고, 같은 밤 504호 앞 복도에 제습기와 물받이 통이 놓인 걸 보자 두 사람은 상대를 원인으로 확신했다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "새벽 소음에 딸이 울고, 천장 물자국은 날마다 번졌다. 설명 한마디 늦은 것도 고의 은폐로 읽히는 온도였다.",
+    "caseNumber": "E-NB-E-0001",
+    "caseName": "누수 갈등"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "504호 현관 무단 촬영",
+      "truth": true,
+      "truthDescription": "한결은 0시 48분과 1시 15분, 504호 현관문이 정면으로 잡히도록 공용복도에 휴대폰을 세워 두 차례 촬영했다. 증거 확보 목적이었지만 특정 세대 사생활 침해 소지가 있다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "사생활경계",
+      "legitimacyIssue": true,
+      "judgmentStatement": "한결은 504호 현관을 촬영했다."
+    },
+    {
+      "id": "d-2",
+      "name": "복도 적치와 31시간 늦은 공지",
+      "truth": true,
+      "truthDescription": "주연은 제습기·물받이 통·젖은 발판 세 점을 48시간 동안 복도에 두었고, 아래층 한결에게는 첫 민원 접수 31시간 뒤에야 문자 한 통을 보냈다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "공용공간경계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "주연은 복도에 물건을 적치했다."
+    },
+    {
+      "id": "d-3",
+      "name": "누수 원인: 윗집인가 건물 하자인가",
+      "truth": false,
+      "truthDescription": "시설주임 보고서에 따르면 누수 원인은 옥상 우수관 낙엽 막힘과 4라인 외벽 실리콘 틈이다. 504호 실내 배수와 직접 연결되는 경로는 확인되지 않았다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "누수복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "누수 원인은 옥상 하자이다."
+    },
+    {
+      "id": "d-4",
+      "name": "새벽 소음의 정체: 발망치 vs 기사 출입",
+      "truth": false,
+      "truthDescription": "23시 58분 경비실이 허가한 점검 기사가 공구를 들고 504호에 출입했고, 가동 중이던 제습기 진동이 겹쳤다. 발망치가 아니라 허가된 야간 점검 소음이었다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "생활소음조정",
+      "legitimacyIssue": false,
+      "judgmentStatement": "소음은 허가된 점검 소음이다."
+    },
+    {
+      "id": "d-5",
+      "name": "선통보 약속 쌍방 위반",
+      "truth": true,
+      "truthDescription": "겨울 주차 갈등 이후 합의한 '관리사무소 선통보' 원칙을 둘 다 깼다. 한결은 단체방에 '504호에서 또 내려온다'를 올렸고, 주연은 첫 점검을 넘긴 뒤에야 상황을 알렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "중재절차",
+      "legitimacyIssue": false,
+      "judgmentStatement": "한결과 주연은 선통보 약속을 위반했다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "한결의 새벽 복도 촬영 영상 캡처",
+      "description": "504호 현관 앞 제습기와 둔탁한 소리가 담긴 43초 영상. 단, 촬영 전후 5분은 잘려 있고 복도 반대편 기사 동선은 화면 밖이다.",
+      "type": "video",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "제출 파일 43초뿐, 촬영 전후 5분 분량은 누락. 의도적 편집 가능성을 배제할 수 없다.",
+        "check_metadata": "EXIF 생성 시각 7월 12일 00:48, 한결 휴대폰 갤러리 타임스탬프와 초 단위 일치.",
+        "restore_context": "504호 문 앞 제습기·소리는 담기나 복도 반대편 기사 출입 동선은 프레임 밖. 소음 원인 단정 불가.",
+        "verify_source": "SHA-256 해시·기기 시리얼이 한결 휴대폰과 일치. 제3자 기기 촬영 가능성 없음.",
+        "check_edits": "프레임 연속성 유지돼 컷 편집은 없으나, 시작·종료 지점이 임의로 짧아 선택적 촬영 의심.",
+        "question_acquisition": "공용복도이나 504호 현관문이 정면으로 식별돼 사생활 침해 소지. 증거 사용 시 마스킹 필요."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "정한결에게: \"504호 현관 무단 촬영\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 정한결의 \"504호 현관 무단 촬영\" 쟁점과 관련된다. 정한결은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "이주연에게: \"새벽 소음의 정체: 발망치 vs 기사 출입\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 이주연의 \"새벽 소음의 정체: 발망치 vs 기사 출입\" 쟁점과 관련된다. 이주연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "관리사무소 4라인 누수 점검 보고서",
+      "description": "4라인 누수 원인을 '공용 우수관 낙엽 막힘 + 외벽 실리콘 틈'으로 특정한 시설주임 보고서. 세대 배수 경로와는 별개 원인임을 보여준다.",
+      "type": "inspection_report",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "investigationResults": {
+        "request_original": "원본에 누수 위치 도면·점검 시각·현장 사진 6매 번호가 첨부. 페이지 누락 없음.",
+        "check_metadata": "작성 시각 7월 13일 오전, 단체방 분쟁 다음 날. 민원 접수 시각과 12시간 내 맞물린다.",
+        "restore_context": "아래층 천장뿐 아니라 4라인 외벽 코너 3곳에서도 젖음 반복. 세대 배수 아닌 건물 하자 패턴.",
+        "verify_source": "시설주임 최선미 자필 서명 + 관리사무소 직인 확인. 공적 문서로 출처 신뢰도 높음.",
+        "check_edits": "관리사무소 전산 직출력본. PDF 메타데이터상 수정 이력 0건.",
+        "question_acquisition": "관리사무소 공식 자료로 절차 적법. 단, 타 세대 위치 정보는 마스킹 후 공개 원칙."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-3",
+      "name": "공용복도 CCTV와 야간 기사 출입대장",
+      "description": "주연의 복도 적치 장면과 23시 58분 점검 기사 출입이 모두 담긴 CCTV 12분 영상 + 경비실 출입대장. 소음 원인을 특정하는 핵심 자료.",
+      "type": "cctv",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 12분 영상 + 출입대장에 기사 성명·방문 사유 '504호 누수 점검' 기재 확인.",
+        "check_metadata": "CCTV 타임코드와 경비실 출입기록 시각 오차 47초 이내. 동일 이벤트로 신뢰 가능.",
+        "restore_context": "기사 손의 공구 가방은 식별되나 세대 내부 작업 장면은 화각 밖. 실제 작업 내용은 미확인.",
+        "verify_source": "경비실 NVR과 백업 서버 양쪽 해시 일치. 원본 무결성 확인됨.",
+        "check_edits": "NVR 원본 저장본으로 프레임 연속성 유지. 편집·삭제 흔적 없음.",
+        "question_acquisition": "공용시설 CCTV로 적법 확보. 제3자 얼굴 마스킹 후 활용 가능."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-4",
+      "name": "옥상 우수관 막힘 사진과 긴급 보수 영수증",
+      "description": "옥상 배수구에 낙엽·흙이 뭉친 현장 사진과 외벽 실리콘 재시공 영수증. 누수가 건물 하자임을 물증으로 보여주지만 세대 과실 유무까지는 증명 못 한다.",
+      "type": "repair_record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "보수업체 촬영 원본 사진 4매 + 관리사무소 법인카드 결제 영수증 번호 일치 확인.",
+        "check_metadata": "사진 EXIF 촬영 시각 7월 13일 새벽 05시대, 누수 보고서 작성 직전. 시간 순서 부합.",
+        "restore_context": "막힘 지점이 옥상 공용 우수관 상단이라 특정 세대 실내 배수로는 물리적으로 설명 불가.",
+        "verify_source": "보수업체 세금계산서와 관리사무소 법인카드 매출 내역 금액·일자 일치.",
+        "check_edits": "사진 EXIF GPS·시각과 영수증 원본 대조 완료. 조작·보정 흔적 없음.",
+        "question_acquisition": "건물 공용부 보수 자료로 제출 적법. 개인정보 포함 없어 제한 사항 없음."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-5",
+      "name": "관리사무소 민원 접수기록과 주연 문자",
+      "description": "주연의 베란다 누수 문의, 한결의 단체방 호수 지목 글, 31시간 뒤 주연이 보낸 문자가 시간순으로 묶인 민원 로그. 양측 통보 지연을 대조할 수 있다.",
+      "type": "complaint_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "민원 접수 시각·통화메모·문자 발신번호가 한 세트로 보존. 시간순 연결 가능.",
+        "check_metadata": "주연의 아래층 문자 발송 시각이 첫 민원 접수보다 정확히 31시간 후. 통보 지연 수치 확인.",
+        "restore_context": "주연은 이틀 전 이미 베란다 누수를 문의했으나, 아래층 직접 설명은 31시간 뒤로 미뤘다.",
+        "verify_source": "관리사무소 전산 로그와 통신사 문자 발송 기록이 같은 시각대를 가리킨다.",
+        "check_edits": "전산 로그 직출력본으로 편집 흔적 없음. 문자는 통신사 CDR로 이중 확인 완료.",
+        "question_acquisition": "공동주택 민원 자료로 분쟁 해결 목적 내 사용 적법. 외부 유출·재배포는 제한."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "정한결에게: \"선통보 약속 쌍방 위반\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 정한결의 \"선통보 약속 쌍방 위반\" 쟁점과 관련된다. 정한결은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "이주연에게: \"복도 적치와 31시간 늦은 공지\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 이주연의 \"복도 적치와 31시간 늦은 공지\" 쟁점과 관련된다. 이주연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "아파트 단체방 캡처와 삭제 요청 메시지",
+      "description": "한결이 '504호에서 또 내려온다'고 올린 글과 이튿날 삭제·사과 요청이 오간 단체방 캡처. 호수 지목 비난의 직접 증거이나 크롭돼 있다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "방 관리자가 내보내기 원본을 제출해 캡처와 실제 게시 내용·시각 일치 확인.",
+        "check_metadata": "게시 시각 7월 12일 01시대(야간 점검 직후), 삭제 요청은 같은 날 오전 도착.",
+        "restore_context": "앞뒤 문맥상 한결이 누수·소음을 한 문장에 묶어 '504호'를 직접 지목한 구조.",
+        "verify_source": "단체방 내보내기 JSON과 참가자 2인의 개별 캡처가 시각·내용 모두 일치.",
+        "check_edits": "상하 크롭이 있으나 핵심 문장 '504호에서 또 내려온다'는 원본과 동일.",
+        "question_acquisition": "공개 단체방 자료로 확보 적법. 단, 504호 특정 문구 재유포 시 명예훼손 소지."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "정한결에게: \"선통보 약속 쌍방 위반\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 정한결의 \"선통보 약속 쌍방 위반\" 쟁점과 관련된다. 정한결은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "이주연에게: \"선통보 약속 쌍방 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 이주연의 \"선통보 약속 쌍방 위반\" 쟁점과 관련된다. 이주연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "한결은 주연 현관이 보이도록 공용복도를 촬영했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "주연은 제습기와 물받이 통을 이틀간 공용복도에 두고 아래층 공지를 늦췄다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "천장 누수의 직접 원인은 윗집 욕실이 아니라 공용 우수관 막힘과 외벽 틈이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "문제의 새벽 소음은 고의적 발망치가 아니라 기사 출입과 제습기 진동이 겹친 결과였다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 관리사무소 선통보 원칙을 어기고 갈등을 공개적으로 키웠다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "corridor_filming_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "filming_scope_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "privacy_concern_followup"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "leak_source_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "shared_pipe_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-2_or_e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "management_first_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "prior_promise_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "corridor_items_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "notice_timing_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "noise_source_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_repair_anxiety"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-3_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "management_first_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "missed_inspection_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "사생활경계": [
+      "개인 촬영은 즉시 중단하고, 소음·누수 증거는 관리사무소 입회 하에 공용 CCTV와 점검기록으로만 확보한다.",
+      "특정 세대 현관이 보이는 자료는 관리사무소에만 제출하고 단체방·개인전송을 금지한다.",
+      "재차 무단 촬영이 발생하면 공동주택 분쟁조정 절차와 함께 접근금지형 경계 합의를 적용한다."
+    ],
+    "공용공간경계": [
+      "긴급 누수 대응 물품도 24시간 안에 치우고, 부득이하면 아래층과 관리사무소에 같은 날 알린다.",
+      "복도 적치가 필요할 때는 사진·시간·철거예정 시각을 남겨 공용공간 사용을 예외적으로만 허용한다.",
+      "반복 적치가 생기면 관리규약에 따라 즉시 제거와 비용 부담을 명시한다."
+    ],
+    "누수복구": [
+      "두 세대와 관리사무소가 함께 재점검해 세대 과실과 건물 하자를 분리해 기록한다.",
+      "공용 우수관·외벽 보수는 관리사무소 책임으로 먼저 처리하고, 세대 내부 손상은 사진 기준으로 산정한다.",
+      "건물 하자 방치가 반복되면 동대표 회의록에 남기고 외부 누수 진단을 의무화한다."
+    ],
+    "생활소음조정": [
+      "야간 점검이나 제습기 가동이 필요하면 같은 라인 세대에 시간대를 미리 공지한다.",
+      "소음이 생길 수 있는 작업은 30분 단위로 끊어 기록하고, 필요시 관리사무소 확인을 받는다.",
+      "재차 분쟁이 생기면 개인 녹음 대신 공식 소음 측정과 현장 입회를 우선한다."
+    ],
+    "중재절차": [
+      "호수 지목 비난은 금지하고, 최초 민원은 관리사무소와 당사자 1:1 통보로만 처리한다.",
+      "관리사무소가 1차 사실확인 후 공동 문구를 작성해 단체방에 공유하도록 절차를 표준화한다.",
+      "같은 유형의 공개 비난이 반복되면 관리규약 위반 경고와 공동체 게시 제한을 함께 적용한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

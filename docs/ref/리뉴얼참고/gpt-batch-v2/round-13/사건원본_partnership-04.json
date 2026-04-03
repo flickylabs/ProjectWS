@@ -1,0 +1,793 @@
+{
+  "caseId": "case-partner-04",
+  "meta": {
+    "relationshipType": "partnership",
+    "conflictSeed": "CS-4",
+    "variableModules": [
+      "VM-B",
+      "VM-E"
+    ],
+    "twistModule": "TW-4",
+    "difficulty": "hard",
+    "anchorTruth": "현재 문제의 주말 이체는 민재의 횡령이 아니라 해지 정산을 위한 보증금·충당금 이동이었고, 협상에 제시된 '은행 거래내역' 일부는 원본이 아니라 편집본이었다.",
+    "emotionalBait": "은행 도장처럼 보이는 PDF, 주말 심야 이체, 그리고 2년 전 민재의 외주 리베이트 은폐 사건이 겹치며 '이번에도 같은 배신이 반복됐다'는 서사가 너무 그럴듯해 보인다.",
+    "resolutionDilemma": "현재 증거 조작은 중대하지만, 그 조작이 설득력을 얻은 배경에는 실제로 존재했던 민재의 과거 배신이 있다. 지금의 위조를 단죄하면서도 과거 신뢰 훼손을 어디까지 현재 책임에 반영할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "오민재",
+      "age": 40,
+      "occupation": "모바일 커머스 개발사 공동대표 겸 개발운영총괄",
+      "incomeBracket": "high",
+      "archetype": "cold_logic",
+      "speechStyle": "현재 거래 흐름을 숫자와 계정 구분으로 설명하려 한다. 다만 과거 배신 이야기가 나오면 불편한 침묵 뒤에 '그건 이미 정리된 건'이라며 최소화한다.",
+      "pride": 8,
+      "fear": "회사를 만든 기술 책임자이면서도 마지막에 회사 돈을 빼돌린 사람으로 기록되거나, 과거 잘못이 현재 모든 판단을 오염시키는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "bank_exports_and_audit_folders",
+      "dailyRoutine": "오전에는 개발 일정과 외주 정산을 보고, 오후에는 고객사 운영 이슈를 처리하며, 밤에는 회계자료와 서버 비용 명세를 직접 대조한다.",
+      "sensitivePoints": [
+        "횡령 의심",
+        "과거 외주 리베이트 사건",
+        "법인계좌 접근권"
+      ],
+      "verbalTells": [
+        {
+          "type": "ledger_walkthrough",
+          "trigger": "lying",
+          "pattern": "의도를 묻는 질문에도 계좌번호, 분개명, 전표순으로 대답해 감정적 쟁점을 뒤로 미룬다."
+        },
+        {
+          "type": "past_minimization",
+          "trigger": "cornered",
+          "pattern": "과거 배신이 나오면 '그건 이미 규정으로 봉합됐다'며 당시 충격을 과소화한다."
+        },
+        {
+          "type": "precision_burst",
+          "trigger": "avoiding",
+          "pattern": "현재 혐의를 부정할 때 지나치게 세부 계좌 흐름을 늘어놓아 큰 질문을 흐리려 한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "라희씨",
+        "toJudge": "제 동업자",
+        "angry": "김라희 씨!"
+      }
+    },
+    "partyB": {
+      "name": "김라희",
+      "age": 39,
+      "occupation": "모바일 커머스 개발사 공동대표 겸 영업재무총괄",
+      "incomeBracket": "high",
+      "archetype": "victim_cosplay",
+      "speechStyle": "현재 분쟁을 늘 과거의 상처와 연결해 설명한다. 스스로를 반복해서 속아온 사람처럼 그리며, 불리한 자료가 나오면 '내가 그렇게까지 예민해진 이유'로 방향을 틀려 한다.",
+      "pride": 7,
+      "fear": "해지 협상에서 또 한 번 숫자와 문서에 속아 손해를 보거나, 이미 경고 신호를 보고도 놓친 재무 책임자로 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "spreadsheet_snapshots_and_email_threads",
+      "dailyRoutine": "아침엔 미수금과 현금흐름을 확인하고, 오후엔 고객사와 정산 협의를 하며, 밤에는 해지 조건표와 거래내역 캡처를 반복해서 비교한다.",
+      "sensitivePoints": [
+        "또다시 속았다는 인식",
+        "매입·외주 거래 투명성",
+        "해지 정산 비율"
+      ],
+      "verbalTells": [
+        {
+          "type": "history_stack",
+          "trigger": "lying",
+          "pattern": "현재 질문을 받으면 과거 배신 사례를 길게 쌓아 지금 행동을 정당화한다."
+        },
+        {
+          "type": "evidence_dramatization",
+          "trigger": "cornered",
+          "pattern": "한 장의 PDF나 캡처를 '이번엔 눈으로 봤다'는 식으로 과장해 말한다."
+        },
+        {
+          "type": "moral_pivot",
+          "trigger": "emotional",
+          "pattern": "증거의 진위를 묻는 질문을 받으면 곧바로 '그런 의심을 갖게 만든 건 누구냐'는 도덕 프레임으로 옮긴다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "민재씨",
+        "toJudge": "제 동업자",
+        "angry": "오민재 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "2년 전 외주 리베이트 사건 이후 두 사람은 500만원 이상 외주·정산 거래는 원본 은행자료와 세금계산서를 함께 공유하기로 서면 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "회사가 커지던 시절 누가 재무 통제를 더 자주 무시했는지를 두 사람 모두 상대 탓 중심으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '라희가 매출만 보고 예외 승인을 남발했다' / B: '민재가 늘 기술 비용을 사후 통보했다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "지분 정리와 동업 해지를 논의하기 시작한 뒤, 과거 리베이트 사건을 해지 평가액 산정에 다시 반영할지에 대해 결론을 내지 못한 채 피했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "김도연 (라희의 언니, 초기 법인 설립 자금 일부 지원)",
+        "relationTo": "b",
+        "knowledgeScope": "2년 전 외주 리베이트 사건 당시 라희가 얼마나 크게 배신감을 느꼈는지, 그리고 이번 해지 협상에서 같은 패턴을 두려워했다는 점을 안다.",
+        "witnessedDirectly": false,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 42,
+          "occupation": "라희의 언니, 초기 법인 설립 자금 일부 지원",
+          "relationToA": "오민재와는 이 사건을 통해 알게 됨",
+          "relationToB": "라희의 언니, 초기 법인 설립 자금 일부 지원",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "동생 걱정이 앞서지만 사실은 사실대로 말하려 한다. 감정이 올라오면 직설적이 된다.",
+          "addressJudge": "재판관님",
+          "addressA": "민재씨",
+          "addressB": "라희씨"
+        },
+        "addressA": "민재",
+        "addressB": "라희"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "한지훈 (외부 조정인)",
+        "relationTo": "both",
+        "knowledgeScope": "해지 협상 테이블에 어떤 거래내역이 언제 제출됐는지, 원본 여부를 둘러싼 질문이 언제 제기됐는지 중립적으로 기억한다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "외부 조정인",
+          "relationToA": "오민재을 업무상 알고 있음",
+          "relationToB": "김라희을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "민재씨",
+          "addressB": "라희씨"
+        },
+        "addressA": "오민재씨",
+        "addressB": "김라희씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "문세정 (거래은행 기업금융 대리)",
+        "relationTo": "both",
+        "knowledgeScope": "원본 은행 거래내역, PDF 양식 진위, 시스템 마이그레이션으로 인한 표시 방식 변화, 실제 수취계좌의 귀속을 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 44,
+          "occupation": "거래은행 기업금융 대리",
+          "relationToA": "오민재을 업무상 알고 있음",
+          "relationToB": "김라희을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "오민재씨",
+          "addressB": "김라희씨"
+        },
+        "addressA": "오민재씨",
+        "addressB": "김라희씨"
+      }
+    ],
+    "relationshipType": "partnership"
+  },
+  "context": {
+    "contextType": "dissolution_talks",
+    "description": "공동대표 해지와 지분 정산을 논의하던 중이라 계좌 하나, 전표 한 줄이 곧 평가액과 책임 비율로 연결되고 있었다. 서로 신뢰가 바닥난 상태에서 현재 거래의 의미를 따지기보다, 과거 누가 먼저 배신했는지를 끌어와 지금 협상력을 높이려는 유인이 강했다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "동업 해지 직전이라 숫자 하나가 곧 buyout 가격과 향후 명예에 직결됐고, 이미 있던 과거 상처가 현재 자료의 진위 검토보다 훨씬 빠르게 판단을 굳혀 버렸다.",
+    "caseNumber": "E-PT-H-0004",
+    "caseName": "신뢰 붕괴 갈등"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "라희 측 편집 거래내역의 제출과 지속 사용",
+      "truth": true,
+      "truthDescription": "라희는 원본이 아니라 편집본이라는 점을 알고도, 민재의 횡령 정황처럼 보이는 거래내역 PDF를 해지 협상 자료로 계속 사용했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 18,
+        "b": 82
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "증거검증프로토콜",
+      "legitimacyIssue": true,
+      "judgmentStatement": "라희는 편집본을 계속 사용했다."
+    },
+    {
+      "id": "d-2",
+      "name": "민재의 과거 외주 리베이트 은폐",
+      "truth": true,
+      "truthDescription": "민재는 2년 전 친구 회사로 overflow QA를 넘기며 일부 리베이트성 정산을 숨겼고, 그 사실이 현재 불신의 배경이 됐다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 74,
+        "b": 26
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "과거정산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "민재는 리베이트를 은폐했다."
+    },
+    {
+      "id": "d-3",
+      "name": "주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가",
+      "truth": false,
+      "truthDescription": "둘 다 주말에 쪼개진 세 줄을 별도 외부유출로 읽었지만, 실제로는 해지 정산을 위한 고객 환급보증금과 퇴직충당금 이동이 분리 표기된 것이었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 43,
+        "b": 57
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "계좌흐름복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "주말 세 줄 이체는 분리 표기이다."
+    },
+    {
+      "id": "d-4",
+      "name": "과거 배신 사건의 협상용 소환",
+      "truth": true,
+      "truthDescription": "두 사람은 2년 전 사건이 일부 제도 개선과 정산으로 봉합됐다는 점을 알면서도, 현재 해지 협상에서 각자 유리한 방향으로 그 사건을 반복 소환했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 48,
+        "b": 52
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거정산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "두 사람은 과거 사건을 반복 소환했다."
+    },
+    {
+      "id": "d-5",
+      "name": "겉보기 손실 규모를 키운 은행 표시 방식 변화",
+      "truth": true,
+      "truthDescription": "은행 시스템 마이그레이션으로 주말 예약이체가 원금·부가세·수수료로 분리 표기되고 수취인 별칭이 바뀌어, 겉보기 손실이 실제보다 1,240만원 크게 보였다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 46,
+        "b": 54
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "계좌흐름복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "겉보기 손실이 1,240만원 과대 표기되었다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "원본 은행 거래내역과 이체확인서",
+      "description": "문제의 주말 이체에 대한 은행 원본 CSV, PDF 이체확인서, 실제 수취계좌 귀속 확인 자료로 환급보증금과 퇴직충당금 이동이었음을 보여준다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은행 원본 CSV와 서버 발급 PDF, 수취계좌 확인서가 함께 확보됐다.",
+        "check_metadata": "출력 시각과 전산 전표번호가 일치하며, 수취 계좌는 개인계좌가 아니라 법무 자문이 지정한 정산용 계좌다.",
+        "restore_context": "문제의 금액은 고객 환급보증금과 퇴직충당금으로 나뉘어 예약 이체된 것이지 민재 개인 계좌나 지인 회사로 흐르지 않았다.",
+        "verify_source": "거래은행 서버 원장과 발급본 해시가 일치한다.",
+        "check_edits": "원본 파일로 편집 흔적이 없다.",
+        "question_acquisition": "법인계좌 자료라 해지 협상 목적 열람은 적법하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오민재에게: \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오민재의 \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 쟁점과 관련된다. 오민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김라희에게: \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 관련 해명 요구 (방어 동기: 복수심)",
+          "implication": "이 증거는 김라희의 \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 쟁점과 관련된다. 김라희은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "2024년 외주 리베이트 정산 메모와 친구 회사 계약서",
+      "description": "민재가 2년 전 overflow QA를 친구 회사로 넘기며 일부 리베이트성 정산을 숨겼다가 뒤늦게 시인하고 규정을 고친 당시 메모와 계약서다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "당시 회의록, 친구 회사 계약서, 정산 메모 원본이 모두 확보됐다.",
+        "check_metadata": "문서 작성 시각은 2024년 8월과 9월로 이어지고, 민재의 시인 메일이 첨부돼 있다.",
+        "restore_context": "사건은 완전히 허구가 아니라 실제로 존재했던 신뢰 위반이며, 이후 거래공개 규칙을 만들게 된 계기였다.",
+        "verify_source": "전자결재 기록과 메일 스레드, 계약 원본 번호가 모두 일치한다.",
+        "check_edits": "원본 문서에서 후편집 흔적이 없다.",
+        "question_acquisition": "과거 회사 분쟁 자료라 제출은 적법하지만 외부 공개는 제한돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오민재에게: \"민재의 과거 외주 리베이트 은폐\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 오민재의 \"민재의 과거 외주 리베이트 은폐\" 쟁점과 관련된다. 오민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김라희에게: \"과거 배신 사건의 협상용 소환\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 김라희의 \"과거 배신 사건의 협상용 소환\" 쟁점과 관련된다. 김라희은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "은행 도장처럼 보이는 거래내역 PDF 캡처",
+      "description": "라희가 해지 협상 테이블에 처음 제출한 자료로, 주말 이체 세 건이 특정 외주업체로 흘러간 것처럼 표시되고 은행 직인처럼 보이는 이미지가 들어가 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "PDF 전체가 아니라 협상용 출력본과 화면 캡처만 먼저 제출됐다.",
+        "check_metadata": "파일 생성 프로그램 정보가 은행 발급기가 아니라 일반 스프레드시트 PDF 변환기로 남아 있다.",
+        "restore_context": "행 제목과 수취인 별칭이 실제 은행 양식과 미묘하게 다르고, 강조표시가 과도하게 삽입돼 있다.",
+        "verify_source": "원본 출처가 회계보조 스프레드시트인지 은행 서버인지 처음에는 확인되지 않았다.",
+        "check_edits": "글꼴 혼합과 해상도 차이로 편집 가능성이 높다.",
+        "question_acquisition": "출처 불명 편집본이라 증거능력이 약하고, 개인정보가 섞여 있어 사용 범위도 제한된다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오민재에게: \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오민재의 \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 쟁점과 관련된다. 오민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김라희에게: \"라희 측 편집 거래내역의 제출과 지속 사용\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 김라희의 \"라희 측 편집 거래내역의 제출과 지속 사용\" 쟁점과 관련된다. 김라희은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "편집 원본 스프레드시트와 위조 직인 이미지 파일",
+      "description": "거래내역 PDF의 바탕이 된 스프레드시트 원본, 숨김 열, 삽입된 직인 PNG 파일로 수취인 별칭과 금액 강조 행이 수동 편집됐음을 보여준다.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "클라우드 드라이브의 버전 기록, 숨김 열, 이미지 삽입 로그가 함께 확보됐다.",
+        "check_metadata": "편집본은 라희 팀 폴더에서 생성됐고, 직인 이미지는 외부 인터넷 다운로드 파일로 삽입된 기록이 남아 있다.",
+        "restore_context": "원본 거래내역을 '보기 쉽게' 정리한다는 명목이었지만 실제로는 수취인 별칭과 강조 행이 바뀌어 의미가 달라졌다.",
+        "verify_source": "파일 해시와 수정 로그가 연속적으로 이어진다.",
+        "check_edits": "행 병합, 별칭 변경, 이미지 삽입 흔적이 명확하다.",
+        "question_acquisition": "회사 공용 드라이브 자료라 적법하게 확보됐지만 사용 목적은 분쟁 해결로 제한돼야 한다."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-5",
+      "name": "조정인 메일과 라희의 확인 회신",
+      "description": "외부 조정인이 제출 자료의 원본 여부를 묻자 라희가 '정리본이지만 흐름은 같다'고 답한 메일과, 과거 사건을 현재 협상에 다시 얹겠다고 언급한 회신이다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "조정인 발신 원문과 라희 회신, 첨부 목록이 모두 확보됐다.",
+        "check_metadata": "라희는 원본 제출 요청을 받은 다음 날에도 같은 편집 PDF를 다시 보냈다.",
+        "restore_context": "라희가 편집본이라는 사실을 인지했음에도 '실질은 같다'며 협상 자료로 계속 사용한 정황이 드러난다.",
+        "verify_source": "조정인 메일 서버 헤더와 수신 확인 로그가 일치한다.",
+        "check_edits": "헤더 포함 원본이라 수정 흔적이 없다.",
+        "question_acquisition": "중재 절차 중 생성된 자료라 적법하지만 외부 유출은 제한된다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오민재에게: \"민재의 과거 외주 리베이트 은폐\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 오민재의 \"민재의 과거 외주 리베이트 은폐\" 쟁점과 관련된다. 오민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김라희에게: \"라희 측 편집 거래내역의 제출과 지속 사용\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 김라희의 \"라희 측 편집 거래내역의 제출과 지속 사용\" 쟁점과 관련된다. 김라희은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "은행 마이그레이션 공지와 표기 방식 설명서",
+      "description": "은행이 시스템 변경 후 예약이체를 원금·부가세·수수료로 분리 표기하고 수취인 별칭을 축약 표시하게 됐다는 공지와, 해당 거래에 적용된 세부 설명서다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "은행 공지 원문, FAQ, 담당자 확인 메모가 함께 제출됐다.",
+        "check_metadata": "시스템 전환은 문제 거래 일주일 전에 적용됐고, 예약이체 분리 표기 규칙이 명시돼 있다.",
+        "restore_context": "주말 이체 세 건은 외부 유출 세 건이 아니라 하나의 환급보증금 이동과 하나의 퇴직충당금 이동이 분리 표기된 결과로 해석돼야 한다.",
+        "verify_source": "거래은행 문서번호와 담당자 확인 회신이 일치한다.",
+        "check_edits": "기관 발급본이라 편집 흔적이 없다.",
+        "question_acquisition": "은행 공용 안내 자료와 담당 확인 문서라 적법하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오민재에게: \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오민재의 \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 쟁점과 관련된다. 오민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김라희에게: \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 관련 해명 요구 (방어 동기: 복수심)",
+          "implication": "이 증거는 김라희의 \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 쟁점과 관련된다. 김라희은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "라희는 편집된 거래내역 PDF를 원본처럼 협상 자료에 계속 사용했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "민재는 2년 전 친구 회사 외주 리베이트를 숨긴 실제 과거 배신 전력이 있다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "주말에 나뉘어 찍힌 세 줄은 서로 다른 비정상 외부유출 세 건이 아니라, 해지 정산 목적의 적법한 자금 이동이 분리 표기된 결과였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "두 사람 모두 과거 배신 사건이 일부 정리됐다는 사실을 알면서도 현재 협상 압박 수단으로 반복 소환했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "은행 표시 방식 변화 때문에 겉보기 손실 규모가 실제보다 1,240만원 과장돼 보였다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "past_rebate_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "friend_company_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "weekend_transfer_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_settlement_reserve"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-1_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "past_incident_reuse_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "partial_settlement_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "bank_pdf_origin_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "original_request_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_or_e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-7",
+      "lieIntensity": "L2",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "personal_diversion_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_bank_display_confusion"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-1_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-2",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "past_betrayal_reuse_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "settlement_closure_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "증거검증프로토콜": [
+      "해지 협상에 제출되는 모든 거래자료는 편집본을 금지하고, 은행 원본·전표·수취계좌 확인서를 한 세트로만 인정한다.",
+      "표 형식으로 재정리한 요약본을 쓰더라도 원본과 다른 표시나 강조가 들어가면 '참고자료'로만 분리하고 증거 효력을 주지 않는다.",
+      "다시 편집본이나 위조 의심 자료를 원본처럼 제출하면 해지 협상은 중단하고 외부 회계감사를 먼저 진행한다."
+    ],
+    "과거정산": [
+      "2년 전 외주 리베이트 사건은 별도 부속합의로 현재 해지 협상과 분리하되, 그 당시 미반영된 손익이 있으면 한 번만 재계산한다.",
+      "과거 배신 사건을 현재 협상 자료에 인용할 때는 사실관계, 이미 반영된 제재, 남은 미정산 항목을 함께 써서 감정적 재소환을 막는다.",
+      "과거 사건을 현재 협상 압박용으로만 반복 언급할 경우, 발언 효력을 배제하고 외부 중재인이 사실 요약본만 남기게 한다."
+    ],
+    "계좌흐름복구": [
+      "문제의 주말 이체는 은행 담당자 입회 아래 환급보증금, 퇴직충당금, 수수료를 항목별로 다시 맵핑해 공동 확인한다.",
+      "해지 평가액 산정은 편집 PDF가 아니라 원본 은행자료와 세금계산서 기준으로 전면 재산정한다.",
+      "향후 해지 정산용 자금은 별도 정산계좌로만 움직이고, 이동 사유와 귀속 주체를 두 대표와 외부 조정인이 동시에 확인한다."
+    ],
+    "신뢰회복": [
+      "라희는 현재 증거 조작 사용에 대해 사과하고, 민재는 과거 리베이트 은폐가 지금의 불신 기반을 만들었다는 점을 인정하는 식으로 사과 범위를 분리한다.",
+      "두 사람은 '이번 사건'과 '과거 사건'을 시간순으로 분리한 공동 사실표를 작성해, 같은 패턴이라는 추정과 실제 사실을 나눠 본다.",
+      "해지 이후에도 명예훼손성 주장을 반복하면 비방전이 아니라 합의된 사실표와 원본 자료만 인용하는 조항을 넣는다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-3",
+    "tp-2"
+  ]
+}

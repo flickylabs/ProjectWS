@@ -1514,7 +1514,7 @@ export const family09V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "power_of_attorney_question",
-      "line": "그날은 절차만 물어본 거라고 버티지만, '초안은 봤다'는 문장까지는 밀려나온다.",
+      "line": "그날은 절차만 물어본 거예요. 다만… 초안은 봤어요, 그건 맞아요.",
       "behaviorHint": "시선을 피하며 서류 명칭 대신 '그거'라고 부른다."
     },
     {
@@ -1525,7 +1525,7 @@ export const family09V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-3_presented",
-      "line": "예약표와 CCTV 시각이 제시되자 '시세만 보는 서류라고 설명했다'는 범위 축소형 인정으로 무너진다.",
+      "line": "시세만 보는 서류라고 설명했어요. 그렇게밖에 말을 못 했다고요.",
       "behaviorHint": "입술을 깨물고 의자에 등을 붙인다."
     },
     {
@@ -1536,7 +1536,7 @@ export const family09V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "mother_consent_followup",
-      "line": "어머니가 실제로 들은 설명을 재차 추궁받자, 매매 문구가 들어간 서명 초안을 먼저 받아 둔 사실을 말한다.",
+      "line": "매매 문구가 들어간 초안을 먼저 받아 뒀어요. 어머니한테는 그 부분을 자세히 말씀 안 드렸고요.",
       "behaviorHint": "목소리가 낮아지고 문장을 짧게 끊는다."
     },
     {
@@ -1547,7 +1547,7 @@ export const family09V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "responsibility_question",
-      "line": "실무 선점 욕심과 보호자 명분이 겹쳤음을 인정하며 선서명 유도를 사실상 시인한다.",
+      "line": "실무를 먼저 잡고 싶은 마음과 보호자라는 명분이 겹쳤어요. 서명을 유도한 거… 맞아요.",
       "behaviorHint": "숨을 길게 내쉬고 고개를 끄덕인다."
     },
     {
@@ -1558,7 +1558,7 @@ export const family09V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "off_contract_money_question",
-      "line": "처음엔 도윤과 중개사만의 일이라 밀어내지만, 별도 보전금 얘기가 오간 건 알았다고 후퇴한다.",
+      "line": "도윤이랑 중개사 사이 일이라고 생각했어요. 다만 별도 보전금 얘기가 오간 건… 알고 있었어요.",
       "behaviorHint": "돌봄 서사를 먼저 깔고 핵심 답을 미룬다."
     },
     {
@@ -1569,7 +1569,7 @@ export const family09V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-2_presented",
-      "line": "원본 메시지와 통화가 나오자 '강하게 막지 못했다'는 소극적 가담 인정으로 선이 무너진다.",
+      "line": "강하게 막지 못했어요. 알면서도 그냥 넘어간 거예요.",
       "behaviorHint": "손으로 눈가를 한번 눌렀다가 내려놓는다."
     },
     {
@@ -1580,7 +1580,7 @@ export const family09V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "broker_memo_followup",
-      "line": "중개사 메모 추궁이 이어지면 3,300만원 분배 이야기를 자신도 알았다고 털어놓는다.",
+      "line": "3,300만원 분배 이야기… 저도 알고 있었어요. 모르는 척한 거예요.",
       "behaviorHint": "상대를 보며 책임을 반쯤 넘기려 한다."
     },
     {
@@ -1591,7 +1591,7 @@ export const family09V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "e-5_presented",
-      "line": "음성메모와 분배 메모가 겹치자 공모와 은닉, 그리고 사후 단독 몰아가기까지 인정한다.",
+      "line": "공모한 거 맞아요. 숨긴 것도, 나중에 도윤한테만 돌린 것도요. 다 제 잘못이에요.",
       "behaviorHint": "한숨 뒤 목소리가 갈라진다."
     },
     {
@@ -1602,7 +1602,7 @@ export const family09V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "parent_explanation_question",
-      "line": "비용 설명일 뿐이라고 하다가도, 표현이 과했을 수 있다는 식의 완곡한 후퇴를 보인다.",
+      "line": "비용을 설명한 것뿐이었어요. 다만… 표현이 좀 과했을 수도 있겠다는 생각은 해요.",
       "behaviorHint": "손가락으로 비용 항목을 셈하듯 움직인다."
     },
     {
@@ -1613,7 +1613,7 @@ export const family09V3GameLoopData = {
       "fromState": "S1",
       "toState": "S4",
       "trigger": "nonjudgmental_question_about_rehab_cost_pressure",
-      "line": "비난 대신 재활비 압박을 묻는 질문이 들어오면 돌봄 서사 뒤의 죄책감이 먼저 터져 나온다.",
+      "line": "제가 아니면 누가 해요… 재활비가 계속 나가는데. 죄책감이 있었어요, 솔직히.",
       "behaviorHint": "목이 잠기며 '제가 아니면 누가'라는 말이 튀어나온다."
     },
     {
@@ -1624,7 +1624,7 @@ export const family09V3GameLoopData = {
       "fromState": "S4",
       "toState": "S3",
       "trigger": "e-6_presented",
-      "line": "감정이 열린 상태에서 공식 설명 녹취가 제시되자, 부모 앞에서 순매매가만 강조했다는 구체 인정으로 정리된다.",
+      "line": "부모님 앞에서 순매매가만 말씀드렸어요. 나머지는… 일부러 빼고 말한 거예요.",
       "behaviorHint": "손으로 입을 가렸다가 천천히 내린다."
     },
     {
@@ -1635,7 +1635,7 @@ export const family09V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "shared_responsibility_question",
-      "line": "축소 설명의 공동성까지 묻자 돌봄 명분을 내려놓고 공동 은폐 책임을 인정한다.",
+      "line": "돌봄이라는 명분… 더 이상 못 쓰겠어요. 같이 숨긴 거예요. 제 책임이에요.",
       "behaviorHint": "눈을 감고 한 박자 쉬었다가 답한다."
     },
     {
@@ -1646,7 +1646,7 @@ export const family09V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "side_transfer_question",
-      "line": "처음엔 잠깐 묶어 둔 돈이라 하다가도, 자기 계좌로 먼저 들어온 사실까지는 인정한다.",
+      "line": "잠깐 묶어 둔 거였어요. 다만… 제 계좌로 먼저 들어온 건 맞아요.",
       "behaviorHint": "숫자를 빠르게 읊고 곧바로 현장 사정 설명으로 넘어간다."
     },
     {
@@ -1657,7 +1657,7 @@ export const family09V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-1_presented",
-      "line": "잘린 캡처가 제시되면 선수령 자체는 인정하면서도 '다시 맞추려 했다'는 변명으로 옮겨간다.",
+      "line": "먼저 받은 건 맞아요. 다시 맞추려고 했거든요. 그게 안 된 것도 알지만요.",
       "behaviorHint": "팔짱을 끼려다 풀고 의자 앞으로 기울인다."
     },
     {
@@ -1668,7 +1668,7 @@ export const family09V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "debt_payment_followup",
-      "line": "개인 채무 상환 여부를 계속 추궁받자 1,300만원이 리스와 카드로 갔음을 구체적으로 시인한다.",
+      "line": "1,300만원이 리스랑 카드값으로 갔어요. 그 부분은 숨길 수가 없네요.",
       "behaviorHint": "턱선이 굳고 대답이 짧아진다."
     },
     {
@@ -1679,7 +1679,7 @@ export const family09V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "e-4_presented",
-      "line": "계좌와 상환서가 맞물리면 체면과 두려움 때문에 숨겼다는 감정까지 포함해 완전 시인으로 넘어간다.",
+      "line": "체면 때문에 숨긴 거예요. 두려워서요. 다 인정해요.",
       "behaviorHint": "눈을 떨군 채 손가락 움직임이 멈춘다."
     },
     {
@@ -1690,7 +1690,7 @@ export const family09V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "off_contract_money_question",
-      "line": "처음엔 현장 조정금이라 낮추다가도, 별도 돈 얘기 자체는 있었다고 수위를 낮춘다.",
+      "line": "현장 조정금 정도로 생각했거든요. 다만 별도 돈 얘기가 있긴 했어요.",
       "behaviorHint": "시세와 명도 일정을 먼저 장황하게 말한다."
     },
     {
@@ -1701,7 +1701,7 @@ export const family09V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-2_presented",
-      "line": "원본 스레드가 나오면 부모 앞에서 순매매가만 말하자는 공감대가 있었다고 인정한다.",
+      "line": "부모님 앞에서 순매매가만 말하자는 공감대가 있었어요. 그건 인정해요.",
       "behaviorHint": "어깨를 으쓱이며 '거래 안 깨려던 것'이라 덧붙인다."
     },
     {
@@ -1712,7 +1712,7 @@ export const family09V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "split_agreement_followup",
-      "line": "분배 약속을 재차 묻자 3,300만원씩 보자는 내부 기준이 있었다고 털어놓는다.",
+      "line": "3,300만원씩 나눠 보자는 내부 기준이 있었어요. 누나도 알고 있었고요.",
       "behaviorHint": "상대도 알았다는 말을 반드시 붙인다."
     },
     {
@@ -1723,7 +1723,7 @@ export const family09V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "e-5_presented",
-      "line": "중개사 음성메모가 제시되면 공모와 은닉 구조를 더는 실무 용어로 덮지 못하고 인정한다.",
+      "line": "더 이상 실무라는 말로 덮을 수 없을 것 같아요. 같이 숨긴 거 맞아요.",
       "behaviorHint": "짧은 침묵 뒤 단문으로 답한다."
     },
     {
@@ -1734,7 +1734,7 @@ export const family09V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "parent_explanation_question",
-      "line": "필수 비용 설명이었다고 하다가도, 숫자를 세게 잡은 건 맞다는 쪽으로 한 걸음 물러난다.",
+      "line": "필수 비용을 설명한 거였는데요. 다만 숫자를 좀 세게 잡은 건… 맞는 것 같아요.",
       "behaviorHint": "손으로 허공에 금액표를 그리듯 움직인다."
     },
     {
@@ -1745,7 +1745,7 @@ export const family09V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-6_presented",
-      "line": "공식 브리핑 자료가 나오자 부모 앞에서 순매매가 중심으로만 설명했다는 사실을 인정한다.",
+      "line": "부모님 앞에서 순매매가 중심으로만 설명한 건 맞아요. 인정해요.",
       "behaviorHint": "입술을 다문 채 짧게 고개를 끄덕인다."
     },
     {
@@ -1756,7 +1756,7 @@ export const family09V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "same_day_disclosure_followup",
-      "line": "같은 날 왜 별도 보전금을 말하지 않았는지 묻자 비용 핑계로 형제 몫을 가렸다고 구체화된다.",
+      "line": "비용이 크다는 핑계로 형제 몫을 가린 거예요. 같은 날 말하지 않은 건 일부러 그랬어요.",
       "behaviorHint": "현장 노고를 꺼내려다 말고 손을 내린다."
     },
     {
@@ -1767,7 +1767,7 @@ export const family09V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "shared_responsibility_question",
-      "line": "공동 책임을 정면으로 묻자 실무 방패를 내려놓고 부모 판단을 흐린 책임을 인정한다.",
+      "line": "실무라는 방패… 더 이상 못 쓰겠어요. 부모님 판단을 흐린 건 제 책임이에요.",
       "behaviorHint": "숨을 길게 들이쉬고 천천히 답한다."
     }
   ]

@@ -1,0 +1,665 @@
+{
+"caseId": "case-work-01",
+"meta": {
+"relationshipType": "boss_employee",
+"conflictSeed": "CS-2",
+"variableModules": [
+"VM-B"
+],
+"twistModule": "TW-4",
+"difficulty": "hard",
+"anchorTruth": "서윤이 막판 오류를 넣은 최종 수정자라는 핵심 비난은 조작된 문서 이력 PDF에 기대고 있었고, 서버 원본 로그는 관리자 대리발급 계정의 덮어쓰기를 가리킨다.",
+"emotionalBait": "평가 시즌의 승진 경쟁, 밤늦은 수정 시각, 서윤 명의로 찍힌 최종 수정자 캡처가 겹치며 '공을 세우고도 망친 직원' 대 '성과를 훔친 상사' 구도가 선명해 보인다.",
+"resolutionDilemma": "태성의 공로 가로채기와 서윤의 무단 열람·소문 확산 중 무엇을 더 무겁게 볼지, 그리고 조작된 로그를 근거로 움직인 인사평가를 어디까지 되돌릴지가 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "윤태성",
+"age": 42,
+"occupation": "퍼포먼스마케팅팀 팀장",
+"incomeBracket": "high",
+"archetype": "cold_logic",
+"speechStyle": "질문을 받으면 먼저 결론과 책임선을 분리해 말하고, 감정 표현은 거의 하지 않는다. 불리해지면 '프로세스상'이라는 말을 반복하며 인간관계 문제를 절차 문제로 바꾸려 한다.",
+"pride": 8,
+"fear": "평가 시즌에 리더십이 흔들려 승진 후보에서 밀리고 팀 통제력을 잃는 것",
+"riskAppetite": 6,
+"digitalHabit": "revision_history_obsessed",
+"dailyRoutine": "아침 KPI 회의 후 임원 보고용 문서를 직접 손보고, 늦은 밤까지 대시보드와 메신저를 번갈아 보며 팀원 수치를 체크한다.",
+"sensitivePoints": [
+"승진 심사",
+"팀 통제력",
+"보고 라인 신뢰"
+],
+"verbalTells": [
+{
+"type": "process_shield",
+"trigger": "lying",
+"pattern": "자신의 선택을 묻는 질문에도 '프로세스상 그렇게 처리됐다'며 행위 주체를 흐린다."
+},
+{
+"type": "premature_summary",
+"trigger": "cornered",
+"pattern": "상대가 질문을 끝내기 전에 '핵심은 그게 아니고'라고 먼저 요약해 쟁점을 좁혀 버린다."
+},
+{
+"type": "pronoun_blur",
+"trigger": "avoiding",
+"pattern": "'우리가 정리했다', '그쪽에서 올렸다'처럼 주어를 흐려 자신의 직접 행동을 숨긴다."
+}
+]
+},
+"partyB": {
+"name": "박서윤",
+"age": 31,
+"occupation": "그로스분석 대리",
+"incomeBracket": "mid",
+"archetype": "confrontational",
+"speechStyle": "핵심 단어를 되받아치듯 반복하며 상대의 표현을 바로잡으려 든다. 억울함이 커지면 문장 속도가 빨라지고, 캡처나 시간표를 손에 든 채 몰아붙인다.",
+"pride": 7,
+"fear": "성과를 빼앗긴 채 '마지막에 사고 친 사람'으로 낙인찍혀 평가가 무너지는 것",
+"riskAppetite": 5,
+"digitalHabit": "slack_power_user",
+"dailyRoutine": "오전에는 캠페인 수치와 리포트 초안을 만들고, 오후에는 팀 회의와 실험 정리를 거친 뒤 밤에는 수정 요청에 대응한다.",
+"sensitivePoints": [
+"성과 인정",
+"야근 강요",
+"평가 조작 의심"
+],
+"verbalTells": [
+{
+"type": "timestamp_barrage",
+"trigger": "lying",
+"pattern": "불리한 장면이 나오면 분 단위 시간표를 쏟아내며 전체 의도를 시간 정보로 덮는다."
+},
+{
+"type": "echo_challenge",
+"trigger": "cornered",
+"pattern": "상대가 쓴 표현을 그대로 되묻고 비꼬듯 반복해 방어적 주도권을 잡으려 한다."
+},
+{
+"type": "evidence_tap",
+"trigger": "emotional",
+"pattern": "테이블이나 화면을 여러 번 두드리며 '여기 있잖아요'라는 말로 감정과 사실을 한 번에 밀어붙인다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "작년 하반기부터 대외 제출용 보고서는 팀장 명의로 보내더라도 본문 말미에 실무 기여자를 병기하기로 팀 내에서 합의했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "올해 1분기 캠페인 발표 때 태성이 '최종 발표는 팀장 명의로 낸다'고 말한 일을 두 사람은 다르게 해석한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '대표 발신자만 팀장으로 하자는 뜻이었다' / B: '실무자 이름을 빼도 된다는 경고처럼 들렸다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "indirect"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "서윤이 지난 분기 야근 강요와 늦은 밤 수정 지시를 HR에 올리려다 평가를 의식해 접은 일이 말없이 남아 있다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "최현우 (본부 팀장)",
+"relationTo": "a",
+"knowledgeScope": "임원 보고 전날 회의에서 서윤의 분석 프레임이 핵심이라고 들었고, 제출본 명의 규칙에 대한 기존 관행을 안다.",
+"witnessedDirectly": true,
+"bias": "pro_a",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "이지안 (HR 비즈니스 파트너)",
+"relationTo": "both",
+"knowledgeScope": "평가 초안 버전, 태성의 비공식 코멘트 입력 시점, 서윤의 미제출 고충 초안을 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "김도현 (감사팀 포렌식 담당)",
+"relationTo": "both",
+"knowledgeScope": "문서 서버 원본 로그, 관리자 대리발급 토큰, 수정 이력 PDF 해시 불일치를 원본 기준으로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "performance_review",
+"description": "분기 성과와 승진 심사가 동시에 걸린 인사평가 시즌, 팀은 임원 앞에 올릴 전환율 개선 보고서를 마지막 근거로 삼고 있었다. 실적 반영 마감이 촉박해지자 밤늦은 수정 지시와 명의 문제, 평가 초안의 코멘트가 한 번에 얽히며 누가 보고서를 만들고 누가 망쳤는지가 곧 인사 결과로 이어지는 상황이 됐다.",
+"emotionalPressure": 9,
+"affects": "both",
+"triggerAmplifier": "평가 점수와 승진 추천서가 같은 주에 닫히는 일정이라, 작은 로그 하나나 캡처 한 장도 곧바로 공로 귀속과 징계 가능성으로 확대됐다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "태성의 공로 단독 기재",
+"truth": true,
+"truthDescription": "태성은 서윤이 만든 핵심 분석 프레임과 표를 최종 보고서에 사용하면서 제출 메일과 표지에서 서윤 이름을 뺐다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-1",
+"e-4"
+],
+"correctResponsibility": {
+"a": 80,
+"b": 20
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "성과배분복구",
+"legitimacyIssue": false
+},
+{
+"id": "d-2",
+"name": "서윤의 평가시즌 무단 열람과 캡처 유포",
+"truth": true,
+"truthDescription": "서윤은 팀 공유폴더에 남아 있던 권한으로 1차 평가 메모를 열람하고, 그 일부를 캡처해 동료들에게 보내며 태성이 점수를 깎았다는 소문을 키웠다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-5"
+],
+"correctResponsibility": {
+"a": 25,
+"b": 75
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "증거취급경계",
+"legitimacyIssue": true
+},
+{
+"id": "d-3",
+"name": "문서 수정 로그가 서윤을 최종 수정자로 확정하는가",
+"truth": false,
+"truthDescription": "서윤이 막판 오류를 넣은 최종 수정자라는 주장은 조작된 수정 이력 PDF에 기대고 있으며, 문서 서버 원본에는 관리자 대리발급 계정의 덮어쓰기 흔적이 남아 있다.",
+"quadrant": "shared_misconception",
+"requiredEvidence": [
+"e-2",
+"e-3",
+"e-6"
+],
+"correctResponsibility": {
+"a": 65,
+"b": 35
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "평가절차복구",
+"legitimacyIssue": false
+},
+{
+"id": "d-4",
+"name": "태성의 비공식 평가 개입",
+"truth": true,
+"truthDescription": "태성은 서윤의 평가 초안이 확정되기 전 HR에 '기여는 있으나 리스크가 크다'는 비공식 코멘트를 넣어 점수 보정 방향에 영향을 줬다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-4"
+],
+"correctResponsibility": {
+"a": 85,
+"b": 15
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "평가절차복구",
+"legitimacyIssue": false
+},
+{
+"id": "d-5",
+"name": "성과 배분 규칙의 쌍방 위반",
+"truth": true,
+"truthDescription": "두 사람은 대외 제출본에 실무 기여자와 검토자를 남기기로 해왔지만, 태성은 단독 명의 제출로 취지를 깨고 서윤은 무단 캡처와 소문 유포로 정식 이의 절차를 무너뜨렸다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-1",
+"e-5"
+],
+"correctResponsibility": {
+"a": 60,
+"b": 40
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "성과배분복구",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "프로젝트 초안 제출 이메일 체인과 주간회의록",
+"description": "서윤이 핵심 분석 프레임과 KPI 표를 담은 초안을 올리고, 같은 주간회의록에서 해당 프레임의 실무 오너로 서윤이 기록된 자료 묶음이다.",
+"type": "email",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-1",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "메일 원본과 회의록 초안·확정본이 모두 남아 있다.",
+"check_metadata": "초안 첨부의 작성자와 회의록 최초 입력자가 모두 서윤 계정으로 표시된다.",
+"restore_context": "태성의 회신과 회의록 메모에는 '임원용 문안은 내가 다듬겠다'는 역할 분담이 함께 적혀 있다.",
+"verify_source": "사내 메일 서버 아카이브와 개인 받은편지함 사본이 일치한다.",
+"check_edits": "첨부 파일 해시값이 서버 보존본과 동일해 사후 편집 흔적이 없다.",
+"question_acquisition": "팀 프로젝트 메일함 자료라 제출 절차상 문제는 적다."
+}
+},
+{
+"id": "e-2",
+"name": "태성이 제출한 문서 수정 이력 PDF",
+"description": "서윤이 밤 11시 48분 최종 수정자로 표시된 보고서 이력 캡처 PDF다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "platform",
+"legitimacy": "lawful",
+"proves": [
+"d-3"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "원본 감사 로그가 아니라 PDF 출력본만 제출됐다.",
+"check_metadata": "파일 생성 시각이 주장된 추출 시각보다 14분 늦고, 작성 프로그램 표기가 일반 내보내기와 다르다.",
+"restore_context": "관리자 토큰 여부와 이전 편집 열이 잘려 있어 단독으로는 마지막 수정자를 확정할 수 없다.",
+"verify_source": "팀 공용 PC에서 만들어진 파일로 보이지만 공식 문서 서버 직출력 여부는 확인되지 않는다.",
+"check_edits": "글꼴 레이어와 표 간격이 한 행만 어긋나 선택적 편집 가능성이 보인다.",
+"question_acquisition": "태성이 자발적으로 제출한 자료라 입수 경위는 적법하지만 진본성은 별도 쟁점이다."
+}
+},
+{
+"id": "e-3",
+"name": "문서 서버 원본 감사 로그",
+"description": "같은 보고서의 원본 감사 로그로, 서윤의 마지막 정상 편집은 20시 17분이고 23시 41분에는 관리자 대리발급 토큰이 메타데이터를 덮어쓴 기록이 남아 있다.",
+"type": "access_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "platform",
+"legitimacy": "lawful",
+"proves": [
+"d-3"
+],
+"isTrap": false,
+"requires": [
+"e-2"
+],
+"investigationResults": {
+"request_original": "서버 raw log에는 사용자 ID, 토큰 종류, 편집 범위가 줄 단위로 보존돼 있다.",
+"check_metadata": "문제 시각 행에는 서윤 계정이 아니라 관리자 대리발급 토큰과 공용 PC 세션 ID가 찍혀 있다.",
+"restore_context": "실제 본문 수정은 이미 저녁에 끝났고, 밤 시간대 기록은 이력 덮어쓰기 성격에 가깝다.",
+"verify_source": "문서 서버 감사 콘솔과 백업 서버 로그가 동일한 순서를 보여준다.",
+"check_edits": "서버 추출 CSV라 사후 편집 흔적이 없다.",
+"question_acquisition": "감사팀 입회 하에 추출한 원본이라 증거 능력은 높다."
+}
+},
+{
+"id": "e-4",
+"name": "HR 평가 초안 버전기록과 코멘트 메모",
+"description": "평가 초안에서 서윤의 기여 항목이 '보고서 오너'에서 '보조 분석'으로 바뀌고, 태성의 비공식 코멘트가 추가된 버전기록이다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-1",
+"d-4"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "평가 시스템 원본 버전과 코멘트 입력 기록이 보존돼 있다.",
+"check_metadata": "점수 보정 직전 태성 계정에서 비공개 메모가 입력된 시각이 남아 있다.",
+"restore_context": "초기 초안에는 서윤의 보고서 주도 기여가 명시돼 있었고 이후 표현이 축소됐다.",
+"verify_source": "HR 시스템 관리자 확인과 출력본이 일치한다.",
+"check_edits": "버전 이력 자체는 수정 불가 로그라 편집 흔적이 없다.",
+"question_acquisition": "인사자료라 제출 범위는 분쟁 해결 목적에 한정돼야 한다."
+}
+},
+{
+"id": "e-5",
+"name": "서윤이 전달한 슬랙 캡처 묶음",
+"description": "서윤이 동료 둘에게 전달한 슬랙 DM과 평가 화면 일부 캡처 묶음이다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-2",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "원본 대화 전체가 아니라 갤러리의 묶음 캡처만 있다.",
+"check_metadata": "생성 시각은 평가 초안 열람 직후 새벽 1시대로 몰려 있다.",
+"restore_context": "야간 수정 지시와 평가 문장이 일부만 잘려 있어 맥락 복원이 필요하다.",
+"verify_source": "전달받은 동료 두 명의 단말과 서윤 갤러리 파일명이 일치한다.",
+"check_edits": "문장 자체 수정 흔적은 없지만 의도적 크롭과 순서 재배치가 확인된다.",
+"question_acquisition": "남은 권한으로 인사 화면을 열람해 얻은 자료라 사생활·인사정보 침해 우려가 크다."
+}
+},
+{
+"id": "e-6",
+"name": "감사팀 포렌식 메모와 관리자 토큰 발급 기록",
+"description": "문서관리 관리자 오지훈이 공용 PC에서 관리자 대리발급 토큰을 사용했고, 문제의 PDF 해시가 공식 추출본과 다르다는 감사팀 포렌식 메모다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-3"
+],
+"isTrap": false,
+"requires": [
+"e-3"
+],
+"investigationResults": {
+"request_original": "토큰 발급 기록과 PDF 해시 비교표가 함께 첨부돼 있다.",
+"check_metadata": "공식 추출본 생성 시각과 태성이 제출한 PDF 생성 시각 사이에 11분 공백이 있다.",
+"restore_context": "오지훈은 관리자 토큰 사용 사실을 숨기기 위해 내보내기 PDF에서 관련 열을 뺀 것으로 정리된다.",
+"verify_source": "감사팀 저장소와 IT 운영 기록이 같은 결론을 가리킨다.",
+"check_edits": "포렌식 메모는 감사팀 서명본으로 사후 수정 흔적이 없다.",
+"question_acquisition": "내부 조사 문건이라 적법하지만 관리자 개인 징계 정보는 최소한으로만 공개돼야 한다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-2",
+"e-5"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-3"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "서윤의 초안과 분석 프레임은 태성이 최종 제출한 보고서의 핵심 골격이었다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "both_know"
+},
+{
+"id": "t-2",
+"fact": "서윤은 남아 있던 권한으로 평가 초안을 열람하고 캡처를 동료들에게 돌렸다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "b_only"
+},
+{
+"id": "t-3",
+"fact": "서윤이 최종 수정자라는 결정적 근거처럼 보인 문서 이력 PDF는 조작본이었다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "shared_misconception"
+},
+{
+"id": "t-4",
+"fact": "태성은 평가 초안 확정 전에 비공식 코멘트로 서윤 점수 보정에 영향을 줬다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "a_only"
+},
+{
+"id": "t-5",
+"fact": "두 사람 모두 정식 절차 대신 명의 삭제와 캡처 유포로 기존 성과 배분 규칙을 무너뜨렸다.",
+"isTrue": true,
+"weight": 7,
+"quadrant": "both_know"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-1",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "career_preservation",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "credit_label_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "byline_rule_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-4_or_responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-4",
+"lieIntensity": "L3",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "final_editor_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_shared_pc"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "e-3_or_e-6_presented"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-1",
+"lieIntensity": "L2",
+"lieMotive": "career_preservation",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "hr_comment_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-4_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "calibration_timing_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-1",
+"lieType": "LT-3",
+"lieIntensity": "L1",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "credit_share_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "executive_summary_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-4_or_responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-2",
+"lieType": "LT-1",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "evaluation_access_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-5_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "coworker_share_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "leftover_permission_question"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-7",
+"lieIntensity": "L2",
+"lieMotive": "revenge",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "rumor_spread_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "small_admission_about_anger"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "formal_complaint_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"solutions": {
+"성과배분복구": [
+"이번 보고서의 기여자 표기를 즉시 정정하고, 평가 반영 전 실무 기여 비중을 공동 확인서로 다시 남긴다.",
+"대외 제출본은 팀장 명의와 별도로 본문 첫 장에 실무 오너·검토자·최종 승인자를 병기하는 규칙으로 바꾼다.",
+"성과 가로채기 분쟁이 반복되면 해당 프로젝트의 평가권을 직속 상사에게서 분리하고 본부 차원 재심으로 넘긴다."
+],
+"증거취급경계": [
+"평가나 메신저 캡처는 개인 기기 전송을 금지하고, 이의 제기는 HR 보안 폴더 한 채널로만 받는다.",
+"남은 권한으로 열람한 자료는 즉시 봉인하고, 정식 열람 승인 없이 공유한 당사자 모두에게 재교육을 실시한다.",
+"재차 무단 열람이나 캡처 유포가 발생하면 프로젝트 기여 판단과 별개로 정보보안 징계를 우선 적용한다."
+],
+"평가절차복구": [
+"조작된 로그와 비공식 코멘트를 제외한 상태에서 평가위원회가 보고서 기여도와 책임을 다시 심의한다.",
+"문서 이력은 PDF가 아니라 서버 원본 로그만 증거로 인정하고, 관리자 토큰 사용 시 자동 감사 알림을 붙인다.",
+"평가 시즌에 관리자·팀장 어느 쪽이든 증거를 가공해 제출하면 승진 심사와 평가권을 동시에 보류하는 강경 규칙을 둔다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-2",
+"tp-3"
+]
+}

@@ -304,7 +304,7 @@ export const spouse04TellsBeats = {
       "party": "a",
       "disputeId": "d-5",
       "beatType": "blame",
-      "line": "솔직히 저는 가능성을 알고도 외면했습니다. 어머니를 막지 못한 것도, 다은 씨에게 바로 말하지 않은 것도 제 잘못입니다.",
+      "line": "솔직히 저는 가능성을 알고도 외면했습니다. 어머니를 막지 못한 것도, 다은 씨에게 바로 말하지 않은 것도 제 잘못입니다. 다은 씨 쪽도 예약 코드를 어머니에게 먼저 넘긴 부분이 있잖아요.",
       "behaviorHint": "목이 잠긴 채 단어를 끊어 말한다.",
       "applicableStates": [
         "S3"
@@ -369,7 +369,7 @@ export const spouse04TellsBeats = {
       "party": "b",
       "disputeId": "d-2",
       "beatType": "partial",
-      "line": "네, 알림을 캡처한 건 맞습니다. 그때는 하준이 직접 예약을 바꾼 줄 알았습니다.",
+      "line": "네, 알림을 캡처한 건 맞습니다. 그때는 하준 씨가 직접 예약을 바꾼 줄 알았습니다.",
       "behaviorHint": "시선을 고정한 채 사실과 해석을 분리해 말한다.",
       "applicableStates": [
         "S2"
@@ -382,7 +382,7 @@ export const spouse04TellsBeats = {
       "party": "b",
       "disputeId": "d-2",
       "beatType": "blame",
-      "line": "친구들에게 보낸 것도 맞지만, 그만큼 제가 혼자 감당할 수 없을 만큼 상처가 컸습니다.",
+      "line": "친구들에게 보낸 것도 맞지만, 그만큼 제가 혼자 감당할 수 없을 만큼 상처가 컸습니다. 하준 씨 쪽도 동기화된 태블릿을 방치해 놓고 거짓 문자까지 보냈잖아요.",
       "behaviorHint": "입술을 굳게 다문 채 감정의 크기를 강조한다.",
       "applicableStates": [
         "S3"
@@ -421,7 +421,7 @@ export const spouse04TellsBeats = {
       "party": "b",
       "disputeId": "d-3",
       "beatType": "deny",
-      "line": "하준 태블릿에 변경 알림이 떴다면 당연히 하준이 직접 바꿨다고 볼 수밖에 없었습니다.",
+      "line": "하준 씨 태블릿에 변경 알림이 떴다면 당연히 하준 씨가 직접 바꿨다고 볼 수밖에 없었습니다.",
       "behaviorHint": "분 단위 타임라인을 세며 확신하듯 말한다.",
       "applicableStates": [
         "S0"
@@ -460,7 +460,7 @@ export const spouse04TellsBeats = {
       "party": "b",
       "disputeId": "d-3",
       "beatType": "blame",
-      "line": "제가 하준을 범인처럼 몰아간 건 인정하지만, 그렇게 보이도록 상황이 짜여 있었다고도 생각합니다.",
+      "line": "제가 하준 씨를 범인처럼 몰아간 건 인정하지만, 그렇게 보이도록 상황이 짜여 있었다고도 생각합니다.",
       "behaviorHint": "억울함과 인정이 섞인 표정으로 말한다.",
       "applicableStates": [
         "S3"
@@ -473,7 +473,7 @@ export const spouse04TellsBeats = {
       "party": "b",
       "disputeId": "d-3",
       "beatType": "confession",
-      "line": "실제 변경 요청자는 별도 발신자였습니다. 저는 잘린 알림 하나로 하준이 직접 취소했다고 단정했습니다.",
+      "line": "실제 변경 요청자는 별도 발신자였습니다. 저는 잘린 알림 하나로 하준 씨가 직접 취소했다고 단정했습니다.",
       "behaviorHint": "손에 쥔 물건을 내려놓고 시선을 내린다.",
       "applicableStates": [
         "S5"
@@ -486,7 +486,7 @@ export const spouse04TellsBeats = {
       "party": "b",
       "disputeId": "d-3",
       "beatType": "evidence_hit",
-      "line": "통화기록 요약이 나오면 더는 '하준이 직접 했다'고만 말할 수 없습니다. 알림과 요청 주체가 다르네요.",
+      "line": "통화기록 요약이 나오면 더는 '하준 씨가 직접 했다'고만 말할 수 없습니다. 알림과 요청 주체가 다르네요.",
       "behaviorHint": "말을 멈추고 기록 쪽으로 시선을 돌린다.",
       "applicableStates": [
         "S5"
@@ -538,7 +538,7 @@ export const spouse04TellsBeats = {
       "party": "b",
       "disputeId": "d-4",
       "beatType": "blame",
-      "line": "하지만 하준도 선물과 케이크를 어머니 쪽에 맡겼습니다. 둘 다 각자 가족을 우회로로 쓴 겁니다.",
+      "line": "하지만 하준 씨도 선물과 케이크를 어머니 쪽에 맡겼습니다. 둘 다 각자 가족을 우회로로 쓴 겁니다.",
       "behaviorHint": "상대와 자신을 번갈아 가리키며 균형을 잡으려 한다.",
       "applicableStates": [
         "S3"

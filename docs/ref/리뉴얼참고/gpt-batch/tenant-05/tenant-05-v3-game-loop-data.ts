@@ -1,0 +1,1283 @@
+export const tenant05V3GameLoopData = {
+  "caseId": "tenant-05",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "특약과 소문 발화 순서",
+      "description": "퇴거 점검 특약과 초기 대화 캡처를 함께 대조해 정산 범위와 비방의 출발점을 흔드는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "배선우, 계약 특약상 정산 항목을 최종 점검 때 함께 말하려 했다는 설명을 지금 구체적으로 해 보십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant05:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "과거 옥상 민원이 현재 비방과 섞여 있는데도, 왜 처음엔 그 과거 자체를 전면 부정했습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant05:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "계약서 특약을 기준으로 볼 때, 공제 가능 항목과 과장된 공제 항목을 어떻게 구분하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant05:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "조민재, 손상 통보보다 먼저 '전 세입자 문제' 취지의 말을 한 이유가 무엇입니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant05:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "공동 점검 뒤 실제 확인 손상만 공제한다는 특약이 있는데, 왜 큰 공제 통보를 먼저 보냈습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant05:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "예전 옥상 민원, 손상, 소액 미납을 한 문장으로 묶은 이유가 단순 설명이라고 보십니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant05:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "관리기록과 퇴거 뒤 출입",
+      "description": "관리비·카드 재발급 내역과 CCTV 출입기록을 겹쳐 정산 누락과 손상 시점을 분리하는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "배선우 씨, 관리기록상 카드 분실 접수가 최종 점검 전날 밤입니다. 그 사실을 왜 먼저 알리지 않았습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant05:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "퇴거 뒤 출입기록이 나온 뒤에도 초반엔 왜 보증금 전액 반환만 강하게 주장했습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant05:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "작은 정산 누락을 인정하지 못한 이유가 금전 문제였는지, 낙인 두려움이었는지 분명히 답하십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant05:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "조민재 씨, CCTV상 선우 퇴거 뒤 6시간 후 사다리를 들고 들어간 것이 맞습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant05:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "공동 점검보다 15시간 먼저 들어간 이유가 단순 확인이었습니까, 아니면 새 입주자 보여주기 준비였습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant05:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "실제 소액 항목이 정리된 뒤에도 공제 범위를 더 넓게 잡은 이유를 설명하십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant05:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "사다리 문자와 종결 메모",
+      "description": "사적 문자와 공식 종결 메모를 교차해 과거 민원과 현재 손상 책임의 왜곡을 직접 드러내는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "배선우 씨, 종결 메모상 옥상 민원은 1회입니다. 그런데 왜 처음엔 '아예 없었다'고 답했습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant05:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "그 한 번의 사건이 지금까지 따라다닌다고 느끼는 지점을 재판부에 설명해 보십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant05:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "지금 시점에서 과거 민원과 현재 손상·정산 분쟁을 어떻게 분리해 말하겠습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant05:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "조민재 씨, 조카 문자에 '문짝 쳤다'는 표현이 남아 있습니다. 그 문장을 부인하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant05:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "그 문자와 사다리 영수증까지 나온 지금도 손상이 선우 책임이라고 보십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant05:b:d-2:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "종결 메모상 반복 민원은 없는데, 왜 새 입주자에게 과거 문제를 현재 평가처럼 전했습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant05:b:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-3": {
+        "S2": [
+          {
+            "id": "tenant05:a:d-3:unlock:s2:0",
+            "factText": "선우가 카드 분실과 소액 미납을 최종 점검 자리에서 함께 말하려고 스스로 미뤘다는 사실",
+            "tags": [
+              "motive",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "최종 점검 자리",
+                "neutral": "그 자리"
+              },
+              "issue": {
+                "exact": "카드 분실과 소액 미납",
+                "neutral": "그 정산 누락"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant05:a:d-3:unlock:s3:0",
+            "factText": "카드 분실 접수 시각이 최종 점검 전날 밤이라 미고지가 더 또렷해진다는 점",
+            "tags": [
+              "evidence",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "최종 점검 전날 밤",
+                "neutral": "그 전날 밤",
+                "period": "정산 직전"
+              },
+              "record": {
+                "exact": "분실 접수 기록",
+                "neutral": "그 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant05:a:d-3:unlock:s4:0",
+            "factText": "선우가 작은 누락까지 먼저 말하면 '문제 세입자' 낙인이 굳어질까 봐 겁을 먹었다는 사실",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "label": {
+                "exact": "문제 세입자",
+                "neutral": "그 낙인"
+              },
+              "issue": {
+                "exact": "작은 누락",
+                "neutral": "그 소액 문제"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant05:a:d-3:unlock:s5:0",
+            "factText": "선우가 카드 재발급비와 음식물 처리비는 자신이 부담하겠다고 최종 인정하는 점",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "cost": {
+                "exact": "카드 재발급비와 음식물 처리비",
+                "neutral": "그 소액 항목"
+              },
+              "scope": {
+                "exact": "자기 부담",
+                "neutral": "정산 책임"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant05:a:d-4:unlock:s2:0",
+            "factText": "옥상 민원은 지인 한 명이 방문했을 때 한 번 있었고 바로 사과했다는 사실",
+            "tags": [
+              "context",
+              "relationship"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "지인 한 명",
+                "neutral": "그 방문객"
+              },
+              "time": {
+                "exact": "2년 전 여름",
+                "neutral": "예전 그때",
+                "period": "과거"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant05:a:d-4:unlock:s3:0",
+            "factText": "선우가 처음에 '아예 없었다'고 말한 이유가 사실 부인보다 낙인 회피에 가까웠다는 점",
+            "tags": [
+              "shame",
+              "motive"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "issue": {
+                "exact": "'아예 없었다'는 말",
+                "neutral": "그 부정"
+              },
+              "label": {
+                "exact": "낙인 회피",
+                "neutral": "그 두려움"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant05:a:d-4:unlock:s4:0",
+            "factText": "그 한 번의 옥상 일이 현재 인격평가처럼 따라오는 것이 선우에게 큰 수치심으로 남아 있다는 사실",
+            "tags": [
+              "shame",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "issue": {
+                "exact": "옥상 민원 1회",
+                "neutral": "그 한 번의 일"
+              },
+              "effect": {
+                "exact": "현재 인격평가",
+                "neutral": "지금의 낙인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant05:a:d-4:unlock:s5:0",
+            "factText": "선우가 과거 1회 민원은 인정하되 현재 손상·정산 분쟁의 상습성 근거로 쓰일 수 없다고 정리하는 점",
+            "tags": [
+              "admission",
+              "counter"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "issue": {
+                "exact": "과거 1회 민원",
+                "neutral": "그 옛 사건"
+              },
+              "scope": {
+                "exact": "상습성 근거 불가",
+                "neutral": "현재 판단과의 분리"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "partial"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant05:a:d-5:unlock:s2:0",
+            "factText": "계약 특약과 관리기록을 함께 보면 실제 공제 가능 항목이 카드비와 소액 미납 쪽으로 좁혀진다는 점",
+            "tags": [
+              "threshold",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "record": {
+                "exact": "계약 특약과 관리기록",
+                "neutral": "그 자료들"
+              },
+              "cost": {
+                "exact": "카드비와 소액 미납",
+                "neutral": "그 소액 범위"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "confess"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant05:a:d-5:unlock:s3:0",
+            "factText": "선우가 초반에 보증금 전액 반환만 강하게 주장한 데에는 이사 직후의 자기보호 심리가 깔려 있었다는 사실",
+            "tags": [
+              "motive",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "이사 직후",
+                "neutral": "그 직후"
+              },
+              "issue": {
+                "exact": "보증금 전액 반환 주장",
+                "neutral": "그 강한 요구"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant05:a:d-5:unlock:s4:0",
+            "factText": "허위 평판과 과대 공제가 한꺼번에 겹치면서 선우가 작은 정산 누락까지 더 숨기게 됐다는 점",
+            "tags": [
+              "harm",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "issue": {
+                "exact": "허위 평판과 과대 공제",
+                "neutral": "그 묶인 문제"
+              },
+              "effect": {
+                "exact": "더 강한 은폐",
+                "neutral": "더 큰 위축"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant05:a:d-5:unlock:s5:0",
+            "factText": "선우가 소액 항목 상계를 받아들이되 장롱문 교체비와 탈취 공제는 철회돼야 한다고 최종 정리하는 점",
+            "tags": [
+              "admission",
+              "counter"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "cost": {
+                "exact": "장롱문 교체비와 탈취 공제",
+                "neutral": "그 큰 공제"
+              },
+              "scope": {
+                "exact": "소액 항목 상계",
+                "neutral": "항목별 정산"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "partial"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "tenant05:b:d-1:unlock:s2:0",
+            "factText": "문제 세입자 취지의 말이 손상 통보보다 먼저 나갔다는 시간 순서가 드러나는 점",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "손상 통보 약 40분 전",
+                "neutral": "그보다 앞선 시점"
+              },
+              "forum": {
+                "exact": "입주 예정자 대화",
+                "neutral": "그 대화"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "confess"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant05:b:d-1:unlock:s3:0",
+            "factText": "민재가 옥상 민원, 사후 손상, 소액 미납을 한 문장에 묶어 선우 평가를 키웠다는 사실",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "issue": {
+                "exact": "옥상 민원·사후 손상·소액 미납",
+                "neutral": "그 서로 다른 사안들"
+              },
+              "label": {
+                "exact": "문제 세입자 평가",
+                "neutral": "그 낙인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant05:b:d-1:unlock:s4:0",
+            "factText": "새 계약이 흔들릴까 두려워 입주 예정자 앞에서 표현을 더 단정적으로 굳혔다는 사실",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "issue": {
+                "exact": "새 계약 불안",
+                "neutral": "그 불안"
+              },
+              "audience": {
+                "exact": "입주 예정자",
+                "neutral": "그 사람들"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant05:b:d-1:unlock:s5:0",
+            "factText": "민재가 선우 이름이 들어간 평가성 표현을 정정하고 삭제해야 한다는 점을 스스로 받아들이는 상태",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "issue": {
+                "exact": "평가성 표현 정정·삭제",
+                "neutral": "그 정정"
+              },
+              "forum": {
+                "exact": "새 입주자와 건물 대화방",
+                "neutral": "그 대화 채널"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "tenant05:b:d-2:unlock:s2:0",
+            "factText": "민재 측이 공동 점검보다 15시간 먼저 조카와 사다리를 들고 세대에 들어갔다는 사실",
+            "tags": [
+              "timeline",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "공동 점검 15시간 전",
+                "neutral": "예정보다 이른 시점"
+              },
+              "tools": {
+                "exact": "사다리",
+                "neutral": "그 장비"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant05:b:d-2:unlock:s3:0",
+            "factText": "민재가 공실 압박 때문에 보여주기 준비를 앞당기며 절차를 건너뛰었다는 사실",
+            "tags": [
+              "self_justification",
+              "motive"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "issue": {
+                "exact": "보여주기 준비 앞당김",
+                "neutral": "그 서두름"
+              },
+              "cause": {
+                "exact": "공실 압박",
+                "neutral": "그 압박"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant05:b:d-2:unlock:s4:0",
+            "factText": "조카 문자에 '건조대 빼다가 문짝 쳤다'는 직접 표현이 남아 있다는 점",
+            "tags": [
+              "evidence",
+              "quote"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "quote": {
+                "exact": "건조대 빼다가 문짝 쳤다",
+                "neutral": "그 표현"
+              },
+              "record": {
+                "exact": "조카 문자",
+                "neutral": "그 문자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant05:b:d-2:unlock:s5:0",
+            "factText": "장롱문과 걸레받이 손상이 민재 측 정리 작업 중 발생했다는 책임 인정",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "items": {
+                "exact": "장롱문과 걸레받이",
+                "neutral": "그 손상 부위"
+              },
+              "cause": {
+                "exact": "정리 작업",
+                "neutral": "그 작업"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant05:b:d-5:unlock:s2:0",
+            "factText": "민재가 손상 원인 확정 전에 큰 공제 통보부터 먼저 보냈다는 사실",
+            "tags": [
+              "timeline",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "원인 확정 전",
+                "neutral": "그 이전"
+              },
+              "issue": {
+                "exact": "큰 공제 통보",
+                "neutral": "그 통보"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant05:b:d-5:unlock:s3:0",
+            "factText": "실제 항목별로 남는 정산은 카드 재발급비와 소액 미납 정도라는 점",
+            "tags": [
+              "threshold",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "cost": {
+                "exact": "카드 재발급비와 소액 미납",
+                "neutral": "그 소액 항목"
+              },
+              "scope": {
+                "exact": "항목별 정산",
+                "neutral": "그 범위"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant05:b:d-5:unlock:s4:0",
+            "factText": "민재가 수리비와 공실 부담을 혼자 떠안을까 봐 공제 통보액을 부풀렸다는 사실",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "issue": {
+                "exact": "수리비와 공실 부담",
+                "neutral": "그 부담"
+              },
+              "cost": {
+                "exact": "부풀린 공제 통보액",
+                "neutral": "그 큰 금액"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant05:b:d-5:unlock:s5:0",
+            "factText": "민재가 보증금을 실제 소액 항목 기준으로 다시 계산해 반환해야 한다는 결론",
+            "tags": [
+              "admission",
+              "threshold"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "scope": {
+                "exact": "실제 소액 항목 기준 재계산",
+                "neutral": "그 재계산"
+              },
+              "cost": {
+                "exact": "보증금 반환",
+                "neutral": "그 반환"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "tenant05:contradiction:0",
+        "targetParty": "b",
+        "trigger": "민재가 '손상 확인 뒤에야 우려를 전했다'고 말할 때",
+        "text": "손상 통보보다 앞서 입주 예정자 대화에서 이미 '전 세입자 문제' 취지 발언이 나간 점이 모순으로 드러난다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "tenant05:contradiction:1",
+        "targetParty": "b",
+        "trigger": "민재가 장롱문 손상을 선우 퇴거 전 책임으로 밀어붙일 때",
+        "text": "복도 CCTV와 도어락 로그가 민재 측의 선행 출입을 보여 주면서, 손상 시점 주장이 스스로 무너진다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      },
+      {
+        "id": "tenant05:contradiction:2",
+        "targetParty": "a",
+        "trigger": "선우가 과거 옥상 민원 자체를 전면 부정할 때",
+        "text": "종결 메모상 1회 경고와 사과 기록이 확인되며, '아예 없었다'는 진술이 축소였음이 드러난다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      },
+      {
+        "id": "tenant05:contradiction:3",
+        "targetParty": "b",
+        "trigger": "민재가 큰 공제 통보가 계약 특약에 맞는다고 주장할 때",
+        "text": "계약 특약과 관리기록을 대조하면 실제 정산 가능 항목은 소액인데도, 통보서는 전면 교체와 탈취까지 포함해 범위를 넘겼음이 드러난다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-3"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "tenant05:interjection:0",
+        "speaker": "a",
+        "trigger": "민재가 '건물 전체 평판'을 반복하며 선우 인격을 암시할 때",
+        "text": "그 '평판'이라는 말로 사람을 먼저 찍어 누르셨잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant05:interjection:1",
+        "speaker": "b",
+        "trigger": "선우가 옥상 민원을 아무 의미 없는 일처럼 밀어낼 때",
+        "text": "한 번이라도 경고가 있었으면 집주인 입장에선 그냥 넘길 수가 없었습니다.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant05:interjection:2",
+        "speaker": "judge",
+        "trigger": "손상 책임과 소액 정산, 평판 비방이 한 문장으로 뒤엉킬 때",
+        "text": "과거 민원, 현재 손상, 소액 미납을 분리해 답하십시오. 섞어서 말하면 판단이 흐려집니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2",
+          "d-3",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "tenant05:outburst:a:0",
+        "party": "a",
+        "trigger": "선우가 '문제 세입자'라는 표현을 다시 들을 때",
+        "text": "그 말 한마디로 제가 새 동네에서까지 어떤 사람으로 보였는지 아세요.",
+        "relatedDisputes": [
+          "d-1"
+        ]
+      },
+      {
+        "id": "tenant05:outburst:a:1",
+        "party": "a",
+        "trigger": "과거 옥상 민원을 현재 인격평가처럼 반복 소환할 때",
+        "text": "한 번 사과하고 끝난 일을 왜 아직도 제 사람됨 전체처럼 끌고 옵니까.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant05:outburst:b:0",
+        "party": "b",
+        "trigger": "민재가 새 계약을 지키려던 사정 자체를 무시당한다고 느낄 때",
+        "text": "저도 건물 비워 두면 다 제 책임입니다. 그 압박을 누가 대신 감당합니까.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant05:outburst:b:1",
+        "party": "b",
+        "trigger": "조카 문자와 사다리 영수증으로 손상 책임이 자기 쪽으로 굳어질 때",
+        "text": "하... 제가 서두른 건 맞지만, 그게 이렇게까지 다 제 잘못으로 돌아오면 저도 버티기 어렵습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "tenant05:transition:a:d-3:s0_s1",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "card_settlement_question",
+      "line": "그건 아직 정산이 마감된 게 아니었어요. 카드랑 소액 항목은 마지막에 같이 말하려던 거였습니다.",
+      "behaviorHint": "상대 표현을 되받아 말하다가 손으로 휴대폰을 더듬으며 시선을 잠깐 피한다."
+    },
+    {
+      "id": "tenant05:transition:a:d-3:s1_s2",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "계약서 조항은 압니다. 다만 그 절차 안에서 같이 정리하려던 거였지, 떼먹으려던 건 아니었습니다.",
+      "behaviorHint": "계약서 쪽으로 몸을 숙이며 빠르게 문구를 훑어 보지만 목소리는 여전히 방어적이다."
+    },
+    {
+      "id": "tenant05:transition:a:d-3:s2_s3",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-3_presented",
+      "line": "네, 카드 한 장이랑 처리비가 남은 건 맞아요. 그런데 그 소액을 핑계로 다른 공제까지 다 씌우는 건 다르잖아요.",
+      "behaviorHint": "영수증 화면을 급히 넘겨 보이며 인정과 반박을 한 호흡에 쏟아낸다."
+    },
+    {
+      "id": "tenant05:transition:a:d-3:s3_s5",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "먼저 알리지 않은 건 제 책임입니다. 그 대신 카드비와 처리비만 정확히 정산하면 되는 문제로 봐 주세요.",
+      "behaviorHint": "한숨을 짧게 내쉰 뒤 속도를 늦추고, 마지막 문장에서는 고개를 끄덕여 인정한다."
+    },
+    {
+      "id": "tenant05:transition:a:d-4:s0_s1",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "past_smoking_question",
+      "line": "실내 흡연 같은 건 아니었어요. 예전 옥상에서 잠깐 말이 나온 걸 지금까지 끌고 오는 게 더 이상한 겁니다.",
+      "behaviorHint": "표정이 굳은 채 상대 표현을 그대로 되풀이하고, 끝부분에서 말꼬리를 세운다."
+    },
+    {
+      "id": "tenant05:transition:a:d-4:s1_s2",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "한 번 있었던 옥상 일까지는 부정 안 하겠습니다. 그런데 그걸 상습 문제처럼 말한 건 너무 과장됐어요.",
+      "behaviorHint": "캡처를 쳐다보다가 입술을 깨물고, 인정하는 대목만 낮은 톤으로 끊어 말한다."
+    },
+    {
+      "id": "tenant05:transition:a:d-4:s2_s4",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_guest_visit",
+      "line": "그날은 지인이 와 있었고, 제가 바로 사과하고 끝낸 일이에요. 그런데 그 한 번이 계속 따라다니는 게 너무 수치스러웠습니다.",
+      "behaviorHint": "목소리가 갑자기 낮아졌다가 마지막 문장에서 떨리고, 손끝으로 옷자락을 만지작거린다."
+    },
+    {
+      "id": "tenant05:transition:a:d-4:s4_s5",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "네, 옥상 민원은 한 번 있었습니다. 다만 종결된 일이고 반복 기록은 없으니 지금 사람 전체를 판단하는 근거로 쓰여선 안 됩니다.",
+      "behaviorHint": "증거를 보고 고개를 숙였다가 천천히 들어 올리며, 문장을 또박또박 정리한다."
+    },
+    {
+      "id": "tenant05:transition:a:d-5:s0_s1",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "deposit_full_return_question",
+      "line": "처음부터 말씀드리지만 그 공제 통보는 과했습니다. 공동 점검도 전에 교체비와 탈취비를 다 얹는 건 말이 안 돼요.",
+      "behaviorHint": "짧게 웃었다가 곧바로 어조가 높아지고, 손바닥으로 책상을 한 번 짚는다."
+    },
+    {
+      "id": "tenant05:transition:a:d-5:s1_s2",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "소액 정산이 일부 남은 건 자료로 확인되네요. 그래도 저 큰 공제 항목들까지 정당해지는 건 아닙니다.",
+      "behaviorHint": "자료를 훑어보며 빠르게 인정하되, 손가락으로 소액 항목만 따로 짚어 구분한다."
+    },
+    {
+      "id": "tenant05:transition:a:d-5:s2_s3",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "deduction_item_followup",
+      "line": "제가 부담할 건 카드비랑 처리비 정도예요. 그런데 민재 씨는 그 위에 퇴거 뒤 손상까지 얹어서 보증금을 묶었습니다.",
+      "behaviorHint": "문장을 끊어 말하며 항목별로 손가락을 접어 세고, 마지막에 상대를 똑바로 본다."
+    },
+    {
+      "id": "tenant05:transition:a:d-5:s3_s5",
+      "caseId": "tenant-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-1_presented",
+      "line": "맞습니다. 소액 항목은 제가 정산하겠습니다. 대신 계약 특약대로 실제 확인된 범위만 남기고 나머지 공제는 빼야 합니다.",
+      "behaviorHint": "호흡을 가다듬은 뒤 차분한 톤으로 선을 그어 말하고, 끝에서 고개를 한 번 숙인다."
+    },
+    {
+      "id": "tenant05:transition:b:d-1:s0_s1",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "rumor_origin_question",
+      "line": "새로 들어올 분들이 먼저 집 상태를 걱정하셨습니다. 저는 그 맥락을 설명한 것뿐이지, 흉을 보려던 건 아니었습니다.",
+      "behaviorHint": "길게 숨을 내쉰 뒤 손바닥을 펼쳐 보이며 자신이 상황을 수습한 사람이라는 인상을 준다."
+    },
+    {
+      "id": "tenant05:transition:b:d-1:s1_s2",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "표현이 조금 세게 적힌 건 인정합니다. 다만 입주 예정자 입장에선 과거 일과 정산 문제를 함께 알아야 한다고 봤습니다.",
+      "behaviorHint": "캡처를 오래 바라보다가 목을 가다듬고, 문장을 길게 이어 붙여 방어 논리를 만든다."
+    },
+    {
+      "id": "tenant05:transition:b:d-1:s2_s3",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "old_complaint_scope_question",
+      "line": "예전 옥상 일도 있었고 카드 문제도 남아 있었으니 제가 우려를 말한 겁니다. 말이 한 문장으로 묶였을 뿐입니다.",
+      "behaviorHint": "날짜와 사안을 여러 개 늘어놓으며 현재 책임을 흐리고, 시선은 정면을 피한다."
+    },
+    {
+      "id": "tenant05:transition:b:d-1:s3_s5",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "한 번 있었던 옥상 민원과 다른 사안들을 섞어 과장한 건 제 잘못입니다. 그 표현은 정정하겠습니다.",
+      "behaviorHint": "어깨가 내려가고, 느린 톤으로 문장을 짧게 끊어 사과에 가까운 형식으로 말한다."
+    },
+    {
+      "id": "tenant05:transition:b:d-2:s0_s1",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "damage_timing_question",
+      "line": "퇴거 뒤에 들어간 건 맞습니다만, 저는 그때 이미 흔적이 있었다고 본 겁니다. 상태 확인 차원이었다고 이해해 주십시오.",
+      "behaviorHint": "처음엔 단정하다가 뒤 문장에서 속도를 늦추며 여지를 남긴다."
+    },
+    {
+      "id": "tenant05:transition:b:d-2:s1_s2",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "공동 점검 전에 먼저 들어간 건 인정합니다. 공실을 줄이려 보여주기를 준비하느라 절차를 당겼습니다.",
+      "behaviorHint": "영상을 본 뒤 자세가 무너지고, 변명하듯 손으로 허공에 동선을 그린다."
+    },
+    {
+      "id": "tenant05:transition:b:d-2:s2_s4",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_fast_turnover_pressure",
+      "line": "솔직히 공실이 길어질까 너무 급했습니다. 그래서 조카까지 불러 서둘렀고, 그 과정에서 문제가 커졌을 수 있습니다.",
+      "behaviorHint": "한숨이 길어지고 시선이 아래로 떨어지며, 마지막 문장에서 목이 잠긴다."
+    },
+    {
+      "id": "tenant05:transition:b:d-2:s4_s5",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "네, 조카 문자대로 정리하다 문짝을 친 게 맞습니다. 그 손상을 선우 씨 탓으로 돌린 건 제 잘못입니다.",
+      "behaviorHint": "문자를 확인한 뒤 말을 멈췄다가 짧게 인정하고, 의자 등받이에 기대 힘이 빠진다."
+    },
+    {
+      "id": "tenant05:transition:b:d-5:s0_s1",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "deduction_scope_question",
+      "line": "새 세입자를 받으려면 복구 비용을 넉넉히 볼 수밖에 없었습니다. 저는 그 범위가 정당하다고 판단했습니다.",
+      "behaviorHint": "건물 평판과 입주 준비를 번갈아 언급하며 숫자보다 상황을 먼저 내세운다."
+    },
+    {
+      "id": "tenant05:transition:b:d-5:s1_s2",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "계약 특약상 실제 확인 손상 위주라는 건 압니다. 다만 당시엔 복구와 청소를 동시에 보느라 범위를 넓게 잡았습니다.",
+      "behaviorHint": "계약서를 읽다 말고 눈을 감았다 뜨며, 어조가 한 단계 낮아진다."
+    },
+    {
+      "id": "tenant05:transition:b:d-5:s2_s3",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "actual_unpaid_amount_question",
+      "line": "실제 미납은 작았지만 그때는 집 상태까지 한꺼번에 떠안는 기분이었습니다. 그래서 금액을 보수적으로 크게 잡았습니다.",
+      "behaviorHint": "손가락으로 소액 항목을 세다가 갑자기 전체 부담을 강조하며 몸을 뒤로 젖힌다."
+    },
+    {
+      "id": "tenant05:transition:b:d-5:s3_s5",
+      "caseId": "tenant-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-3_and_e-4_presented",
+      "line": "이제 보니 실제 정산 가능한 건 카드비와 소액 미납 정도였습니다. 큰 공제 통보는 제가 과하게 잡은 겁니다.",
+      "behaviorHint": "자료를 번갈아 본 뒤 고개를 숙이고, 마지막 문장을 천천히 또렷하게 말한다."
+    }
+  ]
+}
+

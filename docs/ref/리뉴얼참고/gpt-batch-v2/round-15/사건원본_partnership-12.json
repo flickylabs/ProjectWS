@@ -1,0 +1,803 @@
+{
+  "caseId": "case-partner-12",
+  "meta": {
+    "relationshipType": "partnership",
+    "conflictSeed": "CS-5",
+    "variableModules": [
+      "VM-C",
+      "VM-D"
+    ],
+    "twistModule": "TW-6",
+    "difficulty": "medium",
+    "anchorTruth": "거래처에 직접적인 험담은 없었고, 행사 운영을 돕던 프리랜서가 두 사람의 별도 불만을 섞어 전달하면서 '서로를 못 믿는다'는 말로 와전됐다.",
+    "emotionalBait": "바이어가 두 대표가 서로 욕한다더라고 말하고, 선우 목소리처럼 들리는 크롭 음성전사와 수진이 남긴 불만 메시지가 겹치며 상대가 직접 평판을 깎은 것처럼 보인다.",
+    "resolutionDilemma": "직접적인 명예훼손은 오해였지만, 두 사람 모두 외부 인력에게 서로 불만을 흘려 와전의 재료를 제공했다는 점에서 누가 더 잘못했는지보다 외부 평판을 어떻게 복구하고 다시 불만을 외부로 새지 않게 막을지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "류선우",
+      "age": 38,
+      "occupation": "프리미엄 도자 식기 브랜드 공동대표 겸 생산운영총괄",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "문제를 사람보다 생산 일정, 샘플 승인 시각, 출고 가능 수량으로 잘게 잘라 설명한다. 불리해질수록 자신이 한 말은 단순한 실무 하소연이었다고 축소하며, 평판 훼손 문제를 운영 혼선의 층위로 낮추려 한다.",
+      "pride": 7,
+      "fear": "생산을 맡은 대표가 바이어 앞에서 불안정한 사람처럼 보이거나, 반대로 동업자를 뒤에서 험담한 사람으로 업계 평판을 잃는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "production_dashboards_and_sent_notes",
+      "dailyRoutine": "아침에는 가마 스케줄과 재고량을 확인하고, 오후에는 샘플 포장과 납품 일정을 조율하며, 밤에는 행사 후속자료와 생산 노트를 다시 맞춘다.",
+      "sensitivePoints": [
+        "납기 약속",
+        "생산 차질 책임",
+        "외부 평판"
+      ],
+      "verbalTells": [
+        {
+          "type": "schedule_recital",
+          "trigger": "lying",
+          "pattern": "험담 의도를 묻는 질문에도 먼저 어떤 날짜에 어떤 샘플이 밀렸는지부터 숫자로 읊는다."
+        },
+        {
+          "type": "venting_downgrade",
+          "trigger": "cornered",
+          "pattern": "외부 인력에게 한 말을 지적받으면 '그건 그냥 하소연이었다'며 의미를 축소한다."
+        },
+        {
+          "type": "emotion_cut",
+          "trigger": "avoiding",
+          "pattern": "상대가 명예 훼손을 말하면 '감정 말고 발화 경로를 보자'며 정서적 쟁점을 잘라낸다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "수진씨",
+        "toJudge": "제 동업자",
+        "angry": "장수진 씨!"
+      }
+    },
+    "partyB": {
+      "name": "장수진",
+      "age": 35,
+      "occupation": "프리미엄 도자 식기 브랜드 공동대표 겸 세일즈브랜드총괄",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "조금이라도 배신처럼 느껴지면 세부 경위보다 의도부터 먼저 단정한다. 바이어 반응 한 줄, 음성전사 캡처 한 장만으로도 상대가 직접 평판을 해쳤다고 몰아붙이는 편이다.",
+      "pride": 8,
+      "fear": "자신이 만든 바이어 관계가 내부 분열 이미지로 무너지거나, 영업총괄인데도 대표 간 신뢰를 지키지 못한 사람처럼 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "buyer_notes_and_event_chats",
+      "dailyRoutine": "오전에는 바이어 후속 메일과 오더 가능 수량을 확인하고, 오후에는 쇼룸 미팅과 행사 응대를 맡으며, 밤에는 행사 단톡과 바이어 피드백을 다시 읽는다.",
+      "sensitivePoints": [
+        "바이어 신뢰",
+        "뒤에서 험담당했다는 인식",
+        "자신의 영업 기여 축소"
+      ],
+      "verbalTells": [
+        {
+          "type": "betrayal_headline",
+          "trigger": "lying",
+          "pattern": "세부 사실보다 '결국 바이어 앞에서 내 욕 한 거잖아' 같은 결론 문장부터 던진다."
+        },
+        {
+          "type": "pressure_echo",
+          "trigger": "cornered",
+          "pattern": "같은 질문을 짧게 되풀이하며 상대가 자신을 건너뛴 순간을 집요하게 파고든다."
+        },
+        {
+          "type": "proof_zoom",
+          "trigger": "emotional",
+          "pattern": "음성전사 한 줄이나 바이어 반응 한 문장을 전체 의도의 증거처럼 키워 해석한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "선우씨",
+        "toJudge": "제 동업자",
+        "angry": "류선우 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "지난겨울 백화점 트렁크쇼 갈등 이후 두 사람은 행사 중 바이어, 외부 스태프, 프리랜서 앞에서 서로를 평가하거나 불만을 말하지 않고 문제는 종료 후 debrief에서만 다루기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "지난 시즌 샘플 배송 지연 때 누가 먼저 바이어에게 무리한 약속을 했는지를 두 사람 모두 상대 탓 중심으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '수진이 출고 가능 수량을 과하게 약속했다' / B: '선우가 승인과 생산 일정을 늦춰 놓고 뒤늦게 핑계를 댔다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "이번 리빙페어 전날 외부 프리랜서와 보조 스태프에게 어디까지 내부 이슈를 설명할지 기준을 다시 정하지 못한 채, 각자 필요할 만큼만 말하자고 애매하게 넘겼다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "장유경 (수진의 사촌, 셀렉트숍 바잉 경력)",
+        "relationTo": "b",
+        "knowledgeScope": "수진이 바이어에게 내부 분열 이미지가 퍼지는 것을 가장 두려워했고, 그래서 음성전사 캡처를 본 뒤 선우를 거의 확신 수준으로 의심했다는 심리 상태를 안다.",
+        "witnessedDirectly": false,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 40,
+          "occupation": "수진의 사촌, 셀렉트숍 바잉 경력",
+          "relationToA": "류선우와는 이 사건을 통해 알게 됨",
+          "relationToB": "수진의 사촌, 셀렉트숍 바잉 경력",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "선우씨",
+          "addressB": "수진씨"
+        },
+        "addressA": "류선우씨",
+        "addressB": "장수진씨"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "홍세진 (리빙페어 PR 프리랜서)",
+        "relationTo": "both",
+        "knowledgeScope": "행사 도중 선우와 수진이 각각 어떤 불만을 자신에게 말했는지, 그리고 자신이 이를 바이어에게 어떤 표현으로 다시 전했는지 구체적으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 38,
+          "occupation": "리빙페어 PR 프리랜서",
+          "relationToA": "류선우을 업무상 알고 있음",
+          "relationToB": "장수진을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "선우씨",
+          "addressB": "수진씨"
+        },
+        "addressA": "류선우씨",
+        "addressB": "장수진씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "오지은 (리빙페어 운영사 파트너십 매니저)",
+        "relationTo": "both",
+        "knowledgeScope": "행사장 라운지 출입기록, staff briefing notes, buyer complaint memo, follow-up 메일 수신자를 운영사 보관본 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "리빙페어 운영사 파트너십 매니저",
+          "relationToA": "류선우을 업무상 알고 있음",
+          "relationToB": "장수진을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "류선우씨",
+          "addressB": "장수진씨"
+        },
+        "addressA": "선우씨",
+        "addressB": "수진씨"
+      }
+    ],
+    "relationshipType": "partnership"
+  },
+  "context": {
+    "contextType": "post_trade_fair_rumor",
+    "description": "대형 편집숍 바이어와 유통사 MD가 몰리는 리빙페어 직후라, 행사 후 한두 문장의 소문이 곧 다음 시즌 발주와 연결되는 시점이었다. 부스 운영이 빡빡했던 탓에 두 사람 모두 외부 프리랜서와 스태프에게 속사정 섞인 불만을 조금씩 털어놓았고, 그 말이 행사 뒤 바이어들 사이에서 뒤틀린 문장으로 돌아오며 갈등이 폭발했다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "업계가 좁아 전시회 뒤의 평판이 곧 주문서와 소개로 이어지고, 서로에 대한 오래된 불만이 이미 쌓여 있어 제3자의 과장된 한마디도 곧 직접 배신처럼 받아들여졌다.",
+    "caseNumber": "E-PT-N-0012",
+    "caseName": "소문 유출 갈등"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "선우의 외부 프리랜서 상대 불만 유출",
+      "truth": true,
+      "truthDescription": "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 64,
+        "b": 36
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "외부불만금지",
+      "legitimacyIssue": false,
+      "judgmentStatement": "선우는 홍세진에게 불만을 털어놓았다."
+    },
+    {
+      "id": "d-2",
+      "name": "수진의 외부 인력 상대 맞불 불만",
+      "truth": true,
+      "truthDescription": "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 38,
+        "b": 62
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "외부불만금지",
+      "legitimacyIssue": false,
+      "judgmentStatement": "수진은 외부에 내부 불만을 전했다."
+    },
+    {
+      "id": "d-3",
+      "name": "상대가 거래처에 직접 험담했는가",
+      "truth": false,
+      "truthDescription": "둘 다 상대가 바이어에게 직접 자신을 험담했다고 믿었지만, 실제로는 홍세진이 양측 불만을 섞어 '둘이 서로 못 믿는다'는 식으로 와전 전달한 공유 오해였다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 49,
+        "b": 51
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "대외평판복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "홍세진이 험담을 왜곡 전달했다."
+    },
+    {
+      "id": "d-4",
+      "name": "상호 비방 금지 원칙의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 51,
+        "b": 49
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "이벤트커뮤니케이션재설계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "선우와 수진은 비방 원칙을 위반했다."
+    },
+    {
+      "id": "d-5",
+      "name": "문제의 소문은 프리랜서의 buyer recap에서 시작됐다",
+      "truth": true,
+      "truthDescription": "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 44,
+        "b": 56
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "대외평판복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "문제의 소문은 홍세진의 메시지이다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "선우와 PR 프리랜서의 원본 카톡과 음성메모",
+      "description": "선우가 홍세진에게 수진이 납기 약속을 너무 쉽게 한다고 털어놓은 원본 카톡과 짧은 음성메모다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "메신저 내보내기 파일과 음성메모 원본이 함께 확보됐다.",
+        "check_metadata": "발화 시각은 바이어 2차 미팅 직후이고, 수신자는 홍세진 개인 계정으로만 남아 있다.",
+        "restore_context": "선우는 구매처에게 직접 말한 것은 아니지만, 외부 프리랜서에게 내부 불만을 털어놓았다는 사실은 분명하다.",
+        "verify_source": "홍세진 기기와 선우 기기의 타임스탬프, 음성 길이가 서로 일치한다.",
+        "check_edits": "원본 대화와 음성 파일에 후편집 흔적이 없다.",
+        "question_acquisition": "행사 운영 관련 업무 대화라 제출 정당성은 높다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"선우의 외부 프리랜서 상대 불만 유출\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 류선우의 \"선우의 외부 프리랜서 상대 불만 유출\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"상호 비방 금지 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 장수진의 \"상호 비방 금지 원칙의 쌍방 위반\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "수진의 보조 스태프·홍세진 대화 원본",
+      "description": "수진이 보조 스태프와 홍세진에게 선우의 승인 지연과 출고 불안정을 말한 원본 대화 묶음이다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "1:1 메신저 원본과 행사 스태프 단톡 내보내기 파일이 함께 제출됐다.",
+        "check_metadata": "수진의 메시지는 선우의 음성메모보다 40분 뒤에 전송됐고, 바이어 상담 직전 상황 설명 명목으로 시작됐다.",
+        "restore_context": "수진 역시 직접 바이어에게 말한 것은 아니지만, 외부 인력에게 상대 불만을 흘린 점은 동일하다.",
+        "verify_source": "수신자 두 명의 기기 기록과 수진 발신 시간표가 맞아떨어진다.",
+        "check_edits": "대화 원문과 타임스탬프에 조작 흔적이 없다.",
+        "question_acquisition": "행사 운영 관련 업무 대화라 적법하게 확보됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"상호 비방 금지 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 류선우의 \"상호 비방 금지 원칙의 쌍방 위반\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"수진의 외부 인력 상대 맞불 불만\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 장수진의 \"수진의 외부 인력 상대 맞불 불만\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "크롭된 음성전사 캡처",
+      "description": "선우가 수진은 약속만 하고 못 맞춘다고 말한 부분만 남은 자동전사 캡처로, 수신자가 바이어인지 외부 스태프인지 알 수 없게 잘려 있다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "음성파일 전체가 아니라 자동전사 화면 캡처 한 장만 먼저 제출됐다.",
+        "check_metadata": "이미지 생성 시각은 소문이 퍼진 다음 날 새벽이며, 화면 상하단의 채팅방 정보가 제거돼 있다.",
+        "restore_context": "이 문장만으로는 선우가 바이어에게 직접 말했는지, 단순히 행사 스태프에게 하소연했는지 구분할 수 없다.",
+        "verify_source": "선우의 음성메모 앱 화면인 것은 맞지만 원본 수신 대화방 정보는 빠져 있다.",
+        "check_edits": "문자열 조작 흔적은 없으나 선택적 크롭이 분명하다.",
+        "question_acquisition": "개인 기기 캡처라 사생활과 맥락 훼손 문제가 있다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"선우의 외부 프리랜서 상대 불만 유출\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 류선우의 \"선우의 외부 프리랜서 상대 불만 유출\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"상대가 거래처에 직접 험담했는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 장수진의 \"상대가 거래처에 직접 험담했는가\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "원본 follow-up 대화와 바이어 해명 메일",
+      "description": "홍세진이 바이어들에게 보낸 follow-up 메시지 원본, 그리고 몇몇 바이어가 누구 말이냐고 되물은 해명 메일이다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "홍세진 발신 메시지 원본과 바이어 회신 메일 전체가 확보됐다.",
+        "check_metadata": "문제의 '둘이 서로 못 믿는다'는 문장은 애프터파티 종료 50분 뒤 홍세진 계정에서 처음 발신됐다.",
+        "restore_context": "선우와 수진의 개별 불만이 각각 직접 인용된 것이 아니라, 홍세진이 상황을 자기식으로 요약하며 과장한 표현이었다.",
+        "verify_source": "바이어 수신함과 홍세진 발신 기록, 운영사 와이파이 접속 로그가 서로 일치한다.",
+        "check_edits": "원본 메시지와 헤더에 후편집 흔적이 없다.",
+        "question_acquisition": "행사 follow-up 관련 업무 메시지와 바이어 회신이라 적법하게 제출됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"상대가 거래처에 직접 험담했는가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 류선우의 \"상대가 거래처에 직접 험담했는가\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"상대가 거래처에 직접 험담했는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 장수진의 \"상대가 거래처에 직접 험담했는가\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "이벤트 운영 가이드와 debrief 규칙 문서",
+      "description": "행사 운영 가이드에 적힌 상호 비방 금지 원칙, 외부 인력 앞 평가 금지, 종료 후 debrief만 허용한 규칙 문서다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "행사 준비 노션 원본과 공동 확인 체크리스트가 함께 제출됐다.",
+        "check_metadata": "두 대표 모두 행사 전날 밤 문서를 열람했고, 비방 금지 항목 옆에 확인 체크가 남아 있다.",
+        "restore_context": "외부 인력에게 하소연을 하지 말자는 규칙은 분명했으므로, 단순 실수라기보다 합의 위반의 성격이 강하다.",
+        "verify_source": "노션 히스토리와 체크리스트 로그가 서로 일치한다.",
+        "check_edits": "버전 기록상 조작 흔적이 없다.",
+        "question_acquisition": "회사 공용 운영문서라 적법하게 확보됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"선우의 외부 프리랜서 상대 불만 유출\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 류선우의 \"선우의 외부 프리랜서 상대 불만 유출\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"수진의 외부 인력 상대 맞불 불만\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 장수진의 \"수진의 외부 인력 상대 맞불 불만\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "운영사 출입기록과 buyer complaint",
+      "description": "행사장 라운지 출입기록, 바이어 complaint memo, 그리고 당시 홍세진이 단독으로 바이어들과 대화한 시각을 보여주는 운영사 보관 자료다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "운영사 전산 출입기록과 buyer complaint memo, staff briefing notes가 함께 제출됐다.",
+        "check_metadata": "문제의 소문이 돌기 시작한 시각에 선우와 수진은 각자 부스 데모와 상담 중이었고, 홍세진만 바이어 라운지에 머문 기록이 남아 있다.",
+        "restore_context": "직접 험담은 없었지만, 둘이 외부 인력에게 불만을 남겼고 그 말을 제3자가 buyer recap으로 재가공하면서 평판 훼손이 생긴 경로가 드러난다.",
+        "verify_source": "운영사 출입 로그와 complaint memo의 작성 시각, 홍세진의 follow-up 발신 시각이 정확히 맞아떨어진다.",
+        "check_edits": "기관 보관본이라 후편집 흔적이 없다.",
+        "question_acquisition": "행사 운영사가 분쟁 해결 목적으로 제출한 자료라 적법하지만 외부 배포는 제한된다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"상호 비방 금지 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 류선우의 \"상호 비방 금지 원칙의 쌍방 위반\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"상호 비방 금지 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 장수진의 \"상호 비방 금지 원칙의 쌍방 위반\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3",
+        "d-5"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "선우는 행사 운영 프리랜서에게 수진의 영업 약속에 대한 불만을 외부로 흘렸다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "수진도 외부 스태프와 프리랜서에게 선우의 승인 지연과 출고 문제를 불만으로 말했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "상대가 바이어에게 직접 험담했다는 믿음은 거짓이며, 핵심은 제3자가 두 사람의 불만을 섞어 와전한 공유 오해였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "두 사람 모두 외부 인력 앞 상호 비방 금지라는 기존 원칙을 각자 다른 방식으로 어겼다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "문제의 소문은 행사 후 홍세진의 buyer recap 메시지에서 처음 등장했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "outside_venting_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_tell_freelancer_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_slander_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_event_stress"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "non_disparagement_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "shared_blame_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_or_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "outside_complaint_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "staff_message_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-7",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "betrayal_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_shared_misread"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "event_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_tell_staff_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_or_shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "대외평판복구": [
+      "주요 바이어와 편집숍 MD들에게 직접 험담이 아니라 행사 후 와전이 있었음을 공동 명의로 정정하고, 서로를 특정하는 발언은 철회한다.",
+      "문제의 follow-up 표현이 어디서 어떻게 생겼는지 시간순으로 정리한 한 장짜리 사실표를 거래처 대응용으로 통일한다.",
+      "앞으로 비슷한 소문이 돌 경우 각자 해명하지 말고, 운영사와 공동 사실 확인 뒤 하나의 문장으로만 외부에 설명한다."
+    ],
+    "외부불만금지": [
+      "행사 중 외부 프리랜서, 보조 스태프, 협력업체 앞에서는 서로에 대한 평가나 불만을 말하지 않고, 문제는 행사 종료 후 debrief에서만 다루도록 다시 고정한다.",
+      "실무 스트레스 해소가 필요하면 외부 인력 대신 내부 기록용 채널이나 사전 지정된 운영 메모에만 남기게 한다.",
+      "다시 외부 인력에게 상대 불만이 새어 나가면 그 행사 기간에는 단독 대외 응대 권한을 제한하고 공동 스크립트만 사용한다."
+    ],
+    "이벤트커뮤니케이션재설계": [
+      "바이어, 프리랜서, 운영사와의 소통 창구를 한 명으로 단일화하고, 다른 대표는 사실 확인 후에만 보충 설명을 하도록 역할을 분리한다.",
+      "행사 전 staff briefing에 내부 이슈 설명 한계, 문의 응답 문구, escalation 절차를 짧은 카드로 명문화한다.",
+      "애프터파티나 비공식 네트워킹에서도 follow-up 발언은 기록 가능한 공식 채널로만 이어지게 하고, 구두 요약을 금지한다."
+    ],
+    "신뢰회복": [
+      "수진은 선우가 바이어에게 직접 험담했다고 단정한 표현을 거두고, 선우는 외부 프리랜서에게 하소연을 흘린 행동 자체를 인정한다.",
+      "두 사람은 이번 소문의 출발점이 직접 비방이 아니라 외부로 새어 나온 불만과 제3자의 과장이라는 점을 함께 복기한 회의록을 남긴다.",
+      "향후 업계 행사에서 다시 상대 의도를 먼저 악의로 단정하면 현장 논쟁 대신 외부 조정 세션을 자동으로 열도록 규칙을 만든다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

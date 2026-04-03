@@ -363,7 +363,7 @@
       "party": "b",
       "disputeId": "d-1",
       "beatType": "partial",
-      "line": "어머니께 먼저 말씀드리고 선물 예약까지 한 건 맞습니다. 그땐 수아도 비슷하게 아는 줄 알았어요.",
+      "line": "어머니께 먼저 말씀드리고 선물 예약까지 한 건 맞습니다. 그땐 수아 씨도 비슷하게 아는 줄 알았어요.",
       "behaviorHint": "한숨을 섞어 사실관계를 일부 인정한다.",
       "applicableStates": [
         "S2"
@@ -376,7 +376,7 @@
       "party": "b",
       "disputeId": "d-1",
       "beatType": "blame",
-      "line": "수아가 '본가', '가까운 쪽 먼저'라고만 하니까 저는 우리 집 점심 먼저로 굳었어요.",
+      "line": "수아 씨가 '본가', '가까운 쪽 먼저'라고만 하니까 저는 우리 집 점심 먼저로 굳었어요.",
       "behaviorHint": "말끝에 억울함을 얹어 반문하듯 말한다.",
       "applicableStates": [
         "S3"
@@ -454,7 +454,7 @@
       "party": "b",
       "disputeId": "d-3",
       "beatType": "blame",
-      "line": "수아가 애매하게 말하니까 저는 제 식으로 정리해 버렸어요. 그 착각이 문제였죠.",
+      "line": "수아 씨가 애매하게 말하니까 저는 제 식으로 정리해 버렸어요. 그 착각이 문제였죠.",
       "behaviorHint": "억울한 표정으로 단어를 하나씩 끊어 말한다.",
       "applicableStates": [
         "S3"
@@ -532,7 +532,7 @@
       "party": "b",
       "disputeId": "d-5",
       "beatType": "blame",
-      "line": "수아 표현이 애매했던 데다 저도 이동시간을 쉽게 봤습니다. 둘이 겹쳐서 꼬였어요.",
+      "line": "수아 씨 표현이 애매했던 데다 저도 이동시간을 쉽게 봤습니다. 둘이 겹쳐서 꼬였어요.",
       "behaviorHint": "양손을 벌려 두 원인을 나눠 설명한다.",
       "applicableStates": [
         "S3"

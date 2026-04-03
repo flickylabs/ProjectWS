@@ -1,0 +1,2993 @@
+{
+  "caseId": "partnership-08",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "가계약을 끊은 게 아니라 숫자 확인을 위해 잠깐 멈춘 것뿐입니다."
+          ],
+          "privateKnowledge": [
+            "브로커에게 홀드 연장을 포기하겠다고 단독 통보한 사실을 알고 있다."
+          ],
+          "suppressions": [
+            "지아와 마지막 대면 조율 없이 통보한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-1:denial:0",
+              "factText": "가계약 보류를 일시 점검으로 축소해 말하며 단독 통보성을 부정하는 사실",
+              "tags": [
+                "denial",
+                "act",
+                "self_justification"
+              ],
+              "slots": {
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "무조건 취소가 아니라 조건이 확인될 때까지 보류한 겁니다."
+          ],
+          "privateKnowledge": [
+            "보류가 사실상 후보지 포기로 이어질 수 있다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "회의 직후 후보지 검토를 직접 지시해 기대를 키운 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:condition_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-1:rule:0",
+              "factText": "보류를 조건 미충족의 문제로만 환원해 설명하는 사실",
+              "tags": [
+                "rule",
+                "threshold",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "제가 먼저 멈춘 건 맞지만 현금성 자산과 리스 부담을 보고 위험하다고 본 겁니다."
+          ],
+          "privateKnowledge": [
+            "가계약 보류 메일이 단독 결정을 입증한다는 걸 안다."
+          ],
+          "suppressions": [
+            "미리 지아에게 보류 사유서를 남기지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-1:admission:0",
+              "factText": "보류를 먼저 결정한 주체가 자신임을 부분 인정하는 사실",
+              "tags": [
+                "admission",
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "가계약 보류 메일",
+                  "neutral": "그 메일"
+                },
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "최종 미팅 없이 처리한 건 절차상 제 잘못입니다. 다만 그 직전 수치가 버티지 못했고 누군가는 멈춰야 했습니다."
+          ],
+          "privateKnowledge": [
+            "감정 충돌을 피하려고 숫자 뒤로 숨었다."
+          ],
+          "suppressions": [
+            "지아가 배신으로 받아들일 걸 예상한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-1:responsibility:0",
+              "factText": "최종 조율 없이 단독 처리한 절차 책임을 인식하고 있는 사실",
+              "tags": [
+                "responsibility",
+                "rule",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                },
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "지아가 5주년 분위기를 약속으로 받아들였다는 걸 알면서도 제가 다시 선을 긋지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "기대를 키워놓고 마지막에는 숫자만 말하면 된다고 여겼다."
+          ],
+          "suppressions": [
+            "관계적 상처를 재무 문턱 문제로 환원해 버린 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:threshold_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-1:emotion:0",
+              "factText": "상대의 기대를 알면서도 명확히 정리하지 않아 상처를 키운 사실",
+              "tags": [
+                "emotion",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "네, 저는 마지막 조율도 없이 홀드를 놓았고 그 방식이 배신처럼 들릴 걸 알았습니다. 조건 미충족은 사실이지만 처리 방식은 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "조건 문제를 방패로 쓰면 절차 위반이 가려질 거라고 기대했다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:condition_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-1:admission:1",
+              "factText": "조건 미충족과 별개로 단독 보류 방식이 자신의 책임임을 시인하는 사실",
+              "tags": [
+                "admission",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                },
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                },
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "지아는 이미 따로 나갈 준비를 하고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "처음에는 크롭된 DM만 보고도 거의 확정처럼 말했다."
+          ],
+          "suppressions": [
+            "내 보류가 그 불안을 키웠을 가능성"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-2:act:0",
+              "factText": "상대의 별도 준비를 기정사실로 단정해 말하는 사실",
+              "tags": [
+                "act",
+                "denial",
+                "counter"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 DM 캡처",
+                  "neutral": "그 캡처"
+                },
+                "person": {
+                  "exact": "김나리",
+                  "neutral": "그 강사",
+                  "fullName": "김나리",
+                  "judgeRef": "전 헤드강사"
+                }
+              },
+              "stanceHints": [
+                "accuse",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 전 헤드강사와 별도 공간 얘기가 오간 건 분명합니다."
+          ],
+          "privateKnowledge": [
+            "DM 한 장만으로는 위로인지 준비인지 완전히 단정하기 어렵다는 걸 안다."
+          ],
+          "suppressions": [
+            "크롭본만으로 먼저 몰아간 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:condition_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-2:context:0",
+              "factText": "초기 의심의 근거가 불완전한 DM 맥락이었다는 사실",
+              "tags": [
+                "context",
+                "privacy",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 DM 캡처",
+                  "neutral": "그 캡처"
+                },
+                "person": {
+                  "exact": "김나리",
+                  "neutral": "그 강사",
+                  "fullName": "김나리",
+                  "judgeRef": "전 헤드강사"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "DM만으로는 다 못 박지 못하지만, 법인 초안과 강사 시트까지 있으면 백업 플랜 수준은 아니죠."
+          ],
+          "privateKnowledge": [
+            "원본 로그가 나오기 전에는 자신도 일부를 추정으로 메웠다."
+          ],
+          "suppressions": [
+            "내 쪽 절차 위반이 동시에 존재한다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-2:admission:0",
+              "factText": "별도 준비가 실제 실행 단계였다고 보는 근거가 원본 초안과 시트라는 사실",
+              "tags": [
+                "admission",
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "person": {
+                  "exact": "김나리",
+                  "neutral": "그 강사",
+                  "fullName": "김나리",
+                  "judgeRef": "전 헤드강사"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제 보류가 불안을 키운 건 인정합니다. 그래도 기존 회사에 비밀로 새 팀을 짜려 한 건 별개 문제입니다."
+          ],
+          "privateKnowledge": [
+            "지아를 몰아붙일수록 내 보류 책임이 옅어지는 효과를 알고 있다."
+          ],
+          "suppressions": [
+            "그 효과를 의식적으로 활용한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-2:responsibility:0",
+              "factText": "자신의 책임과 별개로 상대의 비밀 준비를 분리해 추궁하는 사실",
+              "tags": [
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "그 자료를 보고 나서야 지아가 상처만 받은 쪽은 아니었다고 확신했습니다."
+          ],
+          "privateKnowledge": [
+            "확신을 말할수록 자신이 '배신자'로만 보이는 걸 피할 수 있다고 느꼈다."
+          ],
+          "suppressions": [
+            "그 판단에 감정적 반격이 섞인 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:threshold_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-2:emotion:0",
+              "factText": "상대의 별도 준비 정황을 자신이 받은 비난을 상쇄하는 재료로 쓴 사실",
+              "tags": [
+                "emotion",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "person": {
+                  "exact": "김나리",
+                  "neutral": "그 강사",
+                  "fullName": "김나리",
+                  "judgeRef": "전 헤드강사"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "지아가 따로 준비한 건 사실입니다. 다만 제가 먼저 신뢰를 흔든 뒤 그 움직임이 더 빨라졌을 가능성도 인정합니다."
+          ],
+          "privateKnowledge": [
+            "상대의 준비 사실이 있어도 내 보류 책임이 사라지지 않는다는 걸 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:condition_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-2:admission:1",
+              "factText": "상대의 별도 준비와 자신의 신뢰 훼손이 동시적으로 갈등을 키웠음을 인정하는 사실",
+              "tags": [
+                "admission",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                },
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "지아를 순수한 피해자라고 보는 건 과장입니다. 본인도 이미 다른 판을 보고 있었어요."
+          ],
+          "privateKnowledge": [
+            "내 단독 보류가 상처의 출발점이 된 건 안다."
+          ],
+          "suppressions": [
+            "내가 회의에서 확장 기대를 키운 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-3:denial:0",
+              "factText": "상대의 피해를 전면 부정해 자신의 보류 책임을 옅게 만드는 사실",
+              "tags": [
+                "denial",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "순수한 피해자라기보단 서로 계산이 엇갈린 겁니다."
+          ],
+          "privateKnowledge": [
+            "그 '엇갈림' 안에는 내 단독 보류라는 선행 행동이 있다."
+          ],
+          "suppressions": [
+            "엇갈림의 시작점이 내 쪽 절차 위반이라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:condition_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-3:context:0",
+              "factText": "갈등을 쌍방 오해로만 묶어 자신의 선행 책임을 흐리는 사실",
+              "tags": [
+                "context",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "제가 먼저 기대를 꺾은 건 맞지만, 그 무렵 지아도 백업이 아니라 별도 준비를 만졌습니다."
+          ],
+          "privateKnowledge": [
+            "지아의 준비를 말할수록 내 잘못이 희석된다고 느낀다."
+          ],
+          "suppressions": [
+            "내가 먼저 기대를 깨뜨린 점의 무게"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-3:admission:0",
+              "factText": "자신의 선행 상처와 상대의 병행 준비를 동시에 알고 있는 사실",
+              "tags": [
+                "admission",
+                "counter",
+                "act"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "가계약 보류 메일",
+                  "neutral": "그 메일"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "그래서 저만 가해자, 지아만 피해자로 정리되면 제 쪽 설명이 사라집니다."
+          ],
+          "privateKnowledge": [
+            "설명이 사라질까 두려워 상대 준비 정황을 더 크게 밀어붙였다."
+          ],
+          "suppressions": [
+            "두려움 때문에 서술의 균형을 일부러 틀게 한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-3:responsibility:0",
+              "factText": "순수 가해자로 남지 않으려는 체면 동기가 주장 강도를 키운 사실",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "fear"
+              ],
+              "slots": {
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "self_justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 저는 '배신자'로만 남기 싫어서 지아의 준비 정황만 더 세게 말했습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 상처를 인정하면 내 잘못이 확정될까 봐 겁났다."
+          ],
+          "suppressions": [
+            "상대 피해를 일부러 덜 말한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:threshold_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-3:emotion:0",
+              "factText": "체면을 지키려는 마음 때문에 피해 균형을 왜곡한 사실",
+              "tags": [
+                "emotion",
+                "self_justification",
+                "shame"
+              ],
+              "slots": {
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "지아가 순수한 피해자만은 아니지만, 그렇다고 제 단독 보류 책임이 사라지는 것도 아닙니다. 저는 그 둘을 섞어 제 잘못을 줄이려 했습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 별도 준비를 말하는 방식 자체가 내 방어였다는 걸 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:condition_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-3:admission:1",
+              "factText": "상대의 병행 준비를 근거로 자신의 선행 책임을 줄이려 했음을 시인하는 사실",
+              "tags": [
+                "admission",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "가계약 보류 메일",
+                  "neutral": "그 메일"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "2024년 합의를 먼저 흔든 건 지아 쪽입니다."
+          ],
+          "privateKnowledge": [
+            "나도 단독 보류로 그 틀을 깼다."
+          ],
+          "suppressions": [
+            "서면 사유서 없이 중단한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-4:denial:0",
+              "factText": "상대의 위반만 부각해 자신의 부속합의 위반을 지우는 사실",
+              "tags": [
+                "denial",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 저는 현금 기준을 지키려 했고, 지아는 바깥 판을 먼저 열었습니다."
+          ],
+          "privateKnowledge": [
+            "현금 기준을 지키려 했다는 말만으로 절차 위반이 사라지지 않는다."
+          ],
+          "suppressions": [
+            "공동 역할분담표를 다시 정리하지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:condition_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-4:rule:0",
+              "factText": "현금 기준 준수 의도를 근거로 자신의 위반 정도를 낮추는 사실",
+              "tags": [
+                "rule",
+                "threshold",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                },
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "제 단독 보류도 부속합의 절차엔 어긋났습니다."
+          ],
+          "privateKnowledge": [
+            "지아의 별도 준비를 강조할수록 자신의 절차 위반이 가려진다는 걸 안다."
+          ],
+          "suppressions": [
+            "의도적으로 비교 우위를 만들려 한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-4:admission:0",
+              "factText": "자신도 2024년 부속합의 절차를 어겼음을 인정하는 사실",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 비밀 준비까지 한 쪽이 더 깊게 틀을 벗어난 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "위반의 크기를 비교하면 내 위반의 도덕성이 옅어질 거라 본다."
+          ],
+          "suppressions": [
+            "위반 비교 자체가 방어라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-4:responsibility:0",
+              "factText": "상대의 위반 강도를 비교재료로 삼아 자신의 위반을 상대화하는 사실",
+              "tags": [
+                "responsibility",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "결국 우리는 둘 다 합의를 필요할 때만 꺼냈습니다."
+          ],
+          "privateKnowledge": [
+            "나도 합의문을 진작 다시 열어보자고 말하지 않았다."
+          ],
+          "suppressions": [
+            "그 무기화 습관"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:threshold_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-4:emotion:0",
+              "factText": "합의문을 원칙이 아니라 방패처럼 사용해 온 사실",
+              "tags": [
+                "emotion",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "네, 2024년 부속합의는 둘 다 깼습니다. 저는 단독 보류로, 지아는 단독 확장 준비로 무너뜨렸습니다."
+          ],
+          "privateKnowledge": [
+            "둘의 위반 방식이 달라도 같은 틀을 무너뜨렸다는 걸 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:condition_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-4:admission:1",
+              "factText": "양측이 서로 다른 방식으로 같은 부속합의 틀을 무너뜨렸음을 시인하는 사실",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                },
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "조건이 안 됐으니 2호점은 애초에 발동된 적이 없습니다."
+          ],
+          "privateKnowledge": [
+            "그 숫자를 지아와 다시 맞춰 확인시키지 않았다."
+          ],
+          "suppressions": [
+            "5주년 기대를 방치한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-5:denial:0",
+              "factText": "조건 미충족만 내세워 기대 관리 실패를 지우는 사실",
+              "tags": [
+                "denial",
+                "threshold",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "현금성 자산 8천만원 2개월 유지가 안 됐는데 어떻게 약속이 자동이죠."
+          ],
+          "privateKnowledge": [
+            "회의에서는 후보지 검토를 돌려 자동 발동처럼 느끼게 만들었다."
+          ],
+          "suppressions": [
+            "혼합 신호를 준 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:condition_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-5:rule:0",
+              "factText": "서면 기준을 들어 자동 발동 서사를 차단하는 사실",
+              "tags": [
+                "rule",
+                "threshold",
+                "counter"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "부속메모 기준으로는 미달이 맞습니다. 다만 저는 그 기준을 제때 다시 분명히 못 박지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "문턱을 늦게 꺼낼수록 자신이 더 유리하다고 느꼈다."
+          ],
+          "suppressions": [
+            "숫자를 공유하는 타이밍을 뒤로 미룬 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-5:admission:0",
+              "factText": "자동 발동이 아니었다는 사실과 설명 지연 책임을 함께 아는 사실",
+              "tags": [
+                "admission",
+                "threshold",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                },
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "리스료와 세금을 반영하면 버틸 수치가 아니었고, 그래서 제가 숫자 뒤에 숨었습니다."
+          ],
+          "privateKnowledge": [
+            "숫자 설명이 관계적 비난을 막아줄 거라고 기대했다."
+          ],
+          "suppressions": [
+            "숫자를 방패로 쓴 동기"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-5:responsibility:0",
+              "factText": "실제 미달 숫자를 방패 삼아 관계 설명을 회피한 사실",
+              "tags": [
+                "responsibility",
+                "threshold",
+                "fear"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                },
+                "person": {
+                  "exact": "오혜린",
+                  "neutral": "회계사",
+                  "fullName": "오혜린",
+                  "judgeRef": "외부 회계사"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "조건이 안 된다는 사실만 반복하면 제가 약속을 식힌 책임까지 지워질 거라 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "조건 미충족 자체는 사실이지만 그 말하는 방식이 방어였다는 걸 안다."
+          ],
+          "suppressions": [
+            "방어 계산"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:a:tell:condition_shield",
+            "partnership-08:a:tell:threshold_recital"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-5:emotion:0",
+              "factText": "조건 사실을 관계 책임 회피의 방패로 사용한 사실",
+              "tags": [
+                "emotion",
+                "self_justification",
+                "shame"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                },
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "네, 자동 발동은 아니었습니다. 하지만 저는 그 사실을 제때 공유하지 않고 나중에 방패처럼 써서 더 큰 상처를 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "조건 미충족과 처리 방식 책임을 이제는 분리해서 인정해야 한다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:a:tell:threshold_recital",
+            "partnership-08:a:tell:condition_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:a:d-5:admission:1",
+              "factText": "자동 발동 부재는 사실이지만 그 사실의 사용 방식이 자신의 책임임을 시인하는 사실",
+              "tags": [
+                "admission",
+                "threshold",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                },
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                },
+                "person": {
+                  "exact": "오혜린",
+                  "neutral": "회계사",
+                  "fullName": "오혜린",
+                  "judgeRef": "외부 회계사"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "시원이 갑자기 2호점을 접어버린 겁니다."
+          ],
+          "privateKnowledge": [
+            "회의 때 현금 보유 조건이 붙어 있었다는 건 안다."
+          ],
+          "suppressions": [
+            "서면 조건을 다시 확인하지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-1:denial:0",
+              "factText": "조건부 맥락을 지운 채 단독 보류만 절대적 배신으로 말하는 사실",
+              "tags": [
+                "denial",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 저한테는 올해 여름 2호점이 가는 흐름으로 들렸어요."
+          ],
+          "privateKnowledge": [
+            "시원이 '현금 보유가 버티면'이라는 단서를 달았다는 걸 기억한다."
+          ],
+          "suppressions": [
+            "그 단서를 제 기대에 맞게 좁혀 들은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-1:context:0",
+              "factText": "조건부 발언을 사실상 확정 신호로 받아들인 사실",
+              "tags": [
+                "context",
+                "timeline",
+                "rule"
+              ],
+              "slots": {
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_victim"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "보류 통보가 단독이었던 건 맞고, 그래서 저는 약속이 깨졌다고 느꼈어요."
+          ],
+          "privateKnowledge": [
+            "단독 통보와 별개로 조건 문제가 완전히 없던 건 아니라는 걸 안다."
+          ],
+          "suppressions": [
+            "그 무렵 따로 대비를 시작한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:betrayal_zoom",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-1:admission:0",
+              "factText": "단독 보류가 상처의 직접 계기였다고 느끼는 사실",
+              "tags": [
+                "admission",
+                "harm",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "가계약 보류 메일",
+                  "neutral": "그 메일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "다만 완전한 무조건 약속만 있었던 건 아니었죠. 그래도 마지막 조율 없이 끊은 건 시원 책임이라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "조건부였어도 자신이 그 약속을 기정사실처럼 다뤘다는 걸 안다."
+          ],
+          "suppressions": [
+            "기대와 사실을 구분하지 못한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:betrayal_zoom",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-1:responsibility:0",
+              "factText": "무조건 약속은 아니었지만 단독 보류 책임은 크다고 보는 사실",
+              "tags": [
+                "responsibility",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                },
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "저는 5년 동안 쌓은 확장이 눈앞에서 사라진 느낌이었어요. 그래서 모든 말을 배신으로 읽었습니다."
+          ],
+          "privateKnowledge": [
+            "상징적 보상에 매달릴수록 숫자 조건을 밀어냈다."
+          ],
+          "suppressions": [
+            "확장 약속을 인정 욕구와 겹쳐서 키운 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-1:emotion:0",
+              "factText": "확장 약속을 자신의 5년 기여에 대한 보상으로 읽어 감정이 증폭된 사실",
+              "tags": [
+                "emotion",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "시원이 단독 보류한 건 사실이고 저는 그걸 배신으로 느꼈습니다. 하지만 조건 문제가 완전히 없던 건 아니었어요."
+          ],
+          "privateKnowledge": [
+            "자신의 기대를 사실처럼 말하면 피해자 서사가 더 강해진다는 걸 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-1:admission:1",
+              "factText": "단독 보류의 상처와 조건 문제의 존재를 함께 인정하는 사실",
+              "tags": [
+                "admission",
+                "harm",
+                "rule"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "가계약 보류 메일",
+                  "neutral": "그 메일"
+                },
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "저는 따로 스튜디오를 차리려던 게 아니라 숨통을 찾으려던 거였어요."
+          ],
+          "privateKnowledge": [
+            "브랜드명과 장비 수량까지 적은 초안이 있었다."
+          ],
+          "suppressions": [
+            "전 헤드강사와 합류 인원을 논의한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-2:denial:0",
+              "factText": "별도 사업 준비를 생존용 상상으로 축소해 말하는 사실",
+              "tags": [
+                "denial",
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "그 DM도 맥락이 잘린 거예요. 힘든 강사에게 한 말이 다예요."
+          ],
+          "privateKnowledge": [
+            "공간 탐색 메일과 초안이 별도로 존재한다."
+          ],
+          "suppressions": [
+            "법인 초안의 작성 시점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-2:privacy:0",
+              "factText": "크롭된 DM의 불완전성을 방패로 실제 준비 정황 전체를 가리는 사실",
+              "tags": [
+                "privacy",
+                "evidence",
+                "denial"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 DM 캡처",
+                  "neutral": "그 캡처"
+                },
+                "person": {
+                  "exact": "김나리",
+                  "neutral": "그 강사",
+                  "fullName": "김나리",
+                  "judgeRef": "전 헤드강사"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "불안해서 백업처럼 생각한 적은 있어요. 그래도 바로 독립 확정은 아니었어요."
+          ],
+          "privateKnowledge": [
+            "초안 작성 시점이 보류 통보 전주라는 걸 안다."
+          ],
+          "suppressions": [
+            "준비가 이미 실행 단계였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:betrayal_zoom",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-2:admission:0",
+              "factText": "별도 준비를 백업 구상으로 축소하며 일부만 인정하는 사실",
+              "tags": [
+                "admission",
+                "motive",
+                "timeline"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 비밀스럽게 움직인 건 맞아요. 그런데 시원이 언제든 끊을 수 있다는 불안이 너무 컸어요."
+          ],
+          "privateKnowledge": [
+            "불안이 있었다고 해도 현직 강사 합류 시트까지 만든 건 과했다는 걸 안다."
+          ],
+          "suppressions": [
+            "비밀 유지 요청이 회사 바깥 판을 짠 행동이었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:betrayal_zoom",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-2:responsibility:0",
+              "factText": "비밀 준비를 인정하면서도 그 동기를 버려질 불안으로 설명하는 사실",
+              "tags": [
+                "responsibility",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "person": {
+                  "exact": "김나리",
+                  "neutral": "그 강사",
+                  "fullName": "김나리",
+                  "judgeRef": "전 헤드강사"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "제가 먼저 도망칠 구멍을 판 건 부끄럽습니다. 다만 그때는 버려질 것 같았어요."
+          ],
+          "privateKnowledge": [
+            "피해자처럼 말해야 준비 행위가 덜 공격적으로 들린다고 느꼈다."
+          ],
+          "suppressions": [
+            "상처 서사를 방패로 쓴 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-2:emotion:0",
+              "factText": "별도 준비의 부끄러움과 버려질 공포가 함께 있었던 사실",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "네, 별도 스튜디오 준비를 실제로 했습니다. 상처를 이유로 정당화했지만 회사 밖 판까지 짜고 있었어요."
+          ],
+          "privateKnowledge": [
+            "피해자 서사만 유지하면 준비의 구체성이 가려질 거라 기대했다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-2:admission:1",
+              "factText": "별도 스튜디오 준비가 실제 실행 단계였음을 시인하는 사실",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "person": {
+                  "exact": "김나리",
+                  "neutral": "그 강사",
+                  "fullName": "김나리",
+                  "judgeRef": "전 헤드강사"
+                },
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "저는 정말 일방적으로 약속을 깨진 사람입니다."
+          ],
+          "privateKnowledge": [
+            "그때 이미 별도 준비 흔적이 있었다."
+          ],
+          "suppressions": [
+            "전 헤드강사와 새 공간 얘기를 한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-3:denial:0",
+              "factText": "자신을 순수 피해자로만 고정해 병행 준비 사실을 지우는 사실",
+              "tags": [
+                "denial",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "self_victim"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "제가 뭘 준비했다고 해도 그건 다 시원이 먼저 끊었기 때문이죠."
+          ],
+          "privateKnowledge": [
+            "일부 준비는 보류 통보 전에도 있었다."
+          ],
+          "suppressions": [
+            "시점이 자신에게 불리하다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-3:timeline:0",
+              "factText": "모든 별도 움직임을 보류 이후의 반응으로만 설명하는 사실",
+              "tags": [
+                "timeline",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "가계약 보류 메일",
+                  "neutral": "그 메일"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "시원이 마지막에 보류한 건 분명하고, 그래서 제가 무너진 것도 맞아요."
+          ],
+          "privateKnowledge": [
+            "상처가 사실이어도 피해자 서사만으로는 현재를 다 설명할 수 없다는 걸 안다."
+          ],
+          "suppressions": [
+            "병행 준비의 독자적 무게"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:betrayal_zoom",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-3:admission:0",
+              "factText": "상처의 사실성과 별개로 서사가 단선적이라는 점을 알고 있는 사실",
+              "tags": [
+                "admission",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "가계약 보류 메일",
+                  "neutral": "그 메일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 제가 먼저 마음을 접은 건 아니었어요. 살 길을 본 것뿐이었어요."
+          ],
+          "privateKnowledge": [
+            "살 길을 본 것뿐이라는 말이 준비의 구체성을 가린다는 걸 안다."
+          ],
+          "suppressions": [
+            "브랜드명과 합류 시트까지 짠 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:betrayal_zoom",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-3:responsibility:0",
+              "factText": "별도 준비를 생존 전략으로만 말해 자신의 적극성을 낮추는 사실",
+              "tags": [
+                "responsibility",
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "person": {
+                  "exact": "김나리",
+                  "neutral": "그 강사",
+                  "fullName": "김나리",
+                  "judgeRef": "전 헤드강사"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 저를 너무 피해자 쪽으로만 말한 건 알아요. 그렇게 말해야 제 행동이 덜 나쁘게 들릴 것 같았어요."
+          ],
+          "privateKnowledge": [
+            "상처를 앞세우면 비밀 준비의 선명도가 떨어진다고 느꼈다."
+          ],
+          "suppressions": [
+            "그 계산이 있었다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-3:emotion:0",
+              "factText": "피해자 서사가 자신의 별도 준비를 덜 공격적으로 보이게 하는 계산이었다는 사실",
+              "tags": [
+                "emotion",
+                "shame",
+                "self_justification"
+              ],
+              "slots": {
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "시원이 상처를 준 건 사실이지만, 저도 동시에 다른 길을 준비하고 있었어요. 순수한 피해자라고만 말한 건 사실을 줄인 겁니다."
+          ],
+          "privateKnowledge": [
+            "상처와 준비가 동시에 있었다는 복합 구도를 이제는 인정해야 한다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-3:admission:1",
+              "factText": "순수 피해자 서사가 자신의 병행 준비를 누락한 불완전한 설명임을 시인하는 사실",
+              "tags": [
+                "admission",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "가계약 보류 메일",
+                  "neutral": "그 메일"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "부속합의는 시원이 먼저 깬 거예요."
+          ],
+          "privateKnowledge": [
+            "내 별도 준비가 전념 구조를 흔들었다."
+          ],
+          "suppressions": [
+            "법인 초안과 강사 시트"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-4:denial:0",
+              "factText": "부속합의 위반을 상대의 단독 잘못으로만 고정하는 사실",
+              "tags": [
+                "denial",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                },
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "그 합의가 살아 있었다면 왜 저한테 먼저 끊는 걸 상의하지 않았겠어요?"
+          ],
+          "privateKnowledge": [
+            "나도 그 합의가 살아 있는 동안 바깥 준비를 병행했다."
+          ],
+          "suppressions": [
+            "합의문이 살아 있다는 사실을 불리할 때만 잊은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-4:rule:0",
+              "factText": "상대의 단독 보류를 이유로 자신의 별도 위반을 덮는 사실",
+              "tags": [
+                "rule",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                },
+                "evidence": {
+                  "exact": "가계약 보류 메일",
+                  "neutral": "그 메일"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "서면 조건이 남아 있었던 건 맞아요. 그리고 저도 그 틀 안에서 안전하게 움직인 건 아니었어요."
+          ],
+          "privateKnowledge": [
+            "자신의 움직임이 이미 합의 틀 바깥이었다는 걸 안다."
+          ],
+          "suppressions": [
+            "별도 자료의 구체성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:betrayal_zoom",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-4:admission:0",
+              "factText": "자신도 2024년 부속합의의 틀을 벗어나 움직였음을 인정하는 사실",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 시작점은 시원의 단독 보류였고, 저는 거기서 밀려난 느낌에 따로 준비했습니다."
+          ],
+          "privateKnowledge": [
+            "밀려난 느낌이 있었다고 해도 준비 시점 일부가 더 앞선다는 걸 안다."
+          ],
+          "suppressions": [
+            "시점상 불리함"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:betrayal_zoom",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-4:responsibility:0",
+              "factText": "자신의 위반을 상처의 반응으로만 설명해 독자적 책임을 낮추는 사실",
+              "tags": [
+                "responsibility",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "가계약 보류 메일",
+                  "neutral": "그 메일"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "사실 저는 그 합의를 필요할 때만 들고 왔어요. 제 쪽 위반이 드러나면 그때는 상처 얘기로 덮으려 했죠."
+          ],
+          "privateKnowledge": [
+            "도덕 프레임으로 이동하면 자료의 구체성이 흐려진다고 느꼈다."
+          ],
+          "suppressions": [
+            "그 계산"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-4:emotion:0",
+              "factText": "상처 서사로 자신의 합의 위반을 가리는 계산이 있었던 사실",
+              "tags": [
+                "emotion",
+                "shame",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "네, 부속합의는 시원만이 아니라 저도 깼습니다. 제가 회사 밖 준비를 비밀로 한 순간 같은 틀을 같이 무너뜨렸습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 절차 위반과 자신의 별도 준비가 같은 합의 붕괴에 합쳐졌다는 걸 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-4:admission:1",
+              "factText": "자신의 비밀 확장 준비가 부속합의를 무너뜨린 축 중 하나임을 시인하는 사실",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "2024년 부속메모",
+                  "neutral": "그 합의문",
+                  "dateExact": "2024년",
+                  "period": "팝업 손실 직후"
+                },
+                "document": {
+                  "exact": "별도 스튜디오 법인 초안",
+                  "neutral": "그 초안"
+                },
+                "person": {
+                  "exact": "김나리",
+                  "neutral": "그 강사",
+                  "fullName": "김나리",
+                  "judgeRef": "전 헤드강사"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "5주년까지 왔으면 사실상 가는 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "서면 8천만원 2개월 조항이 있다는 건 안다."
+          ],
+          "suppressions": [
+            "최근 수치를 직접 다시 대조하지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-5:denial:0",
+              "factText": "상징적 기대를 서면 발동처럼 받아들인 사실",
+              "tags": [
+                "denial",
+                "legacy_sentence",
+                "threshold"
+              ],
+              "slots": {
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                },
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "서면 조건이 있었어도 시원이 계속 후보지 검토를 돌리니 발동된 거나 마찬가지로 느꼈어요."
+          ],
+          "privateKnowledge": [
+            "후보지 검토 신호를 자신에게 유리하게 확정 신호로 읽었다."
+          ],
+          "suppressions": [
+            "문서상 선행 조건을 뒤로 민 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-5:context:0",
+              "factText": "후보지 검토 행동을 자동 발동의 대체 신호로 해석한 사실",
+              "tags": [
+                "context",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                },
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_victim"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "문서상 자동 발동은 아니었다는 건 인정해요. 그래도 제게는 거의 확정처럼 보여졌습니다."
+          ],
+          "privateKnowledge": [
+            "문서 기준과 체감 확정을 구분하지 않은 책임이 자신에게도 있다."
+          ],
+          "suppressions": [
+            "체감 확정을 사실처럼 말한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:betrayal_zoom",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-5:admission:0",
+              "factText": "자동 발동 부재를 인정하면서도 혼합 신호로 기대가 커진 사실",
+              "tags": [
+                "admission",
+                "threshold",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                },
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "제가 숫자를 끝까지 확인하지 않은 책임도 있어요. 하지만 시원이 그 조건을 뒤늦게 꺼낸 건 사실이죠."
+          ],
+          "privateKnowledge": [
+            "자신의 확인 책임을 말해도 상처 프레임을 유지하고 싶어 한다."
+          ],
+          "suppressions": [
+            "확인 책임을 최소화하고 싶은 마음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-08:b:tell:betrayal_zoom",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-5:responsibility:0",
+              "factText": "숫자 확인 책임과 상대의 늦은 설명 책임을 함께 안고 있는 사실",
+              "tags": [
+                "responsibility",
+                "threshold",
+                "counter"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                },
+                "person": {
+                  "exact": "오혜린",
+                  "neutral": "회계사",
+                  "fullName": "오혜린",
+                  "judgeRef": "외부 회계사"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "5년 동안 만든 성장의 보상처럼 붙들고 있어서, 서면 문구보다 상징을 더 크게 본 것 같아요."
+          ],
+          "privateKnowledge": [
+            "인정받고 싶은 마음이 숫자 검토보다 앞섰다."
+          ],
+          "suppressions": [
+            "보상 심리"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-5:emotion:0",
+              "factText": "확장 조건을 보상과 인정의 문제로 과대 해석한 사실",
+              "tags": [
+                "emotion",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "자동 발동은 아니었습니다. 저는 기대를 사실로 받아들였고, 시원은 그 틈을 바로잡지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "내 기대와 그의 모호함이 함께 문제였다는 걸 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-08:b:tell:injury_stack",
+            "partnership-08:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-08:b:d-5:admission:1",
+              "factText": "자동 발동 부재와 기대-모호함의 동시 책임을 인정하는 사실",
+              "tags": [
+                "admission",
+                "threshold",
+                "relationship"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "80,000,000원",
+                  "neutral": "기준 금액",
+                  "rounded": "8천만원"
+                },
+                "duration": {
+                  "exact": "2개월 유지",
+                  "neutral": "유지 기간",
+                  "period": "두 달 연속"
+                },
+                "location": {
+                  "exact": "성수 2호점 후보지",
+                  "neutral": "해당 후보지"
+                },
+                "season": {
+                  "exact": "5주년 시즌",
+                  "neutral": "그 시기",
+                  "period": "기념 시즌 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

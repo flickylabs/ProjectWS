@@ -209,7 +209,7 @@ export const family04TellsBeats = {
       "party": "a",
       "disputeId": "d-4",
       "beatType": "partial",
-      "line": "네, 원본 대신 크롭본을 먼저 올렸고 설명도 비워 뒀습니다. 원칙 위반이라는 지적은 받아들이겠습니다.",
+      "line": "네, 원본 대신 크롭본을 먼저 올렸고 설명도 비워 뒀습니다. 원칙 위반이라는 지적은 받아들이겠습니다. 다만 민규도 파일명을 '정리본'으로 흐려 둔 상태였다는 점은 같이 봐야 합니다.",
       "behaviorHint": "짧게 수긍한 뒤 곧바로 다음 설명으로 넘어간다.",
       "applicableStates": [
         "S2"
@@ -221,7 +221,7 @@ export const family04TellsBeats = {
       "party": "a",
       "disputeId": "d-4",
       "beatType": "blame",
-      "line": "다만 제 위반 이전에 민규가 기부 자료 파일명을 흐려 둔 것도 사실입니다. 폴더가 헷갈리게 된 건 한쪽만의 행동이 아니었습니다.",
+      "line": "제 위반 이전에 민규가 기부 자료 파일명을 흐려 둔 것도 사실입니다. 폴더가 헷갈리게 된 건 한쪽만의 행동이 아니었습니다.",
       "behaviorHint": "폴더 변경 이력을 가리키며 문장을 차례로 쌓는다.",
       "applicableStates": [
         "S3"
@@ -296,7 +296,7 @@ export const family04TellsBeats = {
       "party": "a",
       "disputeId": "d-5",
       "beatType": "blame",
-      "line": "민규를 전제로 물은 책임은 제게 있습니다. 다만 그 배경엔 오래된 차용금과 반복된 불신이 있었습니다.",
+      "line": "민규를 전제로 물은 책임은 제게 있습니다. 그 배경엔 오래된 차용금과 반복된 불신이 있었습니다.",
       "behaviorHint": "스스로를 탓하다가도 곧바로 오래된 맥락을 덧붙인다.",
       "applicableStates": [
         "S3",
@@ -432,7 +432,7 @@ export const family04TellsBeats = {
       "party": "b",
       "disputeId": "d-4",
       "beatType": "partial",
-      "line": "네, 기부 자료 파일명을 모호하게 바꿨고 설명도 비워 뒀습니다. 그건 규칙 위반 맞습니다.",
+      "line": "네, 기부 자료 파일명을 모호하게 바꿨고 설명도 비워 뒀습니다. 그건 규칙 위반 맞습니다. 그래도 누나도 잘린 캡처를 먼저 올린 건 같이 봐야 하지 않나요.",
       "behaviorHint": "인정은 하되 목소리에 여전히 억울함이 남아 있다.",
       "applicableStates": [
         "S2"

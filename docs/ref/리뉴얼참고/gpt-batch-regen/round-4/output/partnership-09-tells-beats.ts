@@ -1,0 +1,577 @@
+export const partnership09TellsBeats = {
+  "caseId": "partnership-09",
+  "executableTells": {
+    "a": [
+      {
+        "id": "partnership-09:a:tell:credit_headline",
+        "appliesWhen": [
+          "lying",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "결국",
+          "핵심은",
+          "실제로"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "세부 질문을 받아도 '결국 기술이었지' 같은 헤드라인 문장으로 먼저 결론을 던진다."
+      },
+      {
+        "id": "partnership-09:a:tell:repeat_pressure",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "lying"
+        ],
+        "lexicalHooks": [
+          "다시 말하지만",
+          "그러니까",
+          "결론은"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "every_turn",
+        "originalPattern": "같은 사실을 단어만 바꿔 여러 번 반복하며 상대의 설명 공간을 좁힌다."
+      },
+      {
+        "id": "partnership-09:a:tell:contribution_downgrade",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "shame",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "부수적",
+          "행정",
+          "서류"
+        ],
+        "sentenceShape": "conditional",
+        "cadence": "on_trigger_only",
+        "originalPattern": "상대가 외부 설득이나 행정 절차 기여를 말하면 '그건 다 부수적인 거였다'며 중요도를 의도적으로 낮춘다."
+      }
+    ],
+    "b": [
+      {
+        "id": "partnership-09:b:tell:burden_stack",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "기관",
+          "서류",
+          "일정"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "every_turn",
+        "originalPattern": "현재 질문을 받으면 자신이 감당한 기관 응대, 서류 작성, 일정 조율의 양부터 길게 나열한다."
+      },
+      {
+        "id": "partnership-09:b:tell:martyr_turn",
+        "appliesWhen": [
+          "cornered",
+          "hurt",
+          "shame",
+          "emotional"
+        ],
+        "lexicalHooks": [
+          "결국",
+          "제가",
+          "혼자"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "잘못을 지적받으면 '결국 내가 다 끌고 왔으니 내가 맞아야 하는 거네'처럼 자신을 희생자로 돌려세운다."
+      },
+      {
+        "id": "partnership-09:b:tell:public_frame",
+        "appliesWhen": [
+          "avoiding",
+          "lying",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "예산",
+          "기관",
+          "회사 생존"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "내부 규정 위반을 묻는 질문을 외부 기관의 기대와 회사 생존 문제로 바꿔 말한다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "partnership-09:beat:a:d-2:deny",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "그 캡처는 요지만 공유한 겁니다. 결국 평가가 본 건 기술성이었어요.",
+      "behaviorHint": "턱을 들고 손바닥으로 말을 자르듯 단정한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-2:hedge",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "문장이 좀 잘렸을 수는 있어도 뜻은 안 바뀝니다. 핵심은 기술 파트가 제일 강했다는 거예요.",
+      "behaviorHint": "같은 결론을 표현만 바꿔 반복한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-2:partial",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "제가 '기술성 최고'만 남겨 돌린 건 맞습니다. 다만 제 공이 통째로 지워지던 분위기라 방어적으로 그랬습니다.",
+      "behaviorHint": "시선을 피했다가 곧 다시 정면을 본다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-2:blame",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "다예 씨가 먼저 바깥에서 자기 이름만 남기려 했습니다. 저는 그 압박에 밀려 제 쪽 근거를 과하게 밀어붙인 겁니다.",
+      "behaviorHint": "책상 쪽으로 몸을 숙이며 상대를 겨눈다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-2:confession",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "원문맥을 숨긴 선택적 편집이었습니다. 제 공을 지키려다 증거 자체를 왜곡했습니다. 설명을 늦춘 건 제 잘못입니다.",
+      "behaviorHint": "말끝이 짧아지고 손을 내려놓는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-2:evidence_hit",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "원본 메일이 나오면 제가 잘라낸 구간을 부정할 수 없네요. 그 캡처만으로는 제 주장처럼 읽히게 만든 게 맞습니다.",
+      "behaviorHint": "입술을 다문 채 한 박자 늦게 고개를 끄덕인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "partnership-09:beat:a:d-4:deny",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "그 숫자들은 허위라기보다 곧 채워질 전망치를 먼저 적은 겁니다. 현장 흐름은 제가 제일 잘 알았습니다.",
+      "behaviorHint": "손가락으로 표를 짚는 시늉을 하며 단정한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-4:hedge",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "마감 직전이라 테스트값을 임시로 정리한 건 맞습니다. 없는 숫자를 꾸며낸 것처럼 몰아가진 말아주십시오.",
+      "behaviorHint": "말속도를 높이며 문장 끝을 세게 닫는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-4:partial",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "실제보다 높게 적은 건 인정합니다. 그때는 곧 맞춰질 값이라고 제 스스로 합리화했습니다.",
+      "behaviorHint": "한숨을 짧게 내쉬고 시선을 문서로 돌린다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-4:blame",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "기관 눈높이에 맞추자는 압박은 다예 씨도 같이 걸었습니다. 저 혼자 만든 허위처럼 정리되는 건 사실과 다릅니다.",
+      "behaviorHint": "어깨를 굳힌 채 상대 쪽으로 턱짓한다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-4:confession",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "둘이 함께 실증 수치와 확인서 문구를 부풀려 제출했습니다. 기술 전망치라는 변명으로 덮을 수 없는 허위 제출이었습니다. 그 판단은 제 잘못입니다.",
+      "behaviorHint": "등받이에 기대다가 다시 몸을 세운다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-4:evidence_hit",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "원시 로그와 제출용 PDF가 같이 나오면 더 못 버팁니다. 실제 수치와 제출 수치가 달랐다는 건 분명합니다.",
+      "behaviorHint": "목을 한번 만지고 말을 고른다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "partnership-09:beat:a:d-5:deny",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "사후점검 후보라는 표현은 과합니다. 교부 직후 파일을 다시 보는 건 흔한 절차예요.",
+      "behaviorHint": "웃어넘기려 하지만 눈이 빨리 깜빡인다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-5:hedge",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "메타데이터를 다시 본 흔적은 있어도 그때는 그냥 절차라고 봤습니다. 바로 위험 신호로 읽진 않았습니다.",
+      "behaviorHint": "의자에 기대며 말을 길게 늘인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-5:partial",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "후보 메모 비슷한 뉘앙스를 읽은 건 맞습니다. 다만 그 메모는 내부 검토용 초안이었고, 정식 점검 통보가 나온 건 아니었습니다.",
+      "behaviorHint": "입술을 깨물고 문장을 두 번 끊는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-5:blame",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "브리핑 수정이랑 정산 일정이 한꺼번에 몰렸습니다. 그 압박 속에서 저도 위험을 축소했고 다예 씨도 그 분위기를 밀었습니다.",
+      "behaviorHint": "손으로 관자놀이를 문지르며 짜증 섞인 숨을 쉰다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-5:confession",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "기관이 이미 이상 징후를 잡고 있었는데도 저는 안전하다고 말했습니다. 커리어와 후속 일정이 무너질까 봐 외면했습니다. 그건 제 잘못입니다.",
+      "behaviorHint": "목소리가 낮아지고 끝 문장을 힘없이 맺는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:a:d-5:evidence_hit",
+      "caseId": "partnership-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "그 메모가 진짜면 제가 위험을 가볍게 본 게 아니라 일부러 축소한 셈이네요. 그건 부인하기 어렵습니다.",
+      "behaviorHint": "시선을 내리고 손가락을 꼬아 쥔다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "partnership-09:beat:b:d-1:deny",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "제가 앞에 선 건 기관과 파트너를 붙들고 있었기 때문입니다. 그걸 공로 절도로 보시면 너무 단선적입니다.",
+      "behaviorHint": "숨을 길게 들이마신 뒤 서사를 길게 세운다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-1:hedge",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "보도자료 문장이 제 쪽으로 기운 건 맞아도 그건 대외 설명용 정리였어요. 단독 공로 선언으로 몰아가실 정도는 아닙니다.",
+      "behaviorHint": "손가락으로 항목을 세듯 차분히 나열한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-1:partial",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "인센티브 승인안과 브리핑 문구에 제 이름이 앞선 건 사실입니다. 하지만 교부 직후 외부 창구를 거의 제가 혼자 감당했습니다.",
+      "behaviorHint": "말끝을 흐리며 어깨를 살짝 움츠린다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-1:blame",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "인호 씨가 안에서는 계속 기술만이 전부라고 몰았습니다. 밖에서는 제가 이야기를 정리할 수밖에 없었고 그 과정에서 제 비중이 더 커졌습니다.",
+      "behaviorHint": "손바닥을 펴 보이며 억울하다는 표정을 짓는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-1:confession",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "인호 씨의 제품·데모 기여를 의도적으로 줄이고 제 이름을 전면에 세웠습니다. 성과급 승인안까지 그 방향으로 밀어붙인 건 제 책임입니다.",
+      "behaviorHint": "목이 잠긴 듯 한 박자 쉬고 낮게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-1:evidence_hit",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "브리핑 수정요청 메일까지 붙으면 제가 이름 배치를 의도했다는 걸 부정할 수 없네요. 그냥 정리였다고만 말할 수는 없습니다.",
+      "behaviorHint": "입술을 다물고 시선을 한 번 피한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "partnership-09:beat:b:d-3:deny",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "지원금을 끌어온 건 결국 기관과 지자체를 설득한 흐름입니다. 기술만으로는 예산이 나오지 않아요.",
+      "behaviorHint": "기관 대응 일정을 세듯 손가락을 하나씩 접는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-3:hedge",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "인호 씨 기술이 필요했던 건 맞지만 통과의 문을 연 건 제 대외 신뢰였습니다. 그 정도 구분은 해주셔야죠.",
+      "behaviorHint": "끝을 살짝 올려 되묻듯 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-3:partial",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "원본 평가에 기술성과 협업 설계가 같이 적힌 건 압니다. 그래도 외부 자금은 제가 판을 깔지 않으면 안 굴러간다고 믿었습니다.",
+      "behaviorHint": "양손을 모아 쥔 채 스스로를 설득하듯 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-3:blame",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "둘 다 자기 쪽만 공이라고 우긴 건 맞습니다. 그리고 그때 이미 제출 수치가 더럽혀져 있었으니 어느 한쪽의 깨끗한 성과라고 말하기 어렵습니다.",
+      "behaviorHint": "시선을 떨군 채 말을 길게 이어 간다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-3:confession",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "깨끗한 단독 성과는 없었습니다. 둘이 함께 부풀린 실적과 확인서가 지원금의 핵심 근거였습니다. 그 선택은 제 책임입니다.",
+      "behaviorHint": "한숨을 내쉰 뒤 정면을 보고 또렷하게 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-3:evidence_hit",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "원시 로그랑 확인서 초안이 같이 나오면 제가 '내가 혼자 끌어왔다'고만 말할 수는 없네요. 그 서사는 버텨지지 않습니다.",
+      "behaviorHint": "목소리가 낮아지고 마지막 문장을 삼키듯 끊는다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "partnership-09:beat:b:d-4:deny",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "확인서 문구를 정리한 건 행정 포맷을 맞춘 겁니다. 허위 실적을 꾸민 것과는 다릅니다.",
+      "behaviorHint": "서류 작업의 양을 먼저 나열하며 선을 긋는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-4:hedge",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "마감 직전이라 표현을 정돈했을 뿐이고 숫자는 인호 씨 쪽에서 준 값을 바탕으로 했습니다. 제가 숫자를 만든 건 아니에요.",
+      "behaviorHint": "고개를 작게 저으며 문장을 길게 잇는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-4:partial",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "제가 확인서 문구와 KPI 표 수정을 승인한 건 맞습니다. 다만 기준 미달을 메우자는 압박이 동시에 있었습니다.",
+      "behaviorHint": "서류를 쥔 손에 힘이 들어간다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-4:blame",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "실제 절감률을 키워 보자고 먼저 밀어붙인 건 인호 씨였습니다. 저는 그걸 기관 제출 형식으로 묶어 준 쪽에 가까웠습니다.",
+      "behaviorHint": "억울한 웃음을 한번 짓고 바로 표정을 굳힌다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-4:confession",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "둘이 함께 수치와 확인서를 부풀려 냈습니다. 행정 부담을 핑계로 넘길 수 없는 공동 허위 제출이었습니다. 그 선택은 제 책임입니다.",
+      "behaviorHint": "시선을 내리고 천천히 문장을 끊어 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-09:beat:b:d-4:evidence_hit",
+      "caseId": "partnership-09",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "원시 로그랑 확인서 초안까지 붙으면 형식 정리였다고 버틸 수가 없어요. 실제보다 좋게 보이도록 다듬은 게 맞습니다.",
+      "behaviorHint": "어깨가 내려앉고 말끝이 급히 작아진다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-5"
+    }
+  ]
+} as const;

@@ -1,0 +1,29 @@
+{
+  "caseId": "workplace04",
+  "counts": {
+    "claimPolicyPartyCount": 2,
+    "claimPolicyDisputeStateCount": 60,
+    "claimAtomCount": 120,
+    "tellCount": 6,
+    "beatScriptCount": 36,
+    "dossierCardCount": 3,
+    "stateUnlockAtomCount": 40,
+    "contradictionCount": 4,
+    "interjectionCount": 3,
+    "emotionalOutburstCount": 4,
+    "transitionBeatCount": 24
+  },
+  "checks": [
+    "caseId normalized to workplace04",
+    "all beatScript ids present",
+    "all transitionBeat ids present",
+    "tellPool ids match executableTells",
+    "dossier onSuccess.revealAtom ids match stateUnlockAtoms ids",
+    "all slot objects include exact and neutral",
+    "all beat lines satisfy lexical hook >= 50%",
+    "all confession beats include 제 잘못 and 제 책임",
+    "all blame beats include 쪽도",
+    "all partial beats include 다만 or 그래도",
+    "all first dossier questions start with target name + 씨"
+  ]
+}

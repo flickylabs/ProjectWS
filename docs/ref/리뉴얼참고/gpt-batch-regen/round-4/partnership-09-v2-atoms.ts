@@ -1,0 +1,5694 @@
+export const partnership09V2Atoms = {
+  "caseId": "partnership-09",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "교부 직후 보도자료와 성과급 문서에서 다예 이름만 전면에 섰습니다.",
+            "실제 장비 제작과 데모 실행은 제가 맡았는데 그 기여가 지워졌습니다."
+          ],
+          "privateKnowledge": [
+            "교부 직후 자신도 공로를 되찾으려는 압박이 강했고, 그 반작용이 이후 편집 캡처 유통으로 이어졌다."
+          ],
+          "suppressions": [
+            "자신이 평가피드백 캡처를 선택 편집해 반격 자료로 돌린 사실",
+            "공로 경쟁이 이미 감정전으로 번졌다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-1:responsibility:0",
+              "factText": "교부 직후 보도자료·브리핑 발표문·인센티브 승인안에서 손다예 이름이 단독 주공로자처럼 전면 배치된 사실",
+              "tags": [
+                "responsibility",
+                "act"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-1:harm:1",
+              "factText": "기술 담당으로 축소되거나 허위 실적의 주범으로 뒤집어쓸까 두려워한 감정",
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "초기 초안에는 제 제품·데모 문장이 있었는데 최종본에서 빠졌습니다.",
+            "그건 단순 정리가 아니라 공로의 방향을 바꾼 겁니다."
+          ],
+          "privateKnowledge": [
+            "교부 직후 자신도 공로를 되찾으려는 압박이 강했고, 그 반작용이 이후 편집 캡처 유통으로 이어졌다.",
+            "공동 승인 원칙이 있었는데도 대외 홍보와 성과급 문서가 손다예 중심으로 재배열된 경위"
+          ],
+          "suppressions": [
+            "자신이 평가피드백 캡처를 선택 편집해 반격 자료로 돌린 사실",
+            "공로 경쟁이 이미 감정전으로 번졌다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-1:evidence:2",
+              "factText": "초기 초안에는 조인호의 제품 제작·데모 문장이 있었으나 최종본에서 빠졌다는 문서 흐름",
+              "tags": [
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-1:rule:3",
+              "factText": "3천만원 이상 지원사업은 KPI·확인서·발표문을 공동 승인하기로 한 서면 합의를 어긴 문제",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "제가 대외자료 최종 검토를 끝까지 챙기지 못한 건 있습니다.",
+            "그래도 공동 승인 원칙 아래에서 제 기여를 뺄 문서는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "교부 직후 자신도 공로를 되찾으려는 압박이 강했고, 그 반작용이 이후 편집 캡처 유통으로 이어졌다.",
+            "초기 초안에는 조인호의 제품 제작·데모 문장이 있었으나 최종본에서 빠졌다는 문서 흐름"
+          ],
+          "suppressions": [
+            "자신이 평가피드백 캡처를 선택 편집해 반격 자료로 돌린 사실",
+            "외부에 드러날 경우 자신에게 돌아올 책임 비율"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-1:context:4",
+              "factText": "공동 승인 원칙이 있었는데도 대외 홍보와 성과급 문서가 손다예 중심으로 재배열된 경위",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-1:admission:5",
+              "factText": "상대의 공로 독식은 문제였지만 자신도 이후 편집 캡처로 맞대응했다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "교부 직후 서로 먼저 서사를 굳히려는 경쟁이 있었던 것도 사실입니다.",
+            "하지만 단독 공로 프레임을 먼저 공식 문서에 올린 쪽은 다예였습니다."
+          ],
+          "privateKnowledge": [
+            "교부 직후 자신도 공로를 되찾으려는 압박이 강했고, 그 반작용이 이후 편집 캡처 유통으로 이어졌다.",
+            "공공지원금 홍보 국면에서 손다예가 외부 얼굴을 선점하려 했다고 조인호가 인식한 점"
+          ],
+          "suppressions": [
+            "자신이 평가피드백 캡처를 선택 편집해 반격 자료로 돌린 사실",
+            "정산 복구로 이어질 경우의 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-1:counter:6",
+              "factText": "공공지원금 홍보 국면에서 손다예가 외부 얼굴을 선점하려 했다고 조인호가 인식한 점",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "counter",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-1:relationship:7",
+              "factText": "공동 승인 원칙이 있었는데도 대외 홍보와 성과급 문서가 손다예 중심으로 재배열된 경위",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "counter",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "기술만 만든 사람으로 밀려나는 기분이었습니다.",
+            "그래서 이후에는 저도 방어적으로 반격 자료를 찾게 됐습니다."
+          ],
+          "privateKnowledge": [
+            "교부 직후 자신도 공로를 되찾으려는 압박이 강했고, 그 반작용이 이후 편집 캡처 유통으로 이어졌다.",
+            "기술 담당으로 축소되거나 허위 실적의 주범으로 뒤집어쓸까 두려워한 감정"
+          ],
+          "suppressions": [
+            "외부 환수와 평판 손상 범위를 끝까지 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-1:emotion:8",
+              "factText": "기술 담당으로 축소되거나 허위 실적의 주범으로 뒤집어쓸까 두려워한 감정",
+              "tags": [
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "harm"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-1:harm:9",
+              "factText": "상대의 공로 독식은 문제였지만 자신도 이후 편집 캡처로 맞대응했다는 인정",
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "harm"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "다예가 제 제품·데모 기여를 줄이고 자기 이름을 전면에 둔 건 맞습니다.",
+            "다만 저도 그 뒤 편집 캡처로 맞대응해 분쟁을 더 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "교부 직후 자신도 공로를 되찾으려는 압박이 강했고, 그 반작용이 이후 편집 캡처 유통으로 이어졌다.",
+            "3천만원 이상 지원사업은 KPI·확인서·발표문을 공동 승인하기로 한 서면 합의를 어긴 문제"
+          ],
+          "suppressions": [
+            "정산 복구 뒤 개인 책임이 어디까지 이어질지는 끝까지 확정하지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-1:admission:10",
+              "factText": "상대의 공로 독식은 문제였지만 자신도 이후 편집 캡처로 맞대응했다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "admission",
+                "context"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-1:rule:11",
+              "factText": "3천만원 이상 지원사업은 KPI·확인서·발표문을 공동 승인하기로 한 서면 합의를 어긴 문제",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "해당 문서들"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "ruleDoc": {
+                  "exact": "공동 승인 서면 합의",
+                  "neutral": "그 합의"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                }
+              },
+              "stanceHints": [
+                "admission",
+                "context"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "평가피드백 캡처는 핵심만 공유한 거지 조작은 아니었습니다.",
+            "결국 평가의 무게중심은 기술성이었다는 뜻이었습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가 메일에는 기술성뿐 아니라 시장검증과 협업 설계 강점이 함께 적혀 있었고, 캡처는 직접 잘라냈다."
+          ],
+          "suppressions": [
+            "e-3 저장 시각이 공로 분쟁 직후라는 점",
+            "편집 앱 로그와 잘린 구간 복원 결과"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-2:denial:0",
+              "factText": "평가피드백 메일에서 '기술성 최고'만 남긴 캡처를 팀 단톡에 돌린 사실",
+              "tags": [
+                "denial",
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-2:self_justification:1",
+              "factText": "공로 분쟁 직후 자신의 기술 기여를 방어하려는 조급함이 개입된 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "문장이 조금 잘렸더라도 요지는 같았습니다.",
+            "시장검증 문단이 빠졌다고 해서 제 기술 기여가 사라지는 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가 메일에는 기술성뿐 아니라 시장검증과 협업 설계 강점이 함께 적혀 있었고, 캡처는 직접 잘라냈다.",
+            "공로 분쟁 직후 자신의 기술 기여를 방어하려는 조급함이 개입된 경위"
+          ],
+          "suppressions": [
+            "e-3 저장 시각이 공로 분쟁 직후라는 점",
+            "편집 앱 로그와 잘린 구간 복원 결과"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-2:uncertainty:2",
+              "factText": "원본 메일에는 기술성과 함께 시장검증·협업 설계 강점이 적혀 있었다는 점",
+              "tags": [
+                "uncertainty",
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-2:self_justification:3",
+              "factText": "공로 분쟁 직후 자신의 기술 기여를 방어하려는 조급함이 개입된 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "제가 '기술성 최고'만 남긴 캡처를 돌린 건 맞습니다.",
+            "다예가 제 공을 지우려는 국면에서 제 몫을 방어하려 했습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가 메일에는 기술성뿐 아니라 시장검증과 협업 설계 강점이 함께 적혀 있었고, 캡처는 직접 잘라냈다.",
+            "원본 메일에는 기술성과 함께 시장검증·협업 설계 강점이 적혀 있었다는 점"
+          ],
+          "suppressions": [
+            "e-3 저장 시각이 공로 분쟁 직후라는 점",
+            "외부에 드러날 경우 자신에게 돌아올 책임 비율"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-2:admission:4",
+              "factText": "평가피드백 메일에서 '기술성 최고'만 남긴 캡처를 팀 단톡에 돌린 사실",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-2:self_justification:5",
+              "factText": "공로 분쟁 직후 자신의 기술 기여를 방어하려는 조급함이 개입된 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "다예가 먼저 보도자료와 인센티브안을 자기 중심으로 굳혔습니다.",
+            "그 압박이 없었으면 그렇게까지 편집하지 않았을 겁니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가 메일에는 기술성뿐 아니라 시장검증과 협업 설계 강점이 함께 적혀 있었고, 캡처는 직접 잘라냈다.",
+            "손다예가 먼저 단독 공로 서사를 굳혔다고 느껴 방어적으로 증거를 다룬 인식"
+          ],
+          "suppressions": [
+            "e-3 저장 시각이 공로 분쟁 직후라는 점",
+            "정산 복구로 이어질 경우의 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-2:counter:6",
+              "factText": "손다예가 먼저 단독 공로 서사를 굳혔다고 느껴 방어적으로 증거를 다룬 인식",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-2:fear:7",
+              "factText": "기술 담당으로 밀려나거나 허위 실적의 주범으로 덮일까 두려워한 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "기술만 만든 사람으로 밀려날까 봐 겁이 났습니다.",
+            "그 조급함 때문에 원문맥을 숨기는 선을 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가 메일에는 기술성뿐 아니라 시장검증과 협업 설계 강점이 함께 적혀 있었고, 캡처는 직접 잘라냈다.",
+            "기술 담당으로 밀려나거나 허위 실적의 주범으로 덮일까 두려워한 감정"
+          ],
+          "suppressions": [
+            "외부 환수와 평판 손상 범위를 끝까지 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-2:emotion:8",
+              "factText": "기술 담당으로 밀려나거나 허위 실적의 주범으로 덮일까 두려워한 감정",
+              "tags": [
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-2:admission:9",
+              "factText": "원문맥을 숨긴 선택적 편집이었다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "원본 메일의 협업 강점 문단을 잘라낸 선택적 편집이었습니다.",
+            "제 공을 지키려다 증거를 왜곡했습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가 메일에는 기술성뿐 아니라 시장검증과 협업 설계 강점이 함께 적혀 있었고, 캡처는 직접 잘라냈다.",
+            "원본 헤더와 전문 없는 캡처를 증거처럼 사용하면 안 된다는 문제"
+          ],
+          "suppressions": [
+            "정산 복구 뒤 개인 책임이 어디까지 이어질지는 끝까지 확정하지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-2:admission:10",
+              "factText": "원문맥을 숨긴 선택적 편집이었다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-2:rule:11",
+              "factText": "원본 헤더와 전문 없는 캡처를 증거처럼 사용하면 안 된다는 문제",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "평가피드백 원본 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처와 메타데이터 보고",
+                  "neutral": "그 캡처 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "chat": {
+                  "exact": "팀 단톡",
+                  "neutral": "그 대화방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "지원금이 붙은 건 결국 장비와 데모가 보여 준 절감률 때문이었습니다.",
+            "기술이 없었으면 그 사업은 애초에 서지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가는 기술성과 시장검증·협업 설계를 함께 칭찬했고, 실제 교부의 핵심 근거에는 공동으로 부풀린 실증 수치가 들어 있었다."
+          ],
+          "suppressions": [
+            "e-5 원시 로그가 제출본보다 낮다는 점",
+            "추천확인서 문구가 유사하게 반복된다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-3:identity:0",
+              "factText": "지원금이 순수하게 조인호 기술만의 성과라는 주장",
+              "tags": [
+                "identity",
+                "act"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-3:self_justification:1",
+              "factText": "교부 직전 기준 미달을 메우려 둘 다 실증 수치와 증빙을 키운 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "다예가 기관을 상대했다 해도 통과 근거는 기술성이었습니다.",
+            "대외 설득은 포장이고 핵심은 현장 데모였습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가는 기술성과 시장검증·협업 설계를 함께 칭찬했고, 실제 교부의 핵심 근거에는 공동으로 부풀린 실증 수치가 들어 있었다.",
+            "교부 직전 기준 미달을 메우려 둘 다 실증 수치와 증빙을 키운 경위"
+          ],
+          "suppressions": [
+            "e-5 원시 로그가 제출본보다 낮다는 점",
+            "추천확인서 문구가 유사하게 반복된다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-3:evidence:2",
+              "factText": "원본 평가와 제출 자료가 기술성뿐 아니라 협업 설계와 시장검증을 함께 본다는 점",
+              "tags": [
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-3:context:3",
+              "factText": "교부 직전 기준 미달을 메우려 둘 다 실증 수치와 증빙을 키운 경위",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "원본 평가 메일에 협업 설계 언급이 있는 건 압니다.",
+            "그래도 판을 움직인 건 기술 데모였다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가는 기술성과 시장검증·협업 설계를 함께 칭찬했고, 실제 교부의 핵심 근거에는 공동으로 부풀린 실증 수치가 들어 있었다.",
+            "원본 평가와 제출 자료가 기술성뿐 아니라 협업 설계와 시장검증을 함께 본다는 점"
+          ],
+          "suppressions": [
+            "e-5 원시 로그가 제출본보다 낮다는 점",
+            "외부에 드러날 경우 자신에게 돌아올 책임 비율"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-3:context:4",
+              "factText": "원본 평가와 제출 자료가 기술성뿐 아니라 협업 설계와 시장검증을 함께 본다는 점",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-3:admission:5",
+              "factText": "교부 직전 기준 미달을 메우려 둘 다 실증 수치와 증빙을 키운 경위",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "다예가 외부 신뢰를 만든 건 인정합니다.",
+            "하지만 그 단계에서도 둘 다 기준 미달 수치를 메우며 단독 공로처럼 말하고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가는 기술성과 시장검증·협업 설계를 함께 칭찬했고, 실제 교부의 핵심 근거에는 공동으로 부풀린 실증 수치가 들어 있었다.",
+            "둘 다 자기 몫만 공로라고 우기며 공동 허위 제출을 가리는 방향으로 움직였다는 점"
+          ],
+          "suppressions": [
+            "e-5 원시 로그가 제출본보다 낮다는 점",
+            "정산 복구로 이어질 경우의 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-3:counter:6",
+              "factText": "둘 다 자기 몫만 공로라고 우기며 공동 허위 제출을 가리는 방향으로 움직였다는 점",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "counter",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-3:admission:7",
+              "factText": "단독 공로 서사 자체가 성립하지 않고 지원금 핵심 근거가 공동 허위 실적이었다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "counter",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 기술이 전부라고 붙든 건 기술 담당으로 밀려날까 두려웠기 때문입니다.",
+            "동시에 허위 실적 책임이 제 쪽으로만 몰릴까도 겁났습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가는 기술성과 시장검증·협업 설계를 함께 칭찬했고, 실제 교부의 핵심 근거에는 공동으로 부풀린 실증 수치가 들어 있었다.",
+            "기술 담당으로 밀려나거나 허위 실적의 주범으로 몰릴까 두려워한 감정"
+          ],
+          "suppressions": [
+            "외부 환수와 평판 손상 범위를 끝까지 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-3:fear:8",
+              "factText": "기술 담당으로 밀려나거나 허위 실적의 주범으로 몰릴까 두려워한 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-3:shame:9",
+              "factText": "단독 공로 서사 자체가 성립하지 않고 지원금 핵심 근거가 공동 허위 실적이었다는 인정",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "깨끗한 단독 성과는 없었습니다.",
+            "지원금은 둘이 함께 부풀린 실적과 확인서 위에 섰습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가는 기술성과 시장검증·협업 설계를 함께 칭찬했고, 실제 교부의 핵심 근거에는 공동으로 부풀린 실증 수치가 들어 있었다.",
+            "실제 수치와 제출 수치를 분리해 외부 정산과 복구를 해야 한다는 문제"
+          ],
+          "suppressions": [
+            "정산 복구 뒤 개인 책임이 어디까지 이어질지는 끝까지 확정하지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-3:admission:10",
+              "factText": "단독 공로 서사 자체가 성립하지 않고 지원금 핵심 근거가 공동 허위 실적이었다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-3:rule:11",
+              "factText": "실제 수치와 제출 수치를 분리해 외부 정산과 복구를 해야 한다는 문제",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가결과 메일·실증 로그·요약 PDF",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "제출본 수치는 전망치를 정리한 거지 허위를 만든 게 아닙니다.",
+            "현장 흐름은 기술팀이 가장 잘 알고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "실증 매장 수와 절감률이 기준에 못 미쳤다는 사실을 알고 있었고, 마감 직전 공동 수정으로 수치와 문구를 단계적으로 키웠다."
+          ],
+          "suppressions": [
+            "e-2의 교차 수정 로그",
+            "e-5의 원시 로그와 제출용 PDF 차이"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-4:denial:0",
+              "factText": "실증 매장 수·월 절감률·확인서 문구를 실제보다 높게 올려 공동 제출한 사실",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-4:self_justification:1",
+              "factText": "기준 미달 상태에서 마감 압박 때문에 테스트값과 전망치를 제출값처럼 다룬 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "마감이 급해서 테스트값을 임시로 넣은 겁니다.",
+            "완전히 없는 숫자를 꾸며낸 것처럼 말하는 건 과합니다."
+          ],
+          "privateKnowledge": [
+            "실증 매장 수와 절감률이 기준에 못 미쳤다는 사실을 알고 있었고, 마감 직전 공동 수정으로 수치와 문구를 단계적으로 키웠다.",
+            "기준 미달 상태에서 마감 압박 때문에 테스트값과 전망치를 제출값처럼 다룬 경위"
+          ],
+          "suppressions": [
+            "e-2의 교차 수정 로그",
+            "e-5의 원시 로그와 제출용 PDF 차이"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-4:uncertainty:2",
+              "factText": "마감 6시간 전부터 두 계정이 교차 수정하며 숫자와 표현을 키운 버전 로그",
+              "tags": [
+                "uncertainty",
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-4:self_justification:3",
+              "factText": "기준 미달 상태에서 마감 압박 때문에 테스트값과 전망치를 제출값처럼 다룬 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "실제보다 높게 정리한 건 맞습니다.",
+            "다만 당시엔 곧 채워질 값이라고 스스로 합리화했습니다."
+          ],
+          "privateKnowledge": [
+            "실증 매장 수와 절감률이 기준에 못 미쳤다는 사실을 알고 있었고, 마감 직전 공동 수정으로 수치와 문구를 단계적으로 키웠다.",
+            "마감 6시간 전부터 두 계정이 교차 수정하며 숫자와 표현을 키운 버전 로그"
+          ],
+          "suppressions": [
+            "e-2의 교차 수정 로그",
+            "외부에 드러날 경우 자신에게 돌아올 책임 비율"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-4:admission:4",
+              "factText": "실증 매장 수·월 절감률·확인서 문구를 실제보다 높게 올려 공동 제출한 사실",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-4:self_justification:5",
+              "factText": "기준 미달 상태에서 마감 압박 때문에 테스트값과 전망치를 제출값처럼 다룬 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "같은 수정 로그에서 다예도 숫자와 문구를 함께 키웠습니다.",
+            "저 혼자 벌인 일처럼 정리되는 건 사실과 다릅니다."
+          ],
+          "privateKnowledge": [
+            "실증 매장 수와 절감률이 기준에 못 미쳤다는 사실을 알고 있었고, 마감 직전 공동 수정으로 수치와 문구를 단계적으로 키웠다.",
+            "손다예도 같은 로그와 확인서 문구 승인에 관여했다는 점"
+          ],
+          "suppressions": [
+            "e-2의 교차 수정 로그",
+            "정산 복구로 이어질 경우의 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-4:counter:6",
+              "factText": "손다예도 같은 로그와 확인서 문구 승인에 관여했다는 점",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-4:fear:7",
+              "factText": "기술이 통째로 부정되거나 후속 투자와 커리어가 무너질까 두려워한 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "기관 눈높이에 맞추자는 압박과 마감 공포에 끌려갔습니다.",
+            "그 불안 때문에 검증되지 않은 수치를 제출본에 올렸습니다."
+          ],
+          "privateKnowledge": [
+            "실증 매장 수와 절감률이 기준에 못 미쳤다는 사실을 알고 있었고, 마감 직전 공동 수정으로 수치와 문구를 단계적으로 키웠다.",
+            "기술이 통째로 부정되거나 후속 투자와 커리어가 무너질까 두려워한 감정"
+          ],
+          "suppressions": [
+            "외부 환수와 평판 손상 범위를 끝까지 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-4:emotion:8",
+              "factText": "기술이 통째로 부정되거나 후속 투자와 커리어가 무너질까 두려워한 감정",
+              "tags": [
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-4:admission:9",
+              "factText": "둘이 함께 허위 실적과 증빙을 만들어 냈다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "둘이 함께 실증 매장 수와 절감률, 확인서 문구를 부풀려 제출했습니다.",
+            "기술 전망치라는 변명으로 넘길 수 없는 허위 실적 공모였습니다."
+          ],
+          "privateKnowledge": [
+            "실증 매장 수와 절감률이 기준에 못 미쳤다는 사실을 알고 있었고, 마감 직전 공동 수정으로 수치와 문구를 단계적으로 키웠다.",
+            "공공지원금 제출 수치는 실제 검증값과 분리해 적어야 한다는 기본 규칙 위반"
+          ],
+          "suppressions": [
+            "정산 복구 뒤 개인 책임이 어디까지 이어질지는 끝까지 확정하지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-4:admission:10",
+              "factText": "둘이 함께 허위 실적과 증빙을 만들어 냈다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-4:rule:11",
+              "factText": "공공지원금 제출 수치는 실제 검증값과 분리해 적어야 한다는 기본 규칙 위반",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 수정 코멘트·요약 PDF",
+                  "neutral": "해당 제출 자료"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 월 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "사후점검 후보 같은 건 아니었고 교부 직후 흔한 기관 검토였습니다.",
+            "파일을 다시 보는 일만으로 위험 신호라고 보진 않았습니다."
+          ],
+          "privateKnowledge": [
+            "진흥원 내부 검토와 후보 메모 정황을 감지했고, 파일 메타데이터·중복 문구 문제가 연결될 수 있다는 점을 알면서도 안전하다고 말했다."
+          ],
+          "suppressions": [
+            "같은 주에 작성된 사후점검 후보 메모",
+            "브리핑 수정요청과 이상 징후가 맞물려 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-5:denial:0",
+              "factText": "진흥원이 이미 사후점검 후보로 올려둔 가능성을 알고도 안전하다고 말한 사실",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-5:self_justification:1",
+              "factText": "교부 직후 브리핑·정산·후속 투자 일정 때문에 위험 신호를 축소해 해석한 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "기관이 파일 메타데이터를 다시 본 흔적은 있어도 통상 절차라고 생각했습니다.",
+            "그때는 아직 안전하다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "진흥원 내부 검토와 후보 메모 정황을 감지했고, 파일 메타데이터·중복 문구 문제가 연결될 수 있다는 점을 알면서도 안전하다고 말했다.",
+            "교부 직후 브리핑·정산·후속 투자 일정 때문에 위험 신호를 축소해 해석한 경위"
+          ],
+          "suppressions": [
+            "같은 주에 작성된 사후점검 후보 메모",
+            "브리핑 수정요청과 이상 징후가 맞물려 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-5:uncertainty:2",
+              "factText": "파일 메타데이터와 중복 문구 이상 징후를 적은 기관 메모와 관련 메일",
+              "tags": [
+                "uncertainty",
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-5:self_justification:3",
+              "factText": "교부 직후 브리핑·정산·후속 투자 일정 때문에 위험 신호를 축소해 해석한 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "후보 메모 비슷한 뉘앙스를 읽은 건 맞습니다.",
+            "그래도 바로 현장 점검으로 이어질 거라고는 믿고 싶지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "진흥원 내부 검토와 후보 메모 정황을 감지했고, 파일 메타데이터·중복 문구 문제가 연결될 수 있다는 점을 알면서도 안전하다고 말했다.",
+            "파일 메타데이터와 중복 문구 이상 징후를 적은 기관 메모와 관련 메일"
+          ],
+          "suppressions": [
+            "같은 주에 작성된 사후점검 후보 메모",
+            "외부에 드러날 경우 자신에게 돌아올 책임 비율"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-5:admission:4",
+              "factText": "진흥원이 이미 사후점검 후보로 올려둔 가능성을 알고도 안전하다고 말한 사실",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-5:self_justification:5",
+              "factText": "교부 직후 브리핑·정산·후속 투자 일정 때문에 위험 신호를 축소해 해석한 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "브리핑 수정과 정산 일정에 쫓기면서 그런 신호를 흘려보냈습니다.",
+            "위험을 축소해서 팀에도 안전하다고 말했습니다."
+          ],
+          "privateKnowledge": [
+            "진흥원 내부 검토와 후보 메모 정황을 감지했고, 파일 메타데이터·중복 문구 문제가 연결될 수 있다는 점을 알면서도 안전하다고 말했다.",
+            "손다예의 브리핑 수정과 외부 일정 압박 속에서 문제를 뒤로 미뤘다는 인식"
+          ],
+          "suppressions": [
+            "같은 주에 작성된 사후점검 후보 메모",
+            "정산 복구로 이어질 경우의 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-5:counter:6",
+              "factText": "손다예의 브리핑 수정과 외부 일정 압박 속에서 문제를 뒤로 미뤘다는 인식",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-5:fear:7",
+              "factText": "사후점검이 열리면 허위 실적 책임과 경력 타격이 동시에 온다는 공포",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "이미 이상 징후를 알고도 안전하다고 말한 건 제 커리어와 후속 투자 일정이 무서웠기 때문입니다.",
+            "그래서 더 낙관적인 해석만 붙들었습니다."
+          ],
+          "privateKnowledge": [
+            "진흥원 내부 검토와 후보 메모 정황을 감지했고, 파일 메타데이터·중복 문구 문제가 연결될 수 있다는 점을 알면서도 안전하다고 말했다.",
+            "사후점검이 열리면 허위 실적 책임과 경력 타격이 동시에 온다는 공포"
+          ],
+          "suppressions": [
+            "외부 환수와 평판 손상 범위를 끝까지 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-5:emotion:8",
+              "factText": "사후점검이 열리면 허위 실적 책임과 경력 타격이 동시에 온다는 공포",
+              "tags": [
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-5:admission:9",
+              "factText": "기관의 위험 신호를 알고도 팀에 낙관론을 퍼뜨렸다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "진흥원은 이미 파일 메타데이터와 중복 문구 이상 때문에 사후점검 후보로 올려둔 상태였습니다.",
+            "저는 그 위험을 알면서도 축소했습니다."
+          ],
+          "privateKnowledge": [
+            "진흥원 내부 검토와 후보 메모 정황을 감지했고, 파일 메타데이터·중복 문구 문제가 연결될 수 있다는 점을 알면서도 안전하다고 말했다.",
+            "사후점검 후보 가능성을 감추지 말고 즉시 공동 대응표를 만들었어야 한다는 문제"
+          ],
+          "suppressions": [
+            "정산 복구 뒤 개인 책임이 어디까지 이어질지는 끝까지 확정하지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:a:tell:credit_headline",
+            "partnership-09:a:tell:repeat_pressure",
+            "partnership-09:a:tell:contribution_downgrade"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:a:d-5:admission:10",
+              "factText": "기관의 위험 신호를 알고도 팀에 낙관론을 퍼뜨렸다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-09:a:d-5:rule:11",
+              "factText": "사후점검 후보 가능성을 감추지 말고 즉시 공동 대응표를 만들었어야 한다는 문제",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "손다예",
+                  "neutral": "상대",
+                  "fullName": "손다예",
+                  "judgeRef": "손다예 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "제가 얼굴로 나간 건 기관과 언론을 붙들고 있었기 때문이지 인호 공을 훔친 게 아닙니다.",
+            "대외 창구를 제가 맡았으니 앞에 선 것뿐입니다."
+          ],
+          "privateKnowledge": [
+            "초기 초안에 있던 인호의 제품·데모 문장을 최종본에서 덜어내고, 인센티브 승인안도 자신의 이름 중심으로 정리했다."
+          ],
+          "suppressions": [
+            "e-1 전자결재 기록의 최종 수정자 정보",
+            "e-6 브리핑 수정요청 메일에서 자신의 이름 배치를 직접 요구한 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-1:denial:0",
+              "factText": "교부 직후 보도자료·브리핑 발표문·인센티브 승인안에서 손다예를 단독 주공로자처럼 올린 사실",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-1:self_justification:1",
+              "factText": "기관·지자체·파트너 대응을 자신이 맡고 있다는 이유로 외부 얼굴을 선점한 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "보도자료 문장이 제 쪽으로 기운 건 맞아도 대외 설명용 정리였습니다.",
+            "단독 공로 선언처럼 보일 의도는 없었습니다."
+          ],
+          "privateKnowledge": [
+            "초기 초안에 있던 인호의 제품·데모 문장을 최종본에서 덜어내고, 인센티브 승인안도 자신의 이름 중심으로 정리했다.",
+            "기관·지자체·파트너 대응을 자신이 맡고 있다는 이유로 외부 얼굴을 선점한 경위"
+          ],
+          "suppressions": [
+            "e-1 전자결재 기록의 최종 수정자 정보",
+            "e-6 브리핑 수정요청 메일에서 자신의 이름 배치를 직접 요구한 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-1:uncertainty:2",
+              "factText": "초기 초안의 조인호 제품·데모 문장이 최종본에서 사라진 편집 흐름",
+              "tags": [
+                "uncertainty",
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-1:self_justification:3",
+              "factText": "기관·지자체·파트너 대응을 자신이 맡고 있다는 이유로 외부 얼굴을 선점한 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "인센티브 승인안과 브리핑 문구에 제 이름이 앞선 건 사실입니다.",
+            "하지만 교부 직후 외부 창구를 제가 거의 혼자 감당하고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "초기 초안에 있던 인호의 제품·데모 문장을 최종본에서 덜어내고, 인센티브 승인안도 자신의 이름 중심으로 정리했다.",
+            "초기 초안의 조인호 제품·데모 문장이 최종본에서 사라진 편집 흐름"
+          ],
+          "suppressions": [
+            "e-1 전자결재 기록의 최종 수정자 정보",
+            "외부에 드러날 경우 자신에게 돌아올 책임 비율"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-1:admission:4",
+              "factText": "교부 직후 보도자료·브리핑 발표문·인센티브 승인안에서 손다예를 단독 주공로자처럼 올린 사실",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-1:self_justification:5",
+              "factText": "기관·지자체·파트너 대응을 자신이 맡고 있다는 이유로 외부 얼굴을 선점한 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "인호가 안에서 계속 기술만이 전부라고 몰아붙이니 바깥에서는 제가 서사를 정리할 수밖에 없었습니다.",
+            "그 과정에서 제 쪽 비중이 더 커졌습니다."
+          ],
+          "privateKnowledge": [
+            "초기 초안에 있던 인호의 제품·데모 문장을 최종본에서 덜어내고, 인센티브 승인안도 자신의 이름 중심으로 정리했다.",
+            "조인호가 기술만이 전부라고 몰아붙여 자신도 외부 서사를 더 강하게 가져갔다고 보는 인식"
+          ],
+          "suppressions": [
+            "e-1 전자결재 기록의 최종 수정자 정보",
+            "정산 복구로 이어질 경우의 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-1:counter:6",
+              "factText": "조인호가 기술만이 전부라고 몰아붙여 자신도 외부 서사를 더 강하게 가져갔다고 보는 인식",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-1:fear:7",
+              "factText": "환수나 외부 망신이 오면 자신이 먼저 맞을 거라는 불안과 체면 공포",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "환수나 외부 망신이 오면 제가 먼저 맞는 위치라는 불안이 컸습니다.",
+            "그래서 공로 문구를 제 쪽으로 당겨 안전장치를 만들려 했습니다."
+          ],
+          "privateKnowledge": [
+            "초기 초안에 있던 인호의 제품·데모 문장을 최종본에서 덜어내고, 인센티브 승인안도 자신의 이름 중심으로 정리했다.",
+            "환수나 외부 망신이 오면 자신이 먼저 맞을 거라는 불안과 체면 공포"
+          ],
+          "suppressions": [
+            "외부 환수와 평판 손상 범위를 끝까지 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-1:emotion:8",
+              "factText": "환수나 외부 망신이 오면 자신이 먼저 맞을 거라는 불안과 체면 공포",
+              "tags": [
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-1:admission:9",
+              "factText": "상대 기여를 줄이고 자신의 이름을 전면에 세웠다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "인호의 제품·데모 기여를 의도적으로 줄이고 제 이름을 전면에 세웠습니다.",
+            "성과급 승인안까지 그 방향으로 밀어붙인 건 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "초기 초안에 있던 인호의 제품·데모 문장을 최종본에서 덜어내고, 인센티브 승인안도 자신의 이름 중심으로 정리했다.",
+            "공동 승인 원칙 아래 공동 명의로 정리했어야 할 공로 문서를 단독 서사로 바꾼 문제"
+          ],
+          "suppressions": [
+            "정산 복구 뒤 개인 책임이 어디까지 이어질지는 끝까지 확정하지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-1:admission:10",
+              "factText": "상대 기여를 줄이고 자신의 이름을 전면에 세웠다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-1:rule:11",
+              "factText": "공동 승인 원칙 아래 공동 명의로 정리했어야 할 공로 문서를 단독 서사로 바꾼 문제",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "보도자료 초안·브리핑 발표문·인센티브 승인안",
+                  "neutral": "그 문서들"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "보도자료 초안·기관 보관본 메일",
+                  "neutral": "관련 증거"
+                },
+                "institution": {
+                  "exact": "진흥원 브리핑",
+                  "neutral": "그 브리핑"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "인호가 '기술성 최고'만 남긴 캡처로 자기 공만 부풀렸습니다.",
+            "원본 문맥을 보면 그렇게 단정할 수 없습니다."
+          ],
+          "privateKnowledge": [
+            "원본 메일에 협업 설계와 사업화 역량 칭찬이 함께 있다는 걸 알고 있었고, 자신의 단독 공로 홍보가 인호의 반격을 자극했다는 점도 안다."
+          ],
+          "suppressions": [
+            "자신의 단독 공로 홍보와 인센티브 편취 정황",
+            "공로 분쟁이 이미 격화된 상태였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-2:responsibility:0",
+              "factText": "조인호가 '기술성 최고'만 남긴 크롭 캡처를 돌려 자신의 공만 강조한 사실",
+              "tags": [
+                "responsibility",
+                "act"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-2:harm:1",
+              "factText": "기관과 파트너 앞에서 자신이 공로를 가로챈 사람처럼 보일까 두려워한 감정",
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "원본 메일엔 시장검증과 협업 설계도 있었는데 그 아래를 잘라냈습니다.",
+            "그 캡처 하나로 저를 거의 무의미한 사람처럼 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "원본 메일에 협업 설계와 사업화 역량 칭찬이 함께 있다는 걸 알고 있었고, 자신의 단독 공로 홍보가 인호의 반격을 자극했다는 점도 안다.",
+            "단독 공로 다툼이 격화된 뒤 캡처 편집이 반격 수단처럼 쓰인 경위"
+          ],
+          "suppressions": [
+            "자신의 단독 공로 홍보와 인센티브 편취 정황",
+            "공로 분쟁이 이미 격화된 상태였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-2:evidence:2",
+              "factText": "원본 평가 메일에는 시장검증·협업 설계 강점도 함께 적혀 있었다는 점",
+              "tags": [
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-2:rule:3",
+              "factText": "원본 메일 전체 문맥을 함께 제시해야 한다는 증거 사용 원칙",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "저도 공로 분쟁 중이라 그 캡처를 바로 문제 삼지 못한 건 있습니다.",
+            "하지만 편집 자체가 있었다는 사실은 변하지 않습니다."
+          ],
+          "privateKnowledge": [
+            "원본 메일에 협업 설계와 사업화 역량 칭찬이 함께 있다는 걸 알고 있었고, 자신의 단독 공로 홍보가 인호의 반격을 자극했다는 점도 안다.",
+            "원본 평가 메일에는 시장검증·협업 설계 강점도 함께 적혀 있었다는 점"
+          ],
+          "suppressions": [
+            "자신의 단독 공로 홍보와 인센티브 편취 정황",
+            "외부에 드러날 경우 자신에게 돌아올 책임 비율"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-2:context:4",
+              "factText": "단독 공로 다툼이 격화된 뒤 캡처 편집이 반격 수단처럼 쓰인 경위",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-2:admission:5",
+              "factText": "인호의 편집은 문제였지만 그 전의 단독 공로 프레임도 분쟁을 키웠다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 대외 홍보를 가져가자 인호도 자기 쪽 증거만 세게 밀어붙였습니다.",
+            "둘 다 서사를 선점하려던 국면이 편집을 더 자극했습니다."
+          ],
+          "privateKnowledge": [
+            "원본 메일에 협업 설계와 사업화 역량 칭찬이 함께 있다는 걸 알고 있었고, 자신의 단독 공로 홍보가 인호의 반격을 자극했다는 점도 안다.",
+            "자신의 대외 홍보 독식이 인호의 방어적 편집을 자극한 배경"
+          ],
+          "suppressions": [
+            "자신의 단독 공로 홍보와 인센티브 편취 정황",
+            "정산 복구로 이어질 경우의 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-2:counter:6",
+              "factText": "자신의 대외 홍보 독식이 인호의 방어적 편집을 자극한 배경",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "counter",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-2:relationship:7",
+              "factText": "단독 공로 다툼이 격화된 뒤 캡처 편집이 반격 수단처럼 쓰인 경위",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "counter",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "기관과 파트너 앞에서 제가 거짓말쟁이처럼 보이게 만드는 방식이라 치욕스러웠습니다.",
+            "그래서 저도 더 방어적으로 굴었습니다."
+          ],
+          "privateKnowledge": [
+            "원본 메일에 협업 설계와 사업화 역량 칭찬이 함께 있다는 걸 알고 있었고, 자신의 단독 공로 홍보가 인호의 반격을 자극했다는 점도 안다.",
+            "기관과 파트너 앞에서 자신이 공로를 가로챈 사람처럼 보일까 두려워한 감정"
+          ],
+          "suppressions": [
+            "외부 환수와 평판 손상 범위를 끝까지 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-2:emotion:8",
+              "factText": "기관과 파트너 앞에서 자신이 공로를 가로챈 사람처럼 보일까 두려워한 감정",
+              "tags": [
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "harm"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-2:harm:9",
+              "factText": "인호의 편집은 문제였지만 그 전의 단독 공로 프레임도 분쟁을 키웠다는 인정",
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "harm"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "인호의 선택 편집은 맞습니다.",
+            "다만 그 전부터 제 단독 공로 프레임이 분쟁을 자극한 것도 사실입니다."
+          ],
+          "privateKnowledge": [
+            "원본 메일에 협업 설계와 사업화 역량 칭찬이 함께 있다는 걸 알고 있었고, 자신의 단독 공로 홍보가 인호의 반격을 자극했다는 점도 안다.",
+            "원본 메일 전체 문맥을 함께 제시해야 한다는 증거 사용 원칙"
+          ],
+          "suppressions": [
+            "정산 복구 뒤 개인 책임이 어디까지 이어질지는 끝까지 확정하지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-2:admission:10",
+              "factText": "인호의 편집은 문제였지만 그 전의 단독 공로 프레임도 분쟁을 키웠다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "admission",
+                "context"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-2:rule:11",
+              "factText": "원본 메일 전체 문맥을 함께 제시해야 한다는 증거 사용 원칙",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일",
+                  "neutral": "해당 메일"
+                },
+                "evidence": {
+                  "exact": "크롭 캡처·메타데이터 보고",
+                  "neutral": "그 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "평가위원 피드백",
+                  "neutral": "그 피드백"
+                }
+              },
+              "stanceHints": [
+                "admission",
+                "context"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "지원금을 끌어온 건 기관·지자체·파트너 설득이었습니다.",
+            "기술만으로는 예산이 나오지 않습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가와 실증 로그를 보면 기술성과 협업 설계가 함께 작동했고, 실제 수령의 핵심 근거에는 둘이 함께 부풀린 수치와 확인서가 들어 있었다."
+          ],
+          "suppressions": [
+            "e-5의 원시 로그와 허위 추천확인서 초안",
+            "양측이 모두 공동 승인 흐름에 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-3:identity:0",
+              "factText": "지원금이 순수하게 손다예의 기관 설득 성과라는 주장",
+              "tags": [
+                "identity",
+                "act"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-3:self_justification:1",
+              "factText": "교부 직전 기준 미달을 메우려 둘 다 실증 수치와 증빙을 키운 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "인호 기술이 필요했던 건 맞지만 통과의 문을 연 건 제 대외 신뢰였습니다.",
+            "예산은 결국 사람과 기관을 움직여야 나옵니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가와 실증 로그를 보면 기술성과 협업 설계가 함께 작동했고, 실제 수령의 핵심 근거에는 둘이 함께 부풀린 수치와 확인서가 들어 있었다.",
+            "교부 직전 기준 미달을 메우려 둘 다 실증 수치와 증빙을 키운 경위"
+          ],
+          "suppressions": [
+            "e-5의 원시 로그와 허위 추천확인서 초안",
+            "양측이 모두 공동 승인 흐름에 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-3:evidence:2",
+              "factText": "원본 평가와 제출 자료가 기술성과 협업 설계를 함께 강점으로 본다는 점",
+              "tags": [
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-3:context:3",
+              "factText": "교부 직전 기준 미달을 메우려 둘 다 실증 수치와 증빙을 키운 경위",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "원본 평가에 기술성과 협업 설계가 함께 적힌 건 압니다.",
+            "그래도 외부 자금은 제가 판을 깔지 않으면 굴러가지 않는다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가와 실증 로그를 보면 기술성과 협업 설계가 함께 작동했고, 실제 수령의 핵심 근거에는 둘이 함께 부풀린 수치와 확인서가 들어 있었다.",
+            "원본 평가와 제출 자료가 기술성과 협업 설계를 함께 강점으로 본다는 점"
+          ],
+          "suppressions": [
+            "e-5의 원시 로그와 허위 추천확인서 초안",
+            "외부에 드러날 경우 자신에게 돌아올 책임 비율"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-3:context:4",
+              "factText": "원본 평가와 제출 자료가 기술성과 협업 설계를 함께 강점으로 본다는 점",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-3:admission:5",
+              "factText": "교부 직전 기준 미달을 메우려 둘 다 실증 수치와 증빙을 키운 경위",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "둘 다 자기 쪽만 공이라고 우겼고 그 사이 제출 수치는 이미 더럽혀져 있었습니다.",
+            "어느 한 사람의 깨끗한 단독 성과라고 말하기 어려웠습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가와 실증 로그를 보면 기술성과 협업 설계가 함께 작동했고, 실제 수령의 핵심 근거에는 둘이 함께 부풀린 수치와 확인서가 들어 있었다.",
+            "둘 다 자기 서사를 먼저 굳히려 하며 공동 허위 제출을 가린 점"
+          ],
+          "suppressions": [
+            "e-5의 원시 로그와 허위 추천확인서 초안",
+            "정산 복구로 이어질 경우의 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-3:counter:6",
+              "factText": "둘 다 자기 서사를 먼저 굳히려 하며 공동 허위 제출을 가린 점",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "counter",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-3:admission:7",
+              "factText": "단독 공로 서사 자체가 성립하지 않고 지원금 핵심 근거가 공동 허위 실적이었다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "counter",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 혼자 끌어왔다고 붙든 건 환수와 외부 망신이 무서웠기 때문입니다.",
+            "행정 부담을 혼자 진다는 감정으로 저 자신을 정당화했습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가와 실증 로그를 보면 기술성과 협업 설계가 함께 작동했고, 실제 수령의 핵심 근거에는 둘이 함께 부풀린 수치와 확인서가 들어 있었다.",
+            "환수 책임과 외부 망신을 혼자 떠안을까 두려워한 감정"
+          ],
+          "suppressions": [
+            "외부 환수와 평판 손상 범위를 끝까지 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-3:fear:8",
+              "factText": "환수 책임과 외부 망신을 혼자 떠안을까 두려워한 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-3:shame:9",
+              "factText": "단독 공로 서사 자체가 성립하지 않고 지원금 핵심 근거가 공동 허위 실적이었다는 인정",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "깨끗한 단독 성과는 없었습니다.",
+            "둘이 함께 부풀린 실적과 확인서가 지원금의 핵심 근거였습니다."
+          ],
+          "privateKnowledge": [
+            "원본 평가와 실증 로그를 보면 기술성과 협업 설계가 함께 작동했고, 실제 수령의 핵심 근거에는 둘이 함께 부풀린 수치와 확인서가 들어 있었다.",
+            "실제 수치 기준으로 정산 복구를 해야 한다는 문제"
+          ],
+          "suppressions": [
+            "정산 복구 뒤 개인 책임이 어디까지 이어질지는 끝까지 확정하지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-3:admission:10",
+              "factText": "단독 공로 서사 자체가 성립하지 않고 지원금 핵심 근거가 공동 허위 실적이었다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-3:rule:11",
+              "factText": "실제 수치 기준으로 정산 복구를 해야 한다는 문제",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "원본 평가 메일·실증 로그·허위 추천확인서 초안",
+                  "neutral": "관련 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원 지원사업",
+                  "neutral": "그 지원사업"
+                },
+                "evidence": {
+                  "exact": "원본 평가 메일·원시 실증 자료",
+                  "neutral": "핵심 증거"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "확인서 문구를 정리한 건 행정 포맷을 맞춘 거지 허위 실적을 꾸민 게 아닙니다.",
+            "기관 제출 양식을 맞추는 과정이었습니다."
+          ],
+          "privateKnowledge": [
+            "기준 미달 상태를 알고 있었고, 확인서 문구와 KPI 표를 인호와 교차 수정하며 실제보다 좋아 보이게 정리했다."
+          ],
+          "suppressions": [
+            "문장 구조가 유사한 추천확인서 초안들",
+            "e-2 로그에서 자신의 승인 흔적"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-4:denial:0",
+              "factText": "확인서 문구와 KPI 표를 실제보다 좋게 보이도록 수정·승인해 공동 제출한 사실",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-4:self_justification:1",
+              "factText": "기관 제출 양식을 맞춘다는 명분으로 기준 미달 수치를 포장한 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "마감 직전이라 표현을 정돈했을 뿐입니다.",
+            "현장 값은 인호 쪽에서 준 숫자를 바탕으로 했습니다."
+          ],
+          "privateKnowledge": [
+            "기준 미달 상태를 알고 있었고, 확인서 문구와 KPI 표를 인호와 교차 수정하며 실제보다 좋아 보이게 정리했다.",
+            "기관 제출 양식을 맞춘다는 명분으로 기준 미달 수치를 포장한 경위"
+          ],
+          "suppressions": [
+            "문장 구조가 유사한 추천확인서 초안들",
+            "e-2 로그에서 자신의 승인 흔적"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-4:uncertainty:2",
+              "factText": "마감 직전 버전 로그와 유사 문장 구조의 추천확인서 초안",
+              "tags": [
+                "uncertainty",
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-4:self_justification:3",
+              "factText": "기관 제출 양식을 맞춘다는 명분으로 기준 미달 수치를 포장한 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "제가 확인서 문구와 KPI 표 수정을 승인한 건 사실입니다.",
+            "다만 기준 미달을 메우자는 압박이 동시에 있었습니다."
+          ],
+          "privateKnowledge": [
+            "기준 미달 상태를 알고 있었고, 확인서 문구와 KPI 표를 인호와 교차 수정하며 실제보다 좋아 보이게 정리했다.",
+            "마감 직전 버전 로그와 유사 문장 구조의 추천확인서 초안"
+          ],
+          "suppressions": [
+            "문장 구조가 유사한 추천확인서 초안들",
+            "외부에 드러날 경우 자신에게 돌아올 책임 비율"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-4:admission:4",
+              "factText": "확인서 문구와 KPI 표를 실제보다 좋게 보이도록 수정·승인해 공동 제출한 사실",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-4:self_justification:5",
+              "factText": "기관 제출 양식을 맞춘다는 명분으로 기준 미달 수치를 포장한 경위",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "실제 절감률을 키워 보자고 먼저 밀어붙인 건 인호였습니다.",
+            "저는 그걸 기관 제출 형식으로 묶어 준 쪽에 가까웠습니다."
+          ],
+          "privateKnowledge": [
+            "기준 미달 상태를 알고 있었고, 확인서 문구와 KPI 표를 인호와 교차 수정하며 실제보다 좋아 보이게 정리했다.",
+            "수치 자체를 키우는 방향은 조인호 쪽에서 먼저 강하게 밀었다고 보는 인식"
+          ],
+          "suppressions": [
+            "문장 구조가 유사한 추천확인서 초안들",
+            "정산 복구로 이어질 경우의 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-4:counter:6",
+              "factText": "수치 자체를 키우는 방향은 조인호 쪽에서 먼저 강하게 밀었다고 보는 인식",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-4:fear:7",
+              "factText": "행정 부담과 외부 체면 때문에 허위성을 축소해 본 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "제가 혼자 행정 부담을 끌고 간다는 감정으로 선을 흐렸습니다.",
+            "마감 공포와 체면 때문에 허위성을 스스로 눙쳤습니다."
+          ],
+          "privateKnowledge": [
+            "기준 미달 상태를 알고 있었고, 확인서 문구와 KPI 표를 인호와 교차 수정하며 실제보다 좋아 보이게 정리했다.",
+            "행정 부담과 외부 체면 때문에 허위성을 축소해 본 감정"
+          ],
+          "suppressions": [
+            "외부 환수와 평판 손상 범위를 끝까지 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-4:emotion:8",
+              "factText": "행정 부담과 외부 체면 때문에 허위성을 축소해 본 감정",
+              "tags": [
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-4:admission:9",
+              "factText": "행정 포맷 정리가 아니라 공동 허위 제출이었다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "둘이 함께 수치와 확인서를 부풀려 냈습니다.",
+            "행정 부담을 핑계로 넘길 수 없는 공동 허위 제출이었습니다."
+          ],
+          "privateKnowledge": [
+            "기준 미달 상태를 알고 있었고, 확인서 문구와 KPI 표를 인호와 교차 수정하며 실제보다 좋아 보이게 정리했다.",
+            "제출 형식 정리라는 이유로 허위 수치를 덮을 수 없다는 문제"
+          ],
+          "suppressions": [
+            "정산 복구 뒤 개인 책임이 어디까지 이어질지는 끝까지 확정하지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-4:admission:10",
+              "factText": "행정 포맷 정리가 아니라 공동 허위 제출이었다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-4:rule:11",
+              "factText": "제출 형식 정리라는 이유로 허위 수치를 덮을 수 없다는 문제",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "버전 로그·KPI 코멘트·추천확인서 초안",
+                  "neutral": "그 제출 자료"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "metric": {
+                  "exact": "실증 매장 수와 절감률",
+                  "neutral": "그 수치"
+                },
+                "evidence": {
+                  "exact": "버전 로그·원시 실증 자료",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "사후점검 후보라기보다 교부 직후 브리핑 정리 수준이라고 봤습니다.",
+            "기관이 이름 배치나 문구를 다시 보는 건 흔한 일입니다."
+          ],
+          "privateKnowledge": [
+            "브리핑 수정요청을 하던 시점에 기관이 이상 징후를 별도로 보고 있었고, 자신의 문구 집착이 그 신호를 흐리게 만들었다."
+          ],
+          "suppressions": [
+            "기관 후보 메모와 같은 주에 보낸 브리핑 수정요청 메일",
+            "사후점검 가능성을 내부에서 크게 말하지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-5:denial:0",
+              "factText": "진흥원이 이미 사후점검 후보로 올려두고 있었는데도 위험을 실감하지 못한 사실",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-5:uncertainty:1",
+              "factText": "기관 후보 메모와 브리핑 수정요청 메일이 같은 주에 남아 있다는 점",
+              "tags": [
+                "uncertainty",
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "기관이 파일 맥락을 다시 보는 건 절차상 있을 수 있다고 여겼습니다.",
+            "그때는 아직 위험으로 읽지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "브리핑 수정요청을 하던 시점에 기관이 이상 징후를 별도로 보고 있었고, 자신의 문구 집착이 그 신호를 흐리게 만들었다.",
+            "공로 문구와 외부 브리핑에 집중하느라 기관의 이상 징후를 놓친 경위"
+          ],
+          "suppressions": [
+            "기관 후보 메모와 같은 주에 보낸 브리핑 수정요청 메일",
+            "사후점검 가능성을 내부에서 크게 말하지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-5:uncertainty:2",
+              "factText": "기관 후보 메모와 브리핑 수정요청 메일이 같은 주에 남아 있다는 점",
+              "tags": [
+                "uncertainty",
+                "evidence"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-5:institution:3",
+              "factText": "공로 문구와 외부 브리핑에 집중하느라 기관의 이상 징후를 놓친 경위",
+              "tags": [
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "후보 메모가 있었다면 그때는 몰랐습니다.",
+            "지금 보면 제 브리핑 수정요청 메일이 위험 신호와 겹친 셈입니다."
+          ],
+          "privateKnowledge": [
+            "브리핑 수정요청을 하던 시점에 기관이 이상 징후를 별도로 보고 있었고, 자신의 문구 집착이 그 신호를 흐리게 만들었다.",
+            "기관 후보 메모와 브리핑 수정요청 메일이 같은 주에 남아 있다는 점"
+          ],
+          "suppressions": [
+            "기관 후보 메모와 같은 주에 보낸 브리핑 수정요청 메일",
+            "외부에 드러날 경우 자신에게 돌아올 책임 비율"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-5:admission:4",
+              "factText": "기관 후보 메모와 브리핑 수정요청 메일이 같은 주에 남아 있다는 점",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-5:context:5",
+              "factText": "공로 문구와 외부 브리핑에 집중하느라 기관의 이상 징후를 놓친 경위",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "공로 문구를 제 쪽으로 몰아넣느라 기관의 다른 신호를 못 봤습니다.",
+            "사후점검 가능성을 진지하게 점검하지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "브리핑 수정요청을 하던 시점에 기관이 이상 징후를 별도로 보고 있었고, 자신의 문구 집착이 그 신호를 흐리게 만들었다.",
+            "교부 직후 서사를 선점하려는 양측 경쟁이 위험 신호를 뒤로 밀어냈다는 점"
+          ],
+          "suppressions": [
+            "기관 후보 메모와 같은 주에 보낸 브리핑 수정요청 메일",
+            "정산 복구로 이어질 경우의 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-5:fear:6",
+              "factText": "환수와 외부 망신을 자신이 먼저 떠안을까 두려워한 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "fear",
+                "context"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-5:responsibility:7",
+              "factText": "공로 문구와 외부 브리핑에 집중하느라 기관의 이상 징후를 놓친 경위",
+              "tags": [
+                "responsibility",
+                "act"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "fear",
+                "context"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "환수와 외부 망신이 무서워 사후점검 가능성을 축소해서 봤습니다.",
+            "저한테 먼저 화살이 올 거라는 생각 때문에 더 회피했습니다."
+          ],
+          "privateKnowledge": [
+            "브리핑 수정요청을 하던 시점에 기관이 이상 징후를 별도로 보고 있었고, 자신의 문구 집착이 그 신호를 흐리게 만들었다.",
+            "환수와 외부 망신을 자신이 먼저 떠안을까 두려워한 감정"
+          ],
+          "suppressions": [
+            "외부 환수와 평판 손상 범위를 끝까지 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-5:emotion:8",
+              "factText": "환수와 외부 망신을 자신이 먼저 떠안을까 두려워한 감정",
+              "tags": [
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-5:fear:9",
+              "factText": "안전하다는 이야기만 믿고 사후점검 가능성을 외면했다는 인정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "진흥원은 이미 후보로 올려두고 있었고 저는 브리핑 서사에 매달리느라 그 위험을 외면했습니다.",
+            "결국 안전하다는 말을 믿고 싶어 했습니다."
+          ],
+          "privateKnowledge": [
+            "브리핑 수정요청을 하던 시점에 기관이 이상 징후를 별도로 보고 있었고, 자신의 문구 집착이 그 신호를 흐리게 만들었다.",
+            "기관 이상 징후가 나오면 개인 서사보다 공동 대응표를 먼저 만들었어야 한다는 문제"
+          ],
+          "suppressions": [
+            "정산 복구 뒤 개인 책임이 어디까지 이어질지는 끝까지 확정하지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-09:b:tell:burden_stack",
+            "partnership-09:b:tell:martyr_turn",
+            "partnership-09:b:tell:public_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-09:b:d-5:admission:10",
+              "factText": "안전하다는 이야기만 믿고 사후점검 가능성을 외면했다는 인정",
+              "tags": [
+                "admission"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-09:b:d-5:institution:11",
+              "factText": "기관 이상 징후가 나오면 개인 서사보다 공동 대응표를 먼저 만들었어야 한다는 문제",
+              "tags": [
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "doc": {
+                  "exact": "사후점검 후보 메모·브리핑 수정요청 메일",
+                  "neutral": "그 기관 자료"
+                },
+                "institution": {
+                  "exact": "지역산업진흥원",
+                  "neutral": "지원기관"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "상대",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 대표"
+                },
+                "evidence": {
+                  "exact": "원시 실증 자료·기관 후보 메모",
+                  "neutral": "핵심 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+

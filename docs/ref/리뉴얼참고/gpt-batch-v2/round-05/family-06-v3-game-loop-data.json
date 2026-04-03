@@ -1,0 +1,2085 @@
+{
+  "caseId": "family-06",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "공개 저격과 역연락의 시작",
+      "description": "게시물 식별성(e-1)과 선영의 1차 대응(e-2)을 한 카드로 묶어, 누가 먼저 공개 전장을 열었는지 추궁하는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "게시물을 보자마자 가족임을 알아보셨다면, 왜 곧바로 삭제를 요구하기보다 외부로 캡처를 돌리셨습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.unlock.s2.a.immediate_identify",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "협찬사와 친척·교회방 연락이 익명 PDF보다 먼저였다는 점을, 시간 순서까지 포함해 부인하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.unlock.s2.a.contact_scope",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "하준 씨의 휴학기와 예전 문제행동까지 꺼낸 순간, 과거 비무기화 약속을 이미 흔든 것 아닙니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.s2.a.past_behavior",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "흐린 영정사진, 체육관 태그, 가족만 아는 문구를 한 묶음으로 올리고도 식별 가능성이 없었다고 보십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.unlock.s2.b.identifiable_bundle",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "가족을 추정하는 댓글이 붙은 뒤에도 게시물을 즉시 내리지 않은 이유가 정말 표현의 자유 때문뿐이었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.unlock.s3.b.metrics_after_reaction",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "어머니 연락을 문제 삼더라도, 그 연락이 왜 평판 훼손처럼 읽혔는지 본인 입으로 설명해 보시겠습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.unlock.s2.b.dm_damage",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "익명 PDF의 함정과 발신 흔적",
+      "description": "잘린 캡처(e-3)의 함정성과 메일 헤더·게스트계정 로그(e-4)를 나란히 제시해 d-3의 오인을 무너뜨리는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "잘린 캡처만 보고 하준 씨 쪽으로 단정하신 근거가 무엇이었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.s2.a.capture_not_source",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "외삼촌이 예전 스캔본을 보관했다는 사실을 알고도, 왜 처음엔 그 가능성을 재판관에게 말하지 않으셨습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.unlock.s3.a.uncle_backup_known",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "확인보다 비난이 먼저 나온 이유가 자료 때문입니까, 아니면 2014년 망신이 다시 열릴까 두려웠기 때문입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.unlock.s4.a.panic_before_verification",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "맘카페 캡처만으로 어머니나 연인을 범인처럼 말한 건, 함정 자료에 끌린 성급한 판단 아닙니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.s2.b.trap_limit",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "외삼촌 병철 씨가 예전 스캔본을 보관했다는 기억을 왜 처음에는 꺼내지 않았습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.unlock.s3.b.uncle_memory",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "가족 어른을 감싸려는 침묵이었습니까, 아니면 본인도 의심 화살에서 벗어나고 싶었던 겁니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d3.unlock.s4.b.third_party_fear",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "백업 로그와 협찬 중단 결정문",
+      "description": "옛 백업·USB 흔적(e-5)과 협찬 중단 내부 메모(e-6)를 연결해 약속 파기와 실제 손해 원인을 정리하는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "휴학기와 예전 문제행동을 다시 꺼낸 순간, '과거 기록을 새 싸움에 쓰지 않겠다'는 약속은 이미 깨진 것 아닙니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.s3.a.defensive_breach",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "브랜드가 선영 씨 연락을 가족 분쟁 확산 신호로 읽었다는 내부 메모를 보고도, 여전히 본인 연락이 부차적이었다고 보십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.unlock.s3.a.brand_risk",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "지금도 수습 명목을 앞세우시겠습니까, 아니면 협찬 중단 원인에 본인 연락이 포함됐다고 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.unlock.s5.a.admit_cause",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "직접 문서를 올리지 않았다는 이유만으로, 빚과 쉼터를 암시한 게시물이 약속 위반이 아니라고 말할 수 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.s3.b.first_opened_door",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "협찬 중단의 최종 시점이 뒤였다 해도, 브랜드가 처음 위험 신호를 본 장면이 본인 게시물이었다는 점은 인정합니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.unlock.s3.b.first_signal",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "외삼촌 쪽 로그와 백업 기록이 맞아떨어진 뒤에도, 여전히 본인은 피해자 자리에만 있었다고 말하실 겁니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d3.unlock.s5.b.real_source",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.s2.a.immediate_identify",
+            "factText": "선영은 게시물을 보자마자 영정사진 일부와 체육관 태그만으로 가족임을 알아봤다.",
+            "tags": [
+              "identity",
+              "evidence",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "platform": {
+                "exact": "쓰레드·인스타 스토리",
+                "judgeRef": "해당 SNS 게시물",
+                "neutral": "그 게시물 묶음"
+              },
+              "visualCue": {
+                "exact": "흐린 영정사진 일부",
+                "neutral": "가족을 짐작할 수 있는 이미지"
+              },
+              "location": {
+                "exact": "동네 체육관 위치 태그",
+                "neutral": "지역 단서"
+              },
+              "reaction": {
+                "exact": "가족을 특정한 추정 댓글",
+                "neutral": "식별 반응"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence-led"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.s3.a.forward_capture",
+            "factText": "선영은 식별 가능성을 확인한 뒤 게시물 캡처를 외부로 전달했다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "platform": {
+                "exact": "쓰레드·인스타 스토리",
+                "judgeRef": "해당 SNS 게시물",
+                "neutral": "그 게시물 묶음"
+              },
+              "visualCue": {
+                "exact": "흐린 영정사진 일부",
+                "neutral": "가족을 짐작할 수 있는 이미지"
+              },
+              "location": {
+                "exact": "동네 체육관 위치 태그",
+                "neutral": "지역 단서"
+              },
+              "reaction": {
+                "exact": "가족을 특정한 추정 댓글",
+                "neutral": "식별 반응"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.s4.a.retriggered_2014",
+            "factText": "선영은 게시물 때문에 2014년 망신이 재개되는 공포를 겪었다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "platform": {
+                "exact": "쓰레드·인스타 스토리",
+                "judgeRef": "해당 SNS 게시물",
+                "neutral": "그 게시물 묶음"
+              },
+              "visualCue": {
+                "exact": "흐린 영정사진 일부",
+                "neutral": "가족을 짐작할 수 있는 이미지"
+              },
+              "location": {
+                "exact": "동네 체육관 위치 태그",
+                "neutral": "지역 단서"
+              },
+              "reaction": {
+                "exact": "가족을 특정한 추정 댓글",
+                "neutral": "식별 반응"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "opening"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.s5.a.dual_responsibility",
+            "factText": "하준의 식별 게시와 선영의 확산 반응이 함께 파장을 키웠다.",
+            "tags": [
+              "responsibility",
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "platform": {
+                "exact": "쓰레드·인스타 스토리",
+                "judgeRef": "해당 SNS 게시물",
+                "neutral": "그 게시물 묶음"
+              },
+              "visualCue": {
+                "exact": "흐린 영정사진 일부",
+                "neutral": "가족을 짐작할 수 있는 이미지"
+              },
+              "location": {
+                "exact": "동네 체육관 위치 태그",
+                "neutral": "지역 단서"
+              },
+              "reaction": {
+                "exact": "가족을 특정한 추정 댓글",
+                "neutral": "식별 반응"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.s2.a.contact_scope",
+            "factText": "선영의 첫 경고 연락은 익명 PDF보다 38분 먼저 협찬사와 친척·교회방으로 퍼졌다.",
+            "tags": [
+              "timeline",
+              "institution",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "audience": {
+                "exact": "협찬사·친척 단톡·교회 소모임",
+                "judgeRef": "그 연락을 받은 쪽들",
+                "neutral": "여러 수신처"
+              },
+              "timeOffset": {
+                "exact": "익명 PDF 도착 38분 전",
+                "neutral": "그보다 앞선 시점"
+              },
+              "institution": {
+                "exact": "보충제 협찬사",
+                "neutral": "협찬처"
+              },
+              "phrase": {
+                "exact": "과거에도 문제를 만들었다",
+                "neutral": "예전 문제행동 언급"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence-led"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.s3.a.phrase_damage",
+            "factText": "'과거에도 문제를 만들었다'는 반복 문구가 상담이 아니라 평판 깎기로 읽힐 수준이었다.",
+            "tags": [
+              "harm",
+              "responsibility",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "audience": {
+                "exact": "협찬사·친척 단톡·교회 소모임",
+                "judgeRef": "그 연락을 받은 쪽들",
+                "neutral": "여러 수신처"
+              },
+              "timeOffset": {
+                "exact": "익명 PDF 도착 38분 전",
+                "neutral": "그보다 앞선 시점"
+              },
+              "institution": {
+                "exact": "보충제 협찬사",
+                "neutral": "협찬처"
+              },
+              "phrase": {
+                "exact": "과거에도 문제를 만들었다",
+                "neutral": "예전 문제행동 언급"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.s4.a.shame_panic",
+            "factText": "선영은 2014년 망신이 재확산될까 두려워 연락 범위를 넓혔다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "audience": {
+                "exact": "협찬사·친척 단톡·교회 소모임",
+                "judgeRef": "그 연락을 받은 쪽들",
+                "neutral": "여러 수신처"
+              },
+              "timeOffset": {
+                "exact": "익명 PDF 도착 38분 전",
+                "neutral": "그보다 앞선 시점"
+              },
+              "institution": {
+                "exact": "보충제 협찬사",
+                "neutral": "협찬처"
+              },
+              "phrase": {
+                "exact": "과거에도 문제를 만들었다",
+                "neutral": "예전 문제행동 언급"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "opening"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.s5.a.admit_broadcast",
+            "factText": "선영은 수습 명목으로 비난성 연락을 돌렸음을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "act"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "audience": {
+                "exact": "협찬사·친척 단톡·교회 소모임",
+                "judgeRef": "그 연락을 받은 쪽들",
+                "neutral": "여러 수신처"
+              },
+              "timeOffset": {
+                "exact": "익명 PDF 도착 38분 전",
+                "neutral": "그보다 앞선 시점"
+              },
+              "institution": {
+                "exact": "보충제 협찬사",
+                "neutral": "협찬처"
+              },
+              "phrase": {
+                "exact": "과거에도 문제를 만들었다",
+                "neutral": "예전 문제행동 언급"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.s2.a.capture_not_source",
+            "factText": "e-3 캡처만으로는 선영이나 하준 누구도 발신자로 특정되지 않는다.",
+            "tags": [
+              "evidence",
+              "uncertainty",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "과거"
+              },
+              "person": {
+                "fullName": "오병철",
+                "judgeRef": "외삼촌",
+                "neutral": "제3가족"
+              },
+              "account": {
+                "exact": "교회 사무실 게스트계정",
+                "neutral": "공용 계정"
+              },
+              "device": {
+                "exact": "USB 동기화",
+                "neutral": "외부 저장장치 복사"
+              },
+              "document": {
+                "exact": "쉼터·채무조정 서류 스캔본",
+                "neutral": "과거 가족사 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence-led"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.s3.a.uncle_backup_known",
+            "factText": "선영은 병철이 옛 서류 스캔본을 보관했다는 사실을 초반부터 알고 있었다.",
+            "tags": [
+              "legacy_sentence",
+              "relationship",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "과거"
+              },
+              "person": {
+                "fullName": "오병철",
+                "judgeRef": "외삼촌",
+                "neutral": "제3가족"
+              },
+              "account": {
+                "exact": "교회 사무실 게스트계정",
+                "neutral": "공용 계정"
+              },
+              "device": {
+                "exact": "USB 동기화",
+                "neutral": "외부 저장장치 복사"
+              },
+              "document": {
+                "exact": "쉼터·채무조정 서류 스캔본",
+                "neutral": "과거 가족사 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.s4.a.panic_before_verification",
+            "factText": "선영은 확인보다 비난을 먼저 하면서 하준 쪽을 성급히 의심했다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "responsibility"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "과거"
+              },
+              "person": {
+                "fullName": "오병철",
+                "judgeRef": "외삼촌",
+                "neutral": "제3가족"
+              },
+              "account": {
+                "exact": "교회 사무실 게스트계정",
+                "neutral": "공용 계정"
+              },
+              "device": {
+                "exact": "USB 동기화",
+                "neutral": "외부 저장장치 복사"
+              },
+              "document": {
+                "exact": "쉼터·채무조정 서류 스캔본",
+                "neutral": "과거 가족사 문서"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "opening"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.s5.a.real_source",
+            "factText": "실제 유출은 병철의 백업과 교회 게스트계정 사용에서 시작됐다.",
+            "tags": [
+              "admission",
+              "evidence",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "과거"
+              },
+              "person": {
+                "fullName": "오병철",
+                "judgeRef": "외삼촌",
+                "neutral": "제3가족"
+              },
+              "account": {
+                "exact": "교회 사무실 게스트계정",
+                "neutral": "공용 계정"
+              },
+              "device": {
+                "exact": "USB 동기화",
+                "neutral": "외부 저장장치 복사"
+              },
+              "document": {
+                "exact": "쉼터·채무조정 서류 스캔본",
+                "neutral": "과거 가족사 문서"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.s2.a.past_behavior",
+            "factText": "선영은 협찬사와 주변 연락에서 하준의 휴학기와 예전 문제행동을 끌어왔다.",
+            "tags": [
+              "legacy_sentence",
+              "act",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "그 시절"
+              },
+              "agreement": {
+                "exact": "과거 기록을 새 갈등의 무기로 쓰지 않기로 한 약속",
+                "neutral": "그 약속"
+              },
+              "record": {
+                "exact": "쉼터·채무조정 기록",
+                "neutral": "과거 기록"
+              },
+              "pastAct": {
+                "exact": "휴학기·예전 문제행동 언급",
+                "neutral": "예전 일을 끌어온 말"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence-led"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.s3.a.defensive_breach",
+            "factText": "선영은 방어 명목으로 약속 경계를 넘었음을 알면서도 훈계로 포장했다.",
+            "tags": [
+              "self_justification",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "그 시절"
+              },
+              "agreement": {
+                "exact": "과거 기록을 새 갈등의 무기로 쓰지 않기로 한 약속",
+                "neutral": "그 약속"
+              },
+              "record": {
+                "exact": "쉼터·채무조정 기록",
+                "neutral": "과거 기록"
+              },
+              "pastAct": {
+                "exact": "휴학기·예전 문제행동 언급",
+                "neutral": "예전 일을 끌어온 말"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.s4.a.promise_fear",
+            "factText": "망신 공포가 비무기화 약속보다 앞서면서 선영이 먼저 과거를 흔들었다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "rule"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "그 시절"
+              },
+              "agreement": {
+                "exact": "과거 기록을 새 갈등의 무기로 쓰지 않기로 한 약속",
+                "neutral": "그 약속"
+              },
+              "record": {
+                "exact": "쉼터·채무조정 기록",
+                "neutral": "과거 기록"
+              },
+              "pastAct": {
+                "exact": "휴학기·예전 문제행동 언급",
+                "neutral": "예전 일을 끌어온 말"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "opening"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.s5.a.shared_break",
+            "factText": "하준과 선영 모두 2014년 기록 비무기화 약속을 각자 다른 방식으로 깼다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "그 시절"
+              },
+              "agreement": {
+                "exact": "과거 기록을 새 갈등의 무기로 쓰지 않기로 한 약속",
+                "neutral": "그 약속"
+              },
+              "record": {
+                "exact": "쉼터·채무조정 기록",
+                "neutral": "과거 기록"
+              },
+              "pastAct": {
+                "exact": "휴학기·예전 문제행동 언급",
+                "neutral": "예전 일을 끌어온 말"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.s2.a.timeline_overlap",
+            "factText": "협찬 중단 판단은 하준 게시물 뒤가 아니라 선영 연락과 익명 PDF 수신 이후에 내려졌다.",
+            "tags": [
+              "timeline",
+              "institution",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "causeA": {
+                "exact": "하준의 첫 게시물",
+                "neutral": "초기 게시물"
+              },
+              "causeB": {
+                "exact": "선영의 경고 연락",
+                "neutral": "가족 쪽 연락"
+              },
+              "causeC": {
+                "exact": "익명 PDF 제보",
+                "neutral": "문서 제보"
+              },
+              "decisionTime": {
+                "exact": "두 연락이 모두 끝난 뒤의 잠정 중단 결정",
+                "neutral": "최종 결정 시점"
+              },
+              "institution": {
+                "exact": "협찬사 내부 중단 메모",
+                "neutral": "브랜드 판단 자료"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence-led"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.s3.a.brand_risk",
+            "factText": "브랜드는 선영의 연락을 가족 분쟁 확산 신호로 읽었다.",
+            "tags": [
+              "institution",
+              "harm",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "causeA": {
+                "exact": "하준의 첫 게시물",
+                "neutral": "초기 게시물"
+              },
+              "causeB": {
+                "exact": "선영의 경고 연락",
+                "neutral": "가족 쪽 연락"
+              },
+              "causeC": {
+                "exact": "익명 PDF 제보",
+                "neutral": "문서 제보"
+              },
+              "decisionTime": {
+                "exact": "두 연락이 모두 끝난 뒤의 잠정 중단 결정",
+                "neutral": "최종 결정 시점"
+              },
+              "institution": {
+                "exact": "협찬사 내부 중단 메모",
+                "neutral": "브랜드 판단 자료"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.s4.a.face_saving",
+            "factText": "선영의 체면 방어가 해명 욕구를 과잉으로 밀어 올렸다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "causeA": {
+                "exact": "하준의 첫 게시물",
+                "neutral": "초기 게시물"
+              },
+              "causeB": {
+                "exact": "선영의 경고 연락",
+                "neutral": "가족 쪽 연락"
+              },
+              "causeC": {
+                "exact": "익명 PDF 제보",
+                "neutral": "문서 제보"
+              },
+              "decisionTime": {
+                "exact": "두 연락이 모두 끝난 뒤의 잠정 중단 결정",
+                "neutral": "최종 결정 시점"
+              },
+              "institution": {
+                "exact": "협찬사 내부 중단 메모",
+                "neutral": "브랜드 판단 자료"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "opening"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.s5.a.admit_cause",
+            "factText": "협찬 중단의 직접 원인에는 선영 연락이 포함된다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "causeA": {
+                "exact": "하준의 첫 게시물",
+                "neutral": "초기 게시물"
+              },
+              "causeB": {
+                "exact": "선영의 경고 연락",
+                "neutral": "가족 쪽 연락"
+              },
+              "causeC": {
+                "exact": "익명 PDF 제보",
+                "neutral": "문서 제보"
+              },
+              "decisionTime": {
+                "exact": "두 연락이 모두 끝난 뒤의 잠정 중단 결정",
+                "neutral": "최종 결정 시점"
+              },
+              "institution": {
+                "exact": "협찬사 내부 중단 메모",
+                "neutral": "브랜드 판단 자료"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.s2.b.identifiable_bundle",
+            "factText": "영정사진 일부·체육관 태그·가족만 아는 문구가 한 묶음으로 노출됐다.",
+            "tags": [
+              "identity",
+              "evidence",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "platform": {
+                "exact": "쓰레드·인스타 스토리",
+                "judgeRef": "해당 SNS 게시물",
+                "neutral": "그 게시물 묶음"
+              },
+              "visualCue": {
+                "exact": "흐린 영정사진 일부",
+                "neutral": "가족을 짐작할 수 있는 이미지"
+              },
+              "location": {
+                "exact": "동네 체육관 위치 태그",
+                "neutral": "지역 단서"
+              },
+              "reaction": {
+                "exact": "가족을 특정한 추정 댓글",
+                "neutral": "식별 반응"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence-led"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.s3.b.metrics_after_reaction",
+            "factText": "가족 추정 댓글과 저장 반응이 붙은 뒤에도 하준은 게시물을 바로 내리지 않았다.",
+            "tags": [
+              "timeline",
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "platform": {
+                "exact": "쓰레드·인스타 스토리",
+                "judgeRef": "해당 SNS 게시물",
+                "neutral": "그 게시물 묶음"
+              },
+              "visualCue": {
+                "exact": "흐린 영정사진 일부",
+                "neutral": "가족을 짐작할 수 있는 이미지"
+              },
+              "location": {
+                "exact": "동네 체육관 위치 태그",
+                "neutral": "지역 단서"
+              },
+              "reaction": {
+                "exact": "가족을 특정한 추정 댓글",
+                "neutral": "식별 반응"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.s4.b.validation_need",
+            "factText": "하준은 상처 호소와 공감 욕구를 식별 가능성보다 우선했다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "platform": {
+                "exact": "쓰레드·인스타 스토리",
+                "judgeRef": "해당 SNS 게시물",
+                "neutral": "그 게시물 묶음"
+              },
+              "visualCue": {
+                "exact": "흐린 영정사진 일부",
+                "neutral": "가족을 짐작할 수 있는 이미지"
+              },
+              "location": {
+                "exact": "동네 체육관 위치 태그",
+                "neutral": "지역 단서"
+              },
+              "reaction": {
+                "exact": "가족을 특정한 추정 댓글",
+                "neutral": "식별 반응"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "opening"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.s5.b.admit_targeting",
+            "factText": "하준은 실명 없이도 가족이 특정될 수 있다는 점을 알고 게시물을 올렸다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "act"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "platform": {
+                "exact": "쓰레드·인스타 스토리",
+                "judgeRef": "해당 SNS 게시물",
+                "neutral": "그 게시물 묶음"
+              },
+              "visualCue": {
+                "exact": "흐린 영정사진 일부",
+                "neutral": "가족을 짐작할 수 있는 이미지"
+              },
+              "location": {
+                "exact": "동네 체육관 위치 태그",
+                "neutral": "지역 단서"
+              },
+              "reaction": {
+                "exact": "가족을 특정한 추정 댓글",
+                "neutral": "식별 반응"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.s2.b.dm_damage",
+            "factText": "선영의 연락은 단순 상담보다 '하준을 믿지 말라'는 평판 훼손 효과가 컸다.",
+            "tags": [
+              "institution",
+              "harm",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "audience": {
+                "exact": "협찬사·친척 단톡·교회 소모임",
+                "judgeRef": "그 연락을 받은 쪽들",
+                "neutral": "여러 수신처"
+              },
+              "timeOffset": {
+                "exact": "익명 PDF 도착 38분 전",
+                "neutral": "그보다 앞선 시점"
+              },
+              "institution": {
+                "exact": "보충제 협찬사",
+                "neutral": "협찬처"
+              },
+              "phrase": {
+                "exact": "과거에도 문제를 만들었다",
+                "neutral": "예전 문제행동 언급"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence-led"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.s3.b.separate_wrong",
+            "factText": "하준은 자신의 게시물과 별개로 선영의 비난 연락을 독립된 잘못으로 본다.",
+            "tags": [
+              "responsibility",
+              "counter",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "audience": {
+                "exact": "협찬사·친척 단톡·교회 소모임",
+                "judgeRef": "그 연락을 받은 쪽들",
+                "neutral": "여러 수신처"
+              },
+              "timeOffset": {
+                "exact": "익명 PDF 도착 38분 전",
+                "neutral": "그보다 앞선 시점"
+              },
+              "institution": {
+                "exact": "보충제 협찬사",
+                "neutral": "협찬처"
+              },
+              "phrase": {
+                "exact": "과거에도 문제를 만들었다",
+                "neutral": "예전 문제행동 언급"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.s4.b.job_shaken",
+            "factText": "하준은 협찬사 연락 이후 가족 때문에 생계가 흔들린다는 공포를 느꼈다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "audience": {
+                "exact": "협찬사·친척 단톡·교회 소모임",
+                "judgeRef": "그 연락을 받은 쪽들",
+                "neutral": "여러 수신처"
+              },
+              "timeOffset": {
+                "exact": "익명 PDF 도착 38분 전",
+                "neutral": "그보다 앞선 시점"
+              },
+              "institution": {
+                "exact": "보충제 협찬사",
+                "neutral": "협찬처"
+              },
+              "phrase": {
+                "exact": "과거에도 문제를 만들었다",
+                "neutral": "예전 문제행동 언급"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "opening"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.s5.b.admit_trigger",
+            "factText": "하준은 자기 게시물이 선영의 공포 반응을 촉발한 계기였음을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "audience": {
+                "exact": "협찬사·친척 단톡·교회 소모임",
+                "judgeRef": "그 연락을 받은 쪽들",
+                "neutral": "여러 수신처"
+              },
+              "timeOffset": {
+                "exact": "익명 PDF 도착 38분 전",
+                "neutral": "그보다 앞선 시점"
+              },
+              "institution": {
+                "exact": "보충제 협찬사",
+                "neutral": "협찬처"
+              },
+              "phrase": {
+                "exact": "과거에도 문제를 만들었다",
+                "neutral": "예전 문제행동 언급"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.s2.b.trap_limit",
+            "factText": "e-3 캡처만으로는 발신자와 업로드 경로를 특정할 수 없다.",
+            "tags": [
+              "evidence",
+              "uncertainty",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "과거"
+              },
+              "person": {
+                "fullName": "오병철",
+                "judgeRef": "외삼촌",
+                "neutral": "제3가족"
+              },
+              "account": {
+                "exact": "교회 사무실 게스트계정",
+                "neutral": "공용 계정"
+              },
+              "device": {
+                "exact": "USB 동기화",
+                "neutral": "외부 저장장치 복사"
+              },
+              "document": {
+                "exact": "쉼터·채무조정 서류 스캔본",
+                "neutral": "과거 가족사 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence-led"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.s3.b.uncle_memory",
+            "factText": "하준은 외삼촌 병철이 예전 스캔본을 보관했다는 기억을 숨겼다.",
+            "tags": [
+              "relationship",
+              "legacy_sentence",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "과거"
+              },
+              "person": {
+                "fullName": "오병철",
+                "judgeRef": "외삼촌",
+                "neutral": "제3가족"
+              },
+              "account": {
+                "exact": "교회 사무실 게스트계정",
+                "neutral": "공용 계정"
+              },
+              "device": {
+                "exact": "USB 동기화",
+                "neutral": "외부 저장장치 복사"
+              },
+              "document": {
+                "exact": "쉼터·채무조정 서류 스캔본",
+                "neutral": "과거 가족사 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.s4.b.third_party_fear",
+            "factText": "가족 어른을 지목하면 집안이 무너질까 두려워 제3자 가능성을 줄여 말했다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "과거"
+              },
+              "person": {
+                "fullName": "오병철",
+                "judgeRef": "외삼촌",
+                "neutral": "제3가족"
+              },
+              "account": {
+                "exact": "교회 사무실 게스트계정",
+                "neutral": "공용 계정"
+              },
+              "device": {
+                "exact": "USB 동기화",
+                "neutral": "외부 저장장치 복사"
+              },
+              "document": {
+                "exact": "쉼터·채무조정 서류 스캔본",
+                "neutral": "과거 가족사 문서"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "opening"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.s5.b.real_source",
+            "factText": "실제 유출 출발점은 병철의 USB 동기화와 게스트계정 발신 로그였다.",
+            "tags": [
+              "admission",
+              "evidence",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "과거"
+              },
+              "person": {
+                "fullName": "오병철",
+                "judgeRef": "외삼촌",
+                "neutral": "제3가족"
+              },
+              "account": {
+                "exact": "교회 사무실 게스트계정",
+                "neutral": "공용 계정"
+              },
+              "device": {
+                "exact": "USB 동기화",
+                "neutral": "외부 저장장치 복사"
+              },
+              "document": {
+                "exact": "쉼터·채무조정 서류 스캔본",
+                "neutral": "과거 가족사 문서"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.s2.b.memory_implicit",
+            "factText": "하준 게시물의 빚·쉼터 암시는 직접 명시가 없어도 2014년 기억을 소환한다.",
+            "tags": [
+              "legacy_sentence",
+              "act",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "그 시절"
+              },
+              "agreement": {
+                "exact": "과거 기록을 새 갈등의 무기로 쓰지 않기로 한 약속",
+                "neutral": "그 약속"
+              },
+              "record": {
+                "exact": "쉼터·채무조정 기록",
+                "neutral": "과거 기록"
+              },
+              "pastAct": {
+                "exact": "휴학기·예전 문제행동 언급",
+                "neutral": "예전 일을 끌어온 말"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence-led"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.s3.b.first_opened_door",
+            "factText": "하준은 표현의 자유를 내세우며 먼저 약속의 문을 열었다.",
+            "tags": [
+              "responsibility",
+              "self_justification",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "그 시절"
+              },
+              "agreement": {
+                "exact": "과거 기록을 새 갈등의 무기로 쓰지 않기로 한 약속",
+                "neutral": "그 약속"
+              },
+              "record": {
+                "exact": "쉼터·채무조정 기록",
+                "neutral": "과거 기록"
+              },
+              "pastAct": {
+                "exact": "휴학기·예전 문제행동 언급",
+                "neutral": "예전 일을 끌어온 말"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.s4.b.shame_cover",
+            "factText": "하준은 '예술적 은유'라는 표현으로 약속 위반의 부끄러움을 덮었다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "그 시절"
+              },
+              "agreement": {
+                "exact": "과거 기록을 새 갈등의 무기로 쓰지 않기로 한 약속",
+                "neutral": "그 약속"
+              },
+              "record": {
+                "exact": "쉼터·채무조정 기록",
+                "neutral": "과거 기록"
+              },
+              "pastAct": {
+                "exact": "휴학기·예전 문제행동 언급",
+                "neutral": "예전 일을 끌어온 말"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "opening"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.s5.b.admit_breach",
+            "factText": "하준도 2014년 기록 비무기화 약속을 깬 당사자다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "year": {
+                "exact": "2014년",
+                "neutral": "그 시절"
+              },
+              "agreement": {
+                "exact": "과거 기록을 새 갈등의 무기로 쓰지 않기로 한 약속",
+                "neutral": "그 약속"
+              },
+              "record": {
+                "exact": "쉼터·채무조정 기록",
+                "neutral": "과거 기록"
+              },
+              "pastAct": {
+                "exact": "휴학기·예전 문제행동 언급",
+                "neutral": "예전 일을 끌어온 말"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.s2.b.sequence_clarity",
+            "factText": "협찬 중단은 초기 게시물 직후가 아니라 후속 연락들과 PDF 도착 뒤 결정됐다.",
+            "tags": [
+              "timeline",
+              "institution",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "causeA": {
+                "exact": "하준의 첫 게시물",
+                "neutral": "초기 게시물"
+              },
+              "causeB": {
+                "exact": "선영의 경고 연락",
+                "neutral": "가족 쪽 연락"
+              },
+              "causeC": {
+                "exact": "익명 PDF 제보",
+                "neutral": "문서 제보"
+              },
+              "decisionTime": {
+                "exact": "두 연락이 모두 끝난 뒤의 잠정 중단 결정",
+                "neutral": "최종 결정 시점"
+              },
+              "institution": {
+                "exact": "협찬사 내부 중단 메모",
+                "neutral": "브랜드 판단 자료"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence-led"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.s3.b.first_signal",
+            "factText": "브랜드가 처음 위험을 감지한 장면은 하준의 게시물이었다.",
+            "tags": [
+              "institution",
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "causeA": {
+                "exact": "하준의 첫 게시물",
+                "neutral": "초기 게시물"
+              },
+              "causeB": {
+                "exact": "선영의 경고 연락",
+                "neutral": "가족 쪽 연락"
+              },
+              "causeC": {
+                "exact": "익명 PDF 제보",
+                "neutral": "문서 제보"
+              },
+              "decisionTime": {
+                "exact": "두 연락이 모두 끝난 뒤의 잠정 중단 결정",
+                "neutral": "최종 결정 시점"
+              },
+              "institution": {
+                "exact": "협찬사 내부 중단 메모",
+                "neutral": "브랜드 판단 자료"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.s4.b.mother_blame_comfort",
+            "factText": "하준은 분노 때문에 협찬 중단을 '전부 엄마 탓'으로 단순화했다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "causeA": {
+                "exact": "하준의 첫 게시물",
+                "neutral": "초기 게시물"
+              },
+              "causeB": {
+                "exact": "선영의 경고 연락",
+                "neutral": "가족 쪽 연락"
+              },
+              "causeC": {
+                "exact": "익명 PDF 제보",
+                "neutral": "문서 제보"
+              },
+              "decisionTime": {
+                "exact": "두 연락이 모두 끝난 뒤의 잠정 중단 결정",
+                "neutral": "최종 결정 시점"
+              },
+              "institution": {
+                "exact": "협찬사 내부 중단 메모",
+                "neutral": "브랜드 판단 자료"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "opening"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.s5.b.shared_cause",
+            "factText": "협찬 중단의 실제 원인은 하준 게시물과 선영 연락, 익명 PDF의 중첩이다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "causeA": {
+                "exact": "하준의 첫 게시물",
+                "neutral": "초기 게시물"
+              },
+              "causeB": {
+                "exact": "선영의 경고 연락",
+                "neutral": "가족 쪽 연락"
+              },
+              "causeC": {
+                "exact": "익명 PDF 제보",
+                "neutral": "문서 제보"
+              },
+              "decisionTime": {
+                "exact": "두 연락이 모두 끝난 뒤의 잠정 중단 결정",
+                "neutral": "최종 결정 시점"
+              },
+              "institution": {
+                "exact": "협찬사 내부 중단 메모",
+                "neutral": "브랜드 판단 자료"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "contradiction-1",
+        "trigger": "b insists the post was only metaphor after e-1",
+        "line": "‘은유였다’는 주장과 영정사진 일부·체육관 태그·가족 추정 댓글의 결합이 정면으로 충돌한다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "contradiction-2",
+        "trigger": "a calls the messages mere damage control after e-2",
+        "line": "‘수습 연락’이라는 표현이 '과거에도 문제를 만들었다'는 비난 문구와 38분 선행 발송 시점 때문에 무너진다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "contradiction-3",
+        "trigger": "either side keeps blaming the other for the PDF after e-3 and e-4",
+        "line": "잘린 캡처가 만든 인상과 실제 발신 로그가 어긋나면서, 서로를 범인으로 몰던 초기 서사가 급격히 흔들린다.",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      },
+      {
+        "id": "contradiction-4",
+        "trigger": "either party says they did not weaponize the past after e-5",
+        "line": "‘서류는 직접 안 돌렸다’는 항변과 휴학기·쉼터 기억을 현재 공격에 끌어온 사실이 약속 파기 여부에서 충돌한다.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "interjection-1",
+        "byParty": "a",
+        "trigger": "b minimizes identifiability on d-1",
+        "line": "실명만 안 쓰면 다냐? 그 사진 조각하고 체육관 태그면 누가 몰라.",
+        "relatedDisputeId": "d-1"
+      },
+      {
+        "id": "interjection-2",
+        "byParty": "b",
+        "trigger": "a frames sponsor contact as cleanup on d-2",
+        "line": "수습이요? 협찬사에 전화해서 저를 믿지 말라 한 게 수습이에요?",
+        "relatedDisputeId": "d-2"
+      },
+      {
+        "id": "interjection-3",
+        "byParty": "b",
+        "trigger": "a blames b alone for the PDF on d-3",
+        "line": "외삼촌이 옛 파일 갖고 있던 건 알면서 왜 그 얘긴 이제야 해요?",
+        "relatedDisputeId": "d-3"
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "outburst-a-1",
+        "byParty": "a",
+        "trigger": "d-1 or d-4 reaches S4",
+        "line": "내가 또 무능한 엄마로 찍히는 게 그렇게 쉬워 보여? 그래서라도 막아야 했어.",
+        "relatedDisputeIds": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "outburst-a-2",
+        "byParty": "a",
+        "trigger": "b treats her contact as pure malice on d-2 or d-5",
+        "line": "집안 일 다 밖에 던져놓고 나만 악역 만들지 마. 내가 겁이 나서 그랬다는 건 아무도 안 보잖아.",
+        "relatedDisputeIds": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "outburst-b-1",
+        "byParty": "b",
+        "trigger": "d-1 or d-4 reaches S4",
+        "line": "또 나만 과한 사람 만들죠. 저는 한 번만 제 상처를 보라고 한 거예요.",
+        "relatedDisputeIds": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "outburst-b-2",
+        "byParty": "b",
+        "trigger": "d-2 or d-5 reaches S4",
+        "line": "협찬 끊긴 날 저는 또 가족 때문에 일도 잃는 줄 알았어요. 그래서 더 크게 반응했어요.",
+        "relatedDisputeIds": [
+          "d-2",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "family06:transition:a:d-2:s0_s1",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "sponsor_contact_question",
+      "line": "연락은 했죠. 그런데 그걸 협찬 끊으라고 한 것처럼 말하면 과해요.",
+      "behaviorHint": "즉답은 하되 목적만 축소한다."
+    },
+    {
+      "id": "family06:transition:a:d-2:s1_s2",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "캡처를 보낸 건 맞아요. 다만 그땐 망신이 번질까 봐 먼저 막아야 했어요.",
+      "behaviorHint": "자료를 본 뒤 한 단계 물러난다."
+    },
+    {
+      "id": "family06:transition:a:d-2:s2_s3",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "group_size_followup",
+      "line": "친척방이랑 교회방까지 간 건 인정해요. 그래도 하준이 먼저 밖에 던졌잖아요.",
+      "behaviorHint": "인정 뒤 바로 책임을 반사한다."
+    },
+    {
+      "id": "family06:transition:a:d-2:s3_s5",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "그래요. 제가 비난성 연락을 돌렸고 하준 평판을 깎았습니다.",
+      "behaviorHint": "짧고 단정한 시인으로 전환한다."
+    },
+    {
+      "id": "family06:transition:a:d-4:s0_s1",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_records_promise_question",
+      "line": "저는 서류를 돌린 게 아니라 왜 그 글이 위험한지만 말한 거예요.",
+      "behaviorHint": "직접 행동을 부정하며 범위를 좁힌다."
+    },
+    {
+      "id": "family06:transition:a:d-4:s1_s4",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_family_shame",
+      "line": "솔직히 또 2014년 얘기가 돌까 봐 겁이 났어요. 그래서 먼저 눌러야 한다고 생각했어요.",
+      "behaviorHint": "처음으로 두려움을 드러내며 목소리가 낮아진다."
+    },
+    {
+      "id": "family06:transition:a:d-4:s4_s3",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S3",
+      "trigger": "e-5_presented",
+      "line": "그래도 하준이 먼저 그 기억을 꺼낸 건 사실이잖아요. 제가 방어적으로 과거를 건드린 것도 그 때문이에요.",
+      "behaviorHint": "감정 개방 뒤 다시 방어적으로 후퇴한다."
+    },
+    {
+      "id": "family06:transition:a:d-4:s3_s5",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "맞아요. 하준도, 저도 각자 다른 방식으로 약속을 깼습니다.",
+      "behaviorHint": "상대와 자신을 한 문장에 묶어 시인한다."
+    },
+    {
+      "id": "family06:transition:a:d-5:s0_s1",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "sponsorship_pause_question",
+      "line": "제 전화가 불편했을 순 있어도, 협찬이 끊긴 핵심 원인은 그 게시물이에요.",
+      "behaviorHint": "원인 비율을 쪼개며 한 걸음 물러난다."
+    },
+    {
+      "id": "family06:transition:a:d-5:s1_s2",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "메모를 보니 제 연락도 판단에 들어갔네요. 그건 부인 못 하겠어요.",
+      "behaviorHint": "증거를 본 뒤 직접 원인성을 일부 인정한다."
+    },
+    {
+      "id": "family06:transition:a:d-5:s2_s3",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "timeline_reconstruction",
+      "line": "하지만 시작점은 하준 게시물이었고, 저는 뒤늦게 막으려다 더 키운 쪽이에요.",
+      "behaviorHint": "연표가 정리되자 책임을 분산해 말한다."
+    },
+    {
+      "id": "family06:transition:a:d-5:s3_s5",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "제 연락이 브랜드에 분쟁 리스크를 키운 건 맞습니다. 협찬 중단 원인 중 하나예요.",
+      "behaviorHint": "체면보다 인과를 먼저 인정한다."
+    },
+    {
+      "id": "family06:transition:b:d-1:s0_s1",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "sns_identifiability_question",
+      "line": "실명이 없는데 바로 특정이라고 하긴 어렵죠. 과하게 읽힌 면도 있어요.",
+      "behaviorHint": "직접 부정을 누그러뜨리며 의미를 낮춘다."
+    },
+    {
+      "id": "family06:transition:b:d-1:s1_s2",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "네, 알아본 사람이 생긴 건 인정해요. 그래도 저는 폭로보다 감정 표현이라고 믿고 싶었어요.",
+      "behaviorHint": "증거에 밀려 부분 인정으로 이동한다."
+    },
+    {
+      "id": "family06:transition:b:d-1:s2_s3",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "local_acquaintance_followup",
+      "line": "동네가 좁고 엄마가 바로 반응해서 더 커진 것도 사실이에요.",
+      "behaviorHint": "자기 책임을 남기면서도 외부 요인을 끌어온다."
+    },
+    {
+      "id": "family06:transition:b:d-1:s3_s5",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "결국 제 게시물은 가족이 특정될 수 있는 저격이었습니다.",
+      "behaviorHint": "짧고 낮은 톤으로 정면 인정한다."
+    },
+    {
+      "id": "family06:transition:b:d-3:s0_s1",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "document_leak_source_question",
+      "line": "출처는 모르지만 적어도 제 손에서 나간 건 아니에요. 그래서 더 억울했어요.",
+      "behaviorHint": "완전부정에서 무지 주장으로 옮겨간다."
+    },
+    {
+      "id": "family06:transition:b:d-3:s1_s2",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "캡처만 보고 누굴 단정하긴 어렵죠. 사실 외삼촌 쪽 기억이 잠깐 스치긴 했어요.",
+      "behaviorHint": "함정 자료 한계를 인정하며 숨겨둔 기억을 조금 꺼낸다."
+    },
+    {
+      "id": "family06:transition:b:d-3:s2_s3",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "girlfriend_share_question",
+      "line": "연인 탓으로 돌리고 싶진 않았어요. 가족 어른 이름을 꺼내면 더 깨질까 봐 말을 줄였습니다.",
+      "behaviorHint": "보호 동기와 책임 회피가 함께 드러난다."
+    },
+    {
+      "id": "family06:transition:b:d-3:s3_s5",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_or_e-5_presented",
+      "line": "로그까지 맞으면 인정해야죠. 실제 출발점은 외삼촌 병철 쪽 접근이었습니다.",
+      "behaviorHint": "증거에 의해 제3자 실명을 꺼낸다."
+    },
+    {
+      "id": "family06:transition:b:d-4:s0_s1",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_records_promise_question",
+      "line": "전 그냥 돌려 말한 거예요. 직접 문서를 꺼낸 건 아니잖아요.",
+      "behaviorHint": "행위의 형식을 방패로 삼는다."
+    },
+    {
+      "id": "family06:transition:b:d-4:s1_s2",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "그래도 그 시절을 떠올리게 만든 건 맞죠. 약속 경계에 걸친 건 인정할게요.",
+      "behaviorHint": "은유 방패가 약해지며 일부 시인한다."
+    },
+    {
+      "id": "family06:transition:b:d-4:s2_s3",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "promise_reminder_followup",
+      "line": "엄마가 제 과거를 퍼뜨린 게 더 직접적이었지만, 저도 먼저 문을 연 책임이 있어요.",
+      "behaviorHint": "상대 비난과 자기 인정을 한 문장에 섞는다."
+    },
+    {
+      "id": "family06:transition:b:d-4:s3_s5",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "맞아요. 저도 2014년 기록 비무기화 약속을 깼습니다.",
+      "behaviorHint": "부끄러움을 삼키고 단문으로 인정한다."
+    }
+  ]
+}

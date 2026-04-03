@@ -1,0 +1,29 @@
+/**
+ * workplace-01 리뉴얼 데이터 등록
+ * GPT Batch: V2 ClaimAtom + ExecutableVerbalTell + BeatScript + V3 GameLoop
+ */
+import { registerClaimPolicies } from '../claimPolicyLoader'
+import { registerExecutableTells } from '../executableTellLoader'
+import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3GameLoopLoader'
+import { workplace01V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-batch/workplace-01/workplace-01-v2-atoms'
+import { workplace01TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-batch/workplace-01/workplace-01-tells-beats'
+import { workplace01V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-batch/workplace-01/workplace-01-v3-game-loop-data'
+
+export function registerWorkplace01Data(): void {
+  console.log('[Renewal] workplace-01 리뉴얼 데이터 등록 시작')
+
+  // V2 atom 데이터
+  registerClaimPolicies('workplace-01', (workplace01V2Atoms as any).claimPolicies)
+
+  // ExecutableVerbalTell
+  registerExecutableTells('workplace-01', 'a', (workplace01TellsBeats as any).executableTells.a)
+  registerExecutableTells('workplace-01', 'b', (workplace01TellsBeats as any).executableTells.b)
+
+  // V3 Game Loop Data (DossierCard + StateUnlockAtom + EventText + TransitionBeat)
+  registerV3GameLoopData(workplace01V3GameLoopData as any)
+
+  // BeatScript 런타임 fallback 등록
+  registerBeatScripts('workplace-01', (workplace01TellsBeats as any).beatScripts)
+
+  console.log('[Renewal] workplace-01 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback')
+}

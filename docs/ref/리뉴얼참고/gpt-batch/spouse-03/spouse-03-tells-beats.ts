@@ -284,7 +284,7 @@ export const spouse03TellsBeats = {
       "party": "a",
       "disputeId": "d-5",
       "beatType": "hedge",
-      "line": "제 인출이 영향이 없었다고는 안 해요. 다만 그때는 인호 씨 조정이 먼저 집을 흔든다고 느꼈어요.",
+      "line": "제 인출이 영향이 없었다고는 안 해요. 그때는 인호 씨 조정이 먼저 집을 흔든다고 느꼈어요.",
       "behaviorHint": "한숨을 삼키고 문장을 조심스럽게 골라낸다.",
       "applicableStates": [
         "S1"
@@ -505,7 +505,7 @@ export const spouse03TellsBeats = {
       "party": "b",
       "disputeId": "d-5",
       "beatType": "deny",
-      "line": "생활비 구멍이 왜 전부 제 조정 탓이에요. 솔직히 그땐 유진 쪽 결제가 더 크게 보였어요.",
+      "line": "생활비 구멍이 왜 전부 제 조정 탓이에요. 솔직히 그땐 유진 씨 쪽 결제가 더 크게 보였어요.",
       "behaviorHint": "웃음기 없이 바로 반박하며 상체를 앞으로 숙인다.",
       "applicableStates": [
         "S0"
@@ -518,7 +518,7 @@ export const spouse03TellsBeats = {
       "party": "b",
       "disputeId": "d-5",
       "beatType": "hedge",
-      "line": "제 조정이 영향 없었다고는 안 해요. 그래도 시작은 유진 지출이라고 느껴져서 저부터 몰리는 게 억울했죠.",
+      "line": "제 조정이 영향 없었다고는 안 해요. 그래도 시작은 유진 씨 지출이라고 느껴져서 저부터 몰리는 게 억울했죠.",
       "behaviorHint": "혀끝을 차고 짧게 문장을 나눠 말한다.",
       "applicableStates": [
         "S1"
@@ -557,7 +557,7 @@ export const spouse03TellsBeats = {
       "party": "b",
       "disputeId": "d-5",
       "beatType": "confession",
-      "line": "생활비 공백은 제 조정과 유진의 인출이 겹친 결과였어요. 한 사람 탓으로 몰던 태도부터 제가 거둬야 해요.",
+      "line": "생활비 공백은 제 조정과 유진 씨의 인출이 겹친 결과였어요. 한 사람 탓으로 몰던 태도부터 제가 거둬야 해요.",
       "behaviorHint": "양손을 무릎 위에 올리고 더는 되받아치지 않는다.",
       "applicableStates": [
         "S5"

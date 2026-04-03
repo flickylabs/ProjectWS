@@ -1,0 +1,5001 @@
+{
+  "caseId": "family-02",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "확실한 증거를 아직 다 들이민 건 아니어도, 선우 쪽에서 집안 자료가 바깥으로 새기 시작했다고 본다.",
+            "배우자에게든 누구에게든 그 선을 넘긴 순간, 우리 집 비공유 원칙은 이미 깨진 거다."
+          ],
+          "privateKnowledge": [
+            "나는 아직 선우가 민지에게 정확히 어떤 파일을 언제 보냈는지 전부 알지 못한다.",
+            "하지만 며느리가 경영 안쪽 정보까지 건드렸을 가능성 자체가 내겐 위협처럼 느껴진다."
+          ],
+          "suppressions": [
+            "배우자 공유와 직접 외부 유출을 한 덩어리처럼 몰아가고 있다.",
+            "내가 느끼는 통제력 상실과 며느리 경영 관여에 대한 불안은 숨기고 있다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:a:tell:accusation_loop",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-1:act:s0:0",
+              "factText": "확실한 증거를 아직 다 들이민 건 아니어도, 선우 쪽에서 집안 자료가 바깥으로 새기 시작했다고 본다.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-1:rule:s0:1",
+              "factText": "배우자에게든 누구에게든 그 선을 넘긴 순간, 우리 집 비공유 원칙은 이미 깨진 거다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "민지 쪽으로 자료가 건너간 흔적은 분명해 보이고, 선우가 그냥 정리만 맡겼다는 말은 쉽게 못 믿겠다.",
+            "나는 지금도 선우가 책임의 이름만 바꿔가며 선을 흐린다고 본다."
+          ],
+          "privateKnowledge": [
+            "구체적 로그는 없지만, 명절 직후 선우 휴대폰 움직임과 민지 태도를 같이 떠올리고 있다.",
+            "아들의 설명 순서가 계속 늦어질수록 의심이 더 굳어진다."
+          ],
+          "suppressions": [
+            "직접 외부 문의를 누가 했는지는 아직 모른다.",
+            "내 추궁이 선우를 더 방어적으로 만들 수 있다는 점은 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:a:tell:accusation_loop",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-1:act:s1:0",
+              "factText": "민지 쪽으로 자료가 건너간 흔적은 분명해 보이고, 선우가 그냥 정리만 맡겼다는 말은 쉽게 못 믿겠다.",
+              "tags": [
+                "act",
+                "timeline",
+                "uncertainty"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-1:rule:s1:1",
+              "factText": "나는 지금도 선우가 책임의 이름만 바꿔가며 선을 흐린다고 본다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "42초 음성 클립이 선우 휴대폰에서 민지에게 넘어간 이상, 가족 밖 비공유 원칙은 선우가 먼저 깬 셈이다.",
+            "아버지 건강과 공장 얘기가 섞인 파일을 배우자에게 보냈다면 그건 단순 전달이 아니라 문을 열어준 행동이다."
+          ],
+          "privateKnowledge": [
+            "나는 음성 클립 전송 사실이 확인되면 선우 책임을 더 세게 물을 생각이었다.",
+            "아직 선우가 외부 유출까지 직접 의도했다고 단정할 근거는 약하다."
+          ],
+          "suppressions": [
+            "클립만으로는 등기와 부채표 링크까지 갔는지 다 드러나지 않는다.",
+            "내 판단이 아직 선우 단독 책임 쪽으로 기울어 있다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:a:tell:hierarchy_strike",
+            "family02:a:tell:accusation_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-1:act:s2:0",
+              "factText": "42초 음성 클립이 선우 휴대폰에서 민지에게 넘어간 이상, 가족 밖 비공유 원칙은 선우가 먼저 깬 셈이다.",
+              "tags": [
+                "act",
+                "timeline",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-1:rule:s2:1",
+              "factText": "아버지 건강과 공장 얘기가 섞인 파일을 배우자에게 보냈다면 그건 단순 전달이 아니라 문을 열어준 행동이다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "음성 클립만이 아니라 창고 등기와 부채표 링크까지 갔다면, 그건 정리 부탁 수준이 아니라 자료 공유다.",
+            "선우가 민지에게만 맡겼다고 해도 원칙을 깬 첫 사람이라는 책임은 피할 수 없다."
+          ],
+          "privateKnowledge": [
+            "명절 다음 날 오전 6시 42분이라는 구체적 전송 시각이 나오면 내 의심은 사실로 굳어진다.",
+            "나는 며느리가 경영 판단에 발을 들이는 걸 특히 경계하고 있다."
+          ],
+          "suppressions": [
+            "실제 거래처와 중개업소로 번진 마지막 손이 누구인지는 아직 남아 있다.",
+            "내가 선우를 압박하면서 가족 서열 문제를 함께 섞고 있다는 점은 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:a:tell:hierarchy_strike",
+            "family02:a:tell:accusation_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-1:act:s3:0",
+              "factText": "음성 클립만이 아니라 창고 등기와 부채표 링크까지 갔다면, 그건 정리 부탁 수준이 아니라 자료 공유다.",
+              "tags": [
+                "act",
+                "timeline",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-1:rule:s3:1",
+              "factText": "선우가 민지에게만 맡겼다고 해도 원칙을 깬 첫 사람이라는 책임은 피할 수 없다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "내가 화가 난 건 자료 자체만이 아니라, 선우가 배우자를 사실상 경영 안쪽으로 들여놓고도 숨겼다는 점이다.",
+            "내가 대표로서 관리해야 할 선을 아들이 먼저 무너뜨렸다는 생각이 나를 더 거칠게 만든다."
+          ],
+          "privateKnowledge": [
+            "며느리의 경영 관여와 남편 건강 정보가 함께 움직이면 내가 밀려난다는 공포가 있다.",
+            "그래서 나는 사실 확인보다도 배신 프레임을 먼저 세우게 된다."
+          ],
+          "suppressions": [
+            "분노 아래에 있는 불안과 자리 위협감은 겉으로 인정하지 않는다.",
+            "내 말투가 죄책감을 몰아가는 방식이라는 점도 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:a:tell:public_threat",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-1:act:s4:0",
+              "factText": "내가 화가 난 건 자료 자체만이 아니라, 선우가 배우자를 사실상 경영 안쪽으로 들여놓고도 숨겼다는 점이다.",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:a:d-1:rule:s4:1",
+              "factText": "내가 대표로서 관리해야 할 선을 아들이 먼저 무너뜨렸다는 생각이 나를 더 거칠게 만든다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "실제 외부 유출의 마지막 손이 선우 본인만은 아닐 수 있어도, 첫 문을 연 건 선우였다.",
+            "배우자에게 자료를 넘긴 책임만큼은 내가 과하게 본 게 아니라 분명한 위반으로 남는다."
+          ],
+          "privateKnowledge": [
+            "민지 쪽의 별도 움직임이 있었다면 내 초기 판단도 일부는 과녁을 벗어났다.",
+            "그래도 선우가 예외를 만든 순간 이후의 유출 경로가 가능해졌다는 인식은 바뀌지 않는다."
+          ],
+          "suppressions": [
+            "내가 처음에는 선우 혼자 모든 걸 벌였다고 몰아세운 점은 줄여 말하고 있다.",
+            "내 공개적 압박이 사건을 더 키운 부분은 여기서도 적극적으로 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:a:tell:public_threat",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-1:act:s5:0",
+              "factText": "실제 외부 유출의 마지막 손이 선우 본인만은 아닐 수 있어도, 첫 문을 연 건 선우였다.",
+              "tags": [
+                "act",
+                "timeline",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:a:d-1:rule:s5:1",
+              "factText": "배우자에게 자료를 넘긴 책임만큼은 내가 과하게 본 게 아니라 분명한 위반으로 남는다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "나는 처음부터 이 소문이 결국 선우 쪽에서 나간 일이라고 봤다.",
+            "집안 자료를 가장 가까이 쥐고 있던 사람이 선우였으니, 밖으로 번진 출발도 거기라고 생각한 거다."
+          ],
+          "privateKnowledge": [
+            "중개업소 메일이나 민지의 별도 문의 같은 구체 경로는 아직 모른다.",
+            "내 머릿속에서는 이미 선우가 배신의 얼굴로 굳어져 있다."
+          ],
+          "suppressions": [
+            "직접 유출자와 유출의 매개를 구분하지 않고 있다.",
+            "내 분노가 사실 판단보다 앞서 있다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:a:tell:accusation_loop",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-2:evidence:s0:0",
+              "factText": "나는 처음부터 이 소문이 결국 선우 쪽에서 나간 일이라고 봤다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-2:context:s0:1",
+              "factText": "집안 자료를 가장 가까이 쥐고 있던 사람이 선우였으니, 밖으로 번진 출발도 거기라고 생각한 거다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "선우가 직접 보냈든, 옆에서 새게 했든 출발선은 선우 라인이라고 본다.",
+            "밖에선 이미 거래처와 중개업소가 같은 말을 하고 있는데, 그 규모면 우연한 소문으로 보기 어렵다."
+          ],
+          "privateKnowledge": [
+            "나는 배우자 쪽을 막연히 의심하지만, 아직 이름을 중심에 놓고 말하진 못한다.",
+            "선우가 말 꼬리를 흐릴수록 나는 더 선우 본인에게 책임을 모은다."
+          ],
+          "suppressions": [
+            "실제 메일 계정과 통화기록은 아직 없다.",
+            "내가 선우를 직접 배후로 단정하고 있다는 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:a:tell:accusation_loop",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-2:evidence:s1:0",
+              "factText": "선우가 직접 보냈든, 옆에서 새게 했든 출발선은 선우 라인이라고 본다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "uncertainty"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-2:context:s1:1",
+              "factText": "밖에선 이미 거래처와 중개업소가 같은 말을 하고 있는데, 그 규모면 우연한 소문으로 보기 어렵다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "문의메일과 창고 등기 PDF까지 돌았다면, 선우가 최소한 바깥으로 나갈 길은 열어준 셈이다.",
+            "직접 메일을 보낸 손이 아니더라도 자기 쪽 파일 관리 책임까지 없어지는 건 아니다."
+          ],
+          "privateKnowledge": [
+            "이 단계에서도 나는 선우가 중심이고 다른 누군가는 보조라고 본다.",
+            "민지 쪽 보조 이메일 가능성이 보여도 아직 감정상 선우를 먼저 겨눈다."
+          ],
+          "suppressions": [
+            "직접 전송자와 유출 원인의 책임 비중을 세밀하게 나누지 않는다.",
+            "내가 사실과 해석을 섞어 말하고 있다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:a:tell:hierarchy_strike",
+            "family02:a:tell:accusation_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-2:evidence:s2:0",
+              "factText": "문의메일과 창고 등기 PDF까지 돌았다면, 선우가 최소한 바깥으로 나갈 길은 열어준 셈이다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-2:context:s2:1",
+              "factText": "직접 메일을 보낸 손이 아니더라도 자기 쪽 파일 관리 책임까지 없어지는 건 아니다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "직접 거래처에 말한 사람이 선우가 아닐 수는 있어도, 민지 쪽으로 건너간 뒤 외부 문의가 이어진 흐름은 선우가 부른 불씨다.",
+            "나는 이제 선우 단독 범행보다, 선우가 연 문을 민지 쪽이 더 멀리 밀어버린 그림으로 본다."
+          ],
+          "privateKnowledge": [
+            "민지의 사촌 중개사 연결 가능성이 보이면 내 초기 단정은 흔들린다.",
+            "그래도 아들이 만든 예외가 없었다면 이런 흐름이 생기지 않았다고 믿는다."
+          ],
+          "suppressions": [
+            "내가 처음엔 선우 혼자 했다고 확신한 점은 약하게만 인정한다.",
+            "며느리 쪽 책임을 말하면서도 내 감정은 여전히 선우를 향한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:a:tell:hierarchy_strike",
+            "family02:a:tell:accusation_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-2:evidence:s3:0",
+              "factText": "직접 거래처에 말한 사람이 선우가 아닐 수는 있어도, 민지 쪽으로 건너간 뒤 외부 문의가 이어진 흐름은 선우가 부른 불씨다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-2:context:s3:1",
+              "factText": "나는 이제 선우 단독 범행보다, 선우가 연 문을 민지 쪽이 더 멀리 밀어버린 그림으로 본다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "내가 처음엔 선우 혼자 거래처에까지 흘렸다고 몰아붙였지만, 실제론 민지 쪽이 밖으로 확인을 더 돌린 모양새다.",
+            "그래도 어머니인 내가 느낀 배신감이 선우 쪽에서 시작된 건 변하지 않는다."
+          ],
+          "privateKnowledge": [
+            "아들이 배우자를 통해 집안 권한을 우회했다고 느껴 더 상처받았다.",
+            "그래서 직접 배후를 바로 못 잡고도 선우를 먼저 범인처럼 취급했다."
+          ],
+          "suppressions": [
+            "내 초기 오판이 있었음을 온전히 고백하지 않는다.",
+            "민지에게 느끼는 적대감은 여전히 숨기지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:a:tell:public_threat",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-2:evidence:s4:0",
+              "factText": "내가 처음엔 선우 혼자 거래처에까지 흘렸다고 몰아붙였지만, 실제론 민지 쪽이 밖으로 확인을 더 돌린 모양새다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:a:d-2:context:s4:1",
+              "factText": "그래도 어머니인 내가 느낀 배신감이 선우 쪽에서 시작된 건 변하지 않는다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "직접 외부 유출의 배후는 민지 쪽이 더 가깝다고 보겠다.",
+            "다만 선우가 자료를 넘기지 않았다면 그 유출은 그렇게 멀리 번지지 못했을 거라는 점도 함께 남는다."
+          ],
+          "privateKnowledge": [
+            "아들과 며느리의 책임을 분리해서 봐야 한다는 걸 이제는 안다.",
+            "내가 초반에 만든 배신 프레임이 선우 단독 책임으로 과장됐다는 것도 인정할 수 있다."
+          ],
+          "suppressions": [
+            "내가 친척과 거래처에 의심을 흘린 문제는 이 쟁점에서 일부러 옆으로 치우고 있다.",
+            "선우를 향한 분노를 아직 완전히 거두진 못했다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:a:tell:public_threat",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-2:evidence:s5:0",
+              "factText": "직접 외부 유출의 배후는 민지 쪽이 더 가깝다고 보겠다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:a:d-2:context:s5:1",
+              "factText": "다만 선우가 자료를 넘기지 않았다면 그 유출은 그렇게 멀리 번지지 못했을 거라는 점도 함께 남는다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "나는 남의 태블릿을 뒤질 사람이 아니다.",
+            "그날 내가 본 건 선우 입에서 새는 이상한 태도뿐이지, 민지 기기를 열어본 적은 없다."
+          ],
+          "privateKnowledge": [
+            "실제로는 주방에 놓인 민지 태블릿의 동기화 화면을 확인했다.",
+            "그 직후 친척 단톡에 선우가 밖에 흘렸다는 취지의 글도 올렸다."
+          ],
+          "suppressions": [
+            "태블릿 접속 시각과 단톡 전송 시각의 근접성.",
+            "내가 의심을 사실처럼 친척들 앞에 적었다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:a:tell:accusation_loop",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-3:act:s0:0",
+              "factText": "나는 남의 태블릿을 뒤질 사람이 아니다.",
+              "tags": [
+                "act",
+                "privacy",
+                "denial"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-3:relationship:s0:1",
+              "factText": "그날 내가 본 건 선우 입에서 새는 이상한 태도뿐이지, 민지 기기를 열어본 적은 없다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "주방 화면에 떠 있는 걸 스친 정도는 있을지 몰라도, 잠금을 풀고 들여다본 건 아니다.",
+            "친척들한테 물은 것도 확인 차원이지 누굴 몰아가려던 건 아니었다."
+          ],
+          "privateKnowledge": [
+            "실제로는 기기를 적극적으로 확인했고, 단톡 문구도 꽤 단정적이었다.",
+            "나는 화면에 선우가 보낸 공유 링크가 떠 있는 걸 보고 바로 확신해 버렸다."
+          ],
+          "suppressions": [
+            "접속 기록이 남는다는 사실.",
+            "단톡 문장이 '선우가 밖에 흘렸다'는 식으로 단정적이었다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:a:tell:accusation_loop",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-3:act:s1:0",
+              "factText": "주방 화면에 떠 있는 걸 스친 정도는 있을지 몰라도, 잠금을 풀고 들여다본 건 아니다.",
+              "tags": [
+                "act",
+                "privacy",
+                "uncertainty"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-3:relationship:s1:1",
+              "factText": "친척들한테 물은 것도 확인 차원이지 누굴 몰아가려던 건 아니었다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "화면을 본 건 맞다. 하지만 그건 이미 선우가 자료를 밖으로 돌린 정황이 보여서 확인한 수준이었다.",
+            "그 상황에서 어른들한테 먼저 알린 걸 무단 열람처럼만 몰아붙이는 건 과하다."
+          ],
+          "privateKnowledge": [
+            "태블릿을 확인한 시각은 오전 7시 03분이고, 6분 뒤 친척 단톡을 보냈다.",
+            "내가 본 화면에는 민지의 외부 발송이 아니라 선우가 보낸 공유 링크만 떠 있었다."
+          ],
+          "suppressions": [
+            "나는 확인과 무단 열람의 경계를 의도적으로 흐린다.",
+            "친척 단톡 확산이 내 행동으로 바로 이어졌다는 점을 축소한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:a:tell:hierarchy_strike",
+            "family02:a:tell:accusation_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-3:act:s2:0",
+              "factText": "화면을 본 건 맞다. 하지만 그건 이미 선우가 자료를 밖으로 돌린 정황이 보여서 확인한 수준이었다.",
+              "tags": [
+                "act",
+                "privacy",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-3:relationship:s2:1",
+              "factText": "그 상황에서 어른들한테 먼저 알린 걸 무단 열람처럼만 몰아붙이는 건 과하다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "친척 단톡에 올린 건 민지를 공격하려던 게 아니라, 집안 어른들한테 지금 상황을 묻고 막으려던 행동이었다.",
+            "그래도 결과적으로 내가 확인 안 된 의심을 너무 빨리 바깥 가족에게 퍼뜨린 건 맞다."
+          ],
+          "privateKnowledge": [
+            "단톡은 사실상 친척들에게 선우 책임을 공표하는 효과를 냈다.",
+            "나는 민지가 경영에 끼어든다는 불안 때문에 사생활 경계를 무시했다."
+          ],
+          "suppressions": [
+            "내 글이 선우와 민지에게 공개 망신처럼 작동했다는 점.",
+            "내가 며느리 기기를 본 행위 자체가 이미 큰 선 넘기였다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:a:tell:hierarchy_strike",
+            "family02:a:tell:accusation_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-3:act:s3:0",
+              "factText": "친척 단톡에 올린 건 민지를 공격하려던 게 아니라, 집안 어른들한테 지금 상황을 묻고 막으려던 행동이었다.",
+              "tags": [
+                "act",
+                "privacy",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-3:relationship:s3:1",
+              "factText": "그래도 결과적으로 내가 확인 안 된 의심을 너무 빨리 바깥 가족에게 퍼뜨린 건 맞다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "그 아침엔 남편 건강 얘기, 공장 소문, 며느리 화면이 한꺼번에 겹쳐서 내가 너무 몰려 있었다.",
+            "나는 사실을 확인한다기보다 우리 집이 무너지는 걸 막아야 한다는 마음으로 선을 넘었다."
+          ],
+          "privateKnowledge": [
+            "내 행동의 핵심 동기는 자기방어와 통제력 회복이었다.",
+            "공포가 올라오자 나는 사생활 침해를 정당화하는 말부터 찾았다."
+          ],
+          "suppressions": [
+            "불안 때문에 한 행동이라도 상대 사생활을 건드린 잘못은 줄어들지 않는다.",
+            "친척 앞 공개 비난의 상처는 별도로 남는다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:a:tell:public_threat",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-3:act:s4:0",
+              "factText": "그 아침엔 남편 건강 얘기, 공장 소문, 며느리 화면이 한꺼번에 겹쳐서 내가 너무 몰려 있었다.",
+              "tags": [
+                "act",
+                "privacy",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:a:d-3:relationship:s4:1",
+              "factText": "나는 사실을 확인한다기보다 우리 집이 무너지는 걸 막아야 한다는 마음으로 선을 넘었다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "민지 태블릿을 무단으로 본 것도 사실이고, 확인 안 된 의심을 친척 단톡에 퍼뜨린 것도 내 잘못이다.",
+            "선우를 막겠다는 마음이 있었더라도 사생활 경계를 넘은 책임은 내가 져야 한다."
+          ],
+          "privateKnowledge": [
+            "나는 그때 화면에 보인 일부 정황만으로 전체를 단정했다.",
+            "내 공개적 비난이 이후 가족 대화를 거의 불가능하게 만들었다는 걸 안다."
+          ],
+          "suppressions": [
+            "그래도 선우가 먼저 만든 의심의 원인을 계속 함께 말하고 싶어 한다.",
+            "순수한 가해 인정만으로 끝나는 건 아직 버겁다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:a:tell:public_threat",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-3:act:s5:0",
+              "factText": "민지 태블릿을 무단으로 본 것도 사실이고, 확인 안 된 의심을 친척 단톡에 퍼뜨린 것도 내 잘못이다.",
+              "tags": [
+                "act",
+                "privacy",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:a:d-3:relationship:s5:1",
+              "factText": "선우를 막겠다는 마음이 있었더라도 사생활 경계를 넘은 책임은 내가 져야 한다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "그 42초면 충분하다. 아버지가 분명히 '공장은 선우가 맡아'라고 말했다.",
+            "나는 그 말을 들었을 때 이미 선우 단독 승계 신호가 나온다고 받아들였다."
+          ],
+          "privateKnowledge": [
+            "전체 녹취와 정식 승계 문서 유무는 아직 들춰보지 않으려 한다.",
+            "나는 그 짧은 클립을 근거로 선우 쪽 움직임을 경계하고 있다."
+          ],
+          "suppressions": [
+            "42초 클립이 앞뒤 맥락이 잘린 추출본이라는 점.",
+            "정식 지분·상속 문서가 없다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:a:tell:accusation_loop",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-4:quote:s0:0",
+              "factText": "그 42초면 충분하다. 아버지가 분명히 '공장은 선우가 맡아'라고 말했다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-4:legacy_sentence:s0:1",
+              "factText": "나는 그 말을 들었을 때 이미 선우 단독 승계 신호가 나온다고 받아들였다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "전체 맥락이 어떻든 그 대목이 나온 이상, 선우가 승계 카드로 움직였다고 볼 수밖에 없다.",
+            "아버지 건강이 흔들릴 때 그런 말이 나오면 대표 자리 있는 사람은 그 신호를 가볍게 못 듣는다."
+          ],
+          "privateKnowledge": [
+            "나는 사실관계와 내 불안을 섞어서 해석하고 있다.",
+            "선우가 클립을 민지에게 보낸 행동 때문에 더 승계 시나리오로 읽었다."
+          ],
+          "suppressions": [
+            "클립만으로는 임시 운영 지시와 단독 승계 선언을 구분하기 어렵다.",
+            "내 해석이 방어적이라는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:a:tell:accusation_loop",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-4:quote:s1:0",
+              "factText": "전체 맥락이 어떻든 그 대목이 나온 이상, 선우가 승계 카드로 움직였다고 볼 수밖에 없다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "uncertainty"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-4:legacy_sentence:s1:1",
+              "factText": "아버지 건강이 흔들릴 때 그런 말이 나오면 대표 자리 있는 사람은 그 신호를 가볍게 못 듣는다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "42초 클립만 놓고 보면 단독 승계처럼 들린다는 내 판단 자체가 완전히 무리한 건 아니다.",
+            "문제는 그 클립이 잘려 나가면서 나머지 맥락이 빠졌다는 점이지, 내가 허공에서 만들어 낸 해석만은 아니다."
+          ],
+          "privateKnowledge": [
+            "나는 여전히 클립의 인상효과를 방패로 삼고 있다.",
+            "정식 승계 문서 부재와 변호사 확인서의 무게는 아직 회피한다."
+          ],
+          "suppressions": [
+            "전체 18분 녹취를 보면 다른 취지의 발언도 있다는 점.",
+            "내가 선우를 몰아붙일 수단으로 클립을 활용했다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:a:tell:hierarchy_strike",
+            "family02:a:tell:accusation_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-4:quote:s2:0",
+              "factText": "42초 클립만 놓고 보면 단독 승계처럼 들린다는 내 판단 자체가 완전히 무리한 건 아니다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-4:legacy_sentence:s2:1",
+              "factText": "문제는 그 클립이 잘려 나가면서 나머지 맥락이 빠졌다는 점이지, 내가 허공에서 만들어 낸 해석만은 아니다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "전체 녹취에 임시 운영 취지 말이 붙어 있는 건 안다.",
+            "그래도 당시 분위기까지 보면 선우 쪽이 그 말을 승계 신호로 받아들일 여지는 충분했다고 본다."
+          ],
+          "privateKnowledge": [
+            "나는 단독 승계 확정이 아니라 '그렇게 들릴 수 있었다'는 쪽으로 물러서고 있다.",
+            "체면 때문에 처음 해석을 전면 철회하진 못한다."
+          ],
+          "suppressions": [
+            "아버지가 '지분이랑 상속은 나중에 다시 정리하자'고 분명히 말한 점.",
+            "내가 처음엔 단독 승계 선언처럼 단정했다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:a:tell:hierarchy_strike",
+            "family02:a:tell:accusation_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-4:quote:s3:0",
+              "factText": "전체 녹취에 임시 운영 취지 말이 붙어 있는 건 안다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-4:legacy_sentence:s3:1",
+              "factText": "그래도 당시 분위기까지 보면 선우 쪽이 그 말을 승계 신호로 받아들일 여지는 충분했다고 본다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "내가 그 말을 크게 붙잡은 건, 남편 건강이 흔들리는 사이 공장 권한이 조용히 넘어가는 것처럼 보여서였다.",
+            "나는 사실보다 먼저 내 자리와 가업이 밀려나는 공포에 반응했다."
+          ],
+          "privateKnowledge": [
+            "클립을 크게 해석한 데는 대표 자리에서 밀린다는 두려움이 있었다.",
+            "그래서 선우와 며느리 쪽 움직임을 승계 시도처럼 묶어 읽었다."
+          ],
+          "suppressions": [
+            "불안이 있다고 해서 잘린 클립을 확정 근거처럼 쓴 일은 정당화되지 않는다.",
+            "선우의 욕심과 내 두려움을 구분하지 못했다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:a:tell:public_threat",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-4:quote:s4:0",
+              "factText": "내가 그 말을 크게 붙잡은 건, 남편 건강이 흔들리는 사이 공장 권한이 조용히 넘어가는 것처럼 보여서였다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:a:d-4:legacy_sentence:s4:1",
+              "factText": "나는 사실보다 먼저 내 자리와 가업이 밀려나는 공포에 반응했다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "42초 클립을 단독 승계 선언처럼 말한 건 내 과장이었다.",
+            "전체 녹취와 변호사 확인서 기준으로는 건강 악화 시 임시 운영을 맡아보라는 취지로 보는 게 맞다."
+          ],
+          "privateKnowledge": [
+            "나는 짧은 문장 하나를 붙잡고 너무 멀리 나갔다.",
+            "체면과 불안 때문에 전체 맥락을 인정하는 데 시간이 걸렸다."
+          ],
+          "suppressions": [
+            "선우가 그 말을 욕심 섞여 받아들인 문제는 여전히 따로 남겨두고 싶어 한다.",
+            "내 공개적 표현이 갈등을 더 키운 부분은 최소화하고 싶어 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:a:tell:public_threat",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-4:quote:s5:0",
+              "factText": "42초 클립을 단독 승계 선언처럼 말한 건 내 과장이었다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:a:d-4:legacy_sentence:s5:1",
+              "factText": "전체 녹취와 변호사 확인서 기준으로는 건강 악화 시 임시 운영을 맡아보라는 취지로 보는 게 맞다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "나는 집안 안에서만 확인하려고 물은 거다. 밖으로 비밀을 먼저 깬 쪽은 선우다.",
+            "친척 몇 사람에게 상황을 말한 걸 선우의 배우자 공유와 같은 급으로 보긴 어렵다."
+          ],
+          "privateKnowledge": [
+            "실제로는 친척 단톡과 일부 거래처 통화에서 의심을 흘렸다.",
+            "가족 외 비공유 원칙에는 친척 바깥 확산도 포함된다는 걸 알고 있다."
+          ],
+          "suppressions": [
+            "내가 원칙 위반을 관계의 가까움으로 가볍게 분류한다는 점.",
+            "친척과 거래처에 흘린 말의 파급력."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:a:tell:accusation_loop",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-5:rule:s0:0",
+              "factText": "나는 집안 안에서만 확인하려고 물은 거다. 밖으로 비밀을 먼저 깬 쪽은 선우다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-5:harm:s0:1",
+              "factText": "친척 몇 사람에게 상황을 말한 걸 선우의 배우자 공유와 같은 급으로 보긴 어렵다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "친척들한테 확인 차원으로 말한 걸 외부 유출과 똑같이 볼 수는 없다.",
+            "선우가 배우자에게 자료를 넘긴 순간 이미 경계는 무너졌고, 나는 그 뒤를 수습하려 한 쪽이다."
+          ],
+          "privateKnowledge": [
+            "나는 내 행동을 수습으로 부르고 있지만, 실제론 의심을 확대했다.",
+            "비밀경계 원칙을 상황에 따라 다르게 해석하고 있다."
+          ],
+          "suppressions": [
+            "내가 '집안 안'의 범위를 자의적으로 넓힌 점.",
+            "선우와 내 위반을 급이 다르다고 고집하는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:a:tell:accusation_loop",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-5:rule:s1:0",
+              "factText": "친척들한테 확인 차원으로 말한 걸 외부 유출과 똑같이 볼 수는 없다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-5:harm:s1:1",
+              "factText": "선우가 배우자에게 자료를 넘긴 순간 이미 경계는 무너졌고, 나는 그 뒤를 수습하려 한 쪽이다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "내 말이 넓어진 건 인정한다. 그래도 시작은 선우가 배우자에게 자료를 준 데서 비롯됐다.",
+            "원칙을 먼저 흔든 사람과 뒤에 대응하다 선을 넘은 사람의 책임까지 같다고 말하긴 어렵다."
+          ],
+          "privateKnowledge": [
+            "나는 부분 인정으로 물러서면서도 책임 비중을 강하게 선우 쪽에 두고 싶다.",
+            "내 친척 단톡 글이 사실상 외부 브로드캐스트처럼 작동했다는 점을 안다."
+          ],
+          "suppressions": [
+            "내 위반이 '대응'이라는 이름으로 정당화될 수 없다는 점.",
+            "거래처 통화로 소문이 더 빨라진 부분."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:a:tell:hierarchy_strike",
+            "family02:a:tell:accusation_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-5:rule:s2:0",
+              "factText": "내 말이 넓어진 건 인정한다. 그래도 시작은 선우가 배우자에게 자료를 준 데서 비롯됐다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-5:harm:s2:1",
+              "factText": "원칙을 먼저 흔든 사람과 뒤에 대응하다 선을 넘은 사람의 책임까지 같다고 말하긴 어렵다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "원칙을 문자 그대로 지켰다고는 못 하겠다.",
+            "그래도 배우자에게 원자료를 넘긴 행위와 친척 단톡으로 의심을 퍼뜨린 행위는 방식과 무게가 다르다고 본다."
+          ],
+          "privateKnowledge": [
+            "나는 이제 공동 위반은 인정하지만, 무게 중심은 선우에게 두려 한다.",
+            "내 말이 친척과 거래처를 타고 더 번졌을 가능성도 있다."
+          ],
+          "suppressions": [
+            "방식이 다르다고 해서 원칙 위반 여부까지 달라지진 않는다는 점.",
+            "내가 경계 규칙을 결과 중심으로만 재해석한다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:a:tell:hierarchy_strike",
+            "family02:a:tell:accusation_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-5:rule:s3:0",
+              "factText": "원칙을 문자 그대로 지켰다고는 못 하겠다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:a:d-5:harm:s3:1",
+              "factText": "그래도 배우자에게 원자료를 넘긴 행위와 친척 단톡으로 의심을 퍼뜨린 행위는 방식과 무게가 다르다고 본다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "그때는 공장이 팔린다는 소문이 너무 무서워서라도 누군가 붙잡고 확인하고 싶었다.",
+            "나는 가족을 지키려는 마음으로 움직였다고 믿고 싶어서 내 잘못을 끝까지 축소했다."
+          ],
+          "privateKnowledge": [
+            "불안과 관계 유지 욕구 때문에 내 위반을 '확인'과 '경고'로 부른다.",
+            "실은 친척들 앞에서 선우 책임을 굳혀 두고 싶은 마음도 있었다."
+          ],
+          "suppressions": [
+            "가족을 지키겠다는 말이 상대 명예를 깎은 행동을 덮어주진 않는다는 점.",
+            "내 동기가 순수 보호만은 아니었다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:a:tell:public_threat",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-5:rule:s4:0",
+              "factText": "그때는 공장이 팔린다는 소문이 너무 무서워서라도 누군가 붙잡고 확인하고 싶었다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:a:d-5:harm:s4:1",
+              "factText": "나는 가족을 지키려는 마음으로 움직였다고 믿고 싶어서 내 잘못을 끝까지 축소했다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "배우자 공유도, 내 친척 단톡 확산도 둘 다 원칙 위반이었다.",
+            "방식은 달랐지만 집 밖으로 비밀의 경계를 무너뜨린 쪽으로는 우리 둘 다 책임이 있다."
+          ],
+          "privateKnowledge": [
+            "나는 이제 선우를 탓하면서도 내 위반을 따로 떼어낼 수 없다는 걸 안다.",
+            "비밀경계를 문서와 절차로 다시 세워야 한다는 필요성도 인정한다."
+          ],
+          "suppressions": [
+            "그래도 최초 원인과 최종 확산의 비중 문제는 계속 따지고 싶어 한다.",
+            "내 감정적 공개 비난의 상처는 아직 충분히 다루지 못한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:a:tell:public_threat",
+            "family02:a:tell:hierarchy_strike"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:a:d-5:rule:s5:0",
+              "factText": "배우자 공유도, 내 친척 단톡 확산도 둘 다 원칙 위반이었다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:a:d-5:harm:s5:1",
+              "factText": "방식은 달랐지만 집 밖으로 비밀의 경계를 무너뜨린 쪽으로는 우리 둘 다 책임이 있다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "자료를 밖으로 뿌린 적은 없다.",
+            "민지에게도 정식 자료를 넘긴 건 아니라서, 어머니가 말하는 배신 프레임은 과하다."
+          ],
+          "privateKnowledge": [
+            "실제로는 명절 음성 클립과 일부 폴더 링크를 민지에게 보냈다.",
+            "배우자라면 가족 외부가 아니라는 식으로 스스로 예외를 만들었다."
+          ],
+          "suppressions": [
+            "명절 다음 날 오전 6시 42분 전송 기록.",
+            "창고 등기와 부채표 링크까지 간 사실."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-1:act:s0:0",
+              "factText": "자료를 밖으로 뿌린 적은 없다.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-1:rule:s0:1",
+              "factText": "민지에게도 정식 자료를 넘긴 건 아니라서, 어머니가 말하는 배신 프레임은 과하다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "그건 자료 전달이라기보다 집안 상황을 같이 정리하려고 잠깐 보여준 정도다.",
+            "밖에 말하라고 준 건 아니니 원칙 위반으로까지 몰아가긴 억울하다."
+          ],
+          "privateKnowledge": [
+            "실제로는 클라우드 링크를 보냈고, '밖에는 말하지 말고 네가 정리만 해줘'라고 적었다.",
+            "나는 배우자를 사실상 예외 취급하면서도 말로는 공유가 아니라 축소한다."
+          ],
+          "suppressions": [
+            "공유 로그와 채팅 원본이 남아 있다는 점.",
+            "내가 고의로 표현 강도를 낮추고 있다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-1:act:s1:0",
+              "factText": "그건 자료 전달이라기보다 집안 상황을 같이 정리하려고 잠깐 보여준 정도다.",
+              "tags": [
+                "act",
+                "timeline",
+                "uncertainty"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-1:rule:s1:1",
+              "factText": "밖에 말하라고 준 건 아니니 원칙 위반으로까지 몰아가긴 억울하다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "42초 클립은 보냈다. 하지만 맥락 파악하라고 보낸 거지, 밖으로 돌리라고 준 건 아니다.",
+            "내가 숨기려는 건 유출 의도지, 민지와 상의한 사실 자체는 아니다."
+          ],
+          "privateKnowledge": [
+            "클립 외에도 창고 등기와 부채표 링크를 보낸 사실이 있다.",
+            "나는 아내를 보호하려고 인정 범위를 클립 정도로 끊는다."
+          ],
+          "suppressions": [
+            "파일 종류가 음성클립 하나로 끝나지 않는다는 점.",
+            "공유 시점이 명절 다음 날 아침이라는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:b:tell:soft_minimizing",
+            "family02:b:tell:marriage_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-1:act:s2:0",
+              "factText": "42초 클립은 보냈다. 하지만 맥락 파악하라고 보낸 거지, 밖으로 돌리라고 준 건 아니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-1:rule:s2:1",
+              "factText": "내가 숨기려는 건 유출 의도지, 민지와 상의한 사실 자체는 아니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "클립하고 창고 등기, 부채표 링크까지 보낸 건 맞다.",
+            "다만 민지한테만 맡겨 두고 밖에는 말하지 말라고 했으니, 내가 직접 외부 유출을 시킨 건 아니다."
+          ],
+          "privateKnowledge": [
+            "가족 외 비공유 원칙을 알고도 배우자를 예외로 취급했다.",
+            "아내가 그 정보를 더 움직일 가능성을 제대로 막지 못했다."
+          ],
+          "suppressions": [
+            "배우자 예외라는 내 논리가 원칙 자체를 깨는 방식이었다는 점.",
+            "내가 뒤늦게야 사실을 단계적으로 인정하고 있다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:b:tell:soft_minimizing",
+            "family02:b:tell:marriage_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-1:act:s3:0",
+              "factText": "클립하고 창고 등기, 부채표 링크까지 보낸 건 맞다.",
+              "tags": [
+                "act",
+                "timeline",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-1:rule:s3:1",
+              "factText": "다만 민지한테만 맡겨 두고 밖에는 말하지 말라고 했으니, 내가 직접 외부 유출을 시킨 건 아니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "내가 먼저 바로 말 못 한 건, 아내 이야기까지 같이 꺼내는 순간 집안이 더 뒤집힐 것 같았기 때문이다.",
+            "배신한 아들이자 아내도 못 지키는 남편처럼 보일까 봐 시간을 벌었다."
+          ],
+          "privateKnowledge": [
+            "나는 설명 순서를 늦추는 방식으로 책임의 중심을 흐려 왔다.",
+            "실제로는 잘못을 알고 있었지만 결혼과 가족 사이에서 버티고 싶었다."
+          ],
+          "suppressions": [
+            "'정리해서 말하겠다'는 버퍼가 사실상 은폐로 작동했다는 점.",
+            "내 두려움이 원칙 위반을 없애주지 않는다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:b:tell:marriage_shield",
+            "family02:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-1:act:s4:0",
+              "factText": "내가 먼저 바로 말 못 한 건, 아내 이야기까지 같이 꺼내는 순간 집안이 더 뒤집힐 것 같았기 때문이다.",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:b:d-1:rule:s4:1",
+              "factText": "배신한 아들이자 아내도 못 지키는 남편처럼 보일까 봐 시간을 벌었다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "배우자라도 예외라고 착각한 건 내 책임이다.",
+            "내가 처음 비공유 원칙을 깼고, 그 문을 연 행위가 이후 일들을 가능하게 만들었다."
+          ],
+          "privateKnowledge": [
+            "나는 아내를 지키겠다는 이유로 사실을 쪼개서 말했다.",
+            "그 선택이 결국 어머니와 민지 양쪽 모두를 더 몰아넣었다."
+          ],
+          "suppressions": [
+            "민지의 후속 행동에 대한 내 책임 비중을 여전히 덜 말하고 싶어 한다.",
+            "유출 의도는 없었다는 점을 끝까지 붙들고 싶어 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:b:tell:marriage_shield",
+            "family02:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-1:act:s5:0",
+              "factText": "배우자라도 예외라고 착각한 건 내 책임이다.",
+              "tags": [
+                "act",
+                "timeline",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "recipient": {
+                  "fullName": "이민지",
+                  "judgeRef": "배우자",
+                  "neutral": "가족 외 배우자"
+                },
+                "time": {
+                  "dateExact": "명절 다음 날 오전 6시 42분",
+                  "period": "명절 직후",
+                  "neutral": "그 다음 날 아침"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:b:d-1:rule:s5:1",
+              "factText": "내가 처음 비공유 원칙을 깼고, 그 문을 연 행위가 이후 일들을 가능하게 만들었다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "files": {
+                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "neutral": "가족 자료",
+                  "judgeRef": "음성·등기·부채 자료"
+                },
+                "rule": {
+                  "exact": "직계 가족 바깥 비공유 원칙",
+                  "neutral": "그 원칙",
+                  "judgeRef": "가족 비공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "거래처나 중개업소에 내가 말한 적은 없다.",
+            "밖으로 퍼진 건 나도 뒤늦게 알았고, 누가 어떤 식으로 부풀렸는지조차 몰랐다."
+          ],
+          "privateKnowledge": [
+            "나는 민지에게 자료를 준 사실 때문에 유출 경로가 내 쪽에서 시작될 수 있음을 안다.",
+            "하지만 직접 배후 질문이 나오면 우선 전면 부인부터 한다."
+          ],
+          "suppressions": [
+            "민지가 자료를 받은 뒤 시세를 알아보려 했을 가능성.",
+            "내가 경로 일부를 짐작하고도 입을 닫고 있다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-2:evidence:s0:0",
+              "factText": "거래처나 중개업소에 내가 말한 적은 없다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-2:context:s0:1",
+              "factText": "밖으로 퍼진 건 나도 뒤늦게 알았고, 누가 어떤 식으로 부풀렸는지조차 몰랐다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "소문이 돈 경로는 모르겠고, 누가 과장해서 옮긴 것 같다.",
+            "내가 직접 보낸 건 없으니 배후라고 부를 수는 없다고 생각한다."
+          ],
+          "privateKnowledge": [
+            "실제로는 민지 쪽에서 정보를 더 확인하려는 움직임을 어렴풋이 감지했다.",
+            "나는 '직접 보낸 건 없다'는 말 뒤에 숨어 간접 책임을 피해 간다."
+          ],
+          "suppressions": [
+            "직접 발송 여부와 경로 제공 책임을 의도적으로 분리하는 점.",
+            "민지 관련 질문이 나오면 설명 순서를 더 늦춘다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-2:evidence:s1:0",
+              "factText": "소문이 돈 경로는 모르겠고, 누가 과장해서 옮긴 것 같다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "uncertainty"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-2:context:s1:1",
+              "factText": "내가 직접 보낸 건 없으니 배후라고 부를 수는 없다고 생각한다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "중개업소 문의메일은 내 계정이 아니다.",
+            "내가 직접 보낸 건 아니라는 말은 분명히 할 수 있고, 그 점 때문에 계속 버틴다."
+          ],
+          "privateKnowledge": [
+            "메일은 민지 측 보조 이메일과 연결될 수 있다.",
+            "나는 배후의 직접 손이 아내 쪽일 가능성을 알면서도 이름을 빼고 말한다."
+          ],
+          "suppressions": [
+            "보조 이메일 복구 정보와 민지 간편로그인 번호 일부 일치.",
+            "내가 '직접은 아니다'를 반복하며 사실 핵심을 비껴간다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:b:tell:soft_minimizing",
+            "family02:b:tell:marriage_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-2:evidence:s2:0",
+              "factText": "중개업소 문의메일은 내 계정이 아니다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-2:context:s2:1",
+              "factText": "내가 직접 보낸 건 아니라는 말은 분명히 할 수 있고, 그 점 때문에 계속 버틴다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "민지가 시세를 알아보려고 누구와 통화한 건 뒤늦게 알았다.",
+            "그래도 내가 외부 제보를 시킨 건 아니고, 그 단계까지 갈 줄은 몰랐다."
+          ],
+          "privateKnowledge": [
+            "실제로는 자료를 보낸 뒤 그런 확장이 일어날 수 있다는 점을 막지 못했다.",
+            "아내 이름을 내 입으로 말하는 순간 책임 사슬이 또렷해질까 봐 겁난다."
+          ],
+          "suppressions": [
+            "노트앱 초안과 사촌 중개사 통화기록이 연결된다는 점.",
+            "내 '몰랐다'가 완전한 무지와는 다르다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:b:tell:soft_minimizing",
+            "family02:b:tell:marriage_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-2:evidence:s3:0",
+              "factText": "민지가 시세를 알아보려고 누구와 통화한 건 뒤늦게 알았다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-2:context:s3:1",
+              "factText": "그래도 내가 외부 제보를 시킨 건 아니고, 그 단계까지 갈 줄은 몰랐다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "아내 쪽을 바로 말 못 한 건, 제가 배신한 남편이 되는 순간 집안도 결혼도 같이 깨질 것 같았기 때문이다.",
+            "그래서 나는 직접 배후 질문이 나올 때마다 문장 앞부분만 사실로 남겨 두고 뒤를 비웠다."
+          ],
+          "privateKnowledge": [
+            "나는 제일 두려운 낙인이 '배신한 아들'보다 '아내도 못 지킨 남편'이라는 걸 안다.",
+            "그 두려움 때문에 경로를 흐리며 시간을 벌었다."
+          ],
+          "suppressions": [
+            "내 감정적 이유가 배후 은폐를 설명할 뿐 정당화하진 못한다는 점.",
+            "설명 지연이 사건 수습을 더 늦췄다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:b:tell:marriage_shield",
+            "family02:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-2:evidence:s4:0",
+              "factText": "아내 쪽을 바로 말 못 한 건, 제가 배신한 남편이 되는 순간 집안도 결혼도 같이 깨질 것 같았기 때문이다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:b:d-2:context:s4:1",
+              "factText": "그래서 나는 직접 배후 질문이 나올 때마다 문장 앞부분만 사실로 남겨 두고 뒤를 비웠다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "직접 외부에 닿은 손은 민지 쪽이 맞다.",
+            "하지만 그 재료를 넘겨준 출발점이 나였다는 것도 인정하고, 그래서 내 책임도 같이 선다."
+          ],
+          "privateKnowledge": [
+            "나는 직접 발송자와 최초 제공자의 책임을 둘 다 보게 됐다.",
+            "아내를 보호하려고 한 침묵이 오히려 더 큰 의심과 상처를 만들었다."
+          ],
+          "suppressions": [
+            "그래도 민지의 의도를 끝까지 악의로 규정하긴 망설인다.",
+            "내가 더 일찍 사실을 말했어야 했다는 점을 아직 담담히 못 말한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:b:tell:marriage_shield",
+            "family02:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-2:evidence:s5:0",
+              "factText": "직접 외부에 닿은 손은 민지 쪽이 맞다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "target": {
+                  "exact": "거래처와 중개업소",
+                  "neutral": "외부",
+                  "judgeRef": "시장 바깥"
+                },
+                "time": {
+                  "period": "명절 뒤 48시간 안",
+                  "neutral": "그 직후",
+                  "judgeRef": "명절 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:b:d-2:context:s5:1",
+              "factText": "하지만 그 재료를 넘겨준 출발점이 나였다는 것도 인정하고, 그래서 내 책임도 같이 선다.",
+              "tags": [
+                "context",
+                "beneficiary",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "intermediary": {
+                  "fullName": "이민지",
+                  "relation": "배우자",
+                  "neutral": "배우자 쪽 사람"
+                },
+                "channel": {
+                  "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                  "neutral": "외부 확인 경로",
+                  "judgeRef": "문의 경로"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "어머니가 민지 태블릿까지 보셨을 거라고는 생각하고 싶지 않다.",
+            "다만 누가 그 화면을 본 뒤에야 그런 친척 단톡 문장이 나올 수 있다는 느낌은 있다."
+          ],
+          "privateKnowledge": [
+            "정확한 접속 기록은 아직 없지만, 단톡 문구가 화면 정보와 너무 닮아 있다.",
+            "나는 어머니를 정면으로 범인 취급하는 말을 피하고 있다."
+          ],
+          "suppressions": [
+            "어머니가 이미 상당히 구체적 내용을 알고 있었던 점.",
+            "내가 가족 서열 때문에 직접 지목을 망설인다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-3:act:s0:0",
+              "factText": "어머니가 민지 태블릿까지 보셨을 거라고는 생각하고 싶지 않다.",
+              "tags": [
+                "act",
+                "privacy",
+                "denial"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-3:relationship:s0:1",
+              "factText": "다만 누가 그 화면을 본 뒤에야 그런 친척 단톡 문장이 나올 수 있다는 느낌은 있다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "친척 단톡 문구를 보면, 어머니가 적어도 화면 일부를 본 건 맞는 것 같다.",
+            "그래도 저는 아직 우연히 본 건지 일부러 연 건지까지는 단정하지 않으려고 한다."
+          ],
+          "privateKnowledge": [
+            "나는 어머니 행동을 의심하면서도 공개 대치가 두렵다.",
+            "민지와 어머니 사이를 더 악화시키고 싶지 않아 말을 늦춘다."
+          ],
+          "suppressions": [
+            "잠금 해제 여부와 접속 시각이 곧 확인될 수 있다는 점.",
+            "내가 불편한 진실을 완곡하게 말한다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-3:act:s1:0",
+              "factText": "친척 단톡 문구를 보면, 어머니가 적어도 화면 일부를 본 건 맞는 것 같다.",
+              "tags": [
+                "act",
+                "privacy",
+                "uncertainty"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-3:relationship:s1:1",
+              "factText": "그래도 저는 아직 우연히 본 건지 일부러 연 건지까지는 단정하지 않으려고 한다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "접속 시각과 친척 단톡 전송이 6분 차이면, 우연히 지나가다 본 수준은 아니다.",
+            "이 정도면 어머니가 민지 태블릿을 확인하고 내 쪽으로 의심을 돌린 흐름이 맞다."
+          ],
+          "privateKnowledge": [
+            "오전 7시 03분 접속과 6분 뒤 단톡 전송은 나에게 결정적이다.",
+            "나는 이제 더는 '우연' 해석으로 버티기 어렵다."
+          ],
+          "suppressions": [
+            "그래도 어머니의 불안을 이해하려는 여지를 조금 남긴다는 점.",
+            "내가 받은 공개 망신의 감정을 아직 절제하고 있다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-3:act:s2:0",
+              "factText": "접속 시각과 친척 단톡 전송이 6분 차이면, 우연히 지나가다 본 수준은 아니다.",
+              "tags": [
+                "act",
+                "privacy",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-3:relationship:s2:1",
+              "factText": "이 정도면 어머니가 민지 태블릿을 확인하고 내 쪽으로 의심을 돌린 흐름이 맞다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "어머니가 민지 태블릿을 열어 본 뒤 내 이름으로 의심을 돌린 건 사실에 가깝다.",
+            "그 행동은 확인보다 공개 비난에 가까웠고, 가족 안 신뢰를 크게 깨뜨렸다."
+          ],
+          "privateKnowledge": [
+            "단톡 기록을 보면 어머니 문장은 질문이 아니라 단정에 가까웠다.",
+            "나는 이제 피해감과 분노를 동시에 느낀다."
+          ],
+          "suppressions": [
+            "어머니를 비난하는 말이 나 자신 책임 회피처럼 들릴 수 있다는 점.",
+            "민지 기기 무단 열람과 내 자료 공유 문제가 따로 동시에 존재한다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-3:act:s3:0",
+              "factText": "어머니가 민지 태블릿을 열어 본 뒤 내 이름으로 의심을 돌린 건 사실에 가깝다.",
+              "tags": [
+                "act",
+                "privacy",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-3:relationship:s3:1",
+              "factText": "그 행동은 확인보다 공개 비난에 가까웠고, 가족 안 신뢰를 크게 깨뜨렸다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 제일 괴로웠던 건, 잘잘못보다도 어머니가 며느리 기기까지 건드릴 만큼 우리를 못 믿었다는 점이다.",
+            "그 순간 저는 아들이 아니라 심문 대상이 된 느낌이었다."
+          ],
+          "privateKnowledge": [
+            "공개 망신과 가족 서열 압박이 겹치면서 말문이 막혔다.",
+            "그래서 저는 오히려 다른 쟁점에서도 더 숨기고 늦추게 됐다."
+          ],
+          "suppressions": [
+            "내 상처가 어머니의 위반을 설명받지 못하게 하지는 않는다는 점.",
+            "나도 이미 원인 제공을 했다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:marriage_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-3:act:s4:0",
+              "factText": "제가 제일 괴로웠던 건, 잘잘못보다도 어머니가 며느리 기기까지 건드릴 만큼 우리를 못 믿었다는 점이다.",
+              "tags": [
+                "act",
+                "privacy",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:b:d-3:relationship:s4:1",
+              "factText": "그 순간 저는 아들이 아니라 심문 대상이 된 느낌이었다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "어머니의 무단 열람과 친척 단톡 확산은 분명 잘못이다.",
+            "그래도 그 전에 제가 자료를 배우자에게 넘겨 판을 키운 책임도 같이 봐야 한다고 생각한다."
+          ],
+          "privateKnowledge": [
+            "나는 이제 피해자 입장만으로는 이 쟁점을 설명할 수 없다는 걸 안다.",
+            "어머니 잘못을 말하면서도 내 쪽 위반을 함께 넣어야 가족이 멈춘다."
+          ],
+          "suppressions": [
+            "감정적으로는 아직 어머니 사과를 더 크게 원한다.",
+            "민지 입장에서 받은 모욕을 온전히 풀진 못했다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:marriage_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-3:act:s5:0",
+              "factText": "어머니의 무단 열람과 친척 단톡 확산은 분명 잘못이다.",
+              "tags": [
+                "act",
+                "privacy",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "민지 태블릿",
+                  "neutral": "그 기기",
+                  "judgeRef": "며느리 태블릿"
+                },
+                "time": {
+                  "dateExact": "오전 7시 03분",
+                  "period": "그 아침",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:b:d-3:relationship:s5:1",
+              "factText": "그래도 그 전에 제가 자료를 배우자에게 넘겨 판을 키운 책임도 같이 봐야 한다고 생각한다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방",
+                  "judgeRef": "친척들 방"
+                },
+                "content": {
+                  "exact": "'선우가 밖에 흘렸다'는 취지",
+                  "neutral": "확인 전 의심 문구",
+                  "judgeRef": "그 의심글"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "아버지 말은 제가 현장을 맡으라는 뜻이었다.",
+            "그걸 그냥 칭찬으로 듣기엔 너무 분명해서, 저는 사실상 승계 신호라고 느꼈다."
+          ],
+          "privateKnowledge": [
+            "정식 지분 승계 문서나 상속 정리 문구는 없었다.",
+            "나는 오래된 인정 욕구 때문에 짧은 문장을 크게 붙잡았다."
+          ],
+          "suppressions": [
+            "42초 클립이 앞뒤가 잘린 파일이라는 점.",
+            "전체 녹취에는 다른 문장이 더 있다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-4:quote:s0:0",
+              "factText": "아버지 말은 제가 현장을 맡으라는 뜻이었다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-4:legacy_sentence:s0:1",
+              "factText": "그걸 그냥 칭찬으로 듣기엔 너무 분명해서, 저는 사실상 승계 신호라고 느꼈다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "그날 분위기상 적어도 아버지가 저를 1순위로 본다고 느낀 건 사실이다.",
+            "그래서 어머니가 그 말에 과민 반응한다고만 생각했고, 제 해석을 굽히기 싫었다."
+          ],
+          "privateKnowledge": [
+            "나는 느낌과 법적 의미를 섞어서 말하고 있다.",
+            "어머니와 권한 문제로 부딪힐수록 그 짧은 클립이 더 절실한 근거처럼 보였다."
+          ],
+          "suppressions": [
+            "'느꼈다'와 '확정됐다'는 다른 수준이라는 점.",
+            "내 욕심이 해석을 밀어 올렸다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-4:quote:s1:0",
+              "factText": "그날 분위기상 적어도 아버지가 저를 1순위로 본다고 느낀 건 사실이다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "uncertainty"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-4:legacy_sentence:s1:1",
+              "factText": "그래서 어머니가 그 말에 과민 반응한다고만 생각했고, 제 해석을 굽히기 싫었다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "42초 클립만 보면 저도 그렇게 받아들였다.",
+            "그래서 저는 그 파일을 보고 어머니가 오해만 키운다고 생각했지, 제 해석 자체를 의심하진 않았다."
+          ],
+          "privateKnowledge": [
+            "나는 여전히 클립의 인상효과 뒤에 숨어 있다.",
+            "전체 녹취를 확인하면 내 해석이 일부 꺾일 걸 알고도 늦춘다."
+          ],
+          "suppressions": [
+            "전체 18분 녹취와 변호사 확인서가 존재한다는 점.",
+            "내가 원하는 의미를 먼저 붙잡았다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-4:quote:s2:0",
+              "factText": "42초 클립만 보면 저도 그렇게 받아들였다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-4:legacy_sentence:s2:1",
+              "factText": "그래서 저는 그 파일을 보고 어머니가 오해만 키운다고 생각했지, 제 해석 자체를 의심하진 않았다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "전체 녹취를 보면 지분이랑 상속은 나중이라 한 건 맞다.",
+            "그래도 현장 운영을 맡기겠다는 신호까지는 분명했고, 저는 그걸 너무 멀리 읽은 것 같다."
+          ],
+          "privateKnowledge": [
+            "이제는 단독 승계 확정이 아니라 임시 운영 신호와 내 욕심이 겹친 해석으로 본다.",
+            "완전히 틀렸다고 말하면 스스로가 무너질까 봐 조금 남겨 둔다."
+          ],
+          "suppressions": [
+            "'나중에 다시 정리하자'는 문장이 내 초기 주장과 충돌한다는 점.",
+            "나는 아직 명분을 일부 붙들고 있다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-4:quote:s3:0",
+              "factText": "전체 녹취를 보면 지분이랑 상속은 나중이라 한 건 맞다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-4:legacy_sentence:s3:1",
+              "factText": "그래도 현장 운영을 맡기겠다는 신호까지는 분명했고, 저는 그걸 너무 멀리 읽은 것 같다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "제가 그 말을 붙잡은 건 욕심도 있지만, 계속 아버지 앞에서 증명해야 한다는 압박이 너무 컸기 때문이다.",
+            "현장을 맡고도 인정받지 못할까 봐, 그 한 문장을 확정처럼 끌어안았다."
+          ],
+          "privateKnowledge": [
+            "승계 욕심보다 인정 욕구와 불안이 더 크다.",
+            "그래서 어머니와 며느리 문제까지 겹치자 판단이 더 비뚤어졌다."
+          ],
+          "suppressions": [
+            "압박감이 있었다고 해서 잘린 클립을 근거 삼은 일이 정당해지지 않는다는 점.",
+            "내 해석이 가족 갈등의 불씨가 됐다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:marriage_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-4:quote:s4:0",
+              "factText": "제가 그 말을 붙잡은 건 욕심도 있지만, 계속 아버지 앞에서 증명해야 한다는 압박이 너무 컸기 때문이다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:b:d-4:legacy_sentence:s4:1",
+              "factText": "현장을 맡고도 인정받지 못할까 봐, 그 한 문장을 확정처럼 끌어안았다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "단독 승계 확정은 아니었다.",
+            "제가 바랐던 방향으로 그 말을 더 크게 들은 부분이 있었고, 전체 녹취 기준으로는 임시 운영 논의가 맞다."
+          ],
+          "privateKnowledge": [
+            "나는 인정받고 싶은 마음 때문에 문장을 과장해 들었다.",
+            "그 해석을 민지와 공유하면서 다른 쟁점까지 꼬이게 했다."
+          ],
+          "suppressions": [
+            "그래도 현장 운영 신호 자체는 남겨 두고 싶어 한다.",
+            "어머니의 과민 반응을 함께 말하고 싶어 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:marriage_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-4:quote:s5:0",
+              "factText": "단독 승계 확정은 아니었다.",
+              "tags": [
+                "quote",
+                "timeline",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "42초 음성 클립",
+                  "neutral": "짧은 클립",
+                  "judgeRef": "그 음성 파일"
+                },
+                "speaker": {
+                  "fullName": "강정호",
+                  "judgeRef": "아버지",
+                  "neutral": "그분"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:b:d-4:legacy_sentence:s5:1",
+              "factText": "제가 바랐던 방향으로 그 말을 더 크게 들은 부분이 있었고, 전체 녹취 기준으로는 임시 운영 논의가 맞다.",
+              "tags": [
+                "legacy_sentence",
+                "threshold",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "transcript": {
+                  "exact": "18분 전체 녹취",
+                  "neutral": "전체 맥락",
+                  "judgeRef": "전체 녹취"
+                },
+                "quote": {
+                  "clipQuote": "공장은 선우가 맡아",
+                  "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                  "neutral": "그 말들"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "배우자에게 말한 걸 외부 유출로 볼 수는 없다.",
+            "가족 문제를 가족끼리 상의한 수준인데, 어머니는 그걸 밖으로 흘린 일과 한 줄로 묶는다."
+          ],
+          "privateKnowledge": [
+            "직계 가족 바깥 비공유 원칙에는 배우자도 예외가 아니었다.",
+            "나는 민지를 가족 안쪽으로 편입해 스스로 규칙을 바꿨다."
+          ],
+          "suppressions": [
+            "원칙 문구와 실제 내 해석이 달랐다는 점.",
+            "공유 로그가 명확히 남아 있다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-5:rule:s0:0",
+              "factText": "배우자에게 말한 걸 외부 유출로 볼 수는 없다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-5:harm:s0:1",
+              "factText": "가족 문제를 가족끼리 상의한 수준인데, 어머니는 그걸 밖으로 흘린 일과 한 줄로 묶는다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "민지한테는 정리만 부탁한 거고, 밖으로 퍼뜨릴 생각은 없었다.",
+            "그래서 저는 아직도 제 행동을 '예외적 상의' 정도로 말하고 싶다."
+          ],
+          "privateKnowledge": [
+            "실제론 파일과 링크를 보냈고, 그게 규칙 위반임을 어느 정도 알았다.",
+            "의도 부재를 앞세워 위반 사실을 덜어내려 한다."
+          ],
+          "suppressions": [
+            "비밀경계는 의도뿐 아니라 전달 자체도 문제라는 점.",
+            "내가 표현 크기를 줄인다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family02:b:tell:delay_buffer",
+            "family02:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-5:rule:s1:0",
+              "factText": "민지한테는 정리만 부탁한 거고, 밖으로 퍼뜨릴 생각은 없었다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-5:harm:s1:1",
+              "factText": "그래서 저는 아직도 제 행동을 '예외적 상의' 정도로 말하고 싶다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "공유 폴더 링크를 준 건 맞지만, 배우자는 예외라고 생각했다.",
+            "오히려 친척 단톡이 더 바깥으로 번졌으니 어머니 쪽도 같은 원칙 위반을 피하긴 어렵다."
+          ],
+          "privateKnowledge": [
+            "나는 부분 인정과 동시 비난으로 균형을 맞추려 한다.",
+            "배우자 예외 논리가 내 체면을 지켜주는 마지막 방패라고 느낀다."
+          ],
+          "suppressions": [
+            "예외 규정이 사전 합의된 적 없다는 점.",
+            "내가 책임을 분산하려고 즉시 어머니를 끌어들인다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:b:tell:soft_minimizing",
+            "family02:b:tell:marriage_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-5:rule:s2:0",
+              "factText": "공유 폴더 링크를 준 건 맞지만, 배우자는 예외라고 생각했다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-5:harm:s2:1",
+              "factText": "오히려 친척 단톡이 더 바깥으로 번졌으니 어머니 쪽도 같은 원칙 위반을 피하긴 어렵다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "결과적으로 제가 예외를 만들었고, 어머니는 의심을 확산시켰다.",
+            "둘 다 선을 흐렸다는 점에서는 맞지만, 시작과 확산의 방식은 달랐다."
+          ],
+          "privateKnowledge": [
+            "나는 이제 공동 위반을 인정한다.",
+            "다만 최초 위반자라는 말이 너무 무거워서 여전히 완전히는 못 받아들인다."
+          ],
+          "suppressions": [
+            "공유 시점이 친척 단톡보다 앞섰다는 점.",
+            "내가 책임의 순서를 흐리고 있다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family02:b:tell:soft_minimizing",
+            "family02:b:tell:marriage_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-5:rule:s3:0",
+              "factText": "결과적으로 제가 예외를 만들었고, 어머니는 의심을 확산시켰다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family02:b:d-5:harm:s3:1",
+              "factText": "둘 다 선을 흐렸다는 점에서는 맞지만, 시작과 확산의 방식은 달랐다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "제가 그 원칙을 굳이 예외 처리한 건, 아내 앞에서도 공장 일을 다 숨기면 더 큰 불신이 생길까 두려워서였다.",
+            "가업과 결혼 사이에서 둘 중 하나를 선택하라는 느낌이 들어서 저는 편한 쪽으로 규칙을 바꿨다."
+          ],
+          "privateKnowledge": [
+            "관계 유지 욕구가 규칙보다 앞섰다.",
+            "그래서 저는 잘못을 인정하면서도 계속 이유를 덧붙인다."
+          ],
+          "suppressions": [
+            "두려움이 규칙 변경 권한을 주는 건 아니라는 점.",
+            "관계 유지가 오히려 더 큰 불신을 불렀다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:b:tell:marriage_shield",
+            "family02:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-5:rule:s4:0",
+              "factText": "제가 그 원칙을 굳이 예외 처리한 건, 아내 앞에서도 공장 일을 다 숨기면 더 큰 불신이 생길까 두려워서였다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:b:d-5:harm:s4:1",
+              "factText": "가업과 결혼 사이에서 둘 중 하나를 선택하라는 느낌이 들어서 저는 편한 쪽으로 규칙을 바꿨다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "배우자를 예외 취급한 판단은 틀렸다.",
+            "어머니의 단톡 확산과 별개로, 제가 먼저 비공유 원칙을 흔든 책임은 인정한다."
+          ],
+          "privateKnowledge": [
+            "나는 이제 '가족끼리'라는 말이 규칙을 바꾸지 못한다는 걸 안다.",
+            "앞으로는 공유 대상과 목적을 따로 정하지 않으면 같은 일이 반복된다는 점도 인정한다."
+          ],
+          "suppressions": [
+            "어머니 위반과 내 위반의 비중을 여전히 따지고 싶어 한다.",
+            "아내를 향한 비난 수위는 끝까지 조심하려 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family02:b:tell:marriage_shield",
+            "family02:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family02:b:d-5:rule:s5:0",
+              "factText": "배우자를 예외 취급한 판단은 틀렸다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                  "neutral": "비공유 원칙",
+                  "judgeRef": "그 비밀 원칙"
+                },
+                "scope": {
+                  "exact": "직계 가족 바깥",
+                  "neutral": "집 밖",
+                  "judgeRef": "가족 밖"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family02:b:d-5:harm:s5:1",
+              "factText": "어머니의 단톡 확산과 별개로, 제가 먼저 비공유 원칙을 흔든 책임은 인정한다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "breachA": {
+                  "exact": "친척 단톡·거래처 통화로 의심 확산",
+                  "neutral": "의심 전파",
+                  "judgeRef": "공개 확산"
+                },
+                "breachB": {
+                  "exact": "배우자에게 파일과 링크 공유",
+                  "neutral": "배우자 공유",
+                  "judgeRef": "자료 전달"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

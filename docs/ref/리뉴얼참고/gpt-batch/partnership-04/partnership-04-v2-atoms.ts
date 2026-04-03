@@ -1,0 +1,4485 @@
+export const partnership04V2Atoms = {
+  "caseId": "partnership-04",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "라희가 가져온 거래내역은 원본 기준이 아니라 편집된 정리본이었습니다."
+          ],
+          "privateKnowledge": [
+            "라희가 원본 요청을 받고도 같은 PDF를 다시 냈다는 정황까지 나는 알고 있습니다."
+          ],
+          "suppressions": [
+            "e-5 메일에서 라희가 원본 요청을 받았다는 점",
+            "내가 그 PDF를 보자마자 감정적으로 폭발했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-1:evidence:0",
+              "factText": "라희가 가져온 거래내역은 원본 기준이 아니라 편집된 정리본이었습니다.",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-1:context:1",
+              "factText": "조정인 요청 이후에도 같은 편집본이 재제출됐다는 정황",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "과거 리베이트 불신",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "정리본일 수는 있어도 원본 여부를 숨긴 채 협상 자료로 쓴 건 문제입니다."
+          ],
+          "privateKnowledge": [
+            "조정인 회신과 편집 로그가 붙으면 라희가 원본이 아니라는 점을 몰랐다고 하긴 어렵다는 걸 압니다."
+          ],
+          "suppressions": [
+            "과거 리베이트 사건이 라희의 의심을 자극한 배경",
+            "원본 재검증 전까지 나도 정확한 표기 차이를 몰랐다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-1:rule:0",
+              "factText": "정리본일 수는 있어도 원본 여부를 숨긴 채 협상 자료로 쓴 건 문제입니다.",
+              "tags": [
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-1:relationship:1",
+              "factText": "원본 여부를 밝히지 않은 채 '흐름은 같다'고 넘긴 태도",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "과거 리베이트 불신",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "편집본 사용이 핵심 잘못이지만, 그 배경에 과거 불신이 있었다는 점까지는 압니다."
+          ],
+          "privateKnowledge": [
+            "라희 책임이 크지만, 내 과거 리베이트 사건이 그녀의 의심을 키운 배경이었다는 것도 압니다."
+          ],
+          "suppressions": [
+            "내 과거 잘못이 현재 설득력에 영향을 준다는 점",
+            "라희의 불안 자체는 전혀 근거 없지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-1:responsibility:0",
+              "factText": "편집본 사용이 핵심 잘못이지만, 그 배경에 과거 불신이 있었다는 점까지는 압니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-1:threshold:1",
+              "factText": "편집본 사용의 배경에 2년 전 배신 기억이 겹쳐 있었다는 맥락",
+              "tags": [
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "과거 리베이트 불신",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "편집본 지속 사용과 과거 배신에 대한 감정 반응은 구분해서 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "현재 조작 사용을 따지면서도 내 과거 잘못을 완전히 분리해 보긴 어렵다는 걸 압니다."
+          ],
+          "suppressions": [
+            "내가 현재 쟁점과 과거 쟁점을 분리하는 데에도 이해관계가 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-1:counter:0",
+              "factText": "편집본 지속 사용과 과거 배신에 대한 감정 반응은 구분해서 봐야 합니다.",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-1:legacy_sentence:1",
+              "factText": "현재 조작 사용과 과거 신뢰 훼손을 섞어 협상력이 움직였다는 점",
+              "tags": [
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "과거 리베이트 불신",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "그 자료를 보는 순간 저도 과거 일이 덮쳐 와서 더 거칠게 받아쳤습니다."
+          ],
+          "privateKnowledge": [
+            "내가 그 PDF에 과민하게 반응한 데에는 또 횡령자로 찍힐지 모른다는 공포가 섞여 있습니다."
+          ],
+          "suppressions": [
+            "횡령자로 기억될까 두렵다는 속내"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-1:emotion:0",
+              "factText": "그 자료를 보는 순간 저도 과거 일이 덮쳐 와서 더 거칠게 받아쳤습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-1:fear:1",
+              "factText": "편집본을 본 직후 나 역시 방어적으로 격앙됐다는 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "과거 리베이트 불신",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "라희는 편집본이라는 점을 알면서도 협상 자료로 계속 썼고, 현재 평가는 원본 기준으로 다시 해야 합니다."
+          ],
+          "privateKnowledge": [
+            "편집본 지속 사용은 라희 책임이고, 나는 그 사실을 원본 증거로만 정리해야 한다는 결론까지 받아들였습니다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-1:institution:0",
+              "factText": "라희는 편집본이라는 점을 알면서도 협상 자료로 계속 썼고, 현재 평가는 원본 기준으로 다시 해야 합니다.",
+              "tags": [
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-1:quote:1",
+              "factText": "현재 판단은 편집본이 아니라 원본 은행자료와 메일 원본으로 해야 한다는 정리",
+              "tags": [
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "과거 리베이트 불신",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "그 외주 건은 횡령이 아니라 당시 운영상 예외 정산이었습니다."
+          ],
+          "privateKnowledge": [
+            "친구 회사 계약과 정산 메모를 나란히 보면 내가 일부 흐름을 의도적으로 가렸다는 걸 압니다."
+          ],
+          "suppressions": [
+            "친구 회사와의 특수관계",
+            "시인 메일이 남아 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-2:denial:0",
+              "factText": "그 외주 건은 횡령이 아니라 당시 운영상 예외 정산이었습니다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "2024년 외주 리베이트 정산",
+                  "neutral": "그 과거 정산"
+                },
+                "time": {
+                  "exact": "2024년 8월~9월",
+                  "period": "2년 전",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-2:fear:1",
+              "factText": "친구 회사 계약과 정산 메모가 따로 놀지 않는다는 점",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 외부 업체"
+                },
+                "context": {
+                  "exact": "일정 압박과 품질 이슈",
+                  "neutral": "당시 배경"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "친구 회사가 끼어 있었던 건 맞지만 리베이트라고 단정할 정도로 단순한 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "예외 운영이라는 말로 리베이트성 정산을 설명하기엔 기록이 너무 선명하다는 걸 압니다."
+          ],
+          "suppressions": [
+            "리베이트성 정산을 뒤늦게 인정했다는 기록",
+            "규정 개정이 내 잘못에서 출발했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-2:uncertainty:0",
+              "factText": "친구 회사가 끼어 있었던 건 맞지만 리베이트라고 단정할 정도로 단순한 건 아니었습니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "2024년 외주 리베이트 정산",
+                  "neutral": "그 과거 정산"
+                },
+                "time": {
+                  "exact": "2024년 8월~9월",
+                  "period": "2년 전",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-2:self_justification:1",
+              "factText": "예외 운영이라는 설명으로는 가려지지 않는 특수관계 정황",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 외부 업체"
+                },
+                "context": {
+                  "exact": "일정 압박과 품질 이슈",
+                  "neutral": "당시 배경"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "일부 정산을 투명하게 공유하지 않은 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "공유하지 않은 것이 아니라 사실상 숨긴 것에 가깝다는 점을 인정하고 있습니다."
+          ],
+          "suppressions": [
+            "숨김이 체계적이었다는 점",
+            "라희의 불신이 완전히 근거 없지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-2:act:0",
+              "factText": "일부 정산을 투명하게 공유하지 않은 건 인정합니다.",
+              "tags": [
+                "act",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "2024년 외주 리베이트 정산",
+                  "neutral": "그 과거 정산"
+                },
+                "time": {
+                  "exact": "2024년 8월~9월",
+                  "period": "2년 전",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-2:context:1",
+              "factText": "투명한 공유 대신 사후 시인으로 밀린 절차 위반",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 외부 업체"
+                },
+                "context": {
+                  "exact": "일정 압박과 품질 이슈",
+                  "neutral": "당시 배경"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 숨긴 부분은 분명 있지만 당시 일정 압박과 품질 이슈도 함께 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "내 체면과 경력을 지키려 당시 배경을 방패로 세우고 있다는 걸 압니다."
+          ],
+          "suppressions": [
+            "체면 보존이 내 설명 방식에 강하게 작동한다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-2:responsibility:0",
+              "factText": "제가 숨긴 부분은 분명 있지만 당시 일정 압박과 품질 이슈도 함께 봐야 합니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "2024년 외주 리베이트 정산",
+                  "neutral": "그 과거 정산"
+                },
+                "time": {
+                  "exact": "2024년 8월~9월",
+                  "period": "2년 전",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-2:motive:1",
+              "factText": "운영상 필요를 내세워 책임 비율을 낮추려는 태도",
+              "tags": [
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 외부 업체"
+                },
+                "context": {
+                  "exact": "일정 압박과 품질 이슈",
+                  "neutral": "당시 배경"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "그때 일을 다시 꺼내면 지금 모든 판단이 그 한 사건으로 덮일까 봐 저는 계속 축소했습니다."
+          ],
+          "privateKnowledge": [
+            "기술책임자이면서 회사 돈을 빼돌린 사람처럼 기억될까 두렵습니다."
+          ],
+          "suppressions": [
+            "마지막에 돈을 빼돌린 공동대표로 기록될까 하는 공포"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-2:emotion:0",
+              "factText": "그때 일을 다시 꺼내면 지금 모든 판단이 그 한 사건으로 덮일까 봐 저는 계속 축소했습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "2024년 외주 리베이트 정산",
+                  "neutral": "그 과거 정산"
+                },
+                "time": {
+                  "exact": "2024년 8월~9월",
+                  "period": "2년 전",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-2:shame:1",
+              "factText": "현재 모든 판단이 과거 한 사건으로 봉인될까 두려워하는 심리",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 외부 업체"
+                },
+                "context": {
+                  "exact": "일정 압박과 품질 이슈",
+                  "neutral": "당시 배경"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "저는 2년 전 친구 회사 외주 리베이트성 정산을 숨겼고, 그게 지금 불신의 출발점이 됐습니다."
+          ],
+          "privateKnowledge": [
+            "과거 외주 리베이트 은폐는 제 책임이고, 이후 규정 변경도 그 잘못을 전제로 생겼다는 걸 받아들입니다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-2:admission:0",
+              "factText": "저는 2년 전 친구 회사 외주 리베이트성 정산을 숨겼고, 그게 지금 불신의 출발점이 됐습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "2024년 외주 리베이트 정산",
+                  "neutral": "그 과거 정산"
+                },
+                "time": {
+                  "exact": "2024년 8월~9월",
+                  "period": "2년 전",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-2:rule:1",
+              "factText": "과거 은폐가 지금 신뢰 붕괴의 토대가 됐다는 인정",
+              "tags": [
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 외부 업체"
+                },
+                "context": {
+                  "exact": "일정 압박과 품질 이슈",
+                  "neutral": "당시 배경"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 세 줄은 제 개인 유출이 아니고, 같은 정산 흐름이 잘려 보인 겁니다."
+          ],
+          "privateKnowledge": [
+            "개인 계좌로 간 돈이 아니라는 건 알지만, 정확한 분리 표기 이유는 처음엔 나도 완전히 설명하지 못했습니다."
+          ],
+          "suppressions": [
+            "정확한 항목 구성을 처음부터 명료하게 설명하지 못했다는 점",
+            "과거 전력이 현재 의심을 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-3:denial:0",
+              "factText": "그 세 줄은 제 개인 유출이 아니고, 같은 정산 흐름이 잘려 보인 겁니다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-3:context:1",
+              "factText": "개인 유용이 아니라는 최소 사실",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정산용 계좌",
+                  "neutral": "그 계좌"
+                },
+                "context": {
+                  "exact": "해지 정산용 이동",
+                  "neutral": "그 정산 흐름"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "정확한 귀속은 다시 봐야 해도 외부로 빼돌린 세 건이라는 해석은 과합니다."
+          ],
+          "privateKnowledge": [
+            "원본 은행자료를 붙이면 내 횡령은 아니라는 점이 드러나리라는 건 압니다."
+          ],
+          "suppressions": [
+            "표기 혼란을 인정하면 방어가 약해진다고 느낀 점",
+            "원본 전까지 나도 일부를 추정으로 설명했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-3:uncertainty:0",
+              "factText": "정확한 귀속은 다시 봐야 해도 외부로 빼돌린 세 건이라는 해석은 과합니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-3:institution:1",
+              "factText": "외부유출 세 건이라는 해석이 과장이라는 선 긋기",
+              "tags": [
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정산용 계좌",
+                  "neutral": "그 계좌"
+                },
+                "context": {
+                  "exact": "해지 정산용 이동",
+                  "neutral": "그 정산 흐름"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "표기 방식이 사람을 헷갈리게 만든 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "표기 혼란이 있었다는 점을 인정해야 설명이 풀린다는 걸 압니다."
+          ],
+          "suppressions": [
+            "숫자 나열로 질문 초점을 흐린 태도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-3:act:0",
+              "factText": "표기 방식이 사람을 헷갈리게 만든 건 인정합니다.",
+              "tags": [
+                "act",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-3:counter:1",
+              "factText": "분리 표기가 오인을 부른 구조적 원인",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정산용 계좌",
+                  "neutral": "그 계좌"
+                },
+                "context": {
+                  "exact": "해지 정산용 이동",
+                  "neutral": "그 정산 흐름"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "라희가 과거 사건을 겹쳐 읽으면서 그 세 줄을 더 악의적으로 해석한 면도 있습니다."
+          ],
+          "privateKnowledge": [
+            "라희의 과잉 해석을 탓하면서도 내가 숫자만 늘어놓아 큰 질문을 피했다는 걸 압니다."
+          ],
+          "suppressions": [
+            "또 횡령자로 낙인찍힐까 하는 공포"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-3:relationship:0",
+              "factText": "라희가 과거 사건을 겹쳐 읽으면서 그 세 줄을 더 악의적으로 해석한 면도 있습니다.",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-3:legacy_sentence:1",
+              "factText": "과거 사건이 겹치며 의심이 증폭된 협상 맥락",
+              "tags": [
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정산용 계좌",
+                  "neutral": "그 계좌"
+                },
+                "context": {
+                  "exact": "해지 정산용 이동",
+                  "neutral": "그 정산 흐름"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "저도 즉시 설명을 못 해서 의심을 키웠고, 제 이름에 또 횡령 꼬리표가 붙을까 방어적으로 굴었습니다."
+          ],
+          "privateKnowledge": [
+            "과거 리베이트 사건 때문에 이번에도 같은 사람으로 보일까 두려웠습니다."
+          ],
+          "suppressions": [
+            "과거 리베이트 기억이 현재 말투를 경직시킨 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-3:emotion:0",
+              "factText": "저도 즉시 설명을 못 해서 의심을 키웠고, 제 이름에 또 횡령 꼬리표가 붙을까 방어적으로 굴었습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-3:fear:1",
+              "factText": "또 같은 배신자로 보일까 하는 자기방어 심리",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정산용 계좌",
+                  "neutral": "그 계좌"
+                },
+                "context": {
+                  "exact": "해지 정산용 이동",
+                  "neutral": "그 정산 흐름"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "주말 세 줄은 외부유출 세 건이 아니라 해지 정산용 이동의 분리 표기였습니다."
+          ],
+          "privateKnowledge": [
+            "세 줄은 환급보증금과 퇴직충당금 이동이 분리 표기된 것이었고, 내 자기방어가 설명을 늦췄다는 걸 받아들입니다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-3:admission:0",
+              "factText": "주말 세 줄은 외부유출 세 건이 아니라 해지 정산용 이동의 분리 표기였습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-3:beneficiary:1",
+              "factText": "환급보증금과 퇴직충당금 이동이 따로 찍힌 실제 구조",
+              "tags": [
+                "beneficiary",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정산용 계좌",
+                  "neutral": "그 계좌"
+                },
+                "context": {
+                  "exact": "해지 정산용 이동",
+                  "neutral": "그 정산 흐름"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "그 과거 사건은 이미 규정과 정산으로 정리된 건이고 지금 협상과는 별개입니다."
+          ],
+          "privateKnowledge": [
+            "완전히 끝난 일이 아니라는 걸 알면서도 그렇게 말해야 현재 방어가 쉽다고 생각했습니다."
+          ],
+          "suppressions": [
+            "과거 사건이 완전히 끝난 것이 아니라는 점",
+            "현재 협상에서 그 과거를 의식해 말하고 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-4:legacy_sentence:0",
+              "factText": "그 과거 사건은 이미 규정과 정산으로 정리된 건이고 지금 협상과는 별개입니다.",
+              "tags": [
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 리베이트 배신 사건",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "당시",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-4:rule:1",
+              "factText": "이미 정리된 일이라는 방어 문구",
+              "tags": [
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김라희",
+                  "fullName": "김라희",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "커리어 보존",
+                  "neutral": "그 방어 이유"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "완전히 별개라기보다 신뢰 이력 정도지만, 지금 쟁점을 대신할 정도는 아닙니다."
+          ],
+          "privateKnowledge": [
+            "과거 사건이 남긴 상처와 규정 변경이 아직도 현재 협상에 그림자를 드리운다는 걸 압니다."
+          ],
+          "suppressions": [
+            "평판 방어가 설명의 큰 동기라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-4:uncertainty:0",
+              "factText": "완전히 별개라기보다 신뢰 이력 정도지만, 지금 쟁점을 대신할 정도는 아닙니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 리베이트 배신 사건",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "당시",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-4:relationship:1",
+              "factText": "신뢰 이력 정도로만 축소하려는 태도",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김라희",
+                  "fullName": "김라희",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "커리어 보존",
+                  "neutral": "그 방어 이유"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "저도 제게 불리한 과거를 작게 말하면서 협상에서는 선을 그으려 했습니다."
+          ],
+          "privateKnowledge": [
+            "과거를 분리하자고 말하면서도 내 평판 방어에 활용하고 있다는 걸 압니다."
+          ],
+          "suppressions": [
+            "봉합 사실을 과하게 강조해 책임을 약화시키려는 계산"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-4:act:0",
+              "factText": "저도 제게 불리한 과거를 작게 말하면서 협상에서는 선을 그으려 했습니다.",
+              "tags": [
+                "act",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 리베이트 배신 사건",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "당시",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-4:self_justification:1",
+              "factText": "과거를 작게 말하면서 현재 발언 폭을 조정한 부분",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김라희",
+                  "fullName": "김라희",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "커리어 보존",
+                  "neutral": "그 방어 이유"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "이미 일부 봉합된 사건이라는 걸 알면서도 제 커리어를 지키려 경계를 세웠습니다."
+          ],
+          "privateKnowledge": [
+            "부분 정산과 제도 개선으로 봉합된 사실을 내가 더 강조할수록 책임이 옅어 보인다고 계산했습니다."
+          ],
+          "suppressions": [
+            "커리어 보존 욕구"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-4:motive:0",
+              "factText": "이미 일부 봉합된 사건이라는 걸 알면서도 제 커리어를 지키려 경계를 세웠습니다.",
+              "tags": [
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 리베이트 배신 사건",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "당시",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-4:responsibility:1",
+              "factText": "봉합 사실을 방패로 삼은 협상 전략",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김라희",
+                  "fullName": "김라희",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "커리어 보존",
+                  "neutral": "그 방어 이유"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "그 일이 다시 제 이름표가 될까 봐 저는 '이미 끝난 일'이라고 반복했습니다."
+          ],
+          "privateKnowledge": [
+            "한 번의 배신으로 평생 설명해야 하는 사람이 될까 두렵습니다."
+          ],
+          "suppressions": [
+            "과거 사건이 다시 내 이름표가 될까 두렵다는 감정"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-4:emotion:0",
+              "factText": "그 일이 다시 제 이름표가 될까 봐 저는 '이미 끝난 일'이라고 반복했습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 리베이트 배신 사건",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "당시",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-4:fear:1",
+              "factText": "그 사건이 이름표처럼 따라붙을까 두려운 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김라희",
+                  "fullName": "김라희",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "커리어 보존",
+                  "neutral": "그 방어 이유"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "저는 과거 배신 사건을 축소하면서도 현재 협상에서 제게 유리한 방식으로 관리했습니다."
+          ],
+          "privateKnowledge": [
+            "과거 사건을 현재 협상에서 축소와 방어의 카드로 쓴 것은 제 선택이었다고 받아들입니다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-4:admission:0",
+              "factText": "저는 과거 배신 사건을 축소하면서도 현재 협상에서 제게 유리한 방식으로 관리했습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 리베이트 배신 사건",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "당시",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-4:quote:1",
+              "factText": "과거 사건을 축소와 방어에 활용했다는 인정",
+              "tags": [
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김라희",
+                  "fullName": "김라희",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "커리어 보존",
+                  "neutral": "그 방어 이유"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "겉보기 손실 숫자만으로 실제 손실 규모를 확정할 수는 없습니다."
+          ],
+          "privateKnowledge": [
+            "정확한 구조를 복원하면 손실 숫자가 달라질 수 있다는 감은 있었습니다."
+          ],
+          "suppressions": [
+            "숫자 복구가 필요하다는 감",
+            "즉시 설명하지 못했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-5:uncertainty:0",
+              "factText": "겉보기 손실 숫자만으로 실제 손실 규모를 확정할 수는 없습니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-5:context:1",
+              "factText": "겉보기 숫자만으로는 결론이 안 난다는 점",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "분리 표기와 별칭 축약",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "예약이체 표기 방식이 바뀌었을 가능성은 있지만 당시엔 저도 바로 설명하지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "은행 마이그레이션 공지를 확인하면 해석이 달라질 수 있다는 걸 압니다."
+          ],
+          "suppressions": [
+            "마이그레이션 공지를 아직 근거로 내지 못했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-5:institution:0",
+              "factText": "예약이체 표기 방식이 바뀌었을 가능성은 있지만 당시엔 저도 바로 설명하지 못했습니다.",
+              "tags": [
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-5:rule:1",
+              "factText": "표기 규칙 변경 가능성",
+              "tags": [
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "분리 표기와 별칭 축약",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "분리 표기와 수취인 별칭 축약이 손실을 더 크게 보이게 했을 수 있습니다."
+          ],
+          "privateKnowledge": [
+            "별칭 축약과 항목 분리가 핵심 변수라는 걸 인정하고 있습니다."
+          ],
+          "suppressions": [
+            "방어를 우선했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-5:beneficiary:0",
+              "factText": "분리 표기와 수취인 별칭 축약이 손실을 더 크게 보이게 했을 수 있습니다.",
+              "tags": [
+                "beneficiary",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-5:counter:1",
+              "factText": "별칭 축약과 분리 표기가 만든 착시 구조",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "분리 표기와 별칭 축약",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "우리 둘 다 캡처와 인상에 끌려 숫자를 실제보다 크게 읽었습니다."
+          ],
+          "privateKnowledge": [
+            "숫자 복구보다 방어에 먼저 매달렸다는 점도 압니다."
+          ],
+          "suppressions": [
+            "설명 지연 책임"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-5:responsibility:0",
+              "factText": "우리 둘 다 캡처와 인상에 끌려 숫자를 실제보다 크게 읽었습니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-5:relationship:1",
+              "factText": "양측 모두 인상에 끌려 수치를 키운 맥락",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "분리 표기와 별칭 축약",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "저도 숫자 설명을 제때 풀지 않아 오해를 방치했습니다."
+          ],
+          "privateKnowledge": [
+            "설명을 늦게 해서 의심과 손실 인상을 키운 책임을 느낍니다."
+          ],
+          "suppressions": [
+            "복구를 더 빨리 했어야 했다는 자책"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-5:emotion:0",
+              "factText": "저도 숫자 설명을 제때 풀지 않아 오해를 방치했습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-5:shame:1",
+              "factText": "숫자 설명 지연으로 오해를 방치한 책임",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "분리 표기와 별칭 축약",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "은행 표시 방식 변화 때문에 겉보기 손실이 실제보다 1,240만원 크게 보였습니다."
+          ],
+          "privateKnowledge": [
+            "표시 방식 변화가 1,240만원의 착시를 만들었고, 나는 그 복구를 더 빨리 했어야 했다는 걸 받아들입니다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-04:a:tell:ledger_walkthrough",
+            "partnership-04:a:tell:past_minimization",
+            "partnership-04:a:tell:precision_burst"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:a:d-5:evidence:0",
+              "factText": "은행 표시 방식 변화 때문에 겉보기 손실이 실제보다 1,240만원 크게 보였습니다.",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:a:d-5:quote:1",
+              "factText": "실제보다 1,240만원 크게 보였다는 최종 정리",
+              "tags": [
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "분리 표기와 별칭 축약",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "제가 낸 건 정리본이었지만 흐름 자체는 원본과 다르지 않다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "은행 발급본이 아니라 팀 폴더 스프레드시트에서 만든 PDF라는 점은 이미 알고 있었습니다."
+          ],
+          "suppressions": [
+            "직인 PNG를 삽입한 파일이 팀 폴더에서 만들어졌다는 점",
+            "원본 요청 메일을 받고도 같은 PDF를 보냈다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-1:denial:0",
+              "factText": "제가 낸 건 정리본이었지만 흐름 자체는 원본과 다르지 않다고 봤습니다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 정리본"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-1:fear:1",
+              "factText": "팀 폴더 스프레드시트에서 PDF를 만들어 제출했다는 점",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "또 속지 않겠다는 불안",
+                  "neutral": "그 불안"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "표현이 거칠었을 수는 있어도 그 자료를 낸 이유는 다시 속지 않으려는 확인이었습니다."
+          ],
+          "privateKnowledge": [
+            "조정인이 원본 여부를 묻자 '정리본이지만 흐름은 같다'고 답한 순간 방어 논리를 세웠다는 걸 압니다."
+          ],
+          "suppressions": [
+            "형식 문제가 아니라 의도된 편집 지속 사용이었다는 점",
+            "민재의 과거 배신을 현재 자료의 면죄부처럼 썼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-1:uncertainty:0",
+              "factText": "표현이 거칠었을 수는 있어도 그 자료를 낸 이유는 다시 속지 않으려는 확인이었습니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 정리본"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-1:self_justification:1",
+              "factText": "원본 여부 질문을 받고도 '흐름은 같다'고 답하며 버틴 태도",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "또 속지 않겠다는 불안",
+                  "neutral": "그 불안"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "편집본이라는 형식 문제는 인정하지만, 당시엔 실질이 같다고 믿고 밀었습니다."
+          ],
+          "privateKnowledge": [
+            "실질이 같다는 말로 형식 문제를 덮으려 했다는 걸 압니다."
+          ],
+          "suppressions": [
+            "원본이 아니라는 인식이 이미 있었다는 점",
+            "실질 동일 주장이 자기방어였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-1:act:0",
+              "factText": "편집본이라는 형식 문제는 인정하지만, 당시엔 실질이 같다고 믿고 밀었습니다.",
+              "tags": [
+                "act",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 정리본"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-1:context:1",
+              "factText": "형식 문제가 실질 판단에 영향을 줄 수 있다는 사실을 뒤늦게 인정하는 부분",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "또 속지 않겠다는 불안",
+                  "neutral": "그 불안"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "원본이 아니라는 걸 알고도 협상장에서 내려놓지 않은 건 맞지만 그 배경엔 누적된 배신감이 있었습니다."
+          ],
+          "privateKnowledge": [
+            "민재의 과거 배신을 배경 삼아 편집본 사용을 정당화했다는 것도 압니다."
+          ],
+          "suppressions": [
+            "과거 상처를 협상 우위로 바꾸려 했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-1:responsibility:0",
+              "factText": "원본이 아니라는 걸 알고도 협상장에서 내려놓지 않은 건 맞지만 그 배경엔 누적된 배신감이 있었습니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 정리본"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-1:motive:1",
+              "factText": "과거 배신 기억을 현재 편집본 사용의 방패로 세운 동기",
+              "tags": [
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "또 속지 않겠다는 불안",
+                  "neutral": "그 불안"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "저는 또 숫자에 속을까 봐 무서워서, 원본 검증보다 먼저 그 자료에 매달렸습니다."
+          ],
+          "privateKnowledge": [
+            "또 놓치면 재무 책임자이면서도 경고 신호를 못 본 사람으로 보일까 두려웠습니다."
+          ],
+          "suppressions": [
+            "또 속았다는 사람으로 남을까 두려웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-1:emotion:0",
+              "factText": "저는 또 숫자에 속을까 봐 무서워서, 원본 검증보다 먼저 그 자료에 매달렸습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 정리본"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-1:shame:1",
+              "factText": "재무 책임자로 또 놓칠까 두려워 과잉 확신에 매달린 감정",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "또 속지 않겠다는 불안",
+                  "neutral": "그 불안"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "저는 편집본이라는 점을 알면서도 그 PDF를 원본처럼 협상 자료로 계속 사용했습니다."
+          ],
+          "privateKnowledge": [
+            "편집본 지속 사용은 제 책임이고, 원본 검증보다 먼저 서사를 세운 것도 제 선택이었습니다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-1:admission:0",
+              "factText": "저는 편집본이라는 점을 알면서도 그 PDF를 원본처럼 협상 자료로 계속 사용했습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "편집 거래내역 PDF",
+                  "neutral": "그 정리본"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "해지 협상 당시",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-1:rule:1",
+              "factText": "편집본 사용을 멈추지 않은 선택이 제도보다 서사를 앞세운 결정이었다는 사실",
+              "tags": [
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한지훈",
+                  "fullName": "한지훈",
+                  "judgeRef": "조정인",
+                  "neutral": "그 중재자"
+                },
+                "context": {
+                  "exact": "또 속지 않겠다는 불안",
+                  "neutral": "그 불안"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "민재의 과거 외주 리베이트 은폐는 실제였고, 지금 불신도 거기서 시작됐습니다."
+          ],
+          "privateKnowledge": [
+            "민재의 시인 메일과 계약서가 있으니 과거 사건 자체는 분명하다고 알고 있습니다."
+          ],
+          "suppressions": [
+            "과거 사건이 일부 정산과 규정 개정으로 봉합됐다는 점",
+            "그 사실을 현재 압박 카드로 쓰고 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-2:evidence:0",
+              "factText": "민재의 과거 외주 리베이트 은폐는 실제였고, 지금 불신도 거기서 시작됐습니다.",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "외주 리베이트 은폐",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "2024년",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-2:context:1",
+              "factText": "시인 메일과 계약서가 과거 배신의 실재를 뒷받침한다는 점",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 업체"
+                },
+                "context": {
+                  "exact": "현재 불신의 배경",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "이미 일부 정산됐다고 해도 그 배신 사실 자체가 사라지는 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "과거 사건을 반복 호출할수록 현재 협상에서 내 도덕적 우위가 커진다는 것도 알고 있습니다."
+          ],
+          "suppressions": [
+            "과거 사실이 현재 편집본 사용의 면죄부가 아니라는 점",
+            "협상 전략으로 반복 소환했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-2:rule:0",
+              "factText": "이미 일부 정산됐다고 해도 그 배신 사실 자체가 사라지는 건 아닙니다.",
+              "tags": [
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "외주 리베이트 은폐",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "2024년",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-2:relationship:1",
+              "factText": "일부 정산 이후에도 감정적 잔상이 남아 있었다는 점",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 업체"
+                },
+                "context": {
+                  "exact": "현재 불신의 배경",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "그 과거 사건을 지금 협상 맥락에 다시 올린 건 맞지만 완전히 허상은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "과거 배신이 실제라고 해서 현재 편집본 사용까지 면책되지는 않는다는 걸 압니다."
+          ],
+          "suppressions": [
+            "현재와 과거를 일부러 겹쳐 말한 순간들"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-2:responsibility:0",
+              "factText": "그 과거 사건을 지금 협상 맥락에 다시 올린 건 맞지만 완전히 허상은 아닙니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "외주 리베이트 은폐",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "2024년",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-2:threshold:1",
+              "factText": "과거 사실을 현재 협상 프레임에 다시 올린 선택",
+              "tags": [
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 업체"
+                },
+                "context": {
+                  "exact": "현재 불신의 배경",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "과거 배신은 사실이지만, 그 사건이 현재 자료 검증을 대신하게 하면 안 된다는 점도 압니다."
+          ],
+          "privateKnowledge": [
+            "나는 과거 사실과 현재 추정을 일부러 겹쳐 말한 적이 있습니다."
+          ],
+          "suppressions": [
+            "도덕적 우위를 얻으려는 의도"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-2:counter:0",
+              "factText": "과거 배신은 사실이지만, 그 사건이 현재 자료 검증을 대신하게 하면 안 된다는 점도 압니다.",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "외주 리베이트 은폐",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "2024년",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-2:legacy_sentence:1",
+              "factText": "도덕적 우위를 얻기 위해 과거 사건을 길게 소환한 태도",
+              "tags": [
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 업체"
+                },
+                "context": {
+                  "exact": "현재 불신의 배경",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "저는 아직도 그때의 배신감을 현재형으로 끌고 와서 말하고 있습니다."
+          ],
+          "privateKnowledge": [
+            "또다시 숫자와 문서에 속았다는 사람처럼 보일까 두려워 과거 이야기를 붙잡았습니다."
+          ],
+          "suppressions": [
+            "재무 책임자로 경고 신호를 놓쳤다는 낙인이 두렵다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-2:emotion:0",
+              "factText": "저는 아직도 그때의 배신감을 현재형으로 끌고 와서 말하고 있습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "외주 리베이트 은폐",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "2024년",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-2:fear:1",
+              "factText": "배신감이 아직 현재형으로 남아 있다는 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 업체"
+                },
+                "context": {
+                  "exact": "현재 불신의 배경",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "민재의 과거 은폐는 사실이지만, 지금 판단은 그 과거가 아니라 현재 원본 증거로 해야 합니다."
+          ],
+          "privateKnowledge": [
+            "과거 배신은 사실이되 현재 쟁점은 별도 검증해야 한다는 선을 받아들였습니다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-2:institution:0",
+              "factText": "민재의 과거 은폐는 사실이지만, 지금 판단은 그 과거가 아니라 현재 원본 증거로 해야 합니다.",
+              "tags": [
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "외주 리베이트 은폐",
+                  "neutral": "그 과거 사건"
+                },
+                "time": {
+                  "exact": "2년 전",
+                  "period": "2024년",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-2:quote:1",
+              "factText": "과거 사실과 현재 증거 검증을 분리해야 한다는 결론",
+              "tags": [
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "친구 회사",
+                  "neutral": "그 업체"
+                },
+                "context": {
+                  "exact": "현재 불신의 배경",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "주말에 찍힌 세 줄은 또 다른 외부유출처럼 보였고 저는 그렇게 읽었습니다."
+          ],
+          "privateKnowledge": [
+            "은행 원본이 없다는 약점을 알면서도 캡처와 시간대만으로 확신을 키웠습니다."
+          ],
+          "suppressions": [
+            "원본 없이 캡처에 크게 의존했다는 점",
+            "이번에도 같은 패턴이길 바란 감정"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-3:evidence:0",
+              "factText": "주말에 찍힌 세 줄은 또 다른 외부유출처럼 보였고 저는 그렇게 읽었습니다.",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-3:legacy_sentence:1",
+              "factText": "캡처와 시간대가 외부유출처럼 보였다는 최초 인상",
+              "tags": [
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "반복 배신 서사",
+                  "neutral": "그 서사"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "정확한 귀속을 다 보진 못했어도 정상 흐름이라고 넘기기엔 너무 수상했습니다."
+          ],
+          "privateKnowledge": [
+            "민재의 과거 배신이 있으니 이번에도 같을 거라고 기대한 면이 있습니다."
+          ],
+          "suppressions": [
+            "과거 배신 서사가 현재 판단을 선도했다는 점",
+            "오해 가능성을 알고도 강하게 말한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-3:uncertainty:0",
+              "factText": "정확한 귀속을 다 보진 못했어도 정상 흐름이라고 넘기기엔 너무 수상했습니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-3:self_justification:1",
+              "factText": "정상 흐름으로 넘기기 어려웠다는 당시 판단",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "반복 배신 서사",
+                  "neutral": "그 서사"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "PDF와 심야 이체가 겹치면서 제가 그 세 줄을 외부유출로 굳혀 읽은 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "오해 가능성을 알면서도 협상 압박에 유리하다고 느꼈습니다."
+          ],
+          "suppressions": [
+            "협상 압박에 유리하다고 느낀 계산"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-3:act:0",
+              "factText": "PDF와 심야 이체가 겹치면서 제가 그 세 줄을 외부유출로 굳혀 읽은 건 맞습니다.",
+              "tags": [
+                "act",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-3:context:1",
+              "factText": "오해 가능성을 알면서도 해석을 고정한 부분",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "반복 배신 서사",
+                  "neutral": "그 서사"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "민재의 과거 전력 때문에 저는 그 해석을 더 세게 밀어붙였습니다."
+          ],
+          "privateKnowledge": [
+            "현재 사실보다 과거 상처를 앞세워 해석을 굳힌 건 제 선택이었습니다."
+          ],
+          "suppressions": [
+            "복수심이 섞여 있다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-3:motive:0",
+              "factText": "민재의 과거 전력 때문에 저는 그 해석을 더 세게 밀어붙였습니다.",
+              "tags": [
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-3:counter:1",
+              "factText": "과거 전력이 현재 해석을 공격적으로 만든 동기",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "반복 배신 서사",
+                  "neutral": "그 서사"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "저는 사실을 확인하기보다 이번엔 반드시 잡아내야 한다는 마음이 더 앞섰습니다."
+          ],
+          "privateKnowledge": [
+            "또 속았다는 사람이 되기 전에 먼저 몰아붙이고 싶었습니다."
+          ],
+          "suppressions": [
+            "먼저 몰아붙여야 덜 당한다는 공포"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-3:emotion:0",
+              "factText": "저는 사실을 확인하기보다 이번엔 반드시 잡아내야 한다는 마음이 더 앞섰습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-3:fear:1",
+              "factText": "이번엔 먼저 잡아내야 한다는 조급함",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "반복 배신 서사",
+                  "neutral": "그 서사"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "그 세 줄은 외부유출 세 건이 아니라 분리 표기였고, 저는 그 오해를 복수심과 함께 밀어붙였습니다."
+          ],
+          "privateKnowledge": [
+            "세 줄의 실체가 분리 표기였다는 사실과, 내가 그 오해를 정서적으로 이용했다는 점을 받아들입니다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-3:admission:0",
+              "factText": "그 세 줄은 외부유출 세 건이 아니라 분리 표기였고, 저는 그 오해를 복수심과 함께 밀어붙였습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "주말 세 줄 이체",
+                  "neutral": "그 이체 묶음"
+                },
+                "time": {
+                  "exact": "주말 심야",
+                  "period": "문제 주말",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-3:beneficiary:1",
+              "factText": "분리 표기 사실을 알고도 오해를 놓지 않은 자기 인정",
+              "tags": [
+                "beneficiary",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "반복 배신 서사",
+                  "neutral": "그 서사"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "그 일을 꺼낸 건 지금 위험이 왜 그렇게 크게 보였는지 설명하려는 거였습니다."
+          ],
+          "privateKnowledge": [
+            "현재 자료만으로는 약하니 과거 배신 기억이 내 말의 무게를 키운다는 걸 알고 있었습니다."
+          ],
+          "suppressions": [
+            "현재 자료의 약점을 과거 서사로 보강하고 있다는 점",
+            "부분 봉합 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-4:legacy_sentence:0",
+              "factText": "그 일을 꺼낸 건 지금 위험이 왜 그렇게 크게 보였는지 설명하려는 거였습니다.",
+              "tags": [
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 배신 사건 소환",
+                  "neutral": "그 과거 호출"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "현재 협상 과정",
+                  "neutral": "그 협상 국면"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-4:context:1",
+              "factText": "현재 위험 설명 명목으로 과거를 다시 부른 점",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "도덕적 우위",
+                  "neutral": "그 우위"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "압박용이라기보다 신뢰 붕괴의 맥락을 보여주려 했습니다."
+          ],
+          "privateKnowledge": [
+            "맥락 설명이라는 말이 사실은 협상 우위를 위한 포장이었다는 걸 압니다."
+          ],
+          "suppressions": [
+            "협상 우위를 위한 포장이라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-4:uncertainty:0",
+              "factText": "압박용이라기보다 신뢰 붕괴의 맥락을 보여주려 했습니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 배신 사건 소환",
+                  "neutral": "그 과거 호출"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "현재 협상 과정",
+                  "neutral": "그 협상 국면"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-4:relationship:1",
+              "factText": "맥락 설명과 압박 사이에서 선을 흐린 태도",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "도덕적 우위",
+                  "neutral": "그 우위"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "제 입장을 세우려고 그 과거 사건을 다시 협상 테이블에 올린 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "부분 봉합 사실을 알면서도 피해자 서사를 길게 유지했습니다."
+          ],
+          "suppressions": [
+            "피해자 서사를 길게 유지하려는 의도"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-4:act:0",
+              "factText": "제 입장을 세우려고 그 과거 사건을 다시 협상 테이블에 올린 건 맞습니다.",
+              "tags": [
+                "act",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 배신 사건 소환",
+                  "neutral": "그 과거 호출"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "현재 협상 과정",
+                  "neutral": "그 협상 국면"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-4:self_justification:1",
+              "factText": "협상용으로 과거 사건을 재배치한 선택",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "도덕적 우위",
+                  "neutral": "그 우위"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "일부 정리된 사건임을 알면서도 도덕적 우위를 만들기 위해 반복 소환했습니다."
+          ],
+          "privateKnowledge": [
+            "도덕적 우위를 통해 현재 자료의 약점을 덮고 싶었습니다."
+          ],
+          "suppressions": [
+            "현재 자료 약점을 덮고 싶었다는 계산"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-4:motive:0",
+              "factText": "일부 정리된 사건임을 알면서도 도덕적 우위를 만들기 위해 반복 소환했습니다.",
+              "tags": [
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 배신 사건 소환",
+                  "neutral": "그 과거 호출"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "현재 협상 과정",
+                  "neutral": "그 협상 국면"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-4:responsibility:1",
+              "factText": "도덕적 우위를 만들려는 계산",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "도덕적 우위",
+                  "neutral": "그 우위"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "저는 아직도 그 일을 끝난 사건이 아니라 현재형 상처처럼 말하고 있습니다."
+          ],
+          "privateKnowledge": [
+            "그 사건을 놓아버리면 내가 왜 그렇게 예민해졌는지 설명이 사라질까 두려웠습니다."
+          ],
+          "suppressions": [
+            "상처를 놓으면 설명력이 사라질까 두렵다는 감정"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-4:emotion:0",
+              "factText": "저는 아직도 그 일을 끝난 사건이 아니라 현재형 상처처럼 말하고 있습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 배신 사건 소환",
+                  "neutral": "그 과거 호출"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "현재 협상 과정",
+                  "neutral": "그 협상 국면"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-4:fear:1",
+              "factText": "끝나지 않은 상처처럼 계속 말하는 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "도덕적 우위",
+                  "neutral": "그 우위"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "저는 과거 배신 사건을 현재 협상 압박 카드로 다시 사용했습니다."
+          ],
+          "privateKnowledge": [
+            "과거 사건 재소환은 제 전략이었고, 현재 검증을 흐린 부분도 제 책임입니다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-4:admission:0",
+              "factText": "저는 과거 배신 사건을 현재 협상 압박 카드로 다시 사용했습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "과거 배신 사건 소환",
+                  "neutral": "그 과거 호출"
+                },
+                "time": {
+                  "exact": "해지 협상 기간",
+                  "period": "현재 협상 과정",
+                  "neutral": "그 협상 국면"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-4:quote:1",
+              "factText": "현재 자료 검증을 흐린 재소환 책임",
+              "tags": [
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "오민재",
+                  "fullName": "오민재",
+                  "judgeRef": "상대 대표",
+                  "neutral": "상대방"
+                },
+                "context": {
+                  "exact": "도덕적 우위",
+                  "neutral": "그 우위"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "캡처상 손실이 그렇게 보였고, 저는 재무 책임자로 그 숫자를 먼저 붙잡았습니다."
+          ],
+          "privateKnowledge": [
+            "재무 책임자로서 숫자를 놓치면 안 된다는 압박 때문에 큰 수치부터 움켜쥐었습니다."
+          ],
+          "suppressions": [
+            "검증보다 인상이 앞섰다는 점",
+            "큰 숫자에 먼저 매달렸다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-5:uncertainty:0",
+              "factText": "캡처상 손실이 그렇게 보였고, 저는 재무 책임자로 그 숫자를 먼저 붙잡았습니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-5:context:1",
+              "factText": "재무 책임자로 큰 숫자를 먼저 본 초기 반응",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "표기 방식 변화",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "표기 규칙이 바뀌었을 수는 있지만 당시엔 그 문서가 은행 양식처럼 보여서 그대로 믿었습니다."
+          ],
+          "privateKnowledge": [
+            "은행 양식처럼 보였다는 인상이 검증보다 앞섰다는 걸 압니다."
+          ],
+          "suppressions": [
+            "내 판단이 성급했다는 가능성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-5:institution:0",
+              "factText": "표기 규칙이 바뀌었을 수는 있지만 당시엔 그 문서가 은행 양식처럼 보여서 그대로 믿었습니다.",
+              "tags": [
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-5:rule:1",
+              "factText": "은행 양식처럼 보여 검증이 늦어진 점",
+              "tags": [
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "표기 방식 변화",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "수취인 별칭 축약과 분리 표기가 손실을 부풀려 보이게 했을 수 있다는 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "표시 변화 가능성을 인정하면 내 판단이 성급했다는 것도 함께 인정해야 한다는 걸 압니다."
+          ],
+          "suppressions": [
+            "표시 변화 인정이 내 책임 인정으로 이어진다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-5:beneficiary:0",
+              "factText": "수취인 별칭 축약과 분리 표기가 손실을 부풀려 보이게 했을 수 있다는 건 인정합니다.",
+              "tags": [
+                "beneficiary",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-5:counter:1",
+              "factText": "별칭 축약과 분리 표기가 만든 착시 가능성",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "표기 방식 변화",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "저도 큰 손실 숫자를 먼저 키워 읽고 그 프레임을 쉽게 놓지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "손실 프레임을 쉽게 놓지 못한 건 협상에서 불리해지고 싶지 않았기 때문입니다."
+          ],
+          "suppressions": [
+            "협상에서 불리해지고 싶지 않았다는 계산"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-5:responsibility:0",
+              "factText": "저도 큰 손실 숫자를 먼저 키워 읽고 그 프레임을 쉽게 놓지 못했습니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-5:relationship:1",
+              "factText": "손실 프레임을 협상에서 쉽게 놓지 못한 태도",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "표기 방식 변화",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "또 경고 신호를 놓쳤다는 말을 들을까 봐 저는 큰 숫자에 더 집착했습니다."
+          ],
+          "privateKnowledge": [
+            "놓쳤다는 사람으로 남을까 두려워 큰 숫자를 더 오래 붙잡았습니다."
+          ],
+          "suppressions": [
+            "놓쳤다는 사람으로 남을까 두렵다는 감정"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-5:emotion:0",
+              "factText": "또 경고 신호를 놓쳤다는 말을 들을까 봐 저는 큰 숫자에 더 집착했습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-5:fear:1",
+              "factText": "놓쳤다는 평가가 두려워 큰 숫자에 집착한 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "표기 방식 변화",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "은행 표시 방식 변화 때문에 손실이 실제보다 1,240만원 크게 보였습니다."
+          ],
+          "privateKnowledge": [
+            "표시 방식 변화가 착시를 만들었고, 나는 그 숫자를 너무 빨리 확정했다는 걸 받아들입니다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-04:b:tell:history_stack",
+            "partnership-04:b:tell:evidence_dramatization",
+            "partnership-04:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-04:b:d-5:evidence:0",
+              "factText": "은행 표시 방식 변화 때문에 손실이 실제보다 1,240만원 크게 보였습니다.",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "issue": {
+                  "exact": "1,240만원 겉보기 손실",
+                  "rounded": "약 1,200만원 손실",
+                  "neutral": "그 손실 숫자"
+                },
+                "time": {
+                  "exact": "시스템 전환 직후",
+                  "period": "문제 거래 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-04:b:d-5:quote:1",
+              "factText": "1,240만원 착시를 최종적으로 받아들이는 정리",
+              "tags": [
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세정",
+                  "fullName": "문세정",
+                  "judgeRef": "은행 담당자",
+                  "neutral": "그 은행 담당자"
+                },
+                "context": {
+                  "exact": "표기 방식 변화",
+                  "neutral": "그 표시 변화"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+

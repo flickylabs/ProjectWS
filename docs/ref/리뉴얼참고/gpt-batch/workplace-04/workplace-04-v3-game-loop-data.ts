@@ -1,0 +1,1706 @@
+export const workplace04V3GameLoopData = {
+  "caseId": "workplace-04",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "약속과 완료 표시",
+      "description": "회의록과 QA 로그가 같은 저녁의 약속과 완료 표기를 나란히 보여준다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "서민석 씨, 회의록과 보드 코멘트에 18시 전 승인 체크를 직접 남기고도 그 약속이 확정이 아니었다고 보십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-04:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "QA 체크가 초록으로 바뀐 뒤에도 회귀 전체가 끝났는지 다시 확인하지 않은 이유가 무엇입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-04:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "이번 실패를 승인 지연 하나로만 설명하시면 QA 공백과 미보고 구조는 어디에 놓으십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-04:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "배지우 씨, QA 도구 원본 로그상 스모크만 끝난 시점에 완료 표시가 먼저 바뀐 점은 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-04:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "민석 씨의 18시 약속을 문제 삼던 시점에 본인 회귀 테스트 미완료는 왜 함께 보고하지 않았습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-04:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "민석 씨 책임이 크더라도 공동 실패 구조 자체를 부정하실 근거가 있습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-04:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "잘린 대화와 늦은 승인",
+      "description": "크롭된 메신저와 원본 이메일이 약속 범위와 실제 승인 시점을 갈라 보여준다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "서민석 씨, 20시 7분 승인 메일이 도착한 뒤 팀에 중간 상태를 바로 공유하지 않은 이유를 설명해 주시죠.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-04:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "메신저에서 카피 수정까지 묶어 올리자고 하셨다면 공식 보드에는 왜 그 범위 추가를 즉시 남기지 않으셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-04:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "잘린 캡처를 떼고 원문 전체를 보더라도, 약속 범위를 스스로 흐린 부분은 없었다고 보십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-04:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "배지우 씨, 잘린 캡처를 제출하면서 앞줄의 '회귀는 네가 끝내줘' 문장을 같이 제시하지 않은 이유는 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-04:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "민석 씨 약속 문장을 되읽는 동안 회귀 시간이 부족하다는 본인 불안은 왜 한 번도 분명하게 올리지 않으셨습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-04:b:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "막판 범위가 늘어난 사실을 알았을 때 공식 재배정 요구 대신 그 대화를 근거로만 삼은 이유가 무엇입니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-04:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "파이프라인 경고와 범위 이력",
+      "description": "실패 로그와 보드 버전 이력이 누가 무엇을 알고도 보고를 미뤘는지 드러낸다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "서민석 씨, 20시대에 승인과 QA가 둘 다 안 끝났다는 신호를 받고도 왜 정식 에스컬레이션을 미루셨습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-04:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "19시 48분 scope freeze를 풀고도 assignee 재배정을 하지 않은 건 관리 책임 문제 아닌가요?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-04:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "지금 보면 이번 실패를 공동 책임으로 정리하되, 서민석 씨 몫이 특히 컸던 지점은 어디라고 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-04:a:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "배지우 씨, DevOps 로그에 20시 31분 경고를 직접 열람한 기록이 있는데 왜 바로 보고하지 않으셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-04:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "막판 카피 수정이 붙은 뒤 공식 재배정을 요구하지 못한 이유가 단순한 실수였습니까, 아니면 관리자 반발이 두려웠습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-04:b:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "지금 단계에서 문제 신호를 보고도 에스컬레이션을 늦춘 책임을 본인도 인정하십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-04:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-04:a:d-1:unlock:s2:0",
+            "factText": "서민석은 16시 12분 task board 코멘트로 18시 전 승인 체크를 직접 남겼다.",
+            "tags": [
+              "quote",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "16시 12분",
+                "neutral": "그 시점",
+                "dateExact": "마감 당일 16시 12분",
+                "period": "마감 당일 오후"
+              },
+              "task": {
+                "exact": "클라이언트 확인과 최종 승인",
+                "neutral": "그 승인 업무"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-04:a:d-1:unlock:s3:0",
+            "factText": "20시 7분 클라이언트 회신 뒤에도 팀 채널에 중간 상태를 올리지 않았다.",
+            "tags": [
+              "timeline",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "20시 7분",
+                "neutral": "그 시점",
+                "dateExact": "마감 당일 20시 7분",
+                "period": "마감 당일 밤"
+              },
+              "task": {
+                "exact": "중간 상태 공유",
+                "neutral": "그 보고"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-04:a:d-1:unlock:s4:0",
+            "factText": "승인 지연에 카피 수정까지 묶어 넘기려 하며 약속 범위를 스스로 흐렸다.",
+            "tags": [
+              "self_justification",
+              "context"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "task": {
+                "exact": "클라이언트 확인과 최종 승인",
+                "neutral": "그 승인 업무"
+              },
+              "scope": {
+                "exact": "카피 수정 하위 작업",
+                "neutral": "그 수정 작업"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-04:a:d-1:unlock:s5:0",
+            "factText": "18시 약속을 명시해 놓고 확정 승인과 공유를 둘 다 놓친 것이 본인 책임임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "18시까지",
+                "neutral": "그 시각",
+                "dateExact": "마감 당일 18시",
+                "period": "마감 당일 저녁 전"
+              },
+              "task": {
+                "exact": "클라이언트 확인과 최종 승인",
+                "neutral": "그 승인 업무"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-04:a:d-2:unlock:s2:0",
+            "factText": "서민석은 초록 체크를 보고도 회귀 전체가 끝났는지 다시 묻지 않았다.",
+            "tags": [
+              "context",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "task": {
+                "exact": "회귀 테스트 전체",
+                "neutral": "전체 테스트"
+              },
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-04:a:d-2:unlock:s3:0",
+            "factText": "QA 완료 문구를 편한 쪽으로 해석해 승인 지연 리스크와 함께 넘겼다.",
+            "tags": [
+              "self_justification",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              },
+              "task": {
+                "exact": "클라이언트 확인과 최종 승인",
+                "neutral": "그 승인 업무"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-04:a:d-2:unlock:s4:0",
+            "factText": "QA가 완결되지 않았을 수도 있다는 불안이 있었지만 마감 통제력 잃었다는 평가가 무서워 묻지 못했다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "task": {
+                "exact": "회귀 테스트 전체",
+                "neutral": "전체 테스트"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-04:a:d-2:unlock:s5:0",
+            "factText": "배지우의 과장 보고를 경계하지 않고 그대로 운영 판단에 반영한 자기 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "배지우",
+                "neutral": "상대",
+                "fullName": "배지우",
+                "judgeRef": "배지우 씨"
+              },
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-04:a:d-3:unlock:s2:0",
+            "factText": "서민석은 승인 지연만이 아니라 QA 공백과 미보고가 겹쳤다는 구조를 인식했다.",
+            "tags": [
+              "context",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "task": {
+                "exact": "클라이언트 확인과 최종 승인",
+                "neutral": "그 승인 업무"
+              },
+              "signal": {
+                "exact": "누락 파일 경고와 미완료 테스트 알림",
+                "neutral": "그 문제 신호"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-04:a:d-3:unlock:s3:0",
+            "factText": "자신이 먼저 흔든 사실을 알면서도 실패 원인을 한 줄짜리 외부 변수로 넓혀 말했다.",
+            "tags": [
+              "self_justification",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "task": {
+                "exact": "클라이언트 확인과 최종 승인",
+                "neutral": "그 승인 업무"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "uncertainty"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-04:a:d-3:unlock:s4:0",
+            "factText": "운영 관리자라는 체면 때문에 '내가 통제했다'는 인상을 놓지 못했다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "서민석",
+                "neutral": "상대",
+                "fullName": "서민석",
+                "judgeRef": "서민석 씨"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-04:a:d-3:unlock:s5:0",
+            "factText": "이번 실패가 단독 과실이 아니라 공동 책임이지만, 약속과 공유를 관리하지 못한 자기 몫이 크다는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "task": {
+                "exact": "중간 상태 공유",
+                "neutral": "그 보고"
+              },
+              "person": {
+                "exact": "배지우",
+                "neutral": "상대",
+                "fullName": "배지우",
+                "judgeRef": "배지우 씨"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-04:a:d-4:unlock:s2:0",
+            "factText": "서민석은 19시 48분 scope freeze 해제 후 카피 수정 하위 작업을 추가했다.",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "19시 48분",
+                "neutral": "그 시점",
+                "dateExact": "마감 당일 19시 48분",
+                "period": "마감 직전"
+              },
+              "task": {
+                "exact": "scope freeze 해제",
+                "neutral": "범위 변경"
+              },
+              "scope": {
+                "exact": "카피 수정 하위 작업",
+                "neutral": "그 수정 작업"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-04:a:d-4:unlock:s3:0",
+            "factText": "메신저로만 요청하고 공식 보드의 assignee와 검수 기준을 갱신하지 않았다.",
+            "tags": [
+              "context",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "task": {
+                "exact": "task board 갱신",
+                "neutral": "공식 보드 갱신"
+              },
+              "message": {
+                "exact": "'내가 최종 확인할게'",
+                "neutral": "그 문장"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-04:a:d-4:unlock:s4:0",
+            "factText": "마감 통제력을 잃었다는 평가를 피하려고 범위 증가를 작은 수정처럼 보이게 했다.",
+            "tags": [
+              "fear",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "scope": {
+                "exact": "카피 수정 하위 작업",
+                "neutral": "그 수정 작업"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-04:a:d-4:unlock:s5:0",
+            "factText": "막판 범위를 늘리고도 보드 책임 구조를 업데이트하지 않은 것이 자신의 책임임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "task": {
+                "exact": "task board 갱신",
+                "neutral": "공식 보드 갱신"
+              },
+              "scope": {
+                "exact": "카피 수정 하위 작업",
+                "neutral": "그 수정 작업"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-04:a:d-5:unlock:s2:0",
+            "factText": "서민석은 20시대에 승인과 QA가 모두 완결되지 않았다는 신호를 받았다는 점을 안다.",
+            "tags": [
+              "timeline",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "20시 31분",
+                "neutral": "그 시점",
+                "dateExact": "마감 당일 20시 31분",
+                "period": "마감 당일 밤"
+              },
+              "signal": {
+                "exact": "누락 파일 경고와 미완료 테스트 알림",
+                "neutral": "그 문제 신호"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-04:a:d-5:unlock:s3:0",
+            "factText": "배지우가 마저 정리하리라 기대하며 정식 에스컬레이션을 늦췄다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "task": {
+                "exact": "정식 에스컬레이션",
+                "neutral": "상급 보고"
+              },
+              "person": {
+                "exact": "배지우",
+                "neutral": "상대",
+                "fullName": "배지우",
+                "judgeRef": "배지우 씨"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-04:a:d-5:unlock:s4:0",
+            "factText": "운영 관리자가 먼저 실패 신호를 올리면 통제력 없다는 평가를 받을까 두려웠다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "task": {
+                "exact": "정식 에스컬레이션",
+                "neutral": "상급 보고"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-04:a:d-5:unlock:s5:0",
+            "factText": "문제 신호를 확인하고도 보고 체계를 늦춘 것이 자기 책임임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "signal": {
+                "exact": "누락 파일 경고와 미완료 테스트 알림",
+                "neutral": "그 문제 신호"
+              },
+              "task": {
+                "exact": "정식 에스컬레이션",
+                "neutral": "상급 보고"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-04:b:d-1:unlock:s2:0",
+            "factText": "배지우는 민석의 18시 약속을 근거로 삼으면서도 자신의 회귀 테스트 미완료는 그 시점에 함께 말하지 않았다.",
+            "tags": [
+              "counter",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "18시까지",
+                "neutral": "그 시각",
+                "dateExact": "마감 당일 18시",
+                "period": "마감 당일 저녁 전"
+              },
+              "task": {
+                "exact": "회귀 테스트 전체",
+                "neutral": "전체 테스트"
+              },
+              "person": {
+                "exact": "서민석",
+                "neutral": "상대",
+                "fullName": "서민석",
+                "judgeRef": "서민석 씨"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-04:b:d-1:unlock:s3:0",
+            "factText": "민석 약속을 되읽는 방식으로 책임을 분명히 했지만, 그 문장 뒤에 자신의 QA 공백을 가렸다.",
+            "tags": [
+              "quote",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "message": {
+                "exact": "'내가 최종 확인할게'",
+                "neutral": "그 문장"
+              },
+              "task": {
+                "exact": "QA 완료 표시",
+                "neutral": "그 완료 보고"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "uncertainty"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-04:b:d-1:unlock:s4:0",
+            "factText": "느린 사람처럼 보일까 봐 회귀 시간이 부족하다는 말을 두 번 접었다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "task": {
+                "exact": "회귀 테스트 전체",
+                "neutral": "전체 테스트"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-04:b:d-1:unlock:s5:0",
+            "factText": "민석의 약속 파기를 짚는 동안 자신의 보고 과장도 함께 실패를 키웠음을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "서민석",
+                "neutral": "상대",
+                "fullName": "서민석",
+                "judgeRef": "서민석 씨"
+              },
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-04:b:d-2:unlock:s2:0",
+            "factText": "배지우는 스모크 테스트만 끝난 상태에서 체크리스트를 먼저 초록색으로 바꿨다.",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "task": {
+                "exact": "스모크 테스트",
+                "neutral": "일부 테스트"
+              },
+              "message": {
+                "exact": "QA 완료 표시",
+                "neutral": "그 완료 보고"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-04:b:d-2:unlock:s3:0",
+            "factText": "회귀 전체가 아니라 배포 가능 여부만 봤다는 식으로 'QA 끝남'의 범위를 줄였다.",
+            "tags": [
+              "quote",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "task": {
+                "exact": "회귀 테스트 전체",
+                "neutral": "전체 테스트"
+              },
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "hedge"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-04:b:d-2:unlock:s4:0",
+            "factText": "늘 마지막 검수 사고를 내는 사람으로 찍힐까 두려워 완료 표현을 먼저 눌렀다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-04:b:d-2:unlock:s5:0",
+            "factText": "회귀 테스트가 남았는데 완료로 표시해 판단을 흐린 것이 자신의 책임임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "task": {
+                "exact": "회귀 테스트 전체",
+                "neutral": "전체 테스트"
+              },
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-04:b:d-3:unlock:s2:0",
+            "factText": "배지우는 시작점이 민석 약속 파기라고 믿으면서도 자기 QA 과장이 공동 실패 일부임을 알았다.",
+            "tags": [
+              "context",
+              "counter"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "서민석",
+                "neutral": "상대",
+                "fullName": "서민석",
+                "judgeRef": "서민석 씨"
+              },
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-04:b:d-3:unlock:s3:0",
+            "factText": "민석 책임을 더 세게 밀어붙이면 자신의 과장 보고가 가려질 거라고 계산했다.",
+            "tags": [
+              "motive",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "서민석",
+                "neutral": "상대",
+                "fullName": "서민석",
+                "judgeRef": "서민석 씨"
+              },
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "uncertainty"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-04:b:d-3:unlock:s4:0",
+            "factText": "자신도 공동 책임이라는 말을 꺼내면 성장 기회를 잃을까 두려워 버텼다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "배지우",
+                "neutral": "상대",
+                "fullName": "배지우",
+                "judgeRef": "배지우 씨"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-04:b:d-3:unlock:s5:0",
+            "factText": "민석의 승인 지연만이 아니라 자기 과장 보고와 미보고도 마감 실패를 만들었다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "서민석",
+                "neutral": "상대",
+                "fullName": "서민석",
+                "judgeRef": "서민석 씨"
+              },
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-04:b:d-4:unlock:s2:0",
+            "factText": "배지우는 카피 수정이 막판에 붙었다는 점을 알고도 보드 갱신 요구를 세게 하지 못했다.",
+            "tags": [
+              "context",
+              "relationship"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "scope": {
+                "exact": "카피 수정 하위 작업",
+                "neutral": "그 수정 작업"
+              },
+              "task": {
+                "exact": "task board 갱신",
+                "neutral": "공식 보드 갱신"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-04:b:d-4:unlock:s3:0",
+            "factText": "민석의 변경 요청을 근거로 삼아 자신의 QA 공백 설명을 뒤로 미뤘다.",
+            "tags": [
+              "counter",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "서민석",
+                "neutral": "상대",
+                "fullName": "서민석",
+                "judgeRef": "서민석 씨"
+              },
+              "message": {
+                "exact": "'QA 끝났습니다'",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-04:b:d-4:unlock:s4:0",
+            "factText": "관리자 반박으로 보일까 봐 공식 재배정을 요구하지 못했다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "task": {
+                "exact": "task board 갱신",
+                "neutral": "공식 보드 갱신"
+              },
+              "person": {
+                "exact": "서민석",
+                "neutral": "상대",
+                "fullName": "서민석",
+                "judgeRef": "서민석 씨"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-04:b:d-4:unlock:s5:0",
+            "factText": "민석의 보드 미갱신을 지적하면서도 자신이 영향 범위 보고를 미룬 책임도 있음을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "서민석",
+                "neutral": "상대",
+                "fullName": "서민석",
+                "judgeRef": "서민석 씨"
+              },
+              "task": {
+                "exact": "task board 갱신",
+                "neutral": "공식 보드 갱신"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-04:b:d-5:unlock:s2:0",
+            "factText": "배지우는 20시 31분 누락 파일 경고와 미완료 테스트 알림을 직접 열람했다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "20시 31분",
+                "neutral": "그 시점",
+                "dateExact": "마감 당일 20시 31분",
+                "period": "마감 당일 밤"
+              },
+              "signal": {
+                "exact": "누락 파일 경고와 미완료 테스트 알림",
+                "neutral": "그 문제 신호"
+              },
+              "person": {
+                "exact": "정해민 (DevOps 운영 담당)",
+                "neutral": "그 운영 담당",
+                "fullName": "정해민 (DevOps 운영 담당)",
+                "judgeRef": "정해민 운영 담당"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-04:b:d-5:unlock:s3:0",
+            "factText": "서민석이 최종 확인을 맡았으니 자신은 기다려도 된다고 합리화했다.",
+            "tags": [
+              "motive",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "서민석",
+                "neutral": "상대",
+                "fullName": "서민석",
+                "judgeRef": "서민석 씨"
+              },
+              "message": {
+                "exact": "'내가 최종 확인할게'",
+                "neutral": "그 문장"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "hedge"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-04:b:d-5:unlock:s4:0",
+            "factText": "문제 신호를 먼저 올리면 늘 늦는 사람으로 찍힐까 봐 버텼다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "signal": {
+                "exact": "누락 파일 경고와 미완료 테스트 알림",
+                "neutral": "그 문제 신호"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-04:b:d-5:unlock:s5:0",
+            "factText": "신호를 보고도 에스컬레이션을 늦춘 것이 자신의 책임임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "signal": {
+                "exact": "누락 파일 경고와 미완료 테스트 알림",
+                "neutral": "그 문제 신호"
+              },
+              "task": {
+                "exact": "정식 에스컬레이션",
+                "neutral": "상급 보고"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "workplace-04:contradiction:0",
+        "targetParty": "a",
+        "trigger": "서민석이 18시 약속을 전면 부인한 뒤 e-1 또는 e-4가 제시될 때",
+        "text": "18시 전 승인 체크를 직접 남겨 놓고도 확정 약속이 아니었다고 하면, 말의 무게와 기록이 충돌합니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-4"
+        ]
+      },
+      {
+        "id": "workplace-04:contradiction:1",
+        "targetParty": "b",
+        "trigger": "배지우가 QA 완료 표현을 단순한 wording 문제로만 축소한 뒤 e-2가 제시될 때",
+        "text": "회귀 테스트가 남은 시점의 초록 체크는 '표현 문제'라기보다 완료 판단 자체와 충돌합니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "workplace-04:contradiction:2",
+        "targetParty": "a",
+        "trigger": "서민석이 공식 범위 추가가 없었다고 말한 뒤 e-6이 제시될 때",
+        "text": "scope freeze 해제와 새 하위 작업 추가가 남아 있는데 공식 범위 추가가 없었다는 말은 버전 이력과 맞지 않습니다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      },
+      {
+        "id": "workplace-04:contradiction:3",
+        "targetParty": "b",
+        "trigger": "배지우가 문제 신호를 몰랐다고 진술한 뒤 e-5가 제시될 때",
+        "text": "20시 31분 경고 열람 기록이 남아 있으면, 몰랐다는 진술은 미보고 해명과 정면으로 부딪힙니다.",
+        "relatedDisputes": [
+          "d-5",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "workplace-04:interjection:0",
+        "speaker": "a",
+        "trigger": "배지우가 민석 단독 책임만 반복할 때",
+        "text": "재판관님, 승인 메일만 보지 말고 그때 QA 상태도 같이 봐주셔야 해요.",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-04:interjection:1",
+        "speaker": "b",
+        "trigger": "서민석이 '다들 급했다'는 맥락만 앞세울 때",
+        "text": "아니잖아요, '내가 최종 확인할게'라고 남긴 건 서민석 씨였잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-04:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 누가 먼저 실수했는지만 다툴 때",
+        "text": "누가 먼저 화를 냈는지가 아니라, 누가 무엇을 알고도 보고하지 않았는지에 답하십시오.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "workplace-04:outburst:a:0",
+        "party": "a",
+        "trigger": "e-6 제시 후 마감 통제력 상실이 반복 지적될 때",
+        "text": "제가 통제 못 했다는 말이 제일 아픕니다. 그래서 더 무리해서라도 넘기려 했어요.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-04:outburst:a:1",
+        "party": "a",
+        "trigger": "d-3 공동책임 질문에서 관리 실패가 집중 추궁될 때",
+        "text": "한 줄 약속이 다 제 잘못처럼 남는 게 두려웠어요. 그런데 그 두려움 때문에 더 망쳤네요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-04:outburst:b:0",
+        "party": "b",
+        "trigger": "e-2로 QA 과장이 정면 지적될 때",
+        "text": "저만 대충한 사람처럼 보이게 하지 마세요. 그날은 진짜 다 무너지고 있었잖아요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-04:outburst:b:1",
+        "party": "b",
+        "trigger": "e-5로 미보고 책임이 확정적으로 추궁될 때",
+        "text": "늦는 사람으로 찍힐까 봐 말 못 한 거예요. 숨기고 싶어서가 아니라 무서워서요.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "workplace-04:transition:a:d-1:s0_s1",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "signoff_promise_question",
+      "line": "18시라는 숫자가 나오니까 제가 보겠다고는 했지만 그걸 확정 승인으로까지 받아들인 건 조금 달랐던 것 같아요.",
+      "behaviorHint": "질문을 듣자 잠깐 멈칫하고 표현 차이를 강조한다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-1:s1_s2",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "회의록까지 나오면 제가 그 약속 문장을 남긴 건 맞아요. 다만 승인 메일이 실제로 밀린 부분도 같이 봐주셔야 해요.",
+      "behaviorHint": "기록을 흘끗 본 뒤 말투가 한층 낮아진다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-1:s2_s3",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-4_presented",
+      "line": "메일 시각이 찍히니까 제 설명이 가벼워 보이는 건 알아요. 그래도 배지우 씨 쪽도 QA 상태를 바로 올리지 않은 건 같이 봐야 해요.",
+      "behaviorHint": "손을 모았다 풀며 책임을 나누려 한다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-1:s3_s5",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "제가 중간 공유를 안 해서 팀 판단을 늦춘 건 결국 제 책임이에요.",
+      "behaviorHint": "시선을 피하지 않고 짧게 책임을 인정한다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-3:s0_s1",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "sole_responsibility_question",
+      "line": "이번 실패를 제 한 줄 약속으로만 묶기에는, 승인 메일이랑 QA 흐름이 함께 흔들린 것 같아요.",
+      "behaviorHint": "일정 전반을 먼저 설명하며 범위를 넓힌다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-3:s1_s2",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "QA 로그가 나오니 제 쪽만 억울하다고 말하긴 어렵어요. 제 판단이 늦어진 건 인정해요.",
+      "behaviorHint": "고개를 끄덕이며 일부 책임을 받아들인다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-3:s2_s3",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "shared_failure_timeline_question",
+      "line": "순서를 따지면 제가 먼저 흔든 건 맞지만, 배지우 씨 쪽도 미완료 상태를 바로 알리지 않은 건 같이 봐야 해요.",
+      "behaviorHint": "설명 도중 상대 쪽을 짧게 바라본다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-3:s3_s5",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 제가 약속과 공유를 제대로 관리하지 못해 공동 실패를 키운 건 제 책임이에요.",
+      "behaviorHint": "어깨를 내리고 결론만 또렷하게 말한다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-4:s0_s1",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "scope_change_question",
+      "line": "카피 수정이 있었던 건 맞지만, 그때는 다들 급했습니다라서 정식 범위 추가로까지 생각하진 않았어요.",
+      "behaviorHint": "손끝으로 순서를 짚으며 범위 정의를 흐린다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-4:s1_s2",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "메신저 문장까지 보이면 제가 보겠다고 한 건 맞아요. 다만 그걸 보드 업데이트보다 먼저 끝내려 한 판단이 섞였어요.",
+      "behaviorHint": "기록을 본 뒤 말을 고르며 일부를 시인한다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-4:s2_s4",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "e-6_presented",
+      "line": "보드 이력까지 나오면 제가 19시 48분 변경을 풀어 놓고 재배정을 안 한 건 부정하기 어렵네요.",
+      "behaviorHint": "입술을 한번 깨물고 난 뒤 체념하듯 말한다."
+    },
+    {
+      "id": "workplace-04:transition:a:d-4:s4_s5",
+      "caseId": "workplace-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "nonjudgmental_question_about_deadline_pressure",
+      "line": "마감 평가가 무서워서 문서 갱신을 뒤로 미룬 건 맞아요. 그건 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "한숨을 내쉰 뒤 감정을 누르고 인정한다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-2:s0_s1",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "qa_complete_question",
+      "line": "저는 끝났다라고까지는 안 썼다고 생각했잖아요. 짧게 말씀드리면 거의 끝났다 쪽이었어요.",
+      "behaviorHint": "몸을 앞으로 숙이고 문구 차이를 빠르게 강조한다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-2:s1_s2",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "원본 로그가 보이면 제가 초록 체크를 먼저 올린 건 맞잖아요. 정확히는 표현 문제로 줄일 수준이 아니었네요.",
+      "behaviorHint": "말속도가 잠깐 느려지며 시선이 로그에 고정된다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-2:s2_s3",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "wording_of_done_question",
+      "line": "제가 문구를 세게 쓴 건 인정해요. 그래도 서민석 씨 쪽도 뭘 끝난 걸로 이해했는지 다시 확인했어야 하잖아요.",
+      "behaviorHint": "손바닥을 펴 보이며 바로 상대 책임을 덧붙인다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-2:s3_s5",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "제가 완료처럼 보이게 적어서 판단을 흐린 건 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "호흡을 길게 내쉬고 정면으로 말한다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-3:s0_s1",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "sole_responsibility_question",
+      "line": "시작점이 서민석 씨 승인 약속이었던 건 여전히 맞다고 봐요. 다만 제 문구도 세게 남은 건 알아요.",
+      "behaviorHint": "단정적으로 시작했다가 뒤늦게 자신의 표현을 덧붙인다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-3:s1_s2",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "파이프라인 로그까지 보면 한 사람 탓만 하긴 어렵잖아요. 제 QA 표현도 그 안에 들어가네요.",
+      "behaviorHint": "증거를 본 뒤 턱을 당기고 말을 한 템포 늦춘다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-3:s2_s3",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "shared_failure_question",
+      "line": "제가 제 부분을 작게 말한 건 인정해요. 그래도 서민석 씨 쪽도 중간 공유를 안 한 건 같이 책임져야 하잖아요.",
+      "behaviorHint": "짧게 수긍한 뒤 손짓으로 상대 쪽을 가리킨다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-3:s3_s5",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "제가 공동 책임이라는 점을 늦게 인정해서 정리를 더 꼬이게 한 건 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "목소리를 낮추고 결론만 단호하게 남긴다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-5:s0_s1",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "escalation_question",
+      "line": "저는 그때 숨긴 게 아니라 기다렸다고 본 거예요. 짧게 말씀드리면 거의 끝났다 쪽으로 생각했잖아요.",
+      "behaviorHint": "팔짱을 풀며 변명과 판단을 동시에 내세운다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-5:s1_s2",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "열람 기록이 나오면 제가 20시 31분 신호를 본 건 맞잖아요. 지금도 그걸 못 봤다고는 말 못 하겠어요.",
+      "behaviorHint": "증거 화면을 보고 잠깐 입술을 다문다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-5:s2_s3",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_no_report_question",
+      "line": "제가 먼저 안 올린 책임은 있어요. 그래도 서민석 씨 쪽도 최종 확인을 맡았다면 같이 에스컬레이션했어야 하잖아요.",
+      "behaviorHint": "말끝을 짧게 끊으며 상대 책임을 밀어 넣는다."
+    },
+    {
+      "id": "workplace-04:transition:b:d-5:s3_s5",
+      "caseId": "workplace-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "제가 문제 신호를 보고도 보고를 늦춘 건 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "고개를 끄덕인 채 빠르게 인정한다."
+    }
+  ]
+}
+

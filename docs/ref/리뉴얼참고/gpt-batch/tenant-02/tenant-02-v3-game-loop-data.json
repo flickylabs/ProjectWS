@@ -1,0 +1,1277 @@
+{
+  "caseId": "tenant-02",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "특약 문구와 누수 기록 대조",
+      "description": "계약 특약의 허용 범위와 관리기록상 누수 흐름을 함께 대조한다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "정민석 씨, 특약 원문상 긴급 확인 자체는 열려 있는데도 왜 그 조항을 전면 출입 금지처럼 받아들였습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant02:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "관리기록에 공용배관 점검 흔적이 남아 있습니다. 환기 문제만으로 설명되지 않는다는 점을 이제는 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant02:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "장비 보호가 두려웠다는 사정은 이해됩니다. 그 두려움 때문에 집 안 상태를 더 강하게 부인한 측면도 있었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant02:a:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "한규철 씨, 특약 문구에 촬영자료 보관은 별도 고지라고 적혀 있는데 왜 긴급 확인 조항 하나로 함께 처리했다고 보셨습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant02:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "그 해석이 단순한 오해였는지, 아니면 손해를 막아야 한다는 마음으로 일부러 넓게 잡은 것인지 분명히 말해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant02:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "지금 원문을 다시 본다면 긴급출입 조항이 무단 촬영 보관까지 면책하지 않는다는 점을 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant02:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "단톡 흐름과 사진 원본 충돌",
+      "description": "거절 메시지의 시간 흐름과 제출 사진의 원본 시점을 함께 대조한다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "정민석 씨, 이 단톡 전체 문맥을 보면 실제로는 이틀간 기사 방문을 전면 거부한 구간이 있습니다. 그 사실 자체는 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant02:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "그 거부가 단순한 고집이었습니까, 아니면 무단 출입 의심 때문에 집을 비울 수 없었던 겁니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant02:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "동시에 특약이 완전한 출입 금지를 뜻하는 건 아니라는 점도 알고 계셨다면, 왜 그 여지를 끝까지 닫아 두셨습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant02:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "한규철 씨, 세입자가 '오늘은 안 된다'고 한 뒤에도 이틀 먼저 들어간 사실을 부인하실 수 있습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant02:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "원본 사진과 제출 캡처본의 표시 시각이 다릅니다. 분쟁용 캡처를 따로 만든 이유가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant02:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "원본은 놔두고 보기 쉬운 캡처를 택한 결정이, 결과적으로 합의된 점검일처럼 보이게 만들었다는 점은 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant02:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "진단서와 비용 흐름 역추적",
+      "description": "기사 진단 내용과 예약금·재방문 비용의 흐름을 맞춰 실제 책임 분기점을 짚는다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "정민석 씨, 진단서상 1차 원인이 배관 누수라 해도 본인의 적치와 늦은 대응이 악화 요인이었다는 점까지 받아들이십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant02:a:d-2:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "재방문 수수료까지 발생했습니다. 무단 출입 의심이 계기였더라도 그 이틀 지연 책임은 본인 몫이라고 보십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant02:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "결국 특약 조항도 본인에게 유리하게 좁혀 해석한 부분이 있었다면, 그 점을 어디까지 인정하실 수 있습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant02:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "한규철 씨, 누수 확산이 두려웠다는 사정이 있더라도 사전 동의 없는 출입 자체는 잘못이었다고 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant02:b:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "예약금 메모 시각이 사진 캡처 날짜보다 앞섭니다. 그렇다면 제출한 시각 표시가 원본이 아니었다는 결론을 피할 수 있습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant02:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "한규철 씨, 결국 사전 동의도 즉시 통지도 없이 먼저 들어가 촬영한 책임은 본인에게 있다는 점까지 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant02:b:d-1:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "tenant02:a:d-2:unlock:s2:0",
+            "factText": "관리기록상 1차 원인이 환기 부족이 아니라 공용배관 연결부 누수 쪽으로 기울기 시작한 사실",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "cause": {
+                "exact": "공용배관 연결부 누수",
+                "neutral": "배관 문제"
+              },
+              "record": {
+                "exact": "관리비 기록과 누수 접수대장",
+                "neutral": "관리기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant02:a:d-2:unlock:s3:0",
+            "factText": "민석도 짐 적치와 초기 신고 지연이 곰팡이 확산을 더 심하게 만들 수 있었다는 점을 알고 있었던 사실",
+            "tags": [
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "action": {
+                "exact": "짐 적치와 신고 지연",
+                "neutral": "그 대응"
+              },
+              "result": {
+                "exact": "곰팡이 확산",
+                "neutral": "피해 확대"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant02:a:d-2:unlock:s4:0",
+            "factText": "민석이 고가 장비와 원본 파일 때문에 집 안 문제를 인정하면 생계까지 흔들릴까 두려워했다는 사실",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "object": {
+                "exact": "촬영 장비와 원본 파일",
+                "neutral": "장비"
+              },
+              "fear": {
+                "exact": "생계가 흔들리는 상황",
+                "neutral": "그 두려움"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant02:a:d-2:unlock:s5:0",
+            "factText": "1차 원인은 배관 누수였지만 민석 자신의 적치와 늦은 협조도 악화 요인이라는 점을 스스로 받아들인 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "cause": {
+                "exact": "배관 누수",
+                "neutral": "주된 원인"
+              },
+              "share": {
+                "exact": "적치와 늦은 협조",
+                "neutral": "자신의 몫"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant02:a:d-4:unlock:s2:0",
+            "factText": "민석이 무단 출입을 의심한 뒤 정확히 이틀 동안 기사 방문을 전면 거부한 사실",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "이틀간",
+                "neutral": "그 기간",
+                "dateExact": "합의 직전 이틀",
+                "period": "기사 방문 재조율 전"
+              },
+              "action": {
+                "exact": "기사 방문 전면 거부",
+                "neutral": "방문 거절"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant02:a:d-4:unlock:s3:0",
+            "factText": "민석이 장비 상태를 직접 지키려 집을 비우지 못했고 그 불안이 방문 거절을 고착시킨 사실",
+            "tags": [
+              "fear",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "object": {
+                "exact": "편집 장비 상태 확인",
+                "neutral": "장비 확인"
+              },
+              "reason": {
+                "exact": "집을 비우지 못한 불안",
+                "neutral": "그 불안"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant02:a:d-4:unlock:s4:0",
+            "factText": "민석이 먼저 숙이고 일정을 다시 잡자고 하면 자신의 의심이 틀린 사람처럼 보일까 체면을 세웠던 사실",
+            "tags": [
+              "shame",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "emotion": {
+                "exact": "체면을 세운 태도",
+                "neutral": "그 체면"
+              },
+              "risk": {
+                "exact": "의심이 틀린 사람처럼 보이는 상황",
+                "neutral": "그 상황"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant02:a:d-4:unlock:s5:0",
+            "factText": "민석이 지연으로 재방문 비용이 발생했다는 점까지 포함해 자신의 협조 지연 책임을 인정한 사실",
+            "tags": [
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "cost": {
+                "exact": "재방문 수수료",
+                "neutral": "그 비용"
+              },
+              "action": {
+                "exact": "협조 지연",
+                "neutral": "지연 책임"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant02:a:d-5:unlock:s2:0",
+            "factText": "계약 특약상 긴급 하자 확인 자체는 1회 허용될 수 있지만 연락과 즉시 통지가 전제라는 점",
+            "tags": [
+              "rule",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "1회 긴급 확인",
+                "neutral": "긴급 확인"
+              },
+              "notice": {
+                "exact": "연락과 즉시 통지",
+                "neutral": "통지 절차"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant02:a:d-5:unlock:s3:0",
+            "factText": "민석도 최소한의 긴급 확인 가능성은 알고 있었지만 무단 출입 의심 뒤에는 그 여지를 거의 닫아 버린 사실",
+            "tags": [
+              "threshold",
+              "fear"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "최소한의 긴급 확인 가능성",
+                "neutral": "그 여지"
+              },
+              "emotion": {
+                "exact": "무단 출입 의심 이후의 경계심",
+                "neutral": "그 경계심"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant02:a:d-5:unlock:s4:0",
+            "factText": "민석이 계약 조항 문제와 사생활 침해 감정을 하나로 묶어 모든 출입 시도를 동일한 침범으로 받아들인 사실",
+            "tags": [
+              "emotion",
+              "privacy"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "issue": {
+                "exact": "계약 조항 문제와 사생활 침해 감정",
+                "neutral": "그 감정"
+              },
+              "action": {
+                "exact": "모든 출입 시도",
+                "neutral": "출입 시도"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant02:a:d-5:unlock:s5:0",
+            "factText": "민석이 조항을 지나치게 좁게 해석한 부분은 인정하면서도 촬영 보관과 날짜 위장은 허용 범위를 넘는다고 분리해 말한 사실",
+            "tags": [
+              "admission",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "긴급출입 조항 해석",
+                "neutral": "조항 해석"
+              },
+              "over": {
+                "exact": "촬영 보관과 날짜 위장",
+                "neutral": "그 추가 행위"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "tenant02:b:d-1:unlock:s2:0",
+            "factText": "규철이 세입자 거절 메시지 뒤에도 합의된 점검일 이틀 전에 마스터키로 세대 안에 들어간 사실",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "합의된 점검일 이틀 전",
+                "neutral": "그때",
+                "dateExact": "점검일 이틀 전 오후",
+                "period": "합의 전"
+              },
+              "tool": {
+                "exact": "마스터키",
+                "neutral": "열쇠"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant02:b:d-1:unlock:s3:0",
+            "factText": "규철이 봄철의 한 번짜리 예외 허용 발언을 이후 긴급 점검 전반에 대한 포괄 동의처럼 스스로 넓혀 해석한 사실",
+            "tags": [
+              "self_justification",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "memory": {
+                "exact": "봄철 예외 허용 발언",
+                "neutral": "그 말"
+              },
+              "rule": {
+                "exact": "포괄 동의라는 해석",
+                "neutral": "넓은 해석"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant02:b:d-1:unlock:s4:0",
+            "factText": "규철이 장마 전에 누수가 번지면 건물 평판과 비용이 더 커질까 두려워 통지보다 확인을 앞세운 사실",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "건물 평판과 추가 비용",
+                "neutral": "그 손해"
+              },
+              "action": {
+                "exact": "통지보다 먼저 한 확인",
+                "neutral": "선확인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant02:b:d-1:unlock:s5:0",
+            "factText": "규철이 사전 동의도 즉시 통지도 없이 먼저 출입하고 촬영했다는 책임을 받아들인 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "action": {
+                "exact": "사전 동의 없는 출입과 촬영",
+                "neutral": "그 출입"
+              },
+              "notice": {
+                "exact": "즉시 통지 누락",
+                "neutral": "통지 누락"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "tenant02:b:d-3:unlock:s2:0",
+            "factText": "규철이 원본 파일과 별도로 갤러리 표시 시각이 뒤 날짜로 보이는 캡처본을 분쟁용으로 만든 사실",
+            "tags": [
+              "evidence",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "file": {
+                "exact": "갤러리 캡처본",
+                "neutral": "캡처본"
+              },
+              "time": {
+                "exact": "뒤 날짜로 보이는 표시 시각",
+                "neutral": "표시 시각"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant02:b:d-3:unlock:s3:0",
+            "factText": "규철이 원본 사진은 그대로 보관하고도 제출 단계에서는 설명하기 쉬운 화면 캡처를 택한 사실",
+            "tags": [
+              "evidence",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "file": {
+                "exact": "원본 사진",
+                "neutral": "원본"
+              },
+              "choice": {
+                "exact": "설명하기 쉬운 화면 캡처",
+                "neutral": "그 선택"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant02:b:d-3:unlock:s4:0",
+            "factText": "규철이 관리 부실 집주인으로 보일까 두려워 원본보다 안전해 보이는 날짜 표시를 붙든 사실",
+            "tags": [
+              "shame",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "관리 부실 집주인처럼 보이는 상황",
+                "neutral": "그 평가"
+              },
+              "time": {
+                "exact": "안전해 보이는 날짜 표시",
+                "neutral": "그 날짜"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant02:b:d-3:unlock:s5:0",
+            "factText": "규철이 제출한 타임스탬프 표시는 원본 촬영시각이 아니었다고 스스로 인정한 사실",
+            "tags": [
+              "admission",
+              "evidence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "원본 촬영시각이 아닌 표시",
+                "neutral": "바뀐 표시"
+              },
+              "file": {
+                "exact": "제출본 캡처",
+                "neutral": "제출본"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant02:b:d-5:unlock:s2:0",
+            "factText": "규철도 계약 문구에서 긴급 확인과 촬영자료 보관 고지가 따로 적혀 있다는 점은 알고 있었던 사실",
+            "tags": [
+              "rule",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "긴급 확인과 촬영자료 보관 고지의 분리",
+                "neutral": "문구 분리"
+              },
+              "file": {
+                "exact": "계약 특약",
+                "neutral": "특약"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant02:b:d-5:unlock:s3:0",
+            "factText": "규철이 긴급출입 조항을 자신의 선의와 손해 감수 서사에 기대어 실제보다 넓게 적용한 사실",
+            "tags": [
+              "self_justification",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "긴급출입 조항의 넓은 적용",
+                "neutral": "넓은 적용"
+              },
+              "story": {
+                "exact": "손해를 감수한 집주인 서사",
+                "neutral": "그 서사"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant02:b:d-5:unlock:s4:0",
+            "factText": "규철이 세입자 협조 부족을 반복해서 강조하며 조항 해석의 과장을 피해자 프레임으로 덮으려 한 사실",
+            "tags": [
+              "counter",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "frame": {
+                "exact": "세입자 협조 부족 프레임",
+                "neutral": "그 프레임"
+              },
+              "rule": {
+                "exact": "과장된 조항 해석",
+                "neutral": "과장 해석"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "blame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant02:b:d-5:unlock:s5:0",
+            "factText": "긴급출입 조항이 무단 출입과 반복 촬영, 날짜 문제까지 면책해 주지 않는다는 점을 규철이 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "긴급출입 조항의 한계",
+                "neutral": "조항의 한계"
+              },
+              "action": {
+                "exact": "무단 출입과 반복 촬영, 날짜 문제",
+                "neutral": "그 행위들"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "tenant02:contradiction:0",
+        "targetParty": "b",
+        "trigger": "규철이 긴급출입 조항이 촬영 보관까지 포괄한다고 단정할 때",
+        "text": "특약 원문에는 긴급 확인과 촬영자료 보관 고지가 분리되어 있습니다. 조항 하나로 반복 촬영과 보관까지 정당화하는 설명은 문서와 맞지 않습니다.",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "tenant02:contradiction:1",
+        "targetParty": "b",
+        "trigger": "규철이 제출 사진의 표시 시각이 원본 그대로라고 버틸 때",
+        "text": "원본 EXIF와 제출 캡처의 표시 시각이 어긋나고, 예약금 메모 시각은 그보다 앞섭니다. 사진 날짜 설명이 두 증거와 동시에 맞아떨어지지 않습니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-6"
+        ]
+      },
+      {
+        "id": "tenant02:contradiction:2",
+        "targetParty": "a",
+        "trigger": "민석이 기사 방문을 막은 적이 없다고 말할 때",
+        "text": "단톡 전체 문맥과 재방문 비용 기록은 이틀간의 전면 거부와 그 후속 비용 발생을 함께 보여 줍니다. 지연 자체를 부정하는 진술은 유지되기 어렵습니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-6"
+        ]
+      },
+      {
+        "id": "tenant02:contradiction:3",
+        "targetParty": "a",
+        "trigger": "민석이 생활 요인이 전혀 없었다고 단언할 때",
+        "text": "진단서는 1차 원인을 배관 누수로 적으면서도, 관리기록과 기사 접근 지연은 악화 요인을 따로 남깁니다. 전적 무관 주장 역시 증거와 완전히 일치하지 않습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "tenant02:interjection:0",
+        "speaker": "a",
+        "trigger": "규철이 긴급출입을 전부 선의라고 몰아갈 때",
+        "text": "선의였으면 왜 제가 안 된다고 한 뒤에 먼저 들어오셨는데요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant02:interjection:1",
+        "speaker": "b",
+        "trigger": "민석이 모든 지연 책임을 부인할 때",
+        "text": "기사 한 번만 들였어도 그 곰팡이 그렇게 안 번졌습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant02:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 서로의 악의만 강조하며 같은 문장을 반복할 때",
+        "text": "지금부터는 의도 평가보다 시각과 조항 범위를 순서대로 답하십시오.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "tenant02:outburst:a:0",
+        "party": "a",
+        "trigger": "민석이 장비와 원본 파일 이야기를 하다 사생활 침해 감정이 다시 올라올 때",
+        "text": "그 집은 제 작업실이기도 했습니다. 허락도 없이 들어와 찍어 놓고 제가 예민했다고만 하면 저는 뭘 믿고 문을 열어야 합니까.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant02:outburst:a:1",
+        "party": "a",
+        "trigger": "민석이 자신의 지연 책임을 일부 인정한 뒤에도 계속 생활 탓만 듣는다고 느낄 때",
+        "text": "제가 버틴 건 맞아도 시작을 그렇게 만든 사람까지 지워지진 않잖아요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant02:outburst:b:0",
+        "party": "b",
+        "trigger": "규철이 누수 확산과 건물 평판 손실을 동시에 떠올릴 때",
+        "text": "장마 앞두고 천장이 젖는데 집주인이 가만히 있었다면 그건 또 저더러 왜 손 놨냐고 하셨을 겁니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "tenant02:outburst:b:1",
+        "party": "b",
+        "trigger": "규철이 사진 시각 문제로 몰리며 관리 부실 집주인처럼 보일까 두려울 때",
+        "text": "제가 다 뒤집어쓰는 모양새가 제일 억울합니다. 공사 잡고 돈 넣고 뛰어다닌 사람은 저였어요.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "tenant02:transition:a:d-2:s0_s1",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "leak_cause_question",
+      "line": "누수 원인을 제 생활 문제로만 묶는 건 좀 섣부릅니다. 환기 얘기는 하실 수 있어도, 시작은 천장 쪽 흔적부터 봐야죠.",
+      "behaviorHint": "반박은 유지하지만 단정 대신 조건을 붙이기 시작한다."
+    },
+    {
+      "id": "tenant02:transition:a:d-2:s1_s2",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "관리기록까지 보면 배관 점검 흔적이 먼저 있었네요. 그럼 제 생활이 전부 원인은 아니라는 건 분명합니다.",
+      "behaviorHint": "서류를 받아 읽고 목소리가 조금 가라앉는다."
+    },
+    {
+      "id": "tenant02:transition:a:d-2:s2_s4",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_equipment_protection",
+      "line": "장비가 제 밥줄이라 겁이 났습니다. 그래서 집 안 상태를 인정하면 제 잘못만 커질까 봐 더 세게 밀어붙였습니다.",
+      "behaviorHint": "분노가 누그러지고 불안이 먼저 드러난다."
+    },
+    {
+      "id": "tenant02:transition:a:d-2:s4_s5",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "기사 진단까지 합치면 1차 원인은 배관 누수였고, 제 적치와 늦은 대응은 악화 요인이었다고 봐야겠네요.",
+      "behaviorHint": "체념한 듯 고개를 끄덕이며 책임을 분리해 말한다."
+    },
+    {
+      "id": "tenant02:transition:a:d-4:s0_s1",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "visit_refusal_question",
+      "line": "제가 무작정 막은 게 아니라, 누가 왜 들어오는지 확인해 달라고 한 겁니다. 그때는 그 선이 무너졌다고 느꼈어요.",
+      "behaviorHint": "강한 반발 뒤에 설명을 덧붙인다."
+    },
+    {
+      "id": "tenant02:transition:a:d-4:s1_s2",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "대화 흐름까지 나오면, 네, 그 이틀은 제가 방문을 끊어 세웠다고 봐야 합니다.",
+      "behaviorHint": "짧게 인정하고 곧바로 다음 설명을 준비한다."
+    },
+    {
+      "id": "tenant02:transition:a:d-4:s2_s3",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "work_schedule_followup",
+      "line": "일정이 밀린 건 저도 압니다. 그런데 그 직전에 집 안이 이미 한 번 열렸다는 의심이 컸으니 제 쪽에서 공포가 먼저 올라왔습니다.",
+      "behaviorHint": "책임 일부를 인정하면서도 원인 제공을 강조한다."
+    },
+    {
+      "id": "tenant02:transition:a:d-4:s3_s5",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "비용과 재방문 기록까지 남았으면 제가 지연을 만든 건 숨길 수 없네요. 무단 출입 의심이 계기였어도, 그 이틀 책임은 제가 집니다.",
+      "behaviorHint": "고개를 숙였다가 마지막 문장만 분명히 올린다."
+    },
+    {
+      "id": "tenant02:transition:a:d-5:s0_s1",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "emergency_clause_question",
+      "line": "긴급 조항이 있다는 건 알지만, 저는 그걸 무제한 출입으로 받아들이지 않았습니다. 최소한 연락과 확인은 먼저여야 한다고 봤어요.",
+      "behaviorHint": "단정 일변도에서 조항 해석을 붙이기 시작한다."
+    },
+    {
+      "id": "tenant02:transition:a:d-5:s1_s2",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "원문을 보니 1회 긴급 확인 자체는 열려 있었네요. 대신 즉시 통지와 촬영자료 고지가 별도로 붙는다는 점도 같이 적혀 있습니다.",
+      "behaviorHint": "서류를 읽은 뒤 인정과 반박을 동시에 내놓는다."
+    },
+    {
+      "id": "tenant02:transition:a:d-5:s2_s5",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "저도 조항을 제 안전 쪽으로만 좁게 본 건 맞습니다. 그래도 그걸 이유로 반복 촬영과 날짜 문제까지 정당화할 수는 없다는 선은 분명합니다.",
+      "behaviorHint": "숨을 고르고 선 긋는 표현을 또렷하게 말한다."
+    },
+    {
+      "id": "tenant02:transition:b:d-1:s0_s1",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "unauthorized_entry_question",
+      "line": "무단이라고만 하기엔, 예전에도 급하면 키로 볼 수 있다는 말이 오갔습니다. 저는 그 범위 안이라고 믿었습니다.",
+      "behaviorHint": "전면 부인에서 기억 해석으로 물러선다."
+    },
+    {
+      "id": "tenant02:transition:b:d-1:s1_s2",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "대화 시각을 보면 합의일 전인 건 인정해야겠네요. 다만 그때는 누수가 더 번질까 정말 조급했습니다.",
+      "behaviorHint": "억울함을 남긴 채 핵심 사실 일부를 시인한다."
+    },
+    {
+      "id": "tenant02:transition:b:d-1:s2_s4",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_leak_spread_fear",
+      "line": "장마 전에 천장이 더 젖으면 제 건물 전체가 무너질까 무서웠습니다. 그래서 통지보다 확인이 앞섰고, 그게 결국 선을 넘게 만들었습니다.",
+      "behaviorHint": "피해 호소 대신 두려움을 길게 털어놓는다."
+    },
+    {
+      "id": "tenant02:transition:b:d-1:s4_s5",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "원본 사진 날짜까지 나오면 더는 숨길 수 없지요. 제가 합의일 이틀 전에 먼저 들어가 찍었습니다.",
+      "behaviorHint": "고개를 떨군 채 짧게 사실만 인정한다."
+    },
+    {
+      "id": "tenant02:transition:b:d-3:s0_s1",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "photo_timestamp_question",
+      "line": "원본과 화면 표시가 다르게 보일 수는 있습니다. 저는 그 차이를 조작이라고까지 생각하지 않았습니다.",
+      "behaviorHint": "정면 부인에서 기술적 차이 탓으로 물러선다."
+    },
+    {
+      "id": "tenant02:transition:b:d-3:s1_s2",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "원본 파일과 캡처본이 다르게 보이는 건 맞네요. 분쟁용으로 정리하는 과정에서 합의일 기준 화면을 잡았습니다.",
+      "behaviorHint": "불리한 지점을 작게 인정하며 말끝을 흐린다."
+    },
+    {
+      "id": "tenant02:transition:b:d-3:s2_s3",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "original_file_question",
+      "line": "원본은 그대로 있었고, 제출용으로 캡처를 따로 만든 건 제 선택입니다. 보기 좋게 정리한다는 생각이었지, 여기까지 문제 될 줄은 몰랐습니다.",
+      "behaviorHint": "변명과 인정이 섞여 문장이 길어진다."
+    },
+    {
+      "id": "tenant02:transition:b:d-3:s3_s5",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "예약금 시각까지 맞물리면 설명이 안 됩니다. 제가 먼저 찍은 사진을 합의된 점검일처럼 보이게 제출한 게 맞습니다.",
+      "behaviorHint": "패배를 인정하듯 숨을 내쉬고 짧게 시인한다."
+    },
+    {
+      "id": "tenant02:transition:b:d-5:s0_s1",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "contract_clause_question",
+      "line": "긴급 하자 조항이면 어느 정도 선조치는 가능하다고 저는 이해했습니다. 다만 그 범위가 어디까지인지 지금 보니 다툼의 여지는 있군요.",
+      "behaviorHint": "강한 확신에서 해석 차이 프레임으로 물러난다."
+    },
+    {
+      "id": "tenant02:transition:b:d-5:s1_s2",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_urgency",
+      "line": "네, 급하다고 해서 모든 절차가 면제되는 건 아니지요. 당시엔 긴박함을 이유로 확인과 촬영을 한 묶음으로 생각했습니다.",
+      "behaviorHint": "작은 인정으로 방어선을 다시 세운다."
+    },
+    {
+      "id": "tenant02:transition:b:d-5:s2_s3",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "photo_retention_specific_question",
+      "line": "보관 고지가 따로라는 지적은 받아들입니다. 제가 그 조항을 너무 넓게 붙잡고 있었던 건 맞습니다.",
+      "behaviorHint": "어깨를 움츠리고 계약 문구를 다시 본다."
+    },
+    {
+      "id": "tenant02:transition:b:d-5:s3_s5",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "결국 긴급출입 조항은 1회 확인과 즉시 통지 정도만 허용했어야 합니다. 반복 촬영과 날짜 문제까지 밀어 넣은 책임은 제게 있습니다.",
+      "behaviorHint": "피해자 프레임을 내려놓고 조용히 결론을 인정한다."
+    }
+  ]
+}
+

@@ -1,0 +1,54 @@
+[
+  {
+    "case": "neighbor-02",
+    "original_caseId": "case-neighbor-02",
+    "ts_file": "neighbor-02-tells-beats.ts",
+    "json_file": "neighbor-02.json",
+    "disputes": 5,
+    "tells": 6,
+    "beats": 36,
+    "claim_policy_parties": [
+      "a",
+      "b"
+    ]
+  },
+  {
+    "case": "neighbor-04",
+    "original_caseId": "case-neighbor-04",
+    "ts_file": "neighbor-04-tells-beats.ts",
+    "json_file": "neighbor-04.json",
+    "disputes": 5,
+    "tells": 6,
+    "beats": 36,
+    "claim_policy_parties": [
+      "a",
+      "b"
+    ]
+  },
+  {
+    "case": "partnership-04",
+    "original_caseId": "case-partner-04",
+    "ts_file": "partnership-04-tells-beats.ts",
+    "json_file": "partnership-04.json",
+    "disputes": 5,
+    "tells": 6,
+    "beats": 36,
+    "claim_policy_parties": [
+      "a",
+      "b"
+    ]
+  },
+  {
+    "case": "partnership-11",
+    "original_caseId": "case-partner-11",
+    "ts_file": "partnership-11-tells-beats.ts",
+    "json_file": "partnership-11.json",
+    "disputes": 5,
+    "tells": 6,
+    "beats": 36,
+    "claim_policy_parties": [
+      "a",
+      "b"
+    ]
+  }
+]

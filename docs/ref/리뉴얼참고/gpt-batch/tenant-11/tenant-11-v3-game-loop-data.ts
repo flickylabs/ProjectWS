@@ -1,0 +1,2071 @@
+export const tenant11V3GameLoopData = {
+  "caseId": "tenant-11",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "허용선과 철거 흔적",
+      "description": "특약 문구와 퇴거 사진을 함께 대조해 허용 범위와 실제 변경 흔적을 가른다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "백나래 씨, 입주 초 특약을 봤을 때, '되돌릴 수 있게'라는 조건을 붙박이장 문과 상부장 철거까지 포함된다고 본 근거가 무엇입니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant11:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "퇴거 사진에 문짝과 상부장, 앵커 자국이 남아 있는데도 여전히 '정리 수준'이라고 보십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant11:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "부분복구 항목만 따로 떼어 본 견적이 있는데도, 480만원 전액이 왜 과하다고 보시는지 선을 그어 설명해 보십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant11:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "오성필 씨, 계약서 특약과 별개로, 입주 초에 '크게만 안 건드리면 된다'고 말한 사실 자체는 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant11:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "사진상 남은 흔적이 구조 변경임은 분명한데, 그 배경에 집 상태 문제가 있었다는 점도 함께 보셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant11:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "전면복구 말고 부분복구 견적도 있는데, 왜 처음부터 480만원 전체를 기준으로 잡으셨습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant11:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "430만원의 내부 구성",
+      "description": "실지출 총액과 실제로 집에 남는 고정 개선비를 분리해 비용 논리를 해체한다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "백나래 씨, 430만원 항목 중 이동식 거울장과 소품을 고정 개선비와 같이 묶은 이유가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant11:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "총액을 먼저 제시한 방식이 실제 고정 개선비보다 큰 인상을 주려 한 건 아니었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant11:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "시공업체와 범위를 상의하고도 집주인에게 다시 승인받지 않은 건 왜입니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant11:a:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "오성필 씨, 430만원 전부는 아니더라도 집에 남는 고정 개선비가 있었다는 점은 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant11:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "남는 항목 평가를 작게 말한 데엔 본인 청구를 지키려는 계산도 있었습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant11:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "초기 관리 미흡이 구조 변경의 배경이 됐다는 점을 인정하면 정산 기준도 달라져야 하는 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant11:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "홍보 문구와 과잉 복구비",
+      "description": "누수 대화 원문, 모집글 문구, 복구 비교 견적을 함께 놓고 공로와 과잉 청구를 가른다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "백나래 씨, 전체 대화 문맥까지 보면 허용이 구조 변경 승인과는 달랐다는 점을 이제 어떻게 보십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant11:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "모집글 문구를 봤을 때, 돈보다도 본인 기여가 지워졌다고 느끼는 핵심 이유는 무엇입니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant11:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "일부 복구 책임은 인정한다면, 어디까지를 본인 부담으로 선긋겠습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant11:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "오성필 씨, 새 임차인 모집글에서 '집주인 감성 리뉴얼 완료'라고 적은 건 누구의 공로를 전제로 한 표현이었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant11:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "부분복구 견적이 있는데도 큰 금액을 먼저 제시한 건 협상 우위를 위한 자기보호였습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant11:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "이제 돌이켜 보면 세입자 기여 인정과 원상복구 책임을 일부러 섞어 말한 적이 있습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant11:b:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "tenant11:a:d-1:unlock:s2:0",
+            "factText": "카톡 전체 문맥엔 '되돌릴 수 있게'라는 단서가 있었지만 나래는 넓게 받아들였다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "입주 초기",
+                "neutral": "그때",
+                "period": "입주 초"
+              },
+              "quote": {
+                "exact": "예쁘게 하고 살아요, 크게만 안 건드리면 돼요",
+                "neutral": "그 말"
+              },
+              "items": {
+                "exact": "붙박이장 문과 상부장",
+                "neutral": "고정 수납 부분"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant11:a:d-1:unlock:s3:0",
+            "factText": "나래는 화장 공간 욕심과 창피함 때문에 구조 변경 전 재확인을 미뤘다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "입주 초기",
+                "neutral": "그때",
+                "period": "입주 초"
+              },
+              "quote": {
+                "exact": "예쁘게 하고 살아요, 크게만 안 건드리면 돼요",
+                "neutral": "그 말"
+              },
+              "items": {
+                "exact": "붙박이장 문과 상부장",
+                "neutral": "고정 수납 부분"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant11:a:d-1:unlock:s4:0",
+            "factText": "곰팡이와 어두운 수납이 계속 보여 조급함이 커졌고, 그 압박이 선을 흐리게 했다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "입주 초기",
+                "neutral": "그때",
+                "period": "입주 초"
+              },
+              "quote": {
+                "exact": "예쁘게 하고 살아요, 크게만 안 건드리면 돼요",
+                "neutral": "그 말"
+              },
+              "items": {
+                "exact": "붙박이장 문과 상부장",
+                "neutral": "고정 수납 부분"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant11:a:d-1:unlock:s5:0",
+            "factText": "허용 범위는 미관 개선까지였고, 붙박이장 문과 상부장 철거는 승인 밖이었다는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "입주 초기",
+                "neutral": "그때",
+                "period": "입주 초"
+              },
+              "quote": {
+                "exact": "예쁘게 하고 살아요, 크게만 안 건드리면 돼요",
+                "neutral": "그 말"
+              },
+              "items": {
+                "exact": "붙박이장 문과 상부장",
+                "neutral": "고정 수납 부분"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "tenant11:a:d-2:unlock:s2:0",
+            "factText": "퇴거 사진 기준으로 붙박이장 문 두 짝, 상부장, 앵커 자국, 조명 배선 변경이 남아 있었다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직전",
+                "neutral": "그 시점",
+                "period": "퇴거 전"
+              },
+              "items": {
+                "exact": "붙박이장 문 두 짝·화장대 상부장·고정 선반 앵커·전동 조명 배선",
+                "neutral": "그 구조 변경"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant11:a:d-2:unlock:s3:0",
+            "factText": "나래는 작업 효율을 위해 승인 없이 구조 변경을 밀어붙였다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직전",
+                "neutral": "그 시점",
+                "period": "퇴거 전"
+              },
+              "items": {
+                "exact": "붙박이장 문 두 짝·화장대 상부장·고정 선반 앵커·전동 조명 배선",
+                "neutral": "그 구조 변경"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant11:a:d-2:unlock:s4:0",
+            "factText": "누수와 답답한 동선 스트레스가 구조 변경 결정을 정당화하게 만들었다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직전",
+                "neutral": "그 시점",
+                "period": "퇴거 전"
+              },
+              "items": {
+                "exact": "붙박이장 문 두 짝·화장대 상부장·고정 선반 앵커·전동 조명 배선",
+                "neutral": "그 구조 변경"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant11:a:d-2:unlock:s5:0",
+            "factText": "구조 변경이 아닌 정리 수준이었다는 초기 주장은 사실과 다르다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직전",
+                "neutral": "그 시점",
+                "period": "퇴거 전"
+              },
+              "items": {
+                "exact": "붙박이장 문 두 짝·화장대 상부장·고정 선반 앵커·전동 조명 배선",
+                "neutral": "그 구조 변경"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "tenant11:a:d-3:unlock:s2:0",
+            "factText": "430만원 안에 이동식 거울장과 중고 의자, 촬영용 소품이 함께 들어 있었다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "430만원",
+                "neutral": "그 금액",
+                "rounded": "430만 원"
+              },
+              "items": {
+                "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
+                "neutral": "비고정 지출"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant11:a:d-3:unlock:s3:0",
+            "factText": "나래는 기여가 작아 보일까 봐 총액을 묶어 제시했다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "430만원",
+                "neutral": "그 금액",
+                "rounded": "430만 원"
+              },
+              "items": {
+                "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
+                "neutral": "비고정 지출"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant11:a:d-3:unlock:s4:0",
+            "factText": "비용을 세분하면 자기 기여가 희미해질까 두려워 분리를 피했다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "430만원",
+                "neutral": "그 금액",
+                "rounded": "430만 원"
+              },
+              "items": {
+                "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
+                "neutral": "비고정 지출"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant11:a:d-3:unlock:s5:0",
+            "factText": "공간에 남는 고정 개선비와 개인용 지출을 나눠 봐야 한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "430만원",
+                "neutral": "그 금액",
+                "rounded": "430만 원"
+              },
+              "items": {
+                "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
+                "neutral": "비고정 지출"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant11:a:d-4:unlock:s2:0",
+            "factText": "모집글 사진에는 나래가 설치한 조명과 선반, 페인트가 남아 있는 상태가 그대로 실렸다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직후 다음날",
+                "neutral": "그 모집 시점",
+                "period": "퇴거 직후"
+              },
+              "quote": {
+                "exact": "집주인 감성 리뉴얼 완료",
+                "neutral": "그 홍보 문구"
+              },
+              "items": {
+                "exact": "조명·페인트·선반",
+                "neutral": "남아 있는 개선 항목"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant11:a:d-4:unlock:s3:0",
+            "factText": "나래는 돈 문제보다 자신의 손이 지워진 느낌에 더 강하게 반응했다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직후 다음날",
+                "neutral": "그 모집 시점",
+                "period": "퇴거 직후"
+              },
+              "quote": {
+                "exact": "집주인 감성 리뉴얼 완료",
+                "neutral": "그 홍보 문구"
+              },
+              "items": {
+                "exact": "조명·페인트·선반",
+                "neutral": "남아 있는 개선 항목"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant11:a:d-4:unlock:s4:0",
+            "factText": "무단 변경 책임이 있어도 기여 인정까지 사라질까 봐 허탈함이 커졌다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직후 다음날",
+                "neutral": "그 모집 시점",
+                "period": "퇴거 직후"
+              },
+              "quote": {
+                "exact": "집주인 감성 리뉴얼 완료",
+                "neutral": "그 홍보 문구"
+              },
+              "items": {
+                "exact": "조명·페인트·선반",
+                "neutral": "남아 있는 개선 항목"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant11:a:d-4:unlock:s5:0",
+            "factText": "규칙 위반 책임과 개선 성과 인정은 분리해 정산해야 한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직후 다음날",
+                "neutral": "그 모집 시점",
+                "period": "퇴거 직후"
+              },
+              "quote": {
+                "exact": "집주인 감성 리뉴얼 완료",
+                "neutral": "그 홍보 문구"
+              },
+              "items": {
+                "exact": "조명·페인트·선반",
+                "neutral": "남아 있는 개선 항목"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant11:a:d-5:unlock:s2:0",
+            "factText": "부분복구 견적은 붙박이장 문, 상부장 패널, 일부 앵커 자국 보수 수준으로 잡혀 있었다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "480만원",
+                "neutral": "그 청구액",
+                "rounded": "480만 원"
+              },
+              "time": {
+                "exact": "퇴거 정산 시점",
+                "neutral": "정산 시점",
+                "period": "퇴거 직후"
+              },
+              "items": {
+                "exact": "붙박이장 문 복구·상부장 패널 복원·일부 앵커 자국 보수",
+                "neutral": "부분복구 항목"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant11:a:d-5:unlock:s3:0",
+            "factText": "성필의 전면복구 청구에는 협상 우위를 잡으려는 계산이 섞였다고 나래는 본다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "480만원",
+                "neutral": "그 청구액",
+                "rounded": "480만 원"
+              },
+              "time": {
+                "exact": "퇴거 정산 시점",
+                "neutral": "정산 시점",
+                "period": "퇴거 직후"
+              },
+              "items": {
+                "exact": "붙박이장 문 복구·상부장 패널 복원·일부 앵커 자국 보수",
+                "neutral": "부분복구 항목"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant11:a:d-5:unlock:s4:0",
+            "factText": "나래는 일부 복구 책임을 알면서도 480만원 전액 청구를 처벌처럼 받아들였다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "480만원",
+                "neutral": "그 청구액",
+                "rounded": "480만 원"
+              },
+              "time": {
+                "exact": "퇴거 정산 시점",
+                "neutral": "정산 시점",
+                "period": "퇴거 직후"
+              },
+              "items": {
+                "exact": "붙박이장 문 복구·상부장 패널 복원·일부 앵커 자국 보수",
+                "neutral": "부분복구 항목"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant11:a:d-5:unlock:s5:0",
+            "factText": "정산 기준은 전면 철거가 아니라 부분복구 범위여야 한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "480만원",
+                "neutral": "그 청구액",
+                "rounded": "480만 원"
+              },
+              "time": {
+                "exact": "퇴거 정산 시점",
+                "neutral": "정산 시점",
+                "period": "퇴거 직후"
+              },
+              "items": {
+                "exact": "붙박이장 문 복구·상부장 패널 복원·일부 앵커 자국 보수",
+                "neutral": "부분복구 항목"
+              },
+              "person": {
+                "exact": "오성필",
+                "neutral": "임대인",
+                "fullName": "오성필",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "tenant11:b:d-1:unlock:s2:0",
+            "factText": "성필 본인도 '예쁘게 하고 살아요, 크게만 안 건드리면 돼요'라는 말을 한 사실은 숨기기 어렵다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "입주 초기",
+                "neutral": "그때",
+                "period": "입주 초"
+              },
+              "quote": {
+                "exact": "예쁘게 하고 살아요, 크게만 안 건드리면 돼요",
+                "neutral": "그 말"
+              },
+              "items": {
+                "exact": "붙박이장 문과 상부장",
+                "neutral": "고정 수납 부분"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant11:b:d-1:unlock:s3:0",
+            "factText": "성필은 낡은 집 상태를 알면서도 허용 범위를 다시 문서로 못 박지 않았다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "입주 초기",
+                "neutral": "그때",
+                "period": "입주 초"
+              },
+              "quote": {
+                "exact": "예쁘게 하고 살아요, 크게만 안 건드리면 돼요",
+                "neutral": "그 말"
+              },
+              "items": {
+                "exact": "붙박이장 문과 상부장",
+                "neutral": "고정 수납 부분"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant11:b:d-1:unlock:s4:0",
+            "factText": "공실을 빨리 줄이고 싶었던 마음 때문에 말을 부드럽게 한 점이 드러난다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "입주 초기",
+                "neutral": "그때",
+                "period": "입주 초"
+              },
+              "quote": {
+                "exact": "예쁘게 하고 살아요, 크게만 안 건드리면 돼요",
+                "neutral": "그 말"
+              },
+              "items": {
+                "exact": "붙박이장 문과 상부장",
+                "neutral": "고정 수납 부분"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant11:b:d-1:unlock:s5:0",
+            "factText": "구두 표현이 모호했고 그 점이 분쟁을 키웠다는 사실을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "입주 초기",
+                "neutral": "그때",
+                "period": "입주 초"
+              },
+              "quote": {
+                "exact": "예쁘게 하고 살아요, 크게만 안 건드리면 돼요",
+                "neutral": "그 말"
+              },
+              "items": {
+                "exact": "붙박이장 문과 상부장",
+                "neutral": "고정 수납 부분"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "tenant11:b:d-2:unlock:s2:0",
+            "factText": "퇴거 사진과 자재 내역상 구조 변경 흔적은 단순 장식 수준을 넘어선다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직전",
+                "neutral": "그 시점",
+                "period": "퇴거 전"
+              },
+              "items": {
+                "exact": "붙박이장 문 두 짝·화장대 상부장·고정 선반 앵커·전동 조명 배선",
+                "neutral": "그 구조 변경"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant11:b:d-2:unlock:s3:0",
+            "factText": "성필은 나래의 위반을 말하면서도 초기 집 상태 관리 미흡이 불씨였다는 건 안다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직전",
+                "neutral": "그 시점",
+                "period": "퇴거 전"
+              },
+              "items": {
+                "exact": "붙박이장 문 두 짝·화장대 상부장·고정 선반 앵커·전동 조명 배선",
+                "neutral": "그 구조 변경"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant11:b:d-2:unlock:s4:0",
+            "factText": "공실과 안전 부담이 겹치자 성필은 규정 중심으로만 대응했다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직전",
+                "neutral": "그 시점",
+                "period": "퇴거 전"
+              },
+              "items": {
+                "exact": "붙박이장 문 두 짝·화장대 상부장·고정 선반 앵커·전동 조명 배선",
+                "neutral": "그 구조 변경"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant11:b:d-2:unlock:s5:0",
+            "factText": "무단 구조 변경은 사실이지만 집 상태 관리 책임이 일부 섞여 있다는 점도 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직전",
+                "neutral": "그 시점",
+                "period": "퇴거 전"
+              },
+              "items": {
+                "exact": "붙박이장 문 두 짝·화장대 상부장·고정 선반 앵커·전동 조명 배선",
+                "neutral": "그 구조 변경"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "tenant11:b:d-3:unlock:s2:0",
+            "factText": "430만원 중 일부는 실제로 집에 남는 고정 개선비였다는 사실을 성필도 알고 있다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "430만원",
+                "neutral": "그 금액",
+                "rounded": "430만 원"
+              },
+              "items": {
+                "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
+                "neutral": "비고정 지출"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant11:b:d-3:unlock:s3:0",
+            "factText": "성필은 자기 청구 논리가 약해질까 봐 남는 항목 평가를 일부러 작게 말했다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "430만원",
+                "neutral": "그 금액",
+                "rounded": "430만 원"
+              },
+              "items": {
+                "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
+                "neutral": "비고정 지출"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant11:b:d-3:unlock:s4:0",
+            "factText": "숫자만 읽어 내려가는 태도 뒤에는 일부 기여를 인정해야 한다는 부담이 있다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "430만원",
+                "neutral": "그 금액",
+                "rounded": "430만 원"
+              },
+              "items": {
+                "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
+                "neutral": "비고정 지출"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant11:b:d-3:unlock:s5:0",
+            "factText": "총액 부풀림과 별개로, 남는 개선 항목은 별도 평가가 필요하다는 결론에 도달한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "430만원",
+                "neutral": "그 금액",
+                "rounded": "430만 원"
+              },
+              "items": {
+                "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
+                "neutral": "비고정 지출"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant11:b:d-4:unlock:s2:0",
+            "factText": "모집글에 '집주인 감성 리뉴얼 완료'라는 표현을 쓴 건 사실이다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직후 다음날",
+                "neutral": "그 모집 시점",
+                "period": "퇴거 직후"
+              },
+              "quote": {
+                "exact": "집주인 감성 리뉴얼 완료",
+                "neutral": "그 홍보 문구"
+              },
+              "items": {
+                "exact": "조명·페인트·선반",
+                "neutral": "남아 있는 개선 항목"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant11:b:d-4:unlock:s3:0",
+            "factText": "성필은 공실을 빨리 채우려는 목적과 체면 보전 때문에 세입자 기여를 자기 언어로 덮었다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직후 다음날",
+                "neutral": "그 모집 시점",
+                "period": "퇴거 직후"
+              },
+              "quote": {
+                "exact": "집주인 감성 리뉴얼 완료",
+                "neutral": "그 홍보 문구"
+              },
+              "items": {
+                "exact": "조명·페인트·선반",
+                "neutral": "남아 있는 개선 항목"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant11:b:d-4:unlock:s4:0",
+            "factText": "좋아 보이는 사진을 골라 쓰는 순간 그 공이 자신의 것이 아니라는 걸 알면서도 밀어붙였다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직후 다음날",
+                "neutral": "그 모집 시점",
+                "period": "퇴거 직후"
+              },
+              "quote": {
+                "exact": "집주인 감성 리뉴얼 완료",
+                "neutral": "그 홍보 문구"
+              },
+              "items": {
+                "exact": "조명·페인트·선반",
+                "neutral": "남아 있는 개선 항목"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant11:b:d-4:unlock:s5:0",
+            "factText": "세입자 기여를 자신의 리뉴얼처럼 포장한 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "퇴거 직후 다음날",
+                "neutral": "그 모집 시점",
+                "period": "퇴거 직후"
+              },
+              "quote": {
+                "exact": "집주인 감성 리뉴얼 완료",
+                "neutral": "그 홍보 문구"
+              },
+              "items": {
+                "exact": "조명·페인트·선반",
+                "neutral": "남아 있는 개선 항목"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant11:b:d-5:unlock:s2:0",
+            "factText": "부분복구 견적이 있었는데도 성필은 전면복구 480만원을 기준점으로 삼았다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "480만원",
+                "neutral": "그 청구액",
+                "rounded": "480만 원"
+              },
+              "time": {
+                "exact": "퇴거 정산 시점",
+                "neutral": "정산 시점",
+                "period": "퇴거 직후"
+              },
+              "items": {
+                "exact": "붙박이장 문 복구·상부장 패널 복원·일부 앵커 자국 보수",
+                "neutral": "부분복구 항목"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant11:b:d-5:unlock:s3:0",
+            "factText": "큰 청구액에는 추가 분쟁과 공실 손해를 한꺼번에 막으려는 자기보호 계산이 섞였다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "480만원",
+                "neutral": "그 청구액",
+                "rounded": "480만 원"
+              },
+              "time": {
+                "exact": "퇴거 정산 시점",
+                "neutral": "정산 시점",
+                "period": "퇴거 직후"
+              },
+              "items": {
+                "exact": "붙박이장 문 복구·상부장 패널 복원·일부 앵커 자국 보수",
+                "neutral": "부분복구 항목"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant11:b:d-5:unlock:s4:0",
+            "factText": "새 임차인 일정 압박이 비용 산정을 더 공격적으로 만들었다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "480만원",
+                "neutral": "그 청구액",
+                "rounded": "480만 원"
+              },
+              "time": {
+                "exact": "퇴거 정산 시점",
+                "neutral": "정산 시점",
+                "period": "퇴거 직후"
+              },
+              "items": {
+                "exact": "붙박이장 문 복구·상부장 패널 복원·일부 앵커 자국 보수",
+                "neutral": "부분복구 항목"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant11:b:d-5:unlock:s5:0",
+            "factText": "정산은 부분복구 기준으로 다시 나눠야 하고 480만원 전액 청구는 과했다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "480만원",
+                "neutral": "그 청구액",
+                "rounded": "480만 원"
+              },
+              "time": {
+                "exact": "퇴거 정산 시점",
+                "neutral": "정산 시점",
+                "period": "퇴거 직후"
+              },
+              "items": {
+                "exact": "붙박이장 문 복구·상부장 패널 복원·일부 앵커 자국 보수",
+                "neutral": "부분복구 항목"
+              },
+              "person": {
+                "exact": "백나래",
+                "neutral": "세입자",
+                "fullName": "백나래",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "tenant11:contradiction:0",
+        "targetParty": "a",
+        "trigger": "나래가 구조 변경을 단순 정리 수준이라고 반복하면서 e-2와 e-3이 함께 제시될 때",
+        "text": "사진에는 사라진 문짝과 상부장, 앵커 자국이 남아 있고 비용 자료엔 시공 범위가 드러납니다. '정리 수준'이라는 설명과 실제 작업 규모가 맞지 않습니다.",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-3"
+        ]
+      },
+      {
+        "id": "tenant11:contradiction:1",
+        "targetParty": "a",
+        "trigger": "나래가 430만원 전액을 모두 집에 남는 개선비라고 주장하면서 e-4가 열릴 때",
+        "text": "원본 견적과 톡에는 이동식 거울장, 소품, 지인 도움비가 따로 보입니다. 총지출과 공간 가치 상승액을 같은 선에 놓을 수 없습니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-4"
+        ]
+      },
+      {
+        "id": "tenant11:contradiction:2",
+        "targetParty": "b",
+        "trigger": "성필이 480만원 전면복구만 정당하다고 말할 때 e-6과 e-2가 같이 비교될 때",
+        "text": "비교 견적은 일부 고정 가구와 패널 복원만으로도 복구가 가능하다고 말합니다. 집 전체 전면 철거를 전제로 한 청구는 실제 복구 범위를 넘습니다.",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-6",
+          "e-2"
+        ]
+      },
+      {
+        "id": "tenant11:contradiction:3",
+        "targetParty": "b",
+        "trigger": "성필이 모집글은 단순 현상 설명이었다고 주장하는데 e-5의 문구와 사진이 함께 읽힐 때",
+        "text": "개선된 사진 위에 '집주인 감성 리뉴얼 완료'라는 문구를 붙이면 현재 상태 설명을 넘어 공로 귀속까지 바뀝니다. 홍보와 가로채기 사이의 선이 여기서 드러납니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "tenant11:interjection:0",
+        "speaker": "a",
+        "trigger": "성필이 430만원을 전부 허영 지출처럼 몰아갈 때",
+        "text": "허영 아니에요. 그 집에서 실제로 살고 일하려고 쓴 돈이라고요.",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      },
+      {
+        "id": "tenant11:interjection:1",
+        "speaker": "b",
+        "trigger": "나래가 개선 성과만 말하며 구조 변경 책임을 건너뛸 때",
+        "text": "분위기 얘기 전에 허락 없는 철거부터 보셔야죠.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "tenant11:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 '규칙'과 '기여'를 같은 문장 안에서 뒤섞어 말할 때",
+        "text": "허용 범위와 기여 인정은 구분해 답하십시오. 한 항목씩 나눠 보겠습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "tenant11:outburst:a:0",
+        "party": "a",
+        "trigger": "자비 인테리어 지출이 전부 의미 없는 돈처럼 취급될 때",
+        "text": "제가 제 돈으로 곰팡이 집 사람 살 데처럼 만들어 놨는데, 지금 와서 아무 가치도 없었다고 하면 정말 허무하죠.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant11:outburst:a:1",
+        "party": "a",
+        "trigger": "무단 구조 변경 책임만 반복되고 성과 인정은 전혀 다뤄지지 않을 때",
+        "text": "잘못만 남고 제가 한 건 다 지워지면, 그 시간과 돈은 도대체 뭐였냐는 말이에요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant11:outburst:b:0",
+        "party": "b",
+        "trigger": "성필이 세입자 성과를 훔친 사람처럼만 몰릴 때",
+        "text": "집주인이 집 상태를 광고한 걸 전부 도둑질로 몰아가면, 관리 책임은 누가 집니까.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant11:outburst:b:1",
+        "party": "b",
+        "trigger": "구조 변경 책임이 가벼운 꾸미기처럼 축소될 때",
+        "text": "붙박이장 떼고 배선 건드린 걸 '분위기'라고만 하면 집주인은 뭘 기준으로 정산합니까.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "tenant11:transition:a:d-2:s0_s1",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "structure_change_question",
+      "line": "'구조 변경'이라는 말엔 바로 방어가 올라와요. 저는 동선 정리였다고 먼저 선을 그어요.",
+      "behaviorHint": "양손으로 공간 크기를 재듯 허공을 가른다."
+    },
+    {
+      "id": "tenant11:transition:a:d-2:s1_s2",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "사진이 나오면 문짝과 상부장을 손댄 사실은 숨기기 어려워져요. 대신 완전 파손은 아니었다고 버팁니다.",
+      "behaviorHint": "입술을 깨물고 사진을 한 장씩 다시 본다."
+    },
+    {
+      "id": "tenant11:transition:a:d-2:s2_s4",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_leak_repair_stress",
+      "line": "그때 왜 그렇게 급했는지 묻는 말엔 조금 풀립니다. 누수와 답답한 수납이 얼마나 스트레스였는지 먼저 말하게 돼요.",
+      "behaviorHint": "어깨가 내려가며 시선이 바닥으로 떨어진다."
+    },
+    {
+      "id": "tenant11:transition:a:d-2:s4_s5",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-3_presented",
+      "line": "이체 내역과 자재 영수증이 붙으면 제가 어디까지 맡겼는지 더는 줄여 말할 수 없어요. 그제야 제 판단이었다고 인정합니다.",
+      "behaviorHint": "영수증 더미를 내려놓고 천천히 숨을 고른다."
+    },
+    {
+      "id": "tenant11:transition:a:d-3:s0_s1",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "improvement_cost_question",
+      "line": "처음엔 총액부터 말하며 손해를 크게 보여주려 합니다. 세부 항목은 일부러 뒤로 미뤄요.",
+      "behaviorHint": "계좌 캡처를 먼저 밀어 보이며 고개를 든다."
+    },
+    {
+      "id": "tenant11:transition:a:d-3:s1_s2",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "실지출 자료가 나오면 돈이 나간 사실과 가치 상승이 같은 건 아니라는 걸 피하기 어려워요. 그래서 일부 항목이 섞였다는 수준까진 인정합니다.",
+      "behaviorHint": "영수증 순서를 정리하다가 말 속도가 느려진다."
+    },
+    {
+      "id": "tenant11:transition:a:d-3:s2_s3",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "movable_furniture_followup",
+      "line": "이동식 가구를 따로 물으면 기여를 지키려는 마음이 바로 드러나요. 왜 총액으로 묶어 말했는지 변명과 서운함이 함께 나옵니다.",
+      "behaviorHint": "의자 등받이에 기대었다가 다시 앞으로 숙인다."
+    },
+    {
+      "id": "tenant11:transition:a:d-3:s3_s5",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "시공업체 톡과 원본 견적서가 열리면 비고정 항목을 더는 숨길 수 없어요. 결국 전액 주장은 접고 분리 정산 쪽으로 돌아섭니다.",
+      "behaviorHint": "견적서 특정 줄에서 시선을 떼지 못한다."
+    },
+    {
+      "id": "tenant11:transition:a:d-1:s0_s1",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "approval_scope_question",
+      "line": "허용 범위를 묻는 순간 나래는 먼저 분위기 개선 성과부터 꺼내요. 명확한 승인선은 흐리게 둡니다.",
+      "behaviorHint": "사진 폴더를 켜고 손가락으로 화면을 빠르게 넘긴다."
+    },
+    {
+      "id": "tenant11:transition:a:d-1:s1_s2",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "전체 문맥이 보이는 카톡이 나오면 자기에게 유리한 구절만 붙잡고 있었다는 사실이 드러납니다. 그제야 해석이 넓었다는 말을 꺼냅니다.",
+      "behaviorHint": "화면을 확대해 읽다가 짧게 입술을 다문다."
+    },
+    {
+      "id": "tenant11:transition:a:d-1:s2_s3",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "contract_clause_question",
+      "line": "특약 문구를 짚는 질문이 들어오면 부인 대신 '말이 모호했다'는 쪽으로 옮겨 갑니다. 책임을 나누려는 톤이 강해져요.",
+      "behaviorHint": "계약서 가장자리를 손끝으로 문지른다."
+    },
+    {
+      "id": "tenant11:transition:a:d-1:s3_s5",
+      "caseId": "tenant-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "비난이 아닌 책임 배분 질문이 오면 나래는 처음으로 자기 해석이 선을 넘었다는 걸 인정합니다. 대신 모호한 허용이 있었다는 감정은 남겨 둡니다.",
+      "behaviorHint": "고개를 숙였다가 천천히 들어 올린다."
+    },
+    {
+      "id": "tenant11:transition:b:d-4:s0_s1",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "listing_credit_question",
+      "line": "공로 가로채기 질문이 나오면 성필은 곧바로 '현재 상태 설명'이라는 말로 의미를 줄입니다.",
+      "behaviorHint": "허리를 세우고 손을 테이블 위에 평평하게 올린다."
+    },
+    {
+      "id": "tenant11:transition:b:d-4:s1_s2",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "캡처가 제시되면 문구가 과했다는 건 부정하기 어려워져요. 다만 공실 안내였다고 목적을 축소합니다.",
+      "behaviorHint": "모집글 문구에서 시선을 한 번 피한다."
+    },
+    {
+      "id": "tenant11:transition:b:d-4:s2_s3",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "broker_caption_followup",
+      "line": "중개사 전달 맥락까지 묻는 후속 질문엔 체면 보전과 홍보 욕심이 조금씩 비칩니다. 실수라는 말로 책임을 작게 묶으려 해요.",
+      "behaviorHint": "턱을 만지며 짧게 혀를 차는 소리를 낸다."
+    },
+    {
+      "id": "tenant11:transition:b:d-4:s3_s5",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "결국 책임을 직접 묻는 질문이 오면 성필은 기여 인정 문제를 의도적으로 흐린 면이 있었다고 인정합니다.",
+      "behaviorHint": "한 박자 쉬고 낮은 톤으로 문장을 끊는다."
+    },
+    {
+      "id": "tenant11:transition:b:d-5:s0_s1",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "full_restoration_question",
+      "line": "처음엔 큰 견적이 기준이라고 잘라 말합니다. 원상복구를 규칙 문제로 단순화해요.",
+      "behaviorHint": "견적 총액을 먼저 손가락으로 탁 짚는다."
+    },
+    {
+      "id": "tenant11:transition:b:d-5:s1_s2",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "비교 견적이 펼쳐지면 부분복구 가능성을 완전히 부정하긴 어려워집니다. 그래도 일정과 자국 문제를 들며 금액을 방어합니다.",
+      "behaviorHint": "큰 견적과 작은 견적을 번갈아 바라본다."
+    },
+    {
+      "id": "tenant11:transition:b:d-5:s2_s3",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "kept_items_followup",
+      "line": "남겨 쓸 항목을 따로 묻는 순간 자기보호 계산이 드러나기 시작합니다. 범위를 좁혀 말하며 청구 논리를 지키려 해요.",
+      "behaviorHint": "말수를 줄이고 '일부만'이라는 표현을 반복한다."
+    },
+    {
+      "id": "tenant11:transition:b:d-5:s3_s5",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_presented",
+      "line": "사진으로 남겨 둘 개선과 되돌릴 변경이 함께 보이면 전면 청구를 끝까지 유지하긴 어렵습니다. 그제야 과했다는 말이 나옵니다.",
+      "behaviorHint": "사진 속 남아 있는 조명을 보고 미간을 눌러 문지른다."
+    },
+    {
+      "id": "tenant11:transition:b:d-1:s0_s1",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "initial_permission_question",
+      "line": "처음 허용 범위를 묻는 질문엔 성필은 계약 조항부터 꺼내며 구두 표현의 폭을 축소합니다.",
+      "behaviorHint": "특약본을 곧게 펴고 안경 너머로 올려다본다."
+    },
+    {
+      "id": "tenant11:transition:b:d-1:s1_s2",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "서면 특약이 제시되면 규칙 쪽으론 유리하지만, 동시에 재확인을 안 한 점도 떠오릅니다. 그래서 '말이 넓게 들릴 수는 있다'는 선까지 물러납니다.",
+      "behaviorHint": "계약서 페이지를 넘기다 손끝이 잠시 멈춘다."
+    },
+    {
+      "id": "tenant11:transition:b:d-1:s2_s4",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_old_leak_condition",
+      "line": "집 상태와 누수 스트레스를 비난 없이 묻는 순간 성필도 말을 부드럽게 한 사정을 털어놓습니다. 관리 미흡 책임이 처음으로 비칩니다.",
+      "behaviorHint": "등받이에 기대며 한숨을 짧게 내쉰다."
+    },
+    {
+      "id": "tenant11:transition:b:d-1:s4_s5",
+      "caseId": "tenant-11",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "공동 책임 질문이 나오면 성필은 자신의 모호한 표현이 분쟁을 키웠다고 인정합니다. 그래도 구조 변경 승인은 아니었다는 선은 지킵니다.",
+      "behaviorHint": "고개를 한번 끄덕인 뒤 다시 계약서를 덮는다."
+    }
+  ]
+}
+

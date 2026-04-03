@@ -1,0 +1,711 @@
+{
+  "caseId": "case-partner-10",
+  "meta": {
+    "relationshipType": "partnership",
+    "conflictSeed": "CS-4",
+    "variableModules": [
+      "VM-C"
+    ],
+    "twistModule": "",
+    "difficulty": "easy",
+    "anchorTruth": "민서의 합류는 준서의 계획적인 독단 채용이 아니라, 혜린의 '이번 주부터 한번 같이 돌아보자'는 말을 준서가 최종 승인으로 오해하면서 시작된 3일 체험근무였다.",
+    "emotionalBait": "정식 오퍼 메일, 온보딩 서류 요청, 직원 스케줄표에 올라간 새 이름이 겹치며 준서가 동업자를 속이고 채용을 밀어붙인 것처럼 보인다.",
+    "resolutionDilemma": "준서가 확인 없이 오퍼를 먼저 보낸 잘못은 분명하지만, 혜린도 모호한 승인 표현과 별도 보류 통보로 혼선을 키운 만큼 단독 배신으로만 볼지 아니면 채용 절차 자체를 고쳐야 할지 판단이 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "오준서",
+      "age": 36,
+      "occupation": "반려견 데이케어 센터 공동대표 겸 운영인사총괄",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "채용 문제를 감정이 아니라 근무표, 급여 총액, 인력 공백 시간으로 잘라 설명한다. 불리해지면 '그건 체험근무 전제로 움직인 것'이라며 상대가 느낀 배신감을 일정 조정 문제로 축소하려 한다.",
+      "pride": 7,
+      "fear": "현장 인력 공백도 못 메우는 운영총괄로 보이거나, 대표 승인선도 모른 채 사람부터 넣는 성급한 관리자처럼 평가받는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "calendar_and_payroll_app",
+      "dailyRoutine": "아침에는 픽업 일정과 출결표를 맞추고, 오후에는 강아지 반 배치와 인건비를 확인하며, 밤에는 채용 서류와 급여 예산표를 다시 정리한다.",
+      "sensitivePoints": [
+        "인력 공백",
+        "급여 상한",
+        "후보자 이탈"
+      ],
+      "verbalTells": [
+        {
+          "type": "schedule_recital",
+          "trigger": "lying",
+          "pattern": "의도를 묻는 질문에도 먼저 어떤 반에 몇 시간이 비었는지부터 숫자로 읊는다."
+        },
+        {
+          "type": "trial_label",
+          "trigger": "cornered",
+          "pattern": "정식 채용처럼 보이는 행동을 지적받으면 '그건 체험근무 기준이었다'고 이름표를 바꿔 설명한다."
+        },
+        {
+          "type": "emotion_cut",
+          "trigger": "avoiding",
+          "pattern": "상대가 배신감을 말하면 '감정 말고 프로세스를 보자'며 정서를 잘라낸다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "혜린씨",
+        "toJudge": "제 동업자",
+        "angry": "박혜린 씨!"
+      }
+    },
+    "partyB": {
+      "name": "박혜린",
+      "age": 33,
+      "occupation": "반려견 데이케어 센터 공동대표 겸 프로그램브랜딩총괄",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "상대가 절차를 어겼다고 느끼면 세부 사정보다 의도부터 먼저 단정한다. 조금이라도 배제된 흔적이 보이면 같은 질문을 짧게 반복하며 상대가 자신을 건너뛴 순간을 집요하게 파고든다.",
+      "pride": 8,
+      "fear": "센터 철학과 훈련 기준이 자신의 동의 없이 흔들리거나, 프로그램 총괄인데도 사람 한 명 뽑는 최종 결정권이 없는 사람처럼 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "trainer_chats_and_schedule_comments",
+      "dailyRoutine": "아침에는 반별 프로그램과 보호자 피드백을 보고, 오후에는 체험수업과 상담을 맡으며, 밤에는 강사 단톡과 근무 코멘트를 확인한다.",
+      "sensitivePoints": [
+        "훈련사 자질",
+        "자기 영역 배제",
+        "기존 직원 신뢰"
+      ],
+      "verbalTells": [
+        {
+          "type": "betrayal_headline",
+          "trigger": "lying",
+          "pattern": "'결국 내 승인 없이 뽑은 거잖아' 같은 결론 문장을 먼저 던진다."
+        },
+        {
+          "type": "pressure_echo",
+          "trigger": "cornered",
+          "pattern": "같은 질문을 두세 번 반복하며 상대의 표정 변화에서 빈틈을 찾으려 한다."
+        },
+        {
+          "type": "proof_zoom",
+          "trigger": "emotional",
+          "pattern": "오퍼 메일 한 장이나 스케줄표 한 줄을 전체 의도의 증거처럼 확대해 해석한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "준서씨",
+        "toJudge": "제 동업자",
+        "angry": "오준서 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "지난겨울 부적합한 파트타이머 채용 이후 두 사람은 월 인건비 250만원 이상 채용은 체험평가표, 급여 시트, 공동 final message 세 단계를 모두 거치기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "봄 연휴 인력 공백 때 누가 먼저 학생 아르바이트를 급히 넣자고 했는지를 두 사람 모두 상대 탓 중심으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '혜린이 프로그램 살리려 급한 충원을 밀었다' / B: '준서가 현장만 보며 검증 없는 채용을 서둘렀다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "주력 훈련사의 출산휴가가 확정된 뒤 '이번 주부터 한번 같이 돌아보자'가 체험근무 승인인지 최종 채용 승인인지 끝내 다시 확인하지 못한 채 지나갔다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "박성재 (혜린의 오빠, 주말 픽업 차량 지원)",
+        "relationTo": "b",
+        "knowledgeScope": "혜린이 이전 부적합 채용 때문에 품질 저하를 크게 두려워했고, 이번에도 충분한 시범수업 없이 합류시키는 것에 예민했다는 점을 안다.",
+        "witnessedDirectly": false,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 36,
+          "occupation": "혜린의 오빠, 주말 픽업 차량 지원",
+          "relationToA": "오준서와는 이 사건을 통해 알게 됨",
+          "relationToB": "혜린의 오빠, 주말 픽업 차량 지원",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "준서씨",
+          "addressB": "혜린씨"
+        },
+        "addressA": "준서",
+        "addressB": "혜린"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "한민서 (신규 지원자, 보조 훈련사 후보)",
+        "relationTo": "both",
+        "knowledgeScope": "준서에게는 오퍼와 서류 요청을 받고, 혜린에게는 보류 메시지를 받은 당사자로서 각자가 자신에게 어떤 표현을 썼는지 정확히 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 36,
+          "occupation": "신규 지원자, 보조 훈련사 후보",
+          "relationToA": "오준서을 업무상 알고 있음",
+          "relationToB": "박혜린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "준서씨",
+          "addressB": "혜린씨"
+        },
+        "addressA": "오준서씨",
+        "addressB": "박혜린씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "정우림 (노무사 겸 HR 툴 컨설턴트)",
+        "relationTo": "both",
+        "knowledgeScope": "오퍼 템플릿 생성 시점, 자동 캘린더 초대 발송 조건, 공동 체크리스트가 어느 단계에서 무너졌는지를 시스템 로그 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 39,
+          "occupation": "노무사 겸 HR 툴 컨설턴트",
+          "relationToA": "오준서을 업무상 알고 있음",
+          "relationToB": "박혜린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "오준서씨",
+          "addressB": "박혜린씨"
+        },
+        "addressA": "오준서씨",
+        "addressB": "박혜린씨"
+      }
+    ],
+    "relationshipType": "partnership"
+  },
+  "context": {
+    "contextType": "staff_hiring_conflict",
+    "description": "핵심 훈련사의 출산휴가가 시작되기 직전이라 주말 반 운영을 유지하려면 바로 대체 인력을 붙여야 하는 상황이었다. 하루라도 공백이 나면 보호자 항의와 환불 요청이 이어질 수 있어 준서는 채용을 서두르고 싶었고, 혜린은 기준 미달 인력이 들어와 프로그램 신뢰가 흔들릴까 더 예민해졌다.",
+    "emotionalPressure": 6,
+    "affects": "both",
+    "triggerAmplifier": "반려견 케어 서비스는 직원 한 명의 자질이 곧 사고와 평판으로 이어지기 때문에, 모호한 말 한 줄과 자동 발송 알림도 금세 배신이나 독단처럼 느껴지기 쉬웠다.",
+    "caseNumber": "E-PT-E-0010",
+    "caseName": "채용 갈등"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "준서의 최종 승인 없는 오퍼 발송",
+      "truth": true,
+      "truthDescription": "준서는 혜린과 급여 조건을 확정하지 않은 채 민서에게 정식 오퍼 메일, 계좌정보 요청, 온보딩 문서를 먼저 보냈다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 74,
+        "b": 26
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "채용승인선복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준서는 최종 승인 없이 오퍼를 발송했다."
+    },
+    {
+      "id": "d-2",
+      "name": "혜린의 일방적 보류 통보와 내부 확산",
+      "truth": true,
+      "truthDescription": "혜린은 준서와 재확인하지 않은 채 민서와 기존 트레이너들에게 '채용은 없던 일'이라고 말하며, 준서가 몰래 사람을 앉히려 했다는 취지로 상황을 퍼뜨렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 36,
+        "b": 64
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "대내소통정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "혜린은 준서와 확인 없이 사실을 퍼뜨렸다."
+    },
+    {
+      "id": "d-3",
+      "name": "준서가 의도적으로 동업자를 속여 독단 채용했는가",
+      "truth": false,
+      "truthDescription": "혜린은 배신을 의심했고 준서는 승인이 끝났다고 믿었지만, 실제로는 혜린의 '이번 주부터 한번 같이 돌아보자'는 말과 자동 생성된 온보딩 캘린더 초대가 겹치며 trial 승인과 최종 채용이 서로 다르게 이해된 오해였다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 48,
+        "b": 52
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "신뢰회복",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준서는 의도적으로 속이지 않았다."
+    },
+    {
+      "id": "d-4",
+      "name": "공동 채용 프로토콜의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 체험평가표, 급여 시트, 공동 final message를 거치기로 해놓고 준서는 오퍼를 먼저 보내고 혜린은 별도 보류 통보를 먼저 하며 같은 규칙을 함께 무너뜨렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "채용승인선복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준서는 오퍼를 먼저 보냈다."
+    },
+    {
+      "id": "d-5",
+      "name": "온보딩 캘린더의 자동 발송 오해",
+      "truth": true,
+      "truthDescription": "HR 툴은 후보자 이메일을 온보딩 단계에 넣는 순간 자동으로 'Day 1 Orientation' 캘린더 초대를 발송했고, 이 문구가 민서와 두 대표 모두에게 최종 채용 확정처럼 읽혔다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 44,
+        "b": 56
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "도구설정정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "온보딩 이메일이 자동 발송됐다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "오퍼 메일과 온보딩 문서",
+      "description": "준서가 민서에게 보낸 정식 오퍼 메일, 계좌정보 요청서, 첫 주 근무 가이드 문서 원본이다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "준서 발신 메일 원본과 첨부된 온보딩 파일이 모두 확보됐다.",
+        "check_metadata": "발신 시각은 혜린이 급여표를 아직 보지 못한 밤 9시대로 남아 있고, 서류 요청 항목이 정식 채용 단계와 동일하다.",
+        "restore_context": "준서는 체험근무 전제였다고 말하지만, 후보자 입장에서는 사실상 합격 통보처럼 읽히는 구성이었다.",
+        "verify_source": "민서 수신함과 준서 발신함 헤더가 일치한다.",
+        "check_edits": "메일 본문과 첨부문서에 후편집 흔적이 없다.",
+        "question_acquisition": "업무용 계정에서 오간 채용 메일이라 적법하게 확보됐다."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-2",
+      "name": "혜린의 보류 메시지와 기존 트레이너 공지",
+      "description": "혜린이 민서에게 합류를 보류한다고 보낸 메시지와, 기존 트레이너 단톡에 '아직 채용 확정 아님'이라고 알린 원본 대화다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "민서와의 1:1 대화 원본, 트레이너 단톡 내보내기 파일이 함께 제출됐다.",
+        "check_metadata": "보류 메시지는 오퍼 메일 발송 1시간 뒤에 전송됐고, 기존 직원 공지는 그보다 먼저 올라갔다.",
+        "restore_context": "혜린은 품질 우려를 이유로 들었지만, 메시지 어조는 준서의 독단을 기정사실처럼 전달하고 있다.",
+        "verify_source": "민서 휴대폰과 혜린 기기 내보내기 파일이 일치한다.",
+        "check_edits": "대화 원문과 타임스탬프에 조작 흔적이 없다.",
+        "question_acquisition": "채용 관련 업무 대화라 제출 정당성은 높다."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-3",
+      "name": "크롭된 단톡 캡처",
+      "description": "혜린이 '이번 주부터 바로 써'라고 말한 부분만 남은 캡처로, 앞뒤에 붙은 '트라이얼로' 문장이 잘려 있어 최종 승인처럼 보인다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 단톡 내보내기는 없고 저장된 화면 캡처 한 장만 먼저 제출됐다.",
+        "check_metadata": "캡처 생성 시각은 오퍼 논쟁 직후이며, 이미지 상단과 하단이 모두 잘린 흔적이 남아 있다.",
+        "restore_context": "이 한 줄만 보면 최종 채용 승인처럼 보이지만, 체험근무 범위를 특정하는 앞뒤 문맥이 빠져 있다.",
+        "verify_source": "혜린 계정 대화창을 찍은 것은 맞으나 전문 검증은 불가능하다.",
+        "check_edits": "문자열 변조 흔적은 없지만 선택적 크롭이 명확하다.",
+        "question_acquisition": "개인 기기 캡처라 사생활과 맥락 보존 문제를 함께 고려해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오준서에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 오준서의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 오준서은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박혜린에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박혜린의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "원본 단톡과 후보자 일정조율 메일",
+      "description": "e-3의 앞뒤 문맥이 들어 있는 원본 단톡, 그리고 민서가 체험근무 가능한 시간을 보낸 일정조율 메일이다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "단톡 내보내기 원본과 민서의 일정조율 회신 메일이 함께 확보됐다.",
+        "check_metadata": "혜린 메시지 원문에는 '트라이얼로'라는 수식어가 붙어 있고, 민서는 그 뒤에 3일 가능 시간표만 보내고 있었다.",
+        "restore_context": "준서는 이 흐름을 사실상 승인으로 읽었고, 혜린은 아직 검증 단계라고 생각해 같은 대화를 서로 다르게 받아들였다.",
+        "verify_source": "메신저 서버 타임스탬프와 메일 발신 시각이 정확히 이어진다.",
+        "check_edits": "원본 내보내기와 헤더에 변조 흔적이 없다.",
+        "question_acquisition": "업무용 대화와 채용 메일이라 적법하게 제출됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오준서에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 오준서의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 오준서은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박혜린에게: \"혜린의 일방적 보류 통보와 내부 확산\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 박혜린의 \"혜린의 일방적 보류 통보와 내부 확산\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "공동 채용 체크리스트와 미완성 급여 시트",
+      "description": "체험평가표, 급여 시트, 공동 final message가 모두 완료돼야 한다고 적힌 채용 체크리스트와 아직 비어 있는 민서 급여 시트다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "노션 채용 체크리스트 원본과 급여 시트 클라우드 버전 기록이 같이 제출됐다.",
+        "check_metadata": "민서 항목은 체험평가 칸과 급여 확정 칸이 모두 비어 있고, 공동 final message 체크도 누락돼 있다.",
+        "restore_context": "준서가 채용을 서둘렀더라도 원래 합의된 절차상 최종 승인 단계는 아직 오지 않았음이 분명하다.",
+        "verify_source": "플랫폼 활동 로그와 두 대표 계정 열람 기록이 일치한다.",
+        "check_edits": "버전 히스토리에 삭제나 조작 흔적이 없다.",
+        "question_acquisition": "회사 공용 운영문서라 적법하게 확보됐다."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-6",
+      "name": "HR 툴 자동 캘린더 발송 로그와 노무사 확인 메모",
+      "description": "후보자 이메일을 온보딩 단계에 넣으면 자동으로 'Day 1 Orientation' 일정 초대가 발송된다는 HR 툴 로그와 정우림 노무사의 확인 메모다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "HR 툴 이벤트 로그와 노무사 검토 메모 원본이 함께 확보됐다.",
+        "check_metadata": "민서 이메일이 온보딩 단계로 옮겨진 지 30초 안에 자동 캘린더 초대가 발송됐다.",
+        "restore_context": "사람이 따로 확정 문구를 쓰지 않아도 시스템 문구가 정식 합류처럼 보이게 만들어 혼선을 키웠다.",
+        "verify_source": "툴 관리자 로그와 민서 수신함 일정 초대 시각이 정확히 맞아떨어진다.",
+        "check_edits": "기관·툴 보관 로그라 후편집 흔적이 없다.",
+        "question_acquisition": "서비스 제공업체와 노무사가 확인한 시스템 기록이라 적법하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오준서에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 오준서의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 오준서은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박혜린에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박혜린의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "준서는 최종 공동 승인 없이 오퍼 메일과 온보딩 서류를 먼저 보냈다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "혜린은 재확인 없이 후보자와 기존 직원들에게 보류 통보를 먼저 했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "이번 채용은 계획적인 배신보다 trial 승인과 최종 승인 해석이 엇갈린 오해에 가까웠다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "두 사람 모두 합의된 채용 체크리스트와 단일 커뮤니케이션 원칙을 어겼다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "HR 툴의 자동 캘린더 초대가 최종 채용 확정처럼 보이게 만든 기술적 요인이 있었다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "offer_mail_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "salary_sheet_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-6",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "secret_hire_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_trial_approval"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_or_e-6_presented"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "why_tell_staff_hold_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "candidate_message_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "betrayal_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_schedule_confusion"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "채용승인선복구": [
+      "신규 채용은 체험평가표, 급여 시트, 공동 final message 세 단계가 모두 완료돼야만 오퍼 메일을 보낼 수 있게 다시 고정한다.",
+      "대표 한쪽이 급하다고 판단해도 후보자에게는 단독 연락을 하지 않고, 합의 전에는 오직 '체험 일정 조율' 표현만 쓰도록 한다.",
+      "다시 승인선 밖에서 오퍼나 보류 통보가 나가면 그 채용 건은 자동 정지되고 외부 노무 자문 검토를 먼저 받는다."
+    ],
+    "대내소통정리": [
+      "후보자와 기존 직원에게는 서로 다른 버전의 설명을 하지 말고, 채용 상태를 한 줄로 정리한 공동 공지만 배포한다.",
+      "이미 퍼진 '준서가 몰래 뽑았다'는 표현은 혜린이 정정하고, 준서는 혼선을 만든 오퍼 발송 자체를 별도로 사과한다.",
+      "후보자 관련 소문이 다시 내부에 먼저 돌면 대표 둘이 아닌 현장매니저가 임시 커뮤니케이션 창구를 맡는다."
+    ],
+    "도구설정정리": [
+      "HR 툴의 자동 'Day 1 Orientation' 초대는 공동 승인 이후에만 발송되도록 설정을 바꾸고, 그 전 단계 문구는 'Trial Observation'으로 수정한다.",
+      "후보자 이메일만 입력해도 온보딩 단계로 넘어가는 현재 워크플로를 막고, 최종 승인 체크박스가 없으면 일정 생성이 되지 않게 한다.",
+      "자동 알림이 다시 최종 합류처럼 보이면 시스템 문구를 외부 컨설턴트 검수 아래 전면 개편한다."
+    ],
+    "신뢰회복": [
+      "혜린은 계획적 배신이라고 단정한 표현을 거두고, 준서는 승인 확인 없이 정식 서류를 보낸 절차 위반을 인정한다.",
+      "두 사람은 '트라이얼'과 '최종 채용'을 각자 언제부터 다르게 이해했는지 시간순으로 복기한 공동 회의록을 남긴다.",
+      "앞으로 채용·배치 문제에서 다시 상대 의도를 먼저 악의로 규정하면 내부 말다툼이 아니라 외부 조정 세션으로 바로 넘긴다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

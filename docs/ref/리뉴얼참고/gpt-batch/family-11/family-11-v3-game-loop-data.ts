@@ -1598,7 +1598,7 @@ export const family11V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "pickup_change_question",
-      "line": "하원 변경 질문이 정면으로 들어오면 연숙은 완전 부정에서 물러나 '잠깐 챙긴 것'이라는 임시조치 서사로 이동한다.",
+      "line": "잠깐 챙긴 거예요. 임시로 그랬던 거라고요. 제가 맡겨놓고 안 데리러 간 게 아니에요.",
       "behaviorHint": "돌봄 항목을 빠르게 나열한 뒤, '임시로'라는 말을 붙이며 어조를 낮춘다."
     },
     {
@@ -1609,7 +1609,7 @@ export const family11V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-2_presented",
-      "line": "하원 로그와 신청서 원본이 제시되면 연숙은 문의와 조기 하원 자체는 인정하되 '영구 권한은 아니었다'는 부분 인정 상태로 후퇴한다.",
+      "line": "문의한 것, 일찍 데려온 것, 그건 맞아요. 다만 영구적으로 제가 권한을 갖겠다는 건 아니었어요.",
       "behaviorHint": "서류를 한 번 보고 시선을 거둔 뒤, 인정 문장과 변명 문장을 한 세트로 말한다."
     },
     {
@@ -1620,7 +1620,7 @@ export const family11V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "guardian_signature_followup",
-      "line": "보호자 체크란을 누가 선택했는지 재차 묻는 순간 연숙은 직접 기재 사실을 인정하고, 반복 돌봄이 착각을 낳았다고 설명한다.",
+      "line": "제가 직접 쓴 거 맞아요. 늘 제가 맡아서… 당연히 되는 줄 착각했어요.",
       "behaviorHint": "목이 잠기며 책임을 인정하지만 곧바로 '늘 제가 맡아서'라는 문장을 붙인다."
     },
     {
@@ -1631,7 +1631,7 @@ export const family11V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "responsibility_question",
-      "line": "결국 책임을 누구의 것으로 보느냐는 질문이 들어오면 연숙은 도움을 권한처럼 쓴 자신의 잘못을 시인한다.",
+      "line": "도움을 주는 거라고 생각했는데… 권한처럼 쓴 거였어요. 제 잘못이에요.",
       "behaviorHint": "변명성 문장이 줄고, 마지막엔 짧은 사과형 진술로 떨어진다."
     },
     {
@@ -1642,7 +1642,7 @@ export const family11V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "teacher_recommendation_question",
-      "line": "담임 권고를 구체적으로 설명하라는 질문이 들어오면 연숙은 단정 대신 '걱정되는 뉘앙스'를 강조하는 해석형 진술로 옮겨 간다.",
+      "line": "선생님이 단정한 건 아니었어요. 다만 걱정되는 뉘앙스가 분명히 있었다고요.",
       "behaviorHint": "예전 교사 경험을 암시하며 질문형 말끝을 사용한다."
     },
     {
@@ -1653,7 +1653,7 @@ export const family11V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-1_presented",
-      "line": "잘린 캡처가 증거로 놓이면 연숙은 캡처가 잘렸다는 사실은 인정하되 여전히 담임의 우려 해석을 붙잡는다.",
+      "line": "캡처가 잘린 건 맞아요. 그래도 선생님이 걱정하신 건 사실이잖아요.",
       "behaviorHint": "캡처를 보는 순간 말이 짧아지고 '그래도'라는 접속사가 반복된다."
     },
     {
@@ -1664,7 +1664,7 @@ export const family11V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "full_message_followup",
-      "line": "원문 전체 문장을 읽어 주면 연숙은 수면·등원 리듬 문구를 인정하고, 자신이 해석을 선택적으로 전달했다고 한 단계 더 물러난다.",
+      "line": "수면이랑 등원 리듬 문구가 있었던 건 맞아요. 제가… 제 해석에 맞는 부분만 골라서 전달한 거예요.",
       "behaviorHint": "표정이 굳고, 원문 인용 다음에야 자신의 전달 방식을 설명한다."
     },
     {
@@ -1675,7 +1675,7 @@ export const family11V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "e-6_presented",
-      "line": "상담일지와 동의서까지 맞물리면 연숙은 전문가 권고를 왜곡해 자기 개입을 정당화했다는 결론을 피하지 못한다.",
+      "line": "전문가 선생님 말씀을 제 식대로 바꿔서 쓴 거예요. 개입을 정당화하려고요. 인정해요.",
       "behaviorHint": "센터 문서가 놓이는 순간 체면이 무너지는 표정과 함께 자책형 어조로 바뀐다."
     },
     {
@@ -1686,7 +1686,7 @@ export const family11V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "old_er_night_question",
-      "line": "예전 응급실 밤 자체가 언급되면 연숙은 단순 고열 서사를 유지하되 '오래전이라 헷갈린다'는 기억 회피를 덧붙인다.",
+      "line": "그땐 단순 고열이었어요. 오래전이라 좀 헷갈리긴 하는데요.",
       "behaviorHint": "한숨을 길게 쉬며 기억을 더듬는 척 시간을 번다."
     },
     {
@@ -1697,7 +1697,7 @@ export const family11V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-4_presented",
-      "line": "응급실 기록과 트리아지 메모가 제시되면 연숙은 연달아 약을 줬을 가능성은 인정하지만, 긴급 상황의 판단이었다고 방어한다.",
+      "line": "연달아 약을 줬을 수도 있어요. 그때는 급하니까… 급한 판단이었다고요.",
       "behaviorHint": "문서를 보는 즉시 목소리가 낮아지고 두 손을 맞잡는다."
     },
     {
@@ -1708,7 +1708,7 @@ export const family11V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "pharmacy_receipt_followup",
-      "line": "약국 영수증과 구매 시각이 추궁되면 연숙은 성인용 감기시럽 구매 사실까지 인정하며 수치심이 드러난다.",
+      "line": "성인용 감기시럽 산 거… 맞아요. 그걸 애한테 쓴 거, 저도 지금 생각하면 부끄러워요.",
       "behaviorHint": "시선을 완전히 내리고 짧은 문장으로만 답한다."
     },
     {
@@ -1719,7 +1719,7 @@ export const family11V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "e-5_presented",
-      "line": "백업 사진과 영수증이 겹쳐 제시되면 연숙은 중복 투약과 이후 축소 설명까지 모두 자신의 실수로 묶어 시인한다.",
+      "line": "중복으로 먹인 것도, 나중에 대수롭지 않게 말한 것도 다 제 실수예요. 인정해요.",
       "behaviorHint": "감정이 터지기 직전처럼 목이 메고, 부정형 표현이 사라진다."
     },
     {
@@ -1730,7 +1730,7 @@ export const family11V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "routine_consistency_question",
-      "line": "루틴의 일관성을 구체 날짜로 묻는 순간 하린은 전면 부정에서 물러나 '야근 주간만의 예외'라는 좁은 범위 논리로 이동한다.",
+      "line": "야근 주간에만 해당되는 예외였습니다. 루틴 전체가 흔들린 건 아닙니다.",
       "behaviorHint": "자료를 세우며 예외 범위를 작게 보이도록 같은 표현을 반복한다."
     },
     {
@@ -1741,7 +1741,7 @@ export const family11V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-3_presented",
-      "line": "업무캘린더와 태블릿 로그가 나란히 제시되면 하린은 예외의 반복성을 인정하고 버티기용 선택이었다고 말하기 시작한다.",
+      "line": "예외가 반복된 건 인정합니다. 버티기 위한 선택이었습니다.",
       "behaviorHint": "날짜를 확인하는 동안 말속도가 일정해지며 사실 인정 문장이 늘어난다."
     },
     {
@@ -1752,7 +1752,7 @@ export const family11V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "tablet_time_followup",
-      "line": "태블릿 시간과 긴급 하원 요청을 함께 추궁받으면 하린은 반복 예외를 기록하지 않은 자신의 관리 실패까지 인정한다.",
+      "line": "반복된 예외를 기록하지 않은 건 관리 실패입니다. 그 부분은 제 책임입니다.",
       "behaviorHint": "책상 위를 보며 마치 사후보고를 하듯 책임 항목을 정리한다."
     },
     {
@@ -1763,7 +1763,7 @@ export const family11V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "responsibility_question",
-      "line": "좋은 엄마 이미지와 실제 생활의 간극을 묻는 책임 질문이 들어오면 하린은 체면을 위해 루틴 유지 서사를 붙들었다고 고백한다.",
+      "line": "체면을 위해 루틴이 유지되고 있다는 서사를 붙들었습니다. 실제와 달랐고, 그건 제 잘못입니다.",
       "behaviorHint": "건조한 말투가 잠시 무너지고 자조가 섞인다."
     },
     {
@@ -1774,7 +1774,7 @@ export const family11V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "teacher_message_question",
-      "line": "담임 메시지를 정확히 어떻게 읽었는지 묻는 순간 하린은 '과장은 아니고 우려가 느껴졌다'는 식의 해석 방어로 한 단계 이동한다.",
+      "line": "과장은 아닙니다. 담임 선생님 메시지에서 우려가 느껴졌다는 판단이었습니다.",
       "behaviorHint": "기록을 언급하지만 결론은 여전히 단정적으로 유지한다."
     },
     {
@@ -1785,7 +1785,7 @@ export const family11V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-1_presented",
-      "line": "잘린 캡처의 원형이 드러나면 하린은 즉시 검사 권고는 아니었다고 인정하면서도, 왜곡 인상을 바로잡지 않은 자기 책임을 드러낸다.",
+      "line": "검사 권고는 아니었습니다. 인정합니다. 왜곡된 인상을 바로잡지 않은 건 제 책임입니다.",
       "behaviorHint": "문장 앞은 차갑게 정리하고 뒷부분에서만 짧게 숨을 삼킨다."
     },
     {
@@ -1796,7 +1796,7 @@ export const family11V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "counselor_note_followup",
-      "line": "상담일지 원문이 따라오면 하린은 전문가 방향이 루틴 정리였음을 확정하고, 자신의 분노에 유리해 왜곡을 방치했다고 넘어간다.",
+      "line": "전문가 방향은 루틴 정리였습니다. 제 분노에 유리한 방향으로 왜곡을 방치한 건 인정합니다.",
       "behaviorHint": "센터 기록을 읽는 동안 표정이 더 굳어지고 자책이 섞인다."
     },
     {
@@ -1807,7 +1807,7 @@ export const family11V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "e-6_presented",
-      "line": "센터 동의서까지 연결되면 하린은 발달 공포 때문에 과장된 해석을 이용해 엄마를 막으려 했다는 자기 동기를 인정한다.",
+      "line": "발달에 대한 공포가 있었습니다. 과장된 해석을 이용해 어머니를 막으려 했습니다. 제 동기를 인정합니다.",
       "behaviorHint": "차갑던 어조가 흔들리고 마지막은 낮은 고백형으로 마감된다."
     },
     {
@@ -1818,7 +1818,7 @@ export const family11V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "four_party_rule_question",
-      "line": "가족 네 사람의 동의 규칙을 묻는 순간 하린은 자신을 규칙 집행자로 두되, 픽업권 차단과 메시지 공유를 안전 조치라고 해명하는 단계로 이동한다.",
+      "line": "픽업권 차단과 메시지 공유는 안전 조치였습니다. 규칙 자체를 어긴 건 아닙니다.",
       "behaviorHint": "명확한 문구를 먼저 말하고, 자신의 행동은 예외 조치로 분리해 설명한다."
     },
     {
@@ -1829,7 +1829,7 @@ export const family11V3GameLoopData = {
       "fromState": "S1",
       "toState": "S4",
       "trigger": "nonjudgmental_question_about_not_feeling_overridden",
-      "line": "비난 없이 '그때 얼마나 잠식당했다고 느꼈느냐'를 묻는 질문에는 하린이 처음으로 감사와 분노를 동시에 말하며 감정 상태를 드러낸다.",
+      "line": "감사하면서도 분노가 있었습니다. 잠식당하고 있다는 느낌… 처음 말합니다.",
       "behaviorHint": "말수는 적지만 목소리가 낮아지고 속에 눌러 둔 감정이 새어 나온다."
     },
     {
@@ -1840,7 +1840,7 @@ export const family11V3GameLoopData = {
       "fromState": "S4",
       "toState": "S3",
       "trigger": "e-6_presented",
-      "line": "감정이 열린 상태에서 동의서 원문이 제시되면 하린은 자신도 절차를 지키지 않았다는 사실로 다시 냉정한 자기분석 단계에 들어간다.",
+      "line": "저 역시 절차를 지키지 않았습니다. 동의서 원문을 보면 그 부분이 명확합니다.",
       "behaviorHint": "감정 표현 뒤 곧바로 서류를 붙들고 건조하게 자기 위반을 읽어 낸다."
     },
     {
@@ -1851,7 +1851,7 @@ export const family11V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "shared_responsibility_question",
-      "line": "공동 책임을 직접 묻는 질문이 들어오면 하린은 절차 없는 차단과 메시지 유포까지 자신의 몫으로 끌어안으며 최종 시인 상태에 도달한다.",
+      "line": "절차 없이 차단하고 메시지를 유포한 건 제 책임입니다. 더 이상 어머니 쪽으로 미루지 않겠습니다.",
       "behaviorHint": "결론 문장을 짧게 끊어 말하고, 더 이상 엄마 쪽으로 책임을 미루지 않는다."
     }
   ]

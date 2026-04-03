@@ -1,0 +1,4930 @@
+{
+  "caseId": "neighbor-12",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "제가 괜히 그런 말을 한 게 아니에요. 그때는 94만 원이 비는 것처럼 보였고 참가자들이 바로 환불 일정을 물었어요."
+          ],
+          "privateKnowledge": [
+            "원본 정산서를 받기 전에 제가 먼저 공개 글을 올렸다.",
+            "94만 원 안에 작년 금액이 섞였을 수 있다는 불안이 있었다."
+          ],
+          "suppressions": [
+            "도윤에게 원본 정산서를 직접 요구한 시점보다 공개 글이 11분 빨랐다.",
+            "숫자를 현재 환불금처럼 보이게 적었다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-1:act:0",
+              "factText": "배지연이 참가자 압박을 이유로 공개방에 94만 원 은닉 취지의 글을 먼저 올린 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 금액",
+                  "rounded": "94만원"
+                },
+                "time": {
+                  "exact": "공개 글 게시 시점",
+                  "neutral": "그 시점",
+                  "dateExact": "도윤에게 원본 요구 11분 전",
+                  "period": "부모방·입주민방 게시 직전"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-1:emotion:1",
+              "factText": "그때는 94만 원이 비는 것처럼 보였고 참가자들이 바로 환불 일정을 물었어요.",
+              "tags": [
+                "emotion",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 금액",
+                  "rounded": "94만원"
+                },
+                "time": {
+                  "exact": "공개 글 게시 시점",
+                  "neutral": "그 시점",
+                  "dateExact": "도윤에게 원본 요구 11분 전",
+                  "period": "부모방·입주민방 게시 직전"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "숨겼다고 단정한 건 아니고, 비어 보인다고 적은 거예요. 제가 본 표에는 빈칸이 있었어요."
+          ],
+          "privateKnowledge": [
+            "제가 본 표는 제 자작 정산표였고 수식 셀이 가려져 있었다."
+          ],
+          "suppressions": [
+            "공개 글 시각이 원본 요구보다 빨랐다.",
+            "잘라낸 캡처만으로 전체 계산 흐름을 확인하지 못했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-1:evidence:0",
+              "factText": "배지연이 공개 지목의 근거로 자작 정산표의 빈칸과 잘린 캡처를 내세운 사실",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "privacy"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "자작 정산표 캡처",
+                  "neutral": "그 표",
+                  "judgeRef": "캡처본"
+                },
+                "time": {
+                  "exact": "원본 확인 전",
+                  "neutral": "그때",
+                  "period": "공개 글 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-1:uncertainty:1",
+              "factText": "제가 본 표에는 빈칸이 있었어요.",
+              "tags": [
+                "uncertainty",
+                "evidence",
+                "privacy"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "자작 정산표 캡처",
+                  "neutral": "그 표",
+                  "judgeRef": "캡처본"
+                },
+                "time": {
+                  "exact": "원본 확인 전",
+                  "neutral": "그때",
+                  "period": "공개 글 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "제가 너무 앞서 나간 건 맞아요. 그래도 카드취소 얘기가 바로 안 와서 더 의심했어요."
+          ],
+          "privateKnowledge": [
+            "94만 원이 현재 라운드 돈만의 숫자가 아닐 수 있다는 걸 어렴풋이 알았다."
+          ],
+          "suppressions": [
+            "작년 62만 원과 이번 32만 원이 섞인 계산 구조.",
+            "제가 공개 지목을 정당화하는 말만 골랐다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-1:admission:0",
+              "factText": "배지연이 공개 글을 서둘렀다는 점은 인정하지만 카드취소 고지 지연을 의심의 근거로 붙잡는 단계",
+              "tags": [
+                "admission",
+                "counter",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                },
+                "time": {
+                  "exact": "사흘 늦은 고지",
+                  "neutral": "그 시점",
+                  "period": "카드취소 알림 후 약 3일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-1:timeline:1",
+              "factText": "그래도 카드취소 얘기가 바로 안 와서 더 의심했어요.",
+              "tags": [
+                "timeline",
+                "admission",
+                "counter"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                },
+                "time": {
+                  "exact": "사흘 늦은 고지",
+                  "neutral": "그 시점",
+                  "period": "카드취소 알림 후 약 3일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "도윤 씨가 사흘만 빨리 알려줬어도 제가 그런 글까지 안 갔을 거예요. 책임이 전혀 없다고는 못 하지만 시작은 그쪽 침묵이었어요."
+          ],
+          "privateKnowledge": [
+            "저도 숫자를 섞어 쓴 책임을 안다."
+          ],
+          "suppressions": [
+            "공개 지목이 상대 평판에 준 타격.",
+            "제가 먼저 이름을 꺼내 피해자 자리를 선점했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-1:counter:0",
+              "factText": "배지연이 공개 지목 책임을 일부 인정하면서도 사흘 침묵을 상대 쪽 원인으로 전가하는 단계",
+              "tags": [
+                "counter",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사흘",
+                  "neutral": "그 공백"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-1:relationship:1",
+              "factText": "책임이 전혀 없다고는 못 하지만 시작은 그쪽 침묵이었어요.",
+              "tags": [
+                "relationship",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사흘",
+                  "neutral": "그 공백"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "그 방에서 제가 먼저 이름을 꺼낸 건 정말 감정적이었어요. 참가자들 재촉이 무서워서 제가 피해자인 척 먼저 자리를 잡으려 했던 것도 있습니다."
+          ],
+          "privateKnowledge": [
+            "공개 지목으로 상대를 몰아세웠다는 부끄러움이 크다."
+          ],
+          "suppressions": [
+            "94만 원 구조를 끝까지 확인하지 않은 채 확신처럼 말했다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-1:shame:0",
+              "factText": "배지연이 참가자 재촉과 평판 공포 때문에 피해자 자리를 선점했다는 수치심을 드러내는 단계",
+              "tags": [
+                "shame",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "emotion": {
+                  "exact": "참가자 재촉과 평판 공포",
+                  "neutral": "그 압박"
+                },
+                "relationship": {
+                  "exact": "부모방·입주민방",
+                  "neutral": "그 공개 채널"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-1:fear:1",
+              "factText": "참가자들 재촉이 무서워서 제가 피해자인 척 먼저 자리를 잡으려 했던 것도 있습니다.",
+              "tags": [
+                "fear",
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "emotion": {
+                  "exact": "참가자 재촉과 평판 공포",
+                  "neutral": "그 압박"
+                },
+                "relationship": {
+                  "exact": "부모방·입주민방",
+                  "neutral": "그 공개 채널"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "확인 전에 서도윤 씨를 공개적으로 지목한 건 제 잘못입니다. 94만 원을 현재 환불금 은닉처럼 말한 것도 철회하겠습니다."
+          ],
+          "privateKnowledge": [
+            "같은 채널에 정정문을 올리고 평판 회복 절차를 밟아야 한다."
+          ],
+          "suppressions": [
+            "공개 지목으로 깎인 상대의 신뢰를 제가 먼저 복구해야 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-1:responsibility:0",
+              "factText": "배지연이 확인 전 공개 지목과 94만 원 은닉 표현을 철회하고 책임을 수용하는 단계",
+              "tags": [
+                "responsibility",
+                "harm",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 금액",
+                  "rounded": "94만원"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-1:harm:1",
+              "factText": "94만 원을 현재 환불금 은닉처럼 말한 것도 철회하겠습니다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 금액",
+                  "rounded": "94만원"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "카드취소 알림이 있었으면 바로 말을 했어야죠. 사흘이나 비워 둔 이상 숨긴 걸로 보일 수밖에 없었어요."
+          ],
+          "privateKnowledge": [
+            "제가 먼저 공개 글을 올리며 상황을 키웠다."
+          ],
+          "suppressions": [
+            "공급사 최종 정산이 이틀 뒤였다는 사정을 들었다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:old_effort_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-2:act:0",
+              "factText": "배지연이 사흘 비워 둔 카드취소 고지를 은닉처럼 받아들인 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "fear"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                },
+                "time": {
+                  "exact": "사흘 공백",
+                  "neutral": "그 시점",
+                  "period": "카드취소 알림 후 약 3일"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-2:emotion:1",
+              "factText": "사흘이나 비워 둔 이상 숨긴 걸로 보일 수밖에 없었어요.",
+              "tags": [
+                "emotion",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                },
+                "time": {
+                  "exact": "사흘 공백",
+                  "neutral": "그 시점",
+                  "period": "카드취소 알림 후 약 3일"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "확정 전이라도 잠정 금액은 말해줄 수 있었잖아요. 저는 그 공백 때문에 더 불안했습니다."
+          ],
+          "privateKnowledge": [
+            "숨기려는 의도까지는 단정하기 어렵다."
+          ],
+          "suppressions": [
+            "제가 불안을 근거로 단정한 표현을 썼다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:old_effort_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-2:uncertainty:0",
+              "factText": "배지연이 확정 전 잠정 공지 부재를 문제 삼으면서도 고의 은닉 단정은 약화하는 단계",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "emotion"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "잠정 환급액",
+                  "neutral": "그 예상 금액"
+                },
+                "time": {
+                  "exact": "확정 전 공백",
+                  "neutral": "그 시점",
+                  "period": "최종 정산 전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-2:evidence:1",
+              "factText": "저는 그 공백 때문에 더 불안했습니다.",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "잠정 환급액",
+                  "neutral": "그 예상 금액"
+                },
+                "time": {
+                  "exact": "확정 전 공백",
+                  "neutral": "그 시점",
+                  "period": "최종 정산 전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "도윤 씨가 일부러 빼돌렸다고까지는 지금 말 못 하겠습니다. 하지만 카드취소 32만 원을 사흘 늦게 말한 건 분명 문제였어요."
+          ],
+          "privateKnowledge": [
+            "그 지연 때문에 제 판단도 더 급해졌다."
+          ],
+          "suppressions": [
+            "제 과잉 공개가 다른 피해를 만들었다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:old_effort_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-2:context:0",
+              "factText": "배지연이 고의 은닉 판단은 거두지만 32만 원 사흘 지연 고지는 실제 문제로 남긴 단계",
+              "tags": [
+                "context",
+                "timeline",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "그 취소분",
+                  "rounded": "32만원"
+                },
+                "time": {
+                  "exact": "사흘 늦은 안내",
+                  "neutral": "그 시점",
+                  "period": "카드취소 알림 후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-2:timeline:1",
+              "factText": "하지만 카드취소 32만 원을 사흘 늦게 말한 건 분명 문제였어요.",
+              "tags": [
+                "timeline",
+                "context",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "그 취소분",
+                  "rounded": "32만원"
+                },
+                "time": {
+                  "exact": "사흘 늦은 안내",
+                  "neutral": "그 시점",
+                  "period": "카드취소 알림 후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 흥분한 건 제 몫이지만, 사흘 늦은 고지가 불씨였던 건 맞아요. 운영자라면 미확정 항목이라도 먼저 공지했어야죠."
+          ],
+          "privateKnowledge": [
+            "저도 공개 전 사적 확인을 더 했어야 했다."
+          ],
+          "suppressions": [
+            "결국 둘 다 운영 기준이 느슨했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:old_effort_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-2:counter:0",
+              "factText": "배지연이 자신의 과열을 인정하면서도 운영자의 잠정 공지 의무를 강조하는 단계",
+              "tags": [
+                "counter",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "미확정 항목도 먼저 공지",
+                  "neutral": "그 운영 원칙"
+                },
+                "time": {
+                  "exact": "사흘 지연",
+                  "neutral": "그 지연"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-2:relationship:1",
+              "factText": "운영자라면 미확정 항목이라도 먼저 공지했어야죠.",
+              "tags": [
+                "relationship",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "미확정 항목도 먼저 공지",
+                  "neutral": "그 운영 원칙"
+                },
+                "time": {
+                  "exact": "사흘 지연",
+                  "neutral": "그 지연"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "저도 그 사흘을 핑계 삼아 너무 크게 몰아붙였어요. 그래도 늦은 고지가 참가자 불신을 키운 건 사실이라서, 그 부분은 분리해서 인정받고 싶습니다."
+          ],
+          "privateKnowledge": [
+            "분노 뒤에 제 평판 공포도 섞여 있었다."
+          ],
+          "suppressions": [
+            "이 문제를 제 공개 지목의 면죄부로 쓰면 안 된다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:old_effort_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-2:emotion:0",
+              "factText": "배지연이 늦은 고지의 문제와 자신의 과잉 지목을 분리해서 보려는 감정적 정리 단계",
+              "tags": [
+                "emotion",
+                "fear",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사흘",
+                  "neutral": "그 기간"
+                },
+                "relationship": {
+                  "exact": "참가자 불신",
+                  "neutral": "그 반응"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-2:fear:1",
+              "factText": "그래도 늦은 고지가 참가자 불신을 키운 건 사실이라서, 그 부분은 분리해서 인정받고 싶습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사흘",
+                  "neutral": "그 기간"
+                },
+                "relationship": {
+                  "exact": "참가자 불신",
+                  "neutral": "그 반응"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "도윤 씨의 늦은 고지는 실제 잘못이지만, 그걸 근거로 제가 공개 지목까지 한 건 별개의 잘못이었습니다. 두 책임을 분리해서 정리해야 합니다."
+          ],
+          "privateKnowledge": [
+            "공동 운영 기준을 새로 세워야 한다."
+          ],
+          "suppressions": [
+            "제 공개 지목이 상대 책임을 과장하는 도구가 됐다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:old_effort_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-2:responsibility:0",
+              "factText": "배지연이 늦은 고지와 자신의 공개 지목을 별개 책임으로 정리하자고 인정하는 단계",
+              "tags": [
+                "responsibility",
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사흘 지연",
+                  "neutral": "그 안내 지연"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-2:harm:1",
+              "factText": "두 책임을 분리해서 정리해야 합니다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사흘 지연",
+                  "neutral": "그 안내 지연"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "작년 돈이 이번에 섞였다는 말은 과장입니다. 저는 그때그때 맞추려고 잠깐 옮겨 둔 거예요."
+          ],
+          "privateKnowledge": [
+            "작년 62만 원이 공식 정산 없이 제 개인계좌에 남아 있었다."
+          ],
+          "suppressions": [
+            "이번 참가금 일부를 '지난번 정리' 메모로 옮겼다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-3:denial:0",
+              "factText": "배지연이 작년 62만 원의 개인계좌 잔존을 임시 정산처럼 축소하며 부인하는 단계",
+              "tags": [
+                "denial",
+                "legacy_sentence",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "그 금액",
+                  "rounded": "62만원"
+                },
+                "person": {
+                  "exact": "배지연 개인계좌",
+                  "neutral": "제 계좌"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-3:emotion:1",
+              "factText": "저는 그때그때 맞추려고 잠깐 옮겨 둔 거예요.",
+              "tags": [
+                "emotion",
+                "denial",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "그 금액",
+                  "rounded": "62만원"
+                },
+                "person": {
+                  "exact": "배지연 개인계좌",
+                  "neutral": "제 계좌"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "개인계좌로 들어온 건 맞지만 공동구매 돈을 먹으려던 건 아니었어요. 계속 돌려막듯 맞추다 보니 경계가 흐려진 겁니다."
+          ],
+          "privateKnowledge": [
+            "올해 돈으로 작년 구멍을 메우려 한 순간이 있었다."
+          ],
+          "suppressions": [
+            "최병우가 그 말을 들었을 수 있다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-3:self_justification:0",
+              "factText": "배지연이 개인계좌 유입 사실은 인정하면서도 돌려막기식 임시 정산으로 정당화하는 단계",
+              "tags": [
+                "self_justification",
+                "context",
+                "fear"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "작년 미정산분",
+                  "neutral": "그 구멍"
+                },
+                "relationship": {
+                  "exact": "이번 참가금",
+                  "neutral": "현재 라운드 돈"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-3:uncertainty:1",
+              "factText": "계속 돌려막듯 맞추다 보니 경계가 흐려진 겁니다.",
+              "tags": [
+                "uncertainty",
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "작년 미정산분",
+                  "neutral": "그 구멍"
+                },
+                "relationship": {
+                  "exact": "이번 참가금",
+                  "neutral": "현재 라운드 돈"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "작년 캐시백 41만 원이랑 반품차액 21만 원을 따로 닫지 못한 건 맞아요. 그래서 이번 금액을 보면서 그 빈칸부터 메워야 한다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "실제 은닉의 출발이 제 계좌 관리였다는 사실을 알고 있다."
+          ],
+          "suppressions": [
+            "그 구조를 숨기려 도윤을 먼저 의심하는 쪽으로 몰았다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-3:admission:0",
+              "factText": "배지연이 작년 캐시백 41만 원과 반품차액 21만 원을 닫지 못했고 이번 돈으로 메우려 했음을 부분 인정하는 단계",
+              "tags": [
+                "admission",
+                "timeline",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount_old1": {
+                  "exact": "41만 원",
+                  "neutral": "캐시백 금액",
+                  "rounded": "41만원"
+                },
+                "amount_old2": {
+                  "exact": "21만 원",
+                  "neutral": "반품차액",
+                  "rounded": "21만원"
+                },
+                "amount_total": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산 총액",
+                  "rounded": "62만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-3:timeline:1",
+              "factText": "그래서 이번 금액을 보면서 그 빈칸부터 메워야 한다고 생각했습니다.",
+              "tags": [
+                "timeline",
+                "admission",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount_old1": {
+                  "exact": "41만 원",
+                  "neutral": "캐시백 금액",
+                  "rounded": "41만원"
+                },
+                "amount_old2": {
+                  "exact": "21만 원",
+                  "neutral": "반품차액",
+                  "rounded": "21만원"
+                },
+                "amount_total": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산 총액",
+                  "rounded": "62만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "도윤 씨도 그 구조를 몰랐던 건 아니잖아요. 저 혼자 만든 구멍은 아니지만, 제가 먼저 손댄 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "핵심 시작점은 제 쪽이었다."
+          ],
+          "suppressions": [
+            "공개 지목이 제 방어막 역할을 했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-3:counter:0",
+              "factText": "배지연이 자신이 먼저 작년 구멍에 손댄 사실을 인정하면서도 상대의 묵인을 함께 끌어오는 단계",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "그 구멍",
+                  "rounded": "62만원"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-3:relationship:1",
+              "factText": "저 혼자 만든 구멍은 아니지만, 제가 먼저 손댄 건 인정합니다.",
+              "tags": [
+                "relationship",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "그 구멍",
+                  "rounded": "62만원"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 참가자 돈을 안전하게 지키는 사람처럼 보이고 싶어서, 작년 62만 원 문제를 제때 못 꺼냈습니다. 그래서 이번 돈으로 메우면 잠깐 버틸 수 있다고 스스로 합리화했어요."
+          ],
+          "privateKnowledge": [
+            "피해자처럼 먼저 서면 의심이 덜 갈 거라 생각했다."
+          ],
+          "suppressions": [
+            "공동구매 신뢰를 무너뜨릴까 봐 무서웠다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-3:fear:0",
+              "factText": "배지연이 신뢰 상실 공포 때문에 작년 62만 원 문제를 숨기고 현재 돈으로 버티려 했다는 두려움을 드러내는 단계",
+              "tags": [
+                "fear",
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "작년 문제 금액",
+                  "rounded": "62만원"
+                },
+                "relationship": {
+                  "exact": "공동구매 신뢰",
+                  "neutral": "그 신뢰"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-3:shame:1",
+              "factText": "그래서 이번 돈으로 메우면 잠깐 버틸 수 있다고 스스로 합리화했어요.",
+              "tags": [
+                "shame",
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "작년 문제 금액",
+                  "rounded": "62만원"
+                },
+                "relationship": {
+                  "exact": "공동구매 신뢰",
+                  "neutral": "그 신뢰"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "실제 재정 은닉의 출발은 제 쪽이었습니다. 작년 62만 원을 닫지 않은 채 개인계좌에 남겨 두고, 이번 참가금 일부로 그 구멍을 메우려 했습니다."
+          ],
+          "privateKnowledge": [
+            "과거 라운드와 현재 라운드 자금을 분리 복구해야 한다."
+          ],
+          "suppressions": [
+            "제가 먼저 과거청산 절차를 제안해야 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-3:responsibility:0",
+              "factText": "배지연이 작년 62만 원 미정산과 이번 참가금 전용 시도를 명확히 자백하는 단계",
+              "tags": [
+                "responsibility",
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산 금액",
+                  "rounded": "62만원"
+                },
+                "relationship": {
+                  "exact": "이번 참가금 일부",
+                  "neutral": "현재 라운드 돈"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-3:harm:1",
+              "factText": "작년 62만 원을 닫지 않은 채 개인계좌에 남겨 두고, 이번 참가금 일부로 그 구멍을 메우려 했습니다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산 금액",
+                  "rounded": "62만원"
+                },
+                "relationship": {
+                  "exact": "이번 참가금 일부",
+                  "neutral": "현재 라운드 돈"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "제 눈에는 94만 원이 그냥 사라진 돈이었어요. 그 숫자가 왜 나왔는지 따질 겨를도 없었습니다."
+          ],
+          "privateKnowledge": [
+            "표의 한 칸에 작년 이월분과 이번 부족분을 함께 적었다."
+          ],
+          "suppressions": [
+            "32만 원 현재 환급과 62만 원 과거 미정산을 구분하지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-4:act:0",
+              "factText": "배지연이 94만 원을 하나의 현재 손실처럼 받아들이고 그대로 공개 주장한 단계",
+              "tags": [
+                "act",
+                "uncertainty",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 금액",
+                  "rounded": "94만원"
+                },
+                "relationship": {
+                  "exact": "한 칸에 합산된 숫자",
+                  "neutral": "그 칸"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-4:emotion:1",
+              "factText": "그 숫자가 왜 나왔는지 따질 겨를도 없었습니다.",
+              "tags": [
+                "emotion",
+                "act",
+                "uncertainty"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 금액",
+                  "rounded": "94만원"
+                },
+                "relationship": {
+                  "exact": "한 칸에 합산된 숫자",
+                  "neutral": "그 칸"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "그 숫자는 빈칸을 메우다 보니 잡힌 총액이었어요. 당장 환불할 돈과 이전 정산이 섞였는지는 저도 정확히 못 봤습니다."
+          ],
+          "privateKnowledge": [
+            "정확히 못 봤다기보다 일부러 흐려 놓은 면이 있었다."
+          ],
+          "suppressions": [
+            "자작표의 수식 셀과 행 일부를 가렸다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-4:uncertainty:0",
+              "factText": "배지연이 94만 원을 빈칸 보정 총액으로 설명하며 현재 환불금과 과거 미정산의 혼합을 흐리는 단계",
+              "tags": [
+                "uncertainty",
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 총액",
+                  "rounded": "94만원"
+                },
+                "evidence": {
+                  "exact": "자작 정산표 빈칸",
+                  "neutral": "그 빈칸"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-4:evidence:1",
+              "factText": "당장 환불할 돈과 이전 정산이 섞였는지는 저도 정확히 못 봤습니다.",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 총액",
+                  "rounded": "94만원"
+                },
+                "evidence": {
+                  "exact": "자작 정산표 빈칸",
+                  "neutral": "그 빈칸"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "지금 보니 94만 원 전부가 이번 환불금은 아니었습니다. 이번 32만 원이랑 작년 금액이 한 칸에 섞여 있었어요."
+          ],
+          "privateKnowledge": [
+            "도윤을 숨긴 사람처럼 보이게 한 숫자였다."
+          ],
+          "suppressions": [
+            "저한테 유리하게 '사라진 돈'으로 부른 표현."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-4:context:0",
+              "factText": "배지연이 94만 원 안에 이번 32만 원과 작년 금액이 함께 들어 있었다고 구조를 부분 인정하는 단계",
+              "tags": [
+                "context",
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "이번 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_mix": {
+                  "exact": "94만 원",
+                  "neutral": "섞인 총액",
+                  "rounded": "94만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-4:timeline:1",
+              "factText": "이번 32만 원이랑 작년 금액이 한 칸에 섞여 있었어요.",
+              "tags": [
+                "timeline",
+                "context",
+                "admission"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "이번 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_mix": {
+                  "exact": "94만 원",
+                  "neutral": "섞인 총액",
+                  "rounded": "94만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "제가 숫자를 섞은 건 맞지만, 그만큼 장부가 엉켜 있었다는 뜻이기도 해요. 도윤 씨가 정산 원본을 더 빨리 열어줬다면 이런 혼합도 오래 안 갔을 겁니다."
+          ],
+          "privateKnowledge": [
+            "혼합의 직접 행위는 제 표 작성이었다."
+          ],
+          "suppressions": [
+            "작년 62만 원을 먼저 꺼내면 d-3까지 무너진다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-4:counter:0",
+              "factText": "배지연이 혼합 표 작성 책임을 인정하면서도 원본 공개 지연 탓으로 일부 전가하는 단계",
+              "tags": [
+                "counter",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                },
+                "evidence": {
+                  "exact": "공급사 원본 정산서",
+                  "neutral": "그 원본"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-4:relationship:1",
+              "factText": "도윤 씨가 정산 원본을 더 빨리 열어줬다면 이런 혼합도 오래 안 갔을 겁니다.",
+              "tags": [
+                "relationship",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                },
+                "evidence": {
+                  "exact": "공급사 원본 정산서",
+                  "neutral": "그 원본"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "94만 원이라는 말은 사실 제 불안과 창피함이 만든 숫자였어요. 이번 32만 원과 작년 62만 원을 분리해서 말했어야 했는데, 저는 그걸 한 덩어리처럼 밀어붙였습니다."
+          ],
+          "privateKnowledge": [
+            "피해자 자리 선점을 위해 큰 숫자를 앞세웠다."
+          ],
+          "suppressions": [
+            "이제는 그 혼합 숫자를 정정해야 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-4:emotion:0",
+              "factText": "배지연이 32만 원과 62만 원을 불안과 창피함 때문에 94만 원으로 뭉뚱그렸다고 인정하는 단계",
+              "tags": [
+                "emotion",
+                "shame",
+                "admission"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "이번 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "amount_mix": {
+                  "exact": "94만 원",
+                  "neutral": "섞인 숫자",
+                  "rounded": "94만원"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-4:fear:1",
+              "factText": "이번 32만 원과 작년 62만 원을 분리해서 말했어야 했는데, 저는 그걸 한 덩어리처럼 밀어붙였습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "이번 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "amount_mix": {
+                  "exact": "94만 원",
+                  "neutral": "섞인 숫자",
+                  "rounded": "94만원"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "제가 말한 '사라진 94만 원'은 이번 환급 32만 원과 작년 미정산 62만 원이 섞인 숫자였습니다. 현재 라운드 환불금 은닉으로 들리게 만든 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "문서상 현재 라운드와 과거 라운드를 완전히 분리해야 한다."
+          ],
+          "suppressions": [
+            "공개 채널에서도 같은 내용으로 정정해야 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:a:tell:pressure_stack",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-4:responsibility:0",
+              "factText": "배지연이 94만 원의 실제 구성을 32만 원과 62만 원의 혼합으로 명확히 밝히는 단계",
+              "tags": [
+                "responsibility",
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "이번 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "amount_mix": {
+                  "exact": "94만 원",
+                  "neutral": "혼합 총액",
+                  "rounded": "94만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-4:harm:1",
+              "factText": "현재 라운드 환불금 은닉으로 들리게 만든 건 제 잘못입니다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "이번 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "amount_mix": {
+                  "exact": "94만 원",
+                  "neutral": "혼합 총액",
+                  "rounded": "94만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "그동안도 같은 계좌로 굴리면서 맞춰 왔어요. 이번만 특별히 문제였던 건 아니에요."
+          ],
+          "privateKnowledge": [
+            "작년 라운드를 먼저 닫아야 한다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "도윤이 먼저 닫자고 한 대화가 있다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-5:legacy_sentence:0",
+              "factText": "배지연이 과거에도 같은 개인계좌 구조를 써 왔다며 이번 재사용을 관행처럼 정당화하는 단계",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연 개인계좌",
+                  "neutral": "같은 계좌"
+                },
+                "time": {
+                  "exact": "이번 라운드 시작 전",
+                  "neutral": "그 시점",
+                  "period": "작년 라운드 미정산 상태"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-5:emotion:1",
+              "factText": "이번만 특별히 문제였던 건 아니에요.",
+              "tags": [
+                "emotion",
+                "legacy_sentence",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연 개인계좌",
+                  "neutral": "같은 계좌"
+                },
+                "time": {
+                  "exact": "이번 라운드 시작 전",
+                  "neutral": "그 시점",
+                  "period": "작년 라운드 미정산 상태"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "시간이 없어서 이번에 같이 맞추자는 뜻이었지, 숨기려던 건 아니었어요. 다들 그렇게 급하게 굴러가다 보니 넘긴 거예요."
+          ],
+          "privateKnowledge": [
+            "편의 때문에 위험을 알면서도 같은 계좌를 유지했다."
+          ],
+          "suppressions": [
+            "공식 종료 공지 없는 시작이었다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-5:self_justification:0",
+              "factText": "배지연이 시간 부족과 실무 편의를 이유로 같은 계좌 재사용을 합리화하는 단계",
+              "tags": [
+                "self_justification",
+                "rule",
+                "shame"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이번에 같이 맞추자던 시점",
+                  "neutral": "그 시점",
+                  "period": "새 공동구매 공지 직전"
+                },
+                "person": {
+                  "exact": "같은 개인계좌",
+                  "neutral": "그 계좌 구조"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-5:uncertainty:1",
+              "factText": "다들 그렇게 급하게 굴러가다 보니 넘긴 거예요.",
+              "tags": [
+                "uncertainty",
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이번에 같이 맞추자던 시점",
+                  "neutral": "그 시점",
+                  "period": "새 공동구매 공지 직전"
+                },
+                "person": {
+                  "exact": "같은 개인계좌",
+                  "neutral": "그 계좌 구조"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "원칙대로라면 지난 라운드부터 끊었어야 했어요. 그런데 제가 계속 제 계좌를 쓰자고 밀어붙인 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "공동 책임이지만 주도는 제가 했다."
+          ],
+          "suppressions": [
+            "같은 구조가 제게 유리했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-5:admission:0",
+              "factText": "배지연이 지난 라운드를 닫지 않고 자신의 계좌 사용을 계속 민 사실을 인정하는 단계",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연 개인계좌",
+                  "neutral": "제 계좌",
+                  "fullName": "배지연 개인계좌",
+                  "judgeRef": "배지연 씨 계좌"
+                },
+                "time": {
+                  "exact": "새 라운드 시작 전",
+                  "neutral": "그 시점",
+                  "period": "이전 라운드 미마감 상태"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-5:timeline:1",
+              "factText": "그런데 제가 계속 제 계좌를 쓰자고 밀어붙인 건 맞습니다.",
+              "tags": [
+                "timeline",
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연 개인계좌",
+                  "neutral": "제 계좌",
+                  "fullName": "배지연 개인계좌",
+                  "judgeRef": "배지연 씨 계좌"
+                },
+                "time": {
+                  "exact": "새 라운드 시작 전",
+                  "neutral": "그 시점",
+                  "period": "이전 라운드 미마감 상태"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "도윤 씨도 위험하다는 걸 알고 있었으면서 강하게 막지는 않았잖아요. 제가 제안했더라도 둘이서 멈췄어야 했어요."
+          ],
+          "privateKnowledge": [
+            "그래도 같은 계좌를 다시 쓴 직접 제안자는 저였다."
+          ],
+          "suppressions": [
+            "이 책임을 반반처럼 보이게 하고 싶다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-5:counter:0",
+              "factText": "배지연이 계좌 재사용 제안자는 자신이지만 상대가 막지 않은 공동 책임도 끌어오는 단계",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                },
+                "rule": {
+                  "exact": "라운드 종료 후 잔액 0원 확인",
+                  "neutral": "그 종료 절차"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-5:relationship:1",
+              "factText": "제가 제안했더라도 둘이서 멈췄어야 했어요.",
+              "tags": [
+                "relationship",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                },
+                "rule": {
+                  "exact": "라운드 종료 후 잔액 0원 확인",
+                  "neutral": "그 종료 절차"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "여러 라운드를 한꺼번에 끌고 가다 보니, 끝난 돈과 새 돈을 구분해 닫는 절차를 제가 피했습니다. 창피해서 그냥 이번에 맞추자고 한 거예요."
+          ],
+          "privateKnowledge": [
+            "수치심 때문에 종료 공지를 미뤘다."
+          ],
+          "suppressions": [
+            "참가자에게 설명할 용기가 없었다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-5:shame:0",
+              "factText": "배지연이 창피함 때문에 종료 공지와 계좌 분리를 피했다고 드러내는 단계",
+              "tags": [
+                "shame",
+                "emotion",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "작년 라운드 종료 후",
+                  "neutral": "그 시점",
+                  "period": "새 공동구매 시작 전"
+                },
+                "relationship": {
+                  "exact": "종료 공지",
+                  "neutral": "그 마감 절차"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-5:fear:1",
+              "factText": "창피해서 그냥 이번에 맞추자고 한 거예요.",
+              "tags": [
+                "fear",
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "작년 라운드 종료 후",
+                  "neutral": "그 시점",
+                  "period": "새 공동구매 시작 전"
+                },
+                "relationship": {
+                  "exact": "종료 공지",
+                  "neutral": "그 마감 절차"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "작년 라운드를 별도 공지로 닫지 않고 같은 개인계좌를 다시 쓴 건 제 잘못이 큽니다. 도윤 씨 책임도 있지만, 그 구조를 계속 밀어붙인 쪽은 저였습니다."
+          ],
+          "privateKnowledge": [
+            "다음부터는 전용계좌와 종료 절차를 먼저 세워야 한다."
+          ],
+          "suppressions": [
+            "제가 먼저 공동 책임 문서를 정리해야 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:a:tell:old_effort_shield",
+            "neighbor12:a:tell:number_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:a:d-5:responsibility:0",
+              "factText": "배지연이 같은 개인계좌 재사용 구조를 계속 밀어붙인 핵심 책임을 수용하는 단계",
+              "tags": [
+                "responsibility",
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연 개인계좌",
+                  "neutral": "같은 개인계좌"
+                },
+                "person_other": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor12:a:d-5:harm:1",
+              "factText": "도윤 씨 책임도 있지만, 그 구조를 계속 밀어붙인 쪽은 저였습니다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연 개인계좌",
+                  "neutral": "같은 개인계좌"
+                },
+                "person_other": {
+                  "exact": "서도윤",
+                  "neutral": "상대방",
+                  "fullName": "서도윤",
+                  "judgeRef": "서도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "제가 94만 원을 숨긴 적은 없습니다. 배지연 씨가 확인도 전에 공개방에 올린 겁니다."
+          ],
+          "privateKnowledge": [
+            "내 늦은 고지가 그 글의 빌미가 됐다."
+          ],
+          "suppressions": [
+            "사흘 늦게 말한 사실."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-1:denial:0",
+              "factText": "서도윤이 94만 원 은닉 자체를 부인하며 공개 지목의 선행성을 강조하는 단계",
+              "tags": [
+                "denial",
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 금액",
+                  "rounded": "94만원"
+                },
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-1:emotion:1",
+              "factText": "배지연 씨가 확인도 전에 공개방에 올린 겁니다.",
+              "tags": [
+                "emotion",
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 금액",
+                  "rounded": "94만원"
+                },
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "빈칸처럼 보였을 수는 있어도, 숨김이라고 단정할 근거는 없었습니다. 적어도 제게 원본을 다 받아본 뒤 말했어야죠."
+          ],
+          "privateKnowledge": [
+            "원본을 더 빨리 보여줬어야 했다."
+          ],
+          "suppressions": [
+            "카드취소 32만 원을 먼저 공유하지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-1:evidence:0",
+              "factText": "서도윤이 공개 지목의 근거 부족을 강조하면서도 원본 설명 시점이 늦었다는 사실을 숨기는 단계",
+              "tags": [
+                "evidence",
+                "privacy",
+                "uncertainty"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공급사 원본 정산서",
+                  "neutral": "그 원본"
+                },
+                "time": {
+                  "exact": "원본 제시 전",
+                  "neutral": "그 시점",
+                  "period": "공개 글 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-1:uncertainty:1",
+              "factText": "적어도 제게 원본을 다 받아본 뒤 말했어야죠.",
+              "tags": [
+                "uncertainty",
+                "evidence",
+                "privacy"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "공급사 원본 정산서",
+                  "neutral": "그 원본"
+                },
+                "time": {
+                  "exact": "원본 제시 전",
+                  "neutral": "그 시점",
+                  "period": "공개 글 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "공개 지목은 배지연 씨 책임이 큽니다. 다만 제가 카드취소를 즉시 알리지 않아 오해가 커진 건 부인하지 않겠습니다."
+          ],
+          "privateKnowledge": [
+            "평판 문제를 생각해 감정적으로 더 방어적이 됐다."
+          ],
+          "suppressions": [
+            "처음엔 저도 이번 건만 보자며 과거 연결고리를 차단했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-1:admission:0",
+              "factText": "서도윤이 공개 지목 책임은 상대에게 두면서도 자신의 즉시 고지 실패를 부분 인정하는 단계",
+              "tags": [
+                "admission",
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                },
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-1:timeline:1",
+              "factText": "다만 제가 카드취소를 즉시 알리지 않아 오해가 커진 건 부인하지 않겠습니다.",
+              "tags": [
+                "timeline",
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                },
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "저를 횡령한 사람처럼 몰아간 건 과했죠. 하지만 그 틈을 만든 제 지연 고지까지 없던 일처럼 할 수는 없습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 공개 지목만 탓하면 제 몫이 사라진다."
+          ],
+          "suppressions": [
+            "저도 참가자 불안을 가볍게 봤다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-1:counter:0",
+              "factText": "서도윤이 공개 지목의 과잉성과 자신의 지연 고지를 동시에 인정하며 균형을 잡는 단계",
+              "tags": [
+                "counter",
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "지연 고지",
+                  "neutral": "그 늦은 안내"
+                },
+                "relationship": {
+                  "exact": "횡령 의심",
+                  "neutral": "그 누명"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-1:relationship:1",
+              "factText": "하지만 그 틈을 만든 제 지연 고지까지 없던 일처럼 할 수는 없습니다.",
+              "tags": [
+                "relationship",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "지연 고지",
+                  "neutral": "그 늦은 안내"
+                },
+                "relationship": {
+                  "exact": "횡령 의심",
+                  "neutral": "그 누명"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "그 방 글을 봤을 때 정말 모욕감이 컸습니다. 그래서 더 숫자만 읽으며 방어했는데, 제가 바로 설명하지 않은 책임도 그 안에 있습니다."
+          ],
+          "privateKnowledge": [
+            "감정보다 숫자로 버틴 건 제 체면 때문이었다."
+          ],
+          "suppressions": [
+            "사과를 늦췄다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-1:emotion:0",
+              "factText": "서도윤이 모욕감 때문에 숫자만 읽으며 방어했다는 감정 누출 단계",
+              "tags": [
+                "emotion",
+                "shame",
+                "self_justification"
+              ],
+              "slots": {
+                "relationship": {
+                  "exact": "공개방 지목",
+                  "neutral": "그 글"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "본인",
+                  "fullName": "서도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-1:fear:1",
+              "factText": "그래서 더 숫자만 읽으며 방어했는데, 제가 바로 설명하지 않은 책임도 그 안에 있습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "relationship": {
+                  "exact": "공개방 지목",
+                  "neutral": "그 글"
+                },
+                "person": {
+                  "exact": "서도윤",
+                  "neutral": "본인",
+                  "fullName": "서도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "배지연 씨의 공개 지목은 잘못이지만, 제가 카드취소와 정산 경위를 즉시 설명하지 않은 책임도 분명 있습니다. 두 잘못을 분리해서 정리하겠습니다."
+          ],
+          "privateKnowledge": [
+            "정정문과 설명문이 함께 필요하다."
+          ],
+          "suppressions": [
+            "평판 회복은 숫자 설명만으로 끝나지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-1:responsibility:0",
+              "factText": "서도윤이 공개 지목과 자신의 지연 설명 책임을 분리해 정리하겠다고 수용하는 단계",
+              "tags": [
+                "responsibility",
+                "harm",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                },
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-1:harm:1",
+              "factText": "두 잘못을 분리해서 정리하겠습니다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                },
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "숨긴 게 아니라 아직 확정 전이었습니다. 카드취소 32만 원만 따로 말하면 오히려 숫자가 더 틀어질 수 있어서 기다린 겁니다."
+          ],
+          "privateKnowledge": [
+            "사흘 가까이 알려주지 않았다."
+          ],
+          "suppressions": [
+            "늦은 고지가 의심을 키웠다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-2:act:0",
+              "factText": "서도윤이 32만 원 카드취소를 확정 전 항목이라며 사흘 보류한 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                },
+                "time": {
+                  "exact": "사흘 보류",
+                  "neutral": "그 시점",
+                  "period": "카드취소 알림 후 약 3일"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-2:emotion:1",
+              "factText": "카드취소 32만 원만 따로 말하면 오히려 숫자가 더 틀어질 수 있어서 기다린 겁니다.",
+              "tags": [
+                "emotion",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                },
+                "time": {
+                  "exact": "사흘 보류",
+                  "neutral": "그 시점",
+                  "period": "카드취소 알림 후 약 3일"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "이틀, 삼일 늦은 정도를 숨김으로 몰 순 없습니다. 국제배송료 재계산이 끝나야 정확한 환급액을 말할 수 있었어요."
+          ],
+          "privateKnowledge": [
+            "잠정 금액이라도 먼저 알렸어야 했다."
+          ],
+          "suppressions": [
+            "제 방식이 참가자 불안을 과소평가했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-2:uncertainty:0",
+              "factText": "서도윤이 사흘 지연 범위를 축소하면서 국제배송료 재계산을 방패로 세우는 단계",
+              "tags": [
+                "uncertainty",
+                "threshold",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이틀, 삼일 늦은 정도",
+                  "neutral": "그 지연"
+                },
+                "institution": {
+                  "exact": "국제배송료 재계산",
+                  "neutral": "그 재계산"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-2:evidence:1",
+              "factText": "국제배송료 재계산이 끝나야 정확한 환급액을 말할 수 있었어요.",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "threshold"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "이틀, 삼일 늦은 정도",
+                  "neutral": "그 지연"
+                },
+                "institution": {
+                  "exact": "국제배송료 재계산",
+                  "neutral": "그 재계산"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "즉시 알리지 않은 건 제 잘못입니다. 다만 32만 원만 따로 말하면 최종 정산과 어긋날까 봐 확정 뒤에 한 번에 설명하려 했습니다."
+          ],
+          "privateKnowledge": [
+            "체면 때문에 늦은 고지를 크게 인정하기 싫다."
+          ],
+          "suppressions": [
+            "배지연이 공개 글 올리기 전 내가 먼저 말할 기회가 있었다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-2:admission:0",
+              "factText": "서도윤이 즉시 고지 실패를 인정하면서도 최종 정산 일괄 설명 논리로 방어하는 단계",
+              "tags": [
+                "admission",
+                "institution",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "그 취소분",
+                  "rounded": "32만원"
+                },
+                "institution": {
+                  "exact": "수입사 최종 정산",
+                  "neutral": "최종 정산"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-2:timeline:1",
+              "factText": "다만 32만 원만 따로 말하면 최종 정산과 어긋날까 봐 확정 뒤에 한 번에 설명하려 했습니다.",
+              "tags": [
+                "timeline",
+                "admission",
+                "institution"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "그 취소분",
+                  "rounded": "32만원"
+                },
+                "institution": {
+                  "exact": "수입사 최종 정산",
+                  "neutral": "최종 정산"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "사흘 지연이 짧다고만 말할 일은 아니었습니다. 그래도 그 지연이 곧 환불금 은닉이라는 뜻은 아니고, 판단은 제가 너무 건조하게 했습니다."
+          ],
+          "privateKnowledge": [
+            "정산 담당자처럼 굴며 소통 책임을 빼먹었다."
+          ],
+          "suppressions": [
+            "숫자만 읽으면 덜 혼날 거라 생각했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-2:counter:0",
+              "factText": "서도윤이 지연의 문제성은 인정하지만 은닉 의도와는 다르다고 선을 긋는 단계",
+              "tags": [
+                "counter",
+                "emotion",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사흘",
+                  "neutral": "그 지연"
+                },
+                "relationship": {
+                  "exact": "환불금 은닉 의심",
+                  "neutral": "그 의심"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-2:relationship:1",
+              "factText": "그래도 그 지연이 곧 환불금 은닉이라는 뜻은 아니고, 판단은 제가 너무 건조하게 했습니다.",
+              "tags": [
+                "relationship",
+                "counter",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사흘",
+                  "neutral": "그 지연"
+                },
+                "relationship": {
+                  "exact": "환불금 은닉 의심",
+                  "neutral": "그 의심"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "저는 숫자만 맞으면 된다고 생각해서, 사람들 불안이 얼마나 빨리 커지는지 놓쳤습니다. 늦은 안내 때문에 배지연 씨 의심이 커진 점은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "감정 노동을 피하려 했다."
+          ],
+          "suppressions": [
+            "사과보다 설명을 먼저 세웠다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-2:emotion:0",
+              "factText": "서도윤이 숫자 우선 태도 때문에 참가자 불안을 놓쳤다고 감정적 책임을 드러내는 단계",
+              "tags": [
+                "emotion",
+                "responsibility",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                },
+                "relationship": {
+                  "exact": "사람들 불안",
+                  "neutral": "그 반응"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-2:fear:1",
+              "factText": "늦은 안내 때문에 배지연 씨 의심이 커진 점은 인정합니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                },
+                "relationship": {
+                  "exact": "사람들 불안",
+                  "neutral": "그 반응"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "카드취소 32만 원 알림을 받고도 사흘 가까이 즉시 공유하지 않은 건 제 책임입니다. 미확정 항목이라도 잠정 공지를 했어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "다음부터는 잠정 금액과 확정 금액을 분리 공지해야 한다."
+          ],
+          "suppressions": [
+            "늦은 고지가 이번 의심의 직접 원인이었다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-2:responsibility:0",
+              "factText": "서도윤이 32만 원 알림 사흘 미공유를 명확한 책임으로 수용하는 단계",
+              "tags": [
+                "responsibility",
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                },
+                "time": {
+                  "exact": "사흘 가까운 미공유",
+                  "neutral": "그 공백"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-2:harm:1",
+              "factText": "미확정 항목이라도 잠정 공지를 했어야 했습니다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "32만 원",
+                  "neutral": "카드취소분",
+                  "rounded": "32만원"
+                },
+                "time": {
+                  "exact": "사흘 가까운 미공유",
+                  "neutral": "그 공백"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "작년 62만 원 문제는 제 카드취소랑 별개입니다. 배지연 씨 쪽 계좌에서 시작된 일이지 제가 만든 빈칸이 아닙니다."
+          ],
+          "privateKnowledge": [
+            "그때 강하게 마감 요구를 했어야 했다."
+          ],
+          "suppressions": [
+            "같은 구조를 다시 허용했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-3:act:0",
+              "factText": "서도윤이 작년 62만 원 미정산의 출발점이 배지연 개인계좌였다고 선을 긋는 단계",
+              "tags": [
+                "act",
+                "timeline",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "person": {
+                  "exact": "배지연 개인계좌",
+                  "neutral": "상대 계좌"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-3:emotion:1",
+              "factText": "배지연 씨 쪽 계좌에서 시작된 일이지 제가 만든 빈칸이 아닙니다.",
+              "tags": [
+                "emotion",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "person": {
+                  "exact": "배지연 개인계좌",
+                  "neutral": "상대 계좌"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "작년 캐시백 41만 원, 반품차액 21만 원이 닫히지 않은 채 남아 있었어요. 저는 그게 이번 숫자를 흐리게 만든 핵심이라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "봤다고 하면서도 공식 정산을 끝까지 밀어붙이지 않았다."
+          ],
+          "suppressions": [
+            "제 책임 10%라도 존재한다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-3:evidence:0",
+              "factText": "서도윤이 41만 원과 21만 원의 작년 미정산 구조를 사실 근거로 제시하는 단계",
+              "tags": [
+                "evidence",
+                "timeline",
+                "institution"
+              ],
+              "slots": {
+                "amount1": {
+                  "exact": "41만 원",
+                  "neutral": "캐시백 금액",
+                  "rounded": "41만원"
+                },
+                "amount2": {
+                  "exact": "21만 원",
+                  "neutral": "반품차액",
+                  "rounded": "21만원"
+                },
+                "amount_total": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산 총액",
+                  "rounded": "62만원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-3:uncertainty:1",
+              "factText": "저는 그게 이번 숫자를 흐리게 만든 핵심이라고 봅니다.",
+              "tags": [
+                "uncertainty",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "amount1": {
+                  "exact": "41만 원",
+                  "neutral": "캐시백 금액",
+                  "rounded": "41만원"
+                },
+                "amount2": {
+                  "exact": "21만 원",
+                  "neutral": "반품차액",
+                  "rounded": "21만원"
+                },
+                "amount_total": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산 총액",
+                  "rounded": "62만원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "이번 분쟁의 출발점이 제 환불 은닉이 아니라는 점은 분명합니다. 작년 62만 원이 개인계좌에 남아 있었고, 이번 참가금 일부가 거기로 섞여 들어간 정황이 있습니다."
+          ],
+          "privateKnowledge": [
+            "그 정황을 알면서도 참가자에게 구조를 바로 공개하지 않았다."
+          ],
+          "suppressions": [
+            "상대만 몰아붙이면 d-5가 튀어나온다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-3:context:0",
+              "factText": "서도윤이 작년 62만 원과 이번 참가금 일부의 혼합 정황을 현재 분쟁의 출발점으로 짚는 단계",
+              "tags": [
+                "context",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "relationship": {
+                  "exact": "이번 참가금 일부",
+                  "neutral": "현재 라운드 돈"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-3:timeline:1",
+              "factText": "작년 62만 원이 개인계좌에 남아 있었고, 이번 참가금 일부가 거기로 섞여 들어간 정황이 있습니다.",
+              "tags": [
+                "timeline",
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "relationship": {
+                  "exact": "이번 참가금 일부",
+                  "neutral": "현재 라운드 돈"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "배지연 씨가 먼저 구멍을 만든 건 맞습니다. 다만 제가 그 위험을 알고도 '이번 건부터 보자'고 하며 연결을 끊은 건 제 잘못이죠."
+          ],
+          "privateKnowledge": [
+            "제 회피가 구조를 연장시켰다."
+          ],
+          "suppressions": [
+            "더 일찍 중단시킬 수 있었다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-3:admission:0",
+              "factText": "서도윤이 시작점은 상대에게 두면서도 과거 연결을 끊어 버린 자신의 회피를 인정하는 단계",
+              "tags": [
+                "admission",
+                "legacy_sentence",
+                "responsibility"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "이번 건부터 보자",
+                  "neutral": "그 말"
+                },
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-3:relationship:1",
+              "factText": "다만 제가 그 위험을 알고도 '이번 건부터 보자'고 하며 연결을 끊은 건 제 잘못이죠.",
+              "tags": [
+                "relationship",
+                "admission",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "이번 건부터 보자",
+                  "neutral": "그 말"
+                },
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 저는 그 62만 원 문제를 예전부터 찜찜하게 봤습니다. 그런데 이번 정산만 숫자로 맞추면 넘어갈 수 있다고 저도 편하게 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "체면 때문에 강한 충돌을 피했다."
+          ],
+          "suppressions": [
+            "제가 끊지 못해 지금까지 왔다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-3:emotion:0",
+              "factText": "서도윤이 62만 원 문제를 알고도 숫자만 맞추면 된다고 스스로 안이하게 본 감정 누출 단계",
+              "tags": [
+                "emotion",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "그 문제 금액",
+                  "rounded": "62만원"
+                },
+                "relationship": {
+                  "exact": "찜찜함",
+                  "neutral": "그 불편함"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-3:fear:1",
+              "factText": "그런데 이번 정산만 숫자로 맞추면 넘어갈 수 있다고 저도 편하게 생각했습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "그 문제 금액",
+                  "rounded": "62만원"
+                },
+                "relationship": {
+                  "exact": "찜찜함",
+                  "neutral": "그 불편함"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "실제 재정 은닉의 출발점은 배지연 씨 쪽 62만 원 미정산이 맞습니다. 동시에 그 구조를 알고도 제가 강하게 중단시키지 않은 책임도 인정합니다."
+          ],
+          "privateKnowledge": [
+            "과거청산 절차를 공동으로 시작해야 한다."
+          ],
+          "suppressions": [
+            "숫자를 아는 사람답게 더 일찍 제동을 걸었어야 했다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-3:responsibility:0",
+              "factText": "서도윤이 출발점과 자신의 방치 책임을 함께 수용하는 단계",
+              "tags": [
+                "responsibility",
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-3:harm:1",
+              "factText": "동시에 그 구조를 알고도 제가 강하게 중단시키지 않은 책임도 인정합니다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "94만 원이라는 숫자 자체가 틀렸습니다. 이번 라운드에서 제가 쥐고 있던 환급 가능 금액은 32만 원뿐이었습니다."
+          ],
+          "privateKnowledge": [
+            "그 32만 원도 즉시 공유하지 않았다."
+          ],
+          "suppressions": [
+            "62만 원 혼입 설명을 초기에 안 했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-4:act:0",
+              "factText": "서도윤이 현재 라운드 환급 가능 금액이 32만 원뿐이었다고 잘라 말하는 단계",
+              "tags": [
+                "act",
+                "threshold",
+                "institution"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "현재 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_wrong": {
+                  "exact": "94만 원",
+                  "neutral": "상대가 든 숫자",
+                  "rounded": "94만원"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-4:emotion:1",
+              "factText": "이번 라운드에서 제가 쥐고 있던 환급 가능 금액은 32만 원뿐이었습니다.",
+              "tags": [
+                "emotion",
+                "act",
+                "threshold"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "현재 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_wrong": {
+                  "exact": "94만 원",
+                  "neutral": "상대가 든 숫자",
+                  "rounded": "94만원"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "94만 원은 이번 환급금이 아니라 다른 금액이 섞인 숫자예요. 다만 그 혼입분이 정확히 어디서 왔는지는 그때 바로 펼쳐 설명하지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "작년 62만 원과 연결된다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "증빙을 한 번에 꺼내지 않아 의심을 방치했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-4:uncertainty:0",
+              "factText": "서도윤이 94만 원의 혼합 가능성은 말하면서도 혼입 출처 설명을 미루는 단계",
+              "tags": [
+                "uncertainty",
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 혼합 숫자",
+                  "rounded": "94만원"
+                },
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "과거 혼입분",
+                  "rounded": "62만원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-4:evidence:1",
+              "factText": "다만 그 혼입분이 정확히 어디서 왔는지는 그때 바로 펼쳐 설명하지 못했습니다.",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 혼합 숫자",
+                  "rounded": "94만원"
+                },
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "과거 혼입분",
+                  "rounded": "62만원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "수입사 최종 정산서상 현재 라운드 환급분은 32만 원입니다. 94만 원은 이 32만 원에 작년 미정산 금액이 겹쳐진 숫자라고 보는 게 맞습니다."
+          ],
+          "privateKnowledge": [
+            "그 설명을 초기에 했으면 오해가 줄었다."
+          ],
+          "suppressions": [
+            "배지연의 자작표를 틀렸다고만 반복했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-4:context:0",
+              "factText": "서도윤이 94만 원을 현재 32만 원과 과거 미정산 겹침으로 설명하는 단계",
+              "tags": [
+                "context",
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "현재 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_mix": {
+                  "exact": "94만 원",
+                  "neutral": "혼합 총액",
+                  "rounded": "94만원"
+                },
+                "institution": {
+                  "exact": "수입사 최종 정산서",
+                  "neutral": "그 정산서"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-4:timeline:1",
+              "factText": "94만 원은 이 32만 원에 작년 미정산 금액이 겹쳐진 숫자라고 보는 게 맞습니다.",
+              "tags": [
+                "timeline",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "현재 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_mix": {
+                  "exact": "94만 원",
+                  "neutral": "혼합 총액",
+                  "rounded": "94만원"
+                },
+                "institution": {
+                  "exact": "수입사 최종 정산서",
+                  "neutral": "그 정산서"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "제가 94만 원이 틀렸다고만 말한 건 부족했습니다. 32만 원과 62만 원이 뒤섞였다는 구조까지 같이 열었어야 했어요."
+          ],
+          "privateKnowledge": [
+            "숫자 틀림만 반복한 건 제 방어였다."
+          ],
+          "suppressions": [
+            "과거 문제를 끌고 오기 싫었다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-4:admission:0",
+              "factText": "서도윤이 32만 원과 62만 원의 혼합 구조를 설명하지 않고 숫자 오류만 반복한 잘못을 인정하는 단계",
+              "tags": [
+                "admission",
+                "evidence",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "이번 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-4:relationship:1",
+              "factText": "32만 원과 62만 원이 뒤섞였다는 구조까지 같이 열었어야 했어요.",
+              "tags": [
+                "relationship",
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "이번 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "저는 숫자만 맞으면 된다고 생각해, 왜 94만 원이 나왔는지 사람 말로 풀어 설명하지 않았습니다. 그래서 제 말도 변명처럼 들렸을 겁니다."
+          ],
+          "privateKnowledge": [
+            "무정하게 보일까 봐 오히려 더 건조해졌다."
+          ],
+          "suppressions": [
+            "그 침묵이 혼합 숫자를 키웠다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-4:emotion:0",
+              "factText": "서도윤이 숫자 중심 태도 때문에 94만 원의 발생 구조를 사람 말로 설명하지 못했다고 드러내는 단계",
+              "tags": [
+                "emotion",
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 숫자",
+                  "rounded": "94만원"
+                },
+                "relationship": {
+                  "exact": "사람 말로 풀어 설명",
+                  "neutral": "그 설명"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-4:fear:1",
+              "factText": "그래서 제 말도 변명처럼 들렸을 겁니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "94만 원",
+                  "neutral": "그 숫자",
+                  "rounded": "94만원"
+                },
+                "relationship": {
+                  "exact": "사람 말로 풀어 설명",
+                  "neutral": "그 설명"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "지연 씨가 말한 94만 원은 이번 환급 32만 원과 작년 미정산 62만 원이 섞인 숫자였습니다. 저는 그 구조를 더 빨리 설명했어야 했고, 틀렸다는 말만 반복한 것도 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "정산표를 현재 라운드와 과거 라운드로 분리해야 한다."
+          ],
+          "suppressions": [
+            "숫자만 아는 태도로는 신뢰를 회복할 수 없다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:b:tell:statement_wall",
+            "neighbor12:b:tell:past_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-4:responsibility:0",
+              "factText": "서도윤이 94만 원의 실제 구성과 자신의 설명 지연 책임을 함께 밝히는 단계",
+              "tags": [
+                "responsibility",
+                "institution",
+                "admission"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "현재 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "amount_mix": {
+                  "exact": "94만 원",
+                  "neutral": "혼합 총액",
+                  "rounded": "94만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-4:harm:1",
+              "factText": "저는 그 구조를 더 빨리 설명했어야 했고, 틀렸다는 말만 반복한 것도 제 잘못입니다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "institution"
+              ],
+              "slots": {
+                "amount_now": {
+                  "exact": "32만 원",
+                  "neutral": "현재 환급분",
+                  "rounded": "32만원"
+                },
+                "amount_old": {
+                  "exact": "62만 원",
+                  "neutral": "작년 미정산분",
+                  "rounded": "62만원"
+                },
+                "amount_mix": {
+                  "exact": "94만 원",
+                  "neutral": "혼합 총액",
+                  "rounded": "94만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "작년 라운드 얘기까지 끌고 와서 이번 건을 흐릴 필요는 없습니다. 일단 이번 정산부터 끝내고 보자는 뜻이었습니다."
+          ],
+          "privateKnowledge": [
+            "작년 라운드부터 먼저 닫자고 말했지만 끝까지 밀지는 않았다."
+          ],
+          "suppressions": [
+            "같은 개인계좌 사용을 사실상 허용했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:b:tell:past_cutoff",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-5:legacy_sentence:0",
+              "factText": "서도윤이 작년 라운드 문제를 잘라 내고 이번 정산부터 보자며 연결고리를 끊는 단계",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "이번 건부터 보자",
+                  "neutral": "그 말"
+                },
+                "time": {
+                  "exact": "새 라운드 시작 전",
+                  "neutral": "그 시점",
+                  "period": "작년 라운드 미마감 상태"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-5:emotion:1",
+              "factText": "일단 이번 정산부터 끝내고 보자는 뜻이었습니다.",
+              "tags": [
+                "emotion",
+                "legacy_sentence",
+                "rule"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "이번 건부터 보자",
+                  "neutral": "그 말"
+                },
+                "time": {
+                  "exact": "새 라운드 시작 전",
+                  "neutral": "그 시점",
+                  "period": "작년 라운드 미마감 상태"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "제가 먼저 마감 얘기를 하긴 했습니다. 다만 배지연 씨가 이번에 같이 맞추자고 해서 실무상 넘어간 겁니다."
+          ],
+          "privateKnowledge": [
+            "넘어간 판단 자체가 제 책임이다."
+          ],
+          "suppressions": [
+            "위험을 알면서도 편의를 택했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor12:b:tell:past_cutoff",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-5:uncertainty:0",
+              "factText": "서도윤이 먼저 마감 얘기를 했다는 사실을 방패로 삼아 자신의 소극적 동의를 축소하는 단계",
+              "tags": [
+                "uncertainty",
+                "relationship",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                },
+                "quote": {
+                  "exact": "이번에 같이 맞추자",
+                  "neutral": "그 제안"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-5:evidence:1",
+              "factText": "다만 배지연 씨가 이번에 같이 맞추자고 해서 실무상 넘어간 겁니다.",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                },
+                "quote": {
+                  "exact": "이번에 같이 맞추자",
+                  "neutral": "그 제안"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "같은 계좌를 다시 쓴 건 잘못이었습니다. 제가 반대 의사를 더 분명히 하고 서면 종료를 먼저 요구했어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "제 소극성이 구조를 재사용하게 했다."
+          ],
+          "suppressions": [
+            "이번 건부터 보자며 과거를 잘랐다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:b:tell:past_cutoff",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-5:admission:0",
+              "factText": "서도윤이 같은 계좌 재사용과 서면 종료 요구 실패를 부분 인정하는 단계",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "같은 개인계좌",
+                  "neutral": "그 계좌 구조"
+                },
+                "rule": {
+                  "exact": "서면 종료 공지",
+                  "neutral": "그 마감 문서"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-5:timeline:1",
+              "factText": "제가 반대 의사를 더 분명히 하고 서면 종료를 먼저 요구했어야 했습니다.",
+              "tags": [
+                "timeline",
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "같은 개인계좌",
+                  "neutral": "그 계좌 구조"
+                },
+                "rule": {
+                  "exact": "서면 종료 공지",
+                  "neutral": "그 마감 문서"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "계좌를 계속 쓰자고 먼저 민 건 배지연 씨지만, 그걸 허용한 저는 책임에서 빠질 수 없습니다. 숫자를 아는 사람답게 더 강하게 끊었어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "공동 책임이라는 말로 제 몫을 줄이고 싶다."
+          ],
+          "suppressions": [
+            "체면상 강하게 말하기 싫었다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor12:b:tell:past_cutoff",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-5:counter:0",
+              "factText": "서도윤이 제안 주체는 상대였어도 허용 책임은 자신의 몫이라고 인정하는 단계",
+              "tags": [
+                "counter",
+                "relationship",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                },
+                "person_account": {
+                  "exact": "같은 개인계좌",
+                  "neutral": "그 계좌"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-5:relationship:1",
+              "factText": "숫자를 아는 사람답게 더 강하게 끊었어야 했습니다.",
+              "tags": [
+                "relationship",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                },
+                "person_account": {
+                  "exact": "같은 개인계좌",
+                  "neutral": "그 계좌"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter",
+                "responsibility_shift"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "저는 위험을 알고도 '문서만 맞으면 된다'는 쪽으로 스스로를 속였습니다. 그래서 같은 개인계좌 구조를 다시 밟게 놔뒀습니다."
+          ],
+          "privateKnowledge": [
+            "갈등 회피가 원칙을 이겼다."
+          ],
+          "suppressions": [
+            "그 편의가 결국 분쟁을 키웠다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:b:tell:past_cutoff",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-5:emotion:0",
+              "factText": "서도윤이 갈등 회피 때문에 같은 개인계좌 구조를 다시 허용했다고 드러내는 단계",
+              "tags": [
+                "emotion",
+                "fear",
+                "rule"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "문서만 맞으면 된다",
+                  "neutral": "그 자기합리화"
+                },
+                "person": {
+                  "exact": "같은 개인계좌",
+                  "neutral": "그 구조"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-5:fear:1",
+              "factText": "그래서 같은 개인계좌 구조를 다시 밟게 놔뒀습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "rule"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "문서만 맞으면 된다",
+                  "neutral": "그 자기합리화"
+                },
+                "person": {
+                  "exact": "같은 개인계좌",
+                  "neutral": "그 구조"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "작년 라운드를 닫지 않은 채 같은 개인계좌를 다시 쓰게 둔 건 공동 책임입니다. 배지연 씨 제안이 먼저였더라도, 제가 서면 마감과 분리 계좌를 끝까지 요구하지 않은 책임을 인정합니다."
+          ],
+          "privateKnowledge": [
+            "새 운영 기준으로 라운드 종료 공지와 분리 계좌를 의무화해야 한다."
+          ],
+          "suppressions": [
+            "숫자를 아는 쪽이 더 강하게 제동을 걸었어야 했다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor12:b:tell:past_cutoff",
+            "neighbor12:b:tell:scope_shrink"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor12:b:d-5:responsibility:0",
+              "factText": "서도윤이 분리 계좌 요구 실패와 공동 책임을 명확히 인정하는 단계",
+              "tags": [
+                "responsibility",
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                },
+                "person_account": {
+                  "exact": "같은 개인계좌",
+                  "neutral": "그 계좌"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor12:b:d-5:harm:1",
+              "factText": "배지연 씨 제안이 먼저였더라도, 제가 서면 마감과 분리 계좌를 끝까지 요구하지 않은 책임을 인정합니다.",
+              "tags": [
+                "harm",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "배지연",
+                  "neutral": "상대방",
+                  "fullName": "배지연",
+                  "judgeRef": "배지연 씨"
+                },
+                "person_account": {
+                  "exact": "같은 개인계좌",
+                  "neutral": "그 계좌"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1295 @@
+export const tenant04V3GameLoopData = {
+  "caseId": "tenant-04",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "초기 오해의 문구",
+      "description": "녹취와 카카오톡 문맥으로 '거의 됐다'는 표현이 어떻게 다른 확신으로 굳었는지 파고든다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "이다은 씨, 녹취에서 '가자는 방향' 뒤에 '서류 보고 정리하자'가 붙습니다. 그런데도 왜 이미 확정된 약속처럼 받아들이셨습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant04:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "카카오톡 전체 문맥에는 '초안 보고 최종 정하자'는 말이 있습니다. 그 문장을 알고도 다음 달 월세가 멈춘다고 본 근거를 설명해 주십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant04:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "본인은 '느낌상 확정'이었다고 말씀하지만, 실제로는 단서를 듣고도 확정 부분만 더 크게 붙잡은 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant04:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "장성호 씨, 카카오톡 어디에도 협의 결렬 통지가 없는데도 예비 임차인 안내가 정당했다고 보십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant04:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "월세 중단이 곧 협의 종료라는 규칙이 있었다면, 왜 그 문장을 먼저 남기지 않았습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant04:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "지금 설명은 사후 정리처럼 들립니다. 당시에는 통지보다 공실 대응과 주도권 확보를 앞세운 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant04:b:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "돈과 조건의 공백",
+      "description": "송금 내역과 상환 문서를 맞물려, 누가 어떤 조건을 알고도 말하지 않았는지 따진다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "이다은 씨, 추가 보증금 송금 뒤 실제로 한 달치 월세가 빠진 건 맞지요? 표현이 아니라 행동 기준으로 답해 주십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant04:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "영수 메모에 정산 기준이 없다는 걸 알면서도, 2천만원을 거의 전세금처럼 여긴 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant04:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "미납 월세가 공제될 수 있다는 가능성을 알고도, 처음에는 반환 요구만 앞세운 것인지 답하십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant04:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "장성호 씨, 상환예상서를 전환 논의 초반에 받아 보셨다면 왜 그 비용과 공동명의 문제를 먼저 알리지 않았습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant04:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "영수 메모 어디에 위약금이나 몰취라고 적혀 있습니까? 문구가 없다면 그 주장 근거가 약해지는 것 아닌가요?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant04:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "공동명의 서명 이야기를 먼저 꺼내면 협의가 깨질까 봐, 일부러 뒤로 미뤄 둔 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant04:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "결정적 초안과 안내 기록",
+      "description": "초안의 빈칸과 방문 기록을 대조해 최종 책임과 정산 기준의 종착점을 확인한다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "이다은 씨, 결혼 일정이 급하다는 사정 때문에, 확인보다 확신을 택한 것 아닙니까? 그 심리부터 설명해 보십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant04:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "전환 초안에 시작일·총액·공동명의 서명란이 비어 있는 걸 보고도 왜 계속 확정처럼 움직였습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant04:a:d-1:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "지금 시점에서도 2천만원 전액 반환만을 주장하십니까, 아니면 일부 차감 후 정산이 필요하다는 점까지 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant04:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "장성호 씨, 초안에 공동명의 서명란이 비어 있는데도, 그 공란 사유를 다은 씨에게 미리 설명하지 않은 이유가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant04:b:d-2:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "방문일지와 예약문자 시각상 다은 씨에게 결렬 통지하기 전에 집을 보여준 게 맞지요? 순서를 부인하실 수 있습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant04:b:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "결국 2천만원 전액 몰취는 어렵고, 미납 월세와 실제 손해만 반영해 돌려줘야 한다는 점을 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant04:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "tenant04:a:d-1:unlock:s2:0",
+            "factText": "이다은은 e-1 녹취 이전부터 약혼자와 전세대출 상담 일정을 잡아 두고, 구두 전환을 사실상 확정처럼 전제하고 있었다.",
+            "tags": [
+              "context",
+              "motive"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "윤지호",
+                "neutral": "약혼자",
+                "fullName": "윤지호",
+                "judgeRef": "약혼자"
+              },
+              "document": {
+                "exact": "은행 전세대출 상담 접수 준비",
+                "neutral": "상담 준비"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant04:a:d-1:unlock:s3:0",
+            "factText": "이다은은 '서류 보고 정리하자'는 단서를 들었지만, 이후 기억에서는 '가자는 방향'만 앞세워 확정에 가까운 뜻으로 붙잡았다.",
+            "tags": [
+              "quote",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "가자는 방향 / 서류 보고 정리하자",
+                "neutral": "그 표현들"
+              },
+              "time": {
+                "exact": "초여름 통화 직후",
+                "neutral": "그 통화 직후"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant04:a:d-1:unlock:s4:0",
+            "factText": "결혼 준비 일정이 이미 돌아가고 있어, 전환이 무너지면 다시 집을 구해야 한다는 공포가 이다은의 해석을 더 확정 쪽으로 밀었다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "결혼 준비 막바지",
+                "neutral": "그 시기",
+                "period": "결혼 준비 일정 마감 직전"
+              },
+              "person": {
+                "exact": "윤지호",
+                "neutral": "약혼자",
+                "fullName": "윤지호",
+                "judgeRef": "약혼자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant04:a:d-1:unlock:s5:0",
+            "factText": "이다은은 전환 초안에 시작일·총액·공동명의 서명란이 빈 것을 본 뒤에도 이미 확정된 약속처럼 행동했다.",
+            "tags": [
+              "admission",
+              "threshold"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "document": {
+                "exact": "시작일·총액·공동명의 서명란이 빈 전환 초안",
+                "neutral": "빈칸 있는 초안"
+              },
+              "amount": {
+                "exact": "2천만원 추가 보증금",
+                "neutral": "추가 보증금"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "tenant04:a:d-3:unlock:s2:0",
+            "factText": "카카오톡 전체 문맥에는 '초안 보고 최종 정하자'는 문장이 있었지만, 이다은은 월세가 다음 달부터 멈춘다는 쪽으로 먼저 받아들였다.",
+            "tags": [
+              "context",
+              "quote"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "초안 보고 최종 정하자",
+                "neutral": "그 문장"
+              },
+              "document": {
+                "exact": "공인중개사 포함 카카오톡 전체 대화",
+                "neutral": "전체 카톡"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant04:a:d-3:unlock:s3:0",
+            "factText": "이다은은 실제로 한 달치 월세를 송금하지 않았고, 그 선택을 한동안 '보류'라는 표현으로 순화해 말했다.",
+            "tags": [
+              "admission",
+              "shame"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "한 달치 월세",
+                "neutral": "미납 월세"
+              },
+              "time": {
+                "exact": "추가 보증금 송금 다음 달",
+                "neutral": "그다음 달"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant04:a:d-3:unlock:s4:0",
+            "factText": "미납 뒤에 다시 월세를 내자고 먼저 말하면 자신이 성급하고 무책임한 사람처럼 보일까 봐, 이다은은 정산 연락을 미뤘다.",
+            "tags": [
+              "shame",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "미납이 확인된 직후",
+                "neutral": "그 직후"
+              },
+              "person": {
+                "exact": "이다은",
+                "neutral": "본인",
+                "fullName": "이다은",
+                "judgeRef": "본인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant04:a:d-3:unlock:s5:0",
+            "factText": "이다은은 2천만원 송금과 월세 중단을 같은 흐름으로 스스로 묶어 버리며, 별도의 월세 지급 확인 절차를 생략했다.",
+            "tags": [
+              "admission",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "2천만원 송금과 한 달치 월세",
+                "neutral": "송금과 월세"
+              },
+              "document": {
+                "exact": "영수 메모와 월세 지급 확인 부재",
+                "neutral": "정산 공백"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "fact"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant04:a:d-5:unlock:s2:0",
+            "factText": "이다은은 영수 메모에 '전환 준비금'만 적혀 있고 정산 기준이 비어 있다는 점을 알면서도, 돈의 성격을 거의 전세금처럼 받아들였다.",
+            "tags": [
+              "threshold",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "memo": {
+                "exact": "전환 준비금",
+                "neutral": "메모 문구"
+              },
+              "amount": {
+                "exact": "2천만원",
+                "neutral": "그 돈"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant04:a:d-5:unlock:s3:0",
+            "factText": "이다은은 미납 월세가 공제될 수 있다는 가능성을 알면서도, 처음에는 반환 요구를 먼저 붙잡고 자신의 부담 부분은 뒤로 미뤘다.",
+            "tags": [
+              "responsibility",
+              "shame"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "한 달치 월세 미납",
+                "neutral": "미납 월세"
+              },
+              "amount2": {
+                "exact": "2천만원 반환 요구",
+                "neutral": "반환 요구"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant04:a:d-5:unlock:s4:0",
+            "factText": "월세를 안 낸 상태에서 2천만원 반환을 요구하면 자신이 더 나쁜 사람으로 보일까 봐, 이다은은 정산 대화를 미루며 감정적으로 버텼다.",
+            "tags": [
+              "shame",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "2천만원",
+                "neutral": "추가 보증금"
+              },
+              "amount2": {
+                "exact": "한 달치 월세 미납",
+                "neutral": "미납 상태"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant04:a:d-5:unlock:s5:0",
+            "factText": "이다은은 2천만원 전액 반환만을 주장할 수는 없고, 미납 월세를 포함한 일부 차감 후 기준을 다시 세워 정산해야 한다는 점까지 인정한다.",
+            "tags": [
+              "admission",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "2천만원",
+                "neutral": "추가 보증금"
+              },
+              "amount2": {
+                "exact": "미납 월세 일부 차감 후 반환",
+                "neutral": "일부 차감 정산"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "fact"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "tenant04:b:d-2:unlock:s2:0",
+            "factText": "장성호는 전환 논의가 시작된 주간에 이미 상환예상서를 받아 중도상환수수료 규모를 알고 있었다.",
+            "tags": [
+              "evidence",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "담보대출 상환예상서",
+                "neutral": "상환예상서"
+              },
+              "fee": {
+                "exact": "중도상환수수료 예상액",
+                "neutral": "상환 비용"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant04:b:d-2:unlock:s3:0",
+            "factText": "장성호는 아내 공동명의 서명 이야기를 초기에 꺼내면 협의가 깨질까 봐, 그 조건을 뒤로 미루고 먼저 전환 분위기부터 살폈다.",
+            "tags": [
+              "motive",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "공동명의 아내",
+                "neutral": "공동명의자",
+                "fullName": "성호 배우자",
+                "judgeRef": "공동명의자"
+              },
+              "time": {
+                "exact": "초기 전환 논의 시점",
+                "neutral": "처음 협의 때"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant04:b:d-2:unlock:s4:0",
+            "factText": "불리해지자 장성호는 공동명의와 비용 문제를 '원래부터 조건부였다'는 식으로 뒤늦게 붙여, 자신의 말 책임을 형식 문제로 되돌리려 했다.",
+            "tags": [
+              "self_justification",
+              "rule"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "condition": {
+                "exact": "공동명의 서명과 대출 비용",
+                "neutral": "그 조건들"
+              },
+              "document": {
+                "exact": "문서 단계라는 반복 설명",
+                "neutral": "형식 설명"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant04:b:d-2:unlock:s5:0",
+            "factText": "결국 장성호는 공동명의 서명과 대출 비용을 먼저 고지했어야 했고, 그 비공개가 전환 오해를 키웠다는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "condition": {
+                "exact": "공동명의 서명과 중도상환수수료",
+                "neutral": "핵심 조건"
+              },
+              "document": {
+                "exact": "상환예상서와 전환 초안",
+                "neutral": "관련 문서"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "fact"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant04:b:d-4:unlock:s2:0",
+            "factText": "카카오톡 전체 문맥에는 장성호가 '협의는 끝났다'고 명시적으로 통지한 문장이 존재하지 않는다.",
+            "tags": [
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "공인중개사 포함 카카오톡 전체 대화",
+                "neutral": "전체 카톡"
+              },
+              "time": {
+                "exact": "예비 임차인 예약 전",
+                "neutral": "그 전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant04:b:d-4:unlock:s3:0",
+            "factText": "장성호는 다은의 월세 중단이 확인된 다음날 바로 예비 임차인 예약을 잡았고, 그보다 앞선 결렬 통지는 남기지 않았다.",
+            "tags": [
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "document": {
+                "exact": "중개사 방문일지와 예약문자",
+                "neutral": "안내 기록"
+              },
+              "time": {
+                "exact": "월세 중단 확인 다음 날 오후",
+                "neutral": "그다음 날 오후"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant04:b:d-4:unlock:s4:0",
+            "factText": "장성호는 공실 위험뿐 아니라 협상 주도권을 잃지 않으려는 계산 때문에 통지보다 새 임차인 확보를 앞세웠다.",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "예비 임차인",
+                "neutral": "새 임차인"
+              },
+              "fee": {
+                "exact": "공실 손해와 대출 일정 압박",
+                "neutral": "손해 압박"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant04:b:d-4:unlock:s5:0",
+            "factText": "장성호는 다은에게 먼저 협의 종료를 알리지 않은 채 집을 보여준 순서 자체가 잘못이었다는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "document": {
+                "exact": "방문일지와 예약문자",
+                "neutral": "안내 기록"
+              },
+              "person": {
+                "exact": "이다은",
+                "neutral": "세입자",
+                "fullName": "이다은",
+                "judgeRef": "세입자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "fact"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant04:b:d-5:unlock:s2:0",
+            "factText": "장성호가 작성한 영수 메모에는 위약금·몰취라는 문구가 없고, '전환 준비금'이라는 표현만 남아 있다.",
+            "tags": [
+              "evidence",
+              "threshold"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "memo": {
+                "exact": "전환 준비금",
+                "neutral": "메모 문구"
+              },
+              "amount": {
+                "exact": "2천만원",
+                "neutral": "그 돈"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant04:b:d-5:unlock:s3:0",
+            "factText": "장성호는 2천만원을 객관식 정산 전에 자신의 손해 방어용 자금처럼 먼저 붙잡아 두려 했다.",
+            "tags": [
+              "motive",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "2천만원",
+                "neutral": "추가 보증금"
+              },
+              "fee": {
+                "exact": "손해 방어용 자금",
+                "neutral": "손해 보전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant04:b:d-5:unlock:s4:0",
+            "factText": "대출 정리 비용과 공실 압박이 겹치자, 장성호는 항목별 계산보다 돈을 선점해 두려는 심리가 더 앞섰다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fee": {
+                "exact": "대출 정리 비용과 공실 손해",
+                "neutral": "손해 압박"
+              },
+              "amount": {
+                "exact": "2천만원",
+                "neutral": "그 돈"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant04:b:d-5:unlock:s5:0",
+            "factText": "장성호는 2천만원 전액 몰취는 불가능하고, 미납 월세와 실제 손해만 공제한 뒤 나머지를 반환해야 한다는 기준을 인정한다.",
+            "tags": [
+              "admission",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "2천만원",
+                "neutral": "추가 보증금"
+              },
+              "amount2": {
+                "exact": "미납 월세와 실제 손해 공제 후 반환",
+                "neutral": "차감 후 반환"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "fact"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "tenant04:contradiction:0",
+        "targetParty": "a",
+        "trigger": "이다은이 d-1에서는 전세 전환이 사실상 확정됐다고 말하면서, d-3에서는 월세 중단 근거를 상대의 명시적 동의가 아니라 자신의 해석에 기대려 할 때",
+        "text": "전세 전환이 아직 문서상 미완이었다면, 다음 달 월세가 자동으로 멈춘다는 결론 역시 누가 어떻게 확정했는지 설명이 필요합니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-2"
+        ]
+      },
+      {
+        "id": "tenant04:contradiction:1",
+        "targetParty": "b",
+        "trigger": "장성호가 d-1에서 '아직 미확정'만 강조하면서 d-2의 핵심 조건 비공개를 부인하려 할 때",
+        "text": "아직 미확정이었다면 오히려 공동명의와 대출 비용 같은 핵심 조건을 더 먼저 밝혔어야 합니다. 미확정 주장과 조건 비공개 부인은 함께 유지되기 어렵습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-6"
+        ]
+      },
+      {
+        "id": "tenant04:contradiction:2",
+        "targetParty": "b",
+        "trigger": "장성호가 d-4에서 이미 충분히 통지했다고 주장하지만, 예비 임차인 예약 시각이 결렬 통지보다 앞설 때",
+        "text": "기록상 먼저 있었던 것은 통지가 아니라 안내 예약입니다. '이미 끝난 협의였다'는 설명은 순서 자료와 충돌합니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-5"
+        ]
+      },
+      {
+        "id": "tenant04:contradiction:3",
+        "targetParty": "a",
+        "trigger": "이다은이 d-5에서 2천만원을 확정 전세금처럼 주장하면서도, 영수 메모와 초안에 정산 기준이 비어 있음을 인정할 때",
+        "text": "메모와 초안 어디에도 확정 전세금 또는 자동 대체 조항이 없다면, 전액 반환이나 전액 보전 어느 쪽도 단정할 수 없습니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "tenant04:interjection:0",
+        "speaker": "judge",
+        "trigger": "두 당사자가 '느낌상'과 '문서상'만 반복하며 같은 문장을 다르게 해석할 때",
+        "text": "지금부터는 느낌이나 원칙이 아니라, 그 문장이 언제 누구 앞에서 어떤 단서와 함께 나왔는지 순서대로 답하십시오.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "tenant04:interjection:1",
+        "speaker": "a",
+        "trigger": "장성호가 감정 질문을 모두 '문서가 없잖아요'로 되돌릴 때",
+        "text": "문서 얘기만 하시는데, 그때 왜 그 조건을 먼저 안 말했는지는 또 빠지잖아요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant04:interjection:2",
+        "speaker": "b",
+        "trigger": "이다은이 여러 메시지를 한꺼번에 꺼내며 핵심 날짜 답변을 피할 때",
+        "text": "그 메시지 말고요. 2천만원 넣은 다음 달 월세를 실제로 냈는지부터 맞추시죠.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "tenant04:outburst:a:0",
+        "party": "a",
+        "trigger": "결혼 준비 일정과 예비 임차인 안내 장면이 함께 거론될 때",
+        "text": "저는 또 밀려나는 사람 되기 싫어서 버틴 거예요. 집이랑 결혼 일정이 한꺼번에 무너지는 느낌이었다고요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant04:outburst:a:1",
+        "party": "a",
+        "trigger": "장성호가 '초안일 뿐'이라는 말을 세 번 이상 반복할 때",
+        "text": "초안만 보냈다고 끝이 아니잖아요. 그 전까지 해온 말들이 있으니까 제가 거기까지 간 거죠.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "tenant04:outburst:b:0",
+        "party": "b",
+        "trigger": "이다은이 계속 '이미 확정'이었다고 단정하면서 문서 공란 지적을 넘기려 할 때",
+        "text": "서명도 날짜도 없는 걸 어떻게 완료라고 합니까. 말의 방향과 계약 완료는 전혀 다른 겁니다.",
+        "relatedDisputes": [
+          "d-1"
+        ]
+      },
+      {
+        "id": "tenant04:outburst:b:1",
+        "party": "b",
+        "trigger": "2천만원 전액 반환 요구가 대출 비용과 공실 손해 설명을 덮을 때",
+        "text": "그 돈을 그냥 다 돌리면 제 비용은 누가 떠안습니까. 손해가 생긴 항목도 같이 보셔야죠.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "tenant04:transition:a:d-1:s0_s1",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "구두 전세 전환 발언의 정확한 의미를 재판관이 반복 확인한다.",
+      "line": "정확한 계약 문구까지는 제가 못 짚을 수 있어요. 그래도 그때는 거의 정리된 방향이라고 느껴졌습니다.",
+      "behaviorHint": "말끝을 낮추고 손을 모은 채 재판관의 표정을 살핀다."
+    },
+    {
+      "id": "tenant04:transition:a:d-1:s1_s2",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1 녹취를 제시해 '가자는 방향' 뒤에 붙은 단서를 함께 들려준다.",
+      "line": "네, '서류 보고 정리하자'는 말이 붙어 있었네요. 그래도 저는 전환 쪽으로 굳었다고 받아들였습니다.",
+      "behaviorHint": "짧게 숨을 들이마신 뒤 인정과 해명을 한 문장에 붙인다."
+    },
+    {
+      "id": "tenant04:transition:a:d-1:s2_s4",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "결혼 일정과 대출 준비 압박을 비난 없이 묻는다.",
+      "line": "결혼 일정이 이미 돌아가고 있어서요. 그 약속이 틀어지면 다시 집을 구해야 할까 봐 더 확정처럼 붙들었습니다.",
+      "behaviorHint": "목소리가 작아졌다가 마지막 문장에서 조금 떨린다."
+    },
+    {
+      "id": "tenant04:transition:a:d-1:s4_s5",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6 초안과 상담 접수기록을 함께 제시해 빈칸과 서명 공란을 확인시킨다.",
+      "line": "초안 상태를 보면 완성된 계약은 아니었습니다. 제가 먼저 확정으로 믿고 움직인 건 인정합니다.",
+      "behaviorHint": "어깨가 내려가고 시선이 서류에 고정된다."
+    },
+    {
+      "id": "tenant04:transition:a:d-3:s0_s1",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "월세가 실제로 언제, 어떤 근거로 멈췄는지 특정해 묻는다.",
+      "line": "'끊었다'보다는 제가 멈춰도 되는 줄 알았다는 쪽이 더 가까워요. 그때는 정말 그렇게 이해했습니다.",
+      "behaviorHint": "손바닥을 작게 펼치며 표현을 순화하려 한다."
+    },
+    {
+      "id": "tenant04:transition:a:d-3:s1_s2",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2 전체 대화 문맥을 제시해 빠진 문장을 확인시킨다.",
+      "line": "전체 문맥에 '최종 정하자'는 말이 있네요. 그래도 저는 제가 받은 분위기대로 믿고 있었습니다.",
+      "behaviorHint": "휴대폰 화면을 한번 보고 바로 시선을 내린다."
+    },
+    {
+      "id": "tenant04:transition:a:d-3:s2_s3",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "2천만원 송금 메모와 월세 미납 시점을 연결해 재판관이 묻는다.",
+      "line": "네, 한 달치를 안 낸 건 제 행동입니다. 다만 송금이 이미 들어가 있어서 같은 흐름으로 봤습니다.",
+      "behaviorHint": "고개를 끄덕이며 인정하지만 바로 이유를 길게 덧붙인다."
+    },
+    {
+      "id": "tenant04:transition:a:d-3:s3_s5",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-3 송금 내역과 영수 메모 원본을 제시한다.",
+      "line": "더는 돌릴 말이 없네요. 저는 실제로 한 달치 월세를 내지 않았고, 그 판단이 성급했습니다.",
+      "behaviorHint": "입술을 깨물고 잠시 멈춘 뒤 짧게 인정한다."
+    },
+    {
+      "id": "tenant04:transition:a:d-5:s0_s1",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "2천만원의 성격과 반환 기준을 바로 묻는다.",
+      "line": "전액이라고 단정하긴 어렵더라도, 그 돈이 그냥 묶여 있을 성격은 아니라고 생각했습니다.",
+      "behaviorHint": "금액부터 말한 뒤 문장을 조심스럽게 고쳐 나간다."
+    },
+    {
+      "id": "tenant04:transition:a:d-5:s1_s2",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3 영수 메모와 송금 내역을 제시해 문구를 정확히 읽게 한다.",
+      "line": "메모상 확정 전세금이라고 못 박힌 건 아니네요. 그렇다고 위약금처럼 적힌 것도 아니었습니다.",
+      "behaviorHint": "영수 메모를 손끝으로 짚으며 문구를 따라 읽는다."
+    },
+    {
+      "id": "tenant04:transition:a:d-5:s2_s3",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "초안의 빈칸과 정산 기준 부재를 재판관이 짚는다.",
+      "line": "맞아요, 기준이 비어 있었습니다. 그래서 저는 상대가 먼저 정리해 줄 줄 알고 더 밀어붙였습니다.",
+      "behaviorHint": "상대 쪽을 짧게 본 뒤 다시 재판관에게 시선을 돌린다."
+    },
+    {
+      "id": "tenant04:transition:a:d-5:s3_s5",
+      "caseId": "tenant-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "정산에서 서로의 책임을 얼마나 인정하는지 직접 묻는다.",
+      "line": "제 월세 미납도 반영해야 합니다. 대신 나머지는 기준을 다시 세워 정산해야 한다는 건 인정합니다.",
+      "behaviorHint": "체념한 듯 고개를 끄덕이며 문장을 짧게 끊는다."
+    },
+    {
+      "id": "tenant04:transition:b:d-2:s0_s1",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "공동명의와 대출 비용을 언제 처음 고지했는지 재판관이 좁혀 묻는다.",
+      "line": "숨겼다기보다 서류 단계 문제로 본 겁니다. 다만 처음부터 길게 설명하진 않았습니다.",
+      "behaviorHint": "턱을 든 채 항목을 줄이는 듯 짧게 답한다."
+    },
+    {
+      "id": "tenant04:transition:b:d-2:s1_s2",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4 등기부와 상환예상서를 제시해 초기 인지 시점을 확인시킨다.",
+      "line": "문서 날짜를 보면 제가 일찍 알았던 건 맞습니다. 그 조건을 선명하게 말하지 않은 부분도 인정합니다.",
+      "behaviorHint": "문서를 한 번 내려다보고 입술을 굳힌다."
+    },
+    {
+      "id": "tenant04:transition:b:d-2:s2_s4",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "중도상환수수료 부담을 비난 없이 묻는다.",
+      "line": "상환수수료가 컸고 아내 서명까지 걸려 있었습니다. 그 말을 꺼내면 협의가 깨질까 봐 늦췄습니다.",
+      "behaviorHint": "말속도가 느려지고 '늦췄습니다'에서 시선을 피한다."
+    },
+    {
+      "id": "tenant04:transition:b:d-2:s4_s5",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6 초안과 상담 접수기록을 함께 제시해 공란 사유와 영향 범위를 확인한다.",
+      "line": "초안 공란과 상담 기록을 같이 보면, 그 조건을 먼저 알려야 했다는 게 분명합니다. 그건 제 잘못입니다.",
+      "behaviorHint": "등을 펴고 앉았다가 마지막 문장에서 힘을 빼듯 정리한다."
+    },
+    {
+      "id": "tenant04:transition:b:d-4:s0_s1",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "다른 임차인 안내 전 통지 여부를 시간순으로 묻는다.",
+      "line": "명시적 통지는 없었지만, 저는 이미 종료로 받아들였습니다. 월세가 멈춘 상태였으니까요.",
+      "behaviorHint": "손가락으로 날짜를 세듯 책상 위를 두드린다."
+    },
+    {
+      "id": "tenant04:transition:b:d-4:s1_s2",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2 전체 대화 문맥을 제시해 빠진 문장을 확인시킨다.",
+      "line": "카톡 전체를 보니 제가 끝났다고 적진 않았군요. 그 점은 인정합니다.",
+      "behaviorHint": "짧게 숨을 내쉬고 바로 다음 변명을 준비하는 표정이 된다."
+    },
+    {
+      "id": "tenant04:transition:b:d-4:s2_s3",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "결렬 통지 문구가 실제로 있었는지 재판관이 특정해 묻는다.",
+      "line": "직접 문구를 남기진 않았습니다. 하지만 미납 상태에서 공실을 비워둘 수는 없었습니다.",
+      "behaviorHint": "어깨를 굳힌 채 '공실'에서 짧게 힘을 준다."
+    },
+    {
+      "id": "tenant04:transition:b:d-4:s3_s5",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5 방문일지와 예약문자 원본을 제시해 실제 순서를 확인시킨다.",
+      "line": "방문일지와 예약문자를 보면 순서가 명확하네요. 먼저 통지하지 않고 보여준 건 제 실수입니다.",
+      "behaviorHint": "문자를 읽다가 고개를 끄덕이며 더는 말을 덧붙이지 않는다."
+    },
+    {
+      "id": "tenant04:transition:b:d-5:s0_s1",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "협의 실패 시 2천만원을 어떻게 돌려줄 생각이었는지 재판관이 묻는다.",
+      "line": "바로 돌려줄 돈은 아니라고 봤습니다. 적어도 미납과 손해는 먼저 계산돼야 하니까요.",
+      "behaviorHint": "금액을 먼저 말하고 손으로 선을 긋듯 제스처한다."
+    },
+    {
+      "id": "tenant04:transition:b:d-5:s1_s2",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3 영수 메모와 송금 내역을 제시해 문구를 정확히 읽게 한다.",
+      "line": "메모만 보면 위약금이라고 못 박히진 않았습니다. 그 점은 제가 더 세게 말한 셈이군요.",
+      "behaviorHint": "영수 메모를 들어 올렸다가 바로 내려놓는다."
+    },
+    {
+      "id": "tenant04:transition:b:d-5:s2_s3",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "초안과 메모에 정산 기준이 왜 없는지 재판관이 묻는다.",
+      "line": "초안과 메모에 기준이 비어 있었던 건 맞습니다. 그래도 월세 미납은 반영해야 한다고 봤습니다.",
+      "behaviorHint": "잠시 멈췄다가 계산 항목을 읊듯 다시 말문을 연다."
+    },
+    {
+      "id": "tenant04:transition:b:d-5:s3_s5",
+      "caseId": "tenant-04",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6 초안과 상담 기록을 함께 놓고 전액 몰취 가능성을 재판관이 묻는다.",
+      "line": "초안까지 같이 놓고 보면 전액 몰취는 어렵습니다. 미납 월세와 실제 손해만 빼고 나머지는 반환해야 합니다.",
+      "behaviorHint": "표정이 굳은 채로도 결론 문장은 분명하게 말한다."
+    }
+  ]
+}
+

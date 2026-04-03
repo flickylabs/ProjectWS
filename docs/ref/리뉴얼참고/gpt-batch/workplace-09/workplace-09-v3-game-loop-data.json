@@ -1,0 +1,1715 @@
+{
+  "caseId": "workplace-09",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "후속 메일과 DM의 교차 순서",
+      "description": "미팅 직후 참조 제거와 외부 문의가 어떤 순서로 이어졌는지 맞대어 보는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "송준석 씨, 미팅 직후 왜 유은채 씨를 거래처 후속 메일 참조에서 먼저 제외했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-09:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "송준석 씨, e-1과 e-2를 함께 보면 외부 반응보다 내부 확인이 먼저였어야 하지 않습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-09:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "송준석 씨, 회의록의 '자료선 이슈' 표현이 누군가를 원인처럼 읽히게 할 수 있다는 점을 알고도 남기셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-09:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "유은채 씨, 강소라 씨에게 보낸 DM이 단순 확인 요청이었다면 왜 내부 화면이 함께 갔습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-09:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "유은채 씨, 참조에서 빠진 직후 바로 외부 채널로 간 순서를 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-09:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "유은채 씨, '팀장이 잘못 보낸 것 아니냐'는 취지가 외부 파트너에게 내부 책임 공방으로 읽힐 수 있다는 점을 알았습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-09:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "같은 제목의 두 공유본",
+      "description": "절삭된 로그와 원본 링크 맵을 대조해 실제 유출 여부를 가르는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "송준석 씨, 이 PDF는 제목만 같을 뿐 문서 ID가 없는데도 왜 실제 유출 정황이라고 단정하셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-09:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "송준석 씨, 같은 제목 문서가 둘이었다는 점을 듣고도 왜 계속 '공유본'만 말했습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-09:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "송준석 씨, 중복 제목 구조를 알게 된 뒤 자신의 지시 방식이 오해를 키웠다는 점은 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-09:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "유은채 씨, 문서 제목과 발신 시각만으로 실제 유출이라고 본 근거를 다시 설명해 주시겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-09:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "유은채 씨, e-4에서 문서 ID가 갈리는 걸 보고도 왜 송준석 씨 설명보다 유출 결론을 먼저 붙잡았습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-09:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "유은채 씨, 같은 제목 구조가 핵심이었다면 왜 그 순간 자신의 단정을 거두지 못했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-09:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "요약 메일과 리스크 메모의 엇갈린 후폭풍",
+      "description": "실제 유출이 아니었다는 외부 메일과 선행 내부 제재 기록을 함께 보는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "송준석 씨, e-6 기준으로 사실확인 전에 '외부 커뮤니케이션 리스크' 메모를 넣은 이유를 설명해 주시겠습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-09:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "송준석 씨, 역할 축소가 임시 조치였다면 왜 평가에 남는 CRM 기록으로 먼저 처리했습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-09:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "송준석 씨, e-5까지 보면 실제 유출이 없었는데도 왜 유은채 씨 배제와 리스크 메모를 계속 유지했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-09:a:d-1:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "유은채 씨, e-5를 보면 거래처 표현이 AE 요약에서 온 것인데도 왜 실제 유출이라고 더 강하게 보셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-09:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "유은채 씨, e-6으로 역할 축소가 먼저였다는 사실이 확인된 뒤 그 조치가 자신의 판단에 어떤 영향을 줬습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-09:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "유은채 씨, 지금은 송준석 씨의 선행 조치가 부당했다는 주장과 별개로 자신의 후속 감정 대응까지 같이 보실 수 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-09:b:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-09:a:d-1:unlock:s2:0",
+            "factText": "준석은 유은채를 참조에서 빼는 조치를 실제로 했고, 이를 '임시 정리'라고 표현했다.",
+            "tags": [
+              "act",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "partner": {
+                "exact": "유은채",
+                "neutral": "상대 직원",
+                "fullName": "유은채",
+                "judgeRef": "유은채 씨"
+              },
+              "channel": {
+                "exact": "거래처 후속 메일 참조",
+                "neutral": "해당 후속 커뮤니케이션"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-09:a:d-1:unlock:s3:0",
+            "factText": "미팅 직후의 참조 제거와 회의록 표현 수정이 이어지며 은채를 원인처럼 읽히게 만들었다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "미팅 종료 후 두 시간 안",
+                "neutral": "그 직후",
+                "period": "미팅 직후"
+              },
+              "record": {
+                "exact": "계정 회의록",
+                "neutral": "내부 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-09:a:d-1:unlock:s4:0",
+            "factText": "준석은 계정과 리더십을 잃을까 두려워 거래처 리스크를 앞세워 자신의 조치를 포장했다.",
+            "tags": [
+              "context",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "account": {
+                "exact": "재계약 직전 핵심 계정",
+                "neutral": "그 계정"
+              },
+              "risk": {
+                "exact": "매출 리스크",
+                "neutral": "운영상 위험"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-09:a:d-1:unlock:s5:0",
+            "factText": "준석의 선행 배제는 사실확인보다 낙인이 먼저 작동한 결정이었다.",
+            "tags": [
+              "act",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "partner": {
+                "exact": "유은채",
+                "neutral": "상대 직원",
+                "fullName": "유은채",
+                "judgeRef": "유은채 씨"
+              },
+              "channel": {
+                "exact": "거래처 후속 메일 참조",
+                "neutral": "해당 후속 커뮤니케이션"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-09:a:d-2:unlock:s2:0",
+            "factText": "준석도 은채의 외부 문의 배경에 자신의 선행 배제가 있었다는 점을 안다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "강소라",
+                "neutral": "외부 파트너",
+                "fullName": "강소라",
+                "judgeRef": "강소라 씨"
+              },
+              "material": {
+                "exact": "내부 슬랙 화면 일부",
+                "neutral": "내부 화면"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-09:a:d-2:unlock:s3:0",
+            "factText": "준석은 촉발 원인과 별개로 외부 노출 책임은 별도로 본다.",
+            "tags": [
+              "rule",
+              "institution"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "대외 커뮤니케이션 분리 원칙",
+                "neutral": "팀 원칙"
+              },
+              "channel": {
+                "exact": "에이전시 AE 채널",
+                "neutral": "외부 채널"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-09:a:d-2:unlock:s4:0",
+            "factText": "준석의 시선에서도 d-2는 배제와 외부 노출이 서로 꼬인 사건이다.",
+            "tags": [
+              "context",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "참조 제거 직후",
+                "neutral": "그 직후"
+              },
+              "mood": {
+                "exact": "억울함",
+                "neutral": "감정적 압박"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-09:a:d-2:unlock:s5:0",
+            "factText": "준석은 은채 행동의 문제를 인정하면서도 그 압박 구조를 만든 자기 몫을 인정한다.",
+            "tags": [
+              "rule",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "대외 커뮤니케이션 분리 원칙",
+                "neutral": "팀 원칙"
+              },
+              "channel": {
+                "exact": "에이전시 AE 채널",
+                "neutral": "외부 채널"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-09:a:d-3:unlock:s2:0",
+            "factText": "준석이 든 열람 로그 PDF는 제목만 남은 절삭본이라 단독으로는 내부 유출을 증명하지 못한다.",
+            "tags": [
+              "evidence",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "'공유본_팔콘' 열람 로그 PDF",
+                "neutral": "그 로그 PDF"
+              },
+              "missing": {
+                "exact": "문서 ID와 경로",
+                "neutral": "핵심 식별 정보"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-09:a:d-3:unlock:s3:0",
+            "factText": "준석은 '공유본'이라는 말을 문서 특정 없이 써서 중복 제목 오해를 키웠다.",
+            "tags": [
+              "context",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "title": {
+                "exact": "'공유본_팔콘'",
+                "neutral": "해당 제목"
+              },
+              "count": {
+                "exact": "둘 이상의 문서",
+                "neutral": "중복 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-09:a:d-3:unlock:s4:0",
+            "factText": "준석은 계정과 자신의 관리 평판이 무너질까 두려워 실제 유출 해석에 매달렸다.",
+            "tags": [
+              "context",
+              "timeline"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "title": {
+                "exact": "'공유본_팔콘'",
+                "neutral": "해당 제목"
+              },
+              "count": {
+                "exact": "둘 이상의 문서",
+                "neutral": "중복 문서"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-09:a:d-3:unlock:s5:0",
+            "factText": "준석은 실제 유출이 없었다는 사실과, 자신이 오해를 키운 책임을 인정하게 된다.",
+            "tags": [
+              "context",
+              "timeline"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "title": {
+                "exact": "'공유본_팔콘'",
+                "neutral": "해당 제목"
+              },
+              "count": {
+                "exact": "둘 이상의 문서",
+                "neutral": "중복 문서"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-09:a:d-4:unlock:s2:0",
+            "factText": "준석은 사실확인 전에 CRM 역할 축소와 리스크 메모를 실제로 남겼다.",
+            "tags": [
+              "act",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "system": {
+                "exact": "CRM 역할 변경",
+                "neutral": "해당 시스템 조치"
+              },
+              "partner": {
+                "exact": "유은채",
+                "neutral": "상대 직원",
+                "fullName": "유은채",
+                "judgeRef": "유은채 씨"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-09:a:d-4:unlock:s3:0",
+            "factText": "d-4의 핵심은 임시 관리가 아니라 사실확인 전 선행 기록과 역할 재배치다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "사실확인 전",
+                "neutral": "그 이전"
+              },
+              "order": {
+                "exact": "메모와 역할 축소 선행",
+                "neutral": "선행 조치"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-09:a:d-4:unlock:s4:0",
+            "factText": "준석은 관리자 평판과 계정 방어를 위해 메모를 먼저 남겼다.",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "goal": {
+                "exact": "계정 보호와 리더십 방어",
+                "neutral": "자기 보전"
+              },
+              "fear": {
+                "exact": "관리 실패 평판",
+                "neutral": "그 평가"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-09:a:d-4:unlock:s5:0",
+            "factText": "준석은 리스크 메모와 역할 축소가 선행 낙인이었다는 책임을 인정하게 된다.",
+            "tags": [
+              "act",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "system": {
+                "exact": "CRM 역할 변경",
+                "neutral": "해당 시스템 조치"
+              },
+              "partner": {
+                "exact": "유은채",
+                "neutral": "상대 직원",
+                "fullName": "유은채",
+                "judgeRef": "유은채 씨"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-09:a:d-5:unlock:s2:0",
+            "factText": "준석은 원인을 단정하지 않았다고 말하지만, 제3자에게 자료관리 이슈 뉘앙스를 실제로 흘렸다.",
+            "tags": [
+              "act",
+              "quote"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "phrase": {
+                "exact": "'자료관리 이슈가 있었다'",
+                "neutral": "그 뉘앙스"
+              },
+              "outside": {
+                "exact": "거래처와 에이전시",
+                "neutral": "제3자 채널"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-09:a:d-5:unlock:s3:0",
+            "factText": "d-5에서 준석의 몫은 내부 확인보다 외부 분위기 탐색을 먼저 돌린 점이다.",
+            "tags": [
+              "context",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "process": {
+                "exact": "사실확인 전",
+                "neutral": "정식 확인 전"
+              },
+              "focus": {
+                "exact": "제3자 반응",
+                "neutral": "외부 분위기"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-09:a:d-5:unlock:s4:0",
+            "factText": "준석은 계정 붕괴 공포 때문에 제3자 반응을 먼저 읽으려 했다.",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "account": {
+                "exact": "핵심 계정",
+                "neutral": "그 계정"
+              },
+              "risk": {
+                "exact": "매출 리스크",
+                "neutral": "운영상 위험"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-09:a:d-5:unlock:s5:0",
+            "factText": "준석은 자신의 대외 뉘앙스 전달이 추측전을 키운 책임을 인정한다.",
+            "tags": [
+              "act",
+              "quote"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "phrase": {
+                "exact": "'자료관리 이슈가 있었다'",
+                "neutral": "그 뉘앙스"
+              },
+              "outside": {
+                "exact": "거래처와 에이전시",
+                "neutral": "제3자 채널"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-09:b:d-1:unlock:s2:0",
+            "factText": "은채는 참조 제거 그 자체보다, 그 순서가 자신을 원인처럼 만들었다고 본다.",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "partner": {
+                "exact": "송준석",
+                "neutral": "상대 관리자",
+                "fullName": "송준석",
+                "judgeRef": "송준석 씨"
+              },
+              "channel": {
+                "exact": "후속 메일 참조와 계정 회의",
+                "neutral": "해당 운영 흐름"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-09:b:d-1:unlock:s3:0",
+            "factText": "은채의 시선에서 쟁점은 '명시적 지목'보다도 사실확인 전에 시작된 배제다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "미팅 직후 두 시간 안",
+                "neutral": "그 직후",
+                "period": "미팅 직후"
+              },
+              "action": {
+                "exact": "참조 제거",
+                "neutral": "배제 조치"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-09:b:d-1:unlock:s4:0",
+            "factText": "배제는 은채에게 누설자 낙인과 경력 훼손 공포로 체감됐다.",
+            "tags": [
+              "harm",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "harm": {
+                "exact": "누설자처럼 보이는 낙인",
+                "neutral": "그 낙인"
+              },
+              "career": {
+                "exact": "세일즈 경력",
+                "neutral": "업무 평판"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-09:b:d-1:unlock:s5:0",
+            "factText": "은채는 준석의 선행 배제가 부당했다고 보면서도 이후 자신의 감정적 대응까지 돌아본다.",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "partner": {
+                "exact": "송준석",
+                "neutral": "상대 관리자",
+                "fullName": "송준석",
+                "judgeRef": "송준석 씨"
+              },
+              "channel": {
+                "exact": "후속 메일 참조와 계정 회의",
+                "neutral": "해당 운영 흐름"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-09:b:d-2:unlock:s2:0",
+            "factText": "은채는 강소라에게 내부 화면 일부를 보냈지만 이를 '확인 요청'으로 축소해 말한다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "강소라",
+                "neutral": "외부 파트너",
+                "fullName": "강소라",
+                "judgeRef": "강소라 씨"
+              },
+              "material": {
+                "exact": "내부 슬랙 화면 일부",
+                "neutral": "내부 화면"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-09:b:d-2:unlock:s3:0",
+            "factText": "은채의 메시지에는 결백 확인뿐 아니라 준석 책임을 바깥에서 확인받고 싶은 감정이 섞여 있었다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "강소라",
+                "neutral": "외부 파트너",
+                "fullName": "강소라",
+                "judgeRef": "강소라 씨"
+              },
+              "material": {
+                "exact": "내부 슬랙 화면 일부",
+                "neutral": "내부 화면"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-09:b:d-2:unlock:s4:0",
+            "factText": "희생양이 됐다는 분노가 은채를 외부 파트너 채널로 밀어냈다.",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "goal": {
+                "exact": "결백 입증",
+                "neutral": "자기 방어"
+              },
+              "fear": {
+                "exact": "기밀 누설 낙인",
+                "neutral": "그 낙인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-09:b:d-2:unlock:s5:0",
+            "factText": "은채의 외부 문의는 결국 내부 갈등을 외부에 노출한 책임으로 남는다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "강소라",
+                "neutral": "외부 파트너",
+                "fullName": "강소라",
+                "judgeRef": "강소라 씨"
+              },
+              "material": {
+                "exact": "내부 슬랙 화면 일부",
+                "neutral": "내부 화면"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-09:b:d-3:unlock:s2:0",
+            "factText": "은채도 e-3만으로는 실제 유출을 단정할 수 없다는 점을 인정하기 시작한다.",
+            "tags": [
+              "evidence",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "title": {
+                "exact": "문서 제목",
+                "neutral": "해당 제목"
+              },
+              "time": {
+                "exact": "발신 시각과 수신 순서",
+                "neutral": "그 시각 흐름"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-09:b:d-3:unlock:s3:0",
+            "factText": "은채는 오해의 구조가 중복 제목과 애매한 지시에 있었다고 본다.",
+            "tags": [
+              "context",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "title": {
+                "exact": "'공유본_팔콘'",
+                "neutral": "해당 제목"
+              },
+              "type": {
+                "exact": "클라이언트용 공유본과 내부 준비문서",
+                "neutral": "두 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-09:b:d-3:unlock:s4:0",
+            "factText": "은채의 '실제 유출' 단정에는 누설자 낙인을 벗고 싶은 조급함이 섞여 있었다.",
+            "tags": [
+              "evidence",
+              "quote"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "mail": {
+                "exact": "AE 후속 메일",
+                "neutral": "해당 메일"
+              },
+              "phrase": {
+                "exact": "'팔콘 가격가드'와 할인한도 표현",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-09:b:d-3:unlock:s5:0",
+            "factText": "은채는 실제 유출이 없었다는 사실과 자신의 과잉 단정 책임을 인정한다.",
+            "tags": [
+              "evidence",
+              "quote"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "mail": {
+                "exact": "AE 후속 메일",
+                "neutral": "해당 메일"
+              },
+              "phrase": {
+                "exact": "'팔콘 가격가드'와 할인한도 표현",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-09:b:d-4:unlock:s2:0",
+            "factText": "은채가 보는 d-4의 핵심은 설명보다 먼저 기록과 역할 축소가 들어간 순서다.",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "system": {
+                "exact": "CRM 역할 축소",
+                "neutral": "계정 역할 변경"
+              },
+              "time": {
+                "exact": "사실확인 전",
+                "neutral": "그 이전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-09:b:d-4:unlock:s3:0",
+            "factText": "은채는 관리자 권한이 사실확인보다 먼저 작동했다고 본다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "order": {
+                "exact": "선행 입력",
+                "neutral": "그 순서"
+              },
+              "process": {
+                "exact": "사실확인",
+                "neutral": "정식 확인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-09:b:d-4:unlock:s4:0",
+            "factText": "은채에게 d-4는 경력과 대외 접점에 찍힌 낙인으로 체감됐다.",
+            "tags": [
+              "evidence",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "memo": {
+                "exact": "'외부 커뮤니케이션 리스크'",
+                "neutral": "그 메모"
+              },
+              "effect": {
+                "exact": "문제 인원 표식",
+                "neutral": "낙인 효과"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-09:b:d-4:unlock:s5:0",
+            "factText": "은채는 선행 기록의 부당함을 주장하면서도 이후 자신의 감정적 대응까지 돌아본다.",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "system": {
+                "exact": "CRM 역할 축소",
+                "neutral": "계정 역할 변경"
+              },
+              "time": {
+                "exact": "사실확인 전",
+                "neutral": "그 이전"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-09:b:d-5:unlock:s2:0",
+            "factText": "은채는 참조에서 빠진 직후 강소라에게 책임 소재를 암시하며 확인을 구했다.",
+            "tags": [
+              "act",
+              "relationship"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "강소라",
+                "neutral": "외부 파트너",
+                "fullName": "강소라",
+                "judgeRef": "강소라 씨"
+              },
+              "action": {
+                "exact": "내부 책임 소재 암시",
+                "neutral": "책임 추정 문의"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-09:b:d-5:unlock:s3:0",
+            "factText": "은채의 d-5 책임은 내부 채널보다 제3자 역추적을 먼저 택한 데 있다.",
+            "tags": [
+              "context",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "참조 제거 직후",
+                "neutral": "그 직후"
+              },
+              "channel": {
+                "exact": "에이전시 AE DM",
+                "neutral": "외부 채널"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-09:b:d-5:unlock:s4:0",
+            "factText": "은채는 희생양이 되지 않으려는 수치심 때문에 외부 확인에 더 매달렸다.",
+            "tags": [
+              "motive",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "희생양 낙인",
+                "neutral": "그 낙인"
+              },
+              "goal": {
+                "exact": "결백 확인",
+                "neutral": "자기 방어"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-09:b:d-5:unlock:s5:0",
+            "factText": "은채는 자신도 제3자를 통한 추측전에 가담했다는 책임을 인정한다.",
+            "tags": [
+              "act",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "강소라",
+                "neutral": "외부 파트너",
+                "fullName": "강소라",
+                "judgeRef": "강소라 씨"
+              },
+              "action": {
+                "exact": "내부 책임 소재 암시",
+                "neutral": "책임 추정 문의"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "workplace-09:contradiction:0",
+        "targetParty": "a",
+        "trigger": "송준석이 '단정한 적 없다'고 버티면서 e-1과 e-6이 함께 제시될 때",
+        "text": "참조 제거와 리스크 메모가 모두 사실확인 전에 들어갔는데도 '단정은 아니었다'는 진술이 스스로 충돌합니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-6"
+        ]
+      },
+      {
+        "id": "workplace-09:contradiction:1",
+        "targetParty": "b",
+        "trigger": "유은채가 DM을 '확인 요청'으로만 축소하면서 e-2가 열릴 때",
+        "text": "내부 화면과 책임 추정 문구가 함께 나갔는데 '확인만 했다'는 설명은 대외 노출 범위와 맞지 않습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "workplace-09:contradiction:2",
+        "targetParty": "a",
+        "trigger": "송준석이 e-3만으로 실제 유출을 계속 단정할 때 e-4가 추가될 때",
+        "text": "제출한 로그는 제목뿐인 절삭본인데, 원본 링크 맵이 다른 문서를 가리키면 '실제 유출' 단정은 근거를 잃습니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-4"
+        ]
+      },
+      {
+        "id": "workplace-09:contradiction:3",
+        "targetParty": "b",
+        "trigger": "유은채가 여전히 실제 유출이라고 밀어붙이는데 e-5가 확인될 때",
+        "text": "거래처 표현이 AE의 요약 메일과 미팅 구두 설명에서 온 것으로 확인되면, '내부 준비자료를 봤다'는 결론은 더 이상 유지되지 않습니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "workplace-09:interjection:0",
+        "speaker": "judge",
+        "trigger": "양측이 서로 제3자부터 찾은 이유를 상대 탓으로만 돌릴 때",
+        "text": "두 분 다 제3자를 먼저 찾은 순서부터 멈추고, 왜 내부 확인 채널이 비었는지부터 답하십시오.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-09:interjection:1",
+        "speaker": "a",
+        "trigger": "유은채가 자신을 희생양이라고 반복할 때",
+        "text": "그 계정은 정말 한 번만 삐끗해도 끝날 수 있었어요. 제가 그 압박을 무시한 건 아니었어요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-09:interjection:2",
+        "speaker": "b",
+        "trigger": "송준석이 모든 조치를 '임시 정리'라고만 부를 때",
+        "text": "임시라고 하셨지만 저는 먼저 잘려 나간 사람으로 남았습니다. 그 순서부터 보셔야 합니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "workplace-09:outburst:a:0",
+        "party": "a",
+        "trigger": "e-4와 e-5로 실제 유출이 없었다는 점이 드러난 뒤에도 계정 손실 가능성이 언급될 때",
+        "text": "제가 겁먹어서 일을 더 키운 건 알아요. 그런데 그 계정이 날아갈까 봐 정말 무서웠어요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-09:outburst:a:1",
+        "party": "a",
+        "trigger": "리스크 메모와 역할 축소가 인사적 낙인으로 지적될 때",
+        "text": "임시 조치라고 계속 말한 건, 제가 관리자 자리를 지키려는 말이기도 했어요. 그걸 이제는 부인하기 어렵네요.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-09:outburst:b:0",
+        "party": "b",
+        "trigger": "e-2가 제시된 뒤에도 외부 문의를 단순 확인으로만 다룰 때",
+        "text": "문서 제목이 어떻든 저는 누설자로 몰린 채 잘린 사람처럼 서 있었어요. 그 상태에서 차분하기만 하긴 어려웠어요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-09:outburst:b:1",
+        "party": "b",
+        "trigger": "e-5로 실제 유출이 아니었다는 점이 확인되지만 자신의 피해는 축소될 때",
+        "text": "실제 유출이 아니었어도 제가 받은 낙인은 진짜였습니다. 그래서 제가 더 세게 버틴 겁니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3",
+          "d-4"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "workplace-09:transition:a:d-1:s0_s1",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "leak_source_question",
+      "line": "그 계정이 한 번만 삐끗해도 끝날 수 있어서 먼저 매출 리스크부터 봤어요. 유은채 씨를 바로 문제 삼으려던 건 아니고 잠깐 정리한 거라고 생각했어요.",
+      "behaviorHint": "의자 끝에 걸터앉듯 몸을 앞으로 숙인다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-1:s1_s2",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "e-1을 보니까 제가 유은채 씨를 잠깐 뺀 건 맞아요. 다만 그때는 계정을 멈추지 않게 하려는 운영상 판단이라고 여겼어요.",
+      "behaviorHint": "서류를 들여다보다 시선을 천천히 올린다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-1:s2_s3",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_remove_from_account_question",
+      "line": "제가 너무 빨랐던 건 맞지만, 공유본 정리가 더 빨랐으면 그렇게까지 가진 않았을 거예요. 그 계정 매출 리스크를 혼자 막아야 한다고 느꼈어요.",
+      "behaviorHint": "손을 펴 보이며 자기 변호와 상대 지적을 섞는다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-1:s3_s5",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_or_responsibility_question",
+      "line": "리스크 메모까지 보이면 변명하기 어렵네요. 사실확인 전에 유은채 씨를 배제한 건 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "짧게 숨을 고르고 고개를 숙인다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-3:s0_s1",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "actual_leak_question",
+      "line": "공유본 로그를 봤을 때는 실제 유출처럼 느꼈어요. 그 계정 매출 리스크 때문에 더 예민하게 본 것 같아요.",
+      "behaviorHint": "자료 가장자리를 손끝으로 정리한다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-3:s1_s2",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "그 PDF만으로는 어떤 공유본인지 특정되지 않는 건 맞아요. 그래도 그때는 그쪽에서 연 문서가 내부본인 줄 알았어요.",
+      "behaviorHint": "말끝을 낮추며 고개를 끄덕인다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-3:s2_s4",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_duplicate_titles",
+      "line": "같은 제목 문서가 둘일 수 있다는 얘기를 들으니 제가 공유본이라는 말만 붙잡았다는 걸 알아요. 애매한 지시를 제가 먼저 했던 것도 맞아요.",
+      "behaviorHint": "눈가가 풀리며 방어적 자세가 조금 풀린다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-3:s4_s5",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-4_or_e-5_presented",
+      "line": "e-4와 e-5를 보면 실제 유출은 아니네요. 제가 절삭된 로그에 기대어 몰아간 건 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "서류를 내려놓고 정면을 바라본다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-4:s0_s1",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "risk_note_question",
+      "line": "그 계정이 한 번만 삐끗해도 끝날 수 있어서 리스크 표시를 먼저 한 거예요. 평가라기보다 임시 정리라고 생각했어요.",
+      "behaviorHint": "손바닥을 뒤집으며 완곡하게 변명한다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-4:s1_s2",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "e-6을 보니까 제가 역할을 먼저 줄이고 메모를 남긴 건 맞아요. 다만 그때는 운영상 안전장치라고 봤어요.",
+      "behaviorHint": "입술을 다문 채 고개를 한 번 끄덕인다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-4:s2_s3",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_before_factcheck_question",
+      "line": "제가 확인보다 기록을 먼저 남긴 건 인정해요. 그래도 공유본 혼선이 계속될까 봐 보수적으로 갔어요.",
+      "behaviorHint": "손끝으로 테이블을 천천히 두드린다."
+    },
+    {
+      "id": "workplace-09:transition:a:d-4:s3_s5",
+      "caseId": "workplace-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "account_role_change_question",
+      "line": "역할 축소까지 묶어서 보면 임시 조치라고만 말하기 어렵네요. 사실확인 전 선행 낙인을 남긴 건 제 책임이에요.",
+      "behaviorHint": "어깨 힘을 풀고 시선을 피하지 않는다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-2:s0_s1",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "agency_dm_question",
+      "line": "문서 제목, 발신 시각, 수신 순서를 맞춰 보려던 확인 요청이었습니다. 외부 공유라고까지 보지는 않았습니다.",
+      "behaviorHint": "손가락으로 세 항목을 차례대로 짚는다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-2:s1_s2",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "e-2를 보면 제가 내부 화면을 보낸 건 맞습니다. 다만 그 당시에는 결백을 확인받으려는 확인 요청으로 판단했습니다.",
+      "behaviorHint": "짧게 숨을 들이쉬고 목소리를 더 낮춘다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-2:s2_s3",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "internal_screenshot_question",
+      "line": "화면까지 보낸 건 과했습니다. 그래도 송준석 씨 쪽도 저를 먼저 잘라 놓고 시작했잖아요, 그래서 밖에라도 확인하고 싶었습니다.",
+      "behaviorHint": "표정은 굳은 채 시선만 상대를 향한다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-2:s3_s5",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "recipient_scope_question",
+      "line": "수신 범위까지 확인되면 줄여 말하기 어렵습니다. 외부 파트너에게 내부 갈등을 노출한 건 제 잘못이고 제 책임입니다.",
+      "behaviorHint": "손에 쥔 펜을 내려놓고 자세를 바로 세운다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-3:s0_s1",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "raw_doc_shared_claim",
+      "line": "문서 제목, 발신 시각, 수신 순서를 보면 실제 유출처럼 읽혔습니다. 그래서 그 정황을 그대로 붙들었습니다.",
+      "behaviorHint": "타임라인을 보듯 허공을 세로로 가른다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-3:s1_s2",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "e-3만으로는 실제 유출을 단정할 수 없다는 건 압니다. 그래도 그때는 그 자료가 가장 직접적인 근거처럼 보였습니다.",
+      "behaviorHint": "시선을 내린 채 속도를 늦춘다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-3:s2_s3",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-4_presented",
+      "line": "e-4를 보니 같은 제목 문서가 둘이었던 구조가 드러납니다. 그래도 송준석 씨 쪽도 '공유본' 설명을 흐렸기 때문에 제가 더 세게 의심한 것입니다.",
+      "behaviorHint": "냉정한 표정으로 문장 끝을 단단히 끊는다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-3:s3_s5",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "ae_summary_email_question",
+      "line": "AE 메일까지 확인되면 실제 유출은 아니었습니다. 제가 정황을 실제 사실로 밀어붙인 건 제 잘못이고 제 책임입니다.",
+      "behaviorHint": "호흡을 길게 내쉰 뒤 고개를 아주 작게 숙인다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-5:s0_s1",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "third_party_rumor_question",
+      "line": "문서 제목, 발신 시각, 수신 순서를 확인하려는 확인 요청이었습니다. 소문을 돌리려던 의도는 아니었습니다.",
+      "behaviorHint": "입술을 얇게 다문 채 정확한 발음으로 말한다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-5:s1_s2",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_being_cut_out",
+      "line": "참조에서 빠진 직후 강소라 씨에게 물은 건 맞습니다. 다만 제가 희생양인지 확인받고 싶었던 것입니다.",
+      "behaviorHint": "목소리가 잠시 낮아지며 시선이 흔들린다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-5:s2_s3",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_not_internal_channel_first_question",
+      "line": "내부보다 밖에 먼저 물은 건 잘못입니다. 그래도 송준석 씨 쪽도 저를 먼저 잘라 놓고 시작했잖아요, 그래서 그렇게 기울었습니다.",
+      "behaviorHint": "차갑게 정면을 보며 한 단어씩 끊어 말한다."
+    },
+    {
+      "id": "workplace-09:transition:b:d-5:s3_s5",
+      "caseId": "workplace-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "상호 책임을 묻는다면 피하지 않겠습니다. 제3자를 통한 역추적에 제가 가담한 건 제 잘못이고 제 책임입니다.",
+      "behaviorHint": "어깨를 바로 펴고 담담하게 인정한다."
+    }
+  ]
+}
+

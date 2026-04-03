@@ -109,7 +109,7 @@ export const friend01TellsBeats = {
       "party": "a",
       "disputeId": "d-1",
       "beatType": "deny",
-      "line": "보증금 건은 아직 따로 떼어 말할 숫자가 아니었어. 체크아웃 직후엔 변수가 있어서 전체 정산으로 봐야 해.",
+      "line": "보증금을 숨긴 적 없어. 전체 정산이 끝나기 전인데 하나만 떼어서 말하는 건 순서가 아니야.",
       "behaviorHint": "시선을 아래로 두고 손가락으로 허공에 숫자를 정리하듯 세어 본다.",
       "applicableStates": [
         "S0"
@@ -310,7 +310,7 @@ export const friend01TellsBeats = {
       "party": "a",
       "disputeId": "d-4",
       "beatType": "blame",
-      "line": "관계를 덜 각박하게 끝내려 한 건데 그게 오히려 책임 회피처럼 보였어. 전체 정산이 꼬인 것도 사실이고.",
+      "line": "관계를 덜 각박하게 끝내려 한 건데 그게 오히려 책임 회피처럼 보였어. 전체 정산이 꼬인 것도 사실이고. 하린 쪽도 중간 캡처를 최종처럼 먼저 돌린 건 아닌가.",
       "behaviorHint": "쓴웃음을 짓고 문장 끝에서 잠깐 숨을 고른다.",
       "applicableStates": [
         "S3"
@@ -459,7 +459,7 @@ export const friend01TellsBeats = {
       "party": "b",
       "disputeId": "d-3",
       "beatType": "partial",
-      "line": "CSV 보니까 자동분배 전 숫자였더라고요. 그래서 과소비 단정은 거둬야 맞아요.",
+      "line": "CSV 보니까 자동분배 전 숫자였더라고요. 과소비라고 단정한 건 맞아요. 다만 그 숫자를 믿게 된 건 도윤이 환급이랑 차용 얘기를 안 꺼냈기 때문이에요.",
       "behaviorHint": "증거를 확인한 뒤 짧고 단단하게 결론을 수정한다.",
       "applicableStates": [
         "S2"

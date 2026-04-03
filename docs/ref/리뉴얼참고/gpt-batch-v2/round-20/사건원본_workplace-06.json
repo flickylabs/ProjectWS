@@ -1,0 +1,779 @@
+{
+  "caseId": "case-work-06",
+  "meta": {
+    "relationshipType": "boss_employee",
+    "conflictSeed": "CS-3",
+    "variableModules": [
+      "VM-C",
+      "VM-D"
+    ],
+    "twistModule": "",
+    "difficulty": "medium",
+    "anchorTruth": "통합 공지는 어느 쪽에도 단독 통제권을 주지 않았다. 첫 2주간 계정 변경·규칙 수정은 공동 승인+PM 기록이 필수였다.",
+    "emotionalBait": "준호의 일괄 계정 재배정 기록과 서린의 새벽 라우팅 수정 로그가 나란히 찍혀 있어, 먼저 침범한 한쪽만 문제처럼 보인다.",
+    "resolutionDilemma": "준호의 독단적 재배정과 서린의 레거시 권한 사용 중 어느 쪽이 더 무거운가. 이미 쌓인 고객 지연 책임은 어떻게 공동 정산하는가."
+  },
+  "duo": {
+    "partyA": {
+      "name": "박준호",
+      "age": 42,
+      "occupation": "통합수익운영팀 팀장",
+      "incomeBracket": "high",
+      "archetype": "avoidant",
+      "speechStyle": "\"그날은 시스템이 다 흔들렸잖아요.\" 전체 KPI부터 깔아 개별 월권의 순서를 미룬다. 몰리면 \"멈추지 않게 하려 했다\"로 방어.",
+      "pride": 7,
+      "fear": "통합 첫 주부터 '통제력 없는 새 팀장'으로 찍혀 리더십 자체를 의심받는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "queue_dashboard_watcher",
+      "dailyRoutine": "아침에는 통합 큐와 매출 지표를 훑고, 오후에는 계정 우선순위와 인력 배치를 조정하며, 저녁에는 병목 계정을 직접 재배정해 마감 수치를 맞춘다.",
+      "sensitivePoints": [
+        "통합 리더십",
+        "고객 지연",
+        "관리자 평가"
+      ],
+      "verbalTells": [
+        {
+          "type": "chaos_cover",
+          "trigger": "lying",
+          "pattern": "\"그날은 시스템 전체가 흔들렸어요.\" 구체적 월권 질문에 혼란 자체를 방패로 세운다."
+        },
+        {
+          "type": "temporary_language",
+          "trigger": "cornered",
+          "pattern": "\"잠깐 손댄 거예요, 임시로 돌린 거예요.\" 조치의 강도를 계속 축소한다."
+        },
+        {
+          "type": "order_skip",
+          "trigger": "avoiding",
+          "pattern": "누가 먼저 절차를 건너뛰었는지 대신 \"결과가 나빴잖아요\"로 점프해 순서를 흐린다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "서린씨",
+        "toJudge": "제 팀원",
+        "angry": "이서린!"
+      }
+    },
+    "partyB": {
+      "name": "이서린",
+      "age": 34,
+      "occupation": "고객성공 선임",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "\"공지에 이렇게 적혀 있잖아요.\" 상대 문장을 되읽으며 경계를 세운다. 몰리면 \"수정이 아니라 복구예요\"로 자기 월권을 축소한다.",
+      "pride": 6,
+      "fear": "영역을 지키지 못한 사람이자 시스템을 마음대로 건드린 사람, 두 딱지를 동시에 붙여지는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "macro_rule_tuner",
+      "dailyRoutine": "오전에는 고객 헬스 점수와 이탈 위험 계정을 확인하고, 오후에는 에스컬레이션 티켓을 정리하며, 밤에는 남아 있는 레거시 설정과 자동화 규칙을 손본다.",
+      "sensitivePoints": [
+        "영역 침범",
+        "레거시 권한",
+        "고객 손실 책임"
+      ],
+      "verbalTells": [
+        {
+          "type": "quote_and_point",
+          "trigger": "lying",
+          "pattern": "공지 문장을 화면에서 그대로 되읽으며 자기 쪽 월권을 잠시 가린다."
+        },
+        {
+          "type": "permission_narrowing",
+          "trigger": "cornered",
+          "pattern": "\"수정이 아니라 복구예요.\" 명칭을 바꿔 권한 남용 범위를 축소한다."
+        },
+        {
+          "type": "sharp_overlap",
+          "trigger": "emotional",
+          "pattern": "억울하면 상대 말을 끊고 \"그건 제 영역이에요\"를 반복한다. 대화가 점점 충돌로 변한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "팀장님",
+        "toJudge": "제 팀장",
+        "angry": "박준호 팀장!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "킥오프에서 첫 2주간 계정 변경·라우팅 수정은 상호 확인 후 PM에게 기록하기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "지난 분기 서린이 야간에 타팀 라우팅을 고쳐 준 일을 둘은 '도움' vs '월권'으로 다르게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '그때부터 선을 자주 넘었다' / B: '당신이 부탁해서 살린 건이었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "통합 첫날 준호가 전화로 \"헷갈리면 네 쪽에서 먼저 막아\"라고 했으나 보드에는 미기록. 서린은 그 말을 근거로 삼았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "이보라 (통합프로그램 디렉터)",
+        "relationTo": "a",
+        "knowledgeScope": "준호가 수치 안정화 압박을 받은 사실과, 공지가 단독 통제권이 아니었다는 점을 안다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 47,
+          "occupation": "통합프로그램 디렉터",
+          "relationToA": "통합프로그램 디렉터",
+          "relationToB": "이서린와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "준호씨",
+          "addressB": "서린씨"
+        },
+        "addressA": "박준호씨",
+        "addressB": "이서린씨"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "권하늘 (부서통합 PM)",
+        "relationTo": "both",
+        "knowledgeScope": "임시 RACI, 공동 승인 규칙, 두 사람이 에스컬레이션을 건너뛴 시점을 확인 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 40,
+          "occupation": "부서통합 PM",
+          "relationToA": "박준호을 업무상 알고 있음",
+          "relationToB": "이서린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "준호씨",
+          "addressB": "서린씨"
+        },
+        "addressA": "박준호씨",
+        "addressB": "이서린씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "최원석 (IT 권한관리 담당)",
+        "relationTo": "both",
+        "knowledgeScope": "레거시 권한 잔존 여부, 재배정 감사 로그, 라우팅 변경 이력을 원본 대조 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 43,
+          "occupation": "IT 권한관리 담당",
+          "relationToA": "박준호을 업무상 알고 있음",
+          "relationToB": "이서린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "박준호씨",
+          "addressB": "이서린씨"
+        },
+        "addressA": "박준호씨",
+        "addressB": "이서린씨"
+      }
+    ],
+    "relationshipType": "boss_employee"
+  },
+  "context": {
+    "contextType": "department_merge",
+    "description": "고객성공팀과 수익운영팀 통합 직후. 계정 오너십, 에스컬레이션 큐, 자동화 규칙이 전부 과도기다. 버튼 하나가 매출과 고객 지연을 바로 움직이는 시기에, 모호한 공지와 레거시 권한이 월권의 근거로 쓰이고 있다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "첫 2주 성과가 새 조직 평가로 직결된다. 작은 권한 충돌도 리더십 논란과 고객 손실 책임 공방으로 확대되는 구조.",
+    "caseNumber": "E-WK-N-0006",
+    "caseName": "권한 갈등"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "준호의 일괄 재배정과 대시보드 수정",
+      "truth": true,
+      "truthDescription": "준호는 인수인계 완료 전 서린 관할 계정을 일괄 재배정하고, 헬스 점수 임계값까지 직접 수정했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "권한경계재설정",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준호는 계정을 재배정했다."
+    },
+    {
+      "id": "d-2",
+      "name": "서린의 레거시 권한 사용과 라우팅 변경",
+      "truth": true,
+      "truthDescription": "서린은 삭제됐어야 할 레거시 관리자 권한으로 새벽에 수익운영 큐 라우팅과 벤더 태그를 수정했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "권한경계재설정",
+      "legitimacyIssue": false,
+      "judgmentStatement": "서린은 레거시 권한으로 수정했다."
+    },
+    {
+      "id": "d-3",
+      "name": "통합 공지의 단독 통제권 부여 여부",
+      "truth": false,
+      "truthDescription": "공지는 임시 안정화 지침일 뿐 단독 통제권은 없었다. RACI에 'co-sign + PM log' 필수가 명시돼 있다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "역할명문화",
+      "legitimacyIssue": false,
+      "judgmentStatement": "통합 공지는 단독 통제권이 아니다."
+    },
+    {
+      "id": "d-4",
+      "name": "준호의 선행 캘리브레이션 메모",
+      "truth": true,
+      "truthDescription": "준호는 역할 경계 정리 전날 밤 HR 캘리브레이션에 서린을 'boundary-blind'로 적어 선행 낙인을 만들었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "평가보류",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준호는 서린을 'boundary-blind'로 적었다."
+    },
+    {
+      "id": "d-5",
+      "name": "지연 경고 후 쌍방 독단 핫픽스",
+      "truth": true,
+      "truthDescription": "지연 경고 후 준호는 계정을 직접 돌리고 서린은 자동화 규칙을 독단 수정했다. 둘 다 PM 에스컬레이션을 늦췄다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "공동운영복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준호는 계정을 직접 돌렸다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "팀즈 통합공지 캡처와 잘린 역할표",
+      "description": "잘린 팀즈 공지 캡처. 'temporary stabilization' 뒤의 조건 문장이 빠져 단독 권한처럼 읽힌다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "캡처가 아닌 공지 원문과 답글 스레드 전체를 함께 확인해야 한다.",
+        "check_metadata": "'temporary stabilization' 뒤 조건 문장이 잘려 단독 권한 부여로 오독되기 쉽다.",
+        "restore_context": "원 공지는 공동 승인+PM 기록을 전제로 한 임시 운영 지침이다.",
+        "verify_source": "팀즈 메시지 ID와 캡처 시간은 일치. 다만 절삭 범위 때문에 해석이 달라진다.",
+        "check_edits": "문장 조작은 없으나 절삭·하이라이트로 의미가 과장됐다.",
+        "question_acquisition": "개인 단말 저장 조직 공지 캡처. 제출 범위·인명 노출 제한 필요."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박준호에게: \"준호의 일괄 재배정과 대시보드 수정\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 박준호의 \"준호의 일괄 재배정과 대시보드 수정\" 쟁점과 관련된다. 박준호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "이서린에게: \"통합 공지의 단독 통제권 부여 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 이서린의 \"통합 공지의 단독 통제권 부여 여부\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "레거시 관리자 권한 감사 로그와 라우팅 규칙 변경 내역",
+      "description": "서린의 레거시 관리자 권한 잔존 기록과, 새벽 시간대 라우팅·벤더 태그 변경 감사 로그.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약이 아닌 권한 부여 이력과 세부 변경 로그를 함께 추출해야 한다.",
+        "check_metadata": "서린 계정 새벽 규칙 수정. 통합 후 삭제 대상 관리자 그룹이 아직 잔존.",
+        "restore_context": "서린은 지연 방어를 주장하지만, 공식 승인 없이 타팀 큐를 건드린 사실은 남는다.",
+        "verify_source": "권한관리 콘솔과 라우팅 엔진 로그가 같은 계정·세션 ID를 가리킨다.",
+        "check_edits": "자동 감사 로그. 사후 편집 흔적 없음.",
+        "question_acquisition": "시스템 운영 로그. 조사 범위 내 적법 열람 가능."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박준호에게: \"지연 경고 후 쌍방 독단 핫픽스\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박준호의 \"지연 경고 후 쌍방 독단 핫픽스\" 쟁점과 관련된다. 박준호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "이서린에게: \"서린의 레거시 권한 사용과 라우팅 변경\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 이서린의 \"서린의 레거시 권한 사용과 라우팅 변경\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "공식 통합 RACI 문서와 임시권한 해설 메모",
+      "description": "계정 변경·규칙 수정에 'co-sign + PM log' 필수라고 명시된 통합 RACI와 해설 메모.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "최종 배포본과 배포 직전 첨부된 해설 메모를 함께 확인해야 한다.",
+        "check_metadata": "계정 변경·라우팅 수정 옆에 'co-sign + PM log' 필수가 명시돼 있다.",
+        "restore_context": "임시 운영 범위가 오해됐을 뿐, 어느 쪽 단독 소관으로 정리된 적은 없다.",
+        "verify_source": "PMO 저장소와 배포 메일 첨부본이 같은 버전 해시를 가진다.",
+        "check_edits": "버전 이력 보존. 배포 당시 상태 복원 가능.",
+        "question_acquisition": "통합 운영 문서. 업무 확인 적법."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-4",
+      "name": "통합 큐 재배정 기록과 대시보드 편집 이력",
+      "description": "준호의 일괄 계정 재배정과 서린 팀 대시보드 점수 임계값 수정이 찍힌 CRM 감사 로그.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "결과표가 아닌 전후 오너십 변경 기록과 편집 이력을 함께 확인해야 한다.",
+        "check_metadata": "준호 계정에서 짧은 시간 안에 일괄 재배정→점수 임계값 수정이 연속 실행.",
+        "restore_context": "준호는 매출 방어를 주장하나, 인수인계 전 타팀 기준을 직접 바꾼 사실은 분명하다.",
+        "verify_source": "CRM 감사 로그와 대시보드 기록이 같은 사용자·세션을 가리킨다.",
+        "check_edits": "플랫폼 원본 로그. 사후 편집 흔적 없음.",
+        "question_acquisition": "고객 계정 운영 기록. 분쟁 해결 범위 내 적법."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박준호에게: \"준호의 일괄 재배정과 대시보드 수정\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 박준호의 \"준호의 일괄 재배정과 대시보드 수정\" 쟁점과 관련된다. 박준호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "이서린에게: \"지연 경고 후 쌍방 독단 핫픽스\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 이서린의 \"지연 경고 후 쌍방 독단 핫픽스\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "HR 캘리브레이션 초안과 매니저 코멘트",
+      "description": "준호가 서린을 'boundary-blind'로 적은 HR 캘리브레이션 초안. 역할 정리 전날 밤 입력.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약이 아닌 초기 입력본과 수정본을 모두 확인해야 한다.",
+        "check_metadata": "역할 경계 정리 전날 밤 준호 계정에서 'boundary-blind' 코멘트가 먼저 입력.",
+        "restore_context": "징계가 아닌 캘리브레이션 메모가 통합 초기 평판을 선행적으로 형성했다.",
+        "verify_source": "HR 시스템 관리자 조회본과 출력본이 일치한다.",
+        "check_edits": "수정 이력 보존. 표현 완화 전 원문까지 확인 가능.",
+        "question_acquisition": "인사자료. 사용 목적은 분쟁 해결에 한정."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-6",
+      "name": "부서통합 PM 회의록과 에스컬레이션 체크리스트",
+      "description": "권한 충돌 시 'PM 즉시 기록+공동 승인'이라고 적힌 통합 회의록과 에스컬레이션 체크리스트.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "확정본과 당일 체크리스트 제출 여부, 댓글 스레드를 함께 확인해야 한다.",
+        "check_metadata": "지연 알림 당일 두 사람 모두 체크리스트를 열람했으나 PM 핑은 늦게 남았다.",
+        "restore_context": "혼선이 있었더라도 즉시 에스컬레이션 루트는 이미 마련돼 있었다.",
+        "verify_source": "PM 도구 알림과 회의록 링크가 같은 이벤트 ID로 연결된다.",
+        "check_edits": "보존된 협업 문서. 사후 편집 흔적 없음.",
+        "question_acquisition": "통합 운영 회의 자료. 업무 목적 확인 적법."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박준호에게: \"지연 경고 후 쌍방 독단 핫픽스\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박준호의 \"지연 경고 후 쌍방 독단 핫픽스\" 쟁점과 관련된다. 박준호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "이서린에게: \"통합 공지의 단독 통제권 부여 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 이서린의 \"통합 공지의 단독 통제권 부여 여부\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "준호는 인수인계가 끝나기 전 고객 계정과 대시보드 기준을 직접 바꿨다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "서린은 남아 있던 레거시 관리자 권한으로 타팀 라우팅 규칙을 수정했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "통합 공지는 어느 한쪽의 단독 통제권이 아니라 공동 승인과 PM 기록을 요구하는 임시 지침이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "준호는 역할 경계가 정리되기 전에 서린에 대한 부정적 평가 메모를 먼저 남겼다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "고객 지연 신호 이후 두 사람 모두 독단적 핫픽스를 택하고 에스컬레이션을 늦췄다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "account_owner_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "dashboard_edit_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "calibration_note_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_merge_pressure"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "note_withdrawal_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "escalation_delay_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_no_pm_ping_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "routing_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "legacy_admin_rights_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "exclusive_authority_claim"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "co_sign_rule_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "queue_delay_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_being_cut_out"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "권한경계재설정": [
+      "첫 2주 동안의 계정 재배정과 규칙 수정은 당사자 둘과 PM이 함께 보는 승인표로만 처리한다.",
+      "레거시 관리자 권한을 전수 점검해 남아 있는 권한을 즉시 회수하고, 예외 변경은 일회성 승인 토큰으로만 허용한다.",
+      "재차 독단 수정이 발생하면 관리권과 관리자 권한을 모두 일시 중지하고 제3자 운영담당이 임시로 큐를 맡는다."
+    ],
+    "역할명문화": [
+      "통합 공지와 RACI 문서의 모호한 문구를 실제 버튼 단위 권한으로 다시 써서 배포한다.",
+      "계정 오너 변경, 라우팅 수정, 대시보드 기준 변경을 각각 누구와 공동 승인해야 하는지 체크리스트로 고정한다.",
+      "모호한 지시를 전화나 구두로 내리는 관행이 반복되면 통합 기간 모든 운영 지시를 문서 채널에서만 인정한다."
+    ],
+    "평가보류": [
+      "역할 경계가 확정될 때까지 통합 초기의 비공식 평가 메모는 승진·보상 판단에서 잠정 제외한다.",
+      "준호의 선행 코멘트는 사실확인 후 다시 검토하고, 동일 시기 서린의 반박도 같은 문서에 병기한다.",
+      "통합 혼선 중 관리자의 선행 낙인이 반복되면 해당 관리자의 평가 코멘트 권한을 일정 기간 보류한다."
+    ],
+    "공동운영복구": [
+      "고객 지연이 생기면 핫픽스보다 먼저 PM 에스컬레이션과 공동 승인 로그를 남기게 한다.",
+      "통합 초기 장애와 지연은 개인 잘못만이 아니라 승인 누락, 권한 잔존, 미기록 조치를 나눠 회고한다.",
+      "반복적으로 독단적 핫픽스가 발생하면 두 팀의 운영을 임시 공동관제 체제로 전환해 단독 수정 권한을 제한한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

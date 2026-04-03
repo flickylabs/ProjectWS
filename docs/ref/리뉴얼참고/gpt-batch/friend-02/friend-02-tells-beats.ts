@@ -132,7 +132,7 @@ export const friend02TellsBeats = {
       "party": "a",
       "disputeId": "d-2",
       "beatType": "evidence_hit",
-      "line": "스토리요? 네, 감정이 올라와서 올렸습니다. 하지만 그때는 이미 배신당했다고 믿고 있었어요.",
+      "line": "스토리 보관본까지 나오면 부정할 수 없죠. 네, 감정이 올라와서 올렸습니다. 하지만 그때는 이미 배신당했다고 믿고 있었어요.",
       "behaviorHint": "숨을 한 번 길게 멈춘 뒤 사실과 감정을 분리하듯 말한다.",
       "applicableStates": [
         "S1",
@@ -357,7 +357,7 @@ export const friend02TellsBeats = {
       "party": "b",
       "disputeId": "d-1",
       "beatType": "evidence_hit",
-      "line": "포워드 기록은 부정 못 하겠습니다. 다만 그 뒤 익명글로 번질 줄은 진짜 몰랐어요.",
+      "line": "포워드 기록은 부정 못 하겠습니다. 그 뒤 익명글로 번질 줄은 진짜 몰랐어요.",
       "behaviorHint": "목이 잠긴 소리로 사실을 좁게 인정한다.",
       "applicableStates": [
         "S1",
@@ -533,7 +533,7 @@ export const friend02TellsBeats = {
       "party": "b",
       "disputeId": "d-4",
       "beatType": "blame",
-      "line": "처음 자료를 넘긴 사람이 저라, 박서후 이름까지 나오면 일이 전부 제 탓으로 몰릴까 겁났습니다.",
+      "line": "처음 자료를 넘긴 사람이 저라, 박서후 이름까지 나오면 일이 전부 제 탓으로 몰릴까 겁났습니다. 가은 쪽도 확인 없이 저격 스토리를 올려서 상황을 키운 부분이 있잖아요.",
       "behaviorHint": "목소리가 갈라지며 두려움을 의도보다 앞세운다.",
       "applicableStates": [
         "S3",

@@ -1,5 +1,5 @@
 {
-  "caseId": "neighbor05",
+  "caseId": "neighbor-05",
   "executableTells": {
     "a": [
       {
@@ -117,7 +117,7 @@
   "beatScripts": [
     {
       "id": "neighbor05:beat:a:d-1:deny",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-1",
       "beatType": "deny",
@@ -130,7 +130,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-1:hedge",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-1",
       "beatType": "hedge",
@@ -143,7 +143,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-1:partial",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-1",
       "beatType": "partial",
@@ -156,7 +156,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-1:blame",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-1",
       "beatType": "blame",
@@ -169,7 +169,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-1:confession",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-1",
       "beatType": "confession",
@@ -182,7 +182,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-1:evidence_hit",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-1",
       "beatType": "evidence_hit",
@@ -195,7 +195,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-3:deny",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-3",
       "beatType": "deny",
@@ -208,7 +208,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-3:hedge",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-3",
       "beatType": "hedge",
@@ -221,7 +221,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-3:partial",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-3",
       "beatType": "partial",
@@ -234,7 +234,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-3:blame",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-3",
       "beatType": "blame",
@@ -247,7 +247,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-3:confession",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-3",
       "beatType": "confession",
@@ -260,7 +260,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-3:evidence_hit",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-3",
       "beatType": "evidence_hit",
@@ -273,7 +273,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-5:deny",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-5",
       "beatType": "deny",
@@ -286,7 +286,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-5:hedge",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-5",
       "beatType": "hedge",
@@ -299,7 +299,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-5:partial",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-5",
       "beatType": "partial",
@@ -312,11 +312,11 @@
     },
     {
       "id": "neighbor05:beat:a:d-5:blame",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-5",
       "beatType": "blame",
-      "line": "약속 문언으로 보면 제가 먼저 어긴 걸 수 있어요. 다만 그 순간엔 공개가 아니라 도움 요청이라고 스스로 합리화했습니다.",
+      "line": "약속 문언으로 보면 제가 먼저 어긴 걸 수 있어요. 그 순간엔 공개가 아니라 도움 요청이라고 스스로 합리화했습니다.",
       "behaviorHint": "시선을 피하다가 마지막 문장에서 자책 섞인 웃음을 보인다.",
       "applicableStates": [
         "S3"
@@ -325,7 +325,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-5:confession",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-5",
       "beatType": "confession",
@@ -338,7 +338,7 @@
     },
     {
       "id": "neighbor05:beat:a:d-5:evidence_hit",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "a",
       "disputeId": "d-5",
       "beatType": "evidence_hit",
@@ -351,7 +351,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-2:deny",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-2",
       "beatType": "deny",
@@ -364,7 +364,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-2:hedge",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-2",
       "beatType": "hedge",
@@ -377,7 +377,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-2:partial",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-2",
       "beatType": "partial",
@@ -390,7 +390,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-2:blame",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-2",
       "beatType": "blame",
@@ -403,7 +403,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-2:confession",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-2",
       "beatType": "confession",
@@ -416,7 +416,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-2:evidence_hit",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-2",
       "beatType": "evidence_hit",
@@ -429,7 +429,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-4:deny",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-4",
       "beatType": "deny",
@@ -442,7 +442,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-4:hedge",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-4",
       "beatType": "hedge",
@@ -455,7 +455,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-4:partial",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-4",
       "beatType": "partial",
@@ -468,11 +468,11 @@
     },
     {
       "id": "neighbor05:beat:b:d-4:blame",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-4",
       "beatType": "blame",
-      "line": "그 상자까지 제 것이 아니면 제 반박 전체가 약해지니까, 제가 그 동일성을 더 붙잡았던 겁니다.",
+      "line": "그 상자까지 제 것이 아니면 제 반박 전체가 약해지니까, 제가 그 동일성을 더 붙잡았던 겁니다. 서윤 쪽도 먼저 잘린 캡처를 돌리며 절도 프레임을 만든 건 아닌가요.",
       "behaviorHint": "턱을 만지며 계산적인 표정이 잠깐 드러난다.",
       "applicableStates": [
         "S3"
@@ -481,7 +481,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-4:confession",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-4",
       "beatType": "confession",
@@ -494,7 +494,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-4:evidence_hit",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-4",
       "beatType": "evidence_hit",
@@ -507,7 +507,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-5:deny",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-5",
       "beatType": "deny",
@@ -520,7 +520,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-5:hedge",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-5",
       "beatType": "hedge",
@@ -533,7 +533,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-5:partial",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-5",
       "beatType": "partial",
@@ -546,7 +546,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-5:blame",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-5",
       "beatType": "blame",
@@ -559,7 +559,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-5:confession",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-5",
       "beatType": "confession",
@@ -572,7 +572,7 @@
     },
     {
       "id": "neighbor05:beat:b:d-5:evidence_hit",
-      "caseId": "neighbor05",
+      "caseId": "neighbor-05",
       "party": "b",
       "disputeId": "d-5",
       "beatType": "evidence_hit",

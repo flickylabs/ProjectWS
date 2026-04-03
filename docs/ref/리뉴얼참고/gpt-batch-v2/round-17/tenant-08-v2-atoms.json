@@ -1,0 +1,2559 @@
+{
+  "caseId": "tenant-08",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "보내신 캡처는 원본처럼 안 보입니다. 합계 줄이랑 잘린 부분부터 이상합니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 처음 캡처를 받았을 때부터 발행기관명과 합계 부분이 잘려 있어 공식 원본이 아닐 수 있다고 느꼈다."
+          ],
+          "suppressions": [
+            "관리비 전액 보류를 한 자신의 대응은 이 시점에 일부러 뒤로 미룬다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing",
+            "tenant08:a:tell:overlap_attack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-1:evidence:0",
+              "factText": "캡처 자료의 잘린 상단 정보와 어색한 합계 줄 때문에 서지현은 원본성 자체를 의심한다.",
+              "tags": [
+                "evidence",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "관리비 상세 캡처",
+                  "neutral": "그 캡처"
+                },
+                "amount": {
+                  "exact": "합계 줄",
+                  "neutral": "그 합계 부분"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "원본이면 왜 발행정보가 잘려 있고, 같은 표를 PDF로 다시 따로 보내셨는지 설명이 안 됩니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 캡처가 먼저 오고 PDF가 나중에 온 순서 자체를 재작성 의심의 근거로 잡고 있다."
+          ],
+          "suppressions": [
+            "자신이 숫자 문제를 더 공격적으로 몰아붙인 이유가 분노였다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing",
+            "tenant08:a:tell:overlap_attack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-1:timeline:1",
+              "factText": "캡처 뒤에 같은 표의 PDF가 다시 도착한 전달 순서는 원본 추출이 아니라 재작성 흐름처럼 보인다.",
+              "tags": [
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "캡처 뒤에 다시 온 PDF",
+                  "neutral": "그 PDF"
+                },
+                "time": {
+                  "exact": "뒤이어 전송된 순서",
+                  "neutral": "그 전송 순서"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "캡처와 PDF 생성 시각이 공식 고지 시점보다 늦고 서로 붙어 있어서, 원본 추출본으로는 안 보입니다."
+          ],
+          "privateKnowledge": [
+            "캡처본과 PDF의 생성 시각이 공식 고지 시점보다 늦고 서로 11분 차이로 이어져, 서지현은 처음부터 원본 추출물이 아니라 재작성본이라고 의심했다."
+          ],
+          "suppressions": [
+            "다투지 않는 사용분까지 안 내겠다는 사람처럼 보이고 싶지 않아, 체납 얘기는 계속 미룬다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-1:timeline:2",
+              "factText": "캡처본과 PDF의 생성 시각이 공식 고지 시점보다 늦고 서로 11분 차이로 이어져, 서지현은 처음부터 원본 추출물이 아니라 재작성본이라고 의심했다.",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "관리비 상세 캡처와 PDF",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "공식 고지보다 늦은 시각과 11분 차이",
+                  "neutral": "그 생성 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "한미라 씨 원본 양식과 비교하면 합계 행 순서랑 세대 코드가 다릅니다. 이건 단순 전달이 아니라 편집입니다."
+          ],
+          "privateKnowledge": [
+            "한미라가 보관한 원본 양식과 비교하면 합계 행 순서와 세대 코드 표기가 달라, 서지현은 '보기 좋게 옮긴 것'이 아니라 구조를 바꾼 편집이라고 본다."
+          ],
+          "suppressions": [
+            "상대를 속였다는 프레임을 더 강하게 밀기 위해 자신의 분노를 정당화한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing",
+            "tenant08:a:tell:overlap_attack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-1:evidence:3",
+              "factText": "한미라가 보관한 원본 양식과 비교하면 합계 행 순서와 세대 코드 표기가 달라, 서지현은 '보기 좋게 옮긴 것'이 아니라 구조를 바꾼 편집이라고 본다.",
+              "tags": [
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한미라",
+                  "neutral": "관리대행 측",
+                  "fullName": "한미라",
+                  "judgeRef": "관리대행 회계 담당"
+                },
+                "document": {
+                  "exact": "원본 고지 양식",
+                  "neutral": "원본 양식"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "도장까지 붙은 순간 저는 금액보다도 '나를 속이려 한다'는 느낌이 먼저 들었습니다."
+          ],
+          "privateKnowledge": [
+            "서지현에게 도장 이미지가 붙은 순간 문제는 금액보다 신뢰 파괴가 됐고, 그때부터 상대가 자신을 '숫자 모르는 세입자'로 속이려 한다는 분노가 올라왔다."
+          ],
+          "suppressions": [
+            "자신의 체납 행동이 논점이 되는 걸 피하고 싶어 감정 설명으로 주도권을 잡으려 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:overlap_attack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-1:emotion:4",
+              "factText": "서지현에게 도장 이미지가 붙은 순간 문제는 금액보다 신뢰 파괴가 됐고, 그때부터 상대가 자신을 '숫자 모르는 세입자'로 속이려 한다는 분노가 올라왔다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "관리실 도장 이미지가 붙은 편집본",
+                  "neutral": "그 문서"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "저는 실제 사용분까지 부정하는 게 아닙니다. 원본 아닌 표를 원본처럼 보낸 방식이 문제였다고 정리하겠습니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 실제 사용분까지 안 내겠다는 뜻이 아니라, 원본이 아닌 표를 원본처럼 보내고 그 위에 도장을 얹은 방식 자체를 철회해야 한다고 정리한다."
+          ],
+          "suppressions": [
+            "이제는 실사용 정산과 문서 조작 책임을 분리해 말해야 자신의 정당성이 선다고 판단한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-1:rule:5",
+              "factText": "서지현은 실제 사용분까지 안 내겠다는 뜻이 아니라, 원본이 아닌 표를 원본처럼 보내고 그 위에 도장을 얹은 방식 자체를 철회해야 한다고 정리한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "원본처럼 보낸 재작성 표",
+                  "neutral": "그 표"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "제 전기사용이 그렇게까지 튄 건 아닙니다. 그 총액을 제 장비 탓으로 돌리는 건 과해요."
+          ],
+          "privateKnowledge": [
+            "서지현은 여름에 렌더링과 제습기 사용이 늘었다는 사실을 알고 있지만 먼저 꺼내면 낙인이 찍힐까 두렵다."
+          ],
+          "suppressions": [
+            "밤샘 렌더링과 장비 사용 기록이 남아 있다는 점을 먼저 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:admission_delay",
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-2:denial:0",
+              "factText": "서지현은 사용량 증가 전체를 부정하며 청구 총액과 자신의 장비 사용을 분리하려 한다.",
+              "tags": [
+                "denial",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "청구 총액",
+                  "neutral": "전체 금액"
+                },
+                "device": {
+                  "exact": "작업 장비 사용",
+                  "neutral": "그 장비 사용"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "재택 장비는 원래 쓰던 거고, 청구 총액을 다 설명할 정도는 아닙니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 평소보다 사용량이 늘긴 했지만 그 증가폭이 전체 청구액보다 작다는 점에 기대고 있다."
+          ],
+          "suppressions": [
+            "듀얼 모니터와 제습기 가동 시간이 길어진 사실은 축소한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-2:self_justification:1",
+              "factText": "기존에도 장비를 썼다는 점을 앞세워 최근 증가폭을 흐리려는 방어가 나타난다.",
+              "tags": [
+                "self_justification",
+                "threshold"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "재택 장비",
+                  "neutral": "그 장비들"
+                },
+                "amount": {
+                  "exact": "청구 총액",
+                  "neutral": "전체 금액"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "밤샘 렌더링이 길게 간 주간은 있었어요. 그래도 그게 전체 금액 전부는 아닙니다."
+          ],
+          "privateKnowledge": [
+            "서지현의 밤샘 렌더링 구간과 스마트플러그 전력 피크가 겹치는 주간이 실제로 있었고, 그 점은 본인도 부정하기 어렵다."
+          ],
+          "suppressions": [
+            "자신의 사용 증가를 인정하는 순간 다른 쟁점까지 밀릴까 봐 말을 짧게 한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-2:act:2",
+              "factText": "서지현의 밤샘 렌더링 구간과 스마트플러그 전력 피크가 겹치는 주간이 실제로 있었고, 그 점은 본인도 부정하기 어렵다.",
+              "tags": [
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "작업용 PC와 스마트플러그 기록",
+                  "neutral": "장비 기록"
+                },
+                "time": {
+                  "exact": "밤샘 렌더링 주간",
+                  "neutral": "그 주간",
+                  "period": "밤샘 렌더링 주간"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제습기랑 모니터 사용이 늘어난 건 맞습니다. 다만 그 증가분만 따로 계산해야죠."
+          ],
+          "privateKnowledge": [
+            "듀얼 모니터와 제습기를 여름 내내 더 오래 켠 건 사실이어서, 서지현은 '거의 안 늘었다'는 초반 표현이 과장된 방어였음을 알게 된다."
+          ],
+          "suppressions": [
+            "처음에 '거의 그대로'라고 말한 것이 과장된 방어였다는 점을 드러내고 싶지 않다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing",
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-2:context:3",
+              "factText": "듀얼 모니터와 제습기를 여름 내내 더 오래 켠 건 사실이어서, 서지현은 '거의 안 늘었다'는 초반 표현이 과장된 방어였음을 알게 된다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "듀얼 모니터와 제습기",
+                  "neutral": "그 장비들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "제가 먼저 그 얘길 하면 '관리비도 안 내는 세입자'라고 찍힐까 봐 무서웠습니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 재택근무 전력 사용이 드러나면 '관리비도 안 내는 진상 세입자'처럼 보일까 봐 먼저 입을 닫았다는 부끄러움을 털어놓는다."
+          ],
+          "suppressions": [
+            "숫자보다 낙인 공포가 컸다는 감정을 이제야 드러낸다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-2:shame:4",
+              "factText": "서지현은 재택근무 전력 사용이 드러나면 '관리비도 안 내는 진상 세입자'처럼 보일까 봐 먼저 입을 닫았다는 부끄러움을 털어놓는다.",
+              "tags": [
+                "shame",
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "identity": {
+                  "exact": "관리비도 안 내는 진상 세입자",
+                  "neutral": "그 낙인"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "네, 제 사용량이 늘어난 건 인정합니다. 대신 실사용 증가분과 다른 항목은 분리해서 정산해야 합니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 자기 세대 사용량이 늘어난 건 인정하지만, 그 증가분이 청구 총액 전부를 설명하지 못하므로 실사용 증가분과 다른 항목은 분리 정산해야 한다고 시인한다."
+          ],
+          "suppressions": [
+            "이제는 일부 책임을 인정해야 오히려 전체 청구의 과장을 선명하게 만들 수 있다고 본다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-2:admission:5",
+              "factText": "서지현은 자기 세대 사용량이 늘어난 건 인정하지만, 그 증가분이 청구 총액 전부를 설명하지 못하므로 실사용 증가분과 다른 항목은 분리 정산해야 한다고 시인한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "청구 총액 전부",
+                  "neutral": "전체 금액"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 급등분은 제 집 사용 때문이 아니라 그냥 부풀려진 겁니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 공실 상가와 공용부 문제를 강하게 의심하지만 자기 사용량 증가가 일부 겹친다는 불안도 있다."
+          ],
+          "suppressions": [
+            "자기 장비 사용이 늘어난 사실 때문에 주장이 약해질까 봐 그 이야기를 먼저 꺼내지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing",
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-3:denial:0",
+              "factText": "서지현은 급등분 전체를 외부 항목 탓으로 몰며 자기 세대 사용 가능성을 밀어낸다.",
+              "tags": [
+                "denial",
+                "counter"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "급등분 전체",
+                  "neutral": "그 급등분"
+                },
+                "device": {
+                  "exact": "자기 세대 사용",
+                  "neutral": "본인 사용분"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "공용비라고만 퉁친 항목이 있어서 제 세대 몫이라고는 못 믿겠습니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 세대 사용 증가와 별개로, 공용비 안에 다른 항목이 섞였을 거라는 직감을 붙잡고 있다."
+          ],
+          "suppressions": [
+            "자기 사용량 증가가 논점을 흐릴 수 있어 계속 말끝을 흐린다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-3:context:1",
+              "factText": "공용비라는 포괄적 표현이 세대별 귀속을 가리는 방패로 쓰인다고 서지현은 본다.",
+              "tags": [
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "공용비 항목",
+                  "neutral": "그 항목들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "전력회사 로그를 보니 공용부와 빈 상가 구간이 따로 튄 건 보입니다."
+          ],
+          "privateKnowledge": [
+            "전력회사 로그를 보고 나서야 서지현은 자기 세대와 별도로 공용부·빈 상가 쪽 사용량이 같은 달에 함께 튀었다는 점을 구체적으로 붙잡게 된다."
+          ],
+          "suppressions": [
+            "자기 세대 사용 증가를 먼저 인정하면 상대가 그걸 전체 청구의 근거로 삼을까 봐 조심한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-3:evidence:2",
+              "factText": "전력회사 로그를 보고 나서야 서지현은 자기 세대와 별도로 공용부·빈 상가 쪽 사용량이 같은 달에 함께 튀었다는 점을 구체적으로 붙잡게 된다.",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전력회사 원시 계량 로그",
+                  "neutral": "기관 로그"
+                },
+                "charge": {
+                  "exact": "공용부·빈 상가 사용량",
+                  "neutral": "그 다른 구간"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "솔직히 제 사용량이 조금 겹쳐 보여서, 오히려 공실 전가 문제를 더 세게 밀어붙였습니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 자신의 전력 증가가 약간은 겹쳐 보인다는 사실 때문에, 오히려 공실 전가 문제를 더 날카롭게 몰아붙여 방어막을 세웠다는 걸 자각한다."
+          ],
+          "suppressions": [
+            "본인도 방어적으로 몰아붙였다는 사실이 드러나면 설득력이 약해질까 걱정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:overlap_attack",
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-3:self_justification:3",
+              "factText": "서지현은 자신의 전력 증가가 약간은 겹쳐 보인다는 사실 때문에, 오히려 공실 전가 문제를 더 날카롭게 몰아붙여 방어막을 세웠다는 걸 자각한다.",
+              "tags": [
+                "self_justification",
+                "shame"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "공실 상가 전기료와 누수 점검비",
+                  "neutral": "그 항목들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제 장비 얘기를 먼저 꺼내면 공실이랑 누수까지 다 제 탓으로 밀릴까 봐 무서웠어요."
+          ],
+          "privateKnowledge": [
+            "본인 사용량을 먼저 인정하면 공실과 누수 항목까지 전부 자기 탓으로 밀릴까 두려워, 서지현은 '전부 조작'이라는 말에 의존했다."
+          ],
+          "suppressions": [
+            "이제는 낙인 공포와 방어 심리가 자신의 과장된 표현 뒤에 있었다고 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-3:fear:4",
+              "factText": "본인 사용량을 먼저 인정하면 공실과 누수 항목까지 전부 자기 탓으로 밀릴까 두려워, 서지현은 '전부 조작'이라는 말에 의존했다.",
+              "tags": [
+                "fear",
+                "motive",
+                "denial"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "공실 상가 전기료와 누수 점검비",
+                  "neutral": "그 항목들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "빈 상가 기본요금과 누수 점검비는 떼고, 제 실사용 증가분만 따로 정산하자는 입장입니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 빈 상가 기본요금과 누수 점검비는 임대인 부담으로 떼고, 자기 실사용 증가분만 따로 정산하자는 쪽으로 입장을 정리한다."
+          ],
+          "suppressions": [
+            "부분 인정이 오히려 항목 분리 정산을 더 명확하게 만든다고 판단한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-3:admission:5",
+              "factText": "서지현은 빈 상가 기본요금과 누수 점검비는 임대인 부담으로 떼고, 자기 실사용 증가분만 따로 정산하자는 쪽으로 입장을 정리한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "beneficiary"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "빈 1층 상가 기본 전기료와 옥상 누수 점검비",
+                  "neutral": "그 외부 항목들"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "원본도 안 주는데 그 금액을 그대로 낼 수는 없었습니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 자동이체를 두 달 모두 막았다는 사실을 알고 있지만, 먼저 말하면 체납 프레임이 굳는다고 느낀다."
+          ],
+          "suppressions": [
+            "두 달 전액 보류라는 규모와 인정분 미납 사실을 먼저 밝히지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-4:self_justification:0",
+              "factText": "원본 요구를 이유로 전액 보류를 정당화하며 조치의 범위를 축소해 말한다.",
+              "tags": [
+                "self_justification",
+                "denial"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "그 금액 전체",
+                  "neutral": "그 금액"
+                },
+                "document": {
+                  "exact": "원본 내역",
+                  "neutral": "원본"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "일단 멈춘 건 맞지만, 무조건 버티려던 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 전액 보류가 협상용 압박이었다는 점을 스스로도 알고 있다."
+          ],
+          "suppressions": [
+            "부분 납부나 예치 방식을 검토하지 않았다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-4:uncertainty:1",
+              "factText": "전액 보류를 임시조치처럼 표현하며 의도와 범위를 흐린다.",
+              "tags": [
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "전액 보류",
+                  "neutral": "그 조치"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "자동이체를 두 달 다 막은 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 호준의 상세표 전송 다음 날부터 자동이체를 두 차례 모두 멈췄고, 다투지 않는 부분만 따로 낸 기록도 남기지 않았다."
+          ],
+          "suppressions": [
+            "이 사실을 인정하는 순간 체납 이미지가 강해질까 봐 표정이 굳는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-4:act:2",
+              "factText": "서지현은 호준의 상세표 전송 다음 날부터 자동이체를 두 차례 모두 멈췄고, 다투지 않는 부분만 따로 낸 기록도 남기지 않았다.",
+              "tags": [
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "상세표 전송 다음 날",
+                  "neutral": "그 다음 날"
+                },
+                "amount": {
+                  "exact": "두 달 관리비 전액",
+                  "neutral": "그 기간 전체"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "인정분만 따로 납부하는 선택지까지는 그때 생각을 못 했습니다."
+          ],
+          "privateKnowledge": [
+            "'원본만 주면 내겠다'는 생각에 묶여, 인정분 예치나 부분 납부 같은 중간 해법을 스스로 닫아버렸다는 점이 드러난다."
+          ],
+          "suppressions": [
+            "상대의 원본 문제를 강조하는 데 몰두해 자신의 대안 부재를 인정하기 싫다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-4:context:3",
+              "factText": "'원본만 주면 내겠다'는 생각에 묶여, 인정분 예치나 부분 납부 같은 중간 해법을 스스로 닫아버렸다는 점이 드러난다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "인정분 예치나 부분 납부",
+                  "neutral": "중간 해법"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "사기당하는 기분이 들어서 아예 전액을 세웠습니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 속았다는 기분과 체납 세입자 낙인 사이에서, 아예 전액을 멈추는 방식으로 자신을 지키려 했다고 털어놓는다."
+          ],
+          "suppressions": [
+            "문제의식을 넘어 분노와 자기보호가 행동을 밀었다는 감정을 드러낸다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:admission_delay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-4:emotion:4",
+              "factText": "서지현은 속았다는 기분과 체납 세입자 낙인 사이에서, 아예 전액을 멈추는 방식으로 자신을 지키려 했다고 털어놓는다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "identity": {
+                  "exact": "체납 세입자 낙인",
+                  "neutral": "그 이미지"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "전액 보류는 과했습니다. 다투지 않는 부분은 먼저 냈어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 전액 보류가 과했다는 점을 인정하고, 실제로 다투지 않는 부분은 먼저 납부했어야 했다고 시인한다."
+          ],
+          "suppressions": [
+            "이제는 일부 책임을 인정해야 문서 조작 문제를 더 선명하게 분리할 수 있다고 본다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-4:admission:5",
+              "factText": "서지현은 전액 보류가 과했다는 점을 인정하고, 실제로 다투지 않는 부분은 먼저 납부했어야 했다고 시인한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "다투지 않는 부분",
+                  "neutral": "인정분"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "관리실 도장과 파일 생성기록이 공식문서처럼 보이게 꾸며졌습니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 도장 이미지 경계와 파일 느낌이 너무 인위적이라 '설명용 정리'로 보기 어렵다고 본다."
+          ],
+          "suppressions": [
+            "자신이 왜 이렇게 격앙됐는지, 신뢰가 깨진 감정적 이유는 드러내지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing",
+            "tenant08:a:tell:overlap_attack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-5:evidence:0",
+              "factText": "도장과 파일 생성 흔적이 공식 고지처럼 꾸며진 외형을 만들고 있어 서지현은 위조 정황으로 받아들인다.",
+              "tags": [
+                "evidence",
+                "rule"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "관리실 도장과 파일 생성기록",
+                  "neutral": "그 흔적들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "도장 이미지 경계랑 글꼴 흔적이 너무 인위적입니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 문서 형식이 원본 양식과 다르다는 점을 감각적으로 포착하고 있다."
+          ],
+          "suppressions": [
+            "관리비 전액 보류가 이 의심과 결합되어 있다는 점은 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-5:authenticity:1",
+              "factText": "도장 경계와 글꼴 자간의 부자연스러움은 공식 파일의 일관성과 맞지 않는다.",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "도장 이미지 경계와 글꼴 흔적",
+                  "neutral": "그 흔적"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "예전 PDF 도장을 떼어 붙인 흔적이 보이고, 생성 프로그램도 다릅니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 예전 관리실 PDF의 도장 이미지를 따로 떼어 붙인 흔적과 개인 편집 프로그램 흔적을 보고, 파일 생성기록 자체가 공식 고지와 다르다고 본다."
+          ],
+          "suppressions": [
+            "문제의 심각성을 더 분명하게 보여주기 위해 기술적 표현을 앞세운다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-5:act:2",
+              "factText": "서지현은 예전 관리실 PDF의 도장 이미지를 따로 떼어 붙인 흔적과 개인 편집 프로그램 흔적을 보고, 파일 생성기록 자체가 공식 고지와 다르다고 본다.",
+              "tags": [
+                "evidence",
+                "act"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "예전 관리실 PDF의 도장 이미지",
+                  "neutral": "그 도장 이미지"
+                },
+                "time": {
+                  "exact": "파일 생성기록",
+                  "neutral": "그 생성 흔적"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "관리대행 서버 이력과 안 맞습니다. 이쯤 되면 설명용 정리본이라는 말은 안 통합니다."
+          ],
+          "privateKnowledge": [
+            "관리대행 서버 문서등록 이력과 문제 PDF의 생성 흔적이 맞지 않는다는 점이 드러나자, 서지현은 '설명용 정리본'이라는 해명이 더 이상 성립하지 않는다고 본다."
+          ],
+          "suppressions": [
+            "상대를 몰아붙이기 위해 문서등록 이력 같은 객관 자료를 반복한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing",
+            "tenant08:a:tell:overlap_attack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-5:evidence:3",
+              "factText": "관리대행 서버 문서등록 이력과 문제 PDF의 생성 흔적이 맞지 않는다는 점이 드러나자, 서지현은 '설명용 정리본'이라는 해명이 더 이상 성립하지 않는다고 본다.",
+              "tags": [
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "관리대행 서버 문서등록 이력",
+                  "neutral": "등록 이력"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "이건 금액보다 신뢰를 무너뜨린 문제라 더 예민했습니다."
+          ],
+          "privateKnowledge": [
+            "서지현에게는 도장과 파일 형식을 꾸민 행위가 금액 분쟁보다 더 큰 배신으로 느껴져, 말투가 훨씬 날카로워진다."
+          ],
+          "suppressions": [
+            "숫자 논쟁보다 배신감이 더 컸다는 본심이 밖으로 새어 나온다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:a:tell:overlap_attack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-5:harm:4",
+              "factText": "서지현에게는 도장과 파일 형식을 꾸민 행위가 금액 분쟁보다 더 큰 배신으로 느껴져, 말투가 훨씬 날카로워진다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "도장과 파일 형식을 꾸민 행위",
+                  "neutral": "그 꾸밈"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "실사용 정산과 별개로, 공식 고지처럼 꾸민 파일과 도장 사용은 철회돼야 합니다."
+          ],
+          "privateKnowledge": [
+            "서지현은 실사용 정산과 별도로, 공식 고지처럼 꾸민 파일과 도장 사용을 철회하고 원본 절차를 다시 세워야 한다고 요구한다."
+          ],
+          "suppressions": [
+            "문서 조작 문제를 절차적 해결책과 연결해야 한다고 판단한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:a:tell:cell_pointing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:a:d-5:rule:5",
+              "factText": "서지현은 실사용 정산과 별도로, 공식 고지처럼 꾸민 파일과 도장 사용을 철회하고 원본 절차를 다시 세워야 한다고 요구한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "공식 고지처럼 꾸민 파일",
+                  "neutral": "그 파일"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "보내드린 표는 같은 내용을 정리한 것입니다. 원본성과 다를 게 없습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 관리대행 원본이 아니라 자신의 엑셀 재작성본을 보냈다는 사실을 알고 있다."
+          ],
+          "suppressions": [
+            "개인 엑셀로 다시 옮긴 과정과 도장 사용은 먼저 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:template_defense",
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-1:denial:0",
+              "factText": "임호준은 재작성본을 원본과 실질적으로 같다고 규정해 원본성 문제를 지운다.",
+              "tags": [
+                "denial",
+                "rule"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "같은 내용 정리본",
+                  "neutral": "그 표"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "캡처든 PDF든 항목과 합계는 같습니다. 형식만 다시 맞춘 겁니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 형식을 손댄 것이 원본성 다툼의 핵심이라는 점을 알고 있어 말의 초점을 '내용 동일'로 돌린다."
+          ],
+          "suppressions": [
+            "항목 순서와 세대 코드 표기를 바꾼 사실은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:template_defense",
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-1:self_justification:1",
+              "factText": "형식 수정과 내용 변경을 분리해 말함으로써 원본성 훼손을 축소한다.",
+              "tags": [
+                "self_justification",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "캡처와 PDF",
+                  "neutral": "그 자료들"
+                },
+                "amount": {
+                  "exact": "항목과 합계",
+                  "neutral": "그 숫자들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "관리대행 원본을 그대로 보내지 않고 제 엑셀로 옮긴 건 맞습니다. 실무상 정리였을 뿐입니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 관리대행 원본을 그대로 보내지 않고 개인 엑셀에 항목을 옮겨 다시 캡처했다는 사실까지는 내심 알고 있다."
+          ],
+          "suppressions": [
+            "개인 엑셀 재작성 사실이 드러나면 위조 논점으로 번질까 봐 '실무상'이라는 말을 반복한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:template_defense"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-1:act:2",
+              "factText": "임호준은 관리대행 원본을 그대로 보내지 않고 개인 엑셀에 항목을 옮겨 다시 캡처했다는 사실까지는 내심 알고 있다.",
+              "tags": [
+                "act",
+                "privacy"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "개인 엑셀 재작성본",
+                  "neutral": "그 정리본"
+                },
+                "person": {
+                  "exact": "관리대행 원본",
+                  "neutral": "원본",
+                  "judgeRef": "관리대행 원본"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "보기 좋게 행 순서를 바꾼 건 맞아도, 허위로 새로 만든 건 아니라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "보기 좋게 보이도록 합계 행 순서와 일부 항목 배치를 손댄 것이 단순 전달과는 다르다는 점을 임호준도 알고 있어, 질문이 길어질수록 말끝이 짧아진다."
+          ],
+          "suppressions": [
+            "합계 행 순서와 항목 배치를 조정한 것이 단순 정리 이상이라는 점을 내심 안다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:template_defense",
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-1:context:3",
+              "factText": "보기 좋게 보이도록 합계 행 순서와 일부 항목 배치를 손댄 것이 단순 전달과는 다르다는 점을 임호준도 알고 있어, 질문이 길어질수록 말끝이 짧아진다.",
+              "tags": [
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "합계 행 순서와 항목 배치",
+                  "neutral": "그 배열"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "공실 손실과 체납 압박이 겹쳐서, 빨리 설명되는 형식을 만들려 한 건 있습니다."
+          ],
+          "privateKnowledge": [
+            "공실 손실과 체납 압박이 겹치자, 임호준은 '공식처럼 보여야 돈이 움직인다'는 조급함으로 형식을 꾸몄다는 동기를 숨기지 못한다."
+          ],
+          "suppressions": [
+            "돈이 돌지 않는 달일수록 공식처럼 보이는 문서가 필요하다는 조급함을 감추지 못한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-1:motive:4",
+              "factText": "공실 손실과 체납 압박이 겹치자, 임호준은 '공식처럼 보여야 돈이 움직인다'는 조급함으로 형식을 꾸몄다는 동기를 숨기지 못한다.",
+              "tags": [
+                "motive",
+                "fear",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "공실 손실과 체납 압박",
+                  "neutral": "그 압박"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "원본이 아니라 제가 다시 만든 파일이었고, 원본처럼 받아들여지게 한 책임은 제게 있습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 자신이 보낸 표가 원본이 아니라 재작성·편집본이었고, 원본처럼 받아들여지게 만든 책임이 자신에게 있다고 시인한다."
+          ],
+          "suppressions": [
+            "이제는 원본성 부인을 접고 책임 인정 쪽이 더 이상 손해를 줄인다고 판단한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-1:admission:5",
+              "factText": "임호준은 자신이 보낸 표가 원본이 아니라 재작성·편집본이었고, 원본처럼 받아들여지게 만든 책임이 자신에게 있다고 시인한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "재작성·편집본",
+                  "neutral": "그 파일"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "지현 씨 세대 사용량은 여름 들어 분명히 올랐습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 세대 사용 증가가 실제로 있다는 점을 가장 강한 방패로 삼고 싶어 한다."
+          ],
+          "suppressions": [
+            "공용부와 빈 상가 쪽 급증이 같은 달 함께 있었던 사실은 아직 꺼내지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset",
+            "tenant08:b:tell:cost_spread_logic"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-2:act:0",
+              "factText": "지현 세대 사용량 증가라는 사실이 임호준의 초반 주장을 지탱하는 핵심 수치가 된다.",
+              "tags": [
+                "act",
+                "threshold"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "지현 세대 사용량 증가",
+                  "neutral": "그 증가분"
+                },
+                "time": {
+                  "exact": "여름 기간",
+                  "neutral": "그 시기",
+                  "period": "늦여름"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "작업 장비와 제습기 사용이 늘어난 시점이 검침 증가와 겹칩니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 장비 사용 기록이 로그와 맞물린다는 점을 강조하면 다른 항목 질문을 잠시 막을 수 있다고 본다."
+          ],
+          "suppressions": [
+            "청구 총액 전체가 그 증가분만으로 설명되지 않는다는 계산은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-2:timeline:1",
+              "factText": "장비 가동 시점과 검침 증가 시점을 연결해 세대 책임을 강조한다.",
+              "tags": [
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "작업 장비와 제습기",
+                  "neutral": "그 장비들"
+                },
+                "time": {
+                  "exact": "검침 증가 시점",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "세대 사용 증가가 있는 건 로그로 확인됩니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 지현 세대의 장비 사용 증가가 검침 로그와 겹친다는 점을 근거로 들지만, 그 수치가 총액 전체를 설명하지는 못한다는 계산도 이미 봤다."
+          ],
+          "suppressions": [
+            "사용량 증가 수치가 존재한다는 점만 앞세우고 범위의 한계는 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-2:evidence:2",
+              "factText": "임호준은 지현 세대의 장비 사용 증가가 검침 로그와 겹친다는 점을 근거로 들지만, 그 수치가 총액 전체를 설명하지는 못한다는 계산도 이미 봤다.",
+              "tags": [
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "작업 장비 사용 증가",
+                  "neutral": "그 장비 사용"
+                },
+                "amount": {
+                  "exact": "청구 총액 전체",
+                  "neutral": "전체 금액"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "다만 총액 전부를 그 세대 사용만으로 설명하긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "공용부와 빈 상가 구간도 같은 기간 급증했다는 보고서를 읽은 뒤로는, 임호준도 세대 사용량만으로 모든 금액을 밀 수 없다는 걸 안다."
+          ],
+          "suppressions": [
+            "이제는 사용량 증가만으로 모든 금액을 밀 수 없다는 점을 받아들이기 시작한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-2:threshold:3",
+              "factText": "공용부와 빈 상가 구간도 같은 기간 급증했다는 보고서를 읽은 뒤로는, 임호준도 세대 사용량만으로 모든 금액을 밀 수 없다는 걸 안다.",
+              "tags": [
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "공용부와 빈 상가 구간",
+                  "neutral": "그 다른 구간"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "사용량 증가를 앞세워 다른 항목 질문을 잠시 막으려 한 부분은 있습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 지현의 실사용 증가를 앞세우면 다른 항목 질문을 잠시 막을 수 있다는 계산을 했고, 그래서 사용량 문제를 더 크게 강조했다."
+          ],
+          "suppressions": [
+            "지현의 실사용 문제를 전면에 세우면 자신에게 불리한 공실·누수 질문이 뒤로 밀린다고 계산했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:cost_spread_logic"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-2:motive:4",
+              "factText": "임호준은 지현의 실사용 증가를 앞세우면 다른 항목 질문을 잠시 막을 수 있다는 계산을 했고, 그래서 사용량 문제를 더 크게 강조했다.",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "지현의 실사용 증가",
+                  "neutral": "그 증가분"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "지현 씨의 실제 증가분은 따로 계산하고, 공실·누수 항목은 그 밖으로 빼야 합니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 지현 세대의 실제 증가분은 따로 산정하되, 총액에 섞인 공실·누수 항목은 세입자 책임으로 둘 수 없다고 정리한다."
+          ],
+          "suppressions": [
+            "실사용 증가와 다른 항목을 분리해야 전체 분쟁이 정리된다고 본다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-2:admission:5",
+              "factText": "임호준은 지현 세대의 실제 증가분은 따로 산정하되, 총액에 섞인 공실·누수 항목은 세입자 책임으로 둘 수 없다고 정리한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "beneficiary"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "공실·누수 항목",
+                  "neutral": "그 항목들"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 항목들은 건물 전체 유지비라 공용으로 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 빈 상가 전기료와 누수 점검비가 세입자 관리비에 들어간 사실을 알고 있지만, '건물 유지비'라는 말로 넓혀 말한다."
+          ],
+          "suppressions": [
+            "공실 손실을 세입자에게 일부 넘기려는 계산은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:cost_spread_logic",
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-3:rule:0",
+              "factText": "임호준은 개별 항목의 귀속 문제를 '건물 전체 유지비'라는 범주로 희석한다.",
+              "tags": [
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "건물 전체 유지비",
+                  "neutral": "그 비용들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "공실이든 누수든 결국 건물 전체 비용이니 세대별로 조금씩 나눌 수 있습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 개별 귀속보다 분산 부담 논리를 앞세우면 부당함을 흐릴 수 있다고 본다."
+          ],
+          "suppressions": [
+            "장부상 별도 항목이라는 점은 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:cost_spread_logic"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-3:beneficiary:1",
+              "factText": "분산 부담 논리는 임대인 부담 항목을 세입자 공동비처럼 들리게 만든다.",
+              "tags": [
+                "beneficiary",
+                "rule"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "세대별 분산 부담",
+                  "neutral": "그 분담"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "세대 사용분만으로 설명 안 되는 비용이 있었던 건 맞습니다. 관리상 함께 묶었습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 세대 사용분만으로 설명되지 않는 비용이 있었고, 그 안에 빈 상가 기본요금과 누수 점검비가 섞여 있다는 점을 이미 장부로 알고 있었다."
+          ],
+          "suppressions": [
+            "구체 항목을 인정하면 부당 전가가 선명해질까 봐 표현을 최대한 관리·묶음으로 바꾼다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:cost_spread_logic"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-3:act:2",
+              "factText": "임호준은 세대 사용분만으로 설명되지 않는 비용이 있었고, 그 안에 빈 상가 기본요금과 누수 점검비가 섞여 있다는 점을 이미 장부로 알고 있었다.",
+              "tags": [
+                "evidence",
+                "act"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "빈 상가 기본요금과 누수 점검비",
+                  "neutral": "그 항목들"
+                },
+                "document": {
+                  "exact": "건물 회계장부",
+                  "neutral": "장부"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "공실이 길어져 손실이 컸고, 누수 점검비도 급해 당장 넣었습니다."
+          ],
+          "privateKnowledge": [
+            "공실이 길어지면서 손실을 혼자 감당하기 싫어 세입자 관리비에 넓게 펴 넣었다는 현금흐름 압박이 드러난다."
+          ],
+          "suppressions": [
+            "현금흐름 압박을 이유로 들지만, 그 판단이 정당하지 않다는 점은 내심 알고 있다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:cost_spread_logic"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-3:motive:3",
+              "factText": "공실이 길어지면서 손실을 혼자 감당하기 싫어 세입자 관리비에 넓게 펴 넣었다는 현금흐름 압박이 드러난다.",
+              "tags": [
+                "motive",
+                "beneficiary",
+                "self_justification"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "공실 손실",
+                  "neutral": "그 손실"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "세입자에게 다 떠넘기면 안 된다는 건 알았지만, 자금 압박 때문에 무리하게 처리했습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 '건물 유지비'라는 말로 세대별 책임을 흐리면 넘어갈 수 있다고 계산했지만, 그게 세입자에게 부당하다는 점도 알고 있었다."
+          ],
+          "suppressions": [
+            "자신의 재정 압박과 체면이 부당한 배분을 밀어붙였음을 시인 직전까지 끌고 간다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant08:b:tell:cost_spread_logic"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-3:fear:4",
+              "factText": "임호준은 '건물 유지비'라는 말로 세대별 책임을 흐리면 넘어갈 수 있다고 계산했지만, 그게 세입자에게 부당하다는 점도 알고 있었다.",
+              "tags": [
+                "rule",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "건물 유지비라는 표현",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "빈 상가 전기료와 누수 점검비를 지현 씨 관리비에 섞은 건 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 빈 상가 전기료와 누수 점검비를 지현 세대 관리비에 섞은 건 자신의 책임이며, 임대인 부담으로 분리해야 한다고 시인한다."
+          ],
+          "suppressions": [
+            "이제는 임대인 부담 항목을 분리하는 수습책 외에는 답이 없다고 본다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-3:admission:5",
+              "factText": "임호준은 빈 상가 전기료와 누수 점검비를 지현 세대 관리비에 섞은 건 자신의 책임이며, 임대인 부담으로 분리해야 한다고 시인한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "charge": {
+                  "exact": "빈 상가 전기료와 누수 점검비",
+                  "neutral": "그 항목들"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "지현 씨는 두 달 관리비 전체를 막았습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 체납 사실을 가장 단순하고 강한 프레임으로 제시하려 한다."
+          ],
+          "suppressions": [
+            "원본 요구에 응답하지 못한 자신의 책임은 먼저 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-4:act:0",
+              "factText": "두 달 전체 미납이라는 사실은 임호준이 초반 우위를 잡는 데 쓰는 핵심 주장이다.",
+              "tags": [
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "두 달 관리비 전체",
+                  "neutral": "그 기간 전체"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "이의가 있어도 인정분까지 끊은 건 사실입니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 지현의 방식이 과했다는 점에 기대면서도, 왜 그렇게 됐는지 설명은 피하려 한다."
+          ],
+          "suppressions": [
+            "원본 아닌 자료 전달이 불신을 키웠다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-4:rule:1",
+              "factText": "인정분도 끊었다는 점을 강조해 지현의 대응 전체를 비합리적으로 보이게 만든다.",
+              "tags": [
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "인정분까지 끊은 상태",
+                  "neutral": "그 미납 상태"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "자동이체 중지 시점이 제가 표를 보낸 바로 다음 날이었습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 지현이 두 달치를 모두 멈춘 시점이 자신의 상세표 전송 직후라는 점을 알고 있어, 체납 사실과 문서 불신이 연결돼 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "체납과 문서 불신이 연결돼 있음을 알고 있지만 우선 체납 흐름만 내세운다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-4:timeline:2",
+              "factText": "임호준은 지현이 두 달치를 모두 멈춘 시점이 자신의 상세표 전송 직후라는 점을 알고 있어, 체납 사실과 문서 불신이 연결돼 있다는 걸 안다.",
+              "tags": [
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "두 달치 관리비 전체",
+                  "neutral": "그 기간 전체"
+                },
+                "time": {
+                  "exact": "상세표 전송 직후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "다만 제가 원본 요구를 제대로 응답하지 않은 채 독촉부터 보낸 건 사실입니다."
+          ],
+          "privateKnowledge": [
+            "원본 요구를 제대로 응답하지 않은 상태에서 독촉 문자만 보낸 것이 반발을 키웠다는 점이, 임호준에게도 점점 방어 불가능해진다."
+          ],
+          "suppressions": [
+            "이제는 자신의 대응이 반발을 키웠다는 점을 더는 숨기기 어렵다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-4:counter:3",
+              "factText": "원본 요구를 제대로 응답하지 않은 상태에서 독촉 문자만 보낸 것이 반발을 키웠다는 점이, 임호준에게도 점점 방어 불가능해진다.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "독촉 문자",
+                  "neutral": "그 문자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "숫자만 던지면 결국 돈이 들어올 거라고 생각한 제 태도도 문제였습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 숫자만 던지면 결국 돈이 들어올 거라고 생각했고, 그 태도가 지현의 전액 보류를 더 자극했다는 점을 체감한다."
+          ],
+          "suppressions": [
+            "상대를 설득이 아니라 압박 대상으로 봤던 태도를 드러낸다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-4:relationship:4",
+              "factText": "임호준은 숫자만 던지면 결국 돈이 들어올 거라고 생각했고, 그 태도가 지현의 전액 보류를 더 자극했다는 점을 체감한다.",
+              "tags": [
+                "motive",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "숫자만 던지는 태도",
+                  "neutral": "그 방식"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "전액 보류는 문제지만, 원본 아닌 자료를 보낸 제가 먼저 신뢰를 깬 부분이 더 큽니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 전액 보류 자체는 문제라고 보면서도, 원본 아닌 자료를 보낸 자신이 먼저 신뢰를 깨뜨린 부분이 더 크다고 인정한다."
+          ],
+          "suppressions": [
+            "체납 비난만으로는 정리되지 않는다는 점을 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-4:admission:5",
+              "factText": "임호준은 전액 보류 자체는 문제라고 보면서도, 원본 아닌 자료를 보낸 자신이 먼저 신뢰를 깨뜨린 부분이 더 크다고 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "원본 아닌 자료",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "도장은 예전 파일에 있던 표시를 붙였을 뿐, 위조라고 볼 일은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 도장 이미지를 직접 가져다 썼다는 사실을 알고 있지만 의미를 줄여 말한다."
+          ],
+          "suppressions": [
+            "공식 고지처럼 보이게 만들려 한 효과는 먼저 인정하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:template_defense",
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-5:denial:0",
+              "factText": "도장 사용 행위를 단순 표시 추가로 축소해 위조 프레임을 막으려 한다.",
+              "tags": [
+                "denial",
+                "rule"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "예전 파일의 도장 표시",
+                  "neutral": "그 도장"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "파일 생성기록이 다르다고 해서 허위 문서가 되는 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 생성 프로그램과 시각 흔적이 자신에게 불리하다는 걸 알고 있어 쟁점을 법적 정의로 좁히려 한다."
+          ],
+          "suppressions": [
+            "회계 프로그램이 아닌 개인 편집 경로를 쓴 사실은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant08:b:tell:template_defense"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-5:counter:1",
+              "factText": "파일 메타데이터 문제를 허위 작성 여부와 분리해 축소하려는 방어다.",
+              "tags": [
+                "counter",
+                "uncertainty"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "파일 생성기록",
+                  "neutral": "그 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "관리실 도장 이미지를 가져다 쓴 건 맞지만, 내용 확인용이었습니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 예전 관리실 PDF에서 도장 이미지를 따로 가져와 문제 파일에 붙였다는 사실을 부인하기 어렵다."
+          ],
+          "suppressions": [
+            "도장 사용 사실은 인정하되 공식 사칭 의도는 부인하고 싶어 한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:template_defense"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-5:act:2",
+              "factText": "임호준은 예전 관리실 PDF에서 도장 이미지를 따로 가져와 문제 파일에 붙였다는 사실을 부인하기 어렵다.",
+              "tags": [
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "예전 관리실 PDF 도장 이미지",
+                  "neutral": "그 도장"
+                },
+                "time": {
+                  "exact": "문제 파일",
+                  "neutral": "그 파일"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "공식 발행처럼 보일 수 있다는 점은 생각이 짧았습니다."
+          ],
+          "privateKnowledge": [
+            "파일 생성 프로그램 흔적이 공식 회계 프로그램이 아니라 개인 엑셀·편집 경로라는 점이 나오자, 임호준은 '설명용'이라는 말의 한계를 느낀다."
+          ],
+          "suppressions": [
+            "개인 편집 경로가 공식 양식과 다르다는 점을 알면서도 표현을 약하게 고른다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:template_defense",
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-5:context:3",
+              "factText": "파일 생성 프로그램 흔적이 공식 회계 프로그램이 아니라 개인 엑셀·편집 경로라는 점이 나오자, 임호준은 '설명용'이라는 말의 한계를 느낀다.",
+              "tags": [
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "개인 엑셀·편집 경로 흔적",
+                  "neutral": "그 흔적"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "회계 담당을 거치면 시간이 걸려서 제 선에서 정리했습니다."
+          ],
+          "privateKnowledge": [
+            "회계 담당을 거치면 늦어진다는 조급함과 체면 문제가 겹쳐, 임호준은 공식 발행처럼 보이는 외형을 스스로 만들었다."
+          ],
+          "suppressions": [
+            "시간, 체면, 자금 압박이 겹쳐 공식 외형을 스스로 만들었다는 동기가 드러난다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-5:institution:4",
+              "factText": "회계 담당을 거치면 늦어진다는 조급함과 체면 문제가 겹쳐, 임호준은 공식 발행처럼 보이는 외형을 스스로 만들었다.",
+              "tags": [
+                "motive",
+                "shame",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "한미라 회계 담당",
+                  "neutral": "회계 담당",
+                  "fullName": "한미라",
+                  "judgeRef": "회계 담당"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "도장 이미지와 파일 형식을 공식 고지처럼 꾸민 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "임호준은 도장 이미지와 파일 형식을 공식 고지처럼 꾸민 행위가 위조에 가까운 잘못이었다고 인정하고 철회를 받아들인다."
+          ],
+          "suppressions": [
+            "공식처럼 보이게 만든 효과와 책임을 더는 부인할 수 없다고 본다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant08:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant08:b:d-5:admission:5",
+              "factText": "임호준은 도장 이미지와 파일 형식을 공식 고지처럼 꾸민 행위가 위조에 가까운 잘못이었다고 인정하고 철회를 받아들인다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "공식 고지처럼 꾸민 행위",
+                  "neutral": "그 꾸밈"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+

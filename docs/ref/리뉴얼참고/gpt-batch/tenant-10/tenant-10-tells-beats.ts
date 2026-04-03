@@ -1,0 +1,577 @@
+export const tenant10TellsBeats = {
+  "caseId": "tenant-10",
+  "executableTells": {
+    "a": [
+      {
+        "id": "tenant10:a:tell:broker_shield",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "브로커가 그렇게 전달했다고",
+          "저는 그렇게 들었어요",
+          "제가 직접 들은 건 아니고요"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "자신의 판단을 묻는 질문이 오면 브로커가 괜찮다고 했다는 말을 먼저 꺼내 직접 결정을 흐린다."
+      },
+      {
+        "id": "tenant10:a:tell:photo_stack",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "사진 보시면",
+          "이동장도 같이",
+          "그때 저장해 둔 화면이 있어요"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "on_trigger_only",
+        "originalPattern": "불리한 질문이 오면 답 대신 강아지 사진과 이동장 사진을 연달아 보여주며 얌전한 반려견이라는 인상을 먼저 만들려 한다."
+      },
+      {
+        "id": "tenant10:a:tell:quiet_overflow",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "3.2kg라서",
+          "입주 이틀 전이라서",
+          "제가 그걸 다 감당했거든요"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "처음에는 조용히 말하다가 억울한 지점에 오면 문장이 길어지고 쉬지 않고 서운함을 쏟아낸다."
+      }
+    ],
+    "b": [
+      {
+        "id": "tenant10:b:tell:clause_gate",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "특약상",
+          "문구대로 보면",
+          "계약서 기준으로는"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "every_turn",
+        "originalPattern": "자신의 애매한 답변을 지적받으면 결국 계약서 특약 문구를 반복해 지금 판단만 절대적인 것처럼 만든다."
+      },
+      {
+        "id": "tenant10:b:tell:condition_backfill",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "self_protection"
+        ],
+        "lexicalHooks": [
+          "냄새도 있고",
+          "털 문제도 있고",
+          "알레르기 우려도 있고"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "처음엔 말하지 않았던 냄새, 털, 알레르기 같은 조건을 뒤늦게 하나씩 붙여 원래부터 불허였던 것처럼 설명한다."
+      },
+      {
+        "id": "tenant10:b:tell:rule_reset",
+        "appliesWhen": [
+          "emotional",
+          "cornered",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "저는 원칙대로 한 겁니다",
+          "건물 전체 기준이 그렇습니다",
+          "예외를 두면 안 됩니다"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "감정이 올라오면 구체적 사례 대신 건물 전체 규칙과 원칙만 다시 읽어 내려간다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "tenant10:beat:a:d-1:deny",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "브로커 통해 사진까지 보냈고 관리만 잘하면 된다는 말도 들었습니다. 저는 그때 이미 정리된 줄 알았어요.",
+      "behaviorHint": "시선은 피하지만 말끝은 단정적으로 맺는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-1:hedge",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "특약이 무조건 금지처럼만 보이진 않았습니다. 사진 확인 뒤에 별말이 없으니 그렇게 이해한 거예요.",
+      "behaviorHint": "손가락으로 메시지 화면을 더듬으며 조심스럽게 해명한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-1:partial",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "지금 보면 승인 문장이 분명하진 않았네요. 그래도 그 답이 허락처럼 읽힌 건 사실입니다.",
+      "behaviorHint": "한숨을 짧게 쉬고 고개를 조금 숙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-1:blame",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "제가 앞질러 해석한 건 맞지만, 상훈 씨 답도 너무 애매했습니다. 끝난 건지 보류인지 누구라도 헷갈렸을 거예요.",
+      "behaviorHint": "브로커와 집주인을 번갈아 보듯 시선을 움직인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-1:confession",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "명확한 허락 전에 입주한 건 제 잘못입니다. 애매한 답을 남긴 책임도 함께 봐 주셨으면 합니다.",
+      "behaviorHint": "목소리가 낮아지고 마지막 문장에서 감정을 누른다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-1:evidence_hit",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "계약서와 문자 원문을 같이 보니 제가 너무 빨리 결론내린 건 부정하기 어렵네요. 그래도 그 한 줄이 왜 허락처럼 보였는지는 이해해 주셨으면 합니다.",
+      "behaviorHint": "화면을 내밀었다가 천천히 거둬들인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-2:deny",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "입주 전에 사진도 보내고 질문도 했습니다. 저는 필요한 고지는 다 했다고 생각했습니다.",
+      "behaviorHint": "브로커 이름을 먼저 꺼내며 직접 판단을 흐린다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-2:hedge",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "집주인 쪽에 전달됐고 별도 거절도 없어서요. 저는 허락 단계가 거의 끝난 줄 알았습니다.",
+      "behaviorHint": "문장 끝을 올리며 되묻는 억양을 쓴다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-2:partial",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "원문에 아직 답이 없다는 문장이 있었는데 제가 유리한 캡처부터 냈습니다. 그건 인정합니다.",
+      "behaviorHint": "휴대폰을 꽉 쥔 채 짧게 끊어 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-2:blame",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "그래도 완전한 무단 반입이라고만 하시면 억울합니다. 제가 성급했어도 사전 고지 자체는 있었잖아요.",
+      "behaviorHint": "억울함이 올라와 문장이 조금 길어진다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-2:confession",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "사전 고지는 했지만 최종 승인을 확인하지 않고 들어온 건 제 책임입니다. 허락으로 단정한 부분은 제가 잘못 봤습니다.",
+      "behaviorHint": "고개를 끄덕이며 스스로 결론을 정리한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-2:evidence_hit",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "이 캡처는 제가 편한 쪽만 먼저 보여 드린 게 맞네요. 원문까지 보면 집주인 답이 아직이라는 문장이 분명히 있었습니다.",
+      "behaviorHint": "사진을 넘기다 멈추고 입술을 깨문다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-4:deny",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "저희 강아지는 거의 안 짖었습니다. 복도도 어지럽힌 적 없어요.",
+      "behaviorHint": "즉답으로 짧게 부인한 뒤 시선을 피한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-4:hedge",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "있었다고 해도 정말 잠깐 수준이었습니다. 계속 불편을 줄 정도는 아니었어요.",
+      "behaviorHint": "손바닥을 아래로 눌러가며 규모를 축소한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-4:partial",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "택배나 초인종 때 두세 번 짧게 짖은 적은 있습니다. 다만 그게 상습 민원은 아니었습니다.",
+      "behaviorHint": "짧게 인정하고 바로 범위를 제한한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-4:blame",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "매트 세척할 정도 흔적은 있었지만 그걸로 복도 전체 문제처럼 말하는 건 과장입니다.",
+      "behaviorHint": "억울한 표정으로 관리실 기록을 손가락으로 짚는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-4:confession",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "완전히 없었다고 한 건 제 체면 때문이었습니다. 짧은 짖음과 매트 세척 정도는 있었지만 반복 민원은 아니었습니다. 제 잘못이었습니다.",
+      "behaviorHint": "마지막에 목소리가 작아지며 수긍한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:a:d-4:evidence_hit",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "관리실 일지를 보니 제가 너무 세게 부정했네요. 두 건 있었던 건 맞습니다.",
+      "behaviorHint": "숨을 들이마신 뒤 인정의 폭을 최소한으로 조절한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-1:deny",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "특약상 허용된 게 아닙니다. 사진 확인은 승인과 다릅니다.",
+      "behaviorHint": "계약서 문구를 손끝으로 두드리며 짧게 자른다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-1:hedge",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "저는 명확히 허가한 적이 없습니다. 그 단계는 아직 협의 중이었다고 보는 게 맞습니다.",
+      "behaviorHint": "표정을 굳힌 채 문구 해석으로만 답한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-1:partial",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "문구가 자동 금지 하나만 뜻하진 않을 수 있습니다. 그래도 최종 승인은 제 확인이 있어야 했습니다.",
+      "behaviorHint": "잠깐 멈췄다가 바로 원칙 문장으로 회수한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-1:blame",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "이전 세입자 냄새 민원이 있어서 제가 쉽게 예외를 못 준 겁니다. 그런 사정도 모르고 허락처럼 받아들인 쪽도 있었죠.",
+      "behaviorHint": "처음엔 없던 배경 사정을 뒤늦게 덧붙인다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-1:confession",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "결국 저는 승인도 거절도 분명히 하지 않았습니다. 그 애매한 답이 해석 충돌을 만든 건 인정합니다.",
+      "behaviorHint": "어깨를 한 번 들썩이고 낮은 목소리로 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-1:evidence_hit",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "계약서와 문자 원문을 같이 놓고 보니 자동 금지라고만 밀기는 어렵군요. 승인 전 단계였다는 제 생각은 변함없습니다.",
+      "behaviorHint": "문구를 다시 읽으며 말끝을 조심스럽게 늦춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-3:deny",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "계약 위반이라고 판단했으니 즉시 조치를 요구한 겁니다. 건물 관리 책임이 제게 있으니까요.",
+      "behaviorHint": "허리를 세우고 원칙론으로 밀어붙인다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-3:hedge",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "다른 세입자 민원까지 생각하면 빠른 대응이 필요했습니다. 늦게 움직이면 더 커질 수 있었습니다.",
+      "behaviorHint": "민원과 규칙을 교차로 언급하며 압박한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-3:partial",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "24시간 반출과 50만원 예치금 통보를 제가 보낸 건 맞습니다. 그때는 강하게 선을 그어야 한다고 봤습니다.",
+      "behaviorHint": "휴대폰 기록을 보며 마지못해 사실관계를 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-3:blame",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "냄새나 털, 알레르기 우려까지 있었으니 제가 세게 말한 겁니다. 그런 요소들을 다 봐야죠.",
+      "behaviorHint": "뒤늦은 조건을 하나씩 붙이며 정당화를 시도한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-3:confession",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "지금 보면 즉시 퇴거와 선예치금 요구는 계약과 확인된 손상 범위를 넘었습니다. 제 대응 수위가 과했습니다. 제 잘못이었습니다.",
+      "behaviorHint": "입술을 굳게 다문 뒤 짧게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-3:evidence_hit",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "점검 사진과 견적 비교서를 보니 그 정도 손상은 아직 아니군요. 제가 요구를 먼저 크게 잡은 건 맞습니다.",
+      "behaviorHint": "서류를 넘기다 멈추고 한 박자 늦게 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-5:deny",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "전문 청소와 바닥보수 선공제는 당연합니다. 반려동물이 있었으니 대비해야 합니다.",
+      "behaviorHint": "금액과 항목을 숫자처럼 또박또박 나열한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-5:hedge",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "동물 냄새는 나중에 커질 수 있습니다. 미리 비용을 잡아 두는 게 안전합니다.",
+      "behaviorHint": "현재 손상보다 미래 위험을 앞세워 설명한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-5:partial",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "현재 보이는 게 매트 오염 정도라는 건 압니다. 그래도 후속 냄새 문제 가능성까지 본 겁니다.",
+      "behaviorHint": "한쪽은 인정하되 곧바로 가능성 논리로 후퇴한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-5:blame",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "전문 탈취와 바닥보수까지는 확인되지 않았어도, 나중에 손해를 누가 집니까. 민주 씨가 승인도 안 받고 반려견을 들인 게 이 비용 문제의 출발점이에요. 제가 미리 잡을 수밖에 없던 겁니다.",
+      "behaviorHint": "손해 부담을 강조하며 비용 산정을 정당화한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-5:confession",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "현 단계에서는 선공제보다 실제 손상 후 증빙 정산이 맞습니다. 제가 비용을 너무 앞서 잡았습니다. 제 잘못이었습니다.",
+      "behaviorHint": "말끝이 짧아지고 서류를 내려놓는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant10:beat:b:d-5:evidence_hit",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "현장 사진과 비교 견적을 보니 전문 보수까지는 아직이군요. 제가 큰 비용부터 떠올린 건 인정합니다.",
+      "behaviorHint": "견적서를 두 번 접었다 펴며 난처함을 드러낸다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    }
+  ]
+}
+

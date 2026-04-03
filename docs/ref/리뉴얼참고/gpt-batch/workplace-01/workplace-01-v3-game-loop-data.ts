@@ -1,0 +1,1704 @@
+export const workplace01V3GameLoopData = {
+  "caseId": "workplace-01",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "명의와 평가선 카드",
+      "description": "초안 작성 기록과 HR 버전 흐름을 함께 대조해 공로 귀속과 평가 개입의 선후를 묻는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "윤태성 씨, e-1의 메일 체인과 회의록에 박서윤이 실무 오너로 남아 있는데도 제출 메일과 표지에서 이름을 뺀 기준이 무엇이었습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-01:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "e-4에 따르면 점수 보정 직전 귀하 계정의 비공개 메모가 들어갑니다. 그 메모를 HR의 정식 판단과 별개라고 말할 근거가 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-01:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "작년부터 실무 기여자를 병기하기로 했던 관행이 있었다면, 이번 단독 명의 제출은 단순 누락이 아니라 규칙 이탈 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-01:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "박서윤 씨, e-1만 보더라도 핵심 골격은 귀하가 만든 것으로 보입니다. 그렇다면 윤태성의 최종 문안 정리와 승인 절차까지 전부 지우는 표현은 과장 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-01:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "e-4에서 귀하의 기여 항목이 '보고서 오너'에서 '보조 분석'으로 바뀌는 흐름을 봤을 때, 정확히 어느 지점에서 태성 개입을 의심하게 되었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-01:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "공로 삭제가 부당하다는 주장과 별개로, 최종 승인 절차에 윤태성 몫이 있었다는 사실까지 부정할 이유는 없지 않습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-01:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "로그 역전 카드",
+      "description": "조작 가능성이 있는 PDF와 원본 서버 로그를 맞물려 최종 수정자 프레임을 뒤집는 카드",
+      "evidenceIds": [
+        "e-2",
+        "e-3"
+      ],
+      "relatedDisputes": [
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "윤태성 씨, e-2가 원본 감사 로그가 아니라 잘린 출력본이라는 지적을 받는 순간에도 그 자료를 최종 책임 근거로 유지하시겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-01:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "e-3 원본 로그에는 23시 41분 관리자 대리발급 토큰 흔적이 남습니다. 그렇다면 귀하의 PDF가 가리키는 '23시 48분 최종 수정자' 결론은 무엇으로 보완됩니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-01:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "재판부가 비난 없이 묻겠습니다. 공용 PC와 관리자 세션 가능성을 알면서도 왜 원본 로그보다 PDF를 먼저 제출했습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-01:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "박서윤 씨, e-3에 따르면 귀하의 마지막 정상 편집 시각은 따로 존재합니다. 23시 48분 캡처와 구분되는 귀하의 실제 마지막 편집 시각을 말씀하십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-01:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "원본 로그의 23시 41분 행에 귀하 계정이 아니라 관리자 토큰과 공용 PC 세션이 찍혀 있다는 점을 어떻게 해석합니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-01:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "귀하 이름이 찍힌 PDF를 처음 봤을 때 왜 분 단위 시간표를 그렇게 빠르게 내밀었는지, 그 심리까지 설명해 보십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-01:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "캡처와 포렌식 카드",
+      "description": "무단 캡처 확산의 실제 범위와 포렌식 메모가 드러내는 은폐 동기를 함께 압박하는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "윤태성 씨, e-5의 새벽 캡처 확산은 분명 문제지만 그 불신이 왜 생겼는지까지 보아야 하지 않겠습니까? 귀하의 관리 방식이 그 배경이 된 부분을 부인하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-01:a:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "e-5의 소문 확산을 앞세워도, 귀하가 먼저 단독 명의 제출로 규칙을 흔든 사실이 사라지지는 않습니다. 그 선행 위반을 가리기 위해 상대의 유포를 더 크게 부각한 것은 아닙니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-01:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "e-6 포렌식 메모까지 확인된 지금, 귀하는 조작 가능성이 있는 PDF를 근거로 박서윤 책임을 먼저 고정하려 했다는 점을 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-01:a:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "박서윤 씨, e-5를 보면 캡처가 실제로 두 명에게 전달됩니다. 그 순간 귀하는 단순 확인을 넘어서 사람들에게 판을 열기 시작한 것 아닙니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-01:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "정식 고충 절차를 거치지 않고 캡처와 대화를 먼저 돌린 이유를 묻습니다. 그 선택이 결국 소문과 보복 감정을 결합시킨 것은 아닌지 답해 보십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-01:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "귀하는 억울함만 풀고 싶었던 것입니까, 아니면 윤태성도 곤란해지길 바랐습니까? 재판부는 감정 동기 자체를 묻고 있습니다.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-01:b:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-01:a:d-1:unlock:s2:0",
+            "factText": "초안 메일과 주간회의록에는 박서윤이 핵심 분석 프레임의 실무 오너로 적혀 있었다.",
+            "tags": [
+              "evidence",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              },
+              "role": {
+                "exact": "보고서 오너",
+                "neutral": "그 주도 역할"
+              },
+              "evidence": {
+                "exact": "프로젝트 초안 메일과 주간회의록",
+                "neutral": "그 자료 묶음"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-01:a:d-1:unlock:s3:0",
+            "factText": "작년 하반기부터 대외 제출본에는 실무 기여자를 병기하기로 팀 내 합의가 이어지고 있었다.",
+            "tags": [
+              "rule",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "실무 기여자 병기 관행",
+                "neutral": "그 기여자 표기 규칙"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-01:a:d-1:unlock:s4:0",
+            "factText": "윤태성은 승진 심사 주간에 팀 통제력이 흔들려 보일까 두려워 이름 표기를 좁혔다.",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              },
+              "time": {
+                "exact": "평가 시즌",
+                "dateExact": "평가 시즌",
+                "period": "승진 심사 주간",
+                "neutral": "그 시각"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-01:a:d-1:unlock:s5:0",
+            "factText": "제출 메일과 표지에서 박서윤 이름을 뺀 최종 판단은 윤태성 본인이 내린 것이었다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-01:a:d-2:unlock:s2:0",
+            "factText": "박서윤은 새벽 1시대에 평가 화면 일부를 캡처해 동료 두 명에게 전송했다.",
+            "tags": [
+              "privacy",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              },
+              "time": {
+                "exact": "새벽 1시대",
+                "dateExact": "새벽 1시대",
+                "period": "평가 캡처가 몰린 시각",
+                "neutral": "그 시각"
+              },
+              "count": {
+                "exact": "2명",
+                "neutral": "그 인원",
+                "rounded": "두 명"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-01:a:d-2:unlock:s3:0",
+            "factText": "슬랙 캡처 묶음은 평가 문장과 야간 수정 지시를 부분적으로 잘라 맥락을 재배치한 흔적이 있다.",
+            "tags": [
+              "evidence",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "evidence": {
+                "exact": "슬랙 캡처 묶음",
+                "neutral": "그 캡처 묶음"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-01:a:d-2:unlock:s4:0",
+            "factText": "윤태성의 늦은 밤 수정 지시와 비공식 평가 코멘트가 박서윤의 불신을 키운 배경으로 작용했다.",
+            "tags": [
+              "context",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-01:a:d-2:unlock:s5:0",
+            "factText": "무단 열람과 유포 책임은 박서윤에게 있지만, 그 불신의 배경을 만든 관리 방식 일부는 윤태성 쪽에도 있었다.",
+            "tags": [
+              "responsibility",
+              "context"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              }
+            },
+            "stanceHints": [
+              "admission",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-01:a:d-3:unlock:s2:0",
+            "factText": "문서 수정 이력 PDF는 원본 감사 로그가 아니라 잘린 출력본으로 단독 증거력이 약하다.",
+            "tags": [
+              "evidence",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "문서 수정 이력 PDF",
+                "neutral": "그 PDF"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-01:a:d-3:unlock:s3:0",
+            "factText": "제출된 PDF는 주장된 추출 시각보다 생성 시각이 늦고 관련 열이 빠져 있어 선택적 편집 가능성이 보인다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "23시 48분",
+                "dateExact": "23시 48분",
+                "period": "PDF상 최종 수정 시각",
+                "neutral": "그 시각"
+              },
+              "evidence": {
+                "exact": "문서 수정 이력 PDF",
+                "neutral": "그 PDF"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-01:a:d-3:unlock:s4:0",
+            "factText": "윤태성은 공용 PC와 관리자 대리발급 토큰 가능성을 알면서도 원본 로그 대신 PDF 프레임을 유지했다.",
+            "tags": [
+              "institution",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "session": {
+                "exact": "공용 PC 세션",
+                "neutral": "그 공용 PC 세션"
+              },
+              "token": {
+                "exact": "관리자 대리발급 토큰",
+                "neutral": "그 관리자 토큰"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-01:a:d-3:unlock:s5:0",
+            "factText": "윤태성은 박서윤 책임을 먼저 고정하기 위해 약한 PDF를 사실상 결정적 근거처럼 사용했다.",
+            "tags": [
+              "admission",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              },
+              "evidence": {
+                "exact": "문서 수정 이력 PDF",
+                "neutral": "그 PDF"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-01:a:d-4:unlock:s2:0",
+            "factText": "점수 보정 직전 HR 버전기록에 윤태성 계정의 비공개 메모 입력 시각이 남아 있다.",
+            "tags": [
+              "institution",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "institution": {
+                "exact": "HR",
+                "neutral": "인사 부서",
+                "judgeRef": "HR"
+              },
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              },
+              "evidence": {
+                "exact": "HR 평가 초안 버전기록",
+                "neutral": "그 평가 기록"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-01:a:d-4:unlock:s3:0",
+            "factText": "같은 평가 흐름에서 박서윤의 기여 표기는 '보고서 오너'에서 '보조 분석'으로 축소됐다.",
+            "tags": [
+              "evidence",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              },
+              "role": {
+                "exact": "보고서 오너",
+                "neutral": "그 주도 역할"
+              },
+              "role_support": {
+                "exact": "보조 분석",
+                "neutral": "그 축소된 역할"
+              },
+              "evidence": {
+                "exact": "HR 평가 초안 버전기록",
+                "neutral": "그 평가 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-01:a:d-4:unlock:s4:0",
+            "factText": "윤태성은 승진 심사와 보고 라인 신뢰를 지키려는 이유로 리스크 문구를 미리 심었다.",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              },
+              "time": {
+                "exact": "평가 시즌",
+                "dateExact": "평가 시즌",
+                "period": "승진 심사 주간",
+                "neutral": "그 시각"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-01:a:d-4:unlock:s5:0",
+            "factText": "비공식 코멘트는 단순 참고가 아니라 서윤 평가의 하향 방향에 실제 영향을 주었다.",
+            "tags": [
+              "responsibility",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "institution": {
+                "exact": "HR",
+                "neutral": "인사 부서",
+                "judgeRef": "HR"
+              },
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-01:a:d-5:unlock:s2:0",
+            "factText": "팀 내에서는 대외 제출본에도 실무 오너와 검토자를 병기하는 규칙이 이미 굳어져 있었다.",
+            "tags": [
+              "rule",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "실무 기여자 병기 관행",
+                "neutral": "그 기여자 표기 규칙"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-01:a:d-5:unlock:s3:0",
+            "factText": "윤태성의 단독 명의 제출이 성과 배분 규칙을 먼저 깨뜨린 시작점이었다.",
+            "tags": [
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-01:a:d-5:unlock:s4:0",
+            "factText": "윤태성은 박서윤의 캡처 유포를 더 크게 부각해 자신의 선행 위반을 흐리려 했다.",
+            "tags": [
+              "counter",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-01:a:d-5:unlock:s5:0",
+            "factText": "성과 배분 규칙은 윤태성의 명의 삭제와 박서윤의 소문 확산으로 서로 다른 방식으로 무너졌다.",
+            "tags": [
+              "rule",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "실무 기여자 병기 관행",
+                "neutral": "그 기여자 표기 규칙"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-01:b:d-1:unlock:s2:0",
+            "factText": "메일 원본과 회의록은 핵심 분석 프레임과 KPI 표의 실무 작성자가 박서윤이었음을 뒷받침한다.",
+            "tags": [
+              "evidence",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              },
+              "evidence": {
+                "exact": "프로젝트 초안 메일과 주간회의록",
+                "neutral": "그 자료 묶음"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-01:b:d-1:unlock:s3:0",
+            "factText": "임원용 문안 정리와 최종 승인 절차에는 윤태성의 역할도 분명히 포함돼 있었다.",
+            "tags": [
+              "context",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-01:b:d-1:unlock:s4:0",
+            "factText": "박서윤은 이름이 빠진 뒤 자신의 기여 전체가 사라지는 모멸감을 강하게 느꼈다.",
+            "tags": [
+              "shame",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-01:b:d-1:unlock:s5:0",
+            "factText": "박서윤은 보고서를 전부 자신의 단독 성과처럼 말한 과장은 인정하지만, 이름 삭제가 부당했다는 핵심 주장은 유지된다.",
+            "tags": [
+              "admission",
+              "counter"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-01:b:d-2:unlock:s2:0",
+            "factText": "박서윤은 평가 화면 일부를 캡처해 동료 두 명에게 실제로 공유했다.",
+            "tags": [
+              "privacy",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              },
+              "count": {
+                "exact": "2명",
+                "neutral": "그 인원",
+                "rounded": "두 명"
+              },
+              "evidence": {
+                "exact": "슬랙 캡처 묶음",
+                "neutral": "그 캡처 묶음"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-01:b:d-2:unlock:s3:0",
+            "factText": "남은 권한이 열람의 문을 열어 준 것은 사실이지만, 공유와 소문 확산은 별도의 선택이었다.",
+            "tags": [
+              "threshold",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "institution": {
+                "exact": "HR",
+                "neutral": "인사 부서",
+                "judgeRef": "HR"
+              },
+              "rule": {
+                "exact": "인사 정보 공유 금지",
+                "neutral": "그 금지선"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-01:b:d-2:unlock:s4:0",
+            "factText": "박서윤은 '마지막에 사고 친 사람'으로 낙인찍힐까 두려워 캡처를 방패처럼 쥐었다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-01:b:d-2:unlock:s5:0",
+            "factText": "불안과 억울함이 이유였더라도 박서윤의 행위는 무단 열람과 유포에 해당한다.",
+            "tags": [
+              "responsibility",
+              "privacy"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-01:b:d-3:unlock:s2:0",
+            "factText": "문서 서버 원본 로그상 박서윤의 마지막 정상 편집은 20시 17분에 끝난다.",
+            "tags": [
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              },
+              "time": {
+                "exact": "20시 17분",
+                "dateExact": "20시 17분",
+                "period": "서윤의 마지막 정상 편집 시각",
+                "neutral": "그 시각"
+              },
+              "evidence": {
+                "exact": "문서 서버 원본 감사 로그",
+                "neutral": "그 원본 로그"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-01:b:d-3:unlock:s3:0",
+            "factText": "23시 41분 기록에는 박서윤 계정이 아니라 관리자 대리발급 토큰과 공용 PC 세션이 찍혀 있다.",
+            "tags": [
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "23시 41분",
+                "dateExact": "23시 41분",
+                "period": "관리자 토큰 덮어쓰기 시각",
+                "neutral": "그 시각"
+              },
+              "token": {
+                "exact": "관리자 대리발급 토큰",
+                "neutral": "그 관리자 토큰"
+              },
+              "session": {
+                "exact": "공용 PC 세션",
+                "neutral": "그 공용 PC 세션"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-01:b:d-3:unlock:s4:0",
+            "factText": "제출된 PDF 해시는 공식 추출본과 다르고, 공식 추출 시각과 제출본 생성 시각 사이에 공백이 남아 있다.",
+            "tags": [
+              "evidence",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "evidence": {
+                "exact": "문서 수정 이력 PDF",
+                "neutral": "그 PDF"
+              },
+              "token": {
+                "exact": "해시 불일치",
+                "neutral": "그 해시 차이"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-01:b:d-3:unlock:s5:0",
+            "factText": "따라서 박서윤을 막판 오류의 최종 수정자로 확정한 비난은 원본 증거 기준으로 무너진다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              },
+              "evidence": {
+                "exact": "문서 서버 원본 감사 로그",
+                "neutral": "그 원본 로그"
+              }
+            },
+            "stanceHints": [
+              "admission",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-01:b:d-4:unlock:s2:0",
+            "factText": "HR 평가 버전기록에는 윤태성의 비공개 메모 입력 직후 박서윤 기여 문구가 축소된 흐름이 남아 있다.",
+            "tags": [
+              "institution",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "institution": {
+                "exact": "HR",
+                "neutral": "인사 부서",
+                "judgeRef": "HR"
+              },
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-01:b:d-4:unlock:s3:0",
+            "factText": "비공개 메모의 핵심은 '기여는 있으나 리스크가 크다'는 식의 방향성 있는 평가 문장이었다.",
+            "tags": [
+              "quote",
+              "motive"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "term": {
+                "exact": "기여는 있으나 리스크가 크다",
+                "neutral": "그 코멘트"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-01:b:d-4:unlock:s4:0",
+            "factText": "박서윤은 점수보다도 '문제 있는 사람'으로 정리될까 봐 더 크게 무너졌다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박서윤",
+                "fullName": "박서윤",
+                "judgeRef": "박 대리",
+                "neutral": "그 실무자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-01:b:d-4:unlock:s5:0",
+            "factText": "윤태성의 비공식 코멘트는 정식 권한 바깥에서 서윤 평가 방향을 누르는 효과를 냈다.",
+            "tags": [
+              "responsibility",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              },
+              "institution": {
+                "exact": "HR",
+                "neutral": "인사 부서",
+                "judgeRef": "HR"
+              }
+            },
+            "stanceHints": [
+              "admission",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-01:b:d-5:unlock:s2:0",
+            "factText": "박서윤은 일이 그냥 묻히지 않길 바라는 마음으로 먼저 몇 사람에게 캡처 이야기를 꺼냈다.",
+            "tags": [
+              "motive",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "count": {
+                "exact": "2명",
+                "neutral": "그 인원",
+                "rounded": "두 명"
+              },
+              "evidence": {
+                "exact": "슬랙 캡처 묶음",
+                "neutral": "그 캡처 묶음"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-01:b:d-5:unlock:s3:0",
+            "factText": "정식 고충 절차를 건너뛴 선택이 소문 확산과 보복 감정을 결합시켰다.",
+            "tags": [
+              "harm",
+              "threshold"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "channel": {
+                "exact": "정식 고충 절차",
+                "neutral": "그 공식 절차"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-01:b:d-5:unlock:s4:0",
+            "factText": "박서윤에게는 억울함과 함께 윤태성도 곤란해지길 바라는 복수심이 분명히 있었다.",
+            "tags": [
+              "motive",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "윤태성",
+                "fullName": "윤태성",
+                "judgeRef": "윤 팀장",
+                "neutral": "그 팀장"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-01:b:d-5:unlock:s5:0",
+            "factText": "박서윤은 되갚으려는 마음으로 캡처와 소문을 이용했고, 그 점에서 자신도 규칙을 무너뜨렸다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "evidence": {
+                "exact": "슬랙 캡처 묶음",
+                "neutral": "그 캡처 묶음"
+              },
+              "rule": {
+                "exact": "실무 기여자 병기 관행",
+                "neutral": "그 기여자 표기 규칙"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "workplace-01:contradiction:0",
+        "targetParty": "a",
+        "trigger": "윤태성이 PDF만으로 박서윤을 최종 수정자로 단정한 뒤 e-3 또는 e-6이 제시될 때",
+        "text": "잘린 PDF는 단독으로 확정 근거가 약하다고 인정하면서도, 같은 자료로 박서윤 책임만 먼저 고정한 점이 모순됩니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-3",
+          "e-6"
+        ]
+      },
+      {
+        "id": "workplace-01:contradiction:1",
+        "targetParty": "b",
+        "trigger": "박서윤이 확인 목적 열람이었다고 말한 뒤 e-5에서 전달 흔적과 순서 재배치가 드러날 때",
+        "text": "우발적 확인이라고 하면서도 캡처를 고르고 순서를 바꿔 두 명에게 보낸 정황은 단순 열람을 넘는 행동으로 보입니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      },
+      {
+        "id": "workplace-01:contradiction:2",
+        "targetParty": "a",
+        "trigger": "윤태성이 평가에는 개입하지 않았다고 말한 뒤 e-4의 메모 시각과 역할 축소 기록이 확인될 때",
+        "text": "평가는 HR 영역이라고 선을 그으면서도, 보정 직전 비공개 메모로 방향을 민 흔적은 직접 개입과 모순됩니다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      },
+      {
+        "id": "workplace-01:contradiction:3",
+        "targetParty": "b",
+        "trigger": "박서윤이 보고서가 전부 자신의 단독 성과라고 밀어붙인 뒤 e-1의 역할 분담 문구가 확인될 때",
+        "text": "핵심 골격 작성은 박서윤 쪽이지만, 임원용 문안 정리와 최종 승인 절차까지 모두 지워 버리면 사건 구조가 다시 왜곡됩니다.",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "workplace-01:interjection:0",
+        "speaker": "judge",
+        "trigger": "양측이 '프로세스'와 '억울함'만 반복하며 증거 지점을 놓칠 때",
+        "text": "감정은 뒤로 미루십시오. 지금은 누가 무엇을 언제 확인했는지를 먼저 정리하겠습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-01:interjection:1",
+        "speaker": "a",
+        "trigger": "박서윤이 캡처를 흔들며 태성의 모든 설명을 권한 남용으로 몰아갈 때",
+        "text": "지금도 보시죠, 자꾸 사람 문제로 돌립니다. 절차와 증거를 분리해서 보셔야 합니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-01:interjection:2",
+        "speaker": "b",
+        "trigger": "윤태성이 '프로세스상'이라는 말을 세 번 이상 반복할 때",
+        "text": "프로세스상, 프로세스상요? 사람이 이름 지운 걸 절차라고 부르면 다 절차가 되나요?",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "workplace-01:outburst:a:0",
+        "party": "a",
+        "trigger": "승진 심사와 팀 통제력 상실 공포를 직접 찌르는 질문이 들어올 때",
+        "text": "팀장 이름 하나로 버티는 구조가 얼마나 불안한지 아십니까. 그 주간엔 뭐 하나 잘못 보이면 바로 리더십이 무너졌습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-01:outburst:a:1",
+        "party": "a",
+        "trigger": "조작된 PDF를 이용해 서윤을 몰아갔다는 취지로 연속 추궁받을 때",
+        "text": "저 혼자 다 꾸민 것처럼 말하지 마십시오. 그 밤엔 운영 쪽도, 공용 PC도, 책임이 한 군데만 있는 게 아니었습니다.",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-01:outburst:b:0",
+        "party": "b",
+        "trigger": "'보조 분석'이라는 표현이 반복 제시될 때",
+        "text": "보조 분석이요? 그 표와 프레임을 제가 며칠 밤 새서 만든 건데, 버튼 한 번 눌렀다고 사람이 보조가 돼요?",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-01:outburst:b:1",
+        "party": "b",
+        "trigger": "막판 오류를 넣은 사람이라는 낙인 표현이 다시 나올 때",
+        "text": "그 한 장짜리 캡처 때문에 제가 끝장난 사람처럼 몰렸어요. 그래서 제가 시간표를 쥐고 버틴 거예요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "workplace-01:transition:a:d-1:s0_s1",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "공로 표기 질문이 직설적으로 들어올 때",
+      "line": "핵심은 이름 한 줄이 아니라 제출 책임입니다. 저는 그 질문이 왜 지금 평가 문제처럼 부풀려지는지부터 봐야 한다고 생각했습니다.",
+      "behaviorHint": "시선을 들지 않은 채 문장 첫머리만 또렷하게 끊는다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-1:s1_s2",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1이 제시되어 박서윤 실무 오너 기록이 확인될 때",
+      "line": "메일 체인과 회의록까지 나오면 실무 오너가 박서윤이었다는 건 부정하지 않겠습니다. 다만 그게 바로 단독 공로라는 뜻은 아닙니다.",
+      "behaviorHint": "인정의 폭을 최소화하듯 고개를 아주 작게 끄덕인다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-1:s2_s3",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "기여자 병기 관행에 대한 후속 질문이 이어질 때",
+      "line": "그 관행이 있었던 건 압니다. 그래도 당시엔 보고 라인 혼선과 평가 시즌 파장을 더 크게 봤습니다.",
+      "behaviorHint": "손끝으로 보이지 않는 선을 가르듯 책임선을 나눈다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-1:s3_s5",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4가 제시되거나 직접 책임 질문이 들어올 때",
+      "line": "네, 결국 제 계산이었습니다. 이름을 빼면 제 리더십이 더 안정적으로 보일 거라고 생각했습니다.",
+      "behaviorHint": "한 번 숨을 멈춘 뒤 단정적으로 인정한다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-3:s0_s1",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "최종 수정자 질문이 반복될 때",
+      "line": "제가 본 자료에선 마지막 이름이 박서윤으로 보였고, 그걸 기준으로 말했습니다. 다만 추출 경로 전체를 제가 다 통제한 건 아닙니다.",
+      "behaviorHint": "PDF 쪽으로 시선을 고정한 채 주어를 흐린다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-3:s1_s2",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2가 제시되어 PDF의 한계가 드러날 때",
+      "line": "이 PDF가 원본 로그가 아니라는 점은 인정합니다. 그래도 당시엔 그 자료가 가장 먼저 제 손에 들어왔습니다.",
+      "behaviorHint": "문서 가장자리를 매만지며 말끝을 낮춘다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-3:s2_s4",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "공용 PC와 공유 세션에 대한 비판 없는 질문이 들어올 때",
+      "line": "공용 PC 얘기가 나오면 저도 불편합니다. 그 가능성을 알고도 바로 원본을 들추지 않은 건 제 방어심리였을 수 있습니다.",
+      "behaviorHint": "처음으로 시선을 비껴가며 말 속도가 느려진다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-3:s4_s5",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-3 또는 e-6이 제시되어 관리자 토큰 기록이 확인될 때",
+      "line": "원본 로그가 여기까지 나오면 더는 미룰 수 없겠네요. 저는 약한 PDF를 이용해 박서윤 책임을 먼저 굳히려 했습니다.",
+      "behaviorHint": "어깨 힘이 빠지며 문장을 더 짧게 끊는다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-4:s0_s1",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "HR 코멘트 질문이 들어올 때",
+      "line": "관리자 입장에서 일반적인 의견을 낸 겁니다. 그걸 곧바로 비공식 개입이라고 규정하는 건 과합니다.",
+      "behaviorHint": "얼굴 변화 없이 기관 명칭만 또렷하게 발음한다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-4:s1_s2",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4가 제시되어 비공개 메모 시점이 확인될 때",
+      "line": "점수 보정 직전에 메모를 넣은 건 맞습니다. 다만 저는 그걸 참고 정보 정도로 생각했습니다.",
+      "behaviorHint": "짧게 인정한 뒤 바로 단서를 붙인다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-4:s2_s3",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "캘리브레이션 직전 시점에 대한 질문이 이어질 때",
+      "line": "그 시점이 민감했다는 건 압니다. 하지만 이후 야간 수정과 소동까지 겹치면서 HR도 리스크를 크게 봤습니다.",
+      "behaviorHint": "메모에서 이후 사건으로 화제를 미끄러뜨린다."
+    },
+    {
+      "id": "workplace-01:transition:a:d-4:s3_s5",
+      "caseId": "workplace-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "직접 책임을 묻는 질문이 들어올 때",
+      "line": "결국 방향을 바꾸는 문장을 제가 먼저 넣은 겁니다. 일반 피드백이라는 말은 제 책임을 줄이려던 표현이었습니다.",
+      "behaviorHint": "입술을 굳혔다 풀며 낮게 인정한다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-1:s0_s1",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "공로를 어떻게 나눠야 하는지 질문이 들어올 때",
+      "line": "제가 다 만들었다고 말하고 싶을 만큼 억울했어요. 그래도 승인 절차와 발신은 팀장 쪽이었다는 건 알아요.",
+      "behaviorHint": "처음엔 빠르게 몰아붙이다가 끝부분에서 속도를 줄인다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-1:s1_s2",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1이 제시되어 실무 오너 기록이 확인될 때",
+      "line": "메일 원본이 나오면 적어도 제가 골격을 만든 건 분명하죠. 그다음엔 왜 제 이름을 뺐는지가 남는 거예요.",
+      "behaviorHint": "자료를 손끝으로 두 번 두드리며 힘을 준다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-1:s2_s3",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "임원용 요약 문안 역할에 대한 질문이 들어올 때",
+      "line": "문안 정리를 했다고 이름을 지울 권리까지 생기는 건 아니잖아요. 저는 그 대목에서 제 존재가 잘렸다고 느꼈어요.",
+      "behaviorHint": "상대 표현을 그대로 받아 '권리요?' 하고 되묻는다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-1:s3_s5",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4가 제시되거나 책임을 직접 묻는 질문이 들어올 때",
+      "line": "네, 제가 보고서를 전부 제 단독 성과처럼 말한 건 과했어요. 그래도 그 과장을 낳은 출발점은 이름 삭제였어요.",
+      "behaviorHint": "말끝이 떨리지만 눈을 피하지 않는다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-2:s0_s1",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "평가 열람 경위를 묻는 질문이 들어올 때",
+      "line": "남아 있던 권한으로 화면이 열린 거예요. 그때는 너무 불안해서 그게 진짜 내 평가인지부터 확인하고 싶었어요.",
+      "behaviorHint": "숨이 조금 가빠지며 문장 길이가 짧아진다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-2:s1_s2",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5가 제시되어 전달 흔적이 확인될 때",
+      "line": "캡처를 동료 둘에게 보낸 건 인정할게요. 혼자 들고 있으면 그대로 당할 것 같았거든요.",
+      "behaviorHint": "캡처를 쥔 손처럼 손가락이 오므라든다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-2:s2_s3",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "동료 공유 범위와 의도를 묻는 후속 질문이 이어질 때",
+      "line": "네, 저도 판이 커질 수 있다는 걸 모른 건 아니에요. 그런데 그때는 정식 채널이 저를 지켜 줄 거라는 믿음이 없었어요.",
+      "behaviorHint": "속도를 올려 밀어붙이다가 마지막 단어마다 힘을 준다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-2:s3_s5",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "남은 권한 자체를 왜 끊지 않았는지 질문이 들어올 때",
+      "line": "권한이 남아 있었다고 해서 제가 캡처를 돌려도 된다는 뜻은 아니죠. 결국 저는 무단으로 열람했고 유포했습니다.",
+      "behaviorHint": "잠깐 고개를 떨군 뒤 짧게 결론을 낸다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-5:s0_s1",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "소문 확산 경위를 묻는 질문이 들어올 때",
+      "line": "몇 사람에게 먼저 말한 건 맞아요. 하지만 그때는 제가 조용히 있으면 그냥 묻힐 거라고 생각했어요.",
+      "behaviorHint": "빠른 호흡으로 시작했다가 끝에서 살짝 멈춘다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-5:s1_s2",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "분노를 작은 범위로라도 인정하라는 질문이 들어올 때",
+      "line": "맞아요, 화가 났어요. 그리고 사람들이 이 일을 그냥 지나가지 않았으면 했어요.",
+      "behaviorHint": "입술을 굳게 다문 채 고개를 한 번 크게 끄덕인다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-5:s2_s3",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "정식 고충 절차를 왜 밟지 않았는지 묻는 질문이 들어올 때",
+      "line": "정식 절차가 저를 지켜 줄 거라고 믿었으면 저도 그렇게 했죠. 이름은 지워지고 평가는 흔들리는데, 저는 이미 늦었다고 느꼈어요.",
+      "behaviorHint": "말 속도가 확 빨라지고 손끝이 허공에서 짧게 떤다."
+    },
+    {
+      "id": "workplace-01:transition:b:d-5:s3_s5",
+      "caseId": "workplace-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "쌍방 책임을 직접 묻는 질문이 들어올 때",
+      "line": "네, 태성이 먼저 선을 넘었다고 믿었지만 저도 되갚으려고 선을 넘었어요. 캡처와 소문으로 압박한 건 제 책임입니다.",
+      "behaviorHint": "마지막 문장을 거의 속삭이듯 낮춘다."
+    }
+  ]
+}
+

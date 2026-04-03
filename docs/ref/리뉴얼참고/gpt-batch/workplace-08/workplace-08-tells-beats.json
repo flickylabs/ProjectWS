@@ -1,0 +1,572 @@
+{
+  "caseId": "workplace-08",
+  "executableTells": {
+    "a": [
+      {
+        "id": "workplace-08:a:tell:policy_detour",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "예산 코드상",
+          "접대비 기준으로 보면"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "개별 승인 질문에도 예산 코드와 접대비 기준부터 설명하며 승인 주체를 흐린다."
+      },
+      {
+        "id": "workplace-08:a:tell:future_cleanup",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "avoiding",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "월말 전에 정리될 예정",
+          "개인분 메우고 닫는"
+        ],
+        "sentenceShape": "conditional",
+        "cadence": "on_trigger_only",
+        "originalPattern": "'곧 개인 정산될 건이었다'며 이미 발생한 위반을 임시 상태처럼 축소한다."
+      },
+      {
+        "id": "workplace-08:a:tell:subject_blur",
+        "appliesWhen": [
+          "avoiding",
+          "defensive",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "재무 쪽에서",
+          "보류 탭에"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "'재무 쪽에서', '보류 탭에' 같은 표현으로 직접 지시 주체를 흐린다."
+      }
+    ],
+    "b": [
+      {
+        "id": "workplace-08:b:tell:line_item_barrage",
+        "appliesWhen": [
+          "lying",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "결제 시각으로는",
+          "품목명으로는"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "every_turn",
+        "originalPattern": "결제 시각과 품목명을 차례대로 읊으며 핵심 인정 대신 주변 정보를 길게 늘어놓는다."
+      },
+      {
+        "id": "workplace-08:b:tell:approval_echo",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "허락한 걸로 정리해",
+          "그대로 올리지 말고"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "상대 승인 문구를 그대로 되읽으며 자신의 책임을 뒤로 민다."
+      },
+      {
+        "id": "workplace-08:b:tell:paper_shuffle",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "shame",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "정리한 거예요",
+          "분류 보정이에요"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "영수증 뭉치를 뒤적이며 '정리'와 '분류 보정' 같은 축소 표현으로 억울함을 밀어붙인다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "workplace-08:beat:a:d-1:deny",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "예산 코드상 그 건을 개인분 메우고 닫는 합의로 승인한 적은 없습니다. 접대비 기준으로 보면 재무 쪽에서 보류 탭에 넣을 사안도 아니었습니다.",
+      "behaviorHint": "표정을 굳힌 채 손가락으로 테이블을 두 번 두드린다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-1:hedge",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "예산 코드상 월말 전에 정리될 예정이라는 취지의 말은 했을 수 있습니다. 다만 접대비 기준으로 보면 재무 쪽에서 보류 탭에 두고 검토하라는 정도였지, 사적 결제를 허락한 건 아니었습니다.",
+      "behaviorHint": "안경을 고쳐 쓰며 문장을 길게 끈다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-1:partial",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "제가 보류 탭에 두고 보자는 말을 한 건 맞습니다. 다만 예산 코드상 월말 전에 정리될 예정인 항목을 개인분 메우고 닫는 수준으로 본 것이지, 전부 괜찮다고 승인한 건 아니었습니다.",
+      "behaviorHint": "시선을 잠깐 피한 뒤 차분하게 문장을 분절한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-1:blame",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "제가 재무 쪽에서 보류 탭에 두고 월말 전에 정리될 예정이라고 본 건 맞습니다. 그래도 김나래 씨 쪽도 접대비 기준으로 보면 설명이 안 되는 항목을 개인분 메우고 닫는 식으로 넘기려 했습니다.",
+      "behaviorHint": "입꼬리를 굳힌 채 상대 쪽을 짧게 쳐다본다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-1:evidence_hit",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "메일하고 메신저까지 나오면 예산 코드상 핑계를 대도 부정할 수 없습니다. 제가 보류 탭에 넣고 월말 전에 정리될 예정이라고 돌린 건, 재무 쪽에서 문제 삼기 전에 넘기려던 판단이었습니다.",
+      "behaviorHint": "한숨을 짧게 내쉰 뒤 목소리를 낮춘다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-1:confession",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "제가 예산 코드상 문제를 가볍게 보고 보류 탭에 넣으라고 했습니다. 월말 전에 정리될 예정이라며 개인분 메우고 닫는 합의를 먼저 꺼낸 제 잘못이고 제 책임입니다.",
+      "behaviorHint": "어깨를 떨어뜨리고 정면을 보며 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-3:deny",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "예산 코드상 그 상계표를 공식 원본으로 본 적은 없습니다. 접대비 기준으로 보면 재무 쪽에서 보류 탭에 남긴 참고표일 뿐이고, 월말 전에 정리될 예정인 임시 파일이었습니다.",
+      "behaviorHint": "입술을 얇게 다문 채 서류를 손끝으로 밀어낸다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-3:hedge",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "예산 코드상 참고자료일 가능성은 있었습니다. 다만 접대비 기준으로 보면 재무 쪽에서 보류 탭에 둔 임시표인지, 개인분 메우고 닫는 근거 문서인지는 바로 확정하기 어려웠습니다.",
+      "behaviorHint": "말끝을 끌며 서류의 일부만 넘겨 본다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-3:partial",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "제가 제출한 캡처만 보면 상계표를 의심한 건 맞습니다. 다만 예산 코드상 월말 전에 정리될 예정인 파일처럼 보여서, 재무 쪽에서 보류 탭에 둔 원본인지 끝까지 확인하지 못했습니다.",
+      "behaviorHint": "손등으로 코끝을 스치며 시선을 내린다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-3:blame",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "제가 상계표를 사후 정리처럼 본 건 맞습니다. 그래도 김나래 씨 쪽도 접대비 기준으로 보면 애매한 파일을 개인분 메우고 닫는 증거처럼 밀었고, 재무 쪽에서 보류 탭 기록을 먼저 설명하지 않았습니다.",
+      "behaviorHint": "고개를 옆으로 기울이며 건조하게 반박한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-3:evidence_hit",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "홍예진 씨 백업본과 카드사 메모필드까지 나오면 예산 코드상 더는 조작이라고 못 합니다. 접대비 기준으로 보면 제가 월말 전에 정리될 예정인 절삭 PDF만 보고, 재무 쪽에서 남긴 보류 탭 원본을 확인하지 않은 겁니다.",
+      "behaviorHint": "입술을 깨물었다가 천천히 놓는다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-3:confession",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "제가 예산 코드상 불리한 열이 빠진 캡처를 먼저 내고 상계표를 의심하게 만들었습니다. 접대비 기준으로 보면 재무 쪽에서 남긴 보류 탭 기록을 외면한 제 잘못이고 제 책임입니다.",
+      "behaviorHint": "서류를 내려놓고 손을 깍지 낀다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-4:deny",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "감사 대응 초안은 예산 코드상 일반 리스크 메모였을 뿐입니다. 접대비 기준으로 보면 재무 쪽에서 보는 통상 표현이지, 김나래 씨를 보류 탭에 올리듯 낙인찍은 적은 없습니다.",
+      "behaviorHint": "턱을 들고 문장을 끊어 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-4:hedge",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "예산 코드상 선제 메모는 있었습니다. 다만 월말 전에 정리될 예정인 건들을 묶어 보려던 수준이었고, 재무 쪽에서 인사평가까지 연결하려던 건 아니었습니다.",
+      "behaviorHint": "손바닥을 펴 보이며 의미를 축소하듯 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-4:partial",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "제가 '비용 통제 취약' 문구를 적은 건 맞습니다. 다만 접대비 기준으로 보면 보류 탭에 쌓인 항목을 월말 전에 정리될 예정으로 본 참고 메모였지, 확정 낙인으로 쓰려던 건 아니었습니다.",
+      "behaviorHint": "문장 사이마다 짧게 숨을 고른다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-4:blame",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "제가 면담 전에 메모를 남긴 건 맞습니다. 그래도 김나래 씨 쪽도 예산 코드상 설명이 어려운 항목을 보류 탭에 쌓아 두면서 재무 쪽에서 의심할 빌미를 줬습니다.",
+      "behaviorHint": "상대 쪽으로 턱짓한 뒤 다시 정면을 본다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-4:evidence_hit",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "초기 입력 시각까지 나오면 예산 코드상 변명은 어렵습니다. 접대비 기준으로 보면 제가 월말 전에 정리될 예정이라는 인식에 기대어, 재무 쪽에서 볼 보류 탭 문제를 김나래 씨 평가와 먼저 묶은 건 사실입니다.",
+      "behaviorHint": "목이 잠긴 듯 헛기침한 뒤 말을 잇는다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:a:d-4:confession",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "제가 예산 코드상 근거도 다 확인하지 않고 김나래 씨를 '비용 통제 취약'으로 먼저 적었습니다. 접대비 기준으로 보면 재무 쪽에서 보기 전에 선행 낙인을 만든 제 잘못이고 제 책임입니다.",
+      "behaviorHint": "한 박자 쉬고 낮은 목소리로 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-2:deny",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "저는 결제 시각으로는 순서만 맞춰 본 거고, 품목명으로는 손댄 적 없어요. '허락한 걸로 정리해'라고 들은 범위에서 서류만 정리한 거예요.",
+      "behaviorHint": "영수증 뭉치를 붙잡은 손을 꽉 쥔다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-2:hedge",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "재발급이 있긴 했어도 결제 시각으로는 누락분을 맞춘 수준이었어요. 품목명으로는 크게 달라진 게 없고, '그대로 올리지 말고' 먼저 정리하라는 말에 맞춰 분류 보정이에요.",
+      "behaviorHint": "말이 빨라지며 영수증을 한 장씩 넘긴다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-2:partial",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "제가 재발급 요청한 건 맞아요. 다만 결제 시각으로는 마감 전에 맞춰야 해서 한 거고, 품목명으로는 덜 거칠게 보이게 정리한 거예요, 분류 보정이에요.",
+      "behaviorHint": "눈을 크게 뜨고 억울하다는 표정을 짓는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-2:blame",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "제가 품목명 일부를 줄여 달라고 한 건 맞아요. 그래도 최정훈 씨 쪽도 '그대로 올리지 말고', '허락한 걸로 정리해'라고 했고, 결제 시각으로는 그 압박 때문에 정리한 거예요.",
+      "behaviorHint": "서류를 들고 상대 쪽으로 반쯤 몸을 돌린다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-2:evidence_hit",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "문자랑 POS 수정 기록까지 나오면 결제 시각으로는 더 못 버텨요. 품목명으로는 제가 손댄 게 맞고, '그대로 올리지 말고'라는 말에 기대서 분류 보정이에요라고 줄여 말한 거예요.",
+      "behaviorHint": "입술을 깨물다가 체념한 듯 어깨를 떨군다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-2:confession",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "제가 결제 시각으로는 감사 직후를 노리고, 품목명으로는 주류와 개인물품이 덜 보이게 재발급을 요청했어요. 그걸 '정리한 거예요', '분류 보정이에요'라고 숨긴 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "고개를 숙인 채 빠르게 내뱉는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-3:deny",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "상계표는 꾸민 게 아니에요. 결제 시각으로는 원래 돌던 파일이고, 품목명으로는 따로 바꾼 적 없고 '허락한 걸로 정리해'라고 들은 흐름을 적어 둔 거예요.",
+      "behaviorHint": "시트를 손바닥으로 눌러 고정한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-3:hedge",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "상계표가 원래 있던 건 맞는데, 결제 시각으로는 누가 어디까지 본 건지 엇갈릴 수 있어요. 그래도 품목명으로는 건드린 파일이 아니고 '그대로 올리지 말고' 잠깐 정리한 거예요.",
+      "behaviorHint": "서류를 앞으로 내밀며 속도를 높여 설명한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-3:partial",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "홍예진 씨 파일이 원래 있던 건 맞아요. 다만 제가 결제 시각으로는 실장님이 다 승인한 것처럼 말한 건 있었고, 품목명으로는 원본이라며 너무 세게 밀어붙인 거예요, 정리한 거예요.",
+      "behaviorHint": "손가락 끝으로 표의 날짜 열을 짚는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-3:blame",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "제가 상계표를 최정훈 씨 전면 승인표처럼 말한 건 맞아요. 그래도 최정훈 씨 쪽도 '허락한 걸로 정리해'라고 해 놓고, 결제 시각으로는 그 파일이 있었던 걸 모른 척했잖아요, 저는 그 말 믿고 정리한 거예요.",
+      "behaviorHint": "상대의 눈을 똑바로 보며 목소리를 세운다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-3:evidence_hit",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "백업본하고 메모필드까지 나오면 상계표가 급조 자료는 아니라는 건 부정 못 해요. 제가 '그대로 올리지 말고'라는 말을 붙잡고, 품목명으로는 다 승인된 것처럼 과장한 거예요, 분류 보정이에요라고 버틴 거예요.",
+      "behaviorHint": "말끝에서 힘이 빠지며 서류를 내려놓는다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-3:confession",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "제가 결제 시각으로는 파일 존재를 방패로 삼고, 품목명으로는 원본이라는 점을 이용해서 최정훈 씨가 전부 허락한 것처럼 과장했어요. '허락한 걸로 정리해'라는 말에 기대어 제 책임을 덜어 보려 한 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "눈가가 붉어진 채 고개를 끄덕인다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-5:deny",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "저는 오프북 관행에 가담한 적 없어요. 결제 시각으로는 임시 보관만 했고, 품목명으로는 손댄 적 없고 '허락한 걸로 정리해'라는 말대로 서류만 정리한 거예요.",
+      "behaviorHint": "양손을 펼쳐 억울함을 강조한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-5:hedge",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "보류에 묶어 둔 적은 있어도 결제 시각으로는 잠깐 넘긴 수준이었어요. 품목명으로는 공식 정산 전 준비였고, '그대로 올리지 말고' 맞춰 보라는 말에 분류 보정이에요.",
+      "behaviorHint": "서둘러 말을 잇다가 끝에서 볼륨을 낮춘다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-5:partial",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "제가 임시 상계표에 넣은 건 맞아요. 다만 결제 시각으로는 월말 압박 때문에 잠깐 정리한 거고, 품목명으로는 공식 업로드 전 분류 보정이에요.",
+      "behaviorHint": "시선을 떨군 채 손끝으로 종이 모서리를 구긴다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-5:blame",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "제가 공식 밖에서 넘긴 건 맞아요. 그래도 최정훈 씨 쪽도 '허락한 걸로 정리해'라고 하면서 결제 시각으로는 계속 확인했고, 저는 그 말 믿고 정리한 거예요.",
+      "behaviorHint": "울컥한 표정으로 상대를 가리키려다 손을 내린다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-5:evidence_hit",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "로그랑 메모필드까지 나오면 결제 시각으로는 더 못 숨겨요. 품목명으로는 축소도 있었고, '그대로 올리지 말고'라는 말 뒤에 숨어서 분류 보정이에요라고 버틴 거예요.",
+      "behaviorHint": "한숨과 함께 어깨가 무너진다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-08:beat:b:d-5:confession",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "제가 결제 시각으로는 감사 전에 넘기려고 임시 상계표와 보류 탭으로 돌렸어요. '허락한 걸로 정리해'라는 말에 기대어 그렇게 정리한 거예요, 오프북 관행에 가담한 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "눈을 감았다 뜨며 단호하게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    }
+  ]
+}
+

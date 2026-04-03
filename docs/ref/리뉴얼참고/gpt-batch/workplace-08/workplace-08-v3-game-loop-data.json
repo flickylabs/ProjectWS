@@ -1,0 +1,1565 @@
+{
+  "caseId": "workplace-08",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "월말 보류와 품목 축소",
+      "description": "사전 보류 합의와 영수증 재분류가 같은 흐름이었는지 확인하는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "최정훈 씨, e-1 메일에서 '월말 전에 개인분 메우고 닫자'는 회신을 보낸 계정이 본인 계정이 맞습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-08:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "최정훈 씨, 같은 스레드에서 김나래 씨에게 보류 탭 입력 뒤 상환 시점을 묻게 한 이유가 사전 합의 관리 때문이었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-08:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "최정훈 씨, e-2로 문제 품목까지 드러난 뒤에도 이 건을 월말 상계로 눌러 닫을 생각이었던 겁니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-08:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "김나래 씨, e-2 문자에서 품목명을 줄여 달라고 요청한 번호와 본인 휴대폰 번호가 일치합니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-08:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "김나래 씨, 감사 공지 다음 날 새벽에 재발급을 요청한 이유가 단순 정리였는지, 아니면 불편한 품목을 덜 보이게 하려던 것인지 설명해 보세요.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-08:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "김나래 씨, 원본과 재발급 영수증 차이를 알고도 그걸 '정리'나 '분류 보정'이라고만 말한 게 맞습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-08:b:d-2:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "절삭 PDF와 상계표 원본",
+      "description": "상계표의 진위와 절삭 PDF의 편향 여부를 대조하는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "최정훈 씨, e-3 PDF가 전체 거래내역이 아니라 일부 열만 절삭된 캡처라는 점을 알고 제출하셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-08:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "최정훈 씨, 홍예진 씨 자동백업본 존재를 확인하지 않은 채 나래 씨의 사후 조작이라고 단정한 이유가 무엇입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-08:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "최정훈 씨, e-4 시트 히스토리상 감사 이전 입력이 연속으로 남아 있는데도 상계표를 변명용 자료라고 몰아간 책임을 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-08:a:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "김나래 씨, e-4의 최초 작성 계정이 홍예진 씨인 점은 인정합니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-08:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "김나래 씨, 그렇다면 그 상계표를 실장님이 모든 항목을 명시 승인한 증거처럼 말한 건 과장 아니었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-08:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "김나래 씨, e-3와 e-4를 함께 보면 상계표는 진짜지만 승인 범위를 부풀려 자기 방어에 쓴 부분도 있지 않습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-08:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "선행 낙인과 회수 로그",
+      "description": "감사 메모 선행 입력과 회수 전 로그가 어떻게 책임 전가를 굳혔는지 추적하는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "최정훈 씨, e-5 초기본에 '비용 통제 취약' 문구를 나래 씨 면담 전에 입력한 계정이 본인 계정이 맞습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-08:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "최정훈 씨, e-6의 상환 예정 메모를 보고도 d-1과 d-4를 엮어 나래 씨 단독 책임처럼 정리한 이유가 무엇입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-08:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "최정훈 씨, 사실확인 전에 감사 메모와 평가 코멘트로 선행 낙인을 만든 책임을 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-08:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "김나래 씨, e-6 메모필드와 회수 로그를 보면 본인이 보류 코드와 상환 예정일을 직접 맞춰 넣은 기록이 맞습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-08:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "김나래 씨, 그 과정을 재무나 감사에 올리지 않고 공식 절차 밖에서 굴린 이유가 혼자 낙인찍힐까 두려워서였습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-08:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "김나래 씨, 결국 실장님과 함께 오프북 상계 관행을 굴렸다는 책임까지 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-08:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-08:a:d-1:unlock:s2:0",
+            "factText": "클로징 메일 회신에서 최정훈이 문제 결제를 '월말 전에 개인분 메우고 닫자'고 먼저 적었다.",
+            "tags": [
+              "context",
+              "motive"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "김나래",
+                "fullName": "김나래",
+                "judgeRef": "김나래 씨",
+                "neutral": "상대 직원"
+              },
+              "tab": {
+                "exact": "보류 탭",
+                "neutral": "그 탭"
+              },
+              "plan": {
+                "exact": "월말 전에 개인분 메우고 닫기",
+                "neutral": "그 정리 방식"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이틀 전",
+                "period": "월말 클로징 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-08:a:d-1:unlock:s3:0",
+            "factText": "보류 탭 입력 뒤 상환 시점을 계속 확인한 사람도 최정훈이었다.",
+            "tags": [
+              "timeline",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "김나래",
+                "fullName": "김나래",
+                "judgeRef": "김나래 씨",
+                "neutral": "상대 직원"
+              },
+              "tab": {
+                "exact": "보류 탭",
+                "neutral": "그 탭"
+              },
+              "plan": {
+                "exact": "월말 전에 개인분 메우고 닫기",
+                "neutral": "그 정리 방식"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이틀 전",
+                "period": "월말 클로징 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-08:a:d-1:unlock:s4:0",
+            "factText": "감사 플래그가 뜨자 최정훈은 승진 심사 평판을 먼저 떠올리며 합의 표현을 축소했다.",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "김나래",
+                "fullName": "김나래",
+                "judgeRef": "김나래 씨",
+                "neutral": "상대 직원"
+              },
+              "tab": {
+                "exact": "보류 탭",
+                "neutral": "그 탭"
+              },
+              "plan": {
+                "exact": "월말 전에 개인분 메우고 닫기",
+                "neutral": "그 정리 방식"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이틀 전",
+                "period": "월말 클로징 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-08:a:d-1:unlock:s5:0",
+            "factText": "감사 대응 초안과 평가 코멘트에는 나래 단독 책임처럼 읽히는 선행 프레임이 이미 반영돼 있었다.",
+            "tags": [
+              "harm",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "김나래",
+                "fullName": "김나래",
+                "judgeRef": "김나래 씨",
+                "neutral": "상대 직원"
+              },
+              "tab": {
+                "exact": "보류 탭",
+                "neutral": "그 탭"
+              },
+              "plan": {
+                "exact": "월말 전에 개인분 메우고 닫기",
+                "neutral": "그 정리 방식"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이틀 전",
+                "period": "월말 클로징 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-08:a:d-3:unlock:s2:0",
+            "factText": "정훈이 제출한 e-3 PDF는 상환 예정 메모와 보류 코드 열이 잘린 절삭본이었다.",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "홍예진",
+                "fullName": "홍예진",
+                "judgeRef": "홍예진 씨",
+                "neutral": "재무 담당자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "doc": {
+                "exact": "카드 승인내역 캡처 PDF",
+                "neutral": "그 캡처본"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이전",
+                "period": "클로징 당시",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-08:a:d-3:unlock:s3:0",
+            "factText": "공유폴더 회수 전 백업에는 정훈이 확인할 수 있었던 원본 상계표 경로가 그대로 남아 있었다.",
+            "tags": [
+              "timeline",
+              "institution"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "홍예진",
+                "fullName": "홍예진",
+                "judgeRef": "홍예진 씨",
+                "neutral": "재무 담당자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "doc": {
+                "exact": "카드 승인내역 캡처 PDF",
+                "neutral": "그 캡처본"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이전",
+                "period": "클로징 당시",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-08:a:d-3:unlock:s4:0",
+            "factText": "최정훈은 홍예진의 자동백업본 존재를 알고도 끝까지 원본 대조를 하지 않았다.",
+            "tags": [
+              "fear",
+              "evidence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "홍예진",
+                "fullName": "홍예진",
+                "judgeRef": "홍예진 씨",
+                "neutral": "재무 담당자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "doc": {
+                "exact": "카드 승인내역 캡처 PDF",
+                "neutral": "그 캡처본"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이전",
+                "period": "클로징 당시",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-08:a:d-3:unlock:s5:0",
+            "factText": "홍예진 백업본과 카드사 메모필드 원본이 함께 맞물리며 상계표가 동시대 자료였음이 확정된다.",
+            "tags": [
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "홍예진",
+                "fullName": "홍예진",
+                "judgeRef": "홍예진 씨",
+                "neutral": "재무 담당자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "doc": {
+                "exact": "카드 승인내역 캡처 PDF",
+                "neutral": "그 캡처본"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이전",
+                "period": "클로징 당시",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-08:a:d-4:unlock:s2:0",
+            "factText": "나래 면담 전 입력된 감사 대응 초안 초기본에 이미 '비용 통제 취약' 문구가 들어 있었다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "김나래",
+                "fullName": "김나래",
+                "judgeRef": "김나래 씨",
+                "neutral": "상대 직원"
+              },
+              "memo": {
+                "exact": "감사 대응 초안",
+                "neutral": "그 초안"
+              },
+              "rating": {
+                "exact": "비용 통제 취약",
+                "neutral": "그 평가 문구"
+              },
+              "time": {
+                "exact": "나래 면담 전",
+                "dateExact": "면담 전 입력 시각",
+                "period": "초기 감사 정리 단계",
+                "neutral": "그 이전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-08:a:d-4:unlock:s3:0",
+            "factText": "최정훈은 사실관계 확인 전에 감사 이슈와 인사평가 인상을 같은 프레임으로 묶었다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "김나래",
+                "fullName": "김나래",
+                "judgeRef": "김나래 씨",
+                "neutral": "상대 직원"
+              },
+              "memo": {
+                "exact": "감사 대응 초안",
+                "neutral": "그 초안"
+              },
+              "rating": {
+                "exact": "비용 통제 취약",
+                "neutral": "그 평가 문구"
+              },
+              "time": {
+                "exact": "나래 면담 전",
+                "dateExact": "면담 전 입력 시각",
+                "period": "초기 감사 정리 단계",
+                "neutral": "그 이전"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-08:a:d-4:unlock:s4:0",
+            "factText": "문제가 관리 책임으로 번질까 두려워 정훈은 선행 낙인 문구를 먼저 남겼다.",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "김나래",
+                "fullName": "김나래",
+                "judgeRef": "김나래 씨",
+                "neutral": "상대 직원"
+              },
+              "memo": {
+                "exact": "감사 대응 초안",
+                "neutral": "그 초안"
+              },
+              "rating": {
+                "exact": "비용 통제 취약",
+                "neutral": "그 평가 문구"
+              },
+              "time": {
+                "exact": "나래 면담 전",
+                "dateExact": "면담 전 입력 시각",
+                "period": "초기 감사 정리 단계",
+                "neutral": "그 이전"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-08:a:d-4:unlock:s5:0",
+            "factText": "초기 감사 메모와 비공식 평가 코멘트가 같은 시점에 저장돼 선행 낙인의 고의성이 드러난다.",
+            "tags": [
+              "harm",
+              "evidence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "김나래",
+                "fullName": "김나래",
+                "judgeRef": "김나래 씨",
+                "neutral": "상대 직원"
+              },
+              "memo": {
+                "exact": "감사 대응 초안",
+                "neutral": "그 초안"
+              },
+              "rating": {
+                "exact": "비용 통제 취약",
+                "neutral": "그 평가 문구"
+              },
+              "time": {
+                "exact": "나래 면담 전",
+                "dateExact": "면담 전 입력 시각",
+                "period": "초기 감사 정리 단계",
+                "neutral": "그 이전"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-08:b:d-2:unlock:s2:0",
+            "factText": "김나래는 감사 공지 다음 날 새벽 점장에게 품목명을 줄여 달라는 재발급 요청 문자를 보냈다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "최정훈",
+                "fullName": "최정훈",
+                "judgeRef": "최정훈 씨",
+                "neutral": "상대 관리자"
+              },
+              "receipt": {
+                "exact": "재발급 영수증",
+                "neutral": "그 영수증"
+              },
+              "item": {
+                "exact": "주류·개인물품 표기",
+                "neutral": "문제 품목명"
+              },
+              "time": {
+                "exact": "감사 공지 다음 날 새벽",
+                "dateExact": "감사 공지 다음 날",
+                "period": "감사 직후",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-08:b:d-2:unlock:s3:0",
+            "factText": "원본 영수증의 주류·개인물품 표기가 재발급본에서는 축소돼 있었다.",
+            "tags": [
+              "act",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "최정훈",
+                "fullName": "최정훈",
+                "judgeRef": "최정훈 씨",
+                "neutral": "상대 관리자"
+              },
+              "receipt": {
+                "exact": "재발급 영수증",
+                "neutral": "그 영수증"
+              },
+              "item": {
+                "exact": "주류·개인물품 표기",
+                "neutral": "문제 품목명"
+              },
+              "time": {
+                "exact": "감사 공지 다음 날 새벽",
+                "dateExact": "감사 공지 다음 날",
+                "period": "감사 직후",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-08:b:d-2:unlock:s4:0",
+            "factText": "김나래는 문자와 POS 로그가 남아 있음을 알고도 '정리'와 '분류 보정'이라는 말로 의미를 줄였다.",
+            "tags": [
+              "shame",
+              "quote"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "최정훈",
+                "fullName": "최정훈",
+                "judgeRef": "최정훈 씨",
+                "neutral": "상대 관리자"
+              },
+              "receipt": {
+                "exact": "재발급 영수증",
+                "neutral": "그 영수증"
+              },
+              "item": {
+                "exact": "주류·개인물품 표기",
+                "neutral": "문제 품목명"
+              },
+              "time": {
+                "exact": "감사 공지 다음 날 새벽",
+                "dateExact": "감사 공지 다음 날",
+                "period": "감사 직후",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-08:b:d-2:unlock:s5:0",
+            "factText": "가맹점 문자와 POS 수정 이력이 맞물리며 영수증 세탁이 의도적 행동이었음이 확정된다.",
+            "tags": [
+              "evidence",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "최정훈",
+                "fullName": "최정훈",
+                "judgeRef": "최정훈 씨",
+                "neutral": "상대 관리자"
+              },
+              "receipt": {
+                "exact": "재발급 영수증",
+                "neutral": "그 영수증"
+              },
+              "item": {
+                "exact": "주류·개인물품 표기",
+                "neutral": "문제 품목명"
+              },
+              "time": {
+                "exact": "감사 공지 다음 날 새벽",
+                "dateExact": "감사 공지 다음 날",
+                "period": "감사 직후",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-08:b:d-3:unlock:s2:0",
+            "factText": "임시 상계표의 최초 작성 계정은 김나래가 아니라 홍예진 계정이었다.",
+            "tags": [
+              "identity",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "홍예진",
+                "fullName": "홍예진",
+                "judgeRef": "홍예진 씨",
+                "neutral": "재무 담당자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "doc": {
+                "exact": "자동백업본",
+                "neutral": "그 백업본"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이전",
+                "period": "클로징 당시",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-08:b:d-3:unlock:s3:0",
+            "factText": "백업 히스토리에는 상계표 존재가 남아 있지만, 최정훈의 명시 승인 범위를 전부 입증하지는 않는다.",
+            "tags": [
+              "threshold",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "홍예진",
+                "fullName": "홍예진",
+                "judgeRef": "홍예진 씨",
+                "neutral": "재무 담당자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "doc": {
+                "exact": "자동백업본",
+                "neutral": "그 백업본"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이전",
+                "period": "클로징 당시",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-08:b:d-3:unlock:s4:0",
+            "factText": "김나래는 실존 자료와 승인 범위를 일부러 섞어 말하며 자기 방어 폭을 넓혔다.",
+            "tags": [
+              "motive",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "홍예진",
+                "fullName": "홍예진",
+                "judgeRef": "홍예진 씨",
+                "neutral": "재무 담당자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "doc": {
+                "exact": "자동백업본",
+                "neutral": "그 백업본"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이전",
+                "period": "클로징 당시",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-08:b:d-3:unlock:s5:0",
+            "factText": "카드사 메모필드 원본과 자동백업본을 함께 보면 상계표는 진짜였지만, 김나래의 승인 과장도 드러난다.",
+            "tags": [
+              "evidence",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "홍예진",
+                "fullName": "홍예진",
+                "judgeRef": "홍예진 씨",
+                "neutral": "재무 담당자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "doc": {
+                "exact": "자동백업본",
+                "neutral": "그 백업본"
+              },
+              "time": {
+                "exact": "감사 공지 이전",
+                "dateExact": "감사 플래그 생성 이전",
+                "period": "클로징 당시",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-08:b:d-5:unlock:s2:0",
+            "factText": "김나래 계정에는 보류 코드와 상환 예정일을 직접 입력한 흔적이 반복해서 남아 있었다.",
+            "tags": [
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "최정훈",
+                "fullName": "최정훈",
+                "judgeRef": "최정훈 씨",
+                "neutral": "상대 관리자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "tab": {
+                "exact": "보류 탭",
+                "neutral": "그 탭"
+              },
+              "time": {
+                "exact": "월말 클로징",
+                "dateExact": "클로징 주간",
+                "period": "마감 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-08:b:d-5:unlock:s3:0",
+            "factText": "재무 보고 대신 임시 상계표와 보류 탭으로 넘긴 선택이 여러 건에서 반복됐다.",
+            "tags": [
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "최정훈",
+                "fullName": "최정훈",
+                "judgeRef": "최정훈 씨",
+                "neutral": "상대 관리자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "tab": {
+                "exact": "보류 탭",
+                "neutral": "그 탭"
+              },
+              "time": {
+                "exact": "월말 클로징",
+                "dateExact": "클로징 주간",
+                "period": "마감 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-08:b:d-5:unlock:s4:0",
+            "factText": "김나래는 혼자 사적 유용자로 낙인찍힐까 두려워 관행성을 계속 축소했다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "최정훈",
+                "fullName": "최정훈",
+                "judgeRef": "최정훈 씨",
+                "neutral": "상대 관리자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "tab": {
+                "exact": "보류 탭",
+                "neutral": "그 탭"
+              },
+              "time": {
+                "exact": "월말 클로징",
+                "dateExact": "클로징 주간",
+                "period": "마감 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-08:b:d-5:unlock:s5:0",
+            "factText": "공유폴더 로그와 메모필드 원본이 합쳐지며 두 사람이 함께 오프북 상계 관행을 굴렸음이 확정된다.",
+            "tags": [
+              "evidence",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "최정훈",
+                "fullName": "최정훈",
+                "judgeRef": "최정훈 씨",
+                "neutral": "상대 관리자"
+              },
+              "sheet": {
+                "exact": "임시 상계표",
+                "neutral": "그 표"
+              },
+              "tab": {
+                "exact": "보류 탭",
+                "neutral": "그 탭"
+              },
+              "time": {
+                "exact": "월말 클로징",
+                "dateExact": "클로징 주간",
+                "period": "마감 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "evidence_present"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "workplace-08:contradiction:0",
+        "targetParty": "a",
+        "trigger": "최정훈이 사전 합의를 부인하면서 e-1 메일 발신자도 자신의 지시도 아니라고 할 때",
+        "text": "월말 전에 개인분을 메우고 닫자던 회신이 이미 남아 있는데, 이제 와서 합의가 없었다고 하면 보류 탭 지시는 누가 한 겁니까?",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "workplace-08:contradiction:1",
+        "targetParty": "b",
+        "trigger": "김나래가 재발급을 단순 정리라고만 축소할 때",
+        "text": "감사 공지 다음 날 새벽의 POS 품목 수정 요청이 단순 정리라면, 왜 원본에서 주류와 개인물품 표기가 사라졌습니까?",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "workplace-08:contradiction:2",
+        "targetParty": "a",
+        "trigger": "최정훈이 상계표를 나래의 사후 조작이라고 단정할 때",
+        "text": "절삭 PDF만으로 급조라고 몰았지만, 홍예진 백업본과 카드사 메모는 감사 이전부터 같은 항목을 가리킵니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-4",
+          "e-6"
+        ]
+      },
+      {
+        "id": "workplace-08:contradiction:3",
+        "targetParty": "a",
+        "trigger": "최정훈이 감사 메모를 일반 참고라고 축소할 때",
+        "text": "나래 씨 면담 전에 입력된 '비용 통제 취약' 코멘트가 있다면, 사실확인보다 선행 낙인이 먼저 작동한 것 아닙니까?",
+        "relatedDisputes": [
+          "d-4",
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "workplace-08:interjection:0",
+        "speaker": "b",
+        "trigger": "최정훈이 합의 존재를 전면 부인할 때",
+        "text": "최정훈 씨, 그때 분명 '월말 전에 메우고 닫자'고 하셨잖아요.",
+        "relatedDisputes": [
+          "d-1"
+        ]
+      },
+      {
+        "id": "workplace-08:interjection:1",
+        "speaker": "a",
+        "trigger": "김나래가 모든 책임을 지시 탓으로만 돌릴 때",
+        "text": "김나래 씨도 품목명을 바꿀지 말지는 직접 선택하셨습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-08:interjection:2",
+        "speaker": "judge",
+        "trigger": "e-3 단독 해석으로 결론이 기울 때",
+        "text": "절삭본 하나로 단정하지 말고 원본 로그와 백업본까지 함께 보겠습니다.",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "workplace-08:outburst:a:0",
+        "party": "a",
+        "trigger": "승진 심사와 감사 메모가 동시에 거론될 때",
+        "text": "제가 다 뒤집어쓰게 생긴 상황에서 관리 책임까지 몰리면, 그 압박이 어떤 건지 아십니까.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-08:outburst:a:1",
+        "party": "a",
+        "trigger": "상계표 조작 주장도 무너지는데 계속 책임을 추궁받을 때",
+        "text": "저도 겁이 나서 절삭본부터 냈습니다. 그렇다고 제가 혼자 다 꾸민 사람은 아닙니다.",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-08:outburst:b:0",
+        "party": "b",
+        "trigger": "영수증 세탁이 반복해서 지적될 때",
+        "text": "혼자 사적 유용자로 찍힐까 무서워서 그랬어요. 그렇다고 저만 시킨 일처럼 말하면 너무 억울해요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-08:outburst:b:1",
+        "party": "b",
+        "trigger": "선행 감사 메모가 공개될 때",
+        "text": "이미 취약 인원처럼 적어 놓고 제 말을 들으셨다면, 제가 무슨 말을 해도 믿을 생각이 없었던 거잖아요.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "workplace-08:transition:a:d-1:s0_s1",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "prior_approval_question",
+      "line": "예산 코드상 제가 직접 승인했다기보다, 재무 쪽에서 보류 탭에 두고 월말 전에 정리될 예정이라고 본 겁니다.",
+      "behaviorHint": "시선을 정면에 둔 채 말만 길어진다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-1:s1_s2",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "메일이 나오면 보류 탭 정리 얘기 자체를 부정하긴 어렵습니다. 개인분 메우고 닫는 표현이 언급된 건 맞습니다.",
+      "behaviorHint": "손끝이 잠깐 멈추고 목소리가 낮아진다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-1:s2_s3",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_hold_in_temp_tab_question",
+      "line": "제가 그렇게 돌린 건 맞습니다. 그래도 김나래 씨 쪽도 그 보류 방식을 따르면서 위험한 항목을 함께 넘겼습니다.",
+      "behaviorHint": "어깨를 굳힌 채 상대를 짧게 본다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-1:s3_s5",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_or_responsibility_question",
+      "line": "제가 합의를 먼저 꺼내고도 감사가 시작되자 김나래 씨 단독 책임처럼 정리했습니다. 제 책임입니다.",
+      "behaviorHint": "턱을 한번 내리고 그대로 인정한다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-3:s0_s1",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "fabricated_sheet_claim_question",
+      "line": "예산 코드상 급조 같아 보였지만, 재무 쪽 파일일 가능성까지 부정할 수는 없습니다.",
+      "behaviorHint": "확신하던 표정이 살짝 흐려진다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-3:s1_s2",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "절삭 PDF만 보면 사후 정리처럼 보였다는 점은 인정합니다. 다만 제가 그 인상에 너무 기대었습니다.",
+      "behaviorHint": "서류 끝을 만지작거리며 말속도를 늦춘다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-3:s2_s4",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_missing_originals",
+      "line": "맞습니다, 저는 원본을 끝까지 확인하지 않았습니다. 제 승인 흔적까지 번질까 두려워 절삭본 판단에 머문 겁니다.",
+      "behaviorHint": "목을 축이듯 마른침을 삼킨다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-3:s4_s5",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-4_or_e-6_presented",
+      "line": "홍예진 씨 백업본과 메모필드가 맞다면 상계표는 동시대 자료입니다. 제가 오해를 만든 쪽이었습니다.",
+      "behaviorHint": "한숨 뒤에 시선을 내리고 인정한다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-4:s0_s1",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "audit_note_question",
+      "line": "초안 메모는 있었습니다만 예산 코드상 일반 리스크 정리 수준이었습니다.",
+      "behaviorHint": "펜을 굴리며 표현을 고른다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-4:s1_s2",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "그 문구를 먼저 적은 건 맞습니다. 다만 참고 메모라고 생각했습니다.",
+      "behaviorHint": "손을 멈추고 짧게 고개를 끄덕인다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-4:s2_s3",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_before_interview_question",
+      "line": "면담 전에 적은 건 맞습니다. 그래도 김나래 씨 쪽도 설명 없는 보류로 의심을 키웠습니다.",
+      "behaviorHint": "한쪽 입꼬리가 굳은 채 방어적으로 기울어진다."
+    },
+    {
+      "id": "workplace-08:transition:a:d-4:s3_s5",
+      "caseId": "workplace-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "제가 먼저 프레임을 만든 건 부인할 수 없습니다. 사실확인 전에 낙인을 찍은 제 책임입니다.",
+      "behaviorHint": "눈을 감았다 뜨며 단호하게 시인한다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-2:s0_s1",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "receipt_reissue_question",
+      "line": "재발급은 있었어도 결제 시각으로는 누락분을 맞춘 정도였어요. 저는 아직 그걸 정리라고 생각했어요.",
+      "behaviorHint": "영수증 모서리를 접었다 펴며 빠르게 말한다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-2:s1_s2",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "문자가 나오면 제가 요청한 건 맞아요. 다만 품목명으로는 들키지 않게 하려던 게 아니라 분류 보정이라고 믿었어요.",
+      "behaviorHint": "억울하다는 듯 눈썹을 치켜세운다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-2:s2_s3",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "item_name_change_question",
+      "line": "제가 줄여 달라고 한 건 맞아요. 그래도 최정훈 씨 쪽도 그대로 올리지 말라고 압박했잖아요.",
+      "behaviorHint": "고개를 세차게 젓다가 상대를 본다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-2:s3_s5",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "vendor_contact_question",
+      "line": "점장 연락 내역까지 남았으면 더 못 숨겨요. 제가 품목을 세탁한 거고 그건 제 책임이에요.",
+      "behaviorHint": "목이 잠기며 말을 몰아친다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-3:s0_s1",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "sheet_origin_question",
+      "line": "상계표가 원래 있던 건 맞지만, 결제 시각으로는 누가 어디까지 본 건지 제가 세게 말했을 수 있어요.",
+      "behaviorHint": "말끝이 처음보다 조심스러워진다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-3:s1_s2",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "홍예진 씨 백업본이 나오면 파일 존재는 분명해요. 다만 제가 그걸 실장님 전면 승인처럼 밀어붙인 건 있어요.",
+      "behaviorHint": "시트 날짜를 손톱으로 짚으며 인정한다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-3:s2_s3",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "how_much_was_explicitly_approved_question",
+      "line": "제가 승인 범위를 넓게 말한 건 맞아요. 그래도 최정훈 씨 쪽도 파일이 있던 걸 알고 모른 척했잖아요.",
+      "behaviorHint": "상대에게 시선을 꽂으며 목소리를 높인다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-3:s3_s5",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_or_responsibility_question",
+      "line": "메모필드까지 맞아떨어지면 상계표는 진짜예요. 제가 그걸 방패로 삼아 승인 범위를 과장한 제 책임도 인정할게요.",
+      "behaviorHint": "숨을 길게 내쉬고 체념한 듯 고개를 끄덕인다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-5:s0_s1",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "offbook_practice_question",
+      "line": "보류에 묶어 둔 적은 있어도 결제 시각으로는 잠깐 넘긴 수준이라고 생각했어요.",
+      "behaviorHint": "손을 빠르게 흔들며 규모를 축소하려 한다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-5:s1_s2",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_pressure",
+      "line": "제가 임시 상계표에 넣은 건 맞아요. 다만 월말 압박 때문에 잠깐 정리한 거라고 믿었어요.",
+      "behaviorHint": "시선을 내리며 목소리가 작아진다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-5:s2_s3",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_not_finance_escalation_question",
+      "line": "재무에 바로 못 올린 건 제 잘못이에요. 그래도 최정훈 씨 쪽도 그 방식을 계속 허용했잖아요.",
+      "behaviorHint": "입술을 깨문 채 상대를 흘겨본다."
+    },
+    {
+      "id": "workplace-08:transition:b:d-5:s3_s5",
+      "caseId": "workplace-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "맞아요, 저도 오프북 관행에 가담했어요. 그걸 실장님과 함께 굴린 책임까지 인정할게요.",
+      "behaviorHint": "어깨가 무너진 채 그대로 인정한다."
+    }
+  ]
+}
+

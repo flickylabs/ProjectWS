@@ -1,0 +1,763 @@
+{
+  "caseId": "case-friend-02",
+  "meta": {
+    "relationshipType": "friend",
+    "conflictSeed": "CS-4",
+    "variableModules": [
+      "VM-A"
+    ],
+    "twistModule": "TW-2",
+    "difficulty": "hard",
+    "anchorTruth": "가은의 비밀 연애와 동호회 역할 조정 이야기가 온라인 커뮤니티에 퍼진 출발점은 민재가 아니라, 민재가 넘긴 자료를 편집해 익명계정으로 뿌린 공통 친구 박서후였다.",
+    "emotionalBait": "마지막으로 비밀을 들은 사람이 민재였고, 익명글의 표현이 민재 말투와 닮아 있으며, 가은의 저격 스토리까지 이어져 처음에는 민재가 처음부터 끝까지 배신한 범인처럼 보인다.",
+    "resolutionDilemma": "민재의 제한적이지만 명백한 비밀 유출과 박서후의 배후 조작 중 무엇을 더 무겁게 판단할지, 또 가은의 무단 열람과 공개 저격까지 포함해 친구 관계를 회복할지 끊어낼지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "윤가은",
+      "age": 29,
+      "occupation": "웹소설 편집자",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "말을 할 때 추정과 확인 사실을 분리하려 애쓴다. 다만 배신감을 느끼면 문장을 짧게 잘라 말하고, 상대의 사소한 모순도 놓치지 않고 재배열해 제시한다.",
+      "pride": 8,
+      "fear": "사적인 연애와 동호회 역할 문제가 뒤섞여 가볍고 계산적인 사람으로 소비되는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "notes_and_archives",
+      "dailyRoutine": "오전엔 원고 교정과 회의를 하고, 퇴근 후에는 북카페에서 동호회 디자인 자료를 정리한다. 자기 전에는 메모앱에 대화 포인트와 일정 변경사항을 기록하는 습관이 있다.",
+      "sensitivePoints": [
+        "사적인 비밀 유출",
+        "동호회 내 평판",
+        "연애를 계산적으로 봤다는 오해"
+      ],
+      "verbalTells": [
+        {
+          "type": "qualification_split",
+          "trigger": "lying",
+          "pattern": "불리한 행동을 설명할 때 '본 건 확인이지 열람은 아니고'처럼 행위의 이름을 잘게 나눠 수위를 낮춘다."
+        },
+        {
+          "type": "quote_lock",
+          "trigger": "cornered",
+          "pattern": "상대가 한 말을 짧게 따옴표처럼 반복하며 자신의 해석이 아니라 상대 표현이라는 인상을 만든다."
+        },
+        {
+          "type": "flat_breath",
+          "trigger": "emotional",
+          "pattern": "감정이 올라오면 목소리를 오히려 낮추고 단어 사이 간격을 길게 둔다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "민재아",
+        "toJudge": "제 친구",
+        "angry": "야, 민재!"
+      }
+    },
+    "partyB": {
+      "name": "박민재",
+      "age": 31,
+      "occupation": "피트니스 코치",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "자신이 난처했던 시간을 길게 설명하며 먼저 상처 입은 사람의 자리를 잡는다. 몰리면 '난 사이가 더 나빠질까 봐' 같은 말로 행위보다 의도를 앞세운다.",
+      "pride": 7,
+      "fear": "비밀 파는 사람, 친구 사이를 이용하는 사람으로 낙인찍히는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "multiple_chat_rooms",
+      "dailyRoutine": "이른 아침 수업을 하고 낮에는 회원 상담을 본다. 저녁에는 동호회 단톡과 개인 DM을 번갈아 보며 약속을 조율하고, 카페에서 태블릿으로 사진 셀렉을 하는 시간이 길다.",
+      "sensitivePoints": [
+        "친구들 사이 신뢰 문제",
+        "연애 감정이 얽힌 오해",
+        "공개적으로 비겁한 사람 취급받는 일"
+      ],
+      "verbalTells": [
+        {
+          "type": "sacrifice_stack",
+          "trigger": "lying",
+          "pattern": "'내가 중간에서 달래고 일정도 맞추고'처럼 자신이 감당한 수고를 길게 나열해 핵심 질문을 늦춘다."
+        },
+        {
+          "type": "wounded_pause",
+          "trigger": "emotional",
+          "pattern": "답하기 전 길게 숨을 멈추고 상처받은 표정을 만든 뒤 말을 잇는다."
+        },
+        {
+          "type": "moral_shield",
+          "trigger": "cornered",
+          "pattern": "비밀 유출을 묻으면 '망치려던 게 아니라 막으려던 거야'라고 도덕적 의도로 재포장한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "가은아",
+        "toJudge": "제 친구",
+        "angry": "야, 가은!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "작년 겨울 동호회 내 다른 커플 소문이 커졌을 때, 두 사람은 서로의 사적인 비밀을 동호회 운영이나 평판 싸움에 쓰지 않겠다고 약속했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "겨울 사진전 준비 때 가은이 민재에게 지나치게 기대었는지, 민재가 과하게 개입했는지를 두 사람 모두 다르게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '민재가 스스로 중간자 역할을 과장했다' / B: '가은이 나를 감정 완충재처럼 썼다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "공통 친구 박서후가 예전에 가은에게 호감을 표현했다가 어색해진 일을 민재가 알고도, 그 뒤 셋의 거리 조절이 얼마나 불안했는지는 끝내 말로 정리되지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "박서후 (공통 친구)",
+        "relationTo": "both",
+        "knowledgeScope": "민재에게서 가은의 비밀 일부를 전달받았고, 이를 익명계정과 편집 파일로 증폭시킨 실제 배후다.",
+        "witnessedDirectly": false,
+        "bias": "pro_self",
+        "distortionRisk": "deliberate",
+        "witnessProfile": {
+          "age": 30,
+          "occupation": "스포츠센터 매니저",
+          "relationToA": "윤가은을 업무상 알고 있음",
+          "relationToB": "박민재을 업무상 알고 있음",
+          "sentimentToA": 0,
+          "sentimentToB": 0,
+          "speechStyle": "편하게 말하다가 재판관 앞에서는 존댓말로 돌아간다. 친구의 입장을 자연스럽게 대변한다.",
+          "addressJudge": "재판관님",
+          "addressA": "가은씨",
+          "addressB": "민재"
+        },
+        "addressA": "가은",
+        "addressB": "민재"
+      },
+      {
+        "id": "tp-2",
+        "slot": "institutional",
+        "name": "이소담 (동호회 운영진)",
+        "relationTo": "both",
+        "knowledgeScope": "익명 제보가 들어온 시각, 운영진에게 전달된 음성파일 경로, 모임 배정 변경 요청의 흐름을 원본 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 35,
+          "occupation": "동호회 운영진",
+          "relationToA": "윤가은을 업무상 알고 있음",
+          "relationToB": "박민재을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "윤가은씨",
+          "addressB": "박민재씨"
+        },
+        "addressA": "가은씨",
+        "addressB": "민재씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional_2",
+        "name": "황유정 (온라인 커뮤니티 운영자)",
+        "relationTo": "both",
+        "knowledgeScope": "익명 게시글과 댓글의 작성 계정, 접속 기기 정보, 삭제 전 보존 로그를 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 32,
+          "occupation": "온라인 커뮤니티 운영자",
+          "relationToA": "윤가은을 업무상 알고 있음",
+          "relationToB": "박민재을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "가은씨",
+          "addressB": "민재씨"
+        },
+        "addressA": "가은씨",
+        "addressB": "민재씨"
+      }
+    ],
+    "relationshipType": "friend"
+  },
+  "context": {
+    "contextType": "club_meet_aftermath",
+    "description": "봄 정모 뒤풀이가 끝난 뒤, 가은은 민재에게만 자신의 비밀 연애와 동호회 역할 조정 고민을 털어놨다. 며칠 뒤 같은 내용이 익명글과 댓글, 운영진 제보 파일로 번지면서 둘의 사적 신뢰 문제는 곧바로 동호회 내 자리와 평판의 문제로 확대됐다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "친구 관계와 동호회 역할, 연애 감정선이 겹쳐 있어 작은 누설도 즉시 편 가르기와 삼각관계 해석으로 번졌고, 누구를 믿느냐가 곧 모임 안에서의 생존 문제처럼 느껴졌다.",
+    "caseNumber": "E-FR-H-0002",
+    "caseName": "비밀 연애 폭로"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "민재의 비밀 제3자 전달",
+      "truth": true,
+      "truthDescription": "민재는 가은이 보낸 비밀 음성메모와 요약 대화를 공통 친구 박서후에게 전달하며 조언을 구했고, 그 자체로 가은의 신뢰를 깼다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "비밀경계",
+      "legitimacyIssue": true,
+      "judgmentStatement": "민재는 가은의 비밀을 전달했다."
+    },
+    {
+      "id": "d-2",
+      "name": "가은의 무단 열람과 저격성 스토리",
+      "truth": true,
+      "truthDescription": "가은은 카페에 남겨진 민재의 태블릿 알림과 단톡 미리보기를 무단으로 확인했고, 그 직후 민재를 겨냥한 듯한 인스타 스토리를 올렸다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "디지털경계",
+      "legitimacyIssue": true,
+      "judgmentStatement": "가은은 민재의 태블릿을 무단 열람했다."
+    },
+    {
+      "id": "d-3",
+      "name": "익명 폭로글과 댓글의 직접 작성자는 민재인가",
+      "truth": false,
+      "truthDescription": "민재가 의심받을 만한 단서를 남기긴 했지만, 온라인 커뮤니티의 익명 폭로글과 댓글을 직접 작성한 사람은 민재가 아니라 박서후의 보조 계정이었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "동호회절차복구",
+      "legitimacyIssue": true,
+      "judgmentStatement": "민재는 익명 폭로글을 작성하지 않았다."
+    },
+    {
+      "id": "d-4",
+      "name": "박서후의 배후 개입과 음성파일 편집",
+      "truth": true,
+      "truthDescription": "박서후는 민재에게서 받은 자료를 바탕으로 가은의 음성메모를 잘라 편집하고, 이를 익명계정과 운영진 제보 파일로 확산시켜 둘 사이를 이간질했다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 35,
+        "b": 65
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "동호회절차복구",
+      "legitimacyIssue": true,
+      "judgmentStatement": "박서후는 가은의 음성을 편집했다."
+    },
+    {
+      "id": "d-5",
+      "name": "비밀 외부화 금지 약속의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 사적인 비밀을 동호회 평판 싸움에 쓰지 않기로 했지만, 민재는 박서후에게 비밀을 전달했고 가은은 확인되지 않은 확신을 바탕으로 저격성 스토리를 올려 약속을 깨뜨렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 58,
+        "b": 42
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "친구관계재설계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "민재와 가은은 약속을 위반했다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "민재-박서후 메신저 포워드 내역",
+      "description": "민재가 가은의 비밀 음성메모와 요약 문장을 박서후에게 전달하며 '나만 알기엔 너무 무거워'라고 보낸 대화 원본이다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "민재 휴대폰과 박서후 대화 상대 창 양쪽에서 같은 포워드 기록이 확인됐다.",
+        "check_metadata": "전달 시각은 정모 다음 날 오전으로, 익명글 게시 이틀 전이다.",
+        "restore_context": "민재는 직접 익명글을 올리진 않았지만 비밀을 제3자에게 넘긴 출발점이 분명하다.",
+        "verify_source": "양쪽 단말의 메시지 ID와 전송 순서가 일치한다.",
+        "check_edits": "일부 삭제 흔적은 있으나 포워드 자체는 원본 로그에 남아 있다.",
+        "question_acquisition": "대화 당사자 자료이지만 제3자의 사적 정보가 포함돼 있어 사용 범위 제한이 필요하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "윤가은에게: \"비밀 외부화 금지 약속의 쌍방 위반\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 윤가은의 \"비밀 외부화 금지 약속의 쌍방 위반\" 쟁점과 관련된다. 윤가은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박민재에게: \"민재의 비밀 제3자 전달\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 박민재의 \"민재의 비밀 제3자 전달\" 쟁점과 관련된다. 박민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "온라인 커뮤니티 익명 폭로글과 댓글 캡처",
+      "description": "가은의 비밀 연애와 동호회 역할 조정 이야기를 암시하는 익명 게시글과 댓글 캡처다.",
+      "type": "sns",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "third_party",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "운영자 보존본 전부가 아니라 회원들이 퍼간 캡처 위주로 먼저 모였다.",
+        "check_metadata": "게시 시각은 운영진 배정 공지 직후로, 동호회 내부 사정을 아는 사람처럼 보인다.",
+        "restore_context": "표현 몇 개가 민재 말투와 비슷해 보이지만 캡처만으로 작성자를 단정할 수는 없다.",
+        "verify_source": "황유정이 실제 게시 존재와 삭제 시각을 확인했다.",
+        "check_edits": "크롭과 강조 표시가 있어 단독 증거력은 약하다.",
+        "question_acquisition": "폐쇄형 커뮤니티 자료라 사적 영역 침해 논란이 남는다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "윤가은에게: \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 관련 해명 요구 (방어 동기: 복수심)",
+          "implication": "이 증거는 윤가은의 \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 쟁점과 관련된다. 윤가은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박민재에게: \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박민재의 \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 쟁점과 관련된다. 박민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "가은의 인스타 친한친구 스토리 보관본",
+      "description": "'비밀 팔아 관계 지키는 척하는 사람이 제일 비겁하다'는 문구와 모임 사진이 함께 담긴 가은의 스토리 보관본이다.",
+      "type": "sns",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "스토리 아카이브 원본과 친한친구 공개 범위가 함께 제출됐다.",
+        "check_metadata": "게시 시각은 카페에서 민재 태블릿을 확인한 직후 19분 뒤다.",
+        "restore_context": "이름을 적지는 않았지만 같은 날 정모 사진과 '비밀' 문구가 같이 있어 민재를 아는 사람들에겐 지목성이 높다.",
+        "verify_source": "가은 계정의 보관함과 조회 로그가 동일 게시물임을 보여준다.",
+        "check_edits": "앱 내 저장본이라 후편집 흔적이 없다.",
+        "question_acquisition": "본인 계정 자료라 적법하나 조회자 목록에는 제3자 정보가 섞여 있어 제한적 열람이 바람직하다."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-4",
+      "name": "카페 CCTV와 태블릿 자동로그인 기록",
+      "description": "가은이 민재의 태블릿 화면을 확인한 시간대를 보여주는 카페 CCTV 일부와 태블릿 세션 로그, 단톡 미리보기 기록이다.",
+      "type": "photo_video",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "unlawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "카페 CCTV 원본 일부와 태블릿 세션 로그가 함께 확인됐다.",
+        "check_metadata": "가은이 태블릿 앞에 멈춘 시각과 민재 계정 알림이 열린 시점이 분 단위로 겹친다.",
+        "restore_context": "가은은 '화면이 떠 있어 봤다'고 주장하지만 영상상 채팅 목록을 몇 초간 넘기는 동작과 로그가 함께 남아 있다.",
+        "verify_source": "CCTV 타임코드와 태블릿 로컬 로그, 카페 와이파이 접속 기록이 상호 보강된다.",
+        "check_edits": "장비 추출본이라 편집 흔적은 없다.",
+        "question_acquisition": "무단 열람 정황을 담은 자료라 취득 목적은 분쟁 해결로 한정돼야 한다."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-5",
+      "name": "온라인 커뮤니티 운영자 보존로그와 보조계정 복구정보",
+      "description": "익명 게시글·댓글을 올린 계정의 접속 기기, 복구 이메일 일부, 삭제 전 보존 로그가 박서후의 보조 계정과 이어지는 자료다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "운영자 보존본에는 게시글 원문과 로그인 이력이 통째로 남아 있다.",
+        "check_metadata": "복구 이메일 앞자리와 접속 패턴이 박서후가 쓰던 보조 계정 정보와 일치한다.",
+        "restore_context": "게시글 표현은 민재 말투를 흉내 낸 흔적이 있으나 실제 작성 기기는 민재 것이 아니다.",
+        "verify_source": "커뮤니티 운영자와 플랫폼 보안 로그가 같은 결론을 가리킨다.",
+        "check_edits": "서버 추출본이라 후편집 흔적이 없다.",
+        "question_acquisition": "비식별화된 운영자 제공 자료로 적법하지만 개인 계정 복구정보는 최소 범위만 사용해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "윤가은에게: \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 관련 해명 요구 (방어 동기: 복수심)",
+          "implication": "이 증거는 윤가은의 \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 쟁점과 관련된다. 윤가은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박민재에게: \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박민재의 \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 쟁점과 관련된다. 박민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "운영진 제보 음성파일 원본과 편집 비교 리포트",
+      "description": "이소담 운영진에게 전달된 음성파일이 가은의 원래 음성메모 일부를 잘라 재배열한 것임을 보여주는 원본 대조 리포트다.",
+      "type": "audio_report",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "가은이 민재에게 보낸 원래 음성메모와 운영진 제보 파일 원본이 함께 대조됐다.",
+        "check_metadata": "편집본 생성 시각은 민재의 포워드 이후이며, 운영진 전달 계정은 박서후와 연결된 보조 계정이다.",
+        "restore_context": "원문에서는 걱정과 망설임을 말한 부분이, 편집본에서는 타인을 비웃는 말처럼 잘려 배치돼 있다.",
+        "verify_source": "파형 비교와 파일 해시 분석 결과 동일 원본에서 잘려 나간 편집본으로 확인됐다.",
+        "check_edits": "문장 사이 무음 구간 절단과 순서 재배열이 기술적으로 검출됐다.",
+        "question_acquisition": "당사자 동의 하에 비교용으로 제출됐지만 사적 음성자료라 외부 유포는 엄격히 제한돼야 한다."
+      },
+      "subjectParty": "b"
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-5"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "민재는 가은의 비밀 음성메모와 요약 대화를 박서후에게 전달했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "가은은 민재의 태블릿 알림을 무단 확인한 뒤 저격성 스토리를 올렸다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "온라인 커뮤니티 익명 폭로글의 직접 작성자는 민재가 아니라 박서후 쪽 보조 계정이었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "운영진에게 간 음성파일은 박서후가 원본을 잘라 편집한 것이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-5",
+      "fact": "둘은 사적인 비밀을 동호회 평판 싸움에 쓰지 않기로 한 친구 규칙을 서로 다른 방식으로 깼다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "tablet_access_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "wifi_or_preview_log_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "anonymous_post_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_only_minjae_suspected_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_rule_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "third_party_forward_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "voice_memo_specific_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "trust_breach_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "author_identity_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "forwarded_material_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_role_in_suspicion_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-7",
+      "lieIntensity": "L2",
+      "lieMotive": "third_party_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "park_seohoo_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_why_he_protected_friend"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-5_or_emotion_threshold"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "비밀경계": [
+      "민재는 가은에게 어떤 내용이 어디까지 전달됐는지 목록으로 인정하고, 가은은 비밀 범위를 다시 명시해 더 넓은 추측을 막는다.",
+      "친구 사이 비밀은 당사자 동의 없는 제3자 전달 금지, 예외가 필요하면 익명화 후 한 명의 중립자에게만 묻는 규칙을 세운다.",
+      "사적인 비밀을 또다시 동호회 사람에게 넘기면 두 사람은 개인적 친분과 동호회 협업을 모두 중단하는 강한 경계를 둔다."
+    ],
+    "디지털경계": [
+      "가은은 저격성 스토리를 내리고 태블릿 무단 확인에 대해 별도로 사과하며, 민재도 자동로그인 상태의 기기를 공용 공간에 두지 않는다.",
+      "서로의 기기·계정·알림을 확인하지 않는 규칙과, 의심이 생기면 스크린샷 대신 직접 질문 1회 후 중립자를 부르는 절차를 정한다.",
+      "다시 무단 열람이나 암시성 SNS 저격이 반복되면 개인 DM과 친한친구 범위까지 포함한 디지털 접촉을 일정 기간 끊는다."
+    ],
+    "동호회절차복구": [
+      "운영진과 커뮤니티 운영자에게 배후 로그와 편집 파일 사실을 제출해 익명글, 댓글, 제보 파일을 함께 정정한다.",
+      "동호회 내 배정과 역할 문제는 사생활 루머와 분리해 다시 결정하고, 공지문에는 검증된 사실만 남긴다.",
+      "박서후의 조작이 확인되면 보존 조치와 함께 동호회 접근 제한 또는 운영 규정상 징계 절차를 밟는다."
+    ],
+    "친구관계재설계": [
+      "둘 다 약속을 깬 부분을 따로 인정한 뒤, 앞으로는 사적 고민과 동호회 운영 이야기를 한 채널에 섞지 않기로 한다.",
+      "개인적 우정은 유지하되 연애·운영진 관련 민감한 이야기는 일정 기간 서로에게 맡기지 않는 중립 거리를 둔다.",
+      "배후 개입 이후에도 서로를 계속 시험하거나 의심의 캡처를 모으는 단계에 이르면 우정보다 거리두기를 선택하는 것이 안전하다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-1",
+    "tp-3"
+  ]
+}

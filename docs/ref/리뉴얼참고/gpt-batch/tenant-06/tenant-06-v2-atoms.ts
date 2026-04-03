@@ -1,0 +1,4600 @@
+export const tenant06V2Atoms = {
+  "caseId": "tenant-06",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "기성이 처음에 편하게 쓰라고 해서 저는 그 공간을 계속 써도 되는 줄 알았다는 입장, 그리고 적어도 전면 금지나 전용 불가라는 선을 분명히 들은 기억은 없다는 주장."
+          ],
+          "privateKnowledge": [
+            "메시지 원문 뒤에 안전과 사전 고지 조건이 붙어 있었다는 사실",
+            "지하는 왼쪽 선반 한 칸 정도만 가능하다는 취지를 들었던 기억"
+          ],
+          "suppressions": [
+            "조건 문구와 한 칸 보관 취지를 알고도 '편하게'라는 말만 앞세우는 점",
+            "다시 범위를 확인하지 않은 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-1:denial:0",
+              "factText": "기성이 처음에 편하게 쓰라고 해서 저는 그 공간을 계속 써도 되는 줄 알았다는 입장",
+              "tags": [
+                "denial",
+                "quote",
+                "rule"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                },
+                "space": {
+                  "exact": "옥상과 지하 왼쪽 선반 한 칸",
+                  "neutral": "그 공용 공간"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-1:quote:1",
+              "factText": "적어도 전면 금지나 전용 불가라는 선을 분명히 들은 기억은 없다는 주장",
+              "tags": [
+                "quote",
+                "uncertainty",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                },
+                "condition": {
+                  "exact": "\"안전하게만, 필요할 때 말해요\"",
+                  "neutral": "뒤에 붙은 조건"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "정확한 문구를 지금 딱 잘라 말하긴 어렵지만 세부 제한은 흐릿하게만 들렸다는 말, 그리고 당시 제겐 단시간만 허용된다는 경계가 또렷하게 전달되지 않았다는 설명."
+          ],
+          "privateKnowledge": [
+            "계약 특약상 전용 사용 금지 문구가 있었다는 점",
+            "중개사도 '잠깐 사용·한 칸 보관' 취지로 설명했다는 점"
+          ],
+          "suppressions": [
+            "계약 특약과 중개사 설명을 자세히 말하면 자신의 해석이 약해지는 점",
+            "상시 사용처럼 굳어진 동선을 숨기는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:a:tell:memory_softener",
+            "tenant06:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-1:uncertainty:0",
+              "factText": "정확한 문구를 지금 딱 잘라 말하긴 어렵지만 세부 제한은 흐릿하게만 들렸다는 말",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                },
+                "condition": {
+                  "exact": "\"안전하게만, 필요할 때 말해요\"",
+                  "neutral": "뒤에 붙은 조건"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-1:rule:1",
+              "factText": "당시 제겐 단시간만 허용된다는 경계가 또렷하게 전달되지 않았다는 설명",
+              "tags": [
+                "rule",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                },
+                "space": {
+                  "exact": "옥상과 지하 왼쪽 선반 한 칸",
+                  "neutral": "그 공용 공간"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "뒤에 안전과 사전 고지 조건이 붙어 있었던 건 이제 인정하지만 저는 그걸 상시 금지로 읽진 않았다는 해명, 그리고 문자 한 줄의 분위기와 계약 특약을 같은 무게로 보지 않았다는 취지의 답변."
+          ],
+          "privateKnowledge": [
+            "조건 문구를 읽고도 바쁜 시즌이라는 이유로 좁게 해석하지 않았다는 속사정",
+            "상시 적치가 되지 않게 다시 확인해야 했다는 자각"
+          ],
+          "suppressions": [
+            "시즌 물량 때문에 스스로 넓게 썼다는 동기",
+            "경계가 애매하다는 사실을 핑계 삼아 넘어간 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-1:context:0",
+              "factText": "뒤에 안전과 사전 고지 조건이 붙어 있었던 건 이제 인정하지만 저는 그걸 상시 금지로 읽진 않았다는 해명",
+              "tags": [
+                "context",
+                "counter",
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "\"안전하게만, 필요할 때 말해요\"",
+                  "neutral": "뒤에 붙은 조건"
+                },
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-1:counter:1",
+              "factText": "문자 한 줄의 분위기와 계약 특약을 같은 무게로 보지 않았다는 취지의 답변",
+              "tags": [
+                "counter",
+                "responsibility",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "contract": {
+                  "exact": "공용공간 전용 사용 금지 특약",
+                  "neutral": "계약서 문구"
+                },
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "지하는 한 칸 정도라는 취지는 알았어도 작업철엔 제가 범위를 넓게 써 버린 부분이 있다는 인정, 그리고 그래도 기성 쪽에서도 경계선을 다시 표시하거나 바로잡는 말은 늦었다는 지적."
+          ],
+          "privateKnowledge": [
+            "유진 스스로 허용 범위를 넓혀 쓰고 있었다는 자각",
+            "기성이 경계선을 명시하지 않은 점도 문제라고 보고 있다는 생각"
+          ],
+          "suppressions": [
+            "다시 묻지 않은 책임과 동시에 기성의 방치도 있었다는 복합 사정",
+            "허용을 사실상 전용권처럼 받아들인 시간"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:a:tell:photo_stack",
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-1:responsibility:0",
+              "factText": "지하는 한 칸 정도라는 취지는 알았어도 작업철엔 제가 범위를 넓게 써 버린 부분이 있다는 인정",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                },
+                "space": {
+                  "exact": "옥상과 지하 왼쪽 선반 한 칸",
+                  "neutral": "그 공용 공간"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-1:self_justification:1",
+              "factText": "그래도 기성 쪽에서도 경계선을 다시 표시하거나 바로잡는 말은 늦었다는 지적",
+              "tags": [
+                "self_justification",
+                "motive",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "broker": {
+                  "exact": "최나라 중개사",
+                  "fullName": "최나라",
+                  "judgeRef": "중개사",
+                  "neutral": "그 중개인"
+                },
+                "contract": {
+                  "exact": "공용공간 전용 사용 금지 특약",
+                  "neutral": "계약서 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "결혼 시즌 물건이 몰리자 저는 공용 공간을 사실상 제 작업 보조 공간처럼 기대고 있었다는 고백, 그리고 다시 물어보면 안 된다는 눈치를 스스로 만들며 애매한 허용을 편의 쪽으로만 잡았다는 토로."
+          ],
+          "privateKnowledge": [
+            "민폐 세입자로 보일까 두려워 경계를 다시 묻지 못했다는 감정",
+            "비밀번호 교체 전부터 이미 말을 꺼내기 어려운 긴장이 쌓여 있었다는 사실"
+          ],
+          "suppressions": [
+            "민폐로 기억될까 봐 말을 피했다는 두려움",
+            "서운함이 쌓이기 전 이미 경계를 재정리할 수 있었다는 사실"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-1:emotion:0",
+              "factText": "결혼 시즌 물건이 몰리자 저는 공용 공간을 사실상 제 작업 보조 공간처럼 기대고 있었다는 고백",
+              "tags": [
+                "emotion",
+                "fear",
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "space": {
+                  "exact": "옥상과 지하 왼쪽 선반 한 칸",
+                  "neutral": "그 공용 공간"
+                },
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-1:fear:1",
+              "factText": "다시 물어보면 안 된다는 눈치를 스스로 만들며 애매한 허용을 편의 쪽으로만 잡았다는 토로",
+              "tags": [
+                "fear",
+                "motive",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "broker": {
+                  "exact": "최나라 중개사",
+                  "fullName": "최나라",
+                  "judgeRef": "중개사",
+                  "neutral": "그 중개인"
+                },
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "실제로 허용된 건 단시간 건조와 한 칸 보관 같은 제한적 사용이었고 제가 그 범위를 넓게 읽었다는 시인, 그리고 전용권은 아니었는데 편하다는 말만 붙잡은 채 조건을 외면해 오해를 키웠다는 정리."
+          ],
+          "privateKnowledge": [
+            "허용은 제한적이었고 양쪽이 서로 다르게 과해석했다는 결론",
+            "애매한 표현을 바로잡지 않은 책임이 자신에게도 있다는 인정"
+          ],
+          "suppressions": [
+            "거의 남기지 않음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-1:admission:0",
+              "factText": "실제로 허용된 건 단시간 건조와 한 칸 보관 같은 제한적 사용이었고 제가 그 범위를 넓게 읽었다는 시인",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                },
+                "contract": {
+                  "exact": "공용공간 전용 사용 금지 특약",
+                  "neutral": "계약서 문구"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-1:legacy_sentence:1",
+              "factText": "전용권은 아니었는데 편하다는 말만 붙잡은 채 조건을 외면해 오해를 키웠다는 정리",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                },
+                "condition": {
+                  "exact": "\"안전하게만, 필요할 때 말해요\"",
+                  "neutral": "뒤에 붙은 조건"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "옥상에 둔 건 작업 중 잠깐 말리거나 정리하려고 둔 것일 뿐 상시 적치는 아니라는 주장, 그리고 통로를 막거나 배수를 해칠 정도는 아니었다고 선을 긋는 말."
+          ],
+          "privateKnowledge": [
+            "화분대와 방수포가 며칠이 아니라 몇 주 남은 구간이 있었다는 사실",
+            "점검 전날에도 일부 물건을 옮기지 못했다는 사실"
+          ],
+          "suppressions": [
+            "몇 주 적치 사실",
+            "배수구 주변까지 일부 가렸던 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-2:denial:0",
+              "factText": "옥상에 둔 건 작업 중 잠깐 말리거나 정리하려고 둔 것일 뿐 상시 적치는 아니라는 주장",
+              "tags": [
+                "denial",
+                "quote",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                },
+                "duration": {
+                  "exact": "몇 주",
+                  "period": "결혼 시즌과 장마 직전",
+                  "neutral": "그 기간"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-2:quote:1",
+              "factText": "통로를 막거나 배수를 해칠 정도는 아니었다고 선을 긋는 말",
+              "tags": [
+                "quote",
+                "uncertainty",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "옥상 통로와 배수구 주변",
+                  "neutral": "그 자리"
+                },
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "비 오기 전후로 확인하느라 며칠 두고 오간 적은 있지만 방치라고 보진 않았다는 해명, 그리고 사람이 지나갈 길은 남겨 뒀다고 기억한다는 설명."
+          ],
+          "privateKnowledge": [
+            "배수구 주변까지 가벼운 적치가 있었던 사실",
+            "결혼 시즌 작업 동선 때문에 옥상을 자주 완충 공간처럼 썼다는 사실"
+          ],
+          "suppressions": [
+            "기간과 빈도를 줄여 말하는 점",
+            "통로 폭이 줄어든 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:a:tell:memory_softener",
+            "tenant06:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-2:uncertainty:0",
+              "factText": "비 오기 전후로 확인하느라 며칠 두고 오간 적은 있지만 방치라고 보진 않았다는 해명",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "duration": {
+                  "exact": "몇 주",
+                  "period": "결혼 시즌과 장마 직전",
+                  "neutral": "그 기간"
+                },
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-2:rule:1",
+              "factText": "사람이 지나갈 길은 남겨 뒀다고 기억한다는 설명",
+              "tags": [
+                "rule",
+                "context",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "옥상 통로와 배수구 주변",
+                  "neutral": "그 자리"
+                },
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "몇몇 물건이 예상보다 오래 남아 있었던 건 인정하지만 완전 봉쇄처럼 말하는 건 과하다는 답변, 그리고 점검 사진도 일부 위험만 보여 줄 뿐 전면 금지 수준은 아니었다는 반박."
+          ],
+          "privateKnowledge": [
+            "점검 사진이 통로 축소와 배수 주변 가림을 보여 준다는 점",
+            "상시 적치로 보일 수 있음을 알고도 표현을 완화했다는 점"
+          ],
+          "suppressions": [
+            "점검 자료가 나오면 부인하기 어려운 내용",
+            "전면 금지 수준은 아니었다는 반대 포인트만 붙드는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-2:context:0",
+              "factText": "몇몇 물건이 예상보다 오래 남아 있었던 건 인정하지만 완전 봉쇄처럼 말하는 건 과하다는 답변",
+              "tags": [
+                "context",
+                "counter",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "duration": {
+                  "exact": "몇 주",
+                  "period": "결혼 시즌과 장마 직전",
+                  "neutral": "그 기간"
+                },
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-2:counter:1",
+              "factText": "점검 사진도 일부 위험만 보여 줄 뿐 전면 금지 수준은 아니었다는 반박",
+              "tags": [
+                "counter",
+                "responsibility",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 순찰기록",
+                  "neutral": "점검 자료"
+                },
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "화분대와 포장 박스가 몇 주 남은 적이 있었고 그건 제가 치우는 타이밍을 놓친 탓이라는 인정, 그리고 다만 기성도 그동안 그냥 두다가 한꺼번에 문제 삼은 면이 있다는 지적."
+          ],
+          "privateKnowledge": [
+            "몇 주 적치와 통로 축소를 사실상 알고 있었다는 자각",
+            "문제 제기 전 먼저 치우지 못한 책임"
+          ],
+          "suppressions": [
+            "치우는 타이밍을 놓친 책임",
+            "기성이 방치하다 한꺼번에 문제 삼았다는 원망"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:a:tell:photo_stack",
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-2:responsibility:0",
+              "factText": "화분대와 포장 박스가 몇 주 남은 적이 있었고 그건 제가 치우는 타이밍을 놓친 탓이라는 인정",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                },
+                "duration": {
+                  "exact": "몇 주",
+                  "period": "결혼 시즌과 장마 직전",
+                  "neutral": "그 기간"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-2:self_justification:1",
+              "factText": "다만 기성도 그동안 그냥 두다가 한꺼번에 문제 삼은 면이 있다는 지적",
+              "tags": [
+                "self_justification",
+                "motive",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 순찰기록",
+                  "neutral": "점검 자료"
+                },
+                "place": {
+                  "exact": "옥상 통로와 배수구 주변",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "결혼 시즌 물량이 쏟아져 옥상을 사실상 완충 공간처럼 쓰면서도 저는 그 불편을 축소해 말했다는 고백, 그리고 민폐로 보이기 싫어서 통로가 좁아진 정도를 제 스스로도 덜 보려 했다는 토로."
+          ],
+          "privateKnowledge": [
+            "민폐 세입자로 낙인찍힐까 두려워 기간과 규모를 줄여 말했다는 감정",
+            "기성의 무단 이동 서운함 때문에 자신의 적치 문제를 더 축소했다는 사실"
+          ],
+          "suppressions": [
+            "민폐로 기억될까 두려운 마음",
+            "서운함 때문에 자기 책임을 더 작게 말한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-2:emotion:0",
+              "factText": "결혼 시즌 물량이 쏟아져 옥상을 사실상 완충 공간처럼 쓰면서도 저는 그 불편을 축소해 말했다는 고백",
+              "tags": [
+                "emotion",
+                "fear",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                },
+                "duration": {
+                  "exact": "몇 주",
+                  "period": "결혼 시즌과 장마 직전",
+                  "neutral": "그 기간"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-2:fear:1",
+              "factText": "민폐로 보이기 싫어서 통로가 좁아진 정도를 제 스스로도 덜 보려 했다는 토로",
+              "tags": [
+                "fear",
+                "motive",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                },
+                "place": {
+                  "exact": "옥상 통로와 배수구 주변",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "화분대와 방수포, 박스를 몇 주씩 둔 건 맞고 그래서 통로 폭과 배수구 주변에 실제 부담을 줬다는 시인, 그리고 문제가 전혀 없었다고 버틴 건 제 체면을 지키려던 말이었다는 정리."
+          ],
+          "privateKnowledge": [
+            "상시 적치가 실제로 있었고 위험을 가볍게 본 책임이 자신에게 있다는 인정",
+            "다만 위험 수준 자체는 전면 봉쇄까지는 아니었다는 판단"
+          ],
+          "suppressions": [
+            "거의 남기지 않음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-2:admission:0",
+              "factText": "화분대와 방수포, 박스를 몇 주씩 둔 건 맞고 그래서 통로 폭과 배수구 주변에 실제 부담을 줬다는 시인",
+              "tags": [
+                "admission",
+                "responsibility",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                },
+                "duration": {
+                  "exact": "몇 주",
+                  "period": "결혼 시즌과 장마 직전",
+                  "neutral": "그 기간"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-2:legacy_sentence:1",
+              "factText": "문제가 전혀 없었다고 버틴 건 제 체면을 지키려던 말이었다는 정리",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                },
+                "place": {
+                  "exact": "옥상 통로와 배수구 주변",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "기성이 상의도 없이 비밀번호를 바꾸고 제 박스를 복도로 빼놓았다는 주장을 바로 세우는 말, 그리고 문자는 이미 다 끝난 뒤에 와서 저는 통보받은 것이 아니라 나중에 알게 됐다는 지적."
+          ],
+          "privateKnowledge": [
+            "비밀번호 변경 문자가 실제 교체 뒤에 왔다는 사실",
+            "복도에 나온 박스 사진이 문자 직후에 찍혔다는 사실"
+          ],
+          "suppressions": [
+            "자신의 적치가 배경이 됐을 수 있다는 점",
+            "약혼자와 함께 다시 물건을 정리한 후 장면이 일부 바뀐 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-3:denial:0",
+              "factText": "기성이 상의도 없이 비밀번호를 바꾸고 제 박스를 복도로 빼놓았다는 주장을 바로 세우는 말",
+              "tags": [
+                "denial",
+                "quote",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                },
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-3:quote:1",
+              "factText": "문자는 이미 다 끝난 뒤에 와서 저는 통보받은 것이 아니라 나중에 알게 됐다는 지적",
+              "tags": [
+                "quote",
+                "uncertainty",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                },
+                "cctv": {
+                  "exact": "지하 복도 CCTV와 관리실 카트 동선",
+                  "neutral": "영상 기록"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "점검 사정이 있었다고 해도 사전에 한마디라도 했어야 했다는 강조, 그리고 내 물건을 공용 복도로 내놓을 권한까지 준 적은 없다는 설명."
+          ],
+          "privateKnowledge": [
+            "점검 사정이 있었다는 건 알지만 절차가 먼저였어야 한다는 생각",
+            "약혼자 송지훈이 그날 다시 박스를 옮기는 데 관여했다는 사실"
+          ],
+          "suppressions": [
+            "점검 필요성 자체는 완전히 부정하기 어려운 점",
+            "분노 때문에 절차 문제를 더 앞세우는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:a:tell:memory_softener",
+            "tenant06:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-3:uncertainty:0",
+              "factText": "점검 사정이 있었다고 해도 사전에 한마디라도 했어야 했다는 강조",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "reason": {
+                  "exact": "소방 점검과 공용창고 정리 압박",
+                  "neutral": "그 배경"
+                },
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-3:rule:1",
+              "factText": "내 물건을 공용 복도로 내놓을 권한까지 준 적은 없다는 설명",
+              "tags": [
+                "rule",
+                "context",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                },
+                "cctv": {
+                  "exact": "지하 복도 CCTV와 관리실 카트 동선",
+                  "neutral": "영상 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "문자와 사진만 봐도 조치가 먼저, 안내가 나중이라는 순서는 분명하다는 말, 그리고 필요한 정리였더라도 절차 없이 한 일괄 이동은 무단으로 느껴질 수밖에 없었다는 주장."
+          ],
+          "privateKnowledge": [
+            "CCTV가 박스 이동이 문자보다 먼저라는 순서를 보여 준다는 점",
+            "지하 선반 전체가 아니라 자신의 박스가 먼저 내려진 동선이 보인다는 점"
+          ],
+          "suppressions": [
+            "자신 책임과 별개라는 프레임만 강조하는 점",
+            "일부 박스 상태가 이동 후 다시 손봐졌다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-3:context:0",
+              "factText": "문자와 사진만 봐도 조치가 먼저, 안내가 나중이라는 순서는 분명하다는 말",
+              "tags": [
+                "context",
+                "counter",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                },
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-3:counter:1",
+              "factText": "필요한 정리였더라도 절차 없이 한 일괄 이동은 무단으로 느껴질 수밖에 없었다는 주장",
+              "tags": [
+                "counter",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                },
+                "cctv": {
+                  "exact": "지하 복도 CCTV와 관리실 카트 동선",
+                  "neutral": "영상 기록"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "제가 옥상과 지하를 답답하게 쓴 부분이 있어도 비밀번호 교체와 박스 이동이 사전 합의 없이 이뤄진 건 별개라는 정리, 그리고 관리 필요를 이유로 절차를 건너뛴 책임은 기성에게 더 크다는 지적."
+          ],
+          "privateKnowledge": [
+            "자신의 적치 문제가 배경으로 작동했다는 사실",
+            "그래도 무단 이동과 잠금 교체는 별개 책임이라고 본다는 생각"
+          ],
+          "suppressions": [
+            "적치 배경을 충분히 말하지 않는 점",
+            "절차 위반에 대한 상처가 감정적으로 더 커진 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:a:tell:photo_stack",
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-3:responsibility:0",
+              "factText": "제가 옥상과 지하를 답답하게 쓴 부분이 있어도 비밀번호 교체와 박스 이동이 사전 합의 없이 이뤄진 건 별개라는 정리",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                },
+                "reason": {
+                  "exact": "소방 점검과 공용창고 정리 압박",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-3:self_justification:1",
+              "factText": "관리 필요를 이유로 절차를 건너뛴 책임은 기성에게 더 크다는 지적",
+              "tags": [
+                "self_justification",
+                "motive",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                },
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "문이 안 열리고 박스가 복도에 나온 걸 봤을 때 저는 민폐 취급당한 기분이 한꺼번에 올라왔다는 토로, 그리고 한마디 상의 없이 제 물건이 움직여졌다는 감각이 서운함을 넘어서 모욕처럼 남았다는 고백."
+          ],
+          "privateKnowledge": [
+            "물건보다도 예고 없는 조치 자체가 더 크게 상처로 남았다는 감정",
+            "세입자 통제 대상으로만 취급됐다는 수치심"
+          ],
+          "suppressions": [
+            "민폐 세입자로 보였다는 수치심",
+            "예고 없는 통제가 가장 큰 상처였다는 감정"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-3:emotion:0",
+              "factText": "문이 안 열리고 박스가 복도에 나온 걸 봤을 때 저는 민폐 취급당한 기분이 한꺼번에 올라왔다는 토로",
+              "tags": [
+                "emotion",
+                "fear",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                },
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-3:fear:1",
+              "factText": "한마디 상의 없이 제 물건이 움직여졌다는 감각이 서운함을 넘어서 모욕처럼 남았다는 고백",
+              "tags": [
+                "fear",
+                "motive",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                },
+                "reason": {
+                  "exact": "소방 점검과 공용창고 정리 압박",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "실제로 기성은 사전 합의 없이 비밀번호를 바꾸고 박스를 먼저 옮긴 뒤 나중에 문자로 알렸다는 시인성 진술, 그리고 점검 압박이 배경이었어도 그 절차 위반 자체는 분명히 잘못이었다는 정리."
+          ],
+          "privateKnowledge": [
+            "무단 이동과 사후 통보가 핵심 사실이라는 결론",
+            "배경 사정과 절차 위반을 분리해서 봐야 한다는 판단"
+          ],
+          "suppressions": [
+            "거의 남기지 않음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-3:admission:0",
+              "factText": "실제로 기성은 사전 합의 없이 비밀번호를 바꾸고 박스를 먼저 옮긴 뒤 나중에 문자로 알렸다는 시인성 진술",
+              "tags": [
+                "admission",
+                "responsibility",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                },
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-3:legacy_sentence:1",
+              "factText": "점검 압박이 배경이었어도 그 절차 위반 자체는 분명히 잘못이었다는 정리",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "reason": {
+                  "exact": "소방 점검과 공용창고 정리 압박",
+                  "neutral": "그 배경"
+                },
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "옥상과 지하 사용이 실제로는 별문제 없었고 기성이 위험을 너무 크게 말한다는 주장, 그리고 사람이 지날 수 있었으니 위반이라고 볼 정도는 아니라는 말."
+          ],
+          "privateKnowledge": [
+            "통로 폭이 일부 줄어 있었다는 사실",
+            "배수구 주변에 가벼운 적치가 있었던 사실"
+          ],
+          "suppressions": [
+            "일부 위험 존재",
+            "자신의 과소평가"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-4:denial:0",
+              "factText": "옥상과 지하 사용이 실제로는 별문제 없었고 기성이 위험을 너무 크게 말한다는 주장",
+              "tags": [
+                "denial",
+                "quote",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                },
+                "place": {
+                  "exact": "옥상 통로와 지하 배수구 주변",
+                  "neutral": "그 위치"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-4:quote:1",
+              "factText": "사람이 지날 수 있었으니 위반이라고 볼 정도는 아니라는 말",
+              "tags": [
+                "quote",
+                "uncertainty",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                },
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "배수구와 통로를 아예 막은 적은 없어서 저는 심각한 위험으로 체감하지 않았다는 설명, 그리고 관리실 기록이 있어도 과장된 표현이 섞였다고 보는 답변."
+          ],
+          "privateKnowledge": [
+            "관리실과 기사 자료가 위험 요소를 일부 지적한다는 점",
+            "기성이 전면 금지 수준으로 말한 부분은 과장이라고 느낀다는 점"
+          ],
+          "suppressions": [
+            "기사·관리실 자료의 무게",
+            "심각성만 부인하는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:a:tell:memory_softener",
+            "tenant06:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-4:uncertainty:0",
+              "factText": "배수구와 통로를 아예 막은 적은 없어서 저는 심각한 위험으로 체감하지 않았다는 설명",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "옥상 통로와 지하 배수구 주변",
+                  "neutral": "그 위치"
+                },
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-4:rule:1",
+              "factText": "관리실 기록이 있어도 과장된 표현이 섞였다고 보는 답변",
+              "tags": [
+                "rule",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                },
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "사진상 일부 폭이 줄고 배수 주변에 물건이 있었던 건 인정하지만 즉시 전면 금지 수준은 아니라는 수정, 그리고 위험의 존재와 과장된 경고는 구분해야 한다는 주장."
+          ],
+          "privateKnowledge": [
+            "문제 없음이라는 자신의 표현이 유지되기 어렵다는 점",
+            "일부 정리 필요 수준은 맞다는 자각"
+          ],
+          "suppressions": [
+            "정리 필요 수준 인정",
+            "전면 금지 과장만 강조하는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-4:context:0",
+              "factText": "사진상 일부 폭이 줄고 배수 주변에 물건이 있었던 건 인정하지만 즉시 전면 금지 수준은 아니라는 수정",
+              "tags": [
+                "context",
+                "counter",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                },
+                "place": {
+                  "exact": "옥상 통로와 지하 배수구 주변",
+                  "neutral": "그 위치"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-4:counter:1",
+              "factText": "위험의 존재와 과장된 경고는 구분해야 한다는 주장",
+              "tags": [
+                "counter",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                },
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "정리가 더 필요했던 구간이 있었고 저는 그걸 너무 가볍게 말했다는 인정, 그리고 그래도 기성도 그 사실을 통제 명분으로 과장해 말한 책임이 있다는 지적."
+          ],
+          "privateKnowledge": [
+            "자신의 과소평가와 기성의 과장이 함께 있었다는 생각",
+            "위험을 인정하면 다른 쟁점에서도 밀릴까 걱정하는 마음"
+          ],
+          "suppressions": [
+            "자기 과소평가 책임",
+            "다른 쟁점에 미칠 영향에 대한 걱정"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:a:tell:photo_stack",
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-4:responsibility:0",
+              "factText": "정리가 더 필요했던 구간이 있었고 저는 그걸 너무 가볍게 말했다는 인정",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                },
+                "place": {
+                  "exact": "옥상 통로와 지하 배수구 주변",
+                  "neutral": "그 위치"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-4:self_justification:1",
+              "factText": "그래도 기성도 그 사실을 통제 명분으로 과장해 말한 책임이 있다는 지적",
+              "tags": [
+                "self_justification",
+                "motive",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                },
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "비가 오고 작업이 겹치던 시기라 저는 위험 신호를 보고도 문제 없다고 믿고 싶어 했다는 고백, 그리고 조금만 치우면 된다는 생각으로 통로와 배수 부담을 스스로 축소했다는 토로."
+          ],
+          "privateKnowledge": [
+            "민폐 낙인을 피하려 위험을 스스로도 줄여 본 감정",
+            "문제가 커지기 전 바로 치울 수 있었다는 자책"
+          ],
+          "suppressions": [
+            "낙인 두려움",
+            "바로 치울 수 있었다는 자책"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-4:emotion:0",
+              "factText": "비가 오고 작업이 겹치던 시기라 저는 위험 신호를 보고도 문제 없다고 믿고 싶어 했다는 고백",
+              "tags": [
+                "emotion",
+                "fear",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "옥상 통로와 지하 배수구 주변",
+                  "neutral": "그 위치"
+                },
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-4:fear:1",
+              "factText": "조금만 치우면 된다는 생각으로 통로와 배수 부담을 스스로 축소했다는 토로",
+              "tags": [
+                "fear",
+                "motive",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                },
+                "exaggerationA": {
+                  "exact": "\"전혀 문제 없다\"는 표현",
+                  "neutral": "그 과소평가"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "실제 위험은 일부 정리가 필요한 수준으로 존재했고 제가 전혀 문제 없다고 말한 건 과소평가였다는 시인, 그리고 동시에 즉시 전면 금지 수준이라는 기성의 표현도 과장이었다는 정리."
+          ],
+          "privateKnowledge": [
+            "위험은 있었고 양쪽 표현이 모두 극단적이었다는 결론",
+            "기준을 다시 세우는 것이 필요하다는 인정"
+          ],
+          "suppressions": [
+            "거의 남기지 않음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-4:admission:0",
+              "factText": "실제 위험은 일부 정리가 필요한 수준으로 존재했고 제가 전혀 문제 없다고 말한 건 과소평가였다는 시인",
+              "tags": [
+                "admission",
+                "responsibility",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                },
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-4:legacy_sentence:1",
+              "factText": "동시에 즉시 전면 금지 수준이라는 기성의 표현도 과장이었다는 정리",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "exaggerationA": {
+                  "exact": "\"전혀 문제 없다\"는 표현",
+                  "neutral": "그 과소평가"
+                },
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "젖은 가방과 사라진 호스는 거의 전부 기성의 갑작스러운 이동 때문에 생긴 일이라는 주장, 그리고 제 포장 상태를 문제 삼을 건 아니라는 선 긋기."
+          ],
+          "privateKnowledge": [
+            "비닐 덮개를 완전히 닫지 못한 날이 있었다는 사실",
+            "문제 제기 전에 이미 장마 습기가 일부 있었을 수 있다는 불안"
+          ],
+          "suppressions": [
+            "포장 미흡 가능성",
+            "기존 습기 우려"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-5:denial:0",
+              "factText": "젖은 가방과 사라진 호스는 거의 전부 기성의 갑작스러운 이동 때문에 생긴 일이라는 주장",
+              "tags": [
+                "denial",
+                "quote",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                },
+                "action": {
+                  "exact": "예고 없는 일괄 박스 이동",
+                  "neutral": "그 이동"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-5:quote:1",
+              "factText": "제 포장 상태를 문제 삼을 건 아니라는 선 긋기",
+              "tags": [
+                "quote",
+                "uncertainty",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                },
+                "causation": {
+                  "exact": "이동이 직접 계기, 포장 미흡이 일부 가중",
+                  "neutral": "겹친 원인"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 손상 문제가 시작된 계기는 예고 없는 박스 이동이었다는 설명, 그리고 그 이전까지는 쓸 만한 상태였다고 기억한다는 답변."
+          ],
+          "privateKnowledge": [
+            "이동 전후 사진과 시간대가 손상 논쟁의 기준이라는 점",
+            "포장 상태가 완전하진 않았다는 점"
+          ],
+          "suppressions": [
+            "포장 상태 불완전",
+            "시간대별 검토 필요"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:a:tell:memory_softener",
+            "tenant06:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-5:uncertainty:0",
+              "factText": "적어도 손상 문제가 시작된 계기는 예고 없는 박스 이동이었다는 설명",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "예고 없는 일괄 박스 이동",
+                  "neutral": "그 이동"
+                },
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-5:rule:1",
+              "factText": "그 이전까지는 쓸 만한 상태였다고 기억한다는 답변",
+              "tags": [
+                "rule",
+                "context",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "inventory": {
+                  "exact": "이동 전후 사진과 CCTV 시간대",
+                  "neutral": "정산 자료"
+                },
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "문자와 사진 시점만 봐도 이동 뒤에 문제 제기가 이어졌으니 직접 계기는 이동이라고 보는 말, 그리고 다만 물건 상태를 제가 완벽히 챙기진 못했다는 부분은 아직 작게 남겨 두는 해명."
+          ],
+          "privateKnowledge": [
+            "직접 계기가 이동이라는 판단은 유지하지만 일부 자책도 있다는 점",
+            "호스 분실 시점은 CCTV와 함께 봐야 한다는 점"
+          ],
+          "suppressions": [
+            "일부 자책",
+            "호스 분실 시점 불명확성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:a:tell:photo_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-5:context:0",
+              "factText": "문자와 사진 시점만 봐도 이동 뒤에 문제 제기가 이어졌으니 직접 계기는 이동이라고 보는 말",
+              "tags": [
+                "context",
+                "counter",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "inventory": {
+                  "exact": "이동 전후 사진과 CCTV 시간대",
+                  "neutral": "정산 자료"
+                },
+                "action": {
+                  "exact": "예고 없는 일괄 박스 이동",
+                  "neutral": "그 이동"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-5:counter:1",
+              "factText": "다만 물건 상태를 제가 완벽히 챙기진 못했다는 부분은 아직 작게 남겨 두는 해명",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                },
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "비닐 덮개를 완전히 닫지 못한 날이 있었던 건 인정하지만 그게 무단 이동 책임을 없애진 않는다는 정리, 그리고 직접 계기는 이동이고 포장 미흡은 일부 가중 요소라는 선 긋기."
+          ],
+          "privateKnowledge": [
+            "포장 미흡이 일부 젖음에 겹쳤다는 자각",
+            "그래도 사전 동의 없는 이동이 더 큰 책임이라는 생각"
+          ],
+          "suppressions": [
+            "포장 미흡 자각",
+            "무단 이동 책임 강조"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:a:tell:photo_stack",
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-5:responsibility:0",
+              "factText": "비닐 덮개를 완전히 닫지 못한 날이 있었던 건 인정하지만 그게 무단 이동 책임을 없애진 않는다는 정리",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                },
+                "action": {
+                  "exact": "예고 없는 일괄 박스 이동",
+                  "neutral": "그 이동"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-5:self_justification:1",
+              "factText": "직접 계기는 이동이고 포장 미흡은 일부 가중 요소라는 선 긋기",
+              "tags": [
+                "self_justification",
+                "motive",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "causation": {
+                  "exact": "이동이 직접 계기, 포장 미흡이 일부 가중",
+                  "neutral": "겹친 원인"
+                },
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "그날 이후 저는 손상 자체보다도 남의 손으로 제 보관물을 건드렸다는 사실에 더 예민해졌다는 고백, 그리고 그래서 포장 미흡 가능성은 알면서도 처음엔 전부 상대 탓으로 말하고 싶었다는 토로."
+          ],
+          "privateKnowledge": [
+            "손상보다 무단 개입이 더 모욕적으로 느껴졌다는 감정",
+            "그래서 처음엔 자신의 미흡을 거의 말하지 않았다는 사실"
+          ],
+          "suppressions": [
+            "무단 개입에 대한 모욕감",
+            "자기 미흡을 숨긴 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-5:emotion:0",
+              "factText": "그날 이후 저는 손상 자체보다도 남의 손으로 제 보관물을 건드렸다는 사실에 더 예민해졌다는 고백",
+              "tags": [
+                "emotion",
+                "fear",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                },
+                "action": {
+                  "exact": "예고 없는 일괄 박스 이동",
+                  "neutral": "그 이동"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-5:fear:1",
+              "factText": "그래서 포장 미흡 가능성은 알면서도 처음엔 전부 상대 탓으로 말하고 싶었다는 토로",
+              "tags": [
+                "fear",
+                "motive",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                },
+                "inventory": {
+                  "exact": "이동 전후 사진과 CCTV 시간대",
+                  "neutral": "정산 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "실제로 손상의 직접 계기는 기성의 예고 없는 이동이었지만 일부 젖음은 제 비닐 덮개 미흡도 겹쳤다는 시인, 그리고 정산은 두 원인을 같이 반영해 나눠 보는 게 맞다는 정리."
+          ],
+          "privateKnowledge": [
+            "이동과 포장 미흡이 겹친 공동 원인이라는 결론",
+            "품목별 부분 배상이 맞다는 인정"
+          ],
+          "suppressions": [
+            "거의 남기지 않음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:a:tell:quiet_surge"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:a:d-5:admission:0",
+              "factText": "실제로 손상의 직접 계기는 기성의 예고 없는 이동이었지만 일부 젖음은 제 비닐 덮개 미흡도 겹쳤다는 시인",
+              "tags": [
+                "admission",
+                "responsibility",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "causation": {
+                  "exact": "이동이 직접 계기, 포장 미흡이 일부 가중",
+                  "neutral": "겹친 원인"
+                },
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant06:a:d-5:legacy_sentence:1",
+              "factText": "정산은 두 원인을 같이 반영해 나눠 보는 게 맞다는 정리",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                },
+                "inventory": {
+                  "exact": "이동 전후 사진과 CCTV 시간대",
+                  "neutral": "정산 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "전용으로 쓰라고 허락한 적은 없고 어디까지나 공용 공간의 잠깐 사용을 봐준 것뿐이라는 주장, 그리고 유진이 그 호의를 권리처럼 받아들인 것이 문제라는 선 긋기."
+          ],
+          "privateKnowledge": [
+            "처음 안내가 '잠깐 사용·한 칸 보관' 취지였다는 기억",
+            "카카오톡 문구가 짧아 오해를 부를 수 있었다는 사실"
+          ],
+          "suppressions": [
+            "'편하게 쓰세요' 문장이 먼저 전달된 사실",
+            "전용이 아니라고 선명하게 문자 합의를 남기지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-1:denial:0",
+              "factText": "전용으로 쓰라고 허락한 적은 없고 어디까지나 공용 공간의 잠깐 사용을 봐준 것뿐이라는 주장",
+              "tags": [
+                "denial",
+                "quote",
+                "rule"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                },
+                "space": {
+                  "exact": "옥상과 지하 왼쪽 선반 한 칸",
+                  "neutral": "그 공용 공간"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-1:quote:1",
+              "factText": "유진이 그 호의를 권리처럼 받아들인 것이 문제라는 선 긋기",
+              "tags": [
+                "quote",
+                "uncertainty",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                },
+                "contract": {
+                  "exact": "공용공간 전용 사용 금지 특약",
+                  "neutral": "계약서 문구"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "옥상은 단시간 건조, 지하는 한 칸 보관 정도라는 전제가 처음부터 있었다는 설명, 그리고 문서로 박아 두지 않았다고 해서 제한이 없던 건 아니라는 말."
+          ],
+          "privateKnowledge": [
+            "문서보다 구두 설명을 믿고 넘어간 부분이 있었다는 사실",
+            "중개사 확인서가 있으면 자신의 초기 설명도 제한적 허용으로 읽힌다는 점"
+          ],
+          "suppressions": [
+            "문서 없는 구두 허용의 애매함",
+            "경계선을 그어 두지 않은 채 통제만 기대한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:b:tell:document_gate",
+            "tenant06:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-1:uncertainty:0",
+              "factText": "옥상은 단시간 건조, 지하는 한 칸 보관 정도라는 전제가 처음부터 있었다는 설명",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                },
+                "contract": {
+                  "exact": "공용공간 전용 사용 금지 특약",
+                  "neutral": "계약서 문구"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-1:rule:1",
+              "factText": "문서로 박아 두지 않았다고 해서 제한이 없던 건 아니라는 말",
+              "tags": [
+                "rule",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "\"안전하게만, 필요할 때 말해요\"",
+                  "neutral": "뒤에 붙은 조건"
+                },
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "계약 특약과 메모를 보면 전용 사용 금지가 분명하니 자신의 해석이 맞다는 강조, 그리고 초기 안내도 편의 제공이지 독점 허용은 아니었다는 정리."
+          ],
+          "privateKnowledge": [
+            "'편하게 쓰세요'라는 문장이 먼저 나가 해석 주도권을 잃었다는 불안",
+            "제한을 선으로 표시하지 않고 관행처럼 둔 책임"
+          ],
+          "suppressions": [
+            "자신의 불안 때문에 계약 문구만 강조하고 초반 뉘앙스는 축소하는 점",
+            "중개사 기억을 꺼내면 본인 책임도 드러나는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-1:context:0",
+              "factText": "계약 특약과 메모를 보면 전용 사용 금지가 분명하니 자신의 해석이 맞다는 강조",
+              "tags": [
+                "context",
+                "counter",
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "contract": {
+                  "exact": "공용공간 전용 사용 금지 특약",
+                  "neutral": "계약서 문구"
+                },
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-1:counter:1",
+              "factText": "초기 안내도 편의 제공이지 독점 허용은 아니었다는 정리",
+              "tags": [
+                "counter",
+                "responsibility",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                },
+                "space": {
+                  "exact": "옥상과 지하 왼쪽 선반 한 칸",
+                  "neutral": "그 공용 공간"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "다만 카카오톡에선 먼저 편하게 쓰라고 보낸 뒤 조건을 덧붙여 오해 여지를 남긴 건 인정한다는 말, 그리고 그 애매함을 바로 정리하지 않고 뒤늦게 조건을 보태 말한 건 자신의 실수라는 해명."
+          ],
+          "privateKnowledge": [
+            "조건을 뒤늦게 덧붙여 원래부터 그랬던 것처럼 말한 사실",
+            "공용 공간 통제권을 잃을까 봐 더 강경해졌다는 심리"
+          ],
+          "suppressions": [
+            "조건을 뒤늦게 붙였다는 사실",
+            "처음부터 엄격히 말하지 못한 책임"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:b:tell:condition_backfill",
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-1:responsibility:0",
+              "factText": "다만 카카오톡에선 먼저 편하게 쓰라고 보낸 뒤 조건을 덧붙여 오해 여지를 남긴 건 인정한다는 말",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                },
+                "condition": {
+                  "exact": "\"안전하게만, 필요할 때 말해요\"",
+                  "neutral": "뒤에 붙은 조건"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-1:self_justification:1",
+              "factText": "그 애매함을 바로 정리하지 않고 뒤늦게 조건을 보태 말한 건 자신의 실수라는 해명",
+              "tags": [
+                "self_justification",
+                "motive",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "broker": {
+                  "exact": "최나라 중개사",
+                  "fullName": "최나라",
+                  "judgeRef": "중개사",
+                  "neutral": "그 중개인"
+                },
+                "contract": {
+                  "exact": "공용공간 전용 사용 금지 특약",
+                  "neutral": "계약서 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "민원과 점검 압박이 커지자 저는 처음부터 조건부였다고 더 강하게 정리해 말하게 됐다는 고백, 그리고 공용 공간 통제권을 놓치는 것처럼 보일까 봐 문구를 뒤늦게 단단하게 붙였다는 토로."
+          ],
+          "privateKnowledge": [
+            "집주인으로 보이는 권위를 지키려다 설명을 경직되게 했다는 감정",
+            "오해를 초기에 바로잡지 않아 분쟁이 커졌다는 자각"
+          ],
+          "suppressions": [
+            "통제권 상실에 대한 두려움",
+            "뒤늦은 강경화가 불신을 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-1:emotion:0",
+              "factText": "민원과 점검 압박이 커지자 저는 처음부터 조건부였다고 더 강하게 정리해 말하게 됐다는 고백",
+              "tags": [
+                "emotion",
+                "fear",
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "broker": {
+                  "exact": "최나라 중개사",
+                  "fullName": "최나라",
+                  "judgeRef": "중개사",
+                  "neutral": "그 중개인"
+                },
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-1:fear:1",
+              "factText": "공용 공간 통제권을 놓치는 것처럼 보일까 봐 문구를 뒤늦게 단단하게 붙였다는 토로",
+              "tags": [
+                "fear",
+                "motive",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "contract": {
+                  "exact": "공용공간 전용 사용 금지 특약",
+                  "neutral": "계약서 문구"
+                },
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "실제로는 전용 허용도 전면 금지도 아니었고 제가 조건을 분명히 남기지 않아 해석 싸움을 키웠다는 시인, 그리고 유진이 넓게 해석한 책임과 별개로 애매한 안내를 만든 책임이 제게도 있다는 정리."
+          ],
+          "privateKnowledge": [
+            "양쪽 모두 과해석했고 본인도 애매한 허용을 방치했다는 결론",
+            "후행 조건 설명이 신뢰를 깎았다는 인정"
+          ],
+          "suppressions": [
+            "거의 남기지 않음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-1:admission:0",
+              "factText": "실제로는 전용 허용도 전면 금지도 아니었고 제가 조건을 분명히 남기지 않아 해석 싸움을 키웠다는 시인",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule",
+                "quote"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "단시간 건조와 사전 고지된 한 칸 보관",
+                  "neutral": "제한된 사용 범위"
+                },
+                "contract": {
+                  "exact": "공용공간 전용 사용 금지 특약",
+                  "neutral": "계약서 문구"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-1:legacy_sentence:1",
+              "factText": "유진이 넓게 해석한 책임과 별개로 애매한 안내를 만든 책임이 제게도 있다는 정리",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "\"옥상이랑 지하 편하게 쓰세요\"",
+                  "neutral": "그 표현"
+                },
+                "condition": {
+                  "exact": "\"안전하게만, 필요할 때 말해요\"",
+                  "neutral": "뒤에 붙은 조건"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "유진이 옥상을 거의 자기 창고처럼 써서 공용 통로 의미가 사라졌다는 주장, 그리고 배수구와 동선 모두 즉시 손봐야 할 수준이었다고 몰아붙이는 말."
+          ],
+          "privateKnowledge": [
+            "점검 사진상 완전 봉쇄는 아니었다는 사실",
+            "유진의 적치가 반복되면서도 초기에 명확히 끊지 못했다는 사실"
+          ],
+          "suppressions": [
+            "완전 봉쇄처럼 말한 과장",
+            "초기 기준을 명확히 남기지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-2:denial:0",
+              "factText": "유진이 옥상을 거의 자기 창고처럼 써서 공용 통로 의미가 사라졌다는 주장",
+              "tags": [
+                "denial",
+                "quote",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                },
+                "place": {
+                  "exact": "옥상 통로와 배수구 주변",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-2:quote:1",
+              "factText": "배수구와 동선 모두 즉시 손봐야 할 수준이었다고 몰아붙이는 말",
+              "tags": [
+                "quote",
+                "uncertainty",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                },
+                "inspection": {
+                  "exact": "소방점검 사진과 순찰기록",
+                  "neutral": "점검 자료"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "계속 같은 물건이 남아 있었고 그게 단기 사용이 아니라 상시 적치로 보였다는 설명, 그리고 안전상 그냥 넘길 수 없었다는 관리 책임을 내세우는 답변."
+          ],
+          "privateKnowledge": [
+            "상시 적치 판단의 근거가 기간과 반복이었다는 점",
+            "자신도 경고를 누적만 하고 기준을 문자로 확정하지 않았다는 점"
+          ],
+          "suppressions": [
+            "단기 사용과 상시 적치 기준을 뒤늦게 세운 점",
+            "경고 기록을 공식화하지 않은 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:b:tell:document_gate",
+            "tenant06:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-2:uncertainty:0",
+              "factText": "계속 같은 물건이 남아 있었고 그게 단기 사용이 아니라 상시 적치로 보였다는 설명",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "duration": {
+                  "exact": "몇 주",
+                  "period": "결혼 시즌과 장마 직전",
+                  "neutral": "그 기간"
+                },
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-2:rule:1",
+              "factText": "안전상 그냥 넘길 수 없었다는 관리 책임을 내세우는 답변",
+              "tags": [
+                "rule",
+                "context",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                },
+                "inspection": {
+                  "exact": "소방점검 사진과 순찰기록",
+                  "neutral": "점검 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "완전히 막힌 건 아니지만 통로 폭이 줄고 배수 주변이 지저분해진 건 사실이었다는 수정, 그리고 그래서 문제 제기 자체는 필요했다고 정리하는 말."
+          ],
+          "privateKnowledge": [
+            "과장이 섞였다는 걸 알고도 강한 표현을 선택한 점",
+            "관리 책임을 방패로 삼아 세부 수준을 뭉뚱그린 점"
+          ],
+          "suppressions": [
+            "문제 제기 타당성과 위험도 과장을 섞어 말하는 점",
+            "자신 책임을 관리라는 명분 뒤로 숨기는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-2:context:0",
+              "factText": "완전히 막힌 건 아니지만 통로 폭이 줄고 배수 주변이 지저분해진 건 사실이었다는 수정",
+              "tags": [
+                "context",
+                "counter",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                },
+                "place": {
+                  "exact": "옥상 통로와 배수구 주변",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-2:counter:1",
+              "factText": "그래서 문제 제기 자체는 필요했다고 정리하는 말",
+              "tags": [
+                "counter",
+                "responsibility",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 순찰기록",
+                  "neutral": "점검 자료"
+                },
+                "duration": {
+                  "exact": "몇 주",
+                  "period": "결혼 시즌과 장마 직전",
+                  "neutral": "그 기간"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "점검 자료 기준으로는 일부 구간 정리 필요 수준이었는데 저는 그걸 더 급한 위반처럼 말한 면이 있다는 인정, 그리고 그래도 몇 주 적치가 반복된 만큼 관리자로서 제지할 이유는 있었다는 주장."
+          ],
+          "privateKnowledge": [
+            "실제 자료는 일부 정리 필요 수준에 가깝다는 점",
+            "다른 세입자 민원 때문에 더 강경해졌다는 심리"
+          ],
+          "suppressions": [
+            "자료 수준보다 큰 표현을 쓴 사실",
+            "민원 압박과 통제 욕구"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:b:tell:condition_backfill",
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-2:responsibility:0",
+              "factText": "점검 자료 기준으로는 일부 구간 정리 필요 수준이었는데 저는 그걸 더 급한 위반처럼 말한 면이 있다는 인정",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 순찰기록",
+                  "neutral": "점검 자료"
+                },
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-2:self_justification:1",
+              "factText": "그래도 몇 주 적치가 반복된 만큼 관리자로서 제지할 이유는 있었다는 주장",
+              "tags": [
+                "self_justification",
+                "motive",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "duration": {
+                  "exact": "몇 주",
+                  "period": "결혼 시즌과 장마 직전",
+                  "neutral": "그 기간"
+                },
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "다른 세입자 민원과 점검 압박 때문에 저는 위험을 크게 표현해야 통제가 된다고 생각했다는 고백, 그리고 그래서 실제보다 더 센 단어로 몰아붙인 부분이 있다는 토로."
+          ],
+          "privateKnowledge": [
+            "통제권을 확보하려 위험도를 끌어올려 말했다는 감정",
+            "자신의 창고 자재도 비슷한 기준으로 정리해야 한다는 부담"
+          ],
+          "suppressions": [
+            "자신의 표현이 과했다는 자각",
+            "자기 자재도 같은 잣대로 봐야 하는 부담"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-2:emotion:0",
+              "factText": "다른 세입자 민원과 점검 압박 때문에 저는 위험을 크게 표현해야 통제가 된다고 생각했다는 고백",
+              "tags": [
+                "emotion",
+                "fear",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 순찰기록",
+                  "neutral": "점검 자료"
+                },
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-2:fear:1",
+              "factText": "그래서 실제보다 더 센 단어로 몰아붙인 부분이 있다는 토로",
+              "tags": [
+                "fear",
+                "motive",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "옥상 통로와 배수구 주변",
+                  "neutral": "그 자리"
+                },
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "실제 위험은 일부 정리가 필요한 정도였고 전면 금지 수준이라고 몰아간 건 과장이었다는 시인, 그리고 다만 유진의 몇 주 적치 자체는 사실이라 사용 기준을 다시 정했어야 했다는 정리."
+          ],
+          "privateKnowledge": [
+            "위험 과장과 기준 미설정 책임이 자신에게도 있다는 인정",
+            "적치 사실 자체와 과장된 경고는 분리해야 한다는 결론"
+          ],
+          "suppressions": [
+            "거의 남기지 않음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-2:admission:0",
+              "factText": "실제 위험은 일부 정리가 필요한 정도였고 전면 금지 수준이라고 몰아간 건 과장이었다는 시인",
+              "tags": [
+                "admission",
+                "responsibility",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "risk": {
+                  "exact": "통로 폭 축소와 배수구 주변 가림",
+                  "neutral": "일부 위험"
+                },
+                "inspection": {
+                  "exact": "소방점검 사진과 순찰기록",
+                  "neutral": "점검 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-2:legacy_sentence:1",
+              "factText": "다만 유진의 몇 주 적치 자체는 사실이라 사용 기준을 다시 정했어야 했다는 정리",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "duration": {
+                  "exact": "몇 주",
+                  "period": "결혼 시즌과 장마 직전",
+                  "neutral": "그 기간"
+                },
+                "items": {
+                  "exact": "화분대, 접이식 테이블, 방수포, 꽃포장 박스",
+                  "neutral": "작업 물품들"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "소방 점검 때문에 출입을 잠깐 제한하고 물건을 정리한 것뿐이라 무단 조치는 아니라는 주장, 그리고 공용 공간 안전을 위한 관리 행위였다는 식으로 정당화하는 말."
+          ],
+          "privateKnowledge": [
+            "잠금 교체와 박스 이동이 문자보다 먼저였다는 사실",
+            "호스가 분리돼 바닥에 남은 장면이 CCTV에 찍힌다는 사실"
+          ],
+          "suppressions": [
+            "사후 통보 순서",
+            "호스 분리 같은 세부 손상 가능성"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-3:denial:0",
+              "factText": "소방 점검 때문에 출입을 잠깐 제한하고 물건을 정리한 것뿐이라 무단 조치는 아니라는 주장",
+              "tags": [
+                "denial",
+                "quote",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "reason": {
+                  "exact": "소방 점검과 공용창고 정리 압박",
+                  "neutral": "그 배경"
+                },
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-3:quote:1",
+              "factText": "공용 공간 안전을 위한 관리 행위였다는 식으로 정당화하는 말",
+              "tags": [
+                "quote",
+                "uncertainty",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                },
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "문자 안내도 했고 복도로 잠시 뺀 것이지 빼앗거나 버린 게 아니라는 해명, 그리고 당시에는 급해서 그렇게 처리할 수밖에 없었다는 변명."
+          ],
+          "privateKnowledge": [
+            "사후 통보라는 점을 알고 있다는 사실",
+            "유진과 미리 조정하면 마찰이 커질까 피했다는 심리"
+          ],
+          "suppressions": [
+            "미리 알리면 말싸움이 길어질까 피한 점",
+            "정당화 논리만 앞세우는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:b:tell:document_gate",
+            "tenant06:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-3:uncertainty:0",
+              "factText": "문자 안내도 했고 복도로 잠시 뺀 것이지 빼앗거나 버린 게 아니라는 해명",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                },
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-3:rule:1",
+              "factText": "당시에는 급해서 그렇게 처리할 수밖에 없었다는 변명",
+              "tags": [
+                "rule",
+                "context",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "reason": {
+                  "exact": "소방 점검과 공용창고 정리 압박",
+                  "neutral": "그 배경"
+                },
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "문자가 교체 뒤에 간 건 맞지만 점검이 급박해 먼저 움직였다는 인정, 그리고 그래도 위험 요소를 그대로 둘 순 없었다며 판단 자체는 유지하는 답변."
+          ],
+          "privateKnowledge": [
+            "급박함을 내세우지만 개별 동의 없는 이동이라는 점",
+            "관리실 카트로 일괄 이동한 사실"
+          ],
+          "suppressions": [
+            "일괄 이동과 무동의 사실",
+            "관리 권한을 과도하게 넓혀 본 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-3:context:0",
+              "factText": "문자가 교체 뒤에 간 건 맞지만 점검이 급박해 먼저 움직였다는 인정",
+              "tags": [
+                "context",
+                "counter",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                },
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-3:counter:1",
+              "factText": "그래도 위험 요소를 그대로 둘 순 없었다며 판단 자체는 유지하는 답변",
+              "tags": [
+                "counter",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "reason": {
+                  "exact": "소방 점검과 공용창고 정리 압박",
+                  "neutral": "그 배경"
+                },
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "박스를 한꺼번에 옮기며 개별 동의를 받지 않은 건 사실이지만 유진 적치가 계속돼 폭이 좁아졌다는 점을 다시 드는 말, 그리고 절차상 거칠었어도 원인은 유진 쪽 사용 방식에도 있었다는 책임 전가."
+          ],
+          "privateKnowledge": [
+            "절차 위반을 인정하면서도 원인을 유진 적치로 돌리려는 생각",
+            "집주인 통제권을 보여 줘야 한다는 자존심"
+          ],
+          "suppressions": [
+            "책임 전가 성향",
+            "통제권 집착"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:b:tell:condition_backfill",
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-3:responsibility:0",
+              "factText": "박스를 한꺼번에 옮기며 개별 동의를 받지 않은 건 사실이지만 유진 적치가 계속돼 폭이 좁아졌다는 점을 다시 드는 말",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                },
+                "cctv": {
+                  "exact": "지하 복도 CCTV와 관리실 카트 동선",
+                  "neutral": "영상 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-3:self_justification:1",
+              "factText": "절차상 거칠었어도 원인은 유진 쪽 사용 방식에도 있었다는 책임 전가",
+              "tags": [
+                "self_justification",
+                "motive",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "reason": {
+                  "exact": "소방 점검과 공용창고 정리 압박",
+                  "neutral": "그 배경"
+                },
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "점검과 민원 사이에서 제가 통제권을 놓치면 안 된다는 압박 때문에 먼저 잠금을 바꾸고 움직였다는 고백, 그리고 나중에 설명하면 된다고 판단한 것이 결국 더 큰 불신을 만들었다는 토로."
+          ],
+          "privateKnowledge": [
+            "안전 점검 지적과 다른 세입자 민원이 겹쳐 조급했다는 감정",
+            "상대를 설득하기보다 통제하는 방식으로 갔다는 자각"
+          ],
+          "suppressions": [
+            "조급함과 권위 의식",
+            "신뢰 손상 자각"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-3:emotion:0",
+              "factText": "점검과 민원 사이에서 제가 통제권을 놓치면 안 된다는 압박 때문에 먼저 잠금을 바꾸고 움직였다는 고백",
+              "tags": [
+                "emotion",
+                "fear",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "reason": {
+                  "exact": "소방 점검과 공용창고 정리 압박",
+                  "neutral": "그 배경"
+                },
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-3:fear:1",
+              "factText": "나중에 설명하면 된다고 판단한 것이 결국 더 큰 불신을 만들었다는 토로",
+              "tags": [
+                "fear",
+                "motive",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                },
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "실제로는 사전 합의 없이 비밀번호를 바꾸고 박스를 먼저 옮긴 뒤 문자로 알린 것이 맞다는 시인, 그리고 관리 필요가 있었더라도 그 절차를 건너뛴 책임은 제게 있다는 정리."
+          ],
+          "privateKnowledge": [
+            "무단 이동과 사후 통보가 핵심 잘못이라는 인정",
+            "배경 압박이 있어도 절차 책임은 남는다는 결론"
+          ],
+          "suppressions": [
+            "거의 남기지 않음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-3:admission:0",
+              "factText": "실제로는 사전 합의 없이 비밀번호를 바꾸고 박스를 먼저 옮긴 뒤 문자로 알린 것이 맞다는 시인",
+              "tags": [
+                "admission",
+                "responsibility",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "옥상 비밀번호 교체와 지하 박스 이동",
+                  "neutral": "그 조치"
+                },
+                "timing": {
+                  "exact": "잠금 교체 약 18분 뒤 문자, 그보다 먼저 박스 이동",
+                  "neutral": "사후 통보 순서"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-3:legacy_sentence:1",
+              "factText": "관리 필요가 있었더라도 그 절차를 건너뛴 책임은 제게 있다는 정리",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "reason": {
+                  "exact": "소방 점검과 공용창고 정리 압박",
+                  "neutral": "그 배경"
+                },
+                "notice": {
+                  "exact": "사전 합의 없는 안내 문자",
+                  "neutral": "뒤늦은 통보"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "옥상 통로와 지하 배수 주변은 당장 전면 정지시켜야 할 만큼 위험했다는 주장, 그리고 집주인으로서 그대로 두면 책임 문제가 생긴다는 경고성 답변."
+          ],
+          "privateKnowledge": [
+            "완전 봉쇄가 아니었다는 사실",
+            "민원과 점검 압박을 크게 느끼고 있었다는 사실"
+          ],
+          "suppressions": [
+            "완전 금지 수준 과장",
+            "통제 욕구"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-4:denial:0",
+              "factText": "옥상 통로와 지하 배수 주변은 당장 전면 정지시켜야 할 만큼 위험했다는 주장",
+              "tags": [
+                "denial",
+                "quote",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                },
+                "place": {
+                  "exact": "옥상 통로와 지하 배수구 주변",
+                  "neutral": "그 위치"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-4:quote:1",
+              "factText": "집주인으로서 그대로 두면 책임 문제가 생긴다는 경고성 답변",
+              "tags": [
+                "quote",
+                "uncertainty",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                },
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "사람이 지나간다고 해서 안전한 건 아니고 점검 지적만 받아도 충분히 문제라는 설명, 그리고 그래서 강하게 말할 수밖에 없었다는 정당화."
+          ],
+          "privateKnowledge": [
+            "강한 표현이 통제를 위한 전략이었다는 점",
+            "유진의 '문제 없음' 주장이 과소평가라는 점"
+          ],
+          "suppressions": [
+            "강한 표현을 전략처럼 쓴 점",
+            "자료 수준과 다른 주장"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:b:tell:document_gate",
+            "tenant06:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-4:uncertainty:0",
+              "factText": "사람이 지나간다고 해서 안전한 건 아니고 점검 지적만 받아도 충분히 문제라는 설명",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                },
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-4:rule:1",
+              "factText": "그래서 강하게 말할 수밖에 없었다는 정당화",
+              "tags": [
+                "rule",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "옥상 통로와 지하 배수구 주변",
+                  "neutral": "그 위치"
+                },
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "완전 봉쇄는 아니었지만 일부 구간이 기준에 걸릴 수 있는 상태였다는 수정, 그리고 문제를 방치할 수준은 아니었다는 핵심만 남기려는 답변."
+          ],
+          "privateKnowledge": [
+            "자료 수준과 자신의 표현 수준이 다르다는 점",
+            "위험 자체는 존재했다고 본다는 점"
+          ],
+          "suppressions": [
+            "표현-자료 간 차이",
+            "무단 조치 정당화 걱정"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-4:context:0",
+              "factText": "완전 봉쇄는 아니었지만 일부 구간이 기준에 걸릴 수 있는 상태였다는 수정",
+              "tags": [
+                "context",
+                "counter",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                },
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-4:counter:1",
+              "factText": "문제를 방치할 수준은 아니었다는 핵심만 남기려는 답변",
+              "tags": [
+                "counter",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "옥상 통로와 지하 배수구 주변",
+                  "neutral": "그 위치"
+                },
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "자료상으로는 일부 정리 필요 수준이었는데 저는 통제 근거를 만들려고 더 심각하게 표현한 면이 있다는 인정, 그리고 그래도 위험이 전혀 없었다는 유진 말 역시 사실과 다르다는 반박."
+          ],
+          "privateKnowledge": [
+            "과장을 인정하면 무단 조치 정당화가 약해질까 걱정하는 마음",
+            "통제 명분이 필요했다는 심리"
+          ],
+          "suppressions": [
+            "통제 명분 필요성",
+            "상대 과소평가를 방패로 쓰는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:b:tell:condition_backfill",
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-4:responsibility:0",
+              "factText": "자료상으로는 일부 정리 필요 수준이었는데 저는 통제 근거를 만들려고 더 심각하게 표현한 면이 있다는 인정",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                },
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-4:self_justification:1",
+              "factText": "그래도 위험이 전혀 없었다는 유진 말 역시 사실과 다르다는 반박",
+              "tags": [
+                "self_justification",
+                "motive",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                },
+                "exaggerationA": {
+                  "exact": "\"전혀 문제 없다\"는 표현",
+                  "neutral": "그 과소평가"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "점검 지적과 민원이 겹치자 저는 작은 위험도 크게 말해야 사람들이 바로 움직인다고 생각했다는 고백, 그리고 그래서 실제보다 센 위반 언어를 써 버렸다는 토로."
+          ],
+          "privateKnowledge": [
+            "작은 위험도 크게 말해야 움직인다고 믿은 습관",
+            "권위 상실에 대한 두려움"
+          ],
+          "suppressions": [
+            "권위 상실 두려움",
+            "과장 습관"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-4:emotion:0",
+              "factText": "점검 지적과 민원이 겹치자 저는 작은 위험도 크게 말해야 사람들이 바로 움직인다고 생각했다는 고백",
+              "tags": [
+                "emotion",
+                "fear",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                },
+                "place": {
+                  "exact": "옥상 통로와 지하 배수구 주변",
+                  "neutral": "그 위치"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-4:fear:1",
+              "factText": "그래서 실제보다 센 위반 언어를 써 버렸다는 토로",
+              "tags": [
+                "fear",
+                "motive",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                },
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "실제 위험은 일부 정리가 필요한 정도였고 제가 즉시 전면 금지 수준으로 몰아간 건 과장이었다는 시인, 그리고 다만 유진의 사용이 전혀 문제 없었다는 주장도 사실은 아니라는 정리."
+          ],
+          "privateKnowledge": [
+            "위험 존재와 위험 과장은 분리해야 한다는 결론",
+            "공용공간 기준을 다시 정해야 한다는 인정"
+          ],
+          "suppressions": [
+            "거의 남기지 않음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-4:admission:0",
+              "factText": "실제 위험은 일부 정리가 필요한 정도였고 제가 즉시 전면 금지 수준으로 몰아간 건 과장이었다는 시인",
+              "tags": [
+                "admission",
+                "responsibility",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "riskLevel": {
+                  "exact": "일부 정리가 필요한 수준",
+                  "neutral": "그 정도 위험"
+                },
+                "inspection": {
+                  "exact": "소방점검 사진과 주민센터 상담 메모",
+                  "neutral": "확인 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-4:legacy_sentence:1",
+              "factText": "다만 유진의 사용이 전혀 문제 없었다는 주장도 사실은 아니라는 정리",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "exaggerationB": {
+                  "exact": "\"즉시 전면 금지 수준\"이라는 표현",
+                  "neutral": "그 과장"
+                },
+                "exaggerationA": {
+                  "exact": "\"전혀 문제 없다\"는 표현",
+                  "neutral": "그 과소평가"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "크게 망가진 물건은 없고 이동과 손상을 직접 연결하기 어렵다는 주장, 그리고 원래 포장 상태나 습기 가능성을 먼저 봐야 한다는 말."
+          ],
+          "privateKnowledge": [
+            "이동이 문자보다 먼저였고 손상 논쟁이 그 뒤 시작됐다는 사실",
+            "호스가 분리돼 바닥에 잠시 남은 장면이 있다는 사실"
+          ],
+          "suppressions": [
+            "이동 선행 사실",
+            "호스 분리 장면"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-5:denial:0",
+              "factText": "크게 망가진 물건은 없고 이동과 손상을 직접 연결하기 어렵다는 주장",
+              "tags": [
+                "denial",
+                "quote",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                },
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-5:quote:1",
+              "factText": "원래 포장 상태나 습기 가능성을 먼저 봐야 한다는 말",
+              "tags": [
+                "quote",
+                "uncertainty",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "예고 없는 일괄 박스 이동",
+                  "neutral": "그 이동"
+                },
+                "causation": {
+                  "exact": "이동이 직접 계기, 포장 미흡이 일부 가중",
+                  "neutral": "겹친 원인"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "복도로 잠깐 옮겼다고 해서 곧바로 손상 책임이 생기는 건 아니라는 해명, 그리고 유진 쪽 보관 방식 자체가 불안정했다는 점을 내세우는 답변."
+          ],
+          "privateKnowledge": [
+            "포장 미흡 가능성을 크게 보고 싶어 한다는 점",
+            "정산 문제에서 본인 책임을 줄이려는 의식"
+          ],
+          "suppressions": [
+            "책임 축소 의식",
+            "포장 미흡만 강조하는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant06:b:tell:document_gate",
+            "tenant06:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-5:uncertainty:0",
+              "factText": "복도로 잠깐 옮겼다고 해서 곧바로 손상 책임이 생기는 건 아니라는 해명",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "예고 없는 일괄 박스 이동",
+                  "neutral": "그 이동"
+                },
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-5:rule:1",
+              "factText": "유진 쪽 보관 방식 자체가 불안정했다는 점을 내세우는 답변",
+              "tags": [
+                "rule",
+                "context",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                },
+                "inventory": {
+                  "exact": "이동 전후 사진과 CCTV 시간대",
+                  "neutral": "정산 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "가방이 젖었다는 말은 들었지만 실제 손상 범위와 목록이 뒤늦게 정리돼 바로 믿기 어려웠다는 설명, 그리고 포장 미흡이 더 컸을 수 있다는 가능성을 붙드는 말."
+          ],
+          "privateKnowledge": [
+            "손상 범위가 일부 실제였다는 점을 부정하진 못한다는 사실",
+            "목록이 늦게 제출됐다는 절차 논리로 방어하고 있다는 점"
+          ],
+          "suppressions": [
+            "실제 손상 일부 인정",
+            "절차 논리로 방어하는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-5:context:0",
+              "factText": "가방이 젖었다는 말은 들었지만 실제 손상 범위와 목록이 뒤늦게 정리돼 바로 믿기 어려웠다는 설명",
+              "tags": [
+                "context",
+                "counter",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                },
+                "inventory": {
+                  "exact": "이동 전후 사진과 CCTV 시간대",
+                  "neutral": "정산 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-5:counter:1",
+              "factText": "포장 미흡이 더 컸을 수 있다는 가능성을 붙드는 말",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                },
+                "causation": {
+                  "exact": "이동이 직접 계기, 포장 미흡이 일부 가중",
+                  "neutral": "겹친 원인"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "다만 제가 일괄 이동을 하면서 물건 보호를 세밀하게 보지 못한 건 사실이고 그 점은 일부 책임이라는 인정, 그리고 그래도 손상 전체를 제 이동만으로 계산하는 건 과하다는 반박."
+          ],
+          "privateKnowledge": [
+            "일괄 이동 중 보호 조치를 세밀하게 하지 못했다는 자각",
+            "이동이 직접 계기라는 점을 완전히 부인하긴 어렵다는 생각"
+          ],
+          "suppressions": [
+            "보호 미흡 자각",
+            "직접 계기 부인 어려움"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant06:b:tell:condition_backfill",
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-5:responsibility:0",
+              "factText": "다만 제가 일괄 이동을 하면서 물건 보호를 세밀하게 보지 못한 건 사실이고 그 점은 일부 책임이라는 인정",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "예고 없는 일괄 박스 이동",
+                  "neutral": "그 이동"
+                },
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-5:self_justification:1",
+              "factText": "그래도 손상 전체를 제 이동만으로 계산하는 건 과하다는 반박",
+              "tags": [
+                "self_justification",
+                "motive",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                },
+                "causation": {
+                  "exact": "이동이 직접 계기, 포장 미흡이 일부 가중",
+                  "neutral": "겹친 원인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "정산 얘기까지 나오자 저는 절차 잘못보다 손해 규모부터 줄여 말하려 들었다는 고백, 그리고 집주인이 물건을 망가뜨린 사람으로 보일까 봐 목록과 상태를 계속 의심했다는 토로."
+          ],
+          "privateKnowledge": [
+            "물건 손상 가해자로 보일까 두려워 금액과 목록부터 깎아 말한 감정",
+            "사과보다 계산을 먼저 꺼낸 습관"
+          ],
+          "suppressions": [
+            "가해자 이미지 두려움",
+            "사과보다 계산을 앞세운 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-5:emotion:0",
+              "factText": "정산 얘기까지 나오자 저는 절차 잘못보다 손해 규모부터 줄여 말하려 들었다는 고백",
+              "tags": [
+                "emotion",
+                "fear",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                },
+                "inventory": {
+                  "exact": "이동 전후 사진과 CCTV 시간대",
+                  "neutral": "정산 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-5:fear:1",
+              "factText": "집주인이 물건을 망가뜨린 사람으로 보일까 봐 목록과 상태를 계속 의심했다는 토로",
+              "tags": [
+                "fear",
+                "motive",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "예고 없는 일괄 박스 이동",
+                  "neutral": "그 이동"
+                },
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "실제로는 제 예고 없는 이동이 손상의 직접 계기가 됐고 가방 두 개와 호스 하나 문제도 그 흐름에서 생겼다는 시인, 그리고 다만 일부 젖음은 유진의 포장 미흡이 겹친 만큼 정산은 공동 원인 기준으로 나눠야 한다는 정리."
+          ],
+          "privateKnowledge": [
+            "이동이 직접 계기이고 포장 미흡이 일부 가중이라는 결론",
+            "부분 배상과 감액을 같이 봐야 한다는 인정"
+          ],
+          "suppressions": [
+            "거의 남기지 않음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant06:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant06:b:d-5:admission:0",
+              "factText": "실제로는 제 예고 없는 이동이 손상의 직접 계기가 됐고 가방 두 개와 호스 하나 문제도 그 흐름에서 생겼다는 시인",
+              "tags": [
+                "admission",
+                "responsibility",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "예고 없는 일괄 박스 이동",
+                  "neutral": "그 이동"
+                },
+                "damage": {
+                  "exact": "젖은 캔버스 가방 두 개와 사라진 스프레이 호스 하나",
+                  "neutral": "문제 된 보관물"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "tenant06:b:d-5:legacy_sentence:1",
+              "factText": "다만 일부 젖음은 유진의 포장 미흡이 겹친 만큼 정산은 공동 원인 기준으로 나눠야 한다는 정리",
+              "tags": [
+                "legacy_sentence",
+                "rule",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "causation": {
+                  "exact": "이동이 직접 계기, 포장 미흡이 일부 가중",
+                  "neutral": "겹친 원인"
+                },
+                "cover": {
+                  "exact": "완전히 닫히지 않은 비닐 덮개",
+                  "neutral": "포장 상태"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+

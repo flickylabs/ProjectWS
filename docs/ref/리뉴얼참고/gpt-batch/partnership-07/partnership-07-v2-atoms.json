@@ -1,0 +1,2797 @@
+{
+  "caseId": "partnership-07",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그건 유나가 흥분해서 과장한 말이지, 내가 경쟁사에 직접 자료를 넘긴 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "운영사에 전체 덱을 첨부한 사실이 있어서, 자신의 절차 위반이 의심의 토양이 됐다는 점은 알고 있다."
+          ],
+          "suppressions": [
+            "외부 첨부 자체를 먼저 꺼내면 누설자로 굳어질까 봐 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-1:denial:0",
+              "factText": "자신이 경쟁사에 직접 자료를 넘긴 적은 없다는 주장",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "경쟁사 바이어",
+                  "neutral": "저쪽"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "이름이 돌았다는 건 들었지만, 확인도 없이 누설자로 굳힌 건 과했습니다."
+          ],
+          "privateKnowledge": [
+            "전 직장 인맥이 있는 자신이 가장 먼저 의심받을 수 있다는 점을 계산하고 있다."
+          ],
+          "suppressions": [
+            "왜 유나가 그렇게까지 확신했는지 묻기보다, 자신의 외부 첨부 사실은 여전히 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-1:harm:0",
+              "factText": "확인 전 누설자로 굳혀 말한 방식이 과했다는 주장",
+              "tags": [
+                "harm",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "그 사람",
+                  "fullName": "서유나",
+                  "judgeRef": "서 대표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "유나가 바이어와 협회 쪽에 제 이름을 먼저 올린 건 맞고, 저는 소명할 기회도 거의 없었습니다."
+          ],
+          "privateKnowledge": [
+            "소문이 난 시점이 경쟁사 언급 직후였다는 점을 알고 있어, 정정보다 방어부터 하게 됐다고 느낀다."
+          ],
+          "suppressions": [
+            "자신이 그 직전 운영사와 자료를 주고받았다는 흐름은 일부러 연결하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-1:timeline:0",
+              "factText": "바이어와 협회 쪽에 자신의 이름이 먼저 언급됐다는 진술",
+              "tags": [
+                "timeline",
+                "harm",
+                "institution"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "커피산업협회 사무국",
+                  "neutral": "협회 쪽"
+                },
+                "time": {
+                  "exact": "경쟁사가 같은 정보들을 언급한 뒤 2시간 이내",
+                  "neutral": "그 직후",
+                  "period": "행사 직후"
+                },
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "그 사람",
+                  "fullName": "서유나",
+                  "judgeRef": "서 대표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "제가 운영사에 자료를 보낸 건 잘못이지만, 그걸 근거로 업계에 범인처럼 말한 건 별개 문제입니다."
+          ],
+          "privateKnowledge": [
+            "절차 위반과 명예 훼손이 한 덩어리로 읽히는 상황을 두려워한다."
+          ],
+          "suppressions": [
+            "운영사에 보낸 자료가 전체 덱이었다는 수준까지는 아직 스스로 풀지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-1:rule:0",
+              "factText": "자신의 외부 전달 과실과 유나의 누설자 프레임은 별개라는 주장",
+              "tags": [
+                "rule",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "그 사람",
+                  "fullName": "서유나",
+                  "judgeRef": "서 대표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "전 직장 인맥까지 끌어와 누설자처럼 말했을 때, 업계에서 제 이름이 끝났다고 느꼈습니다."
+          ],
+          "privateKnowledge": [
+            "실제로 거래처가 자신을 다르게 보기 시작했을지 모른다는 공포를 크게 느낀다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-1:emotion:0",
+              "factText": "전 직장 인맥이 누설자 낙인과 결합돼 명예 훼손으로 체감됐다는 고백",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "network": {
+                  "exact": "전 직장 인맥",
+                  "neutral": "예전 인맥"
+                },
+                "reputation": {
+                  "exact": "업계 내 누설자 이미지",
+                  "neutral": "그 낙인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "전체 덱을 외부에 보낸 과실은 인정합니다. 그래도 확인 전부터 저를 누설자로 찍어 말한 건 바로잡아야 합니다."
+          ],
+          "privateKnowledge": [
+            "정정과 사과를 받지 못하면 업계 관계가 오래 꼬일 수 있다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-1:admission:0",
+              "factText": "자신의 외부 전달 과실은 인정하지만 누설자 낙인은 정정돼야 한다는 진술",
+              "tags": [
+                "admission",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                },
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "그 사람",
+                  "fullName": "서유나",
+                  "judgeRef": "서 대표"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "운영사에 보낸 건 테스트용 자료 흐름이지, 민감 정보를 외부에 뿌린 행동으로 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "실제로는 비식별 축약본이 아니라 전체 덱을 첨부했다는 사실을 기억한다."
+          ],
+          "suppressions": [
+            "유나에게 다시 확인하지 않았다는 절차 위반은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-2:rule:0",
+              "factText": "운영사 전달은 테스트용 절차였고 외부 유출과는 다르다는 주장",
+              "tags": [
+                "rule",
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "파일이 갔다는 표현만 떼면 커 보이지만, 수신처가 운영사였다는 점부터 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "메일 제목과 첨부파일명까지 외울 정도로 그 장면을 떠올리고 있다."
+          ],
+          "suppressions": [
+            "파일명이 final_all_v3였다는 구체성은 아직 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-2:context:0",
+              "factText": "수신처가 운영사였다는 점을 먼저 보아야 한다는 방어",
+              "tags": [
+                "context",
+                "identity",
+                "denial"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                },
+                "time": {
+                  "exact": "행사 전날 밤",
+                  "neutral": "그 전날",
+                  "dateExact": "행사 전날 밤",
+                  "period": "행사 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "전체 덱 첨부가 간 건 맞습니다. 다만 프로젝터 체크라 외부 영업 배포와는 다르다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "그 판단이 안이했다는 걸 알지만, '의도 유출'과 분리해 말하려 한다."
+          ],
+          "suppressions": [
+            "유나 승인 없이 보냈다는 부분은 여전히 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-2:admission:0",
+              "factText": "프로젝터 체크 요청에 전체 덱 첨부가 갔다는 사실의 인정",
+              "tags": [
+                "admission",
+                "act",
+                "rule"
+              ],
+              "slots": {
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                },
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                },
+                "time": {
+                  "exact": "행사 전날 밤",
+                  "neutral": "그 전날",
+                  "dateExact": "행사 전날 밤",
+                  "period": "행사 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "링크 대신 첨부를 택했고, 유나에게 다시 확인하지도 않았습니다. 절차를 건너뛴 건 제 판단 미스입니다."
+          ],
+          "privateKnowledge": [
+            "자신이 가장 싫어하는 '기본 통제 못 지킨 생산총괄' 이미지가 현실이 됐다고 느낀다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-2:responsibility:0",
+              "factText": "링크 대신 첨부를 택하고 재확인을 생략한 책임의 인정",
+              "tags": [
+                "responsibility",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "file": {
+                  "exact": "final_all_v3",
+                  "neutral": "그 첨부파일"
+                },
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "그 사람",
+                  "fullName": "서유나",
+                  "judgeRef": "서 대표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "의도 유출이 아니라는 말로 버텼지만, 기본 통제부터 제가 무너뜨린 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "의도를 분리해도 결과 책임이 줄지 않는다는 점을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-2:self_justification:0",
+              "factText": "의도와 절차를 분리해 버텼지만 결국 통제 실패를 인정하는 진술",
+              "tags": [
+                "self_justification",
+                "admission",
+                "rule"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "비식별 처리 없는 전체 덱을 외부 운영사에 첨부로 보낸 건 명백한 보안 위반이었습니다."
+          ],
+          "privateKnowledge": [
+            "이 사과가 없으면 d-1 정정 요구도 설득력을 잃는다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-2:admission:1",
+              "factText": "비식별 처리 없는 전체 덱 외부 첨부가 보안 위반이었다는 완전한 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                },
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "apology"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "내부에서 누가 경쟁사에 일부러 팔았다고 단정할 근거는 없었습니다."
+          ],
+          "privateKnowledge": [
+            "문제의 '자료 넘겼어' 메시지가 운영사 프로젝터 테스트 맥락이었다는 사실을 안다."
+          ],
+          "suppressions": [
+            "그 말을 꺼내면 자기방어처럼 들릴까 봐 대화 전체 맥락을 먼저 내지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-3:denial:0",
+              "factText": "동업자 중 누군가가 고의로 경쟁사에 팔았다는 단정의 부정",
+              "tags": [
+                "denial",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "경쟁사 바이어",
+                  "neutral": "저쪽"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "캡처 한 장으로는 누가 누구에게 준 건지, 저쪽이 누구인지도 안 나옵니다."
+          ],
+          "privateKnowledge": [
+            "크롭 캡처가 자신에게 불리한 이미지를 만든다는 사실을 강하게 의식한다."
+          ],
+          "suppressions": [
+            "원본 단톡에 이어진 '프로젝터 테스트용' 문장은 아직 스스로 먼저 꺼내지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-3:uncertainty:0",
+              "factText": "크롭 캡처만으로는 전달 대상과 의도를 확정할 수 없다는 지적",
+              "tags": [
+                "uncertainty",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 메신저 캡처",
+                  "neutral": "그 캡처"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "그 캡처만 놓고 보면 오해가 생길 수는 있습니다. 그래도 내부 공모라고 말할 선은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "유나가 왜 흔들렸는지 이해하면서도, 자신을 공범 프레임에 묶는 건 거부한다."
+          ],
+          "suppressions": [
+            "운영사 오발송 가능성을 머리로는 의심했지만 아직 근거 없이 단정하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-3:admission:0",
+              "factText": "캡처가 오해를 만들 수는 있어도 내부 공모를 증명하지는 않는다는 진술",
+              "tags": [
+                "admission",
+                "evidence",
+                "counter"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 메신저 캡처",
+                  "neutral": "그 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "우리 둘 다 먼저 배신 서사로 뛰어들면서, 실제 경로를 확인할 시간을 잃었습니다."
+          ],
+          "privateKnowledge": [
+            "자신이 더 빨리 맥락을 풀었다면 관계가 덜 망가졌을 거라고 생각한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-3:relationship:0",
+              "factText": "서로 배신 서사에 갇혀 실제 경로 확인이 늦어졌다는 진술",
+              "tags": [
+                "relationship",
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "그 사람",
+                  "fullName": "서유나",
+                  "judgeRef": "서 대표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "사실 저도 운영사 백업 파일 쪽을 더 봐야 한다고 느꼈지만, 제 첨부 과실 때문에 그 말을 세게 못 했습니다."
+          ],
+          "privateKnowledge": [
+            "d-2 책임 때문에 d-5 가능성을 말해도 변명으로 들릴까 봐 주저했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-3:fear:0",
+              "factText": "운영사 백업 파일 가능성을 말하고 싶었지만 자신의 과실 때문에 주저했다는 고백",
+              "tags": [
+                "fear",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "file": {
+                  "exact": "스피커용 백업 폴더",
+                  "neutral": "백업 파일"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "결국 우리 둘 중 누가 경쟁사에 판 게 아니라, 운영사 후속메일 오발송이 실제 경로였습니다."
+          ],
+          "privateKnowledge": [
+            "이 사실이 나와도 자신의 d-2 책임이 사라지지 않는다는 점을 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-3:admission:1",
+              "factText": "동업자 고의 유출이 아니라 운영사 후속메일 오발송이 실제 경로였다는 인정",
+              "tags": [
+                "admission",
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                },
+                "event": {
+                  "exact": "참석자 follow-up 메일",
+                  "neutral": "후속메일"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "보안 원칙은 기억하지만, 이번 건 그 원칙을 완전히 깬 정도는 아니라고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "전체 덱 첨부 자체가 원칙 위반이라는 점을 안다."
+          ],
+          "suppressions": [
+            "자신의 첨부와 유나의 QR 교체가 결국 같은 줄기의 위반이라는 연결은 피한다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-4:uncertainty:0",
+              "factText": "이번 조치가 보안 원칙의 완전한 위반은 아니라는 축소 주장",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비식별 축약본과 추적 링크만 사용",
+                  "neutral": "기존 보안 원칙"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "프로젝터 체크용이라 예외로 처리한 겁니다. 행사 운영과 영업 배포는 같은 층위가 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "예외라고 부르는 순간 이미 합의된 프로토콜을 벗어났다는 점을 안다."
+          ],
+          "suppressions": [
+            "예외 승인 절차를 밟지 않았다는 부분은 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-4:self_justification:0",
+              "factText": "프로젝터 체크용 예외였다고 원칙 위반을 절차상으로 분리하는 주장",
+              "tags": [
+                "self_justification",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "제 첨부도, 유나의 QR 링크 교체도 둘 다 원칙 밖으로 나간 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "공동대표 둘 다 같은 원칙을 다른 방식으로 무너뜨렸다는 걸 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-4:admission:0",
+              "factText": "자신의 첨부와 유나의 QR 링크 교체가 모두 원칙 밖이었다는 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비식별 축약본과 추적 링크만 사용",
+                  "neutral": "기존 보안 원칙"
+                },
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "그 사람",
+                  "fullName": "서유나",
+                  "judgeRef": "서 대표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "제가 첨부를 열었고, 유나도 최신 전체 덱 링크로 바꿨습니다. 둘 다 선을 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "상대만 탓하면 d-2와 d-1 모두 풀리지 않는다는 점을 이해한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-4:responsibility:0",
+              "factText": "태경의 첨부와 유나의 링크 교체 모두 선을 넘은 행위였다는 정리",
+              "tags": [
+                "responsibility",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                },
+                "folder": {
+                  "exact": "QR 후속자료 폴더",
+                  "neutral": "QR 폴더"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 일정에 쫓기면서 '이번 한 번쯤'이라고 합리화했습니다."
+          ],
+          "privateKnowledge": [
+            "효율을 이유로 원칙을 넘는 습관이 위험하다는 자책이 있다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-4:shame:0",
+              "factText": "일정 압박을 이유로 예외를 합리화한 자신의 태도에 대한 고백",
+              "tags": [
+                "shame",
+                "motive",
+                "self_justification"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "행사 자료 통제 원칙은 저도 어겼고, 유나도 어겼습니다. 제 몫의 책임부터 인정합니다."
+          ],
+          "privateKnowledge": [
+            "공동 책임을 인정해야만 이후 재설계가 가능하다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-4:admission:1",
+              "factText": "행사 자료 통제 원칙 위반이 쌍방이었고 자신의 책임을 인정한다는 진술",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비식별 축약본과 추적 링크만 사용",
+                  "neutral": "기존 보안 원칙"
+                },
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "그 사람",
+                  "fullName": "서유나",
+                  "judgeRef": "서 대표"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "apology"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "아직 실제 유출 경로를 단정할 단계는 아닙니다. 운영 흐름부터 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "운영사가 이미 백업 파일을 받은 상태였다는 사실을 알고 있다."
+          ],
+          "suppressions": [
+            "자신이 그 백업 파일의 출발점 중 하나였다는 점은 먼저 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-5:uncertainty:0",
+              "factText": "실제 유출 경로는 아직 단정할 수 없고 운영 흐름을 봐야 한다는 주장",
+              "tags": [
+                "uncertainty",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "운영사와 후속메일 흐름을 먼저 봐야지, 사람부터 범인 만들 일은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "유나가 자신을 먼저 지목한 흐름 때문에 더 차갑게 말하게 됐다."
+          ],
+          "suppressions": [
+            "자신의 첨부 때문에 그 주장 자체가 약해진다는 점을 안다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-5:context:0",
+              "factText": "후속메일 운영 흐름을 먼저 확인해야 했다는 주장",
+              "tags": [
+                "context",
+                "timeline",
+                "counter"
+              ],
+              "slots": {
+                "event": {
+                  "exact": "참석자 follow-up 메일",
+                  "neutral": "후속메일"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "박수민 AE가 백업 파일을 받았던 건 확인됩니다. 문제는 그 파일이 이후 어디서 잘못 붙었는지입니다."
+          ],
+          "privateKnowledge": [
+            "자신이 보낸 파일이 이후 오발송의 재료가 됐을 수 있다는 불편함을 느낀다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-5:evidence:0",
+              "factText": "운영사 AE가 백업 파일을 받았고 이후 첨부 경로를 봐야 한다는 진술",
+              "tags": [
+                "evidence",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                },
+                "file": {
+                  "exact": "스피커용 백업 폴더",
+                  "neutral": "백업 파일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "후속메일 일괄 발송 과정이 가장 의심스럽고, 그 지점은 우리 내부 direct handoff와는 다릅니다."
+          ],
+          "privateKnowledge": [
+            "유출 경로를 외부로 돌리는 말이 자기 면책처럼 보일 수 있어 조심한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-5:threshold:0",
+              "factText": "의심 지점은 내부 direct handoff가 아니라 후속메일 일괄 발송 과정이라는 주장",
+              "tags": [
+                "threshold",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "event": {
+                  "exact": "참석자 follow-up 메일",
+                  "neutral": "후속메일"
+                },
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "그때 오발송 가능성을 더 세게 말했어야 했는데, 제 첨부 과실 때문에 변명처럼 들릴까 봐 못 했습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 입에서 나온 외부 첨부가 모든 추정의 신뢰를 떨어뜨렸다고 느낀다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-5:fear:0",
+              "factText": "오발송 가능성을 말하고 싶었지만 자신의 첨부 과실 때문에 주저했다는 고백",
+              "tags": [
+                "fear",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "event": {
+                  "exact": "참석자 follow-up 메일",
+                  "neutral": "후속메일"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "실제 경로는 운영사 AE의 후속메일 오발송이었습니다. 경쟁사 바이어도 그 첨부를 같이 받은 겁니다."
+          ],
+          "privateKnowledge": [
+            "이 결론이 나와도 자기 보안 위반 책임을 별도로 져야 한다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:a:tell:mail_chain_recital",
+            "partnership-07:a:tell:risk_separation",
+            "partnership-07:a:tell:affect_trim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:a:d-5:admission:0",
+              "factText": "실제 유출 경로가 운영사 AE의 후속메일 오발송이었다는 최종 인정",
+              "tags": [
+                "admission",
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                },
+                "event": {
+                  "exact": "참석자 follow-up 메일",
+                  "neutral": "후속메일"
+                },
+                "institution": {
+                  "exact": "경쟁사 바이어",
+                  "neutral": "저쪽"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "저는 누설자라고 단정한 게 아니라, 내부에서 샌 것 같다고 위험 신호를 말한 겁니다."
+          ],
+          "privateKnowledge": [
+            "메시지 어조가 이미 태경을 거의 범인처럼 가리켰다는 점을 스스로도 안다."
+          ],
+          "suppressions": [
+            "전 직장 인맥을 근거로 사람을 특정해 말한 부분은 의도적으로 누락한다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-1:uncertainty:0",
+              "factText": "태경을 누설자로 단정하지 않고 의심만 전달했다는 주장",
+              "tags": [
+                "uncertainty",
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "경쟁사가 같은 일정과 할인율을 바로 말했는데, 의심 자체를 숨길 상황은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "거래처 앞에서 자신이 허술한 대표로 보일까 봐 조급했다."
+          ],
+          "suppressions": [
+            "의심을 전달한 범위가 바이어와 협회까지 넓었다는 점은 흐린다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-1:fear:0",
+              "factText": "경쟁사 언급 직후 조급함 때문에 의심을 퍼뜨렸다는 맥락",
+              "tags": [
+                "fear",
+                "motive",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "경쟁사가 같은 정보들을 언급한 뒤 2시간 이내",
+                  "neutral": "그 직후",
+                  "period": "행사 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "맞아요, 제가 태경 쪽이 샌 것 같다고 말하긴 했습니다. 그때는 거의 확신 상태였어요."
+          ],
+          "privateKnowledge": [
+            "확신의 근거가 캡처와 인맥 정황뿐이라 사실 검증이 비어 있었다는 점을 안다."
+          ],
+          "suppressions": [
+            "확인 절차 없이 이름부터 돌렸다는 책임 표현은 아직 피한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-1:admission:0",
+              "factText": "태경 쪽이 샌 것 같다고 직접 말한 사실의 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                },
+                "institution": {
+                  "exact": "바이어 두 곳",
+                  "neutral": "바이어들"
+                },
+                "time": {
+                  "exact": "경쟁사가 같은 정보들을 언급한 뒤 2시간 이내",
+                  "neutral": "그 직후",
+                  "period": "행사 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "확인 전에 이름을 먼저 얹은 건 성급했습니다. 경쟁사와 예전 인맥이 눈에 들어와 그쪽으로 몰았습니다."
+          ],
+          "privateKnowledge": [
+            "태경이 실제로는 경쟁사에 직접 넘기지 않았을 가능성을 이미 받아들이기 시작한다."
+          ],
+          "suppressions": [
+            "바이어 앞 체면 때문에 더 강한 어조를 썼다는 감정 동기는 아직 절반만 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-1:relationship:0",
+              "factText": "전 직장 인맥을 근거로 태경에게 의심을 집중시킨 사실의 부분 인정",
+              "tags": [
+                "relationship",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "network": {
+                  "exact": "전 직장 인맥",
+                  "neutral": "예전 인맥"
+                },
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 거래처 앞에서 제 체면이 무너질까 봐, 범인을 빨리 세우고 싶었습니다."
+          ],
+          "privateKnowledge": [
+            "배신당했다는 감정보다 영업총괄로 실패했다는 공포가 더 컸다고 자각한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-1:motive:0",
+              "factText": "영업총괄로서 체면 손상을 막기 위해 범인을 빨리 정하고 싶었다는 고백",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "제가 업계에 태경을 누설자처럼 말한 건 잘못이었습니다. 제가 정정하고 사과하겠습니다."
+          ],
+          "privateKnowledge": [
+            "정정이 늦어질수록 태경과 거래처 모두에게 회복 비용이 커진다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-1:admission:1",
+              "factText": "태경을 업계에 누설자처럼 말한 잘못을 인정하고 정정을 약속하는 진술",
+              "tags": [
+                "admission",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                },
+                "reputation": {
+                  "exact": "업계 내 누설자 이미지",
+                  "neutral": "그 낙인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "apology"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "결국 태경이 넘긴 건 맞잖아요. 말만 점검용이지 결과는 전체 덱 외부 전달이었어요."
+          ],
+          "privateKnowledge": [
+            "직접 경쟁사에 줬다는 증거는 아직 없지만, 전체 덱이 나갔다는 사실에 집중한다."
+          ],
+          "suppressions": [
+            "자신도 later QR 폴더를 바꿨다는 점은 이 쟁점에서 일부러 떼어낸다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-2:act:0",
+              "factText": "태경이 전체 덱을 외부로 넘겼다는 단정적 비판",
+              "tags": [
+                "act",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                },
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "수신처가 운영사였다는 걸 알아도, 왜 full deck이 나갔는지는 설명이 안 됩니다."
+          ],
+          "privateKnowledge": [
+            "'의도 유출'과 '절차 위반'을 분리하자는 태경의 논리를 못마땅해한다."
+          ],
+          "suppressions": [
+            "자신도 당일 최신 자료를 밀어넣었다는 사실은 아직 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-2:threshold:0",
+              "factText": "운영사 수신처라는 설명만으로 전체 덱 외부 전달은 정당화되지 않는다는 주장",
+              "tags": [
+                "threshold",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                }
+              },
+              "stanceHints": [
+                "counter",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "메일 원본을 보면 final_all_v3가 그대로 붙었어요. 그건 부주의가 아니라 통제 실패예요."
+          ],
+          "privateKnowledge": [
+            "증거가 hard인 만큼 이 쟁점은 태경이 피해 갈 수 없다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-2:evidence:0",
+              "factText": "메일 원본상 final_all_v3 전체 덱이 첨부됐다는 지적",
+              "tags": [
+                "evidence",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "file": {
+                  "exact": "final_all_v3",
+                  "neutral": "그 첨부파일"
+                },
+                "time": {
+                  "exact": "행사 전날 밤",
+                  "neutral": "그 전날",
+                  "dateExact": "행사 전날 밤",
+                  "period": "행사 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제 승인도 없이 전체 파일을 보낸 건 사실이고, 그 지점은 태경 책임으로 분리돼야 해요."
+          ],
+          "privateKnowledge": [
+            "자신의 d-4 위반과 별개로 d-2 책임을 먼저 확정하고 싶어한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-2:responsibility:0",
+              "factText": "유나 승인 없이 전체 파일을 보낸 책임이 태경에게 있다는 주장",
+              "tags": [
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                },
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "저는 그때 우리가 합의한 보안선이 한 번에 무너지는 느낌이었어요."
+          ],
+          "privateKnowledge": [
+            "태경만이 아니라 자신도 그 선을 흔들었다는 사실이 마음에 걸린다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-2:emotion:0",
+              "factText": "합의된 보안선이 무너졌다고 느낀 감정 진술",
+              "tags": [
+                "emotion",
+                "rule",
+                "harm"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비식별 축약본과 추적 링크만 사용",
+                  "neutral": "기존 보안 원칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "태경이 경쟁사에 직접 판 건 아니더라도, 전체 덱 외부 첨부는 분명히 사과해야 할 잘못이에요."
+          ],
+          "privateKnowledge": [
+            "의도 누설 프레임과 절차 위반 책임을 분리해야 한다는 점을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-2:admission:0",
+              "factText": "직접 판매는 아니어도 전체 덱 외부 첨부는 태경의 사과 대상이라는 정리",
+              "tags": [
+                "admission",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                },
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "정황상 내부 아니면 설명이 안 된다고 봤어요. 누군가 일부러 넘겼다고 느꼈어요."
+          ],
+          "privateKnowledge": [
+            "하드 증거 없이 캡처와 인맥 정황에 의존하고 있었다."
+          ],
+          "suppressions": [
+            "운영사나 follow-up 메일 쪽 검토를 충분히 안 했다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-3:motive:0",
+              "factText": "정황상 내부 고의 유출이라고 느꼈다는 초기 판단",
+              "tags": [
+                "motive",
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "경쟁사 바이어",
+                  "neutral": "저쪽"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "캡처랑 전 직장 인맥까지 겹치면 누군가 일부러 넘겼다고 볼 수밖에 없었어요."
+          ],
+          "privateKnowledge": [
+            "그 '누군가'가 사실상 태경을 가리키고 있었다."
+          ],
+          "suppressions": [
+            "캡처가 크롭본이고 문맥이 없다는 문제는 축소한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-3:quote:0",
+              "factText": "크롭 캡처와 전 직장 인맥을 연결해 의도 유출로 해석한 판단",
+              "tags": [
+                "quote",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 메신저 캡처",
+                  "neutral": "그 캡처"
+                },
+                "network": {
+                  "exact": "전 직장 인맥",
+                  "neutral": "예전 인맥"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "그 캡처 한 장만으로 범인을 못 박은 건 인정해요. 그래도 그때는 sabotage처럼 보였어요."
+          ],
+          "privateKnowledge": [
+            "자신이 문맥보다 결론을 먼저 선택했다는 점을 인지하기 시작한다."
+          ],
+          "suppressions": [
+            "직접 확인 전에 업계에 말한 흐름까지는 아직 전부 연결하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-3:admission:0",
+              "factText": "캡처 한 장만으로 범인을 확정한 것은 과했지만 당시에는 고의로 보였다는 진술",
+              "tags": [
+                "admission",
+                "evidence",
+                "emotion"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "크롭된 메신저 캡처",
+                  "neutral": "그 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보면 제가 문맥을 잘라서 의도만 키웠어요. 배신처럼 보이는 조각에 너무 매달렸어요."
+          ],
+          "privateKnowledge": [
+            "자신이 실제보다 더 큰 서사를 만들어냈다는 수치심이 있다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-3:shame:0",
+              "factText": "문맥을 자르고 의도만 키운 자신의 해석 습관을 인정하는 진술",
+              "tags": [
+                "shame",
+                "admission",
+                "self_justification"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "거래처 앞에서 당한 느낌이 너무 커서, 누군가 일부러 했다고 믿고 싶었어요."
+          ],
+          "privateKnowledge": [
+            "태경을 의심한 감정의 핵심이 사실 판단보다 상처와 체면이었다고 깨닫는다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-3:fear:0",
+              "factText": "상처와 체면 때문에 누군가의 고의를 믿고 싶었다는 고백",
+              "tags": [
+                "fear",
+                "motive",
+                "emotion"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "결론적으로 우리 둘 중 누가 판 게 아니었어요. 운영사 오발송을 제가 배신으로 오해한 거예요."
+          ],
+          "privateKnowledge": [
+            "정정하지 않으면 d-1 잘못도 더 커진다는 점을 이해한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-3:admission:1",
+              "factText": "동업자 고의 유출이 아니라 운영사 오발송을 배신으로 오해했다는 완전한 인정",
+              "tags": [
+                "admission",
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                },
+                "event": {
+                  "exact": "참석자 follow-up 메일",
+                  "neutral": "후속메일"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "apology"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "저는 설명 업데이트를 한 거지, 보안 원칙을 깨려던 건 아니었어요."
+          ],
+          "privateKnowledge": [
+            "redacted 링크를 끄고 최신 전체 덱 링크로 바꾼 사실을 안다."
+          ],
+          "suppressions": [
+            "그 변경이 기존 합의를 정면으로 어긴 점은 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-4:uncertainty:0",
+              "factText": "설명 업데이트였을 뿐 보안 원칙 위반 의도는 없었다는 주장",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "folder": {
+                  "exact": "QR 후속자료 폴더",
+                  "neutral": "QR 폴더"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "행사 당일엔 최신 할인표 설명이 더 중요했어요. 그래서 링크를 바꾼 거예요."
+          ],
+          "privateKnowledge": [
+            "영업 현장에서 뒤처져 보일까 봐 최신본을 넣었다는 동기가 있다."
+          ],
+          "suppressions": [
+            "보안선이 무너질 수 있다는 우려를 무시한 점은 아직 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-4:motive:0",
+              "factText": "행사 당일 최신 할인표 설명을 위해 QR 링크를 교체했다는 맥락",
+              "tags": [
+                "motive",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "행사 당일 아침",
+                  "neutral": "그 아침",
+                  "dateExact": "행사 당일 아침",
+                  "period": "행사 준비 시간"
+                },
+                "folder": {
+                  "exact": "QR 후속자료 폴더",
+                  "neutral": "QR 폴더"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "맞아요, redacted 링크를 끄고 최신 전체 덱 링크로 바꿨어요."
+          ],
+          "privateKnowledge": [
+            "이 인정이 곧 자신의 영업 판단 실패로 읽힐 것을 두려워한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-4:admission:0",
+              "factText": "redacted 링크를 비활성화하고 최신 전체 덱 링크로 교체한 사실의 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비식별 축약본과 추적 링크만 사용",
+                  "neutral": "기존 보안 원칙"
+                },
+                "time": {
+                  "exact": "행사 당일 아침",
+                  "neutral": "그 아침",
+                  "dateExact": "행사 당일 아침",
+                  "period": "행사 준비 시간"
+                },
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "태경 첨부만 문제 삼았지만, 제 QR 폴더 교체도 같은 종류의 위반이었어요."
+          ],
+          "privateKnowledge": [
+            "상대만 탓하며 자신의 위반을 분리하려 했다는 점을 부끄러워한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-4:responsibility:0",
+              "factText": "태경의 첨부와 자신의 QR 폴더 교체가 같은 종류의 위반이었다는 인정",
+              "tags": [
+                "responsibility",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                },
+                "folder": {
+                  "exact": "QR 후속자료 폴더",
+                  "neutral": "QR 폴더"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "영업총괄로서 뒤처져 보일까 봐, 최신본을 넣어야 마음이 놓였어요."
+          ],
+          "privateKnowledge": [
+            "정보를 더 많이 주는 게 신뢰라고 착각한 측면이 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-4:fear:0",
+              "factText": "영업총괄로 뒤처져 보일까 봐 최신 전체 덱을 넣었다는 감정 고백",
+              "tags": [
+                "fear",
+                "motive",
+                "emotion"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "보안 원칙 위반은 쌍방이었어요. 제 변경도 분명한 책임입니다."
+          ],
+          "privateKnowledge": [
+            "이 부분을 인정해야 d-1 정정도 진정성 있게 갈 수 있다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-4:admission:1",
+              "factText": "보안 원칙 위반이 쌍방이었고 자신의 링크 변경 책임도 분명하다는 진술",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "folder": {
+                  "exact": "QR 후속자료 폴더",
+                  "neutral": "QR 폴더"
+                },
+                "rule": {
+                  "exact": "비식별 축약본과 추적 링크만 사용",
+                  "neutral": "기존 보안 원칙"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "apology"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저는 처음엔 내부 누설로 봤지만, 아직 전체 로그를 다 본 건 아니었어요."
+          ],
+          "privateKnowledge": [
+            "사람부터 범인으로 세운 뒤 로그를 따라간 순서가 뒤집혔다는 걸 안다."
+          ],
+          "suppressions": [
+            "운영사 쪽 가능성을 스스로 좁게 본 점은 아직 인정하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-5:uncertainty:0",
+              "factText": "처음에는 내부 누설로 봤지만 전체 로그를 확인한 상태는 아니었다는 인정",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "motive"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "운영사 follow-up까지 의심 범위에 넣었어야 했는데, 그때는 내부만 봤어요."
+          ],
+          "privateKnowledge": [
+            "배신 서사가 너무 강해 다른 경로를 보지 못했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-5:context:0",
+              "factText": "운영사 후속메일 경로를 보지 않고 내부만 본 한계를 인정하는 진술",
+              "tags": [
+                "context",
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "event": {
+                  "exact": "참석자 follow-up 메일",
+                  "neutral": "후속메일"
+                },
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "운영사 AE가 백업 폴더를 받았던 흐름이 있었다는 건 맞아요."
+          ],
+          "privateKnowledge": [
+            "그 사실이 d-3 내부 배신 서사를 흔든다는 걸 인식한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-5:admission:0",
+              "factText": "운영사 AE가 백업 폴더를 받은 흐름이 있었다는 인정",
+              "tags": [
+                "admission",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                },
+                "file": {
+                  "exact": "스피커용 백업 폴더",
+                  "neutral": "백업 파일"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "후속메일 첨부 실수 가능성을 뒤늦게 인정해요. 제가 너무 늦게 봤어요."
+          ],
+          "privateKnowledge": [
+            "자신의 확신이 눈을 가렸다는 자책이 커진다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-5:shame:0",
+              "factText": "후속메일 첨부 실수 가능성을 뒤늦게 인정하는 진술",
+              "tags": [
+                "shame",
+                "context",
+                "admission"
+              ],
+              "slots": {
+                "event": {
+                  "exact": "참석자 follow-up 메일",
+                  "neutral": "후속메일"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "제가 너무 빨리 내부 배신 서사로 달려가서, 외부 오발송 가능성을 밀어냈어요."
+          ],
+          "privateKnowledge": [
+            "감정이 사실 판단을 밀어낸 구조를 스스로 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-5:emotion:0",
+              "factText": "배신 서사에 매달리며 외부 오발송 가능성을 밀어냈다는 고백",
+              "tags": [
+                "emotion",
+                "motive",
+                "shame"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "실제 유출 경로는 운영사 오발송이었어요. 경쟁사 바이어도 같은 첨부를 받은 거예요."
+          ],
+          "privateKnowledge": [
+            "이제는 태경을 누설자로 본 프레임을 정정해야 한다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-07:b:tell:headline_accusation",
+            "partnership-07:b:tell:pressure_repeat",
+            "partnership-07:b:tell:proof_magnification"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-07:b:d-5:admission:1",
+              "factText": "실제 유출 경로가 운영사 오발송이었고 경쟁사 바이어도 같은 첨부를 받았다는 인정",
+              "tags": [
+                "admission",
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                },
+                "institution2": {
+                  "exact": "경쟁사 바이어",
+                  "neutral": "저쪽"
+                },
+                "event": {
+                  "exact": "참석자 follow-up 메일",
+                  "neutral": "후속메일"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "apology"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

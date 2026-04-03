@@ -346,7 +346,7 @@ export const family03TellsBeats = {
       "party": "b",
       "disputeId": "d-1",
       "beatType": "hedge",
-      "line": "도와주자는 말은 했어요. 다만 그걸 정확히 얼마나, 언제까지로 들었는지는 좀 맥락이 있어요.",
+      "line": "도와주자는 말은 했어요. 그걸 정확히 얼마나, 언제까지로 들었는지는 좀 맥락이 있어요.",
       "behaviorHint": "답을 바로 끝내지 않고 순서를 정리하듯 손가락을 접는다.",
       "applicableStates": [
         "S1"

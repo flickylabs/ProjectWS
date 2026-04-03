@@ -1,0 +1,2901 @@
+export const tenant04V2Atoms = {
+  "caseId": "tenant-04",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "저는 월세를 전세로 바꾸는 얘기가 이미 되는 쪽으로 정리됐다고 들었습니다."
+          ],
+          "privateKnowledge": [
+            "총액·시작일·공동명의 서명까지 끝난 건 아니었지만, 결혼 일정 때문에 확정처럼 붙잡고 있었다."
+          ],
+          "suppressions": [
+            "'서류 보고 정리하자'는 단서를 듣고도 확정된 뉘앙스만 앞세운다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:a:tell:memory_softener",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-1:denial:0",
+              "factText": "전세 전환이 이미 확정 단계라는 쪽으로 이해했다는 주장",
+              "tags": [
+                "denial",
+                "quote",
+                "timeline"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "가자는 방향",
+                  "neutral": "그 표현"
+                },
+                "time": {
+                  "exact": "초여름 전환 통화 시점",
+                  "neutral": "그때",
+                  "period": "초여름 협의 초반"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "계약서까지는 아니어도 거의 정리된 줄 알았고, 그래서 다음 단계 준비를 했습니다."
+          ],
+          "privateKnowledge": [
+            "중개사 초안이 오기 전에도 서명란이 남을 수 있다는 불안은 있었지만, 되돌아가면 결혼 준비가 틀어진다고 느꼈다."
+          ],
+          "suppressions": [
+            "말을 정확히 확인하지 않고 '거의'라는 표현을 스스로 확정으로 번역한 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:a:tell:memory_softener",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-1:uncertainty:0",
+              "factText": "서면 완성 전이었지만 거의 정리됐다고 믿고 움직였다는 설명",
+              "tags": [
+                "uncertainty",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전환 계약 초안 전 단계",
+                  "neutral": "서류 전 단계"
+                },
+                "time": {
+                  "exact": "결혼 준비와 대출 상담을 넣기 전후",
+                  "neutral": "그 무렵",
+                  "period": "준비를 시작하던 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "지금 보면 확정이라고 부르긴 이르렀지만, 저는 전환 쪽으로 굳었다고 받아들였습니다."
+          ],
+          "privateKnowledge": [
+            "성호가 핵심 조건을 다 말하지 않았다는 생각이 커서, 내 해석이 과했다는 부분을 반쯤만 인정한다."
+          ],
+          "suppressions": [
+            "공동명의 서명과 시작일 공란을 보고도 계속 확정처럼 행동한 점은 줄여 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:stacked_messages",
+            "tenant04:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-1:admission:0",
+              "factText": "전환이 법적으로 완성되진 않았지만 사실상 굳었다고 믿고 행동했다는 부분 인정",
+              "tags": [
+                "admission",
+                "threshold",
+                "self_justification"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "시작일·총액·공동명의 서명란이 빈 초안",
+                  "neutral": "미완성 초안"
+                },
+                "time": {
+                  "exact": "초안 발송 직후",
+                  "neutral": "그 직후",
+                  "period": "초안 확인 후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "저도 성급했던 건 맞지만, 먼저 조건을 숨긴 쪽이 있어서 더 확정처럼 믿게 됐습니다."
+          ],
+          "privateKnowledge": [
+            "자기 판단 책임을 덜어내고 싶어 성호의 비공개를 전면에 세운다."
+          ],
+          "suppressions": [
+            "전세대출 상담을 이미 넣어 놓고도 그 압박을 상대에게 분명히 공유하지 않은 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:stacked_messages",
+            "tenant04:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-1:responsibility:0",
+              "factText": "확정처럼 믿은 데에는 성호의 조건 비공개가 영향을 줬다고 책임을 돌리는 진술",
+              "tags": [
+                "responsibility",
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장성호",
+                  "neutral": "상대방",
+                  "fullName": "장성호",
+                  "judgeRef": "임대인"
+                },
+                "condition": {
+                  "exact": "공동명의 서명과 중도상환수수료",
+                  "neutral": "핵심 조건"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "결혼 날짜와 대출 일정이 돌아가고 있어서, 저는 그 약속이 무너지면 다시 집을 잃는다고 느꼈습니다."
+          ],
+          "privateKnowledge": [
+            "송금까지 끝낸 뒤 뒤로 물러날 수 없다는 공포 때문에 '이미 됐다'는 말을 스스로 더 키웠다."
+          ],
+          "suppressions": [
+            "불안 때문에 사실 확인보다 안심되는 해석을 택했다는 점을 완전히 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant04:a:tell:quiet_break",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-1:fear:0",
+              "factText": "결혼 준비와 주거 불안 때문에 전환 약속이 깨질까 두려워 확정처럼 붙든 심리",
+              "tags": [
+                "fear",
+                "emotion",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤지호",
+                  "neutral": "약혼자",
+                  "fullName": "윤지호",
+                  "judgeRef": "약혼자"
+                },
+                "time": {
+                  "exact": "결혼 준비 일정 마감 시점",
+                  "neutral": "그 일정",
+                  "period": "결혼 준비 막바지"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "확정된 전세 계약은 아니었습니다. 저는 '거의 됐다'는 말을 확정으로 붙잡고 그 위에서 움직였습니다."
+          ],
+          "privateKnowledge": [
+            "초안의 빈칸과 서명 문제를 보면서도, 이미 송금과 상담을 시작한 탓에 되돌릴 말을 못 했다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant04:a:tell:quiet_break",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-1:admission:1",
+              "factText": "완성된 전세 전환 계약은 아니었고, 자신이 구두 표현을 확정으로 과대해석했다는 시인",
+              "tags": [
+                "admission",
+                "quote",
+                "threshold"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "거의 됐다",
+                  "neutral": "그 말"
+                },
+                "amount": {
+                  "exact": "추가 보증금 2천만원",
+                  "neutral": "추가 보증금",
+                  "rounded": "2천만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "공동명의 서명이나 대출 비용이 핵심 조건이라는 말은 처음엔 듣지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "성호가 '거의 된다'는 식으로 말할 때 별도 조건이 있더라도 곧 정리될 문제라고 생각했다."
+          ],
+          "suppressions": [
+            "조건을 세세히 되묻지 않은 자신의 안일함은 줄인다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:a:tell:memory_softener",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-2:rule:0",
+              "factText": "공동명의 동의와 중도상환수수료가 핵심 선행조건이라는 설명을 초기에 듣지 못했다는 주장",
+              "tags": [
+                "rule",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "성호의 아내 공동명의자",
+                  "neutral": "공동명의자",
+                  "fullName": "성호 배우자",
+                  "judgeRef": "공동명의자"
+                },
+                "fee": {
+                  "exact": "기존 담보대출 중도상환수수료",
+                  "neutral": "대출 비용"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "나중에 그런 조건이 있다는 취지의 말은 들었어도, 처음부터 전환을 막는 핵심이라고는 이해하지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "서류 단계에서야 드러날 문제라고 가볍게 본 판단이 있었다."
+          ],
+          "suppressions": [
+            "처음 표현이 모호했더라도 자기가 편한 쪽으로 해석한 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:a:tell:memory_softener",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-2:context:0",
+              "factText": "조건 존재 자체보다 그 무게를 제대로 전달받지 못했다고 이해했다는 설명",
+              "tags": [
+                "context",
+                "uncertainty",
+                "rule"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "서명·수수료가 남아 있다는 말",
+                  "neutral": "그 조건"
+                },
+                "time": {
+                  "exact": "초안 발송 전후",
+                  "neutral": "나중 시점",
+                  "period": "초안이 오가기 시작한 뒤"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "등기부와 상환예상서를 보고 나서야, 그게 실제로 전환 여부를 가르는 조건이었다는 걸 알았습니다."
+          ],
+          "privateKnowledge": [
+            "그 문서를 보고 나서야 자기 믿음이 너무 앞서 갔다는 사실도 같이 체감했다."
+          ],
+          "suppressions": [
+            "문서를 본 뒤에도 바로 월세 계획을 수정하지 않은 점은 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:stacked_messages",
+            "tenant04:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-2:evidence:0",
+              "factText": "등기부와 상환예상서로 공동명의와 비용 문제가 실제 장애물이었다는 점을 확인했다는 진술",
+              "tags": [
+                "evidence",
+                "institution",
+                "rule"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "공동명의 등기부와 상환예상서",
+                  "neutral": "기관 문서"
+                },
+                "time": {
+                  "exact": "문서 확인 직후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "그 조건을 미리 분명히 들었으면 저는 송금이나 대출 상담을 그렇게 서두르지 않았을 겁니다."
+          ],
+          "privateKnowledge": [
+            "상대가 핵심 정보를 늦게 꺼냈다는 점을 자신의 오판 이유로 묶는다."
+          ],
+          "suppressions": [
+            "대출 상담을 먼저 넣은 사실을 상대에게 선명하게 공유하지 않은 부분은 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:stacked_messages",
+            "tenant04:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-2:responsibility:0",
+              "factText": "핵심 조건이 늦게 공개돼 자신의 준비 일정이 잘못 굴러갔다고 책임을 묻는 진술",
+              "tags": [
+                "responsibility",
+                "harm",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "은행 전세대출 상담 접수기록",
+                  "neutral": "상담 기록"
+                },
+                "person": {
+                  "exact": "이현주",
+                  "neutral": "은행 상담 직원",
+                  "fullName": "이현주",
+                  "judgeRef": "은행 상담 직원"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "저는 결혼 준비 때문에 일정이 한 번 밀리면 집도, 대출도 다 무너질까 봐 더 배신처럼 느꼈습니다."
+          ],
+          "privateKnowledge": [
+            "조건이 있었다는 사실보다 왜 그 말을 일찍 안 했는지에 더 상처를 받고 있다."
+          ],
+          "suppressions": [
+            "자기 불안이 해석을 과장했다는 점은 후순위로 둔다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant04:a:tell:quiet_break",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-2:emotion:0",
+              "factText": "조건 비공개가 결혼·주거 일정 전체를 흔드는 배신으로 느껴졌다는 감정 진술",
+              "tags": [
+                "emotion",
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "결혼 준비 마감이 겹치던 시기",
+                  "neutral": "그 시기",
+                  "period": "결혼 준비 막바지"
+                },
+                "person": {
+                  "exact": "윤지호",
+                  "neutral": "약혼자",
+                  "fullName": "윤지호",
+                  "judgeRef": "약혼자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "공동명의 서명과 대출 비용은 실제 핵심 조건이었고, 그 부분은 성호 씨가 초기에 충분히 말하지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "자신도 확인을 서둘렀어야 했지만, 정보 비대칭의 시작점은 상대였다고 정리한다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:quiet_break",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-2:admission:0",
+              "factText": "공동명의 동의와 대출 비용 문제가 전환의 핵심 조건이었고 그것이 늦게 공유됐다는 최종 정리",
+              "tags": [
+                "admission",
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "공동명의 서명과 중도상환수수료",
+                  "neutral": "핵심 조건"
+                },
+                "document": {
+                  "exact": "등기부와 상환예상서, 전환 초안",
+                  "neutral": "관련 문서"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "저는 월세를 끊은 게 아니라, 다음 달부터는 전환금으로 넘어가는 줄 알고 보류한 거였습니다."
+          ],
+          "privateKnowledge": [
+            "한 달치 월세를 실제로 내지 않았다는 표현이 부끄러워 '보류'라고 바꿔 말한다."
+          ],
+          "suppressions": [
+            "즉답을 받지 못한 상태에서 스스로 멈춘 결정이었다는 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:a:tell:memory_softener",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-3:denial:0",
+              "factText": "한 달치 월세 미납을 스스로 중단한 것이 아니라 전환 과정의 보류라고 주장",
+              "tags": [
+                "denial",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "한 달치 월세",
+                  "neutral": "월세 한 번"
+                },
+                "time": {
+                  "exact": "추가 보증금 송금 다음 달",
+                  "neutral": "그다음 달"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "카톡에서도 제가 '다음 달부터 월세는 멈추는 거죠'라고 물었고, 그래서 저는 그렇게 이해했습니다."
+          ],
+          "privateKnowledge": [
+            "성호가 명확히 '아니다'라고 답하지 않은 틈에 자기 해석을 밀어 넣었다."
+          ],
+          "suppressions": [
+            "질문 뒤에 '초안 보고 최종 정하자'는 문장이 있었다는 전체 맥락은 흐린다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:a:tell:memory_softener",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-3:uncertainty:0",
+              "factText": "월세 중단을 확인하려 질문했고 명시적 제지를 못 받아 그렇게 이해했다는 설명",
+              "tags": [
+                "uncertainty",
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "다음 달부터 월세는 멈추는 거죠",
+                  "neutral": "그 질문"
+                },
+                "document": {
+                  "exact": "공인중개사 포함 카카오톡",
+                  "neutral": "카톡 대화"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "제가 한 달치를 안 낸 건 맞지만, 그때는 2천만원이 이미 들어갔고 전환이 이어진다고 믿었습니다."
+          ],
+          "privateKnowledge": [
+            "미납 사실은 인정하되, 송금을 앞세워 책임 비중을 줄이고 싶어 한다."
+          ],
+          "suppressions": [
+            "명확한 월세 종료 합의 전에는 기존 계약이 유지된다는 상식을 뒤로 미룬다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:stacked_messages",
+            "tenant04:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-3:admission:0",
+              "factText": "한 달치 월세 미납 사실은 인정하지만 추가 보증금 송금 후 전환이 이어진다고 믿었다고 설명",
+              "tags": [
+                "admission",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "추가 보증금 2천만원",
+                  "neutral": "추가 보증금",
+                  "rounded": "2천만원"
+                },
+                "time": {
+                  "exact": "송금 직후 다음 달",
+                  "neutral": "그다음 달"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "저 혼자 멈춘 건 맞지만, 상대가 월세를 계속 내라고 분명히 선을 긋지도 않았습니다."
+          ],
+          "privateKnowledge": [
+            "적극적인 승인과 소극적인 침묵을 일부러 비슷한 무게로 묶는다."
+          ],
+          "suppressions": [
+            "질문에 대한 즉답 부재가 곧 동의는 아니라는 점을 외면한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:stacked_messages",
+            "tenant04:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-3:responsibility:0",
+              "factText": "월세 미납의 직접 행동은 자신이 했지만 상대가 명확히 제지하지 않았다고 책임을 나눠 말하는 진술",
+              "tags": [
+                "responsibility",
+                "counter",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장성호",
+                  "neutral": "상대방",
+                  "fullName": "장성호",
+                  "judgeRef": "임대인"
+                },
+                "document": {
+                  "exact": "카카오톡 대화 전체 문맥",
+                  "neutral": "전체 문맥"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 말하면 이미 안 낸 뒤였고, 그걸 번복해서 다시 내자고 말하기가 너무 창피했습니다."
+          ],
+          "privateKnowledge": [
+            "미납을 인정하는 순간 자신이 성급한 사람으로 보일까 봐 두려웠다."
+          ],
+          "suppressions": [
+            "상대에게 먼저 사실을 정리해 보내지 않은 시간을 줄여 말한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant04:a:tell:quiet_break",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-3:shame:0",
+              "factText": "월세를 이미 안 낸 뒤라 되돌려 말하기가 부끄러워 침묵했다는 심리",
+              "tags": [
+                "shame",
+                "emotion",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "한 달치 월세",
+                  "neutral": "그 월세"
+                },
+                "time": {
+                  "exact": "미납이 확인된 저녁",
+                  "neutral": "그날 저녁"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "네, 저는 추가 보증금이 들어간 뒤 한 달치 월세를 실제로 내지 않았습니다. 그 판단은 성급했습니다."
+          ],
+          "privateKnowledge": [
+            "미납을 인정하되, 자신이 속이려 한 게 아니라 잘못 믿은 채 움직였다고 봐주길 바란다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant04:a:tell:quiet_break",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-3:admission:1",
+              "factText": "추가 보증금 송금 뒤 한 달치 월세를 실제로 미납했고 그 판단이 성급했다고 시인",
+              "tags": [
+                "admission",
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "한 달치 월세",
+                  "neutral": "미납 월세"
+                },
+                "amount2": {
+                  "exact": "2천만원 추가 보증금",
+                  "neutral": "추가 보증금",
+                  "rounded": "2천만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "저는 협의가 아직 살아 있다고 믿는 상태에서 갑자기 다른 사람에게 집을 보여준 걸 알았습니다."
+          ],
+          "privateKnowledge": [
+            "그 장면이 전세 전환 약속 전체를 뒤집는 배신처럼 느껴졌다."
+          ],
+          "suppressions": [
+            "성호가 미완으로 생각할 여지가 있었다는 점은 뒤로 민다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:a:tell:memory_softener",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-4:act:0",
+              "factText": "협의가 진행 중이라고 믿는 사이 예비 임차인에게 집을 보여준 사실을 알게 됐다는 진술",
+              "tags": [
+                "act",
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "예비 임차인",
+                  "neutral": "다른 사람"
+                },
+                "time": {
+                  "exact": "월세 중단을 알린 다음 날 오후",
+                  "neutral": "그다음 날"
+                }
+              },
+              "stanceHints": [
+                "fact",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "미완이었다면 더더욱 먼저 말로라도 결렬을 알려줬어야지, 집부터 보여주는 건 아니라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "본인도 미완의 가능성을 일부 알지만, 통지 부재가 더 크게 남는다."
+          ],
+          "suppressions": [
+            "자신이 월세를 멈춘 행동이 상대를 자극했을 수 있다는 점은 낮춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:memory_softener",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-4:rule:0",
+              "factText": "전환이 미완이라도 다른 임차인 안내 전에 먼저 결렬 통지가 있었어야 한다는 기준",
+              "tags": [
+                "rule",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "결렬 통지 후 예비 임차인 안내",
+                  "neutral": "순서 정리"
+                },
+                "person": {
+                  "exact": "장성호",
+                  "neutral": "임대인",
+                  "fullName": "장성호",
+                  "judgeRef": "임대인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "카톡 문맥을 다시 봐도, 보여주기 전에 '이 협의는 끝났다'는 말은 없었습니다."
+          ],
+          "privateKnowledge": [
+            "크롭된 캡처가 있었다는 약점은 있지만, 통지 부재 자체는 자신 있다고 본다."
+          ],
+          "suppressions": [
+            "초기 제출본이 선택적으로 잘렸다는 사실을 스스로 먼저 꺼내지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:stacked_messages",
+            "tenant04:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-4:evidence:0",
+              "factText": "카카오톡 전체 문맥상 예비 임차인 안내 전 명시적 결렬 통지가 없었다는 확인",
+              "tags": [
+                "evidence",
+                "timeline",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "공인중개사 포함 카카오톡 전체 대화",
+                  "neutral": "전체 카톡"
+                },
+                "time": {
+                  "exact": "예비 임차인 예약 전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "제가 월세를 잘못 멈춘 건 별개로, 그걸 이유로 바로 다른 사람을 들이기 전에 제게 먼저 정리했어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "자기 잘못을 선제 인정하면서도 통지 의무 쪽으로 초점을 유지하려 한다."
+          ],
+          "suppressions": [
+            "없음에 가깝지만, 협의가 이미 크게 흔들렸다는 분위기는 줄인다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:stacked_messages",
+            "tenant04:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-4:responsibility:0",
+              "factText": "자신의 월세 미납과 별개로 집을 보여주기 전 통지 책임은 성호에게 있었다는 주장",
+              "tags": [
+                "responsibility",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "미납된 한 달치 월세",
+                  "neutral": "그 월세"
+                },
+                "person": {
+                  "exact": "장성호",
+                  "neutral": "상대방",
+                  "fullName": "장성호",
+                  "judgeRef": "임대인"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "저는 그때 '아, 나는 이미 밀려난 사람이구나'라는 느낌이 들어서 더 크게 무너졌습니다."
+          ],
+          "privateKnowledge": [
+            "집을 잃는 공포와 결혼 준비 압박이 한 장면에 겹쳐 트라우마처럼 남아 있다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant04:a:tell:quiet_break",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-4:emotion:0",
+              "factText": "예비 임차인 안내 장면이 자신을 밀려나는 사람처럼 느끼게 했다는 감정 진술",
+              "tags": [
+                "emotion",
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "예비 임차인",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "안내 당일 오후",
+                  "neutral": "그날"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "성호 씨는 협의가 끝났다고 분명히 말하기 전에 다른 예비 임차인에게 집을 보여줬습니다. 그 점은 맞습니다."
+          ],
+          "privateKnowledge": [
+            "그 사실이 자신의 다른 잘못을 지워 주진 않지만, 신뢰가 깨진 핵심 장면이라고 본다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:quiet_break",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-4:admission:0",
+              "factText": "협의 결렬을 명시적으로 통지하기 전에 예비 임차인 안내가 있었음을 확정적으로 정리",
+              "tags": [
+                "admission",
+                "timeline",
+                "act"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "방문일지와 예약문자",
+                  "neutral": "안내 기록"
+                },
+                "time": {
+                  "exact": "월세 중단 통지 다음 날 오후",
+                  "neutral": "그다음 날"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "2천만원은 전세로 바꾸기 위해 넣은 돈이니 거의 그대로 돌아와야 한다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "정산 기준을 명확히 적지 않은 채 송금한 불안 때문에 '거의 전액 반환'만 붙든다."
+          ],
+          "suppressions": [
+            "미납 월세와 사용 이익을 일부 반영해야 할 수 있다는 점을 처음엔 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:a:tell:memory_softener",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-5:denial:0",
+              "factText": "추가 보증금 2천만원은 사실상 전세금 일부이므로 거의 전액 반환돼야 한다는 주장",
+              "tags": [
+                "denial",
+                "threshold",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "그 돈",
+                  "rounded": "2천만원"
+                },
+                "memo": {
+                  "exact": "전환 준비금",
+                  "neutral": "이체 메모"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 위약금처럼 잡아둘 돈은 아니고, 전환 준비를 위해 맡겨 둔 돈이라고 이해했습니다."
+          ],
+          "privateKnowledge": [
+            "확정 전세금은 아닐 수 있어도 전부 상대 돈이 되는 그림은 버티기 어렵다."
+          ],
+          "suppressions": [
+            "'가계약금'인지 '준비금'인지 모호한 메모 문구를 자기에게 유리하게만 읽는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:a:tell:memory_softener",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-5:uncertainty:0",
+              "factText": "2천만원은 위약금이 아니라 전환 준비를 위해 맡긴 돈이라고 이해했다는 설명",
+              "tags": [
+                "uncertainty",
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원 추가 보증금",
+                  "neutral": "추가 보증금"
+                },
+                "memo": {
+                  "exact": "전환 준비금",
+                  "neutral": "그 메모"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "지금 보면 확정된 전세금 일부라고 단정하긴 어렵지만, 그렇다고 전액을 깎일 돈도 아니라고 생각합니다."
+          ],
+          "privateKnowledge": [
+            "전세금 전액설은 접되, 반환 기준이 비어 있다는 약점을 상대 책임과 묶고 싶다."
+          ],
+          "suppressions": [
+            "월세 미납분을 먼저 상계해야 할 수 있다는 계산을 아직 전면에 두지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:stacked_messages",
+            "tenant04:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-5:admission:0",
+              "factText": "2천만원이 확정 전세금 일부로 단정되진 않지만 전액 공제될 성격도 아니라는 부분 인정",
+              "tags": [
+                "admission",
+                "threshold",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "추가 보증금"
+                },
+                "document": {
+                  "exact": "영수 메모와 송금 내역",
+                  "neutral": "송금 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "정산 기준을 처음부터 적어 줬다면 저도 이렇게 밀어붙이지 않았을 텐데, 그 기준이 비어 있었어요."
+          ],
+          "privateKnowledge": [
+            "자신의 무리한 기대를 상대의 문서 공백에 기대어 설명한다."
+          ],
+          "suppressions": [
+            "정산 기준을 직접 재확인하지 않은 점은 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:stacked_messages",
+            "tenant04:a:tell:memory_softener"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-5:responsibility:0",
+              "factText": "정산 기준 공백 때문에 2천만원의 성격을 과하게 낙관하게 됐다고 상대 책임을 묻는 진술",
+              "tags": [
+                "responsibility",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전환 초안과 영수 메모",
+                  "neutral": "기준 문서"
+                },
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "그 돈"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "그 돈을 돌려달라고 바로 말하는 것도, 제가 월세를 안 낸 상태라 더 미안하고 창피했습니다."
+          ],
+          "privateKnowledge": [
+            "돈 얘기를 꺼내면 자신이 무책임해 보일까 봐 정산 논의를 미뤘다."
+          ],
+          "suppressions": [
+            "없음에 가깝다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tenant04:a:tell:quiet_break",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-5:shame:0",
+              "factText": "월세 미납 상태에서 2천만원 반환을 요구하기가 미안하고 창피해 정산 논의를 피했다는 심리",
+              "tags": [
+                "shame",
+                "emotion",
+                "motive"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "추가 보증금"
+                },
+                "amount2": {
+                  "exact": "한 달치 월세",
+                  "neutral": "미납 월세"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "2천만원은 확정 전세금으로 못 박을 돈은 아니었습니다. 다만 미납 월세만 반영하고 나머지는 기준을 다시 세워 돌려받아야 한다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "자신도 일정 부분 차감은 감수할 생각이지만 전액 몰취만은 받아들이지 않는다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:a:tell:quiet_break",
+            "tenant04:a:tell:stacked_messages"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:a:d-5:admission:1",
+              "factText": "2천만원은 확정 전세금이 아니며 미납 월세 등을 반영한 뒤 나머지를 반환 기준에 따라 정산해야 한다는 최종 입장",
+              "tags": [
+                "admission",
+                "rule",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "추가 보증금"
+                },
+                "amount2": {
+                  "exact": "한 달치 월세 공제",
+                  "neutral": "일부 차감"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "확정된 전세 전환은 아니었습니다. 저는 방향만 얘기했고, 서명이나 금액은 끝난 적이 없습니다."
+          ],
+          "privateKnowledge": [
+            "좋게 말한 부분이 오해를 키웠다는 건 알지만, 우선은 확정 부인으로 선을 긋는다."
+          ],
+          "suppressions": [
+            "'가자는 방향' 같은 표현으로 기대를 부풀린 점은 먼저 꺼내지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:document_gate",
+            "tenant04:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-1:act:0",
+              "factText": "전세 전환은 방향만 논의됐을 뿐 확정된 계약은 아니었다는 주장",
+              "tags": [
+                "act",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "가자는 방향",
+                  "neutral": "그 표현"
+                },
+                "document": {
+                  "exact": "서명 없는 전환 논의",
+                  "neutral": "서류 전 단계"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "초안이 오간 건 맞지만, 초안은 어디까지나 초안이고 시작일·총액·서명란이 다 비어 있었습니다."
+          ],
+          "privateKnowledge": [
+            "초안 발송이 상대에겐 확정 신호처럼 보였을 수 있다는 점을 의식한다."
+          ],
+          "suppressions": [
+            "초안을 보내게 만든 자신의 긍정적 언행은 줄여 말한다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:document_gate",
+            "tenant04:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-1:context:0",
+              "factText": "전환 계약 초안이 오갔어도 핵심 기재사항이 비어 있어 확정 단계가 아니었다는 설명",
+              "tags": [
+                "context",
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전환 계약 초안",
+                  "neutral": "초안"
+                },
+                "time": {
+                  "exact": "2천만원 송금 다음 날",
+                  "neutral": "그다음 날"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "제가 전환 쪽으로 기울어 말한 건 맞습니다. 다만 문서상 빈칸이 남아 있으면 아직 끝난 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "자기 표현의 책임을 조금 인정하되, 법적 완성 기준으로 대화를 옮기고 싶다."
+          ],
+          "suppressions": [
+            "상대 일정 압박을 알면서도 선을 늦게 그은 책임은 약하게 다룬다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:condition_backfill",
+            "tenant04:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-1:admission:0",
+              "factText": "전환 방향으로 말한 점은 인정하지만 문서상 핵심 요소 미완으로 확정은 아니었다는 부분 인정",
+              "tags": [
+                "admission",
+                "threshold",
+                "quote"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "가자는 방향",
+                  "neutral": "그 말"
+                },
+                "document": {
+                  "exact": "시작일·총액·공동명의 서명란이 빈 초안",
+                  "neutral": "빈칸 있는 초안"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "다은 씨가 확정처럼 움직인 속도도 오해를 키웠습니다. 상담과 송금이 먼저 들어오면서 저도 수습이 늦었습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 성급함을 끌어와 자신의 모호한 표현 책임을 희석한다."
+          ],
+          "suppressions": [
+            "먼저 핵심 조건을 정리하지 않은 출발점은 자신이었다는 점을 뒤로 미룬다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:condition_backfill",
+            "tenant04:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-1:responsibility:0",
+              "factText": "다은의 송금·상담 선행이 오해를 키워 자신도 수습 시점을 놓쳤다고 책임을 분산하는 진술",
+              "tags": [
+                "responsibility",
+                "counter",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원 송금",
+                  "neutral": "송금"
+                },
+                "document": {
+                  "exact": "은행 상담 접수",
+                  "neutral": "상담 접수"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "저도 좋게 말하다가 선을 늦게 그었습니다. 괜히 말 한마디로 끌려다니는 집주인처럼 보일까 봐 더 딱 잘라 말하지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "권한을 빼앗기는 듯한 자존심 때문에 모호한 긍정과 늦은 정정을 반복했다."
+          ],
+          "suppressions": [
+            "없음에 가깝다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:numeric_reset",
+            "tenant04:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-1:fear:0",
+              "factText": "집주인으로 끌려다니는 사람처럼 보일까 두려워 확정선을 늦게 그었다는 심리",
+              "tags": [
+                "fear",
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장성호",
+                  "neutral": "본인",
+                  "fullName": "장성호",
+                  "judgeRef": "본인"
+                },
+                "relationship": {
+                  "exact": "집주인-세입자 관계",
+                  "neutral": "당사자 관계"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "결론적으로 전세 전환은 확정되지 않았습니다. 다만 제가 '거의 된다'는 식으로 말해 기대를 키운 책임은 있습니다."
+          ],
+          "privateKnowledge": [
+            "형식 논리만으로는 자신의 초기 발언 책임을 다 덮을 수 없다고 인정한다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:numeric_reset",
+            "tenant04:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-1:admission:1",
+              "factText": "전세 전환은 미확정이었지만 자신이 긍정적 표현으로 상대 기대를 키운 책임이 있다는 시인",
+              "tags": [
+                "admission",
+                "quote",
+                "responsibility"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "거의 된다",
+                  "neutral": "긍정적 표현"
+                },
+                "document": {
+                  "exact": "미완성 전환 초안",
+                  "neutral": "초안"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "공동명의 서명과 대출 비용은 원래 당연한 전제였고, 굳이 숨긴 사안은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "처음엔 상세히 말하지 않았다는 걸 알지만, '당연한 전제'라고 말해 비공개 책임을 줄이려 한다."
+          ],
+          "suppressions": [
+            "상환예상서를 논의 초반에 이미 받아봤다는 사실을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:document_gate",
+            "tenant04:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-2:denial:0",
+              "factText": "공동명의 동의와 대출 비용은 숨긴 조건이 아니라 원래 당연한 전제였다는 주장",
+              "tags": [
+                "denial",
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "공동명의 아내",
+                  "neutral": "공동명의자",
+                  "fullName": "성호 배우자",
+                  "judgeRef": "공동명의자"
+                },
+                "fee": {
+                  "exact": "중도상환수수료",
+                  "neutral": "대출 비용"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "제가 처음부터 항목별로 길게 설명하지는 않았어도, 문서 단계에서 정리될 조건이라고는 말했습니다."
+          ],
+          "privateKnowledge": [
+            "상대가 묻지 않으면 자신도 먼저 불리한 조건을 넓게 설명하지 않는 습관이 있다."
+          ],
+          "suppressions": [
+            "'문서 단계'라는 말로 지금 필요한 정보를 뒤로 미룬 점을 인정하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:document_gate",
+            "tenant04:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-2:uncertainty:0",
+              "factText": "항목별 상세 설명은 안 했지만 문서 단계에서 정리될 조건이라고는 말했다는 설명",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "문서 단계에서 정리될 조건",
+                  "neutral": "서류 조건"
+                },
+                "time": {
+                  "exact": "초기 전환 논의 시점",
+                  "neutral": "처음 논의 때"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "등기와 상환예상서를 보면 아실 겁니다. 비용과 공동명의 문제를 제가 먼저 선명하게 말하지 않은 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "기관 문서가 나오면 더는 부인하기 어렵다고 판단한다."
+          ],
+          "suppressions": [
+            "왜 굳이 늦게 말했는지의 동기는 아직 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:condition_backfill",
+            "tenant04:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-2:admission:0",
+              "factText": "기관 문서상 드러나는 공동명의와 비용 조건을 초기에 선명하게 설명하지 않은 점을 인정",
+              "tags": [
+                "admission",
+                "evidence",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "공동명의 등기부와 상환예상서",
+                  "neutral": "기관 문서"
+                },
+                "fee": {
+                  "exact": "중도상환수수료 예상액",
+                  "neutral": "예상 비용"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "상대도 전세대출을 알아볼 정도였으면 기본 서류가 더 필요하다는 건 짐작할 수 있었을 겁니다."
+          ],
+          "privateKnowledge": [
+            "자신의 비공개 책임을 상대의 금융 상식 탓으로 일부 전가한다."
+          ],
+          "suppressions": [
+            "핵심 조건을 말할 위치에 있던 쪽은 본인이었다는 점을 흐린다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:condition_backfill",
+            "tenant04:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-2:responsibility:0",
+              "factText": "상대도 추가 서류 필요성을 짐작했어야 한다며 비공개 책임을 분산하는 진술",
+              "tags": [
+                "responsibility",
+                "counter",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이다은",
+                  "neutral": "상대방",
+                  "fullName": "이다은",
+                  "judgeRef": "세입자"
+                },
+                "document": {
+                  "exact": "전세대출 상담 접수",
+                  "neutral": "상담 접수"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "중도상환수수료가 꽤 컸고, 아내 서명까지 걸려 있어서 말을 꺼내는 순간 협의가 깨질까 봐 늦췄습니다."
+          ],
+          "privateKnowledge": [
+            "돈과 공동명의 의사결정이 부담돼, 조건을 뒤로 숨긴 채 분위기부터 보려 했다."
+          ],
+          "suppressions": [
+            "없음에 가깝다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:numeric_reset",
+            "tenant04:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-2:fear:0",
+              "factText": "큰 중도상환수수료와 공동명의 서명 부담 때문에 핵심 조건 언급을 늦췄다는 심리",
+              "tags": [
+                "fear",
+                "motive",
+                "institution"
+              ],
+              "slots": {
+                "fee": {
+                  "exact": "중도상환수수료 예상액",
+                  "neutral": "상환 비용"
+                },
+                "person": {
+                  "exact": "공동명의 아내",
+                  "neutral": "공동명의자",
+                  "fullName": "성호 배우자",
+                  "judgeRef": "공동명의자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "네, 공동명의 서명과 대출 비용은 전환의 핵심 조건이었고, 그걸 제가 초기에 충분히 공개하지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "이제는 조건 비공개가 오해의 핵심 축이었다는 점을 인정한다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:numeric_reset",
+            "tenant04:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-2:admission:1",
+              "factText": "공동명의 서명과 대출 비용을 전환의 핵심 조건으로 초기에 충분히 공개하지 않았다는 시인",
+              "tags": [
+                "admission",
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "condition": {
+                  "exact": "공동명의 서명과 중도상환수수료",
+                  "neutral": "핵심 조건"
+                },
+                "document": {
+                  "exact": "상환예상서와 전환 초안",
+                  "neutral": "관련 문서"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "월세는 기존 계약대로 계속 들어와야 했고, 저는 멈추라는 동의를 한 적이 없습니다."
+          ],
+          "privateKnowledge": [
+            "다은이 왜 그렇게 믿었는지 짐작은 하지만 일단 원칙을 앞세운다."
+          ],
+          "suppressions": [
+            "카톡에서 즉답을 피한 대목은 먼저 언급하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:document_gate",
+            "tenant04:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-3:rule:0",
+              "factText": "기존 계약상 월세는 계속 지급돼야 했고 자신은 중단 동의를 한 적 없다는 주장",
+              "tags": [
+                "rule",
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "한 달치 월세",
+                  "neutral": "그 월세"
+                },
+                "document": {
+                  "exact": "기존 월세 계약",
+                  "neutral": "기존 계약"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "상대가 물은 건 봤지만, '초안 보고 최종 정하자'고 한 이상 자동으로 월세가 끊긴다고 볼 수는 없습니다."
+          ],
+          "privateKnowledge": [
+            "즉답 회피가 오해를 키웠다는 건 알지만, 서류 미완을 다시 강조한다."
+          ],
+          "suppressions": [
+            "명확히 '월세는 계속 내라'고 답하지 않은 책임은 축소한다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:document_gate",
+            "tenant04:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-3:context:0",
+              "factText": "카톡에서 초안 확인 후 최종 결정하자고 했으므로 월세 자동 중단 동의가 아니었다는 설명",
+              "tags": [
+                "context",
+                "quote",
+                "rule"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "초안 보고 최종 정하자",
+                  "neutral": "그 문장"
+                },
+                "document": {
+                  "exact": "공인중개사 포함 카카오톡",
+                  "neutral": "카톡"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "2천만원이 들어온 건 사실이지만, 메모에는 '전환 준비금'만 적혀 있어 월세 대체 합의로 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 믿음 형성에는 자기 말도 있었지만, 문서 공백을 무기처럼 사용한다."
+          ],
+          "suppressions": [
+            "메모 문구를 자신이 일부러 모호하게 쓴 점은 언급하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:condition_backfill",
+            "tenant04:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-3:evidence:0",
+              "factText": "2천만원 송금과 메모만으로는 월세 대체 합의가 성립했다고 보기 어렵다는 설명",
+              "tags": [
+                "evidence",
+                "threshold",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "추가 보증금"
+                },
+                "memo": {
+                  "exact": "전환 준비금",
+                  "neutral": "메모 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "다은 씨가 먼저 월세를 멈추지만 않았어도 제가 다른 정산을 바로 꺼낼 일은 없었습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 미납을 끌어와 자신의 소통 미흡을 가린다."
+          ],
+          "suppressions": [
+            "정산 기준을 선명히 적지 않은 점은 뒤로 뺀다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:condition_backfill",
+            "tenant04:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-3:responsibility:0",
+              "factText": "월세 미납이 먼저 발생해 상황이 악화됐다고 상대 책임을 강조하는 진술",
+              "tags": [
+                "responsibility",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "한 달치 월세 미납",
+                  "neutral": "미납 월세"
+                },
+                "person": {
+                  "exact": "이다은",
+                  "neutral": "상대방",
+                  "fullName": "이다은",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 월세가 끊긴 순간, 집주인인 제가 상황을 끌려다닌다는 느낌이 들어 더 강하게 원칙을 들이댔습니다."
+          ],
+          "privateKnowledge": [
+            "통제력을 잃는 감각이 강해져 대화를 숫자와 계약 원칙으로만 밀어붙였다."
+          ],
+          "suppressions": [
+            "없음에 가깝다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:numeric_reset",
+            "tenant04:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-3:emotion:0",
+              "factText": "월세가 끊기자 통제력을 잃는 느낌이 들어 원칙을 더 강하게 내세웠다는 심리",
+              "tags": [
+                "emotion",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "relationship": {
+                  "exact": "집주인-세입자 관계",
+                  "neutral": "당사자 관계"
+                },
+                "amount": {
+                  "exact": "한 달치 월세",
+                  "neutral": "그 월세"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "결론적으로 월세는 계속 내는 게 맞았습니다. 다만 제가 즉답을 피한 탓에 다은 씨가 다르게 믿을 여지는 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "원칙은 지키되 소통 실패 책임을 일부 인정한다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:numeric_reset",
+            "tenant04:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-3:admission:0",
+              "factText": "월세는 계속 지급돼야 했지만 자신의 모호한 대응이 오해 여지를 만들었다는 최종 정리",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "초안 보고 최종 정하자",
+                  "neutral": "그 문장"
+                },
+                "amount": {
+                  "exact": "한 달치 월세",
+                  "neutral": "미납 월세"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "저는 이미 협의가 사실상 흐트러졌다고 봤고, 다른 임차인 일정을 잡는 건 당연한 수순이었습니다."
+          ],
+          "privateKnowledge": [
+            "직접 결렬 통보를 안 한 건 알지만, 공실 위험을 이유로 정당화한다."
+          ],
+          "suppressions": [
+            "다은에게 먼저 끝났다고 명확히 알리지 않은 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:document_gate",
+            "tenant04:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-4:denial:0",
+              "factText": "협의가 사실상 깨진 상태였으므로 예비 임차인 일정을 잡는 것이 당연했다고 주장",
+              "tags": [
+                "denial",
+                "act",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "예비 임차인",
+                  "neutral": "새 임차인"
+                },
+                "time": {
+                  "exact": "월세 중단 통보 다음 날",
+                  "neutral": "그다음 날"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "굳이 '결렬'이라고 적진 않았어도, 월세가 멈춘 상황이면 협의가 끝난 걸로 받아들일 만하지 않습니까."
+          ],
+          "privateKnowledge": [
+            "명시적 통지가 없었다는 약점을 분위기 판단으로 덮으려 한다."
+          ],
+          "suppressions": [
+            "문자로 먼저 정리할 수 있었다는 선택지를 외면한다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:document_gate",
+            "tenant04:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-4:uncertainty:0",
+              "factText": "명시적 결렬 통지는 없었지만 월세 중단 상황상 협의 종료로 받아들일 만했다고 설명",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "한 달치 월세 중단",
+                  "neutral": "월세 중단"
+                },
+                "document": {
+                  "exact": "예비 임차인 예약문자",
+                  "neutral": "예약문자"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "카톡을 다시 보면 제가 직접 끝났다고 쓰진 않았습니다. 그 부분은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "캡처 전체가 나오면 더는 부인할 수 없다는 걸 안다."
+          ],
+          "suppressions": [
+            "왜 통지를 생략했는지의 계산은 아직 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:condition_backfill",
+            "tenant04:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-4:admission:0",
+              "factText": "카톡상 명시적 결렬 통지를 하지 않은 점을 인정",
+              "tags": [
+                "admission",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "공인중개사 포함 카카오톡 전체 문맥",
+                  "neutral": "전체 카톡"
+                },
+                "time": {
+                  "exact": "예비 임차인 예약 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "다만 다은 씨가 월세를 멈춘 상황에서 제가 공실을 비워 둘 수는 없었습니다."
+          ],
+          "privateKnowledge": [
+            "통지 부재를 인정하되 미납 상황을 방패로 세운다."
+          ],
+          "suppressions": [
+            "먼저 정리 문자를 보내지 않은 건 비용보다 귀찮음과 감정 회피도 있었다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:condition_backfill",
+            "tenant04:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-4:responsibility:0",
+              "factText": "통지 부재는 있어도 월세 미납 상황 때문에 공실 방지를 우선할 수밖에 없었다는 진술",
+              "tags": [
+                "responsibility",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "한 달치 월세 미납",
+                  "neutral": "미납 상태"
+                },
+                "person": {
+                  "exact": "이다은",
+                  "neutral": "상대방",
+                  "fullName": "이다은",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "공실이 나면 은행 일정이 꼬이고 손해가 생긴다는 생각에, 먼저 통지 문구를 다듬을 여유가 없었습니다."
+          ],
+          "privateKnowledge": [
+            "사실은 통지를 미루는 동안 협상 주도권도 잡고 싶었다."
+          ],
+          "suppressions": [
+            "협상 우위를 의식했다는 계산은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:numeric_reset",
+            "tenant04:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-4:fear:0",
+              "factText": "공실과 손해에 대한 압박 때문에 통지보다 새 임차인 확보를 앞세웠다는 심리",
+              "tags": [
+                "fear",
+                "motive",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "중개사 방문일지와 예약문자",
+                  "neutral": "안내 기록"
+                },
+                "fee": {
+                  "exact": "기존 대출 비용과 공실 손실",
+                  "neutral": "손해 위험"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "네, 저는 협의 결렬을 다은 씨에게 분명히 통지하기 전에 다른 예비 임차인에게 집을 보여줬습니다."
+          ],
+          "privateKnowledge": [
+            "형식적으로도, 감정적으로도 그 순서가 잘못됐다는 걸 인정한다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:numeric_reset",
+            "tenant04:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-4:admission:1",
+              "factText": "협의 결렬을 명확히 통지하기 전에 예비 임차인에게 집을 보여준 사실을 시인",
+              "tags": [
+                "admission",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "방문일지와 예약문자",
+                  "neutral": "안내 기록"
+                },
+                "person": {
+                  "exact": "예비 임차인",
+                  "neutral": "다른 임차인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "2천만원은 협의가 틀어진 이상 그냥 돌려줄 성격의 돈이 아닙니다."
+          ],
+          "privateKnowledge": [
+            "전액 반환 기준이 비어 있다는 점을 이용해 우선 붙잡아 두려 한다."
+          ],
+          "suppressions": [
+            "메모에 위약금이나 몰취라는 표현이 없다는 약점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:document_gate",
+            "tenant04:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-5:denial:0",
+              "factText": "협의 실패 후 2천만원은 단순 반환 대상이 아니라는 주장",
+              "tags": [
+                "denial",
+                "threshold",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "그 돈",
+                  "rounded": "2천만원"
+                },
+                "memo": {
+                  "exact": "전환 준비금",
+                  "neutral": "메모 문구"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 일부는 손해와 미납을 메우는 돈으로 봐야 하고, 전액 반환을 전제로 볼 수는 없습니다."
+          ],
+          "privateKnowledge": [
+            "전액 몰취는 무리라는 걸 알지만, 큰 폭 공제를 먼저 깔아 두고 싶다."
+          ],
+          "suppressions": [
+            "어떤 항목을 얼마나 공제할지 객관 기준이 없다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tenant04:b:tell:document_gate",
+            "tenant04:b:tell:numeric_reset"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-5:uncertainty:0",
+              "factText": "2천만원 전액 반환은 아니며 일부는 손해와 미납 보전에 써야 한다는 설명",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "추가 보증금"
+                },
+                "amount2": {
+                  "exact": "한 달치 월세 미납",
+                  "neutral": "미납분"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "다만 메모를 보면 확정 전세금도 아니고, 그렇다고 위약금이라고 적힌 것도 아닙니다."
+          ],
+          "privateKnowledge": [
+            "문구가 모호해 자신에게도 완전한 방패는 아니라는 걸 인정한다."
+          ],
+          "suppressions": [
+            "메모를 자신이 작성했다는 점에서 애초에 더 명확히 적을 수 있었다는 사실은 줄인다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:condition_backfill",
+            "tenant04:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-5:admission:0",
+              "factText": "영수 메모상 2천만원이 확정 전세금도 위약금도 아닌 모호한 성격임을 인정",
+              "tags": [
+                "admission",
+                "threshold",
+                "evidence"
+              ],
+              "slots": {
+                "memo": {
+                  "exact": "전환 준비금",
+                  "neutral": "메모 문구"
+                },
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "그 돈"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "다은 씨가 먼저 월세를 멈추고 확정처럼 움직인 부분은 정산에서 반영돼야 합니다."
+          ],
+          "privateKnowledge": [
+            "상대의 오판을 근거로 자기 보전 폭을 넓히고 싶다."
+          ],
+          "suppressions": [
+            "정산 기준을 먼저 문서화하지 않은 자신의 기여는 뒤로 미룬다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:condition_backfill",
+            "tenant04:b:tell:document_gate"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-5:responsibility:0",
+              "factText": "상대의 월세 미납과 성급한 행동이 정산 차감 사유가 돼야 한다는 주장",
+              "tags": [
+                "responsibility",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "한 달치 월세 미납",
+                  "neutral": "미납 월세"
+                },
+                "person": {
+                  "exact": "이다은",
+                  "neutral": "상대방",
+                  "fullName": "이다은",
+                  "judgeRef": "세입자"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "그 돈을 바로 돌려주면 제 대출 정리와 공실 손해를 제가 전부 떠안는 셈이라, 솔직히 붙들고 싶었습니다."
+          ],
+          "privateKnowledge": [
+            "자기 보호 심리가 커져 합리적 정산보다 선점에 가까운 태도를 취했다."
+          ],
+          "suppressions": [
+            "없음에 가깝다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:numeric_reset",
+            "tenant04:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-5:emotion:0",
+              "factText": "대출 정리 비용과 공실 손해 부담 때문에 2천만원을 붙들고 싶었다는 심리",
+              "tags": [
+                "emotion",
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "추가 보증금"
+                },
+                "fee": {
+                  "exact": "대출 정리 비용과 공실 손해",
+                  "neutral": "손해 부담"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "2천만원을 전액 몰취할 수는 없습니다. 미납 월세와 실제 사용·손해 항목만 반영해서 나머지를 반환하는 쪽이 맞습니다."
+          ],
+          "privateKnowledge": [
+            "전부 가져갈 수 없다는 건 받아들이되, 항목별 차감 틀은 지키고 싶다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tenant04:b:tell:numeric_reset",
+            "tenant04:b:tell:condition_backfill"
+          ],
+          "claimAtoms": [
+            {
+              "id": "tenant04:b:d-5:admission:1",
+              "factText": "2천만원 전액 몰취는 불가능하며 미납 월세와 실제 손해를 반영한 뒤 나머지를 반환해야 한다는 최종 입장",
+              "tags": [
+                "admission",
+                "rule",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "2천만원",
+                  "neutral": "추가 보증금"
+                },
+                "amount2": {
+                  "exact": "한 달치 월세 및 실제 손해",
+                  "neutral": "차감 항목"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,4222 @@
+export const partnership03V2Atoms = {
+  "caseId": "partnership-03",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "공유 캘린더 첨부 아젠다를 최종 확정한 게 아니라 투자자 관점의 흐름 최적화 기준으로 임시 정리했을 뿐입니다.",
+            "나서린도 이미 다른 안으로 움직이고 있었기 때문에 단독으로 판을 바꾼 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "나서린 확인 없이 먼저 손댄 건 사실이다.",
+            "오프닝 주도권을 먼저 고정하고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "최종 재확인을 하지 않았다는 점",
+            "수정 내용이 제게 유리했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-1:denial:0",
+              "factText": "새벽 0시 47분의 그 문서 변경·지시를 최종 결정이 아닌 임시 대응으로 축소합니다.",
+              "tags": [
+                "denial",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "새벽 0시 47분",
+                  "neutral": "그 시각",
+                  "period": "리허설 종료 후 31분 뒤",
+                  "dateExact": "새벽 0시 47분"
+                },
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-1:self_justification:0",
+              "factText": "투자자 관점의 흐름 최적화을 앞세워 오프닝 주도권 확보 동기를 숨깁니다.",
+              "tags": [
+                "self_justification",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "새벽 0시 47분 공유 캘린더 아젠다에 손댄 건 맞지만, 확정이 아니라 리허설 흐름 점검이었습니다.",
+            "약속 위반 여부보다 투자자 앞 흐름을 먼저 본 운영 판단이었습니다."
+          ],
+          "privateKnowledge": [
+            "되돌릴 수는 있었지만 먼저 자리를 선점하려는 심리가 있었다."
+          ],
+          "suppressions": [
+            "상대에게 알리지 않은 채 문서를 바꾼 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-1:act:0",
+              "factText": "공유 캘린더 아젠다에 손댄 사실은 부분적으로 인정하면서도 확정 행위가 아니었습니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "uncertainty"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "새벽 0시 47분",
+                  "neutral": "그 시각",
+                  "period": "리허설 종료 후 31분 뒤",
+                  "dateExact": "새벽 0시 47분"
+                },
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-1:context:0",
+              "factText": "약속 문제를 운영 판단 또는 선제 대응의 맥락으로 바꿔 설명합니다.",
+              "tags": [
+                "context",
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "제가 공유 캘린더 첨부 아젠다를 제 쪽 오프닝으로 수정한 사실은 인정하지만, 발표권을 빼앗으려던 의도는 아니었습니다.",
+            "상대도 이미 다른 버전을 준비하고 있었다는 점을 근거로 순수한 탈취와는 다릅니다."
+          ],
+          "privateKnowledge": [
+            "상대가 반발할 걸 알면서도 수정 흔적을 남겼다."
+          ],
+          "suppressions": [
+            "반발 가능성을 알면서도 멈추지 않았던 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:emotion_deflection"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-1:act:1",
+              "factText": "무통보 런오브쇼 수정 자체는 인정하지만, 발표권 탈취 의도까지는 부인합니다.",
+              "tags": [
+                "act",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                },
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-1:responsibility:0",
+              "factText": "상대의 별도 준비 정황이나 기존 혼선을 근거로 책임 비중을 분산하려 합니다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "최종 재확인을 하지 않은 책임은 인정합니다.",
+            "다만 IR 컨설턴트의 \"첫 10분은 한 명이 끊고\"라는 음성메모와 서린도 별도 발표 안을 돌리고 있다는 신호 때문에 그렇게 판단했습니다."
+          ],
+          "privateKnowledge": [
+            "문서화 약속을 다시 열면 내 위치가 흔들릴까 봐 피했다."
+          ],
+          "suppressions": [
+            "문서화 절차를 다시 열지 않은 동기"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:emotion_deflection"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-1:responsibility:1",
+              "factText": "최종 재확인을 하지 않았다는 책임은 인정하지만, IR 컨설턴트의 \"첫 10분은 한 명이 끊고\"라는 음성메모 때문에 판단이 흔들렸습니다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                },
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-1:motive:0",
+              "factText": "오프닝 주도권을 놓치면 위치가 약해질 거라는 두려움이 결정을 밀어붙이게 했다.",
+              "tags": [
+                "motive",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "오프닝에서 밀리면 보조 설명자처럼 밀려날까 봐 예민해졌습니다.",
+            "배신 의도보다 자리를 지키려는 조급함이 더 컸습니다."
+          ],
+          "privateKnowledge": [
+            "투자자 앞에서 보조 설명자로 밀려나는 그림을 견디기 싫었다."
+          ],
+          "suppressions": [
+            "오프닝 주도권을 지키고 싶었던 개인적 불안"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:a:tell:emotion_deflection",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-1:emotion:0",
+              "factText": "행동의 밑바닥에 자리 상실에 대한 불안과 배제 공포가 있었다고 드러냅니다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-1:shame:0",
+              "factText": "효율이나 선제 대응이라는 말 뒤에 실제로는 자존심과 체면이 걸려 있었다는 점을 비춥니다.",
+              "tags": [
+                "shame",
+                "self_justification",
+                "fear"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "최종 확인 없이 공유 캘린더 첨부 아젠다를 제 쪽 오프닝으로 수정한 점을 시인합니다.",
+            "효율 판단과 자기보호가 섞인 결정이었고, 상대를 고의로 지우려 한 것은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "무통보 변경 자체는 내 책임이라는 걸 안다.",
+            "서린이 느낀 배제감이 왜 컸는지도 이해한다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:a:tell:emotion_deflection",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-1:admission:0",
+              "factText": "최종 확인 없이 무통보 런오브쇼 수정을 한 사실을 시인합니다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "새벽 0시 47분",
+                  "neutral": "그 시각",
+                  "period": "리허설 종료 후 31분 뒤",
+                  "dateExact": "새벽 0시 47분"
+                },
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-1:responsibility:2",
+              "factText": "효율 판단 또는 자기보호가 섞인 절차 위반이었고, 고의적 인격 말살까지는 아니었다고 정리합니다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "나서린이 먼저 제 오프닝 스크립트가 들어간 단독 발표용 덱과 인쇄본을 먼저 뽑아달라고 지시했습니다.",
+            "그 순간 내 쪽에서는 발표권 약속이 깨진 신호로 읽혔습니다."
+          ],
+          "privateKnowledge": [
+            "그걸 보는 순간 서린이 발표권을 굳히려 한다고 읽었다",
+            "나도 바로 통화해 확인하지 않았다."
+          ],
+          "suppressions": [
+            "저도 즉시 확인 절차를 밟지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-2:counter:0",
+              "factText": "나서린의 선행 행동을 곧바로 약속 파기 신호로 묶습니다.",
+              "tags": [
+                "counter",
+                "act",
+                "relationship"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "디자인 툴 덱 코멘트",
+                  "neutral": "그 자료"
+                },
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-2:harm:0",
+              "factText": "절차 위반이 곧 제 지위와 발표권이 지워지는 손해로 체감됐다고 숨깁니다.",
+              "tags": [
+                "harm",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "정황상 그렇게 읽을 수밖에 없었다고 하며, 내 오프닝 버전 먼저 같은 표기를 강한 신호로 강조합니다.",
+            "다만 전체 맥락을 끝까지 확인한 건 아니라고 비켜간다."
+          ],
+          "privateKnowledge": [
+            "증거 전체보다 눈에 띄는 문구를 먼저 잡았다."
+          ],
+          "suppressions": [
+            "로그 전체보다 특정 문구에 과민하게 반응했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-2:evidence:0",
+              "factText": "문구 하나와 부분 정황을 핵심 증거처럼 붙잡습니다.",
+              "tags": [
+                "evidence",
+                "quote",
+                "uncertainty"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                },
+                "artifact": {
+                  "exact": "디자인 툴 덱 코멘트",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-2:uncertainty:0",
+              "factText": "원본 전체 맥락은 다 보지 못했다는 약점을 뒤로 숨깁니다.",
+              "tags": [
+                "uncertainty",
+                "context",
+                "privacy"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "디자인 툴 덱 코멘트",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "로그상 나서린의 선행 행동 자체는 사실이입니다.",
+            "그 사실이 곧 악의와 동일하다고까지는 아직 못 박지 않는다."
+          ],
+          "privateKnowledge": [
+            "절차 위반과 의도는 다른 층위라는 걸 어렴풋이 알고 있었다."
+          ],
+          "suppressions": [
+            "의도까지는 확정할 수 없다는 인식"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:emotion_deflection"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-2:act:0",
+              "factText": "나서린의 선행 행동 자체는 사실이입니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "counter"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "디자인 툴 덱 코멘트",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "새벽",
+                  "neutral": "그 시점",
+                  "period": "캘린더 수정 직후",
+                  "dateExact": "새벽"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-2:context:0",
+              "factText": "사실 확인과 의도 단정은 다른 층위라는 점을 조금씩 인정합니다.",
+              "tags": [
+                "context",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "나서린의 행동은 절차 위반이 맞지만, 내가 곧바로 의도적 탈취로 해석한 건 앞서갔습니다.",
+            "그때는 확인보다 결론이 먼저였다."
+          ],
+          "privateKnowledge": [
+            "내 단정이 상황을 더 굳게 만들었다."
+          ],
+          "suppressions": [
+            "내 해석이 갈등을 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:emotion_deflection"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-2:responsibility:0",
+              "factText": "상대 행동은 절차 위반이지만 제가 의도적 탈취로 곧장 해석한 책임도 있습니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "디자인 툴 덱 코멘트",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-2:motive:0",
+              "factText": "확인보다 결론이 먼저 나온 배경에 발표권 상실 불안이 있었다고 드러냅니다.",
+              "tags": [
+                "motive",
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "내가 기술 설명 보조로 밀려난다는 느낌이 커서 상대 행동을 더 공격적으로 읽었습니다.",
+            "투자자 앞 역할 신호를 개인적 지위 문제로 받아들였다."
+          ],
+          "privateKnowledge": [
+            "배제당한다는 느낌이 화보다 먼저 올라왔다."
+          ],
+          "suppressions": [
+            "지위 불안이 판단에 섞였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:a:tell:emotion_deflection",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-2:emotion:0",
+              "factText": "상대 행동을 본 순간 배제감과 상실감이 의도 해석을 밀어붙였다고 드러냅니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-2:fear:0",
+              "factText": "발표권 신호가 곧 회사 안 권력 신호처럼 느껴졌다는 두려움을 비춥니다.",
+              "tags": [
+                "fear",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "나서린의 선행 행동은 사실이지만, 내가 그걸 곧 악의적 발표권 탈취로 단정한 건 과했습니다.",
+            "나 역시 즉시 재확인하지 않고 감정적으로 받아쳤습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 행동을 사실보다 크게 해석한 책임이 있다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:a:tell:emotion_deflection",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-2:admission:0",
+              "factText": "상대의 선행 행동은 사실이지만, 제가 악의적 탈취로 단정한 건 과했습니다.",
+              "tags": [
+                "admission",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "디자인 툴 덱 코멘트",
+                  "neutral": "그 자료"
+                },
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-2:responsibility:1",
+              "factText": "확인 대신 감정적으로 받아친 제 몫도 갈등 원인으로 시인합니다.",
+              "tags": [
+                "responsibility",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "새벽",
+                  "neutral": "그 시점",
+                  "period": "캘린더 수정 직후",
+                  "dateExact": "새벽"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "나서린이 일부러 약속을 깨고 발표권을 가져가려 했다고 봅니다.",
+            "크롭된 \"처음은 내가 끊을게\" 캡처와 발표자용 덱 정황이 그렇게 읽힐 만큼 강한 신호였습니다."
+          ],
+          "privateKnowledge": [
+            "크롭 캡처와 부분 신호가 거의 전부였다.",
+            "그래도 관계가 틀어질까 말은 절제하려 했다."
+          ],
+          "suppressions": [
+            "증거가 부분 캡처와 인상에 크게 기대고 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-3:denial:0",
+              "factText": "상대의 행동을 곧바로 악의적 발표권 탈취로 규정합니다.",
+              "tags": [
+                "denial",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "처음은 내가 끊을게",
+                  "neutral": "그 문구"
+                },
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-3:counter:0",
+              "factText": "부분 신호를 의도 전체의 증거처럼 취급한다.",
+              "tags": [
+                "counter",
+                "evidence",
+                "quote"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "처음은 내가 끊을게",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "의도 단정의 근거로 처음은 내가 끊을게 같은 문구와 발표자 표기를 든다.",
+            "전체 맥락보다 먼저 눈에 띈 신호를 붙잡고 있었다."
+          ],
+          "privateKnowledge": [
+            "원본 전문보다 결론에 맞는 문구를 먼저 골랐다."
+          ],
+          "suppressions": [
+            "원본 맥락을 확인하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-3:quote:0",
+              "factText": "짧은 문구와 표기를 떼어내 의도 판단의 핵심 재료로 삼는다.",
+              "tags": [
+                "quote",
+                "evidence",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "처음은 내가 끊을게",
+                  "neutral": "그 문구"
+                },
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-3:uncertainty:0",
+              "factText": "원본 전문을 충분히 보지 못했다는 약점을 감춘다.",
+              "tags": [
+                "uncertainty",
+                "privacy",
+                "context"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "IR 컨설턴트 음성메모",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "내가 붙잡은 근거가 부분 캡처와 일부 정황이었다는 점은 인정합니다.",
+            "그래도 그때는 나서린이 나를 배제하려 한다고 읽었습니다."
+          ],
+          "privateKnowledge": [
+            "의도까지 확정할 수는 없다는 걸 알면서도 그렇게 믿고 싶었다."
+          ],
+          "suppressions": [
+            "의도 단정의 약한 근거"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:emotion_deflection"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-3:evidence:0",
+              "factText": "부분 캡처와 일부 정황이 제 주된 근거였음을 인정합니다.",
+              "tags": [
+                "evidence",
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "처음은 내가 끊을게",
+                  "neutral": "그 문구"
+                },
+                "source": {
+                  "exact": "IR 컨설턴트 음성메모",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-3:relationship:0",
+              "factText": "근거가 약해도 상대가 저를 배제하려 한다고 믿고 있었다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보면 IR 컨설턴트 음성메모와 자동 생성된 lead presenter 문구가 서로 다르게 읽힐 수 있었습니다.",
+            "의도적 탈취라고 단정한 판단은 그 모호성을 무시한 셈이었다."
+          ],
+          "privateKnowledge": [
+            "모호성을 인정하면 내 판단 전체가 흔들린다."
+          ],
+          "suppressions": [
+            "모호성을 애써 외면한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:emotion_deflection"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-3:context:0",
+              "factText": "컨설턴트 음성메모와 자동 문구가 모두 모호했다는 점을 인정합니다.",
+              "tags": [
+                "context",
+                "evidence",
+                "uncertainty"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "IR 컨설턴트 음성메모",
+                  "neutral": "그 자료"
+                },
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-3:responsibility:0",
+              "factText": "그 모호성을 무시하고 의도적 탈취로 단정한 책임이 제게도 있다고 드러냅니다.",
+              "tags": [
+                "responsibility",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "처음은 내가 끊을게",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "오프닝을 놓치면 기술창업자 위상이 약해질까 두려움 때문에 의도를 먼저 악의로 해석했습니다.",
+            "서린이 나를 배제하려 한다는 느낌이 감정적으로 크게 번졌습니다."
+          ],
+          "privateKnowledge": [
+            "기술창업자 위상이 약해질까 봐 더 민감했다."
+          ],
+          "suppressions": [
+            "지위 불안이 해석을 밀어붙였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:a:tell:emotion_deflection",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-3:fear:0",
+              "factText": "자리와 대표성이 흔들릴까 두려워 의도를 먼저 악의로 읽었다고 드러냅니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-3:emotion:0",
+              "factText": "배제감과 상실감이 증거 해석을 밀어붙였습니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "처음은 내가 끊을게",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "상대가 일부러 발표권을 빼앗은 건 아니었습니다.",
+            "같은 모호한 지시와 문구를 서로 다르게 해석한 공유 오해였습니다."
+          ],
+          "privateKnowledge": [
+            "악의가 아니라 오해였다는 설명이 가장 사실에 가깝다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:a:tell:emotion_deflection",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-3:admission:0",
+              "factText": "의도적 탈취라는 제 판단이 틀렸고, 공유 오해가 핵심이었습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "IR 컨설턴트 음성메모",
+                  "neutral": "그 자료"
+                },
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-3:responsibility:1",
+              "factText": "같은 모호한 지시를 자기 불안에 맞게 해석한 몫을 인정합니다.",
+              "tags": [
+                "responsibility",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "처음은 내가 끊을게",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "전날 밤 10시까지 역할 문서화 규칙이 무너진 건 맞지만, 먼저 균열을 낸 건 상대 쪽입니다.",
+            "자신은 그 흐름에 대응했을 뿐이입니다."
+          ],
+          "privateKnowledge": [
+            "나도 문서를 다시 열지 않았다는 걸 안다."
+          ],
+          "suppressions": [
+            "저도 문서 확정 절차를 다시 열지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-4:denial:0",
+              "factText": "문서화 약속 붕괴의 출발점을 상대 쪽으로 먼저 돌린다.",
+              "tags": [
+                "denial",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                },
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 문서"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-4:self_justification:0",
+              "factText": "제 병행 준비를 대응 행위로만 포장합니다.",
+              "tags": [
+                "self_justification",
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "selfPlan": {
+                  "exact": "자신이 오프닝을 맡는 12분 버전",
+                  "neutral": "자기 버전"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "전날 밤 10시까지 역할 문서화 약속은 있었지만 그 시점엔 상황이 너무 급했습니다.",
+            "문서 확정보다 리허설 대응이 우선이었습니다."
+          ],
+          "privateKnowledge": [
+            "규칙보다 속도를 택했다."
+          ],
+          "suppressions": [
+            "규칙 위반을 운영 판단으로 포장한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-4:rule:0",
+              "factText": "10시 문서화 규칙의 존재는 인정하지만 예외 상황처럼 설명합니다.",
+              "tags": [
+                "rule",
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-4:context:0",
+              "factText": "절차보다 리허설 대응이 우선이었다는 운영 논리로 위반을 희석한다.",
+              "tags": [
+                "context",
+                "self_justification",
+                "threshold"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 문서"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "서로 제가 오프닝을 맡는 12분 버전과 서린 오프닝 11분 버전처럼 다른 버전으로 움직였고, 문서를 다시 열지 않았다는 점은 인정합니다.",
+            "저도 그 상태를 방치한 책임이 있다고 일부 시인합니다."
+          ],
+          "privateKnowledge": [
+            "서린이 다른 안으로 준비하는 걸 보고도 멈추지 않았다."
+          ],
+          "suppressions": [
+            "상대 신호를 보고도 그대로 밀어붙인 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:emotion_deflection"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-4:act:0",
+              "factText": "서로 다른 버전으로 리허설했고 문서를 다시 열지 않았다는 사실을 인정합니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "rule"
+              ],
+              "slots": {
+                "selfPlan": {
+                  "exact": "자신이 오프닝을 맡는 12분 버전",
+                  "neutral": "자기 버전"
+                },
+                "otherPlan": {
+                  "exact": "서린 오프닝 11분 버전",
+                  "neutral": "상대 버전"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-4:responsibility:0",
+              "factText": "저도 그 상태를 방치한 책임이 있다고 부분적으로 시인합니다.",
+              "tags": [
+                "responsibility",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "내 책임도 있지만, 서린도 같은 정도로 10시 확정 절차를 놓쳤습니다.",
+            "한쪽만 규칙을 깬 사건은 아니었다고 정리합니다."
+          ],
+          "privateKnowledge": [
+            "상대와 비슷한 정도의 책임이 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "책임이 거의 비슷할 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:emotion_deflection"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-4:responsibility:1",
+              "factText": "책임이 한쪽에만 있지 않고 거의 비슷하게 나뉜다고 정리합니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-4:counter:0",
+              "factText": "상대도 같은 정도로 절차를 놓쳤다는 점을 전면에 내세운다.",
+              "tags": [
+                "counter",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "otherPlan": {
+                  "exact": "서린 오프닝 11분 버전",
+                  "neutral": "상대 버전"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "미팅이 다음 달 인건비와 직결된다는 압박 때문에 절차보다 실행을 앞세웠습니다.",
+            "막판에 판을 흔든 사람으로 보일까 조급함도 있었습니다."
+          ],
+          "privateKnowledge": [
+            "이번 피치 실패가 곧 회사 운영 위기로 이어질까 불안했다."
+          ],
+          "suppressions": [
+            "불안과 체면이 판단에 섞였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:a:tell:emotion_deflection",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-4:fear:0",
+              "factText": "피치 실패와 대표성 손상이 겹친 압박이 절차를 밀어냈다고 드러냅니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "threshold"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-4:shame:0",
+              "factText": "규칙을 지켜야 한다는 걸 알면서도 조급함 때문에 넘겼다는 부끄러움을 비춥니다.",
+              "tags": [
+                "shame",
+                "rule",
+                "emotion"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 문서"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "전날 밤 10시 문서화 약속을 나도 어겼습니다.",
+            "서로 다른 버전으로 리허설하면서도 다시 확인하지 않은 공동 실패였습니다."
+          ],
+          "privateKnowledge": [
+            "절차를 생략한 채 각자 밀어붙인 게 핵심 문제였다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:a:tell:emotion_deflection",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-4:admission:0",
+              "factText": "전날 밤 10시 문서화 약속을 저도 어겼습니다.",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                },
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 문서"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-4:responsibility:2",
+              "factText": "각자 다른 리허설 안을 밀면서 재확인하지 않은 공동 실패였다고 정리합니다.",
+              "tags": [
+                "responsibility",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "selfPlan": {
+                  "exact": "자신이 오프닝을 맡는 12분 버전",
+                  "neutral": "자기 버전"
+                },
+                "otherPlan": {
+                  "exact": "서린 오프닝 11분 버전",
+                  "neutral": "상대 버전"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "투자자 쪽은 한 명이 전체 흐름을 잡길 원했고, 나는 그걸 회의 전체를 한 명이 리드해야 한다는 요청으로 이해했습니다.",
+            "그 해석이 당시엔 가장 효율적인 운영안처럼 보였습니다."
+          ],
+          "privateKnowledge": [
+            "정확한 범위를 직접 재확인하지 않았다."
+          ],
+          "suppressions": [
+            "직접 확인 없이 해석으로 밀어붙였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-5:denial:0",
+              "factText": "투자자 요청을 전체 단독 리드에 가까운 뜻으로 자신 있게 말합니다.",
+              "tags": [
+                "denial",
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조",
+                  "neutral": "그 요청"
+                },
+                "misread": {
+                  "exact": "회의 전체를 한 명이 리드해야 한다는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-5:self_justification:0",
+              "factText": "그 해석이 당시엔 가장 합리적이거나 필요한 대응이었다고 포장합니다.",
+              "tags": [
+                "self_justification",
+                "beneficiary",
+                "context"
+              ],
+              "slots": {
+                "misread": {
+                  "exact": "회의 전체를 한 명이 리드해야 한다는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "lead presenter 문구와 컨설턴트 음성메모 때문에 그렇게 읽었습니다.",
+            "직접 다시 확인하지는 않았지만 문구상 충분히 그렇게 보였습니다."
+          ],
+          "privateKnowledge": [
+            "문구가 내 쪽에 유리한 방향으로 읽혔다."
+          ],
+          "suppressions": [
+            "유리한 쪽으로 문구를 읽었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-5:evidence:0",
+              "factText": "템플릿 문구와 음성메모를 해석 근거로 제시한다.",
+              "tags": [
+                "evidence",
+                "institution",
+                "quote"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "lead presenter 문구와 컨설턴트 음성메모",
+                  "neutral": "그 근거"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-5:uncertainty:0",
+              "factText": "직접 재확인하지 않았다는 공백을 감춘다.",
+              "tags": [
+                "uncertainty",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조",
+                  "neutral": "그 요청"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "정확한 요청 범위를 원문 기준으로 끝까지 확인한 건 아니입니다.",
+            "템플릿 문구와 음성메모를 넓게 해석한 쪽에 가까웠습니다."
+          ],
+          "privateKnowledge": [
+            "근거보다 해석 폭이 더 컸다."
+          ],
+          "suppressions": [
+            "원문 재확인이 없었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:emotion_deflection"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-5:context:0",
+              "factText": "정확한 요청 범위를 원문으로 검증하지 않은 채 넓게 해석했다는 점을 인정합니다.",
+              "tags": [
+                "context",
+                "institution",
+                "uncertainty"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "lead presenter 문구와 컨설턴트 음성메모",
+                  "neutral": "그 근거"
+                },
+                "misread": {
+                  "exact": "회의 전체를 한 명이 리드해야 한다는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-5:beneficiary:0",
+              "factText": "그 해석이 제게 유리한 역할 배분을 정당화해준다는 점을 숨기지 못한다.",
+              "tags": [
+                "beneficiary",
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "misread": {
+                  "exact": "회의 전체를 한 명이 리드해야 한다는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보면 투자자 요청은 첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조 쪽에 더 가까웠을 수 있습니다.",
+            "회의 전체 리드까지 뜻한 건 아닐 가능성이 크습니다."
+          ],
+          "privateKnowledge": [
+            "전체 리드 요청은 아니었을 수 있다는 걸 받아들이기 시작했다."
+          ],
+          "suppressions": [
+            "제 해석이 과했을 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization",
+            "partnership-03:a:tell:emotion_deflection"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-5:institution:0",
+              "factText": "투자자 측의 실제 요청이 첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조에 더 가까웠을 수 있습니다.",
+              "tags": [
+                "institution",
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조",
+                  "neutral": "그 요청"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-5:responsibility:0",
+              "factText": "제 넓은 해석이 갈등을 부풀린 한 축이었다고 드러냅니다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "misread": {
+                  "exact": "회의 전체를 한 명이 리드해야 한다는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "기술창업자인 내가 보조 설명자로 밀려날까 그 넓은 해석에 더 끌렸습니다.",
+            "그 해석이 내 오프닝을 정당화해준다는 점도 솔직히 있었습니다."
+          ],
+          "privateKnowledge": [
+            "내 위치를 지키는 데 유리한 해석을 골랐다."
+          ],
+          "suppressions": [
+            "이득이 되는 해석을 선호했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:a:tell:emotion_deflection",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-5:fear:0",
+              "factText": "자리와 대표성 상실에 대한 불안이 넓은 해석을 붙잡게 했습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "beneficiary"
+              ],
+              "slots": {
+                "misread": {
+                  "exact": "회의 전체를 한 명이 리드해야 한다는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-5:motive:0",
+              "factText": "제게 유리한 구조를 정당화할 수 있다는 점이 해석 선택에 섞였다고 드러냅니다.",
+              "tags": [
+                "motive",
+                "beneficiary",
+                "shame"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조",
+                  "neutral": "그 요청"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "투자자 측의 실제 요청은 첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조이었고, 내가 그 범위를 넓게 읽었습니다.",
+            "그 오독이 발표권 갈등을 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "실제 요청 범위를 오독했다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:a:tell:emotion_deflection",
+            "partnership-03:a:tell:timeline_rebuild",
+            "partnership-03:a:tell:flow_optimization"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:a:d-5:admission:0",
+              "factText": "투자자 측의 실제 요청은 첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조이었고, 제가 범위를 넓게 읽었습니다.",
+              "tags": [
+                "admission",
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조",
+                  "neutral": "그 요청"
+                },
+                "misread": {
+                  "exact": "회의 전체를 한 명이 리드해야 한다는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:a:d-5:responsibility:1",
+              "factText": "그 오독이 발표권 갈등을 키운 책임 중 하나였습니다.",
+              "tags": [
+                "responsibility",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "lead presenter 문구와 컨설턴트 음성메모",
+                  "neutral": "그 근거"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "결국 강도윤이 먼저 저를 오프닝 발표자로 올리도록 수정했어요.",
+            "도윤 lead 표기가 뜬 순간 내 오프닝이 지워졌다고 받아들였다고 한다."
+          ],
+          "privateKnowledge": [
+            "그 문서를 보는 순간 도윤이 내 역할을 걷어낸다고 읽었다",
+            "나도 바로 원본 맥락을 확인하지 않았다."
+          ],
+          "suppressions": [
+            "원본 전체를 보기 전에 결론부터 내렸다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-1:counter:0",
+              "factText": "강도윤의 선행 행동을 곧바로 약속 파기 신호로 묶어요.",
+              "tags": [
+                "counter",
+                "act",
+                "relationship"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                },
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-1:harm:0",
+              "factText": "절차 위반이 곧 제 지위와 발표권이 지워지는 손해로 체감됐다고 숨겨요.",
+              "tags": [
+                "harm",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "세부보다 결론이 먼저였고, 도윤 lead 같은 문구를 보고 약속 파기로 읽었어요.",
+            "그래도 그 문서 전체가 무슨 경위로 바뀌었는지는 아직 다 못 봤다고 비튼다."
+          ],
+          "privateKnowledge": [
+            "문구 하나를 의도 전체로 확장해 읽었다."
+          ],
+          "suppressions": [
+            "문구 하나에 해석을 과도하게 실었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-1:evidence:0",
+              "factText": "문구 하나와 부분 정황을 핵심 증거처럼 붙잡아요.",
+              "tags": [
+                "evidence",
+                "quote",
+                "uncertainty"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                },
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-1:uncertainty:0",
+              "factText": "원본 전체 맥락은 다 보지 못했다는 약점을 뒤로 숨겨요.",
+              "tags": [
+                "uncertainty",
+                "context",
+                "privacy"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "로그상 강도윤의 선행 행동은 사실이에요.",
+            "하지만 그 사실이 왜 내 쪽에서 탈취처럼 보였는지는 분리해서 말하려 한다."
+          ],
+          "privateKnowledge": [
+            "절차 위반과 악의는 다를 수 있다는 걸 알기 시작했다."
+          ],
+          "suppressions": [
+            "상대 의도는 아직 단정할 수 없다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:proof_overread"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-1:act:0",
+              "factText": "강도윤의 선행 행동 자체는 사실이에요.",
+              "tags": [
+                "act",
+                "timeline",
+                "counter"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                },
+                "time": {
+                  "exact": "새벽 0시 47분",
+                  "neutral": "그 시점",
+                  "period": "리허설 종료 후",
+                  "dateExact": "새벽 0시 47분"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-1:context:0",
+              "factText": "사실 확인과 의도 단정은 다른 층위라는 점을 조금씩 인정해요.",
+              "tags": [
+                "context",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "강도윤의 무통보 변경은 맞지만, 내가 그걸 곧바로 의도적 배제로 읽은 건 성급했어요.",
+            "당시엔 확인보다 상실감이 먼저였다."
+          ],
+          "privateKnowledge": [
+            "내 결론이 너무 빨랐다."
+          ],
+          "suppressions": [
+            "상실감이 해석을 밀어붙였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-1:responsibility:0",
+              "factText": "상대 행동은 절차 위반이지만 제가 의도적 탈취로 곧장 해석한 책임도 있어요.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-1:motive:0",
+              "factText": "확인보다 결론이 먼저 나온 배경에 발표권 상실 불안이 있었다고 드러내요.",
+              "tags": [
+                "motive",
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "내 오프닝이 지워졌다는 느낌이 강해서 상대 의도를 더 나쁘게 해석했어요.",
+            "이름 하나가 곧 대표성 신호처럼 느껴졌어요."
+          ],
+          "privateKnowledge": [
+            "공동대표가 아니라 들러리처럼 보일까 봐 예민했다."
+          ],
+          "suppressions": [
+            "대표성 불안이 크다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:headline_conclusion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-1:emotion:0",
+              "factText": "상대 행동을 본 순간 배제감과 상실감이 의도 해석을 밀어붙였다고 드러내요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-1:fear:0",
+              "factText": "발표권 신호가 곧 회사 안 권력 신호처럼 느껴졌다는 두려움을 비춰요.",
+              "tags": [
+                "fear",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "강도윤의 행동 자체는 절차 위반이었지만, 내가 그걸 곧 '내 오프닝을 뺏었다'로 단정한 건 과했어요.",
+            "나도 감정적으로 대응해 싸움을 키웠어요."
+          ],
+          "privateKnowledge": [
+            "내 단정 역시 책임이 있다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:headline_conclusion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-1:admission:0",
+              "factText": "상대의 선행 행동은 사실이지만, 제가 악의적 탈취로 단정한 건 과했어요.",
+              "tags": [
+                "admission",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 자료"
+                },
+                "role": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-1:responsibility:1",
+              "factText": "확인 대신 감정적으로 받아친 제 몫도 갈등 원인으로 시인해요.",
+              "tags": [
+                "responsibility",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "새벽 0시 47분",
+                  "neutral": "그 시점",
+                  "period": "리허설 종료 후",
+                  "dateExact": "새벽 0시 47분"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "결국 그 출력 요청은 배제 신호에 대한 선제 대응이었을 뿐, 최종 탈취 선언은 아니었어요.",
+            "강도윤 쪽 런오브쇼가 이미 바뀌었다는 정황 때문에 가만있을 수 없었다고 몰아붙인다."
+          ],
+          "privateKnowledge": [
+            "강도윤에게 먼저 확인하지 않았다.",
+            "배제당했다는 느낌이 결론을 앞질렀다."
+          ],
+          "suppressions": [
+            "상대 확인 없이 디자이너에게 바로 지시한 점",
+            "그 요청이 제게 유리한 버전이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-2:denial:0",
+              "factText": "도윤의 캘린더 수정 12분 뒤의 그 출력 요청 변경·지시를 최종 결정이 아닌 임시 대응으로 축소해요.",
+              "tags": [
+                "denial",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "도윤의 캘린더 수정 12분 뒤",
+                  "neutral": "그 시각",
+                  "period": "새벽 직후",
+                  "dateExact": "도윤의 캘린더 수정 12분 뒤"
+                },
+                "artifact": {
+                  "exact": "디자인 툴 코멘트",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-2:self_justification:0",
+              "factText": "배제 신호에 대한 선제 대응을 앞세워 오프닝 주도권 확보 동기를 숨겨요.",
+              "tags": [
+                "self_justification",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "디자인 툴 코멘트를 남긴 건 맞지만, 확정본을 찍으려던 게 아니라 대비용 버전을 먼저 확인한 것이에요.",
+            "상대가 먼저 내 자리를 흔든 상황이었다는 결론을 먼저 세운다."
+          ],
+          "privateKnowledge": [
+            "출력 요청을 남기면 사실상 판이 굳는다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "출력 요청이 사실상 기정사실화 효과를 가진다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-2:act:0",
+              "factText": "디자인 툴 코멘트를 남긴 사실은 부분적으로 인정하면서도 확정 행위가 아니었어요.",
+              "tags": [
+                "act",
+                "timeline",
+                "uncertainty"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "도윤의 캘린더 수정 12분 뒤",
+                  "neutral": "그 시각",
+                  "period": "새벽 직후",
+                  "dateExact": "도윤의 캘린더 수정 12분 뒤"
+                },
+                "artifact": {
+                  "exact": "디자인 툴 코멘트",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-2:context:0",
+              "factText": "약속 문제를 운영 판단 또는 선제 대응의 맥락으로 바꿔 설명해요.",
+              "tags": [
+                "context",
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "제가 오프닝 스크립트가 들어간 단독 발표용 덱과 인쇄본을 먼저 뽑아달라고 지시한 사실은 인정해요.",
+            "다만 그걸 전체 발표권 탈취라고 부르는 건 과하다고 반박한다."
+          ],
+          "privateKnowledge": [
+            "상대의 반응을 보기 전에 먼저 내 버전을 물리적으로 확보하고 싶었다."
+          ],
+          "suppressions": [
+            "상대의 반응을 기다리지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:proof_overread"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-2:act:1",
+              "factText": "단독 발표용 덱 출력 지시 자체는 인정하지만, 발표권 탈취 의도까지는 부인해요.",
+              "tags": [
+                "act",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "디자인 툴 코멘트",
+                  "neutral": "그 자료"
+                },
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-2:responsibility:0",
+              "factText": "상대의 별도 준비 정황이나 기존 혼선을 근거로 책임 비중을 분산하려 해요.",
+              "tags": [
+                "responsibility",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "디자인 툴 코멘트",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "도윤에게 재확인하지 않은 책임은 인정해요.",
+            "그래도 새벽에 바뀐 캘린더와 오프닝 표기와 도윤 쪽 런오브쇼가 이미 바뀌었다는 정황이 있었으니 그대로 당하고 있을 수 없었어요."
+          ],
+          "privateKnowledge": [
+            "문서화 약속을 다시 열면 내 주도권이 더 밀릴까 불안했다."
+          ],
+          "suppressions": [
+            "배제감 때문에 판단이 빨라졌다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-2:responsibility:1",
+              "factText": "최종 재확인을 하지 않았다는 책임은 인정하지만, 새벽에 바뀐 캘린더와 오프닝 표기 때문에 판단이 흔들렸어요.",
+              "tags": [
+                "responsibility",
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "디자인 툴 코멘트",
+                  "neutral": "그 자료"
+                },
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-2:motive:0",
+              "factText": "오프닝 주도권을 놓치면 위치가 약해질 거라는 두려움이 결정을 밀어붙이게 했다.",
+              "tags": [
+                "motive",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "그때는 들러리처럼 밀려날까 봐 너무 예민했어요.",
+            "내 이름이 빠진 채 미팅에 들어가는 그림이 공포처럼 느껴졌어요."
+          ],
+          "privateKnowledge": [
+            "공동대표가 아니라 들러리처럼 보일까 봐 견디기 어려웠다."
+          ],
+          "suppressions": [
+            "들러리 공포가 행동을 밀어붙였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:headline_conclusion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-2:emotion:0",
+              "factText": "행동의 밑바닥에 자리 상실에 대한 불안과 배제 공포가 있었다고 드러내요.",
+              "tags": [
+                "emotion",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-2:shame:0",
+              "factText": "효율이나 선제 대응이라는 말 뒤에 실제로는 자존심과 체면이 걸려 있었다는 점을 비춰요.",
+              "tags": [
+                "shame",
+                "self_justification",
+                "fear"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "디자인 툴 코멘트",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "재확인 없이 오프닝 스크립트가 들어간 단독 발표용 덱과 인쇄본을 먼저 뽑아달라고 지시한 점은 시인해요.",
+            "자기보호가 앞섰고, 도윤을 먼저 밀어내려던 의도까지는 아니었어요."
+          ],
+          "privateKnowledge": [
+            "무통보 출력 지시는 내 책임이다.",
+            "그 행동이 도윤에게도 역으로 탈취처럼 보였을 수 있다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:headline_conclusion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-2:admission:0",
+              "factText": "최종 확인 없이 단독 발표용 덱 출력 지시을 한 사실을 시인해요.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "도윤의 캘린더 수정 12분 뒤",
+                  "neutral": "그 시각",
+                  "period": "새벽 직후",
+                  "dateExact": "도윤의 캘린더 수정 12분 뒤"
+                },
+                "artifact": {
+                  "exact": "디자인 툴 코멘트",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-2:responsibility:2",
+              "factText": "효율 판단 또는 자기보호가 섞인 절차 위반이었고, 고의적 인격 말살까지는 아니었다고 정리해요.",
+              "tags": [
+                "responsibility",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "내 오프닝 버전 먼저",
+                  "neutral": "그 표기"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "결국 강도윤이 일부러 내 오프닝을 가져가려 했다고 봐요.",
+            "새벽에 바뀐 아젠다와 \"도윤 lead\" 표기만 봐도 그렇게 읽힌어요."
+          ],
+          "privateKnowledge": [
+            "강한 결론에 비해 근거는 문구 몇 개와 캡처 한 장이었다.",
+            "그 결론이 내 상실감을 정당화해줬다."
+          ],
+          "suppressions": [
+            "강한 결론에 비해 근거가 약했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-3:denial:0",
+              "factText": "상대의 행동을 곧바로 악의적 발표권 탈취로 규정해요.",
+              "tags": [
+                "denial",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 문구"
+                },
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-3:counter:0",
+              "factText": "부분 신호를 의도 전체의 증거처럼 취급한다.",
+              "tags": [
+                "counter",
+                "evidence",
+                "quote"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "도윤 lead 같은 표기와 캡처를 의도 증거처럼 내세운다.",
+            "세부 경위보다 결론을 먼저 붙잡고 있었다."
+          ],
+          "privateKnowledge": [
+            "원본 전체보다 결론에 맞는 증거를 먼저 골랐다."
+          ],
+          "suppressions": [
+            "선택적 인용을 했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-3:quote:0",
+              "factText": "짧은 문구와 표기를 떼어내 의도 판단의 핵심 재료로 삼는다.",
+              "tags": [
+                "quote",
+                "evidence",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 문구"
+                },
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-3:uncertainty:0",
+              "factText": "원본 전문을 충분히 보지 못했다는 약점을 감춘다.",
+              "tags": [
+                "uncertainty",
+                "privacy",
+                "context"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "IR 컨설턴트 음성메모",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "내가 붙잡은 건 부분 캡처와 일부 문구였다는 점은 인정해요.",
+            "그래도 그때는 강도윤이 내 자리를 밀어낸다고 믿었어요."
+          ],
+          "privateKnowledge": [
+            "의도까지는 확정 못 하면서도 그렇게 말하고 있었다."
+          ],
+          "suppressions": [
+            "의도 단정이 과했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:proof_overread"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-3:evidence:0",
+              "factText": "부분 캡처와 일부 정황이 제 주된 근거였음을 인정해요.",
+              "tags": [
+                "evidence",
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 문구"
+                },
+                "source": {
+                  "exact": "IR 컨설턴트 음성메모",
+                  "neutral": "그 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-3:relationship:0",
+              "factText": "근거가 약해도 상대가 저를 배제하려 한다고 믿고 있었다.",
+              "tags": [
+                "relationship",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보면 IR 컨설턴트 음성메모와 자동 삽입된 lead presenter 문구가 양쪽에 다르게 읽힐 수 있었어요.",
+            "내 단정은 그 모호성을 거의 보지 못한 결론이었다."
+          ],
+          "privateKnowledge": [
+            "모호성을 인정하면 내가 너무 빨리 몰아붙였다는 뜻이 된다."
+          ],
+          "suppressions": [
+            "모호성을 거의 보지 않으려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-3:context:0",
+              "factText": "컨설턴트 음성메모와 자동 문구가 모두 모호했다는 점을 인정해요.",
+              "tags": [
+                "context",
+                "evidence",
+                "uncertainty"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "IR 컨설턴트 음성메모",
+                  "neutral": "그 자료"
+                },
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-3:responsibility:0",
+              "factText": "그 모호성을 무시하고 의도적 탈취로 단정한 책임이 제게도 있다고 드러내요.",
+              "tags": [
+                "responsibility",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "공동대표가 아니라 들러리로 보일까 불안 때문에 의도를 먼저 배신으로 읽었어요.",
+            "도윤이 내 스토리라인까지 가져가려 한다는 느낌이 머리에서 너무 빨리 완성됐어요."
+          ],
+          "privateKnowledge": [
+            "들러리처럼 보일까 두려웠다."
+          ],
+          "suppressions": [
+            "대표성 불안이 해석에 섞였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:headline_conclusion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-3:fear:0",
+              "factText": "자리와 대표성이 흔들릴까 두려워 의도를 먼저 악의로 읽었다고 드러내요.",
+              "tags": [
+                "fear",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-3:emotion:0",
+              "factText": "배제감과 상실감이 증거 해석을 밀어붙였어요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "강도윤이 일부러 발표권을 빼앗은 건 아니었어요.",
+            "같은 모호한 지시를 서로 자기 쪽으로 읽은 공유 오해였어요."
+          ],
+          "privateKnowledge": [
+            "악의보다 오해라는 설명이 사실에 더 가깝다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:headline_conclusion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-3:admission:0",
+              "factText": "의도적 탈취라는 제 판단이 틀렸고, 공유 오해가 핵심이었어요.",
+              "tags": [
+                "admission",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "IR 컨설턴트 음성메모",
+                  "neutral": "그 자료"
+                },
+                "template": {
+                  "exact": "lead presenter",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-3:responsibility:1",
+              "factText": "같은 모호한 지시를 자기 불안에 맞게 해석한 몫을 인정해요.",
+              "tags": [
+                "responsibility",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "도윤 lead",
+                  "neutral": "그 문구"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "결국 전날 밤 10시까지 역할 문서화 약속이 깨진 건 맞지만, 그 균열은 도윤 쪽에서 먼저 보였어요.",
+            "자신은 거기에 대응해 따로 준비한 것뿐이라고 몰아세운다."
+          ],
+          "privateKnowledge": [
+            "나도 문서를 다시 열지 않았다."
+          ],
+          "suppressions": [
+            "저도 확인 절차를 밟지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-4:denial:0",
+              "factText": "문서화 약속 붕괴의 출발점을 상대 쪽으로 먼저 돌린다.",
+              "tags": [
+                "denial",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                },
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 문서"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-4:self_justification:0",
+              "factText": "제 병행 준비를 대응 행위로만 포장해요.",
+              "tags": [
+                "self_justification",
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "selfPlan": {
+                  "exact": "자신이 11분을 끊는 버전",
+                  "neutral": "자기 버전"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "전날 밤 10시까지 역할 문서화 약속을 알면서도 그 밤엔 너무 급해서 문서보다 리허설을 먼저 챙겼어요.",
+            "룰이 있었어도 현장 신호가 더 강했어요."
+          ],
+          "privateKnowledge": [
+            "약속보다 내 자리 방어가 먼저였다."
+          ],
+          "suppressions": [
+            "자리 방어 심리가 컸다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-4:rule:0",
+              "factText": "10시 문서화 규칙의 존재는 인정하지만 예외 상황처럼 설명해요.",
+              "tags": [
+                "rule",
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-4:context:0",
+              "factText": "절차보다 리허설 대응이 우선이었다는 운영 논리로 위반을 희석한다.",
+              "tags": [
+                "context",
+                "self_justification",
+                "threshold"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 문서"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "서로 제가 11분을 끊는 버전과 도윤 12분 리드 버전처럼 다른 버전으로 움직였고 문서를 다시 열지 않았다는 점은 인정해요.",
+            "저도 그 틈을 그냥 지나쳤다고 일부 시인해요."
+          ],
+          "privateKnowledge": [
+            "도윤이 다른 안을 준비하는 걸 보고도 바로 멈추지 않았다."
+          ],
+          "suppressions": [
+            "상대 신호를 보고도 그대로 리허설한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:proof_overread"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-4:act:0",
+              "factText": "서로 다른 버전으로 리허설했고 문서를 다시 열지 않았다는 사실을 인정해요.",
+              "tags": [
+                "act",
+                "timeline",
+                "rule"
+              ],
+              "slots": {
+                "selfPlan": {
+                  "exact": "자신이 11분을 끊는 버전",
+                  "neutral": "자기 버전"
+                },
+                "otherPlan": {
+                  "exact": "도윤 12분 리드 버전",
+                  "neutral": "상대 버전"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-4:responsibility:0",
+              "factText": "저도 그 상태를 방치한 책임이 있다고 부분적으로 시인해요.",
+              "tags": [
+                "responsibility",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "나도 책임이 있지만 도윤도 똑같이 10시 확정 절차를 놓쳤어요.",
+            "한쪽만 규칙을 어긴 사건으로 정리되면 안 된어요."
+          ],
+          "privateKnowledge": [
+            "책임이 거의 절반이라는 것도 안다."
+          ],
+          "suppressions": [
+            "책임이 절반에 가깝다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-4:responsibility:1",
+              "factText": "책임이 한쪽에만 있지 않고 거의 비슷하게 나뉜다고 정리해요.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-4:counter:0",
+              "factText": "상대도 같은 정도로 절차를 놓쳤다는 점을 전면에 내세운다.",
+              "tags": [
+                "counter",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "otherPlan": {
+                  "exact": "도윤 12분 리드 버전",
+                  "neutral": "상대 버전"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "리드 투자사 미팅을 앞둔 조급함 때문에 절차보다 자리를 지키는 쪽으로 움직였어요.",
+            "매출과 투자 스토리의 주도권이 밀릴까 불안이 컸어요."
+          ],
+          "privateKnowledge": [
+            "대표성 상실이 두려웠다."
+          ],
+          "suppressions": [
+            "대표성 불안이 행동을 앞질렀다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:headline_conclusion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-4:fear:0",
+              "factText": "피치 실패와 대표성 손상이 겹친 압박이 절차를 밀어냈다고 드러내요.",
+              "tags": [
+                "fear",
+                "emotion",
+                "threshold"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-4:shame:0",
+              "factText": "규칙을 지켜야 한다는 걸 알면서도 조급함 때문에 넘겼다는 부끄러움을 비춰요.",
+              "tags": [
+                "shame",
+                "rule",
+                "emotion"
+              ],
+              "slots": {
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 문서"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "전날 밤 10시 문서화 약속을 나도 어겼어요.",
+            "각자 다른 리허설 안을 밀면서도 재확인하지 않은 공동 위반이었어요."
+          ],
+          "privateKnowledge": [
+            "둘 다 룰보다 조급함을 선택했다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:headline_conclusion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-4:admission:0",
+              "factText": "전날 밤 10시 문서화 약속을 저도 어겼어요.",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "전날 밤 10시까지 역할 문서화",
+                  "neutral": "그 약속"
+                },
+                "artifact": {
+                  "exact": "공유 캘린더 아젠다",
+                  "neutral": "그 문서"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-4:responsibility:2",
+              "factText": "각자 다른 리허설 안을 밀면서 재확인하지 않은 공동 실패였다고 정리해요.",
+              "tags": [
+                "responsibility",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "selfPlan": {
+                  "exact": "자신이 11분을 끊는 버전",
+                  "neutral": "자기 버전"
+                },
+                "otherPlan": {
+                  "exact": "도윤 12분 리드 버전",
+                  "neutral": "상대 버전"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "결국 투자자 쪽은 한 명이 회의를 끌라고 한 줄 알았고, 나는 그걸 한 명이 회의 전체를 주도하라는 요청으로 읽었어요.",
+            "그렇게 읽히는 순간 내 이름이 빠질 수 없다고 결론냈다고 한다."
+          ],
+          "privateKnowledge": [
+            "정확한 범위를 직접 재확인하지 않았다."
+          ],
+          "suppressions": [
+            "직접 확인 없이 결론부터 냈다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-5:denial:0",
+              "factText": "투자자 요청을 전체 단독 리드에 가까운 뜻으로 자신 있게 말해요.",
+              "tags": [
+                "denial",
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조",
+                  "neutral": "그 요청"
+                },
+                "misread": {
+                  "exact": "한 명이 회의 전체를 주도하라는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-5:self_justification:0",
+              "factText": "그 해석이 당시엔 가장 합리적이거나 필요한 대응이었다고 포장해요.",
+              "tags": [
+                "self_justification",
+                "beneficiary",
+                "context"
+              ],
+              "slots": {
+                "misread": {
+                  "exact": "한 명이 회의 전체를 주도하라는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "lead presenter 문구와 컨설턴트 음성메모가 그렇게 들렸어요.",
+            "직접 다시 묻지는 않았지만 문구가 너무 강하게 보였어요."
+          ],
+          "privateKnowledge": [
+            "문구를 대표성 신호로 과대해석했다."
+          ],
+          "suppressions": [
+            "대표성 신호를 과대해석했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-5:evidence:0",
+              "factText": "템플릿 문구와 음성메모를 해석 근거로 제시한다.",
+              "tags": [
+                "evidence",
+                "institution",
+                "quote"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "lead presenter 문구와 컨설턴트 음성메모",
+                  "neutral": "그 근거"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-5:uncertainty:0",
+              "factText": "직접 재확인하지 않았다는 공백을 감춘다.",
+              "tags": [
+                "uncertainty",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조",
+                  "neutral": "그 요청"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "정확한 요청 범위를 원문 기준으로 끝까지 확인한 건 아니에요.",
+            "템플릿 문구를 실제 요구보다 크게 읽었다고 일부 시인해요."
+          ],
+          "privateKnowledge": [
+            "원문보다 인상에 크게 기대었다."
+          ],
+          "suppressions": [
+            "원문 재확인이 없었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:proof_overread"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-5:context:0",
+              "factText": "정확한 요청 범위를 원문으로 검증하지 않은 채 넓게 해석했다는 점을 인정해요.",
+              "tags": [
+                "context",
+                "institution",
+                "uncertainty"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "lead presenter 문구와 컨설턴트 음성메모",
+                  "neutral": "그 근거"
+                },
+                "misread": {
+                  "exact": "한 명이 회의 전체를 주도하라는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-5:beneficiary:0",
+              "factText": "그 해석이 제게 유리한 역할 배분을 정당화해준다는 점을 숨기지 못한다.",
+              "tags": [
+                "beneficiary",
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "misread": {
+                  "exact": "한 명이 회의 전체를 주도하라는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보면 투자자 요청은 첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조 정도였을 수 있어요.",
+            "한 명이 회의 전체를 가져가라는 뜻까지는 아니었을 수 있어요."
+          ],
+          "privateKnowledge": [
+            "한 명 전체 리드 해석이 약해지고 있다는 걸 느꼈다."
+          ],
+          "suppressions": [
+            "과장이었을 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-03:b:tell:headline_conclusion",
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-5:institution:0",
+              "factText": "투자자 측의 실제 요청이 첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조에 더 가까웠을 수 있어요.",
+              "tags": [
+                "institution",
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조",
+                  "neutral": "그 요청"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-5:responsibility:0",
+              "factText": "제 넓은 해석이 갈등을 부풀린 한 축이었다고 드러내요.",
+              "tags": [
+                "responsibility",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "misread": {
+                  "exact": "한 명이 회의 전체를 주도하라는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "내 이름이 빠진 신호가 곧 대표성 상실로 읽힌다는 점 그 넓은 해석에 더 매달렸어요.",
+            "그 해석이 내 시장·재무 파트 주도권을 지켜준다는 점도 사실 있었어요."
+          ],
+          "privateKnowledge": [
+            "내 자리를 지키는 데 유리한 해석을 붙잡았다."
+          ],
+          "suppressions": [
+            "유리한 해석에 매달렸다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:headline_conclusion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-5:fear:0",
+              "factText": "자리와 대표성 상실에 대한 불안이 넓은 해석을 붙잡게 했어요.",
+              "tags": [
+                "fear",
+                "emotion",
+                "beneficiary"
+              ],
+              "slots": {
+                "misread": {
+                  "exact": "한 명이 회의 전체를 주도하라는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-5:motive:0",
+              "factText": "제게 유리한 구조를 정당화할 수 있다는 점이 해석 선택에 섞였다고 드러내요.",
+              "tags": [
+                "motive",
+                "beneficiary",
+                "shame"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조",
+                  "neutral": "그 요청"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "투자자 측의 실제 요청은 첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조이었고, 내가 그 범위를 부풀려 읽었어요.",
+            "그 오독이 '내 오프닝을 뺏긴다'는 공포를 키웠어요."
+          ],
+          "privateKnowledge": [
+            "실제 요청 범위를 과장해 읽었다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-03:b:tell:proof_overread",
+            "partnership-03:b:tell:pressure_echo",
+            "partnership-03:b:tell:headline_conclusion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-03:b:d-5:admission:0",
+              "factText": "투자자 측의 실제 요청은 첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조이었고, 제가 범위를 넓게 읽었어요.",
+              "tags": [
+                "admission",
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "첫 4분 오프닝과 시간관리만 한 사람이 맡는 구조",
+                  "neutral": "그 요청"
+                },
+                "misread": {
+                  "exact": "한 명이 회의 전체를 주도하라는 요청",
+                  "neutral": "그 해석"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-03:b:d-5:responsibility:1",
+              "factText": "그 오독이 발표권 갈등을 키운 책임 중 하나였어요.",
+              "tags": [
+                "responsibility",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "lead presenter 문구와 컨설턴트 음성메모",
+                  "neutral": "그 근거"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+

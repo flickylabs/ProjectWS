@@ -154,7 +154,7 @@ export const spouse12TellsBeats = {
       "party": "a",
       "disputeId": "d-2",
       "beatType": "blame",
-      "line": "갑자기 가게까지 무너질 판이었어요. 저도 사람인데 제일 불리한 장면부터 내놓을 용기는 안 났습니다.",
+      "line": "갑자기 가게까지 무너질 판이었어요. 저도 사람인데 제일 불리한 장면부터 내놓을 용기는 안 났습니다. 한유진 쪽도 확인 없이 외부로 먼저 돌린 부분이 있잖아요.",
       "behaviorHint": "입술을 깨물고 목소리가 조금 빨라진다.",
       "applicableStates": [
         "S3"

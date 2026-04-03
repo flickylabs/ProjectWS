@@ -1,0 +1,751 @@
+{
+  "caseId": "case-family-10",
+  "meta": {
+    "relationshipType": "family",
+    "conflictSeed": "CS-6",
+    "variableModules": [
+      "VM-C"
+    ],
+    "twistModule": "",
+    "difficulty": "easy",
+    "anchorTruth": "유다은이 '민재가 또 명절 약속을 깨고 다 떠넘겼다'고 느낀 핵심에는 민재의 늦은 통보가 분명히 있었지만, 가장 큰 폭발점은 '금요일 밤에 갈게'처럼 보이던 한 줄 메시지가 실제로는 '되면 금요일 밤, 안 되면 토요일 아침'이었던 오해와 20만원 송금의 의미 혼선이었다.",
+    "emotionalBait": "잘린 가족 단톡 캡처, 밤새 늘어난 장보기 영수증, 새벽에 도착한 남동생 사진이 겹치면서 처음에는 남동생이 명절 준비 약속을 깔끔하게 어기고 누나에게 음식과 뒷정리를 모두 떠넘긴 듯 보인다.",
+    "resolutionDilemma": "민재가 금요일 저녁 도착이 어렵다는 사실을 너무 늦게 알린 책임은 분명하지만, 다은도 장보기 규모와 메뉴를 키운 뒤 절반 정산을 당연시했고 20만원 송금을 비용분담으로 단정했다는 점이 있어, 누가 더 힘들었는지보다 다음 명절엔 약속 문구와 비용 항목을 어떻게 명확히 나눌지가 더 중요하다.",
+    "familyRelation": "siblings"
+  },
+  "duo": {
+    "partyA": {
+      "name": "유다은",
+      "age": 37,
+      "occupation": "초등학교 교사",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "자신이 밤에 전 부치고 아침에 과일 깎고 상차림까지 한 과정을 먼저 길게 말하며, 상대의 늦은 도착을 모든 노동 포기의 상징처럼 묶는다. 불리한 비용 질문이 나오면 '내가 덜 했다는 뜻이냐'며 노동량과 정산 문제를 한 덩어리로 만든다.",
+      "pride": 6,
+      "fear": "매번 명절 준비를 혼자 떠안고도 예민한 누나로만 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "holiday_checklist_and_receipt_album",
+      "dailyRoutine": "학교 수업 뒤에는 학부모 연락과 집안일을 마치고, 명절이 다가오면 장보기 목록과 부모 집 준비물을 휴대폰 체크리스트로 정리한다.",
+      "sensitivePoints": [
+        "혼자 한 상차림",
+        "동생의 늦은 통보",
+        "재료비 정산"
+      ],
+      "verbalTells": [
+        {
+          "type": "labor_rollcall",
+          "trigger": "lying",
+          "pattern": "비용이나 메뉴 변경 질문이 나오면 전, 나물, 과일, 설거지를 한꺼번에 나열해 쟁점을 노동 총량으로 바꾼다."
+        },
+        {
+          "type": "hurt_hook",
+          "trigger": "emotional",
+          "pattern": "반박 전에 '결국 또 내가 다 했지'를 반복해 사실 확인 자체가 자신의 고생을 깎는 일처럼 만든다."
+        },
+        {
+          "type": "scope_blur",
+          "trigger": "cornered",
+          "pattern": "메뉴를 늘린 이유를 묻으면 차례상, 가족 식사, 친척 간식용을 구분하지 않고 한데 묶어 설명한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "민재야",
+        "toJudge": "제 동생",
+        "angry": "민재!"
+      }
+    },
+    "partyB": {
+      "name": "유민재",
+      "age": 33,
+      "occupation": "지역 영업사원",
+      "incomeBracket": "mid",
+      "archetype": "avoidant",
+      "speechStyle": "교통, 거래처 일정, 차 막힘 같은 주변 사정부터 길게 말하며 정작 언제 알렸는지는 뒤로 미룬다. 궁지에 몰리면 '돈도 보냈고 아침엔 왔잖아'처럼 부분 이행을 전체 책임의 면제처럼 말한다.",
+      "pride": 5,
+      "fear": "약속도 못 지키는 무책임한 아들·남동생으로 고정되는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "calendar_auto_reminder_and_transfer_app",
+      "dailyRoutine": "아침부터 거래처를 돌고 늦게 퇴근하며, 이동 일정과 송금 날짜를 휴대폰 캘린더와 이체 앱 알림에 맞춰 관리한다.",
+      "sensitivePoints": [
+        "무책임한 동생 이미지",
+        "도착 시간 문제",
+        "용돈과 재료비 구분"
+      ],
+      "verbalTells": [
+        {
+          "type": "delay_buffer",
+          "trigger": "avoiding",
+          "pattern": "도착 약속을 묻으면 바로 시간 답을 하지 않고 거래처 미팅과 고속도로 상황부터 길게 설명한다."
+        },
+        {
+          "type": "soft_minimizing",
+          "trigger": "lying",
+          "pattern": "늦은 통보는 '조금 늦어진 거지', '아침에 간다고 본 거지'처럼 규모를 줄여 표현한다."
+        },
+        {
+          "type": "partial_credit",
+          "trigger": "cornered",
+          "pattern": "궁지에 몰리면 20만원 송금과 과일 한 상자를 근거로 전체 분담을 어느 정도 끝낸 것처럼 말한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "누나",
+        "toJudge": "제 누나",
+        "angry": "누나!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "아버지 무릎 수술 뒤부터 남매는 명절 장보기, 상차림, 부모 용돈, 귀성 시간을 최소 하루 전까지 공유하고 역할을 나누기로 했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "어머니가 예전에 '민재는 멀리서 오니까 운전만 해줘도 큰일 한다'고 말한 일을 두 사람은 노동 면제인지 단순 위로인지 다르게 받아들인다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '운전만 하면 된다는 뜻은 아니었다' / B: '적어도 음식 준비를 똑같이 기대하진 않는다는 말이었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "재작년 여름 가족여행을 다은이 갑자기 취소하며 민재가 부모 짐과 숙소 정리를 혼자 맡았던 일은 이번 명절의 서운함 밑바닥에 남아 있다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "유옥희 (어머니)",
+        "relationTo": "both",
+        "knowledgeScope": "금요일 밤이냐 토요일 아침이냐는 헷갈렸지만, 다은이 메뉴를 조금 늘렸고 민재가 부모 용돈 20만원을 따로 보낸 사실은 안다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 60,
+          "occupation": "주부",
+          "relationToA": "유다은을 업무상 알고 있음",
+          "relationToB": "유민재을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "자식 편을 들면서도 객관적으로 보이려 한다. 어른 특유의 훈계 톤이 섞인다.",
+          "addressJudge": "재판관님",
+          "addressA": "다은씨",
+          "addressB": "민재"
+        },
+        "addressA": "우리 다은",
+        "addressB": "우리 민재"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "정소라 (동네 정육점 사장)",
+        "relationTo": "both",
+        "knowledgeScope": "다은이 처음 잡아둔 고기 주문량과 전날 밤 갑자기 늘어난 추가 주문 시각을 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 37,
+          "occupation": "동네 정육점 사장",
+          "relationToA": "유다은을 업무상 알고 있음",
+          "relationToB": "유민재을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "다은씨",
+          "addressB": "민재씨"
+        },
+        "addressA": "다은씨",
+        "addressB": "민재씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "김하늘 (가족상담센터 상담사)",
+        "relationTo": "both",
+        "knowledgeScope": "작년 짧게 받았던 가족상담에서 명절 역할표와 비용 항목을 문장으로 정확히 적으라고 권고한 기록을 갖고 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 40,
+          "occupation": "가족상담센터 상담사",
+          "relationToA": "유다은을 업무상 알고 있음",
+          "relationToB": "유민재을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "유다은씨",
+          "addressB": "유민재씨"
+        },
+        "addressA": "유다은씨",
+        "addressB": "유민재씨"
+      }
+    ],
+    "relationshipType": "family"
+  },
+  "context": {
+    "contextType": "holiday_task_split",
+    "description": "설 연휴를 앞두고 남매는 부모 집 상차림과 부모 용돈, 도착 시간을 나눠 보려 했지만, 서로 바쁜 일정 속에서 정확한 시간과 비용 항목을 끝까지 문장으로 고정하지 못했다. 그 결과 민재의 늦은 통보와 다은의 확대된 장보기가 한꺼번에 부딪히며, 단순 조율 실패가 매번 반복되는 불공정 패턴처럼 느껴졌다.",
+    "emotionalPressure": 6,
+    "affects": "both",
+    "triggerAmplifier": "명절은 짧은 시간에 음식 노동과 귀성 스트레스가 몰리기 때문에, 애매한 한 줄 메시지와 작은 송금도 곧 성의와 책임의 상징처럼 받아들여졌다.",
+    "caseNumber": "E-FM-E-0010",
+    "caseName": "명절 준비 갈등"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "민재의 금요일 밤 도착 약속",
+      "truth": false,
+      "truthDescription": "민재의 원래 메시지는 '되면 금요일 밤, 안 되면 토요일 아침'이었지, 무조건 금요일 밤에 도착하겠다는 확정 약속은 아니었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "일정명확화",
+      "legitimacyIssue": false,
+      "judgmentStatement": "민재는 금요일 밤 도착을 확정하지 않았다."
+    },
+    {
+      "id": "d-2",
+      "name": "민재의 늦은 일정 변경 통보",
+      "truth": true,
+      "truthDescription": "민재는 금요일 저녁 출발이 사실상 어렵다는 걸 오후 늦게 이미 알았지만, 다은에게는 밤이 다 돼서야 '아침에 가겠다'고 알렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "연락규칙",
+      "legitimacyIssue": false,
+      "judgmentStatement": "민재는 늦게 일정 변경을 통보했다."
+    },
+    {
+      "id": "d-3",
+      "name": "다은의 장보기·메뉴 확대 미공유",
+      "truth": true,
+      "truthDescription": "다은은 원래보다 과일, 고기, 전 종류를 늘리고 반찬가게 주문까지 추가하면서도 이를 민재와 비용 항목별로 다시 합의하지 않았다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "비용정산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "다은은 메뉴 확대를 미공유했다."
+    },
+    {
+      "id": "d-4",
+      "name": "민재의 20만원 송금은 재료비 분담이었는가",
+      "truth": false,
+      "truthDescription": "문제가 된 20만원은 민재가 어머니 용돈으로 보낸 돈이었고, 다은에게 미리 재료비 분담금이라고 합의된 금액은 아니었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "비용정산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "민재의 20만원 송금은 용돈이었다."
+    },
+    {
+      "id": "d-5",
+      "name": "명절 분담 원칙의 공동 실패",
+      "truth": true,
+      "truthDescription": "남매는 정확한 도착 시간, 메뉴 확정, 비용 항목을 적기로 했지만 민재는 통보를 늦췄고 다은은 규모 변경을 공유하지 않아 결국 둘 다 작년 규칙을 지키지 못했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "분담복원",
+      "legitimacyIssue": false,
+      "judgmentStatement": "민재와 다은은 규칙을 지키지 못했다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "잘린 가족 단톡 캡처",
+      "description": "다은이 보여준 가족 단톡 캡처로, 민재가 '금요일 밤에 갈게'라고 쓴 부분만 남고 앞의 '되면'과 뒤의 조건 문장은 잘려 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 대화 내보내기를 요구하자 캡처 밖에 '되면 금요일 밤, 안 되면 토요일 아침' 문장이 이어져 있었다.",
+        "check_metadata": "이미지는 다은이 친척에게 하소연하기 직전 잘라 저장한 기록이 남아 있다.",
+        "restore_context": "민재가 금요일 밤을 우선 희망한 것은 맞지만, 무조건 그렇게 하겠다는 확정 약속으로 보기는 어렵다.",
+        "verify_source": "두 사람 휴대폰의 대화 원본 순서와 시각이 일치했다.",
+        "check_edits": "텍스트 편집 흔적은 없으나 상하가 강하게 크롭돼 조건 문장이 빠져 있다.",
+        "question_acquisition": "당사자 간 대화 캡처라 활용 가능하지만 제3자 전달은 감정 확산의 별도 문제를 낳는다."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-2",
+      "name": "가족 단톡 원본과 민재의 일정표·통행 기록",
+      "description": "명절 전날 가족 단톡 내보내기, 민재 업무 일정표, 고속도로 하이패스 통행 기록으로 실제 출발 가능 시점과 통보 시각을 맞춰 볼 수 있다.",
+      "type": "schedule",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "원본 대화와 일정표, 통행 기록을 함께 보자 민재가 금요일 오후에는 이미 아침 출발 가능성이 더 크다는 걸 알고 있었음이 드러났다.",
+        "check_metadata": "민재의 마지막 거래처 일정 종료는 18시 08분, 다은에게 아침 도착으로 알린 메시지는 22시 41분으로 남아 있다.",
+        "restore_context": "확정 약속은 아니었지만, 민재가 상황 변경을 늦게 알린 건 사실이라 다은의 체감 부담을 키웠다.",
+        "verify_source": "일정표 캘린더 기록과 하이패스 출입 시간이 서로 맞아떨어졌다.",
+        "check_edits": "원본 내보내기와 장치 기록이라 수동 수정 흔적이 없다.",
+        "question_acquisition": "개인 이동 기록이 포함돼 있어 분쟁 해결 범위 내에서만 사용해야 한다."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-3",
+      "name": "정육점 예약표와 반찬가게 추가 주문 영수증",
+      "description": "처음 예약한 고기 양, 전날 밤 늘어난 정육점 추가 주문, 반찬가게 영수증을 묶은 자료다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "예약표와 영수증 원본을 함께 대조하자 다은이 처음 계획보다 고기와 과일, 전 종류를 늘린 흐름이 확인됐다.",
+        "check_metadata": "추가 주문은 민재의 늦은 통보보다도 앞선 저녁 6시 무렵 이뤄졌다.",
+        "restore_context": "다은이 더 챙기고 싶었던 마음은 이해되지만, 늘어난 메뉴와 비용을 민재와 다시 합의한 흔적은 없다.",
+        "verify_source": "정육점 예약장 사진과 카드 영수증 시각이 서로 일치한다.",
+        "check_edits": "매장 원본 영수증과 수기 예약표라 편집 흔적이 없다.",
+        "question_acquisition": "개인 소비자료지만 명절 정산 범위 안에서는 제출 정당성이 높다."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-4",
+      "name": "20만원 송금 내역과 어머니 답장 문자",
+      "description": "민재가 어머니에게 20만원을 보낸 계좌이체 내역과, '용돈 잘 받았다'는 어머니의 답장 문자다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "송금 원본과 문자 백업을 대조하자 수신 계좌가 다은이 아니라 어머니 계좌였고, 답장도 '용돈'으로 분명히 표현돼 있었다.",
+        "check_metadata": "송금 시각은 명절 이틀 전 아침이고, 답장 문자는 4분 뒤 도착했다.",
+        "restore_context": "민재가 재료비를 따로 논의하지 않은 잘못은 있지만, 20만원 자체를 재료 분담금으로 볼 근거는 약하다.",
+        "verify_source": "은행 앱 거래내역과 통신사 문자 백업 시간이 일치했다.",
+        "check_edits": "원본 거래내역과 문자라 편집 흔적이 없다.",
+        "question_acquisition": "당사자 가족 간 금융자료라 제출은 가능하지만 제3자 공유는 제한돼야 한다."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-5",
+      "name": "가족상담센터 권고 메모와 작년 명절 역할표",
+      "description": "김하늘 상담사가 남긴 짧은 권고 메모와, 작년 추석에 남매가 써 본 역할표 사진이다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "상담 메모와 역할표 원본을 보자 도착 시간, 음식 종류, 비용 항목을 정확히 적어 두라는 권고가 남아 있었다.",
+        "check_metadata": "권고 메모는 작년 추석 직후 작성됐고 역할표 사진도 같은 주말 날짜로 확인된다.",
+        "restore_context": "즉흥적 감정 싸움이 아니라 이미 한 번 비슷한 문제를 겪고 규칙을 만들어 본 전력이 있었다.",
+        "verify_source": "상담센터 접수번호와 역할표 원본 사진 촬영 시각이 일치한다.",
+        "check_edits": "기관 메모와 원본 사진이라 편집 흔적이 없다.",
+        "question_acquisition": "짧은 상담 기록이라 제출 정당성은 높지만 상담 세부 내용은 목적 외 사용을 제한해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "유다은에게: \"명절 분담 원칙의 공동 실패\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 유다은의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유다은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "유민재에게: \"명절 분담 원칙의 공동 실패\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 유민재의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "명절 당일 체크리스트와 주방 사진 타임스탬프",
+      "description": "다은이 적어 둔 당일 체크리스트와, 민재 도착 전후의 상차림·설거지 사진 타임스탬프다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "체크리스트와 원본 사진을 대조하자 다은이 실제로 새벽 준비를 많이 했고, 민재도 아침 이후 일부 운반과 설거지에 참여한 흐름이 보였다.",
+        "check_metadata": "사진 시각은 민재 도착 전 상차림 완료, 도착 후 과일 정리와 설거지로 이어진다.",
+        "restore_context": "한쪽이 전부 안 한 것은 아니지만, 사전 조율 실패 때문에 노동 강도가 크게 불균형하게 체감됐다.",
+        "verify_source": "휴대폰 원본 사진 EXIF와 체크리스트 수정 시각이 서로 맞는다.",
+        "check_edits": "사진은 원본이고 체크리스트도 생성·수정 이력이 남아 있다.",
+        "question_acquisition": "가정 내부 사진이지만 명절 분담 확인 범위에서는 활용 가능하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "유다은에게: \"명절 분담 원칙의 공동 실패\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 유다은의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유다은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "유민재에게: \"명절 분담 원칙의 공동 실패\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 유민재의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-2"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "민재의 메시지는 금요일 밤 확정 약속이 아니라 조건부 도착 안내였다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-2",
+      "fact": "민재는 금요일 저녁 출발이 어렵다는 사실을 늦게 알렸다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "다은은 메뉴와 장보기 규모를 키우고도 비용 합의를 다시 하지 않았다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "20만원 송금은 재료비 분담금이 아니라 어머니 용돈에 가까웠다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-5",
+      "fact": "남매는 작년에 만들었던 명절 역할표 원칙을 이번엔 둘 다 제대로 지키지 못했다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "shopping_scale_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "menu_change_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "transfer_meaning_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "mother_reply_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "cost_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-5",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "shared_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_feeling_left_alone"
+        },
+        {
+          "from": "S4",
+          "to": "S3",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "late_notice_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "afternoon_schedule_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-6",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "arrival_promise_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "full_chat_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-2_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-5",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "shared_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_not_wanting_to_disappoint"
+        },
+        {
+          "from": "S4",
+          "to": "S3",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "일정명확화": [
+      "명절 도착 시간은 '금요일 밤쯤' 같은 표현 대신 날짜와 시각, 실패 시 대체 시간을 한 줄로 고정한다.",
+      "가족 단톡에는 확정 일정과 희망 일정을 구분해 적고, 잘린 캡처가 아니라 원문 전체를 기준으로 본다.",
+      "도착 약속이 다시 애매하게 적히면 역할 배정 자체를 늦추고 정확한 시간부터 다시 확정한다."
+    ],
+    "연락규칙": [
+      "이동 일정이 바뀌면 적어도 장보기 전 마감 시각 전에 알려, 상대가 음식 규모를 조정할 시간을 남긴다.",
+      "늦을 때는 이유보다 새 도착 시각과 못 하게 되는 역할을 먼저 한 문장으로 전달한다.",
+      "같은 유형의 늦은 통보가 반복되면 명절 전날 핵심 역할은 현장에 있는 사람 기준으로 다시 배정한다."
+    ],
+    "비용정산": [
+      "부모 용돈, 재료비, 추가 간식비를 구분해 항목별로 따로 적고 송금 제목도 다르게 남긴다.",
+      "장보기 규모를 바꾸려면 먼저 상한 금액을 공유하고, 합의 없는 추가 주문은 일단 본인 부담으로 둔다.",
+      "다음 명절에도 용돈과 재료비가 섞이면 송금 대신 공동 정산표와 영수증 방식으로 바꾼다."
+    ],
+    "분담복원": [
+      "작년 역할표를 업데이트해 도착 시간, 음식, 운전, 설거지까지 이름 옆에 적는다.",
+      "명절 당일에는 누가 더 힘들었는지 따지기보다 사전 합의한 항목이 실제로 이행됐는지만 확인한다.",
+      "같은 문제로 다시 다투면 부모 앞 즉흥 분담을 중단하고, 연휴 전 주말에 10분짜리 체크리스트 회의를 먼저 한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

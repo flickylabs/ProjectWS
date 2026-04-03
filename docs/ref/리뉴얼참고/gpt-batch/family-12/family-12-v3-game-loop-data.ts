@@ -1499,7 +1499,7 @@ export const family12V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "family_room_forward_question",
-      "line": "'가족방에 올린 건 맞지만 그걸 전파라고까지 부를 건 아니에요.'라는 식으로 부정이 완화된다.",
+      "line": "가족방에 올린 건 맞아요. 근데 그걸 전파라고까지 부를 거예요?",
       "behaviorHint": "처음엔 강하게 부인하다가 질문이 구체화되면 '그 정도는'이라는 표현을 쓰기 시작한다."
     },
     {
@@ -1509,7 +1509,7 @@ export const family12V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-5_presented",
-      "line": "전달 로그가 나오자 지연은 가족방 외 한두 방 추가 전파를 부분적으로 인정한다.",
+      "line": "한두 방 더 올린 건 맞아요. 그 정도까지는 인정할게요.",
       "behaviorHint": "입술을 깨물고 방 이름을 세듯 말한다.",
       "unlockAtom": "d1.unlock.a.s2.family_room_to_aunt_room"
     },
@@ -1520,7 +1520,7 @@ export const family12V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "direct_confirmation_followup",
-      "line": "'제가 먼저 현우에게 확인했어야 했죠.'라는 취지의 말이 처음 나오지만, 곧바로 현우 탓을 덧붙인다.",
+      "line": "제가 먼저 현우한테 확인했어야 했죠. 근데 현우도 잘못이 있잖아요.",
       "behaviorHint": "인정 직후 어깨를 세우며 책임의 절반을 다시 밀어낸다.",
       "unlockAtom": "d1.unlock.a.s3.confirm_before_contact_missing"
     },
@@ -1531,7 +1531,7 @@ export const family12V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "responsibility_question",
-      "line": "책임 비율을 직접 묻는 순간 지연은 공개 비난 자체를 자신의 잘못으로 시인한다.",
+      "line": "공개적으로 비난한 건 제 잘못이에요. 그건 인정해요.",
       "behaviorHint": "목소리가 낮아지고 한 문장마다 호흡이 길어진다.",
       "unlockAtom": "d1.unlock.a.s5.public_shaming_admission"
     },
@@ -1542,7 +1542,7 @@ export const family12V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "edited_capture_question",
-      "line": "편집 여부를 정면으로 묻자 지연은 '재저장'과 '정리' 같은 말을 꺼내며 위조 표현만 피한다.",
+      "line": "재저장한 거예요. 정리한 거지, 위조가 아니에요.",
       "behaviorHint": "기술적 설명으로 의미를 흐리려 한다."
     },
     {
@@ -1552,7 +1552,7 @@ export const family12V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-1_presented",
-      "line": "문제 캡처 단독 제시만으로도 지연은 '한 장으로 보기 좋게 만든 정도'를 인정하는 쪽으로 밀린다.",
+      "line": "한 장으로 보기 좋게 만든 정도예요. 그 정도는 했어요.",
       "behaviorHint": "손끝으로 화면 모서리를 짚으며 요약 프레임을 고수한다.",
       "unlockAtom": "d4.unlock.a.s2.rearranged_capture_for_readability"
     },
@@ -1563,7 +1563,7 @@ export const family12V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "forensic_report_followup",
-      "line": "포렌식 후속 질문이 들어오면 지연은 서로 다른 조각과 메모가 섞였음을 부인하기 어려워진다.",
+      "line": "다른 조각이랑 메모가 섞인 건… 부인하기 어려워요.",
       "behaviorHint": "눈동자가 흔들리며 문장을 짧게 끊는다.",
       "unlockAtom": "d4.unlock.a.s3.self_chat_phrase_inserted"
     },
@@ -1574,7 +1574,7 @@ export const family12V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "e-3_and_e-4_presented",
-      "line": "감정서와 자동저장 파일이 함께 제시되는 순간, 지연은 합성 이미지를 직접 만들었다는 수준까지 무너진다.",
+      "line": "제가 직접 만든 거예요. 합성한 거 맞아요.",
       "behaviorHint": "자료를 보는 시간을 길게 끌다가 단념하듯 인정한다.",
       "unlockAtom": "d4.unlock.a.s5.composite_image_confession"
     },
@@ -1585,7 +1585,7 @@ export const family12V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "shared_sheet_rule_question",
-      "line": "공유규칙을 묻자 지연은 '그건 취지였지 절대 규칙은 아니었다'는 식으로 후퇴한다.",
+      "line": "그건 취지였지 절대 규칙은 아니었잖아요. 그렇게까지 묶인 건 아니에요.",
       "behaviorHint": "합의 문구를 넓게 해석하며 예외를 주장한다."
     },
     {
@@ -1595,7 +1595,7 @@ export const family12V3GameLoopData = {
       "fromState": "S1",
       "toState": "S4",
       "trigger": "nonjudgmental_question_about_being_doubted_as_treasurer",
-      "line": "비난 없이 불신받는 두려움을 건드리면 지연은 방어보다 감정을 먼저 드러낸다.",
+      "line": "장녀니까 제가 해야 하잖아요. 그런데 의심받으면… 그게 제일 무서워요.",
       "behaviorHint": "숨을 고른 뒤 장녀 역할과 의심받는 공포를 토로한다.",
       "unlockAtom": "d5.unlock.a.s4.fear_of_not_being_trusted"
     },
@@ -1606,7 +1606,7 @@ export const family12V3GameLoopData = {
       "fromState": "S4",
       "toState": "S3",
       "trigger": "e-6_presented",
-      "line": "e-6이 나오면 감정 토로 뒤에 구체적 원칙 위반 인정이 붙는다.",
+      "line": "가족방 규칙을 어긴 건 맞아요. 제가 먼저 깨뜨렸어요.",
       "behaviorHint": "눈시울은 남아 있지만 문장은 다시 정리된다.",
       "unlockAtom": "d5.unlock.a.s3.admits_family_room_breach"
     },
@@ -1617,7 +1617,7 @@ export const family12V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "shared_responsibility_question",
-      "line": "공동 책임을 정면으로 묻는 순간 지연은 현우와 함께 약속을 깨뜨렸다고 정리한다.",
+      "line": "저도 약속을 깨뜨렸어요. 현우만의 잘못이 아니에요.",
       "behaviorHint": "상대 비난을 멈추고 '저도'라는 말을 먼저 쓴다.",
       "unlockAtom": "d5.unlock.a.s5.shared_rule_break_admission"
     },
@@ -1628,7 +1628,7 @@ export const family12V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "private_complaint_question",
-      "line": "사적 불만 여부를 직접 묻자 현우는 '불만이 아니라 몇 줄 확인'이라는 식으로 범위를 줄인다.",
+      "line": "불만이 아니라 몇 줄 확인한 겁니다. 범위를 넓게 보실 필요가 없습니다.",
       "behaviorHint": "짧은 문장과 숫자 단어만 남긴다."
     },
     {
@@ -1638,7 +1638,7 @@ export const family12V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-2_presented",
-      "line": "원본 채팅과 시트 로그가 나오면 현우는 사이드채팅 자체는 인정한다.",
+      "line": "사이드채팅 자체는 인정합니다. 사실관계는 그렇습니다.",
       "behaviorHint": "고개를 아주 작게 끄덕이며 사실관계만 인정한다.",
       "unlockAtom": "d2.unlock.b.s2.sidechat_cost_question_admitted"
     },
@@ -1649,7 +1649,7 @@ export const family12V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "timing_during_mourning_followup",
-      "line": "시기와 분위기를 다시 묻는 후속 질문에 현우는 말투와 타이밍의 문제를 받아들인다.",
+      "line": "말투와 타이밍이 문제였다는 점은 받아들입니다.",
       "behaviorHint": "자료에서 눈을 떼지 않은 채 감정 피해를 처음 언급한다.",
       "unlockAtom": "d2.unlock.b.s3.bad_timing_and_tone"
     },
@@ -1660,7 +1660,7 @@ export const family12V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "responsibility_question",
-      "line": "책임을 직접 묻는 질문에 현우는 확인 목적과 별개로 상중 비용 불만의 잘못을 인정한다.",
+      "line": "확인 목적과 별개로, 상중에 비용 불만을 꺼낸 건 제 잘못입니다.",
       "behaviorHint": "건조한 어조를 유지하지만 문장 끝은 낮아진다.",
       "unlockAtom": "d2.unlock.b.s5.apology_for_cold_complaint"
     },
@@ -1671,7 +1671,7 @@ export const family12V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "money_first_frame_question",
-      "line": "'돈부터 본 사람' 프레임을 묻자 현우는 표현 범위를 좁혀 정확한 문구 부재만 강조한다.",
+      "line": "정확히 그 문구를 쓴 적은 없습니다. 표현 범위를 좁혀서 봐 주십시오.",
       "behaviorHint": "같은 문장을 반복하며 선을 긋는다."
     },
     {
@@ -1681,7 +1681,7 @@ export const family12V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-1_presented",
-      "line": "문제 캡처가 제시되면 현우는 비용 질문 자체는 있었지만 그 문장은 아니라고 분리하기 시작한다.",
+      "line": "비용 질문 자체는 있었습니다. 다만 그 문장은 제가 쓴 것이 아닙니다.",
       "behaviorHint": "캡처를 보며 특정 문구만 손가락으로 짚는다.",
       "unlockAtom": "d3.unlock.b.s2.original_has_cost_only"
     },
@@ -1692,7 +1692,7 @@ export const family12V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "original_chat_followup",
-      "line": "원본 대화 후속 질문이 이어지면 현우는 자기 원문과 허위 문장의 경계를 더 또렷하게 설명한다.",
+      "line": "제 원문과 허위 문장은 구분됩니다. 내보내기 원본을 보시면 확인 가능합니다.",
       "behaviorHint": "감정은 눌러 두고 내보내기 원본을 근거처럼 제시한다.",
       "unlockAtom": "d3.unlock.b.s3.denies_exact_quote_with_export"
     },
@@ -1703,7 +1703,7 @@ export const family12V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "e-2_presented",
-      "line": "e-2까지 확인된 뒤에는 현우가 자기 차가운 비용 질문 책임과 허위 인용의 부재를 함께 정리한다.",
+      "line": "차가운 비용 질문의 책임은 인정합니다. 다만 허위 인용은 제가 한 게 아닙니다.",
       "behaviorHint": "억울함을 삼키듯 한 박자 쉬고 말한다.",
       "unlockAtom": "d3.unlock.b.s5.cold_words_but_not_quote"
     },
@@ -1714,7 +1714,7 @@ export const family12V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "shared_sheet_rule_question",
-      "line": "공유규칙을 묻자 현우는 '단순 문의는 예외'라는 해석으로 한 발 물러난다.",
+      "line": "단순 문의는 예외에 해당한다고 봅니다. 규칙 전체를 어긴 건 아닙니다.",
       "behaviorHint": "원칙을 문구 단위로 잘라 해석하려 한다."
     },
     {
@@ -1724,7 +1724,7 @@ export const family12V3GameLoopData = {
       "fromState": "S1",
       "toState": "S4",
       "trigger": "nonjudgmental_question_about_not_trusting_spreadsheet",
-      "line": "시트를 못 믿었는지 차분히 묻는 질문엔 방어가 풀리며 불안의 이유가 먼저 나온다.",
+      "line": "시트를 온전히 신뢰하지 못했습니다. 책임이 저에게로 올까 봐 불안했습니다.",
       "behaviorHint": "표정이 조금 풀리며 책임 공포를 털어놓는다.",
       "unlockAtom": "d5.unlock.b.s4.fear_of_spreadsheet_liability"
     },
@@ -1735,7 +1735,7 @@ export const family12V3GameLoopData = {
       "fromState": "S4",
       "toState": "S3",
       "trigger": "e-6_presented",
-      "line": "메모와 권고서가 나오면 현우는 감정 설명 뒤에 규칙 위반 사실을 명시적으로 인정한다.",
+      "line": "규칙을 위반한 건 인정합니다. 감정과 별개로 사실은 사실입니다.",
       "behaviorHint": "설명을 멈추고 결론형 문장으로 바뀐다.",
       "unlockAtom": "d5.unlock.b.s3.admits_shared_agreement_break"
     },
@@ -1746,7 +1746,7 @@ export const family12V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "shared_responsibility_question",
-      "line": "공동 파기 여부를 정면으로 묻는 순간 현우는 자기 사이드채팅이 출발점 중 하나였다고 받아들인다.",
+      "line": "제 사이드채팅이 출발점 중 하나였습니다. 제 몫의 책임이 있습니다.",
       "behaviorHint": "'제 몫도 있습니다'라는 말이 처음 선행한다.",
       "unlockAtom": "d5.unlock.b.s5.shared_rule_break_apology"
     }

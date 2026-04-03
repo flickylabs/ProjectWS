@@ -1,0 +1,581 @@
+export const partnership06TellsBeats = {
+  "caseId": "partnership-06",
+  "executableTells": {
+    "a": [
+      {
+        "id": "partnership-06:a:tell:urgency_assertion",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "지금 안 하면",
+          "오픈이 밀렸어요",
+          "그날은 급했어요"
+        ],
+        "sentenceShape": "conditional",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "월권 여부를 묻는 질문에도 '당장 안 하면 오픈이 밀렸다'는 긴급성부터 앞세운다."
+      },
+      {
+        "id": "partnership-06:a:tell:blame_snap",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "hurt",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "피드백이 늦어서",
+          "결국 일이 커졌죠",
+          "그쪽이 멈췄잖아요"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "자신의 발주 변경이 드러나면 곧바로 상대의 느린 피드백을 한 문장으로 잘라 책임을 돌린다."
+      },
+      {
+        "id": "partnership-06:a:tell:site_authority_claim",
+        "appliesWhen": [
+          "emotional",
+          "cornered",
+          "defensive",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "그때 매장을 본 사람은 나였어요",
+          "현장에 없었잖아요",
+          "그 상황은 제가 압니다"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "현장에 없던 사람은 판단할 자격이 없다는 식으로 경험 우위를 내세운다."
+      }
+    ],
+    "b": [
+      {
+        "id": "partnership-06:b:tell:category_split",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "디자인 조정이었어요",
+          "동선 문제였어요",
+          "브랜드 일관성 차원입니다"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "실제론 일정까지 건드렸어도 자신의 지시는 '디자인 조정' 범주였다고 쪼개 말한다."
+      },
+      {
+        "id": "partnership-06:b:tell:scope_narrowing",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "shame",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "위치만 말했어요",
+          "공정 판단은 시공팀이죠",
+          "범위가 다릅니다"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "철거 일정 변경을 지적받으면 '나는 위치만 말했고 공정은 시공팀 판단'이라며 범위를 좁힌다."
+      },
+      {
+        "id": "partnership-06:b:tell:clean_summary",
+        "appliesWhen": [
+          "avoiding",
+          "defensive",
+          "hurt",
+          "lying"
+        ],
+        "lexicalHooks": [
+          "정리하면",
+          "핵심만 말하면",
+          "결론은 하나예요"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "혼선이 생긴 장면을 한 줄 요약으로 정리해 복수 지시가 있었던 사실을 흐린다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "partnership-06:beat:a:d-1:deny",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "임의 발주처럼 들리게 하지 마세요. 그날은 지금 안 하면 오픈이 밀리는 상황이었고, 저는 현장에서 가능한 품목을 먼저 잡아둔 겁니다.",
+      "behaviorHint": "턱을 들고 짧게 끊어 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-1:hedge",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "납기 확인 전화는 했습니다. 하지만 그걸 곧바로 최종 확정이라고 단정하면 현장 흐름을 모르는 말입니다.",
+      "behaviorHint": "한숨을 짧게 쉬며 문장을 늘인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-1:partial",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "대체 모델 얘기를 꺼낸 건 맞아요. 그때 매장을 본 사람은 저였고, 그 정도 판단은 필요하다고 봤습니다.",
+      "behaviorHint": "손으로 테이블을 한번 짚고 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-1:blame",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "제가 혼자 즐겨서 바꾼 게 아닙니다. 최종 확인이 계속 늦어지니까 현장에선 누군가 결정해야 했어요.",
+      "behaviorHint": "상대 쪽을 잠깐 바라보며 말끝을 세운다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-1:confession",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "맞습니다. 보라 씨 확인 없이 제가 대체 발주를 밀었습니다. 오픈 압박을 이유로 승인선을 넘었습니다. 그 선택은 제 책임입니다.",
+      "behaviorHint": "시선을 내리깐 채 낮게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-1:evidence_hit",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "그 로그가 그렇게 남아 있으면 부정하긴 어렵네요. 적어도 '옵션만'이었다는 말은 수정하겠습니다.",
+      "behaviorHint": "입술을 깨물고 말 속도가 느려진다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-4:deny",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "지연을 제 발주 하나로 묶는 건 아닙니다. 카운터와 철거 순서를 다시 흔든 순간부터 일정이 무너졌어요.",
+      "behaviorHint": "즉시 반박하며 손짓이 커진다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-4:hedge",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "제 변경이 번거로움을 만든 건 알지만, 진짜 병목은 그 뒤에 겹친 재지시였습니다.",
+      "behaviorHint": "문장 앞부분은 낮추고 끝에서 힘을 준다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-4:partial",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "네, 제 대체 발주도 추가 조율을 만들었습니다. 다만 지연은 그 위에 다른 변경이 겹치면서 커졌습니다.",
+      "behaviorHint": "고개를 끄덕였다가 곧바로 단서를 붙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-4:blame",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "솔직히 제가 먼저 몰렸습니다. 보라 씨가 자기 일정 개입은 작게 말하니까 저도 그쪽 책임을 더 세게 꺼낸 겁니다.",
+      "behaviorHint": "쓴웃음을 짓고 어깨를 한번 들썩인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-4:confession",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "지연은 보라 씨 한 사람 탓이 아닙니다. 제 재발주와 그쪽 재지시가 함께 충돌했습니다. 그건 제 잘못입니다.",
+      "behaviorHint": "맞은편을 보지 못한 채 또렷하게 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-4:evidence_hit",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "현장일지까지 그렇게 끊어 적혀 있으면 더는 한쪽만의 문제라고 하기 어렵겠네요.",
+      "behaviorHint": "서류 쪽으로 시선을 오래 고정한다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-5:deny",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "제가 보낸 건 현장 작업판이었습니다. 최종안이라고 못 박은 적은 없습니다.",
+      "behaviorHint": "손바닥을 펴 보이며 선을 긋는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-5:hedge",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "그때는 누군가 당장 쓸 버전을 줘야 했어요. 현장판 공유를 곧바로 '복수 최종안'으로 부르면 과합니다.",
+      "behaviorHint": "입술을 눌러 다문 뒤 천천히 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-5:partial",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "제 버전이 최종안처럼 받아들여졌을 수는 있습니다. 하지만 보라 씨도 자기 버전을 똑같이 돌렸습니다.",
+      "behaviorHint": "잠깐 인정했다가 곧바로 상대를 가리킨다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-5:blame",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "혼선이 제 메시지 하나로 생긴 건 아니죠. 대표 둘이 각자 마지막 말을 하려 한 게 더 큰 문제였습니다.",
+      "behaviorHint": "웃음기 없이 잘라 말한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-5:confession",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "맞습니다. 저도 제 수정안을 사실상 최종안처럼 돌렸습니다. 그 결과 팀이 두 표를 동시에 봤습니다. 그건 제 잘못입니다.",
+      "behaviorHint": "손끝을 모은 채 짧게 숨을 들이쉰다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:a:d-5:evidence_hit",
+      "caseId": "partnership-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "그 캡처와 외부 기록이 같이 붙으면 '작업판일 뿐'이라는 말이 약해지는 건 인정합니다.",
+      "behaviorHint": "어깨 힘이 빠지며 답한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-2:deny",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "저는 디자인 조정을 말한 겁니다. 철거 일정까지 제가 결정했다는 식으로 묶는 건 부정확합니다.",
+      "behaviorHint": "표정을 바꾸지 않은 채 또박또박 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-2:hedge",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "카운터 위치는 브랜드 구조의 일부예요. 공정 판단은 현장과 시공팀이 가져가는 영역이라고 봤습니다.",
+      "behaviorHint": "손가락으로 항목을 세듯 차분히 정리한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-2:partial",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "네, 위치와 순서에 함께 손댄 건 맞습니다. 당시엔 브랜드 일관성이 무너진다고 봤습니다.",
+      "behaviorHint": "한 박자 쉬고 사실을 분리해 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-2:blame",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "제가 범위를 좁혀 말한 건 맞지만, 가람 씨도 이미 자기 발주를 따로 밀고 있었어요.",
+      "behaviorHint": "시선은 고정한 채 말만 더 날카로워진다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-2:confession",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "맞습니다. 가람 씨와 다시 확인하지 않은 채 카운터와 철거 순서를 바꾸라고 했습니다. 그건 제 잘못입니다.",
+      "behaviorHint": "어조는 건조하지만 결론을 피하지 않는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-2:evidence_hit",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "댓글과 수정 평면도가 그렇게 남아 있으면 '위치만 말했다'고만 하긴 어렵네요.",
+      "behaviorHint": "입꼬리가 굳은 채 서류를 내려다본다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-4:deny",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "지연의 첫 단추는 가람 씨의 재발주였습니다. 그 전까지는 적어도 공정선은 유지되고 있었어요.",
+      "behaviorHint": "문장을 짧게 끊어 원인만 못 박는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-4:hedge",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "제 코멘트가 불편을 더했을 수는 있어도, 지연의 주원인은 아니라고 봤습니다.",
+      "behaviorHint": "어깨를 움직이지 않고 말끝만 낮춘다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-4:partial",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "제 재지시도 추가 작업을 만들었습니다. 다만 현장이 꼬인 건 두 변경이 같은 구간에 겹쳤기 때문입니다.",
+      "behaviorHint": "숫자를 세듯 원인을 나눠 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-4:blame",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "제가 가람 씨 책임을 더 크게 말한 건 사실입니다. 일정까지 건드렸다는 평가를 피하고 싶었으니까요.",
+      "behaviorHint": "건조하게 인정하지만 시선은 단단히 고정한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-4:confession",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "지연은 가람 씨 한 사람 탓이 아닙니다. 제 재지시와 그의 재발주가 함께 충돌했습니다. 그건 제 잘못입니다.",
+      "behaviorHint": "짧게 숨을 내쉰 뒤 결론만 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-4:evidence_hit",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "현장일지와 견적서까지 보면 더는 단독 월권 서사로는 못 버티겠네요.",
+      "behaviorHint": "입술을 다문 채 서류 모서리를 만진다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-5:deny",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "저는 정리본을 보낸 겁니다. 경쟁하는 최종안을 만든 건 아닙니다.",
+      "behaviorHint": "목소리 높낮이 없이 단정한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-5:hedge",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "누군가는 핵심을 정리해 전달해야 했습니다. 그 행위 자체를 혼선의 원인이라고만 보긴 어렵습니다.",
+      "behaviorHint": "짧게 요약한 뒤 침묵을 둔다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-5:partial",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "제 정리본이 직원들에겐 최종안처럼 읽혔을 수는 있습니다. 다만 당시엔 핵심을 정리해 전달해야 하는 상황이었습니다.",
+      "behaviorHint": "처음으로 문장 길이를 줄여 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-5:blame",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "그렇다고 혼선이 제 요약 한 줄 때문에만 생긴 건 아니죠. 가람 씨 쪽 버전도 동시에 돌았습니다.",
+      "behaviorHint": "미세하게 미소를 지었다가 곧 지운다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-5:confession",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "맞습니다. 제 정리본과 수정 평면도는 사실상 또 다른 최종안이 됐습니다. 그건 제 잘못입니다.",
+      "behaviorHint": "고개를 약간 숙인 채 핵심만 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-06:beat:b:d-5:evidence_hit",
+      "caseId": "partnership-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "캡처 하나는 약해도 관리소 기록과 PM 일지까지 붙으면 부정할 여지가 거의 없네요.",
+      "behaviorHint": "말 끝이 짧아지고 시선이 아래로 떨어진다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    }
+  ]
+} as const;

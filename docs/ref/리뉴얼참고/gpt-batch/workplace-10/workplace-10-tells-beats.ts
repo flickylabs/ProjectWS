@@ -1,0 +1,569 @@
+export const workplace10TellsBeats = {
+  "caseId": "workplace-10",
+  "executableTells": {
+    "a": [
+      {
+        "id": "workplace-10:a:tell:budget_screen",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "헤드카운트",
+          "예산"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "본인이 무엇을 말했는지보다 '그때 예산이 어떻게 움직였는지'를 먼저 길게 설명한다."
+      },
+      {
+        "id": "workplace-10:a:tell:promise_softener",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "확정은 아니었고",
+          "올려 보겠다고"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "'전환해 줄게'를 '전환안 올려 보겠다' 정도의 취지였다고 뒤늦게 낮춘다."
+      },
+      {
+        "id": "workplace-10:a:tell:timeline_skip",
+        "appliesWhen": [
+          "avoiding",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "마지막 결정",
+          "그때는"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "과거 여러 차례 미뤄진 약속의 순서를 묻는 질문에 현재 마지막 결정만 끌어와 앞선 반복을 희미하게 만든다."
+      }
+    ],
+    "b": [
+      {
+        "id": "workplace-10:b:tell:promise_quote_stack",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "캡처",
+          "1:1 문구"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "every_turn",
+        "originalPattern": "상대가 한 약속 문장들을 연달아 읽어 주며 자신의 이중 계약 사실을 잠시 가린다."
+      },
+      {
+        "id": "workplace-10:b:tell:survival_relabel",
+        "appliesWhen": [
+          "cornered",
+          "shame",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "생계용 대비",
+          "보험"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "'이중 계약'이 아니라 '생계용 대비 계약'이었다고 표현을 바꿔 숨긴 사실의 무게를 줄인다."
+      },
+      {
+        "id": "workplace-10:b:tell:calendar_tap",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "lying"
+        ],
+        "lexicalHooks": [
+          "일정표",
+          "이 날짜들"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "일정표를 두드리며 '이 날짜들 다 믿고 버틴 거예요'를 반복해 감정과 사실을 한꺼번에 밀어붙인다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "workplace-10:beat:a:d-1:deny",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "제가 혜린 씨에게 정규직 전환을 확정해 준다고 말한 적은 없어요. 헤드카운트와 예산이 안 풀린 그때는 마지막 결정도 없어서, 약속으로 말할 상황 자체가 아니었어요.",
+      "behaviorHint": "수치를 먼저 짚은 뒤 시선을 재판관 쪽으로만 두고 단호하게 선을 긋는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-1:hedge",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "헤드카운트와 예산이 흔들리던 그때는, 제가 확정은 아니었고 전환안을 올려 보겠다고 말씀드린 정도예요. 마지막 결정을 기다리던 상황이었다는 점도 같이 봐 주셔야 해요.",
+      "behaviorHint": "손가락으로 순서를 세며 설명을 늘이고, 끝 문장을 살짝 되묻듯 올린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-1:partial",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "제가 헤드카운트와 예산 설명을 앞세우면서 기대를 키운 건 맞아요. 다만 그때는 마지막 결정 전이라 확정은 아니었고, 저는 전환안을 올려 보겠다고 본 거예요.",
+      "behaviorHint": "한 번 숨을 길게 고른 뒤 일부는 인정하지만 결론은 흐린다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-1:blame",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "제가 헤드카운트와 예산 얘기로 확정은 아니었고 마지막 결정 전이라고 흐린 건 맞아요. 다만 혜린 씨 쪽도 그때는 제가 올려 보겠다고 한 말을 이미 확정처럼 받아서 팀 배치 논의를 밀어붙인 부분이 있어요.",
+      "behaviorHint": "어깨를 움츠렸다가 상대 쪽으로 짧게 시선을 던지며 책임을 나눠 말한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-1:confession",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "제가 헤드카운트와 예산 뒤에 숨으면서, 그때는 마지막 결정 전이었어도 마치 확정처럼 들리게 전환안을 올려 보겠다고 말했어요. 기대하게 만든 건 제 잘못이고, 약속을 흐린 책임도 제 책임이에요.",
+      "behaviorHint": "목소리를 낮추고 문장 끝을 끊지 못한 채 고개를 숙인다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-1:evidence_hit",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "1:1 문구와 메신저 기록까지 나오면, 제가 헤드카운트와 예산만 말하면서도 전환안을 올려 보겠다고 한 흔적은 부정할 수 없어요. 그때는 마지막 결정 전이었다는 말만으로는 더 못 버텨요.",
+      "behaviorHint": "서류를 다시 보며 변명하듯 시작했다가 중간에 말이 짧아진다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-1"
+    },
+    {
+      "id": "workplace-10:beat:a:d-4:deny",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "제가 혜린 씨 전환을 막으려고 메모를 먼저 남긴 적 없어요. 헤드카운트와 예산이 안 풀린 그때는 마지막 결정도 안 났고, 보류 화면을 설명한 것뿐이에요.",
+      "behaviorHint": "표정 변화를 억누른 채 문서 화면을 가리키며 딱 잘라 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-4:hedge",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "헤드카운트와 예산이 묶인 건 사실이고, 그때는 마지막 결정 전이라 확정은 아니었고 보류 화면을 먼저 본 거예요. 제가 전환안을 올려 보겠다고 끝까지 못 한 건 그 흐름 때문이에요.",
+      "behaviorHint": "스크린샷 가장자리 쪽을 짚으며 설명을 길게 늘인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-4:partial",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "제가 헤드카운트, 예산 얘기만 앞세운 건 맞아요. 다만 그때는 마지막 결정 전이었고, 확정은 아니었고 보류와 재요청 가능 사이에서 전환안을 올려 보겠다고 끝까지 못 밀었어요.",
+      "behaviorHint": "한 박자 늦게 수긍한 뒤도 책임 비율을 계산하듯 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-4:blame",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "제가 헤드카운트와 예산 뒤에 숨으면서 확정은 아니었고 마지막 결정 전이라고만 말한 건 맞아요. 다만 혜린 씨 쪽도 그때는 발표 주간을 이미 확정처럼 압박해서 제가 더 방어적으로 굴었어요.",
+      "behaviorHint": "턱을 만지며 난처한 웃음을 짓다가 상대의 압박을 탓한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-4:confession",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "제가 헤드카운트와 예산만 핑계처럼 내세우고, 그때는 마지막 결정 전인데도 '어쩔 수 없다'고 말했어요. commitment concern 메모를 먼저 남긴 건 제 잘못이고, 화면을 잘라 보여 준 책임도 제 책임이에요.",
+      "behaviorHint": "말끝이 작아지고, 스스로 불리한 표현을 고치지 못한 채 그대로 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-4:evidence_hit",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "보류 캡처 원본이 아니라 HR 이력까지 나오면, 제가 헤드카운트와 예산만 내세우고 그때는 마지막 결정 전이었다는 말로 덮은 건 더 못 부정해요. 전환안을 올려 보겠다고 실제로 밀지 않았다는 점도 드러나요.",
+      "behaviorHint": "캡처를 넘기던 손이 멈추고, 다음 문장을 찾지 못해 입술을 다문다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "workplace-10:beat:a:d-5:deny",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "제가 구두 약속으로 혜린 씨를 붙잡아 둔 적 없어요. 헤드카운트와 예산이 흔들리던 그때는 마지막 결정도 없어서, 전환안을 올려 보겠다고 한 말이 관계 유지 수단이었다는 건 사실이 아니에요.",
+      "behaviorHint": "즉답 뒤에 숫자와 절차를 덧붙이며 개인적 의도를 강하게 부정한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-5:hedge",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "헤드카운트와 예산이 불안한 그때는, 제가 확정은 아니었고 전환안을 올려 보겠다고 말한 정도였어요. 마지막 결정이 없는 상황에서 서로 일단 버틴 거지, 제가 일방적으로 붙잡아 둔 건 아니에요.",
+      "behaviorHint": "손바닥을 펴 보이며 서로의 사정을 섞어 책임선을 흐린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-5:partial",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "제가 헤드카운트와 예산 설명 속에 전환안을 올려 보겠다고 말해 관계를 이어 간 건 맞아요. 다만 그때는 마지막 결정 전이었고, 혜린 씨도 자기 사정을 전부 열어 놓지는 않았어요.",
+      "behaviorHint": "일부 인정하는 순간에도 고개를 완전히 끄덕이지 않고 여지를 남긴다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-5:blame",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "제가 헤드카운트와 예산 뒤로 숨으면서 확정은 아니었고 마지막 결정 전이라고 흐린 건 맞아요. 다만 혜린 씨 쪽도 그때는 다른 계약 얘기를 숨긴 채 제가 올려 보겠다고 한 말만 붙들고 관계를 이어 갔어요.",
+      "behaviorHint": "상대를 직접 보지 못하고 서류를 매만지며 상호 의존을 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-5:confession",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "제가 헤드카운트와 예산을 이유로 그때는 마지막 결정 전이라고 하면서도, 사실상 전환안을 올려 보겠다는 말로 혜린 씨를 붙잡아 뒀어요. 문서화하지 않은 채 버티게 만든 건 제 잘못이고, 그 관계를 방치한 책임도 제 책임이에요.",
+      "behaviorHint": "잠시 말을 멈춘 뒤 낮은 목소리로 잘못의 구조를 스스로 정리한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:a:d-5:evidence_hit",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "계약연장 메일과 잔류 요청 기록까지 나오면, 제가 헤드카운트와 예산만 말하면서도 전환안을 올려 보겠다고 관계를 유지한 건 부정할 수 없어요. 그때는 마지막 결정 전이었다는 설명만으로는 안 돼요.",
+      "behaviorHint": "메일 날짜를 확인하다가 한숨을 짧게 내쉬며 말의 강도가 꺾인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "workplace-10:beat:b:d-2:deny",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "저는 타사와 겹치는 고정 근무 계약을 체결한 적도, 병행한 적도 없습니다. 캡처와 1:1 문구, 일정표의 이 날짜들을 보셔도 그건 생계용 대비용 보험 자료였을 뿐입니다.",
+      "behaviorHint": "증빙 순서를 반듯하게 정리한 채 건조하게 부정한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-2:hedge",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "캡처와 1:1 문구, 일정표에 남은 이 날짜들 기준으로도 저는 생계용 대비, 말 그대로 보험 차원에서 계약서를 잡아 둔 겁니다. 다만 실제 가용시간이 겹치지 않게 보려 했고, 고의로 숨기려던 건 아니었습니다.",
+      "behaviorHint": "짧게 끊어 말하다가 마지막만 낮은 톤으로 완화한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-2:partial",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "제가 캡처와 일정표로 관리하면서 다른 회사 계약서를 잡아 둔 건 맞습니다. 다만 1:1 문구에 기대고 있던 이 날짜들 동안 저는 그걸 생계용 대비, 보험이라고 여겼고 실제 충돌을 가볍게 본 겁니다.",
+      "behaviorHint": "노트를 한 번 두드린 뒤 사실과 해석을 분리해 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-2:blame",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "제가 캡처와 일정표를 따로 관리하며 생계용 대비용 보험 계약을 숨긴 건 맞습니다. 다만 도현 씨 쪽도 1:1 문구로 이 날짜들마다 전환을 미뤄서, 제가 disclosure를 미룬 판단을 키운 부분이 있습니다.",
+      "behaviorHint": "시선은 차갑게 유지하되 문장 끝에서 상대 책임을 또렷하게 찍는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-2:confession",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "제가 캡처와 일정표로 이 날짜들까지 관리하면서도, 다른 회사 계약을 생계용 대비나 보험이라고 부르며 숨겼습니다. 겹치는 시간 가능성을 알고도 공유하지 않은 건 제 잘못이고, 병행을 만든 책임도 제 책임입니다.",
+      "behaviorHint": "메모를 덮고 정면을 본 채 건조하게 잘못을 명시한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-2:evidence_hit",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "타사 계약서 캡처와 온보딩 메일, 일정표에 적힌 이 날짜들까지 나오면 제가 그걸 생계용 대비, 보험이라고만 부르며 숨긴 건 더는 부정할 수 없습니다. 1:1 문구와 별개로 disclosure를 안 한 건 사실입니다.",
+      "behaviorHint": "자료 제목을 하나씩 읽다가 끝에서 짧게 멈춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "workplace-10:beat:b:d-3:deny",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "저는 순수한 피해자라는 말씀을 철회할 이유가 없습니다. 캡처, 1:1 문구, 일정표에 남은 이 날짜들을 보시면 저는 약속을 믿고 움직였고, 생계용 대비나 보험 문제로 그 피해가 사라지진 않습니다.",
+      "behaviorHint": "표정을 거의 바꾸지 않은 채 핵심만 잘라 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-3:hedge",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "캡처와 1:1 문구, 일정표에 남은 이 날짜들 기준으로 저는 분명 피해를 입었습니다. 다만 생계용 대비, 보험 차원에서 대비한 선택이 있었다고 해도 그게 약속 파기 자체를 지우는 건 아닙니다.",
+      "behaviorHint": "피해 사실을 먼저 정리하고 나서야 작은 단서를 덧붙인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-3:partial",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "제가 캡처와 일정표를 들고 순수한 피해자라고만 밀어온 건 과했습니다. 다만 1:1 문구와 이 날짜들 때문에 버틴 건 사실이고, 다른 계약을 생계용 대비, 보험이라고 낮춰 본 제 판단도 함께 봐 주셔야 합니다.",
+      "behaviorHint": "침착하게 인정하되 핵심 피해 기록을 다시 책상 위로 밀어 놓는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-3:blame",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "제가 캡처와 일정표를 앞세워 순수한 피해자처럼만 말한 건 맞습니다. 다만 도현 씨 쪽도 1:1 문구로 이 날짜들마다 기대를 키워 놓고, 제가 생계용 대비용 보험을 들 수밖에 없는 불안을 만든 책임이 있습니다.",
+      "behaviorHint": "말의 속도는 일정하게 유지하면서 상대의 유인 구조를 차갑게 짚는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-3:confession",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "제가 캡처와 1:1 문구, 일정표에 남은 이 날짜들만 내세우며 순수한 피해자라고만 말했습니다. 생계용 대비, 보험이라고 부르며 숨긴 계약까지 생각하면 그 표현은 제 잘못이고, 제 책임을 뺀 진술이었던 점도 제 책임입니다.",
+      "behaviorHint": "한 문장씩 단정적으로 끊어 말하며 자기 책임 표현을 피하지 않는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-3:evidence_hit",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "타사 계약서와 VPN 로그가 캡처, 일정표의 이 날짜들과 겹쳐 나오면 제가 순수한 피해자라고만 말한 건 더는 버티기 어렵습니다. 1:1 문구가 있어도 생계용 대비, 보험으로 숨긴 부분은 부정할 수 없습니다.",
+      "behaviorHint": "로그 시각을 확인하던 손이 멈추고, 다음 반박을 포기한 듯 정리한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "workplace-10:beat:b:d-5:deny",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "저는 숨긴 사실 위에서 관계를 유지한 적 없습니다. 캡처와 1:1 문구, 일정표의 이 날짜들을 보시면 저는 약속을 확인했을 뿐이고, 생계용 대비나 보험 문제를 관계 유지 수단으로 쓴 건 아닙니다.",
+      "behaviorHint": "자료를 평평하게 펴 두고 감정을 최대한 배제한 채 부정한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-5:hedge",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "캡처와 1:1 문구, 일정표에 남은 이 날짜들 때문에 저는 계속 확인을 했습니다. 다만 생계용 대비, 보험으로 잡아 둔 계약을 곧 정리할 수 있다고 봤고, 그래서 disclosure 시점을 늦춘 겁니다.",
+      "behaviorHint": "책상을 손끝으로 두드리며 이유와 의도를 분리해 설명한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-5:partial",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "제가 캡처와 일정표를 들여다보며 생계용 대비용 보험 계약을 숨긴 채 버틴 건 맞습니다. 다만 1:1 문구와 이 날짜들마다 반복된 약속이 있어서 곧 정리될 거라고 본 겁니다.",
+      "behaviorHint": "자료를 정렬한 뒤 낮은 한숨과 함께 일부만 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-5:blame",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "제가 캡처와 일정표를 쥔 채 생계용 대비, 보험 계약을 숨긴 건 맞습니다. 다만 도현 씨 쪽도 1:1 문구로 이 날짜들마다 기대를 붙잡아 두면서, 불완전한 관계를 계속 굴린 책임이 있습니다.",
+      "behaviorHint": "표정은 굳힌 채 책임의 대칭성을 수식처럼 읽어 내려간다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-5:confession",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "제가 캡처와 1:1 문구, 일정표에 남은 이 날짜들을 근거로 버티면서도, 생계용 대비용 보험 계약은 끝까지 숨겼습니다. 불완전한 정보 위에서 관계를 유지한 건 제 잘못이고, disclosure를 미룬 책임도 제 책임입니다.",
+      "behaviorHint": "직선적으로 인정한 뒤 더 이상 자료를 넘기지 않고 손을 멈춘다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "workplace-10:beat:b:d-5:evidence_hit",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "계약연장 메일과 VPN 로그가 캡처, 일정표의 이 날짜들과 함께 나오면, 제가 생계용 대비, 보험이라고 부르며 숨긴 계약 위에서 관계를 이어 온 건 부정할 수 없습니다. 1:1 문구만으로 설명할 수는 없습니다.",
+      "behaviorHint": "로그와 메일을 번갈아 본 뒤 짧게 고개를 끄덕이며 멈춘다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-6"
+    }
+  ]
+}
+

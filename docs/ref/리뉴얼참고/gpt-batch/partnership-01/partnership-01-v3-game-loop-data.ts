@@ -1,0 +1,2507 @@
+export const partnership01V3GameLoopData = {
+  "caseId": "partnership-01",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "자금 이동과 예치계약",
+      "description": "법인계좌 송금 원본과 예치계약 초안을 붙여 송금 목적과 승인 공백을 동시에 겨냥하는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "이서준 씨, 9월 3일 1,800만원 이체를 공동승인 없이 실행한 단말과 승인 방식이 본인 쪽에서 나온 것이 맞습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "partnership-01:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "최종 서면 승인 없이도 집행해도 된다고 본 근거가 전날의 구두 한도 논의였다는 점을 분명히 답하십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-01:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "예치계약 초안의 비환급 법률검토비 조항을 송금 전에 확인하고도 320만원 위험을 충분히 설명하지 않은 것 아닙니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-01:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "윤해나 씨, 당신도 전날 예치 한도를 말한 사실은 있지만 9월 3일 실제 송금 버튼과 서면 승인 공백의 책임선은 서준에게 있다고 보십니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "partnership-01:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "계약 초안에 비환급 조항이 있었는데도 전액 환급처럼 받아들인 채 움직였다는 점을 부인하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-01:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "세부 조항을 직접 확인하지 않고도 손실 가능성을 낮게 말한 책임이 서준에게만 있다고 단정할 수 있습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-01:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "잘린 캡처와 회식 직후 원본 대화",
+      "description": "함정 캡처와 원본 단톡을 대비해 개인 채무 프레임과 구두 동의 번복을 동시에 흔드는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "이서준 씨, 크롭된 캡처의 앞뒤 맥락을 바로 풀어 설명하지 않고 개인 채무가 아니라는 말만 반복한 이유가 무엇입니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-01:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "회식 직후 해나의 2천만원 한도 발언을 최종 집행 허용으로 받아들인 시점을 구체적으로 답하십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-01:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "직원 불안을 이유로 컨설팅비 명목을 묵인한 순간 당신도 임시 회계은폐에 가담한 것 아닌가요.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-01:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "윤해나 씨, 원본 없는 크롭 캡처만으로 개인 채무 프레임을 밀어붙였다는 점을 지금도 부인하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-01:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "회식 직후 '먼저 예치 가자'고 말해놓고 직원들 앞에서는 승인 자체를 없던 일로 만든 적이 있습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-01:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "직원들에겐 컨설팅비처럼 설명하자고 먼저 말한 적이 없다고 지금도 답하시겠습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-01:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "분개 지시와 투자자 확인",
+      "description": "세무사 원본 메일과 투자자 확인을 맞물려 숨긴 관여도와 사후 책임 회피를 압박하는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "이서준 씨, 투자자 측 확인 메일상 해나도 1차 브리핑에 참여했는데 그 사실을 숨긴 채 개인 채무 의혹만 부인한 이유는 무엇입니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-01:a:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "세무사 예정신고 메모까지 나온 지금도 320만원 비환급 위험을 사후까지 적극 공유하지 않은 책임을 부정하십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-01:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "해나의 임시 분개 제안이 있었다 해도 당신이 그 표기를 멈추지 않은 공동책임은 인정합니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-01:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "윤해나 씨, 투자자 측 확인 메일이 개인 채무 프레임을 깨고도 계속 그 의심을 유지한 이유가 분노 외에 무엇입니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-01:b:d-2:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "투자자 확인 메일과 원본 대화를 함께 보면 당신의 구두 동의 번복이 더 선명해지는데 그 점을 인정하십니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-01:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "세무사 원본 메일이 나온 뒤에도 임시 분개 제안을 숨기며 서준 단독 판단처럼 몰아간 적이 있습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-01:b:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "partnership-01:a:d-1:unlock:s2:0",
+            "factText": "제가 공동승인 토큰 없이 1,800만원을 보낸 건 맞지만 전날 해나가 2,000만원 한도 안에서 먼저 예치하자고 말한 걸 실행한 겁니다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "time": {
+                "exact": "9월 3일",
+                "dateExact": "9월 3일",
+                "period": "송금 당일",
+                "neutral": "그날"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "lawyer": {
+                "exact": "정민우 법무사",
+                "fullName": "정민우 법무사",
+                "judgeRef": "법무사",
+                "neutral": "그 법무사"
+              },
+              "account": {
+                "exact": "법인 준비금 계좌",
+                "neutral": "회사 계좌"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "approval": {
+                "exact": "공동승인 토큰",
+                "neutral": "그 승인 절차"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-01:a:d-1:unlock:s3:0",
+            "factText": "형식상 최종 승인은 제 손으로 넘어왔지만 그 판단을 혼자 만든 건 아니고 해나가 구두로 한도를 열어놓고 나중에 직원들 앞에서는 승인 자체가 없었다고 선을 그었습니다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "time": {
+                "exact": "9월 3일",
+                "dateExact": "9월 3일",
+                "period": "송금 당일",
+                "neutral": "그날"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "lawyer": {
+                "exact": "정민우 법무사",
+                "fullName": "정민우 법무사",
+                "judgeRef": "법무사",
+                "neutral": "그 법무사"
+              },
+              "account": {
+                "exact": "법인 준비금 계좌",
+                "neutral": "회사 계좌"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "approval": {
+                "exact": "공동승인 토큰",
+                "neutral": "그 승인 절차"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-01:a:d-1:unlock:s4:0",
+            "factText": "그때 저는 운영총괄로서 투자 창을 놓치면 회사가 무너질 수 있다는 생각에 사로잡혀 있었고 절차를 건너뛴 순간이 제 잘못인 건 압니다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "time": {
+                "exact": "9월 3일",
+                "dateExact": "9월 3일",
+                "period": "송금 당일",
+                "neutral": "그날"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "lawyer": {
+                "exact": "정민우 법무사",
+                "fullName": "정민우 법무사",
+                "judgeRef": "법무사",
+                "neutral": "그 법무사"
+              },
+              "account": {
+                "exact": "법인 준비금 계좌",
+                "neutral": "회사 계좌"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "approval": {
+                "exact": "공동승인 토큰",
+                "neutral": "그 승인 절차"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-01:a:d-1:unlock:s5:0",
+            "factText": "네 저는 최종 서면 승인 없이 법인 준비금 1,800만원을 신탁계좌로 보냈고 회사 살리겠다는 판단이었더라도 문서화 없이 집행한 책임은 제가 집니다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "time": {
+                "exact": "9월 3일",
+                "dateExact": "9월 3일",
+                "period": "송금 당일",
+                "neutral": "그날"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "lawyer": {
+                "exact": "정민우 법무사",
+                "fullName": "정민우 법무사",
+                "judgeRef": "법무사",
+                "neutral": "그 법무사"
+              },
+              "account": {
+                "exact": "법인 준비금 계좌",
+                "neutral": "회사 계좌"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "approval": {
+                "exact": "공동승인 토큰",
+                "neutral": "그 승인 절차"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "partnership-01:a:d-2:unlock:s2:0",
+            "factText": "브리지 투자 독점검토를 잡기 위한 예치금과 법률 검토비였다는 건 분명하지만 해나가 초기 브리핑에 들어와 있었다는 사실까지는 제가 먼저 꺼내지 않았습니다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "evidence": {
+                "exact": "크롭된 메신저 캡처",
+                "neutral": "그 캡처"
+              },
+              "quote": {
+                "exact": "‘일단 제 이름으로 돌려놓고 나중에 정리하죠’",
+                "neutral": "그 문장"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "investor": {
+                "exact": "투자자 측 담당",
+                "fullName": "투자자 측 담당",
+                "judgeRef": "투자자 측",
+                "neutral": "투자자 측"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-01:a:d-2:unlock:s3:0",
+            "factText": "개인 빚 프레임이 퍼진 건 저보다도 그 크롭 캡처를 들고 온 쪽의 해석 때문이었고 저는 관계를 깨지 않으려고 설명을 늦췄다가 그 공백을 키웠습니다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "evidence": {
+                "exact": "크롭된 메신저 캡처",
+                "neutral": "그 캡처"
+              },
+              "quote": {
+                "exact": "‘일단 제 이름으로 돌려놓고 나중에 정리하죠’",
+                "neutral": "그 문장"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "investor": {
+                "exact": "투자자 측 담당",
+                "fullName": "투자자 측 담당",
+                "judgeRef": "투자자 측",
+                "neutral": "투자자 측"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-01:a:d-2:unlock:s4:0",
+            "factText": "솔직히 말하면 저는 해나가 같이 움직였다는 사실을 밖으로 꺼내고 싶지 않았고 저 혼자 욕먹는 쪽을 택하다 보니 오히려 개인 채무처럼 보이게 만들었습니다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "evidence": {
+                "exact": "크롭된 메신저 캡처",
+                "neutral": "그 캡처"
+              },
+              "quote": {
+                "exact": "‘일단 제 이름으로 돌려놓고 나중에 정리하죠’",
+                "neutral": "그 문장"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "investor": {
+                "exact": "투자자 측 담당",
+                "fullName": "투자자 측 담당",
+                "judgeRef": "투자자 측",
+                "neutral": "투자자 측"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-01:a:d-2:unlock:s5:0",
+            "factText": "문제의 1,800만원은 제 개인 채무 상환이 아니라 브리지 투자 예치와 법률 검토를 위한 돈이었고 그걸 제때 명확히 설명하지 않은 건 제 책임입니다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "evidence": {
+                "exact": "크롭된 메신저 캡처",
+                "neutral": "그 캡처"
+              },
+              "quote": {
+                "exact": "‘일단 제 이름으로 돌려놓고 나중에 정리하죠’",
+                "neutral": "그 문장"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "investor": {
+                "exact": "투자자 측 담당",
+                "fullName": "투자자 측 담당",
+                "judgeRef": "투자자 측",
+                "neutral": "투자자 측"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "partnership-01:a:d-3:unlock:s2:0",
+            "factText": "원본 단톡과 음성메모 기준으로 해나는 준비금 2천 안에서 먼저 예치 가자고 말했고 저는 그 말을 실행 허용으로 받아들였습니다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "time": {
+                "exact": "송금 하루 전 회식 직후",
+                "period": "송금 하루 전 밤",
+                "neutral": "그 전날 밤"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              },
+              "voice": {
+                "exact": "음성메모",
+                "neutral": "그 녹음"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-01:a:d-3:unlock:s3:0",
+            "factText": "문제는 투자 분위기가 식자 그 말을 통째로 없던 일처럼 바꿨고 직원들 앞에서는 승인 자체가 없었다고 하면서 제 단독 폭주처럼 만들었다는 겁니다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "time": {
+                "exact": "송금 하루 전 회식 직후",
+                "period": "송금 하루 전 밤",
+                "neutral": "그 전날 밤"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              },
+              "voice": {
+                "exact": "음성메모",
+                "neutral": "그 녹음"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-01:a:d-3:unlock:s4:0",
+            "factText": "그때 제일 컸던 감정은 배신감이었고 구두로 같이 밀어놓고 공개석상에선 저만 남겨둔 느낌이었습니다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "time": {
+                "exact": "송금 하루 전 회식 직후",
+                "period": "송금 하루 전 밤",
+                "neutral": "그 전날 밤"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              },
+              "voice": {
+                "exact": "음성메모",
+                "neutral": "그 녹음"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-01:a:d-3:unlock:s5:0",
+            "factText": "해나는 사전에 구두 동의를 했고 저는 그 동의를 최종 승인처럼 믿고 움직였으며 둘 다 잘못했고 저는 그걸 문서로 못 남긴 책임을 피할 수 없습니다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "time": {
+                "exact": "송금 하루 전 회식 직후",
+                "period": "송금 하루 전 밤",
+                "neutral": "그 전날 밤"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              },
+              "voice": {
+                "exact": "음성메모",
+                "neutral": "그 녹음"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "partnership-01:a:d-4:unlock:s2:0",
+            "factText": "해나가 세무사에게 일단 2주년 캠페인 컨설팅비로 잡아달라고 한 건 맞고 저도 그 임시 표기를 그대로 두는 데 동의했습니다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "label": {
+                "exact": "2주년 캠페인 컨설팅비",
+                "neutral": "그 임시 명목"
+              },
+              "time": {
+                "exact": "송금 당일 오전",
+                "period": "송금 당일 오전",
+                "neutral": "그날 오전"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "taxAccountant": {
+                "exact": "세무사",
+                "judgeRef": "세무사",
+                "neutral": "회계대리인"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-01:a:d-4:unlock:s3:0",
+            "factText": "그런데 나중에는 그 제안이 없었던 것처럼 정리하면서 제 단독 판단처럼 밀었고 회계상 부담은 제가 혼자 뒤집어쓰게 됐죠.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "label": {
+                "exact": "2주년 캠페인 컨설팅비",
+                "neutral": "그 임시 명목"
+              },
+              "time": {
+                "exact": "송금 당일 오전",
+                "period": "송금 당일 오전",
+                "neutral": "그날 오전"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "taxAccountant": {
+                "exact": "세무사",
+                "judgeRef": "세무사",
+                "neutral": "회계대리인"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-01:a:d-4:unlock:s4:0",
+            "factText": "직원들이 동요할까 봐 급한 봉합을 택했던 건 이해하지만 그 후에 저 혼자 조작한 사람처럼 남겨진 건 꽤 모욕적이었습니다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "label": {
+                "exact": "2주년 캠페인 컨설팅비",
+                "neutral": "그 임시 명목"
+              },
+              "time": {
+                "exact": "송금 당일 오전",
+                "period": "송금 당일 오전",
+                "neutral": "그날 오전"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "taxAccountant": {
+                "exact": "세무사",
+                "judgeRef": "세무사",
+                "neutral": "회계대리인"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-01:a:d-4:unlock:s5:0",
+            "factText": "임시 회계분류 제안은 해나 쪽에서 먼저 나왔고 저는 그걸 막지 않았기 때문에 이 은폐의 책임도 공동으로 져야 합니다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "label": {
+                "exact": "2주년 캠페인 컨설팅비",
+                "neutral": "그 임시 명목"
+              },
+              "time": {
+                "exact": "송금 당일 오전",
+                "period": "송금 당일 오전",
+                "neutral": "그날 오전"
+              },
+              "counterparty": {
+                "exact": "윤해나",
+                "fullName": "윤해나",
+                "judgeRef": "해나 측",
+                "neutral": "그 사람"
+              },
+              "taxAccountant": {
+                "exact": "세무사",
+                "judgeRef": "세무사",
+                "neutral": "회계대리인"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "partnership-01:a:d-5:unlock:s2:0",
+            "factText": "계약 초안상 법률검토비 전환 조항이 있었던 건 맞고 제가 그 320만원 위험을 충분히 짚어 설명하지 않은 것도 사실입니다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "fee": {
+                "exact": "320만원",
+                "rounded": "320만원",
+                "neutral": "해당 검토비"
+              },
+              "document": {
+                "exact": "브리지 투자 예치계약 초안",
+                "neutral": "해당 초안"
+              },
+              "time": {
+                "exact": "송금 43분 전",
+                "period": "송금 직전",
+                "neutral": "그 직전"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              },
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-01:a:d-5:unlock:s3:0",
+            "factText": "다만 그 문구를 저 혼자만 놓친 건 아니고 모두가 급했던 탓에 초안을 전액 환급처럼 받아들인 채 서둘렀습니다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "fee": {
+                "exact": "320만원",
+                "rounded": "320만원",
+                "neutral": "해당 검토비"
+              },
+              "document": {
+                "exact": "브리지 투자 예치계약 초안",
+                "neutral": "해당 초안"
+              },
+              "time": {
+                "exact": "송금 43분 전",
+                "period": "송금 직전",
+                "neutral": "그 직전"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              },
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-01:a:d-5:unlock:s4:0",
+            "factText": "현금이 마르는 구간에서 비환급 금액까지 먼저 말하면 합의 자체가 깨질까 봐 저도 위험을 축소해서 들은 척했습니다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fee": {
+                "exact": "320만원",
+                "rounded": "320만원",
+                "neutral": "해당 검토비"
+              },
+              "document": {
+                "exact": "브리지 투자 예치계약 초안",
+                "neutral": "해당 초안"
+              },
+              "time": {
+                "exact": "송금 43분 전",
+                "period": "송금 직전",
+                "neutral": "그 직전"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              },
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-01:a:d-5:unlock:s5:0",
+            "factText": "실제론 320만원이 자동 비환급 법률검토비로 전환될 수 있었고 그 조항을 제대로 읽고 공유하지 않은 제 책임이 큽니다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "fee": {
+                "exact": "320만원",
+                "rounded": "320만원",
+                "neutral": "해당 검토비"
+              },
+              "document": {
+                "exact": "브리지 투자 예치계약 초안",
+                "neutral": "해당 초안"
+              },
+              "time": {
+                "exact": "송금 43분 전",
+                "period": "송금 직전",
+                "neutral": "그 직전"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              },
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "partnership-01:b:d-1:unlock:s2:0",
+            "factText": "제가 전날 한도 얘기를 한 건 맞지만 9월 3일 이체 버튼을 누른 사람은 서준이고 서면 승인도 없었습니다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "time": {
+                "exact": "9월 3일",
+                "dateExact": "9월 3일",
+                "period": "송금 당일",
+                "neutral": "그날"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "device": {
+                "exact": "서준의 태블릿",
+                "neutral": "그 단말"
+              },
+              "account": {
+                "exact": "법인 준비금 계좌",
+                "neutral": "회사 계좌"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "approval": {
+                "exact": "공동승인 토큰",
+                "neutral": "그 승인 절차"
+              },
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-01:b:d-1:unlock:s3:0",
+            "factText": "더 문제는 그가 그 빈 절차를 제 동의로 덮으려 했다는 거고 자기 태블릿으로 보내놓고 나중엔 제가 다 허락한 것처럼 말했습니다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "time": {
+                "exact": "9월 3일",
+                "dateExact": "9월 3일",
+                "period": "송금 당일",
+                "neutral": "그날"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "device": {
+                "exact": "서준의 태블릿",
+                "neutral": "그 단말"
+              },
+              "account": {
+                "exact": "법인 준비금 계좌",
+                "neutral": "회사 계좌"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "approval": {
+                "exact": "공동승인 토큰",
+                "neutral": "그 승인 절차"
+              },
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-01:b:d-1:unlock:s4:0",
+            "factText": "그 송금이 터졌을 때 저는 공동대표인데도 마지막 책임선에서 지워진 느낌이 들었고 모르고 있었다고 보이면 무능 알고 있었다고 보이면 공범이 되는 상황이었어요.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "time": {
+                "exact": "9월 3일",
+                "dateExact": "9월 3일",
+                "period": "송금 당일",
+                "neutral": "그날"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "device": {
+                "exact": "서준의 태블릿",
+                "neutral": "그 단말"
+              },
+              "account": {
+                "exact": "법인 준비금 계좌",
+                "neutral": "회사 계좌"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "approval": {
+                "exact": "공동승인 토큰",
+                "neutral": "그 승인 절차"
+              },
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-01:b:d-1:unlock:s5:0",
+            "factText": "네 최종 서면 승인 없는 송금은 서준 책임이 크지만 제가 그 전에 구두로 예치 범위를 열어놓은 것도 사실이라서 제 책임이 완전히 0은 아닙니다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "time": {
+                "exact": "9월 3일",
+                "dateExact": "9월 3일",
+                "period": "송금 당일",
+                "neutral": "그날"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "device": {
+                "exact": "서준의 태블릿",
+                "neutral": "그 단말"
+              },
+              "account": {
+                "exact": "법인 준비금 계좌",
+                "neutral": "회사 계좌"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "approval": {
+                "exact": "공동승인 토큰",
+                "neutral": "그 승인 절차"
+              },
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "partnership-01:b:d-2:unlock:s2:0",
+            "factText": "지금은 그게 개인 채무 상환이라고 확정할 수 없다는 건 알지만 그 문장을 그렇게 읽게 만든 사람도 서준입니다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "evidence": {
+                "exact": "크롭된 메신저 캡처",
+                "neutral": "그 캡처"
+              },
+              "quote": {
+                "exact": "‘일단 제 이름으로 돌려놓고 나중에 정리하죠’",
+                "neutral": "그 문장"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-01:b:d-2:unlock:s3:0",
+            "factText": "승인 없이 돈을 움직이고 설명을 안 하니 저는 가장 나쁜 해석으로 붙잡을 수밖에 없었고 솔직히 말하면 화가 나서 그 프레임을 더 세게 밀었습니다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "evidence": {
+                "exact": "크롭된 메신저 캡처",
+                "neutral": "그 캡처"
+              },
+              "quote": {
+                "exact": "‘일단 제 이름으로 돌려놓고 나중에 정리하죠’",
+                "neutral": "그 문장"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-01:b:d-2:unlock:s4:0",
+            "factText": "직원들 앞에서 제가 다 알고도 끌려간 사람처럼 보이기 싫어서 모호한 캡처를 가장 불리한 의미로 써서라도 그를 세우고 싶었습니다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "evidence": {
+                "exact": "크롭된 메신저 캡처",
+                "neutral": "그 캡처"
+              },
+              "quote": {
+                "exact": "‘일단 제 이름으로 돌려놓고 나중에 정리하죠’",
+                "neutral": "그 문장"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-01:b:d-2:unlock:s5:0",
+            "factText": "예치금은 서준의 개인 채무 상환이 아니었고 그 점을 알면서도 저는 크롭 캡처를 무기처럼 써서 의심을 키웠습니다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "1,800만원",
+                "rounded": "1,800만원",
+                "neutral": "해당 금액"
+              },
+              "evidence": {
+                "exact": "크롭된 메신저 캡처",
+                "neutral": "그 캡처"
+              },
+              "quote": {
+                "exact": "‘일단 제 이름으로 돌려놓고 나중에 정리하죠’",
+                "neutral": "그 문장"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "escrow": {
+                "exact": "법무사 신탁계좌",
+                "neutral": "신탁계좌"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "partnership-01:b:d-3:unlock:s2:0",
+            "factText": "네 준비금 2천 안에서 먼저 예치하자는 취지의 말을 하긴 했지만 그건 투자 성사 전제의 구두 논의였지 바로 송금하라는 최종 승인이라고 생각하진 않았습니다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "time": {
+                "exact": "송금 하루 전 회식 직후",
+                "period": "송금 하루 전 밤",
+                "neutral": "그 전날 밤"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              },
+              "voice": {
+                "exact": "음성메모",
+                "neutral": "그 녹음"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-01:b:d-3:unlock:s3:0",
+            "factText": "그런데 서준은 그 모호한 말을 자기 면책 증거처럼 들고 나왔고 정식 승인 절차를 안 밟아놓고 제 회식 발언 하나에 다 걸었다는 식으로 말했습니다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "time": {
+                "exact": "송금 하루 전 회식 직후",
+                "period": "송금 하루 전 밤",
+                "neutral": "그 전날 밤"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              },
+              "voice": {
+                "exact": "음성메모",
+                "neutral": "그 녹음"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-01:b:d-3:unlock:s4:0",
+            "factText": "투자가 흔들리기 시작하자 제 말 한마디가 공동 승인 기록으로 남을까 너무 두려워서 저는 없던 승인이라고 밀어붙였습니다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "time": {
+                "exact": "송금 하루 전 회식 직후",
+                "period": "송금 하루 전 밤",
+                "neutral": "그 전날 밤"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              },
+              "voice": {
+                "exact": "음성메모",
+                "neutral": "그 녹음"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-01:b:d-3:unlock:s5:0",
+            "factText": "네 저는 그날 구두로 먼저 예치 가자고 말했고 나중에 직원들 앞에서는 그 동의를 부인했습니다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "limit": {
+                "exact": "2,000만원",
+                "rounded": "2,000만원",
+                "neutral": "그 한도"
+              },
+              "time": {
+                "exact": "송금 하루 전 회식 직후",
+                "period": "송금 하루 전 밤",
+                "neutral": "그 전날 밤"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "evidence": {
+                "exact": "원본 단톡과 음성메모",
+                "neutral": "원본 대화"
+              },
+              "voice": {
+                "exact": "음성메모",
+                "neutral": "그 녹음"
+              },
+              "mail": {
+                "exact": "투자자 측 담당 확인 메일",
+                "neutral": "그 확인 메일"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "partnership-01:b:d-4:unlock:s2:0",
+            "factText": "제가 '일단 컨설팅비처럼 잡아달라'고 말한 건 맞지만 그건 외부 공지 전 임시 표기 차원이었고 영구 은폐까지 의도한 건 아니었습니다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "label": {
+                "exact": "2주년 캠페인 컨설팅비",
+                "neutral": "그 임시 명목"
+              },
+              "time": {
+                "exact": "송금 당일 오전",
+                "period": "송금 당일 오전",
+                "neutral": "그날 오전"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "taxAccountant": {
+                "exact": "세무사",
+                "judgeRef": "세무사",
+                "neutral": "회계대리인"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-01:b:d-4:unlock:s3:0",
+            "factText": "서준은 그 임시 표현을 자기 방패처럼 썼고 제가 던진 위기관리용 말을 회계 처리의 면허처럼 받아쓴 뒤 책임만 제 쪽에 다시 돌렸습니다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "label": {
+                "exact": "2주년 캠페인 컨설팅비",
+                "neutral": "그 임시 명목"
+              },
+              "time": {
+                "exact": "송금 당일 오전",
+                "period": "송금 당일 오전",
+                "neutral": "그날 오전"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "taxAccountant": {
+                "exact": "세무사",
+                "judgeRef": "세무사",
+                "neutral": "회계대리인"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-01:b:d-4:unlock:s4:0",
+            "factText": "직원들이 2주년 직후에 현금 빠져나간 사실까지 알면 조직이 무너질까 겁나서 저는 사실과 다른 명목을 먼저 제안했습니다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "label": {
+                "exact": "2주년 캠페인 컨설팅비",
+                "neutral": "그 임시 명목"
+              },
+              "time": {
+                "exact": "송금 당일 오전",
+                "period": "송금 당일 오전",
+                "neutral": "그날 오전"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "taxAccountant": {
+                "exact": "세무사",
+                "judgeRef": "세무사",
+                "neutral": "회계대리인"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-01:b:d-4:unlock:s5:0",
+            "factText": "네 세무사에게 예치금을 2주년 캠페인 컨설팅비로 임시 분개해달라고 제가 말했고 그 제안을 나중에 숨긴 것도 사실입니다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "label": {
+                "exact": "2주년 캠페인 컨설팅비",
+                "neutral": "그 임시 명목"
+              },
+              "time": {
+                "exact": "송금 당일 오전",
+                "period": "송금 당일 오전",
+                "neutral": "그날 오전"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "taxAccountant": {
+                "exact": "세무사",
+                "judgeRef": "세무사",
+                "neutral": "회계대리인"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "partnership-01:b:d-5:unlock:s2:0",
+            "factText": "지금 보니 비환급 법률검토비 조항은 있었지만 그 정도 규모인지 언제 자동 전환되는지까지 저는 제대로 설명받지 못했습니다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "fee": {
+                "exact": "320만원",
+                "rounded": "320만원",
+                "neutral": "해당 검토비"
+              },
+              "document": {
+                "exact": "브리지 투자 예치계약 초안",
+                "neutral": "해당 초안"
+              },
+              "time": {
+                "exact": "송금 43분 전",
+                "period": "송금 직전",
+                "neutral": "그 직전"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-01:b:d-5:unlock:s3:0",
+            "factText": "계약 창구를 주로 붙든 건 서준 쪽이고 마지막 열람도 그 사람이 했으니 세부 조항을 먼저 짚었어야 할 책임은 그에게 더 큽니다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "fee": {
+                "exact": "320만원",
+                "rounded": "320만원",
+                "neutral": "해당 검토비"
+              },
+              "document": {
+                "exact": "브리지 투자 예치계약 초안",
+                "neutral": "해당 초안"
+              },
+              "time": {
+                "exact": "송금 43분 전",
+                "period": "송금 직전",
+                "neutral": "그 직전"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-01:b:d-5:unlock:s4:0",
+            "factText": "그 시점엔 직원들 달래느라 저도 전액 돌아올 수 있다는 식으로 말했고 실제 손실 가능성을 인정하면 팀 전체가 더 흔들릴 것 같았습니다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fee": {
+                "exact": "320만원",
+                "rounded": "320만원",
+                "neutral": "해당 검토비"
+              },
+              "document": {
+                "exact": "브리지 투자 예치계약 초안",
+                "neutral": "해당 초안"
+              },
+              "time": {
+                "exact": "송금 43분 전",
+                "period": "송금 직전",
+                "neutral": "그 직전"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-01:b:d-5:unlock:s5:0",
+            "factText": "실제론 320만원 비환급 검토비 조항이 있었고 저도 그 위험을 제대로 확인하지 않았으며 결과적으로 전액 환급처럼 말한 책임이 있습니다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "fee": {
+                "exact": "320만원",
+                "rounded": "320만원",
+                "neutral": "해당 검토비"
+              },
+              "document": {
+                "exact": "브리지 투자 예치계약 초안",
+                "neutral": "해당 초안"
+              },
+              "time": {
+                "exact": "송금 43분 전",
+                "period": "송금 직전",
+                "neutral": "그 직전"
+              },
+              "counterparty": {
+                "exact": "이서준",
+                "fullName": "이서준",
+                "judgeRef": "서준 측",
+                "neutral": "그 사람"
+              },
+              "mail": {
+                "exact": "세무사 회계분개 지시 메일",
+                "neutral": "그 메일"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "partnership-01:contradiction:0",
+        "targetParty": "a",
+        "trigger": "서준이 단독 집행이 아니라고 버티는데 e-1과 e-2가 이미 제시된 경우",
+        "text": "공동승인 토큰이 비어 있고 9월 3일 이체 실행 단말도 특정돼 있는데 단독 집행이 아니었다고 하면 송금 원본과 어긋납니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-2"
+        ]
+      },
+      {
+        "id": "partnership-01:contradiction:1",
+        "targetParty": "b",
+        "trigger": "해나가 사전 동의 자체를 끝까지 부인하는데 e-4와 e-6이 열린 경우",
+        "text": "원본 단톡과 투자자 측 확인 메일까지 있는데 승인 자체가 없었다고 하면 회식 직후 흐름과 정면으로 충돌합니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-6"
+        ]
+      },
+      {
+        "id": "partnership-01:contradiction:2",
+        "targetParty": "b",
+        "trigger": "해나가 회계분류 지시를 부인하는데 e-5가 제시된 경우",
+        "text": "세무사 원본 메일에 '컨설팅비처럼'이라는 문구가 남아 있는데도 지시가 없었다고 하면 메일 내용과 맞지 않습니다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      },
+      {
+        "id": "partnership-01:contradiction:3",
+        "targetParty": "a",
+        "trigger": "서준이 비환급 위험을 끝까지 축소하는데 e-2와 e-5가 모두 열린 경우",
+        "text": "예치계약 초안과 예정신고 메모에 320만원 비환급 구조가 있는데 전액 환급 전제였다고만 말하면 문서 내용과 어긋납니다.",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "partnership-01:interjection:0",
+        "speaker": "b",
+        "trigger": "서준이 d-1이나 d-5에서 숫자와 조항만 길게 나열하며 직접 답을 피할 때",
+        "text": "숫자 말고요, 결국 승인 없이 보낸 건 맞냐고요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "partnership-01:interjection:1",
+        "speaker": "a",
+        "trigger": "해나가 e-6 이후에도 개인 채무 프레임을 반복할 때",
+        "text": "그 한 줄만 돌리지 말고 돈이 실제로 어디로 갔는지 끝까지 보시죠.",
+        "relatedDisputes": [
+          "d-2"
+        ]
+      },
+      {
+        "id": "partnership-01:interjection:2",
+        "speaker": "judge",
+        "trigger": "구두 동의와 임시 분개 책임을 두고 양측이 동시에 말을 겹칠 때",
+        "text": "두 분 다 결론이 아니라 승인 시점과 증거 원본부터 답하십시오.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "partnership-01:outburst:a:0",
+        "party": "a",
+        "trigger": "해나가 e-6 이후에도 서준을 개인 채무나 횡령 프레임으로 몰아붙일 때",
+        "text": "그 돈 제 빚 막는 데 쓴 적 없습니다. 그 말은 저만이 아니라 회사까지 같이 망가뜨립니다.",
+        "relatedDisputes": [
+          "d-2"
+        ]
+      },
+      {
+        "id": "partnership-01:outburst:a:1",
+        "party": "a",
+        "trigger": "원본 대화가 열린 뒤에도 해나가 사전 동의를 부인할 때",
+        "text": "같이 밀어놓고 저 혼자 폭주한 사람처럼 만들진 마세요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "partnership-01:outburst:b:0",
+        "party": "b",
+        "trigger": "서준이 회식 자리의 가능성 발언을 완전한 승인으로 단정할 때",
+        "text": "가능성 얘기한 걸 승인으로 박아버리면 누가 회의 자리에서 말을 하겠어요.",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      },
+      {
+        "id": "partnership-01:outburst:b:1",
+        "party": "b",
+        "trigger": "e-5가 열린 뒤 서준이 임시 분개 책임을 해나에게만 돌릴 때",
+        "text": "직원 불안 막자며 같이 덮어놓고 이제 와서 저만 남기는 건 비겁하죠.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "partnership-01:transition:a:d-1:s0_s1",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "escrow_transfer_question",
+      "line": "순서대로 보셔야 합니다. 송금 자체보다 그 직전에 예치 필요가 어떻게 형성됐는지부터요.",
+      "behaviorHint": "손끝으로 시간 순서를 그리듯 나열한다."
+    },
+    {
+      "id": "partnership-01:transition:a:d-1:s1_s2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "네, 공동승인 토큰은 비어 있었습니다. 그렇다고 그 판단이 완전히 공중에서 나온 건 아닙니다.",
+      "behaviorHint": "증거를 보고 짧게 인정한 뒤 곧바로 맥락을 붙인다."
+    },
+    {
+      "id": "partnership-01:transition:a:d-1:s2_s3",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "written_approval_question",
+      "line": "서면 승인이 없었다는 지점은 피하지 않겠습니다. 대신 왜 제가 그 구두 한도를 실질 승인으로 받아들였는지도 같이 보셔야 합니다.",
+      "behaviorHint": "한 번 멈칫한 뒤 상대 책임을 끌어온다."
+    },
+    {
+      "id": "partnership-01:transition:a:d-1:s3_s5",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_or_responsibility_question",
+      "line": "네, 결국 실행 책임은 제게 있습니다. 상대의 번복이 있었다 해도 문서 없이 보낸 건 제 잘못입니다.",
+      "behaviorHint": "시선을 내리고 짧게 고개를 끄덕인다."
+    },
+    {
+      "id": "partnership-01:transition:a:d-2:s0_s1",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "cropped_chat_presented",
+      "line": "그 캡처 한 장만 놓고 보면 그렇게 보일 수는 있습니다. 하지만 그 문장만으로 개인 채무라고 단정하면 맥락이 통째로 빠집니다.",
+      "behaviorHint": "캡처를 가리키며 앞뒤 문맥을 요구한다."
+    },
+    {
+      "id": "partnership-01:transition:a:d-2:s1_s2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "personal_debt_question",
+      "line": "개인 빚은 아니었습니다. 예치금과 법률 검토비였고, 제가 그 배경을 늦게 말한 건 맞습니다.",
+      "behaviorHint": "핵심 부인을 짧게 끊고 용도를 바로 정정한다."
+    },
+    {
+      "id": "partnership-01:transition:a:d-2:s2_s4",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_investor_confidentiality",
+      "line": "비밀유지 때문에 이름을 닫아둔 면이 있었습니다. 솔직히는 상대까지 같이 움직였다는 사실을 바로 꺼내고 싶지 않았습니다.",
+      "behaviorHint": "어조가 낮아지며 처음으로 감정 이유를 드러낸다."
+    },
+    {
+      "id": "partnership-01:transition:a:d-2:s4_s5",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-2_or_e-6_presented",
+      "line": "e-2나 e-6까지 나오면 숨길 이유가 없습니다. 그 돈은 투자 예치와 검토비였지 제 개인 채무가 아니었습니다.",
+      "behaviorHint": "방어 자세를 풀고 문장을 짧게 마무리한다."
+    },
+    {
+      "id": "partnership-01:transition:a:d-5:s0_s1",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "refund_clause_question",
+      "line": "환급 전제만 보고 움직인 건 사실입니다. 다만 초안 문구까지 확정 손실처럼 읽진 않았습니다.",
+      "behaviorHint": "문서보다 해석 차이를 강조하며 속도를 늦춘다."
+    },
+    {
+      "id": "partnership-01:transition:a:d-5:s1_s2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "초안에 320만원 위험이 있었다는 건 인정합니다. 제가 그 부분을 충분히 짚지 못했습니다.",
+      "behaviorHint": "문서를 내려다보며 숫자를 낮은 톤으로 반복한다."
+    },
+    {
+      "id": "partnership-01:transition:a:d-5:s2_s5",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S5",
+      "trigger": "e-5_or_shared_responsibility_question",
+      "line": "세무사 메모까지 보면 더는 물러설 수 없네요. 비환급 조항을 제대로 공유하지 않은 책임은 제 쪽에 있습니다.",
+      "behaviorHint": "짧게 숨을 고른 뒤 책임을 또렷하게 인정한다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-3:s0_s1",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "prior_approval_question",
+      "line": "가능성 얘기와 승인은 다릅니다. 그 선부터 분명히 해야 해요.",
+      "behaviorHint": "결론을 먼저 던지고 손으로 선을 긋는다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-3:s1_s2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "네, 2천 안에서 먼저 예치하자는 말은 했습니다. 그런데 그게 바로 송금 승인이라는 뜻은 아니었습니다.",
+      "behaviorHint": "한 번 인정하고 즉시 어조를 올려 의미를 좁힌다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-3:s2_s3",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "voice_note_identification_question",
+      "line": "그 음성메모가 제 목소리인 건 맞아요. 그래도 그 한마디를 정식 결재처럼 들고 오는 건 다른 문제죠.",
+      "behaviorHint": "입꼬리를 굳히고 같은 핵심어를 반복한다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-3:s3_s5",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_or_staff_meeting_reference",
+      "line": "투자자 메일이랑 직원들 앞 상황까지 같이 보면 더 못 버팁니다. 제가 했던 구두 동의를 나중에 부인한 건 맞습니다.",
+      "behaviorHint": "빠른 호흡이 끊기며 인정으로 내려온다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-4:s0_s1",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "tax_coding_question",
+      "line": "표현을 순하게 하자는 말과 회계 지시는 다르죠. 그걸 먼저 구분해야 합니다.",
+      "behaviorHint": "단어 차이를 과장해 강조한다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-4:s1_s2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "네, 컨설팅비처럼 잡아달라는 말은 제가 했습니다. 다만 그때는 임시 표기라고만 생각했습니다.",
+      "behaviorHint": "증거를 본 뒤 짧게 인정하면서도 마지막 문장을 서둘러 붙인다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-4:s2_s3",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "temporary_label_followup",
+      "line": "임시라고 했어도 결국 회계에 들어갔고 그 점은 무겁습니다. 그렇다고 서준이 그 말을 면허처럼 써버린 책임까지 없어지진 않아요.",
+      "behaviorHint": "인정과 반격을 한 호흡에 이어붙인다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-4:s3_s5",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "공동책임 얘기까지 나오면 피할 수 없네요. 먼저 제안하고 나중에 숨긴 건 제 잘못입니다.",
+      "behaviorHint": "공격적인 자세가 무너지며 짧게 인정한다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-2:s0_s1",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "debt_rumor_origin_question",
+      "line": "루머가 왜 났는지는 보셔야죠. 원본 없는 캡처가 그렇게 읽히게 만들었습니다.",
+      "behaviorHint": "결론을 던진 뒤 짧게 캡처를 흔든다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-2:s1_s2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "지금은 개인 채무라고 확정할 수 없다는 건 압니다. 그래도 그 오해를 부른 설명 부재는 분명했습니다.",
+      "behaviorHint": "한 번 물러서고 바로 상대 탓을 덧댄다."
+    },
+    {
+      "id": "partnership-01:transition:b:d-2:s2_s5",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "투자자 확인까지 나오면 여기서 더 밀 수는 없습니다. 개인 채무 프레임을 제가 감정적으로 키웠습니다.",
+      "behaviorHint": "강한 어조가 갑자기 꺾이며 시선을 피한다."
+    }
+  ]
+} as const;
+

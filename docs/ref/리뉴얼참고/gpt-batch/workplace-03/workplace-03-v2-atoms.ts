@@ -1,0 +1,6422 @@
+export const workplace03V2Atoms = {
+  "caseId": "workplace-03",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "저는 회식 자리에서 특정인을 비하한 적이 없습니다.",
+            "그날 분위기를 두고 저를 악의적인 사람으로 몰아가는 해석은 과합니다."
+          ],
+          "privateKnowledge": [
+            "회식 2차에서 '라인 타고 들어온 HJ는 포장이 실력보다 앞선다'는 취지의 말을 실제로 했다.",
+            "직전 맥락의 HJ는 외부 연계 후보 한재균이었지만, 내부 인원으로 들릴 수 있다는 위험성을 즉시 느꼈다.",
+            "관리자 평판이 무너질까 두려워 발언 강도와 책임을 줄여 말하려 한다."
+          ],
+          "suppressions": [
+            "직접 사용한 HJ 표현의 수위",
+            "외부 후보 맥락을 즉시 정정하지 않은 점",
+            "관리자 평판을 지키려는 방어 동기"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-1:denial:0",
+              "factText": "저는 회식 자리에서 특정인을 비하한 적이 없습니다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-1:fear:0",
+              "factText": "그날 분위기를 두고 저를 악의적인 사람으로 몰아가는 해석은 과합니다.",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "과한 농담처럼 들릴 수는 있었지만 특정인을 겨냥한 비방은 아니었습니다.",
+            "그 자리가 시끄럽고 다들 취해 있어서 말의 결이 과장됐습니다."
+          ],
+          "privateKnowledge": [
+            "회식 2차에서 '라인 타고 들어온 HJ는 포장이 실력보다 앞선다'는 취지의 말을 실제로 했다.",
+            "직전 맥락의 HJ는 외부 연계 후보 한재균이었지만, 내부 인원으로 들릴 수 있다는 위험성을 즉시 느꼈다.",
+            "관리자 평판이 무너질까 두려워 발언 강도와 책임을 줄여 말하려 한다."
+          ],
+          "suppressions": [
+            "직접 사용한 HJ 표현의 수위",
+            "외부 후보 맥락을 즉시 정정하지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-1:context:0",
+              "factText": "과한 농담처럼 들릴 수는 있었지만 특정인을 겨냥한 비방은 아니었습니다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-1:self_justification:0",
+              "factText": "그 자리가 시끄럽고 다들 취해 있어서 말의 결이 과장됐습니다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "제가 HJ라는 표현을 쓴 건 맞습니다.",
+            "다만 누군가의 채용 배경을 깎아내리려는 의도까지는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "회식 2차에서 '라인 타고 들어온 HJ는 포장이 실력보다 앞선다'는 취지의 말을 실제로 했다.",
+            "직전 맥락의 HJ는 외부 연계 후보 한재균이었지만, 내부 인원으로 들릴 수 있다는 위험성을 즉시 느꼈다.",
+            "관리자 평판이 무너질까 두려워 발언 강도와 책임을 줄여 말하려 한다."
+          ],
+          "suppressions": [
+            "직접 사용한 HJ 표현의 수위",
+            "외부 후보 맥락을 즉시 정정하지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-1:act:0",
+              "factText": "제가 HJ라는 표현을 쓴 건 맞습니다.",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-1:motive:0",
+              "factText": "다만 누군가의 채용 배경을 깎아내리려는 의도까지는 아니었습니다.",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "표현이 위험했던 건 인정합니다.",
+            "다만 희주 씨 쪽도 잘린 영상만으로 저를 단정해 일을 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "회식 2차에서 '라인 타고 들어온 HJ는 포장이 실력보다 앞선다'는 취지의 말을 실제로 했다.",
+            "직전 맥락의 HJ는 외부 연계 후보 한재균이었지만, 내부 인원으로 들릴 수 있다는 위험성을 즉시 느꼈다.",
+            "관리자 평판이 무너질까 두려워 발언 강도와 책임을 줄여 말하려 한다."
+          ],
+          "suppressions": [
+            "직접 사용한 HJ 표현의 수위"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-1:responsibility:0",
+              "factText": "표현이 위험했던 건 인정합니다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-1:counter:0",
+              "factText": "다만 희주 씨 쪽도 잘린 영상만으로 저를 단정해 일을 키웠습니다.",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "저를 사람 깎아내리는 상사로만 보는 건 솔직히 버겁습니다.",
+            "그래도 회식 자리에서 말을 흐리게 던진 제 책임이 있다는 건 압니다."
+          ],
+          "privateKnowledge": [
+            "회식 2차에서 '라인 타고 들어온 HJ는 포장이 실력보다 앞선다'는 취지의 말을 실제로 했다.",
+            "직전 맥락의 HJ는 외부 연계 후보 한재균이었지만, 내부 인원으로 들릴 수 있다는 위험성을 즉시 느꼈다.",
+            "관리자 평판이 무너질까 두려워 발언 강도와 책임을 줄여 말하려 한다."
+          ],
+          "suppressions": [
+            "직접 사용한 HJ 표현의 수위"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-1:emotion:0",
+              "factText": "저를 사람 깎아내리는 상사로만 보는 건 솔직히 버겁습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-1:shame:0",
+              "factText": "그래도 회식 자리에서 말을 흐리게 던진 제 책임이 있다는 건 압니다.",
+              "tags": [
+                "shame",
+                "responsibility"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "제가 회식 2차에서 특정인을 떠올리게 하는 위험한 평판 발언을 했습니다.",
+            "그 발언으로 상처와 소문이 번지게 만든 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "회식 2차에서 '라인 타고 들어온 HJ는 포장이 실력보다 앞선다'는 취지의 말을 실제로 했다.",
+            "직전 맥락의 HJ는 외부 연계 후보 한재균이었지만, 내부 인원으로 들릴 수 있다는 위험성을 즉시 느꼈다.",
+            "관리자 평판이 무너질까 두려워 발언 강도와 책임을 줄여 말하려 한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-1:admission:0",
+              "factText": "제가 회식 2차에서 특정인을 떠올리게 하는 위험한 평판 발언을 했습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-1:harm:0",
+              "factText": "그 발언으로 상처와 소문이 번지게 만든 건 제 잘못입니다.",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "fear": {
+                  "exact": "관리자 평판",
+                  "neutral": "그 평판 문제"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "희주 씨가 확인도 없이 팀장 비방 메시지를 돌렸다는 건 과장입니다.",
+            "몇몇 사적 대화가 있었을 뿐 조직적인 전파라고 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "희주가 회식 다음 날 오전 멘토방과 동료 둘에게 단정 메시지를 보낸 흐름이 있었다는 점을 알고 있다.",
+            "자신의 회식 발언이 그 전파의 빌미가 됐다는 점도 인지한다.",
+            "관리자 평판을 지키려는 마음 때문에 희주의 전파 책임을 크게 보이게 만들고 싶어 한다."
+          ],
+          "suppressions": [
+            "자신의 발언이 빌미였다는 점",
+            "희주의 초기 메시지에는 확인 의도가 섞여 있었다는 점",
+            "관리자 체면을 지키려는 방어 동기"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-2:counter:0",
+              "factText": "희주 씨가 확인도 없이 팀장 비방 메시지를 돌렸다는 건 과장입니다.",
+              "tags": [
+                "counter",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-2:relationship:0",
+              "factText": "몇몇 사적 대화가 있었을 뿐 조직적인 전파라고 보긴 어렵습니다.",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "멘토방에 묻는 수준의 메시지는 있었을 수 있습니다.",
+            "하지만 저를 깎아내리려는 의도로 퍼뜨렸다고 단정하긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "희주가 회식 다음 날 오전 멘토방과 동료 둘에게 단정 메시지를 보낸 흐름이 있었다는 점을 알고 있다.",
+            "자신의 회식 발언이 그 전파의 빌미가 됐다는 점도 인지한다.",
+            "관리자 평판을 지키려는 마음 때문에 희주의 전파 책임을 크게 보이게 만들고 싶어 한다."
+          ],
+          "suppressions": [
+            "자신의 발언이 빌미였다는 점",
+            "희주의 초기 메시지에는 확인 의도가 섞여 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-2:context:0",
+              "factText": "멘토방에 묻는 수준의 메시지는 있었을 수 있습니다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-2:counter:1",
+              "factText": "하지만 저를 깎아내리려는 의도로 퍼뜨렸다고 단정하긴 어렵습니다.",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "희주 씨가 단정적인 표현을 쓴 건 맞습니다.",
+            "다만 처음에는 확인하려는 마음도 섞여 있었다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "희주가 회식 다음 날 오전 멘토방과 동료 둘에게 단정 메시지를 보낸 흐름이 있었다는 점을 알고 있다.",
+            "자신의 회식 발언이 그 전파의 빌미가 됐다는 점도 인지한다.",
+            "관리자 평판을 지키려는 마음 때문에 희주의 전파 책임을 크게 보이게 만들고 싶어 한다."
+          ],
+          "suppressions": [
+            "자신의 발언이 빌미였다는 점",
+            "희주의 초기 메시지에는 확인 의도가 섞여 있었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-2:counter:2",
+              "factText": "희주 씨가 단정적인 표현을 쓴 건 맞습니다.",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-2:relationship:1",
+              "factText": "다만 처음에는 확인하려는 마음도 섞여 있었다고 봅니다.",
+              "tags": [
+                "relationship",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "희주 씨가 '내 얘기 맞다'고 전한 건 문제였습니다.",
+            "다만 제가 회식 발언으로 불씨를 만든 탓에 희주 씨 쪽도 감정적으로 반응한 면이 있습니다."
+          ],
+          "privateKnowledge": [
+            "희주가 회식 다음 날 오전 멘토방과 동료 둘에게 단정 메시지를 보낸 흐름이 있었다는 점을 알고 있다.",
+            "자신의 회식 발언이 그 전파의 빌미가 됐다는 점도 인지한다.",
+            "관리자 평판을 지키려는 마음 때문에 희주의 전파 책임을 크게 보이게 만들고 싶어 한다."
+          ],
+          "suppressions": [
+            "자신의 발언이 빌미였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-2:responsibility:0",
+              "factText": "희주 씨가 '내 얘기 맞다'고 전한 건 문제였습니다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-2:relationship:2",
+              "factText": "다만 제가 회식 발언으로 불씨를 만든 탓에 희주 씨 쪽도 감정적으로 반응한 면이 있습니다.",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "제 입장에서는 그 DM이 관리자 평판을 찌르는 칼처럼 느껴졌습니다.",
+            "그래도 억울함이 컸다는 희주 씨 감정까지 전부 무시할 수는 없습니다."
+          ],
+          "privateKnowledge": [
+            "희주가 회식 다음 날 오전 멘토방과 동료 둘에게 단정 메시지를 보낸 흐름이 있었다는 점을 알고 있다.",
+            "자신의 회식 발언이 그 전파의 빌미가 됐다는 점도 인지한다.",
+            "관리자 평판을 지키려는 마음 때문에 희주의 전파 책임을 크게 보이게 만들고 싶어 한다."
+          ],
+          "suppressions": [
+            "자신의 발언이 빌미였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-2:emotion:0",
+              "factText": "제 입장에서는 그 DM이 관리자 평판을 찌르는 칼처럼 느껴졌습니다.",
+              "tags": [
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-2:relationship:3",
+              "factText": "그래도 억울함이 컸다는 희주 씨 감정까지 전부 무시할 수는 없습니다.",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "희주 씨는 멘토방과 동료들에게 저를 비방하는 단정 메시지를 보냈습니다.",
+            "저도 빌미를 줬지만 그 전파로 소문이 커진 사실은 분명합니다."
+          ],
+          "privateKnowledge": [
+            "희주가 회식 다음 날 오전 멘토방과 동료 둘에게 단정 메시지를 보낸 흐름이 있었다는 점을 알고 있다.",
+            "자신의 회식 발언이 그 전파의 빌미가 됐다는 점도 인지한다.",
+            "관리자 평판을 지키려는 마음 때문에 희주의 전파 책임을 크게 보이게 만들고 싶어 한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-2:act:0",
+              "factText": "희주 씨는 멘토방과 동료들에게 저를 비방하는 단정 메시지를 보냈습니다.",
+              "tags": [
+                "act",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-2:harm:0",
+              "factText": "저도 빌미를 줬지만 그 전파로 소문이 커진 사실은 분명합니다.",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "상대방",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 사적 대화"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "moment": {
+                  "exact": "회식 다음 날 오전",
+                  "neutral": "그 다음 날",
+                  "period": "다음 날 아침"
+                },
+                "fear": {
+                  "exact": "관리자 평판 훼손",
+                  "neutral": "그 평판 피해"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 발언이 희주 씨를 직접 겨냥한 명예훼손이었다는 말은 사실이 아닙니다.",
+            "HJ를 바로 희주 씨로 읽은 해석부터 어긋나 있었습니다."
+          ],
+          "privateKnowledge": [
+            "회식 직전 대화와 공유노트 기준으로 HJ는 외부 연계 후보 한재균을 뜻했다.",
+            "그럼에도 자신이 던진 표현이 내부 인원으로 읽힐 수 있다는 점을 이미 알았다.",
+            "직접 겨냥 의도는 없었지만 관리자다운 언어 통제를 하지 못했다."
+          ],
+          "suppressions": [
+            "내부 인원으로 들릴 위험성을 알았다는 점",
+            "약어 농담을 제때 끊지 않은 점",
+            "자신도 표현 책임이 크다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-3:denial:0",
+              "factText": "그 발언이 희주 씨를 직접 겨냥한 명예훼손이었다는 말은 사실이 아닙니다.",
+              "tags": [
+                "denial",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-3:context:0",
+              "factText": "HJ를 바로 희주 씨로 읽은 해석부터 어긋나 있었습니다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "19초 클립만 보면 희주 씨로 오해할 여지는 있었을 겁니다.",
+            "하지만 제가 말한 대상이 희주 씨였다고 단정할 수는 없습니다."
+          ],
+          "privateKnowledge": [
+            "회식 직전 대화와 공유노트 기준으로 HJ는 외부 연계 후보 한재균을 뜻했다.",
+            "그럼에도 자신이 던진 표현이 내부 인원으로 읽힐 수 있다는 점을 이미 알았다.",
+            "직접 겨냥 의도는 없었지만 관리자다운 언어 통제를 하지 못했다."
+          ],
+          "suppressions": [
+            "내부 인원으로 들릴 위험성을 알았다는 점",
+            "약어 농담을 제때 끊지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-3:uncertainty:0",
+              "factText": "19초 클립만 보면 희주 씨로 오해할 여지는 있었을 겁니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-3:identity:0",
+              "factText": "하지만 제가 말한 대상이 희주 씨였다고 단정할 수는 없습니다.",
+              "tags": [
+                "identity",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "제가 HJ라는 약어를 쓴 건 맞고, 그게 오해를 불렀습니다.",
+            "다만 회식 직전 맥락에서 HJ는 외부 연계 후보 한재균을 뜻했습니다."
+          ],
+          "privateKnowledge": [
+            "회식 직전 대화와 공유노트 기준으로 HJ는 외부 연계 후보 한재균을 뜻했다.",
+            "그럼에도 자신이 던진 표현이 내부 인원으로 읽힐 수 있다는 점을 이미 알았다.",
+            "직접 겨냥 의도는 없었지만 관리자다운 언어 통제를 하지 못했다."
+          ],
+          "suppressions": [
+            "내부 인원으로 들릴 위험성을 알았다는 점",
+            "약어 농담을 제때 끊지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-3:context:1",
+              "factText": "제가 HJ라는 약어를 쓴 건 맞고, 그게 오해를 불렀습니다.",
+              "tags": [
+                "context",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-3:identity:1",
+              "factText": "다만 회식 직전 맥락에서 HJ는 외부 연계 후보 한재균을 뜻했습니다.",
+              "tags": [
+                "identity",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "결과적으로 희주 씨 명예가 훼손된 듯 보인 책임은 제 표현에도 있습니다.",
+            "다만 잘린 클립과 소문 전파 쪽도 직접 겨냥처럼 굳혀 버렸습니다."
+          ],
+          "privateKnowledge": [
+            "회식 직전 대화와 공유노트 기준으로 HJ는 외부 연계 후보 한재균을 뜻했다.",
+            "그럼에도 자신이 던진 표현이 내부 인원으로 읽힐 수 있다는 점을 이미 알았다.",
+            "직접 겨냥 의도는 없었지만 관리자다운 언어 통제를 하지 못했다."
+          ],
+          "suppressions": [
+            "내부 인원으로 들릴 위험성을 알았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-3:responsibility:0",
+              "factText": "결과적으로 희주 씨 명예가 훼손된 듯 보인 책임은 제 표현에도 있습니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-3:counter:0",
+              "factText": "다만 잘린 클립과 소문 전파 쪽도 직접 겨냥처럼 굳혀 버렸습니다.",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "억울한 건 제가 곧바로 명예훼손 가해자로 낙인찍혔다는 점입니다.",
+            "그래도 관리자였던 제가 애초에 그런 약어 농담을 삼갔어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "회식 직전 대화와 공유노트 기준으로 HJ는 외부 연계 후보 한재균을 뜻했다.",
+            "그럼에도 자신이 던진 표현이 내부 인원으로 읽힐 수 있다는 점을 이미 알았다.",
+            "직접 겨냥 의도는 없었지만 관리자다운 언어 통제를 하지 못했다."
+          ],
+          "suppressions": [
+            "내부 인원으로 들릴 위험성을 알았다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-3:emotion:0",
+              "factText": "억울한 건 제가 곧바로 명예훼손 가해자로 낙인찍혔다는 점입니다.",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-3:responsibility:1",
+              "factText": "그래도 관리자였던 제가 애초에 그런 약어 농담을 삼갔어야 했습니다.",
+              "tags": [
+                "responsibility",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "문제의 HJ는 희주 씨가 아니라 외부 연계 후보 한재균이었습니다.",
+            "제가 모호한 표현으로 오해를 부른 책임은 인정하지만 직접 겨냥한 명예훼손은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "회식 직전 대화와 공유노트 기준으로 HJ는 외부 연계 후보 한재균을 뜻했다.",
+            "그럼에도 자신이 던진 표현이 내부 인원으로 읽힐 수 있다는 점을 이미 알았다.",
+            "직접 겨냥 의도는 없었지만 관리자다운 언어 통제를 하지 못했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-3:admission:0",
+              "factText": "문제의 HJ는 희주 씨가 아니라 외부 연계 후보 한재균이었습니다.",
+              "tags": [
+                "admission",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-3:responsibility:2",
+              "factText": "제가 모호한 표현으로 오해를 부른 책임은 인정하지만 직접 겨냥한 명예훼손은 아니었습니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "note": {
+                  "exact": "Han Jae-gyun/partner shortlist",
+                  "neutral": "그 메모"
+                },
+                "moment": {
+                  "exact": "회식 직전 맥락",
+                  "neutral": "그 앞 대화",
+                  "period": "발언 직전"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "저는 사실 확인도 전에 HR에 불이익성 메모를 넣거나 발표에서 희주 씨를 뺀 적이 없습니다.",
+            "리허설 배정은 업무 운영 차원의 조정이었습니다."
+          ],
+          "privateKnowledge": [
+            "희주 면담 전날 밤 '평판 리스크가 큰 인원'이라는 비공식 메모를 먼저 입력했다.",
+            "그 다음 날 발표 리허설 배정에서 희주를 제외하도록 조정했다.",
+            "관리자 신뢰 하락을 막고 싶어 절차보다 통제를 앞세웠다."
+          ],
+          "suppressions": [
+            "면담 전 선행된 HR 메모 입력 시점",
+            "발표 배제가 사실상 불이익이었다는 점",
+            "관리자 평판을 지키려는 두려움"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-4:denial:0",
+              "factText": "저는 사실 확인도 전에 HR에 불이익성 메모를 넣거나 발표에서 희주 씨를 뺀 적이 없습니다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-4:fear:0",
+              "factText": "리허설 배정은 업무 운영 차원의 조정이었습니다.",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "HR에 상황을 알린 적은 있지만 제재를 요청한 건 아니었습니다.",
+            "발표 배정도 리스크 관리 차원의 임시 조정이었지 배제는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "희주 면담 전날 밤 '평판 리스크가 큰 인원'이라는 비공식 메모를 먼저 입력했다.",
+            "그 다음 날 발표 리허설 배정에서 희주를 제외하도록 조정했다.",
+            "관리자 신뢰 하락을 막고 싶어 절차보다 통제를 앞세웠다."
+          ],
+          "suppressions": [
+            "면담 전 선행된 HR 메모 입력 시점",
+            "발표 배제가 사실상 불이익이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-4:context:0",
+              "factText": "HR에 상황을 알린 적은 있지만 제재를 요청한 건 아니었습니다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-4:self_justification:0",
+              "factText": "발표 배정도 리스크 관리 차원의 임시 조정이었지 배제는 아니었습니다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "제가 '평판 리스크'라는 표현을 먼저 남긴 건 맞습니다.",
+            "다만 당장 조직 피해를 막으려던 판단이었고 희주 씨 해명을 영영 막으려던 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "희주 면담 전날 밤 '평판 리스크가 큰 인원'이라는 비공식 메모를 먼저 입력했다.",
+            "그 다음 날 발표 리허설 배정에서 희주를 제외하도록 조정했다.",
+            "관리자 신뢰 하락을 막고 싶어 절차보다 통제를 앞세웠다."
+          ],
+          "suppressions": [
+            "면담 전 선행된 HR 메모 입력 시점",
+            "발표 배제가 사실상 불이익이었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-4:act:0",
+              "factText": "제가 '평판 리스크'라는 표현을 먼저 남긴 건 맞습니다.",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-4:motive:0",
+              "factText": "다만 당장 조직 피해를 막으려던 판단이었고 희주 씨 해명을 영영 막으려던 건 아니었습니다.",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "제가 성급한 선제 조치를 한 건 인정합니다.",
+            "다만 희주 씨 쪽도 단정 메시지를 돌려 팀 전체 긴장을 높였기 때문에 관리자 대응이 필요하다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "희주 면담 전날 밤 '평판 리스크가 큰 인원'이라는 비공식 메모를 먼저 입력했다.",
+            "그 다음 날 발표 리허설 배정에서 희주를 제외하도록 조정했다.",
+            "관리자 신뢰 하락을 막고 싶어 절차보다 통제를 앞세웠다."
+          ],
+          "suppressions": [
+            "면담 전 선행된 HR 메모 입력 시점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-4:responsibility:0",
+              "factText": "제가 성급한 선제 조치를 한 건 인정합니다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-4:counter:0",
+              "factText": "다만 희주 씨 쪽도 단정 메시지를 돌려 팀 전체 긴장을 높였기 때문에 관리자 대응이 필요하다고 봤습니다.",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "관리자로서 신뢰가 흔들릴까 봐 제가 과민하게 움직였습니다.",
+            "그 과정에서 희주 씨에게 불이익처럼 작동한 점은 부정하지 않겠습니다."
+          ],
+          "privateKnowledge": [
+            "희주 면담 전날 밤 '평판 리스크가 큰 인원'이라는 비공식 메모를 먼저 입력했다.",
+            "그 다음 날 발표 리허설 배정에서 희주를 제외하도록 조정했다.",
+            "관리자 신뢰 하락을 막고 싶어 절차보다 통제를 앞세웠다."
+          ],
+          "suppressions": [
+            "면담 전 선행된 HR 메모 입력 시점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-4:emotion:0",
+              "factText": "관리자로서 신뢰가 흔들릴까 봐 제가 과민하게 움직였습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-4:shame:0",
+              "factText": "그 과정에서 희주 씨에게 불이익처럼 작동한 점은 부정하지 않겠습니다.",
+              "tags": [
+                "shame",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "제가 희주 씨 해명을 듣기 전에 HR 비공식 메모를 남기고 리허설 발표에서 제외했습니다.",
+            "그 선제 조치로 평판 불이익을 키운 건 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "희주 면담 전날 밤 '평판 리스크가 큰 인원'이라는 비공식 메모를 먼저 입력했다.",
+            "그 다음 날 발표 리허설 배정에서 희주를 제외하도록 조정했다.",
+            "관리자 신뢰 하락을 막고 싶어 절차보다 통제를 앞세웠다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-4:admission:0",
+              "factText": "제가 희주 씨 해명을 듣기 전에 HR 비공식 메모를 남기고 리허설 발표에서 제외했습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-4:harm:0",
+              "factText": "그 선제 조치로 평판 불이익을 키운 건 제 책임입니다.",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모",
+                  "neutral": "그 메모"
+                },
+                "phrase": {
+                  "exact": "평판 리스크가 큰 인원",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 면담 전날 밤",
+                  "neutral": "그 전날",
+                  "period": "면담 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "그 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "fear": {
+                  "exact": "관리자 신뢰 상실",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저는 정식 정정 전에 소문전에 가담한 적이 없습니다.",
+            "팀 회의에서 한 말도 특정인을 겨냥한 암시가 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "공식 정정 전에 팀 회의에서 '어제 일로 팀 명예가 흔들렸다'는 표현으로 특정인을 떠올리게 했다.",
+            "그 말이 희주를 지목하는 듯 읽힐 수 있다는 점을 알고도 정면 정정을 미뤘다.",
+            "자신이 먼저 상처받았다는 프레임으로 공동 책임을 흐리려 한다."
+          ],
+          "suppressions": [
+            "암시성 발언의 실제 파장",
+            "피해자 프레임으로 책임을 흐린 점",
+            "팀장 위치에서 더 큰 책임이 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-5:denial:0",
+              "factText": "저는 정식 정정 전에 소문전에 가담한 적이 없습니다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-5:fear:0",
+              "factText": "팀 회의에서 한 말도 특정인을 겨냥한 암시가 아니었습니다.",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "팀 명예 이야기를 하긴 했지만 루머를 돌리려던 건 아니었습니다.",
+            "공식 확인 전 이름을 찍어 말한 적도 없습니다."
+          ],
+          "privateKnowledge": [
+            "공식 정정 전에 팀 회의에서 '어제 일로 팀 명예가 흔들렸다'는 표현으로 특정인을 떠올리게 했다.",
+            "그 말이 희주를 지목하는 듯 읽힐 수 있다는 점을 알고도 정면 정정을 미뤘다.",
+            "자신이 먼저 상처받았다는 프레임으로 공동 책임을 흐리려 한다."
+          ],
+          "suppressions": [
+            "암시성 발언의 실제 파장",
+            "피해자 프레임으로 책임을 흐린 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-5:context:0",
+              "factText": "팀 명예 이야기를 하긴 했지만 루머를 돌리려던 건 아니었습니다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-5:self_justification:0",
+              "factText": "공식 확인 전 이름을 찍어 말한 적도 없습니다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "제가 '어제 일로 팀 명예가 흔들렸다'고 말한 건 맞습니다.",
+            "다만 분위기를 수습하려는 취지였지 희주 씨를 몰아가려는 의도는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "공식 정정 전에 팀 회의에서 '어제 일로 팀 명예가 흔들렸다'는 표현으로 특정인을 떠올리게 했다.",
+            "그 말이 희주를 지목하는 듯 읽힐 수 있다는 점을 알고도 정면 정정을 미뤘다.",
+            "자신이 먼저 상처받았다는 프레임으로 공동 책임을 흐리려 한다."
+          ],
+          "suppressions": [
+            "암시성 발언의 실제 파장",
+            "피해자 프레임으로 책임을 흐린 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-5:act:0",
+              "factText": "제가 '어제 일로 팀 명예가 흔들렸다'고 말한 건 맞습니다.",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-5:motive:0",
+              "factText": "다만 분위기를 수습하려는 취지였지 희주 씨를 몰아가려는 의도는 아니었습니다.",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "결과적으로 제가 남긴 암시가 소문을 키운 건 맞습니다.",
+            "다만 희주 씨 쪽도 DM으로 먼저 단정 메시지를 퍼뜨려 서로 일을 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "공식 정정 전에 팀 회의에서 '어제 일로 팀 명예가 흔들렸다'는 표현으로 특정인을 떠올리게 했다.",
+            "그 말이 희주를 지목하는 듯 읽힐 수 있다는 점을 알고도 정면 정정을 미뤘다.",
+            "자신이 먼저 상처받았다는 프레임으로 공동 책임을 흐리려 한다."
+          ],
+          "suppressions": [
+            "암시성 발언의 실제 파장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-5:responsibility:0",
+              "factText": "결과적으로 제가 남긴 암시가 소문을 키운 건 맞습니다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-5:counter:0",
+              "factText": "다만 희주 씨 쪽도 DM으로 먼저 단정 메시지를 퍼뜨려 서로 일을 키웠습니다.",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "제가 먼저 상처받았다는 말로 책임을 피해 가려 한 것도 사실입니다.",
+            "그래도 팀장인 제가 암시성 발언을 멈췄어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "공식 정정 전에 팀 회의에서 '어제 일로 팀 명예가 흔들렸다'는 표현으로 특정인을 떠올리게 했다.",
+            "그 말이 희주를 지목하는 듯 읽힐 수 있다는 점을 알고도 정면 정정을 미뤘다.",
+            "자신이 먼저 상처받았다는 프레임으로 공동 책임을 흐리려 한다."
+          ],
+          "suppressions": [
+            "암시성 발언의 실제 파장"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-5:emotion:0",
+              "factText": "제가 먼저 상처받았다는 말로 책임을 피해 가려 한 것도 사실입니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-5:shame:0",
+              "factText": "그래도 팀장인 제가 암시성 발언을 멈췄어야 했습니다.",
+              "tags": [
+                "shame",
+                "responsibility"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "제가 공식 정정 전에 팀 회의에서 암시성 발언을 해 소문전에 가담했습니다.",
+            "상대가 먼저든 아니든 그렇게 대응한 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "공식 정정 전에 팀 회의에서 '어제 일로 팀 명예가 흔들렸다'는 표현으로 특정인을 떠올리게 했다.",
+            "그 말이 희주를 지목하는 듯 읽힐 수 있다는 점을 알고도 정면 정정을 미뤘다.",
+            "자신이 먼저 상처받았다는 프레임으로 공동 책임을 흐리려 한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:a:tell:hurt_first_frame",
+            "workplace-03:a:tell:half_laugh_soften",
+            "workplace-03:a:tell:we_all_were_drunk"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:a:d-5:admission:0",
+              "factText": "제가 공식 정정 전에 팀 회의에서 암시성 발언을 해 소문전에 가담했습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:a:d-5:harm:0",
+              "factText": "상대가 먼저든 아니든 그렇게 대응한 건 제 잘못입니다.",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "어제 일로 팀 명예가 흔들렸다",
+                  "neutral": "그 암시 발언"
+                },
+                "moment": {
+                  "exact": "정식 정정 전 팀 회의",
+                  "neutral": "그 회의",
+                  "period": "정정 전"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "특정 팀원",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "harm": {
+                  "exact": "소문전 확대",
+                  "neutral": "그 파장"
+                },
+                "institution": {
+                  "exact": "팀장 위치",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "강도윤 씨는 회식 자리에서 누군가를 깎아내리는 말을 했습니다.",
+            "그 표현은 제 채용 배경과 실력을 겨냥한 말처럼 들릴 정도로 위험했습니다."
+          ],
+          "privateKnowledge": [
+            "회식 발언이 위험했고 자신에게 실력·전배 배경을 겨냥한 것처럼 들렸다고 진심으로 느꼈다.",
+            "그러나 직접 들은 것이 아니라 잘린 영상과 주변 분위기를 통해 확신을 굳혔다.",
+            "억울함 때문에 해석을 의도와 동일시하는 경향이 강해졌다."
+          ],
+          "suppressions": [
+            "직접 듣지 못하고 영상으로 확신을 굳힌 점",
+            "자신의 해석이 의도보다 앞서갔다는 점",
+            "오해 가능성을 초기에 열어 두지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-1:act:0",
+              "factText": "강도윤 씨는 회식 자리에서 누군가를 깎아내리는 말을 했습니다.",
+              "tags": [
+                "act",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-1:identity:0",
+              "factText": "그 표현은 제 채용 배경과 실력을 겨냥한 말처럼 들릴 정도로 위험했습니다.",
+              "tags": [
+                "identity",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "정확한 주어까지 그 자리에서 확인하진 못했지만 발언 자체는 모욕적이었습니다.",
+            "최근 전배 맥락이 겹쳐 저를 향한 말처럼 받아들일 수밖에 없었습니다."
+          ],
+          "privateKnowledge": [
+            "회식 발언이 위험했고 자신에게 실력·전배 배경을 겨냥한 것처럼 들렸다고 진심으로 느꼈다.",
+            "그러나 직접 들은 것이 아니라 잘린 영상과 주변 분위기를 통해 확신을 굳혔다.",
+            "억울함 때문에 해석을 의도와 동일시하는 경향이 강해졌다."
+          ],
+          "suppressions": [
+            "직접 듣지 못하고 영상으로 확신을 굳힌 점",
+            "자신의 해석이 의도보다 앞서갔다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-1:context:0",
+              "factText": "정확한 주어까지 그 자리에서 확인하진 못했지만 발언 자체는 모욕적이었습니다.",
+              "tags": [
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-1:uncertainty:0",
+              "factText": "최근 전배 맥락이 겹쳐 저를 향한 말처럼 받아들일 수밖에 없었습니다.",
+              "tags": [
+                "uncertainty",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "제가 그 말을 제 이야기로 받아들인 배경은 분명했습니다.",
+            "다만 당시에는 잘린 영상과 주변 반응으로만 판단한 한계가 있었습니다."
+          ],
+          "privateKnowledge": [
+            "회식 발언이 위험했고 자신에게 실력·전배 배경을 겨냥한 것처럼 들렸다고 진심으로 느꼈다.",
+            "그러나 직접 들은 것이 아니라 잘린 영상과 주변 분위기를 통해 확신을 굳혔다.",
+            "억울함 때문에 해석을 의도와 동일시하는 경향이 강해졌다."
+          ],
+          "suppressions": [
+            "직접 듣지 못하고 영상으로 확신을 굳힌 점",
+            "자신의 해석이 의도보다 앞서갔다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-1:context:1",
+              "factText": "제가 그 말을 제 이야기로 받아들인 배경은 분명했습니다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-1:identity:1",
+              "factText": "다만 당시에는 잘린 영상과 주변 반응으로만 판단한 한계가 있었습니다.",
+              "tags": [
+                "identity",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "발언이 위험했다는 점은 여전히 변함없습니다.",
+            "다만 제가 강도윤 씨 의도를 곧바로 악의로 확정한 건 성급했습니다."
+          ],
+          "privateKnowledge": [
+            "회식 발언이 위험했고 자신에게 실력·전배 배경을 겨냥한 것처럼 들렸다고 진심으로 느꼈다.",
+            "그러나 직접 들은 것이 아니라 잘린 영상과 주변 분위기를 통해 확신을 굳혔다.",
+            "억울함 때문에 해석을 의도와 동일시하는 경향이 강해졌다."
+          ],
+          "suppressions": [
+            "직접 듣지 못하고 영상으로 확신을 굳힌 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-1:responsibility:0",
+              "factText": "발언이 위험했다는 점은 여전히 변함없습니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-1:counter:0",
+              "factText": "다만 제가 강도윤 씨 의도를 곧바로 악의로 확정한 건 성급했습니다.",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "그 말 한마디로 제 실력과 전배 배경이 한꺼번에 의심받는 느낌이었습니다.",
+            "그래도 제가 확인보다 해석을 앞세운 부분은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "회식 발언이 위험했고 자신에게 실력·전배 배경을 겨냥한 것처럼 들렸다고 진심으로 느꼈다.",
+            "그러나 직접 들은 것이 아니라 잘린 영상과 주변 분위기를 통해 확신을 굳혔다.",
+            "억울함 때문에 해석을 의도와 동일시하는 경향이 강해졌다."
+          ],
+          "suppressions": [
+            "직접 듣지 못하고 영상으로 확신을 굳힌 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-1:harm:0",
+              "factText": "그 말 한마디로 제 실력과 전배 배경이 한꺼번에 의심받는 느낌이었습니다.",
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-1:admission:0",
+              "factText": "그래도 제가 확인보다 해석을 앞세운 부분은 인정합니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "강도윤 씨 발언은 위험했고 실제로 상처를 줬습니다.",
+            "하지만 그 발언이 곧바로 저를 직접 겨냥한 명예훼손이었다고 단정한 건 제 오류였습니다."
+          ],
+          "privateKnowledge": [
+            "회식 발언이 위험했고 자신에게 실력·전배 배경을 겨냥한 것처럼 들렸다고 진심으로 느꼈다.",
+            "그러나 직접 들은 것이 아니라 잘린 영상과 주변 분위기를 통해 확신을 굳혔다.",
+            "억울함 때문에 해석을 의도와 동일시하는 경향이 강해졌다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-1:admission:1",
+              "factText": "강도윤 씨 발언은 위험했고 실제로 상처를 줬습니다.",
+              "tags": [
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-1:responsibility:1",
+              "factText": "하지만 그 발언이 곧바로 저를 직접 겨냥한 명예훼손이었다고 단정한 건 제 오류였습니다.",
+              "tags": [
+                "responsibility",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "phrase": {
+                  "exact": "라인 타고 들어온 HJ",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "회식 2차",
+                  "neutral": "그 시점",
+                  "period": "그날 늦은 술자리"
+                },
+                "harm": {
+                  "exact": "채용 배경과 실력 의심",
+                  "neutral": "그 모욕"
+                },
+                "context": {
+                  "exact": "최근 전배 맥락",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "저는 팀장 비방을 단정해 여러 사람에게 퍼뜨린 적 없습니다.",
+            "사적 대화로 사실 확인을 한 것뿐입니다."
+          ],
+          "privateKnowledge": [
+            "회식 다음 날 오전 7시 42분부터 18분 사이 멘토방과 동료 둘에게 단정 메시지를 연속 전송했다.",
+            "처음은 확인성 질문이었지만 후반으로 갈수록 '내 얘기 맞다'는 식으로 수위가 올라갔다.",
+            "사적 조언을 구했다는 명목으로 전파 책임 범위를 줄여 보이려 한다."
+          ],
+          "suppressions": [
+            "수신 범위가 셋 이상이었다는 점",
+            "후반 메시지가 이미 단정문이 된 점",
+            "창피함과 두려움 때문에 범위를 좁혀 말하는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-2:denial:0",
+              "factText": "저는 팀장 비방을 단정해 여러 사람에게 퍼뜨린 적 없습니다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-2:fear:0",
+              "factText": "사적 대화로 사실 확인을 한 것뿐입니다.",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "멘토방에 물은 적은 있지만 퍼뜨린 건 아닙니다.",
+            "정확한 사실관계를 확인하려고 메시지를 남긴 겁니다."
+          ],
+          "privateKnowledge": [
+            "회식 다음 날 오전 7시 42분부터 18분 사이 멘토방과 동료 둘에게 단정 메시지를 연속 전송했다.",
+            "처음은 확인성 질문이었지만 후반으로 갈수록 '내 얘기 맞다'는 식으로 수위가 올라갔다.",
+            "사적 조언을 구했다는 명목으로 전파 책임 범위를 줄여 보이려 한다."
+          ],
+          "suppressions": [
+            "수신 범위가 셋 이상이었다는 점",
+            "후반 메시지가 이미 단정문이 된 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-2:context:0",
+              "factText": "멘토방에 물은 적은 있지만 퍼뜨린 건 아닙니다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-2:self_justification:0",
+              "factText": "정확한 사실관계를 확인하려고 메시지를 남긴 겁니다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "몇 사람에게 캡처와 제 해석을 보낸 건 맞습니다.",
+            "다만 그때는 정말 제 이야기라고 믿어서 확인 차원이라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "회식 다음 날 오전 7시 42분부터 18분 사이 멘토방과 동료 둘에게 단정 메시지를 연속 전송했다.",
+            "처음은 확인성 질문이었지만 후반으로 갈수록 '내 얘기 맞다'는 식으로 수위가 올라갔다.",
+            "사적 조언을 구했다는 명목으로 전파 책임 범위를 줄여 보이려 한다."
+          ],
+          "suppressions": [
+            "수신 범위가 셋 이상이었다는 점",
+            "후반 메시지가 이미 단정문이 된 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-2:act:0",
+              "factText": "몇 사람에게 캡처와 제 해석을 보낸 건 맞습니다.",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-2:motive:0",
+              "factText": "다만 그때는 정말 제 이야기라고 믿어서 확인 차원이라고 생각했습니다.",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 표현 수위를 높여 단정 메시지를 보낸 건 인정합니다.",
+            "다만 강도윤 씨 쪽 발언과 다음 날 태도가 이미 저를 벼랑 끝으로 몰았습니다."
+          ],
+          "privateKnowledge": [
+            "회식 다음 날 오전 7시 42분부터 18분 사이 멘토방과 동료 둘에게 단정 메시지를 연속 전송했다.",
+            "처음은 확인성 질문이었지만 후반으로 갈수록 '내 얘기 맞다'는 식으로 수위가 올라갔다.",
+            "사적 조언을 구했다는 명목으로 전파 책임 범위를 줄여 보이려 한다."
+          ],
+          "suppressions": [
+            "수신 범위가 셋 이상이었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-2:responsibility:0",
+              "factText": "제가 표현 수위를 높여 단정 메시지를 보낸 건 인정합니다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-2:counter:0",
+              "factText": "다만 강도윤 씨 쪽 발언과 다음 날 태도가 이미 저를 벼랑 끝으로 몰았습니다.",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "제가 차갑게 정리해 말했지만 속으로는 너무 억울했습니다.",
+            "그 감정 때문에 확인과 전파의 선을 제대로 지키지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "회식 다음 날 오전 7시 42분부터 18분 사이 멘토방과 동료 둘에게 단정 메시지를 연속 전송했다.",
+            "처음은 확인성 질문이었지만 후반으로 갈수록 '내 얘기 맞다'는 식으로 수위가 올라갔다.",
+            "사적 조언을 구했다는 명목으로 전파 책임 범위를 줄여 보이려 한다."
+          ],
+          "suppressions": [
+            "수신 범위가 셋 이상이었다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-2:emotion:0",
+              "factText": "제가 차갑게 정리해 말했지만 속으로는 너무 억울했습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-2:shame:0",
+              "factText": "그 감정 때문에 확인과 전파의 선을 제대로 지키지 못했습니다.",
+              "tags": [
+                "shame",
+                "responsibility"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "제가 멘토방과 동료 둘에게 '팀장이 내 채용 배경을 씹었다'는 단정 메시지를 보냈습니다.",
+            "확인하려던 거라고 좁혀 말한 것도 제 책임 회피였습니다."
+          ],
+          "privateKnowledge": [
+            "회식 다음 날 오전 7시 42분부터 18분 사이 멘토방과 동료 둘에게 단정 메시지를 연속 전송했다.",
+            "처음은 확인성 질문이었지만 후반으로 갈수록 '내 얘기 맞다'는 식으로 수위가 올라갔다.",
+            "사적 조언을 구했다는 명목으로 전파 책임 범위를 줄여 보이려 한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-2:admission:0",
+              "factText": "제가 멘토방과 동료 둘에게 '팀장이 내 채용 배경을 씹었다'는 단정 메시지를 보냈습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-2:harm:0",
+              "factText": "확인하려던 거라고 좁혀 말한 것도 제 책임 회피였습니다.",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "neutral": "그 시간대",
+                  "dateExact": "회식 다음 날 오전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "몇몇 수신자"
+                },
+                "phrase": {
+                  "exact": "팀장이 내 채용 배경을 씹었다",
+                  "neutral": "그 단정 메시지"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "emotion": {
+                  "exact": "억울함과 창피함",
+                  "neutral": "그 감정"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "문제의 회식 발언은 저를 직접 겨냥한 말이 맞습니다.",
+            "다른 사람 이야기였다는 설명은 받아들이기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 잘린 클립과 최근 전배 맥락 때문에 HJ를 자신으로 확신했다.",
+            "그러나 HJ가 외부 후보 한재균이라는 원본 자료를 보지 않은 상태에서 결론을 내렸다.",
+            "억울함이 커질수록 정황을 곧 의도로 연결해 판단을 굳혀 갔다."
+          ],
+          "suppressions": [
+            "직접 들은 것이 아니라 잘린 클립에 의존한 점",
+            "공유노트와 원본 자료를 보기 전 확신부터 한 점",
+            "억울함이 판단을 밀어붙였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-3:denial:0",
+              "factText": "문제의 회식 발언은 저를 직접 겨냥한 말이 맞습니다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-3:fear:0",
+              "factText": "다른 사람 이야기였다는 설명은 받아들이기 어렵습니다.",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "단정이 조금 빨랐을 수는 있어도 그 19초 클립만 보면 저를 떠올릴 수밖에 없습니다.",
+            "최근 전배 이슈까지 붙어 있어서 다른 해석이 더 부자연스러웠습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 잘린 클립과 최근 전배 맥락 때문에 HJ를 자신으로 확신했다.",
+            "그러나 HJ가 외부 후보 한재균이라는 원본 자료를 보지 않은 상태에서 결론을 내렸다.",
+            "억울함이 커질수록 정황을 곧 의도로 연결해 판단을 굳혀 갔다."
+          ],
+          "suppressions": [
+            "직접 들은 것이 아니라 잘린 클립에 의존한 점",
+            "공유노트와 원본 자료를 보기 전 확신부터 한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-3:context:0",
+              "factText": "단정이 조금 빨랐을 수는 있어도 그 19초 클립만 보면 저를 떠올릴 수밖에 없습니다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-3:self_justification:0",
+              "factText": "최근 전배 이슈까지 붙어 있어서 다른 해석이 더 부자연스러웠습니다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "제가 제 얘기라고 확신한 건 맞습니다.",
+            "다만 그때는 HJ가 외부 후보 약어라는 자료를 보지 못한 상태였습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 잘린 클립과 최근 전배 맥락 때문에 HJ를 자신으로 확신했다.",
+            "그러나 HJ가 외부 후보 한재균이라는 원본 자료를 보지 않은 상태에서 결론을 내렸다.",
+            "억울함이 커질수록 정황을 곧 의도로 연결해 판단을 굳혀 갔다."
+          ],
+          "suppressions": [
+            "직접 들은 것이 아니라 잘린 클립에 의존한 점",
+            "공유노트와 원본 자료를 보기 전 확신부터 한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-3:act:0",
+              "factText": "제가 제 얘기라고 확신한 건 맞습니다.",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-3:motive:0",
+              "factText": "다만 그때는 HJ가 외부 후보 약어라는 자료를 보지 못한 상태였습니다.",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보니 제가 의도를 너무 빨리 결론 냈던 건 인정합니다.",
+            "다만 강도윤 씨도 내부 인원을 떠올리게 할 만큼 모호하게 말한 책임이 있습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 잘린 클립과 최근 전배 맥락 때문에 HJ를 자신으로 확신했다.",
+            "그러나 HJ가 외부 후보 한재균이라는 원본 자료를 보지 않은 상태에서 결론을 내렸다.",
+            "억울함이 커질수록 정황을 곧 의도로 연결해 판단을 굳혀 갔다."
+          ],
+          "suppressions": [
+            "직접 들은 것이 아니라 잘린 클립에 의존한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-3:responsibility:0",
+              "factText": "지금 보니 제가 의도를 너무 빨리 결론 냈던 건 인정합니다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-3:counter:0",
+              "factText": "다만 강도윤 씨도 내부 인원을 떠올리게 할 만큼 모호하게 말한 책임이 있습니다.",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "억울함이 커질수록 저는 정황을 바로 의도로 묶어 버렸습니다.",
+            "그게 제 판단을 더 단단하게 굳힌 것도 사실입니다."
+          ],
+          "privateKnowledge": [
+            "자신은 잘린 클립과 최근 전배 맥락 때문에 HJ를 자신으로 확신했다.",
+            "그러나 HJ가 외부 후보 한재균이라는 원본 자료를 보지 않은 상태에서 결론을 내렸다.",
+            "억울함이 커질수록 정황을 곧 의도로 연결해 판단을 굳혀 갔다."
+          ],
+          "suppressions": [
+            "직접 들은 것이 아니라 잘린 클립에 의존한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-3:emotion:0",
+              "factText": "억울함이 커질수록 저는 정황을 바로 의도로 묶어 버렸습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-3:shame:0",
+              "factText": "그게 제 판단을 더 단단하게 굳힌 것도 사실입니다.",
+              "tags": [
+                "shame",
+                "responsibility"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "문제의 HJ가 저를 가리킨 건 아니었습니다.",
+            "제가 잘린 클립과 전배 맥락만으로 직접 겨냥이라고 단정한 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "자신은 잘린 클립과 최근 전배 맥락 때문에 HJ를 자신으로 확신했다.",
+            "그러나 HJ가 외부 후보 한재균이라는 원본 자료를 보지 않은 상태에서 결론을 내렸다.",
+            "억울함이 커질수록 정황을 곧 의도로 연결해 판단을 굳혀 갔다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-3:admission:0",
+              "factText": "문제의 HJ가 저를 가리킨 건 아니었습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-3:harm:0",
+              "factText": "제가 잘린 클립과 전배 맥락만으로 직접 겨냥이라고 단정한 건 제 잘못입니다.",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "phrase": {
+                  "exact": "HJ",
+                  "neutral": "그 약어"
+                },
+                "moment": {
+                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "neutral": "그 직후",
+                  "period": "다음 날 아침"
+                },
+                "person": {
+                  "exact": "최희주",
+                  "neutral": "자기 자신",
+                  "fullName": "최희주",
+                  "judgeRef": "희주 씨"
+                },
+                "candidate": {
+                  "exact": "한재균",
+                  "neutral": "다른 HJ",
+                  "fullName": "한재균",
+                  "judgeRef": "외부 후보"
+                },
+                "context": {
+                  "exact": "최근 전배 이슈",
+                  "neutral": "그 배경"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "강도윤 씨는 제 해명을 듣기 전에 이미 HR 메모와 발표 배제를 진행했습니다.",
+            "그건 단순 운영 조정이 아니라 평판 불이익이었습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 메모 입력 시점은 몰랐지만 결과적으로 발표 배제와 낙인 효과를 체감했다.",
+            "나중에 기록을 통해 '평판 리스크' 메모가 먼저였다는 사실을 확인했다.",
+            "자신의 DM 전파가 상황을 자극했어도 관리자 선제 조치는 별개 책임이라고 본다."
+          ],
+          "suppressions": [
+            "자신도 상황을 자극한 면이 있다는 점",
+            "초기에는 정확한 순서를 몰랐다는 점",
+            "상처와 낙인 감정이 해석을 더 강하게 만든 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-4:act:0",
+              "factText": "강도윤 씨는 제 해명을 듣기 전에 이미 HR 메모와 발표 배제를 진행했습니다.",
+              "tags": [
+                "act",
+                "harm"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-4:identity:0",
+              "factText": "그건 단순 운영 조정이 아니라 평판 불이익이었습니다.",
+              "tags": [
+                "identity",
+                "emotion"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "정식 징계는 아니었을지 몰라도 실제 효과는 같았습니다.",
+            "제가 설명할 기회도 없이 리허설 배정이 바뀌었습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 메모 입력 시점은 몰랐지만 결과적으로 발표 배제와 낙인 효과를 체감했다.",
+            "나중에 기록을 통해 '평판 리스크' 메모가 먼저였다는 사실을 확인했다.",
+            "자신의 DM 전파가 상황을 자극했어도 관리자 선제 조치는 별개 책임이라고 본다."
+          ],
+          "suppressions": [
+            "자신도 상황을 자극한 면이 있다는 점",
+            "초기에는 정확한 순서를 몰랐다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-4:context:0",
+              "factText": "정식 징계는 아니었을지 몰라도 실제 효과는 같았습니다.",
+              "tags": [
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-4:uncertainty:0",
+              "factText": "제가 설명할 기회도 없이 리허설 배정이 바뀌었습니다.",
+              "tags": [
+                "uncertainty",
+                "identity"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "기록을 보면 '평판 리스크' 메모가 먼저 입력됐습니다.",
+            "다만 저는 그때까지 그 사실을 정확한 순서로는 몰랐고 결과로 체감했습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 메모 입력 시점은 몰랐지만 결과적으로 발표 배제와 낙인 효과를 체감했다.",
+            "나중에 기록을 통해 '평판 리스크' 메모가 먼저였다는 사실을 확인했다.",
+            "자신의 DM 전파가 상황을 자극했어도 관리자 선제 조치는 별개 책임이라고 본다."
+          ],
+          "suppressions": [
+            "자신도 상황을 자극한 면이 있다는 점",
+            "초기에는 정확한 순서를 몰랐다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-4:context:1",
+              "factText": "기록을 보면 '평판 리스크' 메모가 먼저 입력됐습니다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-4:identity:1",
+              "factText": "다만 저는 그때까지 그 사실을 정확한 순서로는 몰랐고 결과로 체감했습니다.",
+              "tags": [
+                "identity",
+                "act"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "관리자 입장에서 불안을 느낄 수는 있었겠지만 절차를 건너뛴 대응이었습니다.",
+            "그래도 제 DM 전파가 상황을 자극한 면은 부정하지 않겠습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 메모 입력 시점은 몰랐지만 결과적으로 발표 배제와 낙인 효과를 체감했다.",
+            "나중에 기록을 통해 '평판 리스크' 메모가 먼저였다는 사실을 확인했다.",
+            "자신의 DM 전파가 상황을 자극했어도 관리자 선제 조치는 별개 책임이라고 본다."
+          ],
+          "suppressions": [
+            "자신도 상황을 자극한 면이 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-4:responsibility:0",
+              "factText": "관리자 입장에서 불안을 느낄 수는 있었겠지만 절차를 건너뛴 대응이었습니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-4:counter:0",
+              "factText": "그래도 제 DM 전파가 상황을 자극한 면은 부정하지 않겠습니다.",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "그 기록을 보고 나서야 제가 왜 갑자기 배제됐는지 이해됐습니다.",
+            "일에 대한 평가가 아니라 사람에 대한 낙인처럼 느껴졌습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 메모 입력 시점은 몰랐지만 결과적으로 발표 배제와 낙인 효과를 체감했다.",
+            "나중에 기록을 통해 '평판 리스크' 메모가 먼저였다는 사실을 확인했다.",
+            "자신의 DM 전파가 상황을 자극했어도 관리자 선제 조치는 별개 책임이라고 본다."
+          ],
+          "suppressions": [
+            "자신도 상황을 자극한 면이 있다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-4:harm:0",
+              "factText": "그 기록을 보고 나서야 제가 왜 갑자기 배제됐는지 이해됐습니다.",
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-4:admission:0",
+              "factText": "일에 대한 평가가 아니라 사람에 대한 낙인처럼 느껴졌습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "강도윤 씨는 제 설명 전에 HR 비공식 메모를 남기고 발표 배정을 바꿨습니다.",
+            "그 선제 조치가 제 평판을 더 흔든 사실은 분명합니다."
+          ],
+          "privateKnowledge": [
+            "자신은 메모 입력 시점은 몰랐지만 결과적으로 발표 배제와 낙인 효과를 체감했다.",
+            "나중에 기록을 통해 '평판 리스크' 메모가 먼저였다는 사실을 확인했다.",
+            "자신의 DM 전파가 상황을 자극했어도 관리자 선제 조치는 별개 책임이라고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-4:admission:1",
+              "factText": "강도윤 씨는 제 설명 전에 HR 비공식 메모를 남기고 발표 배정을 바꿨습니다.",
+              "tags": [
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-4:responsibility:1",
+              "factText": "그 선제 조치가 제 평판을 더 흔든 사실은 분명합니다.",
+              "tags": [
+                "responsibility",
+                "identity"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR 비공식 메모와 발표 배제",
+                  "neutral": "그 선제 조치"
+                },
+                "phrase": {
+                  "exact": "평판 리스크",
+                  "neutral": "그 표현"
+                },
+                "moment": {
+                  "exact": "희주 설명 전",
+                  "neutral": "그 이전",
+                  "period": "사실확인 전"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                },
+                "harm": {
+                  "exact": "평판 불이익",
+                  "neutral": "그 피해"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저는 정식 정정 전에 소문전에 가담한 적 없습니다.",
+            "몇몇 사람에게 조언을 구한 것뿐이고 회사 안에 퍼뜨린 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "정식 정정보다 먼저 멘토방과 동료들에게 자신의 해석을 공유하며 비공식 평판전에 들어갔다.",
+            "확인 요청으로 시작했지만 주변에 '공개 비하' 서사를 고정시키는 효과를 냈다.",
+            "창피함과 입지 상실 공포 때문에 정식 창구보다 주변 사람을 먼저 찾았다."
+          ],
+          "suppressions": [
+            "자신의 메시지가 서사를 고정시켰다는 점",
+            "창피함과 공포가 판단보다 앞섰다는 점",
+            "정식 창구보다 주변 전파를 먼저 택한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-5:denial:0",
+              "factText": "저는 정식 정정 전에 소문전에 가담한 적 없습니다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-5:fear:0",
+              "factText": "몇몇 사람에게 조언을 구한 것뿐이고 회사 안에 퍼뜨린 건 아닙니다.",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "멘토방과 동료에게 말한 적은 있지만 퍼뜨린 건 아닙니다.",
+            "확인하려고 정리해 보낸 정도였습니다."
+          ],
+          "privateKnowledge": [
+            "정식 정정보다 먼저 멘토방과 동료들에게 자신의 해석을 공유하며 비공식 평판전에 들어갔다.",
+            "확인 요청으로 시작했지만 주변에 '공개 비하' 서사를 고정시키는 효과를 냈다.",
+            "창피함과 입지 상실 공포 때문에 정식 창구보다 주변 사람을 먼저 찾았다."
+          ],
+          "suppressions": [
+            "자신의 메시지가 서사를 고정시켰다는 점",
+            "창피함과 공포가 판단보다 앞섰다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-5:context:0",
+              "factText": "멘토방과 동료에게 말한 적은 있지만 퍼뜨린 건 아닙니다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-5:self_justification:0",
+              "factText": "확인하려고 정리해 보낸 정도였습니다.",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "제가 제 억울함을 여러 사람에게 말한 건 맞습니다.",
+            "다만 공식 대응을 찾으려던 과정이라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "정식 정정보다 먼저 멘토방과 동료들에게 자신의 해석을 공유하며 비공식 평판전에 들어갔다.",
+            "확인 요청으로 시작했지만 주변에 '공개 비하' 서사를 고정시키는 효과를 냈다.",
+            "창피함과 입지 상실 공포 때문에 정식 창구보다 주변 사람을 먼저 찾았다."
+          ],
+          "suppressions": [
+            "자신의 메시지가 서사를 고정시켰다는 점",
+            "창피함과 공포가 판단보다 앞섰다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-5:act:0",
+              "factText": "제가 제 억울함을 여러 사람에게 말한 건 맞습니다.",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-5:motive:0",
+              "factText": "다만 공식 대응을 찾으려던 과정이라고 생각했습니다.",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "결과적으로 제가 보낸 메시지가 소문전 일부가 된 건 인정합니다.",
+            "다만 강도윤 씨 쪽도 팀 회의에서 저를 떠올리게 해 서로 일을 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "정식 정정보다 먼저 멘토방과 동료들에게 자신의 해석을 공유하며 비공식 평판전에 들어갔다.",
+            "확인 요청으로 시작했지만 주변에 '공개 비하' 서사를 고정시키는 효과를 냈다.",
+            "창피함과 입지 상실 공포 때문에 정식 창구보다 주변 사람을 먼저 찾았다."
+          ],
+          "suppressions": [
+            "자신의 메시지가 서사를 고정시켰다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-5:responsibility:0",
+              "factText": "결과적으로 제가 보낸 메시지가 소문전 일부가 된 건 인정합니다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-5:counter:0",
+              "factText": "다만 강도윤 씨 쪽도 팀 회의에서 저를 떠올리게 해 서로 일을 키웠습니다.",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "사실은 제가 너무 창피하고 무서워서 먼저 사람들에게 기대었습니다.",
+            "그 감정이 확인보다 전파를 앞서게 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "정식 정정보다 먼저 멘토방과 동료들에게 자신의 해석을 공유하며 비공식 평판전에 들어갔다.",
+            "확인 요청으로 시작했지만 주변에 '공개 비하' 서사를 고정시키는 효과를 냈다.",
+            "창피함과 입지 상실 공포 때문에 정식 창구보다 주변 사람을 먼저 찾았다."
+          ],
+          "suppressions": [
+            "자신의 메시지가 서사를 고정시켰다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-5:emotion:0",
+              "factText": "사실은 제가 너무 창피하고 무서워서 먼저 사람들에게 기대었습니다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-5:shame:0",
+              "factText": "그 감정이 확인보다 전파를 앞서게 만들었습니다.",
+              "tags": [
+                "shame",
+                "responsibility"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "제가 공식 정정 전에 여러 사람에게 단정 메시지를 보내 소문전에 가담했습니다.",
+            "억울하다는 이유로 그렇게 움직인 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "정식 정정보다 먼저 멘토방과 동료들에게 자신의 해석을 공유하며 비공식 평판전에 들어갔다.",
+            "확인 요청으로 시작했지만 주변에 '공개 비하' 서사를 고정시키는 효과를 냈다.",
+            "창피함과 입지 상실 공포 때문에 정식 창구보다 주변 사람을 먼저 찾았다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-03:b:tell:timestamp_stack",
+            "workplace-03:b:tell:definition_narrowing",
+            "workplace-03:b:tell:flat_voice_push"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-03:b:d-5:admission:0",
+              "factText": "제가 공식 정정 전에 여러 사람에게 단정 메시지를 보내 소문전에 가담했습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-03:b:d-5:harm:0",
+              "factText": "억울하다는 이유로 그렇게 움직인 건 제 잘못입니다.",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "moment": {
+                  "exact": "정식 정정 전",
+                  "neutral": "그 전 단계",
+                  "period": "정정 전"
+                },
+                "channel": {
+                  "exact": "멘토방과 동료 둘",
+                  "neutral": "주변 사람들"
+                },
+                "phrase": {
+                  "exact": "공개 비하라고 보는 해석",
+                  "neutral": "그 해석"
+                },
+                "emotion": {
+                  "exact": "창피함과 입지 상실 공포",
+                  "neutral": "그 불안"
+                },
+                "person": {
+                  "exact": "강도윤",
+                  "neutral": "상대방",
+                  "fullName": "강도윤",
+                  "judgeRef": "강도윤 씨"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+

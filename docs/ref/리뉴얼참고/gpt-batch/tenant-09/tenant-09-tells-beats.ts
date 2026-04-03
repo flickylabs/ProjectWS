@@ -1,0 +1,588 @@
+export const tenant09TellsBeats = {
+  "caseId": "tenant-09",
+  "executableTells": {
+    "a": [
+      {
+        "id": "tenant09:a:tell:timeline_lock",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "순서부터",
+          "그 시각",
+          "먼저 입금",
+          "캡처 시간"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "상대가 설명을 넓히면 곧바로 송금 시각과 캡처 생성 시각을 콕 집어 그 순서부터 다시 맞추자고 한다."
+      },
+      {
+        "id": "tenant09:a:tell:receipt_stack",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "계좌 캡처",
+          "파일명",
+          "송금 메모",
+          "버전"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "책임을 묻는 질문이 오면 감정 설명보다 계좌 캡처와 계약 파일명을 연달아 제시해 논점을 자료로 덮으려 한다."
+      },
+      {
+        "id": "tenant09:a:tell:flat_voice_press",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "아니요",
+          "그건 아니고요",
+          "정확히",
+          "거기까지입니다"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "억울해질수록 목소리가 오히려 평평해지고 문장 끝을 짧게 끊어 상대를 압박한다."
+      }
+    ],
+    "b": [
+      {
+        "id": "tenant09:b:tell:betrayal_preface",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "hurt",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "저도 당했습니다",
+          "배신당한 겁니다",
+          "제가 더 손해예요",
+          "믿었죠"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "불리해지면 먼저 자신이 얼마나 배신당했는지를 길게 깔고 들어가 사실 질문의 초점을 흐린다."
+      },
+      {
+        "id": "tenant09:b:tell:cost_scatter",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "공실비",
+          "세금",
+          "에어컨 청소비",
+          "시설 손실"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "하나의 항목을 묻는 질문에도 공실비, 세금, 에어컨 청소비를 한꺼번에 꺼내 총손실 이야기로 넓혀 버린다."
+      },
+      {
+        "id": "tenant09:b:tell:slow_sigh_reset",
+        "appliesWhen": [
+          "emotional",
+          "shame",
+          "hurt",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "하...",
+          "제가요?",
+          "그렇게까지 해야 합니까",
+          "제가 더 손해 봤습니다"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "목소리가 높아질 듯하면 길게 숨을 내쉰 뒤 다시 느린 톤으로 자신이 더 손해 본 사람처럼 말한다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "tenant09:beat:a:d-1:deny",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "계약서에 적힌 보증금은 8천만원이었고, 저는 그 기준으로 정산을 요구한 겁니다. 송금 구조가 복잡했던 건 맞지만 계약 자체를 제가 따로 비튼 건 아닙니다.",
+      "behaviorHint": "자료 폴더를 먼저 꺼내며 감정을 눌러 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-1:hedge",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "태윤 사장님 계좌와 우석 쪽 정리 계좌가 따로 움직인 건 맞지만, 당시엔 다 계약 정리 과정으로 이해했습니다. 저는 총액만 맞으면 된다고 들었습니다.",
+      "behaviorHint": "시간순 표현을 반복하며 논점을 좁힌다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-1:partial",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "태윤 사장님 계좌로는 6천만원이 들어간 게 맞습니다. 다만 나머지 2천만원도 저는 계약을 맞추기 위한 정리금처럼 이해했습니다.",
+      "behaviorHint": "정확한 액수와 시각을 먼저 인정하고 해석을 뒤로 미룬다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-1:blame",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "솔직히 말하면 2천만원이 태윤 사장님 보증금 계좌로 안 들어간다는 건 알고 있었습니다. 우석이 나중에 정리해도 계약서는 남으니 문제 없다고 해서 그 말을 탔습니다.",
+      "behaviorHint": "평평한 목소리로 우석 또는 상황을 끼워 넣는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-1:confession",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "네, 태윤 사장님이 실제로 받은 보증금은 6천만원뿐이었습니다. 저는 그걸 알면서도 우석과 만든 2천만원 구조를 숨긴 채 계약서상 8천만원 전체를 제 기준으로 붙잡고 있었습니다. 제 잘못이었습니다.",
+      "behaviorHint": "잠깐 침묵한 뒤 짧고 잘린 문장으로 시인한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-1:evidence_hit",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "태윤 사장님 계좌로 6천만원만 간 건 맞아요. 그런데 당시엔 나머지도 정리되는 줄 알았습니다.",
+      "behaviorHint": "캡처와 파일명을 읊다가 한 번 멈춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-2:deny",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "우석 씨와 공모해서 보증금을 부풀렸다는 표현은 과합니다. 저는 필요한 서류 정리가 된다고 들었을 뿐, 누가 일부를 가져가는 구조까지 제가 짠 건 아닙니다.",
+      "behaviorHint": "자료 폴더를 먼저 꺼내며 감정을 눌러 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-2:hedge",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "정책자금 상담 때문에 계약서 숫자를 크게 두면 편하다는 얘기는 들었습니다. 하지만 그걸 바로 공모라고 묶는 건 다릅니다.",
+      "behaviorHint": "시간순 표현을 반복하며 논점을 좁힌다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-2:partial",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "카카오톡에 큰 보증금 숫자가 정책자금에 낫다는 취지의 대화가 있는 건 맞습니다. 다만 저는 그때도 2천만원이 결국 정리비처럼 처리될 거라고만 생각했습니다.",
+      "behaviorHint": "정확한 액수와 시각을 먼저 인정하고 해석을 뒤로 미룬다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-2:blame",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "네, 우석 씨와 저는 8천만원 숫자가 남아 있으면 서로 편해진다는 걸 알고 있었습니다. 저는 가족 투자금 설명과 정책자금 상담 때문에, 우석은 2천만원을 별도 수익으로 처리할 수 있어서 그 구조를 밀었습니다.",
+      "behaviorHint": "평평한 목소리로 우석 또는 상황을 끼워 넣는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-2:confession",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "맞습니다. 저는 우석과 상의해 실제보다 큰 8천만원 계약을 유지했고, 2천만원이 허위 정리비와 컨설팅비 명목으로 빠져나가는 구조를 알고도 이용했습니다. 그건 정책자금 상담과 이후 협상에 유리하다고 봤기 때문입니다. 제 잘못이었습니다.",
+      "behaviorHint": "잠깐 침묵한 뒤 짧고 잘린 문장으로 시인한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-2:evidence_hit",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "큰 숫자가 필요하다는 얘기는 있었습니다. 제가 그 구조 전부를 설계한 건 아닙니다.",
+      "behaviorHint": "캡처와 파일명을 읊다가 한 번 멈춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-4:deny",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "월세나 간판 문제는 거의 정리된 상태였고, 태윤 사장님이 그걸 과장해서 붙인 겁니다. 큰 미납처럼 말할 정도는 아닙니다.",
+      "behaviorHint": "자료 폴더를 먼저 꺼내며 감정을 눌러 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-4:hedge",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "정확히는 폐업 정리 막바지라 며칠 밀린 항목이 있었습니다. 그래도 바로 메우려고 했고, 태윤 사장님이 말하는 식의 큰 체납은 아니었습니다.",
+      "behaviorHint": "시간순 표현을 반복하며 논점을 좁힌다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-4:partial",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "네, 마지막 월세 일부는 약정일보다 9일 늦게 냈습니다. 간판 철거비도 명도 뒤에 정산됐습니다. 다만 규모가 크진 않았습니다.",
+      "behaviorHint": "정확한 액수와 시각을 먼저 인정하고 해석을 뒤로 미룬다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-4:blame",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "폐업 직전에 통장에 남는 돈이 거의 없었습니다. 그래서 마지막 월세 일부와 간판 철거비를 바로 못 끝냈고, 그걸 인정하는 게 너무 창피해서 계속 '거의 정리됐다'고 말했습니다. 태윤 사장님 쪽도 보증금 반환을 5주나 끌면서 제 폐업 정리를 더 어렵게 만든 건 있잖아요.",
+      "behaviorHint": "평평한 목소리로 우석 또는 상황을 끼워 넣는다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-4:confession",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "맞습니다. 마지막 월세 일부는 9일 늦었고, 외부 간판 철거비도 명도 뒤에야 정산했습니다. 금액은 제한적이었지만 실제 미정산이 있었고, 저는 그걸 체면 때문에 축소했습니다. 제 잘못이었습니다.",
+      "behaviorHint": "잠깐 침묵한 뒤 짧고 잘린 문장으로 시인한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:a:d-4:evidence_hit",
+      "caseId": "tenant-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "마지막 월세 일부가 늦은 건 맞고요. 간판 철거비도 뒤로 밀렸습니다.",
+      "behaviorHint": "캡처와 파일명을 읊다가 한 번 멈춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-5:deny",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "최종 계약서는 중개사가 정리해서 가져온 거고, 저는 통상적인 확인은 다 했습니다. 저를 무슨 서류도 못 보는 사람처럼 말하는 건 억울합니다.",
+      "behaviorHint": "한숨 섞인 피해 호소로 문답을 넓힌다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-5:hedge",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "6천만원으로 다시 맞춰 달라고는 분명히 말했습니다. 그래서 우석이가 정리한 최종본도 그렇게 돼 있을 거라고 믿었습니다.",
+      "behaviorHint": "자신도 속았다는 말을 앞세워 책임 범위를 흐린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-5:partial",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "초안이 6천만원이었다는 건 압니다. 그런데 최종 스캔본이 8천만원으로 올라간 걸 저는 그 자리에서 직접 못 봤습니다. 아니, 안 봤다고 해야 맞겠네요.",
+      "behaviorHint": "일부 사실을 인정하되 손실 목록을 덧붙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-5:blame",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "그날은 공실 문의도 겹치고 세금 얘기도 머리에 차 있었어요. 그래서 '6천으로 다시 맞췄다'는 말만 듣고 마지막 종이를 직접 안 봤습니다. 그게 제일 창피합니다. 그래도 우석이가 최종본을 슬쩍 바꾼 건 저한테만 돌릴 일은 아닙니다.",
+      "behaviorHint": "느린 톤으로 사정을 길게 말하며 자기 피해를 강조한다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-5:confession",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "맞습니다. 저는 보증금 액수와 실제 입금 내역을 마지막 출력본과 직접 맞춰보지 않은 채 서명과 날인을 넘겼습니다. 그 틈을 우석이 이용해 8천만원 표기를 굳혔고, 제 확인 소홀이 분쟁의 한 축이 됐습니다. 제 잘못이었습니다.",
+      "behaviorHint": "목이 잠긴 채 자기 소홀을 뒤늦게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-5:evidence_hit",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "제가 한 번만 더 봤어야 했겠죠. 그 점은 부인하기 어렵습니다.",
+      "behaviorHint": "숨을 길게 내쉰 뒤 말속도가 눈에 띄게 느려진다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-3:deny",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "보증금은 정산이 끝나야 돌려주는 겁니다. 저는 항목이 남아 있어서 기다린 겁니다. 저도 공실비와 세금까지 떠안은 사람인데, 마치 일부러 붙잡은 것처럼 말하면 곤란합니다.",
+      "behaviorHint": "한숨 섞인 피해 호소로 문답을 넓힌다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-3:hedge",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "반환이 빨랐다고는 못 하겠지만, 미납 월세와 철거비, 시설 상태를 먼저 정리해야 했습니다. 그 과정에서 금액을 넉넉하게 잡은 건 안전하게 보려던 겁니다.",
+      "behaviorHint": "자신도 속았다는 말을 앞세워 책임 범위를 흐린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-3:partial",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "네, 반환이 명도 뒤 5주를 넘긴 건 맞습니다. 하지만 그때는 미납 월세와 철거비가 실제로 있었고, 저는 공실손실까지 한 번에 잡아야 한다고 생각했습니다.",
+      "behaviorHint": "일부 사실을 인정하되 손실 목록을 덧붙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-3:blame",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "지금 돌아보면, 다투지 않는 6천만원 부분은 먼저 떼어 반환할 수도 있었습니다. 저는 제가 더 손해 봤다는 마음에 공실손실과 세척비를 너무 넓게 걸었습니다.",
+      "behaviorHint": "느린 톤으로 사정을 길게 말하며 자기 피해를 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-3:confession",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "맞습니다. 실제 미정산 항목은 있었지만, 저는 다투지 않는 6천만원 부분도 바로 나누어 돌려주지 않았고 반환을 5주 넘게 끌었습니다. 공실손실과 에어컨 세척비도 근거보다 넓게 잡았습니다. 제 잘못이었습니다.",
+      "behaviorHint": "목이 잠긴 채 자기 소홀을 뒤늦게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-3:evidence_hit",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "반환이 늦은 건 맞습니다. 그때는 제가 손해를 너무 크게 보고 있다고 생각했습니다.",
+      "behaviorHint": "숨을 길게 내쉰 뒤 말속도가 눈에 띄게 느려진다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-1:deny",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "저도 계약서에는 8천만원으로 알고 있었고, 그 기준으로 세입자를 들인 사람입니다. 분할 송금이 있었다고 해서 제가 2천만원을 떼먹은 사람처럼 몰아가면 안 됩니다.",
+      "behaviorHint": "한숨 섞인 피해 호소로 문답을 넓힌다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-1:hedge",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "제 계좌에 먼저 들어온 건 6천만원이 맞습니다. 하지만 우석이가 나머지도 정리된다고 해서 전체 구조가 8천으로 맞는 줄 알았습니다.",
+      "behaviorHint": "자신도 속았다는 말을 앞세워 책임 범위를 흐린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-1:partial",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "네, 제 계좌로 실제 받은 돈은 6천만원뿐이었습니다. 다만 그때는 우석이가 나머지 2천만원도 계약 정리 안에서 움직인다고 해서 깊게 따지지 못했습니다.",
+      "behaviorHint": "일부 사실을 인정하되 손실 목록을 덧붙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-1:blame",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "솔직히 말하면 저는 6천만원만 받은 상태에서 서류가 8천만원으로 굳는 걸 막지 못했습니다. 우석이가 정리해 준다고 하니 그대로 믿고 넘긴 제 책임도 있습니다.",
+      "behaviorHint": "느린 톤으로 사정을 길게 말하며 자기 피해를 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-1:confession",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "맞습니다. 제가 실제로 받은 보증금은 6천만원뿐이었습니다. 나머지 2천만원이 우석 쪽으로 빠진 걸 제대로 확인하지 않은 채 계약서 8천만원 문구를 방치했고, 그 모순을 뒤늦게 제 방패로도 썼습니다. 제 잘못이었습니다.",
+      "behaviorHint": "목이 잠긴 채 자기 소홀을 뒤늦게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant09:beat:b:d-1:evidence_hit",
+      "caseId": "tenant-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "제 계좌로 받은 건 6천만원뿐입니다. 그 뒤를 제가 제대로 못 봤습니다.",
+      "behaviorHint": "숨을 길게 내쉰 뒤 말속도가 눈에 띄게 느려진다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    }
+  ]
+}
+

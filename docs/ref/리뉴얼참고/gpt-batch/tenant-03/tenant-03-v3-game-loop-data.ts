@@ -1,0 +1,1964 @@
+export const tenant03V3GameLoopData = {
+  "caseId": "tenant-03",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "특약과 단톡의 첫 문장",
+      "description": "계약 문구와 안심 메시지의 출처를 대조하는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "강서윤 씨, 이 단톡 기준으로 '보험은 거의 된다'는 문구를 처음 올린 사람이 누군지, 출처만 답하세요.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant03:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "특약에 적힌 당일 확인 순서를 보고도 왜 그날 바로 잔금 절차를 끝내지 않았습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant03:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "잔금 보류 통보가 단순 문의가 아니라 실제 일정 중단이었다는 점, 인정합니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant03:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "문태수 씨, 특약 어디에도 최신 담보 변동 통지 예외는 없습니다. 왜 추가 대출을 직접 다시 말하지 않았습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant03:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "이 단톡에서 보험 안심 문구가 나온 직후, 왜 집주인으로서 '확정은 아니다'라고 끊지 않았습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant03:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "계약서상 당일 확인 원칙을 중개사 설명으로 갈음한 적 없다고 지금도 말씀하십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant03:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "돈의 흐름과 최신 등기",
+      "description": "송금 기록과 최신 담보 자료로 책임의 실제 위치를 압박하는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "강서윤 씨, 이 거래기록상 약정일보다 이틀 늦은 분할 송금이 보입니다. 잔금 일부를 보류한 건 맞습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant03:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "등기와 상환예정서를 함께 보면 처음 본 말소 예정서가 최신본이 아니었습니다. 그럼에도 왜 태수 단독 계획으로 바로 단정했습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant03:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "180만원 송금 상대 명의가 한별 개인 계좌인 걸 보고도 왜 곧장 집주인 수령으로 판단했습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant03:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "문태수 씨, 추가 브리지대출 실행일이 잔금일 사흘 전입니다. 이 수치를 세입자에게 직접 다시 말했습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant03:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "180만원이 본인 계좌가 아닌 한별 개인 계좌로 들어간 걸, 나중에라도 확인했습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant03:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "특약과 최신 등기를 보면 집주인 확인 의무를 중개사에게 넘긴 셈인데, 부인하십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant03:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "녹음과 사무실 정산표",
+      "description": "안심 발언의 출처와 180만원 귀속을 최종 확정하는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "강서윤 씨, 통화 녹음을 들으면 첫 안심 표현은 한별에게서 나옵니다. 그래도 여전히 태수 단독 확답이라고 말하시겠습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant03:a:d-2:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "정산표가 나오면 실수령자가 한별이라는 점이 분명해집니다. 그때의 의심을 지금은 어떻게 정리합니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant03:a:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "지금까지 자료를 전부 놓고 보면 당일 확인 원칙이 양쪽 모두에게서 무너졌다는 점, 인정하십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant03:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "문태수 씨, 녹음 기준으로 보험 가능을 먼저 크게 말한 건 한별입니다. 그런데 왜 그 오해를 바로잡지 않았습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant03:b:d-2:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "정산표와 카드 결제 내역까지 있는데도 180만원 구조를 몰랐다고만 하시겠습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant03:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "계약서 특약, 최신 등기, 통화 흐름을 모두 보면 당일 확인 원칙 붕괴가 공동 실패라는 점 부인하십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant03:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "tenant03:a:d-1:unlock:s2:0",
+            "factText": "처음 본 말소 예정 확인서는 최신 브리지대출을 반영하지 않은 문서였다.",
+            "tags": [
+              "admission",
+              "context",
+              "act",
+              "threshold"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "loan": {
+                "exact": "추가 브리지대출과 최신 상환 잔액",
+                "neutral": "최신 채무 구조"
+              },
+              "document": {
+                "exact": "등기부등본과 브리지대출 상환예정 확인서",
+                "neutral": "관련 서류"
+              },
+              "time": {
+                "exact": "계약 직전~잔금 직전",
+                "period": "계약 직전~잔금 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant03:a:d-1:unlock:s3:0",
+            "factText": "서윤은 한별 설명을 태수 의사와 같은 것으로 받아들여 둘을 함께 의심했다.",
+            "tags": [
+              "responsibility",
+              "act",
+              "threshold"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "loan": {
+                "exact": "추가 브리지대출과 최신 상환 잔액",
+                "neutral": "최신 채무 구조"
+              },
+              "document": {
+                "exact": "등기부등본과 브리지대출 상환예정 확인서",
+                "neutral": "관련 서류"
+              },
+              "time": {
+                "exact": "계약 직전~잔금 직전",
+                "period": "계약 직전~잔금 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant03:a:d-1:unlock:s4:0",
+            "factText": "가족 차용금 압박 때문에 서윤은 태수의 침묵을 의도적 은폐로 해석했다.",
+            "tags": [
+              "fear",
+              "emotion",
+              "act",
+              "threshold"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "loan": {
+                "exact": "추가 브리지대출과 최신 상환 잔액",
+                "neutral": "최신 채무 구조"
+              },
+              "document": {
+                "exact": "등기부등본과 브리지대출 상환예정 확인서",
+                "neutral": "관련 서류"
+              },
+              "time": {
+                "exact": "계약 직전~잔금 직전",
+                "period": "계약 직전~잔금 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant03:a:d-1:unlock:s5:0",
+            "factText": "서윤은 태수를 단독 설계자로 단정한 판단은 수정했지만 최신 채무 설명 의무 위반은 유지한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "act",
+              "threshold"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "loan": {
+                "exact": "추가 브리지대출과 최신 상환 잔액",
+                "neutral": "최신 채무 구조"
+              },
+              "document": {
+                "exact": "등기부등본과 브리지대출 상환예정 확인서",
+                "neutral": "관련 서류"
+              },
+              "time": {
+                "exact": "계약 직전~잔금 직전",
+                "period": "계약 직전~잔금 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "tenant03:a:d-2:unlock:s2:0",
+            "factText": "단톡의 확정적 안심 문구는 한별이 먼저 썼고 서윤은 그 차이를 늦게 인정한다.",
+            "tags": [
+              "admission",
+              "context",
+              "quote",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              },
+              "quote": {
+                "exact": "보험은 거의 된다",
+                "neutral": "그 안심 표현"
+              },
+              "record": {
+                "exact": "단톡 캡처와 통화 녹음",
+                "neutral": "대화 기록"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant03:a:d-2:unlock:s3:0",
+            "factText": "서윤은 체면 때문에 '태수가 확답했다'는 식으로 출처를 단순화했다.",
+            "tags": [
+              "responsibility",
+              "quote",
+              "identity"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              },
+              "quote": {
+                "exact": "보험은 거의 된다",
+                "neutral": "그 안심 표현"
+              },
+              "record": {
+                "exact": "단톡 캡처와 통화 녹음",
+                "neutral": "대화 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant03:a:d-2:unlock:s4:0",
+            "factText": "서윤은 가족 돈 압박 탓에 안심받고 싶어서 문장 출처보다 결과를 붙잡았다.",
+            "tags": [
+              "fear",
+              "emotion",
+              "quote",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              },
+              "quote": {
+                "exact": "보험은 거의 된다",
+                "neutral": "그 안심 표현"
+              },
+              "record": {
+                "exact": "단톡 캡처와 통화 녹음",
+                "neutral": "대화 기록"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant03:a:d-2:unlock:s5:0",
+            "factText": "서윤은 안심 표현의 출처는 한별, 오해 방치 책임은 태수라고 분리해 말하기 시작한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "quote",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              },
+              "quote": {
+                "exact": "보험은 거의 된다",
+                "neutral": "그 안심 표현"
+              },
+              "record": {
+                "exact": "단톡 캡처와 통화 녹음",
+                "neutral": "대화 기록"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "tenant03:a:d-3:unlock:s2:0",
+            "factText": "180만원의 실제 수취 계좌가 한별 개인 명의였다는 점이 서윤 인식에 균열을 낸다.",
+            "tags": [
+              "admission",
+              "context",
+              "beneficiary",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "180만원",
+                "rounded": "180만원",
+                "neutral": "그 금액"
+              },
+              "account": {
+                "exact": "한별 개인 계좌",
+                "neutral": "개인 계좌"
+              },
+              "record": {
+                "exact": "송금 내역과 사무실 정산표",
+                "neutral": "정산 자료"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant03:a:d-3:unlock:s3:0",
+            "factText": "계약서에 없는 추가비용이어서 서윤은 귀속과 책임을 한 덩어리로 오해했다.",
+            "tags": [
+              "responsibility",
+              "beneficiary",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "180만원",
+                "rounded": "180만원",
+                "neutral": "그 금액"
+              },
+              "account": {
+                "exact": "한별 개인 계좌",
+                "neutral": "개인 계좌"
+              },
+              "record": {
+                "exact": "송금 내역과 사무실 정산표",
+                "neutral": "정산 자료"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant03:a:d-3:unlock:s4:0",
+            "factText": "개인 계좌 수납 공포가 커질수록 서윤은 수령자와 방치 책임을 구분하지 못했다.",
+            "tags": [
+              "fear",
+              "emotion",
+              "beneficiary",
+              "act"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "180만원",
+                "rounded": "180만원",
+                "neutral": "그 금액"
+              },
+              "account": {
+                "exact": "한별 개인 계좌",
+                "neutral": "개인 계좌"
+              },
+              "record": {
+                "exact": "송금 내역과 사무실 정산표",
+                "neutral": "정산 자료"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant03:a:d-3:unlock:s5:0",
+            "factText": "서윤은 실수령자는 한별이지만 비용 구조를 방치한 책임은 별도로 남는다고 정리한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "beneficiary",
+              "act"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "180만원",
+                "rounded": "180만원",
+                "neutral": "그 금액"
+              },
+              "account": {
+                "exact": "한별 개인 계좌",
+                "neutral": "개인 계좌"
+              },
+              "record": {
+                "exact": "송금 내역과 사무실 정산표",
+                "neutral": "정산 자료"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant03:a:d-4:unlock:s2:0",
+            "factText": "서윤은 약정일보다 이틀 뒤 분할 송금한 사실을 인정한다.",
+            "tags": [
+              "admission",
+              "context",
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "action": {
+                "exact": "잔금 일부 보류와 전입 지연",
+                "neutral": "일정 지연"
+              },
+              "time": {
+                "exact": "약정일보다 이틀 뒤",
+                "period": "이틀 보류 기간",
+                "neutral": "그 이틀"
+              },
+              "fear": {
+                "exact": "가족 차용금 압박",
+                "neutral": "가족 돈 압박"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant03:a:d-4:unlock:s3:0",
+            "factText": "서윤은 공개적 사기 의심 발언이 갈등과 일정 지연을 더 키웠음을 인식한다.",
+            "tags": [
+              "responsibility",
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "action": {
+                "exact": "잔금 일부 보류와 전입 지연",
+                "neutral": "일정 지연"
+              },
+              "time": {
+                "exact": "약정일보다 이틀 뒤",
+                "period": "이틀 보류 기간",
+                "neutral": "그 이틀"
+              },
+              "fear": {
+                "exact": "가족 차용금 압박",
+                "neutral": "가족 돈 압박"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant03:a:d-4:unlock:s4:0",
+            "factText": "가족 차용금과 사기 낙인 공포가 서윤의 송금 중단을 결정적으로 밀었다.",
+            "tags": [
+              "shame",
+              "emotion",
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "action": {
+                "exact": "잔금 일부 보류와 전입 지연",
+                "neutral": "일정 지연"
+              },
+              "time": {
+                "exact": "약정일보다 이틀 뒤",
+                "period": "이틀 보류 기간",
+                "neutral": "그 이틀"
+              },
+              "fear": {
+                "exact": "가족 차용금 압박",
+                "neutral": "가족 돈 압박"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant03:a:d-4:unlock:s5:0",
+            "factText": "서윤은 의심 사유와 일정 지연 책임을 분리해서 말할 수 있게 된다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "action": {
+                "exact": "잔금 일부 보류와 전입 지연",
+                "neutral": "일정 지연"
+              },
+              "time": {
+                "exact": "약정일보다 이틀 뒤",
+                "period": "이틀 보류 기간",
+                "neutral": "그 이틀"
+              },
+              "fear": {
+                "exact": "가족 차용금 압박",
+                "neutral": "가족 돈 압박"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant03:a:d-5:unlock:s2:0",
+            "factText": "서윤도 계약서 특약의 당일 확인 순서를 끝까지 실행하지 못했다.",
+            "tags": [
+              "admission",
+              "context",
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "당일 확인 후 잔금·전입 진행 원칙",
+                "neutral": "그 원칙"
+              },
+              "document": {
+                "exact": "계약서 특약과 최신 말소 자료",
+                "neutral": "확인 서류"
+              },
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant03:a:d-5:unlock:s3:0",
+            "factText": "서윤은 최신 확인 전 잔금을 멈춘 자신의 판단이 원칙 붕괴의 한 축임을 받아들인다.",
+            "tags": [
+              "responsibility",
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "당일 확인 후 잔금·전입 진행 원칙",
+                "neutral": "그 원칙"
+              },
+              "document": {
+                "exact": "계약서 특약과 최신 말소 자료",
+                "neutral": "확인 서류"
+              },
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant03:a:d-5:unlock:s4:0",
+            "factText": "서윤은 피해자 자리만 지키고 싶어 자기 몫을 늦게 인정했다.",
+            "tags": [
+              "shame",
+              "emotion",
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "rule": {
+                "exact": "당일 확인 후 잔금·전입 진행 원칙",
+                "neutral": "그 원칙"
+              },
+              "document": {
+                "exact": "계약서 특약과 최신 말소 자료",
+                "neutral": "확인 서류"
+              },
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant03:a:d-5:unlock:s5:0",
+            "factText": "서윤은 당일 확인 원칙 붕괴가 양측 공동 실패였다고 명시한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "당일 확인 후 잔금·전입 진행 원칙",
+                "neutral": "그 원칙"
+              },
+              "document": {
+                "exact": "계약서 특약과 최신 말소 자료",
+                "neutral": "확인 서류"
+              },
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "tenant03:b:d-1:unlock:s2:0",
+            "factText": "태수는 추가 브리지대출과 최신 잔액이 기존 설명보다 불리하다는 점을 알고도 축소했다.",
+            "tags": [
+              "admission",
+              "context",
+              "act",
+              "threshold"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "loan": {
+                "exact": "추가 브리지대출과 최신 상환 잔액",
+                "neutral": "최신 채무 구조"
+              },
+              "document": {
+                "exact": "등기부등본과 브리지대출 상환예정 확인서",
+                "neutral": "관련 서류"
+              },
+              "time": {
+                "exact": "계약 직전~잔금 직전",
+                "period": "계약 직전~잔금 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant03:b:d-1:unlock:s3:0",
+            "factText": "태수는 잔금이 멈출까 두려워 최신 수치 설명을 미뤘다.",
+            "tags": [
+              "responsibility",
+              "act",
+              "threshold"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "loan": {
+                "exact": "추가 브리지대출과 최신 상환 잔액",
+                "neutral": "최신 채무 구조"
+              },
+              "document": {
+                "exact": "등기부등본과 브리지대출 상환예정 확인서",
+                "neutral": "관련 서류"
+              },
+              "time": {
+                "exact": "계약 직전~잔금 직전",
+                "period": "계약 직전~잔금 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant03:b:d-1:unlock:s4:0",
+            "factText": "태수는 평판 추락과 상환 압박 때문에 한별 뒤에 숨었다.",
+            "tags": [
+              "shame",
+              "emotion",
+              "act",
+              "threshold"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "loan": {
+                "exact": "추가 브리지대출과 최신 상환 잔액",
+                "neutral": "최신 채무 구조"
+              },
+              "document": {
+                "exact": "등기부등본과 브리지대출 상환예정 확인서",
+                "neutral": "관련 서류"
+              },
+              "time": {
+                "exact": "계약 직전~잔금 직전",
+                "period": "계약 직전~잔금 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant03:b:d-1:unlock:s5:0",
+            "factText": "태수는 최신 채무 구조와 말소 순서를 직접 고지하지 않은 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "act",
+              "threshold"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "loan": {
+                "exact": "추가 브리지대출과 최신 상환 잔액",
+                "neutral": "최신 채무 구조"
+              },
+              "document": {
+                "exact": "등기부등본과 브리지대출 상환예정 확인서",
+                "neutral": "관련 서류"
+              },
+              "time": {
+                "exact": "계약 직전~잔금 직전",
+                "period": "계약 직전~잔금 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "tenant03:b:d-2:unlock:s2:0",
+            "factText": "보험 안심 표현의 시작이 한별이었다는 점을 태수도 인정한다.",
+            "tags": [
+              "admission",
+              "context",
+              "quote",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              },
+              "quote": {
+                "exact": "보험은 거의 된다",
+                "neutral": "그 안심 표현"
+              },
+              "record": {
+                "exact": "단톡 캡처와 통화 녹음",
+                "neutral": "대화 기록"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant03:b:d-2:unlock:s3:0",
+            "factText": "태수는 오해를 정정하지 않고 계약 성사를 위해 방치했다.",
+            "tags": [
+              "responsibility",
+              "quote",
+              "identity"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              },
+              "quote": {
+                "exact": "보험은 거의 된다",
+                "neutral": "그 안심 표현"
+              },
+              "record": {
+                "exact": "단톡 캡처와 통화 녹음",
+                "neutral": "대화 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant03:b:d-2:unlock:s4:0",
+            "factText": "태수는 피해자처럼 말하며 자신의 소극적 동조를 감췄다.",
+            "tags": [
+              "fear",
+              "emotion",
+              "quote",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              },
+              "quote": {
+                "exact": "보험은 거의 된다",
+                "neutral": "그 안심 표현"
+              },
+              "record": {
+                "exact": "단톡 캡처와 통화 녹음",
+                "neutral": "대화 기록"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant03:b:d-2:unlock:s5:0",
+            "factText": "태수는 출처는 한별, 방치 책임은 자신에게도 있다고 정리한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "quote",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              },
+              "quote": {
+                "exact": "보험은 거의 된다",
+                "neutral": "그 안심 표현"
+              },
+              "record": {
+                "exact": "단톡 캡처와 통화 녹음",
+                "neutral": "대화 기록"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "tenant03:b:d-3:unlock:s2:0",
+            "factText": "180만원은 태수 통장이 아니라 한별 개인 수납 구조로 흘러갔다.",
+            "tags": [
+              "admission",
+              "context",
+              "beneficiary",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "180만원",
+                "rounded": "180만원",
+                "neutral": "그 금액"
+              },
+              "account": {
+                "exact": "한별 개인 계좌",
+                "neutral": "개인 계좌"
+              },
+              "record": {
+                "exact": "송금 내역과 사무실 정산표",
+                "neutral": "정산 자료"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant03:b:d-3:unlock:s3:0",
+            "factText": "태수는 그 구조가 비정상적일 수 있음을 알면서도 계약 진행을 우선했다.",
+            "tags": [
+              "responsibility",
+              "beneficiary",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "180만원",
+                "rounded": "180만원",
+                "neutral": "그 금액"
+              },
+              "account": {
+                "exact": "한별 개인 계좌",
+                "neutral": "개인 계좌"
+              },
+              "record": {
+                "exact": "송금 내역과 사무실 정산표",
+                "neutral": "정산 자료"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant03:b:d-3:unlock:s4:0",
+            "factText": "태수는 공사비와 이자 압박 때문에 비용 흐름 검증을 미뤘다.",
+            "tags": [
+              "shame",
+              "emotion",
+              "beneficiary",
+              "act"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "180만원",
+                "rounded": "180만원",
+                "neutral": "그 금액"
+              },
+              "account": {
+                "exact": "한별 개인 계좌",
+                "neutral": "개인 계좌"
+              },
+              "record": {
+                "exact": "송금 내역과 사무실 정산표",
+                "neutral": "정산 자료"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant03:b:d-3:unlock:s5:0",
+            "factText": "태수는 실수령자가 한별이라도 방치 책임은 자신에게 남는다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "beneficiary",
+              "act"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "180만원",
+                "rounded": "180만원",
+                "neutral": "그 금액"
+              },
+              "account": {
+                "exact": "한별 개인 계좌",
+                "neutral": "개인 계좌"
+              },
+              "record": {
+                "exact": "송금 내역과 사무실 정산표",
+                "neutral": "정산 자료"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant03:b:d-4:unlock:s2:0",
+            "factText": "태수는 잔금 보류 사실은 유지하되 서윤 불안의 배경에 자신의 설명 부족이 있었음을 인정한다.",
+            "tags": [
+              "admission",
+              "context",
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "action": {
+                "exact": "잔금 일부 보류와 전입 지연",
+                "neutral": "일정 지연"
+              },
+              "time": {
+                "exact": "약정일보다 이틀 뒤",
+                "period": "이틀 보류 기간",
+                "neutral": "그 이틀"
+              },
+              "fear": {
+                "exact": "가족 차용금 압박",
+                "neutral": "가족 돈 압박"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant03:b:d-4:unlock:s3:0",
+            "factText": "태수는 상환 일정 압박 때문에 서윤 선택을 더 공격적으로 해석했다.",
+            "tags": [
+              "responsibility",
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "action": {
+                "exact": "잔금 일부 보류와 전입 지연",
+                "neutral": "일정 지연"
+              },
+              "time": {
+                "exact": "약정일보다 이틀 뒤",
+                "period": "이틀 보류 기간",
+                "neutral": "그 이틀"
+              },
+              "fear": {
+                "exact": "가족 차용금 압박",
+                "neutral": "가족 돈 압박"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant03:b:d-4:unlock:s4:0",
+            "factText": "태수는 가족 돈 압박을 뒤늦게 이해하지만 자신의 손실 감정도 동시에 남아 있다.",
+            "tags": [
+              "harm",
+              "emotion",
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "action": {
+                "exact": "잔금 일부 보류와 전입 지연",
+                "neutral": "일정 지연"
+              },
+              "time": {
+                "exact": "약정일보다 이틀 뒤",
+                "period": "이틀 보류 기간",
+                "neutral": "그 이틀"
+              },
+              "fear": {
+                "exact": "가족 차용금 압박",
+                "neutral": "가족 돈 압박"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant03:b:d-4:unlock:s5:0",
+            "factText": "태수는 지연 사실과 집주인 설명 책임을 함께 평가해야 한다고 정리한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "action": {
+                "exact": "잔금 일부 보류와 전입 지연",
+                "neutral": "일정 지연"
+              },
+              "time": {
+                "exact": "약정일보다 이틀 뒤",
+                "period": "이틀 보류 기간",
+                "neutral": "그 이틀"
+              },
+              "fear": {
+                "exact": "가족 차용금 압박",
+                "neutral": "가족 돈 압박"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant03:b:d-5:unlock:s2:0",
+            "factText": "태수는 집주인 확인 의무를 사실상 한별에게 넘겨버렸다.",
+            "tags": [
+              "admission",
+              "context",
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "당일 확인 후 잔금·전입 진행 원칙",
+                "neutral": "그 원칙"
+              },
+              "document": {
+                "exact": "계약서 특약과 최신 말소 자료",
+                "neutral": "확인 서류"
+              },
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant03:b:d-5:unlock:s3:0",
+            "factText": "태수는 세입자 중단만 탓하며 자기 몫을 축소했다.",
+            "tags": [
+              "responsibility",
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "당일 확인 후 잔금·전입 진행 원칙",
+                "neutral": "그 원칙"
+              },
+              "document": {
+                "exact": "계약서 특약과 최신 말소 자료",
+                "neutral": "확인 서류"
+              },
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant03:b:d-5:unlock:s4:0",
+            "factText": "전세사기 집주인 낙인 공포가 태수의 피해자 말투를 강화했다.",
+            "tags": [
+              "shame",
+              "emotion",
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "rule": {
+                "exact": "당일 확인 후 잔금·전입 진행 원칙",
+                "neutral": "그 원칙"
+              },
+              "document": {
+                "exact": "계약서 특약과 최신 말소 자료",
+                "neutral": "확인 서류"
+              },
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant03:b:d-5:unlock:s5:0",
+            "factText": "태수는 당일 확인 원칙 붕괴가 공동 실패였다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "당일 확인 후 잔금·전입 진행 원칙",
+                "neutral": "그 원칙"
+              },
+              "document": {
+                "exact": "계약서 특약과 최신 말소 자료",
+                "neutral": "확인 서류"
+              },
+              "person": {
+                "exact": "오한별",
+                "fullName": "오한별",
+                "judgeRef": "중개사 한별",
+                "neutral": "중개사"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "tenant03:contradiction:0",
+        "targetParty": "b",
+        "trigger": "문태수가 '최신 잔액은 큰 차이 없었다'고 말한 직후 e-4가 제시될 때",
+        "text": "기존 말소 예정 설명과 최신 상환표의 수치는 같지 않습니다. 집주인이 최신 잔액을 직접 다시 말하지 않았다는 점이 드러납니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      },
+      {
+        "id": "tenant03:contradiction:1",
+        "targetParty": "a",
+        "trigger": "강서윤이 '단순 확인 지연'이라고 축소하는 직후 e-3 분할 송금 기록이 제시될 때",
+        "text": "기록상 잔금 일부는 약정일보다 정확히 이틀 뒤에 들어갔습니다. 단순 문의가 아니라 실제 보류였다는 점이 확인됩니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-3"
+        ]
+      },
+      {
+        "id": "tenant03:contradiction:2",
+        "targetParty": "a",
+        "trigger": "강서윤이 '태수가 보험 확답을 했다'고 단정하는 직후 e-2와 e-5가 함께 검토될 때",
+        "text": "안심 표현의 첫 출처는 한별 쪽에 더 가깝고, 태수는 그 오해를 정정하지 않은 쪽에 가깝습니다. 출처와 방치 책임이 분리됩니다.",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-5"
+        ]
+      },
+      {
+        "id": "tenant03:contradiction:3",
+        "targetParty": "b",
+        "trigger": "문태수가 '180만원은 나와 무관하다'고만 반복하는 직후 e-6 정산표가 제시될 때",
+        "text": "실수령자가 태수 본인은 아니어도, 비정상적인 개인 수납 구조가 사무실 정산표에 남아 있습니다. '무관'과 '방치 책임 없음'은 같은 말이 아닙니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "tenant03:interjection:0",
+        "speaker": "judge",
+        "trigger": "보험 안심 발언의 출처가 흐려질 때",
+        "text": "길게 말하지 마십시오. 누가 먼저 어떤 표현을 썼는지만 답하십시오.",
+        "relatedDisputes": [
+          "d-2"
+        ]
+      },
+      {
+        "id": "tenant03:interjection:1",
+        "speaker": "a",
+        "trigger": "태수가 '큰 틀은 같았다'는 표현으로 최신 담보 차이를 축소할 때",
+        "text": "그 서류 기준 시점부터 말씀해 주세요. 최신본이 아니었잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant03:interjection:2",
+        "speaker": "b",
+        "trigger": "서윤의 잔금 보류만 반복 지적되고 태수의 상환 압박이 언급되지 않을 때",
+        "text": "저도 그날 죽을 맛이었습니다. 제 이자하고 상환 일정도 같이 보셔야죠.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "tenant03:outburst:a:0",
+        "party": "a",
+        "trigger": "가족 차용금 압박이 직접 언급될 때",
+        "text": "그 돈은 제 돈만 아니었습니다. 제가 왜 그날 버튼을 못 눌렀는지, 그건 좀 이해하셔야 합니다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant03:outburst:a:1",
+        "party": "a",
+        "trigger": "서윤의 초기 공개 비난이 지적될 때",
+        "text": "네, 제가 세게 말한 건 맞아요. 그런데 그 순간엔 정말 사기당하는 줄 알았습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "tenant03:outburst:b:0",
+        "party": "b",
+        "trigger": "전세사기 집주인 낙인이 직접 언급될 때",
+        "text": "하… 다 저를 사기꾼으로만 보니까 제가 더 숨었습니다. 그때 제 건물 전체가 무너질까 겁났어요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant03:outburst:b:1",
+        "party": "b",
+        "trigger": "180만원 방치 책임을 집요하게 추궁받을 때",
+        "text": "제 통장으로 안 왔다는 말만 한 건 맞습니다. 그래도 그때 자금이 막혀서 눈앞이 캄캄했습니다.",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "tenant03:transition:a:d-4:s0_s1",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "balance_hold_question",
+      "line": "완전히 멈춘 건 아니에요. 안전 확인 때문에 조금 조정한 거예요.",
+      "behaviorHint": "휴대폰 송금 화면을 켠 채 금액보다 시각부터 짚는다."
+    },
+    {
+      "id": "tenant03:transition:a:d-4:s1_s2",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "거래기록이 그렇게 찍혀 있으면, 네, 제가 이틀 보류한 건 맞습니다. 그때는 멈출 수밖에 없었어요.",
+      "behaviorHint": "계좌기록을 보자 어깨가 굳고 말끝이 짧아진다."
+    },
+    {
+      "id": "tenant03:transition:a:d-4:s2_s4",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_family_loan_pressure",
+      "line": "이모 돈까지 들어간 계약이라 제가 겁을 냈습니다. 그래서 송금 버튼을 못 눌렀어요.",
+      "behaviorHint": "시선을 내렸다가 가족 이야기가 나오자 숨을 길게 고른다."
+    },
+    {
+      "id": "tenant03:transition:a:d-4:s4_s5",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "transfer_timeline_reconstruction",
+      "line": "맞습니다. 저는 그 이틀을 직접 멈췄고 그 결과 전입도 늦췄습니다.",
+      "behaviorHint": "시간순서를 따라 말하다가 마지막에 단정적으로 책임을 인정한다."
+    },
+    {
+      "id": "tenant03:transition:a:d-2:s0_s1",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "insurance_assurance_question",
+      "line": "누가 먼저랄 것 없이 다 같은 뜻으로 들렸습니다. 적어도 태수 씨가 아니라고 하진 않았어요.",
+      "behaviorHint": "출처를 따져 묻는 어조지만 끝에서는 스스로도 확신을 조금 거둔다."
+    },
+    {
+      "id": "tenant03:transition:a:d-2:s1_s2",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "캡처 순서를 보면 한별 쪽 문장이 먼저였네요. 그래도 저는 집주인 승인처럼 들었습니다.",
+      "behaviorHint": "채팅 순서를 손가락으로 따라가며 문장 주어를 고쳐 말한다."
+    },
+    {
+      "id": "tenant03:transition:a:d-2:s2_s3",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "who_spoke_first_question",
+      "line": "처음 말은 한별이 한 게 맞습니다. 제가 그걸 태수 씨 말처럼 묶어 말했습니다.",
+      "behaviorHint": "정답을 확인받듯 짧게 고개를 끄덕인 뒤 문장을 정정한다."
+    },
+    {
+      "id": "tenant03:transition:a:d-2:s3_s5",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "녹음까지 들으면 더는 부정 못 하겠습니다. 출처를 섞어 말한 건 제 체면 지키기였습니다.",
+      "behaviorHint": "오디오가 끝난 뒤 잠시 침묵하고 천천히 인정한다."
+    },
+    {
+      "id": "tenant03:transition:a:d-5:s0_s1",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "same_day_check_question",
+      "line": "저는 원칙을 깨려던 게 아니라 지키려다 멈춘 거예요. 그래도 결과적으로 절차가 끊긴 건 맞습니다.",
+      "behaviorHint": "계약서 특약을 읽다가 두 번째 문장에서 목소리가 낮아진다."
+    },
+    {
+      "id": "tenant03:transition:a:d-5:s1_s2",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "특약을 다시 보면 제가 끝까지 실행한 건 아니네요. 그날 제 쪽 절차도 멈췄습니다.",
+      "behaviorHint": "서류를 들여다보다가 마지막 문장에서 시선을 떼지 못한다."
+    },
+    {
+      "id": "tenant03:transition:a:d-5:s2_s3",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_not_wait_for_latest_registry_question",
+      "line": "최신 등기를 다 보기 전까지 못 움직이겠다고 제가 결정했습니다. 그 순간 저도 원칙을 흔든 겁니다.",
+      "behaviorHint": "숨을 들이마신 뒤 스스로 결정했다는 표현을 또렷하게 끊는다."
+    },
+    {
+      "id": "tenant03:transition:a:d-5:s3_s5",
+      "caseId": "tenant-03",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "맞습니다. 그 원칙은 태수 씨만이 아니라 저도 무너뜨렸습니다.",
+      "behaviorHint": "상대를 보지 못하다가 마지막 단어에서 겨우 눈을 맞춘다."
+    },
+    {
+      "id": "tenant03:transition:b:d-1:s0_s1",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "bridge_loan_question",
+      "line": "저도 그 대출은 잔금으로 정리된다고만 봤어요. 세부 잔액은 한별이 정리하는 줄 알았습니다.",
+      "behaviorHint": "손을 펴 보이며 설명 책임을 중개사 쪽으로 밀어낸다."
+    },
+    {
+      "id": "tenant03:transition:b:d-1:s1_s2",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "이 서류면 추가 브리지대출이 있었던 건 부인 못 하겠네요. 제가 심각성을 낮게 본 겁니다.",
+      "behaviorHint": "최신 확인서를 보고 말끝이 흐려지며 한숨이 섞인다."
+    },
+    {
+      "id": "tenant03:transition:b:d-1:s2_s3",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "latest_balance_followup",
+      "line": "최신 잔액을 다시 말했어야 했는데 계약 깨질까 미뤘습니다. 그건 제 판단 미스예요.",
+      "behaviorHint": "변명처럼 시작했다가 마지막에서만 짧게 책임을 인정한다."
+    },
+    {
+      "id": "tenant03:transition:b:d-1:s3_s5",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "한별 뒤에 숨은 것까지 포함해 결국 제가 설명 의무를 져버린 겁니다.",
+      "behaviorHint": "어깨를 떨구고 더 이상 숫자를 줄이지 않은 채 말한다."
+    },
+    {
+      "id": "tenant03:transition:b:d-3:s0_s1",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "safety_fee_question",
+      "line": "제 돈은 아니지만 그런 돈이 붙는다는 얘기는 들었습니다. 세부 수납은 중개사 사무실이 하는 줄 알았어요.",
+      "behaviorHint": "되묻던 말투가 조금 느려지고 손동작이 작아진다."
+    },
+    {
+      "id": "tenant03:transition:b:d-3:s1_s2",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "제 통장으로 안 온 건 맞아도, 이 송금내역이면 제가 구조를 따져 묻지 않은 건 인정해야겠네요.",
+      "behaviorHint": "입금 상대 이름을 보자마자 시선을 피한다."
+    },
+    {
+      "id": "tenant03:transition:b:d-3:s2_s4",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_cashflow_gap",
+      "line": "그때 이자랑 공사비가 급해서 추가비용 흐름을 세게 못 끊었습니다. 솔직히 눈앞이 급했습니다.",
+      "behaviorHint": "한숨을 길게 뱉고 처음으로 자금 압박을 길게 늘어놓는다."
+    },
+    {
+      "id": "tenant03:transition:b:d-3:s4_s5",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "정산표까지 나오면 더는 숨길 수 없네요. 실수령자는 한별이지만 방치 책임은 제 겁니다.",
+      "behaviorHint": "정산표를 바라보며 목이 잠긴 채 두 문장을 분리해서 말한다."
+    },
+    {
+      "id": "tenant03:transition:b:d-5:s0_s1",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "same_day_rule_question",
+      "line": "절차를 준비한 건 맞지만 마지막에 멈춘 건 세입자 쪽이라 생각했습니다. 제가 직접 다 챙겼다고는 못 하겠네요.",
+      "behaviorHint": "반문으로 시작했다가 두 번째 문장에서 힘이 빠진다."
+    },
+    {
+      "id": "tenant03:transition:b:d-5:s1_s2",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "특약을 보면 최신 말소 확인을 제가 직접 세워야 했네요. 그걸 한별에게 너무 넘겼습니다.",
+      "behaviorHint": "특약 문구를 읽는 동안 손가락이 멈춰 있다."
+    },
+    {
+      "id": "tenant03:transition:b:d-5:s2_s3",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "broker_reference",
+      "line": "맞아요, 저는 중개사 뒤에 숨었습니다. 집주인 확인 의무를 제 손에서 비워 둔 겁니다.",
+      "behaviorHint": "'중개사'라는 단어를 낮게 반복한 뒤 체념한 표정으로 고개를 숙인다."
+    },
+    {
+      "id": "tenant03:transition:b:d-5:s3_s5",
+      "caseId": "tenant-03",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 그날 원칙은 둘 다 무너뜨렸습니다. 세입자 중단만 탓한 건 제 체면이었습니다.",
+      "behaviorHint": "피해자 톤을 걷고 마지막 문장을 짧게 끊는다."
+    }
+  ]
+}
+

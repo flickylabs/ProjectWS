@@ -1,0 +1,1367 @@
+{
+  "caseId": "neighbor-01",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "복도 촬영과 누수 원인 분리 카드",
+      "description": "사적 촬영의 범위와 누수 직접 원인을 같은 장면으로 묶어도 되는지 가른다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "정한결 씨, 관리사무소를 거치지 않고 개인 휴대폰을 세운 이유가 무엇입니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor01:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "점검 보고서가 세대 직접 원인을 적지 않는데도 왜 주연 세대라고 단정했습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor01:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "복도 장면과 천장 누수를 한 원인으로 묶은 근거를, 추정이 아닌 사실만으로 설명해 보십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor01:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "이주연 씨, 이 새벽 소리가 고의적 발망치가 아니라는 설명을 시간대와 동선으로만 말해 보십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor01:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "기사 출입과 제습기 가동이 있었다면, 왜 아래층은 그 맥락을 듣지 못한 채 소리만 감당해야 했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor01:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "그 밤 바로 설명하지 못하게 만든 가장 큰 두려움이 무엇이었습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor01:b:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "복도 동선과 건물 하자 카드",
+      "description": "CCTV 동선과 공용부 보수 자료로 오해와 실제 책임의 경계를 세운다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "정한결 씨, 옥상 우수관 막힘 사진과 보수 영수증을 보고도 사람 원인을 앞세운 이유가 남습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor01:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "CCTV와 기사 동선까지 보인 뒤에도, 복도 장면 하나로 촬영 범위를 정당화할 수 있다고 보십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor01:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "가족 피해 불안이 크더라도, 왜 공식 절차보다 직접 확인이 먼저였는지 감정까지 포함해 답하십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor01:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "이주연 씨, CCTV 기준으로 제습기와 통, 젖은 발판이 잠깐이 아니라는 점을 부정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor01:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "관리사무소에는 문의하고도 아래층에는 늦게 알린 사이, 무엇이 가장 먼저였습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor01:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "민폐 이웃으로 보일까 두려워 사과만 먼저 꺼냈다면, 그 감정이 공지를 늦춘 핵심입니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor01:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "선통보 약속 파기 카드",
+      "description": "민원 기록과 단체방 캡처로 누가 약속을 먼저 깼는지, 왜 공개 갈등이 커졌는지 드러낸다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "정한결 씨, 이 단체방 글이 경고였다는 말과 공개 지목이라는 사실을 어떻게 함께 설명하시겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor01:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "지난 갈등 뒤 관리사무소 선통보를 약속하고도, 왜 그 약속을 먼저 접었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor01:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "무시당한다는 감각이 올라왔을 때, 사실 확인보다 반응을 끌어내고 싶었던 마음이 있었습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor01:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "이주연 씨, 민원 접수 시각과 문자 시각 차이가 31시간인데도 '조금 늦었다'는 표현을 유지하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor01:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "관리사무소 선통보 약속을 알면서도 첫 점검 시간을 넘길 때까지 아래층 설명을 미룬 이유를 한 문장으로 답하십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor01:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "낙인 두려움 때문에 설명보다 회피가 먼저였다는 점을 지금은 인정하십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor01:b:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "neighbor01:a:d-1:unlock:s2:0",
+            "factText": "한결은 7월 12일 새벽 휴대폰을 두 차례 세워 두었고, 화면에는 이주연 현관문과 제습기 위치가 함께 잡혔다.",
+            "tags": [
+              "admission",
+              "privacy",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "이주연",
+                "fullName": "이주연",
+                "judgeRef": "윗집",
+                "neutral": "상대방"
+              },
+              "time": {
+                "exact": "7월 12일 00시 48분 무렵",
+                "neutral": "그때",
+                "dateExact": "7월 12일",
+                "period": "문제의 새벽"
+              },
+              "count": {
+                "exact": "두 차례",
+                "neutral": "그 횟수",
+                "rounded": "2회"
+              },
+              "place": {
+                "exact": "공용복도와 이주연 현관 앞",
+                "neutral": "그 복도"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor01:a:d-1:unlock:s3:0",
+            "factText": "한결은 복도의 통과 소리, 물자국을 하나로 묶어 개인 촬영을 스스로 정당화했다.",
+            "tags": [
+              "self_justification",
+              "context",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "7월 12일 00시 48분 무렵",
+                "neutral": "그때",
+                "dateExact": "7월 12일",
+                "period": "문제의 새벽"
+              },
+              "place": {
+                "exact": "공용복도와 이주연 현관 앞",
+                "neutral": "그 복도"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor01:a:d-1:unlock:s4:0",
+            "factText": "한결은 딸 수면과 누수 불안을 이유로 공식 절차보다 직접 확인을 앞세웠다.",
+            "tags": [
+              "fear",
+              "motive",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "7월 12일 00시 48분 무렵",
+                "neutral": "그때",
+                "dateExact": "7월 12일",
+                "period": "문제의 새벽"
+              },
+              "person": {
+                "exact": "이주연",
+                "fullName": "이주연",
+                "judgeRef": "윗집",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor01:a:d-1:unlock:s5:0",
+            "factText": "한결은 공용복도 촬영이 사생활 경계를 넘었다고 인정하고 관리사무소 절차로 돌렸어야 했다고 시인한다.",
+            "tags": [
+              "admission",
+              "privacy",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "place": {
+                "exact": "공용복도와 이주연 현관 앞",
+                "neutral": "그 복도"
+              },
+              "person": {
+                "exact": "이주연",
+                "fullName": "이주연",
+                "judgeRef": "윗집",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "neighbor01:a:d-3:unlock:s2:0",
+            "factText": "관리사무소 기록이 나오자 한결도 주연 세대만 직접 원인이라고 단정할 근거가 약했다는 점을 인정하기 시작한다.",
+            "tags": [
+              "admission",
+              "evidence",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                "neutral": "그 점검 자료"
+              },
+              "person": {
+                "exact": "이주연",
+                "fullName": "이주연",
+                "judgeRef": "윗집",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor01:a:d-3:unlock:s3:0",
+            "factText": "한결은 복도 장면과 천장 누수를 한 문장으로 묶어 인과를 성급히 만든 부분이 있음을 드러낸다.",
+            "tags": [
+              "context",
+              "self_justification",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "장마 기간",
+                "neutral": "그 시기",
+                "period": "장마철"
+              },
+              "evidence": {
+                "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                "neutral": "그 점검 자료"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor01:a:d-3:unlock:s4:0",
+            "factText": "피해가 계속될까 두려워 책임 대상을 빨리 정하려던 심리가 한결 판단을 밀어올렸다.",
+            "tags": [
+              "fear",
+              "motive",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "장마 기간",
+                "neutral": "그 시기",
+                "period": "장마철"
+              },
+              "person": {
+                "exact": "이주연",
+                "fullName": "이주연",
+                "judgeRef": "윗집",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor01:a:d-3:unlock:s5:0",
+            "factText": "직접 원인은 장마로 막힌 공용 우수관과 외벽 실리콘 틈이며, 한결의 세대 특정은 오판이었다.",
+            "tags": [
+              "admission",
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "cause": {
+                "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                "neutral": "그 건물 원인"
+              },
+              "evidence": {
+                "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                "neutral": "그 점검 자료"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor01:a:d-5:unlock:s2:0",
+            "factText": "한결은 504호를 지목한 단체방 글을 올렸고, 그로써 선통보 원칙의 예외를 스스로 만들었다.",
+            "tags": [
+              "admission",
+              "rule",
+              "relationship"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "post": {
+                "exact": "'504호에서 또 내려온다'고 적은 단체방 글",
+                "neutral": "그 공개 글"
+              },
+              "rule": {
+                "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                "neutral": "그 선통보 원칙"
+              },
+              "person": {
+                "exact": "이주연",
+                "fullName": "이주연",
+                "judgeRef": "윗집",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor01:a:d-5:unlock:s3:0",
+            "factText": "한결은 아무 설명이 없었다는 감정 때문에 공개 채널로 반응을 끌어내려 했음을 드러낸다.",
+            "tags": [
+              "motive",
+              "relationship",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                "neutral": "그 선통보 원칙"
+              },
+              "time": {
+                "exact": "첫 민원 뒤 31시간과 야간 점검 직후",
+                "neutral": "그 시점",
+                "period": "문제의 밤과 다음 날"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor01:a:d-5:unlock:s4:0",
+            "factText": "무시당한다는 감각이 올라오자 한결은 관리사무소를 거치지 않고 즉시 공개 글로 튀었다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "post": {
+                "exact": "'504호에서 또 내려온다'고 적은 단체방 글",
+                "neutral": "그 공개 글"
+              },
+              "time": {
+                "exact": "첫 민원 뒤 31시간과 야간 점검 직후",
+                "neutral": "그 시점",
+                "period": "문제의 밤과 다음 날"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor01:a:d-5:unlock:s5:0",
+            "factText": "한결은 선통보 약속을 깨고 공개 지목으로 갈등을 키운 점을 인정한다.",
+            "tags": [
+              "admission",
+              "rule",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                "neutral": "그 선통보 원칙"
+              },
+              "post": {
+                "exact": "'504호에서 또 내려온다'고 적은 단체방 글",
+                "neutral": "그 공개 글"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "neighbor01:b:d-2:unlock:s2:0",
+            "factText": "주연은 제습기, 물받이 통, 젖은 발판을 복도에 둔 사실 자체는 인정한다.",
+            "tags": [
+              "admission",
+              "act",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "item": {
+                "exact": "제습기, 물받이 통, 젖은 발판",
+                "neutral": "그 물건들"
+              },
+              "duration": {
+                "exact": "이틀가량",
+                "neutral": "그 기간",
+                "rounded": "2일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor01:b:d-2:unlock:s3:0",
+            "factText": "주연은 관리사무소 문의 뒤에도 아래층 직접 문자를 31시간 늦췄다는 시간 축을 피하지 못한다.",
+            "tags": [
+              "timeline",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "31시간 뒤 문자",
+                "neutral": "그 안내 시점",
+                "period": "첫 민원 뒤"
+              },
+              "person": {
+                "exact": "정한결",
+                "fullName": "정한결",
+                "judgeRef": "아래층",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor01:b:d-2:unlock:s4:0",
+            "factText": "민폐 이웃으로 보일까 두려운 마음이 주연의 늦은 공지와 회피를 키웠다.",
+            "tags": [
+              "fear",
+              "shame",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "이주연",
+                "fullName": "이주연",
+                "judgeRef": "본인",
+                "neutral": "저"
+              },
+              "time": {
+                "exact": "31시간 뒤 문자",
+                "neutral": "그 안내 시점",
+                "period": "첫 민원 뒤"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor01:b:d-2:unlock:s5:0",
+            "factText": "주연은 공용복도 적치와 늦은 공지가 모두 자신의 책임임을 시인한다.",
+            "tags": [
+              "admission",
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "item": {
+                "exact": "제습기, 물받이 통, 젖은 발판",
+                "neutral": "그 물건들"
+              },
+              "duration": {
+                "exact": "이틀가량",
+                "neutral": "그 기간",
+                "rounded": "2일"
+              },
+              "time": {
+                "exact": "31시간 뒤 문자",
+                "neutral": "그 안내 시점",
+                "period": "첫 민원 뒤"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "neighbor01:b:d-4:unlock:s2:0",
+            "factText": "문제의 새벽 소리는 23시 58분 기사 출입과 제습기 진동이 겹친 결과라는 설명이 나온다.",
+            "tags": [
+              "timeline",
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "7월 12일 23시 58분 기사 출입",
+                "neutral": "그 시각",
+                "dateExact": "7월 12일",
+                "period": "문제의 새벽"
+              },
+              "source": {
+                "exact": "허가된 야간 점검 기사 출입과 제습기 진동",
+                "neutral": "그 소리 원인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor01:b:d-4:unlock:s3:0",
+            "factText": "주연은 누수 대응 때문에 소음이 생겼다고 설명하며 고의성을 부인하지만, 사전 설명 부재는 남는다.",
+            "tags": [
+              "self_justification",
+              "counter",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "7월 12일 23시 58분 기사 출입",
+                "neutral": "그 시각",
+                "dateExact": "7월 12일",
+                "period": "문제의 새벽"
+              },
+              "source": {
+                "exact": "허가된 야간 점검 기사 출입과 제습기 진동",
+                "neutral": "그 소리 원인"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor01:b:d-4:unlock:s4:0",
+            "factText": "발망치 이웃으로 낙인찍힐까 두려워 주연은 사실 설명보다 사과와 회피를 앞세웠다.",
+            "tags": [
+              "fear",
+              "emotion",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "이주연",
+                "fullName": "이주연",
+                "judgeRef": "본인",
+                "neutral": "저"
+              },
+              "time": {
+                "exact": "7월 12일 23시 58분 기사 출입",
+                "neutral": "그 시각",
+                "dateExact": "7월 12일",
+                "period": "문제의 새벽"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor01:b:d-4:unlock:s5:0",
+            "factText": "고의적 발망치가 아니라 허가된 야간 점검과 제습기 진동이 겹친 소리였음이 정리된다.",
+            "tags": [
+              "admission",
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "source": {
+                "exact": "허가된 야간 점검 기사 출입과 제습기 진동",
+                "neutral": "그 소리 원인"
+              },
+              "time": {
+                "exact": "7월 12일 23시 58분 기사 출입",
+                "neutral": "그 시각",
+                "dateExact": "7월 12일",
+                "period": "문제의 새벽"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor01:b:d-5:unlock:s2:0",
+            "factText": "주연은 첫 점검 시간을 넘긴 뒤에야 아래층에 상황을 설명했다는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "timeline",
+              "rule"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "첫 점검 시간을 넘긴 뒤와 첫 민원 뒤 31시간",
+                "neutral": "그 시점",
+                "period": "문제의 밤과 다음 날"
+              },
+              "rule": {
+                "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                "neutral": "그 선통보 원칙"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor01:b:d-5:unlock:s3:0",
+            "factText": "관리실 문의를 해 두고도 직접 통보를 미룬 데에는 낙인 두려움이 작동했다.",
+            "tags": [
+              "motive",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                "neutral": "그 선통보 원칙"
+              },
+              "time": {
+                "exact": "첫 점검 시간을 넘긴 뒤와 첫 민원 뒤 31시간",
+                "neutral": "그 시점",
+                "period": "문제의 밤과 다음 날"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor01:b:d-5:unlock:s4:0",
+            "factText": "관계가 깨질까 겁나서 사과부터 깔고 핵심 설명을 뒤로 미루는 주연의 회피 패턴이 드러난다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "이주연",
+                "fullName": "이주연",
+                "judgeRef": "본인",
+                "neutral": "저"
+              },
+              "rule": {
+                "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                "neutral": "그 선통보 원칙"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor01:b:d-5:unlock:s5:0",
+            "factText": "주연은 선통보 약속을 지키지 못했고, 그 회피가 분쟁을 더 키웠다고 인정한다.",
+            "tags": [
+              "admission",
+              "rule",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                "neutral": "그 선통보 원칙"
+              },
+              "time": {
+                "exact": "첫 점검 시간을 넘긴 뒤와 첫 민원 뒤 31시간",
+                "neutral": "그 시점",
+                "period": "문제의 밤과 다음 날"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "neighbor01:contradiction:0",
+        "targetParty": "a",
+        "trigger": "한결이 d-3에서 여전히 주연 세대 직접 원인을 단정하면서 e-2 또는 e-4가 제시될 때",
+        "text": "점검 보고서와 보수 영수증은 공용 우수관·외벽 틈을 가리키는데, 왜 아직도 세대 직접 원인으로 묶습니까?",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-4"
+        ]
+      },
+      {
+        "id": "neighbor01:contradiction:1",
+        "targetParty": "a",
+        "trigger": "한결이 d-1 촬영을 단순 확인이라고 축소하면서 e-1 원본 길이와 각도가 문제 될 때",
+        "text": "43초 영상과 두 차례 촬영을 '잠깐 확인'이라 부르면서도 현관 식별은 왜 피하지 못했습니까?",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "neighbor01:contradiction:2",
+        "targetParty": "b",
+        "trigger": "주연이 d-2를 잠깐이라고 줄이면서 e-3와 e-5가 함께 제시될 때",
+        "text": "복도 물건은 이틀가량 남고 안내는 31시간 뒤였는데, 무엇이 여전히 '잠깐'입니까?",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-5"
+        ]
+      },
+      {
+        "id": "neighbor01:contradiction:3",
+        "targetParty": "b",
+        "trigger": "주연이 d-4 소음을 흐리면서 e-3 출입대장이 제시될 때",
+        "text": "23시 58분 기사 출입 기록이 있는데도 왜 아래층엔 그 새벽 설명 한 번이 없었습니까?",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-3"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "neighbor01:interjection:0",
+        "speaker": "a",
+        "trigger": "주연이 누수 책임을 식물·포장 이야기로 빼돌릴 때",
+        "text": "아니, 결론부터 말씀하세요. 그 밤에 복도에 뭐가 있었는지만요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      },
+      {
+        "id": "neighbor01:interjection:1",
+        "speaker": "b",
+        "trigger": "한결이 호수와 날짜를 반복하며 몰아붙일 때",
+        "text": "죄송한데 자꾸 504호라고 크게 말씀하시면 더 대화가 안 돼요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "neighbor01:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 누수 직접 원인과 생활태도 비난을 섞어 말할 때",
+        "text": "누수 원인과 복도·공지 문제를 분리해서 답하십시오. 한 질문에 한 사실만 다루겠습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "neighbor01:outburst:a:0",
+        "party": "a",
+        "trigger": "d-3에서 건물 하자 인정 직전, 가족 피해가 언급될 때",
+        "text": "저는 밤새 물받이 놓고 아이 재우느라 버텼습니다. 누가 봐도 급한 상황이었어요.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ]
+      },
+      {
+        "id": "neighbor01:outburst:a:1",
+        "party": "a",
+        "trigger": "d-5에서 단체방 공개 지목을 추궁받을 때",
+        "text": "계속 참다가 쓴 겁니다. 매번 관리실만 믿고 기다리면 저희 집 피해는 누가 책임집니까.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      },
+      {
+        "id": "neighbor01:outburst:b:0",
+        "party": "b",
+        "trigger": "d-2에서 적치와 늦은 공지가 함께 제시될 때",
+        "text": "죄송하다고 먼저 말한 이유가 있어요. 복도에 꺼내놓은 순간부터 제가 민폐처럼 보일까 겁났거든요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "neighbor01:outburst:b:1",
+        "party": "b",
+        "trigger": "d-4에서 발망치 의심이 반복될 때",
+        "text": "저를 일부러 쿵쿵대는 사람처럼 보지 말아 주세요. 그날은 진짜 누수 때문에 정신없었습니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "neighbor01:transition:a:d-1:s0_s1",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "corridor_filming_question",
+      "line": "촬영이란 말은 과합니다. 길게 둔 것도 아니고 잠깐 확인한 겁니다.",
+      "behaviorHint": "답변 길이를 스스로 줄이며 방어적으로 눈을 가늘게 뜬다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-1:s1_s2",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "현관이 같이 들어간 건 맞네요. 그래도 누수 확인 때문에 찍은 겁니다.",
+      "behaviorHint": "증거를 보고 짧게 인정한 뒤 곧바로 목적을 덧붙인다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-1:s2_s3",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "filming_scope_question",
+      "line": "문 앞에 통이 놓여 있었으니 그쪽을 볼 수밖에 없었습니다.",
+      "behaviorHint": "복도 장면을 손짓으로 재현하며 정당화를 시도한다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-1:s3_s5",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "privacy_concern_followup",
+      "line": "네, 결국 제 사정으로 개인 촬영을 정당화한 셈입니다. 그건 선을 넘었습니다.",
+      "behaviorHint": "어깨를 한 번 떨군 뒤 시선을 내린다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-3:s0_s1",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "leak_source_question",
+      "line": "그때는 윗집 문제로 볼 수밖에 없었습니다만, 단정이라고까지 말하긴 어렵네요.",
+      "behaviorHint": "문장 첫머리는 강하게, 끝은 흐리게 내린다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-3:s1_s2",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "주연 씨 공지가 늦었던 건 사실이지만, 그게 직접 원인 증명은 아니었군요.",
+      "behaviorHint": "주장을 한 단계 접으며 입술을 다문다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-3:s2_s3",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "shared_pipe_followup",
+      "line": "공용관 가능성도 있었는데 제가 사람 쪽으로 너무 빨리 묶었습니다.",
+      "behaviorHint": "손바닥으로 허공을 가르며 연결을 스스로 끊어낸다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-3:s3_s5",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_or_e-4_presented",
+      "line": "보고서와 보수 기록까지 보면 직접 원인은 건물 하자였습니다.",
+      "behaviorHint": "문서를 내려다본 채 짧게 결론을 낸다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-5:s0_s1",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "management_first_reminder",
+      "line": "순서가 완벽하진 않았습니다. 다만 상황이 급해서 메시지가 먼저 나갔습니다.",
+      "behaviorHint": "턱을 괴다 말고 급히 손을 내린다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-5:s1_s2",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "제가 504호를 지목한 건 맞습니다.",
+      "behaviorHint": "호수 표현에서 잠깐 숨을 멈춘다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-5:s2_s3",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "prior_promise_question",
+      "line": "지난 약속을 알면서도 반응을 얻으려 공개 채널로 갔습니다.",
+      "behaviorHint": "목소리가 낮아지지만 변명은 남긴다."
+    },
+    {
+      "id": "neighbor01:transition:a:d-5:s3_s5",
+      "caseId": "neighbor-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 저도 선통보 원칙을 깼고 갈등을 키웠습니다.",
+      "behaviorHint": "말끝을 짧게 끊으며 고개를 숙인다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-2:s0_s1",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "corridor_items_question",
+      "line": "죄송하긴 한데 잠깐 빼둔 거였어요. 오래 둘 생각은 아니었습니다.",
+      "behaviorHint": "사과를 먼저 던지고 말끝을 가늘게 줄인다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-2:s1_s2",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "네, 제습기랑 통, 발판 둔 건 맞습니다.",
+      "behaviorHint": "짧게 인정하고 손끝으로 바닥을 짚는다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-2:s2_s3",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "notice_timing_question",
+      "line": "문자까지 늦어진 건 포장과 기사 대응이 겹쳤기 때문이에요.",
+      "behaviorHint": "동선을 나열하며 시선을 좌우로 흩뜨린다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-2:s3_s5",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "31시간 차이가 이렇게 남으면 제가 늦게 알린 걸 인정해야죠.",
+      "behaviorHint": "기록을 본 뒤 체념한 듯 숨을 내쉰다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-4:s0_s1",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "noise_source_question",
+      "line": "죄송하긴 한데 그 소리가 발망치는 아니었어요. 기계음이 섞인 거였어요.",
+      "behaviorHint": "사과와 부인을 한 호흡에 붙여 말한다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-4:s1_s2",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "고의는 아니고, 그 시간 제습기랑 다른 소리가 겹친 건 맞아요.",
+      "behaviorHint": "시간부터 꺼내며 수습하려 한다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-4:s2_s4",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_repair_anxiety",
+      "line": "윗집으로 찍힐까 겁나서 설명보다 사과부터 했어요.",
+      "behaviorHint": "어깨를 움츠리고 손을 가슴 쪽으로 끌어당긴다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-4:s4_s5",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-3_or_responsibility_question",
+      "line": "출입기록까지 보면 기사 소리와 제습기 진동이 겹친 거라고 말씀드리는 게 맞습니다.",
+      "behaviorHint": "체념한 표정으로 또박또박 말한다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-5:s0_s1",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "management_first_reminder",
+      "line": "일부러 숨긴 건 아니에요. 다만 직접 설명이 늦었습니다.",
+      "behaviorHint": "고개를 살짝 저으며 방어한다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-5:s1_s2",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "missed_inspection_question",
+      "line": "첫 점검 시간을 놓친 건 맞아요.",
+      "behaviorHint": "짧게 인정하고 바로 입술을 문다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-5:s2_s3",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-5_presented",
+      "line": "민원은 먼저 넣고도 문자를 늦게 보낸 건, 제가 겁나서 미뤘기 때문입니다.",
+      "behaviorHint": "'겁나서'라는 단어에서 목소리가 작아진다."
+    },
+    {
+      "id": "neighbor01:transition:b:d-5:s3_s5",
+      "caseId": "neighbor-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "저도 선통보 약속을 지키지 못했고 그 책임을 피하긴 어렵습니다.",
+      "behaviorHint": "양손을 모은 채 시선을 내린다."
+    }
+  ]
+}

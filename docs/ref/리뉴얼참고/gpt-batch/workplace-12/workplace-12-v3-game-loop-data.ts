@@ -1,0 +1,1183 @@
+export const workplace12V3GameLoopData = {
+  "caseId": "workplace-12",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "감시 범위와 유휴 패턴",
+      "description": "공지 원문과 원본 로그를 묶어 감시 범위와 실제 공백을 동시에 흔드는 카드입니다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "백지훈 씨, 공식 지침에 없는 웹캠 확인을 왜 출석 확인으로만 설명하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-12:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "관리자 설정에서 캡처 주기를 높인 결정이 정식 승인 없는 개인 판단이었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-12:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "응답 공백 관리가 필요했다 해도 집 안 배경까지 보이게 한 이유는 무엇입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-12:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "오수민 씨, 유휴 로그와 VPN 기록이 겹친 시간대에 실제로 자리를 비운 적이 있었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-12:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "반복 미세 이동 패턴은 자연 입력과 다르게 보이는데, 왜 상태를 유지했습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-12:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "그 시간대의 공백을 감시 압박과 별개로 숨기려 한 건 아닌가요?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-12:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "요약 PDF와 원본 Export 대조",
+      "description": "발췌 PDF와 raw export를 맞붙여 편집 제출과 방어 심리를 드러내는 카드입니다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "백지훈 씨, HR에 낸 PDF에서 정상 응답 구간보다 유휴 구간을 먼저 붙인 이유가 뭡니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-12:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "raw export에 남은 웹캠 지시 문맥을 왜 제출본에서 뺐습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-12:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "원본 대신 요약본으로 HR 민원을 방어하려 했던 건 인정하십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-12:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "오수민 씨, 그 PDF가 편집됐다고 느낀 뒤에도 왜 정식 workload 조정 요청보다 버티기를 택했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-12:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "백지훈 씨 감시가 과했다는 점과 별개로, 본인도 편법을 멈추지 않았다는 건 맞습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-12:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "억울함 때문에 본인 책임을 늦게 본 건 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-12:b:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "편집 캡처와 늦은 절차",
+      "description": "편집 보고와 HR 코칭 지연을 묶어 양측의 편법 구조를 추궁하는 카드입니다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "백지훈 씨, 지연 티켓이 쌓일 때 정식 코칭 계획 입력보다 사적 감시를 먼저 강화한 이유가 뭡니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-12:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "오수민 씨 우회행동을 봤다면 왜 workload 조정과 공식 경고를 더 미뤘습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-12:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "관리자로서 절차보다 통제를 앞세운 책임을 인정하십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-12:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "오수민 씨, 캡처를 보내기 직전에 캘린더 블록을 바꾼 이유가 뭡니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-12:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "동료에게 대신 답변을 부탁하면서 보고 화면까지 꾸민 건 사실입니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-12:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "게으르다는 낙인이 두려워 화면을 꾸몄다는 점을 이제는 인정합니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-12:b:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-12:a:d-1:unlock:s2:0",
+            "factText": "웹캠 확인이 단순 로그인 확인이 아니라 집 안 배경이 보이도록 요청된 적이 있었다",
+            "tags": [
+              "context",
+              "privacy"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "method": {
+                "exact": "배경이 보이게 한 웹캠 호출",
+                "neutral": "웹캠 확인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "contextualize"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-12:a:d-1:unlock:s3:0",
+            "factText": "정식 정책 변경 승인 없이 지훈이 관리자 설정에서 캡처 주기를 직접 높였다",
+            "tags": [
+              "act",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "process": {
+                "exact": "관리자 설정 변경",
+                "neutral": "설정 조정"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-12:a:d-1:unlock:s4:0",
+            "factText": "팀 성과 압박을 이유로 직원 사생활 경계를 스스로 무시했다는 자각",
+            "tags": [
+              "emotion",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "pressure": {
+                "exact": "팀 성과 압박",
+                "neutral": "성과 압박"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-12:a:d-1:unlock:s5:0",
+            "factText": "얼굴과 거실 배경이 찍히는 확인까지 요구한 건 관리자가 아닌 감시자로 행동한 것이었다",
+            "tags": [
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "place": {
+                "exact": "얼굴과 거실 배경",
+                "neutral": "집 안 배경"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-12:a:d-3:unlock:s2:0",
+            "factText": "PDF에 정상 응답 구간보다 유휴 구간을 먼저 배치해 인상을 강하게 만들었다",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "doc": {
+                "exact": "유휴 구간 우선 배치",
+                "neutral": "순서 편집"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "contextualize"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-12:a:d-3:unlock:s3:0",
+            "factText": "웹캠 지시 문장이 들어간 raw export 구간은 의도적으로 HR 제출본에서 뺐다",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "source": {
+                "exact": "웹캠 지시 문맥",
+                "neutral": "빠진 문맥"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-12:a:d-3:unlock:s4:0",
+            "factText": "HR 민원 대응에서 제 운영 판단을 보호하려고 원본 대신 요약본을 내밀었다",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "motive": {
+                "exact": "HR 민원 방어",
+                "neutral": "민원 방어"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-12:a:d-3:unlock:s5:0",
+            "factText": "원본 대조를 피한 선택 자체가 오수민 씨에게 불리한 편집 제출이었다",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "effect": {
+                "exact": "원본 대조 회피",
+                "neutral": "원본 비교 회피"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-12:a:d-5:unlock:s2:0",
+            "factText": "정식 코칭 계획 입력보다 사적 모니터링을 먼저 강화했다",
+            "tags": [
+              "rule",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "process": {
+                "exact": "개선계획 입력 지연",
+                "neutral": "정식 절차 지연"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "contextualize"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-12:a:d-5:unlock:s3:0",
+            "factText": "수민의 우회행동을 핑계로 공식 workload 조정 논의를 미뤘다",
+            "tags": [
+              "act",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "process": {
+                "exact": "workload 조정 논의 미룸",
+                "neutral": "공식 논의 지연"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-12:a:d-5:unlock:s4:0",
+            "factText": "관리자인 제가 절차보다 통제 욕구를 먼저 택했다는 자각",
+            "tags": [
+              "emotion",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "motive": {
+                "exact": "통제 욕구",
+                "neutral": "통제 심리"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-12:a:d-5:unlock:s5:0",
+            "factText": "재택 규칙을 지켜야 할 관리자인 제가 편법 구조를 키운 책임이 절반 이상이다",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "role": {
+                "exact": "운영 매니저 책임",
+                "neutral": "관리 책임"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-12:b:d-2:unlock:s2:0",
+            "factText": "장시간 자리를 비운 동안 상태를 살아 있는 것처럼 보이게 두었다",
+            "tags": [
+              "context",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "behavior": {
+                "exact": "장시간 자리 비움",
+                "neutral": "자리 비움"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "contextualize"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-12:b:d-2:unlock:s3:0",
+            "factText": "지글러를 켠 건 알림만 늦게 본 게 아니라 공백을 숨기려는 선택이었다",
+            "tags": [
+              "act",
+              "motive"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "device": {
+                "exact": "지글러 사용",
+                "neutral": "우회 장치"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-12:b:d-2:unlock:s4:0",
+            "factText": "집안일과 감시 압박이 겹쳐도 결국 근무시간을 속였다는 자각",
+            "tags": [
+              "emotion",
+              "responsibility"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "motive": {
+                "exact": "감시 압박 속 은폐",
+                "neutral": "은폐 판단"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-12:b:d-2:unlock:s5:0",
+            "factText": "제가 실제 근무 공백을 숨기려고 온라인 상태를 가장한 건 제 책임이다",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "responsibility": {
+                "exact": "온라인 상태 가장",
+                "neutral": "상태 가장"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-12:b:d-4:unlock:s2:0",
+            "factText": "보고용 캡처를 보내기 직전에 캘린더 블록을 급히 수정했다",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "item": {
+                "exact": "캘린더 블록 급수정",
+                "neutral": "캡처 직전 수정"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "contextualize"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-12:b:d-4:unlock:s3:0",
+            "factText": "동료에게 커버를 부탁한 DM과 편집 캡처를 함께 써서 빈 시간을 가렸다",
+            "tags": [
+              "act",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "msg": {
+                "exact": "동료 커버 DM",
+                "neutral": "커버 요청"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-12:b:d-4:unlock:s4:0",
+            "factText": "게으르다는 낙인이 두려워 화면을 꾸몄다는 감정",
+            "tags": [
+              "emotion",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "근무 태만 낙인 두려움",
+                "neutral": "낙인 두려움"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-12:b:d-4:unlock:s5:0",
+            "factText": "자리를 지킨 것처럼 꾸민 보고는 변명할 여지 없이 제 잘못이다",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "trust": {
+                "exact": "꾸민 보고",
+                "neutral": "편집 보고"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-12:b:d-5:unlock:s2:0",
+            "factText": "정식 workload 조정 요청 대신 상태 편집과 우회로로 시간을 벌었다",
+            "tags": [
+              "rule",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "process": {
+                "exact": "정식 workload 조정 요청 누락",
+                "neutral": "공식 요청 누락"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "contextualize"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-12:b:d-5:unlock:s3:0",
+            "factText": "지훈 씨의 감시를 탓하면서도 제 편법을 멈추지 않았다",
+            "tags": [
+              "relationship",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "relationship": {
+                "exact": "감시 탓과 편법 지속",
+                "neutral": "상호 악순환"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-12:b:d-5:unlock:s4:0",
+            "factText": "억울함에 매달리느라 제 책임을 늦게 봤다는 자각",
+            "tags": [
+              "emotion",
+              "admission"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "emotion": {
+                "exact": "억울함에 매달림",
+                "neutral": "억울함"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-12:b:d-5:unlock:s5:0",
+            "factText": "재택 규칙을 무너뜨린 편집 캡처와 우회 행동은 저도 같은 무게로 책임이 있다",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "method": {
+                "exact": "편집 캡처와 우회 행동",
+                "neutral": "편법"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "workplace-12:contradiction:0",
+        "targetParty": "a",
+        "trigger": "백지훈이 웹캠 확인을 단순 출석 확인이라고 줄여 말한 직후 e-1 또는 e-4가 제시될 때",
+        "text": "출석 확인이라고 했지만, 공지와 설정 로그에는 배경이 보이는 웹캠 호출과 잦은 캡처 주기가 남아 있습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-4"
+        ]
+      },
+      {
+        "id": "workplace-12:contradiction:1",
+        "targetParty": "a",
+        "trigger": "백지훈이 HR PDF를 중립 요약이라고 주장한 뒤 e-3과 e-4가 함께 검토될 때",
+        "text": "중립 요약이라면 왜 raw export의 정상 응답 구간과 웹캠 지시 문맥이 제출본에서 빠졌습니까?",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-4"
+        ]
+      },
+      {
+        "id": "workplace-12:contradiction:2",
+        "targetParty": "b",
+        "trigger": "오수민이 잠깐 비운 것뿐이라고 축소한 직후 e-2가 제시될 때",
+        "text": "잠깐 비운 수준이라기에는 유휴시간, VPN 유지, 반복 커서 패턴이 같은 구간에 길게 겹칩니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "workplace-12:contradiction:3",
+        "targetParty": "b",
+        "trigger": "오수민이 캡처는 정리였을 뿐이라고 말한 뒤 e-5의 메타데이터와 DM 맥락이 드러날 때",
+        "text": "정리였다면 왜 캡처 직전 캘린더 블록이 수정되고, 같은 시각 동료에게 커버 요청이 이어졌습니까?",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "workplace-12:interjection:0",
+        "speaker": "b",
+        "trigger": "백지훈이 감시를 출석 확인이라고만 반복할 때",
+        "text": "그 문장 그대로 읽어드릴까요? 출석 확인이라고 하기엔 웹캠이랑 화면까지 다 적혀 있었잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-12:interjection:1",
+        "speaker": "a",
+        "trigger": "오수민이 모든 공백을 표현 문제라고 돌릴 때",
+        "text": "표현 문제가 아니라 로그와 응답 시간이 실제로 흔들린 것입니다. 업무 결과가 비었습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-12:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 d-5에서 서로 탓만 하며 말을 겹칠 때",
+        "text": "지금은 상대를 끊지 말고, 정식 절차를 왜 먼저 쓰지 않았는지 각자 한 문장으로 답하십시오.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "workplace-12:outburst:a:0",
+        "party": "a",
+        "trigger": "백지훈이 사생활 침범이라는 표현을 세 번 이상 연속으로 들은 뒤",
+        "text": "제가 팀을 지키려고 숫자를 붙잡은 건데, 감시자 취급만 받으면 관리자 판단은 전부 악의였다는 말입니까.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-12:outburst:a:1",
+        "party": "a",
+        "trigger": "오수민의 편법과 자신의 편집 제출이 동시에 지적될 때",
+        "text": "실제 공백은 있었는데 저만 조작자로 남는 건 받아들이기 어렵습니다. 그렇다고 제 제출이 옳았다는 뜻은 아닙니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-12:outburst:b:0",
+        "party": "b",
+        "trigger": "오수민이 집 안 배경 노출 장면을 다시 설명해야 할 때",
+        "text": "집 안까지 보여 주면서 일하라고 한 순간부터 저는 이미 사람보다 화면이었어요.",
+        "relatedDisputes": [
+          "d-1"
+        ]
+      },
+      {
+        "id": "workplace-12:outburst:b:1",
+        "party": "b",
+        "trigger": "마우스 지글러와 편집 캡처가 함께 제시돼 거짓이 겹쳐 보일 때",
+        "text": "네, 제가 숨겼어요. 그런데 그 전에 숨지 않으면 버틸 수 없게 만든 압박도 있었다고 말하고 싶어요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "workplace-12:transition:a:d-1:s0_s1",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "monitoring_scope_question",
+      "line": "SLA가 흔들리면 운영 공백부터 막아야 한다고 본 것입니다. 그래서 출석 확인을 먼저 말씀드린 겁니다.",
+      "behaviorHint": "숫자를 세듯 손가락을 접으며 절차 대신 지표를 먼저 말한다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-1:s1_s2",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "공지 문구가 넓게 읽히는 건 보입니다. 다만 그때는 응답 공백을 줄이려는 예외 관리라고 판단했습니다.",
+      "behaviorHint": "공지 문구를 읽고 잠깐 눈썹을 찌푸린다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-1:s2_s3",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "webcam_background_question",
+      "line": "배경까지 보인 확인이 부담이었을 수 있다는 점은 압니다. 다만 오수민 씨 쪽 공백이 누적된 것도 사실이었습니다.",
+      "behaviorHint": "말끝이 짧아지고 상대를 잠깐 쳐다본다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-1:s3_s5",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_or_responsibility_question",
+      "line": "e-4까지 보면 더 줄여 말할 수 없습니다. 제가 웹캠과 화면 캡처를 관리 범위 밖으로 쓴 건 제 책임입니다.",
+      "behaviorHint": "메모하던 손을 멈추고 고개를 작게 숙인다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-3:s0_s1",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "hr_pdf_question",
+      "line": "HR이 먼저 상황을 보길 원해 핵심만 정리했다고 생각했습니다. 원본 전체를 바로 붙이지 않은 건 사실입니다.",
+      "behaviorHint": "문서 모서리를 맞추며 설명한다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-3:s1_s2",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "PDF가 발췌본이라는 점은 부인하지 않겠습니다. 다만 당시엔 SLA와 응답 지연을 먼저 보여 주려 했습니다.",
+      "behaviorHint": "서류를 다시 넘겨 보며 속도를 늦춘다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-3:s2_s4",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_raw_export",
+      "line": "원본을 같이 내면 제 감시 방식까지 드러난다는 걸 알고 있었습니다. 그래서 요약본 뒤에 숨은 측면이 있습니다.",
+      "behaviorHint": "목소리가 낮아지고 시선이 문서 아래로 떨어진다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-3:s4_s5",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-4_or_crop_question",
+      "line": "결국 저는 오수민 씨에게 불리한 편집본을 낸 것입니다. 제 잘못이고 제출 책임도 제게 있습니다.",
+      "behaviorHint": "숨을 길게 내쉰 뒤 정면을 보고 인정한다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-5:s0_s1",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "formal_procedure_question",
+      "line": "정식 절차를 버리려던 건 아니었습니다. 다만 운영 공백이 커서 임시 대응을 먼저 택했습니다.",
+      "behaviorHint": "의자를 고쳐 앉고 말끝을 다소 단정하게 끊는다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-5:s1_s2",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "HR 기록을 보니 절차가 늦어진 건 분명합니다. 그 사이 제가 감시를 먼저 강화한 것도 사실입니다.",
+      "behaviorHint": "서류를 보다가 짧게 고개를 끄덕인다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-5:s2_s4",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "mutual_responsibility_question",
+      "line": "오수민 씨 편법만 탓할 수는 없다는 걸 압니다. 관리자인 제가 절차보다 통제를 먼저 택했습니다.",
+      "behaviorHint": "손깍지를 풀고 솔직히 말하려는 자세로 몸을 앞으로 기울인다."
+    },
+    {
+      "id": "workplace-12:transition:a:d-5:s4_s5",
+      "caseId": "workplace-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "formal_duty_question",
+      "line": "정식 개선 절차 대신 사적 감시를 먼저 택한 건 제 잘못입니다. 관리 책임을 인정합니다.",
+      "behaviorHint": "말을 마친 뒤 한 박자 늦게 고개를 숙인다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-2:s0_s1",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "idle_log_question",
+      "line": "제가 잠깐 비운 거는 있었어요. 그런데 그걸 전부 근태 가장으로 묶는 건 너무 빠르다고 느꼈어요.",
+      "behaviorHint": "손을 빠르게 움직이며 억울함을 먼저 드러낸다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-2:s1_s2",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "로그가 그렇게 남은 건 보이네요. 다만 그때 저는 계속 감시받는 느낌이라 공백을 크게 보이고 싶지 않았어요.",
+      "behaviorHint": "말이 빨라지다가 끝에서만 작게 떨린다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-2:s2_s3",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "mouse_jiggler_question",
+      "line": "네, 상태를 유지하려고 한 건 맞아요. 그렇다고 그 선택이 그냥 나온 건 아니라고 말하고 싶어요.",
+      "behaviorHint": "눈을 피했다가 다시 정면을 본다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-2:s3_s5",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "결국 제가 온라인 상태를 가장한 건 제 책임이에요. 제 잘못이라고 인정할게요.",
+      "behaviorHint": "입술을 깨문 뒤 짧고 단호하게 끊는다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-4:s0_s1",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "status_screenshot_question",
+      "line": "캡처를 조금 손본 건 맞아요. 그런데 그걸 바로 조작으로만 부르면 너무 무섭게 느껴졌어요.",
+      "behaviorHint": "목소리를 높였다가 마지막 단어에서만 낮춘다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-4:s1_s2",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "캡처 직전에 일정을 만진 건 사실이에요. 그때는 들키면 바로 낙인찍힐 것 같았어요.",
+      "behaviorHint": "손끝으로 허공에 직사각형을 그리는 버릇이 나온다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-4:s2_s4",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "small_admission_about_home_disruption",
+      "line": "집안 사정이 있었던 건 맞지만, 화면을 꾸민 제 마음도 이제는 부정 못 하겠어요. 너무 창피했어요.",
+      "behaviorHint": "눈가에 힘이 풀리고 숨을 들이마시는 소리가 커진다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-4:s4_s5",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "why_edit_calendar_question",
+      "line": "결국 자리를 지킨 것처럼 보이게 꾸민 건 제 잘못이에요. 보고를 편집한 책임을 인정해요.",
+      "behaviorHint": "고개를 숙인 채 마지막 문장만 또렷하게 말한다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-5:s0_s1",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "formal_request_question",
+      "line": "정식으로 말하지 못한 건 맞아요. 이미 감시가 먼저 들어오고 있어서 입을 열기가 더 어려웠어요.",
+      "behaviorHint": "팔짱을 풀고 손을 비비며 불편함을 드러낸다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-5:s1_s2",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "HR 기록까지 보면 제가 공식 요청을 미룬 건 사실이네요. 그 사이 편집 캡처와 우회로로 버틴 것도 맞아요.",
+      "behaviorHint": "기록을 보는 순간 말 속도가 잠깐 느려진다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-5:s2_s4",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "mutual_procedure_question",
+      "line": "백지훈 씨 감시만 탓하면서 제 책임을 늦게 본 것도 사실이에요. 억울함에 기대서 버틴 면이 있어요.",
+      "behaviorHint": "목소리가 낮아지며 감정이 새어 나온다."
+    },
+    {
+      "id": "workplace-12:transition:b:d-5:s4_s5",
+      "caseId": "workplace-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "equal_responsibility_question",
+      "line": "정식 절차 대신 편집 캡처와 우회 수단으로 버틴 건 제 잘못이에요. 저도 같은 무게로 책임질게요.",
+      "behaviorHint": "말끝에서 고개를 숙이고 손을 내려놓는다."
+    }
+  ]
+}

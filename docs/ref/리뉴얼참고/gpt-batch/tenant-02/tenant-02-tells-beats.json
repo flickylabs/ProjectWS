@@ -1,0 +1,576 @@
+{
+  "caseId": "tenant-02",
+  "executableTells": {
+    "a": [
+      {
+        "id": "tenant02:a:tell:screenshot_strike",
+        "appliesWhen": [
+          "lying",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "캡처",
+          "그 장면",
+          "그때 이미"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "자신에게 유리한 캡처를 먼저 꺼내며 상대가 다른 맥락을 말하려는 순간 말을 끊는다."
+      },
+      {
+        "id": "tenant02:a:tell:interruption_ramp",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "잠깐만요",
+          "아니",
+          "그게 아니라"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "억울해지면 질문 끝을 기다리지 않고 도중에 받아치며 목소리 크기가 한 단계씩 올라간다."
+      },
+      {
+        "id": "tenant02:a:tell:locked_door_repetition",
+        "appliesWhen": [
+          "cornered",
+          "shame",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "안 된다고",
+          "제가 분명",
+          "허락 안"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "코너에 몰리면 '제가 안 된다고 했잖아요'라는 문장을 표현만 바꿔 반복한다."
+      }
+    ],
+    "b": [
+      {
+        "id": "tenant02:b:tell:sacrifice_rollcall",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "민원",
+          "기사 일정",
+          "제가 다"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "on_trigger_only",
+        "originalPattern": "불리해지면 그동안 자신이 처리한 민원과 공사 일정을 길게 열거해 본론을 흐린다."
+      },
+      {
+        "id": "tenant02:b:tell:blame_loop",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "협조만 했어도",
+          "그때만",
+          "세입자가"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "질문을 받으면 결국 '협조만 했어도 안 이랬다'는 말로 되돌아와 책임을 다시 세입자에게 건넨다."
+      },
+      {
+        "id": "tenant02:b:tell:wounded_tone",
+        "appliesWhen": [
+          "emotional",
+          "shame",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "제가 얼마나",
+          "참 답답했습니다",
+          "그것도 상처입니다"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "억울함을 강조할 때 말끝을 길게 늘이며 먼저 상처받은 사람처럼 호흡을 만든다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "tenant02:beat:a:d-2:deny",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "그건 제 생활 습관 탓으로 몰아가는 거죠. 곰팡이는 처음부터 천장 쪽에서 번졌고, 제 환기 문제로 시작된 건 아닙니다.",
+      "behaviorHint": "턱을 들고 빠르게 반박하며 손으로 천장 방향을 가리킨다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-2:hedge",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "장비 때문에 창을 오래 못 열었던 건 맞아도, 그게 1차 원인이라는 건 너무 단정입니다. 먼저 새기 시작한 건 배관 쪽 흔적이었어요.",
+      "behaviorHint": "말을 몰아치다가 마지막 문장에서 속도를 늦춘다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-2:partial",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "배관 문제가 먼저였다는 건 기록으로 보이네요. 다만 제가 집 안을 바로 비워 두지 못해서 기사 접근이 불편했던 건 있습니다.",
+      "behaviorHint": "시선을 잠깐 피하고 손을 모았다가 다시 올려다본다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-2:blame",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "제가 괜히 버틴 게 아니라 장비가 젖을까 봐 그랬습니다. 집 상태를 이렇게 만든 쪽이 먼저 있는데 왜 저만 생활 탓을 듣습니까.",
+      "behaviorHint": "목소리가 높아지며 분노와 해명이 한 문장에 섞인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-2:confession",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "1차 원인은 공용배관 연결부 누수였고, 제 적치와 신고 지연은 악화 요인이었습니다. 장비 지키겠다고 버틴 판단이 결과적으로 피해를 키운 건 인정합니다.",
+      "behaviorHint": "어깨를 내리고 짧게 숨을 고른 뒤 또박또박 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-2:evidence_hit",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "진단서까지 나오면 더는 생활 탓만 할 수 없죠. 배관이 먼저였다는 건 인정하되, 제가 왜 장비를 못 치웠는지도 같이 봐 주셔야 합니다.",
+      "behaviorHint": "서류를 본 뒤 입술을 깨물고 말끝을 낮춘다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "tenant02:beat:a:d-4:deny",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "제가 수리를 막았다는 표현은 과합니다. 무단으로 들어온 것 같다는 의심이 생기니까 확인 없는 방문을 거절한 거예요.",
+      "behaviorHint": "즉시 끼어들 듯 답하며 손바닥을 앞으로 내민다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-4:hedge",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "이틀 내내 무조건 안 된다고만 한 건 아닙니다. 누가 언제 들어오는지 분명히 해 달라고 했던 거죠.",
+      "behaviorHint": "짧게 한숨을 쉬고 단어를 세게 끊는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-4:partial",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "네, 그 이틀은 기사 방문을 전면 거부했습니다. 다만 그 직전에 합의도 없이 집 안 사진이 돌았으니 제가 예민해질 수밖에 없었습니다.",
+      "behaviorHint": "고개를 끄덕여 일부는 인정하지만 바로 반박 자세로 돌아선다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-4:blame",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "일정이 밀린 건 사실인데, 그 불신의 원인을 만든 건 집주인 쪽입니다. 먼저 선을 넘지 않았으면 제가 문을 걸어 잠글 이유도 없었어요.",
+      "behaviorHint": "말끝마다 손가락으로 상대를 짚듯 흔든다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-4:confession",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "제가 이틀간 협조를 멈춰 곰팡이 제거 일정이 한 번 밀린 건 맞습니다. 겁이 앞섰고 체면도 세웠지만, 그 지연 책임은 제가 더 큽니다.",
+      "behaviorHint": "마지막 문장에서 시선을 내리며 목소리가 가라앉는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-4:evidence_hit",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "재방문 수수료까지 찍혀 있으면 제가 버틴 시간이 실제 비용으로 이어진 건 부정 못 하겠습니다. 그래도 그 전에 왜 제가 문을 닫았는지는 같이 봐야 합니다.",
+      "behaviorHint": "영수증을 보고 표정이 굳고, 뒤 문장에서 억울함이 다시 올라온다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "tenant02:beat:a:d-5:deny",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "긴급 조항이 있다고 해서 제 동의도 없이 들어와도 된다는 뜻은 아니잖아요. 저는 그 문구를 그렇게 받아들인 적 없습니다.",
+      "behaviorHint": "계약서를 손으로 두드리며 단호하게 끊어 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-5:hedge",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "급하면 연락 후 확인 정도는 논의할 수 있어도, 허락도 없이 촬영하고 저장하는 것까지 열어 둔 조항은 아니었습니다.",
+      "behaviorHint": "문장 앞은 빠르게, 뒤는 또렷하게 강조한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-5:partial",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "긴급 하자면 1회 확인 자체는 계약상 열려 있었던 건 맞습니다. 대신 즉시 통지와 촬영자료 고지가 붙는다는 점까지 같이 봐야죠.",
+      "behaviorHint": "마지못해 인정하듯 입술을 다물었다가 다시 설명한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-5:blame",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "제가 조항을 더 좁게 해석한 건 맞아도, 그걸 빌미로 반복 촬영과 날짜 위장까지 덮을 수는 없습니다. 선을 넘은 쪽이 먼저예요.",
+      "behaviorHint": "팔짱을 끼었다 풀며 분노를 눌러 담는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-5:confession",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "저도 긴급출입 조항을 너무 제 쪽 안전만 생각하며 해석했습니다. 하지만 허용 범위가 1회 확인과 즉시 통지라는 점은 분명하고, 그 밖의 촬영 보관과 날짜 위장은 조항 밖입니다. 제 잘못이었습니다.",
+      "behaviorHint": "단호함과 체념이 섞인 목소리로 계약 문구를 짚는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:a:d-5:evidence_hit",
+      "caseId": "tenant-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "특약 원문을 보면 확인과 보관 고지가 분리돼 있네요. 그러면 제 해석도 전부 맞진 않았지만, 상대 해석은 더 과했다는 게 분명합니다.",
+      "behaviorHint": "서류를 다시 읽으며 말의 속도를 줄인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-1"
+    },
+    {
+      "id": "tenant02:beat:b:d-1:deny",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "무단 출입이라니요, 그때는 누수가 번질까 봐 긴급 확인을 한 겁니다. 집주인 입장에서 손 놓고 있을 수는 없었지요.",
+      "behaviorHint": "양손을 벌려 억울함을 먼저 호소한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-1:hedge",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "봄에 급하면 빈집일 때 키로 볼 수도 있다고 서로 말이 오갔습니다. 저는 그 취지 안에서 잠깐 본다고 이해했습니다.",
+      "behaviorHint": "문장 앞부분을 길게 끌며 정당화를 깐다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-1:partial",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "합의된 점검일 전에 먼저 들어간 건 맞습니다. 다만 장마 전에 상황을 봐야 한다는 압박이 너무 컸습니다.",
+      "behaviorHint": "시선을 비껴 두고 손가락으로 무릎을 두드린다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-1:blame",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "제가 먼저 본 건 잘못일 수 있어도, 세입자가 협조만 했어도 이런 식으로까지 안 갔습니다. 연락이 막히니 집주인은 더 조급해질 수밖에 없지 않겠습니까.",
+      "behaviorHint": "한숨을 길게 뱉고 마지막을 되묻는 어조로 올린다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-1:confession",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "네, 저는 합의일 이틀 전에 마스터키로 들어가 주방과 거실을 찍었습니다. 급했다는 사정은 있어도 사전 동의 없이 출입한 사실 자체는 인정합니다.",
+      "behaviorHint": "어깨가 처지고 목이 잠긴 채 짧게 시인한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-1:evidence_hit",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "대화 시각과 원본 사진 날짜가 같이 맞물리면 제가 먼저 들어간 건 더 숨길 수 없겠네요. 그때 누수가 퍼질까 겁이 나서 선을 넘었습니다.",
+      "behaviorHint": "증거를 본 뒤 입술을 말아 넣고 고개를 떨군다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "tenant02:beat:b:d-3:deny",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "사진 시간을 바꿨다는 건 사실이 아닙니다. 제가 낸 건 보이는 그대로의 캡처였어요.",
+      "behaviorHint": "휴대폰을 움켜쥐고 말끝을 짧게 자른다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-3:hedge",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "원본 시간하고 갤러리에서 보이는 표시는 다를 수도 있지요. 그걸 조작이라고까지 하시면 저는 너무 억울합니다.",
+      "behaviorHint": "말끝을 늘이며 자신이 피해자인 듯 호흡을 만든다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-3:partial",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "캡처본 표시 시각이 원본 촬영일과 다르게 보일 수는 있습니다. 분쟁용으로 정리하다가 합의일 기준 화면을 잡은 건 제가 맞습니다.",
+      "behaviorHint": "이마를 문지르며 일부만 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-3:blame",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "원본 파일을 그대로 내면 될 일을 복잡하게 만든 건 제 실수입니다만, 세입자 쪽이 처음부터 저를 거짓말쟁이로 몰아붙이니 방어적으로 정리한 겁니다.",
+      "behaviorHint": "자책과 원망을 한 문장에 섞어 길게 늘어놓는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-3:confession",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "제가 낸 타임스탬프 표시는 원본 그대로가 아니었습니다. 합의된 점검일에 맞춰 보이도록 캡처를 만든 건 제 책임입니다.",
+      "behaviorHint": "고개를 숙인 채 작은 목소리로 핵심만 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-3:evidence_hit",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "예약금 메모 시각이 사진 캡처 날짜보다 앞서면 설명이 안 되지요. 그러면 제가 먼저 찍은 사진을 나중 날짜처럼 보이게 제출한 셈입니다.",
+      "behaviorHint": "손에서 휴대폰을 내려놓고 한 박자 쉬어 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "tenant02:beat:b:d-5:deny",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "긴급 하자 조항이면 집주인이 먼저 확인할 수 있다는 뜻 아닙니까. 배관이 터질 수 있는데 매번 허락만 기다릴 수는 없었습니다.",
+      "behaviorHint": "계약 문구를 넓게 해석하며 자신감 있게 밀어붙인다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-5:hedge",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "적어도 급한 상황에 들어가 보고 기록을 남길 여지는 있었다고 봅니다. 저는 건물을 지키려 한 쪽이지, 엿보려 한 게 아닙니다.",
+      "behaviorHint": "자신을 정당화하는 서두를 길게 깐다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-5:partial",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "무제한 면책 조항은 아니라는 건 압니다. 그래도 당시엔 긴급 확인과 촬영이 한 덩어리로 허용된다고 생각했습니다.",
+      "behaviorHint": "손바닥을 아래로 누르며 진정을 구하듯 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-5:blame",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "보관 고지까지 따로 해야 한다는 해석은 이제 이해합니다. 하지만 세입자가 협조만 했어도 제가 그 문구를 그렇게까지 넓게 붙들 일도 없었지요.",
+      "behaviorHint": "희생을 호소하다가 마지막에 다시 책임을 돌린다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-5:confession",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "계약 조항은 1회 긴급 확인과 즉시 통지 정도만 허용할 뿐, 반복 촬영과 자료 보관, 날짜 위장까지 덮어 주진 않습니다. 제가 그 범위를 넓혀 잡은 건 맞습니다. 제 잘못이었습니다.",
+      "behaviorHint": "체념한 듯 고개를 끄덕이며 조항을 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "tenant02:beat:b:d-5:evidence_hit",
+      "caseId": "tenant-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "특약에 촬영자료 보관은 별도 고지라고 따로 적혀 있네요. 그러면 제가 긴급 조항 하나로 전부 덮으려 한 건 무리였다고 봐야겠지요.",
+      "behaviorHint": "계약서 조항을 손끝으로 따라 읽다가 한숨을 쉰다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-1"
+    }
+  ]
+}
+

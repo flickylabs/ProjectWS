@@ -216,7 +216,7 @@ export const family07TellsBeats = {
       "party": "a",
       "disputeId": "d-4",
       "beatType": "partial",
-      "line": "규정상 대표 기준 표기라는 건 저도 알고 있었습니다. 그래서 저는 계속 형식이라고 말한 겁니다.",
+      "line": "규정상 대표 기준 표기라는 건 저도 알고 있었습니다. 그 모호함을 정리하지 않은 건 맞아요. 다만 저는 계속 형식이라고 이해했기 때문에 승계 확정과는 다른 문제라고 봤습니다.",
       "behaviorHint": "종이의 특정 문장을 손끝으로 짚으며 답한다.",
       "applicableStates": [
         "S2"
@@ -295,7 +295,7 @@ export const family07TellsBeats = {
       "party": "a",
       "disputeId": "d-5",
       "beatType": "partial",
-      "line": "맞습니다. 발표표에 개편 전 최저점을 기준선처럼 남겼습니다.",
+      "line": "발표표에 개편 전 최저점을 기준선처럼 남긴 건 맞습니다. 다만 그 저점 구간에 제가 실제로 버텨낸 시간이 들어 있다는 점까지 지워지진 않습니다.",
       "behaviorHint": "한 박자 쉬고 난 뒤 짧게 인정한다.",
       "applicableStates": [
         "S2"

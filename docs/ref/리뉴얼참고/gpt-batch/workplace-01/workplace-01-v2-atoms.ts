@@ -1,0 +1,4360 @@
+export const workplace01V2Atoms = {
+  "caseId": "workplace-01",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "최종 제출 명의가 팀장으로 나간 것 자체는 통상적인 보고 절차였습니다.",
+            "이름이 빠졌다고 해서 곧바로 공로를 빼앗았다고 보는 건 과도합니다."
+          ],
+          "privateKnowledge": [
+            "주간회의록과 초안 메일에는 박서윤이 핵심 프레임의 실무 오너로 남아 있었다.",
+            "제출 메일과 표지에서 실무자 이름을 넣지 않기로 판단한 사람은 나였다."
+          ],
+          "suppressions": [
+            "작년 하반기부터 실무 기여자를 병기하기로 한 팀 내 관행",
+            "승진 심사 주간이라 공로 표기가 민감해졌다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-1:rule:0",
+              "factText": "팀장 명의 제출이 통상 절차였다는 주장",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "팀장 명의 제출 관행",
+                  "neutral": "그 절차"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-1:denial:1",
+              "factText": "이름 누락만으로 공로 탈취가 단정되지는 않는다는 주장",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "마감이 촉박해서 표지와 메일의 기여자 표기를 별도로 정리하지 못했습니다.",
+            "핵심은 보고서 완성이었지 누군가를 지우려던 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "기여자 병기는 나중으로 미루자고 먼저 선을 그은 쪽은 나였다.",
+            "박서윤이 자신의 이름 누락을 바로 문제 삼을 수 있다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "기여자 병기 합의가 이미 존재했다는 점",
+            "임원 보고 직전 명의 문제가 곧 평가에 연결된다는 계산"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-1:timeline:2",
+              "factText": "마감 압박 때문에 기여자 표기를 뒤로 미뤘다는 설명",
+              "tags": [
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "임원 보고 직전",
+                  "dateExact": "임원 보고 직전",
+                  "period": "마감 직전 시점",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-1:self_justification:3",
+              "factText": "완성 우선이라는 명분으로 명의 문제를 후순위로 돌렸다는 주장",
+              "tags": [
+                "self_justification"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "실무 기여자 병기 관행",
+                  "neutral": "그 기여자 표기 규칙"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "핵심 분석 프레임과 KPI 표를 박서윤이 만든 건 맞습니다.",
+            "다만 최종 보고서는 팀장 검토와 임원용 문안 정리가 더해진 팀 결과물이었습니다."
+          ],
+          "privateKnowledge": [
+            "핵심 골격을 만든 사람이 박서윤이라는 점은 e-1로 쉽게 드러난다.",
+            "그 사실을 알면서도 대외 제출본에서는 팀장 단독 명의 구도를 유지했다."
+          ],
+          "suppressions": [
+            "실무 오너를 표지에서 누락한 직접 책임",
+            "초기 초안에서 박서윤 기여가 명시돼 있었다는 HR 기록"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-1:admission:4",
+              "factText": "핵심 분석 프레임과 KPI 표의 원 작성자가 박서윤이었다는 사실",
+              "tags": [
+                "admission",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "role": {
+                  "exact": "보고서 오너",
+                  "neutral": "그 주도 역할"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-1:context:5",
+              "factText": "최종 문안 정리와 승인 절차를 팀 결과물이라는 근거로 내세우는 설명",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "평가 시즌에 실무자 이름을 전면에 세우면 보고 라인 혼선이 커질 수 있다고 봤습니다.",
+            "박서윤도 그 시점에는 자기 몫을 강하게 확보하려고 했고 저는 조직 리스크를 먼저 봤습니다."
+          ],
+          "privateKnowledge": [
+            "승진 심사에서 리더십이 약해 보일까 두려웠다.",
+            "보고 라인 혼선이라는 말로 사실상 내 커리어 보전을 우선했다."
+          ],
+          "suppressions": [
+            "명의 정리를 조직 리스크 명분으로 포장했다는 점",
+            "실제 두려움이 승진 후보 밀림이었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-1:fear:6",
+              "factText": "보고 라인 혼선보다 승진 심사에서 리더십이 흔들릴까 걱정했다는 속내",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-1:counter:7",
+              "factText": "평가 시즌의 긴장 때문에 박서윤도 자기 공을 강하게 밀어붙였다고 책임을 나누는 주장",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 그 보고서에서 팀장 이름만 남기면 관리가 쉬워질 거라고 생각했습니다.",
+            "그 판단이 절차 문제라는 말 뒤에 숨은 제 욕심이었던 건 압니다."
+          ],
+          "privateKnowledge": [
+            "박서윤 이름을 빼면 임원과 HR에 내가 더 안정적인 리더처럼 보일 거라고 계산했다.",
+            "프로세스상이라는 표현을 반복해 직접 결정을 흐려 왔다."
+          ],
+          "suppressions": [
+            "단독 명의가 내 통제력과 승진 이미지에 유리하다고 본 계산",
+            "주어를 흐리며 직접 결정을 감춘 습관"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-1:emotion:8",
+              "factText": "단독 명의가 관리와 통제에 유리하다고 계산했다는 인정",
+              "tags": [
+                "emotion",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-1:quote:9",
+              "factText": "프로세스상이라는 말로 직접 결정을 숨겨 왔다는 자기 인식",
+              "tags": [
+                "quote",
+                "self_justification"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "프로세스상",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "제가 제출 메일과 표지에서 박서윤 이름을 뺐습니다.",
+            "승진 심사 직전에 공을 제 명의로 묶어 두려는 계산이 있었고, 그 점은 제가 책임지겠습니다."
+          ],
+          "privateKnowledge": [
+            "실무 기여자 병기 규칙을 알면서도 일부러 어겼다.",
+            "이후 평가 기록 축소와도 같은 방향으로 움직였다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-1:responsibility:10",
+              "factText": "제출 메일과 표지에서 박서윤 이름을 뺀 직접 책임이 윤태성에게 있다는 사실",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-1:motive:11",
+              "factText": "승진 심사 직전에 공로를 자신의 명의로 묶으려는 계산이 있었다는 사실",
+              "tags": [
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평가 시즌",
+                  "dateExact": "평가 시즌",
+                  "period": "승진 심사 주간",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "평가 초안을 열어보고 캡처를 돌린 건 절차 위반입니다.",
+            "그 문제는 업무 불만과 별개로 선을 넘은 행동이었습니다."
+          ],
+          "privateKnowledge": [
+            "박서윤이 왜 불안했는지는 어느 정도 짐작했다.",
+            "내 비공식 코멘트와 늦은 밤 지시가 그 불안을 키운 측면이 있었다."
+          ],
+          "suppressions": [
+            "내 평가 개입이 박서윤의 의심을 키운 배경",
+            "야간 수정 지시가 감정적 폭발의 배경이 됐다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-2:privacy:0",
+              "factText": "평가 초안을 열람하고 캡처를 돌린 행위가 절차 위반이라는 주장",
+              "tags": [
+                "privacy",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-2:rule:1",
+              "factText": "업무 갈등과 별개로 인사 화면 공유는 금지돼야 한다는 주장",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "인사 정보 비공개 원칙",
+                  "neutral": "그 보안 원칙"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "남아 있던 권한으로 화면을 본 것까지는 우발적이라고 주장할 수 있어도, 전송은 다른 문제입니다.",
+            "동료 둘에게 전달된 시점부터는 실수보다 확산 쪽에 가깝습니다."
+          ],
+          "privateKnowledge": [
+            "남은 권한이 있었다는 사실은 관리 책임과도 닿아 있다.",
+            "그러나 공유가 두 명에게 이뤄졌다는 점은 분명히 서윤 쪽 선택이다."
+          ],
+          "suppressions": [
+            "권한 회수 관리가 허술했다는 조직 책임",
+            "초기 접근 자체와 전달 행위를 구분해서 봐야 한다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-2:context:2",
+              "factText": "남아 있던 권한 자체와 캡처 전송을 구분해야 한다는 설명",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "count": {
+                  "exact": "2명",
+                  "neutral": "그 인원",
+                  "rounded": "두 명"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-2:timeline:3",
+              "factText": "동료 두 명에게 전달되면서 우발이 아니라 확산으로 보인다는 주장",
+              "tags": [
+                "timeline"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2명",
+                  "neutral": "그 인원",
+                  "rounded": "두 명"
+                },
+                "time": {
+                  "exact": "새벽 1시대",
+                  "dateExact": "새벽 1시대",
+                  "period": "평가 캡처가 몰린 시각",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "박서윤이 느낀 불안과 억울함이 컸다는 점은 인정합니다.",
+            "그래도 남은 권한을 이용해 평가 화면을 캡처하고 돌린 선택은 별도로 책임이 있습니다."
+          ],
+          "privateKnowledge": [
+            "내 비공식 코멘트와 명의 문제 때문에 그녀가 벼랑 끝으로 몰렸다고 느꼈을 수 있다.",
+            "그 사정을 알아도 무단 열람과 유포를 정당화할 수는 없다."
+          ],
+          "suppressions": [
+            "내 행동이 의심의 배경이었다는 점",
+            "감정 사정을 인정하면서도 책임은 분리하려는 계산"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-2:emotion:4",
+              "factText": "박서윤이 억울함과 불안을 크게 느꼈을 수 있다는 인정",
+              "tags": [
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-2:responsibility:5",
+              "factText": "남은 권한을 이용한 캡처와 전송은 별도 책임이라는 주장",
+              "tags": [
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "evidence": {
+                  "exact": "슬랙 캡처 묶음",
+                  "neutral": "그 캡처 묶음"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "정식 이의 절차를 밟지 않고 소문부터 키운 건 분명히 잘못입니다.",
+            "그 선택 때문에 평가 문제는 사실 확인보다 감정전으로 번졌습니다."
+          ],
+          "privateKnowledge": [
+            "정식 채널이 안전하지 않다고 그녀가 느꼈을 수 있다.",
+            "그래도 소문 확산은 내 입장에선 공격으로 읽혔다."
+          ],
+          "suppressions": [
+            "HR 채널에 대한 불신이 있었다는 점",
+            "내가 그 불신을 만든 배경의 일부라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-2:counter:6",
+              "factText": "정식 이의 절차 대신 소문을 키운 선택이 갈등을 악화시켰다는 주장",
+              "tags": [
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "HR 보안 폴더 채널",
+                  "neutral": "그 공식 채널"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-2:harm:7",
+              "factText": "사실 확인 문제를 감정전으로 바꿨다는 인식",
+              "tags": [
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "제가 늦은 밤마다 수정 지시를 내리고 평가 코멘트까지 얹으니, 박서윤이 사방이 막혔다고 느꼈을 수는 있습니다.",
+            "그래도 그 불안을 이유로 인사 정보를 돌린 일까지 덮을 순 없습니다."
+          ],
+          "privateKnowledge": [
+            "내 통제 방식이 사람을 몰아붙였다는 걸 안다.",
+            "그러나 그 인정이 곧 내 전체 책임으로 번지는 건 경계하고 있다."
+          ],
+          "suppressions": [
+            "통제적인 리더십이 폭발의 배경이었다는 점",
+            "사람을 몰아붙인 방식"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-2:relationship:8",
+              "factText": "늦은 밤 지시와 평가 코멘트가 관계를 막다른 곳으로 몰았다는 인정",
+              "tags": [
+                "relationship",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-2:threshold:9",
+              "factText": "그 배경과 무단 유포 책임은 선을 그어 봐야 한다는 주장",
+              "tags": [
+                "threshold"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "정식 이의 절차",
+                  "neutral": "그 절차"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "박서윤이 남은 권한으로 평가 화면을 열람하고 캡처를 돌린 건 맞습니다.",
+            "다만 그 불신과 공포를 키운 배경에 제 야간 지시와 비공식 개입이 있었던 것도 인정합니다."
+          ],
+          "privateKnowledge": [
+            "그녀 행동의 위법성만 앞세워 내 배경 책임을 지우려 했다.",
+            "문제를 절차 위반 하나로 축소하면 사건 전체가 왜곡된다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-2:privacy:10",
+              "factText": "남은 권한으로 평가 화면을 열람하고 캡처를 돌린 행위가 실제로 있었다는 사실",
+              "tags": [
+                "privacy",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "time": {
+                  "exact": "새벽 1시대",
+                  "dateExact": "새벽 1시대",
+                  "period": "평가 캡처가 몰린 시각",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-2:context:11",
+              "factText": "그 불신의 배경에 윤태성의 야간 지시와 비공식 개입이 있었다는 사실",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "admission",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "제가 본 자료에서는 박서윤이 밤 11시 48분 최종 수정자로 찍혀 있었습니다.",
+            "그 시각 이후 결과물이 망가졌다면 마지막 수정자로 보는 게 자연스럽습니다."
+          ],
+          "privateKnowledge": [
+            "PDF가 원본 로그가 아니라는 걸 알았다.",
+            "그 자료만으로 최종 수정자를 단정하기엔 빈 구간이 있다는 것도 알고 있었다."
+          ],
+          "suppressions": [
+            "PDF가 잘린 출력본이라는 점",
+            "공용 PC와 관리자 토큰 가능성"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-3:evidence:0",
+              "factText": "PDF상 박서윤이 23시 48분 최종 수정자로 보인다는 주장",
+              "tags": [
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "time": {
+                  "exact": "23시 48분",
+                  "dateExact": "23시 48분",
+                  "period": "PDF상 최종 수정 시각",
+                  "neutral": "그 시각"
+                },
+                "evidence": {
+                  "exact": "문서 수정 이력 PDF",
+                  "neutral": "그 PDF"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-3:responsibility:1",
+              "factText": "마지막 수정 시각과 오류 발생을 직접 연결하는 주장",
+              "tags": [
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "23시 48분",
+                  "dateExact": "23시 48분",
+                  "period": "PDF상 최종 수정 시각",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "저는 공식 감사 로그가 아니라 당시 확보된 출력본을 제출했을 뿐입니다.",
+            "추출 경위를 제가 다 챙긴 건 아니지만, 화면상 마지막 이름은 박서윤으로 보였습니다."
+          ],
+          "privateKnowledge": [
+            "공식 직출력인지 확인하지 않았고, 오히려 확인하지 않는 편이 내게 유리했다.",
+            "주어를 흐리면 제출 책임도 희미해질 거라고 생각했다."
+          ],
+          "suppressions": [
+            "PDF 진본성 확인을 일부러 미뤘다는 점",
+            "자발적으로 제출한 사람이 나라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-3:self_justification:2",
+              "factText": "공식 로그가 아니라 확보된 출력본만 전달했다는 자기 방어",
+              "tags": [
+                "self_justification"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "문서 수정 이력 PDF",
+                  "neutral": "그 PDF"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-3:uncertainty:3",
+              "factText": "추출 경위를 다 챙기지 못했다고 책임선을 흐리는 말",
+              "tags": [
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "session": {
+                  "exact": "공용 PC 세션",
+                  "neutral": "그 공용 PC 세션"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "그 PDF가 잘린 출력본이어서 단독으로 최종 수정자를 확정하긴 어렵다는 점은 압니다.",
+            "그래도 당시엔 그 자료가 가장 빠른 설명이라고 판단했습니다."
+          ],
+          "privateKnowledge": [
+            "원본 로그를 확인하면 내 주장이 흔들릴 수 있다고 느꼈다.",
+            "잘린 자료라는 약점을 알면서도 서윤 책임 프레임을 유지하려 했다."
+          ],
+          "suppressions": [
+            "원본 로그 확인을 늦춘 이유",
+            "잘린 열과 생성 시각 차이"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-3:admission:4",
+              "factText": "잘린 PDF만으로 최종 수정자를 확정하기 어렵다는 점을 알고 있었다는 사실",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "문서 수정 이력 PDF",
+                  "neutral": "그 PDF"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-3:context:5",
+              "factText": "가장 빠른 설명이라는 이유로 약한 자료를 우선 사용했다는 설명",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "마감 직후",
+                  "dateExact": "마감 직후",
+                  "period": "결과 설명을 서둘러야 하던 시점",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "공용 PC와 관리자 측 개입이 있었다면 그 부분은 운영 측 책임도 큽니다.",
+            "혼란스러운 밤 작업 끝에 제게 들어온 자료를 기준으로 판단한 겁니다."
+          ],
+          "privateKnowledge": [
+            "관리자 대리발급 토큰 얘기가 나오면 내 프레임이 무너진다.",
+            "운영 책임을 앞으로 내세우면 내가 서윤을 몰아간 책임이 줄어들 거라 계산했다."
+          ],
+          "suppressions": [
+            "서윤에게 먼저 책임을 고정하려 했다는 점",
+            "관리자 토큰 개입 가능성을 알고도 활용한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-3:institution:6",
+              "factText": "공용 PC와 관리자 개입 가능성을 운영 측 책임으로 돌리는 주장",
+              "tags": [
+                "counter",
+                "institution"
+              ],
+              "slots": {
+                "session": {
+                  "exact": "공용 PC 세션",
+                  "neutral": "그 공용 PC 세션"
+                },
+                "token": {
+                  "exact": "관리자 대리발급 토큰",
+                  "neutral": "그 관리자 토큰"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-3:counter:7",
+              "factText": "밤 작업 혼란을 이유로 자신의 판단 책임을 낮추려는 말",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "23시 41분",
+                  "dateExact": "23시 41분",
+                  "period": "관리자 토큰 덮어쓰기 시각",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "비판받을 걸 알면서도 저는 그 PDF가 서윤 쪽에 더 불리하다는 걸 이용했습니다.",
+            "공용 PC 얘기와 관리자 토큰 얘기가 나오면 제 책임도 같이 보일까 봐 원본을 바로 들추지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "서윤이 마지막 수정자라는 인상이 굳어지면 내 평가 개입과 보고서 책임도 덜 보일 거라고 계산했다.",
+            "그 두려움 때문에 비판 가능성이 높은 자료를 밀어 넣었다."
+          ],
+          "suppressions": [
+            "원본보다 인상효과를 노렸다는 점",
+            "내 책임을 가리기 위해 프레임을 선택했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-3:fear:8",
+              "factText": "원본 로그가 나오면 자신의 책임까지 드러날까 두려워 약한 자료를 유지했다는 속내",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "문서 서버 원본 감사 로그",
+                  "neutral": "그 원본 로그"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-3:beneficiary:9",
+              "factText": "서윤이 마지막 수정자로 보이면 자신에게 유리하다고 계산했다는 사실",
+              "tags": [
+                "beneficiary",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "서윤이 최종 수정자라는 주장을 저는 조작 가능성이 있는 PDF에 기대어 밀었습니다.",
+            "원본 서버 로그와 관리자 토큰 기록을 먼저 봤어야 했고, 그렇게 하지 않은 책임이 제게 있습니다."
+          ],
+          "privateKnowledge": [
+            "PDF가 진본이 아닐 수 있다는 신호를 무시했다.",
+            "서윤 책임을 고정하면 내 다른 문제들이 덜 보일 거라고 믿었다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-3:admission:10",
+              "factText": "서윤 최종 수정자 주장에 조작 가능성이 있는 PDF를 근거로 사용했다는 사실",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "evidence": {
+                  "exact": "문서 수정 이력 PDF",
+                  "neutral": "그 PDF"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-3:institution:11",
+              "factText": "원본 서버 로그와 관리자 토큰 기록을 확인하지 않고 책임을 고정한 윤태성의 잘못",
+              "tags": [
+                "institution",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "문서 서버 원본 감사 로그",
+                  "neutral": "그 원본 로그"
+                },
+                "token": {
+                  "exact": "관리자 대리발급 토큰",
+                  "neutral": "그 관리자 토큰"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "평가 초안은 HR이 다루는 영역이고, 제가 비공식으로 점수에 손댄 건 아닙니다.",
+            "관리자 입장에서 일반적인 피드백을 준 것과 개입은 구분해야 합니다."
+          ],
+          "privateKnowledge": [
+            "점수 보정 직전 내가 비공개 메모를 넣은 건 사실이다.",
+            "그 메모가 서윤 평가 방향에 영향을 줄 수 있다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "비공개 메모 입력 시각",
+            "보고서 오너 표현이 보조 분석으로 축소된 변화"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-4:denial:0",
+              "factText": "HR 초안에 비공식 개입한 적 없다는 주장",
+              "tags": [
+                "denial"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-4:rule:1",
+              "factText": "관리자 피드백과 평가 개입은 다른 문제라는 주장",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "평가 보정 권한 구분",
+                  "neutral": "그 권한 구분"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "제가 남긴 건 점수 지시가 아니라 리스크에 관한 일반 코멘트였습니다.",
+            "최종 반영 여부는 HR 판단이라 그걸 개입이라고 부르는 건 과합니다."
+          ],
+          "privateKnowledge": [
+            "일반 코멘트처럼 보이게 적었지만 시점상 보정 직전이었다.",
+            "리스크 언어가 점수 하향 근거로 쓰일 수 있다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "점수 보정 직전이라는 시점",
+            "비공개 메모가 사실상 방향 제시였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-4:self_justification:2",
+              "factText": "리스크 코멘트일 뿐 점수 지시는 아니라는 주장",
+              "tags": [
+                "self_justification"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "HR 평가 초안 버전기록",
+                  "neutral": "그 평가 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-4:context:3",
+              "factText": "최종 반영 여부는 HR 판단이었다며 거리를 두는 설명",
+              "tags": [
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                },
+                "person": {
+                  "exact": "이지안",
+                  "fullName": "이지안",
+                  "judgeRef": "HR 담당자",
+                  "neutral": "그 HR 담당자"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "점수 보정 직전에 '기여는 있으나 리스크가 크다'는 메모를 넣은 건 맞습니다.",
+            "그 다층적 설명이 그대로 반영될지는 HR 몫이라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "그 문장은 사실상 서윤 평가를 눌러 두는 장치였다.",
+            "HR이 그 문장을 무시하지 않을 거라는 점을 알고 있었다."
+          ],
+          "suppressions": [
+            "메모가 비공식 경로였다는 점",
+            "기여 축소와 연결된 버전 변경"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-4:admission:4",
+              "factText": "점수 보정 직전에 비공개 메모를 입력했다는 사실",
+              "tags": [
+                "admission",
+                "institution"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "HR 평가 초안 버전기록",
+                  "neutral": "그 평가 기록"
+                },
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-4:quote:5",
+              "factText": "기여는 있으나 리스크가 크다는 표현으로 평가 방향을 제시했다는 사실",
+              "tags": [
+                "quote",
+                "motive"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "기여는 있으나 리스크가 크다",
+                  "neutral": "그 코멘트"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "문제는 HR이 그 메모를 어떻게 읽었느냐지, 제가 단독으로 점수를 정한 건 아닙니다.",
+            "야간 수정과 캡처 소동까지 겹쳐 리스크 판단이 강화된 면도 있었습니다."
+          ],
+          "privateKnowledge": [
+            "메모를 넣은 출발점은 나였고, 이후 사건을 끌어와 내 코멘트를 합리화했다.",
+            "서윤의 다른 행동을 평가 하향 명분으로 연결했다."
+          ],
+          "suppressions": [
+            "내 코멘트가 출발점이었다는 점",
+            "이후 소동을 가져와 정당화했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-4:counter:6",
+              "factText": "HR 해석과 이후 소동을 이유로 자신의 개입 효과를 축소하는 주장",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                },
+                "evidence": {
+                  "exact": "슬랙 캡처 묶음",
+                  "neutral": "그 캡처 묶음"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-4:counter:7",
+              "factText": "야간 수정과 캡처 소동이 리스크 판단을 키웠다고 말하는 반격",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "승진 심사 주간에 팀 통제력을 잃는 모습으로 보이고 싶지 않았습니다.",
+            "그래서 서윤의 기여를 인정하면서도 위험한 사람처럼 읽히는 문장을 미리 심어 둔 겁니다."
+          ],
+          "privateKnowledge": [
+            "서윤이 보고서 오너로 남으면 내 리더십 서사가 약해질까 두려웠다.",
+            "평가 문장에서 그 두려움을 은근히 처리했다."
+          ],
+          "suppressions": [
+            "승진 후보 경쟁",
+            "기여 축소와 리스크 프레이밍의 결합"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-4:fear:8",
+              "factText": "팀 통제력이 흔들린다는 인상을 막으려 평가 문장을 조정했다는 속내",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평가 시즌",
+                  "dateExact": "평가 시즌",
+                  "period": "승진 심사 주간",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-4:self_justification:9",
+              "factText": "기여 인정과 위험 프레이밍을 함께 넣어 스스로 균형적이라 여겼다는 설명",
+              "tags": [
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "제가 비공식 코멘트로 서윤 평가 방향에 영향을 줬습니다.",
+            "점수 보정 직전에 그런 문장을 넣은 건 사실상 개입이었고, 그 책임은 제 몫입니다."
+          ],
+          "privateKnowledge": [
+            "일반 피드백이라는 말은 책임 축소였다.",
+            "보고서 공로 문제와 평가 통제가 서로 연결돼 있었다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-4:responsibility:10",
+              "factText": "점수 보정 직전에 비공식 코멘트로 평가 방향에 영향을 준 책임이 윤태성에게 있다는 사실",
+              "tags": [
+                "responsibility",
+                "institution"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                },
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-4:motive:11",
+              "factText": "보고서 공로 문제와 평가 통제를 함께 관리하려는 계산이 있었다는 사실",
+              "tags": [
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "성과 배분 규칙이 있었다고 해도 팀장 명의 제출 자체를 곧바로 위반으로 볼 수는 없습니다.",
+            "문제는 이후 감정적으로 캡처와 소문이 번진 방식이 더 컸습니다."
+          ],
+          "privateKnowledge": [
+            "실무 기여자 병기 관행을 내가 먼저 무너뜨렸다.",
+            "서윤의 소문 확산을 내 위반보다 크게 보이게 만들고 싶었다."
+          ],
+          "suppressions": [
+            "작년 하반기 합의된 기여자 병기 관행",
+            "내 단독 명의 제출이 출발점이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-5:rule:0",
+              "factText": "팀장 명의 제출만으로는 바로 규칙 위반이 아니라는 주장",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "실무 기여자 병기 관행",
+                  "neutral": "그 기여자 표기 규칙"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-5:counter:1",
+              "factText": "캡처와 소문 확산이 더 큰 문제라고 초점을 이동시키는 주장",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "슬랙 캡처 묶음",
+                  "neutral": "그 캡처 묶음"
+                },
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "기여자 표기를 빠뜨린 건 절차 누락에 가깝고, 서윤의 전파 행동은 의도적 확산에 가깝습니다.",
+            "둘을 같은 무게로 놓기는 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "절차 누락이라는 표현으로 내 선택성을 희석했다.",
+            "서윤 쪽 행동을 더 무겁게 보이게 해야 균형이 내게 유리하다."
+          ],
+          "suppressions": [
+            "기여자 표기 누락이 반복 관행을 깨는 행위라는 점",
+            "내 선택을 단순 누락으로 축소했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-5:threshold:2",
+              "factText": "기여자 표기 누락과 의도적 전파는 무게가 다르다는 주장",
+              "tags": [
+                "threshold"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "실무 기여자 병기 관행",
+                  "neutral": "그 기여자 표기 규칙"
+                },
+                "evidence": {
+                  "exact": "슬랙 캡처 묶음",
+                  "neutral": "그 캡처 묶음"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-5:self_justification:3",
+              "factText": "자신의 행동을 절차 누락으로 축소하는 설명",
+              "tags": [
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "실무 기여자 병기 규칙의 취지를 제가 먼저 약하게 만든 건 맞습니다.",
+            "다만 서윤도 정식 이의 대신 무단 캡처와 유포로 같은 규칙의 다른 축을 무너뜨렸습니다."
+          ],
+          "privateKnowledge": [
+            "내가 먼저 신뢰를 깼다는 점을 알고 있다.",
+            "그래도 쌍방 과실 구조로 가야 책임이 분산된다."
+          ],
+          "suppressions": [
+            "내 선행 위반이 갈등의 출발점이라는 점",
+            "쌍방 과실 프레임으로 책임을 나누려는 계산"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-5:admission:4",
+              "factText": "실무 기여자 병기 규칙의 취지를 먼저 약하게 만든 쪽이 윤태성이라는 사실",
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "실무 기여자 병기 관행",
+                  "neutral": "그 기여자 표기 규칙"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-5:counter:5",
+              "factText": "박서윤도 무단 캡처와 유포로 다른 절차 규칙을 무너뜨렸다는 주장",
+              "tags": [
+                "counter",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "evidence": {
+                  "exact": "슬랙 캡처 묶음",
+                  "neutral": "그 캡처 묶음"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "서윤이 정식 채널을 무시하지 않았다면 성과 배분 문제는 재조정으로 갈 수 있었습니다.",
+            "소문이 먼저 돈 순간 규칙 복구는 사실상 어려워졌습니다."
+          ],
+          "privateKnowledge": [
+            "정식 채널이 안전하지 않다는 불신을 내가 만들었다.",
+            "그 점을 감추고 결과만 탓하고 있다."
+          ],
+          "suppressions": [
+            "HR 채널 불신의 배경",
+            "소문 이전에 명의 삭제가 있었다는 순서"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-5:counter:6",
+              "factText": "정식 채널 대신 소문이 먼저 돌아 규칙 복구가 어려워졌다는 주장",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "정식 이의 절차",
+                  "neutral": "그 절차"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-5:timeline:7",
+              "factText": "소문 확산 이후에는 복구보다 방어가 먼저 됐다는 인식",
+              "tags": [
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "새벽 1시대",
+                  "dateExact": "새벽 1시대",
+                  "period": "평가 캡처가 몰린 시각",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "결국 저는 이름을 지워 통제권을 잡으려 했고, 서윤은 캡처로 판을 뒤집으려 했습니다.",
+            "둘 다 규칙보다 자기 방어를 먼저 택한 셈입니다."
+          ],
+          "privateKnowledge": [
+            "내가 먼저 불공정의 신호를 줬다.",
+            "그 뒤의 대응이 과해졌다고 해도 출발점 책임은 가볍지 않다."
+          ],
+          "suppressions": [
+            "출발점 책임",
+            "통제권 욕구"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-5:emotion:8",
+              "factText": "이름 삭제와 캡처 유포 모두 자기 방어에서 나온 선택이었다는 인식",
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "rule": {
+                  "exact": "실무 기여자 병기 관행",
+                  "neutral": "그 기여자 표기 규칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-5:responsibility:9",
+              "factText": "두 사람 모두 규칙보다 자기 방어를 먼저 택했다는 평가",
+              "tags": [
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "성과 배분 규칙은 제가 단독 명의 제출로 먼저 깼고, 서윤은 무단 캡처와 소문 확산으로 그 다음 선을 넘었습니다.",
+            "선후와 형태는 달랐지만 규칙을 무너뜨린 책임이 양쪽에 있다는 점은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "내 위반이 출발점이었다.",
+            "쌍방 위반 구조를 인정해야 전체 사건이 제대로 보인다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:a:tell:process_shield",
+            "workplace-01:a:tell:premature_summary",
+            "workplace-01:a:tell:pronoun_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:a:d-5:rule:10",
+              "factText": "윤태성이 단독 명의 제출로 성과 배분 규칙을 먼저 깼다는 사실",
+              "tags": [
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "실무 기여자 병기 관행",
+                  "neutral": "그 기여자 표기 규칙"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:a:d-5:counter:11",
+              "factText": "박서윤은 무단 캡처와 소문 확산으로 다른 선을 넘었다는 사실",
+              "tags": [
+                "counter",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "evidence": {
+                  "exact": "슬랙 캡처 묶음",
+                  "neutral": "그 캡처 묶음"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그 보고서의 핵심은 제가 만든 분석 프레임과 KPI 표였습니다.",
+            "팀장이 메일을 보냈다고 해서 공로까지 팀장 몫이 되는 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "임원용 문안 정리와 최종 승인 절차는 윤태성 몫이기도 했다.",
+            "분노가 커질수록 보고서를 거의 전부 내 것처럼 말하고 있다."
+          ],
+          "suppressions": [
+            "최종 문안 정리와 승인 절차의 공동 작업",
+            "100 대 0처럼 말하는 과장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-1:identity:0",
+              "factText": "보고서 핵심 골격과 KPI 표의 작성 주체가 박서윤이었다는 주장",
+              "tags": [
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "role": {
+                  "exact": "보고서 오너",
+                  "neutral": "그 주도 역할"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-1:counter:1",
+              "factText": "메일 발신자와 공로 귀속은 같지 않다는 주장",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "표현 몇 줄을 다듬은 건 있을 수 있어도, 뼈대와 숫자는 제 작업이었습니다.",
+            "적어도 이름을 통째로 뺄 정도의 차이는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "윤태성이 임원용 문안을 손본 건 사실이다.",
+            "그 사실을 거의 중요하지 않은 것처럼 밀어내고 있다."
+          ],
+          "suppressions": [
+            "문장 다듬기와 승인 역할",
+            "공동 제출 관행"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-1:threshold:2",
+              "factText": "문안 다듬기와 이름 삭제는 비례하지 않는다는 주장",
+              "tags": [
+                "threshold"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                },
+                "rule": {
+                  "exact": "실무 기여자 병기 관행",
+                  "neutral": "그 기여자 표기 규칙"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-1:self_justification:3",
+              "factText": "뼈대와 숫자가 자신의 작업이었다는 점을 전면에 두는 설명",
+              "tags": [
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "임원용 문안 정리와 최종 승인 절차를 팀장이 맡은 건 맞습니다.",
+            "그래도 실무 오너 표기를 지운 순간 공로 배분 선을 넘은 건 분명합니다."
+          ],
+          "privateKnowledge": [
+            "승인 절차를 인정하면 내 초기 말이 과해 보일 수 있다.",
+            "하지만 이름 누락 문제의 본질은 여전히 유효하다."
+          ],
+          "suppressions": [
+            "초기 표현의 과장",
+            "보고서 전체를 단독 창작처럼 말한 부분"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-1:admission:4",
+              "factText": "임원용 문안 정리와 최종 승인 절차를 윤태성이 맡았다는 사실",
+              "tags": [
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-1:rule:5",
+              "factText": "실무 오너 표기를 지운 순간 공로 배분 규칙을 넘었다는 주장",
+              "tags": [
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "실무 기여자 병기 관행",
+                  "neutral": "그 기여자 표기 규칙"
+                },
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "문제는 팀장이라는 자리를 이용해 제 이름을 지워도 된다고 본 태도입니다.",
+            "저도 감정이 거칠어졌지만 출발점은 그 권한 남용이었습니다."
+          ],
+          "privateKnowledge": [
+            "내가 감정적으로 밀어붙인 부분이 사건을 더 키웠다.",
+            "그래도 처음 선을 넘은 건 윤태성이라고 믿는다."
+          ],
+          "suppressions": [
+            "내 반응의 과열",
+            "권한 남용과 감정 대응을 섞어 말하고 있다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-1:counter:6",
+              "factText": "팀장 지위를 이용해 이름을 지웠다는 권한 남용 비판",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-1:emotion:7",
+              "factText": "자신도 감정적으로 거칠어졌지만 출발점 책임은 다르다고 보는 인식",
+              "tags": [
+                "emotion",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 저는 그 보고서를 거의 제 것처럼 말하고 싶었습니다.",
+            "이름이 빠진 모멸감이 너무 커서 팀장 몫까지 인정하면 제가 사라지는 것 같았거든요."
+          ],
+          "privateKnowledge": [
+            "분노 때문에 공동 작업 요소를 축소해서 말했다.",
+            "내 말이 지나치게 단정적으로 들릴 수 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "공동 작업 요소 축소",
+            "모멸감 때문에 서술이 더 날카로워졌다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-1:shame:8",
+              "factText": "이름이 빠진 모멸감 때문에 공동 작업 요소를 거의 지워 버렸다는 감정",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-1:self_justification:9",
+              "factText": "팀장 몫까지 인정하면 자신이 사라지는 것 같았다는 설명",
+              "tags": [
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "핵심 프레임과 숫자는 제가 만들었지만, 최종 문안 정리와 승인 절차는 팀장 몫도 있었습니다.",
+            "제가 화가 나서 보고서를 전부 제 단독 성과처럼 말한 건 과했지만, 제 이름을 뺀 행위 자체는 분명한 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "초기에는 100 대 0으로 말해 체면을 지키려 했다.",
+            "이제는 공동 작업 부분과 이름 삭제 문제를 분리해 말해야 한다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-1:admission:10",
+              "factText": "핵심 프레임과 숫자는 박서윤이 만들었지만 최종 문안 정리와 승인 절차는 윤태성 몫도 있었다는 사실",
+              "tags": [
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                },
+                "role": {
+                  "exact": "보고서 오너",
+                  "neutral": "그 주도 역할"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-1:responsibility:11",
+              "factText": "보고서를 전부 단독 성과처럼 말한 과장은 인정하지만 이름 삭제 자체는 여전히 잘못이라는 사실",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "저는 평가를 '유포'하려고 한 게 아니라 제 상황이 얼마나 이상한지 확인하려고 본 겁니다.",
+            "남아 있던 권한으로 열린 화면을 본 걸 바로 악의적 열람으로 몰아가는 건 억울합니다."
+          ],
+          "privateKnowledge": [
+            "평가 화면이라는 걸 알고도 더 봤다.",
+            "캡처를 저장하고 전달하면 선을 넘는다는 것도 알고 있었다."
+          ],
+          "suppressions": [
+            "동료 두 명에게 캡처를 보낸 사실",
+            "평가 화면 일부를 의도적으로 잘라 전달한 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-2:denial:0",
+              "factText": "유포 목적이 아니라 이상한 상황을 확인하려고 본 것뿐이라는 주장",
+              "tags": [
+                "denial"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-2:uncertainty:1",
+              "factText": "남아 있던 권한으로 열린 화면을 본 것이라 악의적 열람이 아니라는 주장",
+              "tags": [
+                "uncertainty",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "남은 권한으로 화면이 열렸고, 저는 너무 불안해서 몇 장을 캡처했습니다.",
+            "다만 그걸 본격적인 '유포'라고 부를 정도로 퍼뜨릴 생각은 처음부터 없었습니다."
+          ],
+          "privateKnowledge": [
+            "캡처를 두 명에게 보낸 순간 이미 전파가 시작된다는 걸 알았다.",
+            "의도 부인을 통해 책임을 낮추고 싶다."
+          ],
+          "suppressions": [
+            "두 명에게 전달한 사실",
+            "새벽 1시대에 몰아서 저장한 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-2:admission:2",
+              "factText": "불안 때문에 평가 화면 일부를 캡처했다는 사실",
+              "tags": [
+                "admission",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "새벽 1시대",
+                  "dateExact": "새벽 1시대",
+                  "period": "평가 캡처가 몰린 시각",
+                  "neutral": "그 시각"
+                },
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-2:self_justification:3",
+              "factText": "처음부터 대대적으로 퍼뜨릴 생각은 없었다는 해명",
+              "tags": [
+                "self_justification"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2명",
+                  "neutral": "그 인원",
+                  "rounded": "두 명"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "동료 두 명에게 캡처를 보낸 건 맞습니다.",
+            "그때는 태성이 이미 제 평가를 깎고 있다고 믿어서 혼자 감당하면 제가 바로 낙인찍힐 것 같았습니다."
+          ],
+          "privateKnowledge": [
+            "정식 절차보다 먼저 사람들에게 알리면 판세가 달라질 수 있다고 생각했다.",
+            "보호받고 싶다는 마음과 동시에 태성을 압박하고 싶은 마음이 섞여 있었다."
+          ],
+          "suppressions": [
+            "캡처 전달이 방어이자 압박 수단이었다는 점",
+            "정식 절차를 건너뛰었다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-2:admission:4",
+              "factText": "동료 두 명에게 평가 화면 캡처를 보낸 사실",
+              "tags": [
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2명",
+                  "neutral": "그 인원",
+                  "rounded": "두 명"
+                },
+                "evidence": {
+                  "exact": "슬랙 캡처 묶음",
+                  "neutral": "그 캡처 묶음"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-2:fear:5",
+              "factText": "낙인찍힐 것 같다는 공포 때문에 사람들에게 먼저 알렸다는 속내",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "남은 권한을 닫아 두지 않은 쪽도 문제였고, 태성이 비공식으로 평가를 만진 정황이 저를 더 몰았습니다.",
+            "잘못이 없다는 게 아니라, 왜 제가 그 무리수를 뒀는지는 그 배경을 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "배경 설명이 책임을 지우는 방패가 되길 바란다.",
+            "그래도 권한이 남아 있었다고 해서 캡처 전송까지 허용되는 건 아니다."
+          ],
+          "suppressions": [
+            "권한 잔존과 캡처 전송의 차이",
+            "배경 설명으로 책임을 완전히 지울 수 없다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-2:context:6",
+              "factText": "남은 권한 관리 실패와 태성의 비공식 개입이 자신을 몰았다고 보는 주장",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                },
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-2:threshold:7",
+              "factText": "배경 설명이 있어도 무리수였다는 선을 스스로 긋는 말",
+              "tags": [
+                "threshold"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "인사 정보 공유 금지",
+                  "neutral": "그 금지선"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "저는 그때 너무 무서워서, 저 혼자만 알고 있으면 그대로 잘릴 것 같았습니다.",
+            "그래서 캡처를 손에 쥐고 사람들 반응을 확인하며 버텼고, 그게 점점 소문이 됐습니다."
+          ],
+          "privateKnowledge": [
+            "버티기 위한 행동이었지만 동시에 태성을 흔들고 싶은 감정도 있었다.",
+            "캡처를 쥐고 있으면 내가 완전히 약자는 아니라는 느낌을 받았다."
+          ],
+          "suppressions": [
+            "압박 욕구",
+            "소문이 되도록 묵인한 부분"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-2:fear:8",
+              "factText": "혼자 알고 있으면 그대로 낙인찍힐 것 같아 캡처를 쥐었다는 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-2:harm:9",
+              "factText": "버티기 위한 행동이 점차 소문 확산으로 이어졌다는 인식",
+              "tags": [
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "슬랙 캡처 묶음",
+                  "neutral": "그 캡처 묶음"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "저는 남아 있던 권한으로 평가 화면을 열람했고, 일부를 캡처해 동료들에게 보냈습니다.",
+            "불안과 억울함이 이유였더라도 그건 무단 열람과 유포였고, 그 책임은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "배경이 있었지만 행위 자체는 틀렸다.",
+            "공식 절차를 건너뛰며 사건을 키웠다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-2:privacy:10",
+              "factText": "남아 있던 권한으로 평가 화면을 열람하고 일부를 캡처해 동료들에게 보낸 사실",
+              "tags": [
+                "privacy",
+                "act"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "새벽 1시대",
+                  "dateExact": "새벽 1시대",
+                  "period": "평가 캡처가 몰린 시각",
+                  "neutral": "그 시각"
+                },
+                "count": {
+                  "exact": "2명",
+                  "neutral": "그 인원",
+                  "rounded": "두 명"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-2:responsibility:11",
+              "factText": "불안과 억울함이 이유였더라도 무단 열람과 유포 책임을 인정한다는 말",
+              "tags": [
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "저는 밤 11시 48분에 그 문서를 최종 수정하지 않았습니다.",
+            "그 캡처가 제 이름을 찍고 있어도 제가 막판 오류를 넣었다는 뜻은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "내 이름이 찍힌 캡처를 보고 순간적으로 식은땀이 났다.",
+            "저녁에 수정한 적이 있으니 오해받을 여지가 있다는 것도 안다."
+          ],
+          "suppressions": [
+            "20시 17분에 마지막 정상 편집을 한 사실",
+            "캡처만 보면 내 이름이 불리하게 보인다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-3:denial:0",
+              "factText": "박서윤이 23시 48분 최종 수정자가 아니라는 부인",
+              "tags": [
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "time": {
+                  "exact": "23시 48분",
+                  "dateExact": "23시 48분",
+                  "period": "PDF상 최종 수정 시각",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-3:uncertainty:1",
+              "factText": "이름이 찍힌 캡처만으로 막판 오류 투입까지 단정할 수 없다는 주장",
+              "tags": [
+                "uncertainty",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "문서 수정 이력 PDF",
+                  "neutral": "그 PDF"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "제가 그날 저녁에 수정한 건 맞지만 마지막 정상 편집은 20시 17분이었습니다.",
+            "그 뒤 심야 구간은 제가 본 작업 흐름과 맞지 않습니다."
+          ],
+          "privateKnowledge": [
+            "내가 저녁에 손댄 사실이 상대에게 좋은 공격 포인트가 된다는 걸 안다.",
+            "그래서 시간표를 더 세게 말하게 된다."
+          ],
+          "suppressions": [
+            "시간표를 과하게 쏟아내는 방어 습관",
+            "내 저녁 수정 이력이 불리한 단서로 보일 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-3:timeline:2",
+              "factText": "박서윤의 마지막 정상 편집이 20시 17분이었다는 설명",
+              "tags": [
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "20시 17분",
+                  "dateExact": "20시 17분",
+                  "period": "서윤의 마지막 정상 편집 시각",
+                  "neutral": "그 시각"
+                },
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-3:counter:3",
+              "factText": "심야 구간 기록은 자신의 실제 작업 흐름과 맞지 않는다는 주장",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "23시 41분",
+                  "dateExact": "23시 41분",
+                  "period": "관리자 토큰 덮어쓰기 시각",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "태성이 낸 PDF는 앞뒤 열이 잘려 있어서 단독으로는 마지막 수정자를 확정할 수 없습니다.",
+            "생성 시각도 주장된 추출 시각보다 어긋나 있어서 저는 그 자료를 못 믿겠습니다."
+          ],
+          "privateKnowledge": [
+            "원본 로그가 나오면 내 설명이 훨씬 정리될 거라고 기대한다.",
+            "하지만 지금은 캡처 하나가 사람을 덮치는 느낌이다."
+          ],
+          "suppressions": [
+            "PDF 생성 시각과 추출 시각 차이",
+            "잘린 열 문제"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-3:evidence:4",
+              "factText": "잘린 PDF만으로는 마지막 수정자를 확정할 수 없다는 사실",
+              "tags": [
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "문서 수정 이력 PDF",
+                  "neutral": "그 PDF"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-3:uncertainty:5",
+              "factText": "생성 시각 차이 때문에 자료 진본성을 신뢰하지 못한다는 주장",
+              "tags": [
+                "uncertainty",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "23시 48분",
+                  "dateExact": "23시 48분",
+                  "period": "PDF상 최종 수정 시각",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "원본 서버 로그를 보면 23시 41분엔 관리자 대리발급 토큰과 공용 PC 세션이 찍혀 있습니다.",
+            "누군가 제 이름이 보이게 덮어쓴 흔적이 있다는 뜻이지, 제가 마지막 작성자라는 뜻은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "이제야 겨우 내 얘기가 증거 언어로 바뀐다.",
+            "태성이 이 프레임을 밀어붙인 이유도 같이 묻고 싶다."
+          ],
+          "suppressions": [
+            "원본 로그가 나오기 전까지 감정으로만 싸운 시간",
+            "태성이 왜 그 PDF만 냈는지에 대한 의심"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-3:institution:6",
+              "factText": "23시 41분에는 관리자 대리발급 토큰과 공용 PC 세션이 찍혔다는 사실",
+              "tags": [
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "23시 41분",
+                  "dateExact": "23시 41분",
+                  "period": "관리자 토큰 덮어쓰기 시각",
+                  "neutral": "그 시각"
+                },
+                "token": {
+                  "exact": "관리자 대리발급 토큰",
+                  "neutral": "그 관리자 토큰"
+                },
+                "session": {
+                  "exact": "공용 PC 세션",
+                  "neutral": "그 공용 PC 세션"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-3:counter:7",
+              "factText": "자신의 이름이 보이게 덮어쓴 흔적이지 마지막 작성자 확정은 아니라는 주장",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제 이름이 찍힌 캡처를 처음 봤을 때는 제가 정말 끝장난 줄 알았습니다.",
+            "그래서 더 빠르게 시간표를 쏟아내며 버텼지만, 사실은 그 화면 자체가 너무 무서웠습니다."
+          ],
+          "privateKnowledge": [
+            "억울함보다 공포가 먼저 올라왔다.",
+            "사람들이 캡처 한 장으로 저를 '마지막에 사고 친 사람'으로 믿을까 봐 무서웠다."
+          ],
+          "suppressions": [
+            "시간표를 무기처럼 쏟아낸 방어",
+            "낙인 공포"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-3:fear:8",
+              "factText": "캡처 한 장으로 마지막에 사고 친 사람으로 낙인찍힐까 두려웠다는 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "문서 수정 이력 PDF",
+                  "neutral": "그 PDF"
+                },
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-3:quote:9",
+              "factText": "더 빠르게 시간표를 쏟아내며 버텼다는 자기 묘사",
+              "tags": [
+                "quote",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "20시 17분",
+                  "dateExact": "20시 17분",
+                  "period": "서윤의 마지막 정상 편집 시각",
+                  "neutral": "그 시각"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "제 마지막 정상 편집은 20시 17분이고, 23시 41분 기록은 관리자 대리발급 토큰이 공용 PC에서 메타데이터를 덮어쓴 구간입니다.",
+            "그러니 저를 최종 수정자로 확정한 PDF 비난은 성립하지 않습니다."
+          ],
+          "privateKnowledge": [
+            "이제야 사건의 구조가 말이 된다.",
+            "내 불안 때문에 초반엔 설명이 산만했지만 핵심은 원본 로그다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-3:evidence:10",
+              "factText": "마지막 정상 편집은 20시 17분이고 23시 41분은 관리자 토큰 덮어쓰기 구간이라는 사실",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "time1": {
+                  "exact": "20시 17분",
+                  "dateExact": "20시 17분",
+                  "period": "서윤의 마지막 정상 편집 시각",
+                  "neutral": "그 시각"
+                },
+                "time2": {
+                  "exact": "23시 41분",
+                  "dateExact": "23시 41분",
+                  "period": "관리자 토큰 덮어쓰기 시각",
+                  "neutral": "그 시각"
+                },
+                "token": {
+                  "exact": "관리자 대리발급 토큰",
+                  "neutral": "그 관리자 토큰"
+                }
+              },
+              "stanceHints": [
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-3:responsibility:11",
+              "factText": "박서윤을 최종 수정자로 확정한 PDF 비난은 성립하지 않는다는 결론",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "문서 서버 원본 감사 로그",
+                  "neutral": "그 원본 로그"
+                },
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "admission",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "제 평가는 HR이 정하는 줄 알았는데, 결과를 보면 태성 말이 먼저 들어간 것처럼 보였습니다.",
+            "보고서 기여를 깎아 놓은 방향이 너무 노골적이어서 저는 개입을 의심합니다."
+          ],
+          "privateKnowledge": [
+            "초반에는 정확한 기록보다 정황과 감각에 기대고 있다.",
+            "의심이 강한 만큼 단정도 빨라지고 있다."
+          ],
+          "suppressions": [
+            "정확한 입력 시각과 버전 기록을 아직 직접 제시하지 못했다는 점",
+            "의심이 단정으로 앞서고 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-4:uncertainty:0",
+              "factText": "HR 결정처럼 보였지만 실제로는 태성 말이 먼저 들어간 것 같다는 의심",
+              "tags": [
+                "uncertainty",
+                "institution"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                },
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-4:counter:1",
+              "factText": "보고서 기여 축소 방향이 너무 노골적이라 개입을 의심한다는 주장",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "보고서 오너",
+                  "neutral": "그 주도 역할"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "초기 초안에는 제가 보고서 오너였는데, 어느 순간 '보조 분석'으로 축소돼 있었습니다.",
+            "그 변화가 그냥 자연발생적으로 생겼다고 믿긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "축소를 본 순간 개인 감정이 더 세게 올라왔다.",
+            "정확한 기록이 나오면 내 의심이 입증될 거라고 기대한다."
+          ],
+          "suppressions": [
+            "감정이 추론을 밀어올리고 있다는 점",
+            "정확한 버전 기록 필요"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-4:timeline:2",
+              "factText": "초기 초안의 보고서 오너 표기가 보조 분석으로 축소됐다는 사실",
+              "tags": [
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "보고서 오너",
+                  "neutral": "그 주도 역할"
+                },
+                "role_support": {
+                  "exact": "보조 분석",
+                  "neutral": "그 축소된 역할"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-4:counter:3",
+              "factText": "그 변화가 자연발생적이라고 보기 어렵다는 주장",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "HR 버전기록을 보면 점수 보정 직전에 태성 계정의 비공개 메모가 들어갑니다.",
+            "그 시점이면 그냥 참고 의견이 아니라 방향을 미는 말이라고 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "이제는 정황이 아니라 기록으로 말할 수 있다.",
+            "태성이 항상 절차 뒤에 숨는 방식이 여기서도 보인다고 느낀다."
+          ],
+          "suppressions": [
+            "감정 섞인 표현",
+            "메모 문구를 더 직접 인용할 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-4:evidence:4",
+              "factText": "점수 보정 직전에 윤태성 계정의 비공개 메모가 들어갔다는 사실",
+              "tags": [
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "HR 평가 초안 버전기록",
+                  "neutral": "그 평가 기록"
+                },
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                },
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-4:motive:5",
+              "factText": "그 시점의 메모는 단순 참고가 아니라 평가 방향을 미는 말이라는 주장",
+              "tags": [
+                "motive"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "비공개 메모",
+                  "neutral": "그 메모"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "태성은 보고서 공로를 가져가면서 동시에 평가에선 저를 '리스크'로 눌렀습니다.",
+            "성과는 가져가고 점수는 깎는 방식으로 양쪽 손해를 다 저에게 몰았습니다."
+          ],
+          "privateKnowledge": [
+            "분노가 커질수록 문장이 더 단정적으로 나간다.",
+            "하지만 공로 문제와 평가 문제를 따로 떼어도 같은 방향이다."
+          ],
+          "suppressions": [
+            "내 표현이 공격적으로 들릴 수 있다는 점",
+            "두 문제를 연결해서 보는 이유"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-4:harm:6",
+              "factText": "공로는 가져가고 평가는 리스크로 눌렀다는 비난",
+              "tags": [
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                },
+                "term": {
+                  "exact": "리스크",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-4:harm:7",
+              "factText": "성과와 점수의 손해가 모두 자신에게 몰렸다고 느낀다는 진술",
+              "tags": [
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "저는 점수 하나보다도 '문제 있는 사람'으로 정리돼 버릴까 봐 더 무서웠습니다.",
+            "태성 메모가 들어간 뒤 제 기여 문장이 줄어든 걸 보고, 아 이건 이미 방향이 정해졌다고 느꼈습니다."
+          ],
+          "privateKnowledge": [
+            "숫자보다 낙인에 대한 공포가 컸다.",
+            "그래서 캡처와 시간표에 더 집착하게 됐다."
+          ],
+          "suppressions": [
+            "낙인 공포",
+            "캡처 집착의 감정적 배경"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-4:fear:8",
+              "factText": "점수보다 문제 있는 사람으로 낙인찍힐까 두려웠다는 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                },
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-4:timeline:9",
+              "factText": "태성 메모 뒤에 기여 문장이 줄어든 걸 보고 방향이 정해졌다고 느꼈다는 설명",
+              "tags": [
+                "timeline"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "HR 평가 초안 버전기록",
+                  "neutral": "그 평가 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "HR 버전기록상 제 기여 항목은 '보고서 오너'에서 '보조 분석'으로 축소됐고, 그 직전에 태성의 비공개 메모가 들어갔습니다.",
+            "정식 권한이 아니더라도 그건 평가 방향에 실질적으로 개입한 행동이었다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "이제는 의심보다 기록이 앞선다.",
+            "제 감정이 과열돼 보여도 핵심 구조는 변하지 않는다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-4:evidence:10",
+              "factText": "기여 항목 축소와 태성 비공개 메모 입력이 같은 버전 흐름에 있다는 사실",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "HR 평가 초안 버전기록",
+                  "neutral": "그 평가 기록"
+                },
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-4:responsibility:11",
+              "factText": "정식 권한 여부와 별개로 평가 방향에 실질적으로 개입한 행동이라는 판단",
+              "tags": [
+                "responsibility",
+                "institution"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "HR",
+                  "neutral": "인사 부서",
+                  "judgeRef": "HR"
+                }
+              },
+              "stanceHints": [
+                "admission",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "규칙을 먼저 깬 건 제 이름을 지운 태성입니다.",
+            "저는 그 뒤에야 반응한 거라서 둘을 같은 위반으로 묶는 건 받아들이기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "내 반응이 규칙을 더 크게 무너뜨렸을 수 있다는 걸 안다.",
+            "그래도 처음 억울함 때문에 선후를 방패로 삼고 싶다."
+          ],
+          "suppressions": [
+            "무단 캡처와 소문 확산이 별도 위반이라는 점",
+            "반응이라도 규칙 위반일 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-5:denial:0",
+              "factText": "규칙을 먼저 깬 건 윤태성이라 자신은 같은 위반이 아니라는 주장",
+              "tags": [
+                "denial",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                },
+                "rule": {
+                  "exact": "실무 기여자 병기 관행",
+                  "neutral": "그 기여자 표기 규칙"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-5:counter:1",
+              "factText": "자신은 뒤늦은 반응자일 뿐이라는 주장",
+              "tags": [
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "화가 나서 몇 사람에게 말은 했지만, 저는 그게 그렇게 큰 파장을 낼 줄 몰랐습니다.",
+            "정식 절차가 믿기지 않으니 어디라도 붙잡고 싶었던 겁니다."
+          ],
+          "privateKnowledge": [
+            "몇 사람에게 말하면 판이 커질 수 있다는 걸 모른 척하고 있다.",
+            "공식 절차에 대한 불신이 내 무리수를 합리화해 주길 바란다."
+          ],
+          "suppressions": [
+            "소문의 파장 예측 가능성",
+            "정식 절차 불신이 책임을 없애 주진 않는다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-5:uncertainty:2",
+              "factText": "몇 사람에게 말했을 뿐 큰 파장을 의도한 건 아니라는 주장",
+              "tags": [
+                "uncertainty"
+              ],
+              "slots": {
+                "count": {
+                  "exact": "2명",
+                  "neutral": "그 인원",
+                  "rounded": "두 명"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-5:relationship:3",
+              "factText": "정식 절차가 믿기지 않아 어디라도 붙잡고 싶었다는 설명",
+              "tags": [
+                "relationship",
+                "emotion"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "정식 이의 절차",
+                  "neutral": "그 공식 절차"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "맞아요, 저는 화가 났고 사람들이 이 일이 그냥 묻히지 않길 바랐습니다.",
+            "그 마음 때문에 캡처를 들고 다니며 제 얘기를 먼저 꺼냈습니다."
+          ],
+          "privateKnowledge": [
+            "사실은 단순 방어만이 아니라 공개 압박의 마음도 있었다.",
+            "태성이 당황하길 바라는 복수심이 스쳤다."
+          ],
+          "suppressions": [
+            "복수심",
+            "캡처를 전략처럼 사용한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-5:admission:4",
+              "factText": "사건이 묻히지 않길 바라며 먼저 이야기를 꺼냈다는 사실",
+              "tags": [
+                "admission",
+                "motive"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "슬랙 캡처 묶음",
+                  "neutral": "그 캡처 묶음"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-5:emotion:5",
+              "factText": "화가 난 상태에서 캡처를 들고 다니며 압박했다는 인정",
+              "tags": [
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "제가 그렇게 한 건 정식 채널이 저를 지켜 줄 거라는 믿음이 없었기 때문입니다.",
+            "태성이 이름을 지우고 평가까지 건드리는 상황에서 가만히 있으면 제가 끝난다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "배경이 있어도 내가 선택한 방식은 깨끗하지 않았다.",
+            "하지만 그때의 나는 복수와 생존을 분리하지 못했다."
+          ],
+          "suppressions": [
+            "복수와 생존이 섞였다는 점",
+            "방식의 정당성 부족"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-5:context:6",
+              "factText": "정식 채널을 믿지 못하게 만든 배경으로 태성의 이름 삭제와 평가 개입을 지목하는 주장",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                },
+                "channel": {
+                  "exact": "정식 채널",
+                  "neutral": "그 공식 채널"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-5:fear:7",
+              "factText": "가만히 있으면 자신이 끝난다고 느껴 복수와 생존이 섞였다는 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박서윤",
+                  "fullName": "박서윤",
+                  "judgeRef": "박 대리",
+                  "neutral": "그 실무자"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 말하면 저는 억울함만 풀고 싶었던 게 아니라 태성도 곤란해지길 바랐습니다.",
+            "제 이름을 지운 대가를 바로 느끼게 하고 싶다는 마음이 컸어요."
+          ],
+          "privateKnowledge": [
+            "이제는 복수심을 부정하기 어렵다.",
+            "다만 그 감정이 어디서 왔는지도 같이 봐 달라고 하고 싶다."
+          ],
+          "suppressions": [
+            "복수심",
+            "감정의 출발점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-5:motive:8",
+              "factText": "태성도 곤란해지길 바랐다는 복수심의 인정",
+              "tags": [
+                "motive",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-5:quote:9",
+              "factText": "이름을 지운 대가를 바로 느끼게 하고 싶었다는 직설적 표현",
+              "tags": [
+                "quote",
+                "harm"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "대가를 느끼게 하고 싶었다",
+                  "neutral": "그 생각"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "저는 태성이 이름을 지운 뒤 캡처와 소문으로 되갚으려 했습니다.",
+            "선후는 달라도 그 과정에서 성과 배분 규칙과 정식 이의 절차를 저도 무너뜨렸다는 점을 인정합니다."
+          ],
+          "privateKnowledge": [
+            "복수심을 인정해야만 사건이 정리된다.",
+            "태성의 선행 위반과 내 보복 위반을 같이 놓고 봐야 한다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "workplace-01:b:tell:timestamp_barrage",
+            "workplace-01:b:tell:echo_challenge",
+            "workplace-01:b:tell:evidence_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "workplace-01:b:d-5:responsibility:10",
+              "factText": "캡처와 소문으로 되갚으려 했고 그 과정에서 자신도 규칙을 무너뜨렸다는 사실",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "슬랙 캡처 묶음",
+                  "neutral": "그 캡처 묶음"
+                },
+                "rule": {
+                  "exact": "실무 기여자 병기 관행",
+                  "neutral": "그 기여자 표기 규칙"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "workplace-01:b:d-5:motive:11",
+              "factText": "태성의 선행 위반에 대한 복수심이 행동 동력이었다는 사실",
+              "tags": [
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "윤태성",
+                  "fullName": "윤태성",
+                  "judgeRef": "윤 팀장",
+                  "neutral": "그 팀장"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+

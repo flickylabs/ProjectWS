@@ -1,0 +1,1439 @@
+export const workplace10V3GameLoopData = {
+  "caseId": "workplace-10",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "약속 문구와 대비 계약의 시작점",
+      "description": "전환 약속 문구와 타사 계약 체결 시점을 한 카드에서 맞대조한다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "임도현 씨, '이번 런칭 끝나면 전환안 올릴게'라는 1:1 문구를 남기고도 확정 약속이 아니었다고 하시는 겁니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-10:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "같은 표현을 두 차례 이상 반복한 뒤 장혜린 씨에게 야간 인수인계와 교육까지 맡긴 건, 잔류 유인으로 보일 수밖에 없는 흐름 아닌가요?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-10:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "타사 계약 가능성도 모른 채 구두 약속만으로 관계를 유지했다면, 관리 방식 자체가 불완전했던 것 아닌가요?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-10:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "장혜린 씨, 다른 회사 계약서 서명 시점이 마지막 전환 기대 기간과 겹치는데도 왜 회사에 알리지 않으셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-10:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "도현 씨의 약속 문장을 믿었다 해도, 그 계약을 '보험'이라고만 부른 건 스스로의 책임을 가볍게 보이려는 재정의 아닌가요?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-10:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "1:1 문구를 근거로 버티는 동안 이미 다른 회사 온보딩 메일까지 받은 상태였다면, 관계 유지 방식도 불완전했던 것 아닌가요?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-10:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "보류 화면과 실제 HR 이력",
+      "description": "잘린 보류 캡처와 원본 HR 트래커를 비교해 누가 무엇을 숨겼는지 가른다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "임도현 씨, 이 보류 캡처에서 '추가요청 가능'과 코멘트 영역을 왜 잘라 내셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-10:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "헤드카운트가 최종으로 닫히기 전에 'commitment concern' 메모를 먼저 남긴 이유는 무엇입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-10:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "전환을 못 해 준 것이 아니라 안 밀어 준 것에 가까웠다면, 예산 설명은 체면 보전용이었다고 봐야 하지 않겠습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-10:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "장혜린 씨, 헤드카운트 보류 화면만으로도 왜 이번에는 확실하다고 판단하셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-10:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "원본 HR 이력상 전환이 흔들리고 있었다면, 자신을 순수한 피해자로만 정리한 설명은 과하지 않았습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-10:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "보류와 재요청 가능 사이가 반복되는 동안에도 다른 계약 사실을 말하지 않은 건, 관계를 계속 굴리려는 계산도 있었던 것 아닌가요?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-10:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "반복 잔류 요청과 실제 겹침 로그",
+      "description": "반복된 잔류 요청 기록과 병행 근무 로그를 겹쳐 쌍방 의존 구조를 드러낸다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "임도현 씨, 지난 두 차례 연장 메일까지 보면 이번 건은 단발성 표현이 아니라 반복 잔류 유인 아닌가요?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-10:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "계속 '다음 사이클'을 말하면서도 전환 기준을 같은 문장으로 남기지 않은 이유는 무엇입니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-10:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "장혜린 씨의 겹침 로그까지 확인된 뒤에도 그 관계를 그대로 굴린 건, 결국 관리 책임을 인정해야 하는 것 아닌가요?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-10:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "장혜린 씨, 출입·VPN 로그가 평일 시간대와 겹치는데도 '실제 병행은 아니었다'고 계속 말하시겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-10:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "반복된 잔류 요청이 있었다 해도, 그 기간 내내 disclosure를 미룬 채 순수한 피해자처럼만 말한 건 본인 서사를 지키려는 선택 아니었습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-10:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "계약연장 메일까지 모두 보면 두 분 모두 불완전한 정보를 쥔 채 버틴 셈인데, 본인 책임도 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-10:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-10:a:d-1:unlock:s2:0",
+            "factText": "출시 직전과 직후 두 차례 이상 '전환안 올릴게'에 가까운 문장이 반복 입력된 사실",
+            "tags": [
+              "evidence",
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "phrase": {
+                "exact": "전환안 올릴게",
+                "neutral": "그 표현"
+              },
+              "time": {
+                "exact": "출시 직전과 직후",
+                "neutral": "그 시점",
+                "period": "런칭 전후"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-10:a:d-1:unlock:s3:0",
+            "factText": "혜린 씨가 야간 인수인계와 신규 인력 교육을 맡게 된 시점이 그 약속 직후였다는 사실",
+            "tags": [
+              "context",
+              "beneficiary",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "장혜린",
+                "neutral": "상대방",
+                "fullName": "장혜린",
+                "judgeRef": "혜린 씨"
+              },
+              "task": {
+                "exact": "야간 인수인계와 신규 인력 교육",
+                "neutral": "추가 핵심 업무"
+              },
+              "time": {
+                "exact": "약속 직후",
+                "neutral": "그 직후",
+                "period": "런칭 막판"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-10:a:d-1:unlock:s4:0",
+            "factText": "전환 슬롯이 확정되지 않았다는 점을 알면서도 팀 공백을 막기 위해 기대를 유지한 사실",
+            "tags": [
+              "motive",
+              "fear",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "status": {
+                "exact": "전환 슬롯 미확정",
+                "neutral": "불확실한 상태"
+              },
+              "team": {
+                "exact": "팀 공백",
+                "neutral": "운영 공백"
+              },
+              "time": {
+                "exact": "런칭 직전",
+                "neutral": "그 무렵",
+                "period": "분기 말"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-10:a:d-1:unlock:s5:0",
+            "factText": "기준과 시점을 다시 바꾸며 혜린 씨를 붙잡아 둔 책임을 스스로 인정하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "emotion"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "장혜린",
+                "neutral": "상대방",
+                "fullName": "장혜린",
+                "judgeRef": "혜린 씨"
+              },
+              "change": {
+                "exact": "기준과 시점 변경",
+                "neutral": "결정 변경"
+              },
+              "time": {
+                "exact": "계약 종료 직전",
+                "neutral": "막판",
+                "period": "발표 주간 직전"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-10:a:d-4:unlock:s2:0",
+            "factText": "헤드카운트 보류 캡처가 '추가요청 가능'과 코멘트 영역을 잘라 낸 상태였다는 사실",
+            "tags": [
+              "evidence",
+              "context",
+              "rule"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "screen": {
+                "exact": "보류 캡처",
+                "neutral": "그 화면"
+              },
+              "status": {
+                "exact": "추가요청 가능",
+                "neutral": "다른 가능 상태"
+              },
+              "field": {
+                "exact": "코멘트 영역",
+                "neutral": "잘린 부분"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-10:a:d-4:unlock:s3:0",
+            "factText": "도현 계정의 'commitment concern' 메모가 헤드카운트 재심 최종 결정보다 먼저 입력된 사실",
+            "tags": [
+              "timeline",
+              "evidence",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "memo": {
+                "exact": "commitment concern",
+                "neutral": "그 메모"
+              },
+              "time": {
+                "exact": "재심 최종 결정 이전",
+                "neutral": "그 이전",
+                "period": "검토 중"
+              },
+              "person": {
+                "exact": "임도현",
+                "neutral": "본인",
+                "fullName": "임도현",
+                "judgeRef": "도현 씨"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-10:a:d-4:unlock:s4:0",
+            "factText": "예산 설명 뒤에 관리 책임 회피와 체면 보전이 함께 섞여 있었다는 사실",
+            "tags": [
+              "motive",
+              "shame",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "reason": {
+                "exact": "예산 설명",
+                "neutral": "그 설명"
+              },
+              "motive": {
+                "exact": "관리 책임 회피",
+                "neutral": "체면 보전"
+              },
+              "fear": {
+                "exact": "관리자 신뢰 상실",
+                "neutral": "신뢰 손상"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-10:a:d-4:unlock:s5:0",
+            "factText": "예산만 탓한 설명이 사실상 허위 축소였다고 인정하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "evidence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "reason": {
+                "exact": "예산만 탓한 설명",
+                "neutral": "그 설명"
+              },
+              "screen": {
+                "exact": "절삭된 캡처",
+                "neutral": "가린 자료"
+              },
+              "memo": {
+                "exact": "선행 부정 메모",
+                "neutral": "앞선 코멘트"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "evidence_hit"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-10:a:d-5:unlock:s2:0",
+            "factText": "계약 연장 때마다 '이번 사이클만 버텨 달라'는 잔류 유인이 반복되었다는 사실",
+            "tags": [
+              "act",
+              "timeline",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "phrase": {
+                "exact": "이번 사이클만 버텨 달라",
+                "neutral": "잔류 요청"
+              },
+              "time": {
+                "exact": "두 차례 계약 연장 시점",
+                "neutral": "그 연장 시점",
+                "period": "이전 두 번"
+              },
+              "person": {
+                "exact": "장혜린",
+                "neutral": "상대방",
+                "fullName": "장혜린",
+                "judgeRef": "혜린 씨"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-10:a:d-5:unlock:s3:0",
+            "factText": "전환 기준과 승인권자를 1:1 문서와 HR 트래커에 같은 문장으로 남기기로 한 관행을 이번에는 지키지 않은 사실",
+            "tags": [
+              "rule",
+              "evidence",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "같은 문장 기록 관행",
+                "neutral": "기록 원칙"
+              },
+              "doc": {
+                "exact": "1:1 문서와 HR 트래커",
+                "neutral": "공식 문서"
+              },
+              "time": {
+                "exact": "이번 런칭 사이클",
+                "neutral": "이번 건",
+                "period": "현재 분기"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-10:a:d-5:unlock:s4:0",
+            "factText": "혜린 씨의 불안을 알면서도 구두 약속을 관계 유지 수단으로 사용한 사실",
+            "tags": [
+              "motive",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "장혜린",
+                "neutral": "상대방",
+                "fullName": "장혜린",
+                "judgeRef": "혜린 씨"
+              },
+              "promise": {
+                "exact": "구두 전환 약속",
+                "neutral": "말로 한 약속"
+              },
+              "emotion": {
+                "exact": "생계 불안",
+                "neutral": "그 불안"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-10:a:d-5:unlock:s5:0",
+            "factText": "문서화되지 않은 약속 위에서 관계를 유지해 온 책임을 인정하는 사실",
+            "tags": [
+              "admission",
+              "relationship",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "promise": {
+                "exact": "문서화되지 않은 약속",
+                "neutral": "구두 약속"
+              },
+              "relation": {
+                "exact": "잔류와 전환을 엮은 관계",
+                "neutral": "그 관계"
+              },
+              "time": {
+                "exact": "반복 지연 기간 내내",
+                "neutral": "그 기간",
+                "period": "지난 여러 사이클"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-10:b:d-2:unlock:s2:0",
+            "factText": "마지막 전환 기대 기간 중 타사 계약서와 온보딩 메일을 이미 수신한 사실",
+            "tags": [
+              "act",
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "doc": {
+                "exact": "타사 계약서와 온보딩 메일",
+                "neutral": "그 자료"
+              },
+              "time": {
+                "exact": "마지막 전환 기대 기간",
+                "neutral": "그 시기",
+                "period": "발표 전"
+              },
+              "person": {
+                "exact": "장혜린",
+                "neutral": "본인",
+                "fullName": "장혜린",
+                "judgeRef": "혜린 씨"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-10:b:d-2:unlock:s3:0",
+            "factText": "타사 계약 유효기간과 회사 출입·VPN 기록이 일부 평일 시간대에서 중복된 사실",
+            "tags": [
+              "timeline",
+              "evidence",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "일부 평일 시간대 중복",
+                "neutral": "겹친 시간대",
+                "period": "평일 근무시간"
+              },
+              "log": {
+                "exact": "출입·VPN 로그",
+                "neutral": "원본 로그"
+              },
+              "doc": {
+                "exact": "타사 계약 유효기간",
+                "neutral": "계약 기간"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-10:b:d-2:unlock:s4:0",
+            "factText": "이중 계약을 '생계용 대비'로 재정의하며 은폐의 무게를 낮추려 한 사실",
+            "tags": [
+              "self_justification",
+              "shame",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "label": {
+                "exact": "생계용 대비",
+                "neutral": "그 표현"
+              },
+              "contract": {
+                "exact": "이중 계약",
+                "neutral": "숨긴 계약"
+              },
+              "emotion": {
+                "exact": "낙인 회피",
+                "neutral": "평가 불안"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-10:b:d-2:unlock:s5:0",
+            "factText": "고정 근무 계약과 병행 가능성을 숨긴 책임을 스스로 인정하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "privacy"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "contract": {
+                "exact": "고정 근무 계약",
+                "neutral": "다른 계약"
+              },
+              "time": {
+                "exact": "중복 기간",
+                "neutral": "그 기간",
+                "period": "발표 전후"
+              },
+              "disclosure": {
+                "exact": "비공개 유지",
+                "neutral": "공유 누락"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-10:b:d-3:unlock:s2:0",
+            "factText": "순수 피해자 서사 뒤에 다른 회사 계약 존재를 가려 두고 있었다는 사실",
+            "tags": [
+              "counter",
+              "context",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "identity": {
+                "exact": "순수 피해자",
+                "neutral": "피해자 서사"
+              },
+              "contract": {
+                "exact": "다른 회사 계약",
+                "neutral": "숨긴 계약"
+              },
+              "person": {
+                "exact": "장혜린",
+                "neutral": "본인",
+                "fullName": "장혜린",
+                "judgeRef": "혜린 씨"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-10:b:d-3:unlock:s3:0",
+            "factText": "전환 무산 전에 이미 가용시간 충돌 가능성을 알고 있었다는 사실",
+            "tags": [
+              "context",
+              "rule",
+              "fear"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "전환 무산 이전",
+                "neutral": "그 이전",
+                "period": "발표 전"
+              },
+              "risk": {
+                "exact": "가용시간 충돌 가능성",
+                "neutral": "업무 충돌"
+              },
+              "person": {
+                "exact": "장혜린",
+                "neutral": "본인",
+                "fullName": "장혜린",
+                "judgeRef": "혜린 씨"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-10:b:d-3:unlock:s4:0",
+            "factText": "약속 피해는 사실이지만 자신의 자격과 신뢰도도 흔들리고 있음을 인식한 사실",
+            "tags": [
+              "threshold",
+              "emotion",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "harm": {
+                "exact": "약속 파기 피해",
+                "neutral": "그 피해"
+              },
+              "status": {
+                "exact": "자격과 신뢰도 흔들림",
+                "neutral": "평가 손상"
+              },
+              "time": {
+                "exact": "전환 심사 시점",
+                "neutral": "그 심사 시점",
+                "period": "분기 말"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-10:b:d-3:unlock:s5:0",
+            "factText": "무과실 피해자라고만 말한 진술이 불완전했다고 인정하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "identity": {
+                "exact": "무과실 피해자 진술",
+                "neutral": "그 진술"
+              },
+              "contract": {
+                "exact": "숨긴 타사 계약",
+                "neutral": "숨긴 사정"
+              },
+              "time": {
+                "exact": "심문 종반",
+                "neutral": "마지막",
+                "period": "정리 단계"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-10:b:d-5:unlock:s2:0",
+            "factText": "반복 지연 속에서 타사 계약을 보험처럼 붙들고도 이를 공유하지 않은 사실",
+            "tags": [
+              "act",
+              "relationship",
+              "privacy"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "contract": {
+                "exact": "보험처럼 붙든 타사 계약",
+                "neutral": "그 계약"
+              },
+              "time": {
+                "exact": "반복 지연 기간",
+                "neutral": "그 기간",
+                "period": "여러 차례 지연"
+              },
+              "disclosure": {
+                "exact": "비공개 유지",
+                "neutral": "공유하지 않음"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-10:b:d-5:unlock:s3:0",
+            "factText": "전환 일정 확인과 타사 온보딩 준비를 같은 시기에 병행한 사실",
+            "tags": [
+              "timeline",
+              "counter",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "act": {
+                "exact": "전환 일정 확인과 온보딩 준비 병행",
+                "neutral": "동시 진행"
+              },
+              "time": {
+                "exact": "같은 시기",
+                "neutral": "동일 시점",
+                "period": "발표 전후"
+              },
+              "doc": {
+                "exact": "일정표와 온보딩 메일",
+                "neutral": "관련 기록"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-10:b:d-5:unlock:s4:0",
+            "factText": "약속이 또 미뤄질까 두려워 disclosure를 미루며 관계를 연명한 사실",
+            "tags": [
+              "fear",
+              "motive",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "재차 지연 우려",
+                "neutral": "그 두려움"
+              },
+              "disclosure": {
+                "exact": "공개 지연",
+                "neutral": "말 미룸"
+              },
+              "relation": {
+                "exact": "관계 연명",
+                "neutral": "그 관계 유지"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-10:b:d-5:unlock:s5:0",
+            "factText": "불완전한 정보 위에서 관계를 이어 온 책임을 인정하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "relation": {
+                "exact": "불완전한 정보 위의 관계",
+                "neutral": "그 관계"
+              },
+              "contract": {
+                "exact": "숨긴 보험성 계약",
+                "neutral": "숨긴 계약"
+              },
+              "time": {
+                "exact": "분쟁 전 기간",
+                "neutral": "그 기간",
+                "period": "계약 종료 전까지"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "workplace-10:contradiction:0",
+        "targetParty": "a",
+        "trigger": "임도현이 전환 불가가 전적으로 헤드카운트 동결 때문이었다고 말할 때",
+        "text": "보류 캡처만으로는 막힌 것처럼 보이지만, HR 원본 이력에는 재요청 가능 상태와 선행 코멘트가 함께 남아 있습니다. 예산 탓만으로 정리하기 어렵습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-4"
+        ]
+      },
+      {
+        "id": "workplace-10:contradiction:1",
+        "targetParty": "b",
+        "trigger": "장혜린이 자신을 순수한 피해자로만 설명할 때",
+        "text": "타사 계약서와 온보딩 메일, 겹치는 로그가 이미 존재합니다. 약속 파기의 피해와 별개로 숨긴 계약 책임이 빠져 있습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-6"
+        ]
+      },
+      {
+        "id": "workplace-10:contradiction:2",
+        "targetParty": "a",
+        "trigger": "임도현이 문제의 문구가 단발성 격려였다고 축소할 때",
+        "text": "이번 한 번이 아니라 지난 두 차례 연장 메일과 1:1 문서까지 같은 방향의 잔류 유인이 반복됩니다. 단발성 격려로 보기 어렵습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-5"
+        ]
+      },
+      {
+        "id": "workplace-10:contradiction:3",
+        "targetParty": "b",
+        "trigger": "장혜린이 다른 회사 계약을 단순 보험이라고만 부를 때",
+        "text": "보험이라면 대기 자료에 그쳐야 하지만, 실제로는 평일 시간대의 출입·VPN 기록이 계약 기간과 맞물립니다. 준비를 넘은 병행 정황이 보입니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "workplace-10:interjection:0",
+        "speaker": "a",
+        "trigger": "장혜린이 1:1 문구를 연속으로 읽어 내려갈 때",
+        "text": "그 문장만 떼면 안 됩니다. 그때 헤드카운트랑 예산이 어떻게 움직였는지도 같이 보셔야 합니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-10:interjection:1",
+        "speaker": "b",
+        "trigger": "임도현이 다른 계약을 '보험'이라며 가볍게 말할 때",
+        "text": "보험이라고 부른 건 제 표현이지만, 그 표현 뒤에 숨어서 약속 자체를 없던 일처럼 만들지는 말아 주세요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-10:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 동시에 상대의 도덕성만 공격하며 타임라인을 흐릴 때",
+        "text": "두 분 다 한 문장씩만 답하십시오. 먼저 약속이 있었는지, 그다음에 숨긴 계약이 있었는지 순서대로 확인하겠습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "workplace-10:outburst:a:0",
+        "party": "a",
+        "trigger": "반복 약속과 선행 메모가 동시에 제시되어 임도현의 관리 책임이 몰릴 때",
+        "text": "팀이 무너지기 직전이었어요. 그때 사람 하나 더 빠지면 진짜 런칭이 터졌습니다, 그래서 말을 바로 못 끊었습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-10:outburst:a:1",
+        "party": "a",
+        "trigger": "장혜린의 이중 계약 로그가 나온 뒤에도 착취 관리자라고 몰릴 때",
+        "text": "제가 잘못한 건 인정하지만, 저 혼자만 전부 계산해 놓고 속인 사람처럼 말하면 억울합니다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-10:outburst:b:0",
+        "party": "b",
+        "trigger": "임도현이 약속 문구를 가능성 표현으로 계속 낮출 때",
+        "text": "그 문장들 때문에 제가 야간 인수인계까지 맡은 거예요. 이제 와서 다 '그럴 수도 있다'였다고 하면 저는 뭘 믿고 버틴 겁니까.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-10:outburst:b:1",
+        "party": "b",
+        "trigger": "타사 계약 문제가 강조되어 장혜린의 피해 경험이 완전히 지워질 것처럼 느껴질 때",
+        "text": "제가 숨긴 건 맞아요. 그런데 그 숨김만 남기고 약속 파기를 다 지우려 하면, 저는 끝까지 이용만 당한 사람처럼 느껴집니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "workplace-10:transition:a:d-1:s0_s1",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "conversion_promise_question",
+      "line": "헤드카운트와 예산이 안 풀린 그때는, 제가 확정은 아니었고 전환안을 올려 보겠다고 들리게 말했을 수는 있습니다.",
+      "behaviorHint": "바로 부정하던 태도에서 한 단계 물러나며 문장을 길게 늘인다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-1:s1_s2",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "1:1 문구가 남아 있다면 제가 헤드카운트만 말한 건 아니겠죠. 다만 마지막 결정 전이라 표현을 약속처럼 보이게 한 겁니다.",
+      "behaviorHint": "증거를 본 뒤 목소리가 낮아지고, 손으로 문구를 한 번 짚는다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-1:s2_s3",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_keep_through_launch_question",
+      "line": "그때는 팀 공백이 너무 컸고 예산도 불안해서, 제가 올려 보겠다고 한 말을 계속 가져간 건 맞습니다.",
+      "behaviorHint": "시선을 피하다가도 팀 상황을 말할 때만 빠르게 설명한다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-1:s3_s5",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_or_responsibility_question",
+      "line": "반복해서 기대를 유지시킨 건 결국 저였습니다. 혜린 씨를 붙잡아 둔 방식이 잘못됐고 그 책임은 제가 지겠습니다.",
+      "behaviorHint": "말을 멈췄다가 스스로 결론을 내리듯 고개를 숙인다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-4:s0_s1",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "headcount_freeze_question",
+      "line": "헤드카운트와 예산 때문에 제가 그렇게 말한 건 맞지만, 그때는 마지막 결정 전이라 보류 화면을 먼저 설명한 겁니다.",
+      "behaviorHint": "처음보다 방어 강도가 내려가고, 화면 설명에 집착한다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-4:s1_s2",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "그 캡처가 전부는 아니라는 건 압니다. 다만 저는 확정은 아니었고 보류 상황을 먼저 보여 준 거라고 생각했습니다.",
+      "behaviorHint": "캡처의 잘린 가장자리를 의식하며 말끝이 짧아진다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-4:s2_s4",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_retention_pressure",
+      "line": "솔직히 말씀드리면, 그때는 전환보다 팀 유지 압박이 먼저 보였습니다. 그래서 예산 뒤에 숨으면서도 부정 메모를 앞서 적었습니다.",
+      "behaviorHint": "재판관의 비판이 약하자 표정이 무너지고 체면을 놓친다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-4:s4_s5",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-4_or_commitment_note_question",
+      "line": "commitment concern 메모를 먼저 남기고 예산만 이유처럼 말한 건 제 잘못입니다. 전환을 제가 더 좁게 만들어 버렸습니다.",
+      "behaviorHint": "어깨가 처지고, 더 이상 화면을 가리키지 못한 채 인정한다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-5:s0_s1",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "oral_promise_practice_question",
+      "line": "구두로 얘기한 건 있었지만, 헤드카운트와 예산이 흔들리던 그때는 확정은 아니었고 전환안을 올려 보겠다는 선이었다고 본 겁니다.",
+      "behaviorHint": "규정 설명과 사정 설명을 섞어 관계의 성격을 흐린다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-5:s1_s2",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "계약연장 메일이 반복된 건 인정합니다. 다만 마지막 결정이 없던 시기라 제가 관계를 유지하려고 말을 더 길게 한 겁니다.",
+      "behaviorHint": "메일 날짜를 보며 부정에서 설명으로 톤이 바뀐다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-5:s2_s3",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_not_write_conditions_question",
+      "line": "조건을 문서로 못 박지 않은 건 저도 압니다. 그 대신 말로 붙잡아 둔 셈이 됐고, 혜린 씨도 자기 사정을 전부 열진 않았습니다.",
+      "behaviorHint": "불편한 사실을 삼키듯 말한 뒤 곧바로 상호 책임을 꺼낸다."
+    },
+    {
+      "id": "workplace-10:transition:a:d-5:s3_s5",
+      "caseId": "workplace-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "불완전한 정보 위에서 관계를 이어 간 출발점은 제가 만든 구두 약속이었습니다. 문서화하지 않은 채 버티게 한 건 제 책임입니다.",
+      "behaviorHint": "책임 비율을 계산하던 태도를 접고 한 번에 인정한다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-2:s0_s1",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "other_company_contract_question",
+      "line": "캡처와 일정표 기준으로 말씀드리면, 그 계약은 생계용 대비, 보험처럼 잡아 둔 것이지 즉시 병행하려던 건 아니었습니다.",
+      "behaviorHint": "건조하게 부정하던 톤에서 한 단계 낮춰 해석을 붙인다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-2:s1_s2",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "서명본과 온보딩 메일이 있으면 계약 자체는 인정하겠습니다. 다만 1:1 문구와 이 날짜들 때문에 저는 그걸 생계용 대비로 본 겁니다.",
+      "behaviorHint": "증거를 순서대로 확인하며 사실과 의도를 분리한다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-2:s2_s3",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "overlap_hours_question",
+      "line": "일정표를 다시 보면 일부 시간대가 겹친 건 맞습니다. 다만 도현 씨가 전환을 계속 미루지 않았다면 제가 보험처럼 끌고 갈 이유도 줄었을 겁니다.",
+      "behaviorHint": "짧게 인정한 뒤 바로 상대 유인을 분석하듯 덧붙인다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-2:s3_s5",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_or_disclosure_question",
+      "line": "VPN 로그까지 겹치면 더는 숨길 수 없습니다. 제가 계약과 가용시간을 공유하지 않은 건 제 잘못이고, 그 책임은 제가 지겠습니다.",
+      "behaviorHint": "서류를 덮고 정면을 본 채 결론만 또렷하게 남긴다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-3:s0_s1",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "pure_victim_claim_question",
+      "line": "캡처와 1:1 문구, 일정표의 이 날짜들을 보시면 저는 분명 피해자입니다. 다만 생계용 대비로 대비한 선택이 있었다는 점까지는 부인하지 않겠습니다.",
+      "behaviorHint": "피해 증빙을 먼저 제시하고 마지막에 작은 단서를 붙인다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-3:s1_s2",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "그 약속 문구가 반복된 건 맞고, 그래서 제가 순수한 피해자라고 더 강하게 말해 온 것도 있습니다. 다만 표현이 과했을 수는 있습니다.",
+      "behaviorHint": "재판관을 보며 문장 길이를 짧게 유지한 채 인정 폭을 좁힌다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-3:s2_s3",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-2_presented",
+      "line": "타사 계약서가 나오면 제 서사가 완전히 무과실은 아니라는 건 압니다. 다만 그 불안을 만든 출발점은 도현 씨의 반복 약속이었습니다.",
+      "behaviorHint": "자료를 내려놓고 상대의 유인 구조를 차갑게 다시 정리한다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-3:s3_s5",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_or_responsibility_question",
+      "line": "로그까지 확인되면 제가 순수한 피해자라고만 말한 건 틀렸습니다. 약속 파기의 피해는 사실이지만, 제 책임을 뺀 진술이었던 점은 인정합니다.",
+      "behaviorHint": "얼굴 근육을 굳힌 채 감정을 눌러 담고 결론을 내린다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-5:s0_s1",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "why_no_disclosure_question",
+      "line": "캡처와 1:1 문구, 일정표의 이 날짜들 때문에 저는 곧 정리될 거라고 봤습니다. 그래서 생계용 대비, 보험 계약을 바로 꺼내지 못했습니다.",
+      "behaviorHint": "처음의 전면 부정에서 물러나 이유를 계산하듯 설명한다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-5:s1_s2",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_survival_anxiety",
+      "line": "맞습니다, 그때 저는 생계가 무너질까 불안했습니다. 그래서 보험처럼 잡아 둔 계약을 숨긴 채 1:1 문구를 믿고 버텼습니다.",
+      "behaviorHint": "짧게 고백한 뒤 다시 감정을 눌러 차분함을 회복한다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-5:s2_s4",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "question_about_previous_delays",
+      "line": "이전에도 약속이 미뤄졌으니 저는 일정표의 이 날짜들마다 또 밀릴 수 있다고 봤습니다. 그래서 disclosure를 미루며 관계를 연명한 건 맞습니다.",
+      "behaviorHint": "과거 지연을 계산하듯 짚다가 끝에서 체념이 묻어난다."
+    },
+    {
+      "id": "workplace-10:transition:b:d-5:s4_s5",
+      "caseId": "workplace-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 저는 캡처와 1:1 문구만 붙들고, 생계용 대비 계약은 숨긴 채 관계를 이어 왔습니다. 불완전한 정보 위에서 버틴 건 제 잘못이고 제 책임입니다.",
+      "behaviorHint": "더 이상 방어하지 않고 정리된 문장으로 자기 책임을 못 박는다."
+    }
+  ]
+}
+

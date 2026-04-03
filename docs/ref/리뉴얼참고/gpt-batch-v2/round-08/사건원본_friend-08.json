@@ -1,0 +1,789 @@
+{
+  "caseId": "case-friend-08",
+  "meta": {
+    "relationshipType": "friend",
+    "conflictSeed": "CS-2",
+    "variableModules": [
+      "VM-D"
+    ],
+    "twistModule": "",
+    "difficulty": "easy",
+    "anchorTruth": "은비가 발표와 게시물에서 프로젝트를 지나치게 단독 성과처럼 보이게 만든 것은 맞지만, 공모전 제출 시스템의 대표자 필드와 둘의 느슨한 역할 정리 때문에 외부에는 원래부터 팀 프로젝트로 등록되어 있었고 준혁의 기여도도 최종본에 남아 있었다.",
+    "emotionalBait": "시상 직후 올라온 카드뉴스와 포트폴리오 캡션에 은비 이름만 크게 보이고 '내 프로젝트'라는 표현까지 붙으면서, 준혁에게는 자신의 작업을 통째로 빼앗긴 것처럼 느껴진다.",
+    "resolutionDilemma": "은비의 과한 단독 표기와 준혁의 마감 직전 자료 누락 중 무엇을 더 무겁게 볼지, 그리고 앞으로 친구 사이 공동 프로젝트에서 기여도와 대표자 표기를 어디까지 세밀하게 남겨야 할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "조은비",
+      "age": 24,
+      "occupation": "시각디자인과 4학년",
+      "incomeBracket": "low",
+      "archetype": "victim_cosplay",
+      "speechStyle": "자신이 밤새 수습한 일과 발표 때 감당한 압박을 먼저 길게 설명하며 공로를 정당화한다. 불리해지면 고의가 아니라 대표자 역할의 관성 때문이었다고 말하며 표현 수위를 낮춘다.",
+      "pride": 7,
+      "fear": "남의 성과를 가로챈 사람으로 찍혀 포트폴리오 신뢰를 잃는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "portfolio_and_story_posts",
+      "dailyRoutine": "낮에는 수업과 과제 피드백을 받고, 저녁에는 동아리 전시물 시안과 포트폴리오 문구를 정리한다. 마감이 몰리면 새벽에 카드뉴스와 발표 자료를 혼자 마무리하는 일이 잦다.",
+      "sensitivePoints": [
+        "수습한 작업이 인정받지 못하는 상황",
+        "포트폴리오에서 표절이나 가로채기 의심을 받는 일",
+        "학내 공모전 관계자 앞에서 무책임하게 보이는 것"
+      ],
+      "verbalTells": [
+        {
+          "type": "rescue_stack",
+          "trigger": "lying",
+          "pattern": "질문을 받으면 본론보다 자신이 고친 화면, 다시 뽑은 출력물, 발표 직전 수습한 일을 길게 나열한다."
+        },
+        {
+          "type": "caption_minimizing",
+          "trigger": "cornered",
+          "pattern": "문제가 된 문구를 지적받으면 '캡션 한 줄이었어'라고 표현의 파급력을 축소한다."
+        },
+        {
+          "type": "tired_laugh",
+          "trigger": "emotional",
+          "pattern": "억울할 때 짧게 웃은 뒤 '그날 누가 남아 있었는지 생각해 봐'라고 피로를 근거로 내세운다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "준혁아",
+        "toJudge": "제 친구",
+        "angry": "야, 준혁!"
+      }
+    },
+    "partyB": {
+      "name": "김준혁",
+      "age": 25,
+      "occupation": "컴퓨터공학과 복학생",
+      "incomeBracket": "low",
+      "archetype": "cold_logic",
+      "speechStyle": "커밋 시간, 설문 버전, 회의 날짜처럼 기록 가능한 요소를 중심으로 말한다. 하지만 인정받지 못했다는 감정이 커지면 숫자와 로그를 들이대며 상대의 의도까지 확정해 버린다.",
+      "pride": 8,
+      "fear": "아이디어만 던진 사람처럼 취급돼 실제 기여가 지워지는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "git_and_shared_docs",
+      "dailyRoutine": "오전에는 수업과 아르바이트를 병행하고, 밤에는 깃 저장소와 설문 데이터를 정리한다. 발표 직전까지도 기능과 표를 손보느라 회의 메시지 답이 늦어지는 편이다.",
+      "sensitivePoints": [
+        "기여도가 아이디어 수준으로 축소되는 일",
+        "기술 작업을 설명하지 못한 채 발표자 공만 커지는 상황",
+        "지각이나 회의 불참이 무능으로 고정되는 것"
+      ],
+      "verbalTells": [
+        {
+          "type": "log_drop",
+          "trigger": "lying",
+          "pattern": "불리한 지점이 나오면 로그 캡처를 한꺼번에 보여 주며 개별 질문을 기술 기록 더미 속에 묻는다."
+        },
+        {
+          "type": "binary_credit",
+          "trigger": "cornered",
+          "pattern": "'내 거였어, 아니었어'처럼 공로를 이분법으로 나눠 중간 지대를 지우려 한다."
+        },
+        {
+          "type": "dry_pause",
+          "trigger": "emotional",
+          "pattern": "감정이 올라오면 대답 전 짧게 침묵하고, 이후 더 딱딱한 톤으로 사실만 열거한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "은비아",
+        "toJudge": "제 친구",
+        "angry": "야, 은비!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "지난 학기 포스터 팀플 후 둘은 최종 제출 전 대표자 표기와 팀원 크레딧 문구를 공동 문서로 먼저 확인하기로 약속했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "겨울 해커톤 때 누가 먼저 '발표자 중심으로 포트폴리오를 정리하자'고 말했는지를 둘 다 상대 탓으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '준혁도 발표자 위주 정리를 당연하게 여겼다' / B: '은비가 예전부터 대표자 이름만 남기려 했다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "봄 전시 준비 때 준혁이 밤새 프린트 오류를 잡아 주고 은비가 대신 발표를 맡아 준 적이 있었지만, 서로 어떤 공로가 빚처럼 남았는지는 끝내 정리되지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "오세림 (공통 팀원 겸 발표 보조)",
+        "relationTo": "both",
+        "knowledgeScope": "준혁의 리허설 불참과 은비의 밤샘 수정, 그리고 시상 직후 문제된 게시물 업로드를 모두 직접 봤다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 26,
+          "occupation": "공통 팀원 겸 발표 보조",
+          "relationToA": "조은비을 업무상 알고 있음",
+          "relationToB": "김준혁을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "은비씨",
+          "addressB": "준혁씨"
+        },
+        "addressA": "은비씨",
+        "addressB": "준혁씨"
+      },
+      {
+        "id": "tp-2",
+        "slot": "institutional",
+        "name": "박지후 (교내 공모전 담당 조교)",
+        "relationTo": "both",
+        "knowledgeScope": "제출 시스템의 대표자 필드, 팀원 입력란, 심사위원 회신과 상장 표기 원본을 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 29,
+          "occupation": "교내 공모전 담당 조교",
+          "relationToA": "조은비을 업무상 알고 있음",
+          "relationToB": "김준혁을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "조은비씨",
+          "addressB": "김준혁씨"
+        },
+        "addressA": "은비씨",
+        "addressB": "준혁씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional_2",
+        "name": "최민아 (동아리 회장)",
+        "relationTo": "both",
+        "knowledgeScope": "역할 분담 회의록, 부스 패널 최종 출력 파일, SNS 게시 전 확인 절차를 원본 기준으로 알고 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 26,
+          "occupation": "동아리 회장",
+          "relationToA": "조은비을 업무상 알고 있음",
+          "relationToB": "김준혁을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "은비씨",
+          "addressB": "준혁씨"
+        },
+        "addressA": "은비씨",
+        "addressB": "준혁씨"
+      }
+    ],
+    "relationshipType": "friend"
+  },
+  "context": {
+    "contextType": "joint_project_credit_dispute",
+    "description": "교내 사회혁신 공모전과 동아리 전시를 함께 준비한 뒤, 조은비는 대표 발표자로 무대에 올랐고 김준혁은 설문 분석과 프로토타입 정리를 맡았다. 시상 직후 올라온 카드뉴스와 포트폴리오 문구에서 은비 이름만 크게 보이자 준혁은 성과를 빼앗겼다고 느꼈고, 은비는 마감 직전 수습은 자신이 다 했다고 맞섰다.",
+    "emotionalPressure": 6,
+    "affects": "both",
+    "triggerAmplifier": "발표자와 제작자의 공로가 원래 다르게 보이는 구조에서, 제출 시스템의 대표자 표시와 SNS 캡션 한 줄이 기여도 전체를 대신하는 것처럼 읽히며 감정이 더 커졌다.",
+    "caseNumber": "E-FR-E-0008",
+    "caseName": "성과 누락 갈등"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "은비의 단독 성과처럼 보이게 한 게시물과 포트폴리오 문구",
+      "truth": true,
+      "truthDescription": "은비는 시상 직후 카드뉴스와 포트폴리오 초안에서 프로젝트를 자신의 단독 성과처럼 보이게 하는 표현을 사용했고, 준혁 이름은 한동안 빠져 있었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 72,
+        "b": 28
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "공로정리",
+      "legitimacyIssue": true,
+      "judgmentStatement": "은비는 성과를 단독으로 표현했다."
+    },
+    {
+      "id": "d-2",
+      "name": "준혁의 마감 직전 자료 누락과 리허설 불참",
+      "truth": true,
+      "truthDescription": "준혁은 최종 리허설과 일부 자료 업로드를 제시간에 마치지 못해, 은비가 발표 전날 결과물 일부를 다시 정리해야 했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "프로젝트절차복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준혁은 자료를 제시간에 제출하지 못했다."
+    },
+    {
+      "id": "d-3",
+      "name": "공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가",
+      "truth": false,
+      "truthDescription": "SNS와 제출 화면 일부는 은비 개인 프로젝트처럼 보였지만, 공모전 원본 제출과 심사 메일, 상장 표기는 팀 프로젝트로 되어 있었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공로정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "은비 개인 작품으로 인식되지 않았다."
+    },
+    {
+      "id": "d-4",
+      "name": "기여도 기록과 제출 규칙을 둘 다 방치한 공동 책임",
+      "truth": true,
+      "truthDescription": "둘은 대표자 표기와 역할 문구를 사전에 합의하기로 했지만, 실제로는 공동 기여 로그를 비워 둔 채 마감 직전까지 역할과 제출 규칙을 흐리게 두었다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "친구경계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "둘은 기여도 기록을 방치했다."
+    },
+    {
+      "id": "d-5",
+      "name": "준혁의 기여는 아이디어 한 줄뿐이었다는 주장",
+      "truth": false,
+      "truthDescription": "준혁의 기여는 단순 아이디어 제시에 그치지 않았고, 설문 구조, 프로토타입 흐름, 최종 제출 부록의 기술 설명에 실제로 반영되어 있었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 68,
+        "b": 32
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "공로정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준혁의 기여는 단순 아이디어가 아니다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "시상 직후 올라온 카드뉴스와 포트폴리오 캡처",
+      "description": "은비 이름만 크게 보이고 '내 프로젝트'라는 문구가 포함된 카드뉴스와 포트폴리오 초안 캡처다.",
+      "type": "sns",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "처음에는 게시물 캡처와 포트폴리오 일부 화면만 제출돼 팀원 표기 전체는 보이지 않았다.",
+        "check_metadata": "캡처 생성 시각은 시상 직후 30분 안쪽으로, 수정 전 가장 초기 버전이다.",
+        "restore_context": "대표자 이름과 제목만 강조된 영역만 남아 있어 제출 시스템의 팀원 입력란과 이후 수정된 설명은 잘려 있다.",
+        "verify_source": "은비 계정 보관본과 오세림이 저장한 캡처의 해시가 일치한다.",
+        "check_edits": "문자 조작 흔적은 없지만 선택적 크롭으로 팀 프로젝트 맥락이 사라져 있다.",
+        "question_acquisition": "개인 포트폴리오 초안과 비공개 스토리가 섞여 있어 사용 범위 제한이 필요하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "조은비에게: \"은비의 단독 성과처럼 보이게 한 게시물과 포트폴리오 문구\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 조은비의 \"은비의 단독 성과처럼 보이게 한 게시물과 포트폴리오 문구\" 쟁점과 관련된다. 조은비은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김준혁에게: \"공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 김준혁의 \"공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가\" 쟁점과 관련된다. 김준혁은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "공모전 제출 form export와 수정 이력",
+      "description": "대표자 필드는 은비로 입력됐지만 팀원 칸에는 준혁이 포함되어 있고, 역할 서술란은 비어 있었던 제출 원본이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "교내 공모전 시스템 export와 제출 직전 수정 기록이 함께 확인됐다.",
+        "check_metadata": "대표자 계정은 은비였지만 팀원 추가는 같은 날 준혁 이름까지 정상 입력돼 있었다.",
+        "restore_context": "시스템 구조상 바깥 화면에는 대표자 이름만 먼저 보이고, 역할 서술란은 둘 다 끝내 채우지 못했다.",
+        "verify_source": "박지후 조교의 관리자 화면과 제출 PDF 원본이 동일한 내용을 보여 준다.",
+        "check_edits": "서버 보존본이라 후편집 흔적이 없다.",
+        "question_acquisition": "학교 시스템 자료라 적법하지만 학번과 연락처는 가려서 다루어야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "조은비에게: \"기여도 기록과 제출 규칙을 둘 다 방치한 공동 책임\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 조은비의 \"기여도 기록과 제출 규칙을 둘 다 방치한 공동 책임\" 쟁점과 관련된다. 조은비은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김준혁에게: \"공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 김준혁의 \"공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가\" 쟁점과 관련된다. 김준혁은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "깃 저장소와 공유드라이브 revision log",
+      "description": "준혁의 설문 구조 설계와 프로토타입 흐름 작업, 그리고 마감 직전 업로드 지연과 병합 충돌을 보여 주는 로그다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "깃 커밋 로그와 공유드라이브 버전 기록이 함께 제출돼 기술 작업과 문서 작업의 흐름을 비교할 수 있었다.",
+        "check_metadata": "준혁의 핵심 설문·프로토타입 작업은 중반까지 집중돼 있고, 최종 업로드는 발표 전날 밤 지연된 흔적이 남아 있다.",
+        "restore_context": "준혁의 기여는 실제로 크지만, 마감 직전 병합 충돌과 파일 누락 때문에 발표자료 정리가 늦어진 것도 사실이다.",
+        "verify_source": "깃 작성자 정보와 학교 계정의 드라이브 수정 기록이 서로 보강된다.",
+        "check_edits": "플랫폼 로그라 커밋과 버전 이력의 사후 위조 흔적은 없다.",
+        "question_acquisition": "공동 프로젝트 저장소라 적법하지만 개인 계정 이메일과 로컬 경로는 최소 공개가 바람직하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "조은비에게: \"준혁의 기여는 아이디어 한 줄뿐이었다는 주장\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 조은비의 \"준혁의 기여는 아이디어 한 줄뿐이었다는 주장\" 쟁점과 관련된다. 조은비은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김준혁에게: \"준혁의 마감 직전 자료 누락과 리허설 불참\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 김준혁의 \"준혁의 마감 직전 자료 누락과 리허설 불참\" 쟁점과 관련된다. 김준혁은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "팀 회의록과 리허설 출석표",
+      "description": "둘이 역할 문구를 정하지 못한 채 마감을 맞았고, 준혁이 최종 리허설 일부에 빠진 사실이 적힌 회의록과 출석표다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "동아리 회의록 원본과 조교가 보관한 리허설 출석표가 함께 제출됐다.",
+        "check_metadata": "최종 주간 회의록에는 역할 문구 미확정이 그대로 남아 있고, 준혁의 리허설 불참 표시도 같은 주에 찍혀 있다.",
+        "restore_context": "준혁이 모든 일을 빠진 것은 아니지만, 발표 직전 설명 연습과 일부 자료 점검은 은비 쪽으로 더 몰렸다.",
+        "verify_source": "최민아 회장의 회의록 파일과 리허설 출석 시트의 날짜가 서로 일치한다.",
+        "check_edits": "문서 수정 이력상 핵심 문장에 사후 추가 흔적은 없다.",
+        "question_acquisition": "학내 동아리 운영 문서라 적법하지만 다른 팀원 의견과 연락처는 비식별화해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "조은비에게: \"기여도 기록과 제출 규칙을 둘 다 방치한 공동 책임\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 조은비의 \"기여도 기록과 제출 규칙을 둘 다 방치한 공동 책임\" 쟁점과 관련된다. 조은비은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김준혁에게: \"준혁의 마감 직전 자료 누락과 리허설 불참\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 김준혁의 \"준혁의 마감 직전 자료 누락과 리허설 불참\" 쟁점과 관련된다. 김준혁은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "심사위원 회신 메일과 상장 원본",
+      "description": "심사위원이 팀 전체 작업을 평가했다는 메일과 팀명으로 발급된 상장, 준혁 기여를 언급한 코멘트가 담긴 자료다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "심사 결과 메일 원문과 상장 PDF, 피드백 시트 원본이 함께 제출됐다.",
+        "check_metadata": "결과 회신에는 팀명 기준 평가가 적혀 있고, 기술 구현과 설문 구조를 분리해 칭찬한 문구가 보인다.",
+        "restore_context": "외부 심사자는 은비 개인이 아니라 팀 프로젝트로 인식했고, 준혁의 기여도도 일정 부분 확인하고 있었다.",
+        "verify_source": "교내 메일 서버 헤더와 조교 보관본이 동일한 회신 내용을 보여 준다.",
+        "check_edits": "기관 발급 PDF와 메일 원본이라 후편집 흔적이 없다.",
+        "question_acquisition": "심사 코멘트에는 다른 팀 비교 내용이 있어 외부 재배포는 제한하는 것이 적절하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "조은비에게: \"준혁의 기여는 아이디어 한 줄뿐이었다는 주장\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 조은비의 \"준혁의 기여는 아이디어 한 줄뿐이었다는 주장\" 쟁점과 관련된다. 조은비은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김준혁에게: \"공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 김준혁의 \"공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가\" 쟁점과 관련된다. 김준혁은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "은비 포트폴리오 캡션 수정 기록과 동아리 게시물 edit history",
+      "description": "은비가 초기 업로드에서 준혁 이름을 빼고 올렸다가 몇 시간 뒤 팀 표기로 수정한 기록이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "포트폴리오 앱의 버전 기록과 동아리 SNS edit history가 함께 제출됐다.",
+        "check_metadata": "문제 문구는 게시 후 약 4시간 동안 유지됐고, 준혁의 항의 메시지 뒤에야 팀 표기로 수정됐다.",
+        "restore_context": "즉시 영구 삭제는 아니었지만, 시상 직후 가장 노출이 큰 시간대에 단독 성과처럼 읽히는 문구가 유지된 셈이다.",
+        "verify_source": "은비 계정의 버전 기록과 최민아 회장이 확인한 게시물 수정 시간대가 일치한다.",
+        "check_edits": "플랫폼 edit history라 사후 가공 흔적은 없다.",
+        "question_acquisition": "개인 포트폴리오 초안이 포함돼 있어 공개 범위는 최소한으로 제한하는 것이 좋다."
+      },
+      "subjectParty": "a"
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "은비는 시상 직후 프로젝트를 단독 성과처럼 보이게 하는 문구를 실제로 올렸다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "준혁은 최종 리허설과 일부 자료 업로드를 제시간에 마치지 못했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "공모전과 심사위원은 이 작업을 팀 프로젝트로 인식하고 있었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "둘은 제출 전 대표자 표기와 기여도 문구를 정리하기로 했지만 실제로는 비워 둔 채 마감을 맞았다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "준혁의 기여는 아이디어 제안에 그치지 않았고 설문 구조와 프로토타입 흐름에 실제로 반영돼 있었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "solo_credit_post_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "caption_history_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "juneok_contribution_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "judge_comment_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "role_log_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_deadline_panic"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "rehearsal_absence_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "upload_delay_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-5",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "solo_recognition_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "submission_form_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_e-2_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_credit_rule_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_why_he_left_roles_undefined"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "공로정리": [
+      "은비는 문제된 게시물과 포트폴리오 문구를 팀 기준으로 고치고, 준혁의 설문·프로토타입 기여를 한 문장씩 명시해 같은 범위에 다시 올린다.",
+      "둘은 발표, 디자인, 설문, 기술구현처럼 역할을 항목별로 나눠 공동 이력서와 개인 포트폴리오에서 각각 어떤 표현까지 가능한지 합의문으로 남긴다.",
+      "다시 단독 성과처럼 보이게 올리거나 상대 기여를 아이디어 수준으로 축소하면 이후 공동 결과물은 각자 포트폴리오에서 분리 표기한다."
+    ],
+    "프로젝트절차복구": [
+      "최종 제출 전 역할 로그와 대표자 표기를 함께 확인하는 체크리스트를 만들고, 마감 당일에는 한 사람만 대표 제출을 맡되 변경사항을 동시에 공유한다.",
+      "자료 업로드와 리허설처럼 마감 직전 병목이 생기는 업무는 책임자와 백업 담당자를 분리해 공동 책임이 흐려지지 않게 한다.",
+      "다음 프로젝트에서도 리허설 불참과 자료 누락이 반복되면 발표와 기술 작업을 완전히 분리해 공동 제출을 하지 않는다."
+    ],
+    "친구경계": [
+      "기여도 분쟁은 시상 직후 SNS에서 바로 싸우지 말고, 원본 제출본과 로그를 같이 본 뒤 하루 안에 직접 정리하는 규칙을 세운다.",
+      "친구 사이 감정과 프로젝트 공로를 섞지 않기 위해, 서로가 수습해 준 과거 빚은 다음 협업의 공로 비율에 자동 반영하지 않는다고 명확히 한다.",
+      "발표자와 제작자 역할 차이가 계속 감정 싸움으로 번지면 동아리 활동은 같이하되 공식 프로젝트는 한동안 따로 맡는 것이 안전하다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

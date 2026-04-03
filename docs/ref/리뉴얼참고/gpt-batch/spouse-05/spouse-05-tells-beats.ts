@@ -128,7 +128,7 @@ export const spouse05TellsBeats = {
       "party": "a",
       "disputeId": "d-2",
       "beatType": "hedge",
-      "line": "전일 블록이 길어 보였을 수는 있습니다. 다만 그때는 클라이언트 요청이 연달아 붙어 있었어요.",
+      "line": "전일 블록이 길어 보였을 수는 있습니다. 그때는 클라이언트 요청이 연달아 붙어 있었어요.",
       "behaviorHint": "시선을 피하며 달력을 손가락으로 짚는다.",
       "applicableStates": [
         "S1"
@@ -401,7 +401,7 @@ export const spouse05TellsBeats = {
       "party": "b",
       "disputeId": "d-1",
       "beatType": "confession",
-      "line": "민재 씨 예약 블록에 허락 없이 들어간 건 제 잘못입니다. 다만 일을 망치려 들어간 게 아니라 심사를 살리려다 선을 넘었습니다.",
+      "line": "민재 씨 예약 블록에 허락 없이 들어간 건 제 잘못입니다. 일을 망치려 들어간 게 아니라 심사를 살리려다 선을 넘었습니다.",
       "behaviorHint": "한 박자 쉬고 책임을 인정한다.",
       "applicableStates": [
         "S5"

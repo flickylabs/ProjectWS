@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-04-03",
+  "sourceFiles": {
+    "partnership-02": "/mnt/data/partnership-02-tells-beats.ts",
+    "partnership-05": "/mnt/data/partnership-05-tells-beats.ts",
+    "partnership-10": "/mnt/data/partnership-10-tells-beats.ts",
+    "partnership-12": "/mnt/data/partnership-12-tells-beats.ts"
+  },
+  "outputs": [
+    "/mnt/data/partnership-tells-beats-regenerated/partnership-02-tells-beats.json",
+    "/mnt/data/partnership-tells-beats-regenerated/partnership-02-tells-beats.ts",
+    "/mnt/data/partnership-tells-beats-regenerated/partnership-05-tells-beats.json",
+    "/mnt/data/partnership-tells-beats-regenerated/partnership-05-tells-beats.ts",
+    "/mnt/data/partnership-tells-beats-regenerated/partnership-10-tells-beats.json",
+    "/mnt/data/partnership-tells-beats-regenerated/partnership-10-tells-beats.ts",
+    "/mnt/data/partnership-tells-beats-regenerated/partnership-12-tells-beats.json",
+    "/mnt/data/partnership-tells-beats-regenerated/partnership-12-tells-beats.ts"
+  ],
+  "validation": {
+    "partnership-02": {
+      "caseId": "partnership-02",
+      "tells": 6,
+      "beats": 36,
+      "evidenceHitCount": 6,
+      "nullEvidenceRefs": []
+    },
+    "partnership-05": {
+      "caseId": "partnership-05",
+      "tells": 6,
+      "beats": 36,
+      "evidenceHitCount": 6,
+      "nullEvidenceRefs": []
+    },
+    "partnership-10": {
+      "caseId": "partnership-10",
+      "tells": 6,
+      "beats": 36,
+      "evidenceHitCount": 6,
+      "nullEvidenceRefs": []
+    },
+    "partnership-12": {
+      "caseId": "partnership-12",
+      "tells": 6,
+      "beats": 36,
+      "evidenceHitCount": 6,
+      "nullEvidenceRefs": []
+    }
+  },
+  "appliedFixes": [
+    {
+      "caseId": "partnership-12",
+      "beatId": "partnership-12:beat:a:d-1:evidence_hit",
+      "field": "afterEvidence",
+      "from": null,
+      "to": "e-1"
+    },
+    {
+      "caseId": "partnership-12",
+      "beatId": "partnership-12:beat:a:d-3:evidence_hit",
+      "field": "afterEvidence",
+      "from": null,
+      "to": "e-4"
+    },
+    {
+      "caseId": "partnership-12",
+      "beatId": "partnership-12:beat:a:d-4:evidence_hit",
+      "field": "afterEvidence",
+      "from": null,
+      "to": "e-5"
+    },
+    {
+      "caseId": "partnership-12",
+      "beatId": "partnership-12:beat:b:d-2:evidence_hit",
+      "field": "afterEvidence",
+      "from": null,
+      "to": "e-2"
+    },
+    {
+      "caseId": "partnership-12",
+      "beatId": "partnership-12:beat:b:d-3:evidence_hit",
+      "field": "afterEvidence",
+      "from": null,
+      "to": "e-4"
+    },
+    {
+      "caseId": "partnership-12",
+      "beatId": "partnership-12:beat:b:d-4:evidence_hit",
+      "field": "afterEvidence",
+      "from": null,
+      "to": "e-6"
+    }
+  ]
+}

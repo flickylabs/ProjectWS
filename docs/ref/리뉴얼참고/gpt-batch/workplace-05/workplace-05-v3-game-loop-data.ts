@@ -1,0 +1,1542 @@
+export const workplace05V3GameLoopData = {
+  "caseId": "workplace-05",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "브리핑 표기와 개인 노트의 간극",
+      "description": "현재 분기 기여와 순수 창작 주장 사이의 틈을 동시에 압박하는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "오상혁 씨, 킥오프 회의록과 버전 이력상 공동기획 문구가 실장님 수정 단계에서만 사라지는데, 그 삭제를 단순 발표 책임 정리라고만 보라는 말씀이십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-05:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "회의록상 구조 초안 작성자는 문가은 씨인데, 왜 승진 브리핑에서는 기획과 발표를 분리해 문가은 씨 이름만 뺐습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-05:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "개인 노트 사진이 함정일 수 있다는 점과 별개로, 현재 분기 기여자 표기까지 지운 이유에 승진 가점 계산이 작동한 것 아닙니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-05:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "문가은 씨, 날짜가 잘린 노트 사진만으로 순수 창작을 단정하긴 어렵습니다. 이 사진을 현재 분기 원안 증명으로 먼저 낸 이유가 뭡니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-05:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "화이트보드 캡처의 날짜가 비어 있는데도 오상혁 씨의 절도를 먼저 확정해 말한 이유는, 더 오래된 출처 검증을 피하려는 의도는 아니었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-05:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "회의록상 현재 기여는 인정되더라도, 원출처까지 본인 창작처럼 밀면 승진 판단을 유리하게 만들 수 있다고 생각한 것 아닙니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-05:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "다운로드 로그와 보류안의 연결선",
+      "description": "절차 위반과 과거 원출처 은폐의 첫 결합 지점을 겨누는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "오상혁 씨, 2년 전 보류안 주석본에 배수진 씨 문구가 남아 있는데, 그 이름을 공식 기록 밖으로 밀어둔 결정을 기억하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-05:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "당시 외부 기여를 내부 공유만으로 정리한 판단이, 지금도 같은 방식이 반복되는 배경 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-05:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "이번에도 원출처를 정식 복원하지 않은 데엔, 팀 통솔 문제로 보일까 봐 과거를 계속 덮고 싶었던 마음이 작동한 것 아닙니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-05:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "문가은 씨, 다운로드 로그상 권한 회수 전 14분 사이에 폴더 일괄 저장과 링크 전송이 연달아 있습니다. 확인만 하려던 행동이라고 보긴 어렵지 않습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-05:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "정식 이의 제기 전에 멘토방과 동료에게 '훔쳤다'는 단정 메시지를 보낸 건, 방어보다 확산에 가까운 행동 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-05:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "승진이 무너질까 두려워 정식 채널보다 사적 채널을 먼저 택한 것이라면, 절차 위반을 감수한 이유가 설명되지 않습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-05:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "평판 메모와 과거 이메일의 복선",
+      "description": "현재 승진 개입과 오래된 출처 은폐의 반복 구조를 동시에 드러내는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "오상혁 씨, 가은 씨 해명 전날 밤 HR 메모에 'source citation risk'를 먼저 입력한 이유가 단순 관리 기록뿐이었다고 보십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-05:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "발표 순서 변경 로그까지 이어진 걸 보면, 그 메모가 승진위원회 인상에 미칠 효과를 알고도 넣은 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-05:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "사실확인보다 먼저 조직 통솔력 이미지를 지키려 했기 때문에, 문가은 씨를 위험 인원처럼 앞세운 것 아닙니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-05:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "문가은 씨, 과거 이메일 체인에선 배수진 씨 이름이 빠진 상태를 그대로 두고 계셨습니다. 그 선례를 이번에도 이용한 것 아닙니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-05:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "오상혁 씨 책임이 있었다 해도, 원출처를 먼저 밝히지 않은 채 피해자 주장부터 앞세운 건 같은 회색지대를 반복한 행동 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-05:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "이번에 꼭 되돌려받고 싶다는 마음 때문에, 과거 방식이 잘못인 줄 알면서도 일부러 되갚는 선택을 한 것 아닙니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-05:b:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-05:a:d-1:unlock:s2:0",
+            "factText": "공동기획 문구 삭제가 오상혁 계정 수정 단계에서 발생했다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "공동기획 표기",
+                "neutral": "해당 표기"
+              },
+              "institution": {
+                "exact": "승진 브리핑",
+                "neutral": "해당 브리핑"
+              },
+              "time": {
+                "exact": "발표 전날",
+                "dateExact": "발표 전날",
+                "period": "이번 승진 브리핑 준비 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-05:a:d-1:unlock:s3:0",
+            "factText": "오상혁은 발표 책임 기준이라는 명분으로 문가은 씨 이름을 의도적으로 제외했다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "공동기획 표기",
+                "neutral": "해당 표기"
+              },
+              "institution": {
+                "exact": "승진 브리핑",
+                "neutral": "해당 브리핑"
+              },
+              "time": {
+                "exact": "발표 전날",
+                "dateExact": "발표 전날",
+                "period": "이번 승진 브리핑 준비 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-05:a:d-1:unlock:s4:0",
+            "factText": "오상혁은 승진 브리핑에서 자기 성과를 더 선명하게 보이게 하려는 마음이 있었다.",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "공동기획 표기",
+                "neutral": "해당 표기"
+              },
+              "institution": {
+                "exact": "승진 브리핑",
+                "neutral": "해당 브리핑"
+              },
+              "time": {
+                "exact": "발표 전날",
+                "dateExact": "발표 전날",
+                "period": "이번 승진 브리핑 준비 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-05:a:d-1:unlock:s5:0",
+            "factText": "오상혁은 문가은 씨 현재 기여를 알면서도 안건을 단독 성과처럼 보이게 만들었다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "공동기획 표기",
+                "neutral": "해당 표기"
+              },
+              "institution": {
+                "exact": "승진 브리핑",
+                "neutral": "해당 브리핑"
+              },
+              "time": {
+                "exact": "발표 전날",
+                "dateExact": "발표 전날",
+                "period": "이번 승진 브리핑 준비 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-05:a:d-4:unlock:s2:0",
+            "factText": "해명 전날 밤 오상혁 계정에서 'source citation risk' 비공개 메모가 먼저 입력됐다.",
+            "tags": [
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "발표 순서 변경 기록",
+                "neutral": "관련 기록"
+              },
+              "institution": {
+                "exact": "HR 승진심사 메모",
+                "neutral": "해당 메모"
+              },
+              "time": {
+                "exact": "해명 전날 밤",
+                "dateExact": "해명 전날 밤",
+                "period": "승진 발표 전날",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-05:a:d-4:unlock:s3:0",
+            "factText": "오상혁은 그 메모가 승진위원회 인상과 발표 순서에 영향을 줄 수 있다는 점을 알고 있었다.",
+            "tags": [
+              "context",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "발표 순서 변경 기록",
+                "neutral": "관련 기록"
+              },
+              "institution": {
+                "exact": "HR 승진심사 메모",
+                "neutral": "해당 메모"
+              },
+              "time": {
+                "exact": "해명 전날 밤",
+                "dateExact": "해명 전날 밤",
+                "period": "승진 발표 전날",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-05:a:d-4:unlock:s4:0",
+            "factText": "오상혁은 사실확인보다 관리자로서 통솔력을 지킨 사람처럼 보이려는 쪽을 택했다.",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "발표 순서 변경 기록",
+                "neutral": "관련 기록"
+              },
+              "institution": {
+                "exact": "HR 승진심사 메모",
+                "neutral": "해당 메모"
+              },
+              "time": {
+                "exact": "해명 전날 밤",
+                "dateExact": "해명 전날 밤",
+                "period": "승진 발표 전날",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-05:a:d-4:unlock:s5:0",
+            "factText": "오상혁은 가은의 평판을 선제적으로 깎아 승진 판단에 개입했다.",
+            "tags": [
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "발표 순서 변경 기록",
+                "neutral": "관련 기록"
+              },
+              "institution": {
+                "exact": "HR 승진심사 메모",
+                "neutral": "해당 메모"
+              },
+              "time": {
+                "exact": "해명 전날 밤",
+                "dateExact": "해명 전날 밤",
+                "period": "승진 발표 전날",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-05:a:d-5:unlock:s2:0",
+            "factText": "2년 전 오상혁은 배수진 씨 이름을 공식이 아닌 내부 공유에만 남기자는 회신을 보냈다.",
+            "tags": [
+              "legacy_sentence",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "과거 출처 누락 이메일 체인",
+                "neutral": "과거 이메일"
+              },
+              "institution": {
+                "exact": "공식 기록",
+                "neutral": "공식 문서"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "이전 파일럿 보류 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-05:a:d-5:unlock:s3:0",
+            "factText": "오상혁은 외부 기여를 공식 기록에서 빼는 방식을 분쟁 관리라고 합리화했다.",
+            "tags": [
+              "self_justification",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "과거 출처 누락 이메일 체인",
+                "neutral": "과거 이메일"
+              },
+              "institution": {
+                "exact": "공식 기록",
+                "neutral": "공식 문서"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "이전 파일럿 보류 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-05:a:d-5:unlock:s4:0",
+            "factText": "오상혁은 그 선례가 이번 반복의 토대가 됐다는 걸 알고도 정식 복원을 미뤘다.",
+            "tags": [
+              "motive",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "과거 출처 누락 이메일 체인",
+                "neutral": "과거 이메일"
+              },
+              "institution": {
+                "exact": "공식 기록",
+                "neutral": "공식 문서"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "이전 파일럿 보류 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-05:a:d-5:unlock:s5:0",
+            "factText": "오상혁은 과거 출처 누락을 덮어 잘못된 관행을 만들었다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "과거 출처 누락 이메일 체인",
+                "neutral": "과거 이메일"
+              },
+              "institution": {
+                "exact": "공식 기록",
+                "neutral": "공식 문서"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "이전 파일럿 보류 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-05:b:d-2:unlock:s2:0",
+            "factText": "문가은 계정으로 승진위원회 준비 폴더 일괄 다운로드가 발생했다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "DLP 전송 기록",
+                "neutral": "관련 기록"
+              },
+              "institution": {
+                "exact": "승진위원회 준비 폴더",
+                "neutral": "해당 폴더"
+              },
+              "time": {
+                "exact": "권한 회수 전 14분",
+                "dateExact": "권한 회수 전 14분",
+                "period": "권한 종료 직전",
+                "neutral": "그 14분"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-05:b:d-2:unlock:s3:0",
+            "factText": "문가은은 다운로드 직후 멘토방과 동료 둘에게 상혁을 단정하는 메시지를 보냈다.",
+            "tags": [
+              "context",
+              "privacy"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "DLP 전송 기록",
+                "neutral": "관련 기록"
+              },
+              "institution": {
+                "exact": "승진위원회 준비 폴더",
+                "neutral": "해당 폴더"
+              },
+              "time": {
+                "exact": "권한 회수 전 14분",
+                "dateExact": "권한 회수 전 14분",
+                "period": "권한 종료 직전",
+                "neutral": "그 14분"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-05:b:d-2:unlock:s4:0",
+            "factText": "문가은은 승진이 무너질까 두려워 정식 채널보다 사적 확산을 먼저 택했다.",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "DLP 전송 기록",
+                "neutral": "관련 기록"
+              },
+              "institution": {
+                "exact": "승진위원회 준비 폴더",
+                "neutral": "해당 폴더"
+              },
+              "time": {
+                "exact": "권한 회수 전 14분",
+                "dateExact": "권한 회수 전 14분",
+                "period": "권한 종료 직전",
+                "neutral": "그 14분"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-05:b:d-2:unlock:s5:0",
+            "factText": "문가은은 남은 권한과 감정을 이용해 자료를 퍼뜨린 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "문가은",
+                "neutral": "그 사람",
+                "judgeRef": "문가은 씨",
+                "fullName": "문가은"
+              },
+              "document": {
+                "exact": "DLP 전송 기록",
+                "neutral": "관련 기록"
+              },
+              "institution": {
+                "exact": "승진위원회 준비 폴더",
+                "neutral": "해당 폴더"
+              },
+              "time": {
+                "exact": "권한 회수 전 14분",
+                "dateExact": "권한 회수 전 14분",
+                "period": "권한 종료 직전",
+                "neutral": "그 14분"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-05:b:d-3:unlock:s2:0",
+            "factText": "문가은 개인 노트 문구는 2년 전 배수진 씨 주석본 핵심 표현과 겹친다.",
+            "tags": [
+              "identity",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "2년 전 보류 파일과 개인 노트",
+                "neutral": "해당 자료"
+              },
+              "institution": {
+                "exact": "고객회복 랩 안건",
+                "neutral": "해당 안건"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "보류 파일이 남은 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-05:b:d-3:unlock:s3:0",
+            "factText": "문가은은 오래된 구조를 자기 템플릿으로 옮기며 원출처 표기를 빼고 자기 안처럼 굳혔다.",
+            "tags": [
+              "legacy_sentence",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "2년 전 보류 파일과 개인 노트",
+                "neutral": "해당 자료"
+              },
+              "institution": {
+                "exact": "고객회복 랩 안건",
+                "neutral": "해당 안건"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "보류 파일이 남은 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-05:b:d-3:unlock:s4:0",
+            "factText": "문가은은 순수 창작으로 인정받고 승진 누락을 뒤집고 싶어 원출처를 숨겼다.",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "2년 전 보류 파일과 개인 노트",
+                "neutral": "해당 자료"
+              },
+              "institution": {
+                "exact": "고객회복 랩 안건",
+                "neutral": "해당 안건"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "보류 파일이 남은 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-05:b:d-3:unlock:s5:0",
+            "factText": "문가은은 고객회복 랩을 순수 창작이라고 주장한 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "2년 전 보류 파일과 개인 노트",
+                "neutral": "해당 자료"
+              },
+              "institution": {
+                "exact": "고객회복 랩 안건",
+                "neutral": "해당 안건"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "보류 파일이 남은 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-05:b:d-5:unlock:s2:0",
+            "factText": "문가은은 2년 전 출처 정리를 공식화하지 않은 채 보호받는 쪽으로 남았다.",
+            "tags": [
+              "legacy_sentence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "과거 출처 누락 이메일 체인",
+                "neutral": "과거 이메일"
+              },
+              "institution": {
+                "exact": "공식 보존 문서",
+                "neutral": "공식 기록"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "이전 파일럿 보류 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-05:b:d-5:unlock:s3:0",
+            "factText": "문가은은 그때의 회색지대를 알고 이번에도 원출처를 먼저 꺼내지 않았다.",
+            "tags": [
+              "legacy_sentence",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "과거 출처 누락 이메일 체인",
+                "neutral": "과거 이메일"
+              },
+              "institution": {
+                "exact": "공식 보존 문서",
+                "neutral": "공식 기록"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "이전 파일럿 보류 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-05:b:d-5:unlock:s4:0",
+            "factText": "문가은에게는 지워졌던 기억을 이번에 되갚고 싶다는 감정이 섞여 있었다.",
+            "tags": [
+              "emotion",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "과거 출처 누락 이메일 체인",
+                "neutral": "과거 이메일"
+              },
+              "institution": {
+                "exact": "공식 보존 문서",
+                "neutral": "공식 기록"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "이전 파일럿 보류 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-05:b:d-5:unlock:s5:0",
+            "factText": "문가은은 과거에 덮인 방식에 기대 이번 반복을 만든 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "배수진",
+                "neutral": "그 사람",
+                "judgeRef": "배수진 씨",
+                "fullName": "배수진"
+              },
+              "document": {
+                "exact": "과거 출처 누락 이메일 체인",
+                "neutral": "과거 이메일"
+              },
+              "institution": {
+                "exact": "공식 보존 문서",
+                "neutral": "공식 기록"
+              },
+              "time": {
+                "exact": "2년 전",
+                "dateExact": "2년 전",
+                "period": "이전 파일럿 보류 시점",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "workplace-05:contradiction:0",
+        "targetParty": "a",
+        "trigger": "오상혁이 공동기획 표기는 건드리지 않았다고 부인한 뒤 e-1이 제시될 때",
+        "text": "버전 이력상 삭제된 건 디자인 요소가 아니라 공동기획 표기 그 한 줄입니다. 오상혁 씨 설명은 수정 목적과 삭제 대상이 어긋납니다.",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "workplace-05:contradiction:1",
+        "targetParty": "b",
+        "trigger": "문가은이 확인만 했다고 축소한 뒤 e-3의 DLP 기록이 열릴 때",
+        "text": "확인만 했다는 말과 달리 다운로드 직후 링크 전송이 이어집니다. 방어용 열람과 확산 행동이 같은 타임라인에 묶여 있습니다.",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-3"
+        ]
+      },
+      {
+        "id": "workplace-05:contradiction:2",
+        "targetParty": "b",
+        "trigger": "문가은이 순수 창작을 반복 주장한 뒤 e-4와 e-6이 함께 검토될 때",
+        "text": "현재 노트의 핵심 표현이 2년 전 보류안과 과거 메일 체인에서 이미 확인됩니다. '완전한 처음'이라는 말은 원출처 기록과 충돌합니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-6"
+        ]
+      },
+      {
+        "id": "workplace-05:contradiction:3",
+        "targetParty": "a",
+        "trigger": "오상혁이 평판 개입을 부인한 뒤 e-5의 초기 메모 시각이 제시될 때",
+        "text": "사실확인 전날 밤 입력된 메모와 발표 순서 변경 로그가 연결됩니다. 오상혁 씨는 단순 리스크 기록이었다는 설명만으로 영향력을 지울 수 없습니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "workplace-05:interjection:0",
+        "speaker": "a",
+        "trigger": "문가은이 순수 창작과 현재 기여를 섞어 말할 때",
+        "text": "제가 말씀드리는 건 현재 개선 기여를 부정하자는 게 아니라, 원출처를 지운 채 순수 창작으로만 말하는 건 다르다는 겁니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-1"
+        ]
+      },
+      {
+        "id": "workplace-05:interjection:1",
+        "speaker": "b",
+        "trigger": "오상혁이 '팀 자산'이라는 말로 표기 삭제를 희석할 때",
+        "text": "팀 자산이라고 부르면 제 이름이 빠진 일이 없어지진 않아요. 지금 지워진 사람은 저예요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-05:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 현재 기여와 원출처를 일부러 뒤섞을 때",
+        "text": "현재 분기 기여와 2년 전 원출처는 별개로 확인하겠습니다. 둘 중 하나를 섞어 다른 하나를 지울 수는 없습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "workplace-05:outburst:a:0",
+        "party": "a",
+        "trigger": "오상혁이 '아이디어 도둑'이라는 표현을 직접 들을 때",
+        "text": "그 표현은 받아들일 수 없습니다. 제가 관리자로서 선을 넘은 건 맞아도, 통째로 훔친 사람처럼 몰아붙이진 마십시오.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-05:outburst:a:1",
+        "party": "a",
+        "trigger": "2년 전 은폐 메일을 읽고도 계속 회피한다는 지적을 받을 때",
+        "text": "그때는 본부 전체가 흔들릴 상황이었습니다. 제가 잘못 판단한 건 맞지만, 아무 생각 없이 덮은 것처럼 말하시면 안 됩니다.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-05:outburst:b:0",
+        "party": "b",
+        "trigger": "문가은이 무단 다운로드만 부각되고 현재 기여가 지워진다고 느낄 때",
+        "text": "또 그 얘기만 하시네요. 제가 선 넘은 건 맞아도, 왜 제가 지워진 사람이라는 사실은 자꾸 뒤로 밀리죠?",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "workplace-05:outburst:b:1",
+        "party": "b",
+        "trigger": "문가은이 순수 창작 거짓을 정면으로 인정해야 하는 순간",
+        "text": "네, 저도 숨겼어요. 그런데 그걸 안 꺼내면 또 뺏길 것 같았어요. 그 공포까지 없는 일처럼 만들진 마세요.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "workplace-05:transition:a:d-1:s0_s1",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "credit_label_question",
+      "line": "공동기획 표기라는 말은 너무 단선적입니다. 팀 자산화된 안건이고, 우선은 발표 책임 기준으로 보셔야 합니다.",
+      "behaviorHint": "서류를 반듯하게 맞추며 설명 범위를 스스로 정한다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-1:s1_s2",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "문가은 씨 초안이 들어간 건 맞습니다. 다만 구조 초안과 최종 브리핑 책임을 같은 층위로 보긴 어렵습니다.",
+      "behaviorHint": "버전 이력을 본 뒤 짧게 인정하고 곧바로 기준 설명을 붙인다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-1:s2_s3",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_no_coauthor_question",
+      "line": "제가 공동기획 문구를 뺀 건 맞습니다. 그래도 승진위원회 자료는 단일 발표 책임 체계로 정리하려 했습니다.",
+      "behaviorHint": "고개를 한번 숙였다가 다시 들어 방어 논리를 이어 간다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-1:s3_s5",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_or_responsibility_question",
+      "line": "결국 제가 제 성과처럼 보이게 만들려 한 겁니다. 제 잘못이고 문가은 씨 기여를 지운 책임이 제게 있습니다.",
+      "behaviorHint": "책상 위 손을 떼지 못한 채 인정 문장을 또렷하게 말한다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-4:s0_s1",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "promotion_note_question",
+      "line": "그 메모는 인사 판단이 아니라 리스크 정리라고 봐 주십시오. 아직 판단을 내려 달라고 한 단계는 아니었습니다.",
+      "behaviorHint": "말속도가 빨라지며 메모의 성격만 반복한다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-4:s1_s2",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "메모를 먼저 넣은 건 맞습니다. 다만 그때는 출처 이슈가 바로 승진 변수로 번질까 우려했습니다.",
+      "behaviorHint": "메모 입력 시각을 확인한 뒤 낮게 한숨을 쉰다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-4:s2_s4",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_committee_pressure",
+      "line": "솔직히 말씀드리면, 관리자로서 아무 말도 안 한 사람으로 보이고 싶지 않았습니다. 그래서 사실확인보다 먼저 방어적으로 움직였습니다.",
+      "behaviorHint": "잠깐 침묵한 뒤 처음으로 감정이 섞인 설명을 꺼낸다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-4:s4_s5",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "speaking_order_or_responsibility_question",
+      "line": "그 결과 문가은 씨 발표 순서와 평판에 영향을 줬습니다. 제 판단이었고 제 책임입니다.",
+      "behaviorHint": "등받이에서 등을 떼고 몸을 앞으로 숙인다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-5:s0_s1",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_incident_question",
+      "line": "그 일은 공식 분쟁으로 키우지 않으려 했을 뿐입니다. 당시엔 내부 정리로 끝내는 게 낫다고 봤습니다.",
+      "behaviorHint": "과거 사건을 현재와 분리하려는 듯 손을 작게 젓는다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-5:s1_s2",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "배수진 씨 이름을 내부 공유로만 남기자는 회신을 제가 한 건 맞습니다. 문제를 밖으로 키우지 않으려 했습니다.",
+      "behaviorHint": "옛 이메일 문장을 눈으로 따라 읽고 인정한다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-5:s2_s3",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "contractor_name_question",
+      "line": "외부 기여를 공식 기록에서 뺀 건 사실입니다. 다만 문가은 씨도 그 흐름을 알고 있었고 저 혼자만의 판단은 아니었습니다.",
+      "behaviorHint": "책임을 나누듯 손바닥을 펼쳐 보인다."
+    },
+    {
+      "id": "workplace-05:transition:a:d-5:s3_s5",
+      "caseId": "workplace-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "archive_coverup_question",
+      "line": "결국 제가 덮었습니다. 그때 만든 침묵의 방식이 이번 반복까지 불렀고, 그 책임이 제게 있습니다.",
+      "behaviorHint": "과거 메일 제목을 되뇌듯 낮게 말한다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-2:s0_s1",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "folder_access_question",
+      "line": "남아 있던 권한으로 본 건 맞지만, 그걸 무단 확보라고만 부르면 제가 처한 상황은 빠져요.",
+      "behaviorHint": "어깨를 웅크린 채 억울함을 먼저 드러낸다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-2:s1_s2",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "내려받은 건 맞아요. 그때는 정식 채널보다 먼저 증거를 붙잡아야 한다는 생각뿐이었어요.",
+      "behaviorHint": "로그를 본 뒤 빠르게 인정하고 숨을 고른다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-2:s2_s3",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "mentor_chat_question",
+      "line": "멘토방과 동료에게 보낸 것도 맞아요. 저는 또 지워질까 봐 누군가 먼저 알아야 한다고 생각했어요.",
+      "behaviorHint": "눈가가 젖지만 끝내 울지는 않는다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-2:s3_s5",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "leftover_permission_question",
+      "line": "권한이 남아 있었다고 해도 제가 선을 넘은 건 맞아요. 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "양손을 모은 채 짧게 고개를 끄덕인다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-3:s0_s1",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "originality_claim_question",
+      "line": "제가 만든 부분이 분명히 있었어요. 그래서 참고한 흐름이 있어도 제 안이라고 더 세게 말했어요.",
+      "behaviorHint": "피해를 호소하던 톤에서 조금 낮아진 설명 톤으로 이동한다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-3:s1_s2",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "노트와 화이트보드 문장이 제 손에서 다시 정리된 건 맞아요. 다만 그때도 저는 참고였다고 믿고 있었어요.",
+      "behaviorHint": "개인 노트 쪽으로 손을 내밀며 반쯤 인정한다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-3:s2_s4",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "e-4_presented",
+      "line": "보류안까지 보니 더는 완전한 순수 창작이라고 말할 수 없어요. 제가 원출처를 숨긴 채 제 안처럼 밀어붙였어요.",
+      "behaviorHint": "말끝이 떨리며 시선이 아래로 떨어진다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-3:s4_s5",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6_or_responsibility_question",
+      "line": "네, 제가 순수 창작이라고 주장한 건 거짓이었어요. 제 잘못이고 원출처를 지운 책임이 제게 있어요.",
+      "behaviorHint": "눈을 감았다 뜬 뒤 짧게 사실을 확정한다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-5:s0_s1",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_case_reminder",
+      "line": "그때도 저는 조용히 있는 쪽을 택했어요. 반복이라고 부르면 싫었지만, 같은 냄새가 난다는 건 알고 있었어요.",
+      "behaviorHint": "반발하듯 시작했다가 끝에서 목소리가 작아진다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-5:s1_s2",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_fear_of_being_erased",
+      "line": "맞아요, 또 지워질까 봐 겁났어요. 그래서 예전처럼 원출처를 먼저 꺼내지 못했어요.",
+      "behaviorHint": "한숨과 함께 첫 두려움을 인정한다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-5:s2_s3",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "contractor_credit_question",
+      "line": "배수진 씨 이름을 끝까지 밀지 못한 것도 맞고, 이번에도 그 회색지대를 제가 이용한 것도 맞아요. 그래도 오상혁 씨도 그 방식을 알고 있었어요.",
+      "behaviorHint": "시선을 피하다가 마지막 문장에서 상대를 잠깐 본다."
+    },
+    {
+      "id": "workplace-05:transition:b:d-5:s3_s5",
+      "caseId": "workplace-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 제가 반복에 올라탔어요. 되갚고 싶은 마음까지 섞였고, 그 책임을 피할 수 없어요.",
+      "behaviorHint": "울음을 삼키듯 멈칫한 뒤 인정한다."
+    }
+  ]
+}
+

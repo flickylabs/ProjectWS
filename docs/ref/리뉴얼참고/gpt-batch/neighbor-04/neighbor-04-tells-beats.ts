@@ -3,7 +3,7 @@ export const neighbor04TellsBeats = {
   "executableTells": {
     "a": [
       {
-        "id": "neighbor04:a:tell:sympathy_stack",
+        "id": "neighbor-04:a:tell:sympathy_stack",
         "appliesWhen": [
           "emotional",
           "hurt",
@@ -20,7 +20,7 @@ export const neighbor04TellsBeats = {
         "originalPattern": "본론 전에 '그때도 아버지가 힘들었고, 아침마다 내가 뛰었고'처럼 고생 장면을 먼저 길게 쌓는다."
       },
       {
-        "id": "neighbor04:a:tell:omission_wrap",
+        "id": "neighbor-04:a:tell:omission_wrap",
         "appliesWhen": [
           "lying",
           "avoiding",
@@ -37,7 +37,7 @@ export const neighbor04TellsBeats = {
         "originalPattern": "자신에게 불리한 시간 약속이나 종료 시점을 빼고, 남이 남긴 쪽지와 태도만 전면에 둔다."
       },
       {
-        "id": "neighbor04:a:tell:accusation_echo",
+        "id": "neighbor-04:a:tell:accusation_echo",
         "appliesWhen": [
           "cornered",
           "defensive",
@@ -55,7 +55,7 @@ export const neighbor04TellsBeats = {
     ],
     "b": [
       {
-        "id": "neighbor04:b:tell:clause_recital",
+        "id": "neighbor-04:b:tell:clause_recital",
         "appliesWhen": [
           "lying",
           "defensive",
@@ -71,7 +71,7 @@ export const neighbor04TellsBeats = {
         "originalPattern": "자신의 과한 대응을 묻는 질문에는 관리규약 문장을 길게 읽으며 행동의 수위를 흐린다."
       },
       {
-        "id": "neighbor04:b:tell:timestamp_wall",
+        "id": "neighbor-04:b:tell:timestamp_wall",
         "appliesWhen": [
           "cornered",
           "defensive",
@@ -87,7 +87,7 @@ export const neighbor04TellsBeats = {
         "originalPattern": "몇 시 몇 분에 몇 번 칸이 비지 않았는지를 연속으로 말해 감정 논의를 차단한다."
       },
       {
-        "id": "neighbor04:b:tell:affect_flattening",
+        "id": "neighbor-04:b:tell:affect_flattening",
         "appliesWhen": [
           "avoiding",
           "emotional",
@@ -106,7 +106,7 @@ export const neighbor04TellsBeats = {
   },
   "beatScripts": [
     {
-      "id": "neighbor04:beat:a:d-1:deny",
+      "id": "neighbor-04:beat:a:d-1:deny",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-1",
@@ -119,7 +119,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-1:hedge",
+      "id": "neighbor-04:beat:a:d-1:hedge",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-1",
@@ -132,7 +132,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-1:partial",
+      "id": "neighbor-04:beat:a:d-1:partial",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-1",
@@ -145,7 +145,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-1:blame",
+      "id": "neighbor-04:beat:a:d-1:blame",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-1",
@@ -158,7 +158,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-1:confession",
+      "id": "neighbor-04:beat:a:d-1:confession",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-1",
@@ -171,7 +171,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-1:evidence_hit",
+      "id": "neighbor-04:beat:a:d-1:evidence_hit",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-1",
@@ -184,7 +184,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": "e-2"
     },
     {
-      "id": "neighbor04:beat:a:d-3:deny",
+      "id": "neighbor-04:beat:a:d-3:deny",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-3",
@@ -197,7 +197,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-3:hedge",
+      "id": "neighbor-04:beat:a:d-3:hedge",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-3",
@@ -210,12 +210,12 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-3:partial",
+      "id": "neighbor-04:beat:a:d-3:partial",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-3",
       "beatType": "partial",
-      "line": "확실한 증거가 있었던 건 아니고, 그날 분위기 때문에 제가 그렇게 연결해서 본 건 맞습니다. 메모와 콘을 본 직후라 감정이 먼저 튀었어요.",
+      "line": "확실한 증거가 있었던 건 아니고, 그날 분위기 때문에 제가 그렇게 연결해서 본 건 맞습니다. 다만 메모와 콘을 본 직후라 감정이 먼저 튀었어요.",
       "behaviorHint": "손으로 목을 한번 쓸고 난 뒤 조심스럽게 수위를 낮춘다.",
       "applicableStates": [
         "S2"
@@ -223,7 +223,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-3:blame",
+      "id": "neighbor-04:beat:a:d-3:blame",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-3",
@@ -236,7 +236,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-3:confession",
+      "id": "neighbor-04:beat:a:d-3:confession",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-3",
@@ -249,7 +249,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-3:evidence_hit",
+      "id": "neighbor-04:beat:a:d-3:evidence_hit",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-3",
@@ -262,7 +262,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": "e-1"
     },
     {
-      "id": "neighbor04:beat:a:d-5:deny",
+      "id": "neighbor-04:beat:a:d-5:deny",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-5",
@@ -275,7 +275,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-5:hedge",
+      "id": "neighbor-04:beat:a:d-5:hedge",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-5",
@@ -288,7 +288,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-5:partial",
+      "id": "neighbor-04:beat:a:d-5:partial",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-5",
@@ -301,7 +301,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-5:blame",
+      "id": "neighbor-04:beat:a:d-5:blame",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-5",
@@ -314,7 +314,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-5:confession",
+      "id": "neighbor-04:beat:a:d-5:confession",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-5",
@@ -327,7 +327,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:a:d-5:evidence_hit",
+      "id": "neighbor-04:beat:a:d-5:evidence_hit",
       "caseId": "neighbor-04",
       "party": "a",
       "disputeId": "d-5",
@@ -340,7 +340,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": "e-6"
     },
     {
-      "id": "neighbor04:beat:b:d-2:deny",
+      "id": "neighbor-04:beat:b:d-2:deny",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-2",
@@ -353,7 +353,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-2:hedge",
+      "id": "neighbor-04:beat:b:d-2:hedge",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-2",
@@ -366,12 +366,12 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-2:partial",
+      "id": "neighbor-04:beat:b:d-2:partial",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-2",
       "beatType": "partial",
-      "line": "공식 신고 전에 콘과 메모를 둔 건 맞습니다. 그건 별개고, 반복 위반이 계속돼 순간적으로 선을 넘은 겁니다.",
+      "line": "공식 신고 전에 콘과 메모를 둔 건 맞습니다. 다만 그건 별개고, 반복 위반이 계속돼 순간적으로 선을 넘은 겁니다.",
       "behaviorHint": "짧게 인정한 뒤 바로 이유를 숫자처럼 덧붙인다.",
       "applicableStates": [
         "S2"
@@ -379,7 +379,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-2:blame",
+      "id": "neighbor-04:beat:b:d-2:blame",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-2",
@@ -392,7 +392,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-2:confession",
+      "id": "neighbor-04:beat:b:d-2:confession",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-2",
@@ -405,7 +405,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-2:evidence_hit",
+      "id": "neighbor-04:beat:b:d-2:evidence_hit",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-2",
@@ -418,7 +418,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": "e-4"
     },
     {
-      "id": "neighbor04:beat:b:d-4:deny",
+      "id": "neighbor-04:beat:b:d-4:deny",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-4",
@@ -431,7 +431,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-4:hedge",
+      "id": "neighbor-04:beat:b:d-4:hedge",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-4",
@@ -444,7 +444,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-4:partial",
+      "id": "neighbor-04:beat:b:d-4:partial",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-4",
@@ -457,7 +457,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-4:blame",
+      "id": "neighbor-04:beat:b:d-4:blame",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-4",
@@ -470,12 +470,12 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-4:confession",
+      "id": "neighbor-04:beat:b:d-4:confession",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-4",
       "beatType": "confession",
-      "line": "지난가을 임시 배려는 재활 종료와 함께 끝나는 약속이 맞았습니다. 저는 그 사실을 알고도 나중에 문제 제기할 근거처럼만 들고 있었고 즉시 정리하진 못했습니다.",
+      "line": "지난가을 임시 배려는 재활 종료와 함께 끝나는 약속이 맞았습니다. 저는 그 사실을 알고도 나중에 문제 제기할 근거처럼만 들고 있었고 즉시 정리하진 못했습니다, 그건 제 책임입니다.",
       "behaviorHint": "입술을 굳게 다문 채 계산적이었던 대목을 낮게 인정한다.",
       "applicableStates": [
         "S5"
@@ -483,7 +483,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-4:evidence_hit",
+      "id": "neighbor-04:beat:b:d-4:evidence_hit",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-4",
@@ -496,7 +496,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": "e-3"
     },
     {
-      "id": "neighbor04:beat:b:d-5:deny",
+      "id": "neighbor-04:beat:b:d-5:deny",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-5",
@@ -509,7 +509,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-5:hedge",
+      "id": "neighbor-04:beat:b:d-5:hedge",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-5",
@@ -522,7 +522,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-5:partial",
+      "id": "neighbor-04:beat:b:d-5:partial",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-5",
@@ -535,7 +535,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-5:blame",
+      "id": "neighbor-04:beat:b:d-5:blame",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-5",
@@ -548,7 +548,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-5:confession",
+      "id": "neighbor-04:beat:b:d-5:confession",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-5",
@@ -561,7 +561,7 @@ export const neighbor04TellsBeats = {
       "afterEvidence": null
     },
     {
-      "id": "neighbor04:beat:b:d-5:evidence_hit",
+      "id": "neighbor-04:beat:b:d-5:evidence_hit",
       "caseId": "neighbor-04",
       "party": "b",
       "disputeId": "d-5",
@@ -574,4 +574,4 @@ export const neighbor04TellsBeats = {
       "afterEvidence": "e-6"
     }
   ]
-}
+};

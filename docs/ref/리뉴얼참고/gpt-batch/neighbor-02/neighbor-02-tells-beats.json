@@ -3,7 +3,7 @@
   "executableTells": {
     "a": [
       {
-        "id": "neighbor02:a:tell:sympathy_stack",
+        "id": "neighbor-02:a:tell:sympathy_stack",
         "appliesWhen": [
           "emotional",
           "hurt",
@@ -20,7 +20,7 @@
         "originalPattern": "억울함이 올라오면 자신이 참고 넘긴 장면을 연달아 열거해 먼저 동정을 얻으려 한다."
       },
       {
-        "id": "neighbor02:a:tell:selective_victimhood",
+        "id": "neighbor-02:a:tell:selective_victimhood",
         "appliesWhen": [
           "lying",
           "cornered",
@@ -37,7 +37,7 @@
         "originalPattern": "불리한 행동은 빼고 '나만 표적이 됐다'는 피해 서사만 남겨 말한다."
       },
       {
-        "id": "neighbor02:a:tell:accusation_echo",
+        "id": "neighbor-02:a:tell:accusation_echo",
         "appliesWhen": [
           "cornered",
           "defensive",
@@ -56,7 +56,7 @@
     ],
     "b": [
       {
-        "id": "neighbor02:b:tell:clause_recital",
+        "id": "neighbor-02:b:tell:clause_recital",
         "appliesWhen": [
           "lying",
           "avoiding",
@@ -73,7 +73,7 @@
         "originalPattern": "책임을 줄일 때는 관리규약 문장을 길게 인용해 행동 자체보다 규정 해석으로 논점을 옮긴다."
       },
       {
-        "id": "neighbor02:b:tell:timestamp_wall",
+        "id": "neighbor-02:b:tell:timestamp_wall",
         "appliesWhen": [
           "cornered",
           "lying",
@@ -89,7 +89,7 @@
         "originalPattern": "시각과 동선을 촘촘히 나열해 질문자가 감정 문제를 제기할 틈을 줄인다."
       },
       {
-        "id": "neighbor02:b:tell:affect_flattening",
+        "id": "neighbor-02:b:tell:affect_flattening",
         "appliesWhen": [
           "avoiding",
           "hurt",
@@ -109,7 +109,7 @@
   },
   "beatScripts": [
     {
-      "id": "neighbor02:beat:a:d-1:deny",
+      "id": "neighbor-02:beat:a:d-1:deny",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-1",
@@ -122,7 +122,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-1:hedge",
+      "id": "neighbor-02:beat:a:d-1:hedge",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-1",
@@ -135,7 +135,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-1:partial",
+      "id": "neighbor-02:beat:a:d-1:partial",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-1",
@@ -148,7 +148,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-1:blame",
+      "id": "neighbor-02:beat:a:d-1:blame",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-1",
@@ -161,12 +161,12 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-1:confession",
+      "id": "neighbor-02:beat:a:d-1:confession",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-1",
       "beatType": "confession",
-      "line": "네, 제가 캡처 한 장으로 민규 씨를 수상한 사람처럼 보이게 했어요. 확인보다 제 불안과 인상을 먼저 믿었습니다.",
+      "line": "네, 제가 캡처 한 장으로 민규 씨를 수상한 사람처럼 보이게 했어요. 확인보다 제 불안과 인상을 먼저 믿었습니다, 그건 제 책임입니다.",
       "behaviorHint": "고개를 떨구고 마지막 문장을 짧게 끊는다.",
       "applicableStates": [
         "S5"
@@ -174,7 +174,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-1:evidence_hit",
+      "id": "neighbor-02:beat:a:d-1:evidence_hit",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-1",
@@ -187,7 +187,7 @@
       "afterEvidence": "e-1"
     },
     {
-      "id": "neighbor02:beat:a:d-4:deny",
+      "id": "neighbor-02:beat:a:d-4:deny",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-4",
@@ -200,7 +200,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-4:hedge",
+      "id": "neighbor-02:beat:a:d-4:hedge",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-4",
@@ -213,7 +213,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-4:partial",
+      "id": "neighbor-02:beat:a:d-4:partial",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-4",
@@ -226,7 +226,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-4:blame",
+      "id": "neighbor-02:beat:a:d-4:blame",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-4",
@@ -239,12 +239,12 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-4:confession",
+      "id": "neighbor-02:beat:a:d-4:confession",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-4",
       "beatType": "confession",
-      "line": "민규 씨 택배 절도 의심은 사실이 아니었습니다. 오배송 박스 이동을 제가 절도처럼 퍼뜨렸어요.",
+      "line": "민규 씨 택배 절도 의심은 사실이 아니었습니다. 오배송 박스 이동을 제가 절도처럼 퍼뜨렸어요, 그건 제 책임입니다.",
       "behaviorHint": "손을 내려다보며 사과하듯 낮은 톤으로 말한다.",
       "applicableStates": [
         "S5"
@@ -252,7 +252,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-4:evidence_hit",
+      "id": "neighbor-02:beat:a:d-4:evidence_hit",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-4",
@@ -265,7 +265,7 @@
       "afterEvidence": "e-2"
     },
     {
-      "id": "neighbor02:beat:a:d-5:deny",
+      "id": "neighbor-02:beat:a:d-5:deny",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-5",
@@ -278,7 +278,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-5:hedge",
+      "id": "neighbor-02:beat:a:d-5:hedge",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-5",
@@ -291,7 +291,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-5:partial",
+      "id": "neighbor-02:beat:a:d-5:partial",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-5",
@@ -304,7 +304,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-5:blame",
+      "id": "neighbor-02:beat:a:d-5:blame",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-5",
@@ -317,12 +317,12 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-5:confession",
+      "id": "neighbor-02:beat:a:d-5:confession",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-5",
       "beatType": "confession",
-      "line": "제가 CCTV 캡처를 돌린 순간 이미 그 약속을 깼어요. 결국 저도 절차보다 '내가 당했다'는 말을 먼저 택했습니다.",
+      "line": "제가 CCTV 캡처를 돌린 순간 이미 그 약속을 깼어요. 결국 저도 절차보다 '내가 당했다'는 말을 먼저 택했습니다, 그건 제 책임입니다.",
       "behaviorHint": "숨을 길게 내쉬고 자기 가슴 쪽으로 손을 가져간다.",
       "applicableStates": [
         "S5"
@@ -330,7 +330,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:a:d-5:evidence_hit",
+      "id": "neighbor-02:beat:a:d-5:evidence_hit",
       "caseId": "neighbor-02",
       "party": "a",
       "disputeId": "d-5",
@@ -343,7 +343,7 @@
       "afterEvidence": "e-3"
     },
     {
-      "id": "neighbor02:beat:b:d-2:deny",
+      "id": "neighbor-02:beat:b:d-2:deny",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-2",
@@ -356,7 +356,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-2:hedge",
+      "id": "neighbor-02:beat:b:d-2:hedge",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-2",
@@ -369,7 +369,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-2:partial",
+      "id": "neighbor-02:beat:b:d-2:partial",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-2",
@@ -382,7 +382,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-2:blame",
+      "id": "neighbor-02:beat:b:d-2:blame",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-2",
@@ -395,7 +395,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-2:confession",
+      "id": "neighbor-02:beat:b:d-2:confession",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-2",
@@ -408,7 +408,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-2:evidence_hit",
+      "id": "neighbor-02:beat:b:d-2:evidence_hit",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-2",
@@ -421,7 +421,7 @@
       "afterEvidence": "e-4"
     },
     {
-      "id": "neighbor02:beat:b:d-3:deny",
+      "id": "neighbor-02:beat:b:d-3:deny",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-3",
@@ -434,7 +434,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-3:hedge",
+      "id": "neighbor-02:beat:b:d-3:hedge",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-3",
@@ -447,7 +447,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-3:partial",
+      "id": "neighbor-02:beat:b:d-3:partial",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-3",
@@ -460,7 +460,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-3:blame",
+      "id": "neighbor-02:beat:b:d-3:blame",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-3",
@@ -473,12 +473,12 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-3:confession",
+      "id": "neighbor-02:beat:b:d-3:confession",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-3",
       "beatType": "confession",
-      "line": "익명 전단과 첫 단체방 문구의 실질적 출발점은 최병규였습니다. 저는 그걸 제 분노에 맞게 다시 퍼뜨렸습니다.",
+      "line": "익명 전단과 첫 단체방 문구의 실질적 출발점은 최병규였습니다. 저는 그걸 제 분노에 맞게 다시 퍼뜨렸습니다, 그건 제 책임입니다.",
       "behaviorHint": "잠시 시선을 내린 뒤 이름을 또렷하게 말한다.",
       "applicableStates": [
         "S5"
@@ -486,7 +486,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-3:evidence_hit",
+      "id": "neighbor-02:beat:b:d-3:evidence_hit",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-3",
@@ -499,7 +499,7 @@
       "afterEvidence": "e-6"
     },
     {
-      "id": "neighbor02:beat:b:d-5:deny",
+      "id": "neighbor-02:beat:b:d-5:deny",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-5",
@@ -512,7 +512,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-5:hedge",
+      "id": "neighbor-02:beat:b:d-5:hedge",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-5",
@@ -525,7 +525,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-5:partial",
+      "id": "neighbor-02:beat:b:d-5:partial",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-5",
@@ -538,7 +538,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-5:blame",
+      "id": "neighbor-02:beat:b:d-5:blame",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-5",
@@ -551,12 +551,12 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-5:confession",
+      "id": "neighbor-02:beat:b:d-5:confession",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-5",
       "beatType": "confession",
-      "line": "저도 관리사무소 확인 전 유나 씨를 특정하는 말을 퍼뜨려 약속을 깼습니다. 서로 절차보다 평판 싸움을 먼저 택했습니다.",
+      "line": "저도 관리사무소 확인 전 유나 씨를 특정하는 말을 퍼뜨려 약속을 깼습니다. 서로 절차보다 평판 싸움을 먼저 택했습니다, 그건 제 책임입니다.",
       "behaviorHint": "고개를 거의 움직이지 않은 채 인정 문장만 짧게 남긴다.",
       "applicableStates": [
         "S5"
@@ -564,7 +564,7 @@
       "afterEvidence": null
     },
     {
-      "id": "neighbor02:beat:b:d-5:evidence_hit",
+      "id": "neighbor-02:beat:b:d-5:evidence_hit",
       "caseId": "neighbor-02",
       "party": "b",
       "disputeId": "d-5",

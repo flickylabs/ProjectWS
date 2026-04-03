@@ -1,0 +1,769 @@
+{
+  "caseId": "case-friend-11",
+  "meta": {
+    "relationshipType": "friend",
+    "conflictSeed": "CS-3",
+    "variableModules": [
+      "VM-E"
+    ],
+    "twistModule": "TW-1",
+    "difficulty": "hard",
+    "anchorTruth": "최민우가 공유 게임 구독 계정의 접근권을 빼앗겼다고 호소한 출발점은 배준석의 선공 탈취가 아니라, 민우가 과거에 일회성으로 받았던 준석의 본인확인 정보와 청구지 정보를 무단 보관했다가 가족요금제 재인증에 다시 써서 주 관리자 메일을 자기 쪽으로 바꾼 행동이었다.",
+    "emotionalBait": "민우 쪽 화면에는 갑자기 로그인 실패와 프로필 소실, 시즌패스 아이템 누락만 보였고 준석이 복구 직후 아무 설명 없이 기기 접근을 끊어 버려 처음에는 준석이 계정을 독점하고 저장 기록까지 가져간 가해자로 보인다.",
+    "resolutionDilemma": "민우의 개인정보 무단 재사용과 관리자 변경을 더 무겁게 볼지, 준석의 일방적 접근 차단과 프로필 초기화를 더 무겁게 볼지, 그리고 친구 사이 공유 계정에서 본인확인 정보와 관리자 권한을 어디까지 허용할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "최민우",
+      "age": 29,
+      "occupation": "이커머스 CS 매니저",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "먼저 자신이 얼마나 갑자기 계정에서 튕겼는지와 사라진 프로필, 잃은 게임 시간을 길게 말하며 피해자 자리를 선점한다. 불리해지면 관리자 권한 문제보다 '내 저장파일이 날아갔다'는 결과를 반복해 초점을 이동시킨다.",
+      "pride": 7,
+      "fear": "게임과 구독비를 나눠 내고도 친구에게 계정을 통째로 빼앗긴 사람으로 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "gamepass_and_recovery_codes",
+      "dailyRoutine": "낮에는 고객 응대와 반품 처리를 하고, 퇴근 후에는 게임 구독 서비스 공지와 할인 내역을 본다. 밤에는 길드 레이드와 시즌패스 미션을 돌리며 캡처와 보안 메일을 한 폴더에 몰아 저장하는 습관이 있다.",
+      "sensitivePoints": [
+        "프로필과 저장 기록 손실",
+        "친구에게 관리권을 빼앗겼다는 인식",
+        "작은 편법 때문에 전체 관계가 무너지는 상황"
+      ],
+      "verbalTells": [
+        {
+          "type": "loss_preload",
+          "trigger": "lying",
+          "pattern": "불리한 질문이 나오면 '내 레벨이랑 시즌패스가 먼저 날아갔어'라고 피해 결과를 먼저 깔아 행위 책임을 뒤로 미룬다."
+        },
+        {
+          "type": "motive_flip",
+          "trigger": "cornered",
+          "pattern": "개인정보 재사용을 묻으면 '그걸 쓴 게 아니라 계정을 살리려 한 거야'라고 의도로 수위를 바꾼다."
+        },
+        {
+          "type": "wounded_breath",
+          "trigger": "emotional",
+          "pattern": "억울해질수록 짧게 한숨을 내쉰 뒤 같은 손해 항목을 두세 번 반복한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "준석아",
+        "toJudge": "제 친구",
+        "angry": "야, 준석!"
+      }
+    },
+    "partyB": {
+      "name": "배준석",
+      "age": 30,
+      "occupation": "번역 프리랜서",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "날짜와 보안 알림 시간을 정확히 짚으며 말하고, 감정 표현보다 어떤 기기에서 어떤 변경이 있었는지를 먼저 정리한다. 다만 몰리면 설명보다 로그 화면을 오래 보여 주며 자신의 일방적 차단이 준 충격을 축소하려 한다.",
+      "pride": 8,
+      "fear": "친구 개인정보를 관리 못 한 사람이나 뒤늦게 계정을 독점한 사람으로 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 3,
+      "digitalHabit": "billing_mail_and_security_alerts",
+      "dailyRoutine": "오전에는 번역 납품과 정산 메일을 보고, 오후에는 구독 서비스 청구서와 보안 알림을 정리한다. 밤에는 게임은 길게 하지 않고 로그인 이력과 결제 내역을 주기적으로 확인하는 편이다.",
+      "sensitivePoints": [
+        "이름·생년월일·청구지 정보가 타인 손에 남아 있는 일",
+        "보안 문제를 방치했다는 평가",
+        "필요 이상으로 친구를 잘라 냈다는 비난"
+      ],
+      "verbalTells": [
+        {
+          "type": "log_recital",
+          "trigger": "lying",
+          "pattern": "곤란한 질문이 나오면 '오전 9시 14분, 9시 19분'처럼 시각을 길게 읊어 감정적 책임을 뒤로 미룬다."
+        },
+        {
+          "type": "label_split",
+          "trigger": "cornered",
+          "pattern": "'차단'이 아니라 '복구 후 접근 정리'였다고 말하며 같은 행동의 이름을 바꿔 수위를 낮춘다."
+        },
+        {
+          "type": "clipped_breath",
+          "trigger": "emotional",
+          "pattern": "민우의 무단 인증을 떠올릴 때 숨을 짧게 끊고 문장을 더 딱딱하게 자른다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "민우아",
+        "toJudge": "제 친구",
+        "angry": "야, 민우!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "작년 겨울 성인등급 게임 구매를 위해 준석 명의 본인확인을 한 번 빌려 쓴 뒤, 둘은 청구지·생년월일 같은 정보는 즉시 지우고 관리자 변경은 같은 채팅방에서만 공유하기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "봄 시즌패스 비용을 누가 더 많이 냈고 누가 먼저 추가 콘텐츠를 샀는지를 둘 다 자신에게 유리하게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '준석도 예전에 말 없이 시즌권을 묶어 샀다' / B: '민우가 늘 추가 과금 후에만 정산을 요구했다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "2년 전 민우 카드가 막혔을 때 준석이 자기 청구지와 복구 메일을 빌려 콘솔 번들 결제를 도와준 적이 있었지만, 그 뒤 어디까지가 호의이고 어디부터가 경계인지 정식으로 정하지 못했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "오현철 (공통 게임 친구)",
+        "relationTo": "both",
+        "knowledgeScope": "민우가 잠금 화면 캡처를 먼저 보내며 준석이 계정을 먹었다고 말한 사실과, 준석이 뒤늦게 오래된 본인확인 정보 재사용 얘기를 털어놓은 장면을 모두 들었다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 29,
+          "occupation": "프리랜서 디자이너",
+          "relationToA": "최민우을 업무상 알고 있음",
+          "relationToB": "배준석을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "편하게 말하다가 재판관 앞에서는 존댓말로 돌아간다. 친구의 입장을 자연스럽게 대변한다.",
+          "addressJudge": "재판관님",
+          "addressA": "민우씨",
+          "addressB": "준석"
+        },
+        "addressA": "민우",
+        "addressB": "준석"
+      },
+      {
+        "id": "tp-2",
+        "slot": "institutional",
+        "name": "홍지연 (구독 서비스 보안지원 매니저)",
+        "relationTo": "both",
+        "knowledgeScope": "관리자 메일 변경 시각, 가족요금제 재인증 경로, 기기 차단과 아이템 이전 로그를 원본 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 34,
+          "occupation": "구독 서비스 보안지원 매니저",
+          "relationToA": "최민우을 업무상 알고 있음",
+          "relationToB": "배준석을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "최민우씨",
+          "addressB": "배준석씨"
+        },
+        "addressA": "민우씨",
+        "addressB": "준석씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional_2",
+        "name": "신혜원 (결제·본인확인 상담사)",
+        "relationTo": "both",
+        "knowledgeScope": "재인증 과정에서 어떤 이름·생년월일·청구지 정보가 쓰였는지, 과거 일회성 인증 자료가 재사용되었는지 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 31,
+          "occupation": "결제·본인확인 상담사",
+          "relationToA": "최민우을 업무상 알고 있음",
+          "relationToB": "배준석을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "민우씨",
+          "addressB": "준석씨"
+        },
+        "addressA": "최민우씨",
+        "addressB": "배준석씨"
+      }
+    ],
+    "relationshipType": "friend"
+  },
+  "context": {
+    "contextType": "shared_game_subscription_security_conflict",
+    "description": "대학 때부터 콘솔 온라인 멤버십과 게임 패스를 함께 나눠 쓰던 두 사람은 가족요금제 재인증 시기가 오자 다시 관리자 설정을 손봐야 했다. 그런데 주말 레이드 직후 민우 프로필이 사라지고 로그인까지 막히면서, 단순 정산 갈등이던 문제는 곧 계정 탈취와 개인정보 무단 사용 공방으로 번졌다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "공유 계정에는 게임 저장 기록과 유료 아이템, 자동결제 정보까지 한데 묶여 있어 한 번의 관리자 변경이 곧 오랜 취미 기록과 사생활 정보를 동시에 건드리는 문제처럼 느껴졌다.",
+    "caseNumber": "E-FR-H-0011",
+    "caseName": "계정 탈취 분쟁"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "준석의 일방적 접근 차단과 공유 프로필 정리",
+      "truth": true,
+      "truthDescription": "준석은 무단 관리자 변경을 확인한 뒤 민우의 기기 접근을 끊고 공유 프로필을 초기화했으며, 그 과정에서 사전 설명은 거의 하지 않았다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 35,
+        "b": 65
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "접근권재설정",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준석은 민우의 접근을 차단했다."
+    },
+    {
+      "id": "d-2",
+      "name": "민우의 개인정보 무단 재사용과 관리자 메일 변경",
+      "truth": true,
+      "truthDescription": "민우는 예전에 일회성으로 받았던 준석의 본인확인 정보와 청구지 캡처를 삭제하지 않고 보관했다가 가족요금제 재인증에 다시 사용해 주 관리자 메일을 자기 것으로 바꿨다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "개인정보경계",
+      "legitimacyIssue": true,
+      "judgmentStatement": "민우는 개인정보를 무단 재사용했다."
+    },
+    {
+      "id": "d-3",
+      "name": "계정 탈취의 출발점은 준석의 선공 독점이었는가",
+      "truth": false,
+      "truthDescription": "민우가 본 잠금 화면과 차단 결과만으로는 준석의 선공처럼 보였지만, 실제 출발점은 민우가 먼저 본인확인 정보를 무단 재사용해 관리자 구조를 바꾼 행동이었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "접근권재설정",
+      "legitimacyIssue": true,
+      "judgmentStatement": "민우의 무단 재사용이 출발점이다."
+    },
+    {
+      "id": "d-4",
+      "name": "작년 '일회성 본인확인 후 삭제' 규칙의 파기",
+      "truth": true,
+      "truthDescription": "둘은 본인확인 정보는 일회성으로만 쓰고 지우기로 했지만, 민우는 이를 보관·재사용했고 준석도 보안 문제를 감정적으로 처리하며 같은 채팅방 공유 원칙을 지키지 않았다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 58,
+        "b": 42
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "개인정보경계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "민우는 본인확인 정보를 재사용했다."
+    },
+    {
+      "id": "d-5",
+      "name": "사라진 시즌패스 아이템과 저장 파일은 준석이 가져간 것인가",
+      "truth": false,
+      "truthDescription": "민우가 도난이라고 여긴 일부 시즌패스와 저장 슬롯은 준석이 가져간 것이 아니라, 서비스의 프로필 복원·아이템 재귀속과 일부 자동 환불 과정에서 원계정으로 이동하거나 환불 처리된 것이었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공유정산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준석이 시즌패스 아이템을 가져가지 않았다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "민우가 공통 친구 방에 올린 로그인 차단 캡처",
+      "description": "로그인 실패 알림과 사라진 프로필 화면만 보이는 민우의 캡처다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "민우가 공통 친구 오현철에게 보낸 원본 이미지와 단톡 전달본이 함께 확인됐다.",
+        "check_metadata": "캡처 생성 시각은 준석이 계정을 복구한 직후로, 그보다 앞선 관리자 변경 기록은 포함되지 않는다.",
+        "restore_context": "잠금 결과만 잘려 있어 왜 차단이 생겼는지와 그 전에 어떤 재인증이 있었는지는 보이지 않는다.",
+        "verify_source": "민우 휴대폰 원본 파일과 수신자 대화창 이미지의 해시가 일치한다.",
+        "check_edits": "문자 조작 흔적은 없지만 상단 보안 알림과 하단 이전 대화가 잘려 있다.",
+        "question_acquisition": "공유 계정과 개인 프로필 정보가 함께 보이는 자료라 제3자 전달 자체에 사생활 우려가 남는다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최민우에게: \"계정 탈취의 출발점은 준석의 선공 독점이었는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 최민우의 \"계정 탈취의 출발점은 준석의 선공 독점이었는가\" 쟁점과 관련된다. 최민우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "배준석에게: \"준석의 일방적 접근 차단과 공유 프로필 정리\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 배준석의 \"준석의 일방적 접근 차단과 공유 프로필 정리\" 쟁점과 관련된다. 배준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "작년 일회성 본인확인 합의 카톡과 결제 메모",
+      "description": "성인등급 게임 구매와 콘솔 번들 결제를 위해 준석 정보는 한 번만 쓰고 지운다고 약속한 카카오톡 원본과 메모다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "양측 카카오톡 원본과 같은 날 저장된 결제 메모가 함께 제출됐다.",
+        "check_metadata": "해당 합의는 작년 겨울 성인 인증 직후 같은 날에 오갔고, 삭제 약속 문구가 분명히 남아 있다.",
+        "restore_context": "준석이 정보를 준 적은 있지만 범위는 일회성이었고, 이후 관리자 권한 변경까지 허용한 대화는 없다.",
+        "verify_source": "두 단말의 메시지 ID와 전송 순서가 일치한다.",
+        "check_edits": "삭제 복원 흔적 없이 전체 흐름이 보존돼 있다.",
+        "question_acquisition": "사적인 인증 관련 대화라 재유포 범위는 분쟁 해결에 필요한 최소 수준으로 제한돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최민우에게: \"민우의 개인정보 무단 재사용과 관리자 메일 변경\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최민우의 \"민우의 개인정보 무단 재사용과 관리자 메일 변경\" 쟁점과 관련된다. 최민우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "배준석에게: \"작년 '일회성 본인확인 후 삭제' 규칙의 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 배준석의 \"작년 '일회성 본인확인 후 삭제' 규칙의 파기\" 쟁점과 관련된다. 배준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "구독 서비스 보안 로그와 관리자 메일 변경 기록",
+      "description": "가족요금제 재인증 후 주 관리자 메일과 복구 정보가 민우 쪽으로 바뀐 보안 로그다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "보안지원 매니저가 내려받은 관리자 변경 로그와 기기 로그인 기록이 제출됐다.",
+        "check_metadata": "주 관리자 메일 변경은 민우가 잠금 피해를 주장하기 몇 시간 전 이미 민우 기기에서 일어난 것으로 기록돼 있다.",
+        "restore_context": "준석이 나중에 복구를 했다는 사실은 맞지만, 먼저 관리자 구조를 바꾼 쪽은 민우였다.",
+        "verify_source": "플랫폼 서버 로그와 홍지연 보안지원 매니저의 패널 기록이 같은 시각을 가리킨다.",
+        "check_edits": "서버 보존본이라 후편집 흔적은 없다.",
+        "question_acquisition": "기기와 메일 식별 정보가 포함돼 있어 분쟁 범위 밖 세부 접속 정보는 비식별화가 필요하다."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-4",
+      "name": "민우 휴대폰 갤러리의 청구지 캡처와 생년월일 메모",
+      "description": "민우 휴대폰에 남아 있던 준석 청구지 화면 캡처, 생년월일 메모, 재인증 입력 흔적이다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "민우 기기 백업에서 관련 캡처 폴더와 메모앱 기록이 통째로 제출됐다.",
+        "check_metadata": "해당 이미지와 메모는 작년 합의 직후 저장된 뒤 이번 재인증 당일까지 삭제되지 않고 남아 있었다.",
+        "restore_context": "민우는 이미 알고 있던 정보를 쓴 것뿐이라 했지만, 저장과 재사용 자체가 일회성 합의 범위를 넘어선다.",
+        "verify_source": "캡처 생성 시각과 이번 재인증 입력 화면의 접근 시간이 서로 이어진다.",
+        "check_edits": "원본 기기 백업이라 사후 조작 흔적은 없지만, 과거 동의 범위를 넘어 보관된 정보라는 점이 분명하다.",
+        "question_acquisition": "타인의 본인확인·청구지 정보가 담겨 있어 사생활 침해 우려가 크고 외부 공유는 엄격히 제한돼야 한다."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-5",
+      "name": "준석의 계정 복구 신청서와 접근권 회수 로그",
+      "description": "준석이 보안 사고를 이유로 계정 복구를 신청하고 민우 기기 접근을 끊은 기록, 그리고 오현철에게 보낸 경고 메시지다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "복구 신청 메일 원본, 플랫폼 차단 로그, 오현철에게 보낸 카톡 원본이 함께 제출됐다.",
+        "check_metadata": "접근권 회수는 관리자 변경 사실을 준석이 확인한 직후 30분 안에 연속으로 진행됐다.",
+        "restore_context": "준석의 조치는 보안 대응으로 이해될 여지가 있지만, 민우에게 직접 설명 없이 프로필까지 정리한 점은 별도 문제로 남는다.",
+        "verify_source": "복구 신청 접수 시각과 차단 로그, 카톡 전송 시간이 서로 정확히 이어진다.",
+        "check_edits": "서버 기록과 원본 대화라 후편집 흔적은 없다.",
+        "question_acquisition": "보안 대응 자료라 적법하지만 개인 기기명과 일부 메일 주소는 최소 공개가 바람직하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최민우에게: \"작년 '일회성 본인확인 후 삭제' 규칙의 파기\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 최민우의 \"작년 '일회성 본인확인 후 삭제' 규칙의 파기\" 쟁점과 관련된다. 최민우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "배준석에게: \"준석의 일방적 접근 차단과 공유 프로필 정리\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 배준석의 \"준석의 일방적 접근 차단과 공유 프로필 정리\" 쟁점과 관련된다. 배준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "아이템 이전·환불 내역과 프로필 복원 보고서",
+      "description": "사라진 시즌패스 아이템 일부가 원계정으로 재귀속되거나 환불 처리됐고, 프로필 슬롯도 복원 과정에서 재배치됐다는 플랫폼 보고서다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "investigationResults": {
+        "request_original": "보안지원 매니저가 내려받은 아이템 이동 로그, 환불 내역, 프로필 복원 보고서가 제출됐다.",
+        "check_metadata": "민우가 도난을 주장한 시점과 거의 같은 날 시스템 복원·재귀속·부분 환불이 자동 실행된 기록이 있다.",
+        "restore_context": "준석이 민우 아이템을 개인적으로 가져갔다기보다 계정 복구 과정에서 권리 귀속이 원계정 기준으로 재정렬된 것이다.",
+        "verify_source": "플랫폼 내부 보고서와 민우 결제내역의 일부 자동 환불 금액이 서로 맞아떨어진다.",
+        "check_edits": "서버 보존 기록이라 후편집 흔적은 없다.",
+        "question_acquisition": "유료 아이템과 결제 이력이 포함돼 있어 세부 구매 목록은 분쟁 해결 범위까지만 다루어야 한다."
+      },
+      "subjectParty": "b"
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "준석은 보안 문제를 확인한 뒤 민우 기기 접근을 끊고 공유 프로필을 정리했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "민우는 과거 일회성으로 받은 준석의 본인확인 정보를 지우지 않고 이번 재인증에 다시 사용했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "계정 문제의 시작은 준석의 선공 독점이 아니라 민우의 무단 관리자 변경이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "둘은 본인확인 정보는 한 번 쓰고 지우며 관리자 변경은 같은 채팅방에서 공유하기로 이미 합의했었다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "민우가 도난이라 본 일부 아이템과 슬롯은 서비스 복원 과정에서 자동 재귀속·환불된 것이었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "identity_verification_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "who_changed_admin_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "security_alert_timeline_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_or_e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-5",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_rule_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_why_he_kept_the_info"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "lockout_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_delete_profile_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-6",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "missing_items_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "migration_report_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_rule_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_why_he_did_not_explain_first"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "접근권재설정": [
+      "관리자 메일, 복구전화, 가족요금제 기기 권한을 다시 표준 상태로 되돌리고 주 관리자와 일반 이용자 권한을 문서로 나눠 적는다.",
+      "프로필과 저장 기록 복구는 플랫폼 로그 기준으로만 진행하고, 감정적으로 기기 전체를 끊기 전에 최소 1회 설명 메시지를 남기는 규칙을 만든다.",
+      "다시 무단 관리자 변경이나 사전 설명 없는 차단이 반복되면 공유 계정 자체를 종료하고 각자 구독으로 완전히 분리한다."
+    ],
+    "개인정보경계": [
+      "예전에 주고받은 본인확인 자료, 청구지 캡처, 생년월일 메모를 서로 입회한 상태에서 모두 삭제하고 삭제 확인 화면을 남긴다.",
+      "친구 사이에서도 이름·생년월일·청구지 정보는 일회성 사용 후 즉시 삭제하며, 다음 인증이 필요하면 그때 다시 직접 요청한다.",
+      "타인 본인확인 정보를 다시 저장하거나 재사용하면 계정 공유뿐 아니라 개인 결제 정산과 실물 기기 대여까지 중단한다."
+    ],
+    "공유정산": [
+      "아이템 재귀속과 자동 환불 내역을 한 번에 정리해 누가 실제로 손해를 봤는지 금액 기준으로 다시 계산한다.",
+      "시즌패스와 추가 과금은 개인 프로필 기준으로 분리하고, 가족요금제 비용만 고정 분담하는 방식으로 정산 체계를 단순화한다.",
+      "저장 슬롯과 유료 아이템이 계속 섞이는 구조라면 공동 계정의 경제적 이점보다 분쟁 비용이 큰 만큼 구독과 게임 기록을 완전히 분리한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

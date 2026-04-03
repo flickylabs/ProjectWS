@@ -17,13 +17,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-1:act:0",
+              "id": "neighbor-02:a:d-1:act:0",
               "factText": "서유나는 택배실 CCTV 한 컷을 '확인 요청'처럼 포장해 가까운 이웃에게 보내며 장민규가 남의 박스 앞에 오래 선다는 인상을 심었다.",
               "tags": [
                 "act",
@@ -76,13 +76,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-1:uncertainty:0",
+              "id": "neighbor-02:a:d-1:uncertainty:0",
               "factText": "서유나는 메신저 질문 형식을 빌려 캡처를 돌리면서도 의심의 방향이 장민규에게 향하도록 문장을 붙였다.",
               "tags": [
                 "uncertainty",
@@ -135,13 +135,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-1:evidence:0",
+              "id": "neighbor-02:a:d-1:evidence:0",
               "factText": "서유나는 캡처 전송 사실은 인정하지만, 그것이 장민규를 절도 의심 대상으로 보이게 만든 효과는 줄여 말한다.",
               "tags": [
                 "evidence",
@@ -194,13 +194,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-1:motive:0",
+              "id": "neighbor-02:a:d-1:motive:0",
               "factText": "서유나는 쌓인 불안을 근거로 삼아 캡처 유포 책임을 일부 인정하면서도, 장민규의 이전 행동을 원인으로 내세운다.",
               "tags": [
                 "motive",
@@ -253,13 +253,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-1:emotion:0",
+              "id": "neighbor-02:a:d-1:emotion:0",
               "factText": "서유나는 자신의 두려움과 억울함 때문에 캡처 한 장의 인상효과를 알면서도 지지부터 얻으려 했음을 드러낸다.",
               "tags": [
                 "emotion",
@@ -312,13 +312,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-1:admission:0",
+              "id": "neighbor-02:a:d-1:admission:0",
               "factText": "서유나는 CCTV 캡처 유포로 장민규를 수상한 사람처럼 보이게 만들었고, 그 책임이 자신에게 크다고 인정한다.",
               "tags": [
                 "admission",
@@ -373,13 +373,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-2:harm:0",
+              "id": "neighbor-02:a:d-2:harm:0",
               "factText": "서유나는 반상회 직후 악취 소문이 자신의 반려견에게 연결되기 시작했고, 그 방향이 장민규 쪽에서 왔다고 느꼈다.",
               "tags": [
                 "harm",
@@ -432,13 +432,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-2:timeline:0",
+              "id": "neighbor-02:a:d-2:timeline:0",
               "factText": "서유나는 '307호 개봉투 냄새' 같은 지목 문구가 장민규에게서 나왔다는 복수의 전언을 근거로 삼는다.",
               "tags": [
                 "timeline",
@@ -491,13 +491,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-2:evidence:0",
+              "id": "neighbor-02:a:d-2:evidence:0",
               "factText": "서유나는 단체방·1:1 캡처를 통해 장민규가 확인 없이 자신의 호수와 반려견을 냄새 문제에 연결한 사실을 확인했다.",
               "tags": [
                 "evidence",
@@ -550,13 +550,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-2:context:0",
+              "id": "neighbor-02:a:d-2:context:0",
               "factText": "서유나는 장민규의 모욕감이 소문 전파의 배경일 수는 있어도, 자신을 악취 원인처럼 만든 책임과는 별개라고 본다.",
               "tags": [
                 "context",
@@ -609,13 +609,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-2:emotion:0",
+              "id": "neighbor-02:a:d-2:emotion:0",
               "factText": "서유나는 반려견 주인과 재택 판매자라는 이미지가 겹치며 자신이 동네 블랙리스트처럼 찍힐까 두려워했다.",
               "tags": [
                 "emotion",
@@ -668,13 +668,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-2:responsibility:0",
+              "id": "neighbor-02:a:d-2:responsibility:0",
               "factText": "서유나는 장민규가 확인 없이 반려견 악취·배변봉투 소문을 퍼뜨렸고, 그것이 자신의 평판과 일상 동선에 해를 줬다고 정리한다.",
               "tags": [
                 "responsibility",
@@ -729,13 +729,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-3:uncertainty:0",
+              "id": "neighbor-02:a:d-3:uncertainty:0",
               "factText": "서유나는 반상회 직후 너무 빠르게 퍼진 문구 때문에 익명 전단과 첫 소문을 장민규 쪽에서 시작한 것으로 짐작했다.",
               "tags": [
                 "uncertainty",
@@ -788,13 +788,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-3:timeline:0",
+              "id": "neighbor-02:a:d-3:timeline:0",
               "factText": "서유나는 같은 문장이 짧은 시간 안에 반복된 점을 근거로 장민규 또는 그 지인이 문구를 정리했다고 의심했다.",
               "tags": [
                 "timeline",
@@ -847,13 +847,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-3:evidence:0",
+              "id": "neighbor-02:a:d-3:evidence:0",
               "factText": "서유나는 회의 녹음 일부를 통해 문제 문구의 재료가 반상회 발언에서 먼저 나왔고, 출발점이 장민규 한 사람만은 아닐 수 있음을 본다.",
               "tags": [
                 "evidence",
@@ -906,13 +906,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-3:context:0",
+              "id": "neighbor-02:a:d-3:context:0",
               "factText": "서유나는 수정 회의록 흐름을 보고 누군가가 반상회 문구를 가공해 외부로 퍼뜨렸다고 판단하며, 자신이 장민규를 섣불리 지목했음을 일부 인정한다.",
               "tags": [
                 "context",
@@ -965,13 +965,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-3:emotion:0",
+              "id": "neighbor-02:a:d-3:emotion:0",
               "factText": "서유나는 최병규 정황이 드러나자 자신과 장민규의 감정 대립이 제3자에게 이용되었다는 허탈함을 드러낸다.",
               "tags": [
                 "emotion",
@@ -1024,13 +1024,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-3:identity:0",
+              "id": "neighbor-02:a:d-3:identity:0",
               "factText": "서유나는 익명 전단과 첫 소문의 실질적 출발점이 최병규였고, 자신과 장민규는 그 뒤 확산을 키운 쪽이었다고 정리한다.",
               "tags": [
                 "identity",
@@ -1085,13 +1085,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-4:act:0",
+              "id": "neighbor-02:a:d-4:act:0",
               "factText": "서유나는 정지 화면 속 장민규의 자세를 근거로 절도라고는 안 했다면서도 절도 의심이 떠오르도록 말한다.",
               "tags": [
                 "act",
@@ -1144,13 +1144,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-4:context:0",
+              "id": "neighbor-02:a:d-4:context:0",
               "factText": "서유나는 정지 화면만 가지고도 의심할 사정이 있었다고 주장하며 원본 확인 부재를 합리화한다.",
               "tags": [
                 "context",
@@ -1203,13 +1203,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-4:evidence:0",
+              "id": "neighbor-02:a:d-4:evidence:0",
               "factText": "서유나는 원본 영상으로 박스를 열지 않았다는 점은 인정하지만, 자신의 의심 제기 자체는 당시엔 불가피했다고 축소한다.",
               "tags": [
                 "evidence",
@@ -1262,13 +1262,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-4:motive:0",
+              "id": "neighbor-02:a:d-4:motive:0",
               "factText": "서유나는 경비원 요청 확인 없이 이전 감정을 끌어와 장민규를 절도 의심 대상으로 묶었다는 점을 일부 인정한다.",
               "tags": [
                 "motive",
@@ -1321,13 +1321,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-4:emotion:0",
+              "id": "neighbor-02:a:d-4:emotion:0",
               "factText": "서유나는 자신의 공간이 감시당한다는 두려움 때문에 사실과 의심을 섞어 말했음을 감정적으로 드러낸다.",
               "tags": [
                 "emotion",
@@ -1380,13 +1380,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-4:admission:0",
+              "id": "neighbor-02:a:d-4:admission:0",
               "factText": "서유나는 장민규의 행동이 절도가 아니라 경비원 요청에 따른 오배송 박스 이동이었는데도 자신이 절도처럼 퍼뜨렸다고 인정한다.",
               "tags": [
                 "admission",
@@ -1441,13 +1441,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-5:rule:0",
+              "id": "neighbor-02:a:d-5:rule:0",
               "factText": "서유나는 '공개 글'만 금지였다고 해석해 CCTV 캡처의 사적 유포를 약속 위반에서 빼내려 한다.",
               "tags": [
                 "rule",
@@ -1500,13 +1500,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-5:rule:1",
+              "id": "neighbor-02:a:d-5:rule:1",
               "factText": "서유나는 관리사무소 선확인 약속을 알면서도 CCTV 캡처 전달을 사적인 상담처럼 포장한다.",
               "tags": [
                 "rule",
@@ -1559,13 +1559,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-5:admission:0",
+              "id": "neighbor-02:a:d-5:admission:0",
               "factText": "서유나는 약속 취지를 지키지 못한 점은 인정하지만, 자신은 사적 전달만 했고 공개 확산은 장민규 쪽이라고 선을 긋는다.",
               "tags": [
                 "admission",
@@ -1618,13 +1618,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-5:responsibility:0",
+              "id": "neighbor-02:a:d-5:responsibility:0",
               "factText": "서유나는 약속 파기 자체는 인정하면서도, 자신의 행위와 장민규의 소문 재전파는 무게가 다르다고 주장한다.",
               "tags": [
                 "responsibility",
@@ -1677,13 +1677,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-5:emotion:0",
+              "id": "neighbor-02:a:d-5:emotion:0",
               "factText": "서유나는 절차보다 자신의 억울함과 피해 서사를 먼저 내세운 탓에 약속을 실질적으로 무너뜨렸음을 인정한다.",
               "tags": [
                 "emotion",
@@ -1736,13 +1736,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:a:tell:sympathy_stack",
-            "neighbor02:a:tell:selective_victimhood",
-            "neighbor02:a:tell:accusation_echo"
+            "neighbor-02:a:tell:sympathy_stack",
+            "neighbor-02:a:tell:selective_victimhood",
+            "neighbor-02:a:tell:accusation_echo"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:a:d-5:admission:1",
+              "id": "neighbor-02:a:d-5:admission:1",
               "factText": "서유나는 CCTV 캡처를 사적으로 돌린 순간 이미 관리사무소 확인 전 비난 금지 약속을 깼고, 그 결과 서로의 평판 훼손이 커졌다고 인정한다.",
               "tags": [
                 "admission",
@@ -1799,13 +1799,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-1:uncertainty:0",
+              "id": "neighbor-02:b:d-1:uncertainty:0",
               "factText": "장민규는 출처 확인은 보류한 채, 반상회 다음 날부터 자신의 동선이 수상하게 소비된 정황만 건조하게 언급한다.",
               "tags": [
                 "uncertainty",
@@ -1858,13 +1858,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-1:evidence:0",
+              "id": "neighbor-02:b:d-1:evidence:0",
               "factText": "장민규는 정지 화면과 덧붙임 문구가 함께 돌며 사실보다 인상만 남게 됐다고 본다.",
               "tags": [
                 "evidence",
@@ -1917,13 +1917,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-1:evidence:1",
+              "id": "neighbor-02:b:d-1:evidence:1",
               "factText": "장민규는 e-1을 근거로 서유나가 CCTV 캡처와 설명 문구를 직접 보냈다는 점을 분명히 한다.",
               "tags": [
                 "evidence",
@@ -1976,13 +1976,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-1:context:0",
+              "id": "neighbor-02:b:d-1:context:0",
               "factText": "장민규는 크롭된 캡처가 오배송 박스 이동이라는 맥락을 지워 자신의 행동을 절도성으로 읽히게 만들었다고 설명한다.",
               "tags": [
                 "context",
@@ -2035,13 +2035,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-1:emotion:0",
+              "id": "neighbor-02:b:d-1:emotion:0",
               "factText": "장민규는 자신의 실제 행동보다 수상한 이미지가 먼저 굳어버린 점을 가장 모욕적인 피해로 느낀다.",
               "tags": [
                 "emotion",
@@ -2094,13 +2094,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-1:responsibility:0",
+              "id": "neighbor-02:b:d-1:responsibility:0",
               "factText": "장민규는 서유나가 CCTV 캡처를 돌려 자신을 수상한 사람처럼 보이게 만들었다는 사실을 명확히 정리한다.",
               "tags": [
                 "responsibility",
@@ -2155,13 +2155,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-2:rule:0",
+              "id": "neighbor-02:b:d-2:rule:0",
               "factText": "장민규는 기존 민원 표현을 전달했을 뿐이라고 말하며, 자신이 유나를 특정한 표현은 아니었다고 축소한다.",
               "tags": [
                 "rule",
@@ -2214,13 +2214,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-2:quote:0",
+              "id": "neighbor-02:b:d-2:quote:0",
               "factText": "장민규는 기존 민원 문구를 인용했을 뿐이라며, 확인 전 단정은 피하려 했다고 자신을 방어한다.",
               "tags": [
                 "quote",
@@ -2273,13 +2273,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-2:admission:0",
+              "id": "neighbor-02:b:d-2:admission:0",
               "factText": "장민규는 같은 표현을 여러 대화방에 보낸 사실은 인정하지만, 민원에 기초했다는 이유로 책임을 일부 희석한다.",
               "tags": [
                 "admission",
@@ -2332,13 +2332,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-2:motive:0",
+              "id": "neighbor-02:b:d-2:motive:0",
               "factText": "장민규는 반상회 직후 받은 모욕감 때문에 냄새 문제를 더 공격적으로 전달했고, 감정이 섞였음을 인정한다.",
               "tags": [
                 "motive",
@@ -2391,13 +2391,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-2:emotion:0",
+              "id": "neighbor-02:b:d-2:emotion:0",
               "factText": "장민규는 도둑 취급을 받은 뒤 보복 심리로 유나의 약점처럼 보이는 냄새 문제를 먼저 꺼냈다고 고백한다.",
               "tags": [
                 "emotion",
@@ -2450,13 +2450,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-2:admission:1",
+              "id": "neighbor-02:b:d-2:admission:1",
               "factText": "장민규는 확인 없이 유나의 반려견과 악취 민원을 엮어 퍼뜨리고 민원 문구를 사실처럼 재인용한 책임을 인정한다.",
               "tags": [
                 "admission",
@@ -2511,13 +2511,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-3:identity:0",
+              "id": "neighbor-02:b:d-3:identity:0",
               "factText": "장민규는 반상회 직후의 속도를 근거로 익명 전단과 첫 문구의 출처를 서유나 쪽으로 의심한다.",
               "tags": [
                 "identity",
@@ -2570,13 +2570,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-3:timeline:0",
+              "id": "neighbor-02:b:d-3:timeline:0",
               "factText": "장민규는 반상회 직후의 짧은 시차를 들어 유나 또는 그 주변이 문구를 정리했다고 추정했다.",
               "tags": [
                 "timeline",
@@ -2629,13 +2629,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-3:evidence:0",
+              "id": "neighbor-02:b:d-3:evidence:0",
               "factText": "장민규는 회의 녹음 일부를 통해 전단 문구가 반상회 표현을 베낀 흔적이 있어, 출처를 단정하기 어렵다고 물러선다.",
               "tags": [
                 "evidence",
@@ -2688,13 +2688,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-3:admission:0",
+              "id": "neighbor-02:b:d-3:admission:0",
               "factText": "장민규는 수정 회의록 흐름을 보고 누군가 회의 표현을 가공해 외부로 뺐다고 보며, 자신이 유나를 배후처럼 몬 점은 과도했다고 인정한다.",
               "tags": [
                 "admission",
@@ -2747,13 +2747,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-3:emotion:0",
+              "id": "neighbor-02:b:d-3:emotion:0",
               "factText": "장민규는 공용프린터 정황이 드러나자 자신도 제3자에게 이용당했지만, 그 문구를 다시 퍼뜨린 손은 결국 자신이었다고 인정한다.",
               "tags": [
                 "emotion",
@@ -2806,13 +2806,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-3:identity:1",
+              "id": "neighbor-02:b:d-3:identity:1",
               "factText": "장민규는 익명 전단과 첫 단체방 문구의 실질적 출발점이 최병규였고, 자신은 그 문구를 분노에 맞게 재인용해 확산을 키웠다고 인정한다.",
               "tags": [
                 "identity",
@@ -2867,13 +2867,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-4:denial:0",
+              "id": "neighbor-02:b:d-4:denial:0",
               "factText": "장민규는 08시 14분 경비실 요청에 따라 오배송 박스를 선반 쪽으로 이동시켰을 뿐이며 절도는 사실이 아니라고 말한다.",
               "tags": [
                 "denial",
@@ -2926,13 +2926,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-4:context:0",
+              "id": "neighbor-02:b:d-4:context:0",
               "factText": "장민규는 정지 화면만으로는 오해가 가능하지만, 원본 동선상 박스를 열거나 들고 나간 적은 없다고 선을 긋는다.",
               "tags": [
                 "context",
@@ -2985,13 +2985,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-4:evidence:0",
+              "id": "neighbor-02:b:d-4:evidence:0",
               "factText": "장민규는 6분 원본 영상과 처리대장을 근거로 요청 시각, 이동 경로, 퇴실 시각이 모두 일치한다고 제시한다.",
               "tags": [
                 "evidence",
@@ -3044,13 +3044,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-4:responsibility:0",
+              "id": "neighbor-02:b:d-4:responsibility:0",
               "factText": "장민규는 경비원 요청 사실을 곧바로 밝히지 않아 오해가 길어졌을 수는 있지만, 그것이 절도 의심을 사실로 만들진 않는다고 말한다.",
               "tags": [
                 "responsibility",
@@ -3103,13 +3103,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-4:emotion:0",
+              "id": "neighbor-02:b:d-4:emotion:0",
               "factText": "장민규는 도둑 의심이 자신의 직업과 평판에 직접 타격을 주는 모욕으로 남았다고 드러낸다.",
               "tags": [
                 "emotion",
@@ -3162,13 +3162,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-4:evidence:1",
+              "id": "neighbor-02:b:d-4:evidence:1",
               "factText": "장민규는 자신의 행동이 절도가 아니라 경비원 요청에 따른 오배송 박스 이동이었고, 그 점이 원본 영상으로 명확히 확인된다고 정리한다.",
               "tags": [
                 "evidence",
@@ -3223,13 +3223,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-5:rule:0",
+              "id": "neighbor-02:b:d-5:rule:0",
               "factText": "장민규는 공개 게시만 자제하자는 약속이었다고 해석해, 민원 문구 재전달을 약속 위반에서 빼내려 한다.",
               "tags": [
                 "rule",
@@ -3282,13 +3282,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-5:quote:0",
+              "id": "neighbor-02:b:d-5:quote:0",
               "factText": "장민규는 관리사무소 민원 문구를 인용했을 뿐이라며, 성급함은 인정해도 약속 파기는 아니라고 말한다.",
               "tags": [
                 "quote",
@@ -3341,13 +3341,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-5:admission:0",
+              "id": "neighbor-02:b:d-5:admission:0",
               "factText": "장민규는 확인 전 전달을 인정하지만, 자신은 캡처 유포에 대응했을 뿐이라는 식으로 약속 파기 책임을 분산하려 한다.",
               "tags": [
                 "admission",
@@ -3400,13 +3400,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "medium",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-5:admission:1",
+              "id": "neighbor-02:b:d-5:admission:1",
               "factText": "장민규는 규정과 절차를 내세우면서도 실제로는 감정이 앞서 약속 취지를 어긴 채 문구를 옮겼다고 인정한다.",
               "tags": [
                 "admission",
@@ -3459,13 +3459,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-5:emotion:0",
+              "id": "neighbor-02:b:d-5:emotion:0",
               "factText": "장민규는 도둑 취급 이후 체면 회복 욕구가 커져 공개 비난 금지 약속보다 즉각 반격을 택했다고 인정한다.",
               "tags": [
                 "emotion",
@@ -3518,13 +3518,13 @@ export const neighbor02V2Atoms = {
           ],
           "emotionalLeakRisk": "high",
           "tellPool": [
-            "neighbor02:b:tell:clause_recital",
-            "neighbor02:b:tell:timestamp_wall",
-            "neighbor02:b:tell:affect_flattening"
+            "neighbor-02:b:tell:clause_recital",
+            "neighbor-02:b:tell:timestamp_wall",
+            "neighbor-02:b:tell:affect_flattening"
           ],
           "claimAtoms": [
             {
-              "id": "neighbor02:b:d-5:admission:2",
+              "id": "neighbor-02:b:d-5:admission:2",
               "factText": "장민규는 관리사무소 확인 전 유나를 특정하는 말을 퍼뜨려 약속을 깼고, 결국 서로 절차보다 평판 싸움을 먼저 택했다고 인정한다.",
               "tags": [
                 "admission",

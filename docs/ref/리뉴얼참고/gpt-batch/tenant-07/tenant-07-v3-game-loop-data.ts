@@ -1,0 +1,1317 @@
+export const tenant07V3GameLoopData = {
+  "caseId": "tenant-07",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "초안과 잘린 대화",
+      "description": "4% 재계약 정리 문구와 서명 공백의 간격을 함께 따지는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "유하나 씨, 이 3자 대화에서 '4%에서 정리'라는 문장이 먼저 나온 뒤에 남은 건 무엇이었다고 보십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant07:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "갱신 초안 PDF에 서명란만 비어 있던 시점과 실제 발송 시점 사이에 왜 사흘이 생겼습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant07:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "합의가 거의 끝난 상태였다면, 그 사흘 지연이 도형 씨의 표현을 바꾸게 한 부분도 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant07:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "권도형 씨, 기존 초안에는 없던 12% 인상과 추가 조건이 왜 이후에 한꺼번에 등장했습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant07:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "이 잘린 카카오톡의 앞뒤 문맥을 보면 4% 정리 뒤 서류만 맞추자는 흐름이 보이는데, 왜 그 후엔 조건을 다시 열 수 있다고 판단했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant07:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "주차비 별도와 부분 도배 선납까지 붙인 건 손해 회피를 넘어서 압박 수단이 된 것 아닙니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant07:b:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "과거 민원과 새 문의의 실체",
+      "description": "단발성 경고 기록과 예약금 없는 문의의 무게를 분리해 묻는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "유하나 씨, 관리사무소 기록상 2년 전 한 차례 경고가 남아 있는데 그 사실 자체를 왜 초반엔 부정했습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant07:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "그 뒤 재접수는 없는데도 처음엔 '전혀 없었다'고 잘라 말한 이유가 무엇입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant07:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "현재 인상 협상과 과거 한 번의 경고를 분리해 말하지 못했던 데에, 문제 세입자로 보일까 하는 두려움도 있었습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant07:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "권도형 씨, 진우 씨 문의표 어디에도 예약금이나 가예약 표시가 없는데 왜 실제 대안처럼 말하셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant07:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "과거 민원 기록도 한 차례뿐인데, 그 일을 왜 현재 신뢰 문제처럼 다시 꺼내셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant07:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "종결된 민원을 반복 문제처럼 포장한 건 결국 현재 증액 요구를 방어하려는 말 돌리기였던 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant07:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "상담 메모와 발송 시각",
+      "description": "중개사 메모, 일정표, 메일 헤더를 묶어 번복과 지연의 순서를 가르는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "유하나 씨, 중개사 음성메모에 '4%로 먼저 묶고 서명본 받기'가 남아 있는데 그 문구를 거의 확정 계약처럼 더 세게 말한 이유가 있었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant07:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "메일 헤더와 상담 사정을 함께 보면, 미리 충분히 설명하지 못한 절차상 책임은 어디까지 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant07:a:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "지금 기준으로는 4% 합의의 실재와 자신의 절차 지연을 동시에 인정하실 수 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant07:a:d-1:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "권도형 씨, 문의가 들어온 지 두 시간 만에 증액안을 다시 낸 이유가 정말 '시세 일반론'뿐이었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant07:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "중개사 메모와 예약금 부재 확인서까지 보면, 그 문의를 크게 말한 데에 체면 문제도 있었던 것 아닙니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant07:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "이제는 4% 뒤에 12%와 추가 조건을 다시 붙인 조치가 기존 합의를 넘어선 변경이었다고 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant07:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "tenant07:a:d-1:unlock:s2:0",
+            "factText": "중개사 일정표에는 4% 인상안과 2년 재계약 서류 발송이 이미 같은 저녁에 잡혀 있었다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "4% 인상",
+                "rounded": "약 4%",
+                "neutral": "그 인상률"
+              },
+              "term": {
+                "exact": "2년 재계약",
+                "neutral": "그 재계약 기간"
+              },
+              "time": {
+                "exact": "협의 당일 저녁",
+                "dateExact": "협의 당일",
+                "period": "그날 저녁",
+                "neutral": "그 시점"
+              },
+              "person": {
+                "exact": "남서희",
+                "fullName": "남서희 공인중개사",
+                "judgeRef": "중개사",
+                "neutral": "그 중개사"
+              },
+              "document": {
+                "exact": "상담 일정표",
+                "neutral": "그 일정표"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant07:a:d-1:unlock:s3:0",
+            "factText": "하나는 보증인 상담 때문에 서명본 발송을 사흘 늦췄고 그 사이 도형의 표현이 '정리'에서 '다시 봐야 한다'로 바뀌었다.",
+            "tags": [
+              "timeline",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "delay": {
+                "exact": "사흘 지연",
+                "neutral": "그 지연"
+              },
+              "procedure": {
+                "exact": "보증인 상담",
+                "neutral": "그 상담 사정"
+              },
+              "time": {
+                "exact": "표현 변경 시점",
+                "period": "그 사이",
+                "neutral": "그 변화 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant07:a:d-1:unlock:s4:0",
+            "factText": "하나는 서명 지연 때문에 합의가 깨질까 봐 4% 합의를 거의 완료된 계약처럼 더 단정적으로 말해 왔다.",
+            "tags": [
+              "fear",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "4% 합의",
+                "neutral": "그 합의"
+              },
+              "delay": {
+                "exact": "서명 지연",
+                "neutral": "그 지연"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant07:a:d-1:unlock:s5:0",
+            "factText": "핵심 합의는 실재했지만 하나도 자신의 절차 지연이 만든 틈을 줄여 말했다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "4% 인상 재계약",
+                "neutral": "그 재계약 조건"
+              },
+              "delay": {
+                "exact": "절차 지연",
+                "neutral": "그 절차 문제"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "tenant07:a:d-3:unlock:s2:0",
+            "factText": "초안 수신 후 사흘 뒤 발송된 메일 헤더로 서명본 전달 시각이 확인된다.",
+            "tags": [
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "delay": {
+                "exact": "사흘 지연",
+                "neutral": "그 지연"
+              },
+              "document": {
+                "exact": "메일 헤더 원본",
+                "neutral": "그 메일 기록"
+              },
+              "time": {
+                "exact": "초안 수신 후 사흘 뒤",
+                "dateExact": "사흘 뒤",
+                "period": "발송 시점",
+                "neutral": "그때"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant07:a:d-3:unlock:s3:0",
+            "factText": "지연 사유는 보증인 상담과 자동이체 일정 조정이었고, 하나는 그 사정을 미리 길게 설명하지 못했다.",
+            "tags": [
+              "context",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "procedure": {
+                "exact": "보증인 상담 및 자동이체 일정 조정",
+                "neutral": "그 절차 사정"
+              },
+              "delay": {
+                "exact": "사흘 지연",
+                "neutral": "그 지연"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant07:a:d-3:unlock:s4:0",
+            "factText": "하나는 체면 때문에 그 사흘 지연을 '별일 아님'처럼 축소했다.",
+            "tags": [
+              "shame",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "delay": {
+                "exact": "사흘 지연",
+                "neutral": "그 지연"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant07:a:d-3:unlock:s5:0",
+            "factText": "하나는 미리 충분히 설명하지 못한 절차상 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "procedure": {
+                "exact": "사전 설명 부족",
+                "neutral": "그 설명 누락"
+              },
+              "delay": {
+                "exact": "절차상 책임",
+                "neutral": "그 책임"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant07:a:d-4:unlock:s2:0",
+            "factText": "관리사무소 기록에는 2년 전 복도 자전거와 분리배출 경고 한 차례, 그리고 종결 메모만 남아 있다.",
+            "tags": [
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "2년 전 여름",
+                "dateExact": "2년 전 여름",
+                "period": "그때",
+                "neutral": "그 과거 시점"
+              },
+              "issue": {
+                "exact": "복도 자전거와 분리배출",
+                "neutral": "그 생활 민원"
+              },
+              "document": {
+                "exact": "민원 종결 기록",
+                "neutral": "그 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant07:a:d-4:unlock:s3:0",
+            "factText": "이후 같은 항목의 재접수는 없었고, 현재까지 남은 건 단발성 기록뿐이다.",
+            "tags": [
+              "counter",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "result": {
+                "exact": "재접수 없음",
+                "neutral": "그 이후 상황"
+              },
+              "document": {
+                "exact": "관리사무소 기록",
+                "neutral": "그 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant07:a:d-4:unlock:s4:0",
+            "factText": "하나는 문제 세입자로 찍힐까 봐 그 한 번의 경고 자체를 부정했다.",
+            "tags": [
+              "shame",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "한 차례 경고",
+                "neutral": "그 경고"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant07:a:d-4:unlock:s5:0",
+            "factText": "하나는 경고가 한 번 있었다는 사실을 인정하고, 그 기록을 현재 증액 협상과는 분리해 달라고 말한다.",
+            "tags": [
+              "admission",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "2년 전 한 차례",
+                "neutral": "그 과거 기록"
+              },
+              "issue": {
+                "exact": "현재 증액 협상",
+                "neutral": "그 현재 협상"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "tenant07:b:d-2:unlock:s2:0",
+            "factText": "진우가 가져온 문의표에는 예약금이나 가예약 표시가 없었다.",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "공실 문의표",
+                "neutral": "그 문의표"
+              },
+              "money": {
+                "exact": "예약금 없음",
+                "neutral": "그 부재 사실"
+              },
+              "person": {
+                "exact": "권진우",
+                "fullName": "권진우",
+                "judgeRef": "아드님",
+                "neutral": "그 가족"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant07:b:d-2:unlock:s3:0",
+            "factText": "도형은 그 문의를 받은 지 두 시간 만에 12% 인상안을 다시 꺼냈다.",
+            "tags": [
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "문의 후 두 시간",
+                "dateExact": "증액 번복 직전",
+                "period": "그 짧은 간격",
+                "neutral": "그 사이"
+              },
+              "amount": {
+                "exact": "12% 인상안",
+                "neutral": "그 인상안"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant07:b:d-2:unlock:s4:0",
+            "factText": "도형은 아들이 가져온 시세 압박을 놓치면 약한 집주인으로 보일까 봐 조급해졌다.",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "권진우",
+                "fullName": "권진우",
+                "judgeRef": "아드님",
+                "neutral": "그 가족"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant07:b:d-2:unlock:s5:0",
+            "factText": "도형은 탐색 문의를 거의 성사된 대안처럼 부풀려 협상 지렛대로 썼다.",
+            "tags": [
+              "admission",
+              "self_justification"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "document": {
+                "exact": "탐색 문의",
+                "neutral": "그 문의"
+              },
+              "money": {
+                "exact": "예약금 없음",
+                "neutral": "그 부재 사실"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant07:b:d-5:unlock:s2:0",
+            "factText": "기존 4% 초안 뒤에 12% 인상, 주차비 별도, 부분 도배 선납이 새로 붙었다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "12% 인상",
+                "neutral": "그 인상률"
+              },
+              "conditionA": {
+                "exact": "주차비 별도",
+                "neutral": "그 추가 조건"
+              },
+              "conditionB": {
+                "exact": "부분 도배 선납",
+                "neutral": "그 선납 조건"
+              },
+              "document": {
+                "exact": "갱신 초안 대비 변경",
+                "neutral": "그 변경 사항"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant07:b:d-5:unlock:s3:0",
+            "factText": "그 추가 조건은 서명 지연과 새 문의가 겹친 뒤 한꺼번에 통보됐다.",
+            "tags": [
+              "timeline",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "delay": {
+                "exact": "사흘 지연",
+                "neutral": "그 지연"
+              },
+              "time": {
+                "exact": "새 문의 직후",
+                "period": "그 직후",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant07:b:d-5:unlock:s4:0",
+            "factText": "도형은 시세를 놓친 집주인처럼 보일까 봐 손실 회피에 매달렸다.",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "시세 반영 실패",
+                "neutral": "그 체면 문제"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant07:b:d-5:unlock:s5:0",
+            "factText": "도형은 기존 합의를 넘어선 일방 변경이었다는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "12% 인상과 추가 조건",
+                "neutral": "그 변경안"
+              },
+              "document": {
+                "exact": "기존 4% 합의",
+                "neutral": "그 기존 합의"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant07:b:d-4:unlock:s2:0",
+            "factText": "도형이 기대는 공식 기록도 실제로는 2년 전 한 차례뿐이다.",
+            "tags": [
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "2년 전 한 차례",
+                "dateExact": "2년 전 여름",
+                "period": "그때",
+                "neutral": "그 과거 기록"
+              },
+              "document": {
+                "exact": "관리사무소 기록",
+                "neutral": "그 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant07:b:d-4:unlock:s3:0",
+            "factText": "도형은 그 종결된 민원을 반복 문제처럼 말해 현재 신뢰 문제로 다시 포장했다.",
+            "tags": [
+              "counter",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "issue": {
+                "exact": "종결된 민원",
+                "neutral": "그 과거 민원"
+              },
+              "time": {
+                "exact": "현재 재계약 국면",
+                "neutral": "그 현재 상황"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant07:b:d-4:unlock:s4:0",
+            "factText": "도형은 세입자 관리에 끌려다니는 집주인처럼 보일까 봐 예전 경고를 크게 불렸다.",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "issue": {
+                "exact": "예전 경고",
+                "neutral": "그 경고"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant07:b:d-4:unlock:s5:0",
+            "factText": "도형은 과거 민원을 현재 증액 명분으로 재활용한 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "issue": {
+                "exact": "과거 민원",
+                "neutral": "그 민원"
+              },
+              "amount": {
+                "exact": "현재 증액 명분",
+                "neutral": "그 현재 명분"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "tenant07:contradiction:0",
+        "targetParty": "a",
+        "trigger": "하나가 과거 경고를 전면 부정한 뒤 e-3이 제시될 때",
+        "text": "관리사무소 기록에는 2년 전 한 차례 경고와 종결 메모가 남아 있습니다. '전혀 없었다'는 진술과는 맞지 않습니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-3"
+        ]
+      },
+      {
+        "id": "tenant07:contradiction:1",
+        "targetParty": "b",
+        "trigger": "도형이 새 임차인 문의를 거의 성사된 계약처럼 말한 뒤 e-4와 e-6이 함께 제시될 때",
+        "text": "문의표에는 가능 금액만 적혀 있고 예약금도 없습니다. '거의 됐다'는 설명은 자료보다 훨씬 앞서 있습니다.",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-6"
+        ]
+      },
+      {
+        "id": "tenant07:contradiction:2",
+        "targetParty": "b",
+        "trigger": "도형이 4%는 단순 방향이었다고만 주장하는데 e-2와 e-5가 결합될 때",
+        "text": "잘린 대화 앞뒤 문맥과 중개사 메모를 보면, 이미 4%로 정리하고 서류만 맞추자는 흐름이 확인됩니다. 단순 문의 단계라고 보기 어렵습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-5"
+        ]
+      },
+      {
+        "id": "tenant07:contradiction:3",
+        "targetParty": "a",
+        "trigger": "하나가 합의는 완전히 끝났다고만 말하는데 e-1과 e-6이 함께 제시될 때",
+        "text": "갱신 초안은 협의 당일 생성됐지만 서명본 발송은 사흘 뒤입니다. 합의의 핵심과 절차의 남은 부분을 구분해 답해야 합니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "tenant07:interjection:0",
+        "speaker": "a",
+        "trigger": "도형이 과거 생활 민원을 현재 증액 사유와 섞어 말할 때",
+        "text": "그 표현 먼저 어디서 나왔죠? 2년 전 종결 기록을 지금 인상 근거처럼 붙이면 순서가 바뀌잖아요.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant07:interjection:1",
+        "speaker": "b",
+        "trigger": "하나가 4% 합의를 말하면서 자신의 서명 지연을 거의 언급하지 않을 때",
+        "text": "저도 봐줄 만큼 봐줬습니다. 사흘이나 답이 없는데 집주인이 아무 판단도 안 합니까?",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "tenant07:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 '시세'와 '상식'만 반복하며 구체 자료를 피할 때",
+        "text": "시세 일반론은 잠시 멈추십시오. 예약금 유무, 4% 정리 문구, 서명본 발송 시각을 각각 자료 기준으로 답하십시오.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "tenant07:outburst:a:0",
+        "party": "a",
+        "trigger": "도형이 과거 경고를 반복 문제처럼 몰아가고 e-3이 확인된 뒤",
+        "text": "한 번 정리된 일을 왜 지금까지 사람 꼬리표처럼 붙이십니까. 그걸로 제가 계속 문제였던 사람처럼 만들진 말아 주세요.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "tenant07:outburst:a:1",
+        "party": "a",
+        "trigger": "12% 인상과 추가 조건이 연달아 낭독되어 주거 불안이 다시 자극될 때",
+        "text": "저는 숫자 하나 바뀌면 바로 이사 걱정부터 해야 합니다. 이미 4%로 얘기해 놓고 왜 갑자기 살던 사람부터 밀어내는 쪽으로 갑니까.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant07:outburst:b:0",
+        "party": "b",
+        "trigger": "진우의 문의를 과장한 이유가 체면 문제였는지 집요하게 추궁받을 때",
+        "text": "저도 손 놓고 있던 사람 아닙니다. 세금이니 공실이니 다 떠안는데, 집주인은 무조건 욕먹는 자리입니까?",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant07:outburst:b:1",
+        "party": "b",
+        "trigger": "과거 민원을 현재 협상 카드로 쓴 점을 인정하라는 압박이 계속될 때",
+        "text": "예전 일까지 다 입 닫고 있으라는 겁니까. 저도 계속 참고만 있었던 사람처럼 몰리면 억울합니다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "tenant07:transition:a:d-1:s0_s1",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "prior_agreement_question",
+      "line": "그 문장이 먼저였죠. 4%로 정리하고 서류만 맞추자는 순서였습니다.",
+      "behaviorHint": "캡처 순서를 떠올리듯 손가락으로 허공을 짚는다."
+    },
+    {
+      "id": "tenant07:transition:a:d-1:s1_s2",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "잘린 부분 말고 앞뒤까지 보면, 네, 4% 방향은 이미 서로 확인한 상태였습니다.",
+      "behaviorHint": "짧게 입술을 다물었다가 사실관계를 정리하듯 말한다."
+    },
+    {
+      "id": "tenant07:transition:a:d-1:s2_s3",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "signature_status_followup",
+      "line": "제가 늦게 낸 건 맞습니다. 그 틈을 보고 도형 씨 말이 바뀐 것도 맞고요.",
+      "behaviorHint": "시선을 내렸다가 다시 들어 상대를 본다."
+    },
+    {
+      "id": "tenant07:transition:a:d-1:s3_s5",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "중개사 메모까지 나오면 인정해야죠. 합의는 있었고, 저는 제 지연이 만든 틈을 작게 말했습니다.",
+      "behaviorHint": "목소리가 한층 낮아지고 어깨 힘이 풀린다."
+    },
+    {
+      "id": "tenant07:transition:a:d-3:s0_s1",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "signed_copy_question",
+      "line": "사흘 안에 보냈습니다. 미루려던 게 아니라 절차를 맞추느라 그랬던 겁니다.",
+      "behaviorHint": "날짜를 세듯 짧게 손가락을 접는다."
+    },
+    {
+      "id": "tenant07:transition:a:d-3:s1_s2",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "초안 상태가 그렇게 남아 있다면, 네, 중개사가 기대한 때보다 늦은 건 맞습니다.",
+      "behaviorHint": "문서를 내려다보며 건조하게 인정한다."
+    },
+    {
+      "id": "tenant07:transition:a:d-3:s2_s3",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "guarantor_consult_followup",
+      "line": "보증인 상담과 자동이체 일정 때문에 설명이 길어졌습니다. 그건 제 몫이었어요.",
+      "behaviorHint": "고개를 작게 끄덕이며 자기 책임을 받아들인다."
+    },
+    {
+      "id": "tenant07:transition:a:d-3:s3_s5",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "메일 기록까지 나오면 더 줄일 수 없네요. 저는 그 사흘을 너무 가볍게 말했습니다.",
+      "behaviorHint": "민망한 듯 숨을 길게 내쉰다."
+    },
+    {
+      "id": "tenant07:transition:a:d-4:s0_s1",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_complaint_question",
+      "line": "계속 문제였던 것처럼 들리게 하시네요. 제가 기억하는 건 한 번 생활 안내 받은 정도였습니다.",
+      "behaviorHint": "표정은 굳지만 톤은 오히려 차분해진다."
+    },
+    {
+      "id": "tenant07:transition:a:d-4:s1_s2",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "기록이 그렇게 남아 있다면 한 차례 경고는 인정합니다. 하지만 재발은 없었습니다.",
+      "behaviorHint": "말끝을 단단히 닫으며 범위를 한정한다."
+    },
+    {
+      "id": "tenant07:transition:a:d-4:s2_s4",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_embarrassment",
+      "line": "부끄러워서 그 한 번도 없던 일처럼 잘라 말했습니다. 그 말부터 방어였어요.",
+      "behaviorHint": "눈빛이 흔들리고 손을 움켜쥐었다 푼다."
+    },
+    {
+      "id": "tenant07:transition:a:d-4:s4_s5",
+      "caseId": "tenant-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "repeat_record_question",
+      "line": "맞습니다. 한 번 있었고 바로 종결됐습니다. 지금은 그 기록을 현재 협상과 분리해서 말하겠습니다.",
+      "behaviorHint": "고개를 살짝 숙였다가 정면을 본다."
+    },
+    {
+      "id": "tenant07:transition:b:d-2:s0_s1",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "market_offer_question",
+      "line": "시장에선 그런 문의 하나도 쉽게 못 넘깁니다. 예약금이 없어도 가능성은 본 겁니다.",
+      "behaviorHint": "길게 한숨을 쉰 뒤 느린 톤으로 설명한다."
+    },
+    {
+      "id": "tenant07:transition:b:d-2:s1_s2",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "문의표가 그 정도였다면, 네, 제가 실제보다 무겁게 받아들인 건 있겠죠.",
+      "behaviorHint": "이마를 문지르며 말을 잠시 끊는다."
+    },
+    {
+      "id": "tenant07:transition:b:d-2:s2_s4",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_son_pressure",
+      "line": "아들 말까지 놓치면 제가 너무 둔한 집주인처럼 보일까 봐 조급했습니다.",
+      "behaviorHint": "어깨를 움츠리고 시선을 비켜 간다."
+    },
+    {
+      "id": "tenant07:transition:b:d-2:s4_s5",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "예약금도 없었다면 결국 탐색 문의였던 겁니다. 제가 그걸 크게 말해 압박에 쓴 거죠.",
+      "behaviorHint": "체념한 듯 천천히 고개를 끄덕인다."
+    },
+    {
+      "id": "tenant07:transition:b:d-5:s0_s1",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "rent_increase_question",
+      "line": "저도 손해만 보고 살 수는 없잖습니까. 서명 전이면 조건을 다시 볼 수 있다고 본 겁니다.",
+      "behaviorHint": "손바닥을 펴 보이며 자신도 피해자라는 식으로 말한다."
+    },
+    {
+      "id": "tenant07:transition:b:d-5:s1_s2",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "대화 전체가 그렇게 이어진다면, 네, 제가 조건을 다시 꺼낸 건 맞습니다.",
+      "behaviorHint": "한숨 뒤에 말을 이어 가며 시선을 아래로 깐다."
+    },
+    {
+      "id": "tenant07:transition:b:d-5:s2_s3",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "additional_condition_followup",
+      "line": "주차비에 도배까지 한꺼번에 붙인 건 과했을 수 있습니다. 그때는 제 부담부터 막고 싶었습니다.",
+      "behaviorHint": "턱을 쓸며 변명과 인정 사이를 오간다."
+    },
+    {
+      "id": "tenant07:transition:b:d-5:s3_s5",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "중개사 메모까지 나오면 부인하기 어렵네요. 그건 4% 합의를 넘는 일방 변경이었습니다.",
+      "behaviorHint": "목이 잠긴 채 긴 숨으로 문장을 마무리한다."
+    },
+    {
+      "id": "tenant07:transition:b:d-4:s0_s1",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "past_bicycle_question",
+      "line": "그때 일은 그냥 넘길 수 있는 게 아니었습니다. 집주인 입장에선 신뢰를 볼 수밖에 없어요.",
+      "behaviorHint": "과거 날짜를 세듯 손가락을 접어 나간다."
+    },
+    {
+      "id": "tenant07:transition:b:d-4:s1_s2",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "공식 기록이 한 번뿐인 건 맞습니다. 그래도 저는 그 인상이 오래 갔습니다.",
+      "behaviorHint": "속도를 늦추며 마지못해 인정한다."
+    },
+    {
+      "id": "tenant07:transition:b:d-4:s2_s3",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "repeat_incident_question",
+      "line": "예, 제가 여러 번 있었던 것처럼 말한 건 있습니다. 지금 와선 그게 과장인 것도 압니다.",
+      "behaviorHint": "입꼬리를 굳힌 채 말끝을 흐린다."
+    },
+    {
+      "id": "tenant07:transition:b:d-4:s3_s5",
+      "caseId": "tenant-07",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "과거 민원을 현재 증액 명분으로 가져온 건 제 쪽 계산이었습니다.",
+      "behaviorHint": "어깨가 처지며 체면을 내려놓는 듯 보인다."
+    }
+  ]
+}
+

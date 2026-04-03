@@ -154,7 +154,7 @@ export const spouse06TellsBeats = {
       "party": "a",
       "disputeId": "d-1",
       "beatType": "blame",
-      "line": "다만 크롭된 캡처만 돌면 원래 붙어 있던 맥락이 싹 사라져요. 의도보다 더 독하게 보이게 만든 건 그 유통 방식이었어요.",
+      "line": "크롭된 캡처만 돌면 원래 붙어 있던 맥락이 싹 사라져요. 의도보다 더 독하게 보이게 만든 건 그 유통 방식이었어요.",
       "behaviorHint": "손바닥을 펼쳐 '잘려 나간 화면'을 강조한다.",
       "applicableStates": [
         "S3"
@@ -440,7 +440,7 @@ export const spouse06TellsBeats = {
       "party": "b",
       "disputeId": "d-4",
       "beatType": "hedge",
-      "line": "서희에게 먼저 묻지 못한 건 아쉽지만, 팀 안에서 오해가 돌 조짐이 보였습니다. 역할상 선조치가 필요하다고 판단했습니다.",
+      "line": "서희 씨에게 먼저 묻지 못한 건 아쉽지만, 팀 안에서 오해가 돌 조짐이 보였습니다. 역할상 선조치가 필요하다고 판단했습니다.",
       "behaviorHint": "말하면서 '팀장 입장'이라는 표현에 힘을 준다.",
       "applicableStates": [
         "S1"
@@ -466,7 +466,7 @@ export const spouse06TellsBeats = {
       "party": "b",
       "disputeId": "d-4",
       "beatType": "blame",
-      "line": "다만 승진 심사 직전이었고, 숙박비나 외근비 얘기로 번지면 팀 전체 신뢰까지 건드릴 수 있었어요. 저는 그 압박 아래서 역할을 우선했습니다.",
+      "line": "승진 심사 직전이었고, 숙박비나 외근비 얘기로 번지면 팀 전체 신뢰까지 건드릴 수 있었어요. 저는 그 압박 아래서 역할을 우선했습니다.",
       "behaviorHint": "등을 곧게 세우고 조직 논리를 차분히 내세운다.",
       "applicableStates": [
         "S3"
@@ -557,7 +557,7 @@ export const spouse06TellsBeats = {
       "party": "b",
       "disputeId": "d-5",
       "beatType": "confession",
-      "line": "이번 갈등은 서희의 모호한 게시물, 제 과잉 방어, 회사 안 오해가 이어진 공유 오해의 연쇄였습니다. 저는 그중 제 단계의 책임을 인정합니다.",
+      "line": "이번 갈등은 서희 씨의 모호한 게시물, 제 과잉 방어, 회사 안 오해가 이어진 공유 오해의 연쇄였습니다. 저는 그중 제 단계의 책임을 인정합니다.",
       "behaviorHint": "시선을 정면으로 두고 짧게 숨을 고른다.",
       "applicableStates": [
         "S5"

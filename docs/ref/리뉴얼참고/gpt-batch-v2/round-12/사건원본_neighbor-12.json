@@ -1,0 +1,772 @@
+{
+  "caseId": "case-neighbor-12",
+  "meta": {
+    "relationshipType": "neighbor",
+    "conflictSeed": "CS-1",
+    "variableModules": [
+      "VM-E"
+    ],
+    "twistModule": "TW-1",
+    "difficulty": "hard",
+    "anchorTruth": "도윤이 94만 원을 숨긴 게 아니었다. 지연이 작년 캐시백 62만 원을 묶어둔 채 이번 참가금으로 메우려다 먼저 피해자 행세를 한 것이다.",
+    "emotionalBait": "참가자 12명의 재촉 메시지, 텅 빈 환불표 칸, 도윤 카드에 찍힌 32만 원 취소 알림―세 장면이 겹치면 도윤이 공동구매 돈을 빼돌린 것처럼 보인다.",
+    "resolutionDilemma": "62만 원 은닉은 지연이 시작했지만, 도윤도 32만 원 취소를 사흘간 알리지 않았고 작년 정산을 서면으로 닫지 않았다. 작년 구멍 62만 원과 이번 환급 32만 원을 분리해 정리하지 않으면 참가자 신뢰가 완전히 무너진다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "배지연",
+      "age": 38,
+      "occupation": "홈베이킹 클래스 운영자",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "'참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.",
+      "pride": 7,
+      "fear": "입주민방에서 '작년 캐시백 62만 원 개인계좌에 넣고 도윤한테 뒤집어씌운 사람'이라 불리는 장면 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "parent_chat_and_banking_sheet",
+      "dailyRoutine": "오전엔 베이킹 수업과 주문 상담을 하고 오후엔 입주민 공동구매 문의와 입금표를 정리한다. 밤에는 휴대폰 뱅킹 캡처와 정산표를 다시 맞추는 습관이 있다.",
+      "sensitivePoints": [
+        "공동구매 신뢰",
+        "입금 관리",
+        "아이 엄마들 사이 평판"
+      ],
+      "verbalTells": [
+        {
+          "type": "pressure_stack",
+          "trigger": "lying",
+          "pattern": "'참가자 분들 문의 12건, 제가 선입금한 것만 47만 원'―숫자를 길게 쌓아 자신의 의심이 당연했다는 분위기를 깔아놓는다."
+        },
+        {
+          "type": "old_effort_shield",
+          "trigger": "cornered",
+          "pattern": "작년 62만 원을 왜 안 닫았냐는 질문에 '제가 지금까지 공구 네 번을 혼자 돌렸는데요'로 수고를 먼저 쌓아 핵심을 묻는다."
+        },
+        {
+          "type": "number_blur",
+          "trigger": "avoiding",
+          "pattern": "'그때그때 섞인 게 있었다'―62만 원과 32만 원의 경계를 흐려 94만 원 전체가 도윤 문제인 것처럼 유지한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "도윤씨",
+        "toJudge": "옆집 분",
+        "angry": "서도윤 씨!"
+      }
+    },
+    "partyB": {
+      "name": "서도윤",
+      "age": 44,
+      "occupation": "세무법인 경리팀장",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "공급사 정산 PDF와 32만 원 카드취소 화면을 먼저 보여주며 감정을 뺀다. 궁지에 몰리면 '지연 씨 숫자가 틀렸다'만 반복하고 작년 정산을 서면으로 닫지 않은 자기 책임은 한 줄로 줄인다.",
+      "pride": 8,
+      "fear": "정산표를 잘 아는 사람이라 오히려 '숫자 다룰 줄 아니까 돈장난한 거 아니냐'는 의심을 받는 장면 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "spreadsheet_and_card_alert",
+      "dailyRoutine": "출근 전 공동구매 입금표를 확인하고, 퇴근 후 공급사 메일과 카드매입 내역을 정리한다. 환불·취소 알림은 따로 스크린샷해 두는 편이다.",
+      "sensitivePoints": [
+        "환불금 누명",
+        "장부 정확성",
+        "지연된 고지 책임"
+      ],
+      "verbalTells": [
+        {
+          "type": "statement_wall",
+          "trigger": "lying",
+          "pattern": "사흘 늦게 알린 책임을 물으면 정산서 A열부터 F열까지 차례로 읽기 시작해 감정 논의 자체를 차단한다."
+        },
+        {
+          "type": "scope_shrink",
+          "trigger": "cornered",
+          "pattern": "실제 3일인 고지 지연을 '이틀 정도, 배송료 확정 기다렸다'로 줄여 영향 범위를 축소한다."
+        },
+        {
+          "type": "past_cutoff",
+          "trigger": "avoiding",
+          "pattern": "작년 정산을 왜 서면으로 안 닫았냐는 질문에 '이번 건부터 보시죠'로 과거 연결고리를 끊으려 한다. 62만 원 방치 책임은 피한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "지연씨",
+        "toJudge": "옆집 분",
+        "angry": "배지연 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "작년부터 지연은 주민 입금·배송 공지, 도윤은 공급사 주문·정산표 확인을 맡아 공동구매를 함께 운영해 왔다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "작년 통관 보증금을 도윤 카드로 결제한 뒤 지연이 며칠 후 개인계좌에서 돌려준 일을, 지연은 '늘 해오던 임시 정산', 도윤은 '돈 섞임의 시작'으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '원래 잠깐씩 메우고 맞추는 흐름이었다' / B: '그때부터 공적 돈과 개인 돈 경계가 흐려졌다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "작년 캐시백 41만 원 + 반품차액 21만 원 = 62만 원을 안 닫은 채 넘어간 걸 둘 다 알았지만 '번거롭다'며 공식 공지를 미뤘다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "윤미정 (같은 동 공동구매 참가자)",
+        "relationTo": "both",
+        "knowledgeScope": "지연이 부모방에 '94만 원이 빈다' 글을 올린 시점과 도윤이 뒤늦게 카드취소 캡처로 해명한 순서를 직접 목격했다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 43,
+          "occupation": "같은 동 공동구매 참가자",
+          "relationToA": "배지연을 업무상 알고 있음",
+          "relationToB": "서도윤을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "지연씨",
+          "addressB": "도윤씨"
+        },
+        "addressA": "배지연씨",
+        "addressB": "서도윤씨"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_2",
+        "name": "최병우 (지연의 베이킹 클래스 보조강사)",
+        "relationTo": "both",
+        "knowledgeScope": "지연이 이번 참가금 일부를 개인계좌로 옮기며 '지난번 빈칸부터 메워야 한다'고 말하는 것을 들었다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 43,
+          "occupation": "지연의 베이킹 클래스 보조강사",
+          "relationToA": "배지연을 업무상 알고 있음",
+          "relationToB": "서도윤을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "지연씨",
+          "addressB": "도윤씨"
+        },
+        "addressA": "배지연씨",
+        "addressB": "서도윤씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "송예린 (수입사 정산 담당자)",
+        "relationTo": "both",
+        "knowledgeScope": "이번 환급 32만 원, 국제배송료 재계산 결과, 작년 캐시백·반품차액 62만 원 지급 내역을 원본 기준으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 46,
+          "occupation": "수입사 정산 담당자",
+          "relationToA": "배지연을 업무상 알고 있음",
+          "relationToB": "서도윤을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "배지연씨",
+          "addressB": "서도윤씨"
+        },
+        "addressA": "배지연씨",
+        "addressB": "서도윤씨"
+      }
+    ],
+    "relationshipType": "neighbor"
+  },
+  "context": {
+    "contextType": "group_purchase_investment_conflict",
+    "description": "같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "참가자 12명의 돈을 대신 쥔 상태에서 여러 번 함께한 신뢰가 걸려 있었기 때문에, 도윤의 사흘간 고지 지연만으로도 즉시 '횡령' '은닉'이라는 단어가 올라왔다.",
+    "caseNumber": "E-NB-H-0012",
+    "caseName": "94만 원 은닉"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "지연의 공개 지목: 94만 원 은닉 주장",
+      "truth": true,
+      "truthDescription": "지연은 도윤에게 원본 정산서를 요구하기 11분 전에 부모방·입주민방에 '도윤이 94만 원을 숨긴 것 같다'는 글을 공개했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "평판회복",
+      "legitimacyIssue": true,
+      "judgmentStatement": "지연은 도윤의 94만 원 은닉을 주장했다."
+    },
+    {
+      "id": "d-2",
+      "name": "도윤의 32만 원 취소 늦은 고지",
+      "truth": true,
+      "truthDescription": "도윤은 32만 원 카드취소 알림을 받고도 '배송료 확정 후 알리겠다'며 사흘간 지연과 참가자에게 알리지 않았다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "참가자공지",
+      "legitimacyIssue": false,
+      "judgmentStatement": "도윤은 카드취소를 지연했다."
+    },
+    {
+      "id": "d-3",
+      "name": "재정 은닉의 실제 출발점",
+      "truth": true,
+      "truthDescription": "94만 원 구멍의 핵심은 도윤의 은닉이 아니다. 지연이 작년 캐시백 41만 원 + 반품차액 21만 원 = 62만 원을 개인계좌에 묶어두고 이번 참가금으로 메우려 한 것이 출발점이었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 90,
+        "b": 10
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "과거청산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "지연이 62만 원을 개인계좌에 묶었다."
+    },
+    {
+      "id": "d-4",
+      "name": "'사라진 94만 원'의 실제 구성",
+      "truth": true,
+      "truthDescription": "'사라진 94만 원' = 이번 환급 32만 원 + 작년 미정산 62만 원. 도윤이 숨긴 돈이 아니라 두 라운드 금액이 같은 계좌에서 뒤섞인 결과다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "정산분리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "사라진 94만 원은 두 라운드 금액이다."
+    },
+    {
+      "id": "d-5",
+      "name": "작년 정산 미마감과 계좌 재사용",
+      "truth": true,
+      "truthDescription": "도윤이 '작년 먼저 닫자'고 했고 지연이 '이번에 같이 맞추겠다'고 답한 대화가 남아 있다. 결국 지연은 같은 계좌를 쓰고 도윤은 서면 마감을 강제하지 않았다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "공동구매계좌",
+      "legitimacyIssue": false,
+      "judgmentStatement": "지연은 같은 계좌를 사용했다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "지연의 환불 요구 글과 자작 정산표 캡처",
+      "description": "부모방·입주민방에 올린 '94만 원 은닉 의심' 글과 개인 스프레드시트 캡처. 작년 62만 원과 이번 32만 원을 한 칸에 합쳐 적어 전액이 이번 환불인 것처럼 보인다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "부모방·입주민방 캡처와 개인 스프레드시트 스크린샷만 제출됐다. 원본 공급사 정산서는 포함되지 않았다.",
+        "check_metadata": "공개 글 게시가 도윤에게 직접 정산서를 요구한 시점보다 11분 빠르다. 확인 전에 공개한 셈이다.",
+        "restore_context": "스프레드시트에 이번 라운드만 적힌 것처럼 보이지만, 작년 이월 62만 원과 이번 32만 원을 한 셀에 합쳐 94만 원으로 부풀렸다.",
+        "verify_source": "지연 노트북 자동저장 파일명과 휴대폰 캡처 시각이 일치한다.",
+        "check_edits": "수식 셀과 일부 행이 가려져 있어 작년 이월과 이번 환급이 어떻게 합산됐는지 단독 확인이 어렵다.",
+        "question_acquisition": "미성년 보호자들이 포함된 채팅방 자료이므로 실명·계좌번호는 최소화해 사용해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "배지연에게: \"지연의 공개 지목: 94만 원 은닉 주장\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 배지연의 \"지연의 공개 지목: 94만 원 은닉 주장\" 쟁점과 관련된다. 배지연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서도윤에게: \"'사라진 94만 원'의 실제 구성\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 서도윤의 \"'사라진 94만 원'의 실제 구성\" 쟁점과 관련된다. 서도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "도윤의 카드취소 알림과 지연에게 보낸 늦은 안내 메시지",
+      "description": "도윤 카드 32만 원 취소 알림 스크린샷과 사흘 뒤 지연에게 보낸 해명 메시지. 알림 시각과 전달 시각 사이 3일 공백이 그대로 보인다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "32만 원 카드취소 알림 스크린샷과 사흘 뒤 보낸 해명 메신저 내보내기 파일이 함께 제출됐다.",
+        "check_metadata": "카드 취소 알림과 지연에 대한 전달 사이 3일 공백. 도윤은 배송료 확정을 기다렸다고 주장한다.",
+        "restore_context": "은닉 의도로 단정하긴 어렵지만, 3일간 침묵이 지연의 '94만 원 은닉' 프레임에 힘을 실어준 직접 원인이다.",
+        "verify_source": "은행 푸시 알림, 휴대폰 시스템 로그, 메신저 발신 시각이 삼중으로 일치한다.",
+        "check_edits": "상하 크롭 외 합성 흔적 없음. 32만 원 금액과 취소 날짜는 원문과 동일하다.",
+        "question_acquisition": "개인 카드 알림이므로 카드번호 전체와 잔액 표시는 마스킹 후 활용해야 한다."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-3",
+      "name": "작년 공기청정기 공동구매 캐시백·반품차액 내역",
+      "description": "작년 수입사 → 지연 개인계좌 이체 내역: 캐시백 41만 원, 반품차액 21만 원. 참가자 환급 전표는 없고 개인계좌에 62만 원이 그대로 남아 있다.",
+      "type": "financial_record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "작년 수입사 이체내역, 지연 계좌 입금기록(캐시백 41만 원 + 반품차액 21만 원), 메모장 캡처가 한 세트로 제출됐다.",
+        "check_metadata": "캐시백·반품차액 입금은 작년 라운드 종료 직후 같은 주에 이뤄졌고 참가자 환급 전표는 존재하지 않는다.",
+        "restore_context": "62만 원이 참가자 환급 없이 지연 개인계좌에 그대로 남아 있었다. 이것이 올해 '94만 원 구멍'의 숨은 62만 원이다.",
+        "verify_source": "수입사 정산 메일 금액, 은행 입금 기록, 메모장 숫자가 삼중으로 일치한다.",
+        "check_edits": "기관 이체 기록과 은행 원본으로 편집 흔적 없음. 메모장도 자동저장 이력으로 원본 확인된다.",
+        "question_acquisition": "개인 금융 거래이므로 캐시백·반품차액 금액과 날짜 외 계좌 정보는 비공개 원칙이다."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-4",
+      "name": "이번 참가금 계좌거래내역과 지연 개인계좌 이체 기록",
+      "description": "이번 참가금 계좌에서 지연 개인계좌로 분할 이체된 내역. 메모에 '지난번 정리'라는 표현이 남아 있어 작년 구멍 메우기가 확인된다.",
+      "type": "financial_record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "공동구매 입금 계좌 원장, 지연 개인계좌 입금 내역, 참가자 12명 입금 리스트가 한 세트로 제출됐다.",
+        "check_metadata": "분할 이체가 공급사 최종 정산 전부터 시작됐고, 메모에 '지난번 정리'가 적혀 있어 작년 구멍 메우기 의도가 드러난다.",
+        "restore_context": "이번 참가금과 작년 미정산 62만 원이 같은 개인계좌에서 뒤섞여 관리됐다. 94만 원 구멍의 구조가 여기서 드러난다.",
+        "verify_source": "은행 원장, 참가자 엑셀 명단, 지연 모바일 뱅킹 스크린샷의 금액이 서로 일치한다.",
+        "check_edits": "원장 출력본과 전자파일이 동일하다. 삭제 후 재입력 흔적이 로그에 남아 있어 수정 시도도 확인된다.",
+        "question_acquisition": "입주민 12명의 입금 정보가 포함돼 있으므로 지연·도윤 관련 항목만 선별해 활용해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "배지연에게: \"재정 은닉의 실제 출발점\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 배지연의 \"재정 은닉의 실제 출발점\" 쟁점과 관련된다. 배지연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서도윤에게: \"작년 정산 미마감과 계좌 재사용\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 서도윤의 \"작년 정산 미마감과 계좌 재사용\" 쟁점과 관련된다. 서도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "수입사 최종 정산서와 국제배송료 재계산표",
+      "description": "공급사 원본 정산서. 이번 환급 가능 금액은 32만 원이며 나머지는 국제배송료 재계산과 부분취소 조정으로 상계됐다. 94만 원은 존재하지 않는 숫자다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "공급사 정산 PDF, 국제배송료 재계산표, 카드취소 확인 이메일이 한 묶음으로 제출됐다.",
+        "check_metadata": "최종 정산 확정이 카드취소 알림보다 이틀 늦다. 도윤이 확정을 기다렸다는 주장에 일부 근거가 된다.",
+        "restore_context": "이번 라운드 환급 가능 금액은 32만 원이 전부다. 94만 원은 존재하지 않는 숫자이며 작년 62만 원이 합산된 결과일 뿐이다.",
+        "verify_source": "수입사 담당자 서명, 주문번호, 카드취소 승인번호가 서로 교차 확인된다.",
+        "check_edits": "기관 발행 원본으로 편집 흔적 없음. 수정 이력도 별도 로그에 남아 있다.",
+        "question_acquisition": "거래처 할인율과 배송 계약 단가가 포함돼 있어 금액 확인 외 목적의 외부 공개는 제한된다."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-6",
+      "name": "이전 라운드 대화와 이번 시작 메시지",
+      "description": "도윤 '작년 먼저 닫자' → 지연 '이번에 같이 맞추겠다' 대화 원문. 두 사람 모두 위험을 알면서 같은 계좌 구조를 반복한 증거다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "작년 말 '먼저 닫자' 대화와 이번 공동구매 개시 직전 대화 내보내기 파일이 함께 제출됐다.",
+        "check_metadata": "도윤의 '먼저 닫자'가 공구 공지 이틀 전, 지연의 '이번에 같이 맞추겠다'가 그날 밤. 위험 인식과 방치가 모두 기록돼 있다.",
+        "restore_context": "둘 다 62만 원 미정산 위험을 알면서 같은 계좌 구조를 반복했다. 편의가 분쟁의 씨앗이 된 과정이 대화에 그대로 남아 있다.",
+        "verify_source": "메신저 서버 원문과 양쪽 휴대폰 추출본의 메시지 ID가 일치한다.",
+        "check_edits": "크롭본이 있으나 내보내기 원문 대조로 '먼저 닫자' '이번에 같이 맞추겠다' 핵심 문구와 시각이 확인됐다.",
+        "question_acquisition": "사적 대화와 참가자 운영 논의가 섞여 있으므로 정산 마감 관련 문장만 선별 공개해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "배지연에게: \"작년 정산 미마감과 계좌 재사용\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 배지연의 \"작년 정산 미마감과 계좌 재사용\" 쟁점과 관련된다. 배지연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서도윤에게: \"작년 정산 미마감과 계좌 재사용\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 서도윤의 \"작년 정산 미마감과 계좌 재사용\" 쟁점과 관련된다. 서도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    },
+    {
+      "requires": [
+        "e-1",
+        "e-5"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "지연은 도윤이 환불금 94만 원을 숨겼다는 취지의 공개 지목을 먼저 올렸다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "도윤은 카드취소 32만 원 알림을 곧바로 공유하지 않아 의심을 키웠다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "실제 재정 은닉의 출발점은 작년 공동구매 62만 원을 닫지 않은 지연 쪽이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "지연이 말한 94만 원은 이번 환급 32만 원과 작년 미정산 62만 원이 섞인 숫자였다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 작년 라운드를 닫지 않은 채 같은 개인계좌 구조를 다시 사용했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "public_accusation_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_participant_pressure"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_cashback_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_mix_current_deposits"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_round_close_question"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_running_too_many_group_buys"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "late_notice_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_wait_for_freight_recalc"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "what_is_940k_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "old_round_overlap_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_or_e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_round_close_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_allow_same_account_again"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "평판회복": [
+      "지연은 도윤이 94만 원을 숨겼다는 공개 글을 같은 채널에서 철회하고, 숫자 혼합이 확인됐다는 정정문을 올린다.",
+      "도윤도 지연의 개인계좌 운용을 비난하는 감정 표현보다 확인된 장부 사실만 공유하도록 범위를 줄인다.",
+      "입주민 참가자들에게는 사건 요약과 환불 일정만 공지하고, 개인 성향 평가나 과거 실수 낙인은 금지한다."
+    ],
+    "참가자공지": [
+      "카드취소나 배송료 재계산이 생기면 공급사 최종 확정 전이라도 잠정 금액과 예상 일정부터 먼저 참가자에게 알린다.",
+      "공동구매 운영자는 환불 알림을 받은 날 즉시 공동 문서에 반영하고, 미확정 항목은 별도 색상으로 구분한다.",
+      "고지 지연이 반복되면 다음 공동구매 운영권은 다른 계정 관리자에게 넘기도록 기준을 만든다."
+    ],
+    "과거청산": [
+      "작년 공기청정기 공동구매의 캐시백 41만 원과 반품차액 21만 원을 별도 사건으로 분리해 참가자 기준으로 재정산한다.",
+      "이번 라운드 참가금으로 과거 부족분을 메운 부분은 개인 부담과 과거 정산 항목으로 다시 나누어 원상복구한다.",
+      "과거 라운드를 닫지 못한 채 새 공동구매를 여는 관행을 즉시 중단하고, 미정산 내역은 종료 공지 없이는 다음 회차로 넘기지 않는다."
+    ],
+    "정산분리": [
+      "이번 음식물처리기 공동구매의 현재 환급 32만 원과 작년 미정산 62만 원을 문서상 완전히 분리해 참가자에게 보여 준다.",
+      "정산표는 현재 라운드, 과거 라운드, 개인 가수금·가지급금 칸을 따로 두어 섞이지 않게 만든다.",
+      "숫자 혼합이 확인된 경우 한 사람의 자작 표가 아니라 공급사 원본과 은행 원장을 기준으로 다시 계산한다."
+    ],
+    "공동구매계좌": [
+      "개인계좌 대신 공동구매 전용 계좌나 최소한 라운드별 분리 계좌를 사용하고, 운영자 둘 다 조회 권한을 갖는다.",
+      "새 라운드를 시작하기 전 이전 라운드 종료 공지와 잔액 0원 확인 절차를 의무화한다.",
+      "다음부터는 운영자 역할을 분리하되 입금관리자와 정산확인자가 서로의 원장을 주 1회 교차 검증한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

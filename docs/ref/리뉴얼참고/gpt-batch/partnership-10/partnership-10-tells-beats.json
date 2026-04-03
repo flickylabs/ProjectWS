@@ -1,0 +1,587 @@
+{
+  "caseId": "partnership-10",
+  "executableTells": {
+    "a": [
+      {
+        "id": "partnership-10:a:tell:schedule_recital",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "공백",
+          "시간표",
+          "급여 총액",
+          "반 배치"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "의도를 묻는 질문에도 먼저 어떤 반에 몇 시간이 비었는지부터 숫자로 읊는다."
+      },
+      {
+        "id": "partnership-10:a:tell:trial_label",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "avoiding",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "체험근무",
+          "트라이얼",
+          "정식 채용은 아니고"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "정식 채용처럼 보이는 행동을 지적받으면 '그건 체험근무 기준이었다'고 이름표를 바꿔 설명한다."
+      },
+      {
+        "id": "partnership-10:a:tell:emotion_cut",
+        "appliesWhen": [
+          "avoiding",
+          "hurt",
+          "defensive",
+          "shame",
+          "emotional"
+        ],
+        "lexicalHooks": [
+          "감정 말고",
+          "프로세스",
+          "절차로 보죠"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "상대가 배신감을 말하면 '감정 말고 프로세스를 보자'며 정서를 잘라낸다."
+      }
+    ],
+    "b": [
+      {
+        "id": "partnership-10:b:tell:betrayal_headline",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "hurt",
+          "defensive",
+          "emotional"
+        ],
+        "lexicalHooks": [
+          "결국",
+          "내 승인 없이",
+          "건너뛴 거잖아"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "'결국 내 승인 없이 뽑은 거잖아' 같은 결론 문장을 먼저 던진다."
+      },
+      {
+        "id": "partnership-10:b:tell:pressure_echo",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "defensive",
+          "emotional"
+        ],
+        "lexicalHooks": [
+          "왜요",
+          "그때요",
+          "정말요",
+          "맞죠"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "같은 질문을 두세 번 반복하며 상대의 표정 변화에서 빈틈을 찾으려 한다."
+      },
+      {
+        "id": "partnership-10:b:tell:proof_zoom",
+        "appliesWhen": [
+          "emotional",
+          "lying",
+          "hurt",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "이 한 줄",
+          "이 메일",
+          "이 일정",
+          "여기 적혀 있잖아"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "on_trigger_only",
+        "originalPattern": "오퍼 메일 한 장이나 스케줄표 한 줄을 전체 의도의 증거처럼 확대해 해석한다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "partnership-10:beat:a:d-1:deny",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "빈 반 시간이 먼저 보였지, 최종 채용 확정부터 누른 건 아닙니다. 저는 그걸 체험근무 세팅으로 봤어요.",
+      "behaviorHint": "근무표를 손끝으로 짚으며 숫자를 세듯 말하고 눈을 바로 마주치지 않는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-1:hedge",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "혜린 씨가 '이번 주부터 한번 같이 돌아보자'고 했습니다. 저는 그 말을 시작 신호로 읽은 겁니다.",
+      "behaviorHint": "짧게 숨을 삼키고 따옴표를 치듯 손가락을 접는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-1:partial",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "정식 오퍼 형식이 나간 건 맞습니다. 다만 제 머릿속에선 아직 체험근무 전제가 붙어 있었습니다.",
+      "behaviorHint": "말끝을 낮추지만 마지막 문장에서 '체험근무'를 또렷하게 강조한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-1:blame",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "급여 시트와 final message가 비어 있던 건 제 실수예요. 그래도 그 모호한 승인 표현이 없었다면 여기까지는 안 왔습니다.",
+      "behaviorHint": "어깨를 굳히고 인정 뒤에 바로 반박을 덧붙인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-1:confession",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "최종 공동 승인 없이 오퍼와 서류를 먼저 보낸 건 제 잘못입니다. 이름표를 바꿔도 절차 위반은 남습니다.",
+      "behaviorHint": "한 번 시선을 내리고 문장을 끊어 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-1:evidence_hit",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "메일 원본이 그렇게 찍혀 있으면 더 돌려 말할 수는 없겠네요. 제가 먼저 보낸 건 사실입니다.",
+      "behaviorHint": "입술을 다물고 잠깐 멈춘 뒤 체념한 듯 고개를 끄덕인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-1"
+    },
+    {
+      "id": "partnership-10:beat:b:d-2:deny",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "저는 막으려던 거예요, 퍼뜨리려던 게 아니라. 내 승인 없이 나간 걸 그 상태에서 안 세우면 더 크게 났어요.",
+      "behaviorHint": "양손을 짧게 앞으로 내밀며 제동을 거는 몸짓을 한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-2:hedge",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "이 메일이 이미 나갔고 한 시간 뒤면 이름이 굳어요. 그때요, 수습이 먼저였어요, 먼저였어요.",
+      "behaviorHint": "짧은 문장을 두 번 겹쳐 말하며 상대 반응을 확인한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-2:partial",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "네, 제가 민서 씨랑 직원들한테 먼저 알렸습니다. 그런데 결국 그 직전에 내 승인 없이 정식 채용처럼 보이는 게 이미 나가 있었잖아요.",
+      "behaviorHint": "인정하면서도 마지막 문장을 날카롭게 올린다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-2:blame",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "수습이라고 했지만 사실 확인보다 단정이 먼저 나갔습니다. 그래도 그 단정을 만든 장면은 준서 씨가 열어 놓았죠, 맞죠?",
+      "behaviorHint": "입술을 깨물었다가 곧장 상대를 본다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-2:confession",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "재확인 없이 보류를 먼저 돌리고 의도까지 사실처럼 말한 건 제 잘못입니다. 품질 우려가 면책은 아니에요.",
+      "behaviorHint": "어깨 힘을 빼고 천천히 발음한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-2:evidence_hit",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "이 메일 원본이 다 남아 있으면 제가 먼저 보낸 순서는 부정 못 하죠. 제 어조도 너무 셌고요.",
+      "behaviorHint": "반박하려다 멈추고 휴대폰을 내려다보는 듯 시선을 떨군다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "partnership-10:beat:a:d-3:deny",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "저는 혜린 씨를 속여서 사람을 밀어 넣으려 한 적 없습니다. 그렇게 숨길 생각이었으면 흔적을 저렇게 남기지 않았어요.",
+      "behaviorHint": "손을 펼쳐 흔적이 남아 있다는 점을 건조하게 강조한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-3:hedge",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "'이번 주부터 같이 돌아보자'면 저는 trial 시작으로 읽을 수밖에 없었습니다. 그 해석이 틀렸을 수는 있어도 속이려던 건 아닙니다.",
+      "behaviorHint": "따옴표 대목에서 목소리를 낮추고 마지막 문장을 단호하게 끊는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-3:partial",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "크롭된 캡처만 보면 제가 떼어먹은 사람처럼 보이죠. 그런데 원본에는 '트라이얼로'가 있고 민서 씨도 3일 일정만 보냈습니다.",
+      "behaviorHint": "자료를 손으로 가리키며 문맥이 잘렸다는 점을 조용히 짚는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-3:blame",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "배신처럼 보인 이유는 이해합니다. 다만 제 은폐보다 모호한 표현과 시스템 문구가 오해를 더 크게 만들었습니다.",
+      "behaviorHint": "이해를 먼저 말한 뒤 표정을 굳히며 원인을 분리해 설명한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-3:confession",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "계획적으로 속이려던 건 아니었지만, 제가 확인 없이 승인으로 묶어 읽어 속인 것처럼 보이게 만들었습니다. 그건 제 잘못입니다.",
+      "behaviorHint": "한 박자 쉬고 마지막 절반을 낮은 목소리로 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-3:evidence_hit",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "원본 단톡하고 일정 메일까지 같이 놓이면 제 해석이 너무 빨랐다는 게 드러나네요. 의도가 아니라 오해였다는 쪽으로 봐야 합니다.",
+      "behaviorHint": "자료를 본 뒤 짧게 한숨 쉬고 말의 속도를 늦춘다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "partnership-10:beat:b:d-3:deny",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "결국 그때 제 눈에는 정말 배신으로 보였어요. 오퍼, 서류, 새 이름, 건너뛴 거잖아, 그 장면을 보고 어떻게 다르게 읽어요.",
+      "behaviorHint": "결론부터 던지고 손가락으로 항목을 하나씩 세듯 짚는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-3:hedge",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "적어도 제가 본 조각만 놓고 보면 독단 채용처럼 보였습니다. 왜요, 같은 질문을 계속 할 수밖에 없었어요, 없었어요.",
+      "behaviorHint": "마지막 어구를 짧게 반복하며 상대 표정을 살핀다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-3:partial",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "원본을 보니 '트라이얼로'가 있더군요. 다만 정말요, 제가 믿은 이유는 있어도, 그 믿음이 완전한 진실은 아니었던 거죠.",
+      "behaviorHint": "목소리를 낮추며 한 발 물러나지만 눈빛은 여전히 날카롭다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-3:blame",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "저는 장면 하나를 전체 의도로 확대해 읽었습니다. 그렇다고 그 장면이 그냥 생긴 것도 아니었고요.",
+      "behaviorHint": "인정 뒤에 곧바로 반문하듯 시선을 들어 올린다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-3:confession",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "지금은 계획적인 독단 채용이었다고까지는 못 말하겠습니다. 제 배제감과 과잉 해석이 오해를 키웠어요. 그건 제 잘못이에요.",
+      "behaviorHint": "숨을 고르고 문장을 짧게 끊어 자책처럼 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-3:evidence_hit",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "자동 일정까지 시스템 로그로 확인되면 제가 붙들던 '배신' 하나만으로는 설명이 안 되네요. 제가 너무 빨리 단정했어요.",
+      "behaviorHint": "손에 쥔 종이를 천천히 내려놓고 고개를 조금 숙인다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "partnership-10:beat:a:d-5:deny",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "그 초대는 제가 확정 문구를 따로 쓴 게 아니라 자동으로 나간 일정입니다. 일정 하나만으로 최종 채용이라고 볼 순 없습니다.",
+      "behaviorHint": "건조하게 문장을 끊고 시스템 용어를 먼저 꺼낸다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-5:hedge",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "저는 그걸 출근 확정이 아니라 trial 일정 생성으로 읽었습니다. 이름표가 과한 거지, 의도가 그 문구 그대로는 아니었습니다.",
+      "behaviorHint": "손바닥을 아래로 눌러 의미를 축소하듯 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-5:partial",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "온보딩 단계에 넣자마자 Day 1 Orientation이 자동 발송된 건 맞습니다. 다만 그래서 제 의도와 별개로 확정처럼 읽힌 것도 맞고요.",
+      "behaviorHint": "사실관계는 또렷하게 인정하되 마지막에 작게 한숨을 쉰다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-5:blame",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "도구가 혼선을 키웠고 저도 그 신호를 승인처럼 붙잡았습니다. 시스템 탓만 하긴 어렵지만 문구 자체가 너무 셌어요.",
+      "behaviorHint": "기계적인 설명을 하다가 끝에서 스스로를 향한 자책이 잠깐 비친다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-5:confession",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "자동 발송이 오해를 키운 건 사실이지만, 설정도 모른 채 온보딩 단계로 넘기고 멈추지 않은 건 제 책임입니다.",
+      "behaviorHint": "말끝을 낮추고 손을 모은 채 굳어 있다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:a:d-5:evidence_hit",
+      "caseId": "partnership-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "로그까지 그렇게 찍혀 있으면 시스템을 핑계로만 돌리긴 어렵네요. 제가 그 문구를 제 편한 승인 신호로 읽었습니다.",
+      "behaviorHint": "화면을 응시하다가 짧게 고개를 끄덕인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "partnership-10:beat:b:d-5:deny",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "이 일정 제목 'Day 1 Orientation'이면 누가 봐도 확정처럼 보입니다. 결국 내 승인 없이 건너뛴 거잖아, 저는 그 제목을 보고 배신감을 느낀 거예요.",
+      "behaviorHint": "문구를 또렷하게 인용하고 바로 감정 단어를 붙인다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-5:hedge",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "이 한 줄이요, 이 한 줄이요. 여기 적혀 있잖아, 그걸 보고도 아무 뜻 아니라고 하면 저는 더 못 믿겠습니다.",
+      "behaviorHint": "같은 말을 짧게 반복하며 자료를 손끝으로 두드린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-5:partial",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "온보딩 단계만으로 자동 발송된다는 건 알겠습니다. 다만 그렇다고 제가 그걸 확정으로 읽은 이유까지 사라지는 건 아니에요.",
+      "behaviorHint": "인정과 반발이 섞인 표정으로 말을 절반씩 끊는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-5:blame",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "도구 문구가 오해를 만든 건 맞지만, 저는 이 한 줄을 곧바로 '나를 건너뛴 증거'로 써버렸습니다.",
+      "behaviorHint": "자료를 움켜쥐었다가 천천히 놓으며 시선을 피한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-5:confession",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "기술적 문제와 제 과잉 해석이 같이 있었습니다. 저는 확인보다 배신이라는 이름을 먼저 붙였습니다. 그건 제 잘못입니다.",
+      "behaviorHint": "목이 잠긴 듯 짧게 멈춘 뒤 낮게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "partnership-10:beat:b:d-5:evidence_hit",
+      "caseId": "partnership-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "자동 발송 로그가 저렇게 명확하면 그 일정 제목 하나만으로 준서 씨 의도를 다 말할 순 없네요. 제가 너무 크게 읽었어요.",
+      "behaviorHint": "날카롭던 톤이 꺾이고 문장 끝이 흐려진다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-6"
+    }
+  ]
+}

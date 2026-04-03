@@ -1,0 +1,4412 @@
+export const partnership11V2Atoms = {
+  "caseId": "partnership-11",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "성수 건은 정식 오픈 계약이라기보다 기회를 놓치지 않기 위한 선확보에 가까웠습니다.",
+            "최종 공동승인 전 집행까지 간 사안처럼 몰아갈 건은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "임대차계약서와 보증금 이체가 이미 본법인 명의로 처리됐고, 공동결재 흔적이 없다는 점은 알고 있다."
+          ],
+          "suppressions": [
+            "전자서명 시각이 아린에게 '내일 다시 보자'고 말한 뒤 2시간 후라는 점",
+            "보증금 1,500만원이 먼저 집행된 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:a:tell:clause_shield",
+            "partnership-11:a:tell:deadline_timeline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-1:act:0",
+              "factText": "성수 지점 건을 최종 오픈이 아닌 선확보 단계라고 축소해 말한다.",
+              "tags": [
+                "act",
+                "uncertainty",
+                "denial"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "contract": {
+                  "exact": "6개월 임대차계약",
+                  "neutral": "그 계약"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-1:motive:0",
+              "factText": "hold 마감과 브로커 독촉 때문에 운영총괄이 먼저 움직였다는 정당화를 꺼낸다.",
+              "tags": [
+                "motive",
+                "self_justification",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후",
+                  "neutral": "그 시점",
+                  "period": "계약 체결 직전",
+                  "dateExact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "임대차 문서와 이체가 있었던 건 맞지만, 공실 hold 마감 때문에 임시로 걸어 둔 조치였습니다.",
+            "아린 승인 없이 영구적으로 지점을 확정하려던 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "부속합의서에 예외적 현장 판단 조항이 없고, 최종 서면 승인 전 집행 금지가 명시돼 있다는 걸 기억한다."
+          ],
+          "suppressions": [
+            "공동 서면 승인 전 집행 금지 조항",
+            "본법인 자금이 공동결재 없이 먼저 나간 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:a:tell:clause_shield",
+            "partnership-11:a:tell:deadline_timeline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-1:timeline:0",
+              "factText": "hold 마감과 공실 일정 압박을 이유로 임시 조치였다고 주장한다.",
+              "tags": [
+                "timeline",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후",
+                  "neutral": "그 시점",
+                  "period": "계약 체결 직전",
+                  "dateExact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후"
+                },
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-1:rule:0",
+              "factText": "공동승인이 최종 오픈 단계에만 필요했다고 경계를 좁혀 말한다.",
+              "tags": [
+                "rule",
+                "denial",
+                "threshold"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "공동 서면 승인 전 집행 금지",
+                  "neutral": "기존 승인 절차"
+                },
+                "contract": {
+                  "exact": "6개월 임대차계약",
+                  "neutral": "그 계약"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "제가 먼저 계약서와 보증금을 움직인 건 맞습니다.",
+            "다만 그때는 기회가 바로 사라질 수 있다고 봐서 우선 확보라고 판단했습니다."
+          ],
+          "privateKnowledge": [
+            "공동기회 부속합의서상 지점 역시 공동 기회였고, 자신의 집행이 그 합의를 깬 첫 행위라는 점을 안다."
+          ],
+          "suppressions": [
+            "본인 결정이 부속합의 위반이라는 직접 표현",
+            "아린에게 사전 고지하지 않은 의도성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:a:tell:deadline_timeline",
+            "partnership-11:a:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-1:act:1",
+              "factText": "본법인 명의 계약과 보증금 집행을 자신이 먼저 움직였다는 사실을 부분 인정한다.",
+              "tags": [
+                "act",
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "contract": {
+                  "exact": "6개월 임대차계약",
+                  "neutral": "그 계약"
+                },
+                "amount": {
+                  "exact": "1,500만원",
+                  "neutral": "보증금 일부",
+                  "rounded": "1,500만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-1:motive:1",
+              "factText": "운영상 기회 확보라는 판단을 내세워 절차 위반의 무게를 낮추려 한다.",
+              "tags": [
+                "motive",
+                "self_justification",
+                "responsibility"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "rule": {
+                  "exact": "공동 서면 승인 전 집행 금지",
+                  "neutral": "기존 승인 절차"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "작년 합의를 모르는 건 아니었습니다. 그래도 아린이 확장 결정을 계속 미루는 동안 hold를 놓칠 수 없었습니다.",
+            "운영총괄인 제가 일정 책임을 떠안은 셈입니다."
+          ],
+          "privateKnowledge": [
+            "아린의 답이 느렸더라도 자신이 먼저 계약과 이체를 한 사실이 책임의 핵심이라는 점을 안다."
+          ],
+          "suppressions": [
+            "브로커 압박보다 합의 위반이 먼저라는 점",
+            "아린이 미뤘다는 평가가 주관적이라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:a:tell:deadline_timeline",
+            "partnership-11:a:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-1:responsibility:0",
+              "factText": "결정을 늦춘 아린의 태도를 끌어와 자기 단독 집행의 책임을 분산한다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-1:timeline:1",
+              "factText": "hold 마감과 공실 일정을 순서대로 나열해 불가피성을 강조한다.",
+              "tags": [
+                "timeline",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후",
+                  "neutral": "그 시점",
+                  "period": "계약 체결 직전",
+                  "dateExact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후"
+                },
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "공동승인 절차를 건너뛰면 안 된다는 걸 알면서도 또 타이밍을 놓치면 운영총괄로서 무능해 보일까 두려웠습니다.",
+            "그 불안을 운영 판단이라는 말로 포장했습니다."
+          ],
+          "privateKnowledge": [
+            "배신 문제를 숫자와 일정 문제로 납작하게 만든 것이 관계적 상처를 키웠다는 걸 느낀다."
+          ],
+          "suppressions": [
+            "감정 손상을 절차 문제로 축소한 태도",
+            "확장 타이밍에 대한 개인적 공포"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:a:tell:affect_flattening",
+            "partnership-11:a:tell:clause_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-1:fear:0",
+              "factText": "확장 타이밍을 놓치면 운영을 모르는 사람으로 보일까 두려워 절차를 밀어냈다.",
+              "tags": [
+                "fear",
+                "motive",
+                "emotion"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-1:emotion:0",
+              "factText": "배신감을 말하는 상대에게 감정은 별개라고 잘라낸 자신의 태도를 돌아본다.",
+              "tags": [
+                "emotion",
+                "relationship",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "본법인 명의로 성수 위성매장 6개월 임대차계약을 체결했고, 보증금 1,500만원도 공동승인 없이 집행했습니다.",
+            "절차 위반이 맞고 그 책임은 제가 집니다."
+          ],
+          "privateKnowledge": [
+            "아린의 별도 법인 준비가 있었더라도 d-1 자체의 책임은 본인에게 있다는 점을 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:a:tell:affect_flattening",
+            "partnership-11:a:tell:clause_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-1:admission:0",
+              "factText": "성수 지점 계약과 보증금 집행이 공동승인 위반이었다고 명확히 시인한다.",
+              "tags": [
+                "admission",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "amount": {
+                  "exact": "1,500만원",
+                  "neutral": "보증금 일부",
+                  "rounded": "1,500만원"
+                },
+                "rule": {
+                  "exact": "공동 서면 승인 전 집행 금지",
+                  "neutral": "기존 승인 절차"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-1:responsibility:1",
+              "factText": "상대의 선행 준비와 별개로 자신의 절차 위반 책임을 분리해 인정한다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "아린은 이미 별도 법인까지 세워 두고 움직이고 있었습니다.",
+            "저를 피해자 가해자 구도로만 몰기 전에 그 준비부터 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "자신의 지점 계약 위반이 있더라도, 아린의 선행 준비를 끌어와 방어하고 싶다."
+          ],
+          "suppressions": [
+            "자신의 무단 임대차계약 책임",
+            "아린 준비 사실을 자기 면책처럼 쓰는 태도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:a:tell:clause_shield",
+            "partnership-11:a:tell:deadline_timeline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-2:act:0",
+              "factText": "아린의 별도 법인 설립을 선행된 분리 행동으로 단정해 내세운다.",
+              "tags": [
+                "act",
+                "timeline",
+                "counter"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "time": {
+                  "exact": "지점 계약일보다 19일 전",
+                  "neutral": "그보다 먼저",
+                  "period": "지점 계약 공개 전",
+                  "dateExact": "지점 계약일보다 19일 전"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-2:responsibility:0",
+              "factText": "피해자 서사를 반박하며 자신의 절차 위반 논점을 뒤로 미룬다.",
+              "tags": [
+                "responsibility",
+                "denial",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "DM 하나만으로 단정할 수는 없다고 해도, 등기와 메일까지 보면 단순 아이디어 수준은 아니었습니다.",
+            "최소한 거래처 분리를 실제로 준비한 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "soft 증거인 e-3만으로 밀면 역풍이 올 수 있다는 걸 알고, e-4 수준을 기다린다."
+          ],
+          "suppressions": [
+            "크롭된 DM 하나만으로는 맥락이 부족하다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:a:tell:clause_shield",
+            "partnership-11:a:tell:deadline_timeline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-2:evidence:0",
+              "factText": "크롭된 DM만이 아니라 등기와 원본 메일까지 봐야 준비 수준이 보인다고 주장한다.",
+              "tags": [
+                "evidence",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "mail": {
+                  "exact": "전환 견적서와 미팅 제안 메일",
+                  "neutral": "전환 준비 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-2:timeline:0",
+              "factText": "지점 계약 공개 전부터 움직였다는 선행성을 핵심 포인트로 잡는다.",
+              "tags": [
+                "timeline",
+                "counter",
+                "act"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "지점 계약 공개 전주",
+                  "neutral": "그 무렵",
+                  "period": "분쟁 공개 전주",
+                  "dateExact": "지점 계약 공개 전주"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "지점 건이 드러나기 전부터 아린이 분리 구조를 설계했다는 점은 분명합니다.",
+            "그 준비가 단순 방어라고만 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "아린의 행동을 과장해 자신의 책임 비율을 줄이고 싶은 마음이 있다."
+          ],
+          "suppressions": [
+            "자신도 동시에 단독 지점 구조를 실무로 굴리고 있었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:a:tell:deadline_timeline",
+            "partnership-11:a:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-2:timeline:1",
+              "factText": "아린의 준비가 공개 갈등보다 먼저 시작됐다는 선행성을 강조한다.",
+              "tags": [
+                "timeline",
+                "act",
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "지점 계약일보다 19일 전",
+                  "neutral": "그보다 먼저",
+                  "period": "지점 계약 공개 전",
+                  "dateExact": "지점 계약일보다 19일 전"
+                },
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-2:motive:0",
+              "factText": "그 준비를 단순 방어가 아닌 실질적 분리 의도로 해석한다.",
+              "tags": [
+                "motive",
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                },
+                "mail": {
+                  "exact": "전환 견적서와 미팅 제안 메일",
+                  "neutral": "전환 준비 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "저를 가해자로만 몰면서 자기 분리 계획은 숨긴 셈입니다.",
+            "그래서 저는 그의 피해자 서사를 그대로 믿기 어려웠습니다."
+          ],
+          "privateKnowledge": [
+            "아린의 숨김을 핑계 삼아 자신의 독단을 정당화했다는 점을 안다."
+          ],
+          "suppressions": [
+            "아린의 숨김과 자신의 독단을 동일선상에 놓는 과장"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:a:tell:deadline_timeline",
+            "partnership-11:a:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-2:counter:0",
+              "factText": "아린의 피해자 서사를 자기 분리 계획 은폐와 연결해 반격한다.",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                },
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-2:relationship:0",
+              "factText": "신뢰가 먼저 깨졌다고 말하며 자신의 경계를 후행적 반응처럼 만든다.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "그 사실을 알았을 때 저는 이미 뒤에서 회사가 나뉘고 있다는 느낌을 받았습니다.",
+            "그래서 숫자와 일정 뒤에 숨어 더 공격적으로 반응했습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 선행 준비를 본 순간 배신감과 공포가 겹쳐 냉소적이고 건조한 말투로 변했다."
+          ],
+          "suppressions": [
+            "감정보다 자료를 앞세워 관계 손상을 회피한 태도"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:a:tell:affect_flattening",
+            "partnership-11:a:tell:clause_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-2:emotion:0",
+              "factText": "아린의 선행 준비를 알았을 때 느낀 배신감이 방어적 태도를 굳혔다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-2:self_justification:0",
+              "factText": "숫자와 일정 설명 뒤에 숨어 감정 문제를 운영 판단으로 바꿨다고 돌아본다.",
+              "tags": [
+                "self_justification",
+                "admission",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "나",
+                  "fullName": "김재원",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "아린이 먼저 별도 법인과 거래처 전환을 준비한 건 사실입니다.",
+            "다만 그 사실이 제 지점 절차 위반을 없애주지는 않습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 책임과 상대의 선행 준비를 분리해서 봐야 한다는 점을 수용한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:a:tell:affect_flattening",
+            "partnership-11:a:tell:clause_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-2:admission:0",
+              "factText": "아린의 선행된 별도 법인 준비 사실을 증거 수준으로 정리해 말한다.",
+              "tags": [
+                "admission",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "mail": {
+                  "exact": "전환 견적서와 미팅 제안 메일",
+                  "neutral": "전환 준비 자료"
+                },
+                "time": {
+                  "exact": "지점 계약일보다 19일 전",
+                  "neutral": "그보다 먼저",
+                  "period": "지점 계약 공개 전",
+                  "dateExact": "지점 계약일보다 19일 전"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-2:responsibility:1",
+              "factText": "상대의 준비가 있어도 자신의 절차 위반은 별도 책임이라고 분리해 인정한다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "아린이 순수 피해자인 척하는 건 사실관계와 다릅니다.",
+            "먼저 회사를 분리하려고 준비한 쪽도 아린입니다."
+          ],
+          "privateKnowledge": [
+            "아린이 순수 피해자가 아니라는 말은 맞지만, 그 사실을 자신의 무단 계약 책임을 가리는 데 쓰고 있다."
+          ],
+          "suppressions": [
+            "자신의 무단 지점 계약",
+            "상대 준비 사실을 자기 면책처럼 쓰는 태도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:a:tell:clause_shield",
+            "partnership-11:a:tell:deadline_timeline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-3:counter:0",
+              "factText": "아린의 피해자 서사를 먼저 무너뜨리는 데 초점을 맞춘다.",
+              "tags": [
+                "counter",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                },
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-3:timeline:0",
+              "factText": "별도 법인 준비가 자신의 지점 계약 공개보다 앞섰다는 점을 반복한다.",
+              "tags": [
+                "timeline",
+                "act",
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "지점 계약일보다 19일 전",
+                  "neutral": "그보다 먼저",
+                  "period": "지점 계약 공개 전",
+                  "dateExact": "지점 계약일보다 19일 전"
+                },
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "제 계약이 문제인 건 알아도, 아린이 순수 피해자라는 말은 틀립니다.",
+            "그 사람도 이미 다른 출구를 만들고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "순수 피해자 부정은 사실이지만, 자신의 가해 책임을 분리해 인정해야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "계약과 피해자 반전 사실을 같은 무게로 묶어 말하는 것"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:a:tell:clause_shield",
+            "partnership-11:a:tell:deadline_timeline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-3:admission:0",
+              "factText": "자기 계약의 문제를 일부 인정하면서도 피해자 서사 반박을 우선한다.",
+              "tags": [
+                "admission",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-3:relationship:0",
+              "factText": "상대가 이미 다른 출구를 만들고 있었다는 말로 관계 파탄의 선행 신호를 짚는다.",
+              "tags": [
+                "relationship",
+                "timeline",
+                "fear"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "제가 지점 계약을 독단으로 한 사실과 별개로, 아린도 별도 법인과 거래처 분리를 준비했습니다.",
+            "그래서 지금 갈등은 한쪽만 피해자인 구조가 아닙니다."
+          ],
+          "privateKnowledge": [
+            "상대의 준비를 알게 되자 자신의 공격성이 더 정당하다고 느꼈다는 심리가 숨어 있다."
+          ],
+          "suppressions": [
+            "상대 준비가 있었어도 자신의 독단이 선행 위반이라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:a:tell:deadline_timeline",
+            "partnership-11:a:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-3:context:0",
+              "factText": "자신의 독단과 상대의 선행 준비가 함께 갈등을 만들었다는 구조를 부분 인정한다.",
+              "tags": [
+                "context",
+                "admission",
+                "counter"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-3:responsibility:0",
+              "factText": "순수 피해자 구도를 깨면서도 책임 배분을 양쪽으로 넓힌다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "우리는 둘 다 공동 기회를 자기 방식으로 붙들려 했습니다.",
+            "저는 지점을, 아린은 거래처와 별도 구조를 먼저 움켜쥔 셈입니다."
+          ],
+          "privateKnowledge": [
+            "상대를 공격하면서도 자신도 동일한 패턴으로 공동 기회를 사유화했다는 점을 인정해야 한다."
+          ],
+          "suppressions": [
+            "양측 사유화의 공통점",
+            "자신이 먼저 드러난 가해라는 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:a:tell:deadline_timeline",
+            "partnership-11:a:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-3:context:1",
+              "factText": "양측이 다른 채널을 통해 같은 공동 기회를 사유화했다고 정리한다.",
+              "tags": [
+                "context",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-3:relationship:1",
+              "factText": "상대를 비난하는 동시에 자신도 같은 패턴이었다는 불편한 유사성을 드러낸다.",
+              "tags": [
+                "relationship",
+                "admission",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "저는 아린의 준비 사실에 과잉 반응하면서 제 절차 위반을 정당화하려 했습니다.",
+            "상대가 순수 피해자가 아니라는 사실을 제 면죄부처럼 썼습니다."
+          ],
+          "privateKnowledge": [
+            "분노와 배신감이 합쳐져 자기 잘못을 상대의 거짓으로 덮으려 했다는 걸 인식한다."
+          ],
+          "suppressions": [
+            "상대의 거짓을 자기 면죄부처럼 사용한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:a:tell:affect_flattening",
+            "partnership-11:a:tell:clause_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-3:admission:1",
+              "factText": "상대의 준비 사실을 자기 면죄부처럼 쓴 방어 방식을 인정한다.",
+              "tags": [
+                "admission",
+                "self_justification",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-3:emotion:0",
+              "factText": "배신감과 분노가 자신의 절차 위반을 더 세게 밀어붙이게 했다고 털어놓는다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "아린은 순수 피해자가 아니지만, 그래서 제가 가해 책임에서 벗어나는 것도 아닙니다.",
+            "지금 갈등은 제 독단 계약과 아린의 선행된 분리 준비가 겹친 결과입니다."
+          ],
+          "privateKnowledge": [
+            "피해자 반전 구조를 인정하되, 자신의 책임을 분명히 나눠 말할 수 있게 된다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:a:tell:affect_flattening",
+            "partnership-11:a:tell:clause_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-3:admission:2",
+              "factText": "순수 피해자 부정과 자기 책임 인정을 함께 묶어 진술한다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-3:relationship:2",
+              "factText": "갈등이 한 사람의 악의가 아니라 상호 불신의 누적 결과였다고 정리한다.",
+              "tags": [
+                "relationship",
+                "context",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "공동 기회 조항은 현실적으로 모든 현장 hold 상황에 기계적으로 적용되긴 어려웠습니다.",
+            "아린도 먼저 별도 법인 구상을 했으니 제가 일방적으로 조항을 깼다고만 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "부속합의서에 예외 조항이 없고, 자신이 조항 위반의 한 축이라는 걸 안다."
+          ],
+          "suppressions": [
+            "예외 조항 부재",
+            "자신의 지점 계약이 조항 위반인 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:a:tell:clause_shield",
+            "partnership-11:a:tell:deadline_timeline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-4:rule:0",
+              "factText": "공동 기회 조항의 적용 범위를 현장 상황에 맞게 좁혀 해석한다.",
+              "tags": [
+                "rule",
+                "threshold",
+                "denial"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "2024 공동기회 부속합의서",
+                  "neutral": "부속합의"
+                },
+                "approval": {
+                  "exact": "확장 승인 시트",
+                  "neutral": "승인 보드"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-4:counter:0",
+              "factText": "아린의 별도 법인 구상을 끌어와 조항 위반의 선후를 흐린다.",
+              "tags": [
+                "counter",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "부속합의는 있었지만, hold가 걸린 지점 상황에는 회색지대가 있다고 봤습니다.",
+            "그래서 먼저 움직인 걸 전면 위반으로만 보진 않았습니다."
+          ],
+          "privateKnowledge": [
+            "노션 승인 시트가 지점과 별도 법인을 같은 표에서 관리하도록 설계돼 있었음을 기억한다."
+          ],
+          "suppressions": [
+            "지점과 별도 법인이 같은 승인 보드에 묶여 있던 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:a:tell:clause_shield",
+            "partnership-11:a:tell:deadline_timeline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-4:context:0",
+              "factText": "현장 hold 상황을 회색지대로 묘사하며 규정 위반의 색을 흐린다.",
+              "tags": [
+                "context",
+                "rule",
+                "uncertainty"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "time": {
+                  "exact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후",
+                  "neutral": "그 시점",
+                  "period": "계약 체결 직전",
+                  "dateExact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-4:rule:1",
+              "factText": "먼저 제안한 사람이 우선 검토권을 가진다는 논리를 실행권과 혼동한다.",
+              "tags": [
+                "rule",
+                "threshold",
+                "self_justification"
+              ],
+              "slots": {
+                "approval": {
+                  "exact": "확장 승인 시트",
+                  "neutral": "승인 보드"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "지점과 별도 법인을 모두 공동 기회로 보자는 합의를 알고도, 저는 지점을 단독으로 움직였습니다.",
+            "그 점에서는 조항을 어긴 쪽입니다."
+          ],
+          "privateKnowledge": [
+            "아린도 거래처 이전 시트를 따로 돌렸다는 사실 때문에, 자신의 위반을 단독 잘못으로만 느끼고 싶진 않다."
+          ],
+          "suppressions": [
+            "상대의 위반을 근거로 자기 위반 무게를 낮추는 심리"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:a:tell:deadline_timeline",
+            "partnership-11:a:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-4:admission:0",
+              "factText": "공동 기회 조항이 지점에도 적용됐고 자신이 이를 어겼다는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "2024 공동기회 부속합의서",
+                  "neutral": "부속합의"
+                },
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-4:context:1",
+              "factText": "동시에 상대의 거래처 이전 시트를 떠올리며 쌍방 위반 구조를 예감한다.",
+              "tags": [
+                "context",
+                "counter",
+                "timeline"
+              ],
+              "slots": {
+                "sheet": {
+                  "exact": "거래처 이전 우선순위 시트",
+                  "neutral": "개인 시트"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "아린도 거래처 이전 우선순위 시트를 따로 돌렸습니다.",
+            "그래서 이 합의 붕괴는 제 단독이 아니라 쌍방 책임이라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "쌍방 책임이더라도 자신이 먼저 드러난 지점 계약 위반을 선명하게 인정해야 한다."
+          ],
+          "suppressions": [
+            "쌍방 책임을 앞세워 자기 선행 위반을 희석하는 것"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:a:tell:deadline_timeline",
+            "partnership-11:a:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-4:counter:1",
+              "factText": "아린의 개인 시트를 근거로 합의 붕괴를 쌍방 책임으로 확장한다.",
+              "tags": [
+                "counter",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "sheet": {
+                  "exact": "거래처 이전 우선순위 시트",
+                  "neutral": "개인 시트"
+                },
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "상대",
+                  "fullName": "정아린",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-4:relationship:0",
+              "factText": "조항을 함께 잊어버린 관계의 붕괴로 사건을 다시 묘사한다.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "popup": {
+                  "exact": "작년 여름 팝업 손실",
+                  "neutral": "그때 손실"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "우리가 작년 팝업 손실 뒤 만든 안전장치를 둘 다 편의적으로 잊었습니다.",
+            "저도 숫자와 일정에만 매달리면서 그 합의를 실제 행동에서 빼버렸습니다."
+          ],
+          "privateKnowledge": [
+            "팝업 손실의 상처가 다시 실패하지 않으려는 강박으로 변해 규정을 도구처럼 다루게 했다."
+          ],
+          "suppressions": [
+            "과거 상처를 이유로 현재 규정을 무시한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:a:tell:affect_flattening",
+            "partnership-11:a:tell:clause_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-4:emotion:0",
+              "factText": "팝업 손실 이후 생긴 강박이 조항을 편의적으로 다루게 만들었다고 고백한다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "popup": {
+                  "exact": "작년 여름 팝업 손실",
+                  "neutral": "그때 손실"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-4:admission:1",
+              "factText": "안전장치를 만든 당사자로서 자신이 그 합의를 행동에서 지웠다고 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "shame"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "2024 공동기회 부속합의서",
+                  "neutral": "부속합의"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "공동 기회 조항은 지점과 별도 법인 모두에 적용됐고, 두 사람 다 이를 위반했습니다.",
+            "저는 지점 lease로, 아린은 거래처 전환 준비로 그 선을 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "향후 해결은 누가 먼저였는지보다 공동 자산을 어떻게 다시 묶을지가 핵심이라는 점을 인식한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:a:tell:affect_flattening",
+            "partnership-11:a:tell:clause_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-4:admission:2",
+              "factText": "지점과 별도 법인 모두가 공동 기회였고 양측이 이를 깨뜨렸다고 정리한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "2024 공동기회 부속합의서",
+                  "neutral": "부속합의"
+                },
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-4:responsibility:0",
+              "factText": "자신의 지점 lease 위반과 상대의 거래처 전환 준비를 병렬로 놓는다.",
+              "tags": [
+                "responsibility",
+                "timeline",
+                "relationship"
+              ],
+              "slots": {
+                "sheet": {
+                  "exact": "거래처 이전 우선순위 시트",
+                  "neutral": "개인 시트"
+                },
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "핵심 거래처나 상표 이슈는 조정하면 풀 수 있는 운영 문제라고 봤습니다.",
+            "단독 지점이 곧바로 실행 불가능한 구조라고 생각하진 않았습니다."
+          ],
+          "privateKnowledge": [
+            "독점공급계약과 상표사용 구조를 끝까지 읽지 않았고, 실행 가능성을 낙관적으로 가정했다."
+          ],
+          "suppressions": [
+            "동일 브랜드 단독 운영 시 분쟁 가능성",
+            "기존 법인 동의 없는 구조 변경 제약"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:a:tell:clause_shield",
+            "partnership-11:a:tell:deadline_timeline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-5:rule:0",
+              "factText": "계약 제약을 운영으로 조정 가능한 수준으로 축소한다.",
+              "tags": [
+                "rule",
+                "uncertainty",
+                "denial"
+              ],
+              "slots": {
+                "contract": {
+                  "exact": "도매 독점공급계약",
+                  "neutral": "기존 공급계약"
+                },
+                "brand": {
+                  "exact": "동일 브랜드 단독 운영",
+                  "neutral": "동일 브랜드 운영"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-5:self_justification:0",
+              "factText": "오픈 일정이 먼저였기 때문에 법적 제약은 나중 문제라고 밀어낸다.",
+              "tags": [
+                "self_justification",
+                "timeline",
+                "threshold"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "time": {
+                  "exact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후",
+                  "neutral": "그 시점",
+                  "period": "계약 체결 직전",
+                  "dateExact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "세부 부속조항까지 다 보진 못했지만, 단독 지점 자체가 불가능한 수준은 아니라고 봤습니다.",
+            "문제가 생기면 조정으로 풀 수 있다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "분리 운영 메모를 짜면서도 공급계약·상표 조항 확인을 미뤘다는 점을 안다."
+          ],
+          "suppressions": [
+            "계약서 부속조항 미검토",
+            "법률의견서를 보지 않은 상태에서 실행을 전제한 것"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:a:tell:clause_shield",
+            "partnership-11:a:tell:deadline_timeline"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-5:uncertainty:0",
+              "factText": "세부 조항 미확인 상태를 근거로 불가능성을 단정할 수 없다고 버틴다.",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "contract": {
+                  "exact": "도매 독점공급계약",
+                  "neutral": "기존 공급계약"
+                },
+                "opinion": {
+                  "exact": "상표사용 법률의견서",
+                  "neutral": "법률의견"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-5:context:0",
+              "factText": "문제가 생기면 나중에 조정하자는 식으로 실행 제약을 후순위로 둔다.",
+              "tags": [
+                "context",
+                "threshold",
+                "self_justification"
+              ],
+              "slots": {
+                "memo": {
+                  "exact": "분리 운영 메모",
+                  "neutral": "개별 운영 메모"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "분리 운영 메모를 짜면서도 독점공급과 상표 범위를 가볍게 본 건 맞습니다.",
+            "실행 제약을 충분히 검토하지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "e-5 수준만 봐도 기존 법인을 우회하는 구조가 문제였다는 걸 이제는 안다."
+          ],
+          "suppressions": [
+            "단독 운영을 실제로 굴릴 수 있다고 본 낙관"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:a:tell:deadline_timeline",
+            "partnership-11:a:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-5:admission:0",
+              "factText": "분리 운영 메모를 만들면서 계약 제약 검토를 소홀히 했다고 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "memo": {
+                  "exact": "분리 운영 메모",
+                  "neutral": "개별 운영 메모"
+                },
+                "contract": {
+                  "exact": "도매 독점공급계약",
+                  "neutral": "기존 공급계약"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-5:threshold:0",
+              "factText": "실행 가능성의 문턱을 너무 낮게 잡았다는 인식을 드러낸다.",
+              "tags": [
+                "threshold",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "동일 브랜드 단독 운영",
+                  "neutral": "동일 브랜드 운영"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "법률의견서가 나오기 전까지는 이런 제약을 심각하게 읽지 못했습니다.",
+            "오픈 일정이 눈앞에 있어서 계약 구조를 뒤늦게 봤습니다."
+          ],
+          "privateKnowledge": [
+            "법률의견서 전에도 공급계약 원문은 존재했고, 자신이 읽을 수 있었다는 점을 안다."
+          ],
+          "suppressions": [
+            "모르고 있었다기보다 우선순위를 뒤로 미룬 것"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:a:tell:deadline_timeline",
+            "partnership-11:a:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-5:timeline:0",
+              "factText": "법률의견서 등장 전까지 문제를 심각하게 읽지 못했다고 시간 순서로 설명한다.",
+              "tags": [
+                "timeline",
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "opinion": {
+                  "exact": "상표사용 법률의견서",
+                  "neutral": "법률의견"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-5:responsibility:0",
+              "factText": "오픈 일정 압박을 이유로 계약 확인을 뒤로 미룬 자기 선택을 드러낸다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "admission"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "저는 오픈 일정에 몰두한 나머지 계약 구조를 끝까지 확인하지 않았습니다.",
+            "운영을 살리겠다는 마음이 오히려 실행 불가능성을 외면하게 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "실무 능력을 증명하려는 강박이 법적 검토를 방해했다는 걸 느낀다."
+          ],
+          "suppressions": [
+            "운영 능력 증명 욕구",
+            "법적 검토 회피"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:a:tell:affect_flattening",
+            "partnership-11:a:tell:clause_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-5:emotion:0",
+              "factText": "운영을 살려야 한다는 압박이 법적 검토를 외면하게 했다고 인정한다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "admission"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-5:fear:0",
+              "factText": "무능해 보일까 봐 일정에 매달리며 불가능성을 밀어냈다고 털어놓는다.",
+              "tags": [
+                "fear",
+                "self_justification",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "나",
+                  "fullName": "김재원",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "기존 법인 동의 없이 단독 지점이나 거래처 분리를 추진하면 위약과 상표 분쟁이 동시에 난다는 점을 제가 제대로 놓쳤습니다.",
+            "그 상태에서 성수 지점을 단독 운영 가능한 것처럼 본 제 판단이 틀렸습니다."
+          ],
+          "privateKnowledge": [
+            "이제는 d-5가 누구 편이 아니라 구조적 제약의 문제라는 걸 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:a:tell:affect_flattening",
+            "partnership-11:a:tell:clause_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:a:d-5:admission:1",
+              "factText": "기존 법인 동의 없는 단독 지점 운영이 계약상 불가능에 가깝다는 점을 시인한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "threshold"
+              ],
+              "slots": {
+                "contract": {
+                  "exact": "도매 독점공급계약",
+                  "neutral": "기존 공급계약"
+                },
+                "opinion": {
+                  "exact": "상표사용 법률의견서",
+                  "neutral": "법률의견"
+                },
+                "brand": {
+                  "exact": "동일 브랜드 단독 운영",
+                  "neutral": "동일 브랜드 운영"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:a:d-5:responsibility:1",
+              "factText": "성수 지점을 단독 운영 가능한 것처럼 본 자신의 판단 오류를 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "재원은 제 동의 없이 지점을 가로챘습니다.",
+            "저는 최종 승인도, 보증금 집행 동의도 한 적이 없습니다."
+          ],
+          "privateKnowledge": [
+            "그 무렵 자신도 별도 법인 구상을 구체화하고 있었지만, 지금은 그 사실을 피해자 서사 뒤로 숨기고 싶다."
+          ],
+          "suppressions": [
+            "별도 법인 설립 준비",
+            "거래처 전환 견적과 미팅 제안"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-1:harm:0",
+              "factText": "지점 계약을 관계 전체를 빼앗긴 사건으로 크게 확대해 말한다.",
+              "tags": [
+                "harm",
+                "relationship",
+                "emotion"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "상대",
+                  "fullName": "김재원",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-1:act:0",
+              "factText": "본인 동의가 전혀 없었다는 점을 핵심 피해 사실로 내세운다.",
+              "tags": [
+                "act",
+                "responsibility",
+                "denial"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500만원",
+                  "neutral": "보증금 일부",
+                  "rounded": "1,500만원"
+                },
+                "rule": {
+                  "exact": "공동 서면 승인 전 집행 금지",
+                  "neutral": "기존 승인 절차"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "hold였다고 해도 공동승인 없는 계약과 이체는 배신이었습니다.",
+            "그 절차를 혼자 건너뛴 순간 이미 선을 넘은 겁니다."
+          ],
+          "privateKnowledge": [
+            "재원이 정말로 급박함을 느꼈을 수는 있지만, 그것을 전면 부정하면 자신의 서사가 너무 단순해진다는 걸 안다."
+          ],
+          "suppressions": [
+            "자신도 확장 방향을 두고 결정을 미뤄왔던 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-1:rule:0",
+              "factText": "hold라는 표현과 무관하게 공동승인 없는 집행 자체를 배신으로 규정한다.",
+              "tags": [
+                "rule",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "공동 서면 승인 전 집행 금지",
+                  "neutral": "기존 승인 절차"
+                },
+                "contract": {
+                  "exact": "6개월 임대차계약",
+                  "neutral": "그 계약"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-1:emotion:0",
+              "factText": "절차 위반이 아니라 관계 파탄의 신호로 받아들였다는 정서를 강조한다.",
+              "tags": [
+                "emotion",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "그가 급박함을 말한 건 알지만, 적어도 제 서면 동의 전에는 멈췄어야 했습니다.",
+            "운영상 압박이 있었다는 말이 제 승인 부재를 지우진 못합니다."
+          ],
+          "privateKnowledge": [
+            "자신도 이미 별도 법인 백업 구조를 상상하며 움직였기에, 절대적 피해자라고만 말하면 균형을 잃는다는 걸 안다."
+          ],
+          "suppressions": [
+            "자신의 백업 구조 준비",
+            "순수 피해자라는 단정"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-1:responsibility:0",
+              "factText": "재원의 급박함 설명을 일부 인정하면서도 최종 책임은 단독 집행에 있다고 못 박는다.",
+              "tags": [
+                "responsibility",
+                "act",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "상대",
+                  "fullName": "김재원",
+                  "judgeRef": "상대방"
+                },
+                "rule": {
+                  "exact": "공동 서면 승인 전 집행 금지",
+                  "neutral": "기존 승인 절차"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-1:timeline:0",
+              "factText": "서면 동의 이전에는 어떤 이유로도 멈췄어야 했다는 기준을 세운다.",
+              "tags": [
+                "timeline",
+                "rule",
+                "threshold"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후",
+                  "neutral": "그 시점",
+                  "period": "계약 체결 직전",
+                  "dateExact": "아린에게 '내일 다시 보자'고 말한 뒤 2시간 후"
+                },
+                "contract": {
+                  "exact": "6개월 임대차계약",
+                  "neutral": "그 계약"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "그때 저도 확장 방향을 두고 말을 미룬 부분은 있습니다.",
+            "그래도 그래서 더더욱 단독 계약은 위험했습니다."
+          ],
+          "privateKnowledge": [
+            "자신이 확장 그림을 숨긴 채 재원만 가해자로 고정하고 있다는 죄책감이 조금씩 올라온다."
+          ],
+          "suppressions": [
+            "별도 법인 설립을 이미 검토한 사실",
+            "거래처를 따로 보려 한 문서들"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-1:context:0",
+              "factText": "대화를 미뤄온 상호 침묵의 맥락을 부분 인정한다.",
+              "tags": [
+                "context",
+                "relationship",
+                "admission"
+              ],
+              "slots": {
+                "popup": {
+                  "exact": "작년 여름 팝업 손실",
+                  "neutral": "그때 손실"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-1:harm:1",
+              "factText": "그 침묵이 있었기 때문에 오히려 단독 계약이 더 큰 배신으로 읽혔다고 설명한다.",
+              "tags": [
+                "harm",
+                "relationship",
+                "emotion"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "그 계약서를 봤을 때 저는 브랜드 중심에서 밀려난 느낌이 컸습니다.",
+            "그래서 이후의 모든 정황을 더 크게 배신으로 읽었습니다."
+          ],
+          "privateKnowledge": [
+            "자신이 밀려날 공포 때문에 재원의 행동을 전체 관계 파탄의 상징으로 확대했다는 걸 느낀다."
+          ],
+          "suppressions": [
+            "피해 감정을 절대화한 말투",
+            "자기 방어를 정당성으로 포장한 부분"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:b:tell:moral_pivot",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-1:emotion:1",
+              "factText": "지점 계약이 브랜드 중심에서 밀려나는 감각을 촉발했다고 토로한다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "비건 베이커리 브랜드",
+                  "neutral": "브랜드"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-1:fear:0",
+              "factText": "밀려날 공포가 사건 전체를 더 거칠게 해석하게 만들었다고 인정한다.",
+              "tags": [
+                "fear",
+                "context",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "상대",
+                  "fullName": "김재원",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "재원의 무단 계약은 사실입니다.",
+            "다만 그 무렵 저도 분리 구조를 상상하며 대화를 피한 책임이 있었습니다."
+          ],
+          "privateKnowledge": [
+            "순수 피해자 서사만으로는 현재 갈등을 설명할 수 없음을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:b:tell:moral_pivot",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-1:admission:0",
+              "factText": "재원의 무단 계약 사실을 유지하되 자신의 침묵과 분리 구상 책임도 함께 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "상대",
+                  "fullName": "김재원",
+                  "judgeRef": "상대방"
+                },
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-1:context:1",
+              "factText": "갈등을 순수 피해자 대 가해자로만 볼 수 없다는 맥락을 받아들인다.",
+              "tags": [
+                "context",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "별도 법인은 실제 이전용이 아니라 혹시 모를 상황에 대비한 검토용 껍데기였습니다.",
+            "거래처 전환을 확정한 적은 없습니다."
+          ],
+          "privateKnowledge": [
+            "법인 등기와 견적서, 미팅 제안 메일이 이미 준비 완료 수준이라는 걸 안다."
+          ],
+          "suppressions": [
+            "법인 설립 완료 사실",
+            "두 핵심 도매처에 보낸 전환 견적과 미팅 제안 메일"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-2:denial:0",
+              "factText": "별도 법인을 실사용 구조가 아닌 대비용 껍데기로 축소한다.",
+              "tags": [
+                "denial",
+                "institution",
+                "uncertainty"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-2:act:0",
+              "factText": "거래처 전환이 아니라 단순 상담 또는 가능성 탐색이었다고 선을 긋는다.",
+              "tags": [
+                "act",
+                "uncertainty",
+                "denial"
+              ],
+              "slots": {
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                },
+                "mail": {
+                  "exact": "전환 견적서와 미팅 제안 메일",
+                  "neutral": "전환 준비 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "등기와 DM, 메일이 있었던 건 맞지만 세무 구조를 알아보는 수준이었습니다.",
+            "그걸 바로 거래처 탈취 준비로 보기는 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "e-3의 크롭된 DM만으로는 여지를 만들 수 있지만, e-4가 나오면 더 버티기 어렵다는 걸 안다."
+          ],
+          "suppressions": [
+            "법인 설립일이 지점 계약일보다 19일 빠르다는 점",
+            "견적서와 납품 일정표까지 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-2:institution:0",
+              "factText": "법인 설립과 메일 발송을 세무 테스트나 구조 검토로 낮춰 설명한다.",
+              "tags": [
+                "institution",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "time": {
+                  "exact": "지점 계약일보다 19일 전",
+                  "neutral": "그보다 먼저",
+                  "period": "지점 계약 공개 전",
+                  "dateExact": "지점 계약일보다 19일 전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-2:privacy:0",
+              "factText": "거래처 대화는 맥락이 잘리면 오해되기 쉽다고 주장한다.",
+              "tags": [
+                "privacy",
+                "evidence",
+                "uncertainty"
+              ],
+              "slots": {
+                "mail": {
+                  "exact": "전환 견적서와 미팅 제안 메일",
+                  "neutral": "전환 준비 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "법인을 세우고 견적안을 만든 건 맞습니다.",
+            "다만 그건 재원이 먼저 회사를 가르려 할 때를 대비한 백업 구조라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "자신이 피해자라고 말하기 전부터 실제 거래 전환 수준의 자료를 준비했다는 사실을 안다."
+          ],
+          "suppressions": [
+            "거래처 미팅 제안까지 보낸 점",
+            "백업이라고 해도 공동 공개를 하지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-2:admission:0",
+              "factText": "법인 설립과 견적 준비를 부분 인정한다.",
+              "tags": [
+                "admission",
+                "institution",
+                "timeline"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "mail": {
+                  "exact": "전환 견적서와 미팅 제안 메일",
+                  "neutral": "전환 준비 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-2:motive:0",
+              "factText": "재원이 자신을 밀어낼까 봐 백업 구조를 준비했다는 생존 논리를 붙인다.",
+              "tags": [
+                "motive",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "상대",
+                  "fullName": "김재원",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "브랜드를 키운 제가 밀려나는 징후가 많았습니다.",
+            "그래서 핵심 거래처를 지켜보려면 따로 구조를 준비할 수밖에 없다고 느꼈습니다."
+          ],
+          "privateKnowledge": [
+            "지켜본다는 표현보다 실제 전환 견적·납품 일정·미팅 제안까지 갔다는 점이 더 정확하다."
+          ],
+          "suppressions": [
+            "실제 전환 준비 수준",
+            "공동 기회 조항 위반 가능성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-2:fear:0",
+              "factText": "브랜드 대표성에서 밀려날 것 같은 공포를 전면에 놓는다.",
+              "tags": [
+                "fear",
+                "identity",
+                "emotion"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "비건 베이커리 브랜드",
+                  "neutral": "브랜드"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-2:beneficiary:0",
+              "factText": "핵심 거래처를 지키기 위해 따로 구조를 준비했다며 자기 행동의 수혜자를 브랜드로 포장한다.",
+              "tags": [
+                "beneficiary",
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                },
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "먼저 몰린 느낌이 너무 강해서, 살아남으려면 출구를 만들어야 한다고 생각했습니다.",
+            "그래서 준비 사실을 피해 서사로 포장했습니다."
+          ],
+          "privateKnowledge": [
+            "별도 법인 준비를 도덕적 피해의 언어로 감싸며 자신도 질문 방향을 틀었다는 걸 안다."
+          ],
+          "suppressions": [
+            "준비 사실 자체보다 말하는 방식의 왜곡"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:b:tell:moral_pivot",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-2:emotion:0",
+              "factText": "밀려난다는 공포가 생존 서사를 키웠다고 인정한다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "admission"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "비건 베이커리 브랜드",
+                  "neutral": "브랜드"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-2:self_justification:0",
+              "factText": "별도 법인 준비를 살아남기 위한 대비라는 말로만 포장했다고 털어놓는다.",
+              "tags": [
+                "self_justification",
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "제가 아린셀렉트F&B를 설립하고 두 핵심 도매처에 전환 견적과 미팅 제안을 보낸 건 사실입니다.",
+            "그 준비를 공개하지 않은 채 피해자처럼만 말한 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "재원의 독단 계약과는 별개로 자신도 공동 기회를 사유화하려 했다는 점을 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:b:tell:moral_pivot",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-2:admission:1",
+              "factText": "별도 법인 설립과 핵심 거래처 전환 제안을 구체적으로 시인한다.",
+              "tags": [
+                "admission",
+                "institution",
+                "act"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                },
+                "mail": {
+                  "exact": "전환 견적서와 미팅 제안 메일",
+                  "neutral": "전환 준비 자료"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-2:responsibility:0",
+              "factText": "피해자 서사 뒤에 준비 사실을 숨긴 책임을 스스로 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "나",
+                  "fullName": "정아린",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "저는 재원의 일방적 확장 침해를 당한 피해자였습니다.",
+            "그때 저는 브랜드를 지키려 했을 뿐입니다."
+          ],
+          "privateKnowledge": [
+            "별도 법인 설립과 거래처 전환 제안을 시작한 시점이 재원의 공개 행동보다 빨랐다는 걸 안다."
+          ],
+          "suppressions": [
+            "별도 법인 설립일",
+            "핵심 거래처 전환 준비"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-3:identity:0",
+              "factText": "자신을 브랜드를 지키려는 피해자 위치에 고정한다.",
+              "tags": [
+                "identity",
+                "emotion",
+                "denial"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "비건 베이커리 브랜드",
+                  "neutral": "브랜드"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-3:harm:0",
+              "factText": "재원의 지점 계약을 자신을 침해한 단일 원인으로 압축한다.",
+              "tags": [
+                "harm",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "상대",
+                  "fullName": "김재원",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "별도 구조를 생각한 적은 있어도 그건 피해를 막기 위한 상상 수준이었습니다.",
+            "순수한 가해자와 피해자 구도로 보는 게 크게 틀리진 않습니다."
+          ],
+          "privateKnowledge": [
+            "상상 수준이라고 하기엔 법인 등기와 견적·미팅 제안까지 갔다는 사실을 숨긴다."
+          ],
+          "suppressions": [
+            "법인 등기",
+            "실제 거래 전환 자료"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-3:uncertainty:0",
+              "factText": "별도 구조 준비를 상상이나 대비 차원으로 낮춰 표현한다.",
+              "tags": [
+                "uncertainty",
+                "self_justification",
+                "denial"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-3:identity:1",
+              "factText": "피해자 구도가 본질적으로 맞다고 한 번 더 고정한다.",
+              "tags": [
+                "identity",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "상대",
+                  "fullName": "김재원",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "그 계약서가 나오기 전부터 백업 구조를 본 건 맞습니다.",
+            "하지만 그 출발은 제가 먼저 몰렸다는 공포였습니다."
+          ],
+          "privateKnowledge": [
+            "백업 구조가 실제 전환 준비 수준이었다는 점과, 그것을 순수 피해자 서사 안에 숨겨왔다는 점을 안다."
+          ],
+          "suppressions": [
+            "전환 견적서·미팅 제안 수준",
+            "피해자 단독 서사"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-3:admission:0",
+              "factText": "계약서 공개 전부터 백업 구조를 봤다는 사실을 부분 인정한다.",
+              "tags": [
+                "admission",
+                "timeline",
+                "institution"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "time": {
+                  "exact": "지점 계약일보다 19일 전",
+                  "neutral": "그보다 먼저",
+                  "period": "지점 계약 공개 전",
+                  "dateExact": "지점 계약일보다 19일 전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-3:fear:0",
+              "factText": "그 준비의 출발점이 밀려날 공포였다고 감정적 이유를 붙인다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "motive"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "비건 베이커리 브랜드",
+                  "neutral": "브랜드"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "순수 피해자만은 아니었습니다.",
+            "저도 상대를 믿지 못해 먼저 출구를 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 말이 이제는 피해자 서사보다 불신과 선행 준비의 언어로 이동해야 함을 안다."
+          ],
+          "suppressions": [
+            "거래처 전환 준비를 '출구'로만 미화하는 것"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-3:admission:1",
+              "factText": "순수 피해자라는 자기 서사를 접고 선행된 출구 만들기를 인정한다.",
+              "tags": [
+                "admission",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-3:relationship:0",
+              "factText": "상대를 믿지 못한 감정이 분리 구조를 앞당겼다고 말한다.",
+              "tags": [
+                "relationship",
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "상대",
+                  "fullName": "김재원",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "브랜드를 빼앗길까 봐 제가 한 행동을 피해 서사로만 포장했습니다.",
+            "그 말투가 제 준비 사실을 더 오래 숨기게 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "자신이 history_stack와 moral_pivot로 질문 방향을 바꿔온 습관을 자각한다."
+          ],
+          "suppressions": [
+            "희생 서사를 길게 깔아 사실질문을 피한 태도"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:b:tell:moral_pivot",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-3:shame:0",
+              "factText": "피해 서사로 자기 행동을 포장한 방식에 부끄러움을 느낀다.",
+              "tags": [
+                "shame",
+                "emotion",
+                "admission"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "비건 베이커리 브랜드",
+                  "neutral": "브랜드"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-3:self_justification:0",
+              "factText": "질문을 도덕 판단으로 틀어 준비 사실을 흐린 습관을 인정한다.",
+              "tags": [
+                "self_justification",
+                "admission",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "나",
+                  "fullName": "정아린",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "재원의 독단 계약도 사실이고, 저의 별도 법인 준비도 사실입니다.",
+            "지금 갈등을 순수 피해자 대 가해자로만 말한 건 제 왜곡이었습니다."
+          ],
+          "privateKnowledge": [
+            "피해자 반전 구조를 명확히 인정하고, 관계 회복을 위해서는 시간순 사실표가 필요하다고 느낀다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:b:tell:moral_pivot",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-3:admission:2",
+              "factText": "독단 계약과 선행 준비가 함께 있었다는 이중 사실을 시인한다.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-3:responsibility:0",
+              "factText": "순수 피해자 서사로 갈등을 왜곡한 자신의 말하기 책임을 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "나",
+                  "fullName": "정아린",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "공동 기회 조항을 깬 건 재원 쪽입니다.",
+            "저는 밀려나는 상황에서 방어만 했습니다."
+          ],
+          "privateKnowledge": [
+            "별도 법인과 거래처 이전 우선순위 시트가 조항 위반의 한 축이라는 걸 안다."
+          ],
+          "suppressions": [
+            "개인 폴더에서 만든 우선순위 시트",
+            "별도 법인 준비가 공동기회 대상이라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-4:denial:0",
+              "factText": "공동 기회 조항 위반을 재원 쪽 행동으로만 한정한다.",
+              "tags": [
+                "denial",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "상대",
+                  "fullName": "김재원",
+                  "judgeRef": "상대방"
+                },
+                "rule": {
+                  "exact": "2024 공동기회 부속합의서",
+                  "neutral": "부속합의"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-4:self_justification:0",
+              "factText": "자신의 준비를 공격이 아닌 방어 행동으로 재분류한다.",
+              "tags": [
+                "self_justification",
+                "emotion",
+                "uncertainty"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "별도 법인 구상은 있었어도 실제 공동 기회를 빼돌린 건 아니었습니다.",
+            "공동 기회 조항을 어겼다고 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "지점과 별도 법인을 같은 승인 시트에 넣어 관리하던 합의를 분명히 기억한다."
+          ],
+          "suppressions": [
+            "지점과 별도 법인이 같은 표 안에 있던 승인 구조"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-4:rule:0",
+              "factText": "별도 법인 구상과 실제 공동 기회 이탈을 인위적으로 분리한다.",
+              "tags": [
+                "rule",
+                "threshold",
+                "uncertainty"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "rule": {
+                  "exact": "2024 공동기회 부속합의서",
+                  "neutral": "부속합의"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-4:privacy:0",
+              "factText": "공개하지 않은 구상이 곧바로 위반은 아니라는 식으로 비공개 상태를 방패로 쓴다.",
+              "tags": [
+                "privacy",
+                "self_justification",
+                "denial"
+              ],
+              "slots": {
+                "sheet": {
+                  "exact": "거래처 이전 우선순위 시트",
+                  "neutral": "개인 시트"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "합의상 별도 법인도 공동 기회라는 건 알고 있었습니다.",
+            "그런데 그 무렵엔 제가 배제된다고 느껴 공개를 미뤘습니다."
+          ],
+          "privateKnowledge": [
+            "공개를 미룬 정도가 아니라 실제 거래처 전환 자료를 개인 폴더에서 가다듬고 있었다."
+          ],
+          "suppressions": [
+            "실제 전환 준비 수준",
+            "피해 감정으로 조항 위반을 덮는 방식"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-4:admission:0",
+              "factText": "별도 법인도 공동 기회라는 규칙 인식을 부분 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "rule": {
+                  "exact": "2024 공동기회 부속합의서",
+                  "neutral": "부속합의"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-4:emotion:0",
+              "factText": "배제된다는 감정이 공개 지연의 이유였다고 설명한다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "비건 베이커리 브랜드",
+                  "neutral": "브랜드"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "재원이 먼저 지점 lease를 움직였기 때문에 저도 거래처 방어선을 따로 쌓았습니다.",
+            "적어도 저 혼자 조항을 무너뜨린 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "자신의 우선순위 시트 작성 시점이 재원 공개보다도 앞선 자료가 있어, 후행 방어라는 말이 완전히 맞지 않음을 안다."
+          ],
+          "suppressions": [
+            "우선순위 시트와 메일 일부의 선행성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-4:counter:0",
+              "factText": "재원의 lease를 자기 개인 시트와 거래처 방어선의 원인으로 내세운다.",
+              "tags": [
+                "counter",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "sheet": {
+                  "exact": "거래처 이전 우선순위 시트",
+                  "neutral": "개인 시트"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-4:responsibility:0",
+              "factText": "쌍방 위반 구도로 책임을 분산하며 자기 조항 위반 비중을 낮춘다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김재원",
+                  "neutral": "상대",
+                  "fullName": "김재원",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "우리는 그 합의를 들고도 서로 다른 서랍에 계획을 숨겼습니다.",
+            "저도 공동 기회 조항을 믿는다면서 실무에선 따로 움직였습니다."
+          ],
+          "privateKnowledge": [
+            "피해 감정을 이유로 예외를 만든 것이 결국 합의를 더 무력하게 만들었다고 느낀다."
+          ],
+          "suppressions": [
+            "피해 감정과 규칙 준수의 불일치"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:b:tell:moral_pivot",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-4:admission:1",
+              "factText": "같은 합의를 믿는다고 말하면서도 개인 폴더에서 따로 움직인 모순을 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "shame"
+              ],
+              "slots": {
+                "sheet": {
+                  "exact": "거래처 이전 우선순위 시트",
+                  "neutral": "개인 시트"
+                },
+                "rule": {
+                  "exact": "2024 공동기회 부속합의서",
+                  "neutral": "부속합의"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-4:emotion:1",
+              "factText": "피해 감정이 규칙 위반의 예외를 자기에게 허용하게 했다고 돌아본다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "비건 베이커리 브랜드",
+                  "neutral": "브랜드"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "저는 별도 법인과 거래처 전환 준비로, 재원은 단독 지점 계약으로 공동 기회 조항을 함께 무너뜨렸습니다.",
+            "그 점에서는 저도 책임을 피할 수 없습니다."
+          ],
+          "privateKnowledge": [
+            "해결은 누가 먼저 더 나빴는지보다 합의를 어떻게 복원하느냐에 달렸다고 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:b:tell:moral_pivot",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-4:admission:2",
+              "factText": "양측이 서로 다른 채널로 같은 공동 기회 조항을 무너뜨렸다고 시인한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                },
+                "branch": {
+                  "exact": "성수 위성매장",
+                  "neutral": "그 지점"
+                },
+                "rule": {
+                  "exact": "2024 공동기회 부속합의서",
+                  "neutral": "부속합의"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-4:responsibility:1",
+              "factText": "자신의 별도 법인·거래처 준비 책임을 명확히 분리해 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "sheet": {
+                  "exact": "거래처 이전 우선순위 시트",
+                  "neutral": "개인 시트"
+                },
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "나",
+                  "fullName": "정아린",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "거래처만 옮기면 되는 줄 알았습니다.",
+            "상표 분쟁까지 한꺼번에 터질 구조라고는 생각하지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "별도 법인과 동일 브랜드 사용이 겹치면 분쟁이 커질 수 있다는 막연한 불안은 있었다."
+          ],
+          "suppressions": [
+            "독점공급계약 확인 부족",
+            "상표사용 조항 검토 부족"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-5:uncertainty:0",
+              "factText": "거래처 이전이 가능하다고 막연히 전제하며 상표 문제를 과소평가한다.",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                },
+                "brand": {
+                  "exact": "동일 브랜드 단독 운영",
+                  "neutral": "동일 브랜드 운영"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-5:context:0",
+              "factText": "실무상 옮길 수만 있으면 된다고 생각해 법적 구조를 뒤로 미뤘다.",
+              "tags": [
+                "context",
+                "threshold",
+                "self_justification"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "별도 법인 견적을 돌릴 때도 기존 독점공급계약이 그렇게 강한 제약인 줄은 몰랐습니다.",
+            "브랜드를 그대로 쓰는 문제도 깊게 보지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "거래처 MD들과 일하면서도 계약 갱신본을 직접 확인하지 않은 책임이 있다."
+          ],
+          "suppressions": [
+            "갱신 계약이 올해 초 이미 체결된 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-5:rule:0",
+              "factText": "독점공급계약의 강도를 몰랐다고 하며 제약 인식 부족을 강조한다.",
+              "tags": [
+                "rule",
+                "uncertainty",
+                "admission"
+              ],
+              "slots": {
+                "contract": {
+                  "exact": "도매 독점공급계약",
+                  "neutral": "기존 공급계약"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-5:identity:0",
+              "factText": "브랜드를 키운 사람이라는 자의식 때문에 상표 구조를 자기 재량처럼 느꼈다.",
+              "tags": [
+                "identity",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "비건 베이커리 브랜드",
+                  "neutral": "브랜드"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "핵심 거래처와 브랜드가 기존 법인에 묶여 있다는 사실을 충분히 검토하지 않았습니다.",
+            "거래처 이전만 생각했지 계약 전체는 못 봤습니다."
+          ],
+          "privateKnowledge": [
+            "실제로는 거래처 이전 우선순위 시트를 짤 만큼 구체적으로 움직였으면서도, 법적 구조는 비워 둔 채 갔다."
+          ],
+          "suppressions": [
+            "우선순위 시트의 구체성",
+            "법적 검토의 공백"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-5:admission:0",
+              "factText": "핵심 거래처와 브랜드가 기존 법인에 묶여 있다는 구조를 놓쳤다고 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                },
+                "brand": {
+                  "exact": "동일 브랜드 단독 운영",
+                  "neutral": "동일 브랜드 운영"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-5:threshold:0",
+              "factText": "거래처 이전만 가능하면 된다고 생각해 계약 전체 문턱을 낮게 봤다고 돌아본다.",
+              "tags": [
+                "threshold",
+                "self_justification",
+                "admission"
+              ],
+              "slots": {
+                "sheet": {
+                  "exact": "거래처 이전 우선순위 시트",
+                  "neutral": "개인 시트"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "저도 거래처 이전을 준비하면서 계약 제약을 너무 가볍게 봤습니다.",
+            "살아남는 문제만 크게 보고 실제 실행 조건은 뒤로 미뤘습니다."
+          ],
+          "privateKnowledge": [
+            "피해 서사와 생존 논리가 계약 검토 부족을 가려주는 방패가 되었음을 안다."
+          ],
+          "suppressions": [
+            "피해 감정과 실행 조건의 분리"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "partnership-11:b:tell:history_stack",
+            "partnership-11:b:tell:moral_pivot"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-5:responsibility:0",
+              "factText": "생존 문제를 앞세우느라 계약 제약을 가볍게 본 책임을 인정한다.",
+              "tags": [
+                "responsibility",
+                "emotion",
+                "admission"
+              ],
+              "slots": {
+                "contract": {
+                  "exact": "도매 독점공급계약",
+                  "neutral": "기존 공급계약"
+                },
+                "client": {
+                  "exact": "핵심 도매 거래처 2곳",
+                  "neutral": "핵심 거래처"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-5:self_justification:0",
+              "factText": "살아남아야 한다는 말이 실행 조건 검토를 미루는 면죄부가 됐다고 드러낸다.",
+              "tags": [
+                "self_justification",
+                "fear",
+                "admission"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "살아남겠다는 생각에 법적 불가능성을 외면했습니다.",
+            "브랜드를 지켜야 한다는 말이 오히려 계약을 안 보게 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "브랜드 대표성에 대한 불안이 규칙을 감정 뒤로 밀어낸 구조를 인식한다."
+          ],
+          "suppressions": [
+            "브랜드 대표성 불안",
+            "법적 검토 외면"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:b:tell:moral_pivot",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-5:emotion:0",
+              "factText": "브랜드를 지켜야 한다는 감정이 법적 불가능성을 외면하게 했다고 인정한다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "admission"
+              ],
+              "slots": {
+                "brand": {
+                  "exact": "비건 베이커리 브랜드",
+                  "neutral": "브랜드"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-5:fear:0",
+              "factText": "밀려날까 두려워 계약을 끝까지 보지 못했다고 털어놓는다.",
+              "tags": [
+                "fear",
+                "identity",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정아린",
+                  "neutral": "나",
+                  "fullName": "정아린",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "별도 법인 이전이든 단독 지점 운영이든 기존 계약상 그대로 실행 불가능했습니다.",
+            "저 역시 그 구조를 제대로 확인하지 않은 채 움직였습니다."
+          ],
+          "privateKnowledge": [
+            "이제는 누구의 피해가 더 큰지보다 기존 계약을 어떻게 다시 정리할지가 핵심임을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "partnership-11:b:tell:moral_pivot",
+            "partnership-11:b:tell:betrayal_zoom"
+          ],
+          "claimAtoms": [
+            {
+              "id": "partnership-11:b:d-5:admission:1",
+              "factText": "거래처 이전과 단독 지점 운영 모두 기존 계약상 그대로는 실행 불가능했다고 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "threshold"
+              ],
+              "slots": {
+                "contract": {
+                  "exact": "도매 독점공급계약",
+                  "neutral": "기존 공급계약"
+                },
+                "opinion": {
+                  "exact": "상표사용 법률의견서",
+                  "neutral": "법률의견"
+                },
+                "brand": {
+                  "exact": "동일 브랜드 단독 운영",
+                  "neutral": "동일 브랜드 운영"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "partnership-11:b:d-5:responsibility:1",
+              "factText": "그 구조를 확인하지 않은 채 움직인 자신의 실무 책임도 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "company": {
+                  "exact": "아린셀렉트F&B",
+                  "neutral": "별도 법인"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+

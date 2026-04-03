@@ -2334,7 +2334,7 @@ export const family03V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "allowance_use_question",
-      "line": "사용처를 바로 묻자 복자는 월세와 약값을 길게 늘어놓으며 '다 집안돈이었다'는 말로 한 발 물러난다.",
+      "line": "월세도 냈고, 약값도 냈고… 다 집안일에 쓴 돈이었다고요. 따로 뺀 게 아니에요.",
       "behaviorHint": "열거가 빨라지고 눈을 맞추는 시간을 줄인다.",
       "id": "family03:transition:a:d-3:s0_s1"
     },
@@ -2345,7 +2345,7 @@ export const family03V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-3_presented",
-      "line": "수빈 계좌 송금 내역이 제시되면 복자는 '조금 보낸 건 맞다'며 전면 부정을 포기한다.",
+      "line": "조금 보낸 건 맞아요. 그 부분까지 아니라고 하면 안 될 것 같아요.",
       "behaviorHint": "서류를 한 번 보고 입술을 다문 뒤 짧게 인정한다.",
       "id": "family03:transition:a:d-3:s1_s2"
     },
@@ -2356,7 +2356,7 @@ export const family03V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "sister_support_followup",
-      "line": "송금 목적을 다시 묻는 순간 복자는 학원비와 교통비 이야기를 꺼내며 숨긴 이유를 체면 문제로 돌린다.",
+      "line": "학원비도 있었고 교통비도 있었어요. 숨긴 건… 체면 때문이었어요. 말하기가 초라해서요.",
       "behaviorHint": "목소리가 낮아지고 말끝이 길어진다.",
       "id": "family03:transition:a:d-3:s2_s3"
     },
@@ -2367,7 +2367,7 @@ export const family03V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "responsibility_question",
-      "line": "책임을 정면으로 묻자 복자는 더는 살림 핑계를 못 대고 '약값에만 썼다'는 말이 거짓이었다고 인정한다.",
+      "line": "약값에만 썼다는 말… 거짓이었어요. 더 이상 살림 핑계를 댈 수가 없어요.",
       "behaviorHint": "한숨 뒤에 시선을 떨어뜨리고 짧게 고백한다.",
       "id": "family03:transition:a:d-3:s3_s5"
     },
@@ -2378,7 +2378,7 @@ export const family03V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "family_group_chat_question",
-      "line": "단톡방 규모와 대상을 짚기 시작하면 복자는 '상의였다'는 표현으로 의도를 누그러뜨리려 한다.",
+      "line": "상의였어요, 상의. 친척들한테 물어본 거지 일부러 퍼뜨린 게 아니에요.",
       "behaviorHint": "되묻는 말투가 늘고 손을 모은다.",
       "id": "family03:transition:a:d-4:s0_s1"
     },
@@ -2389,7 +2389,7 @@ export const family03V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-4_presented",
-      "line": "내보내기 파일이 제시되면 복자는 먼저 올린 사실 자체는 인정하고 설명을 '답답함'으로 돌린다.",
+      "line": "올린 건 맞아요. 답답해서 그랬어요. 그 마음을 어디다 말해요.",
       "behaviorHint": "서둘러 변명하려다 문장 사이가 끊긴다.",
       "id": "family03:transition:a:d-4:s1_s2"
     },
@@ -2400,7 +2400,7 @@ export const family03V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "group_size_followup",
-      "line": "친척과 교회 소모임 두 방에 거의 같은 문장을 올린 점을 찌르면 복자는 그게 압박처럼 보였다고 시인한다.",
+      "line": "같은 말을 두 방에 올린 거… 그게 압박처럼 보였겠죠. 저도 알아요.",
       "behaviorHint": "표정이 굳고 손끝을 꼼지락거린다.",
       "id": "family03:transition:a:d-4:s2_s3"
     },
@@ -2411,7 +2411,7 @@ export const family03V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "privacy_boundary_question",
-      "line": "사생활 경계와 공개망신을 묻는 질문 앞에서 복자는 공개 압박이었다는 점을 받아들인다.",
+      "line": "제가 넘었어요. 공개적으로 망신을 준 거나 다름없었다는 거… 받아들여요.",
       "behaviorHint": "말을 멈췄다가 낮게 '제가 넘었어요'라고 말한다.",
       "id": "family03:transition:a:d-4:s3_s5"
     },
@@ -2422,7 +2422,7 @@ export const family03V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "direct_payment_question",
-      "line": "직접 납부 합의 여부를 구체적으로 묻자 복자는 '한번 해보자던 수준'이라며 완전 부정을 누그러뜨린다.",
+      "line": "한번 해보자 했던 수준이었어요. 확실하게 정한 건 아니었다고요.",
       "behaviorHint": "단정적인 어조가 조금 풀리고 설명이 길어진다.",
       "id": "family03:transition:a:d-5:s0_s1"
     },
@@ -2433,7 +2433,7 @@ export const family03V3GameLoopData = {
       "fromState": "S1",
       "toState": "S4",
       "trigger": "nonjudgmental_question_about_bill_fear",
-      "line": "비난 없이 왜 그 방식이 불편했는지 묻는 순간 복자는 영수증 공유가 두렵고 초라했다고 감정을 먼저 내비친다.",
+      "line": "영수증 보여주는 게… 두려웠어요. 초라하잖아요, 그게. 돈 쓴 거 하나하나 보이는 게요.",
       "behaviorHint": "눈가가 젖고 한숨 뒤에 속내가 나온다.",
       "id": "family03:transition:a:d-5:s1_s4"
     },
@@ -2444,7 +2444,7 @@ export const family03V3GameLoopData = {
       "fromState": "S4",
       "toState": "S3",
       "trigger": "e-5_presented",
-      "line": "통화 녹음과 고지서 사진이 나오면 복자는 감정 고백에서 물러나 '합의는 했지만 오래 못 갔다'는 실무 핑계를 붙인다.",
+      "line": "합의는 했어요. 다만 오래 못 갔어요. 현실적으로 계속 그렇게 하기가 어려웠거든요.",
       "behaviorHint": "감정이 올라왔다가 다시 방어적으로 굳는다.",
       "id": "family03:transition:a:d-5:s4_s3"
     },
@@ -2455,7 +2455,7 @@ export const family03V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "e-6_presented",
-      "line": "주민센터 상담 확인서가 제시되면 복자는 현금 요구로 돌아선 자신 몫의 책임까지 인정한다.",
+      "line": "다시 현금으로 달라고 한 건… 제 잘못이에요. 제 몫의 책임까지 인정해요.",
       "behaviorHint": "서류를 보고 체념한 듯 고개를 끄덕인다.",
       "id": "family03:transition:a:d-5:s3_s5"
     },
@@ -2466,7 +2466,7 @@ export const family03V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "missed_transfer_question",
-      "line": "밀린 송금 날짜를 짚자 정우는 '조금 비튼 것'이라며 전면 부정에서 축소 설명으로 이동한다.",
+      "line": "조금 비튼 것 같긴 해요. 날짜가 좀 밀린 건 맞는데요.",
       "behaviorHint": "숫자를 먼저 말하고 문장 끝을 흐린다.",
       "id": "family03:transition:b:d-2:s0_s1"
     },
@@ -2477,7 +2477,7 @@ export const family03V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-2_presented",
-      "line": "은행 로그가 나오면 정우는 자동이체 해지 사실만큼은 즉시 인정한다.",
+      "line": "자동이체 해지한 건 맞아요. 그 부분은 인정해요.",
       "behaviorHint": "짧게 인정하고 곧바로 해명을 준비한다.",
       "id": "family03:transition:b:d-2:s1_s2"
     },
@@ -2488,7 +2488,7 @@ export const family03V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "auto_transfer_cancel_reason",
-      "line": "왜 직접 해지했는지를 파고들면 정우는 수입 변동과 설명 타이밍 상실을 이유로 자기 정당화를 붙인다.",
+      "line": "수입이 좀 줄었거든요. 말씀드리려다 타이밍을 놓친 것 같아요. 변명처럼 들리겠지만요.",
       "behaviorHint": "답을 순서대로 늘어놓으며 핵심을 뒤로 민다.",
       "id": "family03:transition:b:d-2:s2_s3"
     },
@@ -2499,7 +2499,7 @@ export const family03V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "responsibility_question",
-      "line": "책임 귀속을 묻는 재차 질문에서 정우는 통보 없는 감액과 지연이 자신의 잘못이라고 정리한다.",
+      "line": "말씀 안 드리고 줄이고, 늦추고… 그건 제 잘못이에요.",
       "behaviorHint": "짧은 사과 후 더는 방향을 틀지 못한다.",
       "id": "family03:transition:b:d-2:s3_s5"
     },
@@ -2510,7 +2510,7 @@ export const family03V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "promise_duration_question",
-      "line": "약속 기간을 묻자 정우는 '평생은 아니었다'는 강한 부정에서 '몇 달 도움'이라는 모호한 표현으로 물러난다.",
+      "line": "평생 드리겠다고 한 건 아니었어요. 몇 달 정도 도움을 드리겠다는 거였는데요.",
       "behaviorHint": "초반은 단정적이고 후반은 길게 이어 말한다.",
       "id": "family03:transition:b:d-1:s0_s1"
     },
@@ -2521,7 +2521,7 @@ export const family03V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "e-1_presented",
-      "line": "잘린 캡처가 아니라 원본 문맥이 제시되면 정우는 6개월·60만원 약속 문구를 인정한다.",
+      "line": "6개월, 60만원… 네, 그렇게 말한 건 맞아요.",
       "behaviorHint": "짧게 숨을 내쉬고 숫자를 그대로 반복한다.",
       "id": "family03:transition:b:d-1:s1_s2"
     },
@@ -2532,7 +2532,7 @@ export const family03V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "full_chat_context_question",
-      "line": "왜 그 이후에도 어머니 오해를 풀지 않았는지 묻자 정우는 장남 압박과 분위기를 핑계로 침묵 책임을 일부 인정한다.",
+      "line": "장남이니까 분위기를 맞춰야 했거든요. 어머니한테 정리를 안 드린 건… 그건 제가 잘못한 거 맞아요.",
       "behaviorHint": "어깨를 움츠리고 시선을 비껴간다.",
       "id": "family03:transition:b:d-1:s2_s3"
     },
@@ -2543,7 +2543,7 @@ export const family03V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "e-2_presented",
-      "line": "실제 자동이체 등록과 초반 이행 기록까지 맞물리면 정우는 약속 자체와 그 약속을 흐린 책임을 모두 인정한다.",
+      "line": "약속 자체도, 그걸 흐리게 만든 것도 다 제 책임이에요. 인정해요.",
       "behaviorHint": "더는 순서를 늘이지 못하고 한 번에 답한다.",
       "id": "family03:transition:b:d-1:s3_s5"
     },
@@ -2554,7 +2554,7 @@ export const family03V3GameLoopData = {
       "fromState": "S0",
       "toState": "S1",
       "trigger": "direct_payment_question",
-      "line": "직접 납부 방식을 구체적으로 묻자 정우는 합의 자체 부정에서 '한 번은 했다'는 애매한 인정으로 이동한다.",
+      "line": "한 번은 직접 낸 적 있어요. 합의가 없었다고까지 하긴 그렇네요.",
       "behaviorHint": "처음 문장은 짧고, 다음 문장은 길어진다.",
       "id": "family03:transition:b:d-5:s0_s1"
     },
@@ -2565,7 +2565,7 @@ export const family03V3GameLoopData = {
       "fromState": "S1",
       "toState": "S2",
       "trigger": "bill_receipt_question",
-      "line": "고지서와 사진 전달 여부를 콕 집으면 정우는 한 차례 직접 납부한 사실을 인정한다.",
+      "line": "네, 한 번 직접 낸 건 맞아요. 고지서 받아서 처리한 적 있어요.",
       "behaviorHint": "고개를 끄덕이지만 눈은 맞추지 않는다.",
       "id": "family03:transition:b:d-5:s1_s2"
     },
@@ -2576,7 +2576,7 @@ export const family03V3GameLoopData = {
       "fromState": "S2",
       "toState": "S3",
       "trigger": "e-5_presented",
-      "line": "통화 녹음이 제시되면 정우는 이후 루틴을 관리하지 못했고 다시 정리하려 하지도 않았다고 말문이 바뀐다.",
+      "line": "그 뒤로 루틴을 관리 못 했어요. 다시 정리하려는 시도도 안 했고요.",
       "behaviorHint": "설명 순서가 느려지고 변명과 인정이 섞인다.",
       "id": "family03:transition:b:d-5:s2_s3"
     },
@@ -2587,7 +2587,7 @@ export const family03V3GameLoopData = {
       "fromState": "S3",
       "toState": "S5",
       "trigger": "shared_responsibility_question",
-      "line": "공동 책임을 묻는 질문 앞에서 정우는 현금 요구만 탓할 수 없고 자신도 직접 납부 합의를 놓쳤다고 정리한다.",
+      "line": "현금 요구만 탓할 수는 없어요. 저도 직접 납부 합의를 놓친 거니까요.",
       "behaviorHint": "짧게 사과한 뒤 문장을 더 붙이지 않는다.",
       "id": "family03:transition:b:d-5:s3_s5"
     }

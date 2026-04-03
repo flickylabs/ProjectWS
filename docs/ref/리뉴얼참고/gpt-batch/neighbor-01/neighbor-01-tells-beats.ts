@@ -344,7 +344,7 @@ export const neighbor01TellsBeats = {
       "party": "b",
       "disputeId": "d-2",
       "beatType": "deny",
-      "line": "잠깐 둔 거였어요. 적치라고까지 하시면 좀 과합니다.",
+      "line": "적치한 적 없습니다. 복도에 물건을 쌓아 둔 건 아니에요.",
       "behaviorHint": "작게 웃으며 수위를 낮추려 한다.",
       "applicableStates": [
         "S0"
@@ -461,7 +461,7 @@ export const neighbor01TellsBeats = {
       "party": "b",
       "disputeId": "d-4",
       "beatType": "blame",
-      "line": "그 밤이 누수 대응 시간이라 소리가 날 수밖에 없었어요. 제가 보복하려고 쿵쿵댄 건 아닙니다.",
+      "line": "그 밤이 누수 대응 시간이라 소리가 날 수밖에 없었어요. 제가 보복하려고 쿵쿵댄 건 아닙니다. 아래층 쪽도 사정 확인 없이 촬영부터 하고 단체방에 올린 건 아닌가요.",
       "behaviorHint": "두 손을 모아 변명하듯 빠르게 말한다.",
       "applicableStates": [
         "S4"
@@ -474,7 +474,7 @@ export const neighbor01TellsBeats = {
       "party": "b",
       "disputeId": "d-4",
       "beatType": "confession",
-      "line": "고의 소음은 아니었습니다. 다만 미리 알리지 못해서 발망치처럼 오해받게 했어요.",
+      "line": "고의 소음은 아니었지만, 미리 알리지 못한 건 제 잘못입니다. 발망치처럼 오해받게 만든 책임이 저한테 있어요.",
       "behaviorHint": "사과와 해명을 한 문장에 겹쳐 놓는다.",
       "applicableStates": [
         "S5"
