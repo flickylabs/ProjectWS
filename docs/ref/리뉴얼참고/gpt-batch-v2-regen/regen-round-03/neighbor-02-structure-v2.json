@@ -1,0 +1,1135 @@
+{
+  "caseId": "neighbor-02",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "CCTV 캡처 무단 유포",
+      "truth": true,
+      "truthDescription": "유나는 택배실 CCTV 정지 화면 1장을 이웃 2인 이상에게 보내며 '자꾸 남의 박스 앞에 선다'는 문구를 덧붙였다. 원본 영상 확인 없이 캡처만 유포한 것이다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "평판회복",
+      "legitimacyIssue": true,
+      "judgmentStatement": "유나는 CCTV 캡처를 무단 유포했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "택배실 캡처",
+        "남의 박스 앞",
+        "반상회 다음 날",
+        "이웃 2명",
+        "사적 전달",
+        "메신저"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "CCTV 캡처 무단 유포를 겉으로 어떻게 주장하는지가 보인다.",
+          "lockedSummary": "겉으로 드러난 장면만 잡힙니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor02:a:d-1:act:0",
+            "neighbor02:a:d-1:uncertainty:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "CCTV 캡처 무단 유포를 왜 그렇게 밀어붙였는지 감정과 계산이 드러난다.",
+          "lockedSummary": "행동을 떠받친 동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor02:a:d-1:unlock:s2:0",
+            "neighbor02:a:d-1:unlock:s3:0",
+            "neighbor02:a:d-1:evidence:0",
+            "neighbor02:a:d-1:motive:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "CCTV 캡처 무단 유포의 실제 책임 구조와 관계 손상이 함께 정리된다.",
+          "lockedSummary": "핵심 책임선은 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:emotion_named"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor02:a:d-1:unlock:s4:0",
+            "neighbor02:a:d-1:unlock:s5:0",
+            "neighbor02:a:d-1:emotion:0",
+            "neighbor02:a:d-1:admission:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "악취 소문 무검증 전파",
+      "truth": true,
+      "truthDescription": "민규는 관리사무소 확인 없이 '307호 개봉투 냄새 또 난다'는 문구를 단체방과 1:1 대화에서 14시간 내 반복 전파했다. 실제 악취 원인은 찢어진 김치봉투였다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "평판회복",
+      "legitimacyIssue": true,
+      "judgmentStatement": "민규는 악취 소문을 무검증 전파했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "307호 개봉투 냄새",
+        "14시간 전파",
+        "단체방",
+        "1:1 대화",
+        "악취 민원",
+        "김치봉투"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "악취 소문 무검증 전파를 겉으로 어떻게 주장하는지가 보인다.",
+          "lockedSummary": "겉으로 드러난 장면만 잡힙니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor02:b:d-2:rule:0",
+            "neighbor02:b:d-2:quote:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "악취 소문 무검증 전파를 왜 그렇게 밀어붙였는지 감정과 계산이 드러난다.",
+          "lockedSummary": "행동을 떠받친 동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor02:b:d-2:unlock:s2:0",
+            "neighbor02:b:d-2:unlock:s3:0",
+            "neighbor02:b:d-2:admission:0",
+            "neighbor02:b:d-2:motive:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "악취 소문 무검증 전파의 실제 책임 구조와 관계 손상이 함께 정리된다.",
+          "lockedSummary": "핵심 책임선은 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:emotion_named"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor02:b:d-2:unlock:s4:0",
+            "neighbor02:b:d-2:unlock:s5:0",
+            "neighbor02:b:d-2:emotion:0",
+            "neighbor02:b:d-2:admission:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "익명 전단의 실제 배후",
+      "truth": true,
+      "truthDescription": "익명 전단의 원본은 최병규가 관리사무소 민원 문구와 반상회 발언을 짜깁기해 만든 PDF다. 공용프린터 스풀 로그에 그의 계정으로 출력 27분 전 기록이 남아 있다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 40,
+        "b": 60
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공동체절차",
+      "legitimacyIssue": true,
+      "judgmentStatement": "최병규가 전단을 작성했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "익명 전단",
+        "최병규",
+        "공용프린터",
+        "스풀 로그",
+        "27분 전 PDF",
+        "회의록 수정"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "익명 전단의 실제 배후를 겉으로 어떻게 주장하는지가 보인다.",
+          "lockedSummary": "겉으로 드러난 장면만 잡힙니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor02:b:d-3:identity:0",
+            "neighbor02:b:d-3:timeline:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "익명 전단의 실제 배후를 왜 그렇게 밀어붙였는지 감정과 계산이 드러난다.",
+          "lockedSummary": "행동을 떠받친 동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor02:b:d-3:unlock:s2:0",
+            "neighbor02:b:d-3:unlock:s3:0",
+            "neighbor02:b:d-3:evidence:0",
+            "neighbor02:b:d-3:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "익명 전단의 실제 배후의 실제 책임 구조와 관계 손상이 함께 정리된다.",
+          "lockedSummary": "핵심 책임선은 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:emotion_named"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor02:b:d-3:unlock:s4:0",
+            "neighbor02:b:d-3:unlock:s5:0",
+            "neighbor02:b:d-3:emotion:0",
+            "neighbor02:b:d-3:identity:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-4",
+      "name": "택배 절도 의심의 진위",
+      "truth": false,
+      "truthDescription": "CCTV 원본 6분을 보면 민규는 박스를 열지 않고 선반만 옮긴 뒤 나갔다. 경비원 박정호의 무전 요청 메모와 시각이 일치한다. 절도 의심은 사실이 아니다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "사생활경계",
+      "legitimacyIssue": true,
+      "judgmentStatement": "민규는 박스를 열지 않았다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "택배 절도 의심",
+        "08시 14분",
+        "오배송 처리대장",
+        "원본 6분",
+        "박스를 열지 않음",
+        "선반 이동"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "택배 절도 의심의 진위를 겉으로 어떻게 주장하는지가 보인다.",
+          "lockedSummary": "겉으로 드러난 장면만 잡힙니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor02:a:d-4:act:0",
+            "neighbor02:a:d-4:context:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "택배 절도 의심의 진위를 왜 그렇게 밀어붙였는지 감정과 계산이 드러난다.",
+          "lockedSummary": "행동을 떠받친 동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "M2"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:misbelief_shaken"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor02:a:d-4:unlock:s2:0",
+            "neighbor02:a:d-4:unlock:s3:0",
+            "neighbor02:a:d-4:evidence:0",
+            "neighbor02:a:d-4:motive:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "택배 절도 의심의 진위의 실제 책임 구조와 관계 손상이 함께 정리된다.",
+          "lockedSummary": "핵심 책임선은 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "M4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:context_reframed"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor02:a:d-4:unlock:s4:0",
+            "neighbor02:a:d-4:unlock:s5:0",
+            "neighbor02:a:d-4:emotion:0",
+            "neighbor02:a:d-4:admission:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "knows"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "겉모습만 보고 의심이 시작된다.",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "잘린 장면과 인상으로 확신을 키운다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "오해를 설명보다 먼저 붙잡는다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "빠진 맥락이 보이며 확신이 흔들린다.",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해가 벗겨지고 실제 연결선이 드러난다.",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "택배실 CCTV 한 컷만 전달됨",
+          "오배송 맥락이 잘린 캡처",
+          "절도처럼 읽히게 만든 덧붙임 문구"
+        ],
+        "truthExitEvidenceIds": [
+          "e-2"
+        ],
+        "clarifyOutcomeLabel": "오해가 벗겨지고 실제 연결선이 드러난다."
+      }
+    },
+    {
+      "id": "d-5",
+      "name": "선확인 약속 쌍방 파기",
+      "truth": true,
+      "truthDescription": "봄 합의를 둘 다 깼다. 유나는 CCTV 캡처를 사적으로 돌렸고, 민규는 악취 민원 문구를 확인 없이 재인용했다. 선확인 원칙을 서로 무시한 쌍방 위반이다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "공동체절차",
+      "legitimacyIssue": false,
+      "judgmentStatement": "유나와 민규는 모두 합의를 위반했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "선확인 약속",
+        "캡처 전달",
+        "민원 문구 재인용",
+        "공개 비난 금지",
+        "봄 합의",
+        "재전파"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "선확인 약속 쌍방 파기를 겉으로 어떻게 주장하는지가 보인다.",
+          "lockedSummary": "겉으로 드러난 장면만 잡힙니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor02:a:d-5:rule:0",
+            "neighbor02:a:d-5:rule:1",
+            "neighbor02:b:d-5:rule:0",
+            "neighbor02:b:d-5:quote:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "선확인 약속 쌍방 파기를 왜 그렇게 밀어붙였는지 감정과 계산이 드러난다.",
+          "lockedSummary": "행동을 떠받친 동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor02:a:d-5:unlock:s2:0",
+            "neighbor02:a:d-5:unlock:s3:0",
+            "neighbor02:a:d-5:admission:0",
+            "neighbor02:a:d-5:responsibility:0",
+            "neighbor02:b:d-5:unlock:s2:0",
+            "neighbor02:b:d-5:unlock:s3:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "선확인 약속 쌍방 파기의 실제 책임 구조와 관계 손상이 함께 정리된다.",
+          "lockedSummary": "핵심 책임선은 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:emotion_named"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor02:a:d-5:unlock:s4:0",
+            "neighbor02:a:d-5:unlock:s5:0",
+            "neighbor02:a:d-5:emotion:0",
+            "neighbor02:a:d-5:admission:1",
+            "neighbor02:b:d-5:unlock:s4:0",
+            "neighbor02:b:d-5:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "유나가 돌린 택배실 CCTV 캡처",
+      "description": "민규가 박스 더미 앞에 선 CCTV 정지 화면 1장 + 유나의 '남의 박스 앞에 선다' 문구. 전후 영상은 없어 맥락 판단이 불가하다.",
+      "type": "cctv",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "제출물은 캡처 1장 + 전달 메시지뿐. 전후 영상이 없어 행위 맥락을 확인할 수 없다.",
+        "check_metadata": "저장 시각 반상회 다음 날 오전. 유나 휴대폰 메신저 내보내기 기록과 시각 일치.",
+        "restore_context": "정지 화면 1장으로는 박스를 열었는지, 옮겼는지, 기다렸는지 구분 불가.",
+        "verify_source": "화면비·시간표시 형식이 단지 CCTV 시스템과 일치. 외부 합성 가능성 낮음.",
+        "check_edits": "유나가 덧붙인 문구 외 이미지 픽셀 자체에 조작·보정 흔적 없음.",
+        "question_acquisition": "공용 CCTV를 개인이 캡처·전송한 자료. 사생활 침해 및 2차 유포 문제 소지 큼."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "서유나에게: \"CCTV 캡처 무단 유포\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 서유나의 \"CCTV 캡처 무단 유포\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장민규에게: \"선확인 약속 쌍방 파기\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 장민규의 \"선확인 약속 쌍방 파기\" 쟁점과 관련된다. 장민규은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S1",
+            "multiplier": 1.18,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "M2",
+            "multiplier": 1.35,
+            "note": "오해가 굳기 전에 맥락을 뒤집는 창구."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "경비실 오배송 처리대장과 원본 CCTV 6분 영상",
+      "description": "택배실 원본 CCTV 6분 + 경비원 무전 메모. 민규가 박스를 열지 않고 선반만 옮긴 전 과정이 담겨 절도 의심을 반박한다.",
+      "type": "security_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "원본 6분 영상 + 대장에 박정호 경비원의 '오배송 이동 요청' 메모 확인.",
+        "check_metadata": "무전·CCTV·대장 기재 시각이 2분 이내로 맞물린다. 동일 이벤트로 신뢰 가능.",
+        "restore_context": "영상상 민규는 박스 개봉 없이 선반만 옮긴 뒤 3분 내 퇴장. 절도 행위 없음.",
+        "verify_source": "CCTV 저장 서버와 경비실 백업본 해시 일치. 원본 무결성 확인됨.",
+        "check_edits": "NVR 직출력 원본. 프레임 누락·이어붙이기 흔적 없음.",
+        "question_acquisition": "공식 보안기록으로 적법. 타 주민 택배 송장 정보는 마스킹 후 사용 원칙."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4",
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "M2",
+            "multiplier": 1.28,
+            "note": "오해가 굳기 전에 맥락을 뒤집는 창구."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "민규의 단체방·1:1 전달 캡처",
+      "description": "민규가 '307호 개봉투 냄새 또 난다'며 유나를 지목한 단체방·1:1 메시지 캡처. 14시간 내 같은 문구가 여러 대화방에 반복됐다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "단체방 내보내기 JSON + 1:1 채팅 캡처 세트 제출. 동일 문구 반복 확인 가능.",
+        "check_metadata": "반상회 종료 후 14시간 내 동일 문구가 단체방·1:1 다수 대화방에 반복 등장.",
+        "restore_context": "민규는 미확인 민원 표현을 사실로 단정해 전파. 관리사무소 확인 절차를 건너뛰었다.",
+        "verify_source": "발신 계정·전화번호가 민규 본인 확인. 대리 발송 가능성 없음.",
+        "check_edits": "상하 크롭 있으나 핵심 문장 '307호 개봉투 냄새'는 원본과 동일.",
+        "question_acquisition": "개인 대화 포함 자료. 제3자 이름·호수는 최소 노출 원칙 적용 필요."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "서유나에게: \"선확인 약속 쌍방 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 서유나의 \"선확인 약속 쌍방 파기\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장민규에게: \"악취 소문 무검증 전파\" 관련 해명 요구 (방어 동기: 복수심)",
+          "implication": "이 증거는 장민규의 \"악취 소문 무검증 전파\" 쟁점과 관련된다. 장민규은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S1",
+            "multiplier": 1.18,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S1",
+            "multiplier": 1.18,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "관리사무소 악취 민원 원문과 음식물수거 사고보고",
+      "description": "악취 민원 원문 + 찢어진 김치봉투 처리 사고보고서. 반려견 배변봉투는 현장에서 확인되지 않았다는 메모가 포함돼 있다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "민원 접수 원문 + 청소용역 사고보고서 원본 세트 제출. 악취 원인 추적 가능.",
+        "check_metadata": "악취 신고 시각이 유나 산책 시간과 불일치. 사고보고는 신고 20분 후 작성.",
+        "restore_context": "실제 악취 원인은 음식물수거통 옆 찢어진 김치봉투. 반려견 배변봉투는 미확인.",
+        "verify_source": "관리사무소 전산 기록과 청소용역 서명본 일치. 이중 확인 완료.",
+        "check_edits": "기관 전산 문서로 편집 이력 없음. 메모 추가 시각까지 기록돼 있다.",
+        "question_acquisition": "공동주택 민원 자료로 적법 확보. 세대 지목 표현 재유포는 제한."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "반상회 녹음 일부와 회의록 수정본",
+      "description": "최병규가 '공용질서를 흔드는 호수'라 호명한 반상회 녹음 3분 발췌본 + 표현을 순화한 회의록 수정본. 원본과 배포본의 차이가 드러난다.",
+      "type": "audio",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 18분 중 제출 발췌본은 문제 발언 전후 3분뿐. 전체 맥락 파악에 한계.",
+        "check_metadata": "녹음 파일 생성 시각이 회의록 배포본 작성보다 앞선다. 녹음이 1차 자료.",
+        "restore_context": "최병규가 공개석상에서 두 사람을 '공용질서를 흔드는 호수'로 묶어 호명한 장면이 담겨 있다.",
+        "verify_source": "참석자 2인의 개별 녹음과 발언 순서가 일치. 교차 검증 완료.",
+        "check_edits": "발췌본이라 단독 증거력은 약하나 음성 파형상 합성·이어붙이기 흔적 없음.",
+        "question_acquisition": "공개 회의 녹음으로 위법성 낮음. 참석자 음성 재유포 범위는 제한 필요."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S1",
+            "multiplier": 1.18,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "공용프린터 스풀 로그와 익명 전단 PDF",
+      "description": "익명 전단과 동일 문구·이미지의 임시 PDF가 최병규 계정으로 출력된 스풀 로그. 전단 부착 27분 전 출력 기록이 남아 있다.",
+      "type": "device_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "investigationResults": {
+        "request_original": "스풀 로그 원본 + 임시 PDF 해시값 + 출력 계정명 '최병규' 확인.",
+        "check_metadata": "출력 시각이 전단 부착보다 정확히 27분 앞선다. 제작→부착 동선이 성립.",
+        "restore_context": "PDF 내 반상회 발언과 민원 문구가 짜깁기돼 있어 우연한 중복 가능성은 극히 낮다.",
+        "verify_source": "행정주임 감사 기록과 프린터 서버 로그 일치. 최병규 계정 사용 확정.",
+        "check_edits": "서버 추출본에 삭제→복원 흔적은 있으나 PDF 본문 자체 조작은 없음.",
+        "question_acquisition": "기관 장비 로그로 적법 확보. 계정 접근 이력은 분쟁 해결 범위로만 한정 사용."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "corroborate",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          }
+        ]
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-5:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-5:surface:capture_spread_confirmed"
+      },
+      "uiLabel": "캡처 유포가 선확인 파기를 드러냄"
+    },
+    {
+      "id": "link:d-2:d-5:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-5:surface:odor_requote_confirmed"
+      },
+      "uiLabel": "악취 재전파가 약속 파기를 강화"
+    },
+    {
+      "id": "link:d-4:d-1:weakens_counter",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "M3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-1:motive:theft_frame_weakened"
+      },
+      "uiLabel": "절도 의심이 깨지면 캡처 명분도 약해짐"
+    },
+    {
+      "id": "link:d-3:d-5:unlocks_layer",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-5",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-5:core:third_party_context_opened",
+        "unlockLayer": {
+          "disputeId": "d-5",
+          "layer": "core"
+        }
+      },
+      "uiLabel": "배후가 따로 있어도 각자 전파 책임은 남음"
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:capture_route",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "neighbor02:a:d-1:unlock:s2:0",
+          "neighbor02:a:d-1:evidence:0",
+          "neighbor02:a:d-1:unlock:s3:0",
+          "neighbor02:a:d-1:motive:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "누구에게 보냈는지는 지금 세세히 말하고 싶지 않아요.",
+        "전달 경로는 다시 확인해 보고 답하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:odor_chain",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "neighbor02:b:d-2:unlock:s2:0",
+          "neighbor02:b:d-2:admission:0",
+          "neighbor02:b:d-2:unlock:s3:0",
+          "neighbor02:b:d-2:motive:0"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "전파 순서는 지금 한 번에 말하기 어렵습니다.",
+        "그 대화방 흐름은 다시 정리해야 해요."
+      ]
+    },
+    {
+      "id": "fq:d-3:leaflet_source",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "neighbor02:b:d-3:unlock:s2:0",
+          "neighbor02:b:d-3:evidence:0",
+          "neighbor02:b:d-3:unlock:s3:0",
+          "neighbor02:b:d-3:admission:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "배후 이름은 지금 단정적으로 말하고 싶지 않아요.",
+        "그 출처는 자료를 함께 놓고 말해야 합니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:box_context",
+      "intentTag": "context_probe",
+      "allowedAtStates": [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "neighbor02:a:d-4:unlock:s2:0",
+          "neighbor02:a:d-4:evidence:0",
+          "neighbor02:a:d-4:unlock:s3:0",
+          "neighbor02:a:d-4:motive:0"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 장면 맥락은 지금 짧게 못 박기 어렵습니다.",
+        "한 컷만으로는 설명이 부족해요."
+      ]
+    },
+    {
+      "id": "fq:d-5:promise_break",
+      "intentTag": "procedure_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "neighbor02:a:d-5:unlock:s2:0",
+          "neighbor02:a:d-5:admission:0",
+          "neighbor02:a:d-5:unlock:s3:0",
+          "neighbor02:a:d-5:responsibility:0"
+        ],
+        "preferredAngleTags": [
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "약속을 누가 먼저 깼는지는 감정 빼고 다시 말해야 합니다.",
+        "그 순서는 지금 바로 정리하기 어렵네요."
+      ]
+    },
+    {
+      "id": "fq:d-5:reputation_cost",
+      "intentTag": "emotion_check",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "neighbor02:b:d-5:unlock:s4:0",
+          "neighbor02:b:d-5:emotion:0",
+          "neighbor02:b:d-5:unlock:s5:0",
+          "neighbor02:b:d-5:admission:2"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "평판 얘기는 바로 꺼내기 어렵습니다.",
+        "그 부분은 아직 감정이 정리되지 않았어요."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-2"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+}

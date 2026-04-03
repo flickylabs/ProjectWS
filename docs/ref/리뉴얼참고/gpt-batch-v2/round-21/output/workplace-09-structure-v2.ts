@@ -1,0 +1,1075 @@
+export const workplace09StructureV2 = {
+  "caseId": "workplace-09",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "성급한 누설자 지목과 배제",
+      "summary": "사실확인 전 준석은 은채를 유출자로 의심해 후속 메일 참조에서 빼고, 팀 회의에서 '자료선이 틀어졌다'며 원인 제공자로 다뤘다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "참조 제거",
+        "자료선 이슈",
+        "후속 메일",
+        "누설자 취급",
+        "유은채",
+        "계정 배제"
+      ],
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "legitimacyIssue": false,
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "성급한 누설자 지목과 배제의 겉으로 드러난 흐름",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-09:a:d-1:act:0",
+            "workplace-09:b:d-1:act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "성급한 누설자 지목과 배제에 얽힌 이유와 방어",
+          "lockedSummary": "왜 그렇게 움직였는지는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-09:a:d-1:act:0",
+            "workplace-09:b:d-1:rule:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "성급한 누설자 지목과 배제의 최종 책임과 남는 상처",
+          "lockedSummary": "핵심 책임과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:core:emotion_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-09:a:d-1:context:2",
+            "workplace-09:b:d-1:harm:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "외부 파트너 통한 내부비난",
+      "summary": "은채는 결백 입증용으로 AE 강소라에게 내부 슬랙 캡처와 '팀장이 잘못 보낸 것 아니냐'는 DM을 보내며 외부에 내부 갈등을 노출했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "강소라 DM",
+        "슬랙 캡처",
+        "외부 확인",
+        "에이전시 AE",
+        "결백 확인",
+        "내부 책임 공방"
+      ],
+      "requiredEvidenceIds": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "legitimacyIssue": true,
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "외부 파트너 통한 내부비난의 겉으로 드러난 흐름",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-09:b:d-2:act:0",
+            "workplace-09:a:d-2:act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "외부 파트너 통한 내부비난에 얽힌 이유와 방어",
+          "lockedSummary": "왜 그렇게 움직였는지는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:identity_checked"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-09:b:d-2:self_justification:1",
+            "workplace-09:a:d-2:context:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "외부 파트너 통한 내부비난의 최종 책임과 남는 상처",
+          "lockedSummary": "핵심 책임과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:evidence_aired"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-09:b:d-2:motive:2",
+            "workplace-09:a:d-2:context:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "내부 준비자료 실제 유출 여부",
+      "summary": "거래처가 연 것은 클라이언트용 공유본과 AE 요약 메일이었다. 내부 준비자료가 거래처 도메인으로 열린 기록은 없다. '공유본'이라는 같은 이름을 다른 문서로 이해한 오해였다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "공유본_팔콘",
+        "중복 제목",
+        "열람 로그 PDF",
+        "문서 ID",
+        "클라이언트용 공유본",
+        "실제 유출 아님"
+      ],
+      "requiredEvidenceIds": [
+        "e-3",
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "legitimacyIssue": false,
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "내부 준비자료 실제 유출 여부의 겉으로 드러난 흐름",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-09:a:d-3:evidence:0",
+            "workplace-09:b:d-3:evidence:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "내부 준비자료 실제 유출 여부가 왜 오해로 굳어졌는지",
+          "lockedSummary": "왜 그렇게 움직였는지는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:misbelief_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-09:a:d-3:context:1",
+            "workplace-09:b:d-3:context:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "내부 준비자료 실제 유출 여부의 실제 사실선과 해소 지점",
+          "lockedSummary": "핵심 책임과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:misbelief_shaken"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-09:a:d-3:responsibility:5",
+            "workplace-09:b:d-3:emotion:5"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "weaponizes",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "겉보기 단서가 먼저 의심을 만든다.",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "오해를 사실처럼 붙잡고 방어한다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석이 말의 기준이 된다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "원본 맥락이 열리며 확신이 흔들린다.",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해가 걷히고 실제 사실선이 드러난다.",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "제목만 같은 \"공유본_팔콘\" 로그",
+          "문서 ID가 잘린 절삭 PDF",
+          "AE 요약 메일의 모호한 \"공유본\" 표현"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-5"
+        ],
+        "clarifyOutcomeLabel": "오해가 걷히고 실제 사실선이 드러난다."
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "선행 리스크 메모와 역할 축소",
+      "summary": "보안 확인 전 준석은 CRM에 은채를 '외부 커뮤니케이션 리스크'로 메모하고 계정 역할을 축소했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "CRM 메모",
+        "외부 커뮤니케이션 리스크",
+        "역할 축소",
+        "선행 리스크",
+        "계정 역할",
+        "보안 확인 전"
+      ],
+      "requiredEvidenceIds": [
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "legitimacyIssue": false,
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "선행 리스크 메모와 역할 축소의 겉으로 드러난 흐름",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-09:a:d-4:act:0",
+            "workplace-09:b:d-4:act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "선행 리스크 메모와 역할 축소에 얽힌 이유와 방어",
+          "lockedSummary": "왜 그렇게 움직였는지는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-09:a:d-4:motive:3",
+            "workplace-09:b:d-4:responsibility:4"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "선행 리스크 메모와 역할 축소가 본건의 책임선을 어떻게 바꾸는지",
+          "lockedSummary": "핵심 책임과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-09:a:d-4:motive:3",
+            "workplace-09:b:d-4:evidence:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "제3자 통한 쌍방 추측전",
+      "summary": "준석은 거래처에 '자료관리 이슈' 뉘앙스를 풍기고, 은채는 AE에게 내부 책임 소재를 암시 — 쌍방이 제3자를 통해 추측전을 벌였다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "자료관리 이슈",
+        "제3자 추측전",
+        "거래처 뉘앙스",
+        "AE 암시",
+        "외부 반응 탐색",
+        "먼저 깬 쪽"
+      ],
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "legitimacyIssue": false,
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "제3자 통한 쌍방 추측전의 겉으로 드러난 흐름",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-09:a:d-5:act:0",
+            "workplace-09:b:d-5:act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "제3자 통한 쌍방 추측전에 얽힌 이유와 방어",
+          "lockedSummary": "왜 그렇게 움직였는지는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:context_checked"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-09:a:d-5:context:1",
+            "workplace-09:b:d-5:act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "제3자 통한 쌍방 추측전가 본건의 책임선을 어떻게 바꾸는지",
+          "lockedSummary": "핵심 책임과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:motive_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-09:a:d-5:motive:2",
+            "workplace-09:b:d-5:motive:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-5:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-5:surface:first_breach_enabled"
+      },
+      "uiLabel": "먼저 외부로 샌 뉘앙스"
+    },
+    {
+      "id": "link:d-3:d-1:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "counterPenalty": 10,
+        "grantFlag": "d-1:core:misbelief_broken"
+      },
+      "uiLabel": "유출 오해 붕괴"
+    },
+    {
+      "id": "link:d-4:d-5:retaliation",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-5:motive:retaliation_visible"
+      },
+      "uiLabel": "선행 메모의 반작용"
+    },
+    {
+      "id": "link:d-2:d-3:unlocks_layer",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-3",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "unlockLayer": "core",
+        "grantFlag": "d-3:motive:external_probe_seen"
+      },
+      "uiLabel": "외부 확인이 오해를 키움"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "거래처 후속 이메일 체인과 계정 회의록",
+      "description": "은채를 참조에서 뺀 후속 메일과 '자료선 관리가 틀어졌다'는 회의 발언이 담긴 이메일 체인·회의록.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약이 아니라 거래처 체인 전체와 회의록 초안·확정본을 같이 열어야 한다.",
+        "check_metadata": "미팅 종료 2시간 내 은채 참조 제거 메일 발송, 같은 저녁 회의록에 '자료선 이슈' 추가.",
+        "restore_context": "이름은 없지만 참조 제거와 회의 발언이 이어져 은채를 원인으로 보는 흐름이 형성됐다.",
+        "verify_source": "메일 서버 아카이브와 회의록 버전 이력이 동일 타임라인.",
+        "check_edits": "기관 원본·버전 로그 — 사후 편집 흔적 없음.",
+        "question_acquisition": "거래처 응대·계정 운영 기록 — 조사 목적 적법 열람."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "송준석에게: \"성급한 누설자 지목과 배제\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 송준석의 \"성급한 누설자 지목과 배제\" 쟁점과 관련된다. 송준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "유은채에게: \"제3자 통한 쌍방 추측전\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 유은채의 \"제3자 통한 쌍방 추측전\" 쟁점과 관련된다. 유은채은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "앞서 나온 말과 실제 흐름을 맞대기 좋다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "앞서 나온 말과 실제 흐름을 맞대기 좋다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "은채의 에이전시 AE DM과 내부 화면 캡처",
+      "description": "은채가 AE 강소라에게 보낸 DM과 내부 슬랙 화면 캡처. 결백 확인용이라 주장하지만 내부 갈등이 외부에 노출됐다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "캡처뿐 아니라 DM 내보내기 원본과 전후 메시지까지 확인해야 한다.",
+        "check_metadata": "참조 제거 직후 은채가 강소라에게 슬랙 캡처를 보내며 발송 주체를 물은 기록이 남아 있다.",
+        "restore_context": "'결백 확인'이라 주장하지만 외부 파트너에게 내부 책임 공방을 노출한 점은 분명하다.",
+        "verify_source": "강소라 수신 단말과 은채 전송 파일명 일치.",
+        "check_edits": "본문 변조 없으나 앞뒤 맥락이 잘려 있어 강도 판단은 별도 복원 필요.",
+        "question_acquisition": "사적 단말 캡처 포함 — 수신자·화면 범위 최소 공개."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "identity",
+          "emotion"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.22,
+            "note": "보낸 대상과 감정의 결을 함께 흔들 수 있다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.22,
+            "note": "보낸 대상과 감정의 결을 함께 흔들 수 있다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "준석이 제출한 '공유본_팔콘' 열람 로그 PDF",
+      "description": "클라이언트 도메인의 '공유본_팔콘' 열람 로그 PDF. 유출처럼 보이지만 문서 ID와 경로가 잘려 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "PDF 발췌가 아니라 문서 ID·링크 해시·권한맵 포함 원본 추출본을 함께 봐야 한다.",
+        "check_metadata": "제목만 보이고 ID·경로가 잘려 있어 어떤 '공유본_팔콘'인지 단독 구별 불가.",
+        "restore_context": "같은 제목 문서가 2개 이상 — 이것만으론 내부본인지 클라이언트용인지 판단 불가.",
+        "verify_source": "플랫폼 형식과 비슷하지만 관리자 출력 레이아웃과 열 구성이 달라 별도 확인 필요.",
+        "check_edits": "변조 없으나 선택적 절삭·강조로 유출 프레임이 과장돼 있다.",
+        "question_acquisition": "준석 자발 제출 — 입수 적법하지만 완전성은 별도 검증 필요."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "송준석에게: \"내부 준비자료 실제 유출 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 송준석의 \"내부 준비자료 실제 유출 여부\" 쟁점과 관련된다. 송준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "유은채에게: \"내부 준비자료 실제 유출 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 유은채의 \"내부 준비자료 실제 유출 여부\" 쟁점과 관련된다. 유은채은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.4,
+            "note": "잘린 자료나 요약 프레임을 걷어낼 때 효율이 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "협업드라이브 링크 맵과 중복 제목 문서 버전 이력",
+      "description": "같은 제목 두 문서의 ID·권한·생성 경로를 구분한 원본 로그. 거래처가 연 것은 클라이언트용이었음을 보여 준다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "요약이 아니라 문서 ID별 권한 테이블과 버전 이력을 같이 열어야 한다.",
+        "check_metadata": "클라이언트가 연 것은 외부 권한이 열린 클라이언트용. 내부 준비본은 같은 제목이지만 외부 접근 기록 0건.",
+        "restore_context": "같은 제목만 보고 양측이 다른 문서를 두고 같은 사건이라 오해한 구조가 드러난다.",
+        "verify_source": "관리자 콘솔과 추출 CSV가 동일 문서 ID 매핑을 보여 준다.",
+        "check_edits": "관리자 원본 추출본 — 사후 편집 흔적 없음.",
+        "question_acquisition": "협업툴 감사 로그 — 보안조사 범위 내 적법 열람."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "송준석에게: \"내부 준비자료 실제 유출 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 송준석의 \"내부 준비자료 실제 유출 여부\" 쟁점과 관련된다. 송준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "유은채에게: \"내부 준비자료 실제 유출 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 유은채의 \"내부 준비자료 실제 유출 여부\" 쟁점과 관련된다. 유은채은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "원본 로그나 기관 기록으로 방어 문장을 짧게 끊을 수 있다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "에이전시 AE 후속 메일과 거래처 회의요약",
+      "description": "AE 후속 메일과 회의요약. '팔콘 가격가드'는 미팅 중 구두 설명을 AE가 정리한 표현이었음을 보여 준다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "강소라 발신 원문과 고객 수신본을 함께 대조해야 한다.",
+        "check_metadata": "'팔콘 가격가드'는 준석이 미팅에서 구두로 설명한 것을 강소라가 정리한 문장으로 남아 있다.",
+        "restore_context": "문서 유출이 아니라 미팅 구두 설명과 AE 요약을 통해 유사 표현이 퍼진 구조가 드러난다.",
+        "verify_source": "강소라 발신 헤더와 거래처 수신 사본이 동일 메시지 ID.",
+        "check_edits": "제3자 메일 원본 — 사후 편집 흔적 없음.",
+        "question_acquisition": "외부 파트너 자발 제출 — 적법하지만 거래처 민감 표현 제한 사용."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "송준석에게: \"내부 준비자료 실제 유출 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 송준석의 \"내부 준비자료 실제 유출 여부\" 쟁점과 관련된다. 송준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "유은채에게: \"내부 준비자료 실제 유출 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 유은채의 \"내부 준비자료 실제 유출 여부\" 쟁점과 관련된다. 유은채은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S1",
+            "multiplier": 1.25,
+            "note": "앞서 나온 말과 실제 흐름을 맞대기 좋다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "CRM 역할 변경 로그와 준석의 리스크 메모",
+      "description": "준석이 은채 계정 역할을 축소하고 '외부 커뮤니케이션 리스크'를 비공개 메모로 남긴 CRM 기록.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "현재 화면뿐 아니라 역할 변경 이력과 메모 최초 입력본을 함께 확인해야 한다.",
+        "check_metadata": "유출 확인 전 준석 계정에서 은채 미팅 권한 축소와 리스크 메모가 먼저 입력됐다.",
+        "restore_context": "계정 보호 명분과 별개로 선행 낙인·역할 배제가 먼저 작동한 흐름이 드러난다.",
+        "verify_source": "CRM 감사 로그와 인사 메모 타임스탬프 동일 순서.",
+        "check_edits": "초기본·수정본 모두 남아 사후 미화 여부 구분 가능.",
+        "question_acquisition": "인사·영업 자료 — 분쟁 해결 목적 외 공개 제한."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "원본 로그나 기관 기록으로 방어 문장을 짧게 끊을 수 있다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "원본 로그나 기관 기록으로 방어 문장을 짧게 끊을 수 있다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:reference_order",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "workplace-09:a:d-1:act:0",
+          "workplace-09:a:d-1:timeline:1"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 순서를 길게 풀고 싶지 않습니다.",
+        "시점을 다 펼치면 제 판단이 먼저 드러납니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:risk_reason",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "workplace-09:a:d-1:context:2",
+          "workplace-09:a:d-1:motive:3"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "그 이유를 바로 말하면 제 속내가 먼저 열립니다.",
+        "동기까지는 아직 정리해서 말하고 싶지 않습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:dm_recipient",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "workplace-09:b:d-2:act:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 대상을 특정해 말하고 싶지 않습니다.",
+        "이름을 바로 꺼내면 다른 해명까지 엮입니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:role_change_reason",
+      "intentTag": "responsibility_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "workplace-09:a:d-4:act:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "책임 표현으로 바로 묶는 건 아직 받아들이기 어렵습니다.",
+        "그 부분은 평가처럼 들려 지금은 답을 줄이겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:third_party_reason",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "workplace-09:a:d-5:context:1",
+          "workplace-09:a:d-5:relationship:3"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "배경을 다 펼치면 다른 사람 이야기까지 함께 나옵니다.",
+        "상황 맥락은 아직 조심스럽습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:why_not_internal",
+      "intentTag": "emotion_check",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "workplace-09:b:d-5:motive:2"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "감정부터 말하면 제가 더 무너질 것 같습니다.",
+        "그 감정은 지금 꺼내기 어렵습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "evidence_closer",
+      "trap_chaser",
+      "rapport_heavy"
+    ]
+  },
+  "proposedUnlockAtoms": []
+};

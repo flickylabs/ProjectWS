@@ -1,0 +1,1005 @@
+{
+  "caseId": "neighbor-06",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "세영의 보전금 은닉과 과다 청구",
+      "disputeKind": "core_truth",
+      "weight": "high",
+      "mediationLink": "비용정산",
+      "legitimacyIssue": false,
+      "requiredEvidence": [
+        "e-1",
+        "e-3"
+      ],
+      "judgmentStatement": "세영은 9만원을 요구했다.",
+      "disputeAliases": [
+        "9만원",
+        "18만원 견적",
+        "보전금 6만원",
+        "최종 계산서",
+        "과다 청구",
+        "계좌 요청"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "누가 무엇을 먼저 했는지가 겉으로 드러납니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor06:a:d-1:act:0",
+            "neighbor06:a:d-1:evidence:0",
+            "neighbor06:b:d-1:evidence:0",
+            "neighbor06:b:d-1:counter:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "행동을 정당화하거나 되갚고 싶어 한 이유가 드러납니다.",
+          "lockedSummary": "왜 그 행동에 집착했는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor06:a:d-1:counter:0",
+            "neighbor06:a:d-1:admission:0",
+            "neighbor06:a:d-1:self_justification:1",
+            "neighbor06:b:d-1:responsibility:0",
+            "neighbor06:b:d-1:counter:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "감정 비용과 핵심 책임선이 함께 정리됩니다.",
+          "lockedSummary": "감정 비용과 핵심 책임선은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor06:a:d-1:emotion:0",
+            "neighbor06:a:d-1:shame:0",
+            "neighbor06:b:d-1:emotion:0",
+            "neighbor06:b:d-1:evidence:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "인호의 문받침 사용과 공동 책임",
+      "disputeKind": "core_truth",
+      "weight": "medium",
+      "mediationLink": "공동책임정리",
+      "legitimacyIssue": false,
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "judgmentStatement": "인호는 방화문을 반복 사용했다.",
+      "disputeAliases": [
+        "접이식 카트",
+        "꽃 손수레",
+        "문받침",
+        "공동 책임",
+        "3주 사용",
+        "인호 카트"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "누가 무엇을 먼저 했는지가 겉으로 드러납니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor06:a:d-2:counter:0",
+            "neighbor06:a:d-2:evidence:0",
+            "neighbor06:b:d-2:denial:0",
+            "neighbor06:b:d-2:uncertainty:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "행동을 정당화하거나 되갚고 싶어 한 이유가 드러납니다.",
+          "lockedSummary": "왜 그 행동에 집착했는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor06:a:d-2:context:0",
+            "neighbor06:a:d-2:counter:2",
+            "neighbor06:b:d-2:counter:1",
+            "neighbor06:b:d-2:counter:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "감정 비용과 핵심 책임선이 함께 정리됩니다.",
+          "lockedSummary": "감정 비용과 핵심 책임선은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor06:a:d-2:emotion:0",
+            "neighbor06:a:d-2:admission:1",
+            "neighbor06:b:d-2:emotion:0",
+            "neighbor06:b:d-2:admission:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "고장은 세영 손수레 단독 책임인가",
+      "disputeKind": "shared_misconception",
+      "weight": "high",
+      "mediationLink": "공동책임정리",
+      "legitimacyIssue": false,
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "judgmentStatement": "고장은 세영과 인호의 공동 과실이다.",
+      "disputeAliases": [
+        "단독 책임",
+        "도어클로저",
+        "오일 누유",
+        "암 휨",
+        "반복 압력",
+        "공동 과실"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "서로가 사실이라 믿은 전제가 흔들리기 시작합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor06:a:d-3:context:0",
+            "neighbor06:a:d-3:uncertainty:0",
+            "neighbor06:b:d-3:denial:0",
+            "neighbor06:b:d-3:counter:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 잘못된 전제를 끝까지 붙잡았는지 보입니다.",
+          "lockedSummary": "왜 그 행동에 집착했는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor06:a:d-3:counter:2",
+            "neighbor06:a:d-3:denial:1",
+            "neighbor06:b:d-3:context:0",
+            "neighbor06:b:d-3:counter:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "오해를 끝내는 기록과 후폭풍이 하나로 묶입니다.",
+          "lockedSummary": "감정 비용과 핵심 책임선은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor06:a:d-3:emotion:0",
+            "neighbor06:a:d-3:harm:0",
+            "neighbor06:b:d-3:emotion:0",
+            "neighbor06:b:d-3:admission:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "겉보기 정황만 붙잡는다",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어와 단정이 함께 올라온다",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석이 굳어진다",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "기록 앞에서 확신이 흔들린다",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해를 접고 정리 국면으로 간다",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "문이 원래 안 좋았다는 말이 단독 책임 회피로 섞인다",
+          "짧은 사용이었다는 표현이 반복 횟수를 가린다"
+        ],
+        "truthExitEvidenceIds": [
+          "e-2",
+          "e-4"
+        ],
+        "clarifyOutcomeLabel": "오해를 접고 정리 국면으로 간다"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "실제 주민 부담액과 세대별 분담액",
+      "disputeKind": "sub_truth",
+      "weight": "high",
+      "mediationLink": "비용정산",
+      "legitimacyIssue": false,
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "judgmentStatement": "주민 부담액은 12만원이다.",
+      "disputeAliases": [
+        "주민 부담 12만원",
+        "세대당 6만원",
+        "보전 전표",
+        "공식 정산",
+        "최종 수리비"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "주요 갈등을 키운 주변 사실과 순서가 보입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor06:a:d-4:context:0",
+            "neighbor06:a:d-4:uncertainty:0",
+            "neighbor06:b:d-4:rule:0",
+            "neighbor06:b:d-4:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "절차와 관계 맥락이 왜 흔들렸는지 보입니다.",
+          "lockedSummary": "왜 그 행동에 집착했는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor06:a:d-4:counter:0",
+            "neighbor06:a:d-4:self_justification:1",
+            "neighbor06:b:d-4:counter:0",
+            "neighbor06:b:d-4:emotion:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "재발 방지 규칙과 책임의 경계가 또렷해집니다.",
+          "lockedSummary": "감정 비용과 핵심 책임선은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor06:a:d-4:emotion:0",
+            "neighbor06:a:d-4:fear:0",
+            "neighbor06:b:d-4:emotion:1",
+            "neighbor06:b:d-4:admission:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "계산서 확인 전 송금 압박·지급 거부",
+      "disputeKind": "sub_truth",
+      "weight": "medium",
+      "mediationLink": "중재절차",
+      "legitimacyIssue": false,
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "judgmentStatement": "세영은 송금을 요구했고 인호는 거부했다.",
+      "disputeAliases": [
+        "계산서 확인 후 분담",
+        "송금 압박",
+        "전액 거부",
+        "작년 약속",
+        "정산 절차"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "주요 갈등을 키운 주변 사실과 순서가 보입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor06:a:d-5:act:0",
+            "neighbor06:a:d-5:timeline:0",
+            "neighbor06:b:d-5:timeline:0",
+            "neighbor06:b:d-5:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "절차와 관계 맥락이 왜 흔들렸는지 보입니다.",
+          "lockedSummary": "왜 그 행동에 집착했는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor06:a:d-5:motive:0",
+            "neighbor06:a:d-5:counter:0",
+            "neighbor06:b:d-5:fear:0",
+            "neighbor06:b:d-5:counter:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "재발 방지 규칙과 책임의 경계가 또렷해집니다.",
+          "lockedSummary": "감정 비용과 핵심 책임선은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor06:a:d-5:emotion:0",
+            "neighbor06:a:d-5:responsibility:0",
+            "neighbor06:b:d-5:emotion:0",
+            "neighbor06:b:d-5:admission:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-4:d-1:weakens_counter",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 14,
+        "grantFlag": "d-1:surface:official_amount_fixed"
+      },
+      "uiLabel": "공식 분담액 확정"
+    },
+    {
+      "id": "link:d-2:d-3:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-3",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-3:surface:joint_use_seen"
+      },
+      "uiLabel": "양측 문받침"
+    },
+    {
+      "id": "link:d-5:d-1:supports",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-1",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-1:motive:procedure_bypassed"
+      },
+      "uiLabel": "정산 절차 선행"
+    },
+    {
+      "id": "link:d-3:d-4:unlocks_layer",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-4",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-4:core:joint_fault_split_ready"
+      },
+      "uiLabel": "공동과실 전제"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "세영의 계좌요청 문자와 수리견적 캡처",
+      "description": "세영이 보낸 '9만원 송금 요청' 문자와 보전 전 18만원 견적 캡처. 보전금 적용 후 최종 계산서는 빠져 있다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-1의 전제를 걷어내는 창구"
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "d-5의 전제를 걷어내는 창구"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "3층 공동복도 CCTV 요약본",
+      "description": "3주간 CCTV 요약본. 세영 손수레 6회, 인호 카트 5회 — 양쪽 모두 반복적으로 방화문을 받쳐 고정한 장면이 담겨 있다.",
+      "type": "cctv",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "timing": {
+        "intent": "corroborate",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-2의 전제를 걷어내는 창구"
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "d-3의 전제를 걷어내는 창구"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "최종 수리계산서와 관리사무소 보전금 전표",
+      "description": "관리사무소 공식 정산서. 수리비 18만원 - 보전금 6만원 = 주민 부담 12만원. 세영이 보낸 견적과 3만원 차이가 난다.",
+      "type": "repair_record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "d-1의 전제를 확정하는 창구"
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S3",
+            "multiplier": 1.2,
+            "note": "d-4의 전제를 확정하는 창구"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "박영수 기사 점검보고서",
+      "description": "수리기사 점검보고서. 도어클로저 암 휨과 오일 누유는 일회성 충격이 아닌 반복 문받침 압력으로 누적됐다고 기록돼 있다.",
+      "type": "inspection_report",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "timing": {
+        "intent": "corroborate",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-2의 전제를 걷어내는 창구"
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "d-3의 전제를 걷어내는 창구"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "지난해 공용수리 정산 약속 대화와 이번 통화 순서표",
+      "description": "지난해 합의 대화 원문과 이번 사건 통화 순서표. 송금 요구가 최종 계산서 공지보다 앞서 있어 절차 위반 순서가 드러난다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "d-5의 전제를 확정하는 창구"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "층주민 진술과 소음 민원 메모",
+      "description": "층 주민 이수경의 진술과 소음 민원 메모. 수리 직전 2주간 3건의 소음 접수가 기록돼 문제의 누적을 뒷받침한다.",
+      "type": "complaint_log",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-2의 전제를 걷어내는 창구"
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "d-3의 전제를 걷어내는 창구"
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:timeline_check",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "neighbor06:a:d-1:evidence:0",
+          "neighbor06:b:d-1:evidence:1"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 바로 한 줄로 답하기 어렵습니다.",
+        "조금 더 확인된 뒤에야 그 부분은 분명히 말할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:identity_check",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "neighbor06:a:d-4:evidence:0",
+          "neighbor06:b:d-4:evidence:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 바로 한 줄로 답하기 어렵습니다.",
+        "조금 더 확인된 뒤에야 그 부분은 분명히 말할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:responsibility_check",
+      "intentTag": "responsibility_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "neighbor06:a:d-2:context:0",
+          "neighbor06:b:d-2:counter:1"
+        ],
+        "preferredAngleTags": [
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 바로 한 줄로 답하기 어렵습니다.",
+        "조금 더 확인된 뒤에야 그 부분은 분명히 말할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:rule_check",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "neighbor06:a:d-5:admission:0",
+          "neighbor06:b:d-5:admission:1"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 바로 한 줄로 답하기 어렵습니다.",
+        "조금 더 확인된 뒤에야 그 부분은 분명히 말할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:motive_probe",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "neighbor06:a:d-3:emotion:0",
+          "neighbor06:b:d-3:denial:1"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 바로 한 줄로 답하기 어렵습니다.",
+        "조금 더 확인된 뒤에야 그 부분은 분명히 말할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:emotion_probe",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "neighbor06:a:d-1:emotion:0",
+          "neighbor06:b:d-1:emotion:0"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 바로 한 줄로 답하기 어렵습니다.",
+        "조금 더 확인된 뒤에야 그 부분은 분명히 말할 수 있습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-2"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "evidence_closer",
+      "rapport_heavy",
+      "rule_literal"
+    ]
+  },
+  "proposedUnlockAtoms": []
+}

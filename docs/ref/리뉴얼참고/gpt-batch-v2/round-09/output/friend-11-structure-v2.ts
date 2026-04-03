@@ -1,0 +1,2658 @@
+export const friend_11_structure_v2 = {
+  "caseId": "friend-11",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "준석의 일방적 접근 차단과 공유 프로필 정리",
+      "summary": "준석은 무단 관리자 변경을 확인한 뒤 민우의 기기 접근을 끊고 공유 프로필을 초기화했으며, 그 과정에서 사전 설명은 거의 하지 않았다.",
+      "requiredEvidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "weight": "high",
+      "ambiguity": "low",
+      "mediationLink": "접근권재설정",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준석은 민우의 접근을 차단했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "접근차단",
+        "프로필초기화",
+        "로그인실패",
+        "복구신청",
+        "기기차단",
+        "사전설명",
+        "보안조치"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉으로 드러난 실행과 부인의 모양이 보인다.",
+          "lockedSummary": "겉으로 드러난 실행선만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend11:b:d-1:s0:denial:0",
+            "friend11:b:d-1:s0:denial:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 이 행동을 택했는지와 누구를 겨냥했는지가 드러난다.",
+          "lockedSummary": "왜 그런 선택이 겹쳤는지는 아직 보이지 않습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend11:b:d-1:s2:admission:0",
+            "friend11:b:d-1:s2:admission:1",
+            "friend11:b:d-1:s3:admission:0",
+            "friend11:b:d-1:s3:emotion:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "행동, 판단, 사후 책임선이 어떻게 맞물렸는지가 드러난다.",
+          "lockedSummary": "관계와 책임이 얽힌 핵심 구조는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "friend11:b:d-1:s4:emotion:0",
+            "friend11:b:d-1:s4:self_justification:1",
+            "friend11:b:d-1:s4:harm:2",
+            "friend11:b:d-1:s5:admission:0",
+            "friend11:b:d-1:s5:admission:1",
+            "friend11:b:d-1:s5:admission:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "민우의 개인정보 무단 재사용과 관리자 메일 변경",
+      "summary": "민우는 예전에 일회성으로 받았던 준석의 본인확인 정보와 청구지 캡처를 삭제하지 않고 보관했다가 가족요금제 재인증에 다시 사용해 주 관리자 메일을 자기 것으로 바꿨다.",
+      "requiredEvidenceIds": [
+        "e-2",
+        "e-3",
+        "e-4"
+      ],
+      "weight": "high",
+      "ambiguity": "none",
+      "mediationLink": "개인정보경계",
+      "legitimacyIssue": true,
+      "judgmentStatement": "민우는 개인정보를 무단 재사용했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "재인증",
+        "청구지캡처",
+        "생년월일",
+        "본인확인정보",
+        "주관리자메일",
+        "무단재사용",
+        "민우기기"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉으로 드러난 실행과 부인의 모양이 보인다.",
+          "lockedSummary": "겉으로 드러난 실행선만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend11:a:d-2:s0:denial:0",
+            "friend11:a:d-2:s0:act:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 이 행동을 택했는지와 누구를 겨냥했는지가 드러난다.",
+          "lockedSummary": "왜 그런 선택이 겹쳤는지는 아직 보이지 않습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend11:a:d-2:s2:admission:0",
+            "friend11:a:d-2:s2:self_justification:1",
+            "friend11:a:d-2:s3:admission:0",
+            "friend11:a:d-2:s3:motive:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "행동, 판단, 사후 책임선이 어떻게 맞물렸는지가 드러난다.",
+          "lockedSummary": "관계와 책임이 얽힌 핵심 구조는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "friend11:a:d-2:s4:fear:0",
+            "friend11:a:d-2:s4:shame:1",
+            "friend11:a:d-2:s4:relationship:2",
+            "friend11:a:d-2:s5:admission:0",
+            "friend11:a:d-2:s5:admission:1",
+            "friend11:a:d-2:s5:responsibility:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "계정 탈취의 출발점은 준석의 선공 독점이었는가",
+      "summary": "민우가 본 잠금 화면과 차단 결과만으로는 준석의 선공처럼 보였지만, 실제 출발점은 민우가 먼저 본인확인 정보를 무단 재사용해 관리자 구조를 바꾼 행동이었다.",
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-3",
+        "e-4"
+      ],
+      "weight": "high",
+      "ambiguity": "low",
+      "mediationLink": "접근권재설정",
+      "legitimacyIssue": true,
+      "judgmentStatement": "민우의 무단 재사용이 출발점이다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "선공독점",
+        "잠금캡처",
+        "보안로그",
+        "관리자구조변경",
+        "친구방캡처",
+        "먼저튀김"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉보기엔 그럴듯한 오해의 모양이 보인다.",
+          "lockedSummary": "지금은 오해의 껍데기만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend11:a:d-3:s0:denial:0",
+            "friend11:b:d-3:s0:timeline:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 둘 다 그 오해를 붙잡았는지 드러난다.",
+          "lockedSummary": "왜 이 오해가 굳었는지는 아직 보이지 않습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              },
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend11:a:d-3:s2:admission:0",
+            "friend11:a:d-3:s2:admission:1",
+            "friend11:b:d-3:s2:timeline:0",
+            "friend11:b:d-3:s2:act:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "오해를 벗기면 실제 책임 배치가 드러난다.",
+          "lockedSummary": "오해 뒤의 실제 구조는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              },
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:misbelief_shaken"
+            ]
+          },
+          "revealAtomIds": [
+            "friend11:a:d-3:s4:shame:0",
+            "friend11:a:d-3:s4:self_justification:1",
+            "friend11:a:d-3:s4:relationship:2",
+            "friend11:b:d-3:s4:admission:0",
+            "friend11:b:d-3:s4:responsibility:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "weaponizes",
+          "b": "knows"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "잠금 화면만 보면 준석 선공처럼 보인다.",
+          "친구방 캡처가 앞선 재인증 맥락을 잘라낸다.",
+          "복구 직후 설명 공백이 선공 프레임을 굳힌다."
+        ],
+        "truthExitEvidenceIds": [
+          "e-3",
+          "e-4",
+          "e-5"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "작년 '일회성 본인확인 후 삭제' 규칙의 파기",
+      "summary": "둘은 본인확인 정보는 일회성으로만 쓰고 지우기로 했지만, 민우는 이를 보관·재사용했고 준석도 보안 문제를 감정적으로 처리하며 같은 채팅방 공유 원칙을 지키지 않았다.",
+      "requiredEvidenceIds": [
+        "e-2",
+        "e-5"
+      ],
+      "weight": "medium",
+      "ambiguity": "none",
+      "mediationLink": "개인정보경계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "민우는 본인확인 정보를 재사용했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "한번만쓰고지운다",
+        "삭제합의",
+        "같은채팅방",
+        "보안경계",
+        "규칙파기",
+        "감정처리"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "앞뒤 맥락과 후속 조치의 겉면이 보인다.",
+          "lockedSummary": "주변 맥락은 아직 흐릿합니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend11:a:d-4:s0:rule:0",
+            "friend11:a:d-4:s0:denial:1",
+            "friend11:b:d-4:s0:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "체면, 관계, 불안이 왜 개입했는지 드러난다.",
+          "lockedSummary": "왜 그 맥락이 중요해졌는지는 아직 보이지 않습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend11:a:d-4:s2:admission:0",
+            "friend11:a:d-4:s2:admission:1",
+            "friend11:a:d-4:s3:motive:0",
+            "friend11:a:d-4:s3:rule:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "주요 쟁점을 지탱하거나 흔드는 연결 구조가 드러난다.",
+          "lockedSummary": "연결된 책임 구조는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:context_open"
+            ]
+          },
+          "revealAtomIds": [
+            "friend11:a:d-4:s4:shame:0",
+            "friend11:a:d-4:s4:legacy_sentence:1",
+            "friend11:a:d-4:s4:fear:2",
+            "friend11:b:d-4:s4:shame:0",
+            "friend11:b:d-4:s4:fear:1",
+            "friend11:b:d-4:s4:self_justification:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "사라진 시즌패스 아이템과 저장 파일은 준석이 가져간 것인가",
+      "summary": "민우가 도난이라고 여긴 일부 시즌패스와 저장 슬롯은 준석이 가져간 것이 아니라, 서비스의 프로필 복원·아이템 재귀속과 일부 자동 환불 과정에서 원계정으로 이동하거나 환불 처리된 것이었다.",
+      "requiredEvidenceIds": [
+        "e-6"
+      ],
+      "weight": "high",
+      "ambiguity": "low",
+      "mediationLink": "공유정산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준석이 시즌패스 아이템을 가져가지 않았다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "시즌패스",
+        "저장슬롯",
+        "아이템이전",
+        "재귀속",
+        "자동환불",
+        "도난아님",
+        "복원보고서"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "주목을 빼앗는 가짜 쟁점의 외형이 보인다.",
+          "lockedSummary": "눈길을 빼앗는 가짜 쟁점만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend11:a:d-5:s0:denial:0",
+            "friend11:b:d-5:s0:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 이 가짜 쟁점이 쉽게 믿어졌는지 드러난다.",
+          "lockedSummary": "왜 이 쟁점이 크게 보였는지는 아직 모릅니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              },
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend11:a:d-5:s2:admission:0",
+            "friend11:a:d-5:s2:institution:1",
+            "friend11:b:d-5:s2:institution:0",
+            "friend11:b:d-5:s2:counter:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "가짜 쟁점을 걷어내야 본래 핵심이 드러난다.",
+          "lockedSummary": "본래 핵심은 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              },
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:misbelief_shaken"
+            ]
+          },
+          "revealAtomIds": [
+            "friend11:a:d-5:s4:emotion:0",
+            "friend11:a:d-5:s4:admission:1",
+            "friend11:a:d-5:s4:self_justification:2",
+            "friend11:b:d-5:s4:shame:0",
+            "friend11:b:d-5:s4:responsibility:1",
+            "friend11:b:d-5:s4:context:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "knows"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "빈 슬롯과 사라진 시즌패스만 보면 절취처럼 보인다.",
+          "복원·환불 보고서를 보기 전에는 재귀속 과정을 오해하기 쉽다."
+        ],
+        "truthExitEvidenceIds": [
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-2:d-3:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-3",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-3:surface:reauth_seen"
+      },
+      "uiLabel": "재인증이 실제 출발점"
+    },
+    {
+      "id": "link:d-1:d-3:retaliation",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-3",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-3:surface:lockout_result_seen"
+      },
+      "uiLabel": "차단 결과가 선공처럼 보임"
+    },
+    {
+      "id": "link:d-4:d-2:unlocks_layer",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-2",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-2:core:rule_breach_seen"
+      },
+      "uiLabel": "삭제 규칙 파기가 핵심"
+    },
+    {
+      "id": "link:d-5:d-1:weakens_counter",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-1:core:item_theft_weakened"
+      },
+      "uiLabel": "도난 오해가 접근 차단과 분리됨"
+    },
+    {
+      "id": "link:d-3:d-5:unlocks_layer",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-5",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S3",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-5:surface:misread_flow_seen"
+      },
+      "uiLabel": "선공 오해가 도난 오해로 번짐"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "민우가 공통 친구 방에 올린 로그인 차단 캡처",
+      "description": "로그인 실패 알림과 사라진 프로필 화면만 보이는 민우의 캡처다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": true,
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "잘린 첫 인상이 굳기 전에 제시할수록 오해를 빨리 걷어낸다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "작년 일회성 본인확인 합의 카톡과 결제 메모",
+      "description": "성인등급 게임 구매와 콘솔 번들 결제를 위해 준석 정보는 한 번만 쓰고 지운다고 약속한 카카오톡 원본과 메모다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "motive_search",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "말의 순서와 뉘앙스를 비교해 책임선을 좁히는 데 유리하다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "구독 서비스 보안 로그와 관리자 메일 변경 기록",
+      "description": "가족요금제 재인증 후 주 관리자 메일과 복구 정보가 민우 쪽으로 바뀐 보안 로그다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "행위 주체와 시점을 먼저 못 박는 데 가장 강하다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "민우 휴대폰 갤러리의 청구지 캡처와 생년월일 메모",
+      "description": "민우 휴대폰에 남아 있던 준석 청구지 화면 캡처, 생년월일 메모, 재인증 입력 흔적이다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "행위 주체와 시점을 먼저 못 박는 데 가장 강하다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "준석의 계정 복구 신청서와 접근권 회수 로그",
+      "description": "준석이 보안 사고를 이유로 계정 복구를 신청하고 민우 기기 접근을 끊은 기록, 그리고 오현철에게 보낸 경고 메시지다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "행위 주체와 시점을 먼저 못 박는 데 가장 강하다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "아이템 이전·환불 내역과 프로필 복원 보고서",
+      "description": "사라진 시즌패스 아이템 일부가 원계정으로 재귀속되거나 환불 처리됐고, 프로필 슬롯도 복원 과정에서 재배치됐다는 플랫폼 보고서다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "행위 주체와 시점을 먼저 못 박는 데 가장 강하다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:notice_gap",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "friend11:a:d-1:s2:responsibility:0",
+          "friend11:a:d-1:s2:act:1",
+          "friend11:b:d-1:s2:admission:0",
+          "friend11:b:d-1:s2:admission:1"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "맥락까지 다 풀면 여기서 끝나지 않아요.",
+        "앞뒤를 다 말해야 해서 지금은 짧게 답하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:reused_info_identity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "friend11:a:d-2:s2:admission:0",
+          "friend11:a:d-2:s2:self_justification:1",
+          "friend11:b:d-2:s2:rule:0",
+          "friend11:b:d-2:s2:act:1"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 주체를 바로 잘라 말하고 싶지 않아요.",
+        "누가 먼저였는지까지는 아직 정리해서 말하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:rejection_fear",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "friend11:a:d-2:s4:fear:0",
+          "friend11:a:d-2:s4:shame:1",
+          "friend11:a:d-2:s4:relationship:2",
+          "friend11:b:d-2:s4:relationship:0",
+          "friend11:b:d-2:s4:responsibility:1"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "의도 얘기까지 가면 감정이 너무 섞여요.",
+        "왜 그랬는지까지는 아직 바로 말하고 싶지 않습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:actual_order",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "friend11:a:d-3:s2:admission:0",
+          "friend11:a:d-3:s2:admission:1",
+          "friend11:b:d-3:s2:timeline:0",
+          "friend11:b:d-3:s2:act:1"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "그 순서를 다시 꺼내면 얘기가 더 꼬여요.",
+        "그 시점은 지금 한 줄로 잘라 답하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:deletion_breach",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "friend11:a:d-4:s2:admission:0",
+          "friend11:a:d-4:s2:admission:1",
+          "friend11:b:d-4:s2:admission:0",
+          "friend11:b:d-4:s2:admission:1"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "규칙 문제까지 지금 당장 단정하긴 어렵습니다.",
+        "그건 먼저 기록을 같이 보고 말해야 합니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:item_report",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "friend11:a:d-5:s2:admission:0",
+          "friend11:a:d-5:s2:institution:1",
+          "friend11:b:d-5:s2:institution:0",
+          "friend11:b:d-5:s2:counter:1"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "맥락까지 다 풀면 여기서 끝나지 않아요.",
+        "앞뒤를 다 말해야 해서 지금은 짧게 답하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:victim_positioning",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "M3",
+        "M4"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "friend11:a:d-5:s4:emotion:0",
+          "friend11:a:d-5:s4:admission:1",
+          "friend11:a:d-5:s4:self_justification:2",
+          "friend11:b:d-5:s4:shame:0",
+          "friend11:b:d-5:s4:responsibility:1",
+          "friend11:b:d-5:s4:context:2"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 감정은 지금 바로 꺼내기 어렵습니다.",
+        "그 부분은 말하면 제가 먼저 무너질 것 같아요."
+      ]
+    }
+  ],
+  "proposedUnlockAtoms": [
+    {
+      "id": "friend11:a:d-1:unlock:s2:01",
+      "legacySourceId": "d1.unlock.a.s2.notice_gap",
+      "party": "a",
+      "disputeId": "d-1",
+      "unlockedAtState": "S2",
+      "factText": "민우는 보안 대응 명분이 있더라도 직접 설명이 거의 없었다는 점을 분리해 보기 시작한다.",
+      "tags": [
+        "responsibility",
+        "counter",
+        "context"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "period": "관리자 변경 확인 직후",
+          "window": "30분 안",
+          "neutral": "그 직후",
+          "example": "오전 9시 14분~9시 44분"
+        },
+        "action": {
+          "exact": "민우 기기 접근 차단",
+          "softened": "접근 정리",
+          "neutral": "그 조치"
+        },
+        "profile": {
+          "exact": "공유 프로필 초기화",
+          "neutral": "프로필 정리"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:a:d-1:unlock:s3:01",
+      "legacySourceId": "d1.unlock.a.s3.expulsion_feel",
+      "party": "a",
+      "disputeId": "d-1",
+      "unlockedAtState": "S3",
+      "factText": "민우에게는 공유 프로필 초기화가 단순 차단보다 추방감으로 체감됐다는 사실이 드러난다.",
+      "tags": [
+        "harm",
+        "emotion",
+        "relationship"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "period": "관리자 변경 확인 직후",
+          "window": "30분 안",
+          "neutral": "그 직후",
+          "example": "오전 9시 14분~9시 44분"
+        },
+        "action": {
+          "exact": "민우 기기 접근 차단",
+          "softened": "접근 정리",
+          "neutral": "그 조치"
+        },
+        "profile": {
+          "exact": "공유 프로필 초기화",
+          "neutral": "프로필 정리"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend11:a:d-1:unlock:s4:01",
+      "legacySourceId": "d1.unlock.a.s4.triggered_by_own_change",
+      "party": "a",
+      "disputeId": "d-1",
+      "unlockedAtState": "S4",
+      "factText": "민우는 자신의 선행 관리자 변경이 준석 차단의 명분을 키웠다는 점을 감정적으로 인정한다.",
+      "tags": [
+        "admission",
+        "timeline",
+        "responsibility"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "period": "관리자 변경 확인 직후",
+          "window": "30분 안",
+          "neutral": "그 직후",
+          "example": "오전 9시 14분~9시 44분"
+        },
+        "action": {
+          "exact": "민우 기기 접근 차단",
+          "softened": "접근 정리",
+          "neutral": "그 조치"
+        },
+        "profile": {
+          "exact": "공유 프로필 초기화",
+          "neutral": "프로필 정리"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "admit"
+      ]
+    },
+    {
+      "id": "friend11:a:d-1:unlock:s5:01",
+      "legacySourceId": "d1.unlock.a.s5.victim_frame",
+      "party": "a",
+      "disputeId": "d-1",
+      "unlockedAtState": "S5",
+      "factText": "민우가 피해 결과를 먼저 내세워 순서를 흐렸다는 자백이 열린다.",
+      "tags": [
+        "admission",
+        "self_justification",
+        "shame"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "period": "관리자 변경 확인 직후",
+          "window": "30분 안",
+          "neutral": "그 직후",
+          "example": "오전 9시 14분~9시 44분"
+        },
+        "action": {
+          "exact": "민우 기기 접근 차단",
+          "softened": "접근 정리",
+          "neutral": "그 조치"
+        },
+        "profile": {
+          "exact": "공유 프로필 초기화",
+          "neutral": "프로필 정리"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "friend11:a:d-2:unlock:s2:01",
+      "legacySourceId": "d2.unlock.a.s2.reused_saved_info",
+      "party": "a",
+      "disputeId": "d-2",
+      "unlockedAtState": "S2",
+      "factText": "민우가 남겨 둔 본인확인 자료를 이번 재인증에 다시 입력했다는 사실이 열린다.",
+      "tags": [
+        "act",
+        "privacy",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "작년 겨울",
+          "event": "가족요금제 재인증 당일",
+          "neutral": "그때"
+        },
+        "info": {
+          "exact": "청구지·생년월일·본인확인 정보",
+          "neutral": "그 정보"
+        },
+        "adminMail": {
+          "exact": "주 관리자 메일",
+          "neutral": "관리자 메일"
+        },
+        "device": {
+          "exact": "민우 기기",
+          "neutral": "그 기기"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ]
+    },
+    {
+      "id": "friend11:a:d-2:unlock:s3:01",
+      "legacySourceId": "d2.unlock.a.s3.admin_mail_shift",
+      "party": "a",
+      "disputeId": "d-2",
+      "unlockedAtState": "S3",
+      "factText": "민우가 주 관리자 메일이 자기 쪽으로 넘어오게 만들었다는 사실이 열린다.",
+      "tags": [
+        "identity",
+        "timeline",
+        "responsibility"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "작년 겨울",
+          "event": "가족요금제 재인증 당일",
+          "neutral": "그때"
+        },
+        "info": {
+          "exact": "청구지·생년월일·본인확인 정보",
+          "neutral": "그 정보"
+        },
+        "adminMail": {
+          "exact": "주 관리자 메일",
+          "neutral": "관리자 메일"
+        },
+        "device": {
+          "exact": "민우 기기",
+          "neutral": "그 기기"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ]
+    },
+    {
+      "id": "friend11:a:d-2:unlock:s4:01",
+      "legacySourceId": "d2.unlock.a.s4.fear_of_rejection",
+      "party": "a",
+      "disputeId": "d-2",
+      "unlockedAtState": "S4",
+      "factText": "민우가 거절당할까 두려워 직접 묻지 않고 조용히 구조를 바꿨다는 동기가 드러난다.",
+      "tags": [
+        "fear",
+        "motive",
+        "relationship"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "작년 겨울",
+          "event": "가족요금제 재인증 당일",
+          "neutral": "그때"
+        },
+        "info": {
+          "exact": "청구지·생년월일·본인확인 정보",
+          "neutral": "그 정보"
+        },
+        "adminMail": {
+          "exact": "주 관리자 메일",
+          "neutral": "관리자 메일"
+        },
+        "device": {
+          "exact": "민우 기기",
+          "neutral": "그 기기"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend11:a:d-2:unlock:s5:01",
+      "legacySourceId": "d2.unlock.a.s5.origin_responsibility",
+      "party": "a",
+      "disputeId": "d-2",
+      "unlockedAtState": "S5",
+      "factText": "사건 출발점 책임이 민우 쪽 재인증과 관리자 변경에 있었다는 최종 인정이 열린다.",
+      "tags": [
+        "responsibility",
+        "threshold",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "작년 겨울",
+          "event": "가족요금제 재인증 당일",
+          "neutral": "그때"
+        },
+        "info": {
+          "exact": "청구지·생년월일·본인확인 정보",
+          "neutral": "그 정보"
+        },
+        "adminMail": {
+          "exact": "주 관리자 메일",
+          "neutral": "관리자 메일"
+        },
+        "device": {
+          "exact": "민우 기기",
+          "neutral": "그 기기"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "friend11:a:d-3:unlock:s2:01",
+      "legacySourceId": "d3.unlock.a.s2.cropped_first_scene",
+      "party": "a",
+      "disputeId": "d-3",
+      "unlockedAtState": "S2",
+      "factText": "공통 친구 방 캡처는 결과 장면만 남겨 선공처럼 보이게 했다는 점이 드러난다.",
+      "tags": [
+        "evidence",
+        "context",
+        "counter"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "잠금 주장 몇 시간 전",
+          "screenshot": "로그인 차단 캡처 시점",
+          "neutral": "그 시점",
+          "log1": "오전 9시 14분",
+          "log2": "오전 9시 19분"
+        },
+        "evidence": {
+          "soft": "공통 친구 방 캡처",
+          "hard": "보안 로그",
+          "neutral": "그 자료"
+        },
+        "admin": {
+          "exact": "관리자 구조 변경",
+          "neutral": "그 변경"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:a:d-3:unlock:s3:01",
+      "legacySourceId": "d3.unlock.a.s3.actual_order",
+      "party": "a",
+      "disputeId": "d-3",
+      "unlockedAtState": "S3",
+      "factText": "객관적 순서상 관리자 구조 변경이 잠금 주장보다 먼저였다는 타임라인이 열린다.",
+      "tags": [
+        "timeline",
+        "evidence",
+        "act"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "잠금 주장 몇 시간 전",
+          "screenshot": "로그인 차단 캡처 시점",
+          "neutral": "그 시점",
+          "log1": "오전 9시 14분",
+          "log2": "오전 9시 19분"
+        },
+        "evidence": {
+          "soft": "공통 친구 방 캡처",
+          "hard": "보안 로그",
+          "neutral": "그 자료"
+        },
+        "admin": {
+          "exact": "관리자 구조 변경",
+          "neutral": "그 변경"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ]
+    },
+    {
+      "id": "friend11:a:d-3:unlock:s4:01",
+      "legacySourceId": "d3.unlock.a.s4.face_saving_post",
+      "party": "a",
+      "disputeId": "d-3",
+      "unlockedAtState": "S4",
+      "factText": "민우가 체면을 지키려 캡처를 먼저 올렸다는 내면 동기가 드러난다.",
+      "tags": [
+        "shame",
+        "motive",
+        "relationship"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "잠금 주장 몇 시간 전",
+          "screenshot": "로그인 차단 캡처 시점",
+          "neutral": "그 시점",
+          "log1": "오전 9시 14분",
+          "log2": "오전 9시 19분"
+        },
+        "evidence": {
+          "soft": "공통 친구 방 캡처",
+          "hard": "보안 로그",
+          "neutral": "그 자료"
+        },
+        "admin": {
+          "exact": "관리자 구조 변경",
+          "neutral": "그 변경"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend11:a:d-3:unlock:s5:01",
+      "legacySourceId": "d3.unlock.a.s5.false_preemptive_frame",
+      "party": "a",
+      "disputeId": "d-3",
+      "unlockedAtState": "S5",
+      "factText": "준석 선공 독점 프레임이 사실이 아니었다는 최종 사실이 열린다.",
+      "tags": [
+        "counter",
+        "threshold",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "잠금 주장 몇 시간 전",
+          "screenshot": "로그인 차단 캡처 시점",
+          "neutral": "그 시점",
+          "log1": "오전 9시 14분",
+          "log2": "오전 9시 19분"
+        },
+        "evidence": {
+          "soft": "공통 친구 방 캡처",
+          "hard": "보안 로그",
+          "neutral": "그 자료"
+        },
+        "admin": {
+          "exact": "관리자 구조 변경",
+          "neutral": "그 변경"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "friend11:a:d-4:unlock:s2:01",
+      "legacySourceId": "d4.unlock.a.s2.deletion_breach",
+      "party": "a",
+      "disputeId": "d-4",
+      "unlockedAtState": "S2",
+      "factText": "민우가 삭제 약속을 지키지 못하고 자료를 계속 보관했다는 규칙 위반 사실이 열린다.",
+      "tags": [
+        "rule",
+        "privacy",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "agreement": "작년 겨울 합의 시점",
+          "reuse": "이번 재인증 시점",
+          "neutral": "그때"
+        },
+        "rule": {
+          "quote": "한 번만 쓰고 지운다",
+          "neutral": "그 규칙"
+        },
+        "channel": {
+          "exact": "같은 채팅방 공유",
+          "neutral": "같은 방 원칙"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ]
+    },
+    {
+      "id": "friend11:a:d-4:unlock:s3:01",
+      "legacySourceId": "d4.unlock.a.s3.kept_for_future_use",
+      "party": "a",
+      "disputeId": "d-4",
+      "unlockedAtState": "S3",
+      "factText": "민우가 다음 인증 가능성을 염두에 두고 자료를 남겨 두었다는 동기가 드러난다.",
+      "tags": [
+        "motive",
+        "privacy",
+        "context"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "agreement": "작년 겨울 합의 시점",
+          "reuse": "이번 재인증 시점",
+          "neutral": "그때"
+        },
+        "rule": {
+          "quote": "한 번만 쓰고 지운다",
+          "neutral": "그 규칙"
+        },
+        "channel": {
+          "exact": "같은 채팅방 공유",
+          "neutral": "같은 방 원칙"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:a:d-4:unlock:s4:01",
+      "legacySourceId": "d4.unlock.a.s4.rule_meaning",
+      "party": "a",
+      "disputeId": "d-4",
+      "unlockedAtState": "S4",
+      "factText": "민우가 그 규칙의 의미가 '다시 묻고 다시 동의받기'였음을 뒤늦게 깨닫는다.",
+      "tags": [
+        "legacy_sentence",
+        "rule",
+        "quote"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "agreement": "작년 겨울 합의 시점",
+          "reuse": "이번 재인증 시점",
+          "neutral": "그때"
+        },
+        "rule": {
+          "quote": "한 번만 쓰고 지운다",
+          "neutral": "그 규칙"
+        },
+        "channel": {
+          "exact": "같은 채팅방 공유",
+          "neutral": "같은 방 원칙"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend11:a:d-4:unlock:s5:01",
+      "legacySourceId": "d4.unlock.a.s5.both_storage_and_reuse",
+      "party": "a",
+      "disputeId": "d-4",
+      "unlockedAtState": "S5",
+      "factText": "보관과 재사용 모두 민우 책임이라는 최종 인정이 열린다.",
+      "tags": [
+        "responsibility",
+        "privacy",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "agreement": "작년 겨울 합의 시점",
+          "reuse": "이번 재인증 시점",
+          "neutral": "그때"
+        },
+        "rule": {
+          "quote": "한 번만 쓰고 지운다",
+          "neutral": "그 규칙"
+        },
+        "channel": {
+          "exact": "같은 채팅방 공유",
+          "neutral": "같은 방 원칙"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "friend11:a:d-5:unlock:s2:01",
+      "legacySourceId": "d5.unlock.a.s2.jumped_to_theft",
+      "party": "a",
+      "disputeId": "d-5",
+      "unlockedAtState": "S2",
+      "factText": "민우가 직접 절취라고 단정한 건 성급했고 일부는 시스템 흐름일 수 있다는 사실이 열린다.",
+      "tags": [
+        "uncertainty",
+        "counter",
+        "institution"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "claim": "도난 주장 당일",
+          "restore": "복구·재귀속 직후",
+          "neutral": "그 시점"
+        },
+        "item": {
+          "exact": "시즌패스 아이템",
+          "neutral": "그 아이템들"
+        },
+        "save": {
+          "exact": "저장 슬롯",
+          "neutral": "저장 기록"
+        },
+        "report": {
+          "exact": "프로필 복원 보고서",
+          "neutral": "복원 자료"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:a:d-5:unlock:s3:01",
+      "legacySourceId": "d5.unlock.a.s3.saw_only_loss",
+      "party": "a",
+      "disputeId": "d-5",
+      "unlockedAtState": "S3",
+      "factText": "복원 보고서 전까지 민우는 손실 결과만 보고 있었다는 맥락이 드러난다.",
+      "tags": [
+        "context",
+        "harm",
+        "timeline"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "claim": "도난 주장 당일",
+          "restore": "복구·재귀속 직후",
+          "neutral": "그 시점"
+        },
+        "item": {
+          "exact": "시즌패스 아이템",
+          "neutral": "그 아이템들"
+        },
+        "save": {
+          "exact": "저장 슬롯",
+          "neutral": "저장 기록"
+        },
+        "report": {
+          "exact": "프로필 복원 보고서",
+          "neutral": "복원 자료"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:a:d-5:unlock:s4:01",
+      "legacySourceId": "d5.unlock.a.s4.victim_positioning",
+      "party": "a",
+      "disputeId": "d-5",
+      "unlockedAtState": "S4",
+      "factText": "민우가 피해자 자리를 먼저 잡으려 결과를 과장했다는 심리가 드러난다.",
+      "tags": [
+        "self_justification",
+        "beneficiary",
+        "shame"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "claim": "도난 주장 당일",
+          "restore": "복구·재귀속 직후",
+          "neutral": "그 시점"
+        },
+        "item": {
+          "exact": "시즌패스 아이템",
+          "neutral": "그 아이템들"
+        },
+        "save": {
+          "exact": "저장 슬롯",
+          "neutral": "저장 기록"
+        },
+        "report": {
+          "exact": "프로필 복원 보고서",
+          "neutral": "복원 자료"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend11:a:d-5:unlock:s5:01",
+      "legacySourceId": "d5.unlock.a.s5.system_reassignment",
+      "party": "a",
+      "disputeId": "d-5",
+      "unlockedAtState": "S5",
+      "factText": "실제 변화의 핵심 원인이 시스템 재귀속·환불이었다는 최종 사실이 열린다.",
+      "tags": [
+        "institution",
+        "evidence",
+        "timeline"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "배준석",
+          "judgeRef": "준석 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "claim": "도난 주장 당일",
+          "restore": "복구·재귀속 직후",
+          "neutral": "그 시점"
+        },
+        "item": {
+          "exact": "시즌패스 아이템",
+          "neutral": "그 아이템들"
+        },
+        "save": {
+          "exact": "저장 슬롯",
+          "neutral": "저장 기록"
+        },
+        "report": {
+          "exact": "프로필 복원 보고서",
+          "neutral": "복원 자료"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "friend11:b:d-1:unlock:s2:01",
+      "legacySourceId": "d1.unlock.b.s2.lockout_and_profile",
+      "party": "b",
+      "disputeId": "d-1",
+      "unlockedAtState": "S2",
+      "factText": "준석이 민우 기기 접근 회수와 공유 프로필 정리를 연속 조치로 묶어 실행했다는 사실이 열린다.",
+      "tags": [
+        "act",
+        "timeline",
+        "responsibility"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "period": "관리자 변경 확인 직후",
+          "window": "30분 안",
+          "neutral": "그 직후",
+          "example": "오전 9시 14분~9시 44분"
+        },
+        "action": {
+          "exact": "민우 기기 접근 차단",
+          "softened": "접근 정리",
+          "neutral": "그 조치"
+        },
+        "profile": {
+          "exact": "공유 프로필 초기화",
+          "neutral": "프로필 정리"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ]
+    },
+    {
+      "id": "friend11:b:d-1:unlock:s3:01",
+      "legacySourceId": "d1.unlock.b.s3.logs_not_words",
+      "party": "b",
+      "disputeId": "d-1",
+      "unlockedAtState": "S3",
+      "factText": "준석이 설명보다 로그를 먼저 내밀어 추방감을 키웠다는 관계 사실이 드러난다.",
+      "tags": [
+        "evidence",
+        "relationship",
+        "harm"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "period": "관리자 변경 확인 직후",
+          "window": "30분 안",
+          "neutral": "그 직후",
+          "example": "오전 9시 14분~9시 44분"
+        },
+        "action": {
+          "exact": "민우 기기 접근 차단",
+          "softened": "접근 정리",
+          "neutral": "그 조치"
+        },
+        "profile": {
+          "exact": "공유 프로필 초기화",
+          "neutral": "프로필 정리"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:b:d-1:unlock:s4:01",
+      "legacySourceId": "d1.unlock.b.s4.anger_drive",
+      "party": "b",
+      "disputeId": "d-1",
+      "unlockedAtState": "S4",
+      "factText": "준석이 분노 때문에 복구 명분 이상으로 차갑게 밀어붙였다는 감정 동기가 열린다.",
+      "tags": [
+        "emotion",
+        "motive",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "period": "관리자 변경 확인 직후",
+          "window": "30분 안",
+          "neutral": "그 직후",
+          "example": "오전 9시 14분~9시 44분"
+        },
+        "action": {
+          "exact": "민우 기기 접근 차단",
+          "softened": "접근 정리",
+          "neutral": "그 조치"
+        },
+        "profile": {
+          "exact": "공유 프로필 초기화",
+          "neutral": "프로필 정리"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend11:b:d-1:unlock:s5:01",
+      "legacySourceId": "d1.unlock.b.s5.unilateral_method",
+      "party": "b",
+      "disputeId": "d-1",
+      "unlockedAtState": "S5",
+      "factText": "복구 필요와 별개로 방식이 일방적이었다는 최종 인정이 열린다.",
+      "tags": [
+        "responsibility",
+        "threshold",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "period": "관리자 변경 확인 직후",
+          "window": "30분 안",
+          "neutral": "그 직후",
+          "example": "오전 9시 14분~9시 44분"
+        },
+        "action": {
+          "exact": "민우 기기 접근 차단",
+          "softened": "접근 정리",
+          "neutral": "그 조치"
+        },
+        "profile": {
+          "exact": "공유 프로필 초기화",
+          "neutral": "프로필 정리"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "friend11:b:d-2:unlock:s2:01",
+      "legacySourceId": "d2.unlock.b.s2.one_time_boundary",
+      "party": "b",
+      "disputeId": "d-2",
+      "unlockedAtState": "S2",
+      "factText": "작년 일회성 합의 범위를 넘는 개인정보 재사용이었다는 점이 열린다.",
+      "tags": [
+        "rule",
+        "privacy",
+        "threshold"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "작년 겨울",
+          "event": "가족요금제 재인증 당일",
+          "neutral": "그때"
+        },
+        "info": {
+          "exact": "청구지·생년월일·본인확인 정보",
+          "neutral": "그 정보"
+        },
+        "adminMail": {
+          "exact": "주 관리자 메일",
+          "neutral": "관리자 메일"
+        },
+        "device": {
+          "exact": "민우 기기",
+          "neutral": "그 기기"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:b:d-2:unlock:s3:01",
+      "legacySourceId": "d2.unlock.b.s3.intent_irrelevant",
+      "party": "b",
+      "disputeId": "d-2",
+      "unlockedAtState": "S3",
+      "factText": "의도와 무관하게 동의 없는 청구지·생년월일 재입력이 핵심이라는 사실이 드러난다.",
+      "tags": [
+        "privacy",
+        "act",
+        "threshold"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "작년 겨울",
+          "event": "가족요금제 재인증 당일",
+          "neutral": "그때"
+        },
+        "info": {
+          "exact": "청구지·생년월일·본인확인 정보",
+          "neutral": "그 정보"
+        },
+        "adminMail": {
+          "exact": "주 관리자 메일",
+          "neutral": "관리자 메일"
+        },
+        "device": {
+          "exact": "민우 기기",
+          "neutral": "그 기기"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:b:d-2:unlock:s4:01",
+      "legacySourceId": "d2.unlock.b.s4.blurred_boundaries",
+      "party": "b",
+      "disputeId": "d-2",
+      "unlockedAtState": "S4",
+      "factText": "준석이 과거 느슨하게 도와준 전력이 경계 혼선을 키웠다는 배경이 열린다.",
+      "tags": [
+        "context",
+        "relationship",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "작년 겨울",
+          "event": "가족요금제 재인증 당일",
+          "neutral": "그때"
+        },
+        "info": {
+          "exact": "청구지·생년월일·본인확인 정보",
+          "neutral": "그 정보"
+        },
+        "adminMail": {
+          "exact": "주 관리자 메일",
+          "neutral": "관리자 메일"
+        },
+        "device": {
+          "exact": "민우 기기",
+          "neutral": "그 기기"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend11:b:d-2:unlock:s5:01",
+      "legacySourceId": "d2.unlock.b.s5.origin_is_reuse",
+      "party": "b",
+      "disputeId": "d-2",
+      "unlockedAtState": "S5",
+      "factText": "민우의 자료 재사용이 사건 출발점이었다는 결론이 열린다.",
+      "tags": [
+        "timeline",
+        "threshold",
+        "evidence"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "작년 겨울",
+          "event": "가족요금제 재인증 당일",
+          "neutral": "그때"
+        },
+        "info": {
+          "exact": "청구지·생년월일·본인확인 정보",
+          "neutral": "그 정보"
+        },
+        "adminMail": {
+          "exact": "주 관리자 메일",
+          "neutral": "관리자 메일"
+        },
+        "device": {
+          "exact": "민우 기기",
+          "neutral": "그 기기"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "friend11:b:d-3:unlock:s2:01",
+      "legacySourceId": "d3.unlock.b.s2.server_order",
+      "party": "b",
+      "disputeId": "d-3",
+      "unlockedAtState": "S2",
+      "factText": "서버 로그 기준 선행 원인은 민우 재인증과 관리자 변경이라는 순서가 열린다.",
+      "tags": [
+        "institution",
+        "timeline",
+        "evidence"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "잠금 주장 몇 시간 전",
+          "screenshot": "로그인 차단 캡처 시점",
+          "neutral": "그 시점",
+          "log1": "오전 9시 14분",
+          "log2": "오전 9시 19분"
+        },
+        "evidence": {
+          "soft": "공통 친구 방 캡처",
+          "hard": "보안 로그",
+          "neutral": "그 자료"
+        },
+        "admin": {
+          "exact": "관리자 구조 변경",
+          "neutral": "그 변경"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:b:d-3:unlock:s3:01",
+      "legacySourceId": "d3.unlock.b.s3.cutoff_hardened_misread",
+      "party": "b",
+      "disputeId": "d-3",
+      "unlockedAtState": "S3",
+      "factText": "준석의 설명 없는 차단이 선공 오해를 강화했다는 사실이 드러난다.",
+      "tags": [
+        "relationship",
+        "harm",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "잠금 주장 몇 시간 전",
+          "screenshot": "로그인 차단 캡처 시점",
+          "neutral": "그 시점",
+          "log1": "오전 9시 14분",
+          "log2": "오전 9시 19분"
+        },
+        "evidence": {
+          "soft": "공통 친구 방 캡처",
+          "hard": "보안 로그",
+          "neutral": "그 자료"
+        },
+        "admin": {
+          "exact": "관리자 구조 변경",
+          "neutral": "그 변경"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:b:d-3:unlock:s4:01",
+      "legacySourceId": "d3.unlock.b.s4.right_facts_wrong_handling",
+      "party": "b",
+      "disputeId": "d-3",
+      "unlockedAtState": "S4",
+      "factText": "준석이 사실관계는 맞췄지만 사람 다루는 방식은 실패했다는 자각이 열린다.",
+      "tags": [
+        "threshold",
+        "relationship",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "잠금 주장 몇 시간 전",
+          "screenshot": "로그인 차단 캡처 시점",
+          "neutral": "그 시점",
+          "log1": "오전 9시 14분",
+          "log2": "오전 9시 19분"
+        },
+        "evidence": {
+          "soft": "공통 친구 방 캡처",
+          "hard": "보안 로그",
+          "neutral": "그 자료"
+        },
+        "admin": {
+          "exact": "관리자 구조 변경",
+          "neutral": "그 변경"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend11:b:d-3:unlock:s5:01",
+      "legacySourceId": "d3.unlock.b.s5.preemptive_frame_false",
+      "party": "b",
+      "disputeId": "d-3",
+      "unlockedAtState": "S5",
+      "factText": "선공 독점 프레임이 사실이 아니라는 최종 정리가 열린다.",
+      "tags": [
+        "counter",
+        "threshold",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "earlier": "잠금 주장 몇 시간 전",
+          "screenshot": "로그인 차단 캡처 시점",
+          "neutral": "그 시점",
+          "log1": "오전 9시 14분",
+          "log2": "오전 9시 19분"
+        },
+        "evidence": {
+          "soft": "공통 친구 방 캡처",
+          "hard": "보안 로그",
+          "neutral": "그 자료"
+        },
+        "admin": {
+          "exact": "관리자 구조 변경",
+          "neutral": "그 변경"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "friend11:b:d-4:unlock:s2:01",
+      "legacySourceId": "d4.unlock.b.s2.shared_rule_breach",
+      "party": "b",
+      "disputeId": "d-4",
+      "unlockedAtState": "S2",
+      "factText": "민우가 삭제 합의를 깼지만 준석도 같은 방 원칙과 설명을 어겼다는 양면 사실이 열린다.",
+      "tags": [
+        "rule",
+        "relationship",
+        "responsibility"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "agreement": "작년 겨울 합의 시점",
+          "reuse": "이번 재인증 시점",
+          "neutral": "그때"
+        },
+        "rule": {
+          "quote": "한 번만 쓰고 지운다",
+          "neutral": "그 규칙"
+        },
+        "channel": {
+          "exact": "같은 채팅방 공유",
+          "neutral": "같은 방 원칙"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:b:d-4:unlock:s3:01",
+      "legacySourceId": "d4.unlock.b.s3.third_party_warning",
+      "party": "b",
+      "disputeId": "d-4",
+      "unlockedAtState": "S3",
+      "factText": "준석이 오현철에게 먼저 경고해 관계 손상을 키웠다는 사실이 드러난다.",
+      "tags": [
+        "relationship",
+        "harm",
+        "timeline"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "agreement": "작년 겨울 합의 시점",
+          "reuse": "이번 재인증 시점",
+          "neutral": "그때"
+        },
+        "rule": {
+          "quote": "한 번만 쓰고 지운다",
+          "neutral": "그 규칙"
+        },
+        "channel": {
+          "exact": "같은 채팅방 공유",
+          "neutral": "같은 방 원칙"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:b:d-4:unlock:s4:01",
+      "legacySourceId": "d4.unlock.b.s4.defensive_distance",
+      "party": "b",
+      "disputeId": "d-4",
+      "unlockedAtState": "S4",
+      "factText": "준석이 감정 방어 때문에 직접 설명을 피했다는 내면 동기가 열린다.",
+      "tags": [
+        "fear",
+        "motive",
+        "relationship"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "agreement": "작년 겨울 합의 시점",
+          "reuse": "이번 재인증 시점",
+          "neutral": "그때"
+        },
+        "rule": {
+          "quote": "한 번만 쓰고 지운다",
+          "neutral": "그 규칙"
+        },
+        "channel": {
+          "exact": "같은 채팅방 공유",
+          "neutral": "같은 방 원칙"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend11:b:d-4:unlock:s5:01",
+      "legacySourceId": "d4.unlock.b.s5.rule_break_both_sides",
+      "party": "b",
+      "disputeId": "d-4",
+      "unlockedAtState": "S5",
+      "factText": "이 규칙 파기가 양측 문제였다는 최종 정리가 열린다.",
+      "tags": [
+        "threshold",
+        "rule",
+        "admission"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "agreement": "작년 겨울 합의 시점",
+          "reuse": "이번 재인증 시점",
+          "neutral": "그때"
+        },
+        "rule": {
+          "quote": "한 번만 쓰고 지운다",
+          "neutral": "그 규칙"
+        },
+        "channel": {
+          "exact": "같은 채팅방 공유",
+          "neutral": "같은 방 원칙"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "friend11:b:d-5:unlock:s2:01",
+      "legacySourceId": "d5.unlock.b.s2.restore_and_refund",
+      "party": "b",
+      "disputeId": "d-5",
+      "unlockedAtState": "S2",
+      "factText": "준석의 복구 신청 뒤 시스템 재귀속과 부분 환불이 같이 돌았다는 사실이 열린다.",
+      "tags": [
+        "institution",
+        "timeline",
+        "evidence"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "claim": "도난 주장 당일",
+          "restore": "복구·재귀속 직후",
+          "neutral": "그 시점"
+        },
+        "item": {
+          "exact": "시즌패스 아이템",
+          "neutral": "그 아이템들"
+        },
+        "save": {
+          "exact": "저장 슬롯",
+          "neutral": "저장 기록"
+        },
+        "report": {
+          "exact": "프로필 복원 보고서",
+          "neutral": "복원 자료"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:b:d-5:unlock:s3:01",
+      "legacySourceId": "d5.unlock.b.s3.late_explanation",
+      "party": "b",
+      "disputeId": "d-5",
+      "unlockedAtState": "S3",
+      "factText": "복원 보고서 설명이 늦어 도난 오해가 커졌다는 사실이 드러난다.",
+      "tags": [
+        "responsibility",
+        "evidence",
+        "harm"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "claim": "도난 주장 당일",
+          "restore": "복구·재귀속 직후",
+          "neutral": "그 시점"
+        },
+        "item": {
+          "exact": "시즌패스 아이템",
+          "neutral": "그 아이템들"
+        },
+        "save": {
+          "exact": "저장 슬롯",
+          "neutral": "저장 기록"
+        },
+        "report": {
+          "exact": "프로필 복원 보고서",
+          "neutral": "복원 자료"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "friend11:b:d-5:unlock:s4:01",
+      "legacySourceId": "d5.unlock.b.s4.just_denial_not_enough",
+      "party": "b",
+      "disputeId": "d-5",
+      "unlockedAtState": "S4",
+      "factText": "준석이 직접 절취 부인만으로 충분하다고 생각했다는 심리가 열린다.",
+      "tags": [
+        "self_justification",
+        "threshold",
+        "shame"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "claim": "도난 주장 당일",
+          "restore": "복구·재귀속 직후",
+          "neutral": "그 시점"
+        },
+        "item": {
+          "exact": "시즌패스 아이템",
+          "neutral": "그 아이템들"
+        },
+        "save": {
+          "exact": "저장 슬롯",
+          "neutral": "저장 기록"
+        },
+        "report": {
+          "exact": "프로필 복원 보고서",
+          "neutral": "복원 자료"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend11:b:d-5:unlock:s5:01",
+      "legacySourceId": "d5.unlock.b.s5.not_stolen_but_misread",
+      "party": "b",
+      "disputeId": "d-5",
+      "unlockedAtState": "S5",
+      "factText": "직접 절취는 아니었지만 복구 뒤 변화가 민우에게 도난처럼 보였다는 책임 인정이 열린다.",
+      "tags": [
+        "counter",
+        "harm",
+        "responsibility"
+      ],
+      "slots": {
+        "person": {
+          "fullName": "최민우",
+          "judgeRef": "민우 씨",
+          "neutral": "상대방"
+        },
+        "time": {
+          "claim": "도난 주장 당일",
+          "restore": "복구·재귀속 직후",
+          "neutral": "그 시점"
+        },
+        "item": {
+          "exact": "시즌패스 아이템",
+          "neutral": "그 아이템들"
+        },
+        "save": {
+          "exact": "저장 슬롯",
+          "neutral": "저장 기록"
+        },
+        "report": {
+          "exact": "프로필 복원 보고서",
+          "neutral": "복원 자료"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-2",
+      "d-4"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "evidence_closer",
+      "rapport_heavy",
+      "security_boundary"
+    ]
+  }
+} as const;

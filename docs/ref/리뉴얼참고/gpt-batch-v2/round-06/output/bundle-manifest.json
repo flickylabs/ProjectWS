@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-04-03",
+  "cases": {
+    "family-09": {
+      "structureFile": "family-09-structure-v2.json",
+      "beatsFile": "family-09-beats-v2-full.json",
+      "tsStructureFile": "family-09-structure-v2.ts",
+      "tsBeatsFile": "family-09-beats-v2-full.ts",
+      "coverageSummary": {
+        "totalBeats": 52,
+        "byActionFamily": {
+          "question": 25,
+          "evidence": 5,
+          "fatigue": 6,
+          "free_question": 4,
+          "interjection": 12
+        },
+        "byResponseIntent": {
+          "pressure_response": 16,
+          "motive_response": 6,
+          "rapport_response": 10,
+          "evidence_response": 5,
+          "trap_confusion_response": 9,
+          "fatigue_response": 6
+        },
+        "byIssueRole": {
+          "core_truth": 13,
+          "sub_truth": 29,
+          "shared_misconception": 10
+        },
+        "byStage": {
+          "early": 10,
+          "mid": 32,
+          "late": 10
+        },
+        "interjectionDistribution": {
+          "emotional_only": 4,
+          "detail_rebuttal": 4,
+          "misbelief_escalation": 4
+        },
+        "questionTypeCounts": {
+          "fact_pursuit": 20,
+          "motive_search": 8,
+          "empathy_approach": 7,
+          "evidence_present": 5
+        }
+      },
+      "validation": []
+    },
+    "family-10": {
+      "structureFile": "family-10-structure-v2.json",
+      "beatsFile": "family-10-beats-v2-full.json",
+      "tsStructureFile": "family-10-structure-v2.ts",
+      "tsBeatsFile": "family-10-beats-v2-full.ts",
+      "coverageSummary": {
+        "totalBeats": 52,
+        "byActionFamily": {
+          "question": 25,
+          "evidence": 5,
+          "fatigue": 6,
+          "free_question": 4,
+          "interjection": 12
+        },
+        "byResponseIntent": {
+          "trap_confusion_response": 14,
+          "evidence_response": 5,
+          "pressure_response": 13,
+          "motive_response": 5,
+          "rapport_response": 9,
+          "fatigue_response": 6
+        },
+        "byIssueRole": {
+          "shared_misconception": 16,
+          "core_truth": 28,
+          "sub_truth": 8
+        },
+        "byStage": {
+          "early": 10,
+          "mid": 31,
+          "late": 11
+        },
+        "interjectionDistribution": {
+          "emotional_only": 4,
+          "detail_rebuttal": 4,
+          "misbelief_escalation": 4
+        },
+        "questionTypeCounts": {
+          "fact_pursuit": 19,
+          "motive_search": 9,
+          "empathy_approach": 7,
+          "evidence_present": 5
+        }
+      },
+      "validation": []
+    },
+    "family-11": {
+      "structureFile": "family-11-structure-v2.json",
+      "beatsFile": "family-11-beats-v2-full.json",
+      "tsStructureFile": "family-11-structure-v2.ts",
+      "tsBeatsFile": "family-11-beats-v2-full.ts",
+      "coverageSummary": {
+        "totalBeats": 52,
+        "byActionFamily": {
+          "question": 25,
+          "evidence": 5,
+          "fatigue": 6,
+          "free_question": 4,
+          "interjection": 12
+        },
+        "byResponseIntent": {
+          "pressure_response": 13,
+          "motive_response": 5,
+          "rapport_response": 9,
+          "evidence_response": 5,
+          "trap_confusion_response": 14,
+          "fatigue_response": 6
+        },
+        "byIssueRole": {
+          "core_truth": 28,
+          "sub_truth": 8,
+          "shared_misconception": 6,
+          "red_herring": 10
+        },
+        "byStage": {
+          "early": 10,
+          "mid": 31,
+          "late": 11
+        },
+        "interjectionDistribution": {
+          "emotional_only": 4,
+          "detail_rebuttal": 4,
+          "misbelief_escalation": 2,
+          "trap_signal": 2
+        },
+        "questionTypeCounts": {
+          "fact_pursuit": 19,
+          "motive_search": 9,
+          "empathy_approach": 7,
+          "evidence_present": 5
+        }
+      },
+      "validation": []
+    },
+    "family-12": {
+      "structureFile": "family-12-structure-v2.json",
+      "beatsFile": "family-12-beats-v2-full.json",
+      "tsStructureFile": "family-12-structure-v2.ts",
+      "tsBeatsFile": "family-12-beats-v2-full.ts",
+      "coverageSummary": {
+        "totalBeats": 52,
+        "byActionFamily": {
+          "question": 25,
+          "evidence": 5,
+          "fatigue": 6,
+          "free_question": 4,
+          "interjection": 12
+        },
+        "byResponseIntent": {
+          "pressure_response": 16,
+          "motive_response": 6,
+          "rapport_response": 10,
+          "evidence_response": 5,
+          "trap_confusion_response": 9,
+          "fatigue_response": 6
+        },
+        "byIssueRole": {
+          "core_truth": 28,
+          "sub_truth": 14,
+          "red_herring": 10
+        },
+        "byStage": {
+          "early": 10,
+          "mid": 32,
+          "late": 10
+        },
+        "interjectionDistribution": {
+          "emotional_only": 4,
+          "detail_rebuttal": 4,
+          "misbelief_escalation": 2,
+          "trap_signal": 2
+        },
+        "questionTypeCounts": {
+          "fact_pursuit": 20,
+          "motive_search": 8,
+          "empathy_approach": 7,
+          "evidence_present": 5
+        }
+      },
+      "validation": []
+    }
+  },
+  "notes": [
+    "freeQuestionHooks.intentTag는 별도 INTENT_LEXICON 파일이 첨부되지 않아 요청서 예시와 인접 naming pattern을 기준으로 추정했다.",
+    "family-09, family-10, family-11의 stateUnlockAtoms 중 점(.) 기반 legacy id는 proposedUnlockAtoms에서 콜론(:) 기반 unlock id로 정규화했다.",
+    "truthEnvelope.allowAtomIds는 원칙적으로 첨부된 v2-atoms claimAtom id를 우선 사용했다."
+  ]
+}

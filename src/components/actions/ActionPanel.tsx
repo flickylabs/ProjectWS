@@ -261,6 +261,14 @@ export default function ActionPanel() {
   const hasAdvanceConfirm = showAdvance
   const advInfo = getAdvanceInfo(currentPhase)
 
+  // 탭 콘텐츠 색조
+  const TINT_STYLE: Record<string, { border: string; glow: string }> = {
+    question: { border: 'border-blue-500/20', glow: 'shadow-blue-500/10' },
+    evidence: { border: 'border-amber-500/20', glow: 'shadow-amber-500/10' },
+    skill:    { border: 'border-purple-500/20', glow: 'shadow-purple-500/10' },
+    dossier:  { border: 'border-amber-500/20', glow: 'shadow-amber-500/10' },
+  }
+
   const handleTabClick = (tab: ActionTab) => {
     if (tab === 'evidence' && evLocked) return
     if (tab === 'evidence' && activeTab !== 'evidence') markEvidenceSeen()
@@ -270,10 +278,16 @@ export default function ActionPanel() {
 
   return (
     <div className="relative">
-      {/* 토스트 */}
-      {(hasToast || hasAdvanceConfirm) && (
-        <div className="absolute bottom-full left-0 right-0 mb-1 z-40">
-          <div className="bg-gray-800/95 backdrop-blur-sm border border-gray-700/50 rounded-xl max-h-[55vh] overflow-y-auto animate-fade-in">
+      {/* 슬라이드업 콘텐츠 패널 — 독 위에 앵커 */}
+      {(hasToast || (hasAdvanceConfirm && !hasToast)) && (
+        <div className="absolute bottom-full left-0 right-0 mb-0.5 z-40">
+          {(() => { const t = TINT_STYLE[activeTab!] ?? { border: 'border-gray-700/30', glow: 'shadow-black/20' }; return (
+          <div className={`glass-surface ${t.border} border rounded-t-2xl max-h-[50vh] overflow-y-auto animate-slide-up shadow-lg ${t.glow} inner-glow-subtle`}>
+            {/* 드래그 힌트 + 닫기 */}
+            <div className="flex justify-center pt-2.5 pb-1">
+              <button onClick={() => setActiveTab(null)} className="w-10 h-1 rounded-full bg-gray-600/80 hover:bg-gray-400 transition-colors" />
+            </div>
+
             {hasToast && activeTab === 'question' && (
               <div className="p-2">
                 <QuestionSelector target={target!} onSelect={hQ} llmMode={llm} onFreeResult={hFree}
@@ -291,7 +305,13 @@ export default function ActionPanel() {
                 />
               </div>
             )}
-            {hasToast && activeTab === 'evidence' && <div className="p-2"><EvidencePresenter target={target!} onPresent={hEv} onConfront={hConfront} onWitnessCalled={() => setActiveTab(null)} llmMode={llm} newEvidenceIds={new Set(unlockedIds.filter(id => !seenEvidenceRef.current.has(id)))} /></div>}
+            {hasToast && activeTab === 'evidence' && (
+              <div className="p-2">
+                <EvidencePresenter target={target!} onPresent={hEv} onConfront={hConfront}
+                  onWitnessCalled={() => setActiveTab(null)} llmMode={llm}
+                  newEvidenceIds={new Set(unlockedIds.filter(id => !seenEvidenceRef.current.has(id)))} />
+              </div>
+            )}
             {hasToast && activeTab === 'skill' && (
               <div className="p-2">
                 <SkillPanel target={target!} disputes={disputes} resources={resources} canUseSkill={canUseSkill}
@@ -302,76 +322,104 @@ export default function ActionPanel() {
               <div className="p-3">
                 <p className="text-xs text-amber-400 mb-1 font-semibold">{advInfo.label}</p>
                 {advInfo.unlocks.length > 0 && (
-                  <div className="mb-2 space-y-0.5">
+                  <div className="mb-1.5 space-y-0.5">
                     {advInfo.unlocks.map((u, i) => (
-                      <p key={i} className="text-xs text-emerald-400/80">{u}</p>
+                      <p key={i} className="text-[10px] text-emerald-400/80">{u}</p>
                     ))}
                   </div>
                 )}
                 <div className="flex gap-2">
-                  <button onClick={() => setShowAdvance(false)} className="flex-1 text-xs py-1.5 rounded-lg bg-gray-800 text-gray-400">취소</button>
-                  <button onClick={() => { setShowAdvance(false); hAdv() }} className="flex-1 text-xs py-1.5 rounded-lg bg-amber-600 text-gray-950 font-bold">확인</button>
+                  <button onClick={() => setShowAdvance(false)} className="flex-1 text-xs py-1 rounded-lg bg-gray-800 text-gray-400">취소</button>
+                  <button onClick={() => { setShowAdvance(false); hAdv() }} className="flex-1 text-xs py-1 rounded-lg bg-amber-600 text-gray-950 font-bold">확인</button>
                 </div>
               </div>
             )}
           </div>
+          ) })()}
         </div>
       )}
 
-      {/* 고정 패널 */}
-      <div className="grid grid-cols-2 gap-2 h-11">
-        <button onClick={() => setTarget('a')} className={`flex items-center justify-center gap-2 rounded-xl text-sm font-bold active:scale-95 ${target === 'a' ? 'bg-blue-600/90 text-white ring-2 ring-blue-400/50' : 'bg-gray-800/60 text-blue-400 ring-1 ring-blue-800/30'}`}>
-          <Emoji char={EMOTION_EMOJI[agentA.emotionalState.phase] ?? '😐'} size={18} /><span className="ml-1">{caseData.duo.partyA.name}</span>
-        </button>
-        <button onClick={() => setTarget('b')} className={`flex items-center justify-center gap-2 rounded-xl text-sm font-bold active:scale-95 ${target === 'b' ? 'bg-rose-600/90 text-white ring-2 ring-rose-400/50' : 'bg-gray-800/60 text-rose-400 ring-1 ring-rose-800/30'}`}>
-          <Emoji char={EMOTION_EMOJI[agentB.emotionalState.phase] ?? '😐'} size={18} /><span className="ml-1">{caseData.duo.partyB.name}</span>
-        </button>
+      {/* ActionDock: 1행 pill 타겟 + 인라인 미터 + 2행 탭 */}
+
+      {/* 1행: pill 타겟 세그먼트 + 인라인 미터 */}
+      <div className="flex items-center gap-2 h-9">
+        {/* pill 세그먼트 컨트롤 */}
+        <div className="flex bg-white/[0.03] rounded-xl p-0.5 ring-1 ring-white/5 shrink-0">
+          <button onClick={() => setTarget('a')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] text-xs font-bold transition-all active:scale-95 ${
+              target === 'a' ? 'bg-blue-600/90 text-white shadow-md shadow-blue-500/20 glow-blue' : 'text-blue-400/60 hover:text-blue-300 hover:bg-white/5'
+            }`}>
+            <Emoji char={EMOTION_EMOJI[agentA.emotionalState.phase] ?? '😐'} size={16} />
+            <span>{caseData.duo.partyA.name}</span>
+          </button>
+          <button onClick={() => setTarget('b')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] text-xs font-bold transition-all active:scale-95 ${
+              target === 'b' ? 'bg-rose-600/90 text-white shadow-md shadow-rose-500/20 glow-rose' : 'text-rose-400/60 hover:text-rose-300 hover:bg-white/5'
+            }`}>
+            <Emoji char={EMOTION_EMOJI[agentB.emotionalState.phase] ?? '😐'} size={16} />
+            <span>{caseData.duo.partyB.name}</span>
+          </button>
+        </div>
+
+        {/* 인라인 미터 바 */}
+        {target && (
+          <div className="flex-1 min-w-0">
+            <QuestionMeterHUD party={target} />
+          </div>
+        )}
+
+        {/* 단계 진행 버튼 */}
+        {canAdvance && !showAdvance && (
+          <button onClick={() => { setActiveTab(null); setShowAdvance(true) }}
+            className="shrink-0 text-[10px] px-2.5 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20 font-semibold active:scale-95 glow-emerald transition-all hover:bg-emerald-500/15">
+            {advInfo.label} →
+          </button>
+        )}
       </div>
 
-      {/* V3 미터 HUD — 심문 대상 선택 시 표시 */}
-      {target && (
-        <div className="mt-1.5 px-1 flex items-center justify-between">
-          <span className="text-[9px] text-gray-600">{target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name}</span>
-          <QuestionMeterHUD party={target} />
-        </div>
-      )}
-
-      <div className={`flex gap-1.5 mt-1.5 h-10`}>
+      {/* 2행: 탭 버튼 */}
+      <div className="flex gap-1.5 mt-1.5 h-9">
         <button onClick={() => handleTabClick('question')}
-          className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 ${activeTab === 'question' ? 'bg-amber-600 text-gray-950' : 'bg-gray-800/60 text-gray-400 hover:text-gray-200'}`}>
-          <Emoji char="❓" size={14} /> 심문
+          className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all ${
+            activeTab === 'question'
+              ? 'bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25 glow-amber'
+              : 'bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10'
+          }`}>
+          <Emoji char="❓" size={13} /> 심문
         </button>
         {hasDossierCards && (
           <button onClick={() => handleTabClick('dossier')}
-            className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 ${activeTab === 'dossier' ? 'bg-amber-600 text-gray-950' : 'bg-gray-800/60 text-amber-500/70 hover:text-amber-400'}`}>
-            <Emoji char="📋" size={14} /> 사건카드
+            className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all ${
+              activeTab === 'dossier'
+                ? 'bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25 glow-amber'
+                : 'bg-white/[0.03] text-amber-500/60 ring-1 ring-white/5 hover:text-amber-400 hover:ring-white/10'
+            }`}>
+            <Emoji char="📋" size={13} /> 카드
           </button>
         )}
         <button onClick={() => handleTabClick('evidence')}
-          className={`flex-1 text-xs rounded-xl font-semibold relative ${
-            evLocked ? 'bg-gray-900/40 text-gray-600 cursor-not-allowed'
-              : activeTab === 'evidence' ? 'bg-amber-600 text-gray-950 active:scale-95'
-              : 'bg-gray-800/60 text-gray-400 hover:text-gray-200 active:scale-95'
+          className={`flex-1 text-xs rounded-xl font-semibold relative transition-all ${
+            evLocked ? 'bg-gray-900/40 text-gray-600 cursor-not-allowed ring-1 ring-gray-800/30'
+              : activeTab === 'evidence'
+                ? 'bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25 glow-amber active:scale-95'
+                : 'bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10 active:scale-95'
           }`}>
-          {evLocked ? <><Emoji char="🔒" size={14} /> 증거</> : <><Emoji char="📄" size={14} /> 증거</>}
+          {evLocked ? <><Emoji char="🔒" size={13} /> 증거</> : <><Emoji char="📄" size={13} /> 증거</>}
           {!evLocked && newEvidenceCount > 0 && activeTab !== 'evidence' && (
-            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+            <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center ring-2 ring-gray-900 shadow-sm shadow-red-500/30">
               N
             </span>
           )}
         </button>
         <button onClick={() => handleTabClick('skill')}
-          className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 ${activeTab === 'skill' ? 'bg-amber-600 text-gray-950' : 'bg-gray-800/60 text-gray-400 hover:text-gray-200'}`}>
-          <Emoji char="⚡" size={14} /> 스킬
+          className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all ${
+            activeTab === 'skill'
+              ? 'bg-purple-500/15 text-purple-400 ring-1 ring-purple-500/25 shadow-sm shadow-purple-500/10'
+              : 'bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10'
+          }`}>
+          <Emoji char="⚡" size={13} /> 스킬
         </button>
       </div>
-
-      {canAdvance && !showAdvance && (
-        <button onClick={() => { setActiveTab(null); setShowAdvance(true) }}
-          className="w-full mt-2 text-xs py-1.5 rounded-xl bg-emerald-800/60 text-emerald-400 ring-1 ring-emerald-700/50 font-semibold active:scale-95">
-          ➡️ {advInfo.label}
-        </button>
-      )}
     </div>
   )
 }

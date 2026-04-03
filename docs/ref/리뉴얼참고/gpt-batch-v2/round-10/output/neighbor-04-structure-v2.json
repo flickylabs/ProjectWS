@@ -1,0 +1,1159 @@
+{
+  "caseId": "neighbor-04",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "7시 20분 반환 약속 위반",
+      "truth": true,
+      "truthDescription": "번호인식 로그에 따르면 서림 차량은 재활 종료 후 한 달간 평일 7시 20분 이후까지 B-7번 칸을 11차례 점유했다. 합의 위반이 일회성이 아닌 패턴이다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "주차합의복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "서림은 7시 20분 이후 11차례 점유했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "7시 20분",
+        "11차례",
+        "B-7",
+        "102동 앞",
+        "반환 약속",
+        "재활 종료 뒤"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "7시 20분 반환 약속 위반를 겉으로 어떻게 주장하는지가 보인다.",
+          "lockedSummary": "겉으로 드러난 장면만 잡힙니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor-04:a:d-1:context:0",
+            "neighbor-04:a:d-1:denial:0",
+            "neighbor-04:a:d-1:timeline:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "7시 20분 반환 약속 위반를 왜 그렇게 밀어붙였는지 감정과 계산이 드러난다.",
+          "lockedSummary": "행동을 떠받친 동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor-04:a:d-1:admission:0",
+            "neighbor-04:a:d-1:self_justification:0",
+            "neighbor-04:a:d-1:responsibility:0",
+            "neighbor-04:a:d-1:counter:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "7시 20분 반환 약속 위반의 실제 책임 구조와 관계 손상이 함께 정리된다.",
+          "lockedSummary": "핵심 책임선은 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:emotion_named"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor-04:a:d-1:emotion:0",
+            "neighbor-04:a:d-1:fear:0",
+            "neighbor-04:a:d-1:admission:1",
+            "neighbor-04:a:d-1:responsibility:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "사적 콘·경고문 자력 제재",
+      "truth": true,
+      "truthDescription": "도윤은 관리사무소 민원 접수 18분 전에 개인 콘을 B-7 앞에 세우고 '약속 좀 지키세요' 쪽지를 와이퍼에 끼웠다. 정식 절차를 건너뛴 자력 제재다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 30,
+        "b": 70
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "공용공간경계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "도윤은 자력 제재를 했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "개인 콘",
+        "와이퍼 메모",
+        "약속 좀 지키세요",
+        "민원 18분 전",
+        "자력 제재",
+        "순찰일지"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "사적 콘·경고문 자력 제재를 겉으로 어떻게 주장하는지가 보인다.",
+          "lockedSummary": "겉으로 드러난 장면만 잡힙니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor-04:b:d-2:context:0",
+            "neighbor-04:b:d-2:denial:0",
+            "neighbor-04:b:d-2:timeline:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "사적 콘·경고문 자력 제재를 왜 그렇게 밀어붙였는지 감정과 계산이 드러난다.",
+          "lockedSummary": "행동을 떠받친 동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor-04:b:d-2:admission:0",
+            "neighbor-04:b:d-2:self_justification:0",
+            "neighbor-04:b:d-2:responsibility:0",
+            "neighbor-04:b:d-2:counter:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "사적 콘·경고문 자력 제재의 실제 책임 구조와 관계 손상이 함께 정리된다.",
+          "lockedSummary": "핵심 책임선은 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:emotion_named"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor-04:b:d-2:emotion:0",
+            "neighbor-04:b:d-2:fear:0",
+            "neighbor-04:b:d-2:admission:1",
+            "neighbor-04:b:d-2:responsibility:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "범퍼 흠집: 보복 vs 기존 손상",
+      "truth": false,
+      "truthDescription": "범퍼 우측 하단 흠집은 7일 전 지하 기둥 접촉으로 이미 존재했다. 블랙박스 영상과 보험 상담 접수번호가 같은 날짜를 가리킨다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 65,
+        "b": 35
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "평판회복",
+      "legitimacyIssue": false,
+      "judgmentStatement": "범퍼 흠집은 기존 손상이다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "범퍼 흠집",
+        "구겨진 경고문",
+        "일주일 전 손상",
+        "블랙박스",
+        "보험 상담",
+        "보복 의심"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "범퍼 흠집  보복 vs 기존 손상를 겉으로 어떻게 주장하는지가 보인다.",
+          "lockedSummary": "겉으로 드러난 장면만 잡힙니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor-04:a:d-3:context:0",
+            "neighbor-04:a:d-3:denial:0",
+            "neighbor-04:a:d-3:timeline:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "범퍼 흠집  보복 vs 기존 손상를 왜 그렇게 밀어붙였는지 감정과 계산이 드러난다.",
+          "lockedSummary": "행동을 떠받친 동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "M2"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:misbelief_shaken"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor-04:a:d-3:admission:0",
+            "neighbor-04:a:d-3:self_justification:0",
+            "neighbor-04:a:d-3:responsibility:0",
+            "neighbor-04:a:d-3:counter:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "범퍼 흠집  보복 vs 기존 손상의 실제 책임 구조와 관계 손상이 함께 정리된다.",
+          "lockedSummary": "핵심 책임선은 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "M4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:context_reframed"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor-04:a:d-3:emotion:0",
+            "neighbor-04:a:d-3:fear:0",
+            "neighbor-04:a:d-3:admission:1",
+            "neighbor-04:a:d-3:responsibility:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "suspects"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "겉모습만 보고 의심이 시작된다.",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "잘린 장면과 인상으로 확신을 키운다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "오해를 설명보다 먼저 붙잡는다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "빠진 맥락이 보이며 확신이 흔들린다.",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해가 벗겨지고 실제 연결선이 드러난다.",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "범퍼 흠집 근접 사진만 공유됨",
+          "구겨진 메모와 흠집을 같은 날 장면으로 묶음",
+          "7일 전 블랙박스 접촉 가능성이 가려짐"
+        ],
+        "truthExitEvidenceIds": [
+          "e-5"
+        ],
+        "clarifyOutcomeLabel": "오해가 벗겨지고 실제 연결선이 드러난다."
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "재활 종료 후 원상복구 합의",
+      "truth": true,
+      "truthDescription": "메신저 합의문에 '2월 말 재활 종료 시 원상복구, 평일 7시 20분 전 반환'이 명시돼 있다. 수술 다음 날과 종료 직전 두 차례 확인됐다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거청산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "합의문에 원상복구 조건이 있다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "2월 말 종료",
+        "원상복구",
+        "평일 7시 20분 전",
+        "임시주차 합의",
+        "종료 확인 문자",
+        "재활 기간"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "재활 종료 후 원상복구 합의를 겉으로 어떻게 주장하는지가 보인다.",
+          "lockedSummary": "겉으로 드러난 장면만 잡힙니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor-04:b:d-4:context:0",
+            "neighbor-04:b:d-4:denial:0",
+            "neighbor-04:b:d-4:timeline:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "재활 종료 후 원상복구 합의를 왜 그렇게 밀어붙였는지 감정과 계산이 드러난다.",
+          "lockedSummary": "행동을 떠받친 동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor-04:b:d-4:admission:0",
+            "neighbor-04:b:d-4:self_justification:0",
+            "neighbor-04:b:d-4:responsibility:0",
+            "neighbor-04:b:d-4:counter:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "재활 종료 후 원상복구 합의의 실제 책임 구조와 관계 손상이 함께 정리된다.",
+          "lockedSummary": "핵심 책임선은 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:emotion_named"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor-04:b:d-4:emotion:0",
+            "neighbor-04:b:d-4:fear:0",
+            "neighbor-04:b:d-4:admission:1",
+            "neighbor-04:b:d-4:responsibility:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "선확인 약속 쌍방 파기",
+      "truth": true,
+      "truthDescription": "접촉사고 후 합의한 '선확인' 원칙을 둘 다 깼다. 서림은 민원 접수 9분 전 단체방에 피해 글을 올렸고, 도윤은 18분 전 콘과 쪽지로 자력 제재했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "중재절차",
+      "legitimacyIssue": false,
+      "judgmentStatement": "서림과 도윤은 선확인 약속을 파기했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "선확인 약속",
+        "민원 9분 전 글",
+        "콘과 쪽지",
+        "관리사무소 순서",
+        "단체방 피해 글",
+        "쌍방 파기"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "선확인 약속 쌍방 파기를 겉으로 어떻게 주장하는지가 보인다.",
+          "lockedSummary": "겉으로 드러난 장면만 잡힙니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "neighbor-04:a:d-5:context:0",
+            "neighbor-04:a:d-5:denial:0",
+            "neighbor-04:a:d-5:timeline:0",
+            "neighbor-04:b:d-5:context:0",
+            "neighbor-04:b:d-5:denial:0",
+            "neighbor-04:b:d-5:timeline:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "선확인 약속 쌍방 파기를 왜 그렇게 밀어붙였는지 감정과 계산이 드러난다.",
+          "lockedSummary": "행동을 떠받친 동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor-04:a:d-5:admission:0",
+            "neighbor-04:a:d-5:self_justification:0",
+            "neighbor-04:a:d-5:responsibility:0",
+            "neighbor-04:a:d-5:counter:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "선확인 약속 쌍방 파기의 실제 책임 구조와 관계 손상이 함께 정리된다.",
+          "lockedSummary": "핵심 책임선은 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:emotion_named"
+            ]
+          },
+          "revealAtomIds": [
+            "neighbor-04:a:d-5:emotion:0",
+            "neighbor-04:a:d-5:fear:0",
+            "neighbor-04:a:d-5:admission:1",
+            "neighbor-04:a:d-5:responsibility:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "서림 차량 범퍼 사진과 구겨진 경고문",
+      "description": "범퍼 흠집 근접 사진 + 와이퍼 쪽지 사진. 흠집 발생 시점과 차량 위치는 담지 않아 보복 여부 판단이 불가하다.",
+      "type": "photo",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "사진 2장뿐. 차량 전체 위치·전날 상태 연속 사진 미제출. 흠집 발생 시점 특정 불가.",
+        "check_metadata": "EXIF 촬영 시각 07:41, 서림 단체방 게시(07:47)보다 6분 앞선다.",
+        "restore_context": "근접 촬영으로 흠집·메모만 강조. 주차 칸 위치와 흠집 발생 시점은 프레임 밖이다.",
+        "verify_source": "서림 휴대폰 EXIF와 메신저 업로드 시각 일치. 촬영자 본인 확인.",
+        "check_edits": "밝기 보정 외 합성 흔적 없으나 근접 촬영이라 주변 맥락(칸 번호 등)이 잘려 있다.",
+        "question_acquisition": "개인 차량 사진으로 자기 자료 제출은 적법. 번호판 포함돼 재유포는 제한."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박서림에게: \"범퍼 흠집: 보복 vs 기존 손상\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박서림의 \"범퍼 흠집: 보복 vs 기존 손상\" 쟁점과 관련된다. 박서림은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최도윤에게: \"사적 콘·경고문 자력 제재\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 최도윤의 \"사적 콘·경고문 자력 제재\" 쟁점과 관련된다. 최도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S1",
+            "multiplier": 1.18,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "M2",
+            "multiplier": 1.35,
+            "note": "오해가 굳기 전에 맥락을 뒤집는 창구."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "번호인식 출입기록과 새벽 주차면 CCTV 요약",
+      "description": "번호인식 로그 + CCTV 요약 캡처. 재활 종료 후 한 달간 7시 20분 이후 B-7 점유 11차례 기록. 반복 위반 패턴의 핵심 증거.",
+      "type": "security_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "번호인식 로그 + 해당 날짜별 CCTV 요약 캡처 세트 제출. 반복 점유 추적 가능.",
+        "check_metadata": "7:20 기준 이후 출차 기록이 한 달간 날짜·시각별로 누적. 11차례 위반 수치 확인.",
+        "restore_context": "1~2회 실수가 아닌 한 달간 11차례 반복 점유. 합의 종료 후 패턴적 위반 확인.",
+        "verify_source": "주차관제 서버와 CCTV 캡처 시각이 동일 차량번호를 가리킨다. 교차 검증 완료.",
+        "check_edits": "기관 서버 직출력본. 수정·삭제 흔적 없음.",
+        "question_acquisition": "공용주차장 관제자료로 적법. 특정 세대 생활패턴 노출은 최소화 원칙."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "지난가을 임시주차 합의 메시지와 종료 확인 문자",
+      "description": "메신저 합의 대화: '2월 말 종료, 7시 20분 전 반환' 명시. 수술 다음 날·종료 직전 두 차례 확인돼 합의 존재를 증명한다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "메신저 내보내기 JSON + 캡처본 함께 제출. 합의 문구 원문 확인 가능.",
+        "check_metadata": "합의 문구가 수술 다음 날·재활 종료 직전 두 차례 확인. 쌍방 인지 입증.",
+        "restore_context": "배려 사유는 아버지 재활, 종료 시점 2월 말, 반환 시각 7:20이 문자에 명시돼 있다.",
+        "verify_source": "발신 계정·전화번호·대화방 생성일이 양측 정보와 모두 일치.",
+        "check_edits": "캡처 일부 크롭 있으나 내보내기 원문 대조 결과 합의 핵심 문장 동일.",
+        "question_acquisition": "사적 메신저 대화. 공개 범위는 분쟁 해결 목적으로 한정."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박서림에게: \"7시 20분 반환 약속 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박서림의 \"7시 20분 반환 약속 위반\" 쟁점과 관련된다. 박서림은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최도윤에게: \"재활 종료 후 원상복구 합의\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최도윤의 \"재활 종료 후 원상복구 합의\" 쟁점과 관련된다. 최도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S1",
+            "multiplier": 1.18,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S1",
+            "multiplier": 1.18,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "경비실 순찰일지와 개인 접이식 콘 회수 사진",
+      "description": "B-7 앞 개인 콘 배치 CCTV + 경비원 회수·와이퍼 메모 확인 기록. 도윤의 자력 제재 시각과 경위를 보여준다.",
+      "type": "security_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "순찰일지 원본 + 콘 회수 사진 + 와이퍼 메모 보관 사본 세트 제출.",
+        "check_metadata": "콘 배치 07:23(서림 촬영 18분 전), 민원 접수는 그보다 뒤. 자력 제재 선행 확인.",
+        "restore_context": "도윤은 정식 신고 전 자력 제재 시작. 경비원이 콘을 회수하며 제지한 흐름이 남아 있다.",
+        "verify_source": "경비실 무전 로그와 사진 업로드 기록 시각 일치. 출처 신뢰도 높음.",
+        "check_edits": "기관 저장본. 편집·삭제 흔적 없음 확인.",
+        "question_acquisition": "공용주차장 순찰기록으로 적법. 개인 메모 문구는 필요 부분만 활용 원칙."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박서림에게: \"선확인 약속 쌍방 파기\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 박서림의 \"선확인 약속 쌍방 파기\" 쟁점과 관련된다. 박서림은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최도윤에게: \"사적 콘·경고문 자력 제재\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 최도윤의 \"사적 콘·경고문 자력 제재\" 쟁점과 관련된다. 최도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "보험 접수 이력과 일주일 전 블랙박스 충돌 영상",
+      "description": "7일 전 지하 기둥 접촉 블랙박스 2분 + 같은 날 보험 상담 접수번호. 범퍼 흠집이 사건 이전 손상임을 증명하지만 새 흠집 추가 여부까지는 못 막는다.",
+      "type": "dashcam",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "블랙박스 원본 2분 + 보험사 상담 접수번호 함께 제출. 기존 손상 시점 확인 가능.",
+        "check_metadata": "촬영일 사건 7일 전, 보험 상담 같은 날 오후. 흠집 발생 시점이 사건 이전임을 입증.",
+        "restore_context": "범퍼 우하단 흠집 위치·길이가 사건 당일 사진과 동일. 새 손상이 아닌 기존 흠집.",
+        "verify_source": "블랙박스 파일 해시와 보험사 녹취 요약 날짜 일치. 교차 검증 완료.",
+        "check_edits": "블랙박스 원본 프레임 연속 + 보험 기록 수정 이력 없음. 조작 가능성 배제.",
+        "question_acquisition": "자기 차량 블랙박스 + 본인 보험 접수 자료. 제출 정당성 높음."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "M2",
+            "multiplier": 1.28,
+            "note": "오해가 굳기 전에 맥락을 뒤집는 창구."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "단체방 게시 캡처와 관리사무소 통화 순서표",
+      "description": "서림의 단체방 피해 게시(민원 9분 전) → 관리사무소 접수 → 도윤 통화 순서를 보여주는 로그·캡처 묶음. 여론전 선제 시점을 특정한다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "단체방 내보내기 JSON + 관리사무소 통화내역 요약표 제출. 게시→접수→통화 순서 추적 가능.",
+        "check_metadata": "서림 게시 07:47, 민원 접수 07:56, 도윤 통화 그 뒤. 여론전 선행 9분 확인.",
+        "restore_context": "게시문에 재활·쪽지 피해는 강조되나 합의 종료·11차례 점유 사실은 빠져 있다.",
+        "verify_source": "내보내기 파일과 관리사무소 수신기록 시간대 일치. 순서 신뢰 가능.",
+        "check_edits": "크롭본 있으나 내보내기 원문과 대조해 핵심 게시 문구 동일 확인.",
+        "question_acquisition": "입주민 단체방 자료. 호수·제3자 댓글은 마스킹 후 사용 원칙."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박서림에게: \"선확인 약속 쌍방 파기\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 박서림의 \"선확인 약속 쌍방 파기\" 쟁점과 관련된다. 박서림은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최도윤에게: \"선확인 약속 쌍방 파기\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최도윤의 \"선확인 약속 쌍방 파기\" 쟁점과 관련된다. 최도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S1",
+            "multiplier": 1.18,
+            "note": "상대가 부분 인정으로 넘어가기 직전 제시 효율이 높다."
+          }
+        ]
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-4:d-1:supports",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-1:surface:end_date_confirmed"
+      },
+      "uiLabel": "종료 합의가 반환 위반을 굳힘"
+    },
+    {
+      "id": "link:d-1:d-2:retaliation",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-2",
+      "type": "retaliation",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-2:motive:repeat_violation_anger_opened"
+      },
+      "uiLabel": "반복 위반이 자력 제재 감정을 키움"
+    },
+    {
+      "id": "link:d-3:d-5:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-5",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "M3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-5:core:bumper_story_weakened"
+      },
+      "uiLabel": "보복 서사가 깨지면 공개글 명분도 약해짐"
+    },
+    {
+      "id": "link:d-2:d-5:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-5:surface:cone_first_confirmed"
+      },
+      "uiLabel": "콘과 쪽지가 선확인 파기를 먼저 열음"
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:return_pattern",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "neighbor-04:a:d-1:admission:0",
+          "neighbor-04:a:d-1:self_justification:0",
+          "neighbor-04:a:d-1:responsibility:0",
+          "neighbor-04:a:d-1:counter:0"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "반환 패턴은 지금 한 번에 정리하기 어렵습니다.",
+        "그 날짜들은 다시 보고 말해야 해요."
+      ]
+    },
+    {
+      "id": "fq:d-1:family_extension",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "neighbor-04:a:d-1:emotion:0",
+          "neighbor-04:a:d-1:fear:0",
+          "neighbor-04:a:d-1:admission:1",
+          "neighbor-04:a:d-1:responsibility:1"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "가족 사정을 왜 계속 붙들었는지는 지금 바로 답하기 어렵네요.",
+        "그 동기는 아직 감정이 섞여 있어요."
+      ]
+    },
+    {
+      "id": "fq:d-2:cone_origin",
+      "intentTag": "procedure_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "neighbor-04:b:d-2:admission:0",
+          "neighbor-04:b:d-2:self_justification:0",
+          "neighbor-04:b:d-2:responsibility:0",
+          "neighbor-04:b:d-2:counter:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "콘을 누가 언제 놨는지는 차분히 다시 말해야 합니다.",
+        "그 순서는 기록부터 같이 봐야 합니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:damage_timing",
+      "intentTag": "context_probe",
+      "allowedAtStates": [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "neighbor-04:a:d-3:admission:0",
+          "neighbor-04:a:d-3:self_justification:0",
+          "neighbor-04:a:d-3:responsibility:0",
+          "neighbor-04:a:d-3:counter:0"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "흠집 시점은 지금 바로 단정하기 어렵습니다.",
+        "그 사진만으로는 맥락이 부족해요."
+      ]
+    },
+    {
+      "id": "fq:d-4:end_date",
+      "intentTag": "procedure_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "neighbor-04:b:d-4:admission:0",
+          "neighbor-04:b:d-4:self_justification:0",
+          "neighbor-04:b:d-4:responsibility:0",
+          "neighbor-04:b:d-4:counter:0"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "종료 시점 얘기는 문자까지 같이 놓고 말해야 합니다.",
+        "그 합의 날짜는 지금 짧게 자르기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:public_post",
+      "intentTag": "emotion_check",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "neighbor-04:a:d-5:emotion:0",
+          "neighbor-04:a:d-5:fear:0",
+          "neighbor-04:a:d-5:admission:1",
+          "neighbor-04:a:d-5:responsibility:1"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "공개 글을 쓴 마음은 지금 바로 꺼내기 어렵습니다.",
+        "그때 감정은 아직 정리되지 않았어요."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-2"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+}

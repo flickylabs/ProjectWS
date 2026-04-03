@@ -360,7 +360,7 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
   // 비용: 조사 토큰 1개
   if (state.resources.investigationTokens < 1) {
     state.addDialogue({ speaker: 'system', text: '조사 토큰이 모두 소진되었습니다.', relatedDisputes: [], turn: state.turnCount })
-    import('../components/court/PartyStatusBar').then(m => m.openResourcePopup('invest'))
+    import('../components/layout/CourtHeader').then(m => m.openResourcePopup('invest'))
     return
   }
   state.spend('investigationTokens', 1)

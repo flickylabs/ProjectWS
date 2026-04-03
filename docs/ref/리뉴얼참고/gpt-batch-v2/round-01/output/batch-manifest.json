@@ -1,0 +1,46 @@
+{
+  "batch": "spouse-01~04 V2 expansion",
+  "generatedAt": "2026-04-03",
+  "cases": [
+    {
+      "caseId": "spouse-01",
+      "structureFile": "spouse-01-structure-v2.json",
+      "beatsFile": "spouse-01-beats-v2-full.json",
+      "structureTsFile": "spouse-01-structure-v2.ts",
+      "beatsTsFile": "spouse-01-beats-v2-full.ts",
+      "totalBeats": 57,
+      "linkEdges": 4,
+      "freeQuestionHooks": 6
+    },
+    {
+      "caseId": "spouse-02",
+      "structureFile": "spouse-02-structure-v2.json",
+      "beatsFile": "spouse-02-beats-v2-full.json",
+      "structureTsFile": "spouse-02-structure-v2.ts",
+      "beatsTsFile": "spouse-02-beats-v2-full.ts",
+      "totalBeats": 57,
+      "linkEdges": 5,
+      "freeQuestionHooks": 6
+    },
+    {
+      "caseId": "spouse-03",
+      "structureFile": "spouse-03-structure-v2.json",
+      "beatsFile": "spouse-03-beats-v2-full.json",
+      "structureTsFile": "spouse-03-structure-v2.ts",
+      "beatsTsFile": "spouse-03-beats-v2-full.ts",
+      "totalBeats": 57,
+      "linkEdges": 5,
+      "freeQuestionHooks": 6
+    },
+    {
+      "caseId": "spouse-04",
+      "structureFile": "spouse-04-structure-v2.json",
+      "beatsFile": "spouse-04-beats-v2-full.json",
+      "structureTsFile": "spouse-04-structure-v2.ts",
+      "beatsTsFile": "spouse-04-beats-v2-full.ts",
+      "totalBeats": 57,
+      "linkEdges": 5,
+      "freeQuestionHooks": 6
+    }
+  ]
+}

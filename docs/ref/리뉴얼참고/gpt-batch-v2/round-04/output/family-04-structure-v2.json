@@ -1,0 +1,967 @@
+{
+  "caseId": "family-04",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "형제 중 누군가가 부모 예금 3,200만원을 빼돌렸는가",
+      "disputeKind": "shared_misconception",
+      "weightTier": "high",
+      "judgmentStatement": "형제는 부모의 기부를 오해했다.",
+      "requiredEvidenceIds": [
+        "e-4",
+        "e-5"
+      ],
+      "disputeAliases": [
+        "3,200만원",
+        "장학재단",
+        "횡령 의혹",
+        "잘린 잔액",
+        "정리본",
+        "기부 영수증",
+        "향토장학기금",
+        "부모가 보냈다"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉으로 보이는 해석과 증거 조각이 무엇을 가리키는지 정리합니다.",
+          "lockedSummary": "겉으로 보이는 단서만 확인할 수 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family04:b:d-1:s2:atom0",
+            "family04:b:d-1:s2:atom1",
+            "family04:b:d-1:s0:atom0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그 단서를 그렇게 읽게 되었는지, 오해를 붙든 이유를 추적합니다.",
+          "lockedSummary": "행동의 배경은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family04:b:d-1:s4:atom0",
+            "family04:b:d-1:s4:atom1",
+            "family04:a:d-1:s4:atom0",
+            "family04:a:d-1:s4:atom1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "실제 사실과 잘못 붙잡은 해석을 분리해 최종 책임을 고정합니다.",
+          "lockedSummary": "핵심 책임선과 실제 사실은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:context_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family04:a:d-1:s5:atom0",
+            "family04:a:d-1:s5:atom1",
+            "family04:b:d-1:s5:atom0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "trapSignals": [
+          "잘린 잔액 캡처",
+          "정리본으로 바뀐 파일명"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-5"
+        ],
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심이 먼저 선다.",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "불리한 해석을 붙잡고 방어가 굳어진다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 설명이 사실처럼 고착된다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "맥락이 드러나며 확신이 흔들린다.",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해의 출처와 실제 사실이 분리된다.",
+            "npcMode": "clarified"
+          }
+        ],
+        "clarifyOutcomeLabel": "오해의 출처와 실제 사실이 분리된다."
+      }
+    },
+    {
+      "id": "d-2",
+      "name": "하린의 부분 캡처 공유",
+      "disputeKind": "core_truth",
+      "weightTier": "high",
+      "judgmentStatement": "하린은 잘린 잔액 캡처를 보냈다.",
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "disputeAliases": [
+        "잘린 캡처",
+        "메모 상단",
+        "잔액 화면",
+        "11분 전",
+        "원본 거래내역",
+        "향토장학기금 문구",
+        "부분 공유",
+        "의심 키움"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "자료가 누구에게 어떻게 건너갔는지 표면 경로를 잡습니다.",
+          "lockedSummary": "겉으로 보이는 단서만 확인할 수 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family04:a:d-2:s2:atom0",
+            "family04:a:d-2:s2:atom1",
+            "family04:b:d-2:s2:atom0",
+            "family04:b:d-2:s0:atom0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "행동과 해석 뒤에 있던 두려움, 체면, 자기정당화를 드러냅니다.",
+          "lockedSummary": "행동의 배경은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family04:b:d-2:s4:atom0",
+            "family04:b:d-2:s4:atom1",
+            "family04:a:d-2:s4:atom0",
+            "family04:a:d-2:s4:atom1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "증거까지 놓고 보면 숨긴 사실, 실제 수취인, 최종 책임선이 어디인지 닫습니다.",
+          "lockedSummary": "핵심 책임선과 실제 사실은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:responsibility_named"
+            ]
+          },
+          "revealAtomIds": [
+            "family04:b:d-2:s5:atom0",
+            "family04:b:d-2:s5:atom1",
+            "family04:a:d-2:s5:atom0",
+            "family04:a:d-2:s5:atom1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "민규의 인감·등기 원본 무단 반출",
+      "disputeKind": "core_truth",
+      "weightTier": "high",
+      "judgmentStatement": "민규는 인감과 등기 원본을 반출했다.",
+      "requiredEvidenceIds": [
+        "e-3"
+      ],
+      "disputeAliases": [
+        "인감 원본",
+        "등기 원본",
+        "작업실 금고",
+        "도어락 기록",
+        "사흘",
+        "무단 반출",
+        "서류봉투",
+        "즉시 알리지 않았다"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "무슨 일이 있었는지, 누가 먼저 그렇게 보였는지 정리합니다.",
+          "lockedSummary": "겉으로 보이는 단서만 확인할 수 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family04:a:d-3:s2:atom0",
+            "family04:a:d-3:s2:atom1",
+            "family04:b:d-3:s2:atom0",
+            "family04:b:d-3:s1:atom0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "행동과 해석 뒤에 있던 두려움, 체면, 자기정당화를 드러냅니다.",
+          "lockedSummary": "행동의 배경은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family04:b:d-3:s4:atom0",
+            "family04:b:d-3:s4:atom1",
+            "family04:a:d-3:s4:atom0",
+            "family04:a:d-3:s4:atom1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "증거까지 놓고 보면 숨긴 사실, 실제 수취인, 최종 책임선이 어디인지 닫습니다.",
+          "lockedSummary": "핵심 책임선과 실제 사실은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:responsibility_named"
+            ]
+          },
+          "revealAtomIds": [
+            "family04:b:d-3:s5:atom0",
+            "family04:b:d-3:s5:atom1",
+            "family04:a:d-3:s5:atom0",
+            "family04:a:d-3:s5:atom1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-4",
+      "name": "공동 폴더 사용 원칙의 쌍방 위반",
+      "disputeKind": "sub_truth",
+      "weightTier": "medium",
+      "judgmentStatement": "하린은 잘린 캡처를 올렸다.",
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-4"
+      ],
+      "disputeAliases": [
+        "공동 폴더 원칙",
+        "정리본-2",
+        "보낸 것",
+        "파일명 변경",
+        "설명란 비움",
+        "원본 스캔",
+        "모호한 파일명",
+        "크롭 업로드"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "누가 어떤 기준을 먼저 어겼는지 표면 사실을 묶습니다.",
+          "lockedSummary": "겉으로 보이는 단서만 확인할 수 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family04:b:d-4:s2:atom0",
+            "family04:a:d-4:s2:atom0",
+            "family04:a:d-4:s0:atom1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "규칙보다 자기 사정과 체면이 먼저 서게 된 배경을 풉니다.",
+          "lockedSummary": "행동의 배경은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family04:b:d-4:s4:atom0",
+            "family04:b:d-4:s4:atom1",
+            "family04:a:d-4:s4:atom0",
+            "family04:a:d-4:s4:atom1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "증거까지 놓고 보면 숨긴 사실, 실제 수취인, 최종 책임선이 어디인지 닫습니다.",
+          "lockedSummary": "핵심 책임선과 실제 사실은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:responsibility_named"
+            ]
+          },
+          "revealAtomIds": [
+            "family04:b:d-4:s5:atom0",
+            "family04:b:d-4:s5:atom1",
+            "family04:a:d-4:s5:atom0",
+            "family04:a:d-4:s5:atom1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "부모 앞에서의 횡령 단정과 외부 문의 선행",
+      "disputeKind": "sub_truth",
+      "weightTier": "medium",
+      "judgmentStatement": "하린은 세무 지인에게 문의했다.",
+      "requiredEvidenceIds": [
+        "e-6"
+      ],
+      "disputeAliases": [
+        "세무 지인",
+        "부동산 지인",
+        "가족 간 증여 회수",
+        "선처분 문의",
+        "부모 앞 단정",
+        "외부 문의 선행",
+        "의심부터",
+        "회복보다 방어"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "무슨 일이 있었는지, 누가 먼저 그렇게 보였는지 정리합니다.",
+          "lockedSummary": "겉으로 보이는 단서만 확인할 수 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family04:b:d-5:s2:atom0",
+            "family04:b:d-5:s0:atom1",
+            "family04:a:d-5:s0:atom1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "행동과 해석 뒤에 있던 두려움, 체면, 자기정당화를 드러냅니다.",
+          "lockedSummary": "행동의 배경은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family04:b:d-5:s4:atom0",
+            "family04:b:d-5:s4:atom1",
+            "family04:a:d-5:s4:atom0",
+            "family04:a:d-5:s4:atom1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "증거까지 놓고 보면 숨긴 사실, 실제 수취인, 최종 책임선이 어디인지 닫습니다.",
+          "lockedSummary": "핵심 책임선과 실제 사실은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:motive_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "family04:b:d-5:s5:atom1",
+            "family04:a:d-5:s5:atom1",
+            "family04:b:d-5:s5:atom0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-2:d-1:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-1",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-1:cropped_capture_bias"
+      },
+      "uiLabel": "잘린 화면의 오해"
+    },
+    {
+      "id": "link:d-4:d-1:supports",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-1:folder_ambiguity_bias"
+      },
+      "uiLabel": "모호한 파일명 효과"
+    },
+    {
+      "id": "link:d-3:d-5:retaliation",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-5",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "retaliationBonus": 8,
+        "grantFlag": "d-5:document_removal_panic"
+      },
+      "uiLabel": "원본 반출의 역풍"
+    },
+    {
+      "id": "link:d-5:d-2:weakens_counter",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-2",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPenalty": 9,
+        "grantFlag": "d-2:outside_inquiry_pressure"
+      },
+      "uiLabel": "의심 문의가 선택을 더 날카롭게 함"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "잘린 잔액 캡처와 공동폴더 '정리본' 화면",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-2 책임선을 고정하는 시점입니다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "d-4 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "은행 원본 거래내역과 이체 메모 상세",
+      "proves": [
+        "d-1",
+        "d-2"
+      ],
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "d-1의 핵심 해석을 바로잡는 창입니다."
+          },
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "d-2 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "도어락 출입기록과 작업실 금고 사진",
+      "proves": [
+        "d-3"
+      ],
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-3 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "공동 클라우드 파일명 변경 이력과 알림 메일",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "d-1의 핵심 해석을 바로잡는 창입니다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "d-4 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "향토장학재단 기부영수증과 유언공증 준비 메모",
+      "proves": [
+        "d-1"
+      ],
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0",
+          "S1"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "d-1의 핵심 해석을 바로잡는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "형제 간 메시지와 세무·부동산 지인 문의 내역",
+      "proves": [
+        "d-5"
+      ],
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-5 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:actual_recipient",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "family04:a:d-1:s5:atom0",
+          "family04:a:d-1:s5:atom1"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "형제 중 누군가가 부모 예금 3,200만원을 빼돌렸는가부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:misread_trigger",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "family04:b:d-1:s2:atom0",
+          "family04:b:d-1:s2:atom1"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "형제 중 누군가가 부모 예금 3,200만원을 빼돌렸는가부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:crop_decision",
+      "intentTag": "legality_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "family04:a:d-2:s3:atom0",
+          "family04:a:d-2:s3:atom1",
+          "family04:a:d-2:s2:atom0",
+          "family04:a:d-2:s2:atom1"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "하린의 부분 캡처 공유부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:face_loss_fear",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "family04:a:d-2:s4:atom0",
+          "family04:a:d-2:s4:atom1"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "하린의 부분 캡처 공유부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:removal_notice",
+      "intentTag": "responsibility_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "family04:b:d-3:s5:atom0",
+          "family04:b:d-3:s5:atom1",
+          "family04:b:d-3:s3:atom0",
+          "family04:b:d-3:s3:atom1"
+        ],
+        "preferredAngleTags": [
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "민규의 인감·등기 원본 무단 반출부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:file_name_reason",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "family04:b:d-4:s2:atom1",
+          "family04:b:d-4:s3:atom0",
+          "family04:b:d-4:s3:atom1"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "공동 폴더 사용 원칙의 쌍방 위반부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:outside_inquiry_first",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "family04:a:d-5:s3:atom0",
+          "family04:a:d-5:s3:atom1",
+          "family04:a:d-5:s5:atom0"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "부모 앞에서의 횡령 단정과 외부 문의 선행부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-2",
+      "d-3"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+}

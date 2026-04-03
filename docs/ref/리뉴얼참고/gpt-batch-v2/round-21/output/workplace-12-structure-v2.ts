@@ -1,0 +1,1017 @@
+export const workplace12StructureV2 = {
+  "caseId": "workplace-12",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "과도한 모니터링과 사생활 침범",
+      "summary": "지훈은 회사 지침을 넘겨 수시 웹캠·화면 캡처·집 안 배경 점검을 요구했다. 정책 업데이트 없이 개인 운영규칙을 먼저 적용한 것이다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "웹캠 확인",
+        "배경 보이게",
+        "화면 캡처",
+        "출석 확인",
+        "재택 지침 초과",
+        "거실 배경"
+      ],
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "legitimacyIssue": true,
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "과도한 모니터링과 사생활 침범의 겉으로 드러난 흐름",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-12:a:d-1:act:0",
+            "workplace-12:b:d-1:quote:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "과도한 모니터링과 사생활 침범에 얽힌 이유와 방어",
+          "lockedSummary": "왜 그렇게 움직였는지는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-12:a:d-1:context:1",
+            "workplace-12:b:d-1:context:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "과도한 모니터링과 사생활 침범의 최종 책임과 남는 상처",
+          "lockedSummary": "핵심 책임과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:core:emotion_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-12:a:d-1:harm:3",
+            "workplace-12:b:d-1:privacy:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "근무 태만과 지글러 사용",
+      "summary": "수민은 근무시간 중 장시간 자리를 비우면서 지글러와 상태창 유지로 온라인을 가장했다. 엔드포인트 로그에 비정상 커서 패턴이 남아 있다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "마우스 지글러",
+        "유휴 로그",
+        "자리 비움",
+        "온라인 상태 가장",
+        "VPN 유지",
+        "응답 공백"
+      ],
+      "requiredEvidenceIds": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "legitimacyIssue": false,
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "근무 태만과 지글러 사용의 겉으로 드러난 흐름",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-12:b:d-2:act:0",
+            "workplace-12:a:d-2:evidence:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "근무 태만과 지글러 사용에 얽힌 이유와 방어",
+          "lockedSummary": "왜 그렇게 움직였는지는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:identity_checked"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-12:b:d-2:context:2",
+            "workplace-12:a:d-2:counter:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "근무 태만과 지글러 사용의 최종 책임과 남는 상처",
+          "lockedSummary": "핵심 책임과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:evidence_aired"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-12:b:d-2:motive:3",
+            "workplace-12:a:d-2:context:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "모니터링 PDF의 과장 편집",
+      "summary": "HR 제출 PDF는 유휴 구간만 선택 편집한 것으로, raw export에 있던 정상 응답 구간과 과도한 웹캠 지시 문맥이 빠져 있었다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "HR 요약 PDF",
+        "원본 export",
+        "유휴 구간만",
+        "웹캠 지시 누락",
+        "발췌 제출",
+        "편집 제출"
+      ],
+      "requiredEvidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "legitimacyIssue": false,
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "모니터링 PDF의 과장 편집의 겉으로 드러난 흐름",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-12:a:d-3:evidence:0",
+            "workplace-12:b:d-3:evidence:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "모니터링 PDF의 과장 편집에 얽힌 이유와 방어",
+          "lockedSummary": "왜 그렇게 움직였는지는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-12:a:d-3:evidence:0",
+            "workplace-12:b:d-3:motive:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "모니터링 PDF의 과장 편집가 본건의 책임선을 어떻게 바꾸는지",
+          "lockedSummary": "핵심 책임과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-12:a:d-3:act:2",
+            "workplace-12:b:d-3:motive:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-4",
+      "name": "상태창·캘린더 편집 은폐",
+      "summary": "수민은 상태창·캘린더를 편집한 캡처를 보내 자리를 지킨 것처럼 보고했고, 동료에게 '10분만 커버해 달라'는 DM을 보냈다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "상태창 캡처",
+        "캘린더 블록",
+        "10분만 커버",
+        "동료 DM",
+        "편집 보고",
+        "자리를 지킨 척"
+      ],
+      "requiredEvidenceIds": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "legitimacyIssue": false,
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "상태창·캘린더 편집 은폐의 겉으로 드러난 흐름",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-12:b:d-4:act:0",
+            "workplace-12:a:d-4:act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "상태창·캘린더 편집 은폐에 얽힌 이유와 방어",
+          "lockedSummary": "왜 그렇게 움직였는지는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:context_checked"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-12:b:d-4:context:2",
+            "workplace-12:a:d-4:context:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "상태창·캘린더 편집 은폐가 본건의 책임선을 어떻게 바꾸는지",
+          "lockedSummary": "핵심 책임과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:context_checked"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-12:b:d-4:shame:3",
+            "workplace-12:a:d-4:responsibility:3"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "사적 감시·편법의 쌍방 책임",
+      "summary": "지훈은 코칭·정식 경고 대신 사적 감시를 택했고, 수민은 workload 조정 대신 편집·지글러로 버텼다. 양쪽이 재택 규칙을 함께 무너뜨렸다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "사적 감시",
+        "정식 코칭 지연",
+        "workload 조정 누락",
+        "편법 구조",
+        "재택 규칙 붕괴",
+        "쌍방 책임"
+      ],
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "legitimacyIssue": false,
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "사적 감시·편법의 쌍방 책임의 겉으로 드러난 흐름",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-12:a:d-5:rule:0",
+            "workplace-12:b:d-5:rule:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "사적 감시·편법의 쌍방 책임에 얽힌 이유와 방어",
+          "lockedSummary": "왜 그렇게 움직였는지는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-12:a:d-5:counter:1",
+            "workplace-12:b:d-5:relationship:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "사적 감시·편법의 쌍방 책임가 본건의 책임선을 어떻게 바꾸는지",
+          "lockedSummary": "핵심 책임과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:motive_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-12:a:d-5:responsibility:3",
+            "workplace-12:b:d-5:relationship:3"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-5:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-5:surface:private_control_started"
+      },
+      "uiLabel": "사적 감시의 출발점"
+    },
+    {
+      "id": "link:d-2:d-5:retaliation",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-5:motive:concealment_loop_seen"
+      },
+      "uiLabel": "은폐가 통제를 부름"
+    },
+    {
+      "id": "link:d-3:d-1:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPenalty": 9,
+        "grantFlag": "d-1:core:edited_pdf_seen"
+      },
+      "uiLabel": "편집 제출이 정당화를 약화"
+    },
+    {
+      "id": "link:d-4:d-2:supports",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-2",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-2:core:edited_status_seen"
+      },
+      "uiLabel": "꾸민 보고가 공백을 뒷받침"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "재택근무 운영지침과 지훈의 일일 웹캠 체크 공지",
+      "description": "공식 재택지침과 지훈의 팀 채널 웹캠·화면 확인 공지 묶음. 정책과 실행 사이 괴리가 보인다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "정책 원본과 팀 채널 공지 전체를 함께 열어야 한다.",
+        "check_metadata": "공식 지침은 상태창·티켓만 명시, 지훈 공지는 웹캠·배경 확인까지 요구 — 범위 초과.",
+        "restore_context": "응답률 악화가 이유지만 정식 정책 업데이트 없이 개인 규칙을 먼저 적용한 흐름이 보인다.",
+        "verify_source": "HR 배포본과 팀 채널 공지 링크가 원본 서버에서 일치.",
+        "check_edits": "정책 문서·공지 원본 — 사후 편집 흔적 없음.",
+        "question_acquisition": "업무 지침·팀 공지 — 적법 열람."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "원본 로그나 기관 기록으로 방어 문장을 짧게 끊을 수 있다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "원본 로그나 기관 기록으로 방어 문장을 짧게 끊을 수 있다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "엔드포인트 유휴 로그와 마우스 지글러 탐지 기록",
+      "description": "수민의 유휴시간·비정상 커서 패턴·VPN 유지 상태를 보여 주는 엔드포인트 로그. 지글러 흔적이 읽힌다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "그래프가 아니라 원본 유휴 로그와 장치 탐지 기록을 함께 열어야 한다.",
+        "check_metadata": "타이핑 0건에 반복 미세 이동 — 장시간 응답 공백과 같은 시간대에 남아 있다.",
+        "restore_context": "집중 구간이라 보기 어려운 빈도·지속시간 — 실제 자리 비움 가능성 높다.",
+        "verify_source": "엔드포인트 콘솔과 VPN 세션 로그가 동일 사용자 세션을 가리킨다.",
+        "check_edits": "자동 생성 로그 — 사후 편집 흔적 없음.",
+        "question_acquisition": "회사 단말 로그 — 조사 범위 내 적법 활용."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "원본 로그나 기관 기록으로 방어 문장을 짧게 끊을 수 있다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "원본 로그나 기관 기록으로 방어 문장을 짧게 끊을 수 있다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "지훈이 HR에 제출한 모니터링 요약 PDF",
+      "description": "유휴구간·늦은 응답만 발췌한 PDF. 정상 구간과 웹캠 지시 문맥이 잘려 태만만 선명하게 보인다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "PDF뿐 아니라 원천 export와 페이지 생성 순서를 함께 봐야 한다.",
+        "check_metadata": "정상 응답 구간·웹캠 지시·예외 메모가 잘린 채 유휴 장면만 남아 있다.",
+        "restore_context": "단독으론 태만만 선명하지만 과도한 감시와 정상 근무 맥락이 사라져 있다.",
+        "verify_source": "플랫폼 표 일부를 붙인 파일 — 공식 HR 첨부본 형식과 다르다.",
+        "check_edits": "변조 없으나 선택적 절삭·배열로 태만 프레임이 과장됐다.",
+        "question_acquisition": "지훈 자발 제출 — 입수 적법하지만 원본 대조 필요."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.4,
+            "note": "잘린 자료나 요약 프레임을 걷어낼 때 효율이 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "모니터링 도구 raw export와 관리자 설정 로그",
+      "description": "캡처 주기 5분, 웹캠 호출 일 12회 — 정책 허용치를 넘는 설정과 raw 응답 데이터가 남은 원본 export.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "요약이 아니라 raw export CSV와 관리자 설정 스냅샷을 함께 열어야 한다.",
+        "check_metadata": "캡처 5분 간격·웹캠 일 12회 — 정책 허용치 초과. raw에 PDF에서 빠진 정상 구간이 남아 있다.",
+        "restore_context": "과도한 감시와 선택적 요약 제출이 별개 문제로 존재했음을 분리해 보여 준다.",
+        "verify_source": "IT 콘솔과 감사 로그가 동일 설정 변경 시각을 가리킨다.",
+        "check_edits": "플랫폼 원본 추출본 — 사후 편집 흔적 없음.",
+        "question_acquisition": "시스템 설정 로그 — 조사 목적 적법 열람."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "원본 로그나 기관 기록으로 방어 문장을 짧게 끊을 수 있다."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "원본 로그나 기관 기록으로 방어 문장을 짧게 끊을 수 있다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "수민의 편집 상태 스크린샷과 동료 DM",
+      "description": "수민이 편집한 상태창·캘린더 캡처와 동료에게 '10분만 커버' 부탁한 DM. 보고용 화면 조작 정황.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "캡처뿐 아니라 원본 상태창 기록과 DM 앞뒤 메시지를 함께 확인해야 한다.",
+        "check_metadata": "캡처 생성 2분 전 캘린더 블록 급수정, 직후 '10분만 커버' DM이 이어진다.",
+        "restore_context": "'잠깐 비움'이라 주장하지만 보고용 화면을 꾸며 보낸 정황이 분명하다.",
+        "verify_source": "동료 수신 단말과 수민 갤러리 파일명 일치.",
+        "check_edits": "변조 없으나 상태창·일정 블록에 선택적 편집이 확인된다.",
+        "question_acquisition": "개인 단말·사적 대화 포함 — 필요 범위만 제한 사용."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "identity",
+          "emotion"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.22,
+            "note": "보낸 대상과 감정의 결을 함께 흔들 수 있다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.22,
+            "note": "보낸 대상과 감정의 결을 함께 흔들 수 있다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "HR 코칭 메모와 응답 SLA 티켓 기록",
+      "description": "코칭 내역, 반복 지연 티켓, 정식 경고가 늦어진 흐름을 보여 주는 HR·운영 기록. 양쪽 모두 절차를 건너뛰었다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "요약뿐 아니라 SLA 티켓 원본과 개선계획 입력 여부를 함께 봐야 한다.",
+        "check_metadata": "지연 누적에도 정식 경고·workload 조정이 늦었고, 그 사이 사적 감시와 우회행동이 커졌다.",
+        "restore_context": "공식 절차 대신 각자 편법으로 버틴 쌍방 구조가 분명해진다.",
+        "verify_source": "HR 코칭 로그와 운영 티켓이 동일 날짜·사건 번호를 공유한다.",
+        "check_edits": "기관 기록 — 사후 편집 흔적 없음.",
+        "question_acquisition": "인사·운영 자료 — 분쟁 해결 목적 외 공개 제한."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "백지훈에게: \"사적 감시·편법의 쌍방 책임\" 관련 자신이 아는 바를 진술",
+          "implication": "이 증거는 백지훈이 직접적 당사자가 아닌 쟁점이다. 백지훈이 이 상황에 대해 알고 있는 바를 확인한다."
+        },
+        "b": {
+          "questionAngle": "오수민에게: \"사적 감시·편법의 쌍방 책임\" 관련 자신이 아는 바를 진술",
+          "implication": "이 증거는 오수민이 직접적 당사자가 아닌 쟁점이다. 오수민이 이 상황에 대해 알고 있는 바를 확인한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "원본 로그나 기관 기록으로 방어 문장을 짧게 끊을 수 있다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:webcam_scope",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "workplace-12:a:d-1:evidence:2",
+          "workplace-12:a:d-1:harm:3"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 순서를 길게 풀고 싶지 않습니다.",
+        "시점을 다 펼치면 제 판단이 먼저 드러납니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:why_background",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "workplace-12:a:d-1:harm:3",
+          "workplace-12:a:d-1:responsibility:4"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "그 이유를 바로 말하면 제 속내가 먼저 열립니다.",
+        "동기까지는 아직 정리해서 말하고 싶지 않습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:idle_window",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "workplace-12:b:d-2:act:0",
+          "workplace-12:b:d-2:evidence:1"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 대상을 특정해 말하고 싶지 않습니다.",
+        "이름을 바로 꺼내면 다른 해명까지 엮입니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:pdf_edit_order",
+      "intentTag": "responsibility_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "workplace-12:a:d-3:evidence:0",
+          "workplace-12:a:d-3:counter:1"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "책임 표현으로 바로 묶는 건 아직 받아들이기 어렵습니다.",
+        "그 부분은 평가처럼 들려 지금은 답을 줄이겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:why_no_formal_request",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "workplace-12:b:d-5:counter:1",
+          "workplace-12:b:d-5:relationship:3"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "배경을 다 펼치면 다른 사람 이야기까지 함께 나옵니다.",
+        "상황 맥락은 아직 조심스럽습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:why_edit_capture",
+      "intentTag": "emotion_check",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "workplace-12:b:d-4:shame:3"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "감정부터 말하면 제가 더 무너질 것 같습니다.",
+        "그 감정은 지금 꺼내기 어렵습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "evidence_closer",
+      "rapport_heavy",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+} as const;
+
+export default workplace12StructureV2;

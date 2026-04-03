@@ -1,0 +1,1105 @@
+export const family07StructureV2 = {
+  "caseId": "family-07",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "종문의 단독 공로 표기",
+      "truth": true,
+      "truthDescription": "종문은 지원사업 신청서 최종본과 지역 기사 인터뷰에서 지수의 온라인·브랜드 기여를 축소하고 자신의 대표 성과처럼 넓게 말했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "공로기준정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "종문은 지수의 기여를 축소했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "지원사업 최종본",
+        "기사 교정본",
+        "대표 명의",
+        "온라인 확장 문장",
+        "지수 공로",
+        "공로 흡수"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "종문의 단독 공로 표기",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family-07:a:d-1:s0:main",
+            "family-07:b:d-1:s0:main",
+            "family-07:a:d-1:s1:main"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "종문의 단독 공로 표기 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family-07:a:d-1:s3:main",
+            "family-07:b:d-1:s3:main",
+            "family-07:a:d-1:s4:main",
+            "d1.unlock.s3.a.article_credit_expanded"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "종문은 지원사업 신청서 최종본과 지역 기사 인터뷰에서 지수의 온라인·브랜드 기여를 축소하고 자신의 대표 성과처럼 넓게 말했다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family-07:a:d-1:s5:main",
+            "family-07:b:d-1:s5:main",
+            "d1.unlock.s5.a.credit_absorbed",
+            "family-07:a:d-1:s4:main"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "지수의 단독 구원자식 홍보",
+      "truth": true,
+      "truthDescription": "지수는 인터뷰와 홍보 글에서 자신이 공방을 완전히 바꿔 살린 것처럼 말해 종문의 장기 생산 개선과 거래처 유지 기여를 가렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "홍보발언통제",
+      "legitimacyIssue": false,
+      "judgmentStatement": "지수는 공방 기여를 가렸다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "공방 체질",
+        "인터뷰 영상",
+        "홍보 게시물",
+        "단독 구원",
+        "신규 매출",
+        "브랜드 전환"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "지수의 단독 구원자식 홍보",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family-07:b:d-2:s0:main",
+            "family-07:a:d-2:s0:main",
+            "family-07:b:d-2:s1:main"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "지수의 단독 구원자식 홍보 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family-07:b:d-2:s3:main",
+            "family-07:a:d-2:s3:main",
+            "family-07:b:d-2:s4:main",
+            "d2.unlock.s3.b.scope_split_used"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "지수는 인터뷰와 홍보 글에서 자신이 공방을 완전히 바꿔 살린 것처럼 말해 종문의 장기 생산 개선과 거래처 유지 기여를 가렸다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family-07:b:d-2:s5:main",
+            "family-07:a:d-2:s5:main",
+            "d2.unlock.s5.b.overclaim_admission",
+            "family-07:b:d-2:s4:main"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "실제 반등의 핵심 기여는 누구인가",
+      "truth": true,
+      "truthDescription": "최근 반등은 지수의 온라인몰·패키지·행사 기획과 종문의 생산 표준화·불량률 관리·기존 거래처 신뢰 유지가 결합해 나온 결과로, 어느 한쪽의 단독 공로로 보기 어렵다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "승계역할분리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "최근 반등은 다수의 기여로 이루어졌다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "전환율",
+        "재구매율",
+        "불량률",
+        "납기 준수율",
+        "반품률",
+        "공동 성과",
+        "반등 구간"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "실제 반등의 핵심 기여는 누구인가",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family-07:a:d-3:s0:main",
+            "family-07:b:d-3:s0:main",
+            "family-07:a:d-3:s1:main"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "실제 반등의 핵심 기여는 누구인가 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family-07:a:d-3:s3:main",
+            "family-07:b:d-3:s3:main",
+            "family-07:a:d-3:s4:main",
+            "d3.unlock.s3.a.online_pull_ack"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "최근 반등은 지수의 온라인몰·패키지·행사 기획과 종문의 생산 표준화·불량률 관리·기존 거래처 신뢰 유지가 결합해 나온 결과로, 어느 한쪽의 단독 공로로 보기 어렵다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family-07:a:d-3:s5:main",
+            "family-07:b:d-3:s5:main",
+            "d3.unlock.s5.a.combined_result",
+            "family-07:a:d-3:s4:main"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-4",
+      "name": "상패와 박람회 대표 표기는 승계 확정인가",
+      "truth": false,
+      "truthDescription": "지역상 상패와 박람회 대표자 표기는 법적 대표와 신청서 명의 기준일 뿐, 공식적인 승계 확정이나 단독 후계자 지정은 아니었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "승계역할분리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "상패와 표기는 승계 확정이 아니다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "상패 표기",
+        "박람회 등록",
+        "대표자 기준",
+        "승계 확정",
+        "앞에 서도 된다",
+        "상공회의소"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "상패와 박람회 대표 표기는 승계 확정인가",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family-07:a:d-4:s0:main",
+            "family-07:b:d-4:s0:main",
+            "family-07:a:d-4:s1:main"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "상패와 박람회 대표 표기는 승계 확정인가 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family-07:a:d-4:s3:main",
+            "family-07:b:d-4:s3:main",
+            "family-07:a:d-4:s4:main",
+            "d4.unlock.s3.a.ambiguous_phrase_left"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "지역상 상패와 박람회 대표자 표기는 법적 대표와 신청서 명의 기준일 뿐, 공식적인 승계 확정이나 단독 후계자 지정은 아니었다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:trap_context_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "family-07:a:d-4:s5:main",
+            "family-07:b:d-4:s5:main",
+            "d4.unlock.s5.a.no_official_succession",
+            "family-07:a:d-4:s4:main"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "knows",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "대표 명의 상패",
+          "박람회 등록자 한 줄",
+          "'앞에 서도 된다' 발언"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-5",
+      "name": "유리한 기간만 고른 실적 제시",
+      "truth": true,
+      "truthDescription": "종문은 온라인 개편 전의 최저점만, 지수는 생산 불안이 안정된 뒤의 고점만 골라 각자 자신에게 유리한 비교 기간으로 성과를 제시했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "실적검증",
+      "legitimacyIssue": false,
+      "judgmentStatement": "종문과 지수는 유리한 실적을 제시했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "KPI 비교표",
+        "저점만 비교",
+        "고점만 비교",
+        "클라우드 수정 이력",
+        "유리한 기간",
+        "실적 왜곡"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "유리한 기간만 고른 실적 제시",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family-07:a:d-5:s0:main",
+            "family-07:b:d-5:s0:main",
+            "family-07:a:d-5:s1:main"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "유리한 기간만 고른 실적 제시 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family-07:a:d-5:s3:main",
+            "family-07:b:d-5:s3:main",
+            "family-07:a:d-5:s4:main",
+            "d5.unlock.s3.a.hidden_recovery_months"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "종문은 온라인 개편 전의 최저점만, 지수는 생산 불안이 안정된 뒤의 고점만 골라 각자 자신에게 유리한 비교 기간으로 성과를 제시했다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family-07:a:d-5:s5:main",
+            "family-07:b:d-5:s5:main",
+            "d5.unlock.s5.a.selective_window_admission",
+            "family-07:a:d-5:s4:main"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "지원사업 초안·최종본과 지역 기사 교정본",
+      "description": "지수가 작성한 온라인 확장 섹션이 있던 지원사업 초안, 종문 명의로 제출된 최종본, 그리고 지역신문 인터뷰 교정본이다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "문서 원본과 수정 이력, 기사 교정 메일을 함께 대조하자 지수의 역할 문장이 최종 단계에서 빠진 흐름이 확인됐다.",
+        "check_metadata": "초안 작성은 지수 계정, 최종 제출과 기사 확인은 종문 계정에서 이뤄졌다.",
+        "restore_context": "최종본이 대표 명의인 것은 자연스럽지만, 설명 문구까지 대표 개인 성과처럼 바뀐 대목은 형식 이상으로 기여를 좁혔다.",
+        "verify_source": "지원사업 접수번호와 신문사 교정 메일 헤더가 원본과 일치했다.",
+        "check_edits": "추적 변경과 교정 흔적이 남아 있어 누가 어떤 문장을 뺐는지 확인된다.",
+        "question_acquisition": "회사 공동 문서와 당사자 이메일이라 제출 정당성은 높다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "종문의 단독 공로 표기의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "지수의 인터뷰 영상과 홍보 게시물 아카이브",
+      "description": "지수가 지역 창업 인터뷰와 공방 홍보 글에서 '제가 공방 체질을 다 바꿨다'고 말한 영상과 게시물 원본이다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "편집본이 아니라 전체 인터뷰와 게시물 아카이브를 확인하자 과장 표현과 전후 맥락이 모두 드러났다.",
+        "check_metadata": "문제가 된 발언은 수상 직후 집중적으로 게시됐고, 삭제 전 저장 아카이브에도 같은 문장이 남아 있다.",
+        "restore_context": "지수는 온라인 부분만 말했다고 주장하지만, 실제 문장에는 공방 전체를 자신이 바꿨다는 뉘앙스가 섞여 있다.",
+        "verify_source": "플랫폼 원본 아카이브와 촬영본 시간이 일치했다.",
+        "check_edits": "짧은 홍보용 재편집본도 있었지만, 전체본에서도 핵심 표현은 동일하게 확인된다.",
+        "question_acquisition": "본인 공개 게시물 자료라 적법하다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S3",
+            "multiplier": 1.2,
+            "note": "지수의 단독 구원자식 홍보의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "온라인몰 매출 대시보드와 생산 불량률·납기 로그",
+      "description": "지수의 온라인몰 전환율·재구매율 대시보드와 종문의 생산 불량률, 납기 준수율, 반품률 로그를 함께 묶은 자료다.",
+      "type": "spreadsheet",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "대시보드 원본과 공장 일일 로그를 같은 기간으로 맞춰 보자 매출 상승과 품질 안정이 동시에 나타났다.",
+        "check_metadata": "온라인 유입 급증 시점과 납기 준수율 회복 시점이 비슷하게 겹친다.",
+        "restore_context": "광고나 디자인만으로는 반품률이 이렇게 줄기 어렵고, 품질 개선만으로는 신규회원이 이렇게 늘기 어려워 두 축의 기여가 함께 보인다.",
+        "verify_source": "쇼핑몰 관리자 로그와 생산일지 원본이 각각 플랫폼·작업장 기록과 일치했다.",
+        "check_edits": "원본 추출본이라 수동 수정 흔적이 없고, 비교표만 별도로 만들어졌다.",
+        "question_acquisition": "가업 공동 운영 자료여서 제출 정당성은 높다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "백종문에게: \"유리한 기간만 고른 실적 제시\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 백종문의 \"유리한 기간만 고른 실적 제시\" 쟁점과 관련된다. 백종문은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "백지수에게: \"실제 반등의 핵심 기여는 누구인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 백지수의 \"실제 반등의 핵심 기여는 누구인가\" 쟁점과 관련된다. 백지수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "실제 반등의 핵심 기여는 누구인가의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "유리한 기간만 고른 실적 제시의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "지역상 신청 안내문과 상패 제작 주문서",
+      "description": "지역상 신청 규정, 박람회 대표자 등록 기준, 상패 제작 주문서로, 표기가 대표자 기준인지 승계 확정인지 구분할 수 있는 자료다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "안내문 원본과 주문서 세부항목을 확인하자 수상 명칭은 사업자 대표 기준으로 자동 입력되는 구조였다.",
+        "check_metadata": "박람회 등록도 법적 대표명과 사업자등록 정보 기준으로 처리됐다.",
+        "restore_context": "종문 이름이 앞에 나온다고 해서 지수를 배제한 공식 후계 결정으로 해석할 수는 없다.",
+        "verify_source": "상공회의소 접수번호와 상패 제작업체 주문번호가 모두 확인됐다.",
+        "check_edits": "기관 발급 안내문이라 편집 흔적이 없다.",
+        "question_acquisition": "공개 신청 기준 자료라 활용 문제는 낮다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "상패와 박람회 대표 표기는 승계 확정인가의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "월별 KPI 비교표와 클라우드 수정 이력",
+      "description": "두 사람이 각자 발표용으로 만든 월별 KPI 비교표와, 어떤 월을 제외했는지 드러나는 클라우드 수정 이력이다.",
+      "type": "cloud_log",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "발표용 표와 숨김 처리된 월 데이터를 함께 보자 서로가 제외한 시점이 달랐다.",
+        "check_metadata": "종문은 개편 전 저점만 남기는 수정, 지수는 생산불안이 컸던 초기 달을 가리는 수정을 각자 했다.",
+        "restore_context": "거짓 수치라기보다 비교 구간을 고의로 다르게 잡아 자기 기여가 더 커 보이게 만든 방식이었다.",
+        "verify_source": "클라우드 버전 기록과 원본 숫자가 e-3의 실제 로그와 일치했다.",
+        "check_edits": "수정 이력과 숨김 열 처리 흔적이 분명하다.",
+        "question_acquisition": "공동 업무 자료라 제출 정당성은 높다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "백종문에게: \"유리한 기간만 고른 실적 제시\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 백종문의 \"유리한 기간만 고른 실적 제시\" 쟁점과 관련된다. 백종문은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "백지수에게: \"유리한 기간만 고른 실적 제시\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 백지수의 \"유리한 기간만 고른 실적 제시\" 쟁점과 관련된다. 백지수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "유리한 기간만 고른 실적 제시의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "승계 컨설턴트 회의록과 역할 진단표",
+      "description": "문서윤 컨설턴트가 남긴 회의록과 역할 진단표로, 생산·브랜드 양축 기여와 단독 승계 판단의 유보가 적혀 있다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "회의록 원본에는 종문의 생산 통제와 지수의 브랜드 전환이 각각 핵심 축으로 분리돼 기록돼 있다.",
+        "check_metadata": "회의는 수상 직후가 아니라 그보다 앞서 열렸고, 당시에도 단독 후계자 결정은 보류로 적혀 있다.",
+        "restore_context": "외부 수상과 기사보다 실제 승계 논의는 훨씬 신중했고, 역할 분리부터 정리하자는 권고가 중심이었다.",
+        "verify_source": "컨설턴트 서명과 접수 기록이 일치한다.",
+        "check_edits": "기관 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "분쟁 조정을 위한 공식 컨설팅 자료라 제출 정당성은 높다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "백종문에게: \"상패와 박람회 대표 표기는 승계 확정인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 백종문의 \"상패와 박람회 대표 표기는 승계 확정인가\" 쟁점과 관련된다. 백종문은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "백지수에게: \"실제 반등의 핵심 기여는 누구인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 백지수의 \"실제 반등의 핵심 기여는 누구인가\" 쟁점과 관련된다. 백지수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "finish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "실제 반등의 핵심 기여는 누구인가의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "상패와 박람회 대표 표기는 승계 확정인가의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-3:unlocks_layer",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-3",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-3:motive:hidden_credit_restored"
+      },
+      "uiLabel": "숨은 공로 복원"
+    },
+    {
+      "id": "link:d-2:d-3:weakens_counter",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-3",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "counterPenalty": 9,
+        "grantFlag": "d-3:surface:solo_savior_weakened"
+      },
+      "uiLabel": "단독 구원 서사 약화"
+    },
+    {
+      "id": "link:d-4:d-1:weakens_counter",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPenalty": 8,
+        "grantFlag": "d-1:motive:succession_signal_not_credit"
+      },
+      "uiLabel": "승계 오해 제거"
+    },
+    {
+      "id": "link:d-5:d-3:supports",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-3",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-3:core:range_selection_exposed"
+      },
+      "uiLabel": "구간 선택 왜곡"
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:credit_absorption",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "family-07:a:d-1:s2:main",
+          "family-07:a:d-1:s5:main"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 표현이 어떻게 들렸는지는 지금 다시 길게 말하고 싶지 않습니다.",
+        "누구 이름을 앞세웠는지 바로 답하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:solo_savior_scope",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "family-07:b:d-2:s2:main",
+          "family-07:b:d-2:s5:main"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "그 문장 범위는 지금 다시 따져 말하고 싶지 않아요.",
+        "과장으로 들린 부분까지 바로 답하긴 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:combined_turnaround",
+      "intentTag": "cause_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "family-07:a:d-3:s3:main",
+          "family-07:a:d-3:s5:main",
+          "family-07:b:d-3:s3:main"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "반등을 한 축으로만 말하면 또 싸움이 됩니다.",
+        "누가 더 했는지로 바로 나누고 싶지 않습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:succession_signal",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "family-07:a:d-4:s2:main",
+          "family-07:a:d-4:s5:main",
+          "family-07:b:d-4:s2:main"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "그 표기 하나로 승계를 단정하는 얘긴 지금 꺼내기 싫습니다.",
+        "공식 여부는 문서로만 말하고 싶습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:range_selection",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "family-07:a:d-5:s2:main",
+          "family-07:a:d-5:s3:main",
+          "family-07:b:d-5:s2:main"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "비교 구간 얘기는 숫자만 더 꼬이게 만듭니다.",
+        "어느 달을 뺐는지까지는 지금 답하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:repair_and_roles",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "family-07:a:d-3:s4:main",
+          "family-07:a:d-3:s5:main",
+          "family-07:b:d-3:s4:main"
+        ],
+        "preferredAngleTags": [
+          "emotion",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 공로보다 감정이 먼저 올라옵니다.",
+        "역할 정리는 하더라도 그 전에 서운함부터 가라앉혀야 합니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-3"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+};

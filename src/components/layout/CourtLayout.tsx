@@ -1,8 +1,7 @@
 import type { ReactNode } from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useGameStore } from '../../store/useGameStore'
-import TopBar from './TopBar'
-import PartyStatusBar from '../court/PartyStatusBar'
+import CourtHeader from './CourtHeader'
 import DialogueLog from '../court/DialogueLog'
 import TestimonyModal from '../court/TestimonyModal'
 import MemoryPuzzle from '../minigame/MemoryPuzzle'
@@ -33,16 +32,11 @@ type InfoTab = 'disputes' | 'claims' | 'evidence'
 export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhase }: Props) {
   const [infoOpen, setInfoOpen] = useState(false)
   const [infoTab, setInfoTab] = useState<InfoTab>('disputes')
-  const [actionOpen, setActionOpen] = useState(true)
   const [showTestimony, setShowTestimony] = useState(false)
   const chatRef = useRef<HTMLDivElement>(null)
   const dialogueLog = useGameStore((s) => s.dialogueLog)
 
-  useEffect(() => {
-    if (!isDialoguePhase) setActionOpen(true)
-  }, [isDialoguePhase])
-
-  // 새 메시지 시 스크롤 — 약간의 지연으로 레이아웃 안정 후 실행
+  // 새 메시지 시 스크롤
   useEffect(() => {
     const timer = setTimeout(() => {
       const el = chatRef.current
@@ -58,7 +52,6 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
   return (
     <div
       className="h-[100dvh] flex flex-col bg-gray-950 text-gray-100 max-w-lg mx-auto court-bg"
-      style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
     >
       {showTestimony && <TestimonyModal onClose={() => setShowTestimony(false)} />}
 
@@ -68,31 +61,23 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
       {/* 미니게임 모달 */}
       <MinigameOverlay />
       <InterjectionOverlay />
-      <div className="flex items-center shrink-0">
-        <div className="flex-1"><TopBar /></div>
-        {!isDialoguePhase && (
-          <button
-            onClick={() => setInfoOpen(!infoOpen)}
-            className={`shrink-0 px-2.5 py-1 text-xs rounded-lg mr-2 transition-all ${
-              infoOpen ? 'bg-amber-600 text-gray-950 font-bold' : 'bg-gray-800/80 text-gray-400 hover:text-white ring-1 ring-gray-700/50'
-            }`}
-          >
-            {infoOpen ? <Emoji char="✕" size={12} /> : <Emoji char="📋" size={12} />}
-          </button>
-        )}
-      </div>
-      <PartyStatusBar />
+
+      {/* 헤더 (1행: 캐릭터/단계, 2행: 요약/리소스/점수/쟁점) */}
+      <CourtHeader
+        isDialoguePhase={isDialoguePhase}
+        onToggleInfo={() => setInfoOpen(!infoOpen)}
+        infoOpen={infoOpen}
+      />
 
       {/* 채팅 + 사건 요약 오버레이 컨테이너 */}
-      <div className="flex-1 min-h-0 relative">
-        {/* 사건 요약 패널 — absolute 오버레이 (대화창 레이아웃 영향 없음) */}
+      <div className="flex-1 min-h-0 relative chat-fade-top">
+        {/* 사건 요약 패널 — absolute 오버레이 */}
         {!isDialoguePhase && infoOpen && (
           <div
             onClick={(e) => e.stopPropagation()}
             className="absolute top-0 left-0 right-0 z-30 bg-gray-900/98 backdrop-blur-sm border-b border-gray-700/50 rounded-b-xl shadow-xl shadow-black/30 animate-fade-in"
             style={{ height: 280, display: 'flex', flexDirection: 'column' }}
           >
-            {/* 탭 */}
             <div className="flex px-3 gap-1 py-2 shrink-0">
               {([
                 { id: 'disputes' as const, label: '쟁점', icon: '⚡' },
@@ -108,13 +93,11 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
                 ><Emoji char={tab.icon} size={12} /> {tab.label}</button>
               ))}
             </div>
-            {/* 콘텐츠 — 고정 사이즈 내 스크롤 */}
             <div className="overflow-y-auto px-3 pb-2 flex-1 min-h-0">
               {infoTab === 'disputes' && <DisputeChecklist />}
               {infoTab === 'claims' && <ClaimGraph />}
               {infoTab === 'evidence' && <EvidenceBoard />}
             </div>
-            {/* 접기 */}
             <button
               onClick={() => setInfoOpen(false)}
               className="shrink-0 w-full py-1.5 text-xs text-gray-500 hover:text-gray-300 border-t border-gray-800/50 bg-gray-900/50"
@@ -122,7 +105,7 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
           </div>
         )}
 
-        {/* 채팅 — 전체 영역 스크롤, 정보 패널과 독립 */}
+        {/* 채팅 — 전체 영역 스크롤 */}
         <div
           ref={chatRef}
           className="absolute inset-0 overflow-y-auto"
@@ -133,34 +116,17 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
         </div>
       </div>
 
-      {/* 하단 — 토스트(접이식) + 고정 패널 */}
+      {/* 하단 ActionDock — 항상 표시, 토글 없음 */}
       {actionPanel && (
         <div
           className="shrink-0 z-30"
           style={{ paddingBottom: 'max(env(safe-area-inset-bottom, 0px), 4px)' }}
         >
-          {isDialoguePhase ? (
-            <div className="bg-gray-900/95 backdrop-blur-sm border-t border-gray-800/60 px-3 py-2">
-              {actionPanel}
-            </div>
-          ) : actionOpen ? (
-            <div className="bg-gray-900/98 backdrop-blur-sm border-t border-gray-700/50 relative">
-              <div className="px-3 pt-2 pb-1">
-                {actionPanel}
-              </div>
-              <div className="px-2 pb-1">
-                <button onClick={() => setActionOpen(false)}
-                  className="w-full text-xs py-1.5 rounded-xl bg-gray-800 text-gray-500 active:scale-95"
-                >▼ 닫기</button>
-              </div>
-            </div>
-          ) : (
-            <div className="bg-gray-900/95 border-t border-gray-800/60 px-2 py-1">
-              <button onClick={() => setActionOpen(true)}
-                className="w-full text-xs py-2 rounded-xl bg-amber-600/90 text-gray-950 font-bold shadow-lg shadow-amber-600/20 active:scale-95"
-              ><Emoji char="⚖️" size={14} /> 행동 선택</button>
-            </div>
-          )}
+          {/* 앰버 디바이더 */}
+          <div className="divider-amber" />
+          <div className="glass-surface inner-glow-amber px-3 pt-2 pb-1.5">
+            {actionPanel}
+          </div>
         </div>
       )}
     </div>

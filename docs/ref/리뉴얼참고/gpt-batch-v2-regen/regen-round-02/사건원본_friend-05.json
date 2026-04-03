@@ -1,0 +1,666 @@
+{
+"caseId": "case-friend-05",
+"meta": {
+"relationshipType": "friend",
+"conflictSeed": "CS-1",
+"variableModules": [
+"VM-E"
+],
+"twistModule": "TW-1",
+"difficulty": "hard",
+"anchorTruth": "현재 48만원을 못 받았다고 피해를 주장한 전서윤은 실은 2년 전 민태오가 대신 내준 작업실 보증금 186만원 중 더 큰 잔액을 아직 갚지 않았고, 태오는 그 사실을 숨긴 채 이번 차용금을 임의 상계하고 있었다.",
+"emotionalBait": "야간 병원비로 급히 빌려준 48만원이 몇 주째 돌아오지 않은 상황에서, 서윤이 보낸 독촉 캡처와 태오의 늦은 답장이 겹치며 태오가 반복적으로 돈을 떼먹는 사람처럼 보인다.",
+"resolutionDilemma": "서윤이 과거 더 큰 채무를 숨긴 채 현재의 미상환만 부각한 행동과, 태오가 현재 빚을 갚지 않고 과거 채권과 몰래 상계한 행동 중 무엇을 더 무겁게 볼지, 그리고 친구 사이 금전 도움을 앞으로 완전히 끊을지 재설계할지가 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "전서윤",
+"age": 30,
+"occupation": "플라워 스튜디오 운영자",
+"incomeBracket": "mid",
+"archetype": "confrontational",
+"speechStyle": "돈 문제에서는 결론과 금액부터 먼저 말하고, 상대 설명이 길어지면 날짜 순서로 다시 끊어 세운다. 자신이 억울하다고 느끼면 불리한 과거 맥락을 '지금이랑은 다른 얘기'라고 잘라 현재 책임만 남기려 한다.",
+"pride": 7,
+"fear": "가까운 친구에게 돈을 빌려주고도 아무 말 못 한 사람으로 보이는 것",
+"riskAppetite": 6,
+"digitalHabit": "banking_app_and_story",
+"dailyRoutine": "새벽에는 꽃시장 발주와 주문 확인을 하고, 낮에는 스튜디오 예약과 납품 일정을 정리한다. 밤에는 이체 내역과 메신저를 묶어 확인하며 미수금 정리를 한꺼번에 하는 습관이 있다.",
+"sensitivePoints": [
+"돈을 떼였다는 인식",
+"가게와 인간관계를 같이 잃는 상황",
+"친구들 앞에서 손해만 보는 사람처럼 보이는 일"
+],
+"verbalTells": [
+{
+"type": "receipt_fan",
+"trigger": "lying",
+"pattern": "불리한 질문이 나오면 이체내역 캡처를 여러 장 넘기며 숫자 자체로 결론이 끝났다는 듯 말한다."
+},
+{
+"type": "moral_cut",
+"trigger": "cornered",
+"pattern": "상대가 과거 맥락을 꺼내면 '지금 안 갚은 건 안 갚은 거잖아'라고 도덕 판단으로 쟁점을 잘라낸다."
+},
+{
+"type": "short_breath",
+"trigger": "emotional",
+"pattern": "분노가 올라오면 숨이 짧아지고 문장 끝을 세게 끊어 말한다."
+}
+]
+},
+"partyB": {
+"name": "민태오",
+"age": 31,
+"occupation": "영상 후반편집자",
+"incomeBracket": "mid",
+"archetype": "avoidant",
+"speechStyle": "즉답 대신 오래된 순서를 천천히 꺼내며 현재 질문을 과거 맥락 속에 넣어 설명한다. 몰리면 정면으로 비난하기보다 '말 안 한 건 맞지만 이유가 있었다'는 식으로 관계를 먼저 보호하려 한다.",
+"pride": 6,
+"fear": "친구 돈을 안 갚는 사람으로 낙인찍히거나, 오래 참은 채권까지 옹졸하게 꺼낸 사람으로 보이는 것",
+"riskAppetite": 4,
+"digitalHabit": "receipts_and_notes",
+"dailyRoutine": "오전에는 편집실에서 납품 영상을 정리하고, 밤에는 오래된 파일과 영수증을 폴더별로 다시 분류한다. 금전 문제는 바로 말하지 못하고 메모앱에 먼저 계산을 적어 두는 편이다.",
+"sensitivePoints": [
+"옹졸하게 지난 돈을 들추는 사람으로 보이는 일",
+"늦은 상환 약속",
+"친구 관계가 돈 계산표로만 남는 상황"
+],
+"verbalTells": [
+{
+"type": "archive_shuffle",
+"trigger": "lying",
+"pattern": "곤란한 질문이 나오면 오래된 캡처와 사진을 찾느라 말을 끊고, 자료를 찾는 동안 직접 답을 미룬다."
+},
+{
+"type": "offset_murmur",
+"trigger": "cornered",
+"pattern": "'계산상 남는 돈이 있었잖아'라는 말을 낮게 반복하며 명시적 합의의 부재를 흐린다."
+},
+{
+"type": "delay_nod",
+"trigger": "avoiding",
+"pattern": "먼저 고개를 끄덕여 수긍하는 듯 보인 뒤, 잠시 뜸을 들이고 조건을 덧붙여 답을 바꾼다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "작년 팝업 정산 싸움 뒤, 둘은 10만원 이상 차용은 공동 시트에 적고 상계는 반드시 서로 동의한 뒤에만 하기로 약속했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "봄 플리마켓을 준비할 때 서윤이 해준 꽃장식과 태오의 영상 편집 일부를 서로 빚 정리에 포함해도 되는지 두 사람 모두 자신에게 유리하게 기억한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '꽃다발과 장식도 사실상 갚은 셈이었다' / B: '그건 친구 부탁이었지 차용 상환이 아니었다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "indirect"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "2년 전 서윤의 작업실 보증금이 갑자기 모자랐을 때 태오가 큰돈을 대신 보냈지만, 이후 얼마가 남았는지는 몇 번 흐리게 말하고 정식으로 정산하지 못했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "acquaintance_1",
+"name": "최하린 (공통 친구)",
+"relationTo": "both",
+"knowledgeScope": "서윤에게서 현재 48만원 독촉 캡처를 먼저 받았고, 태오에게서 예전 보증금 얘기를 뒤늦게 따로 들었다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-2",
+"slot": "institutional",
+"name": "윤지호 (팝업 회계 도우미)",
+"relationTo": "both",
+"knowledgeScope": "두 사람이 함께 쓰던 정산 시트의 입력 시각, 차용 메모, 상계 금지 문구의 원본을 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional_2",
+"name": "박주연 (작업실 임대인)",
+"relationTo": "both",
+"knowledgeScope": "보증금 부족이 발생한 날짜, 태오의 대납 시각, 이후 서윤이 남은 금액을 분할로 갚겠다고 말한 정황을 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "loan_conflict_after_emergency",
+"description": "민태오가 반려견 야간 병원비가 급하다며 전서윤에게 48만원을 빌린 뒤 몇 주째 명확한 상환을 하지 않자, 서윤은 독촉 캡처를 공통 친구들에게 보내기 시작했다. 그런데 현재 차용금 공방을 따지는 과정에서 2년 전 작업실 보증금 대납과 남은 잔액 문제가 다시 떠오르며 누가 진짜 피해자인지 구도가 뒤집혔다.",
+"emotionalPressure": 8,
+"affects": "both",
+"triggerAmplifier": "응급 상황에 빌려준 돈이라는 명분과 오래 묻어 둔 과거 큰돈 문제가 겹쳐, 지금의 미상환은 배신처럼 읽히고 과거의 미정산은 착취처럼 읽히기 쉬웠다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "태오의 현재 48만원 차용금 미반환",
+"truth": true,
+"truthDescription": "태오는 반려견 야간 병원비 명목으로 빌린 48만원을 약속한 시점까지 별도로 돌려주지 않았다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-1",
+"e-2"
+],
+"correctResponsibility": {
+"a": 20,
+"b": 80
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "채무정리",
+"legitimacyIssue": false
+},
+{
+"id": "d-2",
+"name": "서윤의 피해자식 확산과 과거 채무 은닉",
+"truth": true,
+"truthDescription": "서윤은 현재 48만원 독촉 캡처를 공통 친구와 스토리에 퍼뜨리면서 자신이 태오에게 더 큰 과거 채무를 지고 있다는 맥락을 의도적으로 빼고 말했다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-1",
+"e-6"
+],
+"correctResponsibility": {
+"a": 76,
+"b": 24
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "친구경계",
+"legitimacyIssue": true
+},
+{
+"id": "d-3",
+"name": "2년 전 186만원 보증금은 이미 끝난 돈인가",
+"truth": false,
+"truthDescription": "2년 전 태오가 대신 낸 작업실 보증금 186만원은 완전히 정산된 돈이 아니었고, 확인되는 현금 상환 뒤에도 더 큰 잔액이 남아 있었다.",
+"quadrant": "shared_misconception",
+"requiredEvidence": [
+"e-3",
+"e-4",
+"e-5"
+],
+"correctResponsibility": {
+"a": 61,
+"b": 39
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "과거청산",
+"legitimacyIssue": false
+},
+{
+"id": "d-4",
+"name": "태오의 현재 차용금에 대한 무단 상계",
+"truth": true,
+"truthDescription": "태오는 현재 48만원을 별도 변제하지 않고 예전 남은 채권에서 빼면 된다고 혼자 판단해 임의 상계를 시도했다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-2",
+"e-5"
+],
+"correctResponsibility": {
+"a": 25,
+"b": 75
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "채무정리",
+"legitimacyIssue": false
+},
+{
+"id": "d-5",
+"name": "차용 기록과 상계 합의 규칙의 쌍방 위반",
+"truth": true,
+"truthDescription": "둘은 큰돈 차용은 시트에 기록하고 상계는 합의 뒤에만 하기로 했지만, 서윤은 과거 빚을 뺀 현재 피해만 퍼뜨렸고 태오는 현재 빚을 조용히 과거 채권과 상계하려 했다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-4",
+"e-6"
+],
+"correctResponsibility": {
+"a": 55,
+"b": 45
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "친구경계",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "서윤이 공통 친구들에게 보낸 독촉 캡처",
+"description": "태오가 48만원을 안 갚고 있다는 현재 대화 일부만 보이는 독촉 캡처다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-1",
+"d-2"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "현재 독촉 장면이 보이는 캡처 한 장만 먼저 제출됐고 앞뒤 대화는 빠져 있었다.",
+"check_metadata": "캡처 생성 시각은 서윤이 단체방에 내용을 공유하기 직전으로 남아 있다.",
+"restore_context": "과거 보증금 대화와 태오의 상계 언급이 잘려 있어 현재 48만원만 유일한 쟁점처럼 보이게 한다.",
+"verify_source": "서윤 휴대폰 원본과 최하린이 받은 파일의 해시가 일치한다.",
+"check_edits": "문자열 조작 흔적은 없지만 상단과 하단이 선택적으로 잘려 있다.",
+"question_acquisition": "사적인 차용 대화를 제3자에게 전달한 자료라 사생활 침해 우려가 크다."
+}
+},
+{
+"id": "e-2",
+"name": "48만원 이체내역과 상환 약속 메시지",
+"description": "서윤이 태오에게 48만원을 보낸 계좌이체 원본과, 태오가 다음 월급 주간에 갚겠다고 답한 메시지 기록이다.",
+"type": "bank",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-1",
+"d-4"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "은행 발급 이체내역과 메신저 원본 대화가 함께 제출됐다.",
+"check_metadata": "송금 시각과 태오의 상환 약속 메시지가 같은 밤 20분 간격으로 이어진다.",
+"restore_context": "이 자료만 보면 현재 차용 자체와 상환 기한 약속은 명확하지만 과거 보증금 맥락은 드러나지 않는다.",
+"verify_source": "은행 거래번호와 양측 메시지 ID가 일치해 송금과 약속이 연결된다.",
+"check_edits": "기관 내역과 원본 대화라 후편집 흔적이 없다.",
+"question_acquisition": "당사자들이 직접 제출한 금융·대화 자료라 절차상 문제는 낮다."
+}
+},
+{
+"id": "e-3",
+"name": "2년 전 보증금 186만원 이체기록과 메모란",
+"description": "태오가 서윤의 작업실 임대 보증금 부족분 186만원을 보낸 은행 원본과 '보증금 먼저 막자'라는 메모가 남은 거래기록이다.",
+"type": "bank",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-3"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "은행 발급본에 송금 시각, 수취 계좌, 메모란이 모두 남아 있다.",
+"check_metadata": "보증금 마감일 당일 오후 송금으로, 임대인 독촉 직후 처리된 사실이 확인된다.",
+"restore_context": "단순 선물이나 생활비 지원이 아니라 특정 부족분을 막기 위한 대납이었다.",
+"verify_source": "박주연 임대인이 보관한 입금 확인 시간과 은행 기록이 일치한다.",
+"check_edits": "기관 발급 PDF라 편집 흔적이 없다.",
+"question_acquisition": "태오가 제출에 동의한 계좌 내역이라 적법성은 높다."
+}
+},
+{
+"id": "e-4",
+"name": "공유 가계시트와 수기 차용 메모",
+"description": "둘이 함께 쓰던 정산 시트와 노트에 남아 있는 부분 상환 기록, 남은 잔액 표시, 상계는 합의 후만 가능하다는 문구다.",
+"type": "platform_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-3",
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-3"
+],
+"investigationResults": {
+"request_original": "윤지호가 내려받은 시트 export와 서윤의 수기 노트 원본이 함께 대조됐다.",
+"check_metadata": "보증금 송금 후 두 차례 현금 상환만 입력돼 있고, 이후 장식 제공이나 선물은 상환 항목으로 분류되지 않았다.",
+"restore_context": "남은 금액 칸이 지워지지 않은 채 남아 있어 두 사람이 끝까지 완전 정산 합의를 하지 못했음을 보여준다.",
+"verify_source": "공유 시트 수정 시각과 수기 노트 사진의 날짜가 서로 맞아떨어진다.",
+"check_edits": "시트 버전기록과 노트 필압 흐름상 사후 조작 흔적은 없다.",
+"question_acquisition": "공동으로 관리하던 정산 자료라 제출은 적법하지만 개인 메모 일부는 최소 공개가 바람직하다."
+}
+},
+{
+"id": "e-5",
+"name": "태오의 메모앱 계산표와 하린에게 보낸 상계 언급",
+"description": "태오가 현재 48만원을 예전 남은 돈에서 빼면 된다고 적어 둔 계산 메모와, 같은 취지로 최하린에게 보낸 메시지 원본이다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "personal_device",
+"legitimacy": "lawful",
+"proves": [
+"d-3",
+"d-4"
+],
+"isTrap": false,
+"requires": [
+"e-3"
+],
+"investigationResults": {
+"request_original": "태오 휴대폰의 메모앱 원본과 최하린 수신 대화가 함께 제출됐다.",
+"check_metadata": "계산 메모 생성 시각은 서윤의 마지막 독촉 메시지 직후이고, 하린에게 상계 얘기를 보낸 시각은 그보다 12분 뒤다.",
+"restore_context": "태오는 현재 빚을 부정하기보다 예전 잔액과 묶어 처리하면 된다고 혼자 결론내리고 있었다.",
+"verify_source": "메모앱 생성 기록과 카카오톡 전송 순서가 서로 일치한다.",
+"check_edits": "삭제 복원 흔적은 없지만 메모가 개인 계산표라 해석 여지는 남는다.",
+"question_acquisition": "당사자와 수신인이 각자 제출한 자료라 위법성은 낮다."
+}
+},
+{
+"id": "e-6",
+"name": "서윤의 단체방 발언과 친한친구 스토리 보관본",
+"description": "서윤이 공통 친구 단체방에서 태오를 '원래 돈 약속 흐리는 사람'이라고 말하고, 비슷한 취지의 친한친구 스토리를 올린 기록이다.",
+"type": "sns",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "personal_device",
+"legitimacy": "lawful",
+"proves": [
+"d-2",
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-1"
+],
+"investigationResults": {
+"request_original": "단체방 원본 대화와 인스타 스토리 아카이브가 함께 제출됐다.",
+"check_metadata": "단체방 발언 뒤 11분 후 같은 취지의 스토리가 게시됐다.",
+"restore_context": "현재 48만원 문제만 강조돼 있고, 서윤 자신의 예전 미정산 잔액은 언급되지 않는다.",
+"verify_source": "서윤 계정 보관함, 조회 로그, 단체방 수신 화면이 동일 게시 흐름을 보여준다.",
+"check_edits": "앱 내 원본과 대화창이라 후편집 흔적은 없다.",
+"question_acquisition": "본인 계정 자료이지만 제3자 조회자 목록과 단체방 구성원 정보는 제한적으로 다뤄야 한다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-1",
+"e-3"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-2"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "태오는 현재 빌린 48만원을 약속 시점까지 별도로 갚지 않았다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "b_only"
+},
+{
+"id": "t-2",
+"fact": "서윤은 현재 독촉 캡처를 퍼뜨리며 자신이 지고 있는 더 큰 과거 채무를 의도적으로 빼고 말했다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "a_only"
+},
+{
+"id": "t-3",
+"fact": "2년 전 보증금 186만원은 완전히 끝난 돈이 아니었고 현재 갈등 시점에도 더 큰 잔액이 남아 있었다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "shared_misconception"
+},
+{
+"id": "t-4",
+"fact": "태오는 현재 차용금을 과거 채권과 무단 상계하면 된다고 혼자 판단했다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "b_only"
+},
+{
+"id": "t-5",
+"fact": "둘은 큰돈 차용은 기록하고 상계는 합의 뒤에만 하기로 한 규칙을 알고 있었다.",
+"isTrue": true,
+"weight": 7,
+"quadrant": "both_know"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-2",
+"lieType": "LT-4",
+"lieIntensity": "L2",
+"lieMotive": "revenge",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "public_spread_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "old_debt_omission_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-6_or_e-3_presented"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-3",
+"lieIntensity": "L3",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "old_deposit_loan_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "repayment_plan_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-4_or_e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-5",
+"lieIntensity": "L1",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "old_rule_reminder"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-6_presented"
+},
+{
+"from": "S2",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_why_she_needed_public_support"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-1",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "current_loan_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "due_date_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-6",
+"lieIntensity": "L2",
+"lieMotive": "relationship_maintenance",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "offset_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-5_presented"
+},
+{
+"from": "S2",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_old_hurt"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "e-4_or_emotion_threshold"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-4",
+"lieIntensity": "L1",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "old_rule_reminder"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-4_presented"
+},
+{
+"from": "S2",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"solutions": {
+"채무정리": [
+"현재 48만원과 과거 보증금 잔액을 한 장의 정산서로 다시 적어, 상계 여부를 말이 아니라 서면으로 확정한다.",
+"현재 차용금 반환 일정과 과거 채무 재협상 일정을 분리해 잡고, 둘을 섞어 잠수식으로 미루지 않는다.",
+"다시 무단 상계나 장기 미상환이 반복되면 친구 사이 금전거래를 전면 중단하고 제3자 입회 하에만 정산한다."
+],
+"과거청산": [
+"2년 전 보증금 차용의 원금, 부분상환, 선물·도움 제공을 항목별로 나눠 무엇이 상환이었는지 합의문으로 남긴다.",
+"서로 '그때는 끝난 줄 알았다'는 기억 대신 원본 이체 기록과 시트 기준으로만 과거 금전사를 다시 정리한다.",
+"과거 큰돈 문제를 새 갈등 때마다 무기화한다면 공동 프로젝트와 사적 도움을 모두 끊고 거리두기를 택한다."
+],
+"친구경계": [
+"공통 친구에게 돈 문제를 전할 때는 상대에게 불리한 일부 내역만 잘라 보내지 않는다는 규칙을 다시 세운다.",
+"앞으로 10만원 이상 차용은 목적, 기한, 상계 금지 여부를 같은 메시지 한 줄로 남긴 뒤 송금한다.",
+"상대를 '원래 안 갚는 사람'처럼 낙인찍는 발언이 반복되면 모임과 일 관련 협업을 일정 기간 분리한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-1",
+"tp-3"
+]
+}

@@ -1,0 +1,20 @@
+{
+  "files": [
+    "friend-01-structure-v2.json",
+    "friend-01-structure-v2.ts",
+    "friend-01-beats-v2-full.json",
+    "friend-01-beats-v2-full.ts",
+    "friend-02-structure-v2.json",
+    "friend-02-structure-v2.ts",
+    "friend-02-beats-v2-full.json",
+    "friend-02-beats-v2-full.ts",
+    "friend-03-structure-v2.json",
+    "friend-03-structure-v2.ts",
+    "friend-03-beats-v2-full.json",
+    "friend-03-beats-v2-full.ts",
+    "friend-04-structure-v2.json",
+    "friend-04-structure-v2.ts",
+    "friend-04-beats-v2-full.json",
+    "friend-04-beats-v2-full.ts"
+  ]
+}

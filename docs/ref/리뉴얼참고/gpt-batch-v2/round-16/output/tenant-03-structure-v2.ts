@@ -1,0 +1,1113 @@
+export const tenant03StructureV2 = {
+  "caseId": "tenant-03",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "태수의 선순위 채무 축소 고지",
+      "judgmentStatement": "태수는 채무 축소를 고지하지 않았다.",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "truthDescription": "태수는 계약 직전 브리지대출이 추가된 사실과 실제 상환 잔액을 알고도, 최신 수치와 말소 순서를 직접 다시 설명하지 않은 채 기존 안내가 계속 통한다고 놔뒀다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "브리지대출",
+        "최신 잔액",
+        "말소 예정",
+        "등기부등본",
+        "잔금 직전",
+        "선순위 채무"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "태수의 선순위 채무 축소 고지에서 겉으로 먼저 드러난 말과 장면을 확인합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant03:a:d-1:uncertainty:0",
+            "tenant03:b:d-1:self_justification:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "태수의 선순위 채무 축소 고지 뒤에 있는 불안과 계산을 드러냅니다.",
+          "lockedSummary": "겉말 뒤의 계산과 불안은 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant03:a:d-1:fear:0",
+            "tenant03:b:d-1:shame:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "태수의 선순위 채무 축소 고지의 책임 경계와 실제 정산 기준을 확정합니다.",
+          "lockedSummary": "책임과 기준을 가르는 핵심 층은 아직 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant03:a:d-1:admission:2",
+            "tenant03:b:d-1:admission:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "보증보험 가능 확답의 실제 출처",
+      "judgmentStatement": "한별이 먼저 확답을 사용했다.",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "truthDescription": "확정적으로 안심시킨 표현은 태수보다 한별이 먼저 사용했고, 서윤과 태수는 서로가 그 말을 책임졌다고 오해한 채 계약을 밀어붙였다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "보험 된다",
+        "오한별",
+        "확답 출처",
+        "단톡 캡처",
+        "보증상담",
+        "안심 문구"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "보증보험 가능 확답의 실제 출처에서 겉으로 먼저 드러난 말과 장면을 확인합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant03:a:d-2:self_justification:0",
+            "tenant03:b:d-2:uncertainty:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "보증보험 가능 확답의 실제 출처 뒤에 있는 불안과 계산을 드러냅니다.",
+          "lockedSummary": "겉말 뒤의 계산과 불안은 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant03:a:d-2:fear:0",
+            "tenant03:b:d-2:fear:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "보증보험 가능 확답의 실제 출처의 책임 경계와 실제 정산 기준을 확정합니다.",
+          "lockedSummary": "책임과 기준을 가르는 핵심 층은 아직 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant03:a:d-2:admission:2",
+            "tenant03:b:d-2:admission:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심만 남아 있다",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어와 당황이 앞선다",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석이 굳어진다",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란이 들어오며 확신이 흔들린다",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해가 정리되고 맥락이 복원된다",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "한별 발언을 태수 발언으로 겹쳐 듣는다",
+          "단톡 첫 문장만 고정한다",
+          "상담 조건부를 확답처럼 기억한다"
+        ],
+        "truthExitEvidenceIds": [
+          "e-2",
+          "e-5"
+        ],
+        "clarifyOutcomeLabel": "오해가 정리되고 맥락이 복원된다"
+      }
+    },
+    {
+      "id": "d-3",
+      "name": "중개보수 외 180만원의 실제 수령자",
+      "judgmentStatement": "한별이 180만원을 실제 수령했다.",
+      "requiredEvidence": [
+        "e-3",
+        "e-6"
+      ],
+      "truthDescription": "서윤이 '말소 대행·안전확인비' 명목으로 보낸 180만원은 태수에게 전달되지 않았고, 한별이 개인 계좌로 받아 사무실 운영비와 개인 카드값 결제에 일부 사용했다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "180만원",
+        "개인 계좌",
+        "말소 대행비",
+        "안전확인비",
+        "정산표",
+        "세금계산서"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "중개보수 외 180만원의 실제 수령자에서 겉으로 먼저 드러난 말과 장면을 확인합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant03:a:d-3:uncertainty:0",
+            "tenant03:b:d-3:self_justification:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "중개보수 외 180만원의 실제 수령자 뒤에 있는 불안과 계산을 드러냅니다.",
+          "lockedSummary": "겉말 뒤의 계산과 불안은 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant03:a:d-3:fear:0",
+            "tenant03:b:d-3:shame:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "중개보수 외 180만원의 실제 수령자의 책임 경계와 실제 정산 기준을 확정합니다.",
+          "lockedSummary": "책임과 기준을 가르는 핵심 층은 아직 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant03:a:d-3:admission:2",
+            "tenant03:b:d-3:admission:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "suspects"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심만 남아 있다",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어와 당황이 앞선다",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석이 굳어진다",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란이 들어오며 확신이 흔들린다",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해가 정리되고 맥락이 복원된다",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "개인 계좌라는 이유만으로 집주인 수령으로 단정한다",
+          "정산표보다 송금 화면만 붙잡는다",
+          "계약서 없는 비용을 곧바로 태수 책임으로 연결한다"
+        ],
+        "truthExitEvidenceIds": [
+          "e-3",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "오해가 정리되고 맥락이 복원된다"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "서윤의 잔금 보류와 전입 지연",
+      "judgmentStatement": "서윤은 잔금을 이틀 보류했다.",
+      "requiredEvidence": [
+        "e-2",
+        "e-3"
+      ],
+      "truthDescription": "서윤은 사기 의심이 커진 뒤 잔금 일부를 이틀 보류했고, 그 결과 전입·확정일자 접수도 예정 시각보다 늦어졌다. 의심 사유는 있었지만 일정 지연 자체는 사실이다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "이틀 보류",
+        "분할 송금",
+        "전입 지연",
+        "확정일자",
+        "가족 차용금",
+        "잔금 보류"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "서윤의 잔금 보류와 전입 지연에서 겉으로 먼저 드러난 말과 장면을 확인합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant03:a:d-4:self_justification:0",
+            "tenant03:b:d-4:uncertainty:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "서윤의 잔금 보류와 전입 지연 뒤에 있는 불안과 계산을 드러냅니다.",
+          "lockedSummary": "겉말 뒤의 계산과 불안은 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant03:a:d-4:shame:0",
+            "tenant03:b:d-4:harm:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "서윤의 잔금 보류와 전입 지연의 책임 경계와 실제 정산 기준을 확정합니다.",
+          "lockedSummary": "책임과 기준을 가르는 핵심 층은 아직 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant03:a:d-4:admission:2",
+            "tenant03:b:d-4:admission:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "당일 확인 원칙의 쌍방 붕괴",
+      "judgmentStatement": "서윤과 태수는 당일 확인 원칙을 위반했다.",
+      "requiredEvidence": [
+        "e-1",
+        "e-4",
+        "e-5"
+      ],
+      "truthDescription": "서윤은 최신 말소 확인 전 잔금을 멈췄고, 태수는 최신 대출 구조와 말소 증빙을 직접 제시하지 않은 채 중개사 설명에 기대면서, 둘 다 계약서에 적힌 당일 확인 원칙을 스스로 흔들었다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "당일 확인 원칙",
+        "말소 확인",
+        "중개사 설명",
+        "최신 등기",
+        "계약 특약",
+        "잔금일"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "당일 확인 원칙의 쌍방 붕괴에서 겉으로 먼저 드러난 말과 장면을 확인합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant03:a:d-5:self_justification:0",
+            "tenant03:b:d-5:self_justification:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "당일 확인 원칙의 쌍방 붕괴 뒤에 있는 불안과 계산을 드러냅니다.",
+          "lockedSummary": "겉말 뒤의 계산과 불안은 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant03:a:d-5:shame:0",
+            "tenant03:b:d-5:shame:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "당일 확인 원칙의 쌍방 붕괴의 책임 경계와 실제 정산 기준을 확정합니다.",
+          "lockedSummary": "책임과 기준을 가르는 핵심 층은 아직 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant03:a:d-5:admission:2",
+            "tenant03:b:d-5:admission:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-2:d-1:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-1",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-1:assurance_frame_seen"
+      },
+      "uiLabel": "안심 프레임이 채무 축소를 가림"
+    },
+    {
+      "id": "link:d-1:d-4:retaliation",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-4",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-4:suspicion_holdback"
+      },
+      "uiLabel": "의심이 잔금 보류로 이동"
+    },
+    {
+      "id": "link:d-3:d-2:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-2",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": -8,
+        "grantFlag": "d-2:broker_role_highlight"
+      },
+      "uiLabel": "한별 역할 부각"
+    },
+    {
+      "id": "link:d-4:d-5:supports",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S3",
+        "minLayer": "core"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-5:principle_broken"
+      },
+      "uiLabel": "당일 확인 원칙 붕괴"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "임대차계약서 원본과 특약란",
+      "description": "잔금일 말소 확인, 전입·확정일자 진행 순서, 추가 비용 항목 부재가 적힌 임대차계약서와 특약 원본이다.",
+      "type": "contract",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "중개사 보관 사본과 당사자 보관 원본이 모두 제출돼 문구 일치가 확인됐다.",
+        "check_metadata": "작성일과 잔금일, 특약 기재 순서가 당시 문자 일정과 맞아떨어진다.",
+        "restore_context": "계약서 어디에도 180만원 별도 안전확인비나 개인 계좌 수납 조항은 없다.",
+        "verify_source": "서명과 도장, 중개사 등록번호가 모두 살아 있는 원본이다.",
+        "check_edits": "특약란에 덧붙이거나 재출력한 흔적 없이 최초 작성본으로 보인다.",
+        "question_acquisition": "당사자 계약 문서라 제출 절차상 정당성 문제는 거의 없다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "강서윤에게: \"당일 확인 원칙의 쌍방 붕괴\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 강서윤의 \"당일 확인 원칙의 쌍방 붕괴\" 쟁점과 관련된다. 강서윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "문태수에게: \"태수의 선순위 채무 축소 고지\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 문태수의 \"태수의 선순위 채무 축소 고지\" 쟁점과 관련된다. 문태수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "문구 전체를 복원해 조건 범위를 잡아 주는 시점"
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.2,
+            "note": "문구 전체를 복원해 조건 범위를 잡아 주는 시점"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "서윤-태수-한별 단톡 캡처",
+      "description": "한별이 '보험은 거의 된다'고 말하고, 서윤이 잔금 일부를 잠시 보류하겠다고 답한 단톡방 일부 캡처다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "처음에는 서윤이 잘라낸 캡처만 제출했고, 이후 전체 대화 원문 일부가 추가로 확보됐다.",
+        "check_metadata": "캡처 생성 시각은 잔금 연기 통보 직후 새벽으로 남아 있다.",
+        "restore_context": "전체 문맥에는 한별이 '최종 확인은 말소 서류 보고'라고 덧붙인 문장이 앞부분에 있었음이 드러난다.",
+        "verify_source": "세 사람의 단말에서 메시지 순서와 읽음 표시는 대체로 일치한다.",
+        "check_edits": "문장 자체 편집은 없지만 앞뒤 두세 줄이 빠져 인상이 달라지는 선택적 크롭이 확인됐다.",
+        "question_acquisition": "당사자 대화지만 제3자인 중개사 발언까지 외부 공유돼 사생활 우려가 남는다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "잘린 맥락을 원문으로 되돌려야 하는 시점"
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "잘린 맥락을 원문으로 되돌려야 하는 시점"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "180만원 송금 내역과 잔금 보류 계좌기록",
+      "description": "서윤이 한별 개인 계좌로 180만원을 송금한 내역, 그리고 약정 잔금이 이틀 뒤 분할 송금된 계좌 거래기록이다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은행 발급 원본에는 수취인 실명, 분할 이체 시각, 메모란이 모두 남아 있다.",
+        "check_metadata": "180만원 송금은 계약금 다음 날, 잔금 분할 송금은 약정일보다 정확히 이틀 뒤에 기록돼 있다.",
+        "restore_context": "수취 계좌 명의가 태수나 중개사무소 법인명이 아니라 한별 개인 명의라는 점이 선명하다.",
+        "verify_source": "서윤 출금내역과 수취 계좌 입금내역의 거래번호가 서로 맞는다.",
+        "check_edits": "기관 발급 PDF와 앱 원본 화면을 대조해도 수정 흔적이 없다.",
+        "question_acquisition": "분쟁 정산을 위한 계좌 자료 제출로 정당성은 충분하지만 계좌번호는 최소 범위만 사용해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "강서윤에게: \"서윤의 잔금 보류와 전입 지연\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 강서윤의 \"서윤의 잔금 보류와 전입 지연\" 쟁점과 관련된다. 강서윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "문태수에게: \"중개보수 외 180만원의 실제 수령자\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 문태수의 \"중개보수 외 180만원의 실제 수령자\" 쟁점과 관련된다. 문태수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "숫자 부인이 막히는 시점"
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "숫자 부인이 막히는 시점"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "등기부등본과 브리지대출 상환예정 확인서",
+      "description": "계약 직전 발급된 등기부등본, 잔금일 기준 말소 예정이라던 확인서, 그리고 실제로 추가된 브리지대출 잔액표다.",
+      "type": "record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "등기부 최신본과 금융기관 상환예정 확인서 원본이 함께 제출돼 날짜 비교가 가능했다.",
+        "check_metadata": "추가 브리지대출 실행일이 계약서 작성일보다 이틀 뒤, 잔금일보다 사흘 앞선 시점으로 찍혀 있다.",
+        "restore_context": "처음 보여준 말소 예정서는 기존 담보만 기준으로 작성돼 최신 잔액을 반영하지 못했다.",
+        "verify_source": "등기소 열람본과 금융기관 발급번호가 각 기관 조회 결과와 일치한다.",
+        "check_edits": "금액 덧쓰기나 스캔 왜곡 없이 원본 발급 상태가 유지돼 있다.",
+        "question_acquisition": "등기와 상환예정 확인은 통상 열람 가능한 자료여서 적법성 문제는 낮다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "강서윤에게: \"당일 확인 원칙의 쌍방 붕괴\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 강서윤의 \"당일 확인 원칙의 쌍방 붕괴\" 쟁점과 관련된다. 강서윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "문태수에게: \"태수의 선순위 채무 축소 고지\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 문태수의 \"태수의 선순위 채무 축소 고지\" 쟁점과 관련된다. 문태수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "기관 기록이 말보다 앞서는 시점"
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "기관 기록이 말보다 앞서는 시점"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "통화 녹음 파일과 보증상담센터 통화기록",
+      "description": "잔금 전날 한별, 태수, 서윤이 차례로 통화한 녹음 일부와, 서윤이 보증상담센터에 문의한 상담 이력이다.",
+      "type": "record",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "서윤 휴대폰 원본 음성 파일과 상담센터의 수신기록이 나란히 제출됐다.",
+        "check_metadata": "한별의 안심 발언이 있은 뒤 17분 만에 서윤이 상담센터에 다시 문의한 흐름이 남아 있다.",
+        "restore_context": "녹음 전체를 들으면 태수보다 한별이 먼저 '보험은 크게 문제 없을 것'이라는 표현을 쓰고, 태수는 그 말을 끊지 않는다.",
+        "verify_source": "상담센터 통화내역과 휴대폰 발신 목록의 시각 차이가 1분 이내로 일치한다.",
+        "check_edits": "오디오 컷 편집 흔적은 없고 파일 생성 시간도 연속적이다.",
+        "question_acquisition": "당사자 통화 녹음이지만 제3자 발언과 상담 내용이 섞여 있어 활용 범위에 사생활 주의가 필요하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "강서윤에게: \"보증보험 가능 확답의 실제 출처\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 강서윤의 \"보증보험 가능 확답의 실제 출처\" 쟁점과 관련된다. 강서윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "문태수에게: \"당일 확인 원칙의 쌍방 붕괴\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 문태수의 \"당일 확인 원칙의 쌍방 붕괴\" 쟁점과 관련된다. 문태수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "기관 기록이 말보다 앞서는 시점"
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "기관 기록이 말보다 앞서는 시점"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "중개보수 세금계산서와 사무실 정산표",
+      "description": "정식 중개보수로 신고된 금액과 별도로, 180만원이 한별 개인 수납 항목으로 적힌 사무실 정산표 및 카드 결제 내역이다.",
+      "type": "record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "세무 신고용 세금계산서와 회계 프로그램 출력 정산표가 함께 제출됐다.",
+        "check_metadata": "180만원 항목의 수납일은 e-3 송금일과 동일하고, 같은 날 사무실 운영비와 카드값 출금이 이어진다.",
+        "restore_context": "정식 중개보수 항목에는 그 금액이 포함되지 않아 별도 개인 수납 구조였음이 드러난다.",
+        "verify_source": "사무실 회계 담당자 확인과 세금계산서 발행 기록이 서로 맞는다.",
+        "check_edits": "전표 번호와 회계 로그가 끊기지 않아 사후 조작 가능성은 낮다.",
+        "question_acquisition": "회계 자료는 내부 정보지만 당사자 비용 분쟁 해결을 위해 적법한 요청 절차를 거쳐 제출됐다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "기관 기록이 말보다 앞서는 시점"
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:debt_update_source",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "tenant03:a:d-1:fear:0",
+          "tenant03:b:d-1:shame:1"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:assurance_speaker",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "tenant03:a:d-2:fear:0",
+          "tenant03:b:d-2:fear:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:extra_fee_recipient",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "tenant03:a:d-3:fear:0",
+          "tenant03:b:d-3:admission:2"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:holdback_reason",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "tenant03:a:d-4:shame:0",
+          "tenant03:b:d-4:harm:0"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:rule_break_point",
+      "intentTag": "legality_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "tenant03:a:d-5:shame:0",
+          "tenant03:b:d-5:shame:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:family_pressure",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "tenant03:a:d-4:shame:0",
+          "tenant03:b:d-4:harm:0"
+        ],
+        "preferredAngleTags": [
+          "emotion",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+};

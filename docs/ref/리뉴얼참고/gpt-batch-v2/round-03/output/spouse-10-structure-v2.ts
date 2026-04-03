@@ -1,0 +1,1123 @@
+export const spouse_10_structure_v2 = {
+  "caseId": "spouse-10",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "기현의 일방 점심 확정",
+      "truth": true,
+      "truthDescription": "기현은 전날 밤 단톡에 점심 먼저 가겠다고 보내고 과일상자 픽업까지 예약했다. 수아 확인 문자는 없다. 어머니에게 확정이었지만 배우자 동의 없는 확정은 일방 통보.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "방문확정규칙",
+      "legitimacyIssue": false,
+      "judgmentStatement": "기현은 일방적으로 점심을 확정했다.",
+      "caseId": "spouse-10",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "점심 먼저",
+        "과일상자",
+        "어머니 단톡",
+        "토 점심쯤",
+        "시댁 점심",
+        "선행 확정"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "기현의 일방 점심 확정의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse10:a:d-1:denial:0",
+            "spouse10:b:d-1:denial:0",
+            "spouse10:b:d-1:admission:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "기현의 일방 점심 확정 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse10:a:d-1:responsibility:2",
+            "spouse10:b:d-1:admission:2",
+            "spouse10:b:d-1:context:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "기현의 일방 점심 확정가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse10:a:d-1:fear:4",
+            "spouse10:b:d-1:fear:4",
+            "spouse10:b:d-1:admission:5"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "수아의 모호한 본가 일정표",
+      "truth": true,
+      "truthDescription": "수아는 캘린더에 토 11시 본가라고만 입력하고 본가=친정이라고 설명한 적이 없다. 자기 가족 표현을 배우자도 같은 뜻으로 읽을 거라는 가정이 확인 의무 회피.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "방문확정규칙",
+      "legitimacyIssue": false,
+      "judgmentStatement": "수아는 본가를 친정으로 설명하지 않았다.",
+      "caseId": "spouse-10",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "토 11시 본가",
+        "공유캘린더",
+        "본가 표기",
+        "친정 뜻",
+        "직접 확인 없음",
+        "캘린더 이력"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "수아의 모호한 본가 일정표의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse10:a:d-2:quote:0",
+            "spouse10:a:d-2:admission:2",
+            "spouse10:b:d-2:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "수아의 모호한 본가 일정표 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse10:a:d-2:admission:2",
+            "spouse10:a:d-2:counter:3",
+            "spouse10:b:d-2:admission:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "수아의 모호한 본가 일정표가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse10:a:d-2:shame:4",
+            "spouse10:a:d-2:admission:5",
+            "spouse10:b:d-2:shame:4"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "기현의 처가 무시 의도 유무",
+      "truth": false,
+      "truthDescription": "기현 메모에 오후 장인댁 방문 계획이 남아 있다. 의도적 배제가 아니라 해석 오류였지만 확인 한 통화면 막을 수 있었으므로 과실은 남는다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "오해정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "기현은 의도적 배제가 아니다.",
+      "caseId": "spouse-10",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "처가 무시",
+        "장인댁",
+        "이모 메시지",
+        "점심 차려 놓고",
+        "고의 무시",
+        "홀대 의심"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "기현의 처가 무시 의도 유무의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse10:a:d-3:denial:0",
+            "spouse10:a:d-3:uncertainty:2",
+            "spouse10:b:d-3:denial:0",
+            "spouse10:b:d-3:admission:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "기현의 처가 무시 의도 유무 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse10:a:d-3:uncertainty:2",
+            "spouse10:a:d-3:motive:3",
+            "spouse10:b:d-3:admission:2",
+            "spouse10:b:d-3:context:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "기현의 처가 무시 의도 유무가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:trap_disarmed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse10:a:d-3:fear:4",
+            "spouse10:a:d-3:admission:5",
+            "spouse10:b:d-3:shame:4",
+            "spouse10:b:d-3:admission:5"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "knows"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어와 당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란과 확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소 직전",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "섭섭 메시지 단독 캡처",
+          "홀대감이 고의 판단으로 번짐"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-5"
+        ],
+        "clarifyOutcomeLabel": "오해 해소 직전"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "배우자 최종 확인 지연",
+      "truth": true,
+      "truthDescription": "기현은 전날 밤 어머니에게, 수아는 이틀 전 친정에 방문 의사를 전했다. 부부 간 최종 통화는 출발 7분 전. 양가보다 배우자가 나중에 안 구조 자체가 소통 우선순위 문제.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "부부우선확인",
+      "legitimacyIssue": false,
+      "judgmentStatement": "기현은 어머니에게 연락했다.",
+      "caseId": "spouse-10",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "최종 확인 지연",
+        "출발 7분 전",
+        "양가 먼저 연락",
+        "부부 우선 확인",
+        "선물 예약",
+        "통화 2분 14초"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "배우자 최종 확인 지연의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse10:a:d-4:denial:0",
+            "spouse10:b:d-4:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "배우자 최종 확인 지연 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse10:a:d-4:admission:2",
+            "spouse10:b:d-4:admission:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "배우자 최종 확인 지연가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse10:a:d-4:shame:4",
+            "spouse10:b:d-4:shame:4"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "모호한 표현과 이동시간 착각",
+      "truth": true,
+      "truthDescription": "본가(어느 집?), 먼저(누구 기준?), 점심쯤(몇 시?) — 세 단어 모두 해석이 둘로 갈린다. 양가 사이 이동 50분을 감안 안 한 착각까지 합쳐진 구조적 실수.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-4",
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "명절운영",
+      "legitimacyIssue": false,
+      "judgmentStatement": "모호한 표현과 착각이 있었다.",
+      "caseId": "spouse-10",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "가까운 쪽 먼저",
+        "이동 50분",
+        "동선 착각",
+        "모호한 표현",
+        "오전 오후",
+        "명절 운영"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "모호한 표현과 이동시간 착각의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse10:a:d-5:denial:0",
+            "spouse10:a:d-5:admission:2",
+            "spouse10:b:d-5:denial:0",
+            "spouse10:b:d-5:admission:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "모호한 표현과 이동시간 착각 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse10:a:d-5:admission:2",
+            "spouse10:a:d-5:timeline:3",
+            "spouse10:b:d-5:admission:2",
+            "spouse10:b:d-5:timeline:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "모호한 표현과 이동시간 착각가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:motive_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse10:a:d-5:fear:4",
+            "spouse10:a:d-5:admission:5",
+            "spouse10:b:d-5:emotion:4",
+            "spouse10:b:d-5:admission:5"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-4:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-4",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-4:surface:parent_notice_first"
+      },
+      "uiLabel": "부모에게 먼저 말함"
+    },
+    {
+      "id": "link:d-2:d-5:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-5:surface:ambiguous_label_visible"
+      },
+      "uiLabel": "모호한 표기"
+    },
+    {
+      "id": "link:d-4:d-5:supports",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-5:motive:late_confirmation_open"
+      },
+      "uiLabel": "확인 부재"
+    },
+    {
+      "id": "link:d-3:d-5:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-5",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-5:core:intent_misread_softened"
+      },
+      "uiLabel": "고의가 아님"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "기현-어머니 가족 단톡과 과일상자 픽업 예약",
+      "description": "기현이 전날 밤 어머니에게 보낸 단톡과 오전 과일상자 픽업 예약. 시댁 방문을 확정 수순으로 진행했음을 보여주지만 수아 동의 여부는 없다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "가족 단톡 원문(전날 밤 8:11 발신)과 백화점 픽업 예약 확인서(다음 날 오전 9:03 결제)가 함께 제출됐다.",
+        "check_metadata": "단톡 발신 전날 밤 20:11, 픽업 결제 다음 날 09:03. 13시간 간격으로 연락→준비가 이어져 기현이 확정으로 여겼음을 시사.",
+        "restore_context": "'먼저 갈게요'는 가능성이 아니라 확정 통보에 가깝다. 어머니가 점심상을 준비한 것도 이 문구 때문이다.",
+        "verify_source": "단톡 참여자 두 명(기현·어머니)의 기기 백업본에서 동일 문구가 확인되고, 백화점 주문번호와 카드 승인 내역이 일치한다.",
+        "check_edits": "메시지 삭제·수정 이력 없음, 캡처 이미지에 크롭·합성 흔적 없음. 원본 상태 그대로다.",
+        "question_acquisition": "가족 단톡 참여자 본인 제출 + 주문 당사자 본인 내역이므로 취득 절차상 문제는 없다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "기현의 일방 점심 확정의 사실선을 고정하는 타이밍."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "배우자 최종 확인 지연의 사실선을 고정하는 타이밍."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "공유캘린더 버전 이력",
+      "description": "수아의 토 11시 본가 캘린더 이력. 본가가 어느 집인지 명시하지 않아 기현이 시댁으로 읽었을 가능성이 있다. 수정 없이 유지된 점은 친정 의도 근거.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "캘린더 서버 버전 이력(생성·수정·삭제 로그)과 수아·기현 양쪽 기기의 동기화 타임스탬프가 함께 제출됐다.",
+        "check_metadata": "일정 생성: 명절 이틀 전 밤 23:47. 이후 수정·삭제 없음. 수아 기준으로는 변경 필요를 느끼지 않았다는 뜻.",
+        "restore_context": "'토 11시 본가' — 시간은 구체적이지만 본가가 친정인지 시댁인지 어디에도 명시돼 있지 않아 해석 여지가 남는다.",
+        "verify_source": "캘린더 플랫폼 서버 로그와 양쪽 기기 동기화 시각이 분 단위까지 일치한다. 위조 가능성은 극히 낮다.",
+        "check_edits": "서버 원본 기록이므로 사용자 측 수동 편집이 불가능한 구조다. 조작 흔적 없음.",
+        "question_acquisition": "부부 공유캘린더 자료로 양쪽 모두 열람 권한이 있으며, 제출에 별도 동의가 필요하지 않는 범위다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "timeline"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "수아의 모호한 본가 일정표의 사실선을 고정하는 타이밍."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "배우자 최종 확인 지연의 사실선을 고정하는 타이밍."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "수아가 저장한 이모의 섭섭 메시지 캡처",
+      "description": "이모가 보낸 차려 놓고 기다렸다 메시지. 친정 측 피해를 보여주지만 누가 방문 시간을 확정했는지는 단독 판단 불가.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "이모가 보낸 '점심 차려 놓고 기다렸다' 메시지 한 건만 캡처돼 있고, 그 앞뒤 대화는 포함되지 않았다.",
+        "check_metadata": "캡처 생성: 출발 지연 발생 후 34분. 감정 고조 시점에 가장 서운한 문구만 골랐을 가능성이 있다.",
+        "restore_context": "결과적 피해를 보여줄 뿐이다. 누가 먼저 방문 시간을 확정했는지, 수아가 이모에게 몇 시라고 말했는지는 이 캡처로 알 수 없다.",
+        "verify_source": "이모 기기와 수아 기기 양쪽에서 동일 문구·동일 시각이 확인된다. 문구 자체는 진본이다.",
+        "check_edits": "합성 흔적 없다. 다만 앞뒤 대화가 잘린 선택적 캡처이므로 이모가 메시지 전에 어떤 맥락이 있었는지 확인 불가.",
+        "question_acquisition": "가족 대화 당사자(수아)가 직접 제출한 자료로, 취득 위법성은 없다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.4,
+            "note": "기현의 처가 무시 의도 유무에서 부분 자료의 함정을 벗겨내는 분기점."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "배우자 최종 확인 지연에서 부분 자료의 함정을 벗겨내는 분기점."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "통화기록과 하이패스·주차 이력",
+      "description": "출발 7분 전 부부 통화 기록과, 각자 다른 방향으로 움직인 하이패스·주차 이력. 서로 다른 계획을 갖고 동시에 출발한 물리적 증거.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "통신사 발급 통화기록 원본, 하이패스 톨게이트 통과 이력, 목적지 주차장 정산 내역 세 종류가 함께 제출됐다.",
+        "check_metadata": "부부 최종 통화: 출발 7분 전, 2분 14초. 이후 각자 다른 방면 톨게이트·주차장을 통과. 7분 안에 조율 불가능했던 상황.",
+        "restore_context": "두 차량이 거의 동시에 반대 방향 출발. 어느 쪽도 상대 약속을 알면서 깬 것이 아니라 각자 확정안대로 움직였다.",
+        "verify_source": "통신사 통화 종료 시각과 하이패스 톨게이트 통과 시각이 분 단위로 맞아떨어진다. 세 출처가 교차 검증된다.",
+        "check_edits": "통신사·도로공사·주차장 기관 발급 조회본이라 사용자 편집이 구조적으로 불가능하다.",
+        "question_acquisition": "각자 본인 명의 차량 이력과 본인 통화기록만 최소 범위로 조회·제출했으므로 절차상 문제 없다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "배수아에게: \"기현의 처가 무시 의도 유무\" 관련 해명 요구",
+          "implication": "이 증거는 배수아의 \"기현의 처가 무시 의도 유무\" 쟁점과 관련된다. 배수아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "남기현에게: \"모호한 표현과 이동시간 착각\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 남기현의 \"모호한 표현과 이동시간 착각\" 쟁점과 관련된다. 남기현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "timeline"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "기현의 처가 무시 의도 유무에서 잘못된 해석을 되돌리는 창."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "모호한 표현과 이동시간 착각의 사실선을 고정하는 타이밍."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "부부 음성메시지와 메신저 대화",
+      "description": "수아의 가까운 쪽 먼저 음성메시지와 기현의 본가부터 텍스트 답장. 핵심 분기점이며 어느 쪽도 구체적 집 이름을 명시하지 않았다.",
+      "type": "audio",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "수아의 음성메시지 원본 파일(.m4a)과 기현의 텍스트 답장이 포함된 메신저 서버 백업이 함께 제출됐다.",
+        "check_metadata": "수아 음성메시지: 명절 사흘 전 오후. 기현 답장: 같은 날 저녁 2시간 뒤. 공백 동안 기현이 본가=시댁으로 해석을 굳혔을 가능성.",
+        "restore_context": "수아: '가까운 쪽 먼저', 기현: '본가부터' — 양쪽 모두 구체 집 이름 없이 같은 대화를 정반대로 해석할 여지가 있었다.",
+        "verify_source": "수아 기기의 음성 파일 해시와 메신저 서버 백업 해시가 일치한다. 기현 측 기기에서도 동일 대화가 확인된다.",
+        "check_edits": "음성 파일에 잘라 붙이기·편집 흔적 없음. 텍스트 메시지도 수정 이력 없이 연속 대화 흐름이 유지된다.",
+        "question_acquisition": "부부 당사자 간 1:1 대화 자료이며, 양쪽 모두 제출에 동의했으므로 적법하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "배수아에게: \"수아의 모호한 본가 일정표\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 배수아의 \"수아의 모호한 본가 일정표\" 쟁점과 관련된다. 배수아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "남기현에게: \"모호한 표현과 이동시간 착각\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 남기현의 \"모호한 표현과 이동시간 착각\" 쟁점과 관련된다. 남기현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "수아의 모호한 본가 일정표의 사실선을 고정하는 타이밍."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S3",
+            "multiplier": 1.3,
+            "note": "기현의 처가 무시 의도 유무에서 잘못된 해석을 되돌리는 창."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "두 집 선물세트 픽업 내역과 수령 메모",
+      "description": "기현 과일상자(시댁)·수아 한과세트(친정) 픽업 예약. 5시간 간격 다른 주소로, 각자 다른 첫 방문지를 상정했으나 상대 준비를 확인 안 했다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "기현 명의 과일상자 주문서와 수아 명의 한과세트 주문서, 각각의 수령 메모가 함께 제출됐다.",
+        "check_metadata": "두 주문 간 5시간 차. 기현 수령 메모에 시댁, 수아에 친정 주소. 완전히 별개 주소라는 것은 각자 다른 첫 방문지를 상정했다는 뜻.",
+        "restore_context": "둘 다 내 쪽 부모 집이 먼저라는 전제로 선물을 준비했지만 상대가 어디로 보냈는지 한 번도 확인하지 않았다.",
+        "verify_source": "백화점 주문 시스템의 주문번호·결제 시각과 각자 카드사 승인 기록이 일치한다. 교차 검증 완료.",
+        "check_edits": "백화점 시스템에서 발급된 주문서 원본이므로 사용자 측 조작이 구조적으로 불가능하다.",
+        "question_acquisition": "각자 본인 명의 주문 내역과 본인이 작성한 수령 메모이므로 제출에 절차적 문제없다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "배우자 최종 확인 지연의 사실선을 고정하는 타이밍."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "모호한 표현과 이동시간 착각의 사실선을 고정하는 타이밍."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:confirmation_path",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "spouse10:a:d-1:responsibility:2",
+          "spouse10:b:d-1:admission:2"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "맥락을 빼고 한 문장만 답하면 또 오해가 생깁니다.",
+        "앞뒤 사정을 먼저 정리하지 않으면 답을 아끼고 싶습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:home_label",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "spouse10:a:d-2:admission:2",
+          "spouse10:b:d-2:admission:2"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 특정인 이름부터 다시 단정하고 싶지 않습니다.",
+        "그 사람을 다시 지목하는 방식으로는 답하고 싶지 않아요."
+      ]
+    },
+    {
+      "id": "fq:d-3:intent_vs_result",
+      "intentTag": "motive_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "spouse10:a:d-3:uncertainty:2",
+          "spouse10:b:d-3:admission:2"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "의도부터 단정하는 질문에는 바로 답하고 싶지 않습니다.",
+        "왜 그랬는지 말하려면 감정선부터 정리해야 합니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:last_call_timing",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "spouse10:a:d-4:admission:2",
+          "spouse10:b:d-4:admission:2"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "그 순서를 한 줄로 정리할 준비가 아직 안 됐습니다.",
+        "시점부터 다시 세워야 해서 지금은 바로 답하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:route_feasibility",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "spouse10:a:d-5:admission:2",
+          "spouse10:b:d-5:admission:2"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "맥락을 빼고 한 문장만 답하면 또 오해가 생깁니다.",
+        "앞뒤 사정을 먼저 정리하지 않으면 답을 아끼고 싶습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:face_loss",
+      "intentTag": "emotion_check",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "spouse10:a:d-5:admission:2",
+          "spouse10:b:d-5:admission:2"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 감정은 아직 그대로 말하기 어렵습니다.",
+        "그 부분은 지금 꺼내면 말이 무너질 것 같습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  }
+} as const;

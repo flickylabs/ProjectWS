@@ -1,0 +1,30 @@
+{
+  "requestFile": "00-V2-요청서.md",
+  "generatedFrom": {
+    "tenant-09": {
+      "atoms": "tenant-09-v2-atoms.json",
+      "gameLoop": "tenant-09-v3-game-loop-data.json",
+      "caseOriginal": "사건원본_tenant-09.json"
+    },
+    "tenant-10": {
+      "atoms": "tenant-10-v2-atoms.json",
+      "gameLoop": "tenant-10-v3-game-loop-data.json",
+      "caseOriginal": "사건원본_tenant-10.json"
+    },
+    "tenant-11": {
+      "atoms": "tenant-11-v2-atoms.json",
+      "gameLoop": "tenant-11-v3-game-loop-data.json",
+      "caseOriginal": "사건원본_tenant-11.json"
+    },
+    "tenant-12": {
+      "atoms": "tenant-12-v2-atoms.json",
+      "gameLoop": "tenant-12-v3-game-loop-data.json",
+      "caseOriginal": "사건원본_tenant-12.json"
+    }
+  },
+  "notes": [
+    "structure-v2에는 disputes/evidence/freeQuestionHooks/phase3LogHints 외에 linkEdges와 proposedUnlockAtoms를 함께 넣었습니다.",
+    "beats-v2-full은 사건별 50~74개 범위에 맞추고, interjection/fatigue/free_question/misconception lane을 포함했습니다.",
+    "Beat ID는 하이픈 없는 case prefix(tenant09 등)를 쓰고, top-level caseId는 tenant-09 형식을 유지했습니다."
+  ]
+}

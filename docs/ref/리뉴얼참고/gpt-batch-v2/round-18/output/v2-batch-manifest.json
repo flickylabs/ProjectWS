@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "v2_batch_manifest",
+  "sourceCases": [
+    "tenant-09",
+    "tenant-10",
+    "tenant-11",
+    "tenant-12"
+  ],
+  "files": [
+    "tenant-09-structure-v2.json",
+    "tenant-09-structure-v2.ts",
+    "tenant-09-beats-v2-full.json",
+    "tenant-09-beats-v2-full.ts",
+    "tenant-10-structure-v2.json",
+    "tenant-10-structure-v2.ts",
+    "tenant-10-beats-v2-full.json",
+    "tenant-10-beats-v2-full.ts",
+    "tenant-11-structure-v2.json",
+    "tenant-11-structure-v2.ts",
+    "tenant-11-beats-v2-full.json",
+    "tenant-11-beats-v2-full.ts",
+    "tenant-12-structure-v2.json",
+    "tenant-12-structure-v2.ts",
+    "tenant-12-beats-v2-full.json",
+    "tenant-12-beats-v2-full.ts"
+  ],
+  "caseSummaries": {
+    "tenant-09": {
+      "structure": {
+        "disputes": 5,
+        "evidence": 6,
+        "linkEdges": 4,
+        "freeQuestionHooks": 6,
+        "proposedUnlockAtoms": 24
+      },
+      "beats": {
+        "totalBeats": 54,
+        "byActionFamily": {
+          "question": 24,
+          "evidence": 6,
+          "fatigue": 6,
+          "free_question": 6,
+          "interjection": 12
+        },
+        "byIssueRole": {
+          "core_truth": 28,
+          "sub_truth": 26
+        },
+        "byResponseIntent": {
+          "pressure_response": 22,
+          "evidence_response": 6,
+          "rapport_response": 15,
+          "motive_response": 5,
+          "fatigue_response": 6
+        },
+        "interjectionInfoLevels": {
+          "emotional_only": 6,
+          "detail_rebuttal": 6
+        },
+        "fatigueBeats": 6,
+        "freeQuestionBeats": 6
+      }
+    },
+    "tenant-10": {
+      "structure": {
+        "disputes": 5,
+        "evidence": 6,
+        "linkEdges": 4,
+        "freeQuestionHooks": 6,
+        "proposedUnlockAtoms": 24
+      },
+      "beats": {
+        "totalBeats": 58,
+        "byActionFamily": {
+          "question": 28,
+          "evidence": 6,
+          "fatigue": 6,
+          "free_question": 6,
+          "interjection": 12
+        },
+        "byIssueRole": {
+          "sub_truth": 14,
+          "shared_misconception": 21,
+          "core_truth": 12,
+          "red_herring": 11
+        },
+        "byResponseIntent": {
+          "pressure_response": 20,
+          "motive_response": 5,
+          "evidence_response": 6,
+          "rapport_response": 13,
+          "fatigue_response": 6,
+          "trap_confusion_response": 8
+        },
+        "interjectionInfoLevels": {
+          "emotional_only": 4,
+          "detail_rebuttal": 4,
+          "misbelief_escalation": 2,
+          "trap_signal": 2
+        },
+        "fatigueBeats": 6,
+        "freeQuestionBeats": 6
+      }
+    },
+    "tenant-11": {
+      "structure": {
+        "disputes": 5,
+        "evidence": 6,
+        "linkEdges": 4,
+        "freeQuestionHooks": 6,
+        "proposedUnlockAtoms": 40
+      },
+      "beats": {
+        "totalBeats": 56,
+        "byActionFamily": {
+          "question": 26,
+          "evidence": 6,
+          "fatigue": 6,
+          "free_question": 6,
+          "interjection": 12
+        },
+        "byIssueRole": {
+          "core_truth": 25,
+          "red_herring": 13,
+          "sub_truth": 18
+        },
+        "byResponseIntent": {
+          "pressure_response": 20,
+          "motive_response": 5,
+          "evidence_response": 6,
+          "rapport_response": 13,
+          "fatigue_response": 6,
+          "trap_confusion_response": 6
+        },
+        "interjectionInfoLevels": {
+          "emotional_only": 4,
+          "detail_rebuttal": 4,
+          "misbelief_escalation": 2,
+          "trap_signal": 2
+        },
+        "fatigueBeats": 6,
+        "freeQuestionBeats": 6
+      }
+    },
+    "tenant-12": {
+      "structure": {
+        "disputes": 5,
+        "evidence": 6,
+        "linkEdges": 4,
+        "freeQuestionHooks": 6,
+        "proposedUnlockAtoms": 24
+      },
+      "beats": {
+        "totalBeats": 56,
+        "byActionFamily": {
+          "question": 26,
+          "evidence": 6,
+          "fatigue": 6,
+          "free_question": 6,
+          "interjection": 12
+        },
+        "byIssueRole": {
+          "shared_misconception": 20,
+          "sub_truth": 25,
+          "core_truth": 11
+        },
+        "byResponseIntent": {
+          "pressure_response": 22,
+          "evidence_response": 6,
+          "rapport_response": 13,
+          "fatigue_response": 6,
+          "motive_response": 3,
+          "trap_confusion_response": 6
+        },
+        "interjectionInfoLevels": {
+          "emotional_only": 4,
+          "detail_rebuttal": 4,
+          "misbelief_escalation": 2,
+          "trap_signal": 2
+        },
+        "fatigueBeats": 6,
+        "freeQuestionBeats": 6
+      }
+    }
+  }
+}

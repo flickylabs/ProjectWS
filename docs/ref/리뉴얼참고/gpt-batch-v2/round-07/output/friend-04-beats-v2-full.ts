@@ -1,0 +1,3515 @@
+export const friend04BeatsV2Full = {
+  "caseId": "friend-04",
+  "schemaVersion": "beat_v2_full",
+  "coverageSummary": {
+    "totalBeats": 56,
+    "byActionFamily": {
+      "question": 26,
+      "evidence": 6,
+      "free_question": 6,
+      "fatigue": 6,
+      "interjection": 12
+    },
+    "byParty": {
+      "a": 28,
+      "b": 28
+    },
+    "byIssueRole": {
+      "core_truth": 28,
+      "shared_misconception": 16,
+      "sub_truth": 12
+    },
+    "byDispute": {
+      "d-1": 14,
+      "d-2": 14,
+      "d-3": 16,
+      "d-4": 6,
+      "d-5": 6
+    },
+    "interjectionBreakdown": {
+      "emotional_only": 4,
+      "detail_rebuttal": 4,
+      "misbelief_escalation": 4
+    }
+  },
+  "beats": [
+    {
+      "id": "friend04:beat_v2:a:d-1:surface:pressure:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "내가 혼자 멋대로 예약금을 꽂은 것처럼 말하면 안 돼.",
+      "behaviorHint": "불리한 질문이 나오면 '그때 바로 답했어야지'라며 시간 압박을 꺼내 본질보다 대응 속도를 문제 삼는다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "guarded"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s0:hyunwoo_signal_as_consent:0",
+          "friend04:a:d-1:s0:seller_pressure:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0",
+          "friend04:a:d-1:s4:seller_pressure:1"
+        ]
+      },
+      "weight": 7,
+      "priority": 34,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:pressure:timeline",
+      "coverageKey": "a:d-1:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "tags": [
+        "hot",
+        "timeline"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-1:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:surface:pressure:legality:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "나는 괜히 질러본 게 아니라 놓치지 않으려고 움직인 거야.",
+      "behaviorHint": "불리한 질문이 나오면 '그때 바로 답했어야지'라며 시간 압박을 꺼내 본질보다 대응 속도를 문제 삼는다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "legality",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "guarded"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s0:hyunwoo_signal_as_consent:0",
+          "friend04:a:d-1:s0:seller_pressure:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0",
+          "friend04:a:d-1:s4:seller_pressure:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:pressure:legality",
+      "coverageKey": "a:d-1:surface:early:pressure:legality",
+      "variantTarget": 6,
+      "tags": [
+        "hot",
+        "legality"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-1:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:motive:motive:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "예약금 3만원을 먼저 보낸 건 맞아.",
+      "behaviorHint": "상대의 긴 설명을 자르고 '그래서 산다는 거였어, 아니었어?'처럼 이분법으로 몰아간다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0",
+          "friend04:a:d-1:s2:hyunwoo_signal_as_consent:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0",
+          "friend04:a:d-1:s4:seller_pressure:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 31,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:motive:motive:responsibility",
+      "coverageKey": "a:d-1:motive:mid:motive:responsibility",
+      "variantTarget": 4,
+      "tags": [
+        "mid",
+        "responsibility"
+      ],
+      "questionTypes": [
+        "motive_search"
+      ],
+      "setFlags": [
+        "d-1:motive:responsibility_opened"
+      ],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:motive:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "justify",
+      "line": "다만 현우가 뒤에서 빠질 수 있게 말을 남겨둔 채 긍정 신호를 준 것도 같이 봐야 해.",
+      "behaviorHint": "상대의 긴 설명을 자르고 '그래서 산다는 거였어, 아니었어?'처럼 이분법으로 몰아간다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0",
+          "friend04:a:d-1:s2:hyunwoo_signal_as_consent:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0",
+          "friend04:a:d-1:s4:seller_pressure:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:motive:motive:motive",
+      "coverageKey": "a:d-1:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "tags": [
+        "mid",
+        "motive"
+      ],
+      "questionTypes": [
+        "motive_search"
+      ],
+      "setFlags": [
+        "d-1:motive:motive_opened"
+      ],
+      "requiresFlags": [
+        "d-1:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:motive:evidence:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "cornered",
+      "line": "예약금 3만원 계좌이체 내역 얘기가 나오면, 그래도 그 전에 현우가 반반 가능하다고 계속 읽히게 말한 건 부정 못 해.",
+      "behaviorHint": "생각이 서면 결론부터 바로 말하고, 상대의 애매한 표현도 자기 기준으로 정리해 들이민다",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "timeline",
+      "actionFamily": "evidence",
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "guarded"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s0:hyunwoo_signal_as_consent:0",
+          "friend04:a:d-1:s0:seller_pressure:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0",
+          "friend04:a:d-1:s4:seller_pressure:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:motive:evidence:timeline",
+      "coverageKey": "a:d-1:motive:early:evidence:timeline",
+      "variantTarget": 3,
+      "tags": [
+        "evidence",
+        "early",
+        "timeline"
+      ],
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "setFlags": [
+        "d-1:motive:evidence_seen"
+      ],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "emotional",
+      "line": "솔직히 이번엔 또 내가 먼저 결제해 놓고 나중에 정리하게 될까 봐 조급했어.",
+      "behaviorHint": "계좌이체나 영수증 화면을 손가락으로 두드리며 이미 결론이 끝났다는 듯 말한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0",
+          "friend04:a:d-1:s4:seller_pressure:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0",
+          "friend04:a:d-1:s2:hyunwoo_signal_as_consent:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 28,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:core:rapport:emotion",
+      "coverageKey": "a:d-1:core:late:rapport:emotion",
+      "variantTarget": 4,
+      "tags": [
+        "late",
+        "emotion"
+      ],
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "setFlags": [
+        "d-1:core:emotion_exposed"
+      ],
+      "requiresFlags": [
+        "d-1:motive:motive_opened"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:core:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "candid",
+      "line": "판매자 압박과 현우 말에 기대서 내가 확정으로 번역해 버렸어.",
+      "behaviorHint": "계좌이체나 영수증 화면을 손가락으로 두드리며 이미 결론이 끝났다는 듯 말한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "free_question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0",
+          "friend04:a:d-1:s4:seller_pressure:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0",
+          "friend04:a:d-1:s2:hyunwoo_signal_as_consent:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:core:motive:motive",
+      "coverageKey": "a:d-1:core:late:motive:motive",
+      "variantTarget": 2,
+      "tags": [
+        "free_question",
+        "motive"
+      ],
+      "questionTypes": [
+        "motive_search"
+      ],
+      "setFlags": [
+        "d-1:core:repair_named"
+      ],
+      "requiresFlags": [
+        "d-1:core:emotion_exposed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:surface:fatigue:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "irritated",
+      "line": "그 얘기 아까도 말했잖아. 예약금 3만원을 먼저 보낸 건 맞아.",
+      "behaviorHint": "다혜가 숨을 크게 내쉬고 말을 거의 끊어치듯 던진다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0",
+          "friend04:a:d-1:s2:hyunwoo_signal_as_consent:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0",
+          "friend04:a:d-1:s4:seller_pressure:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:fatigue:timeline",
+      "coverageKey": "a:d-1:surface:mid:fatigue:timeline",
+      "variantTarget": 3,
+      "tags": [
+        "fatigue",
+        "turn2"
+      ],
+      "setFlags": [
+        "d-1:surface:fatigue_annoyed"
+      ],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:motive:fatigue:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blocked",
+      "line": "같은 데만 계속 찌르지 마. 비환불 고지를 보고도 내가 서둘러 송금한 건 인정해.",
+      "behaviorHint": "다혜가 숨을 크게 내쉬고 말을 거의 끊어치듯 던진다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "responsibility",
+      "actionFamily": "fatigue",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0",
+          "friend04:a:d-1:s2:hyunwoo_signal_as_consent:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0",
+          "friend04:a:d-1:s4:seller_pressure:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 30,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:motive:fatigue:responsibility",
+      "coverageKey": "a:d-1:motive:mid:fatigue:responsibility",
+      "variantTarget": 3,
+      "tags": [
+        "fatigue",
+        "turn3",
+        "block"
+      ],
+      "setFlags": [
+        "d-1:motive:fatigue_blocked"
+      ],
+      "requiresFlags": [
+        "d-1:motive:responsibility_opened"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:motive:fatigue:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "counterattack",
+      "line": "또 내가 먼저 움직였다는 이유로 전부 내 탓으로 넘기지 마. 이번에도 정리 담당은 결국 나였잖아.",
+      "behaviorHint": "다혜가 숨을 크게 내쉬고 말을 거의 끊어치듯 던진다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0",
+          "friend04:a:d-1:s4:seller_pressure:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0",
+          "friend04:a:d-1:s2:hyunwoo_signal_as_consent:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 31,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:motive:fatigue:timeline",
+      "coverageKey": "a:d-1:motive:late:fatigue:timeline",
+      "variantTarget": 3,
+      "tags": [
+        "fatigue",
+        "high"
+      ],
+      "setFlags": [
+        "d-1:motive:fatigue_countered"
+      ],
+      "requiresFlags": [
+        "d-1:motive:evidence_seen"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:surface:pressure:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "나는 산다고 확정한 적 없어.",
+      "behaviorHint": "답을 흐릴 때 '일단, 아마, 사진대로면' 같은 단서를 연달아 붙여 명확한 약속처럼 들리지 않게 만든다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "guarded"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s0:not_explicit_purchase:0",
+          "friend04:b:d-2:s0:private_quality_standard:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0",
+          "friend04:b:d-2:s4:not_explicit_purchase:1"
+        ]
+      },
+      "weight": 7,
+      "priority": 34,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:surface:pressure:timeline",
+      "coverageKey": "b:d-2:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "tags": [
+        "hot",
+        "timeline"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-2:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:surface:pressure:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "냄새랑 구성품이 애초에 내 기준에 들어가 있었거든.",
+      "behaviorHint": "답을 흐릴 때 '일단, 아마, 사진대로면' 같은 단서를 연달아 붙여 명확한 약속처럼 들리지 않게 만든다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "guarded"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s0:not_explicit_purchase:0",
+          "friend04:b:d-2:s0:private_quality_standard:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0",
+          "friend04:b:d-2:s4:not_explicit_purchase:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:surface:pressure:context",
+      "coverageKey": "b:d-2:surface:early:pressure:context",
+      "variantTarget": 6,
+      "tags": [
+        "hot",
+        "context"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-2:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:motive:motive:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "내가 의사 있는 것처럼 보이게 말한 건 인정해.",
+      "behaviorHint": "자신의 문장을 지적받으면 '나는 냄새랑 구성품까지 포함해서 말한 거야'라며 뜻의 범위를 뒤늦게 좁힌다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0",
+          "friend04:b:d-2:s2:private_quality_standard:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0",
+          "friend04:b:d-2:s4:not_explicit_purchase:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 31,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:motive:motive:responsibility",
+      "coverageKey": "b:d-2:motive:mid:motive:responsibility",
+      "variantTarget": 4,
+      "tags": [
+        "mid",
+        "responsibility"
+      ],
+      "questionTypes": [
+        "motive_search"
+      ],
+      "setFlags": [
+        "d-2:motive:responsibility_opened"
+      ],
+      "requiresFlags": [
+        "d-2:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:motive:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "justify",
+      "line": "하지만 하자 판단 기준이 달랐고, 그걸 다혜가 너무 확정처럼 밀어붙였다고 봤어.",
+      "behaviorHint": "자신의 문장을 지적받으면 '나는 냄새랑 구성품까지 포함해서 말한 거야'라며 뜻의 범위를 뒤늦게 좁힌다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0",
+          "friend04:b:d-2:s2:private_quality_standard:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0",
+          "friend04:b:d-2:s4:not_explicit_purchase:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:motive:motive:motive",
+      "coverageKey": "b:d-2:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "tags": [
+        "mid",
+        "motive"
+      ],
+      "questionTypes": [
+        "motive_search"
+      ],
+      "setFlags": [
+        "d-2:motive:motive_opened"
+      ],
+      "requiresFlags": [
+        "d-2:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:motive:evidence:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "cornered",
+      "line": "다혜-현우 공동구매 카카오톡 원본 얘기가 나오면, 그래도 실제 물건 보니까 사진에서 안 보이던 부분이 있어서 바로 부담하기 어려웠어.",
+      "behaviorHint": "처음엔 가능성을 열어두는 표현을 많이 쓰고, 불리해지면 정확히 확정한 적 없다고 뒤로 물러난다",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "timeline",
+      "actionFamily": "evidence",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0",
+          "friend04:b:d-2:s2:private_quality_standard:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0",
+          "friend04:b:d-2:s4:not_explicit_purchase:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:motive:evidence:timeline",
+      "coverageKey": "b:d-2:motive:mid:evidence:timeline",
+      "variantTarget": 3,
+      "tags": [
+        "evidence",
+        "mid",
+        "timeline"
+      ],
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "setFlags": [
+        "d-2:motive:evidence_seen"
+      ],
+      "requiresFlags": [
+        "d-2:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "emotional",
+      "line": "솔직히 예약금까지 들어간 뒤라 더 말 꺼내기 어려워서 뜸 들였어.",
+      "behaviorHint": "직접 거절해야 할 때 바로 답하지 않고 한참 뜸을 들인 뒤 조건을 추가하는 식으로 말을 잇는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0",
+          "friend04:b:d-2:s4:not_explicit_purchase:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0",
+          "friend04:b:d-2:s2:private_quality_standard:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 28,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:core:rapport:emotion",
+      "coverageKey": "b:d-2:core:late:rapport:emotion",
+      "variantTarget": 4,
+      "tags": [
+        "late",
+        "emotion"
+      ],
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "setFlags": [
+        "d-2:core:emotion_exposed"
+      ],
+      "requiresFlags": [
+        "d-2:motive:motive_opened"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:core:rapport:emotion:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "candid",
+      "line": "상태 문제가 있더라도 그 판단을 더 빨리, 더 분명하게 말했어야 했어.",
+      "behaviorHint": "직접 거절해야 할 때 바로 답하지 않고 한참 뜸을 들인 뒤 조건을 추가하는 식으로 말을 잇는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "free_question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0",
+          "friend04:b:d-2:s4:not_explicit_purchase:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0",
+          "friend04:b:d-2:s2:private_quality_standard:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:core:rapport:emotion",
+      "coverageKey": "b:d-2:core:late:rapport:emotion",
+      "variantTarget": 2,
+      "tags": [
+        "free_question",
+        "emotion"
+      ],
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "setFlags": [
+        "d-2:core:repair_named"
+      ],
+      "requiresFlags": [
+        "d-2:core:emotion_exposed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:surface:fatigue:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "irritated",
+      "line": "그 얘기 아까도 말했잖아. 내가 의사 있는 것처럼 보이게 말한 건 인정해.",
+      "behaviorHint": "현우가 시선을 피하다가 마지막 단어에서만 눈을 들어 올린다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0",
+          "friend04:b:d-2:s2:private_quality_standard:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0",
+          "friend04:b:d-2:s4:not_explicit_purchase:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:surface:fatigue:timeline",
+      "coverageKey": "b:d-2:surface:mid:fatigue:timeline",
+      "variantTarget": 3,
+      "tags": [
+        "fatigue",
+        "turn2"
+      ],
+      "setFlags": [
+        "d-2:surface:fatigue_annoyed"
+      ],
+      "requiresFlags": [
+        "d-2:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:motive:fatigue:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blocked",
+      "line": "같은 데만 계속 찌르지 마. 철회 시점이 늦었다는 건 알아.",
+      "behaviorHint": "현우가 시선을 피하다가 마지막 단어에서만 눈을 들어 올린다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "responsibility",
+      "actionFamily": "fatigue",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0",
+          "friend04:b:d-2:s2:private_quality_standard:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0",
+          "friend04:b:d-2:s4:not_explicit_purchase:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 30,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:motive:fatigue:responsibility",
+      "coverageKey": "b:d-2:motive:mid:fatigue:responsibility",
+      "variantTarget": 3,
+      "tags": [
+        "fatigue",
+        "turn3",
+        "block"
+      ],
+      "setFlags": [
+        "d-2:motive:fatigue_blocked"
+      ],
+      "requiresFlags": [
+        "d-2:motive:responsibility_opened"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:motive:fatigue:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "counterattack",
+      "line": "나도 하자 있는 물건 떠안기 싫어서 본 거야. 그냥 덥석 사는 사람처럼 보이는 게 제일 싫다고.",
+      "behaviorHint": "현우가 시선을 피하다가 마지막 단어에서만 눈을 들어 올린다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0",
+          "friend04:b:d-2:s4:not_explicit_purchase:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0",
+          "friend04:b:d-2:s2:private_quality_standard:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 31,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:motive:fatigue:timeline",
+      "coverageKey": "b:d-2:motive:late:fatigue:timeline",
+      "variantTarget": 3,
+      "tags": [
+        "fatigue",
+        "high"
+      ],
+      "setFlags": [
+        "d-2:motive:fatigue_countered"
+      ],
+      "requiresFlags": [
+        "d-2:motive:evidence_seen"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-3:surface:trap:identity:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confused",
+      "line": "나는 구조적으로 멀쩡하냐를 본 거지, 없는 기준을 마음대로 줄인 게 아니야.",
+      "behaviorHint": "불리한 질문이 나오면 '그때 바로 답했어야지'라며 시간 압박을 꺼내 본질보다 대응 속도를 문제 삼는다.",
+      "applicableStates": [
+        "M0",
+        "M1"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "identity",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-3:s0:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s0:hyunwoo_unstated_broader_standard:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-3:s4:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s4:cropped_listing:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:trap:identity",
+      "coverageKey": "a:d-3:surface:early:trap:identity",
+      "variantTarget": 4,
+      "tags": [
+        "misbelief",
+        "identity"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-3:surface:identity_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-3:surface:trap:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "mistaken",
+      "line": "적어도 그 순간 대화 기준은 외관이랑 사용 가능 여부 쪽이었어.",
+      "behaviorHint": "상대의 긴 설명을 자르고 '그래서 산다는 거였어, 아니었어?'처럼 이분법으로 몰아간다.",
+      "applicableStates": [
+        "M1",
+        "M2"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-3:s0:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s0:hyunwoo_unstated_broader_standard:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-3:s4:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s4:cropped_listing:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 31,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:trap:context",
+      "coverageKey": "a:d-3:surface:early:trap:context",
+      "variantTarget": 4,
+      "tags": [
+        "misbelief",
+        "context"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-3:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-3:motive:trap:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "stuck",
+      "line": "내가 외관 위주로 이해한 건 맞아.",
+      "behaviorHint": "상대의 긴 설명을 자르고 '그래서 산다는 거였어, 아니었어?'처럼 이분법으로 몰아간다.",
+      "applicableStates": [
+        "M2",
+        "M3"
+      ],
+      "layer": "motive",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-3:s2:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s2:no_shared_definition:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-3:s4:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s4:cropped_listing:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:motive:trap:context",
+      "coverageKey": "a:d-3:motive:mid:trap:context",
+      "variantTarget": 4,
+      "tags": [
+        "misbelief",
+        "mid"
+      ],
+      "questionTypes": [
+        "motive_search"
+      ],
+      "setFlags": [
+        "d-3:motive:misbelief_opened"
+      ],
+      "requiresFlags": [
+        "d-3:surface:identity_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-3:motive:evidence:identity:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "reframe",
+      "line": "다혜-현우 공동구매 카카오톡 원본 얘기가 나오면, 그래도 현우도 자기 기준을 구체적으로 적어 보내진 않았잖아.",
+      "behaviorHint": "생각이 서면 결론부터 바로 말하고, 상대의 애매한 표현도 자기 기준으로 정리해 들이민다",
+      "applicableStates": [
+        "M2",
+        "M3"
+      ],
+      "layer": "motive",
+      "issueRole": "shared_misconception",
+      "responseIntent": "evidence_response",
+      "angleTag": "identity",
+      "actionFamily": "evidence",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-3:s2:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s2:no_shared_definition:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-3:s4:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s4:cropped_listing:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:motive:evidence:identity",
+      "coverageKey": "a:d-3:motive:mid:evidence:identity",
+      "variantTarget": 3,
+      "tags": [
+        "evidence",
+        "misbelief",
+        "identity"
+      ],
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "setFlags": [
+        "d-3:motive:evidence_seen"
+      ],
+      "requiresFlags": [
+        "d-3:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-3:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "wavering",
+      "line": "솔직히 냄새나 누락 부속품을 크게 안 봤던 내 습관이 있었어.",
+      "behaviorHint": "계좌이체나 영수증 화면을 손가락으로 두드리며 이미 결론이 끝났다는 듯 말한다.",
+      "applicableStates": [
+        "M3",
+        "M4"
+      ],
+      "layer": "core",
+      "issueRole": "shared_misconception",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-3:s4:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s4:cropped_listing:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-3:s2:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s2:no_shared_definition:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:core:rapport:emotion",
+      "coverageKey": "a:d-3:core:late:rapport:emotion",
+      "variantTarget": 3,
+      "tags": [
+        "late",
+        "emotion",
+        "misbelief"
+      ],
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "setFlags": [
+        "d-3:core:emotion_exposed"
+      ],
+      "requiresFlags": [
+        "d-3:motive:misbelief_opened"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-3:core:rapport:emotion:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "clarifying",
+      "line": "나는 구조만 봤고, 현우는 냄새와 구성품까지 봤는데 그걸 명확히 맞추지 않았어.",
+      "behaviorHint": "계좌이체나 영수증 화면을 손가락으로 두드리며 이미 결론이 끝났다는 듯 말한다.",
+      "applicableStates": [
+        "M4"
+      ],
+      "layer": "core",
+      "issueRole": "shared_misconception",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "free_question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-3:s4:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s4:cropped_listing:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-3:s2:dahye_standard_structure_only:0",
+          "friend04:a:d-3:s2:no_shared_definition:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:core:rapport:emotion",
+      "coverageKey": "a:d-3:core:late:rapport:emotion",
+      "variantTarget": 2,
+      "tags": [
+        "free_question",
+        "emotion",
+        "misbelief"
+      ],
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "setFlags": [
+        "d-3:core:clarity_named"
+      ],
+      "requiresFlags": [
+        "d-3:core:emotion_exposed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-3:surface:trap:identity:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confused",
+      "line": "나는 처음부터 상태를 넓게 본 거야.",
+      "behaviorHint": "답을 흐릴 때 '일단, 아마, 사진대로면' 같은 단서를 연달아 붙여 명확한 약속처럼 들리지 않게 만든다.",
+      "applicableStates": [
+        "M0",
+        "M1"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "identity",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-3:s0:private_checklist:0",
+          "friend04:b:d-3:s0:not_explicit_in_chat:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-3:s4:late_scope_narrowing:0",
+          "friend04:b:d-3:s4:private_checklist:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:trap:identity",
+      "coverageKey": "b:d-3:surface:early:trap:identity",
+      "variantTarget": 4,
+      "tags": [
+        "misbelief",
+        "identity"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-3:surface:identity_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-3:surface:trap:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "mistaken",
+      "line": "그걸 한 줄 한 줄 다 적진 않았어도, 텐트만 멀쩡하면 된다는 뜻은 아니었어.",
+      "behaviorHint": "자신의 문장을 지적받으면 '나는 냄새랑 구성품까지 포함해서 말한 거야'라며 뜻의 범위를 뒤늦게 좁힌다.",
+      "applicableStates": [
+        "M1",
+        "M2"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-3:s0:private_checklist:0",
+          "friend04:b:d-3:s0:not_explicit_in_chat:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-3:s4:late_scope_narrowing:0",
+          "friend04:b:d-3:s4:private_checklist:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 31,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:trap:context",
+      "coverageKey": "b:d-3:surface:early:trap:context",
+      "variantTarget": 4,
+      "tags": [
+        "misbelief",
+        "context"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-3:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-3:motive:trap:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "stuck",
+      "line": "내 기준을 더 분명히 적지 않은 건 맞아.",
+      "behaviorHint": "자신의 문장을 지적받으면 '나는 냄새랑 구성품까지 포함해서 말한 거야'라며 뜻의 범위를 뒤늦게 좁힌다.",
+      "applicableStates": [
+        "M2",
+        "M3"
+      ],
+      "layer": "motive",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-3:s2:not_explicit_in_chat:0",
+          "friend04:b:d-3:s2:photos_not_enough:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-3:s4:late_scope_narrowing:0",
+          "friend04:b:d-3:s4:private_checklist:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:motive:trap:context",
+      "coverageKey": "b:d-3:motive:mid:trap:context",
+      "variantTarget": 4,
+      "tags": [
+        "misbelief",
+        "mid"
+      ],
+      "questionTypes": [
+        "motive_search"
+      ],
+      "setFlags": [
+        "d-3:motive:misbelief_opened"
+      ],
+      "requiresFlags": [
+        "d-3:surface:identity_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-3:motive:evidence:identity:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "reframe",
+      "line": "다혜-현우 공동구매 카카오톡 원본 얘기가 나오면, 그래도 사진이랑 캡처만으로는 실제 상태를 확정할 수 없다는 경계는 계속 두고 있었어.",
+      "behaviorHint": "처음엔 가능성을 열어두는 표현을 많이 쓰고, 불리해지면 정확히 확정한 적 없다고 뒤로 물러난다",
+      "applicableStates": [
+        "M2",
+        "M3"
+      ],
+      "layer": "motive",
+      "issueRole": "shared_misconception",
+      "responseIntent": "evidence_response",
+      "angleTag": "identity",
+      "actionFamily": "evidence",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-3:s2:not_explicit_in_chat:0",
+          "friend04:b:d-3:s2:photos_not_enough:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-3:s4:late_scope_narrowing:0",
+          "friend04:b:d-3:s4:private_checklist:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:motive:evidence:identity",
+      "coverageKey": "b:d-3:motive:mid:evidence:identity",
+      "variantTarget": 3,
+      "tags": [
+        "evidence",
+        "misbelief",
+        "identity"
+      ],
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "setFlags": [
+        "d-3:motive:evidence_seen"
+      ],
+      "requiresFlags": [
+        "d-3:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-3:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "wavering",
+      "line": "솔직히 나는 내 기준을 머릿속에만 두고 다혜도 당연히 알 거라고 생각했어.",
+      "behaviorHint": "직접 거절해야 할 때 바로 답하지 않고 한참 뜸을 들인 뒤 조건을 추가하는 식으로 말을 잇는다.",
+      "applicableStates": [
+        "M3",
+        "M4"
+      ],
+      "layer": "core",
+      "issueRole": "shared_misconception",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-3:s4:late_scope_narrowing:0",
+          "friend04:b:d-3:s4:private_checklist:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-3:s2:not_explicit_in_chat:0",
+          "friend04:b:d-3:s2:photos_not_enough:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:core:rapport:emotion",
+      "coverageKey": "b:d-3:core:late:rapport:emotion",
+      "variantTarget": 3,
+      "tags": [
+        "late",
+        "emotion",
+        "misbelief"
+      ],
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "setFlags": [
+        "d-3:core:emotion_exposed"
+      ],
+      "requiresFlags": [
+        "d-3:motive:misbelief_opened"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-3:core:rapport:emotion:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "clarifying",
+      "line": "내가 기준을 명확히 적지 않은 채 뒤늦게 좁혀 설명한 책임이 있어.",
+      "behaviorHint": "직접 거절해야 할 때 바로 답하지 않고 한참 뜸을 들인 뒤 조건을 추가하는 식으로 말을 잇는다.",
+      "applicableStates": [
+        "M4"
+      ],
+      "layer": "core",
+      "issueRole": "shared_misconception",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "free_question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-3:s4:late_scope_narrowing:0",
+          "friend04:b:d-3:s4:private_checklist:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-3:s2:not_explicit_in_chat:0",
+          "friend04:b:d-3:s2:photos_not_enough:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:core:rapport:emotion",
+      "coverageKey": "b:d-3:core:late:rapport:emotion",
+      "variantTarget": 2,
+      "tags": [
+        "free_question",
+        "emotion",
+        "misbelief"
+      ],
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "setFlags": [
+        "d-3:core:clarity_named"
+      ],
+      "requiresFlags": [
+        "d-3:core:emotion_exposed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-4:surface:pressure:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "내 메시지는 확인 의사였지 확정 신호가 아니었어.",
+      "behaviorHint": "답을 흐릴 때 '일단, 아마, 사진대로면' 같은 단서를 연달아 붙여 명확한 약속처럼 들리지 않게 만든다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "guarded"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-4:s0:meant_as_conditional:0",
+          "friend04:b:d-4:s0:photo_if_message:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-4:s4:did_not_correct:0",
+          "friend04:b:d-4:s4:meant_as_conditional:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-4:surface:pressure:timeline",
+      "coverageKey": "b:d-4:surface:early:pressure:timeline",
+      "variantTarget": 5,
+      "tags": [
+        "hot",
+        "timeline"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-4:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-4:surface:pressure:legality:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "counter",
+      "line": "바로 산다고 못 박은 건 아니었고, 다혜 메시지까지 합쳐져서 커진 거지.",
+      "behaviorHint": "답을 흐릴 때 '일단, 아마, 사진대로면' 같은 단서를 연달아 붙여 명확한 약속처럼 들리지 않게 만든다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "legality",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "guarded"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-4:s0:meant_as_conditional:0",
+          "friend04:b:d-4:s0:photo_if_message:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-4:s4:did_not_correct:0",
+          "friend04:b:d-4:s4:meant_as_conditional:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 31,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-4:surface:pressure:legality",
+      "coverageKey": "b:d-4:surface:early:pressure:legality",
+      "variantTarget": 5,
+      "tags": [
+        "hot",
+        "legality"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-4:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-4:motive:motive:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "내 문장이 확정처럼 보였을 수는 있어.",
+      "behaviorHint": "자신의 문장을 지적받으면 '나는 냄새랑 구성품까지 포함해서 말한 거야'라며 뜻의 범위를 뒤늦게 좁힌다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-4:s2:photo_if_message:0",
+          "friend04:b:d-4:s2:meant_as_conditional:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-4:s4:did_not_correct:0",
+          "friend04:b:d-4:s4:meant_as_conditional:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-4:motive:motive:responsibility",
+      "coverageKey": "b:d-4:motive:mid:motive:responsibility",
+      "variantTarget": 4,
+      "tags": [
+        "mid",
+        "responsibility"
+      ],
+      "questionTypes": [
+        "motive_search"
+      ],
+      "setFlags": [
+        "d-4:motive:responsibility_opened"
+      ],
+      "requiresFlags": [
+        "d-4:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-4:motive:evidence:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "reframe",
+      "line": "다혜-현우 공동구매 카카오톡 원본 얘기가 나오면, 그래도 그때 나는 실제로 상태만 맞으면 갈 생각도 있었고, 완전히 빈말은 아니었어.",
+      "behaviorHint": "처음엔 가능성을 열어두는 표현을 많이 쓰고, 불리해지면 정확히 확정한 적 없다고 뒤로 물러난다",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "timeline",
+      "actionFamily": "evidence",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-4:s2:photo_if_message:0",
+          "friend04:b:d-4:s2:meant_as_conditional:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-4:s4:did_not_correct:0",
+          "friend04:b:d-4:s4:meant_as_conditional:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-4:motive:evidence:timeline",
+      "coverageKey": "b:d-4:motive:mid:evidence:timeline",
+      "variantTarget": 3,
+      "tags": [
+        "evidence",
+        "timeline"
+      ],
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "setFlags": [
+        "d-4:motive:evidence_seen"
+      ],
+      "requiresFlags": [
+        "d-4:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-4:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "emotional",
+      "line": "솔직히 자리 뺏기기 싫어서 가능성은 열어두고 싶었어.",
+      "behaviorHint": "직접 거절해야 할 때 바로 답하지 않고 한참 뜸을 들인 뒤 조건을 추가하는 식으로 말을 잇는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "sub_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-4:s4:did_not_correct:0",
+          "friend04:b:d-4:s4:meant_as_conditional:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-4:s2:photo_if_message:0",
+          "friend04:b:d-4:s2:meant_as_conditional:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-4:core:rapport:emotion",
+      "coverageKey": "b:d-4:core:late:rapport:emotion",
+      "variantTarget": 3,
+      "tags": [
+        "late",
+        "emotion"
+      ],
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "setFlags": [
+        "d-4:core:emotion_exposed"
+      ],
+      "requiresFlags": [
+        "d-4:motive:responsibility_opened"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-4:core:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "candid",
+      "line": "다혜 메시지와 합쳐져 혼선을 만든 책임이 내게도 있어.",
+      "behaviorHint": "직접 거절해야 할 때 바로 답하지 않고 한참 뜸을 들인 뒤 조건을 추가하는 식으로 말을 잇는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "sub_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "free_question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-4:s4:did_not_correct:0",
+          "friend04:b:d-4:s4:meant_as_conditional:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-4:s2:photo_if_message:0",
+          "friend04:b:d-4:s2:meant_as_conditional:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-4:core:motive:motive",
+      "coverageKey": "b:d-4:core:late:motive:motive",
+      "variantTarget": 2,
+      "tags": [
+        "free_question",
+        "motive"
+      ],
+      "questionTypes": [
+        "motive_search"
+      ],
+      "setFlags": [
+        "d-4:core:repair_named"
+      ],
+      "requiresFlags": [
+        "d-4:core:emotion_exposed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-5:surface:pressure:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "작년 규칙이 있었다고 해서 이번까지 똑같이 볼 수는 없어.",
+      "behaviorHint": "불리한 질문이 나오면 '그때 바로 답했어야지'라며 시간 압박을 꺼내 본질보다 대응 속도를 문제 삼는다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "guarded"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-5:s0:old_explicit_rule:0",
+          "friend04:a:d-5:s0:hyunwoo_left_escape:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-5:s4:repeated_pattern:0",
+          "friend04:a:d-5:s4:dahye_broke_rule:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-5:surface:pressure:timeline",
+      "coverageKey": "a:d-5:surface:early:pressure:timeline",
+      "variantTarget": 5,
+      "tags": [
+        "hot",
+        "timeline"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-5:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-5:surface:pressure:legality:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "counter",
+      "line": "다만 이번엔 현우 답과 판매자 압박이 겹쳐서 그 선이 무너진 거야.",
+      "behaviorHint": "불리한 질문이 나오면 '그때 바로 답했어야지'라며 시간 압박을 꺼내 본질보다 대응 속도를 문제 삼는다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "legality",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "guarded"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-5:s0:old_explicit_rule:0",
+          "friend04:a:d-5:s0:hyunwoo_left_escape:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-5:s4:repeated_pattern:0",
+          "friend04:a:d-5:s4:dahye_broke_rule:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 31,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-5:surface:pressure:legality",
+      "coverageKey": "a:d-5:surface:early:pressure:legality",
+      "variantTarget": 5,
+      "tags": [
+        "hot",
+        "legality"
+      ],
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "setFlags": [
+        "d-5:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-5:motive:motive:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "내가 그 규칙을 먼저 지키지 못한 건 맞아.",
+      "behaviorHint": "상대의 긴 설명을 자르고 '그래서 산다는 거였어, 아니었어?'처럼 이분법으로 몰아간다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-5:s2:dahye_broke_rule:0",
+          "friend04:a:d-5:s2:hyunwoo_left_escape:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-5:s4:repeated_pattern:0",
+          "friend04:a:d-5:s4:dahye_broke_rule:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-5:motive:motive:responsibility",
+      "coverageKey": "a:d-5:motive:mid:motive:responsibility",
+      "variantTarget": 4,
+      "tags": [
+        "mid",
+        "responsibility"
+      ],
+      "questionTypes": [
+        "motive_search"
+      ],
+      "setFlags": [
+        "d-5:motive:responsibility_opened"
+      ],
+      "requiresFlags": [
+        "d-5:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-5:motive:evidence:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "reframe",
+      "line": "다혜-현우 공동구매 카카오톡 원본 얘기가 나오면, 그래도 현우도 사실상 구매 신호를 주면서 해석 여지를 남겼잖아.",
+      "behaviorHint": "생각이 서면 결론부터 바로 말하고, 상대의 애매한 표현도 자기 기준으로 정리해 들이민다",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "context",
+      "actionFamily": "evidence",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-5:s2:dahye_broke_rule:0",
+          "friend04:a:d-5:s2:hyunwoo_left_escape:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-5:s4:repeated_pattern:0",
+          "friend04:a:d-5:s4:dahye_broke_rule:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-5:motive:evidence:context",
+      "coverageKey": "a:d-5:motive:mid:evidence:context",
+      "variantTarget": 3,
+      "tags": [
+        "evidence",
+        "context"
+      ],
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "setFlags": [
+        "d-5:motive:evidence_seen"
+      ],
+      "requiresFlags": [
+        "d-5:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-5:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "emotional",
+      "line": "솔직히 예전처럼 또 내가 먼저 돈 넣고 정리 담당이 될까 봐 조급했어.",
+      "behaviorHint": "계좌이체나 영수증 화면을 손가락으로 두드리며 이미 결론이 끝났다는 듯 말한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "sub_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-5:s4:repeated_pattern:0",
+          "friend04:a:d-5:s4:dahye_broke_rule:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-5:s2:dahye_broke_rule:0",
+          "friend04:a:d-5:s2:hyunwoo_left_escape:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-5:core:rapport:emotion",
+      "coverageKey": "a:d-5:core:late:rapport:emotion",
+      "variantTarget": 3,
+      "tags": [
+        "late",
+        "emotion"
+      ],
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "setFlags": [
+        "d-5:core:emotion_exposed"
+      ],
+      "requiresFlags": [
+        "d-5:motive:responsibility_opened"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-5:core:rapport:emotion:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "candid",
+      "line": "나는 모호한 답에 송금했고, 현우는 산다는 신호를 주고도 빠질 길을 남겼어.",
+      "behaviorHint": "계좌이체나 영수증 화면을 손가락으로 두드리며 이미 결론이 끝났다는 듯 말한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "sub_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "free_question",
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-5:s4:repeated_pattern:0",
+          "friend04:a:d-5:s4:dahye_broke_rule:1"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-5:s2:dahye_broke_rule:0",
+          "friend04:a:d-5:s2:hyunwoo_left_escape:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-5:core:rapport:emotion",
+      "coverageKey": "a:d-5:core:late:rapport:emotion",
+      "variantTarget": 2,
+      "tags": [
+        "free_question",
+        "emotion"
+      ],
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "setFlags": [
+        "d-5:core:repair_named"
+      ],
+      "requiresFlags": [
+        "d-5:core:emotion_exposed"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "interject",
+      "line": "또 내가 먼저 움직였다는 이유로 전부 내 탓으로 넘기지 마. 이번에도 정리 담당은 결국 나였잖아.",
+      "behaviorHint": "다혜가 상대 말을 자르고 몸을 앞으로 기울인다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a:d-1:surface:mid:interjection:emotional_only:allow",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "interject",
+      "line": "나도 하자 있는 물건 떠안기 싫어서 본 거야. 그냥 덥석 사는 사람처럼 보이는 게 제일 싫다고.",
+      "behaviorHint": "현우가 말끝을 낮추지만 문장 사이에 짧은 멈춤을 넣는다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b:d-2:surface:mid:interjection:emotional_only:allow",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "interject",
+      "line": "감정만 먼저 던지지 말고, 3만원 예약금부터 끊어서 답해.",
+      "behaviorHint": "다혜가 상대 말을 자르고 몸을 앞으로 기울인다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a:d-1:surface:mid:interjection:emotional_only:block",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "interject",
+      "line": "감정만 먼저 던지지 말고, 반반 가능부터 끊어서 답해.",
+      "behaviorHint": "현우가 말끝을 낮추지만 문장 사이에 짧은 멈춤을 넣는다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b:d-2:surface:mid:interjection:emotional_only:block",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:surface:mid:interjection:allow:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "interject",
+      "line": "아니, 그 기준을 왜 픽업 끝나고 말하냐고요. 그때 채팅에 한 줄도 없었잖아요.",
+      "behaviorHint": "다혜가 상대 말을 자르고 몸을 앞으로 기울인다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a:d-1:surface:mid:interjection:detail_rebuttal:allow",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:surface:mid:interjection:allow:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "interject",
+      "line": "잠깐만요, 확정이라고 쓴 적은 없잖아요. 그건 다혜 씨가 먼저 결론 낸 거예요.",
+      "behaviorHint": "현우가 말끝을 낮추지만 문장 사이에 짧은 멈춤을 넣는다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b:d-2:surface:mid:interjection:detail_rebuttal:allow",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-1:surface:mid:interjection:block:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "interject",
+      "line": "세부 얘기로 돌리지 말고, 지금은 3만원 예약금 핵심부터 말해.",
+      "behaviorHint": "다혜가 상대 말을 자르고 몸을 앞으로 기울인다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-1:s2:deposit_sent:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-1:s4:rule_break_admission:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a:d-1:surface:mid:interjection:detail_rebuttal:block",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:b:d-2:surface:mid:interjection:block:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "interject",
+      "line": "세부 얘기로 돌리지 말고, 지금은 반반 가능 핵심부터 말해.",
+      "behaviorHint": "현우가 말끝을 낮추지만 문장 사이에 짧은 멈춤을 넣는다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-2:s2:not_explicit_purchase:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-2:s4:burden_left_to_dahye:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b:d-2:surface:mid:interjection:detail_rebuttal:block",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "friend04:beat_v2:a:d-3:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "interject",
+      "line": "그래도 상태 괜찮음만 보면 너무 분명해 보여. 그걸 그냥 오해였다고 하긴 어렵잖아.",
+      "behaviorHint": "다혜가 상대 말을 자르고 몸을 앞으로 기울인다.",
+      "applicableStates": [
+        "M0",
+        "M1",
+        "M2"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ],
+        "misconceptionStates": [
+          "M0",
+          "M1",
+          "M2"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-3:s2:dahye_standard_structure_only:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-3:s4:dahye_standard_structure_only:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a:d-3:surface:mid:interjection:misbelief_escalation:allow",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "misbelief_escalation",
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "friend04:beat_v2:b:d-3:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "interject",
+      "line": "그래도 상태 괜찮음만 보면 너무 분명해 보여. 그걸 그냥 오해였다고 하긴 어렵잖아.",
+      "behaviorHint": "현우가 말끝을 낮추지만 문장 사이에 짧은 멈춤을 넣는다.",
+      "applicableStates": [
+        "M0",
+        "M1",
+        "M2"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "identity",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ],
+        "misconceptionStates": [
+          "M0",
+          "M1",
+          "M2"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-3:s2:not_explicit_in_chat:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-3:s4:late_scope_narrowing:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b:d-3:surface:mid:interjection:misbelief_escalation:allow",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "misbelief_escalation",
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "friend04:beat_v2:a:d-3:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "interject",
+      "line": "상태 괜찮음 정도면 이미 답 나온 거 아니야? 자꾸 맥락으로 흐리지 마.",
+      "behaviorHint": "다혜가 상대 말을 자르고 몸을 앞으로 기울인다.",
+      "applicableStates": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ],
+        "misconceptionStates": [
+          "M2",
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:a:d-3:s2:dahye_standard_structure_only:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:a:d-3:s4:dahye_standard_structure_only:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a:d-3:surface:mid:interjection:misbelief_escalation:block",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "misbelief_escalation",
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "friend04:beat_v2:b:d-3:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "interject",
+      "line": "상태 괜찮음 정도면 이미 답 나온 거 아니야? 자꾸 맥락으로 흐리지 마.",
+      "behaviorHint": "현우가 말끝을 낮추지만 문장 사이에 짧은 멈춤을 넣는다.",
+      "applicableStates": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "identity",
+      "actionFamily": "interjection",
+      "conditions": {
+        "emotionTiers": [
+          "guarded",
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed",
+          "spent"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ],
+        "misconceptionStates": [
+          "M2",
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "friend04:b:d-3:s2:not_explicit_in_chat:0"
+        ],
+        "forbidAtomIds": [
+          "friend04:b:d-3:s4:late_scope_narrowing:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b:d-3:surface:mid:interjection:misbelief_escalation:block",
+      "variantTarget": 2,
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "misbelief_escalation",
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    }
+  ]
+} as const;
+
+export default friend04BeatsV2Full;

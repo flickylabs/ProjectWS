@@ -1,0 +1,66 @@
+{
+  "cases": {
+    "spouse-09": {
+      "structureFile": "spouse-09-structure-v2.json",
+      "beatsFile": "spouse-09-beats-v2-full.json",
+      "structureTsFile": "spouse-09-structure-v2.ts",
+      "beatsTsFile": "spouse-09-beats-v2-full.ts",
+      "totalBeats": 56,
+      "freeQuestionHooks": 6,
+      "linkEdges": 5,
+      "interjectionInfoLevels": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 2,
+        "trap_signal": 2
+      }
+    },
+    "spouse-10": {
+      "structureFile": "spouse-10-structure-v2.json",
+      "beatsFile": "spouse-10-beats-v2-full.json",
+      "structureTsFile": "spouse-10-structure-v2.ts",
+      "beatsTsFile": "spouse-10-beats-v2-full.ts",
+      "totalBeats": 58,
+      "freeQuestionHooks": 6,
+      "linkEdges": 4,
+      "interjectionInfoLevels": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 4
+      }
+    },
+    "spouse-11": {
+      "structureFile": "spouse-11-structure-v2.json",
+      "beatsFile": "spouse-11-beats-v2-full.json",
+      "structureTsFile": "spouse-11-structure-v2.ts",
+      "beatsTsFile": "spouse-11-beats-v2-full.ts",
+      "totalBeats": 56,
+      "freeQuestionHooks": 6,
+      "linkEdges": 5,
+      "interjectionInfoLevels": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 2,
+        "trap_signal": 2
+      }
+    },
+    "spouse-12": {
+      "structureFile": "spouse-12-structure-v2.json",
+      "beatsFile": "spouse-12-beats-v2-full.json",
+      "structureTsFile": "spouse-12-structure-v2.ts",
+      "beatsTsFile": "spouse-12-beats-v2-full.ts",
+      "totalBeats": 58,
+      "freeQuestionHooks": 6,
+      "linkEdges": 5,
+      "interjectionInfoLevels": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 4
+      }
+    }
+  },
+  "notes": [
+    "요청서에 INTENT_LEXICON의 실제 정의가 포함되지 않아 freeQuestionHooks의 intentTag는 제공 예시(identity_check)와 동일한 형식의 범용 태그로 추정해 구성했다.",
+    "구조 확장에 필요한 revealAtomIds와 truthEnvelope는 첨부된 V1 atoms / V3 unlock atoms만 사용했고, 추가 proposedUnlockAtoms는 생성하지 않았다."
+  ]
+}

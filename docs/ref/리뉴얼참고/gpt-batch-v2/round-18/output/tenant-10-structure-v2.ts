@@ -1,0 +1,1863 @@
+export const tenant_10_structure_v2 = {
+  "caseId": "tenant-10",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "반려동물 특약의 해석",
+      "truth": false,
+      "truthDescription": "문구는 전면 자동 금지도, 자동 허용도 아니었다. 소형 실내견은 사전 고지와 임대인 확인을 전제로 조정할 여지를 남겼는데, 민주와 상훈이 이를 각자 끝난 문제와 아직 미승인 문제로 다르게 이해했다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "계약해석정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "민주와 상훈은 해석이 달랐다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "반려동물 특약",
+        "관리만 잘 해 달라",
+        "사전 협의",
+        "소형견",
+        "허락인지 보류인지",
+        "말티즈"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "반려동물 특약의 해석에서 서로 다른 해석이 어디서 갈렸는지 보는 층",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant10:a:d-1:act:0",
+            "tenant10:a:d-1:rule:1",
+            "tenant10:a:d-1:admission:0",
+            "tenant10:a:d-1:counter:0",
+            "tenant10:b:d-1:denial:0",
+            "tenant10:b:d-1:uncertainty:0",
+            "tenant10:b:d-1:admission:0",
+            "tenant10:b:d-1:responsibility:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "반려동물 특약의 해석을 그렇게 믿게 된 심리와 전달 경로를 보는 층",
+          "lockedSummary": "왜 그렇게 말했는지는 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "M2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant10:a:d-1:admission:0",
+            "tenant10:a:d-1:counter:0",
+            "tenant10:a:d-1:self_justification:0",
+            "tenant10:a:d-1:counter:1",
+            "tenant10:a:d-1:fear:0",
+            "tenant10:a:d-1:shame:0",
+            "tenant10:b:d-1:admission:0",
+            "tenant10:b:d-1:responsibility:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "민주와 상훈은 해석이 달랐다.에 도달하기 위한 오해 해소 층",
+          "lockedSummary": "책임선과 핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "M4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:legality_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant10:a:d-1:fear:0",
+            "tenant10:a:d-1:shame:0",
+            "tenant10:a:d-1:admission:1",
+            "tenant10:a:d-1:counter:2",
+            "tenant10:b:d-1:fear:0",
+            "tenant10:b:d-1:rule:1",
+            "tenant10:b:d-1:admission:2",
+            "tenant10:b:d-1:counter:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "issueRole": "shared_misconception",
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-5"
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "trapSignals": [
+          "관리만 잘 해 달라",
+          "집주인 답은 아직",
+          "사진 확인"
+        ],
+        "truthExitEvidenceIds": [
+          "e-1",
+          "e-5"
+        ],
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-2",
+      "name": "민주의 사전 고지와 무응답 해석",
+      "truth": true,
+      "truthDescription": "민주는 입주 전 브로커에게 3.2kg 말티즈 사진과 질문을 보냈지만, 상훈의 명확한 승인 답을 확인하지 않은 채 사진 봤다는 메시지를 허락으로 받아들여 입주했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "통지절차복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "민주는 상훈의 명확한 승인을 받지 않았다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "사진 전송",
+        "집주인 답은 아직",
+        "브로커 단톡",
+        "무응답 해석",
+        "입주 이틀 전",
+        "3.2kg 말티즈"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "민주의 사전 고지와 무응답 해석에 얽힌 표면 정황을 정리하는 층",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant10:a:d-2:act:0",
+            "tenant10:a:d-2:evidence:0",
+            "tenant10:a:d-2:evidence:1",
+            "tenant10:a:d-2:admission:0",
+            "tenant10:b:d-2:rule:0",
+            "tenant10:b:d-2:rule:1",
+            "tenant10:b:d-2:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "민주의 사전 고지와 무응답 해석을 확대하거나 축소한 이유를 보는 층",
+          "lockedSummary": "왜 그렇게 말했는지는 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              },
+              {
+                "id": "d-1",
+                "minState": "M2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant10:a:d-2:admission:0",
+            "tenant10:a:d-2:evidence:1",
+            "tenant10:a:d-2:admission:1",
+            "tenant10:a:d-2:counter:0",
+            "tenant10:a:d-2:fear:0",
+            "tenant10:a:d-2:shame:0",
+            "tenant10:b:d-2:rule:2",
+            "tenant10:b:d-2:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "민주는 상훈의 명확한 승인을 받지 않았다.로 수렴하는 핵심 책임 층",
+          "lockedSummary": "책임선과 핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "M2"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed",
+              "d-2:motive:approval_gap_visible"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant10:a:d-2:shame:0",
+            "tenant10:a:d-2:fear:0",
+            "tenant10:a:d-2:admission:2",
+            "tenant10:a:d-2:context:0",
+            "tenant10:b:d-2:fear:0",
+            "tenant10:b:d-2:relationship:0",
+            "tenant10:b:d-2:admission:2",
+            "tenant10:b:d-2:responsibility:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "issueRole": "sub_truth",
+      "requiredEvidenceIds": [
+        "e-2",
+        "e-5"
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "상훈의 즉시 반려견 퇴거·예치금 요구",
+      "truth": true,
+      "truthDescription": "상훈은 계약 위반이라고 단정하며 24시간 안에 강아지를 내보내거나 50만원 특별청소 예치금을 내라고 통보했는데, 그 요구는 계약 문구와 확인된 하자 범위를 넘어섰다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "계약해석정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "상훈의 요구는 계약 범위를 초과했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "24시간 반출",
+        "50만원 예치금",
+        "계약 위반 통보",
+        "즉시 퇴거",
+        "선청소비",
+        "과잉 요구"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "상훈의 즉시 반려견 퇴거·예치금 요구의 겉 주장과 실제 사실을 먼저 맞춰 보는 층",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant10:a:d-3:rule:0",
+            "tenant10:a:d-3:threshold:0",
+            "tenant10:a:d-3:evidence:0",
+            "tenant10:b:d-3:threshold:0",
+            "tenant10:b:d-3:context:0",
+            "tenant10:b:d-3:admission:0",
+            "tenant10:b:d-3:self_justification:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "상훈의 즉시 반려견 퇴거·예치금 요구을 각자가 왜 끝까지 붙들었는지 보는 층",
+          "lockedSummary": "왜 그렇게 말했는지는 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              },
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant10:a:d-3:evidence:0",
+            "tenant10:a:d-3:counter:0",
+            "tenant10:a:d-3:admission:0",
+            "tenant10:a:d-3:counter:1",
+            "tenant10:a:d-3:identity:0",
+            "tenant10:a:d-3:emotion:0",
+            "tenant10:b:d-3:self_justification:0",
+            "tenant10:b:d-3:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "상훈의 요구는 계약 범위를 초과했다.로 수렴하는 핵심 책임 층",
+          "lockedSummary": "책임선과 핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              },
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:legality_pressed",
+              "d-3:surface:overreach_open"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant10:a:d-3:emotion:0",
+            "tenant10:a:d-3:identity:0",
+            "tenant10:a:d-3:admission:1",
+            "tenant10:a:d-3:rule:1",
+            "tenant10:b:d-3:fear:0",
+            "tenant10:b:d-3:harm:0",
+            "tenant10:b:d-3:admission:2",
+            "tenant10:b:d-3:rule:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "issueRole": "core_truth",
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-6"
+      ]
+    },
+    {
+      "id": "d-4",
+      "name": "실제 소음과 공용부 불편 정도",
+      "truth": true,
+      "truthDescription": "강아지가 택배와 초인종 때 짧게 두세 번 짖은 기록은 있지만, 반복 민원이나 공용부 오염이 상습 수준으로 누적되지는 않았다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "생활관리조정",
+      "legitimacyIssue": false,
+      "judgmentStatement": "강아지 짖음은 단발성이다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "짧은 짖음",
+        "택배 시간대",
+        "민원 2건",
+        "현관매트 세척",
+        "공용부 불편",
+        "상습 아님"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "실제 소음과 공용부 불편 정도에 얽힌 표면 정황을 정리하는 층",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant10:a:d-4:denial:0",
+            "tenant10:a:d-4:uncertainty:0",
+            "tenant10:a:d-4:admission:0",
+            "tenant10:a:d-4:counter:1",
+            "tenant10:b:d-4:rule:0",
+            "tenant10:b:d-4:uncertainty:0",
+            "tenant10:b:d-4:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "실제 소음과 공용부 불편 정도을 확대하거나 축소한 이유를 보는 층",
+          "lockedSummary": "왜 그렇게 말했는지는 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant10:a:d-4:admission:0",
+            "tenant10:a:d-4:counter:1",
+            "tenant10:a:d-4:context:0",
+            "tenant10:a:d-4:counter:2",
+            "tenant10:a:d-4:emotion:0",
+            "tenant10:a:d-4:shame:0",
+            "tenant10:b:d-4:self_justification:0",
+            "tenant10:b:d-4:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "강아지 짖음은 단발성이다.로 수렴하는 핵심 책임 층",
+          "lockedSummary": "책임선과 핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant10:a:d-4:emotion:0",
+            "tenant10:a:d-4:shame:0",
+            "tenant10:a:d-4:admission:1",
+            "tenant10:a:d-4:counter:3",
+            "tenant10:b:d-4:fear:0",
+            "tenant10:b:d-4:self_justification:1",
+            "tenant10:b:d-4:emotion:0",
+            "tenant10:b:d-4:admission:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "issueRole": "sub_truth",
+      "requiredEvidenceIds": [
+        "e-3",
+        "e-4"
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "전문 청소·바닥보수 선공제 필요성",
+      "truth": false,
+      "truthDescription": "현 시점 사진과 관리실 확인상 전문 탈취 청소나 바닥보수 선공제를 정당화할 손상은 발견되지 않았고, 세탁 가능한 현관매트 오염 정도만 확인된다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 15,
+        "b": 85
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "손해정산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "전문 청소·바닥보수 필요 없다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "전문 청소",
+        "바닥보수",
+        "선공제",
+        "매트 오염",
+        "점검 사진",
+        "비교 견적"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "전문 청소·바닥보수 선공제 필요성이 핵심처럼 보이지만 실제론 무엇을 흐리는지 보는 층",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant10:a:d-5:denial:0",
+            "tenant10:a:d-5:threshold:0",
+            "tenant10:a:d-5:counter:1",
+            "tenant10:b:d-5:rule:0",
+            "tenant10:b:d-5:uncertainty:0",
+            "tenant10:b:d-5:admission:0",
+            "tenant10:b:d-5:uncertainty:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "전문 청소·바닥보수 선공제 필요성을 그렇게 믿게 된 심리와 전달 경로를 보는 층",
+          "lockedSummary": "왜 그렇게 말했는지는 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "M2"
+              },
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant10:a:d-5:admission:0",
+            "tenant10:a:d-5:counter:1",
+            "tenant10:a:d-5:rule:0",
+            "tenant10:a:d-5:counter:2",
+            "tenant10:a:d-5:fear:0",
+            "tenant10:a:d-5:emotion:0",
+            "tenant10:b:d-5:uncertainty:1",
+            "tenant10:b:d-5:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "전문 청소·바닥보수 필요 없다.를 위해 핵심과 잡음을 분리하는 층",
+          "lockedSummary": "책임선과 핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "M4"
+              },
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:context_pressed",
+              "d-5:surface:actual_damage_low"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant10:a:d-5:emotion:0",
+            "tenant10:a:d-5:fear:0",
+            "tenant10:a:d-5:admission:1",
+            "tenant10:a:d-5:threshold:1",
+            "tenant10:b:d-5:emotion:0",
+            "tenant10:b:d-5:fear:0",
+            "tenant10:b:d-5:admission:2",
+            "tenant10:b:d-5:threshold:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "issueRole": "red_herring",
+      "requiredEvidenceIds": [
+        "e-4",
+        "e-6"
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "trapSignals": [
+          "매트 오염",
+          "전문 탈취",
+          "바닥보수"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-6"
+        ],
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-2",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "M2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-2:motive:approval_gap_visible"
+      },
+      "uiLabel": "애매한 허락선",
+      "id": "link:d-1:d-2:unlocks_layer"
+    },
+    {
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-3",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-3:surface:overreach_open"
+      },
+      "uiLabel": "승인 공백",
+      "id": "link:d-2:d-3:supports"
+    },
+    {
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-5:surface:actual_damage_low"
+      },
+      "uiLabel": "경미한 민원",
+      "id": "link:d-4:d-5:weakens_counter"
+    },
+    {
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-3",
+      "type": "supports",
+      "when": {
+        "minState": "M3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-3:core:remedy_excessive"
+      },
+      "uiLabel": "선공제 과잉",
+      "id": "link:d-5:d-3:supports"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "임대차계약서와 반려동물 특약 원본",
+      "description": "반려동물 제한 문구와 협의 예외 표현이 함께 적힌 임대차계약서 원본과 특약란이다.",
+      "type": "contract",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "당사자 원본 계약서와 중개사 보관 사본이 함께 제출돼 문구를 그대로 대조할 수 있었다.",
+        "check_metadata": "특약란은 계약 당일 일괄 작성됐고 별도 덧붙임이나 재출력 흔적이 없다.",
+        "restore_context": "문구는 반려동물을 무조건 금지하는 형식이 아니라 사전 협의와 관리 조건을 남겨 둔 구조다.",
+        "verify_source": "서명과 도장 위치, 중개사 등록번호가 보관 사본과 일치한다.",
+        "check_edits": "특약란 지움이나 삽입 흔적 없이 최초 작성본으로 보인다.",
+        "question_acquisition": "당사자 계약 문서라 제출 절차상 문제는 낮다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "윤민주에게: \"반려동물 특약의 해석\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 윤민주의 \"반려동물 특약의 해석\" 쟁점과 관련된다. 윤민주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최상훈에게: \"반려동물 특약의 해석\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 최상훈의 \"반려동물 특약의 해석\" 쟁점과 관련된다. 최상훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "M2",
+            "multiplier": 1.35,
+            "note": "반려동물 특약의 해석 쟁점이 본격적으로 열릴 때 임대차계약서와 반려동물 특약 원본의 설득력이 커진다."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "상훈의 즉시 반려견 퇴거·예치금 요구 쟁점이 본격적으로 열릴 때 임대차계약서와 반려동물 특약 원본의 설득력이 커진다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "브로커 단톡방 캡처와 반려견 사진 전송 기록",
+      "description": "민주가 강아지 사진을 보내며 물어본 메시지와, 브로커가 집주인께 전달하겠다고 답한 단톡방 일부 캡처다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "처음엔 민주가 저장한 캡처만 있었고, 이후 전체 대화 원문 일부가 추가 제출됐다.",
+        "check_metadata": "사진 전송은 입주 이틀 전 밤이었고, 브로커의 전달 메시지는 그 직후 이어졌다.",
+        "restore_context": "처음 캡처에는 사진과 질문만 보였지만 전체 문맥에는 집주인 답은 아직이라는 문장이 앞쪽에 있었다.",
+        "verify_source": "민주 휴대폰 원본과 브로커 보관 대화 시각이 대체로 일치한다.",
+        "check_edits": "본문 조작 흔적은 없지만 허락이 아직 없다는 문장을 잘라 낸 선택적 크롭이 확인됐다.",
+        "question_acquisition": "사적 메신저 자료라 공개 범위는 분쟁 해결과 직접 관련된 부분으로 제한돼야 한다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.22,
+            "note": "민주의 사전 고지와 무응답 해석 쟁점이 본격적으로 열릴 때 브로커 단톡방 캡처와 반려견 사진 전송 기록의 설득력이 커진다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "말티즈 등록증·예방접종 기록·기초 훈련 수료증",
+      "description": "반려견의 체중, 등록번호, 예방접종 여부, 기초 소음 훈련 이력이 적힌 문서 묶음이다.",
+      "type": "record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "동물등록증, 병원 예방접종 원본, 훈련센터 수료증이 한 묶음으로 제출됐다.",
+        "check_metadata": "체중과 등록번호는 입주 직전 갱신됐고 훈련 수료 시점도 입주 한 달 전으로 확인된다.",
+        "restore_context": "소형견이고 기본 훈련을 받은 것은 맞지만, 이것만으로 실제 소음이 전혀 없었다고 단정할 수는 없다.",
+        "verify_source": "등록번호와 병원 기록, 수료증 발행번호가 각 기관 기록과 맞아떨어진다.",
+        "check_edits": "기관 발행 문서라 후편집 흔적이 없다.",
+        "question_acquisition": "반려견 관리 상태를 보여 주는 정식 자료라 제출 정당성은 충분하다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "실제 소음과 공용부 불편 정도 쟁점이 본격적으로 열릴 때 말티즈 등록증·예방접종 기록·기초 훈련 수료증의 설득력이 커진다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "관리사무소 민원일지와 복도 확인 기록",
+      "description": "택배 시간대 짧은 짖음 민원 두 건, 현관매트 세척 기록, 복도 오염 여부를 적은 관리사무소 일지다.",
+      "type": "record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "관리사무소 민원일지 원본과 현관매트 세척 기록표가 함께 제출됐다.",
+        "check_metadata": "민원은 입주 첫 달에 두 차례 있었고, 그 이후 같은 항목 반복 접수는 없다.",
+        "restore_context": "짧은 소음과 세탁 가능한 오염은 있었지만 상습 민원이나 심한 공용부 훼손으로 이어지지는 않았다.",
+        "verify_source": "관리실 일지 번호와 CCTV 확인 메모 시각이 서로 일치한다.",
+        "check_edits": "종이 일지와 전산 입력 내용이 동일해 사후 수정 가능성은 낮다.",
+        "question_acquisition": "건물 관리기록이라 분쟁 해결 목적 범위에서 적법성 문제는 낮다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "윤민주에게: \"실제 소음과 공용부 불편 정도\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 윤민주의 \"실제 소음과 공용부 불편 정도\" 쟁점과 관련된다. 윤민주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최상훈에게: \"전문 청소·바닥보수 선공제 필요성\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 최상훈의 \"전문 청소·바닥보수 선공제 필요성\" 쟁점과 관련된다. 최상훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "실제 소음과 공용부 불편 정도 쟁점이 본격적으로 열릴 때 관리사무소 민원일지와 복도 확인 기록의 설득력이 커진다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "M2",
+            "multiplier": 1.35,
+            "note": "전문 청소·바닥보수 선공제 필요성 쟁점이 본격적으로 열릴 때 관리사무소 민원일지와 복도 확인 기록의 설득력이 커진다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "입주 전 통화요약과 상훈의 문자 회신",
+      "description": "브로커가 정리한 입주 전 통화 요약과, 상훈이 사진은 봤고 관리만 잘 해 달라고 보낸 문자 원문이다.",
+      "type": "record",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "브로커 메모 원본과 상훈 문자 원문이 함께 제출돼 앞뒤 맥락을 확인할 수 있었다.",
+        "check_metadata": "문자 회신은 사진 전송 다음 날 오전에 왔고, 별도 승인 메시지는 그 뒤로 없다.",
+        "restore_context": "상훈의 답은 사진을 확인했다는 뜻과 관리 조건을 강조한 말이 섞여 있어 허락인지 보류인지 애매하게 읽힌다.",
+        "verify_source": "상훈 발신 번호와 민주 수신 기록, 브로커 통화 메모 시간이 서로 맞는다.",
+        "check_edits": "문자 원문에는 편집 흔적이 없고 메모도 당일 작성된 원본이다.",
+        "question_acquisition": "당사자와 중개사 사이 개인 통신이라 활용 범위에 사생활 주의가 필요하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "윤민주에게: \"반려동물 특약의 해석\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 윤민주의 \"반려동물 특약의 해석\" 쟁점과 관련된다. 윤민주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최상훈에게: \"반려동물 특약의 해석\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 최상훈의 \"반려동물 특약의 해석\" 쟁점과 관련된다. 최상훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "M2",
+            "multiplier": 1.22,
+            "note": "반려동물 특약의 해석 쟁점이 본격적으로 열릴 때 입주 전 통화요약과 상훈의 문자 회신의 설득력이 커진다."
+          },
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.22,
+            "note": "민주의 사전 고지와 무응답 해석 쟁점이 본격적으로 열릴 때 입주 전 통화요약과 상훈의 문자 회신의 설득력이 커진다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "바닥·현관 상태 점검 사진과 청소 견적 비교서",
+      "description": "현재 바닥과 현관매트 상태를 찍은 사진, 일반 세척 견적, 전문 탈취·보수 견적을 비교한 자료다.",
+      "type": "estimate",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "현장 점검 사진 원본과 두 종류의 청소·보수 견적서 원본이 모두 제출됐다.",
+        "check_metadata": "점검은 상훈의 즉시 반출 통보 다음 날 이뤄졌고, 견적도 같은 주 안에 발급됐다.",
+        "restore_context": "탈취와 바닥보수까지 필요한 손상은 보이지 않고, 현관매트 세탁이나 소독 정도면 충분하다는 비교 결과가 나온다.",
+        "verify_source": "견적 발행 번호와 점검기사 연락처, 사진 촬영 시각이 일치한다.",
+        "check_edits": "사진과 견적서 모두 원본 출력본이라 후편집 흔적이 없다.",
+        "question_acquisition": "손상 범위를 가리기 위한 통상 자료라 제출 절차상 문제는 낮다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "motive"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "상훈의 즉시 반려견 퇴거·예치금 요구 쟁점이 본격적으로 열릴 때 바닥·현관 상태 점검 사진과 청소 견적 비교서의 설득력이 커진다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "M2",
+            "multiplier": 1.35,
+            "note": "전문 청소·바닥보수 선공제 필요성 쟁점이 본격적으로 열릴 때 바닥·현관 상태 점검 사진과 청소 견적 비교서의 설득력이 커진다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:approval_boundary",
+      "intentTag": "legality_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "tenant10:a:d-1:admission:0",
+          "tenant10:a:d-1:counter:0",
+          "tenant10:b:d-1:admission:0",
+          "tenant10:b:d-1:responsibility:0"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "조항 해석은 자료를 같이 보고 말해야 합니다.",
+        "그 선은 문서와 함께 봐야 답할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:broker_delivery",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "tenant10:a:d-2:evidence:1",
+          "tenant10:a:d-2:admission:0",
+          "tenant10:a:d-2:context:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 사람 이름보다 흐름부터 정리해야 합니다.",
+        "그 이름을 먼저 꺼내면 말이 더 꼬입니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:remedy_scope",
+      "intentTag": "responsibility_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "tenant10:b:d-3:admission:0",
+          "tenant10:b:d-3:admission:2",
+          "tenant10:b:d-3:rule:2"
+        ],
+        "preferredAngleTags": [
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 제 몫과 남의 몫을 바로 자르기 어렵습니다.",
+        "책임선을 지금 한 문장으로 자르긴 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:noise_frequency",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "tenant10:a:d-4:admission:0",
+          "tenant10:b:d-4:admission:0"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "순서를 한 번에 다 설명하긴 어렵습니다.",
+        "그 시점 이야기는 아직 여기서 바로 못 하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:cleaning_basis",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "tenant10:b:d-5:admission:0",
+          "tenant10:b:d-5:uncertainty:1",
+          "tenant10:b:d-5:admission:2"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "배경을 설명하려면 앞 맥락부터 다시 봐야 합니다.",
+        "그 전후를 같이 놓지 않으면 오해가 생깁니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:why_interpreted_as_ok",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "tenant10:a:d-1:fear:0",
+          "tenant10:a:d-1:shame:0",
+          "tenant10:b:d-1:admission:2",
+          "tenant10:b:d-1:counter:0"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "그 마음까지 지금 바로 꺼내고 싶진 않습니다.",
+        "이유를 묻는 질문은 조금 더 뒤에 답하겠습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-3"
+    ],
+    "playerStyleTagCandidates": [
+      "rapport_heavy",
+      "evidence_closer",
+      "pressure_heavy",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": [
+    {
+      "id": "tenant10:a:d-1:unlock:s2:0",
+      "factText": "민주는 '관리만 잘 해 달라'는 회신을 명시적 승인보다 넓게 해석했다.",
+      "tags": [
+        "context",
+        "rule",
+        "uncertainty"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "message": {
+          "exact": "관리만 잘 해 달라",
+          "neutral": "애매한 관리 요청"
+        },
+        "person": {
+          "exact": "최상훈",
+          "neutral": "임대인",
+          "fullName": "최상훈",
+          "judgeRef": "집주인"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-1:unlock:s3:0",
+      "factText": "민주는 강아지 호텔 장기 보관을 이미 취소해 입주를 더 미루기 어려웠다.",
+      "tags": [
+        "motive",
+        "fear",
+        "context"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "time": {
+          "exact": "입주 직전",
+          "neutral": "그 무렵",
+          "period": "입주 직전"
+        },
+        "animal": {
+          "exact": "3.2kg 말티즈",
+          "neutral": "소형 반려견",
+          "rounded": "3kg대",
+          "fullName": "3.2kg 말티즈"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "emotional"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-1:unlock:s4:0",
+      "factText": "민주는 반려견 때문에 규칙도 안 지키는 세입자로 낙인찍힐까 두려워 승인 부족을 더 세게 숨겼다.",
+      "tags": [
+        "identity",
+        "fear",
+        "shame"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "윤민주",
+          "neutral": "세입자",
+          "fullName": "윤민주",
+          "judgeRef": "세입자"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-1:unlock:s5:0",
+      "factText": "민주는 명확한 허락 전 입주 책임을 인정하면서도, 상훈의 애매한 회신이 오해를 키웠다고 받아들인다.",
+      "tags": [
+        "admission",
+        "responsibility",
+        "relationship"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "윤민주",
+          "neutral": "세입자",
+          "fullName": "윤민주",
+          "judgeRef": "세입자"
+        },
+        "person2": {
+          "exact": "최상훈",
+          "neutral": "임대인",
+          "fullName": "최상훈",
+          "judgeRef": "집주인"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-2:unlock:s2:0",
+      "factText": "브로커 단톡방 원문에는 '집주인 답은 아직'이라는 문장이 있었는데, 처음 제출된 캡처에서는 잘려 있었다.",
+      "tags": [
+        "evidence",
+        "privacy",
+        "context"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "document": {
+          "exact": "원문 대화와 cropped 캡처",
+          "neutral": "대화 원문과 잘린 화면"
+        },
+        "person": {
+          "exact": "김하은",
+          "neutral": "중개사",
+          "fullName": "김하은",
+          "judgeRef": "브로커"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-2:unlock:s3:0",
+      "factText": "민주는 잘린 캡처가 자신에게 유리하다는 걸 알고도 먼저 그 화면을 제시했다.",
+      "tags": [
+        "motive",
+        "evidence",
+        "self_justification"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "document": {
+          "exact": "유리하게 잘린 캡처",
+          "neutral": "선택된 캡처"
+        },
+        "person": {
+          "exact": "윤민주",
+          "neutral": "세입자",
+          "fullName": "윤민주",
+          "judgeRef": "세입자"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-2:unlock:s4:0",
+      "factText": "입주 일정과 반려견 보관 문제 때문에 민주가 무응답을 사실상 승인처럼 붙잡았다.",
+      "tags": [
+        "fear",
+        "motive",
+        "context"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "time": {
+          "exact": "입주 직전",
+          "neutral": "그 무렵",
+          "period": "입주 직전"
+        },
+        "animal": {
+          "exact": "3.2kg 말티즈",
+          "neutral": "소형 반려견",
+          "rounded": "3kg대",
+          "fullName": "3.2kg 말티즈"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-2:unlock:s5:0",
+      "factText": "민주는 사전 고지는 했지만 최종 승인을 확인하지 않은 채 입주했다고 인정한다.",
+      "tags": [
+        "admission",
+        "responsibility",
+        "timeline"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "time": {
+          "exact": "입주 직전",
+          "neutral": "그 무렵",
+          "period": "입주 직전"
+        },
+        "person": {
+          "exact": "윤민주",
+          "neutral": "세입자",
+          "fullName": "윤민주",
+          "judgeRef": "세입자"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-4:unlock:s2:0",
+      "factText": "실제 관리실 민원은 택배 시간대 짧은 짖음 두 건이었다.",
+      "tags": [
+        "evidence",
+        "timeline",
+        "context"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "count": {
+          "exact": "2건",
+          "neutral": "몇 건의 민원"
+        },
+        "noise": {
+          "exact": "두세 번 짧게 짖음",
+          "neutral": "짧은 짖음"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-4:unlock:s3:0",
+      "factText": "현관매트 세척 기록은 있었지만 반복 오염이나 복도 훼손으로 이어지진 않았다.",
+      "tags": [
+        "context",
+        "harm",
+        "evidence"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "cleaning": {
+          "exact": "현관매트 세탁",
+          "neutral": "가벼운 청소"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-4:unlock:s4:0",
+      "factText": "민주는 '문제 세입자'로 보일까 봐 짧은 짖음조차 없었다고 더 세게 말했다.",
+      "tags": [
+        "identity",
+        "fear",
+        "shame"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "윤민주",
+          "neutral": "세입자",
+          "fullName": "윤민주",
+          "judgeRef": "세입자"
+        },
+        "noise": {
+          "exact": "두세 번 짧게 짖음",
+          "neutral": "짧은 짖음"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "tenant10:a:d-4:unlock:s5:0",
+      "factText": "민주는 두세 번 짧게 짖은 적과 매트 세척 필요 정도는 인정하지만 상습 불편은 아니었다고 정리한다.",
+      "tags": [
+        "admission",
+        "context",
+        "threshold"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "noise": {
+          "exact": "두세 번 짧게 짖음",
+          "neutral": "짧은 짖음"
+        },
+        "cleaning": {
+          "exact": "현관매트 세탁",
+          "neutral": "가벼운 청소"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-1:unlock:s2:0",
+      "factText": "계약 특약은 자동 금지도 자동 허용도 아니고, 사전 협의와 명확한 확인을 요구하는 구조였다.",
+      "tags": [
+        "rule",
+        "context",
+        "institution"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "document": {
+          "exact": "협의형 반려동물 특약",
+          "neutral": "협의형 특약"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-1:unlock:s3:0",
+      "factText": "상훈은 이전 세입자의 반려동물 냄새 민원 때문에 사진 확인만 시키고 결론을 미뤘다.",
+      "tags": [
+        "motive",
+        "fear",
+        "context"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "최상훈",
+          "neutral": "임대인",
+          "fullName": "최상훈",
+          "judgeRef": "집주인"
+        },
+        "person2": {
+          "exact": "김하은",
+          "neutral": "중개사",
+          "fullName": "김하은",
+          "judgeRef": "브로커"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "emotional"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-1:unlock:s4:0",
+      "factText": "상훈은 명확히 금지하지 않으면서도 나중에 불허 쪽으로 해석될 여지를 남기려 했다.",
+      "tags": [
+        "self_justification",
+        "rule",
+        "responsibility"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "최상훈",
+          "neutral": "임대인",
+          "fullName": "최상훈",
+          "judgeRef": "집주인"
+        },
+        "message": {
+          "exact": "관리만 잘 해 달라",
+          "neutral": "애매한 관리 요청"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "emotional"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-1:unlock:s5:0",
+      "factText": "상훈은 승인도 거절도 분명히 하지 않은 채 애매한 관리 조건만 남긴 책임을 인정한다.",
+      "tags": [
+        "admission",
+        "responsibility",
+        "relationship"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "최상훈",
+          "neutral": "임대인",
+          "fullName": "최상훈",
+          "judgeRef": "집주인"
+        },
+        "message": {
+          "exact": "관리만 잘 해 달라",
+          "neutral": "애매한 관리 요청"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-3:unlock:s2:0",
+      "factText": "상훈이 24시간 내 반려견 반출 또는 50만원 예치금을 요구한 문자를 직접 보냈다.",
+      "tags": [
+        "act",
+        "evidence",
+        "responsibility"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "time": {
+          "exact": "24시간",
+          "neutral": "즉시 기한"
+        },
+        "amount": {
+          "exact": "500,000원",
+          "neutral": "특별청소 예치금",
+          "rounded": "50만원"
+        },
+        "person": {
+          "exact": "최상훈",
+          "neutral": "임대인",
+          "fullName": "최상훈",
+          "judgeRef": "집주인"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-3:unlock:s3:0",
+      "factText": "즉시 조치 정당화를 위해 상훈은 냄새·털·알레르기 같은 조건을 뒤늦게 덧붙였다.",
+      "tags": [
+        "self_justification",
+        "context",
+        "motive"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "document": {
+          "exact": "뒤늦게 붙은 조건들",
+          "neutral": "추가 조건들"
+        },
+        "person": {
+          "exact": "최상훈",
+          "neutral": "임대인",
+          "fullName": "최상훈",
+          "judgeRef": "집주인"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-3:unlock:s4:0",
+      "factText": "상훈은 이전 민원 기억 때문에 실제 손상 확인 전에도 강한 제재를 먼저 꺼냈다.",
+      "tags": [
+        "fear",
+        "motive",
+        "harm"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "최상훈",
+          "neutral": "임대인",
+          "fullName": "최상훈",
+          "judgeRef": "집주인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-3:unlock:s5:0",
+      "factText": "상훈은 자신의 즉시 퇴거·선예치금 요구가 계약 문구와 확인된 손상 범위를 넘어섰음을 인정한다.",
+      "tags": [
+        "admission",
+        "rule",
+        "threshold"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "time": {
+          "exact": "24시간",
+          "neutral": "즉시 기한"
+        },
+        "amount": {
+          "exact": "500,000원",
+          "neutral": "특별청소 예치금",
+          "rounded": "50만원"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-5:unlock:s2:0",
+      "factText": "관리실 기록과 현장 사진상 현재 확인된 것은 세탁 가능한 현관매트 오염 정도였다.",
+      "tags": [
+        "evidence",
+        "context",
+        "harm"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "cleaning": {
+          "exact": "현관매트 세탁",
+          "neutral": "가벼운 청소"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-5:unlock:s3:0",
+      "factText": "전문 탈취 청소와 바닥보수 견적은 비교용으로 제출됐을 뿐, 즉시 필요한 손상은 확인되지 않았다.",
+      "tags": [
+        "evidence",
+        "threshold",
+        "context"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "document": {
+          "exact": "비교 견적서 두 종류",
+          "neutral": "비교 견적"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-5:unlock:s4:0",
+      "factText": "상훈은 반려동물 예외를 막고 싶은 마음에 실제 확인보다 큰 비용을 먼저 상정했다.",
+      "tags": [
+        "motive",
+        "fear",
+        "beneficiary"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "amount": {
+          "exact": "500,000원",
+          "neutral": "특별청소 예치금",
+          "rounded": "50만원"
+        },
+        "person": {
+          "exact": "최상훈",
+          "neutral": "임대인",
+          "fullName": "최상훈",
+          "judgeRef": "집주인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "tenant10:b:d-5:unlock:s5:0",
+      "factText": "상훈은 선공제보다 추후 실제 손상 발생 시 증빙 정산이 맞다는 점을 받아들인다.",
+      "tags": [
+        "admission",
+        "rule",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "document": {
+          "exact": "사후 증빙 정산 원칙",
+          "neutral": "사후 정산 원칙"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    }
+  ]
+} as const;

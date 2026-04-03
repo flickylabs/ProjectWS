@@ -1,0 +1,3602 @@
+export const tenant10BeatsV2Full = {
+  "caseId": "tenant-10",
+  "schemaVersion": "beat_v2_full",
+  "coverageSummary": {
+    "totalBeats": 58,
+    "byActionFamily": {
+      "question": 28,
+      "evidence": 6,
+      "fatigue": 6,
+      "free_question": 6,
+      "interjection": 12
+    },
+    "byIssueRole": {
+      "sub_truth": 14,
+      "shared_misconception": 21,
+      "core_truth": 12,
+      "red_herring": 11
+    },
+    "byResponseIntent": {
+      "pressure_response": 20,
+      "motive_response": 5,
+      "evidence_response": 6,
+      "rapport_response": 13,
+      "fatigue_response": 6,
+      "trap_confusion_response": 8
+    },
+    "interjectionInfoLevels": {
+      "emotional_only": 4,
+      "detail_rebuttal": 4,
+      "misbelief_escalation": 2,
+      "trap_signal": 2
+    },
+    "fatigueBeats": 6,
+    "freeQuestionBeats": 6
+  },
+  "beats": [
+    {
+      "id": "tenant10:beat_v2:a:d-2:surface:pressure:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "입주 전에 반려견 사진과 질문을 다 보냈고, 브로커도 집주인께 전달했다고 해서 저는 필요한 고지는 했다고 봤습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-2:act:0",
+          "tenant10:a:d-2:evidence:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-2:unlock:s5:0",
+          "tenant10:a:d-2:admission:2"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-2:surface:pressure:timeline",
+      "coverageKey": "a:d-2:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-2:surface:timeline_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-2:surface:pressure:identity:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "사진이 전달됐고 별도 거절도 없어서, 저는 허락 단계가 거의 끝났다고 이해했습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "identity",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-2:self_justification:0",
+          "tenant10:a:d-2:uncertainty:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-2:unlock:s5:0",
+          "tenant10:a:d-2:admission:2"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-2:surface:pressure:identity",
+      "coverageKey": "a:d-2:surface:early:pressure:identity",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-2:surface:identity_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-2:motive:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "명확한 승인 확인 없이 들어온 건 제 성급함입니다. 그래도 사진과 질문을 먼저 보낸 이상 완전한 무단 반입이라고만 말하는 건 억울합니다.",
+      "behaviorHint": "잠깐 멈칫한 뒤 이유를 설명하면서도 책임선을 좁히려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-2:admission:0",
+          "tenant10:a:d-2:unlock:s3:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-2:unlock:s5:0",
+          "tenant10:a:d-2:admission:2"
+        ]
+      },
+      "weight": 5,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-2:motive:motive:motive",
+      "coverageKey": "a:d-2:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-2:motive:motive_pressed"
+      ],
+      "tags": [
+        "mid"
+      ],
+      "requiresFlags": [
+        "d-2:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-2:surface:evidence:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "원문에 아직 답이 없다는 문장이 있었는데도, 저는 잘린 캡처 쪽을 먼저 내세워 제가 다 알린 것처럼 보이게 했습니다.",
+      "behaviorHint": "증거를 보고 시선을 한 번 피했다가 다시 맞추며 문장을 고쳐 말한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "context",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-2:evidence:0",
+          "tenant10:a:d-2:unlock:s2:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-2:unlock:s5:0",
+          "tenant10:a:d-2:admission:2"
+        ]
+      },
+      "weight": 4,
+      "priority": 24,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-2:surface:evidence:context",
+      "coverageKey": "a:d-2:surface:early:evidence:context",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-2:surface:context_pressed"
+      ],
+      "tags": [
+        "cold"
+      ],
+      "requiresFlags": [
+        "d-2:surface:identity_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-2:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confess",
+      "line": "이사 날짜는 정해져 있고 강아지 호텔도 취소한 상태였어서, 저는 무응답을 끝까지 보류로 받아들이기가 너무 무서웠습니다.",
+      "behaviorHint": "끝문장에서 감정과 체면이 함께 새어 나온다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "sub_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-2:shame:0",
+          "tenant10:a:d-2:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-2:admission:2"
+        ]
+      },
+      "weight": 5,
+      "priority": 22,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-2:core:rapport:emotion",
+      "coverageKey": "a:d-2:core:late:rapport:emotion",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-2:core:emotion_pressed"
+      ],
+      "tags": [
+        "late"
+      ],
+      "requiresFlags": [
+        "d-2:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-4:surface:pressure:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "저희 강아지는 거의 안 짖었고 복도도 어지럽힌 적이 없습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-4:denial:0",
+          "tenant10:a:d-4:uncertainty:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-4:unlock:s5:0",
+          "tenant10:a:d-4:admission:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-4:surface:pressure:timeline",
+      "coverageKey": "a:d-4:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-4:surface:timeline_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-4:surface:pressure:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "있었다고 해도 잠깐 수준이었고, 남들이 계속 불편할 정도는 아니었습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-4:denial:0",
+          "tenant10:a:d-4:uncertainty:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-4:unlock:s5:0",
+          "tenant10:a:d-4:admission:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-4:surface:pressure:context",
+      "coverageKey": "a:d-4:surface:early:pressure:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-4:surface:context_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-4:motive:pressure:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "현관매트 세척할 정도의 흔적은 있었지만, 반복 오염이나 복도 훼손으로 커지진 않았습니다.",
+      "behaviorHint": "잠깐 멈칫한 뒤 이유를 설명하면서도 책임선을 좁히려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-4:admission:0",
+          "tenant10:a:d-4:unlock:s3:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-4:unlock:s5:0",
+          "tenant10:a:d-4:admission:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-4:motive:pressure:responsibility",
+      "coverageKey": "a:d-4:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-4:motive:responsibility_pressed"
+      ],
+      "tags": [
+        "mid"
+      ],
+      "requiresFlags": [
+        "d-4:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-4:motive:evidence:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "택배나 초인종 때 두세 번 짧게 짖은 적은 있습니다. 다만 그게 상습 민원으로 이어진 건 아닙니다.",
+      "behaviorHint": "증거를 보고 시선을 한 번 피했다가 다시 맞추며 문장을 고쳐 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "context",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-4:unlock:s2:0",
+          "tenant10:a:d-4:unlock:s3:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-4:unlock:s5:0",
+          "tenant10:a:d-4:admission:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 24,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-4:motive:evidence:context",
+      "coverageKey": "a:d-4:motive:mid:evidence:context",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-4:motive:context_pressed"
+      ],
+      "tags": [
+        "cold"
+      ],
+      "requiresFlags": [
+        "d-4:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-4:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confess",
+      "line": "짧은 소음 몇 번을 두고 제가 규칙도 안 지키는 세입자인 것처럼 몰아가는 게 너무 억울했습니다.",
+      "behaviorHint": "끝문장에서 감정과 체면이 함께 새어 나온다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "sub_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-4:unlock:s4:0",
+          "tenant10:a:d-4:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-4:admission:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 22,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-4:core:rapport:emotion",
+      "coverageKey": "a:d-4:core:late:rapport:emotion",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-4:core:emotion_pressed"
+      ],
+      "tags": [
+        "late"
+      ],
+      "requiresFlags": [
+        "d-4:surface:timeline_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:surface:pressure:legality:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "브로커를 통해 반려견 사진까지 미리 보냈고 관리만 잘하면 된다는 취지로 들어서, 저는 반려견 동거가 정리된 줄 알았습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "pressure_response",
+      "angleTag": "legality",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:rule:0",
+          "tenant10:a:d-1:rule:1"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:pressure:legality",
+      "coverageKey": "a:d-1:surface:early:pressure:legality",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:legality_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:surface:pressure:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "특약이 무조건 금지처럼 읽히진 않았고 사진까지 확인됐으니, 별도 반대가 없는 줄 알고 움직였습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:rule:0",
+          "tenant10:a:d-1:rule:1"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:pressure:context",
+      "coverageKey": "a:d-1:surface:early:pressure:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:context_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:motive:pressure:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "허락을 제가 앞질러 해석한 건 맞지만, 상훈 씨 답도 승인과 보류 사이에 걸쳐 있어서 그대로 믿어 버렸습니다.",
+      "behaviorHint": "잠깐 멈칫한 뒤 이유를 설명하면서도 책임선을 좁히려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "shared_misconception",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:admission:0",
+          "tenant10:a:d-1:unlock:s3:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:motive:pressure:responsibility",
+      "coverageKey": "a:d-1:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:responsibility_pressed"
+      ],
+      "tags": [
+        "mid"
+      ],
+      "requiresFlags": [
+        "d-1:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:surface:evidence:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "지금 보면 승인 문장이 분명하진 않았지만, 저는 협의가 끝났다고 너무 빨리 믿고 움직인 것 같습니다.",
+      "behaviorHint": "증거를 보고 시선을 한 번 피했다가 다시 맞추며 문장을 고쳐 말한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "evidence_response",
+      "angleTag": "context",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:rule:1",
+          "tenant10:a:d-1:unlock:s2:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 24,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:evidence:context",
+      "coverageKey": "a:d-1:surface:early:evidence:context",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-1:surface:context_pressed"
+      ],
+      "tags": [
+        "cold"
+      ],
+      "requiresFlags": [
+        "d-1:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confess",
+      "line": "그때는 강아지를 다시 맡길 곳도 없고 호텔도 취소한 상태라, 그 한 줄을 허락처럼 붙잡을 수밖에 없다고 느꼈습니다.",
+      "behaviorHint": "끝문장에서 감정과 체면이 함께 새어 나온다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "shared_misconception",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:unlock:s4:0",
+          "tenant10:a:d-1:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 22,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:core:rapport:emotion",
+      "coverageKey": "a:d-1:core:late:rapport:emotion",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:core:emotion_pressed"
+      ],
+      "tags": [
+        "late"
+      ],
+      "requiresFlags": [
+        "d-1:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-1:surface:pressure:legality:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "특약상 반려동물은 허용된 게 아닙니다. 사진 확인은 승인과 전혀 다른 절차입니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "pressure_response",
+      "angleTag": "legality",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-1:rule:0",
+          "tenant10:b:d-1:uncertainty:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-1:unlock:s5:0",
+          "tenant10:b:d-1:admission:2"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:surface:pressure:legality",
+      "coverageKey": "b:d-1:surface:early:pressure:legality",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:legality_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-1:surface:pressure:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "저는 명확히 허가한 적이 없고, 그 단계는 아직 협의 중이었다고 봅니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-1:rule:0",
+          "tenant10:b:d-1:uncertainty:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-1:unlock:s5:0",
+          "tenant10:b:d-1:admission:2"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:surface:pressure:context",
+      "coverageKey": "b:d-1:surface:early:pressure:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:context_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-1:motive:pressure:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "이전 세입자 냄새 민원 때문에 제가 분명히 거절하지도, 허락하지도 못하고 애매하게 남겼던 건 맞습니다.",
+      "behaviorHint": "잠깐 멈칫한 뒤 이유를 설명하면서도 책임선을 좁히려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "shared_misconception",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-1:responsibility:0",
+          "tenant10:b:d-1:admission:1"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-1:unlock:s5:0",
+          "tenant10:b:d-1:admission:2"
+        ]
+      },
+      "weight": 5,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:motive:pressure:responsibility",
+      "coverageKey": "b:d-1:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:responsibility_pressed"
+      ],
+      "tags": [
+        "mid"
+      ],
+      "requiresFlags": [
+        "d-1:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-1:motive:evidence:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "문구가 자동 금지까지는 아니더라도, 적어도 제 명확한 승인 전제로 봤습니다.",
+      "behaviorHint": "증거를 보고 시선을 한 번 피했다가 다시 맞추며 문장을 고쳐 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "shared_misconception",
+      "responseIntent": "evidence_response",
+      "angleTag": "context",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-1:unlock:s2:0",
+          "tenant10:b:d-1:unlock:s3:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-1:unlock:s5:0",
+          "tenant10:b:d-1:admission:2"
+        ]
+      },
+      "weight": 4,
+      "priority": 24,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:motive:evidence:context",
+      "coverageKey": "b:d-1:motive:mid:evidence:context",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-1:motive:context_pressed"
+      ],
+      "tags": [
+        "cold"
+      ],
+      "requiresFlags": [
+        "d-1:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-1:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confess",
+      "line": "예외를 하나 열어 주면 다른 세입자 민원과 냄새 문제까지 제가 통제 못 하는 집주인처럼 보일까 걱정했습니다.",
+      "behaviorHint": "끝문장에서 감정과 체면이 함께 새어 나온다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "shared_misconception",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-1:fear:0",
+          "tenant10:b:d-1:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-1:admission:2"
+        ]
+      },
+      "weight": 5,
+      "priority": 22,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:core:rapport:emotion",
+      "coverageKey": "b:d-1:core:late:rapport:emotion",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:core:emotion_pressed"
+      ],
+      "tags": [
+        "late"
+      ],
+      "requiresFlags": [
+        "d-1:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:surface:pressure:legality:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "계약 위반 상황이라고 판단했으니 즉시 반출을 요구할 수 있다고 봤습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "legality",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:rule:0",
+          "tenant10:b:d-3:rule:1"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:admission:2",
+          "tenant10:b:d-3:unlock:s5:0"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:pressure:legality",
+      "coverageKey": "b:d-3:surface:early:pressure:legality",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:legality_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:surface:pressure:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "다른 세입자 민원과 건물 관리 문제를 생각하면 빠른 조치가 필요했습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:rule:0",
+          "tenant10:b:d-3:rule:1"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:admission:2",
+          "tenant10:b:d-3:unlock:s5:0"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:pressure:responsibility",
+      "coverageKey": "b:d-3:surface:early:pressure:responsibility",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:responsibility_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:motive:pressure:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "정당화를 하려다 보니 냄새, 털, 알레르기 같은 조건을 뒤늦게 많이 붙인 건 맞습니다.",
+      "behaviorHint": "잠깐 멈칫한 뒤 이유를 설명하면서도 책임선을 좁히려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:unlock:s2:0",
+          "tenant10:b:d-3:unlock:s3:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:admission:2",
+          "tenant10:b:d-3:unlock:s5:0"
+        ]
+      },
+      "weight": 5,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:motive:pressure:context",
+      "coverageKey": "b:d-3:motive:mid:pressure:context",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-3:motive:context_pressed"
+      ],
+      "tags": [
+        "mid"
+      ],
+      "requiresFlags": [
+        "d-3:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:surface:evidence:legality:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "24시간 반출과 50만원 예치금 통보는 제가 보낸 게 맞습니다.",
+      "behaviorHint": "증거를 보고 시선을 한 번 피했다가 다시 맞추며 문장을 고쳐 말한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "legality",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:rule:1",
+          "tenant10:b:d-3:unlock:s2:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:admission:2",
+          "tenant10:b:d-3:unlock:s5:0"
+        ]
+      },
+      "weight": 4,
+      "priority": 24,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:evidence:legality",
+      "coverageKey": "b:d-3:surface:early:evidence:legality",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-3:surface:legality_pressed"
+      ],
+      "tags": [
+        "cold"
+      ],
+      "requiresFlags": [
+        "d-3:surface:responsibility_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confess",
+      "line": "이전 반려동물 냄새 민원 기억 때문에, 실제 손상 확인 전에도 먼저 강하게 제재해야 한다는 생각이 앞섰습니다.",
+      "behaviorHint": "끝문장에서 감정과 체면이 함께 새어 나온다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:unlock:s4:0",
+          "tenant10:b:d-3:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:admission:2"
+        ]
+      },
+      "weight": 5,
+      "priority": 22,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:core:rapport:emotion",
+      "coverageKey": "b:d-3:core:late:rapport:emotion",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-3:core:emotion_pressed"
+      ],
+      "tags": [
+        "late"
+      ],
+      "requiresFlags": [
+        "d-3:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-5:surface:pressure:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "전문 청소와 바닥보수 선공제는 당연히 필요하다고 봤습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "red_herring",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-5:rule:0",
+          "tenant10:b:d-5:uncertainty:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-5:unlock:s5:0",
+          "tenant10:b:d-5:admission:2"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-5:surface:pressure:context",
+      "coverageKey": "b:d-5:surface:early:pressure:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-5:surface:context_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-5:surface:pressure:legality:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "동물 냄새는 뒤늦게 커질 수 있어서 미리 비용을 잡아 두는 게 안전하다고 생각했습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "red_herring",
+      "responseIntent": "pressure_response",
+      "angleTag": "legality",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-5:rule:0",
+          "tenant10:b:d-5:threshold:1"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-5:unlock:s5:0",
+          "tenant10:b:d-5:admission:2"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-5:surface:pressure:legality",
+      "coverageKey": "b:d-5:surface:early:pressure:legality",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-5:surface:legality_pressed"
+      ],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-5:motive:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "전문 탈취와 바닥보수까지는 확인되지 않았는데도, 제가 비용을 크게 잡은 건 맞습니다.",
+      "behaviorHint": "잠깐 멈칫한 뒤 이유를 설명하면서도 책임선을 좁히려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "red_herring",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-5:uncertainty:1",
+          "tenant10:b:d-5:beneficiary:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-5:unlock:s5:0",
+          "tenant10:b:d-5:admission:2"
+        ]
+      },
+      "weight": 5,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-5:motive:motive:motive",
+      "coverageKey": "b:d-5:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-5:motive:motive_pressed"
+      ],
+      "tags": [
+        "mid"
+      ],
+      "requiresFlags": [
+        "d-5:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-5:motive:evidence:legality:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "관리실 기록과 현장 사진상 현재 보이는 건 현관매트 오염 정도라는 건 압니다.",
+      "behaviorHint": "증거를 보고 시선을 한 번 피했다가 다시 맞추며 문장을 고쳐 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "red_herring",
+      "responseIntent": "evidence_response",
+      "angleTag": "legality",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-5:unlock:s2:0",
+          "tenant10:b:d-5:unlock:s3:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-5:unlock:s5:0",
+          "tenant10:b:d-5:admission:2"
+        ]
+      },
+      "weight": 4,
+      "priority": 24,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-5:motive:evidence:legality",
+      "coverageKey": "b:d-5:motive:mid:evidence:legality",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-5:motive:legality_pressed"
+      ],
+      "tags": [
+        "cold"
+      ],
+      "requiresFlags": [
+        "d-5:surface:legality_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-5:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confess",
+      "line": "반려동물 예외를 한 번 두면 나중에 손해를 제가 다 떠안을까 봐, 실제 확인보다 큰 비용을 먼저 떠올렸습니다.",
+      "behaviorHint": "끝문장에서 감정과 체면이 함께 새어 나온다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "red_herring",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-5:unlock:s4:0",
+          "tenant10:b:d-5:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-5:admission:2"
+        ]
+      },
+      "weight": 5,
+      "priority": 22,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-5:core:rapport:emotion",
+      "coverageKey": "b:d-5:core:late:rapport:emotion",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-5:core:emotion_pressed"
+      ],
+      "tags": [
+        "late"
+      ],
+      "requiresFlags": [
+        "d-5:surface:context_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:surface:fatigue:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "fatigue",
+      "line": "지금 보면 승인 문장이 분명하진 않았지만, 저는 협의가 끝났다고 너무 빨리 믿고 움직인 것 같습니다. 같은 축은 이미 설명했습니다. 똑같은 질문을 계속 돌리지 마세요.",
+      "behaviorHint": "같은 축 추궁이 이어지자 짜증이 먼저 올라온다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "closed"
+        ],
+        "fatigueLevels": [
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:admission:0",
+          "tenant10:a:d-1:unlock:s2:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 21,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:fatigue:timeline",
+      "coverageKey": "a:d-1:surface:mid:fatigue:timeline",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-1:surface:timeline_fatigue"
+      ],
+      "tags": [
+        "fatigue",
+        "repeat2"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:surface:fatigue:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "fatigue",
+      "line": "지금 보면 승인 문장이 분명하진 않았지만, 저는 협의가 끝났다고 너무 빨리 믿고 움직인 것 같습니다. 더는 같은 질문에 같은 답을 반복하지 않겠습니다.",
+      "behaviorHint": "대답을 끊어 치며 더는 같은 질문을 받지 않겠다는 태도를 보인다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "fatigue_response",
+      "angleTag": "responsibility",
+      "actionFamily": "fatigue",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "closed"
+        ],
+        "fatigueLevels": [
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:admission:0",
+          "tenant10:a:d-1:unlock:s2:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 21,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:fatigue:responsibility",
+      "coverageKey": "a:d-1:surface:mid:fatigue:responsibility",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-1:surface:responsibility_fatigue"
+      ],
+      "tags": [
+        "fatigue",
+        "repeat3",
+        "block"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:surface:fatigue:timeline:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "fatigue",
+      "line": "허락을 제가 앞질러 해석한 건 맞지만, 상훈 씨 답도 승인과 보류 사이에 걸쳐 있어서 그대로 믿어 버렸습니다. 계속 이렇게 몰아가면 저도 받아칠 수밖에 없습니다.",
+      "behaviorHint": "피로가 누적돼 방어 대신 맞받아치는 말투가 된다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "closed"
+        ],
+        "fatigueLevels": [
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:unlock:s3:0",
+          "tenant10:a:d-1:self_justification:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 21,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:fatigue:timeline",
+      "coverageKey": "a:d-1:surface:mid:fatigue:timeline",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-1:surface:timeline_fatigue"
+      ],
+      "tags": [
+        "fatigue",
+        "high_fatigue",
+        "counter"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:surface:fatigue:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "fatigue",
+      "line": "24시간 반출과 50만원 예치금 통보는 제가 보낸 게 맞습니다. 같은 축은 이미 설명했습니다. 똑같은 질문을 계속 돌리지 마세요.",
+      "behaviorHint": "같은 축 추궁이 이어지자 짜증이 먼저 올라온다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "closed"
+        ],
+        "fatigueLevels": [
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:unlock:s2:0",
+          "tenant10:b:d-3:admission:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:unlock:s5:0",
+          "tenant10:b:d-3:admission:2"
+        ]
+      },
+      "weight": 4,
+      "priority": 21,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:fatigue:timeline",
+      "coverageKey": "b:d-3:surface:mid:fatigue:timeline",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-3:surface:timeline_fatigue"
+      ],
+      "tags": [
+        "fatigue",
+        "repeat2"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:surface:fatigue:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "fatigue",
+      "line": "24시간 반출과 50만원 예치금 통보는 제가 보낸 게 맞습니다. 더는 같은 질문에 같은 답을 반복하지 않겠습니다.",
+      "behaviorHint": "대답을 끊어 치며 더는 같은 질문을 받지 않겠다는 태도를 보인다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "responsibility",
+      "actionFamily": "fatigue",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "closed"
+        ],
+        "fatigueLevels": [
+          "tired"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:unlock:s2:0",
+          "tenant10:b:d-3:admission:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:unlock:s5:0",
+          "tenant10:b:d-3:admission:2"
+        ]
+      },
+      "weight": 4,
+      "priority": 21,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:fatigue:responsibility",
+      "coverageKey": "b:d-3:surface:mid:fatigue:responsibility",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-3:surface:responsibility_fatigue"
+      ],
+      "tags": [
+        "fatigue",
+        "repeat3",
+        "block"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:surface:fatigue:timeline:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "fatigue",
+      "line": "정당화를 하려다 보니 냄새, 털, 알레르기 같은 조건을 뒤늦게 많이 붙인 건 맞습니다. 계속 이렇게 몰아가면 저도 받아칠 수밖에 없습니다.",
+      "behaviorHint": "피로가 누적돼 방어 대신 맞받아치는 말투가 된다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "closed"
+        ],
+        "fatigueLevels": [
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:motive:0",
+          "tenant10:b:d-3:unlock:s3:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:unlock:s5:0",
+          "tenant10:b:d-3:admission:2"
+        ]
+      },
+      "weight": 4,
+      "priority": 21,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:fatigue:timeline",
+      "coverageKey": "b:d-3:surface:mid:fatigue:timeline",
+      "variantTarget": 3,
+      "setFlags": [
+        "d-3:surface:timeline_fatigue"
+      ],
+      "tags": [
+        "fatigue",
+        "high_fatigue",
+        "counter"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:core:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confess",
+      "line": "명확한 허락을 받기 전에 함께 입주한 건 제 잘못입니다. 다만 그 답을 분명하게 남기지 않은 책임도 반씩 있다고 생각합니다.",
+      "behaviorHint": "정형 문답에서 벗어나자 숨기던 이유를 더 직접적으로 드러낸다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "shared_misconception",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "free_question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:unlock:s4:0",
+          "tenant10:a:d-1:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 3,
+      "priority": 18,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:core:motive:motive",
+      "coverageKey": "a:d-1:core:late:motive:motive",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-1:core:motive_pressed"
+      ],
+      "tags": [
+        "free_question"
+      ],
+      "requiresFlags": [
+        "d-1:motive:responsibility_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-2:core:rapport:emotion:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confess",
+      "line": "사전 고지는 했지만, 최종 승인을 확인하지 않은 채 입주한 건 맞습니다. 제가 허락으로 단정한 부분은 제 책임입니다.",
+      "behaviorHint": "정형 문답에서 벗어나자 숨기던 이유를 더 직접적으로 드러낸다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "sub_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "free_question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-2:shame:0",
+          "tenant10:a:d-2:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-2:admission:2"
+        ]
+      },
+      "weight": 3,
+      "priority": 18,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-2:core:rapport:emotion",
+      "coverageKey": "a:d-2:core:late:rapport:emotion",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-2:core:emotion_pressed"
+      ],
+      "tags": [
+        "free_question"
+      ],
+      "requiresFlags": [
+        "d-2:motive:motive_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:core:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confess",
+      "line": "즉시 퇴거와 선예치금 요구는 계약 문구와 확인된 손상 범위를 넘어섰습니다. 그 점은 인정합니다.",
+      "behaviorHint": "정형 문답에서 벗어나자 숨기던 이유를 더 직접적으로 드러낸다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "free_question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:unlock:s4:0",
+          "tenant10:b:d-3:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:admission:2"
+        ]
+      },
+      "weight": 3,
+      "priority": 18,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:core:motive:motive",
+      "coverageKey": "b:d-3:core:late:motive:motive",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-3:core:motive_pressed"
+      ],
+      "tags": [
+        "free_question"
+      ],
+      "requiresFlags": [
+        "d-3:motive:context_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-4:core:rapport:emotion:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confess",
+      "line": "완전히 없었다고 한 건 과장이었습니다. 두세 번 짧게 짖은 적과 매트 세척 정도는 있었지만, 반복 민원이나 심한 공용부 불편은 아니었습니다.",
+      "behaviorHint": "정형 문답에서 벗어나자 숨기던 이유를 더 직접적으로 드러낸다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "sub_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "free_question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-4:unlock:s4:0",
+          "tenant10:a:d-4:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-4:admission:1"
+        ]
+      },
+      "weight": 3,
+      "priority": 18,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-4:core:rapport:emotion",
+      "coverageKey": "a:d-4:core:late:rapport:emotion",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-4:core:emotion_pressed"
+      ],
+      "tags": [
+        "free_question"
+      ],
+      "requiresFlags": [
+        "d-4:motive:responsibility_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-5:core:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confess",
+      "line": "현 단계에서는 선공제보다, 추후 실제 손상이 생기면 그때 증빙 정산하는 방식이 맞습니다.",
+      "behaviorHint": "정형 문답에서 벗어나자 숨기던 이유를 더 직접적으로 드러낸다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "red_herring",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "free_question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-5:unlock:s4:0",
+          "tenant10:b:d-5:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-5:admission:2"
+        ]
+      },
+      "weight": 3,
+      "priority": 18,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-5:core:motive:motive",
+      "coverageKey": "b:d-5:core:late:motive:motive",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-5:core:motive_pressed"
+      ],
+      "tags": [
+        "free_question"
+      ],
+      "requiresFlags": [
+        "d-5:motive:motive_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:core:rapport:emotion:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confess",
+      "line": "명확한 허락을 받기 전에 함께 입주한 건 제 잘못입니다. 다만 그 답을 분명하게 남기지 않은 책임도 반씩 있다고 생각합니다.",
+      "behaviorHint": "정형 문답에서 벗어나자 숨기던 이유를 더 직접적으로 드러낸다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "shared_misconception",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "free_question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:unlock:s4:0",
+          "tenant10:a:d-1:unlock:s5:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 3,
+      "priority": 18,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:core:rapport:emotion",
+      "coverageKey": "a:d-1:core:late:rapport:emotion",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-1:core:emotion_pressed"
+      ],
+      "tags": [
+        "free_question"
+      ],
+      "requiresFlags": [
+        "d-1:motive:responsibility_pressed"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:surface:trap:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "특약이 무조건 금지처럼 읽히진 않았고 사진까지 확인됐으니, 별도 반대가 없는 줄 알고 움직였습니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "M0",
+        "M1",
+        "M2"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ],
+        "misconceptionStates": [
+          "M0",
+          "M1",
+          "M2"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:trap:context",
+      "coverageKey": "a:d-1:surface:early:trap:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:context_pressed"
+      ],
+      "tags": [
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-1:motive:trap:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "emotional",
+      "line": "예외를 하나 열어 주면 다른 세입자 민원과 냄새 문제까지 제가 통제 못 하는 집주인처럼 보일까 걱정했습니다.",
+      "behaviorHint": "끝문장에서 감정과 체면이 함께 새어 나온다.",
+      "applicableStates": [
+        "M3",
+        "M4"
+      ],
+      "layer": "motive",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ],
+        "misconceptionStates": [
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [],
+        "forbidAtomIds": [
+          "tenant10:b:d-1:unlock:s5:0",
+          "tenant10:b:d-1:admission:2"
+        ]
+      },
+      "weight": 5,
+      "priority": 22,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:motive:trap:context",
+      "coverageKey": "b:d-1:motive:late:trap:context",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:context_pressed"
+      ],
+      "tags": [
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-5:surface:trap:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "지금 자료로 보이는 건 현관매트 오염 정도뿐이라, 선공제로 큰 금액을 잡을 단계는 아닙니다.",
+      "behaviorHint": "질문을 받자마자 순서와 문구를 붙잡아 버티려 한다.",
+      "applicableStates": [
+        "M0",
+        "M1",
+        "M2"
+      ],
+      "layer": "surface",
+      "issueRole": "red_herring",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ],
+        "misconceptionStates": [
+          "M0",
+          "M1",
+          "M2"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [],
+        "forbidAtomIds": [
+          "tenant10:a:d-5:admission:1",
+          "tenant10:a:d-5:threshold:1"
+        ]
+      },
+      "weight": 6,
+      "priority": 30,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-5:surface:trap:context",
+      "coverageKey": "a:d-5:surface:early:trap:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-5:surface:context_pressed"
+      ],
+      "tags": [
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-5:motive:trap:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "emotional",
+      "line": "반려견이 있다는 이유만으로 큰 보수비를 먼저 덮어씌우는 것 같아 너무 억울했습니다.",
+      "behaviorHint": "끝문장에서 감정과 체면이 함께 새어 나온다.",
+      "applicableStates": [
+        "M3",
+        "M4"
+      ],
+      "layer": "motive",
+      "issueRole": "red_herring",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "strained",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open",
+          "fragile"
+        ],
+        "fatigueLevels": [
+          "tired",
+          "depleted"
+        ],
+        "misconceptionStates": [
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [],
+        "forbidAtomIds": [
+          "tenant10:a:d-5:admission:1",
+          "tenant10:a:d-5:threshold:1"
+        ]
+      },
+      "weight": 5,
+      "priority": 22,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-5:motive:trap:emotion",
+      "coverageKey": "a:d-5:motive:late:trap:emotion",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-5:motive:emotion_pressed"
+      ],
+      "tags": [
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "interject",
+      "line": "하루 안에 아이를 빼라니요. 그건 제 생활을 통째로 끊으라는 말처럼 들렸어요.",
+      "behaviorHint": "감정을 참지 못하고 질문 사이로 끼어든다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ],
+        "misconceptionStates": [
+          "M2",
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:unlock:s2:0",
+          "tenant10:a:d-1:counter:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a:d-1:surface:mid:interjection:emotional_only:allow",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "emotional_only",
+        "red_herring"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "interject",
+      "line": "나중 손해를 누가 집니까. 집주인은 미리 막을 수밖에 없는 상황도 있는 겁니다.",
+      "behaviorHint": "감정을 참지 못하고 질문 사이로 끼어든다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:unlock:s2:0",
+          "tenant10:b:d-3:admission:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:admission:2",
+          "tenant10:b:d-3:unlock:s5:0"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b:d-3:surface:mid:interjection:emotional_only:allow",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "interject",
+      "line": "짧게 짖은 몇 번으로 저를 규칙도 안 지키는 사람처럼 보시는 게 제일 서운했습니다.",
+      "behaviorHint": "말이 잘리자 짧게 항의하고 숨을 고른다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ],
+        "misconceptionStates": [
+          "M2",
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:unlock:s2:0",
+          "tenant10:a:d-1:counter:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a:d-1:surface:mid:interjection:emotional_only:block",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "emotional_only",
+        "red_herring"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "interject",
+      "line": "제가 예외를 하나 잘못 두면 건물 전체 기준이 무너집니다. 그 부담은 결국 제가 안습니다.",
+      "behaviorHint": "말이 잘리자 짧게 항의하고 숨을 고른다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:unlock:s2:0",
+          "tenant10:b:d-3:admission:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:admission:2",
+          "tenant10:b:d-3:unlock:s5:0"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b:d-3:surface:mid:interjection:emotional_only:block",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-2:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "interject",
+      "line": "처음 낸 화면에는 '집주인 답은 아직' 문장이 빠져 있습니다. 고지를 했다는 사실과 승인을 받았다는 인상은 다른데, 왜 둘을 한 화면으로 묶어 보이게 했습니까?",
+      "behaviorHint": "구체 디테일을 끌어와 즉시 반박한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-2:unlock:s2:0",
+          "tenant10:a:d-2:admission:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-2:unlock:s5:0",
+          "tenant10:a:d-2:admission:2"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a:d-2:surface:mid:interjection:detail_rebuttal:allow",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-5:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "interject",
+      "line": "관리실 기록과 점검 사진상 확인되는 건 매트 세척 수준인데, 왜 전문 탈취와 바닥보수를 먼저 떼어 두려 하셨습니까? 실제 손상보다 비용을 먼저 키운 것 아닙니까?",
+      "behaviorHint": "구체 디테일을 끌어와 즉시 반박한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "red_herring",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ],
+        "misconceptionStates": [
+          "M2",
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-5:unlock:s2:0",
+          "tenant10:b:d-5:admission:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-5:unlock:s5:0",
+          "tenant10:b:d-5:admission:2"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b:d-5:surface:mid:interjection:detail_rebuttal:allow",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "detail_rebuttal",
+        "red_herring"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-4:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "interject",
+      "line": "소음이 전혀 없었다면 왜 택배 시간대 민원 두 건과 현관매트 세척 기록이 남아 있습니까? '거의 없음'과 '전혀 없음' 사이를 의도적으로 지우고 있지 않습니까?",
+      "behaviorHint": "세부 반박이 막히자 끝말만 날카롭게 남긴다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-4:unlock:s2:0",
+          "tenant10:a:d-4:counter:1"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-4:unlock:s5:0",
+          "tenant10:a:d-4:admission:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a:d-4:surface:mid:interjection:detail_rebuttal:block",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-3:surface:mid:interjection:block:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "interject",
+      "line": "특약은 협의 여지를 남기고 있고, 문자에는 '관리만 잘 해 달라'는 애매한 표현이 있습니다. 자동 금지였다면 왜 그 순간 분명한 불허 문장을 남기지 않으셨습니까?",
+      "behaviorHint": "세부 반박이 막히자 끝말만 날카롭게 남긴다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-3:unlock:s2:0",
+          "tenant10:b:d-3:admission:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-3:admission:2",
+          "tenant10:b:d-3:unlock:s5:0"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b:d-3:surface:mid:interjection:detail_rebuttal:block",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-1:surface:mid:interjection:allow:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "interject",
+      "line": "특약이 무조건 금지처럼 읽히진 않았고 사진까지 확인됐으니, 별도 반대가 없는 줄 알고 움직였습니다.",
+      "behaviorHint": "확신에 찬 어조로 오해를 더 굳힌다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "identity",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ],
+        "misconceptionStates": [
+          "M0",
+          "M1",
+          "M2"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-1:unlock:s2:0",
+          "tenant10:a:d-1:counter:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-1:unlock:s5:0",
+          "tenant10:a:d-1:admission:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a:d-1:surface:mid:interjection:misbelief_escalation:allow",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "misbelief_escalation",
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-1:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "interject",
+      "line": "예외를 하나 열어 주면 다른 세입자 민원과 냄새 문제까지 제가 통제 못 하는 집주인처럼 보일까 걱정했습니다.",
+      "behaviorHint": "오해가 흔들리자 짧게 버티며 말을 아낀다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ],
+        "misconceptionStates": [
+          "M0",
+          "M1",
+          "M2"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-1:unlock:s2:0",
+          "tenant10:b:d-1:admission:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-1:unlock:s5:0",
+          "tenant10:b:d-1:admission:2"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b:d-1:surface:mid:interjection:misbelief_escalation:block",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "misbelief_escalation",
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "tenant10:beat_v2:a:d-5:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "interject",
+      "line": "매트 오염만 크게 보지 마세요. 전체 흐름을 붙여 보면 다른 뜻이 나옵니다.",
+      "behaviorHint": "가짜 단서 냄새를 맡고 조심스럽게 경고한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "red_herring",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "allow_last_turn"
+        ],
+        "misconceptionStates": [
+          "M2",
+          "M3",
+          "M4"
+        ],
+        "trapStates": [
+          "trap_open"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:a:d-5:admission:0",
+          "tenant10:a:d-5:counter:1"
+        ],
+        "forbidAtomIds": [
+          "tenant10:a:d-5:admission:1",
+          "tenant10:a:d-5:threshold:1"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a:d-5:surface:mid:interjection:trap_signal:allow",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "trap_signal",
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "tenant10:beat_v2:b:d-5:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "tenant-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "interject",
+      "line": "바닥보수 하나로 결론 내리면 오히려 핵심을 놓칩니다.",
+      "behaviorHint": "말을 막히자 불길한 지점만 짧게 남긴다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "red_herring",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "strained"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "tired"
+        ],
+        "interjectionStates": [
+          "block_last_turn"
+        ],
+        "misconceptionStates": [
+          "M2",
+          "M3",
+          "M4"
+        ],
+        "trapStates": [
+          "trap_warning"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "tenant10:b:d-5:unlock:s2:0",
+          "tenant10:b:d-5:admission:0"
+        ],
+        "forbidAtomIds": [
+          "tenant10:b:d-5:unlock:s5:0",
+          "tenant10:b:d-5:admission:2"
+        ]
+      },
+      "weight": 4,
+      "priority": 28,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b:d-5:surface:mid:interjection:trap_signal:block",
+      "variantTarget": 2,
+      "setFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "trap_signal",
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    }
+  ]
+} as const;
+
+export default tenant10BeatsV2Full;

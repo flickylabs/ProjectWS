@@ -1,0 +1,1060 @@
+export const tenant_02_structure_v2 = {
+  "caseId": "tenant-02",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "규철의 사전 동의 없는 출입",
+      "judgmentStatement": "규철은 사전 동의 없이 출입했다.",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "truthDescription": "규철은 민석과 합의한 점검일 이틀 전, 마스터키로 세대 안에 들어가 주방과 거실 사진을 촬영했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "마스터키",
+        "합의 전 출입",
+        "점검일 이틀 전",
+        "무단 촬영",
+        "방향제 위치",
+        "작업실"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "규철의 사전 동의 없는 출입에서 겉으로 먼저 드러난 말과 장면을 확인합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant02:a:d-1:act:2",
+            "tenant02:b:d-1:act:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "규철의 사전 동의 없는 출입 뒤에 있는 불안과 계산을 드러냅니다.",
+          "lockedSummary": "겉말 뒤의 계산과 불안은 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant02:a:d-1:privacy:9",
+            "tenant02:b:d-1:fear:9"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "규철의 사전 동의 없는 출입의 책임 경계와 실제 정산 기준을 확정합니다.",
+          "lockedSummary": "책임과 기준을 가르는 핵심 층은 아직 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant02:a:d-1:act:10",
+            "tenant02:b:d-1:act:10"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "곰팡이와 누수의 1차 원인",
+      "judgmentStatement": "곰팡이 원인은 공용배관 누수이다.",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "truthDescription": "곰팡이와 천장 젖음의 1차 원인은 민석의 환기 부족이 아니라 공용배관 공사 뒤 느슨해진 연결부 누수였고, 민석의 짐 적치와 신고 지연은 악화 요인에 그쳤다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "곰팡이",
+        "공용배관",
+        "누수 연결부",
+        "짐 적치",
+        "환기",
+        "진단서"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "곰팡이와 누수의 1차 원인에서 겉으로 먼저 드러난 말과 장면을 확인합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant02:a:d-2:context:2",
+            "tenant02:b:d-2:context:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "곰팡이와 누수의 1차 원인 뒤에 있는 불안과 계산을 드러냅니다.",
+          "lockedSummary": "겉말 뒤의 계산과 불안은 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant02:a:d-2:context:8",
+            "tenant02:b:d-2:context:8"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "곰팡이와 누수의 1차 원인의 책임 경계와 실제 정산 기준을 확정합니다.",
+          "lockedSummary": "책임과 기준을 가르는 핵심 층은 아직 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant02:a:d-2:context:10",
+            "tenant02:b:d-2:context:10"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "출입 사진 타임스탬프의 진위",
+      "judgmentStatement": "규철의 사진 타임스탬프는 조작되었다.",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "truthDescription": "규철이 제출한 사진의 표시 시각은 원본 그대로가 아니며, 캡처본 작성 과정에서 촬영일시가 합의된 점검일로 바뀌었다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "표시 시각",
+        "캡처본",
+        "원본 EXIF",
+        "뒤 날짜",
+        "타임스탬프",
+        "분쟁용 캡처"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "출입 사진 타임스탬프의 진위에서 겉으로 먼저 드러난 말과 장면을 확인합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant02:a:d-3:evidence:2",
+            "tenant02:b:d-3:evidence:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "출입 사진 타임스탬프의 진위 뒤에 있는 불안과 계산을 드러냅니다.",
+          "lockedSummary": "겉말 뒤의 계산과 불안은 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant02:a:d-3:emotion:9",
+            "tenant02:b:d-3:shame:9"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "출입 사진 타임스탬프의 진위의 책임 경계와 실제 정산 기준을 확정합니다.",
+          "lockedSummary": "책임과 기준을 가르는 핵심 층은 아직 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant02:a:d-3:evidence:10",
+            "tenant02:b:d-3:evidence:10"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "suspects",
+          "b": "weaponizes"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심만 남아 있다",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어와 당황이 앞선다",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석이 굳어진다",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란이 들어오며 확신이 흔들린다",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해가 정리되고 맥락이 복원된다",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "갤러리 표시 시각 캡처만 먼저 제시한다",
+          "원본보다 보기 쉬운 캡처를 강조한다",
+          "합의일처럼 보이는 뒤 날짜만 고정한다"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "오해가 정리되고 맥락이 복원된다"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "민석의 수리 협조 지연",
+      "judgmentStatement": "민석은 수리기사 방문을 거부했다.",
+      "requiredEvidence": [
+        "e-3",
+        "e-6"
+      ],
+      "truthDescription": "민석은 첫 무단 출입을 의심한 뒤 이틀간 수리기사 방문을 전면 거부했고, 그 사이 곰팡이 제거 일정이 한 차례 밀렸다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "이틀 거부",
+        "수리기사",
+        "재방문 수수료",
+        "방문 거절",
+        "일정 지연",
+        "장비 불안"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "민석의 수리 협조 지연에서 겉으로 먼저 드러난 말과 장면을 확인합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant02:a:d-4:act:2",
+            "tenant02:b:d-4:act:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "민석의 수리 협조 지연 뒤에 있는 불안과 계산을 드러냅니다.",
+          "lockedSummary": "겉말 뒤의 계산과 불안은 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant02:a:d-4:responsibility:9",
+            "tenant02:b:d-4:counter:9"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "민석의 수리 협조 지연의 책임 경계와 실제 정산 기준을 확정합니다.",
+          "lockedSummary": "책임과 기준을 가르는 핵심 층은 아직 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant02:a:d-4:act:10",
+            "tenant02:b:d-4:act:10"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "긴급출입 조항의 허용 범위",
+      "judgmentStatement": "긴급출입 조항은 1회 점검에 한정된다.",
+      "requiredEvidence": [
+        "e-1",
+        "e-3",
+        "e-4"
+      ],
+      "truthDescription": "계약상 긴급 하자 점검은 1회 긴급 확인과 즉시 통지까지 허용되지만, 반복 촬영과 증거 보관, 합의일자 위장까지 포괄하는 면책 조항은 아니다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "긴급출입",
+        "즉시 통지",
+        "촬영자료 보관",
+        "출입 특약",
+        "1회 확인",
+        "면책 범위"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "긴급출입 조항의 허용 범위에서 겉으로 먼저 드러난 말과 장면을 확인합니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "tenant02:a:d-5:rule:2",
+            "tenant02:b:d-5:rule:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "긴급출입 조항의 허용 범위 뒤에 있는 불안과 계산을 드러냅니다.",
+          "lockedSummary": "겉말 뒤의 계산과 불안은 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "tenant02:a:d-5:privacy:9",
+            "tenant02:b:d-5:self_justification:9"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "긴급출입 조항의 허용 범위의 책임 경계와 실제 정산 기준을 확정합니다.",
+          "lockedSummary": "책임과 기준을 가르는 핵심 층은 아직 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:opened"
+            ]
+          },
+          "revealAtomIds": [
+            "tenant02:a:d-5:rule:10",
+            "tenant02:b:d-5:rule:10"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-3:d-1:supports",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-1",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-1:timestamp_drift_seen"
+      },
+      "uiLabel": "사진 시각이 출입 시점 압박"
+    },
+    {
+      "id": "link:d-1:d-4:retaliation",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-4",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-4:distrust_escalated"
+      },
+      "uiLabel": "불신이 거부로 번짐"
+    },
+    {
+      "id": "link:d-2:d-4:weakens_counter",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-4",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": -8,
+        "grantFlag": "d-4:cause_delay_split"
+      },
+      "uiLabel": "원인과 거부 분리"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "임대차계약서와 출입 특약본",
+      "description": "긴급 하자 시 연락 후 출입, 촬영자료 보관 시 별도 고지 의무가 적힌 임대차계약서와 부속 특약이다.",
+      "type": "contract",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "서명된 원본 계약서와 갱신 때 덧붙인 특약 부속지가 함께 제출됐다.",
+        "check_metadata": "특약 작성일과 갱신일이 중개사 보관대장 기록과 일치한다.",
+        "restore_context": "문구는 긴급 확인 자체와 촬영자료 보관 고지를 분리해 적고 있다.",
+        "verify_source": "중개사 사본과 당사자 보관본 내용이 동일하다.",
+        "check_edits": "문장 삽입이나 삭제 흔적 없이 초기 작성본 그대로다.",
+        "question_acquisition": "당사자 계약서 원본이라 취득 절차에 특별한 문제는 없다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "정민석에게: \"긴급출입 조항의 허용 범위\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 정민석의 \"긴급출입 조항의 허용 범위\" 쟁점과 관련된다. 정민석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "한규철에게: \"긴급출입 조항의 허용 범위\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 한규철의 \"긴급출입 조항의 허용 범위\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "문구 전체를 복원해 조건 범위를 잡아 주는 시점"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "관리비 기록과 누수 민원 접수대장",
+      "description": "최근 두 달 수도사용량 변동, 공용배관 점검 메모, 민석의 누수 신고 시각이 남은 관리비·관리실 기록이다.",
+      "type": "record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "관리실 접수대장과 세대별 관리비 부속메모 원본이 같이 제출됐다.",
+        "check_metadata": "공용배관 점검 메모가 곰팡이 확산 직전 날짜에 남아 있다.",
+        "restore_context": "민석의 환기 문제만으로 설명하기 어려운 수도사용 변동과 상부 라인 점검 이력이 함께 보인다.",
+        "verify_source": "관리소장 확인과 발급 기록이 서로 맞는다.",
+        "check_edits": "스캔본 대조 결과 내용 변형은 없었다.",
+        "question_acquisition": "건물 관리자료 제출이라 분쟁 해결 목적 범위에서 적법성이 높다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "기관 기록이 말보다 앞서는 시점"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "세입자·집주인·수리기사 단톡 캡처",
+      "description": "규철이 '오늘은 급하니 잠깐 볼게요'라고 보낸 뒤, 민석이 이후 이틀간 방문을 전면 거부한 대화 일부 캡처다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "처음에는 캡처만 있었고 전체 단톡 원문은 일부만 추가 확보됐다.",
+        "check_metadata": "문제의 메시지는 합의된 점검일보다 이틀 앞선 오후 시각으로 찍혀 있다.",
+        "restore_context": "전체 문맥에는 민석이 그보다 18분 먼저 '오늘은 안 된다'고 거절한 문장이 포함돼 있었다.",
+        "verify_source": "세 참여자 단말의 발신 순서와 읽음 시각이 대체로 맞아떨어진다.",
+        "check_edits": "본문 편집은 없지만 거절과 사후 통지 사이를 잘라 인상이 달라진 선택적 크롭이 확인된다.",
+        "question_acquisition": "당사자 대화이지만 제3자인 기사 동의 없이 유통된 캡처라 사생활 우려가 남는다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "정민석에게: \"민석의 수리 협조 지연\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 정민석의 \"민석의 수리 협조 지연\" 쟁점과 관련된다. 정민석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "한규철에게: \"규철의 사전 동의 없는 출입\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 한규철의 \"규철의 사전 동의 없는 출입\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "잘린 맥락을 원문으로 되돌려야 하는 시점"
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "잘린 맥락을 원문으로 되돌려야 하는 시점"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "규철 제출 사진 원본·캡처본 비교",
+      "description": "주방 천장과 거실 장비 주변을 찍은 사진 12장의 원본 파일과, 규철이 분쟁용으로 제출한 타임스탬프 표시 캡처본 비교 자료다.",
+      "type": "photo",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "unlawful",
+      "proves": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "원본 사진 파일과 분쟁용 캡처본이 모두 제출돼 촬영일시 비교가 가능했다.",
+        "check_metadata": "원본 EXIF의 촬영일은 합의된 점검일보다 이틀 앞서고, 캡처본의 표시 시각만 뒤 날짜로 보인다.",
+        "restore_context": "사진 속 장비 배치와 제습기 상태가 민석이 외출 중이던 날의 환경과 맞아떨어진다.",
+        "verify_source": "규철 휴대폰 백업 폴더와 제출본 파일명이 연결된다.",
+        "check_edits": "이미지 본문 조작은 없지만 타임스탬프가 표시된 갤러리 캡처 생성 시점이 따로 확인된다.",
+        "question_acquisition": "세입자 동의 전 촬영된 실내 사진이라 취득 자체가 위법 소지를 강하게 띤다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "정민석에게: \"긴급출입 조항의 허용 범위\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 정민석의 \"긴급출입 조항의 허용 범위\" 쟁점과 관련된다. 정민석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "한규철에게: \"규철의 사전 동의 없는 출입\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 한규철의 \"규철의 사전 동의 없는 출입\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "establish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "장면의 실제 범위를 복원해야 하는 시점"
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "장면의 실제 범위를 복원해야 하는 시점"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "수리업체 1차 진단서와 공사 견적서",
+      "description": "수리 기사 현장 진단과 배관 연결부 교체, 곰팡이 제거 범위를 적은 견적서다.",
+      "type": "estimate",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "기사 서명 진단서와 업체 견적서 원본이 한 묶음으로 제출됐다.",
+        "check_metadata": "첫 진단 시각은 민석의 전면 거부가 풀린 다음 날 오전으로 남아 있다.",
+        "restore_context": "기사 의견은 환기 부족보다 공용배관 연결부 이탈을 1차 원인으로 보고 있다.",
+        "verify_source": "업체 대표번호 확인과 기사 개인 메모 내용이 일치한다.",
+        "check_edits": "금액 수정이나 항목 재배열 흔적이 없는 최초 발행본이다.",
+        "question_acquisition": "수리 범위 산정용 통상 자료라 제출 정당성은 충분하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "정민석에게: \"곰팡이와 누수의 1차 원인\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 정민석의 \"곰팡이와 누수의 1차 원인\" 쟁점과 관련된다. 정민석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "한규철에게: \"긴급출입 조항의 허용 범위\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 한규철의 \"긴급출입 조항의 허용 범위\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "reframe",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "범위 과장을 줄여야 하는 시점"
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "범위 과장을 줄여야 하는 시점"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "공사 예약금 입금 내역과 재방문 수수료 영수증",
+      "description": "규철이 수리업체에 선지급한 예약금, 민석의 방문 거부 뒤 발생한 재방문 수수료, 이후 일부 환불 내역이 적힌 거래기록이다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "investigationResults": {
+        "request_original": "계좌 이체 원본과 업체 발행 영수증에 같은 예약번호가 적혀 있다.",
+        "check_metadata": "예약금 메모란의 '현장사진 확인 후 접수' 시각이 사진 캡처본 날짜보다 앞선다.",
+        "restore_context": "규철이 합의된 점검일 이전에 이미 사진을 바탕으로 공사 일정을 잡았다는 흐름이 드러난다.",
+        "verify_source": "은행 내역과 업체 회계장부의 예약번호가 일치한다.",
+        "check_edits": "기관 발행 원본이라 편집 흔적이 없고 취소·환불 흐름도 그대로 남아 있다.",
+        "question_acquisition": "공사비 정산을 위한 거래자료라 적법하지만 세부 계좌정보는 최소 범위만 사용해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "정민석에게: \"민석의 수리 협조 지연\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 정민석의 \"민석의 수리 협조 지연\" 쟁점과 관련된다. 정민석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "한규철에게: \"출입 사진 타임스탬프의 진위\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 한규철의 \"출입 사진 타임스탬프의 진위\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "숫자 부인이 막히는 시점"
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "숫자 부인이 막히는 시점"
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:entry_identity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "tenant02:a:d-1:act:6",
+          "tenant02:b:d-1:fear:9"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:moisture_cause",
+      "intentTag": "context_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "tenant02:a:d-2:context:8",
+          "tenant02:b:d-2:context:8"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:timestamp_origin",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "tenant02:a:d-3:emotion:11",
+          "tenant02:b:d-3:evidence:8",
+          "tenant02:b:d-3:shame:9"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:refusal_reason",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "tenant02:a:d-4:act:8",
+          "tenant02:b:d-4:act:8"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:clause_scope",
+      "intentTag": "legality_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "tenant02:a:d-5:rule:8",
+          "tenant02:b:d-5:rule:8"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:equipment_risk",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "tenant02:a:d-2:context:8",
+          "tenant02:b:d-2:context:8"
+        ],
+        "preferredAngleTags": [
+          "emotion",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 지금 단계에서는 바로 답하기 어렵습니다.",
+        "자료와 상태가 더 열리면 그때는 말씀드릴 수 있습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-4"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+} as const;

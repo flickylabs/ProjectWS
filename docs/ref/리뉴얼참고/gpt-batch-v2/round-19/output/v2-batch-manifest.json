@@ -1,0 +1,246 @@
+{
+  "workplace-01": {
+    "structure": {
+      "disputes": 5,
+      "linkEdges": 4,
+      "evidence": 6,
+      "freeQuestionHooks": 6,
+      "proposedUnlockAtoms": 40
+    },
+    "beats": {
+      "totalBeats": 58,
+      "byActionFamily": {
+        "question": 28,
+        "evidence": 8,
+        "fatigue": 6,
+        "free_question": 4,
+        "interjection": 12
+      },
+      "byResponseIntent": {
+        "pressure_response": 20,
+        "motive_response": 6,
+        "rapport_response": 10,
+        "evidence_response": 8,
+        "fatigue_response": 6,
+        "trap_confusion_response": 8
+      },
+      "byLayer": {
+        "surface": 34,
+        "motive": 15,
+        "core": 9
+      },
+      "byIssueRole": {
+        "core_truth": 20,
+        "sub_truth": 24,
+        "shared_misconception": 14
+      },
+      "interjectionCount": 12,
+      "fatigueCount": 6,
+      "coverageKeyCount": 46,
+      "requiredCoverageChecks": {
+        "question_early_timeline": true,
+        "question_early_identity_or_context": true,
+        "question_mid_responsibility": true,
+        "question_mid_motive": true,
+        "question_late_emotion": true,
+        "evidence_early_mid_context_or_identity_or_legality": true,
+        "fatigue_mid_responsibility_or_timeline": true,
+        "free_question_late_motive_or_emotion": true,
+        "special_m0_m2_identity_or_context": true,
+        "special_m3_m4_context_or_emotion": true,
+        "interjection_emotional_only_allow_block": true,
+        "interjection_detail_rebuttal_allow_block": true,
+        "interjection_special_present": true
+      }
+    },
+    "files": {
+      "structure_json": "workplace-01-structure-v2.json",
+      "structure_ts": "workplace-01-structure-v2.ts",
+      "beats_json": "workplace-01-beats-v2-full.json",
+      "beats_ts": "workplace-01-beats-v2-full.ts"
+    }
+  },
+  "workplace-02": {
+    "structure": {
+      "disputes": 5,
+      "linkEdges": 4,
+      "evidence": 6,
+      "freeQuestionHooks": 6,
+      "proposedUnlockAtoms": 40
+    },
+    "beats": {
+      "totalBeats": 58,
+      "byActionFamily": {
+        "question": 28,
+        "evidence": 8,
+        "fatigue": 6,
+        "free_question": 4,
+        "interjection": 12
+      },
+      "byResponseIntent": {
+        "pressure_response": 20,
+        "motive_response": 6,
+        "rapport_response": 10,
+        "evidence_response": 8,
+        "fatigue_response": 6,
+        "trap_confusion_response": 8
+      },
+      "byLayer": {
+        "surface": 34,
+        "motive": 15,
+        "core": 9
+      },
+      "byIssueRole": {
+        "core_truth": 20,
+        "sub_truth": 25,
+        "red_herring": 13
+      },
+      "interjectionCount": 12,
+      "fatigueCount": 6,
+      "coverageKeyCount": 46,
+      "requiredCoverageChecks": {
+        "question_early_timeline": true,
+        "question_early_identity_or_context": true,
+        "question_mid_responsibility": true,
+        "question_mid_motive": true,
+        "question_late_emotion": true,
+        "evidence_early_mid_context_or_identity_or_legality": true,
+        "fatigue_mid_responsibility_or_timeline": true,
+        "free_question_late_motive_or_emotion": true,
+        "special_m0_m2_identity_or_context": true,
+        "special_m3_m4_context_or_emotion": true,
+        "interjection_emotional_only_allow_block": true,
+        "interjection_detail_rebuttal_allow_block": true,
+        "interjection_special_present": true
+      }
+    },
+    "files": {
+      "structure_json": "workplace-02-structure-v2.json",
+      "structure_ts": "workplace-02-structure-v2.ts",
+      "beats_json": "workplace-02-beats-v2-full.json",
+      "beats_ts": "workplace-02-beats-v2-full.ts"
+    }
+  },
+  "workplace-03": {
+    "structure": {
+      "disputes": 5,
+      "linkEdges": 4,
+      "evidence": 6,
+      "freeQuestionHooks": 6,
+      "proposedUnlockAtoms": 24
+    },
+    "beats": {
+      "totalBeats": 58,
+      "byActionFamily": {
+        "question": 28,
+        "evidence": 8,
+        "fatigue": 6,
+        "free_question": 4,
+        "interjection": 12
+      },
+      "byResponseIntent": {
+        "pressure_response": 20,
+        "motive_response": 6,
+        "rapport_response": 10,
+        "evidence_response": 8,
+        "fatigue_response": 6,
+        "trap_confusion_response": 8
+      },
+      "byLayer": {
+        "surface": 34,
+        "motive": 15,
+        "core": 9
+      },
+      "byIssueRole": {
+        "core_truth": 20,
+        "sub_truth": 25,
+        "shared_misconception": 13
+      },
+      "interjectionCount": 12,
+      "fatigueCount": 6,
+      "coverageKeyCount": 46,
+      "requiredCoverageChecks": {
+        "question_early_timeline": true,
+        "question_early_identity_or_context": true,
+        "question_mid_responsibility": true,
+        "question_mid_motive": true,
+        "question_late_emotion": true,
+        "evidence_early_mid_context_or_identity_or_legality": true,
+        "fatigue_mid_responsibility_or_timeline": true,
+        "free_question_late_motive_or_emotion": true,
+        "special_m0_m2_identity_or_context": true,
+        "special_m3_m4_context_or_emotion": true,
+        "interjection_emotional_only_allow_block": true,
+        "interjection_detail_rebuttal_allow_block": true,
+        "interjection_special_present": true
+      }
+    },
+    "files": {
+      "structure_json": "workplace-03-structure-v2.json",
+      "structure_ts": "workplace-03-structure-v2.ts",
+      "beats_json": "workplace-03-beats-v2-full.json",
+      "beats_ts": "workplace-03-beats-v2-full.ts"
+    }
+  },
+  "workplace-04": {
+    "structure": {
+      "disputes": 5,
+      "linkEdges": 4,
+      "evidence": 6,
+      "freeQuestionHooks": 6,
+      "proposedUnlockAtoms": 40
+    },
+    "beats": {
+      "totalBeats": 58,
+      "byActionFamily": {
+        "question": 28,
+        "evidence": 8,
+        "fatigue": 6,
+        "free_question": 4,
+        "interjection": 12
+      },
+      "byResponseIntent": {
+        "pressure_response": 20,
+        "motive_response": 6,
+        "rapport_response": 10,
+        "evidence_response": 8,
+        "fatigue_response": 6,
+        "trap_confusion_response": 8
+      },
+      "byLayer": {
+        "surface": 34,
+        "motive": 15,
+        "core": 9
+      },
+      "byIssueRole": {
+        "core_truth": 19,
+        "sub_truth": 27,
+        "red_herring": 12
+      },
+      "interjectionCount": 12,
+      "fatigueCount": 6,
+      "coverageKeyCount": 46,
+      "requiredCoverageChecks": {
+        "question_early_timeline": true,
+        "question_early_identity_or_context": true,
+        "question_mid_responsibility": true,
+        "question_mid_motive": true,
+        "question_late_emotion": true,
+        "evidence_early_mid_context_or_identity_or_legality": true,
+        "fatigue_mid_responsibility_or_timeline": true,
+        "free_question_late_motive_or_emotion": true,
+        "special_m0_m2_identity_or_context": true,
+        "special_m3_m4_context_or_emotion": true,
+        "interjection_emotional_only_allow_block": true,
+        "interjection_detail_rebuttal_allow_block": true,
+        "interjection_special_present": true
+      }
+    },
+    "files": {
+      "structure_json": "workplace-04-structure-v2.json",
+      "structure_ts": "workplace-04-structure-v2.ts",
+      "beats_json": "workplace-04-beats-v2-full.json",
+      "beats_ts": "workplace-04-beats-v2-full.ts"
+    }
+  }
+}

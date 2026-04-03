@@ -1,0 +1,1096 @@
+export const spouse_07_structure_v2 = {
+  "caseId": "spouse-07",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "상담·단톡에서의 공로 독점",
+      "truth": true,
+      "truthDescription": "다혜는 상담에서 '거의 다 제가 해요'라고, 단톡에도 비슷한 표현을 올렸다. 아침 등원 비중이 높은 건 사실이지만, '거의 다'가 태준의 밤·행정 기여까지 없는 것처럼 만들었는지가 포인트다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "공개발언경계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "다혜의 발언은 태준의 기여를 간과했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "거의 내가 돌린다",
+        "어린이집 상담",
+        "가족 단톡",
+        "등원 사진",
+        "공로 독점",
+        "칭찬받은 날"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "다혜의 발언은 태준의 기여를 간과했다.",
+          "lockedSummary": "겉으로 보이는 사실만 먼저 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse07:b:d-1:denial:0",
+            "spouse07:b:d-1:context:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "배경",
+          "summary": "겉에 드러난 말 뒤의 이유와 방어가 보입니다.",
+          "lockedSummary": "배경과 방어 논리는 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse07:b:d-1:motive:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "결정적인 책임과 관계 파열의 핵심이 보입니다.",
+          "lockedSummary": "핵심 책임과 관계의 깊은 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse07:b:d-1:responsibility:5"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "태준의 체크리스트 선택 내보내기",
+      "truth": true,
+      "truthDescription": "태준은 다혜 발언 22분 뒤 가사앱에서 밤·주말 항목만 선택해 PDF를 내보냈다. 아침 루틴 카테고리를 제외해 상대 기여를 편집한 셈이므로 다혜의 과장과 대칭되는 문제인지가 쟁점이다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "기여가시화",
+      "legitimacyIssue": false,
+      "judgmentStatement": "태준은 아침 루틴을 제외했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "밤·주말 PDF",
+        "22분 뒤 내보내기",
+        "아침 루틴 제외",
+        "선택 내보내기",
+        "공유 가사앱",
+        "PDF 반격"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "태준은 아침 루틴을 제외했다.",
+          "lockedSummary": "겉으로 보이는 사실만 먼저 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse07:a:d-2:denial:0",
+            "spouse07:a:d-2:context:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "배경",
+          "summary": "겉에 드러난 말 뒤의 이유와 방어가 보입니다.",
+          "lockedSummary": "배경과 방어 논리는 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse07:a:d-2:self_justification:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "결정적인 책임과 관계 파열의 핵심이 보입니다.",
+          "lockedSummary": "핵심 책임과 관계의 깊은 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse07:a:d-2:responsibility:5"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "태준은 정말 집안일을 안 했는가",
+      "truth": false,
+      "truthDescription": "태준 명의 한 달 기록: 소아과 8건, 약국 5건, 세탁 12건, 반찬 4건, 밤 옷 준비 매일. 점심·밤·주말에 분산돼 보이지 않지만 체크리스트 총량은 다혜와 크게 다르지 않았다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "기여가시화",
+      "legitimacyIssue": false,
+      "judgmentStatement": "태준은 집안일을 했다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "소아과 8건",
+        "세탁 12건",
+        "반찬 주문 4건",
+        "하원 변경",
+        "보이지 않는 노동",
+        "거의 안 했다"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "태준은 집안일을 했다.",
+          "lockedSummary": "겉으로 보이는 사실만 먼저 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse07:a:d-3:context:1",
+            "spouse07:b:d-3:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "배경",
+          "summary": "겉에 드러난 말 뒤의 이유와 방어가 보입니다.",
+          "lockedSummary": "배경과 방어 논리는 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse07:a:d-3:self_justification:3",
+            "spouse07:b:d-3:self_justification:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "결정적인 책임과 관계 파열의 핵심이 보입니다.",
+          "lockedSummary": "핵심 책임과 관계의 깊은 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse07:a:d-3:responsibility:5",
+            "spouse07:b:d-3:relationship:4"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "knows",
+          "b": "misbelief"
+        },
+        "trapSignals": [
+          "등원 장면만 눈에 띄고 생활행정은 뒤늦게 드러난다",
+          "영수증과 예약 기록이 후행 증거처럼 쌓여 즉시 인정되지 않는다",
+          "단톡 문구가 하루 전체를 대표하는 것처럼 굳어진다"
+        ],
+        "truthExitEvidenceIds": [
+          "e-2",
+          "e-4"
+        ],
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "아이 앞에서 벌어진 점수판 싸움",
+      "truth": true,
+      "truthDescription": "다혜는 단톡에 '오늘만 4번 뛰었다', 태준은 냉장고에 '17건 중 9건 내가 함' 메모를 붙였다. 둘 다 감정 대신 점수판을 꺼냈고, 아이와 가족 앞에서 벌어졌다는 점이 문제의 본질이다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "공개발언경계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "다혜와 태준은 아이 앞에서 싸웠다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "오늘만 4번",
+        "17건 중 9건",
+        "냉장고 메모",
+        "아이 앞 점수판",
+        "메신저 카운트",
+        "횟수 싸움"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "다혜와 태준은 아이 앞에서 싸웠다.",
+          "lockedSummary": "겉으로 보이는 사실만 먼저 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse07:a:d-4:denial:0",
+            "spouse07:b:d-4:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "배경",
+          "summary": "겉에 드러난 말 뒤의 이유와 방어가 보입니다.",
+          "lockedSummary": "배경과 방어 논리는 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse07:a:d-4:self_justification:3",
+            "spouse07:b:d-4:motive:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "결정적인 책임과 관계 파열의 핵심이 보입니다.",
+          "lockedSummary": "핵심 책임과 관계의 깊은 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse07:a:d-4:responsibility:5",
+            "spouse07:b:d-4:responsibility:5"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "붕괴 원인은 태만인가 구조적 과부하인가",
+      "truth": false,
+      "truthDescription": "도우미 종료, 야근 겹침, 소아과 일정 급증 — 돌봄 총량이 늘었는데 분담 구조가 재조정되지 않았다. 한 사람의 태만이 아니라 구조적 과부하가 원인인지를 판단해야 한다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-4",
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "맞벌이운영",
+      "legitimacyIssue": false,
+      "judgmentStatement": "구조적 과부하가 원인이다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "야간 도우미 종료",
+        "야근 겹침",
+        "소아과 일정 급증",
+        "구조적 과부하",
+        "맞벌이 운영",
+        "붕괴 원인"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "구조적 과부하가 원인이다.",
+          "lockedSummary": "겉으로 보이는 사실만 먼저 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse07:a:d-5:responsibility:0",
+            "spouse07:b:d-5:responsibility:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "배경",
+          "summary": "겉에 드러난 말 뒤의 이유와 방어가 보입니다.",
+          "lockedSummary": "배경과 방어 논리는 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse07:a:d-5:context:3",
+            "spouse07:b:d-5:context:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "결정적인 책임과 관계 파열의 핵심이 보입니다.",
+          "lockedSummary": "핵심 책임과 관계의 깊은 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse07:a:d-5:responsibility:5",
+            "spouse07:b:d-5:emotion:4"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-2:retaliation",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-2",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-2:surface:counter_pdf_triggered"
+      },
+      "uiLabel": "공개 발언 직후 반격"
+    },
+    {
+      "id": "link:d-2:d-3:weakens_counter",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-3",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPenalty": 8,
+        "grantFlag": "d-3:motive:visibility_gap_seen"
+      },
+      "uiLabel": "선택 편집의 한계"
+    },
+    {
+      "id": "link:d-3:d-5:supports",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S3",
+        "minLayer": "core"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-5:core:hidden_work_counted"
+      },
+      "uiLabel": "보이지 않는 노동"
+    },
+    {
+      "id": "link:d-4:d-5:supports",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-5:surface:scoreboard_poisoned"
+      },
+      "uiLabel": "언어가 구조를 악화"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "어린이집 등하원 기록과 상담 메모",
+      "description": "어린이집 한 달 등하원 서명(22일 중 18일 다혜)과 부원장 메모에 발언이 기록돼 있다. 등원 비중은 높지만 전체 돌봄 대표성에는 한계.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "부원장 서명이 있는 원본 상담기록 1건과 최근 한 달 출결내역 출력본이 함께 제출됐다. 상담기록에는 다혜 발언이 수기로 기록돼 있다.",
+        "check_metadata": "상담 메모 작성 수요일 오후 4시, 단톡 메시지 같은 날 저녁 7시 32분. 칭찬받은 당일 저녁 비슷한 표현이 이어진 흐름이 확인된다.",
+        "restore_context": "등원은 다혜 압도적이지만 긴급연락 2건, 하원 변경 4건은 태준 명의. 비정기 대응 포함 시 그림이 달라진다.",
+        "verify_source": "어린이집 행정시스템에서 출력한 등하원 기록과 부원장의 수기 상담 메모를 대조한 결과, 날짜·서명자가 일치한다.",
+        "check_edits": "어린이집 행정시스템 출력물이라 사후 수정이 불가능한 구조다. 수기 메모도 볼펜 원본이며 수정액 흔적이 없다.",
+        "question_acquisition": "어린이집 규정상 양쪽 부모 모두 열람·사본 수령이 가능한 자료이므로 확보 절차에 문제없다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "시간 순서를 먼저 잠그면 뒤쪽 책임 공방을 정리하기 쉽다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "공유 체크리스트 원본 이력과 태준의 내보내기 파일",
+      "description": "공유 가사앱 전체 이력과 태준이 밤·주말만 내보낸 PDF다. 원본에는 다혜의 아침 항목도 다수 있지만 PDF에서는 빠져 있어 선택 편집이 확인된다.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "가사앱 서버 전체 이력(한 달분)과 태준 기기의 PDF 내보내기 파일이 제출됐다. 서버 원본과 대조 가능.",
+        "check_metadata": "PDF 생성 시각은 다혜 단톡 메시지(7:32) 이후 22분 뒤인 7:54다. 감정적 증거 수집 정황이 시간으로 확인된다.",
+        "restore_context": "서버 원본에 아침 루틴 카테고리(다혜 18건)가 있지만 PDF 내보내기 설정에서 제외돼 있다. 자기 기여만 보이도록 선택 편집한 셈.",
+        "verify_source": "가사앱 플랫폼 관리자 로그의 내보내기 요청 기록과 태준 기기의 PDF 파일 생성 시각이 일치한다.",
+        "check_edits": "PDF 자체에 편집 흔적 없다. 다만 카테고리 선택 내보내기라 전체가 아닌 잘린 그림이라는 점을 감안해야 한다.",
+        "question_acquisition": "부부 공유 계정의 자료이므로 양쪽 모두 접근 권한이 있다. 확보 절차상 문제없다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "이태준에게: \"태준의 체크리스트 선택 내보내기\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 이태준의 \"태준의 체크리스트 선택 내보내기\" 쟁점과 관련된다. 이태준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "정다혜에게: \"태준은 정말 집안일을 안 했는가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 정다혜의 \"태준은 정말 집안일을 안 했는가\" 쟁점과 관련된다. 정다혜은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "시간 순서를 먼저 잠그면 뒤쪽 책임 공방을 정리하기 쉽다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "가족 단톡 캡처와 어린이집 상담 직후 사진",
+      "description": "가족 단톡의 '거의 내가 돌린다' 메시지와 등원 사진 캡처다. 앞뒤 대화가 잘려 있어 농담인지 진지한 주장인지는 단독으로 확정 불가.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "가족 단톡 전체 대화가 아니라, '평일은 거의 내가 돌린다' 메시지 전후 구간과 등원 사진만 선택적으로 캡처돼 제출됐다.",
+        "check_metadata": "캡처 생성 시각은 상담 종료(오후 4:30 추정) 후 약 15분 뒤다. 상담에서 칭찬받은 직후 단톡에 올린 흐름과 시간이 이어진다.",
+        "restore_context": "앞뒤 대화 없이 '거의 내가 돌린다'만 보이므로, 가벼운 자랑인지 진지한 불만인지 이 자료만으로 확정할 수 없다.",
+        "verify_source": "가족 단톡 참여자 중 두 명(태준 포함)의 기기에서 동일 메시지와 시각이 확인됐다.",
+        "check_edits": "메시지 본문과 사진에 편집·합성 흔적은 없다. 다만 앞뒤 대화가 잘린 선택적 크롭이므로, 맥락을 복원하려면 전체 대화 확인이 필요하다.",
+        "question_acquisition": "가족 단톡 참여자 본인이 자발적으로 제공한 캡처라 적법성에 큰 문제는 없다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "이태준에게: \"아이 앞에서 벌어진 점수판 싸움\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 이태준의 \"아이 앞에서 벌어진 점수판 싸움\" 쟁점과 관련된다. 이태준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "정다혜에게: \"상담·단톡에서의 공로 독점\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 정다혜의 \"상담·단톡에서의 공로 독점\" 쟁점과 관련된다. 정다혜은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "오해가 굳기 전에 형식과 맥락을 분리할수록 효율이 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "병원 예약내역과 세탁 수거·식재료 주문 기록",
+      "description": "태준 명의 소아과 예약 8건, 약국 영수증 5건, 세탁 확인서 12건, 반찬 주문 4건이다. 평일 점심과 밤에 집중돼 있어 보이지 않는 기여를 수치로 보여준다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "소아과 앱 예약 확인서 8건, 태준 명의 카드 명세 원본, 세탁업체 수거 영수증 12건이 날짜순으로 연결돼 제출됐다.",
+        "check_metadata": "소아과 예약 12:10~12:45, 세탁 수거 19:00~19:30, 반찬 주문 밤 21시 이후. 업무 틈새와 밤에 몰린 시간 패턴이 확인된다.",
+        "restore_context": "예약·수거·주문은 목격자가 없는 형태의 노동이다. 기록이 없었다면 존재 자체를 증명하기 어려웠을 보이지 않는 노동의 전형적 사례.",
+        "verify_source": "소아과 앱의 예약 확인 번호, 카드사 명세의 결제 일시·금액, 세탁업체 영수증 번호가 모두 교차 확인돼 일치한다.",
+        "check_edits": "병원 앱·카드사·세탁업체 각각의 기관/업체 발행 원본이므로 사용자가 사후 편집할 수 없는 구조다.",
+        "question_acquisition": "부부 공동 생활비 결제 내역과 자녀 의료 관련 자료이므로, 가사 분담 관련 제출 범위 내에서 적법하다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "시간 순서를 먼저 잠그면 뒤쪽 책임 공방을 정리하기 쉽다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "냉장고 메모 사진과 부부 메신저 가사 카운트 대화",
+      "description": "냉장고 메모 '17건 중 9건 내가 함'과 메신저 '오늘만 4번 뛰었어' 기록이다. 둘 다 숫자로 싸우고 있다는 것을 보여주며 아이가 이 점수판을 목격했을 가능성도 시사한다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "냉장고에 붙인 메모를 촬영한 사진 원본 3장(사흘간 갱신분)과 부부 메신저 대화 원문이 함께 제출됐다.",
+        "check_metadata": "첫 메모 촬영은 다혜 단톡 발언 다음 날 아침, 이후 이틀간 매일 갱신됐다. 갈등 직후 기록을 시작한 시점이 확인된다.",
+        "restore_context": "냉장고에 건수 메모, 메신저에 횟수 자랑. 둘 다 숫자로 대응 중이며 메모는 아이가 볼 수 있는 공간에 노출.",
+        "verify_source": "태준 기기의 사진 EXIF와 다혜 기기의 메신저 백업 시각이 각각 일치한다. 양측 기기에서 독립적으로 확인된다.",
+        "check_edits": "일부 삭제 흔적이 있으나 핵심 숫자 비교 문장은 양쪽 기기에 남아 있다. 삭제 메시지 내용은 복원 불가.",
+        "question_acquisition": "부부 공동 생활공간(냉장고)에 부착된 메모와 당사자 간 메신저 대화이므로 확보 절차에 문제없다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S3",
+            "multiplier": 1.3,
+            "note": "형식보다 맥락이 중요한 자료라 중반 이후에 들이밀수록 반응이 갈린다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "야간 도우미 종료 문자와 양측 야근 일정표",
+      "description": "도우미 종료 문자와 양측 야근 캘린더다. 종료 후 야근 겹침이 주 3일로 늘어 돌봄 공백이 급증했음을 보여주는 구조적 근거.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "야간 도우미로부터 받은 '계약 종료 안내' 문자 원본과 두 사람 각각의 회사 캘린더 내보내기 파일이 함께 제출됐다.",
+        "check_metadata": "도우미 종료 후 야근 겹침이 주 1일에서 3일로 늘었다. 돌봄 공백 급증과 갈등 시작이 10일 차이로 연결된다.",
+        "restore_context": "도우미가 있을 때는 밤 돌봄이 분산돼 차이가 드러나지 않았다. 종료 후 전체가 부부에게 돌아오면서 문제가 수면 위로 올라왔다.",
+        "verify_source": "도우미 종료 문자의 발신 번호가 기존 계약 연락처와 일치하고, 양측 회사 캘린더 내보내기 파일의 일정 링크가 각각 확인된다.",
+        "check_edits": "문자는 통신사 기록과 대조 가능하고, 회사 캘린더는 기관 플랫폼 내보내기 원본이라 사후 조작이 불가능한 구조다.",
+        "question_acquisition": "각자 본인 회사 캘린더와 서비스 종료 문자만 최소 범위로 제출됐다. 동료 일정이나 업무 내용 등 불필요한 정보는 포함되지 않았다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "이태준에게: \"붕괴 원인은 태만인가 구조적 과부하인가\" 관련 자신이 아는 바를 진술",
+          "implication": "이 증거는 이태준이 직접적 당사자가 아닌 쟁점이다. 이태준이 이 상황에 대해 알고 있는 바를 확인한다."
+        },
+        "b": {
+          "questionAngle": "정다혜에게: \"붕괴 원인은 태만인가 구조적 과부하인가\" 관련 자신이 아는 바를 진술",
+          "implication": "이 증거는 정다혜이 직접적 당사자가 아닌 쟁점이다. 정다혜이 이 상황에 대해 알고 있는 바를 확인한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "시간 순서를 먼저 잠그면 뒤쪽 책임 공방을 정리하기 쉽다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:public_phrase",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "spouse07:b:d-1:responsibility:5"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "그걸 여기서 바로 특정해 말하긴 어렵습니다.",
+        "대상부터 단정하면 제 말이 또 비뚤어집니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:export_scope",
+      "intentTag": "authenticity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "spouse07:a:d-2:responsibility:5"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "그걸 여기서 바로 특정해 말하긴 어렵습니다.",
+        "대상부터 단정하면 제 말이 또 비뚤어집니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:hidden_labor",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "spouse07:a:d-3:fear:4",
+          "spouse07:b:d-3:relationship:4"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그건 지금 바로 한 줄로 답하기 어렵습니다.",
+        "맥락을 빼고 그 질문만 받으면 또 왜곡됩니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:emergency_calls",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "spouse07:a:d-3:fear:4",
+          "spouse07:b:d-3:relationship:4"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "그 순서를 지금 단정해서 말하고 싶진 않습니다.",
+        "시점만 따로 떼면 또 다른 오해가 생깁니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:scoreboard_reason",
+      "intentTag": "motive_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "spouse07:a:d-4:shame:4",
+          "spouse07:b:d-4:shame:4"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "그 감정은 지금 쉽게 한 문장으로 못 자르겠습니다.",
+        "의도부터 확정해 말하면 또 방어적으로 들릴 겁니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:overload_context",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "spouse07:a:d-5:emotion:4",
+          "spouse07:b:d-5:emotion:4"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그건 지금 바로 한 줄로 답하기 어렵습니다.",
+        "맥락을 빼고 그 질문만 받으면 또 왜곡됩니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:repair_statement",
+      "intentTag": "responsibility_check",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "spouse07:a:d-5:emotion:4",
+          "spouse07:b:d-5:emotion:4"
+        ],
+        "preferredAngleTags": [
+          "responsibility",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "책임만 따로 떼어 말하면 맥락이 빠집니다.",
+        "그 부분은 앞뒤를 같이 봐야 답할 수 있습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  }
+} as const;

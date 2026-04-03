@@ -1,0 +1,2401 @@
+{
+  "caseId": "workplace-02",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "규원의 선제 낙인과 권한 회수",
+      "truthDescription": "규원은 증거 없이 민아를 유출자로 지목해 폴더·보고 권한을 HR 사건번호 생성 52분 전에 회수하고 팀 앞에서 징계를 암시했다.",
+      "weight": "high",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "52분 전 회수",
+        "보안 리스크 인원",
+        "접근권 차단",
+        "선제 낙인",
+        "HR 접수 메모",
+        "민아 한 명"
+      ],
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "규원의 선제 낙인과 권한 회수에서 표면적으로 확인되는 기록과 행동입니다.",
+          "lockedSummary": "겉으로 드러난 사실만 열려 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-02:a:d-1:act:0",
+            "workplace-02:a:d-1:rule:5",
+            "workplace-02:b:d-1:timeline:0",
+            "workplace-02:b:d-1:harm:5"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "규원의 선제 낙인과 권한 회수 뒤에 숨어 있는 계산과 감정, 방어 이유를 봅니다.",
+          "lockedSummary": "숨은 동기와 계산은 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-02:a:d-1:rule:5",
+            "workplace-02:a:d-1:emotion:8",
+            "workplace-02:b:d-1:relationship:7",
+            "workplace-02:b:d-1:emotion:8"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "규원의 선제 낙인과 권한 회수가 관계 전체와 최종 책임선에 어떤 의미를 남기는지 연결합니다.",
+          "lockedSummary": "핵심 책임선과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-02:a:d-1:admission:10",
+            "workplace-02:a:d-1:harm:11",
+            "workplace-02:b:d-1:admission:10",
+            "workplace-02:b:d-1:responsibility:11"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "민아의 무단 복사·외부 상담",
+      "truthDescription": "민아는 자기 방어용으로 감사 초안 일부를 개인 드라이브에 올렸고, 전 직장 동료에게 \"법무 시각 좀 봐 달라\"며 문장을 보냈다.",
+      "weight": "high",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "개인 드라이브",
+        "법무 시각 DM",
+        "무단 복사",
+        "외부 상담",
+        "전 직장 동료",
+        "자기방어 저장"
+      ],
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "민아의 무단 복사·외부 상담에서 표면적으로 확인되는 기록과 행동입니다.",
+          "lockedSummary": "겉으로 드러난 사실만 열려 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-02:a:d-2:act:0",
+            "workplace-02:a:d-2:timeline:5",
+            "workplace-02:b:d-2:act:1",
+            "workplace-02:b:d-2:fear:7"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "민아의 무단 복사·외부 상담 뒤에 숨어 있는 계산과 감정, 방어 이유를 봅니다.",
+          "lockedSummary": "숨은 동기와 계산은 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-02:a:d-2:context:7",
+            "workplace-02:a:d-2:emotion:8",
+            "workplace-02:b:d-2:fear:5",
+            "workplace-02:b:d-2:fear:8"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "민아의 무단 복사·외부 상담가 관계 전체와 최종 책임선에 어떤 의미를 남기는지 연결합니다.",
+          "lockedSummary": "핵심 책임선과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-02:a:d-2:responsibility:10",
+            "workplace-02:a:d-2:uncertainty:11",
+            "workplace-02:b:d-2:admission:10",
+            "workplace-02:b:d-2:responsibility:11"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "실제 유출 경로의 진위",
+      "truthDescription": "원본 반출은 민아가 아니라 회수 안 된 공유링크를 재사용한 파견 컨설턴트 노지원 쪽이었다. 시각상 민아 업로드보다 2시간 앞선다.",
+      "weight": "high",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "회수 안 된 링크",
+        "노지원",
+        "임시다운로드 토큰",
+        "2시간 전 접속",
+        "실제 유출선",
+        "재사용 링크"
+      ],
+      "requiredEvidence": [
+        "e-3",
+        "e-4",
+        "e-6"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "실제 유출 경로의 진위가 겉으로는 그럴듯한 설명처럼 보입니다.",
+          "lockedSummary": "겉으로 드러난 사실만 열려 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-02:a:d-3:act:0",
+            "workplace-02:a:d-3:context:5",
+            "workplace-02:b:d-3:timeline:2",
+            "workplace-02:b:d-3:context:5"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "실제 유출 경로의 진위 뒤에 숨어 있는 계산과 감정, 방어 이유를 봅니다.",
+          "lockedSummary": "숨은 동기와 계산은 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-02:a:d-3:timeline:4",
+            "workplace-02:a:d-3:fear:8",
+            "workplace-02:b:d-3:motive:7",
+            "workplace-02:b:d-3:emotion:8"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "실제 유출 경로의 진위가 관계 전체와 최종 책임선에 어떤 의미를 남기는지 연결합니다.",
+          "lockedSummary": "핵심 책임선과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:identity_evidenced"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-02:a:d-3:admission:10",
+            "workplace-02:a:d-3:responsibility:11",
+            "workplace-02:b:d-3:admission:10",
+            "workplace-02:b:d-3:responsibility:11"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어와 당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란과 확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "개인 드라이브 업로드와 외부 DM이 유출 프레임을 고정함",
+          "회수 안 된 링크가 민아 업로드보다 먼저 열림"
+        ],
+        "truthExitEvidenceIds": [
+          "e-3",
+          "e-4"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "규원의 입막음 지시와 HR 메모",
+      "truthDescription": "규원은 민아가 비용 이상 징후를 공식 제보하기 전에 HR에 '보안상 위험 인물'이라 적고, \"감사 끝날 때까지 구두로만\"이라고 지시했다.",
+      "weight": "high",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "보안상 위험 인물",
+        "감사 끝날 때까지 구두",
+        "입막음 지시",
+        "비용처리 이상",
+        "HR 메모",
+        "제보 차단"
+      ],
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "규원의 입막음 지시와 HR 메모에서 표면적으로 확인되는 기록과 행동입니다.",
+          "lockedSummary": "겉으로 드러난 사실만 열려 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-02:a:d-4:timeline:1",
+            "workplace-02:a:d-4:institution:4",
+            "workplace-02:b:d-4:quote:0",
+            "workplace-02:b:d-4:institution:4"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "규원의 입막음 지시와 HR 메모 뒤에 숨어 있는 계산과 감정, 방어 이유를 봅니다.",
+          "lockedSummary": "숨은 동기와 계산은 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-02:a:d-4:fear:7",
+            "workplace-02:a:d-4:fear:8",
+            "workplace-02:b:d-4:fear:7",
+            "workplace-02:b:d-4:fear:8"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "규원의 입막음 지시와 HR 메모가 관계 전체와 최종 책임선에 어떤 의미를 남기는지 연결합니다.",
+          "lockedSummary": "핵심 책임선과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S3"
+              },
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:legality_evidenced"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-02:a:d-4:admission:10",
+            "workplace-02:b:d-4:admission:10",
+            "workplace-02:b:d-4:institution:11",
+            "workplace-02:a:d-4:motive:11"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "조사 전 소문전의 쌍방 가담",
+      "truthDescription": "규원은 팀에 \"민아가 외부랑 붙었다\"고 흘렸고, 민아는 단톡에 \"나는 희생양\"이라며 상사 비리설을 키웠다. 쌍방 소문전이다.",
+      "weight": "medium",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "외부랑 붙었다",
+        "나는 희생양",
+        "단톡 발언",
+        "소문전",
+        "공식 조사 전",
+        "상사 비리설"
+      ],
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "조사 전 소문전의 쌍방 가담에서 표면적으로 확인되는 기록과 행동입니다.",
+          "lockedSummary": "겉으로 드러난 사실만 열려 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-02:a:d-5:quote:1",
+            "workplace-02:a:d-5:quote:5",
+            "workplace-02:b:d-5:quote:1",
+            "workplace-02:b:d-5:motive:5"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "조사 전 소문전의 쌍방 가담 뒤에 숨어 있는 계산과 감정, 방어 이유를 봅니다.",
+          "lockedSummary": "숨은 동기와 계산은 아직 드러나지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              },
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-02:a:d-5:counter:6",
+            "workplace-02:a:d-5:fear:9",
+            "workplace-02:b:d-5:motive:5",
+            "workplace-02:b:d-5:emotion:8"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "조사 전 소문전의 쌍방 가담가 관계 전체와 최종 책임선에 어떤 의미를 남기는지 연결합니다.",
+          "lockedSummary": "핵심 책임선과 관계 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S3"
+              },
+              {
+                "id": "d-3",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:context_evidenced"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-02:a:d-5:admission:10",
+            "workplace-02:a:d-5:responsibility:11",
+            "workplace-02:b:d-5:admission:10",
+            "workplace-02:b:d-5:responsibility:11"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-5:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-5:surface:stigma_started"
+      },
+      "uiLabel": "낙인 시작점"
+    },
+    {
+      "id": "link:d-4:d-1:supports",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-1:core:silencing_seen"
+      },
+      "uiLabel": "입막음 선행"
+    },
+    {
+      "id": "link:d-3:d-1:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-1:motive:false_target_broken"
+      },
+      "uiLabel": "실제 유출선"
+    },
+    {
+      "id": "link:d-2:d-5:retaliation",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-5:motive:defensive_rumor_seen"
+      },
+      "uiLabel": "방어성 확산"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "보안폴더 접근권 회수 메일과 팀 공지",
+      "description": "민아 접근권이 HR 사건번호보다 52분 먼저 회수됐고, 같은 날 '보안 리스크 인원 정리' 문구가 팀 메일에 올라갔다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "IT 권한 변경 티켓(ITSM)과 공지 메일 원본이 함께 보존돼 있다.",
+        "check_metadata": "접근권 회수 시각이 HR 사건번호 생성보다 52분 앞선다.",
+        "restore_context": "공지에 이름은 없지만 권한 변경 대상이 민아 한 명뿐임이 ITSM 기록으로 드러난다.",
+        "verify_source": "메일 서버 아카이브와 ITSM 기록의 타임스탬프·대상자가 일치한다.",
+        "check_edits": "메일과 티켓 로그 모두 사후 편집 흔적 없음.",
+        "question_acquisition": "회사 시스템 기록. 적법하게 확인 가능."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "한규원에게: \"규원의 선제 낙인과 권한 회수\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 한규원의 \"규원의 선제 낙인과 권한 회수\" 쟁점과 관련된다. 한규원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "조민아에게: \"조사 전 소문전의 쌍방 가담\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 조민아의 \"조사 전 소문전의 쌍방 가담\" 쟁점과 관련된다. 조민아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "핵심 사실선을 고정하는 구간입니다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "핵심 사실선을 고정하는 구간입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "민아의 개인 드라이브 업로드 이력과 전 직장 동료 DM",
+      "description": "민아의 개인 드라이브 업로드 기록과 전 직장 동료에게 \"법무 쪽 시각 좀 봐줘\"라고 보낸 DM 캡처.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "개인 드라이브 스크린샷과 DM 캡처만 제출. 전체 대화 원본은 미확보.",
+        "check_metadata": "업로드 시각이 유출 소문이 돌기 시작한 직후에 찍혀 있다.",
+        "restore_context": "DM에 포함된 문장은 감사 초안 일부. 실제 유출 범위 단정은 어렵다.",
+        "verify_source": "민아 단말 파일명과 수신자 단말 캡처의 파일명·시각이 일치한다.",
+        "check_edits": "내용 변조는 없으나 크롭·블러 처리가 있어 누락된 맥락이 있을 수 있다.",
+        "question_acquisition": "개인 대화·저장공간 기록 포함. 사생활 침해 우려가 크다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "한규원에게: \"조사 전 소문전의 쌍방 가담\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 한규원의 \"조사 전 소문전의 쌍방 가담\" 쟁점과 관련된다. 한규원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "조민아에게: \"민아의 무단 복사·외부 상담\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 조민아의 \"민아의 무단 복사·외부 상담\" 쟁점과 관련된다. 조민아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "오해 프레임이 고착되기 전에 제시하면 반전 효율이 높습니다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "오해 프레임이 고착되기 전에 제시하면 반전 효율이 높습니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "공유링크 접속 원본 로그와 임시다운로드 토큰 기록",
+      "description": "공유링크가 민아 업로드보다 2시간 앞서 노지원 노트북 IP에서 열렸고, 같은 세션에 임시다운로드 토큰이 발급된 원본 로그.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "링크 생성→열람→다운로드 raw log가 타임스탬프 순으로 보존돼 있다.",
+        "check_metadata": "노지원 파견 노트북 IP와 임시토큰 발급 세션 ID가 같은 행으로 연결된다.",
+        "restore_context": "민아 업로드보다 2시간 앞서 동일 원본이 노지원 세션에서 접근된 것이 드러난다.",
+        "verify_source": "보안관제 서버와 협업 플랫폼 로그의 시퀀스가 일치한다.",
+        "check_edits": "서버 추출 원본. 사후 편집 흔적 없음.",
+        "question_acquisition": "보안사고 조사 범위 내 원본 로그. 적법성 높음."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "오해 프레임이 고착되기 전에 제시하면 반전 효율이 높습니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "노지원의 팀즈 전달 캡처와 회수되지 않은 링크 메모",
+      "description": "노지원이 번역업체에 \"예전 링크 아직 살아 있으니 이걸로 보라\"고 보낸 팀즈 메시지와 링크 회수 누락 메모.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "번역업체가 보관한 화면 캡처와 전달 메모 사본이 제출됐다.",
+        "check_metadata": "전송 시각이 민아의 드라이브 업로드 전날 오후로 찍혀 있다.",
+        "restore_context": "노지원은 번역 검토용이라 주장하지만 링크 회수 누락은 부인하지 못한다.",
+        "verify_source": "업체 담당자 수신 단말 기록과 팀즈 메시지 시각이 일치한다.",
+        "check_edits": "캡처본이라 여백 손실이 있으나 본문 편집 흔적은 미약하다.",
+        "question_acquisition": "제3자 자발 제출로 위법성은 낮으나 업무비밀 포함. 사용 범위 제한 필요."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "emotion"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "오해 프레임이 고착되기 전에 제시하면 반전 효율이 높습니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "HR 조사 접수 메모와 규원 코멘트 타임스탬프",
+      "description": "규원이 '보안상 위험 인물: 민아'라고 먼저 적고, '비용 건은 감사 후'라고 남긴 HR 접수 메모.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "HR 사건 접수 화면 원본 로그와 메모 본문이 보존돼 있다.",
+        "check_metadata": "민아 면담 전에 규원 코멘트가 먼저 입력됐고, 이후 '위험 인물'이 '주의 대상'으로 완화됐다.",
+        "restore_context": "같은 메모에 '비용 건은 감사 후에 처리'라는 지시가 있어 입막음 정황이 이어진다.",
+        "verify_source": "HR 관리자 조회 화면과 출력본이 일치한다.",
+        "check_edits": "초기 입력본→수정본 모두 남아 있어 편집 경로가 투명하다.",
+        "question_acquisition": "인사조사 자료. 제출 목적은 분쟁 해결에 한정돼야 한다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "핵심 사실선을 고정하는 구간입니다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "핵심 사실선을 고정하는 구간입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "감사실 면담확인서와 회의실 CCTV·좌석 로그",
+      "description": "노지원이 문제 시각에 프린터 존↔착석 구역을 오가며 원본을 내려받은 CCTV 동선과 감사실 면담확인서.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "CCTV 출입 시각, 좌석 배치 로그, 면담확인서 원본 3종이 함께 제출됐다.",
+        "check_metadata": "민아 계정 잠금 시각과 노지원의 착석·프린터 사용 시각이 같은 구간에 겹친다.",
+        "restore_context": "노지원은 번역 검토라 했으나, 다운로드→프린터→외부 전달이 하나의 동선으로 이어진다.",
+        "verify_source": "감사실 기록과 시설팀 CCTV 로그가 동일한 시퀀스를 보여준다.",
+        "check_edits": "기관 보존본. 편집 흔적 없음.",
+        "question_acquisition": "보안사고 조사 목적 열람으로 적법. 개인 동선은 최소 범위만 공개해야 한다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "오해 프레임이 고착되기 전에 제시하면 반전 효율이 높습니다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:recipient_identity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "workplace-02:a:d-1:responsibility:6",
+          "workplace-02:a:d-1:counter:7",
+          "workplace-02:b:d-1:harm:6"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 이름만으로 책임을 단정할 단계가 아닙니다.",
+        "역할선이 더 열린 뒤에 답하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:timeline_commitment",
+      "intentTag": "timeline_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "workplace-02:a:d-1:act:4",
+          "workplace-02:b:d-1:timeline:4"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "약속 시각을 지금 잘라 말하면 오해가 커집니다.",
+        "순서를 더 맞춘 뒤에 답하는 편이 정확합니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:motive_boundary",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "workplace-02:a:d-2:context:7",
+          "workplace-02:b:d-2:fear:5"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "동기만 떼어 묻기엔 아직 사실선이 덜 열렸습니다.",
+        "그 감정은 더 깊은 층위에서 답하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:source_authenticity",
+      "intentTag": "authenticity_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "workplace-02:a:d-3:context:5",
+          "workplace-02:b:d-3:context:5"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "그 자료의 진본성은 아직 단정 답변이 어렵습니다.",
+        "원본과 출력본의 맥락이 더 붙어야 답할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:backchannel_reason",
+      "intentTag": "context_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "workplace-02:a:d-4:institution:4",
+          "workplace-02:b:d-4:institution:4"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "그 뒷채널은 아직 설명 순서가 남아 있습니다.",
+        "공식 기록과 비공식 의도를 함께 봐야 답할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:repair_intent",
+      "intentTag": "repair_intent",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "workplace-02:a:d-5:identity:4",
+          "workplace-02:b:d-5:motive:5"
+        ],
+        "preferredAngleTags": [
+          "emotion",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "정리 의도는 아직 감정이 덜 가라앉아 답하기 어렵습니다.",
+        "그 관계 복구 질문은 마지막 층위에서 답하겠습니다."
+      ]
+    }
+  ],
+  "proposedUnlockAtoms": [
+    {
+      "id": "workplace-02:a:d-1:unlock:s2:0",
+      "factText": "공식 조사 단계 이전에 특정 직원 한 명의 폴더 접근권이 먼저 회수된 사실",
+      "tags": [
+        "timeline",
+        "act"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        },
+        "case52": {
+          "exact": "공식 조사번호 생성 52분 전",
+          "neutral": "그 시점",
+          "period": "감사 직전"
+        },
+        "hr": {
+          "exact": "HR 조사 접수 메모",
+          "neutral": "그 메모"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-1",
+      "_state": "S2"
+    },
+    {
+      "id": "workplace-02:a:d-1:unlock:s3:0",
+      "factText": "특정 직원 한 명만 회수 대상이었고 팀 공지가 사실상 그 사람을 지목한 사실",
+      "tags": [
+        "identity",
+        "harm"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        },
+        "late_download": {
+          "exact": "심야 다운로드 직후",
+          "neutral": "그 시점",
+          "period": "감사 직전"
+        },
+        "drive": {
+          "exact": "개인 드라이브",
+          "neutral": "그 저장공간"
+        },
+        "dm": {
+          "exact": "전 직장 동료 DM",
+          "neutral": "그 외부 대화"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-1",
+      "_state": "S3"
+    },
+    {
+      "id": "workplace-02:a:d-1:unlock:s4:0",
+      "factText": "조직 안정과 본부 신뢰를 지키려는 두려움이 절차보다 앞섰던 사실",
+      "tags": [
+        "fear",
+        "motive"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "audit_before": {
+          "exact": "감사 직전",
+          "neutral": "그때",
+          "period": "감사 착수 이틀 전"
+        },
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-1",
+      "_state": "S4"
+    },
+    {
+      "id": "workplace-02:a:d-1:unlock:s5:0",
+      "factText": "확정 증거 없이 특정 직원을 유출자로 몰고 선제 차단과 낙인을 진행한 사실",
+      "tags": [
+        "admission",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        },
+        "team_notice": {
+          "exact": "보안 리스크 인원 공지",
+          "neutral": "그 공지"
+        },
+        "case52": {
+          "exact": "공식 조사번호 생성 52분 전",
+          "neutral": "그 시점",
+          "period": "감사 직전"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-1",
+      "_state": "S5"
+    },
+    {
+      "id": "workplace-02:a:d-2:unlock:s2:0",
+      "factText": "개인 드라이브 업로드는 있었지만 업로드 시각이 익명 유출 소문 이후라는 사실",
+      "tags": [
+        "timeline",
+        "context"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "drive": {
+          "exact": "개인 드라이브",
+          "neutral": "그 저장공간"
+        },
+        "late_download": {
+          "exact": "심야 다운로드 직후",
+          "neutral": "그 시점",
+          "period": "감사 직전"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-2",
+      "_state": "S2"
+    },
+    {
+      "id": "workplace-02:a:d-2:unlock:s3:0",
+      "factText": "외부 연락의 범위는 불명확했지만 내부 보호 채널 부재가 자기방어를 부른 사실",
+      "tags": [
+        "context",
+        "motive"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "dm": {
+          "exact": "전 직장 동료 DM",
+          "neutral": "그 외부 대화"
+        },
+        "drive": {
+          "exact": "개인 드라이브",
+          "neutral": "그 저장공간"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-2",
+      "_state": "S3"
+    },
+    {
+      "id": "workplace-02:a:d-2:unlock:s4:0",
+      "factText": "자기방어성 복사와 악의적 유출을 분리하지 못한 판단",
+      "tags": [
+        "counter",
+        "motive"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        },
+        "scapegoat": {
+          "exact": "'희생양'",
+          "neutral": "그 표현"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-2",
+      "_state": "S4"
+    },
+    {
+      "id": "workplace-02:a:d-2:unlock:s5:0",
+      "factText": "무단 복사 사실은 있었지만 정확한 범위를 모른 채 그것을 유출자 단정의 재료로 사용한 사실",
+      "tags": [
+        "responsibility",
+        "counter"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "drive": {
+          "exact": "개인 드라이브",
+          "neutral": "그 저장공간"
+        },
+        "dm": {
+          "exact": "전 직장 동료 DM",
+          "neutral": "그 외부 대화"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-2",
+      "_state": "S5"
+    },
+    {
+      "id": "workplace-02:a:d-3:unlock:s2:0",
+      "factText": "개인 업로드보다 앞선 시점의 접근 경로가 있을 수 있다는 사실",
+      "tags": [
+        "timeline",
+        "evidence"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "old_link": {
+          "exact": "회수되지 않은 공유링크",
+          "neutral": "그 링크"
+        },
+        "two_hours_before": {
+          "exact": "민아 업로드 2시간 전",
+          "neutral": "그보다 앞선 시점",
+          "period": "감사 직전"
+        },
+        "drive": {
+          "exact": "개인 드라이브",
+          "neutral": "그 저장공간"
+        },
+        "nojw": {
+          "exact": "노지원",
+          "neutral": "그 컨설턴트",
+          "fullName": "노지원",
+          "judgeRef": "노지원 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-3",
+      "_state": "S2"
+    },
+    {
+      "id": "workplace-02:a:d-3:unlock:s3:0",
+      "factText": "회수되지 않은 공유링크와 외주 전달선이 유출 경로가 될 수 있다는 사실",
+      "tags": [
+        "context",
+        "identity"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "old_link": {
+          "exact": "회수되지 않은 공유링크",
+          "neutral": "그 링크"
+        },
+        "vendor": {
+          "exact": "외부 번역업체",
+          "neutral": "그 외부 업체"
+        },
+        "nojw": {
+          "exact": "노지원",
+          "neutral": "그 컨설턴트",
+          "fullName": "노지원",
+          "judgeRef": "노지원 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-3",
+      "_state": "S3"
+    },
+    {
+      "id": "workplace-02:a:d-3:unlock:s4:0",
+      "factText": "정확한 로그보다 빠른 범인 특정이 우선이 된 심리",
+      "tags": [
+        "fear",
+        "motive"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        },
+        "audit_before": {
+          "exact": "감사 직전",
+          "neutral": "그때",
+          "period": "감사 착수 이틀 전"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-3",
+      "_state": "S4"
+    },
+    {
+      "id": "workplace-02:a:d-3:unlock:s5:0",
+      "factText": "실제 원본 반출 경로가 제3자 재사용 경로였다는 사실",
+      "tags": [
+        "identity",
+        "evidence"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "old_link": {
+          "exact": "회수되지 않은 공유링크",
+          "neutral": "그 링크"
+        },
+        "token": {
+          "exact": "임시다운로드 토큰",
+          "neutral": "그 토큰"
+        },
+        "nojw": {
+          "exact": "노지원",
+          "neutral": "그 컨설턴트",
+          "fullName": "노지원",
+          "judgeRef": "노지원 씨"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-3",
+      "_state": "S5"
+    },
+    {
+      "id": "workplace-02:a:d-4:unlock:s2:0",
+      "factText": "한 직원 면담 이전에 인사 조사 기록에 위험 메모가 먼저 입력된 사실",
+      "tags": [
+        "institution",
+        "timeline"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "hr": {
+          "exact": "HR 조사 접수 메모",
+          "neutral": "그 메모"
+        },
+        "risk_note": {
+          "exact": "보안상 위험 인물",
+          "neutral": "그 표현"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-4",
+      "_state": "S2"
+    },
+    {
+      "id": "workplace-02:a:d-4:unlock:s3:0",
+      "factText": "비용처리 이상 징후를 공식 채널이 아니라 구두 정리로 묶어 두려 한 사실",
+      "tags": [
+        "rule",
+        "act"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "verbal_only": {
+          "exact": "감사 끝날 때까지 구두 정리",
+          "neutral": "그 지시"
+        },
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-4",
+      "_state": "S3"
+    },
+    {
+      "id": "workplace-02:a:d-4:unlock:s4:0",
+      "factText": "감사 대응 평판을 지키려는 두려움이 제보 보호보다 앞섰던 사실",
+      "tags": [
+        "fear",
+        "motive"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        },
+        "audit_before": {
+          "exact": "감사 직전",
+          "neutral": "그때",
+          "period": "감사 착수 이틀 전"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-4",
+      "_state": "S4"
+    },
+    {
+      "id": "workplace-02:a:d-4:unlock:s5:0",
+      "factText": "선행 낙인 메모와 비공식 입막음 지시가 함께 존재했다는 사실",
+      "tags": [
+        "admission",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "risk_note": {
+          "exact": "보안상 위험 인물",
+          "neutral": "그 표현"
+        },
+        "hr": {
+          "exact": "HR 조사 접수 메모",
+          "neutral": "그 메모"
+        },
+        "verbal_only": {
+          "exact": "감사 끝날 때까지 구두 정리",
+          "neutral": "그 지시"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-4",
+      "_state": "S5"
+    },
+    {
+      "id": "workplace-02:a:d-5:unlock:s2:0",
+      "factText": "익명 공지처럼 보였지만 실제로는 한 사람만 겨냥된 소문 재료였다는 사실",
+      "tags": [
+        "identity",
+        "harm"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "team_notice": {
+          "exact": "보안 리스크 인원 공지",
+          "neutral": "그 공지"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        },
+        "rumor_quote": {
+          "exact": "'외부랑 붙었다'",
+          "neutral": "그 암시"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-5",
+      "_state": "S2"
+    },
+    {
+      "id": "workplace-02:a:d-5:unlock:s3:0",
+      "factText": "관리자 쪽 암시와 상대 쪽 비공식 대화 발언이 맞물려 소문전이 커진 사실",
+      "tags": [
+        "relationship",
+        "counter"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "group_chat": {
+          "exact": "단톡 발언",
+          "neutral": "그 말"
+        },
+        "scapegoat": {
+          "exact": "'희생양'",
+          "neutral": "그 표현"
+        },
+        "rumor_quote": {
+          "exact": "'외부랑 붙었다'",
+          "neutral": "그 암시"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-5",
+      "_state": "S3"
+    },
+    {
+      "id": "workplace-02:a:d-5:unlock:s4:0",
+      "factText": "팀 통제권을 지키려 소문으로 분위기를 선점하려 한 사실",
+      "tags": [
+        "motive",
+        "act"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        },
+        "team_notice": {
+          "exact": "보안 리스크 인원 공지",
+          "neutral": "그 공지"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-5",
+      "_state": "S4"
+    },
+    {
+      "id": "workplace-02:a:d-5:unlock:s5:0",
+      "factText": "공식 조사 전 상대를 압박하려는 의도로 소문을 사용한 사실",
+      "tags": [
+        "admission",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "rumor_quote": {
+          "exact": "'외부랑 붙었다'",
+          "neutral": "그 암시"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        },
+        "group_chat": {
+          "exact": "단톡 발언",
+          "neutral": "그 말"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ],
+      "_source": "unlock",
+      "_party": "a",
+      "_dispute": "d-5",
+      "_state": "S5"
+    },
+    {
+      "id": "workplace-02:b:d-1:unlock:s2:0",
+      "factText": "공식 조사 단계보다 앞서 접근권이 회수된 사실",
+      "tags": [
+        "timeline",
+        "evidence"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "case52": {
+          "exact": "공식 조사번호 생성 52분 전",
+          "neutral": "그 시점",
+          "period": "감사 직전"
+        },
+        "hr": {
+          "exact": "HR 조사 접수 메모",
+          "neutral": "그 메모"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-1",
+      "_state": "S2"
+    },
+    {
+      "id": "workplace-02:b:d-1:unlock:s3:0",
+      "factText": "익명 팀 공지가 사실상 한 사람에게만 낙인 효과를 냈던 사실",
+      "tags": [
+        "harm",
+        "identity"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "team_notice": {
+          "exact": "보안 리스크 인원 공지",
+          "neutral": "그 공지"
+        },
+        "risk_note": {
+          "exact": "보안상 위험 인물",
+          "neutral": "그 표현"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "hurt"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-1",
+      "_state": "S3"
+    },
+    {
+      "id": "workplace-02:b:d-1:unlock:s4:0",
+      "factText": "조직 안정 명분 아래 제보 가능성과 유출 의심이 한 사람에게 겹쳐 씌워진 사실",
+      "tags": [
+        "emotion",
+        "harm"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "scapegoat": {
+          "exact": "'희생양'",
+          "neutral": "그 표현"
+        },
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "hurt"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-1",
+      "_state": "S4"
+    },
+    {
+      "id": "workplace-02:b:d-1:unlock:s5:0",
+      "factText": "확정 증거 없는 선제 지목과 접근 차단이 있었다는 사실",
+      "tags": [
+        "admission",
+        "harm"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        },
+        "team_notice": {
+          "exact": "보안 리스크 인원 공지",
+          "neutral": "그 공지"
+        },
+        "case52": {
+          "exact": "공식 조사번호 생성 52분 전",
+          "neutral": "그 시점",
+          "period": "감사 직전"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "hurt"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-1",
+      "_state": "S5"
+    },
+    {
+      "id": "workplace-02:b:d-2:unlock:s2:0",
+      "factText": "익명 유출 정황이 돈 뒤 개인 드라이브에 감사 초안 일부를 올린 사실",
+      "tags": [
+        "timeline",
+        "act"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "drive": {
+          "exact": "개인 드라이브",
+          "neutral": "그 저장공간"
+        },
+        "late_download": {
+          "exact": "심야 다운로드 직후",
+          "neutral": "그 시점",
+          "period": "감사 직전"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-2",
+      "_state": "S2"
+    },
+    {
+      "id": "workplace-02:b:d-2:unlock:s3:0",
+      "factText": "외부 상담 과정에서 일부 문장이 실제로 회사 밖으로 전송된 사실",
+      "tags": [
+        "privacy",
+        "act"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "dm": {
+          "exact": "전 직장 동료 DM",
+          "neutral": "그 외부 대화"
+        },
+        "drive": {
+          "exact": "개인 드라이브",
+          "neutral": "그 저장공간"
+        },
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-2",
+      "_state": "S3"
+    },
+    {
+      "id": "workplace-02:b:d-2:unlock:s4:0",
+      "factText": "희생양 공포가 자기방어성 무단 복사를 부른 사실",
+      "tags": [
+        "fear",
+        "motive"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "scapegoat": {
+          "exact": "'희생양'",
+          "neutral": "그 표현"
+        },
+        "drive": {
+          "exact": "개인 드라이브",
+          "neutral": "그 저장공간"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-2",
+      "_state": "S4"
+    },
+    {
+      "id": "workplace-02:b:d-2:unlock:s5:0",
+      "factText": "자기보호 목적이었어도 무단 복사와 외부상담이 실제로 있었다는 사실",
+      "tags": [
+        "admission",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "drive": {
+          "exact": "개인 드라이브",
+          "neutral": "그 저장공간"
+        },
+        "dm": {
+          "exact": "전 직장 동료 DM",
+          "neutral": "그 외부 대화"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-2",
+      "_state": "S5"
+    },
+    {
+      "id": "workplace-02:b:d-3:unlock:s2:0",
+      "factText": "개인 보관 흔적보다 앞선 외부 경로가 존재할 수 있다는 사실",
+      "tags": [
+        "timeline",
+        "evidence"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "old_link": {
+          "exact": "회수되지 않은 공유링크",
+          "neutral": "그 링크"
+        },
+        "two_hours_before": {
+          "exact": "민아 업로드 2시간 전",
+          "neutral": "그보다 앞선 시점",
+          "period": "감사 직전"
+        },
+        "drive": {
+          "exact": "개인 드라이브",
+          "neutral": "그 저장공간"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-3",
+      "_state": "S2"
+    },
+    {
+      "id": "workplace-02:b:d-3:unlock:s3:0",
+      "factText": "실제 핵심이 개인 악의보다 회수되지 않은 링크와 토큰 관리였다는 사실",
+      "tags": [
+        "evidence",
+        "context"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "old_link": {
+          "exact": "회수되지 않은 공유링크",
+          "neutral": "그 링크"
+        },
+        "token": {
+          "exact": "임시다운로드 토큰",
+          "neutral": "그 토큰"
+        },
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-3",
+      "_state": "S3"
+    },
+    {
+      "id": "workplace-02:b:d-3:unlock:s4:0",
+      "factText": "무고함과 별개로 상대 의도를 단정하며 서사를 키운 사실",
+      "tags": [
+        "emotion",
+        "counter"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-3",
+      "_state": "S4"
+    },
+    {
+      "id": "workplace-02:b:d-3:unlock:s5:0",
+      "factText": "최초 원본 반출 경로가 제3자 재사용 경로였다는 사실",
+      "tags": [
+        "identity",
+        "evidence"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "old_link": {
+          "exact": "회수되지 않은 공유링크",
+          "neutral": "그 링크"
+        },
+        "nojw": {
+          "exact": "노지원",
+          "neutral": "그 컨설턴트",
+          "fullName": "노지원",
+          "judgeRef": "노지원 씨"
+        },
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-3",
+      "_state": "S5"
+    },
+    {
+      "id": "workplace-02:b:d-4:unlock:s2:0",
+      "factText": "면담 이전에 위험 인물 취지의 인사 기록이 먼저 입력된 사실",
+      "tags": [
+        "institution",
+        "timeline"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "hr": {
+          "exact": "HR 조사 접수 메모",
+          "neutral": "그 메모"
+        },
+        "risk_note": {
+          "exact": "보안상 위험 인물",
+          "neutral": "그 표현"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-4",
+      "_state": "S2"
+    },
+    {
+      "id": "workplace-02:b:d-4:unlock:s3:0",
+      "factText": "비용처리 이상 징후를 감사 후로 미루라는 지시가 함께 남은 사실",
+      "tags": [
+        "rule",
+        "act"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "hr": {
+          "exact": "HR 조사 접수 메모",
+          "neutral": "그 메모"
+        },
+        "verbal_only": {
+          "exact": "감사 끝날 때까지 구두 정리",
+          "neutral": "그 지시"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "hurt"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-4",
+      "_state": "S3"
+    },
+    {
+      "id": "workplace-02:b:d-4:unlock:s4:0",
+      "factText": "제보 시도가 유출 의심과 결합되며 침묵 압박이 생긴 사실",
+      "tags": [
+        "fear",
+        "harm"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "scapegoat": {
+          "exact": "'희생양'",
+          "neutral": "그 표현"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "hurt"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-4",
+      "_state": "S4"
+    },
+    {
+      "id": "workplace-02:b:d-4:unlock:s5:0",
+      "factText": "선행 낙인과 구두 정리 지시가 결합된 비공식 입막음 사실",
+      "tags": [
+        "admission",
+        "harm"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "hr": {
+          "exact": "HR 조사 접수 메모",
+          "neutral": "그 메모"
+        },
+        "risk_note": {
+          "exact": "보안상 위험 인물",
+          "neutral": "그 표현"
+        },
+        "verbal_only": {
+          "exact": "감사 끝날 때까지 구두 정리",
+          "neutral": "그 지시"
+        },
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "hurt"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-4",
+      "_state": "S5"
+    },
+    {
+      "id": "workplace-02:b:d-5:unlock:s2:0",
+      "factText": "공식 보고 대신 비공식 대화방에서 자신을 희생양이라 부르며 여론전을 시작한 사실",
+      "tags": [
+        "act",
+        "quote"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "group_chat": {
+          "exact": "단톡 발언",
+          "neutral": "그 말"
+        },
+        "scapegoat": {
+          "exact": "'희생양'",
+          "neutral": "그 표현"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "evidence_hit"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-5",
+      "_state": "S2"
+    },
+    {
+      "id": "workplace-02:b:d-5:unlock:s3:0",
+      "factText": "희생양 주장에 상사 비리 추론이 더해져 소문전이 확대된 사실",
+      "tags": [
+        "relationship",
+        "counter"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "group_chat": {
+          "exact": "단톡 발언",
+          "neutral": "그 말"
+        },
+        "scapegoat": {
+          "exact": "'희생양'",
+          "neutral": "그 표현"
+        },
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-5",
+      "_state": "S3"
+    },
+    {
+      "id": "workplace-02:b:d-5:unlock:s4:0",
+      "factText": "억울함이 커지며 로그 설명과 의도 추론이 섞여 단정이 빨라진 사실",
+      "tags": [
+        "emotion",
+        "quote"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "group_chat": {
+          "exact": "단톡 발언",
+          "neutral": "그 말"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-5",
+      "_state": "S4"
+    },
+    {
+      "id": "workplace-02:b:d-5:unlock:s5:0",
+      "factText": "자기보호 명분 아래 공식 조사 전 소문 확산에 가담한 사실",
+      "tags": [
+        "admission",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "group_chat": {
+          "exact": "단톡 발언",
+          "neutral": "그 말"
+        },
+        "gyuwon": {
+          "exact": "한규원",
+          "neutral": "그 상사",
+          "fullName": "한규원",
+          "judgeRef": "규원 씨"
+        },
+        "mina": {
+          "exact": "조민아",
+          "neutral": "그 직원",
+          "fullName": "조민아",
+          "judgeRef": "민아 씨"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ],
+      "_source": "unlock",
+      "_party": "b",
+      "_dispute": "d-5",
+      "_state": "S5"
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "trap_chaser",
+      "evidence_closer",
+      "rapport_heavy"
+    ]
+  }
+}

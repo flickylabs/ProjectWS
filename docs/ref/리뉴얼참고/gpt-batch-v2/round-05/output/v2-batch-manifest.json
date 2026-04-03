@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-04-03",
+  "sourceCases": [
+    "family-05",
+    "family-06",
+    "family-07",
+    "family-08"
+  ],
+  "outputs": [
+    {
+      "caseId": "family-05",
+      "structureFile": "family-05-structure-v2.json",
+      "beatsFile": "family-05-beats-v2-full.json",
+      "structureTsFile": "family-05-structure-v2.ts",
+      "beatsTsFile": "family-05-beats-v2-full.ts",
+      "beatCount": 57,
+      "linkEdgeCount": 4,
+      "freeQuestionHookCount": 6
+    },
+    {
+      "caseId": "family-06",
+      "structureFile": "family-06-structure-v2.json",
+      "beatsFile": "family-06-beats-v2-full.json",
+      "structureTsFile": "family-06-structure-v2.ts",
+      "beatsTsFile": "family-06-beats-v2-full.ts",
+      "beatCount": 58,
+      "linkEdgeCount": 4,
+      "freeQuestionHookCount": 6
+    },
+    {
+      "caseId": "family-07",
+      "structureFile": "family-07-structure-v2.json",
+      "beatsFile": "family-07-beats-v2-full.json",
+      "structureTsFile": "family-07-structure-v2.ts",
+      "beatsTsFile": "family-07-beats-v2-full.ts",
+      "beatCount": 55,
+      "linkEdgeCount": 4,
+      "freeQuestionHookCount": 6
+    },
+    {
+      "caseId": "family-08",
+      "structureFile": "family-08-structure-v2.json",
+      "beatsFile": "family-08-beats-v2-full.json",
+      "structureTsFile": "family-08-structure-v2.ts",
+      "beatsTsFile": "family-08-beats-v2-full.ts",
+      "beatCount": 58,
+      "linkEdgeCount": 4,
+      "freeQuestionHookCount": 6
+    }
+  ],
+  "notes": [
+    "Beat IDs follow the no-hyphen case prefix rule (e.g. family05:beat_v2:...).",
+    "truthEnvelope allowAtomIds / forbidAtomIds reuse source V1 atom IDs exactly as found in the uploaded files.",
+    "family-07 source V1 atom IDs include legacy hyphenated prefixes; these were preserved for compatibility inside truthEnvelope."
+  ]
+}

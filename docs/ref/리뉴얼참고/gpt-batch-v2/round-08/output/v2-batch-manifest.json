@@ -1,0 +1,53 @@
+{
+  "generatedAt": null,
+  "cases": {
+    "friend-05": {
+      "structureFile": "friend-05-structure-v2.json",
+      "beatsFile": "friend-05-beats-v2-full.json",
+      "tsStructureFile": "friend-05-structure-v2.ts",
+      "tsBeatsFile": "friend-05-beats-v2-full.ts",
+      "totalBeats": 58,
+      "interjectionCount": 12,
+      "fatigueCount": 6,
+      "proposedUnlockAtoms": 40,
+      "freeQuestionHooks": 8,
+      "linkEdges": 5
+    },
+    "friend-06": {
+      "structureFile": "friend-06-structure-v2.json",
+      "beatsFile": "friend-06-beats-v2-full.json",
+      "tsStructureFile": "friend-06-structure-v2.ts",
+      "tsBeatsFile": "friend-06-beats-v2-full.ts",
+      "totalBeats": 58,
+      "interjectionCount": 12,
+      "fatigueCount": 6,
+      "proposedUnlockAtoms": 24,
+      "freeQuestionHooks": 8,
+      "linkEdges": 5
+    },
+    "friend-07": {
+      "structureFile": "friend-07-structure-v2.json",
+      "beatsFile": "friend-07-beats-v2-full.json",
+      "tsStructureFile": "friend-07-structure-v2.ts",
+      "tsBeatsFile": "friend-07-beats-v2-full.ts",
+      "totalBeats": 58,
+      "interjectionCount": 12,
+      "fatigueCount": 6,
+      "proposedUnlockAtoms": 24,
+      "freeQuestionHooks": 8,
+      "linkEdges": 5
+    },
+    "friend-08": {
+      "structureFile": "friend-08-structure-v2.json",
+      "beatsFile": "friend-08-beats-v2-full.json",
+      "tsStructureFile": "friend-08-structure-v2.ts",
+      "tsBeatsFile": "friend-08-beats-v2-full.ts",
+      "totalBeats": 58,
+      "interjectionCount": 12,
+      "fatigueCount": 6,
+      "proposedUnlockAtoms": 40,
+      "freeQuestionHooks": 8,
+      "linkEdges": 5
+    }
+  }
+}

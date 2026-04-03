@@ -1,0 +1,2125 @@
+export const partnership_10_structure_v2 = {
+  "caseId": "partnership-10",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "준서의 최종 승인 없는 오퍼 발송",
+      "truth": true,
+      "truthDescription": "준서는 혜린과 급여 조건을 확정하지 않은 채 민서에게 정식 오퍼 메일, 계좌정보 요청, 온보딩 문서를 먼저 보냈다.",
+      "quadrant": "a_only",
+      "weight": "high",
+      "mediationLink": "채용승인선복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준서는 최종 승인 없이 오퍼를 발송했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "정식 오퍼",
+        "온보딩 문서",
+        "계좌정보 요청",
+        "체험근무",
+        "급여 시트",
+        "밤 9시"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "준서의 최종 승인 없는 오퍼 발송의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-10:a:d-1:admission:0",
+            "partnership-10:a:d-1:self_justification:1",
+            "partnership-10:b:d-1:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-10:a:d-1:responsibility:0",
+            "partnership-10:a:d-1:quote:0",
+            "partnership-10:a:d-1:fear:0",
+            "partnership-10:a:d-1:emotion:0",
+            "partnership-10:b:d-1:quote:1",
+            "partnership-10:b:d-1:emotion:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "준서는 혜린과 급여 조건을 확정하지 않은 채 민서에게 정식 오퍼 메일, 계좌정보 요청, 온보딩 문서를 먼저 보냈다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-10:a:d-1:admission:1",
+            "partnership-10:a:d-1:rule:0",
+            "partnership-10:b:d-1:admission:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "혜린의 일방적 보류 통보와 내부 확산",
+      "truth": true,
+      "truthDescription": "혜린은 준서와 재확인하지 않은 채 민서와 기존 트레이너들에게 '채용은 없던 일'이라고 말하며, 준서가 몰래 사람을 앉히려 했다는 취지로 상황을 퍼뜨렸다.",
+      "quadrant": "b_only",
+      "weight": "medium",
+      "mediationLink": "대내소통정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "혜린은 준서와 확인 없이 사실을 퍼뜨렸다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "채용은 없던 일",
+        "보류 통보",
+        "트레이너 단톡",
+        "내부 확산",
+        "몰래 사람 앉히려",
+        "1시간 뒤"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "혜린의 일방적 보류 통보와 내부 확산의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-10:a:d-2:admission:0",
+            "partnership-10:b:d-2:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-10:a:d-2:emotion:0",
+            "partnership-10:a:d-2:harm:0",
+            "partnership-10:b:d-2:responsibility:0",
+            "partnership-10:b:d-2:emotion:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "혜린은 준서와 재확인하지 않은 채 민서와 기존 트레이너들에게 '채용은 없던 일'이라고 말하며, 준서가 몰래 사람을 앉히려 했다는 취지로 상황을 퍼뜨렸다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-10:a:d-2:admission:1",
+            "partnership-10:b:d-2:admission:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "준서가 의도적으로 동업자를 속여 독단 채용했는가",
+      "truth": false,
+      "truthDescription": "혜린은 배신을 의심했고 준서는 승인이 끝났다고 믿었지만, 실제로는 혜린의 '이번 주부터 한번 같이 돌아보자'는 말과 자동 생성된 온보딩 캘린더 초대가 겹치며 trial 승인과 최종 채용이 서로 다르게 이해된 오해였다.",
+      "quadrant": "shared_misconception",
+      "weight": "high",
+      "mediationLink": "신뢰회복",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준서는 의도적으로 속이지 않았다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "트라이얼로",
+        "독단 채용",
+        "3일 가능 시간",
+        "배신",
+        "크롭 캡처",
+        "승인 오해"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "준서가 의도적으로 동업자를 속여 독단 채용했는가의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-10:a:d-3:evidence:0",
+            "partnership-10:a:d-3:timeline:0",
+            "partnership-10:b:d-3:evidence:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-10:a:d-3:counter:0",
+            "partnership-10:a:d-3:fear:0",
+            "partnership-10:b:d-3:legacy_sentence:0",
+            "partnership-10:b:d-3:fear:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "혜린은 배신을 의심했고 준서는 승인이 끝났다고 믿었지만, 실제로는 혜린의 '이번 주부터 한번 같이 돌아보자'는 말과 자동 생성된 온보딩 캘린더 초대가 겹치며 trial 승인과 최종 채용이 서로 다르게 이해된 오해였다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:misbelief_shaken"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-10:a:d-3:admission:0",
+            "partnership-10:b:d-3:admission:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심이 먼저 붙는 단계",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "자기 해석을 붙잡고 방어하는 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘린 자료나 오해가 굳어지는 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "원문과 경로가 나오며 확신이 흔들리는 단계",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 경로가 정리되고 사실이 재배열되는 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "'트라이얼로'가 잘린 단톡 캡처",
+          "'Day 1 Orientation' 자동 일정 제목",
+          "오퍼 형식 문서가 체험근무와 섞여 보이는 화면"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "오해 경로가 정리되고 사실이 재배열되는 단계"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "공동 채용 프로토콜의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 체험평가표, 급여 시트, 공동 final message를 거치기로 해놓고 준서는 오퍼를 먼저 보내고 혜린은 별도 보류 통보를 먼저 하며 같은 규칙을 함께 무너뜨렸다.",
+      "quadrant": "both_know",
+      "weight": "medium",
+      "mediationLink": "채용승인선복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준서는 오퍼를 먼저 보냈다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "체험평가표",
+        "급여 시트",
+        "공동 final message",
+        "채용 프로토콜",
+        "체크리스트",
+        "별도 보류"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "공동 채용 프로토콜의 쌍방 위반의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-10:a:d-4:admission:0",
+            "partnership-10:b:d-4:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              },
+              {
+                "id": "d-4",
+                "minState": "S1"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-10:a:d-4:rule:0",
+            "partnership-10:a:d-4:emotion:0",
+            "partnership-10:b:d-4:rule:0",
+            "partnership-10:b:d-4:emotion:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "두 사람은 체험평가표, 급여 시트, 공동 final message를 거치기로 해놓고 준서는 오퍼를 먼저 보내고 혜린은 별도 보류 통보를 먼저 하며 같은 규칙을 함께 무너뜨렸다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:record_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-10:a:d-4:admission:1",
+            "partnership-10:b:d-4:admission:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "온보딩 캘린더의 자동 발송 오해",
+      "truth": true,
+      "truthDescription": "HR 툴은 후보자 이메일을 온보딩 단계에 넣는 순간 자동으로 'Day 1 Orientation' 캘린더 초대를 발송했고, 이 문구가 민서와 두 대표 모두에게 최종 채용 확정처럼 읽혔다.",
+      "quadrant": "neither_knows",
+      "weight": "medium",
+      "mediationLink": "도구설정정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "온보딩 이메일이 자동 발송됐다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "Day 1 Orientation",
+        "자동 캘린더",
+        "온보딩 단계",
+        "HR 툴",
+        "자동 발송",
+        "승인 신호"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "온보딩 캘린더의 자동 발송 오해의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-10:a:d-5:evidence:0",
+            "partnership-10:b:d-5:evidence:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-10:a:d-5:counter:0",
+            "partnership-10:a:d-5:fear:0",
+            "partnership-10:b:d-5:counter:0",
+            "partnership-10:b:d-5:fear:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "HR 툴은 후보자 이메일을 온보딩 단계에 넣는 순간 자동으로 'Day 1 Orientation' 캘린더 초대를 발송했고, 이 문구가 민서와 두 대표 모두에게 최종 채용 확정처럼 읽혔다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:risk_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-10:a:d-5:admission:0",
+            "partnership-10:b:d-5:admission:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "오퍼 메일과 온보딩 문서",
+      "description": "준서가 민서에게 보낸 정식 오퍼 메일, 계좌정보 요청서, 첫 주 근무 가이드 문서 원본이다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "준서 발신 메일 원본과 첨부된 온보딩 파일이 모두 확보됐다.",
+        "check_metadata": "발신 시각은 혜린이 급여표를 아직 보지 못한 밤 9시대로 남아 있고, 서류 요청 항목이 정식 채용 단계와 동일하다.",
+        "restore_context": "준서는 체험근무 전제였다고 말하지만, 후보자 입장에서는 사실상 합격 통보처럼 읽히는 구성이었다.",
+        "verify_source": "민서 수신함과 준서 발신함 헤더가 일치한다.",
+        "check_edits": "메일 본문과 첨부문서에 후편집 흔적이 없다.",
+        "question_acquisition": "업무용 계정에서 오간 채용 메일이라 적법하게 확보됐다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "준서는 체험근무 전제였다고 말하지만, 후보자 입장에서는 사실상 합격 통보처럼 읽히는 구성이었다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "준서는 체험근무 전제였다고 말하지만, 후보자 입장에서는 사실상 합격 통보처럼 읽히는 구성이었다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "혜린의 보류 메시지와 기존 트레이너 공지",
+      "description": "혜린이 민서에게 합류를 보류한다고 보낸 메시지와, 기존 트레이너 단톡에 '아직 채용 확정 아님'이라고 알린 원본 대화다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "민서와의 1:1 대화 원본, 트레이너 단톡 내보내기 파일이 함께 제출됐다.",
+        "check_metadata": "보류 메시지는 오퍼 메일 발송 1시간 뒤에 전송됐고, 기존 직원 공지는 그보다 먼저 올라갔다.",
+        "restore_context": "혜린은 품질 우려를 이유로 들었지만, 메시지 어조는 준서의 독단을 기정사실처럼 전달하고 있다.",
+        "verify_source": "민서 휴대폰과 혜린 기기 내보내기 파일이 일치한다.",
+        "check_edits": "대화 원문과 타임스탬프에 조작 흔적이 없다.",
+        "question_acquisition": "채용 관련 업무 대화라 제출 정당성은 높다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "혜린은 품질 우려를 이유로 들었지만, 메시지 어조는 준서의 독단을 기정사실처럼 전달하고 있다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "크롭된 단톡 캡처",
+      "description": "혜린이 '이번 주부터 바로 써'라고 말한 부분만 남은 캡처로, 앞뒤에 붙은 '트라이얼로' 문장이 잘려 있어 최종 승인처럼 보인다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 단톡 내보내기는 없고 저장된 화면 캡처 한 장만 먼저 제출됐다.",
+        "check_metadata": "캡처 생성 시각은 오퍼 논쟁 직후이며, 이미지 상단과 하단이 모두 잘린 흔적이 남아 있다.",
+        "restore_context": "이 한 줄만 보면 최종 채용 승인처럼 보이지만, 체험근무 범위를 특정하는 앞뒤 문맥이 빠져 있다.",
+        "verify_source": "혜린 계정 대화창을 찍은 것은 맞으나 전문 검증은 불가능하다.",
+        "check_edits": "문자열 변조 흔적은 없지만 선택적 크롭이 명확하다.",
+        "question_acquisition": "개인 기기 캡처라 사생활과 맥락 보존 문제를 함께 고려해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오준서에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 오준서의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 오준서은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박혜린에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박혜린의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "이 한 줄만 보면 최종 채용 승인처럼 보이지만, 체험근무 범위를 특정하는 앞뒤 문맥이 빠져 있다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "원본 단톡과 후보자 일정조율 메일",
+      "description": "e-3의 앞뒤 문맥이 들어 있는 원본 단톡, 그리고 민서가 체험근무 가능한 시간을 보낸 일정조율 메일이다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "단톡 내보내기 원본과 민서의 일정조율 회신 메일이 함께 확보됐다.",
+        "check_metadata": "혜린 메시지 원문에는 '트라이얼로'라는 수식어가 붙어 있고, 민서는 그 뒤에 3일 가능 시간표만 보내고 있었다.",
+        "restore_context": "준서는 이 흐름을 사실상 승인으로 읽었고, 혜린은 아직 검증 단계라고 생각해 같은 대화를 서로 다르게 받아들였다.",
+        "verify_source": "메신저 서버 타임스탬프와 메일 발신 시각이 정확히 이어진다.",
+        "check_edits": "원본 내보내기와 헤더에 변조 흔적이 없다.",
+        "question_acquisition": "업무용 대화와 채용 메일이라 적법하게 제출됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오준서에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 오준서의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 오준서은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박혜린에게: \"혜린의 일방적 보류 통보와 내부 확산\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 박혜린의 \"혜린의 일방적 보류 통보와 내부 확산\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "준서는 이 흐름을 사실상 승인으로 읽었고, 혜린은 아직 검증 단계라고 생각해 같은 대화를 서로 다르게 받아들였다."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "준서는 이 흐름을 사실상 승인으로 읽었고, 혜린은 아직 검증 단계라고 생각해 같은 대화를 서로 다르게 받아들였다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "공동 채용 체크리스트와 미완성 급여 시트",
+      "description": "체험평가표, 급여 시트, 공동 final message가 모두 완료돼야 한다고 적힌 채용 체크리스트와 아직 비어 있는 민서 급여 시트다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "노션 채용 체크리스트 원본과 급여 시트 클라우드 버전 기록이 같이 제출됐다.",
+        "check_metadata": "민서 항목은 체험평가 칸과 급여 확정 칸이 모두 비어 있고, 공동 final message 체크도 누락돼 있다.",
+        "restore_context": "준서가 채용을 서둘렀더라도 원래 합의된 절차상 최종 승인 단계는 아직 오지 않았음이 분명하다.",
+        "verify_source": "플랫폼 활동 로그와 두 대표 계정 열람 기록이 일치한다.",
+        "check_edits": "버전 히스토리에 삭제나 조작 흔적이 없다.",
+        "question_acquisition": "회사 공용 운영문서라 적법하게 확보됐다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "준서가 채용을 서둘렀더라도 원래 합의된 절차상 최종 승인 단계는 아직 오지 않았음이 분명하다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "준서가 채용을 서둘렀더라도 원래 합의된 절차상 최종 승인 단계는 아직 오지 않았음이 분명하다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "HR 툴 자동 캘린더 발송 로그와 노무사 확인 메모",
+      "description": "후보자 이메일을 온보딩 단계에 넣으면 자동으로 'Day 1 Orientation' 일정 초대가 발송된다는 HR 툴 로그와 정우림 노무사의 확인 메모다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "HR 툴 이벤트 로그와 노무사 검토 메모 원본이 함께 확보됐다.",
+        "check_metadata": "민서 이메일이 온보딩 단계로 옮겨진 지 30초 안에 자동 캘린더 초대가 발송됐다.",
+        "restore_context": "사람이 따로 확정 문구를 쓰지 않아도 시스템 문구가 정식 합류처럼 보이게 만들어 혼선을 키웠다.",
+        "verify_source": "툴 관리자 로그와 민서 수신함 일정 초대 시각이 정확히 맞아떨어진다.",
+        "check_edits": "기관·툴 보관 로그라 후편집 흔적이 없다.",
+        "question_acquisition": "서비스 제공업체와 노무사가 확인한 시스템 기록이라 적법하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오준서에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 오준서의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 오준서은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박혜린에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박혜린의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "사람이 따로 확정 문구를 쓰지 않아도 시스템 문구가 정식 합류처럼 보이게 만들어 혼선을 키웠다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "사람이 따로 확정 문구를 쓰지 않아도 시스템 문구가 정식 합류처럼 보이게 만들어 혼선을 키웠다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:offer_boundary",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-10:a:d-1:admission:0",
+          "partnership-10:b:d-1:admission:0"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 원본 경로부터 다시 확인해야 합니다.",
+        "그 질문은 자료 맥락이 열려야 답할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:approval_gate",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-10:a:d-1:admission:0",
+          "partnership-10:b:d-1:admission:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "절차 얘기는 문서를 같이 봐야 합니다.",
+        "규칙 문제는 지금 단답으로 못 자르겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:notice_order",
+      "intentTag": "timeline_fix",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "partnership-10:a:d-2:admission:0",
+          "partnership-10:b:d-2:admission:0"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "순서를 다시 잡아야 해서 바로 답하긴 어렵습니다.",
+        "시각과 경로가 정리돼야 답할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:intent_gap",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "partnership-10:a:d-3:evidence:0",
+          "partnership-10:b:d-3:evidence:1"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "누가 먼저였는지는 아직 단정 못 하겠습니다.",
+        "그 사람을 바로 지목하는 답은 지금 못 하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:recheck_reason",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "partnership-10:a:d-3:evidence:0",
+          "partnership-10:b:d-3:evidence:1"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "속마음까지 지금 바로 열진 않겠습니다.",
+        "그 이유는 조금 더 압박이 들어와야 말하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:protocol_break",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "partnership-10:a:d-4:admission:0",
+          "partnership-10:b:d-4:admission:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "절차 얘기는 문서를 같이 봐야 합니다.",
+        "규칙 문제는 지금 단답으로 못 자르겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:auto_invite_source",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "partnership-10:a:d-5:evidence:0",
+          "partnership-10:b:d-5:evidence:0"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 원본 경로부터 다시 확인해야 합니다.",
+        "그 질문은 자료 맥락이 열려야 답할 수 있습니다."
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-3:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-3",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-3:offer_betrayal_frame"
+      },
+      "uiLabel": "오퍼가 배신처럼 보임"
+    },
+    {
+      "id": "link:d-2:d-4:retaliation",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-4",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "retaliationPressure": 9,
+        "grantFlag": "d-4:notice_tear_open"
+      },
+      "uiLabel": "별도 보류의 반작용"
+    },
+    {
+      "id": "link:d-5:d-3:weakens_counter",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-3",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPressureBonus": 10,
+        "grantFlag": "d-3:auto_invite_seen"
+      },
+      "uiLabel": "자동 일정이 오해를 약화"
+    },
+    {
+      "id": "link:d-1:d-4:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-4",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-4:first_break_open"
+      },
+      "uiLabel": "프로토콜 첫 균열"
+    }
+  ],
+  "proposedUnlockAtoms": [
+    {
+      "id": "partnership-10:a:d-1:unlock:s2:0",
+      "factText": "오퍼 메일은 혜린이 급여 시트를 아직 보지 못한 밤 9시대에 발송됐다.",
+      "tags": [
+        "evidence",
+        "timeline"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "time": {
+          "exact": "밤 9시대",
+          "neutral": "그 시간대",
+          "dateExact": "발송 당일 밤 9시대",
+          "period": "급여표를 아직 보지 못한 그 밤"
+        },
+        "sheet": {
+          "exact": "민서 급여 시트",
+          "neutral": "급여 시트"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-1:unlock:s3:0",
+      "factText": "민서 급여 시트와 공동 final message 체크가 모두 비어 있었다.",
+      "tags": [
+        "rule",
+        "evidence"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "sheet": {
+          "exact": "민서 급여 시트",
+          "neutral": "급여 시트"
+        },
+        "protocol": {
+          "exact": "체험평가표, 급여 시트, 공동 final message",
+          "neutral": "합의된 3단계"
+        },
+        "candidate": {
+          "exact": "한민서",
+          "neutral": "지원자",
+          "fullName": "한민서",
+          "judgeRef": "민서 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-1:unlock:s4:0",
+      "factText": "준서는 후보자 이탈을 막고 싶어 승인 확인을 건너뛰었다.",
+      "tags": [
+        "fear",
+        "motive"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        },
+        "candidate": {
+          "exact": "한민서",
+          "neutral": "지원자",
+          "fullName": "한민서",
+          "judgeRef": "민서 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-1:unlock:s5:0",
+      "factText": "준서는 체험근무라는 이름으로도 절차 위반이 사라지지 않는다고 인정한다.",
+      "tags": [
+        "admission",
+        "rule"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "quote": {
+          "exact": "체험근무",
+          "neutral": "그 이름표"
+        },
+        "person": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-2:unlock:s2:0",
+      "factText": "오퍼 뒤 혜린이 민서와 직원들에게 '아직 채용 확정 아님'을 먼저 돌렸다.",
+      "tags": [
+        "timeline",
+        "act"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "candidate": {
+          "exact": "한민서",
+          "neutral": "지원자",
+          "fullName": "한민서",
+          "judgeRef": "민서 씨"
+        },
+        "time": {
+          "exact": "1시간 뒤",
+          "neutral": "곧바로",
+          "period": "오퍼 직후"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-2:unlock:s3:0",
+      "factText": "혜린의 공지에는 준서가 몰래 사람을 앉히려 했다는 취지가 실렸다.",
+      "tags": [
+        "harm",
+        "quote"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "subjectPerson": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        }
+      },
+      "stanceHints": [
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-2:unlock:s4:0",
+      "factText": "준서는 배신자로 몰린 억울함 때문에 혜린 책임만 더 세게 물었다.",
+      "tags": [
+        "emotion",
+        "relationship"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "subjectPerson": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-2:unlock:s5:0",
+      "factText": "준서는 자신의 오퍼 선행이 혜린의 일방 통보 문제와 연결된다고 인정한다.",
+      "tags": [
+        "admission",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        },
+        "otherPerson": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-3:unlock:s2:0",
+      "factText": "원본 단톡에는 '트라이얼로'가 있었고 민서는 3일 가능 시간만 보냈다.",
+      "tags": [
+        "evidence",
+        "quote"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "quote": {
+          "exact": "'트라이얼로'",
+          "neutral": "그 표현"
+        },
+        "candidate": {
+          "exact": "한민서",
+          "neutral": "지원자",
+          "fullName": "한민서",
+          "judgeRef": "민서 씨"
+        },
+        "duration": {
+          "exact": "3일",
+          "neutral": "며칠",
+          "period": "체험근무 기간"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-3:unlock:s3:0",
+      "factText": "준서는 모호한 승인 표현과 자동 일정 문구가 배신처럼 보인 핵심 오해라고 본다.",
+      "tags": [
+        "context",
+        "institution"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "quote": {
+          "exact": "'이번 주부터 한번 같이 돌아보자'",
+          "neutral": "그 승인처럼 들린 말"
+        },
+        "invite": {
+          "exact": "'Day 1 Orientation'",
+          "neutral": "첫 출근처럼 보이는 일정 문구"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-3:unlock:s4:0",
+      "factText": "준서는 운영 공백이 두려워 trial 승인과 최종 승인을 묶어 해석했다.",
+      "tags": [
+        "fear",
+        "motive"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "quote": {
+          "exact": "'트라이얼로'",
+          "neutral": "그 표현"
+        },
+        "person": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-3:unlock:s5:0",
+      "factText": "준서는 계획적 배신은 아니었어도 확인 없는 해석으로 속인 듯 보이게 했다고 인정한다.",
+      "tags": [
+        "admission",
+        "relationship"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        },
+        "otherPerson": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-4:unlock:s2:0",
+      "factText": "체크리스트 완료 전 오퍼 발송과 별도 보류 통보로 두 사람이 같은 규칙을 다른 방식으로 깼다.",
+      "tags": [
+        "rule",
+        "relationship"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "protocol": {
+          "exact": "체험평가표, 급여 시트, 공동 final message",
+          "neutral": "합의된 3단계"
+        },
+        "speakerA": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        },
+        "speakerB": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-4:unlock:s3:0",
+      "factText": "절차를 먼저 찢은 건 준서의 선행 오퍼였다.",
+      "tags": [
+        "responsibility",
+        "rule"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        }
+      },
+      "stanceHints": [
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-4:unlock:s4:0",
+      "factText": "과거 부적합 채용 뒤 세운 3단계 룰이 이번에 둘 다에게 무너졌다.",
+      "tags": [
+        "rule",
+        "context"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "protocol": {
+          "exact": "체험평가표, 급여 시트, 공동 final message",
+          "neutral": "합의된 3단계"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-4:unlock:s5:0",
+      "factText": "준서는 공백 메우기를 앞세우다 프로토콜 위반 책임이 더 커졌다고 인정한다.",
+      "tags": [
+        "admission",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        },
+        "protocol": {
+          "exact": "체험평가표, 급여 시트, 공동 final message",
+          "neutral": "합의된 3단계"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-5:unlock:s2:0",
+      "factText": "민서 이메일이 온보딩 단계로 옮겨진 뒤 30초 안에 Day 1 Orientation 초대가 자동 발송됐다.",
+      "tags": [
+        "institution",
+        "timeline"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "candidate": {
+          "exact": "한민서",
+          "neutral": "지원자",
+          "fullName": "한민서",
+          "judgeRef": "민서 씨"
+        },
+        "stage": {
+          "exact": "온보딩 단계",
+          "neutral": "그 단계"
+        },
+        "invite": {
+          "exact": "'Day 1 Orientation'",
+          "neutral": "첫 출근처럼 보이는 일정 문구"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-5:unlock:s3:0",
+      "factText": "설명 없는 자동 발송이 독단처럼 보이게 만들었고 준서도 그 신호를 승인처럼 읽었다.",
+      "tags": [
+        "institution",
+        "counter"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "tool": {
+          "exact": "HR 툴 자동 캘린더",
+          "neutral": "그 시스템"
+        },
+        "invite": {
+          "exact": "'Day 1 Orientation'",
+          "neutral": "첫 출근처럼 보이는 일정 문구"
+        },
+        "person": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-5:unlock:s4:0",
+      "factText": "준서는 일정 알림이 뜨자 마음속으로 이미 합류가 되는 쪽으로 기울었다.",
+      "tags": [
+        "emotion",
+        "fear"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        },
+        "invite": {
+          "exact": "'Day 1 Orientation'",
+          "neutral": "첫 출근처럼 보이는 일정 문구"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-10:a:d-5:unlock:s5:0",
+      "factText": "준서는 자동화와 자신의 성급한 해석이 겹쳐 오해를 키웠다고 인정한다.",
+      "tags": [
+        "admission",
+        "institution"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        },
+        "tool": {
+          "exact": "HR 툴 자동 캘린더",
+          "neutral": "그 시스템"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-1:unlock:s2:0",
+      "factText": "혜린은 오퍼 메일이 정식 채용처럼 보였다는 점과 자신의 모호한 trial 표현을 함께 본다.",
+      "tags": [
+        "admission",
+        "quote"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "quote": {
+          "exact": "'이번 주부터 한번 같이 돌아보자'",
+          "neutral": "그 승인처럼 들린 말"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-1:unlock:s3:0",
+      "factText": "혜린은 final message를 남기지 않은 자기 표현이 독단처럼 보인 장면에 섞였다고 인정한다.",
+      "tags": [
+        "rule",
+        "admission"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "protocol": {
+          "exact": "체험평가표, 급여 시트, 공동 final message",
+          "neutral": "합의된 3단계"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-1:unlock:s4:0",
+      "factText": "배제감과 예전 채용 상처가 혜린의 의도 단정을 더 세게 만들었다.",
+      "tags": [
+        "emotion",
+        "fear"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-1:unlock:s5:0",
+      "factText": "혜린은 무단 오퍼 문제와 자신의 모호한 승인 표현이 함께 오해를 만들었다고 인정한다.",
+      "tags": [
+        "admission",
+        "relationship"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "otherPerson": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        },
+        "quote": {
+          "exact": "'이번 주부터 한번 같이 돌아보자'",
+          "neutral": "그 승인처럼 들린 말"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-2:unlock:s2:0",
+      "factText": "혜린은 민서와 직원들에게 먼저 '아직 채용 확정 아님'을 알렸음을 인정한다.",
+      "tags": [
+        "admission",
+        "timeline"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "candidate": {
+          "exact": "한민서",
+          "neutral": "지원자",
+          "fullName": "한민서",
+          "judgeRef": "민서 씨"
+        },
+        "message": {
+          "exact": "'채용은 없던 일'",
+          "neutral": "그 보류 통보"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-2:unlock:s3:0",
+      "factText": "혜린은 준서가 몰래 사람을 앉히려 했다는 취지를 과장해 실어 보냈다.",
+      "tags": [
+        "responsibility",
+        "harm"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "subjectPerson": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        }
+      },
+      "stanceHints": [
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-2:unlock:s4:0",
+      "factText": "자기 영역이 무시됐다는 감정이 혜린의 확인보다 앞섰다.",
+      "tags": [
+        "emotion",
+        "fear"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-2:unlock:s5:0",
+      "factText": "혜린은 품질 우려와 별개로 재확인 없는 보류 통보와 내부 확산이 자신의 잘못이라고 인정한다.",
+      "tags": [
+        "admission",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "message": {
+          "exact": "'채용은 없던 일'",
+          "neutral": "그 보류 통보"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-3:unlock:s2:0",
+      "factText": "원본 단톡의 '트라이얼로'와 민서의 3일 가능 일정은 혜린의 단정을 흔든다.",
+      "tags": [
+        "evidence",
+        "quote"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "quote": {
+          "exact": "'트라이얼로'",
+          "neutral": "그 표현"
+        },
+        "candidate": {
+          "exact": "한민서",
+          "neutral": "지원자",
+          "fullName": "한민서",
+          "judgeRef": "민서 씨"
+        },
+        "duration": {
+          "exact": "3일",
+          "neutral": "며칠",
+          "period": "체험근무 기간"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-3:unlock:s3:0",
+      "factText": "혜린은 장면 하나를 독단 채용 증거처럼 확대해 읽었다.",
+      "tags": [
+        "legacy_sentence",
+        "admission"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        }
+      },
+      "stanceHints": [
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-3:unlock:s4:0",
+      "factText": "승인권이 지워진다는 공포 때문에 혜린은 확인보다 배신이라는 말을 먼저 붙였다.",
+      "tags": [
+        "fear",
+        "emotion"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-3:unlock:s5:0",
+      "factText": "혜린은 계획적 배신이 아니라 승인 표현, 자동 일정, 자신의 과잉 해석이 겹친 오해였다고 인정한다.",
+      "tags": [
+        "admission",
+        "institution"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "quote": {
+          "exact": "'이번 주부터 한번 같이 돌아보자'",
+          "neutral": "그 승인처럼 들린 말"
+        },
+        "invite": {
+          "exact": "'Day 1 Orientation'",
+          "neutral": "첫 출근처럼 보이는 일정 문구"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-4:unlock:s2:0",
+      "factText": "준서의 선행 오퍼와 혜린의 별도 보류가 같은 체크리스트를 함께 무너뜨렸다.",
+      "tags": [
+        "rule",
+        "relationship"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "speakerA": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        },
+        "speakerB": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "protocol": {
+          "exact": "체험평가표, 급여 시트, 공동 final message",
+          "neutral": "합의된 3단계"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-4:unlock:s3:0",
+      "factText": "혜린은 내부 공지로, 준서는 오퍼로 먼저 움직이며 절차 붕괴를 넓혔다.",
+      "tags": [
+        "rule",
+        "responsibility"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "otherPerson": {
+          "exact": "오준서",
+          "neutral": "공동대표",
+          "fullName": "오준서",
+          "judgeRef": "준서 씨"
+        }
+      },
+      "stanceHints": [
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-4:unlock:s4:0",
+      "factText": "배제감이 올라온 순간 혜린도 규칙을 자기 방식으로 뒤집었다.",
+      "tags": [
+        "emotion",
+        "rule"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-4:unlock:s5:0",
+      "factText": "혜린은 수습이라는 이름으로 같은 규칙을 또 깼다고 인정한다.",
+      "tags": [
+        "admission",
+        "legacy_sentence"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "protocol": {
+          "exact": "체험평가표, 급여 시트, 공동 final message",
+          "neutral": "합의된 3단계"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-5:unlock:s2:0",
+      "factText": "온보딩 단계 진입만으로 Day 1 Orientation 초대가 자동 발송된다는 사실이 확인됐다.",
+      "tags": [
+        "institution",
+        "evidence"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "stage": {
+          "exact": "온보딩 단계",
+          "neutral": "그 단계"
+        },
+        "invite": {
+          "exact": "'Day 1 Orientation'",
+          "neutral": "첫 출근처럼 보이는 일정 문구"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-5:unlock:s3:0",
+      "factText": "혜린은 그 일정 제목을 곧바로 자신을 건너뛴 증거로 사용했다.",
+      "tags": [
+        "emotion",
+        "identity"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "invite": {
+          "exact": "'Day 1 Orientation'",
+          "neutral": "첫 출근처럼 보이는 일정 문구"
+        }
+      },
+      "stanceHints": [
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-5:unlock:s4:0",
+      "factText": "혜린은 승인권이 무시됐다는 공포 때문에 일정 제목을 배신으로 읽었다.",
+      "tags": [
+        "fear",
+        "emotion"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "invite": {
+          "exact": "'Day 1 Orientation'",
+          "neutral": "첫 출근처럼 보이는 일정 문구"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-10:b:d-5:unlock:s5:0",
+      "factText": "혜린은 기술적 문제와 자신의 과잉 해석이 함께 오해를 만들었다고 인정한다.",
+      "tags": [
+        "admission",
+        "institution"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "person": {
+          "exact": "박혜린",
+          "neutral": "공동대표",
+          "fullName": "박혜린",
+          "judgeRef": "혜린 씨"
+        },
+        "tool": {
+          "exact": "HR 툴 자동 캘린더",
+          "neutral": "그 시스템"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-3"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  }
+} as const;

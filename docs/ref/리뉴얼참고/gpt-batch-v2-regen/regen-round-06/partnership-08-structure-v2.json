@@ -1,0 +1,1107 @@
+{
+  "caseId": "partnership-08",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "시원의 2호점 가계약 보류와 보증금 집행 중단",
+      "truth": true,
+      "truthDescription": "시원은 지아와 마지막 조율 없이 성수 2호점 후보지의 가계약금 이체를 멈추고 브로커에게 홀드 연장을 하지 않겠다고 통보했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 71,
+        "b": 29
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "확장계약재설계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "시원은 가계약금 이체를 멈췄다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "성수 2호점",
+        "홀드 포기",
+        "가계약 보류",
+        "보증금 집행",
+        "브로커 문자",
+        "마지막 조율 없음"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "누가 먼저 어떤 행동을 했는지가 보입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-08:a:d-1:denial:0",
+            "partnership-08:a:d-1:rule:0",
+            "partnership-08:b:d-1:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "그 선택을 정당화하거나 몰아붙인 계산이 드러납니다.",
+          "lockedSummary": "왜 그런 판단이 나왔는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-08:a:d-1:responsibility:0",
+            "partnership-08:a:d-1:admission:0",
+            "partnership-08:a:d-1:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "책임과 상처의 무게가 함께 연결됩니다.",
+          "lockedSummary": "핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:responsibility_named"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-08:a:d-1:emotion:0",
+            "partnership-08:a:d-1:admission:1",
+            "partnership-08:a:d-1:unlock:s4:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "지아의 별도 스튜디오 준비",
+      "truth": true,
+      "truthDescription": "지아는 자신이 약속 파기의 피해자라고 말하는 와중에도 전 헤드강사와 별도 스튜디오 컨셉, 공간 탐색, 강사 합류 가능성을 비밀리에 준비하고 있었다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 24,
+        "b": 76
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "경업·지분정리",
+      "legitimacyIssue": true,
+      "judgmentStatement": "지아는 별도 스튜디오를 비밀리에 준비했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "별도 스튜디오",
+        "전 헤드강사",
+        "김나리",
+        "법인 초안",
+        "합류 시트",
+        "비밀 준비"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉에서 확인되는 사실과 발화가 정리됩니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-08:b:d-2:denial:0",
+            "partnership-08:b:d-2:privacy:0",
+            "partnership-08:a:d-2:act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "그 선택을 정당화하거나 몰아붙인 계산이 드러납니다.",
+          "lockedSummary": "왜 그런 판단이 나왔는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-08:b:d-2:responsibility:0",
+            "partnership-08:b:d-2:admission:0",
+            "partnership-08:b:d-2:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "책임과 상처의 무게가 함께 연결됩니다.",
+          "lockedSummary": "핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:backup_named"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-08:b:d-2:emotion:0",
+            "partnership-08:b:d-2:admission:1",
+            "partnership-08:b:d-2:unlock:s4:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "지아는 일방적 약속 파기의 순수한 피해자였는가",
+      "truth": false,
+      "truthDescription": "시원이 확장 약속을 뒤로 미룬 것은 사실이지만, 지아 역시 동시에 별도 사업을 준비하고 있었기 때문에 일방적 피해자 서사만으로는 현재 갈등을 설명할 수 없다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 57,
+        "b": 43
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "신뢰회복",
+      "legitimacyIssue": true,
+      "judgmentStatement": "지아는 일방적 피해자가 아니다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "순수 피해자",
+        "5주년 약속",
+        "배신 서사",
+        "백업 플랜",
+        "동시 준비",
+        "상처와 방어"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉으로는 그럴듯해 보였던 오해의 표면이 드러납니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-08:a:d-3:denial:0",
+            "partnership-08:a:d-3:context:0",
+            "partnership-08:b:d-3:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 서로 그 오해를 붙들었는지가 드러납니다.",
+          "lockedSummary": "왜 그런 판단이 나왔는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "M2"
+              },
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-08:a:d-3:responsibility:0",
+            "partnership-08:a:d-3:admission:0",
+            "partnership-08:a:d-3:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "오해를 깨는 진짜 연결고리가 보입니다.",
+          "lockedSummary": "핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "M3"
+              },
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:hurt_named"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-08:a:d-3:emotion:0",
+            "partnership-08:a:d-3:admission:1",
+            "partnership-08:a:d-3:unlock:s4:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "weaponizes",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "한쪽만 배신자이고 다른 한쪽은 순수한 피해자라는 믿음이 겉으로 그럴듯해 보입니다.",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "오해를 사실처럼 붙들며 방어가 빨라집니다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘린 단서와 기억의 편집이 해석을 고착시킵니다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "앞뒤 맥락이 들어오며 확신이 흔들리기 시작합니다.",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "외부 경로와 실제 책임선이 정리되며 오해가 해소됩니다.",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "5주년 발언을 약속 확정처럼 붙든 해석",
+          "크롭 DM 한 문장",
+          "홀드 포기와 별도 준비를 따로 떼어 읽는 태도"
+        ],
+        "truthExitEvidenceIds": [
+          "e-1",
+          "e-4"
+        ],
+        "clarifyOutcomeLabel": "외부 경로와 실제 책임선이 정리되며 오해가 해소됩니다."
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "2024년 부속합의의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 과거 팝업 손실 이후 2호점은 현금보유·서면 예산·공동 역할분담이 모두 갖춰질 때만 진행하기로 했지만, 시원은 단독으로 보류했고 지아는 단독으로 별도 확장 준비를 진행해 같은 합의 틀을 함께 무너뜨렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 49,
+        "b": 51
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거합의복원",
+      "legitimacyIssue": false,
+      "judgmentStatement": "시원과 지아는 합의를 위반했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "2024년 부속메모",
+        "현금 8천",
+        "공동 역할분담",
+        "서면 예산",
+        "합의 위반",
+        "단독 준비"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉에서 확인되는 사실과 발화가 정리됩니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-08:a:d-4:denial:0",
+            "partnership-08:a:d-4:rule:0",
+            "partnership-08:b:d-4:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "핵심 갈등을 보강한 배경과 방어 논리가 드러납니다.",
+          "lockedSummary": "왜 그런 판단이 나왔는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-08:a:d-4:responsibility:0",
+            "partnership-08:a:d-4:admission:0",
+            "partnership-08:a:d-4:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "관계를 비틀었던 보강 사실의 핵심이 연결됩니다.",
+          "lockedSummary": "핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              },
+              {
+                "id": "d-4",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:agreement_named"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-08:a:d-4:emotion:0",
+            "partnership-08:a:d-4:admission:1",
+            "partnership-08:a:d-4:unlock:s4:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "원래 합의된 확장 조건은 아직 자동 발동되지 않았다",
+      "truth": true,
+      "truthDescription": "2024년 서명된 부속메모상 2호점은 현금성 자산 8천만원 이상 2개월 유지가 선행돼야 했는데, 최근 리스료와 세금 반영 후 실제 월말 보유액은 그 기준에 미달해 있었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 46,
+        "b": 54
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "과거합의복원",
+      "legitimacyIssue": false,
+      "judgmentStatement": "합의된 확장 조건은 발동되지 않았다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "80,000,000원",
+        "2개월 유지",
+        "월말 현금보유",
+        "리스료",
+        "세금 반영",
+        "자동 발동"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉에서 확인되는 사실과 발화가 정리됩니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-08:a:d-5:denial:0",
+            "partnership-08:a:d-5:rule:0",
+            "partnership-08:b:d-5:context:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "핵심 갈등을 보강한 배경과 방어 논리가 드러납니다.",
+          "lockedSummary": "왜 그런 판단이 나왔는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-08:a:d-5:admission:0",
+            "partnership-08:a:d-5:responsibility:0",
+            "partnership-08:a:d-5:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "관계를 비틀었던 보강 사실의 핵심이 연결됩니다.",
+          "lockedSummary": "핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              },
+              {
+                "id": "d-5",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:numbers_checked"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-08:a:d-5:emotion:0",
+            "partnership-08:a:d-5:admission:1",
+            "partnership-08:a:d-5:unlock:s4:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-3:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-3",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-3:surface:hurt_named"
+      },
+      "uiLabel": "단독 보류의 상처"
+    },
+    {
+      "id": "link:d-2:d-3:weakens_counter",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-3",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "counterPenalty": 10,
+        "grantFlag": "d-3:motive:pure_victim_shaken"
+      },
+      "uiLabel": "피해자 서사 흔들림"
+    },
+    {
+      "id": "link:d-4:d-5:unlocks_layer",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "unlockLayer": "core",
+        "grantFlag": "d-5:motive:agreement_recalled"
+      },
+      "uiLabel": "옛 합의 다시 보기"
+    },
+    {
+      "id": "link:d-5:d-1:weakens_counter",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPenalty": 9,
+        "grantFlag": "d-1:core:threshold_not_shield"
+      },
+      "uiLabel": "조건은 방패가 아님"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "가계약 보류 메일과 홀드 포기 문자",
+      "description": "시원이 브로커와 건물주 측에 2호점 후보지 가계약금 이체를 보류하고 더 이상 홀드 연장을 하지 않겠다고 보낸 메일·문자 원본이다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "배시원에게: \"시원의 2호점 가계약 보류와 보증금 집행 중단\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 배시원의 \"시원의 2호점 가계약 보류와 보증금 집행 중단\" 쟁점과 관련된다. 배시원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "윤지아에게: \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 윤지아의 \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 쟁점과 관련된다. 윤지아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "M3",
+            "multiplier": 1.35,
+            "note": "오해가 흔들리기 시작하는 구간에서 제시하면 상대 비난 서사를 빠르게 꺾는다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "5주년 확장회의 녹취록과 가계약 검토표",
+      "description": "5주년 시즌 직전 회의에서 지아가 올해 여름 2호점을 기정사실처럼 말하고, 시원은 '현금 보유가 버티면'이라는 단서를 달며도 결국 브로커 검토표를 돌린 녹취록과 자료다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "배시원에게: \"시원의 2호점 가계약 보류와 보증금 집행 중단\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 배시원의 \"시원의 2호점 가계약 보류와 보증금 집행 중단\" 쟁점과 관련된다. 배시원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "윤지아에게: \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 윤지아의 \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 쟁점과 관련된다. 윤지아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "M3",
+            "multiplier": 1.35,
+            "note": "오해가 흔들리기 시작하는 구간에서 제시하면 상대 비난 서사를 빠르게 꺾는다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "크롭된 DM 캡처",
+      "description": "지아가 전 헤드강사에게 '우리 쪽으로 옮겨타면 돼. 다음 달엔 따로 간다'고 말한 부분만 남은 DM 캡처로, 맥락에 따라 위로인지 실제 분리 준비인지 다르게 읽힌다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "배시원에게: \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 배시원의 \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 쟁점과 관련된다. 배시원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "윤지아에게: \"지아의 별도 스튜디오 준비\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 윤지아의 \"지아의 별도 스튜디오 준비\" 쟁점과 관련된다. 윤지아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S4",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "M2",
+            "multiplier": 1.4,
+            "note": "잘린 단서를 더 오래 붙들기 전에 맥락을 복원할 때 효율이 가장 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "별도 스튜디오 법인 초안과 강사 합류 시트",
+      "description": "지아가 전 헤드강사와 공유한 별도 스튜디오 법인 등기 초안, 공간 탐색 메일, 강사 합류 가능성 시트를 묶은 자료다.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "배시원에게: \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 배시원의 \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 쟁점과 관련된다. 배시원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "윤지아에게: \"지아의 별도 스튜디오 준비\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 윤지아의 \"지아의 별도 스튜디오 준비\" 쟁점과 관련된다. 윤지아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "M3",
+            "multiplier": 1.35,
+            "note": "오해가 흔들리기 시작하는 구간에서 제시하면 상대 비난 서사를 빠르게 꺾는다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "2024년 부속메모와 월말 현금보유 보고서",
+      "description": "팝업 손실 이후 서명한 2호점 확장 부속메모와, 최근 두 달의 현금성 자산·리스료·세금 반영 후 월말 잔액을 정리한 회계 보고서다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "배시원에게: \"원래 합의된 확장 조건은 아직 자동 발동되지 않았다\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 배시원의 \"원래 합의된 확장 조건은 아직 자동 발동되지 않았다\" 쟁점과 관련된다. 배시원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "윤지아에게: \"2024년 부속합의의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 윤지아의 \"2024년 부속합의의 쌍방 위반\" 쟁점과 관련된다. 윤지아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S3",
+            "multiplier": 1.25,
+            "note": "핵심 쟁점을 보강하거나 외부 변수의 책임선을 정리할 때 힘이 붙는다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "대출 사전심사 체크리스트와 회계사 확인 메모",
+      "description": "오혜린 회계사가 정리한 대출 사전심사 체크리스트와 확인 메모로, 최근 리스료·부가세 반영 후 현금보유 요건이 미달했고 공동대표의 전념 구조가 불안정하면 승인 가능성이 낮았다는 자료다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.25,
+            "note": "핵심 쟁점을 보강하거나 외부 변수의 책임선을 정리할 때 힘이 붙는다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:timeline_chain",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-08:a:d-1:admission:0",
+          "partnership-08:a:d-1:responsibility:0"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 성수 2호점 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:decision_identity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-08:a:d-1:admission:0",
+          "partnership-08:a:d-1:responsibility:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 성수 2호점 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:frame_origin",
+      "intentTag": "contradiction_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "partnership-08:b:d-2:admission:0",
+          "partnership-08:b:d-2:responsibility:0"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 별도 스튜디오 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:misbelief_source",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "partnership-08:a:d-3:admission:0",
+          "partnership-08:a:d-3:responsibility:0"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 순수 피해자 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:rule_edge",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "partnership-08:a:d-4:admission:1",
+          "partnership-08:a:d-4:responsibility:0"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 2024년 부속메모 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:outside_motive",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "partnership-08:a:d-5:responsibility:0",
+          "partnership-08:a:d-5:emotion:0"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 80,000,000원 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:emotion_tail",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-08:a:d-1:emotion:0",
+          "partnership-08:a:d-1:admission:1"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 성수 2호점 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-2"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+}

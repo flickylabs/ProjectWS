@@ -1,0 +1,1233 @@
+export const spouse_09_structure_v2 = {
+  "caseId": "spouse-09",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "도현의 비밀 간병 선수금 송금",
+      "truth": true,
+      "truthDescription": "도현은 밤 9시 42분 공동계좌에서 390만 원을 빼 원무주임에게 보냈다. 간병 선수금이었고 영수증이 있다. 같은 날 공유 약속을 깬 것은 명백.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 30,
+        "b": 70
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "재정투명화",
+      "legitimacyIssue": false,
+      "judgmentStatement": "도현은 390만원을 송금했다.",
+      "caseId": "spouse-09",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "390만원",
+        "비밀 송금",
+        "최서정",
+        "원무주임",
+        "간병 선수금",
+        "대기확약서"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "도현의 비밀 간병 선수금 송금의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse09:a:d-1:counter:0",
+            "spouse09:a:d-1:admission:0",
+            "spouse09:a:d-1:responsibility:0",
+            "spouse09:b:d-1:denial:0",
+            "spouse09:b:d-1:admission:0",
+            "spouse09:b:d-1:context:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "도현의 비밀 간병 선수금 송금 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse09:a:d-1:admission:0",
+            "spouse09:a:d-1:responsibility:1",
+            "spouse09:a:d-1:blame:0",
+            "spouse09:b:d-1:admission:0",
+            "spouse09:b:d-1:self_justification:0",
+            "spouse09:b:d-1:blame:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "도현의 비밀 간병 선수금 송금가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse09:a:d-1:fear:0",
+            "spouse09:a:d-1:admission:1",
+            "spouse09:a:d-1:responsibility:2",
+            "spouse09:b:d-1:fear:0",
+            "spouse09:b:d-1:admission:1",
+            "spouse09:b:d-1:responsibility:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "선아의 보험금 비밀 이전",
+      "truth": true,
+      "truthDescription": "선아는 보험금 입금 43분 만에 오빠 계좌로 전액 옮기고 비공개를 요청했다. 도현보다 이틀 앞선 은닉이며 금액도 2.4배. 약속을 먼저 깬 쪽.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "보험금공개",
+      "legitimacyIssue": false,
+      "judgmentStatement": "선아는 보험금을 오빠에게 송금했다.",
+      "caseId": "spouse-09",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "930만원",
+        "보험금",
+        "오빠 계좌",
+        "유성민",
+        "비공개 요청",
+        "입금 43분 뒤"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "선아의 보험금 비밀 이전의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse09:a:d-2:denial:0",
+            "spouse09:a:d-2:admission:0",
+            "spouse09:a:d-2:context:0",
+            "spouse09:b:d-2:counter:0",
+            "spouse09:b:d-2:admission:0",
+            "spouse09:b:d-2:responsibility:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "선아의 보험금 비밀 이전 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse09:a:d-2:admission:0",
+            "spouse09:a:d-2:self_justification:0",
+            "spouse09:a:d-2:blame:0",
+            "spouse09:b:d-2:admission:0",
+            "spouse09:b:d-2:responsibility:1",
+            "spouse09:b:d-2:blame:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "선아의 보험금 비밀 이전가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse09:a:d-2:fear:0",
+            "spouse09:a:d-2:admission:1",
+            "spouse09:a:d-2:responsibility:0",
+            "spouse09:b:d-2:fear:0",
+            "spouse09:b:d-2:admission:1",
+            "spouse09:b:d-2:responsibility:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "도현 송금은 사적 유용이었나",
+      "truth": false,
+      "truthDescription": "최서정은 병동 원무주임이며 병원 전산으로 직책이 확인된다. 외도가 아니라 가족 의료비를 혼자 결정한 행위 자체가 판단 포인트.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "오해정리",
+      "legitimacyIssue": true,
+      "judgmentStatement": "최서정은 가족 의료비를 결정했다.",
+      "caseId": "spouse-09",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "여성 수취인",
+        "잘린 캡처",
+        "밤 10시 전에",
+        "자리 빼놓겠습니다",
+        "병원 메신저",
+        "외도 의심"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "도현 송금은 사적 유용이었나의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse09:a:d-3:counter:0",
+            "spouse09:a:d-3:admission:0",
+            "spouse09:a:d-3:counter:1",
+            "spouse09:b:d-3:denial:0",
+            "spouse09:b:d-3:admission:0",
+            "spouse09:b:d-3:context:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "도현 송금은 사적 유용이었나 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse09:a:d-3:admission:0",
+            "spouse09:a:d-3:responsibility:0",
+            "spouse09:a:d-3:context:1",
+            "spouse09:b:d-3:admission:0",
+            "spouse09:b:d-3:self_justification:0",
+            "spouse09:b:d-3:blame:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "도현 송금은 사적 유용이었나가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:trap_disarmed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse09:a:d-3:fear:0",
+            "spouse09:a:d-3:admission:1",
+            "spouse09:a:d-3:responsibility:1",
+            "spouse09:b:d-3:fear:0",
+            "spouse09:b:d-3:admission:1",
+            "spouse09:b:d-3:responsibility:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "knows"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어와 당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란과 확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소 직전",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "여성 이름만 남은 수취인 정보",
+          "잘린 메신저 문구",
+          "야간 병원 동선과 과거 불신의 결합"
+        ],
+        "truthExitEvidenceIds": [
+          "e-2",
+          "e-1"
+        ],
+        "clarifyOutcomeLabel": "오해 해소 직전"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "2022년 전력이 선아를 면책하나",
+      "truth": false,
+      "truthDescription": "2022년 전력이 동기를 설명하지만 면책은 다르다. 100만 원 이상 공유 원칙을 930만 원 규모로 깬 것은 동기와 무관하게 약속 위반.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 65,
+        "b": 35
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거청산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "2022년 전력은 선아의 면책이 아니다.",
+      "caseId": "spouse-09",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "2022년",
+        "채무상환 합의서",
+        "공개원칙 메모",
+        "면책 주장",
+        "같은 날 공유",
+        "과거 빚"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "2022년 전력이 선아를 면책하나의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse09:a:d-4:legacy_sentence:0",
+            "spouse09:a:d-4:rule:0",
+            "spouse09:a:d-4:fear:1",
+            "spouse09:b:d-4:counter:0",
+            "spouse09:b:d-4:rule:0",
+            "spouse09:b:d-4:context:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "2022년 전력이 선아를 면책하나 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse09:a:d-4:rule:0",
+            "spouse09:a:d-4:self_justification:0",
+            "spouse09:a:d-4:blame:0",
+            "spouse09:b:d-4:rule:0",
+            "spouse09:b:d-4:admission:0",
+            "spouse09:b:d-4:responsibility:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "2022년 전력이 선아를 면책하나가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:trap_disarmed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse09:a:d-4:shame:0",
+            "spouse09:a:d-4:admission:0",
+            "spouse09:a:d-4:responsibility:0",
+            "spouse09:b:d-4:emotion:0",
+            "spouse09:b:d-4:admission:1",
+            "spouse09:b:d-4:responsibility:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "weaponizes",
+          "b": "knows"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어와 당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란과 확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소 직전",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "2022년 전력을 현재 면책처럼 소환",
+          "공개원칙을 감정 논리로 덮기"
+        ],
+        "truthExitEvidenceIds": [
+          "e-6",
+          "e-5"
+        ],
+        "clarifyOutcomeLabel": "오해 해소 직전"
+      }
+    },
+    {
+      "id": "d-5",
+      "name": "병원비 공황 — 단독인가 쌍방인가",
+      "truth": false,
+      "truthDescription": "390만 원만으로 공황이 온 게 아니다. 930만 원 은닉으로 유동성이 사라진 상태에서 퇴원 일정과 대기 순번까지 동시에 바뀌며 터졌다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-1",
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "간병운영",
+      "legitimacyIssue": false,
+      "judgmentStatement": "공황은 390만 원만의 원인이 아니다.",
+      "caseId": "spouse-09",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "병원비 공황",
+        "유동성 부족",
+        "퇴원 일정",
+        "대기 순번",
+        "쌍방 은닉",
+        "먼저 숨긴 쪽"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "병원비 공황 — 단독인가 쌍방인가의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse09:a:d-5:counter:0",
+            "spouse09:a:d-5:admission:0",
+            "spouse09:a:d-5:responsibility:0",
+            "spouse09:b:d-5:counter:0",
+            "spouse09:b:d-5:admission:0",
+            "spouse09:b:d-5:responsibility:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "병원비 공황 — 단독인가 쌍방인가 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse09:a:d-5:admission:0",
+            "spouse09:a:d-5:self_justification:0",
+            "spouse09:a:d-5:blame:0",
+            "spouse09:b:d-5:admission:0",
+            "spouse09:b:d-5:self_justification:0",
+            "spouse09:b:d-5:blame:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "병원비 공황 — 단독인가 쌍방인가가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:motive_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse09:a:d-5:emotion:0",
+            "spouse09:a:d-5:admission:1",
+            "spouse09:a:d-5:responsibility:1",
+            "spouse09:b:d-5:emotion:0",
+            "spouse09:b:d-5:admission:1",
+            "spouse09:b:d-5:responsibility:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-5:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-5:surface:medical_context_open"
+      },
+      "uiLabel": "병원 맥락"
+    },
+    {
+      "id": "link:d-2:d-5:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 14,
+        "grantFlag": "d-5:surface:hidden_liquidity_open"
+      },
+      "uiLabel": "숨은 유동성"
+    },
+    {
+      "id": "link:d-3:d-1:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-1:motive:misread_identity_softened"
+      },
+      "uiLabel": "오해가 벗겨짐"
+    },
+    {
+      "id": "link:d-4:d-2:retaliation",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-2",
+      "type": "retaliation",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-2:core:legacy_justifier_used"
+      },
+      "uiLabel": "과거를 방패로 듦"
+    },
+    {
+      "id": "link:d-2:d-1:unlocks_layer",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-1",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-1:core:mutual_breach_visible"
+      },
+      "uiLabel": "서로 숨긴 구조"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "공동생활비 계좌 이체내역과 병원 주차정산 기록",
+      "description": "공동계좌 밤 9시 42분 이체 내역과 18분 뒤 병원 주차 정산 기록. 동선은 보이지만 목적은 이것만으로 구분 불가.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은행 발급 이체내역 PDF(거래일시·수취인·금액 포함)와 병원 지하주차장 정산 시스템 출력본이 각각의 원본 번호와 함께 확인됐다.",
+        "check_metadata": "이체 시각은 밤 21시 42분, 병원 주차 정산은 22시 00분 — 18분 간격이다. 송금 후 곧바로 병원에 간 동선이 시간 순서로 확인된다.",
+        "restore_context": "도현은 퇴원 일정 앞당김 연락 직후 병원으로 이동했다. 긴급 대응인지 사전 계획인지를 이 시간 흐름으로 판단해야 한다.",
+        "verify_source": "은행 고객센터의 거래원장 대조와 병원 주차관리 시스템 조회 양쪽 검증으로 진본성이 확보됐다. 두 기관 기록이 교차 확인된다.",
+        "check_edits": "은행 PDF와 주차 출력본 모두 기관 시스템 직출력이라 사후 편집이나 수정 흔적이 없다.",
+        "question_acquisition": "부부 공동 계좌 내역과 본인 차량 기록이라 절차 문제는 적다. 수취인 개인정보 포함으로 범위 제한 필요."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "유선아에게: \"병원비 공황 — 단독인가 쌍방인가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 유선아의 \"병원비 공황 — 단독인가 쌍방인가\" 쟁점과 관련된다. 유선아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "강도현에게: \"도현의 비밀 간병 선수금 송금\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 강도현의 \"도현의 비밀 간병 선수금 송금\" 쟁점과 관련된다. 강도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "timeline"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "도현의 비밀 간병 선수금 송금의 사실선을 고정하는 타이밍."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.3,
+            "note": "병원비 공황 — 단독인가 쌍방인가에서 잘못된 해석을 되돌리는 창."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "통합간병 병동 대기확약서와 선수금 영수증",
+      "description": "대기확약서에 최서정이 원무주임으로 기재, 390만 원 영수증과 같은 예약번호로 연결. 간병 목적은 입증되지만 선아 동의는 별도.",
+      "type": "contract",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "병원 원무과 발행 대기확약서와 390만 원 선수금 영수증이 같은 예약번호로 연결된다. 두 문서가 동일 건임을 확인할 수 있다.",
+        "check_metadata": "확약서 생성 시각은 이체 직후이며 보호자란에 도현 번호가 등록돼 있다. 선아 아닌 도현 단독 진행 확인.",
+        "restore_context": "병동 공석 시 즉시 입실 위한 대기 확보 문서로 사적 유용과 무관하다. 다만 선아 동의 없는 진행은 이 문서가 해결해주지 않는다.",
+        "verify_source": "병원 전산 시스템의 예약 기록과 원무주임 최서정의 구두 설명이 일치했다. 기관 내부 기록과 담당자 확인이 모두 이루어진 자료다.",
+        "check_edits": "전자문서 서명 검증 결과 발행 이후 수정 흔적이 없다. 원무과 시스템에서 직접 출력된 원본 상태다.",
+        "question_acquisition": "환자 보호자(도현)가 정당하게 발급받은 서류다. 보호자 자격으로 확보한 것이므로 절차상 문제는 없다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "도현의 비밀 간병 선수금 송금의 사실선을 고정하는 타이밍."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S3",
+            "multiplier": 1.3,
+            "note": "도현 송금은 사적 유용이었나에서 잘못된 해석을 되돌리는 창."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "선아가 캡처한 도현-최서정 메신저 일부",
+      "description": "'밤 10시 전에 다시 봐요'와 '자리 빼놓겠다'가 잡힌 캡처. 앞뒤 잘려 병동 재방문인지 사적 약속인지 단정 불가.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 대화가 아닌 스크린샷 일부만 존재한다. 두 문장이 보이지만 전후 맥락은 잘려 있다.",
+        "check_metadata": "캡처 생성 새벽 1시 12분. 도현이 잠든 사이 알림을 보고 저장했다. 대화 시각과 캡처 사이에 수 시간 간격.",
+        "restore_context": "'다시 봐요'가 재방문인지 사적 약속인지 캡처만으로 단정 불가. 발신자 직책과 병원 안내가 크롭으로 빠졌다.",
+        "verify_source": "도현 계정의 메신저 대화창에서 직접 캡처된 것으로 확인된다. 스크린샷 메타데이터와 도현 기기 정보가 일치한다.",
+        "check_edits": "합성·조작 없다. 다만 선택적 크롭으로 발신자 직책란과 상단 안내가 빠져 최서정이 원무주임이라는 맥락이 사라졌다.",
+        "question_acquisition": "잠든 배우자 휴대폰 무단 열람으로 캡처한 자료다. 부부 사이라 해도 사생활 침해 소지가 크다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.4,
+            "note": "도현 송금은 사적 유용이었나에서 부분 자료의 함정을 벗겨내는 분기점."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "간병보험금 지급결정서와 선아 개인계좌 입금내역",
+      "description": "보험사 지급결정서(930만 원)와 선아 계좌 입금 내역. 입금은 도현 송금 이틀 전. 보험금 존재를 확인하지만 비공개 의도는 없다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "보험사 지급결정서(지급번호·금액·사유)와 선아 계좌 입금내역이 같은 지급번호로 연결된다.",
+        "check_metadata": "입금은 도현 송금보다 이틀 전 오전 10시 21분이다. 선아가 먼저 돈을 확보하고도 알리지 않은 것.",
+        "restore_context": "간병·입원 특약 일시금으로 생활비가 아닌 의료비 완충 자금이다. 선아가 '쓴' 게 아니라 '옮긴' 것이므로 유용과 보관의 구분이 중요.",
+        "verify_source": "보험사 고객센터의 지급 이력과 은행 거래원장 양쪽 교차 확인으로 진위가 확보됐다.",
+        "check_edits": "보험사와 은행 모두 기관 시스템 발급 문서로 사후 편집 흔적이 없다.",
+        "question_acquisition": "보험수익자인 선아 본인이 적법하게 제출한 자료다. 어머니 의료정보가 간접적으로 포함돼 있어 범위 외 활용에는 주의가 필요하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "유선아에게: \"선아의 보험금 비밀 이전\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 유선아의 \"선아의 보험금 비밀 이전\" 쟁점과 관련된다. 유선아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "강도현에게: \"병원비 공황 — 단독인가 쌍방인가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 강도현의 \"병원비 공황 — 단독인가 쌍방인가\" 쟁점과 관련된다. 강도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "timeline"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "선아의 보험금 비밀 이전의 사실선을 고정하는 타이밍."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.3,
+            "note": "병원비 공황 — 단독인가 쌍방인가에서 잘못된 해석을 되돌리는 창."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "유성민 계좌 입금확인서와 남매 메신저",
+      "description": "선아→유성민 930만 원 이체확인서와 비공개 요청 남매 대화. 입금 43분 뒤 전액 이전, 비공개 의도를 동시에 보여준다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "선아→유성민 930만 원 이체확인서와 남매 메신저 원본 대화가 같은 시간대에 이어진다. 이체 직후 비공개 요청 메시지가 전송된 순서가 확인된다.",
+        "check_metadata": "보험금 입금 10:21, 유성민 이체 11:04 — 43분 간격. '도현한텐 나중에'라는 메시지가 직후 전송. 받자마자 옮긴 속도가 판단 핵심.",
+        "restore_context": "선아는 오빠 계좌를 '병원비 보관처'라 표현했다. 목적은 비축이었지만 보험금 수령 자체를 공유하지 않았다.",
+        "verify_source": "선아 측 출금 기록과 유성민 측 입금 기록이 거래원장에서 교차 확인되며, 메신저 백업의 시간대도 일치한다.",
+        "check_edits": "삭제 복원 흔적 일부 있다. 핵심 문장은 남아 있지만 삭제된 메시지에 맥락을 바꿀 내용이 있었을 가능성은 배제 불가.",
+        "question_acquisition": "대화 당사자인 유성민과 계좌명의자 본인의 동의를 거쳐 확인된 자료다. 남매 간 대화이므로 제3자 사생활 침해 소지는 적다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "유선아에게: \"선아의 보험금 비밀 이전\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 유선아의 \"선아의 보험금 비밀 이전\" 쟁점과 관련된다. 유선아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "강도현에게: \"병원비 공황 — 단독인가 쌍방인가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 강도현의 \"병원비 공황 — 단독인가 쌍방인가\" 쟁점과 관련된다. 강도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "timeline"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "선아의 보험금 비밀 이전의 사실선을 고정하는 타이밍."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.3,
+            "note": "병원비 공황 — 단독인가 쌍방인가에서 잘못된 해석을 되돌리는 창."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "2022년 채무상환 합의서와 후속 공개원칙 메모",
+      "description": "2022년 채무상환 합의서와 100만 원 이상 공유 메모. 양쪽 위반 기준선이 되며 핵심 문장은 변경 없이 유지됐다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "2022년 도현 아버지 채무상환 합의서 원본과, 사건 직후 부부가 메모앱에 작성한 공개원칙 메모의 백업본이 함께 제출됐다.",
+        "check_metadata": "공개원칙 메모는 채무상환 합의서 작성과 같은 주에 생성된 것으로 메모앱 기록에 남아 있다. 사건 직후의 감정과 결심이 반영된 시점이다.",
+        "restore_context": "두 사람은 '100만 원 이상은 같은 날 공유' 규칙을 세웠다. 이 규칙이 양쪽 모두의 위반 기준선이 된다.",
+        "verify_source": "채무상환 합의서는 채권자 확인서로 진위가 확인됐고, 공개원칙 메모는 메모앱 버전 이력에서 생성일과 수정 기록이 확인된다.",
+        "check_edits": "수정 이력이 있으나 '100만 원 이상 같은 날 공유' 문장은 최초 작성 시점부터 변경 없이 유지돼 있다.",
+        "question_acquisition": "도현 아버지 채무 관련 금융문서 포함이므로 현재 분쟁 해결 목적으로만 사용해야 한다. 제3자 공개 부적절."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "2022년 전력이 선아를 면책하나에서 잘못된 해석을 되돌리는 창."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:recipient_identity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "spouse09:a:d-1:admission:0",
+          "spouse09:a:d-1:responsibility:0",
+          "spouse09:b:d-1:admission:0",
+          "spouse09:b:d-1:context:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 특정인 이름부터 다시 단정하고 싶지 않습니다.",
+        "그 사람을 다시 지목하는 방식으로는 답하고 싶지 않아요."
+      ]
+    },
+    {
+      "id": "fq:d-2:insurance_route",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "spouse09:a:d-2:admission:0",
+          "spouse09:a:d-2:context:0",
+          "spouse09:b:d-2:admission:0",
+          "spouse09:b:d-2:responsibility:0"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "그 순서를 한 줄로 정리할 준비가 아직 안 됐습니다.",
+        "시점부터 다시 세워야 해서 지금은 바로 답하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:chat_context",
+      "intentTag": "authenticity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "spouse09:a:d-3:admission:0",
+          "spouse09:a:d-3:counter:1",
+          "spouse09:b:d-3:admission:0",
+          "spouse09:b:d-3:context:1"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "원본 맥락 없이 진짜냐부터 묻는 질문엔 신중히 답하겠습니다.",
+        "조각난 자료만 놓고 진위를 단정하는 방식엔 바로 답하지 않겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:legacy_rule",
+      "intentTag": "legality_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "spouse09:a:d-4:rule:0",
+          "spouse09:a:d-4:fear:1",
+          "spouse09:b:d-4:rule:0",
+          "spouse09:b:d-4:context:1"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "규칙 이야기만 먼저 꺼내면 제가 숨긴 감정이 또 빠집니다.",
+        "절차만으로는 다 설명되지 않아 지금은 답을 아끼겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:panic_causation",
+      "intentTag": "motive_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "spouse09:a:d-5:admission:0",
+          "spouse09:a:d-5:responsibility:0",
+          "spouse09:b:d-5:admission:0",
+          "spouse09:b:d-5:responsibility:0"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "의도부터 단정하는 질문에는 바로 답하고 싶지 않습니다.",
+        "왜 그랬는지 말하려면 감정선부터 정리해야 합니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:delayed_explanation",
+      "intentTag": "emotion_check",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "spouse09:a:d-1:admission:0",
+          "spouse09:a:d-1:responsibility:0",
+          "spouse09:b:d-1:admission:0",
+          "spouse09:b:d-1:context:0"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 감정은 아직 그대로 말하기 어렵습니다.",
+        "그 부분은 지금 꺼내면 말이 무너질 것 같습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  }
+} as const;

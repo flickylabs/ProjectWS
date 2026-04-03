@@ -1,0 +1,109 @@
+{
+  "cases": {
+    "spouse-05": {
+      "structureFile": "spouse-05-structure-v2.json",
+      "beatsFile": "spouse-05-beats-v2-full.json",
+      "disputeCount": 5,
+      "linkEdgeCount": 4,
+      "freeQuestionHookCount": 7,
+      "beatCount": 54,
+      "interjectionCount": 12,
+      "interjectionDistribution": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 4
+      },
+      "checks": {
+        "aliases_4_to_8": true,
+        "depth_layers_3_each": true,
+        "link_edges_3_to_5": true,
+        "free_hooks_6_to_8": true,
+        "evidence_timing_present": true,
+        "beat_count_50_to_74": true,
+        "interjections_12": true,
+        "coverage_matrix_core": true,
+        "ids_unique": true
+      }
+    },
+    "spouse-06": {
+      "structureFile": "spouse-06-structure-v2.json",
+      "beatsFile": "spouse-06-beats-v2-full.json",
+      "disputeCount": 5,
+      "linkEdgeCount": 4,
+      "freeQuestionHookCount": 7,
+      "beatCount": 54,
+      "interjectionCount": 12,
+      "interjectionDistribution": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 4
+      },
+      "checks": {
+        "aliases_4_to_8": true,
+        "depth_layers_3_each": true,
+        "link_edges_3_to_5": true,
+        "free_hooks_6_to_8": true,
+        "evidence_timing_present": true,
+        "beat_count_50_to_74": true,
+        "interjections_12": true,
+        "coverage_matrix_core": true,
+        "ids_unique": true
+      }
+    },
+    "spouse-07": {
+      "structureFile": "spouse-07-structure-v2.json",
+      "beatsFile": "spouse-07-beats-v2-full.json",
+      "disputeCount": 5,
+      "linkEdgeCount": 4,
+      "freeQuestionHookCount": 7,
+      "beatCount": 54,
+      "interjectionCount": 12,
+      "interjectionDistribution": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 4
+      },
+      "checks": {
+        "aliases_4_to_8": true,
+        "depth_layers_3_each": true,
+        "link_edges_3_to_5": true,
+        "free_hooks_6_to_8": true,
+        "evidence_timing_present": true,
+        "beat_count_50_to_74": true,
+        "interjections_12": true,
+        "coverage_matrix_core": true,
+        "ids_unique": true
+      }
+    },
+    "spouse-08": {
+      "structureFile": "spouse-08-structure-v2.json",
+      "beatsFile": "spouse-08-beats-v2-full.json",
+      "disputeCount": 5,
+      "linkEdgeCount": 4,
+      "freeQuestionHookCount": 7,
+      "beatCount": 54,
+      "interjectionCount": 12,
+      "interjectionDistribution": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 4
+      },
+      "checks": {
+        "aliases_4_to_8": true,
+        "depth_layers_3_each": true,
+        "link_edges_3_to_5": true,
+        "free_hooks_6_to_8": true,
+        "evidence_timing_present": true,
+        "beat_count_50_to_74": true,
+        "interjections_12": true,
+        "coverage_matrix_core": true,
+        "ids_unique": true
+      }
+    }
+  },
+  "overall": {
+    "caseCount": 4,
+    "filesGenerated": 16,
+    "allChecksPass": true
+  }
+}

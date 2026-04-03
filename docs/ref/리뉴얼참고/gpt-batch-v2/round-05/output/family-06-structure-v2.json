@@ -1,0 +1,1179 @@
+{
+  "caseId": "family-06",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "하준의 식별 가능한 가족 저격 게시물",
+      "truth": true,
+      "truthDescription": "하준은 실명을 쓰지 않았지만 영정사진 일부, 동네 체육관 태그, 가족이 알아볼 문장을 묶어 선영과 집안을 충분히 특정 가능한 게시물을 올렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "가족경계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "하준은 가족을 특정 가능한 게시물을 올렸다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "영정사진",
+        "체육관 태그",
+        "쓰레드",
+        "인스타 스토리",
+        "가족 추정 댓글",
+        "식별 게시물"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "하준의 식별 가능한 가족 저격 게시물",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family06:b:d-1:s0:claim:0",
+            "family06:a:d-1:s0:claim:0",
+            "family06:b:d-1:s1:claim:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "하준의 식별 가능한 가족 저격 게시물 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family06:b:d-1:s3:claim:0",
+            "family06:a:d-1:s3:claim:0",
+            "family06:b:d-1:s4:claim:0",
+            "family06:b:d-1:s3:claim:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "하준은 실명을 쓰지 않았지만 영정사진 일부, 동네 체육관 태그, 가족이 알아볼 문장을 묶어 선영과 집안을 충분히 특정 가능한 게시물을 올렸다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family06:b:d-1:s5:claim:0",
+            "family06:a:d-1:s5:claim:0",
+            "family06:b:d-1:s5:claim:1",
+            "family06:b:d-1:s4:claim:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "선영의 협찬처·친척방 비난 연락",
+      "truth": true,
+      "truthDescription": "선영은 하준의 게시물 캡처를 협찬사와 친척·교회 소모임에 보내며, 아들이 과거 일을 팔아 관심을 끈다는 취지로 비난했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "명예회복",
+      "legitimacyIssue": true,
+      "judgmentStatement": "선영은 하준을 비난했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "협찬사 DM",
+        "친척 단톡",
+        "교회 소모임",
+        "과거에도 문제",
+        "경고 연락",
+        "비난 메시지"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "선영의 협찬처·친척방 비난 연락",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family06:a:d-2:s0:claim:0",
+            "family06:b:d-2:s0:claim:0",
+            "family06:a:d-2:s1:claim:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "선영의 협찬처·친척방 비난 연락 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family06:a:d-2:s3:claim:0",
+            "family06:b:d-2:s3:claim:0",
+            "family06:a:d-2:s4:claim:0",
+            "family06:a:d-2:s3:claim:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "선영은 하준의 게시물 캡처를 협찬사와 친척·교회 소모임에 보내며, 아들이 과거 일을 팔아 관심을 끈다는 취지로 비난했다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family06:a:d-2:s5:claim:0",
+            "family06:b:d-2:s5:claim:0",
+            "family06:a:d-2:s5:claim:1",
+            "family06:a:d-2:s4:claim:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "과거 가정사 문서 유출의 실제 배후",
+      "truth": true,
+      "truthDescription": "맘카페와 협찬처에 돌던 2014년 쉼터·채무조정 서류의 실질적 유출 출발점은 하준이나 선영이 아니라, 옛 스캔 백업을 갖고 있던 외삼촌 병철의 게스트계정 사용이었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-3",
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "온라인확산차단",
+      "legitimacyIssue": true,
+      "judgmentStatement": "유출의 배후는 외삼촌 병철이다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "맘카페 PDF",
+        "게스트계정",
+        "USB 동기화",
+        "쉼터 서류",
+        "채무조정",
+        "오병철",
+        "익명 메일"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "과거 가정사 문서 유출의 실제 배후",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family06:b:d-3:s0:claim:0",
+            "family06:a:d-3:s0:claim:0",
+            "family06:b:d-3:s1:claim:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "과거 가정사 문서 유출의 실제 배후 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family06:b:d-3:s3:claim:0",
+            "family06:a:d-3:s3:claim:0",
+            "family06:b:d-3:s4:claim:0",
+            "family06:b:d-3:s3:claim:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "맘카페와 협찬처에 돌던 2014년 쉼터·채무조정 서류의 실질적 유출 출발점은 하준이나 선영이 아니라, 옛 스캔 백업을 갖고 있던 외삼촌 병철의 게스트계정 사용이었다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:trap_context_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "family06:b:d-3:s5:claim:0",
+            "family06:a:d-3:s5:claim:0",
+            "family06:b:d-3:s5:claim:1",
+            "family06:b:d-3:s4:claim:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "잘린 맘카페 캡처",
+          "익명 PDF 헤더 부재",
+          "하준 게시물 인용처럼 보이는 문장"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-5"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "과거 기록 비무기화 약속의 파기",
+      "truth": true,
+      "truthDescription": "두 사람은 2014년 기록을 새 갈등에 쓰지 않기로 했지만, 하준은 게시물에서 빚과 쉼터 기억을 공개적으로 암시했고 선영은 협찬사와 친척들에게 하준의 예전 문제행동과 휴학기를 끌어와 약속을 깼다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거청산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "하준과 선영은 약속을 깨트렸다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "비무기화 약속",
+        "2014년 기록",
+        "휴학기",
+        "예전 문제행동",
+        "쉼터 얘기",
+        "빚 얘기"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "과거 기록 비무기화 약속의 파기",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family06:a:d-4:s0:claim:0",
+            "family06:b:d-4:s0:claim:0",
+            "family06:a:d-4:s1:claim:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "과거 기록 비무기화 약속의 파기 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family06:a:d-4:s3:claim:0",
+            "family06:b:d-4:s3:claim:0",
+            "family06:a:d-4:s4:claim:0",
+            "family06:a:d-4:s3:claim:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "두 사람은 2014년 기록을 새 갈등에 쓰지 않기로 했지만, 하준은 게시물에서 빚과 쉼터 기억을 공개적으로 암시했고 선영은 협찬사와 친척들에게 하준의 예전 문제행동과 휴학기를 끌어와 약속을 깼다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family06:a:d-4:s5:claim:0",
+            "family06:b:d-4:s5:claim:0",
+            "family06:a:d-4:s5:claim:1",
+            "family06:a:d-4:s4:claim:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "협찬 중단의 실제 원인",
+      "truth": true,
+      "truthDescription": "협찬 중단의 직접 원인은 하준의 첫 게시물만이 아니라, 선영의 경고 연락과 곧이어 도착한 익명 PDF 제보가 겹쳐 브랜드가 분쟁 리스크를 크게 본 데 있었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 65,
+        "b": 35
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "명예회복",
+      "legitimacyIssue": false,
+      "judgmentStatement": "협찬 중단 원인은 경고와 제보이다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "협찬 중단",
+        "브랜드 리스크",
+        "경고 연락",
+        "익명 PDF",
+        "첫 게시물",
+        "중단 메모"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "협찬 중단의 실제 원인",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family06:a:d-5:s0:claim:0",
+            "family06:b:d-5:s0:claim:0",
+            "family06:a:d-5:s1:claim:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "협찬 중단의 실제 원인 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family06:a:d-5:s3:claim:0",
+            "family06:b:d-5:s3:claim:0",
+            "family06:a:d-5:s4:claim:0",
+            "family06:a:d-5:s3:claim:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "협찬 중단의 직접 원인은 하준의 첫 게시물만이 아니라, 선영의 경고 연락과 곧이어 도착한 익명 PDF 제보가 겹쳐 브랜드가 분쟁 리스크를 크게 본 데 있었다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:context_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family06:a:d-5:s5:claim:0",
+            "family06:b:d-5:s5:claim:0",
+            "family06:a:d-5:s5:claim:1",
+            "family06:a:d-5:s4:claim:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "첫 게시물만 원인으로 환원",
+          "브랜드 내부 리스크 평가 누락",
+          "경고 연락과 제보의 중첩 무시"
+        ],
+        "truthExitEvidenceIds": [
+          "e-2",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "하준의 쓰레드·인스타 스토리 원본과 게시 통계",
+      "description": "하준이 올린 게시물 원본과 조회·저장 통계로, 실명은 없지만 지역과 가족을 짐작할 수 있는 단서가 여럿 남아 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "게시물 원본과 삭제 전 스토리 아카이브가 함께 제출됐다.",
+        "check_metadata": "영정사진 일부와 동네 체육관 위치 태그가 같은 게시물 묶음 안에서 연속으로 노출됐다.",
+        "restore_context": "하준은 실명 언급이 없었다고 하지만, 댓글 반응에는 가족을 특정한 추정이 빠르게 붙기 시작한다.",
+        "verify_source": "플랫폼 내보내기 파일과 하준 휴대폰 스크린 기록 시간이 일치했다.",
+        "check_edits": "원본 아카이브라 자르기 흔적은 없지만, 후속 게시물 일부는 수정을 거쳤다.",
+        "question_acquisition": "본인 계정 자료라 제출은 적법하나 제3자 댓글과 계정명은 비식별 처리돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오선영에게: \"과거 기록 비무기화 약속의 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 오선영의 \"과거 기록 비무기화 약속의 파기\" 쟁점과 관련된다. 오선영은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "임하준에게: \"하준의 식별 가능한 가족 저격 게시물\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 임하준의 \"하준의 식별 가능한 가족 저격 게시물\" 쟁점과 관련된다. 임하준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "하준의 식별 가능한 가족 저격 게시물의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "과거 기록 비무기화 약속의 파기의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "선영의 협찬사 DM·친척 단톡·교회 소모임 메시지",
+      "description": "선영이 하준의 게시물 캡처를 보내며 아들의 말을 신뢰하지 말라는 취지로 적은 DM과 단톡 원본이다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "캡처가 아니라 대화 내보내기 파일과 협찬사 수신 DM 원본이 함께 확인됐다.",
+        "check_metadata": "선영의 첫 경고 메시지는 익명 PDF가 도착하기 38분 전에 이미 발송돼 있다.",
+        "restore_context": "선영은 상담을 구한 것뿐이라 했지만, 문장에는 '과거에도 문제를 만들었다'는 평가 문구가 반복된다.",
+        "verify_source": "메신저 원본과 협찬사 수신함 시간이 서로 맞아떨어졌다.",
+        "check_edits": "원본 내보내기라 선택적 삭제 흔적은 없고, 일부 이모티콘만 자동 변환됐다.",
+        "question_acquisition": "협찬 담당자와 친척이 포함된 메시지라 분쟁 외 용도로 돌리면 사생활 침해 문제가 크다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오선영에게: \"선영의 협찬처·친척방 비난 연락\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오선영의 \"선영의 협찬처·친척방 비난 연락\" 쟁점과 관련된다. 오선영은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "임하준에게: \"과거 기록 비무기화 약속의 파기\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 임하준의 \"과거 기록 비무기화 약속의 파기\" 쟁점과 관련된다. 임하준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "선영의 협찬처·친척방 비난 연락의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "과거 기록 비무기화 약속의 파기의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "맘카페 익명글 캡처와 첨부 PDF 묶음",
+      "description": "지역 맘카페에 올라온 익명글 캡처와 함께 돌던 PDF 묶음으로, 처음 보면 하준이나 그의 연인이 직접 퍼뜨린 것처럼 보인다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "초기에는 캡처본만 있었고 작성자 헤더와 업로드 경로는 보이지 않았다.",
+        "check_metadata": "PDF 파일명은 일반적인 스캔명으로 남아 있어 발신자를 바로 특정할 수 없었다.",
+        "restore_context": "게시물 본문은 하준 게시물을 인용하는 듯 보여 그가 직접 흘린 것처럼 읽히지만, 세부 문서 출처는 드러나지 않는다.",
+        "verify_source": "캡처가 여러 이용자에게서 동일하게 수집돼 게시물 존재 자체는 확인됐다.",
+        "check_edits": "헤더와 댓글 상단이 잘려 있어 작성자 식별에 필요한 정보가 빠져 있다.",
+        "question_acquisition": "과거 쉼터와 채무조정 문서가 포함돼 있어 민감정보 유출 문제가 크다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오선영에게: \"협찬 중단의 실제 원인\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 오선영의 \"협찬 중단의 실제 원인\" 쟁점과 관련된다. 오선영은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "임하준에게: \"과거 가정사 문서 유출의 실제 배후\" 관련 해명 요구 (방어 동기: 제3자 보호)",
+          "implication": "이 증거는 임하준의 \"과거 가정사 문서 유출의 실제 배후\" 쟁점과 관련된다. 임하준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S3",
+            "multiplier": 1.2,
+            "note": "과거 가정사 문서 유출의 실제 배후의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.2,
+            "note": "협찬 중단의 실제 원인의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "익명 메일 헤더와 교회 사무실 게스트계정 접속로그",
+      "description": "협찬사와 맘카페 운영진에게 간 익명 메일의 원본 헤더와, 교회 사무실 게스트계정으로 대용량 파일이 전송된 접속로그다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "메일 헤더 원본과 게스트계정 발신 로그가 기관 확인 하에 제출됐다.",
+        "check_metadata": "전송 시각은 하준 게시물 업로드 3시간 뒤이며, 교회 사무실 PC의 외부 저장장치 연결 기록과 겹친다.",
+        "restore_context": "겉으로는 익명 메일이지만, 발신 직전 게스트계정에 저장된 PDF 묶음 경로가 확인돼 내부 반출 정황이 드러난다.",
+        "verify_source": "협찬사 메일 서버와 교회 사무실 로그의 IP 정보가 서로 일치했다.",
+        "check_edits": "서버 원본이라 편집 흔적이 없고, 헤더 누락도 없다.",
+        "question_acquisition": "기관이 비식별 처리 후 제공한 로그라 적법하나, 종교기관 내부 계정 정보는 목적 외 사용을 제한해야 한다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "과거 가정사 문서 유출의 실제 배후의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "2014년 서류 스캔 백업과 외삼촌 USB 동기화 기록",
+      "description": "병철이 예전에 보관하던 2014년 쉼터·채무조정 서류 스캔 백업과, 최근 해당 폴더가 USB로 동기화된 기록이다.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "오래된 가족 PC 백업본과 USB 동기화 로그를 원본 경로까지 열어 확인했다.",
+        "check_metadata": "문제가 된 폴더는 병철 계정에서 최근 다시 열렸고, 익명 메일 발송 직전 USB 연결 시각과 맞물린다.",
+        "restore_context": "하준이나 선영 개인 단말의 최근 열람 흔적은 없고, 오래된 서류 접근 권한은 병철 쪽에 더 가깝다.",
+        "verify_source": "백업 해시값과 USB 복사 로그가 디지털권익상담관 보고서와 일치했다.",
+        "check_edits": "파일 자체 편집은 없지만, 묶음 복사와 재압축 흔적은 분명하다.",
+        "question_acquisition": "과거 쉼터·채무조정 자료라 민감정보성이 매우 높고, 분쟁 해결 범위 외 활용은 엄격히 제한돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오선영에게: \"과거 기록 비무기화 약속의 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 오선영의 \"과거 기록 비무기화 약속의 파기\" 쟁점과 관련된다. 오선영은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "임하준에게: \"과거 가정사 문서 유출의 실제 배후\" 관련 해명 요구 (방어 동기: 제3자 보호)",
+          "implication": "이 증거는 임하준의 \"과거 가정사 문서 유출의 실제 배후\" 쟁점과 관련된다. 임하준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "과거 가정사 문서 유출의 실제 배후의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "과거 기록 비무기화 약속의 파기의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "협찬사 내부 중단 메모와 상담센터 통화 확인서",
+      "description": "협찬사가 협업을 잠정 중단하며 남긴 내부 메모와, 담당자가 상담센터에 설명한 통화 확인서다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "협찬사 내부 메모 원본과 상담센터 제출용 확인서가 함께 나왔다.",
+        "check_metadata": "잠정 중단 결정은 하준의 첫 게시물 직후가 아니라, 선영의 전화와 익명 PDF 수신이 모두 끝난 뒤 찍혀 있다.",
+        "restore_context": "브랜드는 단순 SNS 논란보다 가족 내부 고발이 문서로 번지는 상황을 더 큰 리스크로 평가했다.",
+        "verify_source": "협찬사 담당자 진술과 문서 작성 시각이 상담센터 기록과 일치한다.",
+        "check_edits": "기관·기업 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "민간 기업의 내부 판단 자료이므로 분쟁 해결 목적 외 공개는 제한돼야 한다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "협찬 중단의 실제 원인의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-2:retaliation",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-2",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-2:surface:counter_broadcast_enabled"
+      },
+      "uiLabel": "공개 저격의 역반응"
+    },
+    {
+      "id": "link:d-2:d-5:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 13,
+        "grantFlag": "d-5:surface:family_risk_signal"
+      },
+      "uiLabel": "브랜드 리스크 확산"
+    },
+    {
+      "id": "link:d-3:d-5:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-5",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "counterPenalty": 11,
+        "grantFlag": "d-5:motive:pdf_origin_split"
+      },
+      "uiLabel": "익명 PDF 출처 분리"
+    },
+    {
+      "id": "link:d-4:d-2:supports",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-2",
+      "type": "supports",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-2:core:past_weaponized"
+      },
+      "uiLabel": "비무기화 약속 붕괴"
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:identifiable_bundle",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "family06:b:d-1:s2:claim:0",
+          "family06:b:d-1:s3:claim:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "그 묶음 전체는 다시 말하고 싶지 않습니다.",
+        "식별 얘기까지는 지금 바로 인정하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:broadcast_scope",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "family06:a:d-2:s2:claim:0",
+          "family06:a:d-2:s5:claim:0"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "어디까지 돌렸는지는 지금 정리해서 말하기 어렵네요.",
+        "그 순서를 말하면 또 다른 사람 이름까지 나옵니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:pdf_origin",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "family06:a:d-3:s2:claim:0",
+          "family06:a:d-3:s5:claim:0",
+          "family06:b:d-3:s2:claim:0"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "출처 얘기는 지금도 제일 조심스러운 부분입니다.",
+        "그 경로를 다시 풀면 또 가족이 다 엮입니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:past_weapon_rule",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "family06:a:d-4:s3:claim:0",
+          "family06:a:d-4:s5:claim:0",
+          "family06:b:d-4:s3:claim:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 약속은 기억나지만 지금은 딱 잘라 말하기 어렵습니다.",
+        "어디까지가 금지였는지는 다시 꺼내기 싫습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:brand_stop_cause",
+      "intentTag": "cause_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "family06:a:d-5:s3:claim:0",
+          "family06:a:d-5:s5:claim:0",
+          "family06:b:d-5:s3:claim:0"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "브랜드 판단 얘기는 들을 때마다 숨이 막힙니다.",
+        "중단 원인을 지금 다시 입에 올리기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:repair_after_sponsor",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "family06:a:d-5:s4:claim:0",
+          "family06:a:d-5:s5:claim:0",
+          "family06:b:d-5:s4:claim:0"
+        ],
+        "preferredAngleTags": [
+          "emotion",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "회복 얘기까지는 아직 감정이 안 가라앉았습니다.",
+        "지금은 사과나 복구보다 상처가 먼저 떠오릅니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-2"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+}

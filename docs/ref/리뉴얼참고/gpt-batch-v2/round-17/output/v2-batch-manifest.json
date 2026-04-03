@@ -1,0 +1,52 @@
+{
+  "generated": [
+    {
+      "caseId": "tenant-05",
+      "structureJson": "tenant-05-structure-v2.json",
+      "beatsJson": "tenant-05-beats-v2-full.json",
+      "structureTs": "tenant-05-structure-v2.ts",
+      "beatsTs": "tenant-05-beats-v2-full.ts",
+      "totalBeats": 50,
+      "interjections": 12,
+      "fatigue": 6,
+      "freeQuestionHooks": 6,
+      "linkEdges": 4
+    },
+    {
+      "caseId": "tenant-06",
+      "structureJson": "tenant-06-structure-v2.json",
+      "beatsJson": "tenant-06-beats-v2-full.json",
+      "structureTs": "tenant-06-structure-v2.ts",
+      "beatsTs": "tenant-06-beats-v2-full.ts",
+      "totalBeats": 53,
+      "interjections": 12,
+      "fatigue": 6,
+      "freeQuestionHooks": 6,
+      "linkEdges": 4
+    },
+    {
+      "caseId": "tenant-07",
+      "structureJson": "tenant-07-structure-v2.json",
+      "beatsJson": "tenant-07-beats-v2-full.json",
+      "structureTs": "tenant-07-structure-v2.ts",
+      "beatsTs": "tenant-07-beats-v2-full.ts",
+      "totalBeats": 51,
+      "interjections": 12,
+      "fatigue": 6,
+      "freeQuestionHooks": 6,
+      "linkEdges": 4
+    },
+    {
+      "caseId": "tenant-08",
+      "structureJson": "tenant-08-structure-v2.json",
+      "beatsJson": "tenant-08-beats-v2-full.json",
+      "structureTs": "tenant-08-structure-v2.ts",
+      "beatsTs": "tenant-08-beats-v2-full.ts",
+      "totalBeats": 50,
+      "interjections": 12,
+      "fatigue": 6,
+      "freeQuestionHooks": 6,
+      "linkEdges": 4
+    }
+  ]
+}

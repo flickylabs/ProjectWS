@@ -1,0 +1,1736 @@
+{
+  "caseId": "partnership-11",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "재원의 공동 승인 없는 신규 지점 계약",
+      "truth": true,
+      "truthDescription": "재원은 아린의 최종 동의 없이 본법인 명의로 성수 위성매장 6개월 임대차계약을 체결하고 보증금 일부를 집행했다.",
+      "quadrant": "a_only",
+      "weight": "high",
+      "mediationLink": "확장권한재배치",
+      "legitimacyIssue": false,
+      "judgmentStatement": "재원은 아린 동의 없이 계약했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "성수 위성매장",
+        "6개월 임대차",
+        "보증금 1500만원",
+        "본법인 명의",
+        "hold 마감",
+        "단독 계약"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "재원의 공동 승인 없는 신규 지점 계약의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-11:a:d-1:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-11:a:d-1:unlock:s3:0",
+            "partnership-11:a:d-1:unlock:s4:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "재원은 아린의 최종 동의 없이 본법인 명의로 성수 위성매장 6개월 임대차계약을 체결하고 보증금 일부를 집행했다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-11:a:d-1:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "아린의 별도 법인 설립과 거래처 이전 준비",
+      "truth": true,
+      "truthDescription": "아린은 자신이 피해자라고 말하기 전 이미 아린셀렉트F&B를 설립하고 두 핵심 도매처에 공급 전환 견적과 미팅 제안을 보냈다.",
+      "quadrant": "b_only",
+      "weight": "high",
+      "mediationLink": "경업·거래처정리",
+      "legitimacyIssue": true,
+      "judgmentStatement": "아린은 법인을 설립했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "아린셀렉트F&B",
+        "별도 법인",
+        "거래처 전환",
+        "견적서",
+        "미팅 제안",
+        "19일 전"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "아린의 별도 법인 설립과 거래처 이전 준비의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-11:b:d-2:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-11:b:d-2:unlock:s3:0",
+            "partnership-11:b:d-2:unlock:s4:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "아린은 자신이 피해자라고 말하기 전 이미 아린셀렉트F&B를 설립하고 두 핵심 도매처에 공급 전환 견적과 미팅 제안을 보냈다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-11:b:d-2:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "아린은 일방적 확장 침해의 순수한 피해자였는가",
+      "truth": false,
+      "truthDescription": "재원의 단독 지점 계약은 실제였지만, 아린 역시 그보다 먼저 별도 법인과 거래처 분리를 준비하고 있었기 때문에 현재 갈등을 순수한 피해자 대 가해자로만 설명할 수는 없다.",
+      "quadrant": "shared_misconception",
+      "weight": "high",
+      "mediationLink": "신뢰회복",
+      "legitimacyIssue": true,
+      "judgmentStatement": "아린은 순수한 피해자가 아니다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "순수 피해자",
+        "확장 침해",
+        "공동 기회 사유화",
+        "백업 구조",
+        "지점 계약 공개 전",
+        "선행 준비"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "아린은 일방적 확장 침해의 순수한 피해자였는가의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-11:a:d-3:unlock:s2:0",
+            "partnership-11:b:d-3:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-11:a:d-3:unlock:s3:0",
+            "partnership-11:a:d-3:unlock:s4:0",
+            "partnership-11:b:d-3:unlock:s3:0",
+            "partnership-11:b:d-3:unlock:s4:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "재원의 단독 지점 계약은 실제였지만, 아린 역시 그보다 먼저 별도 법인과 거래처 분리를 준비하고 있었기 때문에 현재 갈등을 순수한 피해자 대 가해자로만 설명할 수는 없다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:misbelief_shaken"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-11:a:d-3:unlock:s5:0",
+            "partnership-11:b:d-3:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "suspects",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심이 먼저 붙는 단계",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "자기 해석을 붙잡고 방어하는 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘린 자료나 오해가 굳어지는 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "원문과 경로가 나오며 확신이 흔들리는 단계",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 경로가 정리되고 사실이 재배열되는 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "다음 달부터 새 법인으로 보자는 크롭 DM",
+          "성수 계약서와 POS 개통 화면만 먼저 묶인 장면",
+          "견적·미팅 제안 전체 맥락이 빠진 거래처 전환 캡처"
+        ],
+        "truthExitEvidenceIds": [
+          "e-1",
+          "e-4"
+        ],
+        "clarifyOutcomeLabel": "오해 경로가 정리되고 사실이 재배열되는 단계"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "공동 기회 조항의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 신규 지점과 같은 카테고리의 별도 법인을 모두 공동 기회로 다루기로 해놓고도, 재원은 지점을 단독 계약하고 아린은 별도 법인과 거래처 전환을 따로 준비하며 같은 합의를 함께 무너뜨렸다.",
+      "quadrant": "both_know",
+      "weight": "medium",
+      "mediationLink": "과거합의복원",
+      "legitimacyIssue": false,
+      "judgmentStatement": "아린은 공동 기회를 위반했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "공동기회 부속합의서",
+        "확장 승인 시트",
+        "서면 승인 전 집행 금지",
+        "우선 검토권",
+        "거래처 이전 시트",
+        "쌍방 위반"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "공동 기회 조항의 쌍방 위반의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-11:b:d-4:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              },
+              {
+                "id": "d-4",
+                "minState": "S1"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-11:b:d-4:unlock:s3:0",
+            "partnership-11:b:d-4:unlock:s4:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "두 사람은 신규 지점과 같은 카테고리의 별도 법인을 모두 공동 기회로 다루기로 해놓고도, 재원은 지점을 단독 계약하고 아린은 별도 법인과 거래처 전환을 따로 준비하며 같은 합의를 함께 무너뜨렸다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:record_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-11:b:d-4:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "핵심 거래처 이전과 단독 지점 운영은 기존 계약상 그대로 실행 불가능했다",
+      "truth": true,
+      "truthDescription": "주요 도매 계약과 상표사용 구조상 기존 법인 동의 없이 별도 법인으로 거래를 이전하거나 동일 브랜드로 지점을 단독 운영하면 위약과 상표 분쟁이 동시에 발생하는 구조였다.",
+      "quadrant": "neither_knows",
+      "weight": "medium",
+      "mediationLink": "경업·거래처정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "거래처 이전은 위약에 해당한다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "도매 독점공급계약",
+        "상표사용 법률의견서",
+        "위약",
+        "동일 브랜드",
+        "실행 불가능",
+        "단독 운영"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "핵심 거래처 이전과 단독 지점 운영은 기존 계약상 그대로 실행 불가능했다의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-11:a:d-5:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-11:a:d-5:unlock:s3:0",
+            "partnership-11:a:d-5:unlock:s4:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "주요 도매 계약과 상표사용 구조상 기존 법인 동의 없이 별도 법인으로 거래를 이전하거나 동일 브랜드로 지점을 단독 운영하면 위약과 상표 분쟁이 동시에 발생하는 구조였다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:risk_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-11:a:d-5:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "성수 위성매장 임대차계약서와 보증금 이체내역",
+      "description": "재원이 본법인 명의로 성수 위성매장 6개월 임대차계약을 체결하고 보증금 1,500만원을 이체한 계약서와 이체내역이다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "임대차계약 원본, 전자서명 페이지, 보증금 이체확인서가 함께 확보됐다.",
+        "check_metadata": "계약 체결 시각은 아린에게 내일 다시 보자고 말한 뒤 2시간 후이며, 서명자는 재원 계정으로만 남아 있다.",
+        "restore_context": "재원은 점포 hold 마감이 급했다고 주장하지만, 공동 결재 흔적 없이 본법인 자금이 먼저 집행됐다.",
+        "verify_source": "건물주 측 서명본과 회사 발신 메일, 은행 이체번호가 서로 일치한다.",
+        "check_edits": "전자서명 검증 결과 후편집 흔적이 없다.",
+        "question_acquisition": "본법인 계약과 법인계좌 자료라 분쟁 해결 목적 확보는 적법하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "김재원에게: \"재원의 공동 승인 없는 신규 지점 계약\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 김재원의 \"재원의 공동 승인 없는 신규 지점 계약\" 쟁점과 관련된다. 김재원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "정아린에게: \"아린은 일방적 확장 침해의 순수한 피해자였는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 정아린의 \"아린은 일방적 확장 침해의 순수한 피해자였는가\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "재원은 점포 hold 마감이 급했다고 주장하지만, 공동 결재 흔적 없이 본법인 자금이 먼저 집행됐다."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "재원은 점포 hold 마감이 급했다고 주장하지만, 공동 결재 흔적 없이 본법인 자금이 먼저 집행됐다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "2024 공동기회 부속합의서와 확장 승인 시트",
+      "description": "팝업 손실 이후 신규 지점, 팝업, 별도 법인을 모두 공동 기회로 보자고 적은 부속합의서와 확장 승인 체크 시트다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "전자서명된 부속합의서와 노션 승인 시트 원본이 함께 확보됐다.",
+        "check_metadata": "마지막 열람자는 두 대표 모두로 찍혀 있고, 지점과 별도 법인을 같은 표 안에서 관리하도록 설계돼 있다.",
+        "restore_context": "예외적 현장 판단 조항은 없고, 먼저 제안한 사람이 우선 검토권을 갖더라도 최종 서면 승인 전 집행은 금지돼 있다.",
+        "verify_source": "전자서명 검증과 노션 활동 로그가 서로 일치한다.",
+        "check_edits": "버전 기록상 삭제나 조작 흔적이 없다.",
+        "question_acquisition": "회사 내부 의사결정 문서라 적법하게 확보됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "김재원에게: \"재원의 공동 승인 없는 신규 지점 계약\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 김재원의 \"재원의 공동 승인 없는 신규 지점 계약\" 쟁점과 관련된다. 김재원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "정아린에게: \"공동 기회 조항의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 정아린의 \"공동 기회 조항의 쌍방 위반\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "예외적 현장 판단 조항은 없고, 먼저 제안한 사람이 우선 검토권을 갖더라도 최종 서면 승인 전 집행은 금지돼 있다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "예외적 현장 판단 조항은 없고, 먼저 제안한 사람이 우선 검토권을 갖더라도 최종 서면 승인 전 집행은 금지돼 있다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "크롭된 거래처 DM 캡처",
+      "description": "아린이 핵심 거래처 MD에게 다음 달부터는 새 법인으로 보자는 대목만 남은 캡처로, 실제 전환 확정인지 아이디어 탐색인지는 앞뒤 맥락이 잘려 있다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 DM 내보내기는 없고 화면 캡처 한 장만 먼저 제출됐다.",
+        "check_metadata": "캡처 저장 시각은 재원이 지점 계약을 공개하기 이틀 전이며, 이미지 상하단이 모두 잘려 있다.",
+        "restore_context": "이 한 문장만으로는 실제 거래처 이전 확정인지, 세무 구조 상담인지 구분하기 어렵다.",
+        "verify_source": "아린 계정 대화 화면은 맞지만 원본 전문과 파일 전송 내역은 빠져 있다.",
+        "check_edits": "문자열 조작 흔적은 없으나 선택적 크롭과 강조 표시가 명확하다.",
+        "question_acquisition": "개인 기기 캡처와 거래처 대화라 사생활 및 영업비밀 보호 이슈가 있다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "김재원에게: \"아린은 일방적 확장 침해의 순수한 피해자였는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 김재원의 \"아린은 일방적 확장 침해의 순수한 피해자였는가\" 쟁점과 관련된다. 김재원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "정아린에게: \"아린의 별도 법인 설립과 거래처 이전 준비\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 정아린의 \"아린의 별도 법인 설립과 거래처 이전 준비\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "이 한 문장만으로는 실제 거래처 이전 확정인지, 세무 구조 상담인지 구분하기 어렵다."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "이 한 문장만으로는 실제 거래처 이전 확정인지, 세무 구조 상담인지 구분하기 어렵다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "별도 법인 등기부와 거래처 전환 제안 메일",
+      "description": "아린셀렉트F&B 법인 등기부, 도매 전환 견적서, 기존 거래처 MD들에게 보낸 미팅 제안 메일 원본이다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "법인 등기부 원본, 거래처별 견적서 PDF, 발신 메일 헤더가 함께 확보됐다.",
+        "check_metadata": "법인 설립일은 e-1의 지점 계약일보다 19일 빠르고, 두 거래처 전환 제안 메일은 재원의 지점 계약 공개 전주에 발송됐다.",
+        "restore_context": "아린은 세무 테스트라고 설명했지만, 견적서, 납품 일정표, 미팅 제안까지 포함돼 실제 거래 전환 준비 수준이었다.",
+        "verify_source": "법원 등기번호, 메일 헤더, 거래처 수신 확인 시각이 서로 맞아떨어진다.",
+        "check_edits": "등기부와 원본 메일에 후편집 흔적이 없다.",
+        "question_acquisition": "공식 등기와 업무 메일 자료라 적법하게 확보됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "김재원에게: \"아린은 일방적 확장 침해의 순수한 피해자였는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 김재원의 \"아린은 일방적 확장 침해의 순수한 피해자였는가\" 쟁점과 관련된다. 김재원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "정아린에게: \"아린의 별도 법인 설립과 거래처 이전 준비\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 정아린의 \"아린의 별도 법인 설립과 거래처 이전 준비\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "아린은 세무 테스트라고 설명했지만, 견적서, 납품 일정표, 미팅 제안까지 포함돼 실제 거래 전환 준비 수준이었다."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "아린은 세무 테스트라고 설명했지만, 견적서, 납품 일정표, 미팅 제안까지 포함돼 실제 거래 전환 준비 수준이었다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "거래처 이전 우선순위 시트와 분리 운영 메모",
+      "description": "아린이 만든 거래처 이전 우선순위 시트와, 재원이 새 지점 인력·생산 배분을 기존 승인 테이블 밖에서 따로 적어 둔 운영 메모다.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "드라이브 시트 원본과 노션 분리 운영 메모의 버전 기록이 함께 확보됐다.",
+        "check_metadata": "두 자료는 같은 주에 따로 작성됐고, 모두 공동 승인 보드가 아닌 개인 폴더나 개인 섹션에서 생성됐다.",
+        "restore_context": "양측 모두 기존 법인을 통하지 않는 확장 구조를 이미 손에 쥔 채 움직이고 있었고, 대상 거래처가 핵심 독점 공급처와 겹친다는 점도 드러난다.",
+        "verify_source": "플랫폼 활동 로그와 파일 해시가 연속적으로 일치한다.",
+        "check_edits": "버전 기록상 문서 조작은 없고 작성 흐름이 그대로 남아 있다.",
+        "question_acquisition": "회사 공용 업무 플랫폼 자료라 적법하지만 거래처 식별 정보는 비식별이 필요하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "김재원에게: \"핵심 거래처 이전과 단독 지점 운영은 기존 계약상 그대로 실행 불가능했다\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 김재원의 \"핵심 거래처 이전과 단독 지점 운영은 기존 계약상 그대로 실행 불가능했다\" 쟁점과 관련된다. 김재원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "정아린에게: \"공동 기회 조항의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 정아린의 \"공동 기회 조항의 쌍방 위반\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "양측 모두 기존 법인을 통하지 않는 확장 구조를 이미 손에 쥔 채 움직이고 있었고, 대상 거래처가 핵심 독점 공급처와 겹친다는 점도 드러난다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "양측 모두 기존 법인을 통하지 않는 확장 구조를 이미 손에 쥔 채 움직이고 있었고, 대상 거래처가 핵심 독점 공급처와 겹친다는 점도 드러난다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "도매 독점공급계약과 상표사용 법률의견서",
+      "description": "핵심 거래처 두 곳과 체결한 독점공급계약, 그리고 동일 브랜드를 별도 법인이나 단독 지점에 그대로 쓰면 위약과 상표 분쟁이 생긴다는 외부 법률의견서다.",
+      "type": "contract",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "investigationResults": {
+        "request_original": "공급계약 원본과 외부 로펌 법률의견서, 상표사용 부속 조항이 함께 제출됐다.",
+        "check_metadata": "계약 갱신본은 올해 초 이미 체결돼 있었고, 법률의견서는 지점 계약 분쟁이 터진 뒤 처음 읽힌 것으로 기록된다.",
+        "restore_context": "단독 지점이든 별도 법인이든 기존 법인 동의 없이 핵심 거래처와 브랜드를 분리하면 둘 다 실질적으로 실행이 막히는 구조였다.",
+        "verify_source": "계약 문서번호와 로펌 참조번호, 상표등록 번호가 서로 맞는다.",
+        "check_edits": "기관 발급본과 외부 의견서 원본에 후편집 흔적이 없다.",
+        "question_acquisition": "회사 계약과 외부 법률 검토 자료라 제출은 적법하지만 외부 재배포는 제한돼야 한다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "단독 지점이든 별도 법인이든 기존 법인 동의 없이 핵심 거래처와 브랜드를 분리하면 둘 다 실질적으로 실행이 막히는 구조였다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:lease_commit_point",
+      "intentTag": "timeline_fix",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-11:a:d-1:act:1",
+          "partnership-11:b:d-1:timeline:0"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "순서를 다시 잡아야 해서 바로 답하긴 어렵습니다.",
+        "시각과 경로가 정리돼야 답할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:exception_clause",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-11:a:d-1:motive:1",
+          "partnership-11:b:d-1:timeline:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "절차 얘기는 문서를 같이 봐야 합니다.",
+        "규칙 문제는 지금 단답으로 못 자르겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:separate_corp_scope",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "partnership-11:a:d-2:timeline:1",
+          "partnership-11:b:d-2:fear:0"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 원본 경로부터 다시 확인해야 합니다.",
+        "그 질문은 자료 맥락이 열려야 답할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:survival_frame",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "partnership-11:a:d-2:motive:0",
+          "partnership-11:b:d-2:motive:0"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "속마음까지 지금 바로 열진 않겠습니다.",
+        "그 이유는 조금 더 압박이 들어와야 말하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:pure_victim_limit",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "partnership-11:a:d-3:context:0",
+          "partnership-11:b:d-3:admission:0"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "누가 먼저였는지는 아직 단정 못 하겠습니다.",
+        "그 사람을 바로 지목하는 답은 지금 못 하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:common_opportunity_board",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "partnership-11:a:d-4:admission:0",
+          "partnership-11:b:d-4:admission:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "절차 얘기는 문서를 같이 봐야 합니다.",
+        "규칙 문제는 지금 단답으로 못 자르겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:brand_blocker",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "partnership-11:a:d-5:admission:0",
+          "partnership-11:b:d-5:admission:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 원본 경로부터 다시 확인해야 합니다.",
+        "그 질문은 자료 맥락이 열려야 답할 수 있습니다."
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-4:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-4",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-4:lease_first_break"
+      },
+      "uiLabel": "지점 계약이 합의를 깨다"
+    },
+    {
+      "id": "link:d-2:d-3:weakens_counter",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-3",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPressureBonus": 11,
+        "grantFlag": "d-3:pure_victim_weakened"
+      },
+      "uiLabel": "순수 피해자 프레임 약화"
+    },
+    {
+      "id": "link:d-4:d-5:unlocks_layer",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "unlockLayer": "core",
+        "grantFlag": "d-5:dual_block_visible"
+      },
+      "uiLabel": "쌍방 위반이 실행 불가를 연다"
+    },
+    {
+      "id": "link:d-5:d-1:retaliation",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-1",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "retaliationPressure": 9,
+        "grantFlag": "d-1:legal_impossibility_shock"
+      },
+      "uiLabel": "법적 불가가 계약 책임을 키움"
+    }
+  ],
+  "proposedUnlockAtoms": [
+    {
+      "id": "partnership-11:a:d-1:unlock:s2:0",
+      "factText": "성수 위성매장 6개월 임대차계약과 보증금 1,500만원 집행은 이미 본법인 명의로 완료됐고 공동결재 흔적이 없다.",
+      "tags": [
+        "evidence",
+        "act",
+        "timeline"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "branch": {
+          "exact": "성수 위성매장",
+          "neutral": "그 지점"
+        },
+        "contract": {
+          "exact": "6개월 임대차계약",
+          "neutral": "그 계약"
+        },
+        "amount": {
+          "exact": "1,500만원",
+          "neutral": "보증금 일부",
+          "rounded": "1,500만원"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "hedge"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-1:unlock:s3:0",
+      "factText": "2024 공동기회 부속합의서에는 현장 예외 조항이 없고, 서면 승인 전 집행 금지가 그대로 적혀 있다.",
+      "tags": [
+        "rule",
+        "evidence",
+        "context"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "rule": {
+          "exact": "공동 서면 승인 전 집행 금지",
+          "neutral": "기존 승인 절차"
+        },
+        "addendum": {
+          "exact": "2024 공동기회 부속합의서",
+          "neutral": "부속합의"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-1:unlock:s4:0",
+      "factText": "재원은 확장 타이밍을 놓치면 운영총괄로 무능해 보일까 두려워 관계적 합의보다 일정과 hold를 앞세웠다.",
+      "tags": [
+        "fear",
+        "motive",
+        "emotion"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "김재원",
+          "neutral": "나",
+          "fullName": "김재원",
+          "judgeRef": "본인"
+        },
+        "branch": {
+          "exact": "성수 위성매장",
+          "neutral": "그 지점"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-1:unlock:s5:0",
+      "factText": "재원은 성수 지점 계약과 보증금 집행이 공동승인 위반이었다는 점을 스스로 인정한다.",
+      "tags": [
+        "admission",
+        "responsibility",
+        "act"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "branch": {
+          "exact": "성수 위성매장",
+          "neutral": "그 지점"
+        },
+        "amount": {
+          "exact": "1,500만원",
+          "neutral": "보증금 일부",
+          "rounded": "1,500만원"
+        },
+        "rule": {
+          "exact": "공동 서면 승인 전 집행 금지",
+          "neutral": "기존 승인 절차"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-3:unlock:s2:0",
+      "factText": "아린셀렉트F&B 법인 설립일은 성수 지점 계약일보다 19일 빠르고, 핵심 거래처 전환 제안 메일은 지점 계약 공개 전주에 발송됐다.",
+      "tags": [
+        "timeline",
+        "evidence",
+        "counter"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "company": {
+          "exact": "아린셀렉트F&B",
+          "neutral": "별도 법인"
+        },
+        "time": {
+          "exact": "지점 계약일보다 19일 전",
+          "neutral": "그보다 먼저",
+          "period": "지점 계약 공개 전",
+          "dateExact": "지점 계약일보다 19일 전"
+        },
+        "mail": {
+          "exact": "전환 견적서와 미팅 제안 메일",
+          "neutral": "전환 준비 자료"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "hedge"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-3:unlock:s3:0",
+      "factText": "재원은 아린의 선행 준비 사실을 자신의 무단 지점 계약 책임을 덜어주는 반증처럼 사용하고 있었다.",
+      "tags": [
+        "self_justification",
+        "responsibility",
+        "relationship"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "정아린",
+          "neutral": "상대",
+          "fullName": "정아린",
+          "judgeRef": "상대방"
+        },
+        "branch": {
+          "exact": "성수 위성매장",
+          "neutral": "그 지점"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-3:unlock:s4:0",
+      "factText": "아린이 순수 피해자가 아니라는 사실을 확인한 뒤 재원은 그 분노를 절차 위반의 면죄부처럼 붙잡았다.",
+      "tags": [
+        "emotion",
+        "shame",
+        "counter"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "김재원",
+          "neutral": "나",
+          "fullName": "김재원",
+          "judgeRef": "본인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-3:unlock:s5:0",
+      "factText": "아린은 순수 피해자가 아니지만, 그렇다고 재원의 독단 계약 책임이 사라지는 것도 아니라는 이중 사실이 드러난다.",
+      "tags": [
+        "admission",
+        "context",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "branch": {
+          "exact": "성수 위성매장",
+          "neutral": "그 지점"
+        },
+        "company": {
+          "exact": "아린셀렉트F&B",
+          "neutral": "별도 법인"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-5:unlock:s2:0",
+      "factText": "재원의 분리 운영 메모는 공동 승인 보드 밖에서 작성됐고, 핵심 독점 공급처와 겹치는 운영 배분을 전제로 하고 있었다.",
+      "tags": [
+        "evidence",
+        "context",
+        "rule"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "memo": {
+          "exact": "분리 운영 메모",
+          "neutral": "개별 운영 메모"
+        },
+        "client": {
+          "exact": "핵심 도매 거래처 2곳",
+          "neutral": "핵심 거래처"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "hedge"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-5:unlock:s3:0",
+      "factText": "법률의견서가 나오기 전에도 기존 도매 독점공급계약 원문은 존재했고, 재원은 이를 끝까지 읽지 않은 채 일정부터 굴렸다.",
+      "tags": [
+        "timeline",
+        "responsibility",
+        "rule"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "contract": {
+          "exact": "도매 독점공급계약",
+          "neutral": "기존 공급계약"
+        },
+        "opinion": {
+          "exact": "상표사용 법률의견서",
+          "neutral": "법률의견"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-5:unlock:s4:0",
+      "factText": "재원은 운영을 살려야 한다는 압박 때문에 법적 불가능성을 '나중에 조정할 문제'로 밀어냈다.",
+      "tags": [
+        "fear",
+        "emotion",
+        "self_justification"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "branch": {
+          "exact": "성수 위성매장",
+          "neutral": "그 지점"
+        },
+        "person": {
+          "exact": "김재원",
+          "neutral": "나",
+          "fullName": "김재원",
+          "judgeRef": "본인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-11:a:d-5:unlock:s5:0",
+      "factText": "기존 법인 동의 없는 단독 지점 운영이나 거래처 분리는 위약과 상표 분쟁을 동시에 일으켜 그대로는 실행 불가능했다.",
+      "tags": [
+        "admission",
+        "rule",
+        "threshold"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "contract": {
+          "exact": "도매 독점공급계약",
+          "neutral": "기존 공급계약"
+        },
+        "brand": {
+          "exact": "동일 브랜드 단독 운영",
+          "neutral": "동일 브랜드 운영"
+        },
+        "opinion": {
+          "exact": "상표사용 법률의견서",
+          "neutral": "법률의견"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-2:unlock:s2:0",
+      "factText": "아린셀렉트F&B는 성수 지점 계약일보다 19일 먼저 설립됐고, 아린 계정 DM과 메일은 지점 계약 공개 전부터 거래처 전환을 준비한 흐름을 보인다.",
+      "tags": [
+        "timeline",
+        "institution",
+        "evidence"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "company": {
+          "exact": "아린셀렉트F&B",
+          "neutral": "별도 법인"
+        },
+        "time": {
+          "exact": "지점 계약일보다 19일 전",
+          "neutral": "그보다 먼저",
+          "period": "지점 계약 공개 전",
+          "dateExact": "지점 계약일보다 19일 전"
+        },
+        "mail": {
+          "exact": "전환 견적서와 미팅 제안 메일",
+          "neutral": "전환 준비 자료"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "hedge"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-2:unlock:s3:0",
+      "factText": "원본 메일에는 견적서뿐 아니라 미팅 제안과 납품 일정표까지 붙어 있어 단순 세무 상담 수준을 넘는다.",
+      "tags": [
+        "evidence",
+        "act",
+        "threshold"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "mail": {
+          "exact": "전환 견적서와 미팅 제안 메일",
+          "neutral": "전환 준비 자료"
+        },
+        "client": {
+          "exact": "핵심 도매 거래처 2곳",
+          "neutral": "핵심 거래처"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-2:unlock:s4:0",
+      "factText": "아린은 별도 법인 준비를 '살아남기 위한 대비'라는 도덕 언어로 포장하며 먼저 움직인 주체라는 사실을 가렸다.",
+      "tags": [
+        "self_justification",
+        "emotion",
+        "shame"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "company": {
+          "exact": "아린셀렉트F&B",
+          "neutral": "별도 법인"
+        },
+        "person": {
+          "exact": "정아린",
+          "neutral": "나",
+          "fullName": "정아린",
+          "judgeRef": "본인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-2:unlock:s5:0",
+      "factText": "아린이 두 핵심 도매처에 전환 견적과 미팅 제안을 보낸 사실 자체는 더 이상 다툴 수 없는 확정 사실로 굳는다.",
+      "tags": [
+        "admission",
+        "act",
+        "evidence"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "client": {
+          "exact": "핵심 도매 거래처 2곳",
+          "neutral": "핵심 거래처"
+        },
+        "mail": {
+          "exact": "전환 견적서와 미팅 제안 메일",
+          "neutral": "전환 준비 자료"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-3:unlock:s2:0",
+      "factText": "아린의 백업 구조 구상은 재원의 지점 계약 공개 전에 이미 법인 설립과 거래처 접촉 단계까지 진입해 있었다.",
+      "tags": [
+        "timeline",
+        "context",
+        "evidence"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "company": {
+          "exact": "아린셀렉트F&B",
+          "neutral": "별도 법인"
+        },
+        "time": {
+          "exact": "지점 계약일보다 19일 전",
+          "neutral": "그보다 먼저",
+          "period": "지점 계약 공개 전",
+          "dateExact": "지점 계약일보다 19일 전"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "hedge"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-3:unlock:s3:0",
+      "factText": "아린의 '순수 피해자' 서사는 별도 법인과 거래처 전환이라는 선행된 출구 설계를 통째로 누락하고 있다.",
+      "tags": [
+        "identity",
+        "counter",
+        "responsibility"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "company": {
+          "exact": "아린셀렉트F&B",
+          "neutral": "별도 법인"
+        },
+        "person": {
+          "exact": "정아린",
+          "neutral": "나",
+          "fullName": "정아린",
+          "judgeRef": "본인"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-3:unlock:s4:0",
+      "factText": "브랜드를 빼앗길까 두려운 감정이 아린으로 하여금 자신의 선행 준비를 모두 피해 서사 안에 감추게 만들었다.",
+      "tags": [
+        "fear",
+        "emotion",
+        "shame"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "brand": {
+          "exact": "비건 베이커리 브랜드",
+          "neutral": "브랜드"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-3:unlock:s5:0",
+      "factText": "재원의 독단 계약과 아린의 선행된 별도 법인 준비가 함께 있었기 때문에, 아린은 순수 피해자로만 남을 수 없었다.",
+      "tags": [
+        "admission",
+        "context",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "branch": {
+          "exact": "성수 위성매장",
+          "neutral": "그 지점"
+        },
+        "company": {
+          "exact": "아린셀렉트F&B",
+          "neutral": "별도 법인"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-4:unlock:s2:0",
+      "factText": "확장 승인 시트는 신규 지점과 별도 법인을 같은 표 안에서 관리하도록 되어 있어, 아린도 별도 법인이 공동 기회 대상임을 알고 있었다.",
+      "tags": [
+        "evidence",
+        "rule",
+        "institution"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "approval": {
+          "exact": "확장 승인 시트",
+          "neutral": "승인 보드"
+        },
+        "company": {
+          "exact": "아린셀렉트F&B",
+          "neutral": "별도 법인"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "hedge"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-4:unlock:s3:0",
+      "factText": "아린의 거래처 이전 우선순위 시트는 공동 승인 보드가 아닌 개인 폴더에서 만들어졌고, 핵심 공급처가 우선 대상에 포함돼 있었다.",
+      "tags": [
+        "evidence",
+        "responsibility",
+        "context"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "sheet": {
+          "exact": "거래처 이전 우선순위 시트",
+          "neutral": "개인 시트"
+        },
+        "client": {
+          "exact": "핵심 도매 거래처 2곳",
+          "neutral": "핵심 거래처"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-4:unlock:s4:0",
+      "factText": "아린은 피해 감정을 근거로 공동 기회 조항을 자신에게만 예외적으로 유예해도 된다고 느꼈다.",
+      "tags": [
+        "emotion",
+        "self_justification",
+        "rule"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "rule": {
+          "exact": "2024 공동기회 부속합의서",
+          "neutral": "부속합의"
+        },
+        "brand": {
+          "exact": "비건 베이커리 브랜드",
+          "neutral": "브랜드"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-11:b:d-4:unlock:s5:0",
+      "factText": "결국 아린의 별도 법인·거래처 준비와 재원의 단독 지점 계약은 같은 공동 기회 조항을 서로 다른 방향에서 동시에 깨뜨린 행동이었다.",
+      "tags": [
+        "admission",
+        "context",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "company": {
+          "exact": "아린셀렉트F&B",
+          "neutral": "별도 법인"
+        },
+        "branch": {
+          "exact": "성수 위성매장",
+          "neutral": "그 지점"
+        },
+        "rule": {
+          "exact": "2024 공동기회 부속합의서",
+          "neutral": "부속합의"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "emotional"
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-3"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  }
+}

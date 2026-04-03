@@ -1,0 +1,1160 @@
+export const family_05_structure_v2 = {
+  "caseId": "family-05",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "은주의 딸 방 출입과 임대인 개입",
+      "truth": true,
+      "truthDescription": "은주는 소현이 없을 때 딸 방에 들어가 계약 서류를 확인했고, 임대인에게 직접 연락해 사실상 계약 중단을 압박했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "거주권한",
+      "legitimacyIssue": true,
+      "judgmentStatement": "은주는 딸 방에 들어갔다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "방 출입",
+        "현관 로그",
+        "방 문 센서",
+        "임대인 연락",
+        "취소 문자",
+        "47분 뒤",
+        "최연우"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "은주의 딸 방 출입과 임대인 개입",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family05:a:d-1:s0:claim:0",
+            "family05:b:d-1:s0:claim:0",
+            "family05:a:d-1:s1:claim:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "은주의 딸 방 출입과 임대인 개입 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family05:a:d-1:s3:claim:0",
+            "family05:b:d-1:s3:claim:0",
+            "family05:a:d-1:s4:claim:0",
+            "family05:a:d-1:s3:claim:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "은주는 소현이 없을 때 딸 방에 들어가 계약 서류를 확인했고, 임대인에게 직접 연락해 사실상 계약 중단을 압박했다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family05:a:d-1:s5:claim:0",
+            "family05:b:d-1:s5:claim:0",
+            "family05:a:d-1:s5:claim:1",
+            "family05:a:d-1:s4:claim:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "소현의 공유주거 계약 축소 설명",
+      "truth": true,
+      "truthDescription": "소현은 부모에게는 단독 원룸이라고 설명했지만, 실제로는 룸메이트가 있는 공유주거 계약 초안에 계약금을 먼저 넣고 있었다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "계약복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "소현은 룸메이트와 공유주거 계약을 했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "공유주거",
+        "룸메이트 조항",
+        "공용 주방",
+        "단독 원룸",
+        "계약 초안",
+        "계약금",
+        "축소 설명"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "소현의 공유주거 계약 축소 설명",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family05:b:d-2:s0:claim:0",
+            "family05:a:d-2:s0:claim:0",
+            "family05:b:d-2:s1:claim:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "소현의 공유주거 계약 축소 설명 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family05:b:d-2:s3:claim:0",
+            "family05:a:d-2:s3:claim:0",
+            "family05:b:d-2:s4:claim:0",
+            "family05:b:d-2:s3:claim:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "소현은 부모에게는 단독 원룸이라고 설명했지만, 실제로는 룸메이트가 있는 공유주거 계약 초안에 계약금을 먼저 넣고 있었다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family05:b:d-2:s5:claim:0",
+            "family05:a:d-2:s5:claim:0",
+            "family05:b:d-2:s5:claim:1",
+            "family05:b:d-2:s4:claim:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "31초 녹취는 소현의 금전·가출 자백인가",
+      "truth": false,
+      "truthDescription": "은주가 제시한 31초 녹취는 소현의 실제 자백이 아니라 세 통화를 잘라 붙이고 오래된 음성조각을 끼워 넣은 위조본이었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "증거검증",
+      "legitimacyIssue": true,
+      "judgmentStatement": "31초 녹취는 위조본이다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "31초 클립",
+        "엄마 카드",
+        "편집 녹취",
+        "11분 원본",
+        "세 통화",
+        "자백처럼",
+        "위조본"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "31초 녹취는 소현의 금전·가출 자백인가",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family05:a:d-3:s0:claim:0",
+            "family05:b:d-3:s0:claim:0",
+            "family05:a:d-3:s1:claim:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "31초 녹취는 소현의 금전·가출 자백인가 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family05:a:d-3:s3:claim:0",
+            "family05:b:d-3:s3:claim:0",
+            "family05:a:d-3:s4:claim:0",
+            "family05:a:d-3:s3:claim:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "은주가 제시한 31초 녹취는 소현의 실제 자백이 아니라 세 통화를 잘라 붙이고 오래된 음성조각을 끼워 넣은 위조본이었다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:trap_context_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "family05:a:d-3:s5:claim:0",
+            "family05:b:d-3:s5:claim:0",
+            "family05:a:d-3:s5:claim:1",
+            "family05:a:d-3:s4:claim:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "weaponizes",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "31초만 남은 잘린 파일",
+          "'엄마 카드' 구절 재사용",
+          "원본 없는 자백 프레임"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-5"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "사전 상담 후 계약하기로 한 약속의 쌍방 파기",
+      "truth": true,
+      "truthDescription": "두 사람은 청년주거상담 뒤에 계약 여부를 정하기로 했지만, 소현은 계약금을 먼저 걸었고 은주는 상담 전에 방 출입과 임대인 연락을 해 약속을 같이 깼다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "독립경계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "소현과 은주는 약속을 위반했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "상담 후 계약",
+        "청년주거상담센터",
+        "선계약",
+        "선개입",
+        "상담 예약",
+        "약속 파기"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "사전 상담 후 계약하기로 한 약속의 쌍방 파기",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family05:b:d-4:s0:claim:0",
+            "family05:a:d-4:s0:claim:0",
+            "family05:b:d-4:s1:claim:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "사전 상담 후 계약하기로 한 약속의 쌍방 파기 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family05:b:d-4:s3:claim:0",
+            "family05:a:d-4:s3:claim:0",
+            "family05:b:d-4:s4:claim:0",
+            "family05:b:d-4:s3:claim:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "두 사람은 청년주거상담 뒤에 계약 여부를 정하기로 했지만, 소현은 계약금을 먼저 걸었고 은주는 상담 전에 방 출입과 임대인 연락을 해 약속을 같이 깼다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family05:b:d-4:s5:claim:0",
+            "family05:a:d-4:s5:claim:0",
+            "family05:b:d-4:s5:claim:1",
+            "family05:b:d-4:s4:claim:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "임대인의 최종 계약 거절 사유",
+      "truth": true,
+      "truthDescription": "임대인의 최종 거절은 소현의 수입 불안정보다, 은주의 취소 연락과 편집된 녹취 전달로 가족 분쟁 위험이 크게 보였기 때문이었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "계약복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "임대인의 거절 사유는 가족 분쟁이다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "거절 사유",
+        "가족 분쟁",
+        "편집 파일",
+        "수입 불안",
+        "회신 메일",
+        "가족이 책임 못 진다",
+        "계약 거절"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "임대인의 최종 계약 거절 사유",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family05:a:d-5:s0:claim:0",
+            "family05:b:d-5:s0:claim:0",
+            "family05:a:d-5:s1:claim:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "임대인의 최종 계약 거절 사유 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family05:a:d-5:s3:claim:0",
+            "family05:b:d-5:s3:claim:0",
+            "family05:a:d-5:s4:claim:0",
+            "family05:a:d-5:s3:claim:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "임대인의 최종 거절은 소현의 수입 불안정보다, 은주의 취소 연락과 편집된 녹취 전달로 가족 분쟁 위험이 크게 보였기 때문이었다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:context_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family05:a:d-5:s5:claim:0",
+            "family05:b:d-5:s5:claim:0",
+            "family05:a:d-5:s5:claim:1",
+            "family05:a:d-5:s4:claim:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "수입 문제만 원인처럼 축소",
+          "가족 분쟁 신호 누락",
+          "편집 파일 전달 영향 은폐"
+        ],
+        "truthExitEvidenceIds": [
+          "e-2",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "현관 스마트도어락 출입기록과 방 문열림 알림",
+      "description": "소현이 작업실에 있던 낮 시간, 은주가 집에 들어와 딸 방 문이 열린 기록과 알림이 남은 스마트도어락·홈앱 로그다.",
+      "type": "device_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "household_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "홈앱 원본 로그에는 현관 개방 시각과 실내 문열림 센서 기록이 같은 분 단위로 이어져 있다.",
+        "check_metadata": "접속 기기는 은주 휴대폰으로 기록됐고, 소현의 작업 메신저 활동 시각과 겹쳐 부재가 확인된다.",
+        "restore_context": "단순 귀가 기록이 아니라 딸 방 센서가 연달아 반응해 내부 확인 행위가 있었음을 보여준다.",
+        "verify_source": "도어락 업체 서버 로그와 가정용 허브 로그가 일치했다.",
+        "check_edits": "장치 추출본이라 수동 편집 흔적이 없다.",
+        "question_acquisition": "같은 집 장치 기록이지만 성인 자녀의 사적 공간 출입이 드러나 사생활 침해 쟁점이 크다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "은주의 딸 방 출입과 임대인 개입의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "임대인 통화녹취와 취소 요청 문자",
+      "description": "은주가 임대인 최연우에게 '계약을 다시 보류해 달라'고 말한 통화 원본과, 직후 보낸 취소 요청 문자다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "임대인 휴대폰의 원본 통화녹음과 문자 내보내기 파일이 제출됐다.",
+        "check_metadata": "통화는 소현의 계약금 송금 47분 뒤에 이뤄졌고, 취소 문자는 그 직후 3분 안에 발송됐다.",
+        "restore_context": "은주는 단순 문의라고 주장했지만, 문자에는 '가족이 책임 못 진다'는 문장이 있어 계약 중단 압박에 가깝다.",
+        "verify_source": "통신사 통화내역과 문자 발신 시간이 원본과 일치했다.",
+        "check_edits": "대화 파일은 원본 내보내기라 자르기 흔적이 없다.",
+        "question_acquisition": "상대방 단말에 남은 녹음이라 제출은 가능하지만, 가족 갈등용으로 재유포하면 사생활 침해 소지가 있다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박은주에게: \"은주의 딸 방 출입과 임대인 개입\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 박은주의 \"은주의 딸 방 출입과 임대인 개입\" 쟁점과 관련된다. 박은주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박소현에게: \"임대인의 최종 계약 거절 사유\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 박소현의 \"임대인의 최종 계약 거절 사유\" 쟁점과 관련된다. 박소현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "은주의 딸 방 출입과 임대인 개입의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "임대인의 최종 계약 거절 사유의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "공유주거 계약서 초안과 계약금 이체증",
+      "description": "소현이 부모에게는 단독 원룸이라 설명했던 방의 실제 계약 초안과, 룸메이트 명의가 포함된 계약금 이체 내역이다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "부동산 전자계약 초안과 은행 이체증 원본을 함께 대조했다.",
+        "check_metadata": "초안 저장 시각이 상담센터 예약 하루 전이고, 계약금 송금은 같은 날 저녁으로 찍혀 있다.",
+        "restore_context": "단독 거주처럼 들렸던 설명과 달리, 계약서에는 공용 주방·룸메이트 조항이 분명히 들어 있다.",
+        "verify_source": "부동산 플랫폼 저장 기록과 은행 송금 기록이 서로 맞아떨어졌다.",
+        "check_edits": "전자문서와 은행 이체증 모두 편집 흔적이 없다.",
+        "question_acquisition": "소현이 직접 제출한 계약 자료라 취득 정당성은 높지만 동거인의 개인정보는 비식별 처리돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박은주에게: \"사전 상담 후 계약하기로 한 약속의 쌍방 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 박은주의 \"사전 상담 후 계약하기로 한 약속의 쌍방 파기\" 쟁점과 관련된다. 박은주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박소현에게: \"소현의 공유주거 계약 축소 설명\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 박소현의 \"소현의 공유주거 계약 축소 설명\" 쟁점과 관련된다. 박소현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "소현의 공유주거 계약 축소 설명의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "사전 상담 후 계약하기로 한 약속의 쌍방 파기의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "31초 음성클립 파일",
+      "description": "소현이 '엄마 카드로 막고 그냥 나갈게'라고 말하는 것처럼 들리는 31초 길이의 음성 파일이다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은주는 전체 녹음이 아닌 31초 클립만 먼저 제출했다.",
+        "check_metadata": "파일 생성 시각은 임대인에게 전달되기 12분 전이며, 동일 길이의 재저장 기록이 두 번 남아 있다.",
+        "restore_context": "앞뒤 문맥이 모두 잘려 있어 실제로 누구와 어떤 상황에서 한 말인지 단정할 수 없다.",
+        "verify_source": "파일 자체는 은주 휴대폰 음성편집 앱 저장 폴더에서 나온 것으로 확인됐다.",
+        "check_edits": "파형상 세 구간의 경계가 비정상적으로 끊기고 주변 잡음 패턴이 달라 절단 흔적이 강하다.",
+        "question_acquisition": "가족 간 사적 대화를 녹음한 자료라 원본 사용 범위와 동의 문제가 민감하다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S3",
+            "multiplier": 1.2,
+            "note": "31초 녹취는 소현의 금전·가출 자백인가의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "디지털포렌식 감정서와 11분 원본 통화 백업",
+      "description": "음성분석 기관이 작성한 감정서와 클라우드에서 복구된 11분 원본 통화 파일로, 31초 클립이 여러 시점의 음성을 붙인 위조본임을 보여준다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "기관 제출본에는 31초 클립과 복구된 11분 파일의 비교 파형이 함께 포함돼 있다.",
+        "check_metadata": "문제가 된 '엄마 카드' 구절은 7개월 전 다른 통화에서 따온 음성조각으로 시간 코드가 전혀 다르다.",
+        "restore_context": "원본 통화에서 소현은 오히려 '엄마 카드 같은 건 안 건드려'라고 말하고, 이후 공유주거 설명을 이어간다.",
+        "verify_source": "포렌식 기관 해시값과 클라우드 백업 파일 해시가 보고서와 일치했다.",
+        "check_edits": "클립에는 세 차례 절단과 한 차례 음절 대치 흔적이 확인됐고, 원본 11분 파일은 편집 흔적이 없다.",
+        "question_acquisition": "소현이 본인 계정 백업 접근을 허락해 확보한 적법 자료지만, 사적 통화 내용은 분쟁 범위 내에서만 사용돼야 한다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "31초 녹취는 소현의 금전·가출 자백인가의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "청년주거상담센터 중재기록과 임대인 회신메일",
+      "description": "윤혜림 상담사의 중재 메모와 임대인이 보낸 회신메일로, 사전 상담 후 결정하기로 한 합의와 최종 계약 거절 이유가 적혀 있다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "상담센터 원본 메모와 임대인 회신메일 전문이 함께 제출됐다.",
+        "check_metadata": "상담 예약은 계약금 송금보다 앞섰지만 실제 상담일은 은주의 임대인 연락 뒤로 미뤄져 있다.",
+        "restore_context": "임대인은 수입 문제보다 '가족이 편집 파일까지 보내며 이견을 보였다'는 점을 계약 부담 사유로 적었다.",
+        "verify_source": "상담센터 접수번호와 메일 서버 원본 헤더가 일치했다.",
+        "check_edits": "기관 메모와 메일 원문이라 선택적 편집 흔적이 없다.",
+        "question_acquisition": "분쟁 해결을 위한 중재 기록이라 제출 정당성은 높지만, 향후 임대차 협상 외 용도로 확산하면 문제가 된다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "박은주에게: \"사전 상담 후 계약하기로 한 약속의 쌍방 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 박은주의 \"사전 상담 후 계약하기로 한 약속의 쌍방 파기\" 쟁점과 관련된다. 박은주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "박소현에게: \"사전 상담 후 계약하기로 한 약속의 쌍방 파기\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 박소현의 \"사전 상담 후 계약하기로 한 약속의 쌍방 파기\" 쟁점과 관련된다. 박소현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "사전 상담 후 계약하기로 한 약속의 쌍방 파기의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "임대인의 최종 계약 거절 사유의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-2:d-1:weakens_counter",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPenalty": 10,
+        "grantFlag": "d-1:motive:concealment_not_excuse"
+      },
+      "uiLabel": "축소 설명≠출입 정당화"
+    },
+    {
+      "id": "link:d-1:d-5:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-5:surface:first_breach_enabled"
+      },
+      "uiLabel": "선개입의 흔적"
+    },
+    {
+      "id": "link:d-3:d-5:supports",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 15,
+        "grantFlag": "d-5:core:edited_clip_weight"
+      },
+      "uiLabel": "편집녹취 여파"
+    },
+    {
+      "id": "link:d-4:d-1:retaliation",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "retaliation",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-1:core:mutual_breach_frame"
+      },
+      "uiLabel": "약속 파기 반작용"
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:room_entry_scope",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "family05:a:d-1:s2:claim:0",
+          "family05:a:d-1:s3:claim:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "방 안 얘기까지는 더 말하고 싶지 않아요.",
+        "그 범위는 지금 바로 다시 꺼내기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:landlord_contact_chain",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "family05:a:d-1:s3:claim:0",
+          "family05:a:d-1:s5:claim:0"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 연락 순서를 지금 다시 풀면 더 감정적이 됩니다.",
+        "이미 말한 범위 이상은 당장 정리하기 어렵네요."
+      ]
+    },
+    {
+      "id": "fq:d-3:clip_source",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "family05:a:d-3:s2:claim:0",
+          "family05:a:d-3:s5:claim:0"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 파일 얘기는 지금 꺼내기만 해도 난리가 납니다.",
+        "출처와 편집 순서까지는 당장 답하고 싶지 않습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:counsel_rule",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "family05:a:d-4:s3:claim:0",
+          "family05:a:d-4:s5:claim:0",
+          "family05:b:d-4:s3:claim:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 약속을 다시 꺼내면 서로 할 말이 너무 많아져요.",
+        "규칙 자체는 기억나지만 지금은 선뜻 정리하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:rejection_cause",
+      "intentTag": "cause_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "family05:a:d-5:s3:claim:0",
+          "family05:a:d-5:s5:claim:0",
+          "family05:b:d-5:s3:claim:0"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "거절 사유는 저도 마지막까지 듣기 싫었던 얘기예요.",
+        "그 원인은 지금 말하면 더 책임 공방이 됩니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:repair_after_rejection",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "family05:a:d-5:s4:claim:0",
+          "family05:a:d-5:s5:claim:0",
+          "family05:b:d-5:s4:claim:0"
+        ],
+        "preferredAngleTags": [
+          "emotion",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 복구 얘기까지 바로 가기 어렵습니다.",
+        "감정 정리가 안 돼서 그 다음 얘기는 못 하겠습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+} as const;

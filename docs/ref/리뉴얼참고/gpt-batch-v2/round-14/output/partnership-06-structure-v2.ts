@@ -1,0 +1,1077 @@
+export const partnership06StructureV2 = {
+  "caseId": "partnership-06",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "가람의 집기·조명 대체 발주",
+      "truth": true,
+      "truthDescription": "가람은 보라의 최종 확인 없이 예산과 납기를 이유로 진열집기와 조명 일부를 다른 모델로 대체 발주했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 67,
+        "b": 33
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "승인선복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "가람은 보라 확인 없이 대체 발주했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "집기 대체",
+        "조명 변경",
+        "대체 모델",
+        "오픈 주간",
+        "브랜드 포인트",
+        "발주서"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "누가 먼저 어떤 행동을 했는지가 보입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-06:a:d-1:context:0",
+            "partnership-06:a:d-1:denial:1",
+            "partnership-06:a:d-1:evidence:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "그 선택을 정당화하거나 몰아붙인 계산이 드러납니다.",
+          "lockedSummary": "왜 그런 판단이 나왔는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-06:a:d-1:context:0",
+            "partnership-06:a:d-1:rule:4",
+            "partnership-06:a:d-1:act:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "책임과 상처의 무게가 함께 연결됩니다.",
+          "lockedSummary": "핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:rule_named"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-06:a:d-1:admission:5",
+            "partnership-06:a:d-1:rule:4",
+            "partnership-06:a:d-1:act:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "보라의 카운터 위치·철거 일정 단독 변경",
+      "truth": true,
+      "truthDescription": "보라는 가람과 재확인하지 않은 채 시공팀에 카운터 위치를 다시 옮기고 철거 순서를 바꾸라고 지시했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 39,
+        "b": 61
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "승인선복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "보라는 카운터 위치를 단독 변경했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "카운터 위치",
+        "철거 순서",
+        "브랜딩 툴",
+        "수정 평면도",
+        "동선 변경",
+        "간판 시야"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "누가 먼저 어떤 행동을 했는지가 보입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-06:b:d-2:denial:0",
+            "partnership-06:b:d-2:motive:2",
+            "partnership-06:a:d-2:act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "그 선택을 정당화하거나 몰아붙인 계산이 드러납니다.",
+          "lockedSummary": "왜 그런 판단이 나왔는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-06:b:d-2:motive:2",
+            "partnership-06:b:d-2:denial:0",
+            "partnership-06:b:d-2:act:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "책임과 상처의 무게가 함께 연결됩니다.",
+          "lockedSummary": "핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:scope_named"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-06:b:d-2:admission:5",
+            "partnership-06:b:d-2:motive:2",
+            "partnership-06:b:d-2:act:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "오픈 주간 변경승인 원칙의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 300만원 이상 변경과 오픈 주간 공정 수정은 공동 승인하기로 해 놓고도, 각자 상대 확인 없이 실행 지시를 내렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 51,
+        "b": 49
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "승인선복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "두 사람은 공동 승인 없이 실행 지시를 내렸다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "300만원 기준",
+        "공동 승인",
+        "오픈 주간",
+        "변경승인 시트",
+        "역할분담",
+        "예외 없는 원칙"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉에서 확인되는 사실과 발화가 정리됩니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-06:a:d-3:rule:0",
+            "partnership-06:a:d-3:self_justification:1",
+            "partnership-06:a:d-3:context:4"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "핵심 갈등을 보강한 배경과 방어 논리가 드러납니다.",
+          "lockedSummary": "왜 그런 판단이 나왔는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-06:a:d-3:counter:3",
+            "partnership-06:a:d-3:self_justification:1",
+            "partnership-06:a:d-3:admission:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "관계를 비틀었던 보강 사실의 핵심이 연결됩니다.",
+          "lockedSummary": "핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              },
+              {
+                "id": "d-3",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:threshold_named"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-06:a:d-3:admission:2",
+            "partnership-06:a:d-3:counter:3",
+            "partnership-06:a:d-3:rule:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-4",
+      "name": "리뉴얼 지연은 한 사람의 월권만으로 생겼는가",
+      "truth": false,
+      "truthDescription": "양측 모두 상대의 월권만이 지연 원인이라고 말했지만, 실제 지연은 가람의 대체 발주와 보라의 동선 재지시가 서로 맞물리며 생긴 공동 결과였다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 48,
+        "b": 52
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공사범위재설계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "리뉴얼 지연은 공동 결과이다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "지연 원인",
+        "하루 지연",
+        "추가견적",
+        "월권 하나",
+        "공동 결과",
+        "철거 꼬임"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉으로는 그럴듯해 보였던 오해의 표면이 드러납니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-06:a:d-4:counter:0",
+            "partnership-06:a:d-4:act:1",
+            "partnership-06:b:d-4:counter:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 서로 그 오해를 붙들었는지가 드러납니다.",
+          "lockedSummary": "왜 그런 판단이 나왔는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "M2"
+              },
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-06:a:d-4:act:1",
+            "partnership-06:a:d-4:evidence:2",
+            "partnership-06:a:d-4:fear:3"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "오해를 깨는 진짜 연결고리가 보입니다.",
+          "lockedSummary": "핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "M3"
+              },
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:delay_trace_named"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-06:a:d-4:admission:4",
+            "partnership-06:a:d-4:fear:3",
+            "partnership-06:a:d-4:evidence:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "weaponizes",
+          "b": "weaponizes"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "리뉴얼 지연이 상대 한 사람의 월권만으로 생겼다는 믿음이 겉으로 그럴듯해 보입니다.",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "오해를 사실처럼 붙들며 방어가 빨라집니다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘린 단서와 기억의 편집이 해석을 고착시킵니다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "앞뒤 맥락이 들어오며 확신이 흔들리기 시작합니다.",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "외부 경로와 실제 책임선이 정리되며 오해가 해소됩니다.",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "부매니저 단톡 한 장으로 최종안을 단정",
+          "한쪽 버전만 최종안처럼 전파된 기억",
+          "긴급성 프레임으로 승인 누락을 덮는 말버릇"
+        ],
+        "truthExitEvidenceIds": [
+          "e-1",
+          "e-2",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "외부 경로와 실제 책임선이 정리되며 오해가 해소됩니다."
+      }
+    },
+    {
+      "id": "d-5",
+      "name": "직원·협력업체에 서로 다른 최종안을 전달한 혼선",
+      "truth": true,
+      "truthDescription": "가람과 보라는 각각 자신의 수정안을 최종안처럼 전달해 시공팀과 매장 직원들이 다른 일정표와 평면도를 동시에 참고하게 만들었다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "현장소통정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "가람과 보라는 서로 다른 최종안을 전달했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "최종안 혼선",
+        "가람표",
+        "보라표",
+        "직원 혼선",
+        "협력업체 혼선",
+        "평면도 버전"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉에서 확인되는 사실과 발화가 정리됩니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-06:a:d-5:counter:2",
+            "partnership-06:a:d-5:denial:0",
+            "partnership-06:a:d-5:act:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "핵심 갈등을 보강한 배경과 방어 논리가 드러납니다.",
+          "lockedSummary": "왜 그런 판단이 나왔는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-06:a:d-5:counter:2",
+            "partnership-06:a:d-5:harm:3",
+            "partnership-06:a:d-5:act:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "관계를 비틀었던 보강 사실의 핵심이 연결됩니다.",
+          "lockedSummary": "핵심 연결은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              },
+              {
+                "id": "d-5",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:double_final_named"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-06:a:d-5:harm:3",
+            "partnership-06:a:d-5:counter:2",
+            "partnership-06:a:d-5:act:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-4:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-4",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-4:surface:delay_trace_named"
+      },
+      "uiLabel": "대체 발주 충돌"
+    },
+    {
+      "id": "link:d-2:d-4:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-4",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-4:motive:single_blame_shaken"
+      },
+      "uiLabel": "카운터 재지시 충돌"
+    },
+    {
+      "id": "link:d-3:d-1:unlocks_layer",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-1",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "unlockLayer": "core",
+        "grantFlag": "d-1:motive:rule_named"
+      },
+      "uiLabel": "공동 승인선"
+    },
+    {
+      "id": "link:d-5:d-4:weakens_counter",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-4",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPenalty": 10,
+        "grantFlag": "d-4:core:dual_final_named"
+      },
+      "uiLabel": "복수 최종안"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "집기 대체 발주서와 시공 PM 변경지시 로그",
+      "description": "가람이 기존 확정안과 다른 진열집기·조명 모델을 요청한 발주서, 통화 후 남긴 시공 PM의 변경지시 로그다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "subjectParty": "a",
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "M3",
+            "multiplier": 1.35,
+            "note": "오해가 흔들리기 시작하는 구간에서 제시하면 상대 비난 서사를 빠르게 꺾는다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "브랜딩 툴 코멘트와 수정 평면도",
+      "description": "보라가 카운터 위치와 간판 시야를 바꾸기 위해 시공팀에 남긴 코멘트, 그리고 그 지시가 반영된 수정 평면도다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "이가람에게: \"리뉴얼 지연은 한 사람의 월권만으로 생겼는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 이가람의 \"리뉴얼 지연은 한 사람의 월권만으로 생겼는가\" 쟁점과 관련된다. 이가람은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최보라에게: \"보라의 카운터 위치·철거 일정 단독 변경\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 최보라의 \"보라의 카운터 위치·철거 일정 단독 변경\" 쟁점과 관련된다. 최보라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "M3",
+            "multiplier": 1.35,
+            "note": "오해가 흔들리기 시작하는 구간에서 제시하면 상대 비난 서사를 빠르게 꺾는다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "부매니저 단톡 캡처",
+      "description": "부매니저가 '가람 대표님 말대로 간판 먼저 철거, 보라 대표님 표로는 카운터부터'라고 적은 단톡 캡처다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "subjectParty": "b",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S4",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "M2",
+            "multiplier": 1.4,
+            "note": "잘린 단서를 더 오래 붙들기 전에 맥락을 복원할 때 효율이 가장 높다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "리뉴얼 역할분담 메모와 변경승인 시트",
+      "description": "브랜딩·동선과 예산·공정의 역할 분담, 300만원 이상 변경과 오픈 주간 공정 수정 시 공동 승인을 요구한 메모와 시트다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "부분 인정 직전의 방어를 넘어 실제 실행 주체를 굳히기 좋다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "관리소 공사허가 변경 기록과 출입 게이트 로그",
+      "description": "보라 요청으로 철거 허가 시간이 조정되고, 가람 요청으로 다른 집기 반입 슬롯이 따로 잡힌 상가 관리소 기록이다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "subjectParty": "b",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "부분 인정 직전의 방어를 넘어 실제 실행 주체를 굳히기 좋다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "시공 PM 현장일지와 추가견적서",
+      "description": "집기 재발주와 카운터 재이동이 겹치며 철거·설치 순서가 꼬였고, 이로 인해 하루 지연과 추가비용이 발생했다는 현장일지와 견적서다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "이가람에게: \"리뉴얼 지연은 한 사람의 월권만으로 생겼는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 이가람의 \"리뉴얼 지연은 한 사람의 월권만으로 생겼는가\" 쟁점과 관련된다. 이가람은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최보라에게: \"직원·협력업체에 서로 다른 최종안을 전달한 혼선\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최보라의 \"직원·협력업체에 서로 다른 최종안을 전달한 혼선\" 쟁점과 관련된다. 최보라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "M3",
+            "multiplier": 1.35,
+            "note": "오해가 흔들리기 시작하는 구간에서 제시하면 상대 비난 서사를 빠르게 꺾는다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:timeline_chain",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-06:a:d-1:act:2",
+          "partnership-06:a:d-1:evidence:3"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 집기 대체 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:decision_identity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-06:a:d-1:act:2",
+          "partnership-06:a:d-1:context:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 집기 대체 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:frame_origin",
+      "intentTag": "contradiction_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "partnership-06:b:d-2:act:1",
+          "partnership-06:b:d-2:motive:2"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 카운터 위치 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:misbelief_source",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "partnership-06:a:d-3:admission:2",
+          "partnership-06:a:d-3:self_justification:1"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 300만원 기준 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:rule_edge",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "partnership-06:a:d-4:admission:4",
+          "partnership-06:a:d-4:act:1"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 지연 원인 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:outside_motive",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "partnership-06:a:d-5:act:1",
+          "partnership-06:a:d-5:counter:2"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 최종안 혼선 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:emotion_tail",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-06:a:d-1:admission:5",
+          "partnership-06:a:d-1:context:0"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 집기 대체 이야기부터 정리해야 합니다.",
+        "그 질문은 아직 답할 단계가 아닙니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-2"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+};

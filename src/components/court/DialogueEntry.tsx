@@ -138,7 +138,7 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
         </div>
         {/* 증인 말풍선 — 녹색 계열 */}
         <div className={`border rounded-2xl ${favor === 'pro_a' ? 'rounded-tl-sm' : favor === 'pro_b' ? 'rounded-tr-sm' : ''} px-3.5 py-2.5 max-w-[85%] bg-emerald-950/40 border-emerald-800/30`}>
-          <p className="text-sm text-gray-200 leading-relaxed">{displayText}{!done && <span className="animate-pulse text-emerald-400">|</span>}</p>
+          <p className="text-[15px] text-gray-200 leading-relaxed">{displayText}{!done && <span className="animate-pulse text-emerald-400">|</span>}</p>
           {done && entry.behaviorHint && (
             <p className="text-xs text-emerald-500/50 mt-1.5 italic leading-relaxed border-t border-emerald-800/30 pt-1.5">
               {entry.behaviorHint}
@@ -156,7 +156,7 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
         <div className="border-t border-gray-700/40 mb-3" />
         <div className="flex justify-center">
           <div className="bg-amber-950/40 border border-amber-800/30 rounded-2xl px-4 py-2.5 max-w-[85%]">
-            <p className="text-sm text-gray-200 leading-relaxed">{displayText}{!done && <span className="animate-pulse text-amber-400">|</span>}</p>
+            <p className="text-[15px] text-gray-200 leading-relaxed">{displayText}{!done && <span className="animate-pulse text-amber-400">|</span>}</p>
           </div>
         </div>
       </div>
@@ -214,7 +214,7 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
             <span>🔒</span><span>비공개 진술</span>
           </div>
         )}
-        <p className="text-sm text-gray-200 leading-relaxed">{displayText}{!done && <span className="animate-pulse text-amber-400">|</span>}</p>
+        <p className="text-[15px] text-gray-200 leading-relaxed">{displayText}{!done && <span className="animate-pulse text-amber-400">|</span>}</p>
         {done && entry.behaviorHint && (
           <p className="text-xs text-gray-500/60 mt-1.5 italic leading-relaxed border-t border-gray-800/50 pt-1.5">
             {entry.behaviorHint}

@@ -1,0 +1,2935 @@
+{
+  "caseId": "friend-05",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "태오의 현재 48만원 차용금 미반환",
+      "truth": true,
+      "truthDescription": "태오는 반려견 야간 병원비 명목으로 빌린 48만원을 약속한 시점까지 별도로 돌려주지 않았다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "채무정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "태오는 48만원을 미반환했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "48만원",
+        "야간 병원비",
+        "다음 월급 주간",
+        "반려견 응급",
+        "미반환",
+        "이체 약속"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "태오의 현재 48만원 차용금 미반환에서 바로 드러나는 장면",
+          "lockedSummary": "겉으로 드러난 사실선만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend-05:a:d-1:s0:core",
+            "friend-05:b:d-1:s0:core"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "태오의 현재 48만원 차용금 미반환 뒤에 깔린 선택 이유",
+          "lockedSummary": "말의 뒤쪽 계산과 감정은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend-05:a:d-1:s2:core",
+            "friend-05:b:d-1:s2:core",
+            "friend05:a:d-1:unlock:s3:01",
+            "friend05:b:d-1:unlock:s3:01"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "태오의 현재 48만원 차용금 미반환를 뒤집는 숨은 책임 연결",
+          "lockedSummary": "핵심 책임 연결은 더 확인이 필요합니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              },
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "friend-05:a:d-1:s4:core",
+            "friend-05:b:d-1:s4:core",
+            "friend05:a:d-1:unlock:s5:01",
+            "friend05:b:d-1:unlock:s5:01"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "서윤의 피해자식 확산과 과거 채무 은닉",
+      "truth": true,
+      "truthDescription": "서윤은 현재 48만원 독촉 캡처를 공통 친구와 스토리에 퍼뜨리면서 자신이 태오에게 더 큰 과거 채무를 지고 있다는 맥락을 의도적으로 빼고 말했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 76,
+        "b": 24
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "친구경계",
+      "legitimacyIssue": true,
+      "judgmentStatement": "서윤은 과거 채무를 은닉했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "독촉 캡처",
+        "친한친구 스토리",
+        "단체방",
+        "피해자처럼",
+        "하린",
+        "잘린 대화"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "서윤의 피해자식 확산과 과거 채무 은닉에서 바로 드러나는 장면",
+          "lockedSummary": "겉으로 드러난 사실선만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend-05:a:d-2:s0:core",
+            "friend-05:b:d-2:s0:core"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "서윤의 피해자식 확산과 과거 채무 은닉 뒤에 깔린 선택 이유",
+          "lockedSummary": "말의 뒤쪽 계산과 감정은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend-05:a:d-2:s2:core",
+            "friend-05:b:d-2:s2:core",
+            "friend05:a:d-2:unlock:s3:01",
+            "friend05:b:d-2:unlock:s3:01"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "서윤의 피해자식 확산과 과거 채무 은닉를 뒤집는 숨은 책임 연결",
+          "lockedSummary": "핵심 책임 연결은 더 확인이 필요합니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              },
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:spread_frame_named"
+            ]
+          },
+          "revealAtomIds": [
+            "friend-05:a:d-2:s4:core",
+            "friend-05:b:d-2:s4:core",
+            "friend05:a:d-2:unlock:s5:01",
+            "friend05:b:d-2:unlock:s5:01"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "2년 전 186만원 보증금은 이미 끝난 돈인가",
+      "truth": false,
+      "truthDescription": "2년 전 태오가 대신 낸 작업실 보증금 186만원은 완전히 정산된 돈이 아니었고, 확인되는 현금 상환 뒤에도 더 큰 잔액이 남아 있었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-3",
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 61,
+        "b": 39
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "과거청산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "태오는 186만원 보증금을 정산하지 않았다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "186만원",
+        "보증금",
+        "작업실 임대",
+        "남은 잔액",
+        "부분 상환",
+        "끝난 돈"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "2년 전 186만원 보증금은 이미 끝난 돈인가에서 바로 드러나는 장면",
+          "lockedSummary": "겉으로 드러난 사실선만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend-05:a:d-3:s0:core",
+            "friend-05:b:d-3:s0:core"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "2년 전 186만원 보증금은 이미 끝난 돈인가 뒤에 깔린 선택 이유",
+          "lockedSummary": "말의 뒤쪽 계산과 감정은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              },
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend-05:a:d-3:s2:core",
+            "friend-05:b:d-3:s2:core",
+            "friend05:a:d-3:unlock:s3:01",
+            "friend05:b:d-3:unlock:s3:01"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "2년 전 186만원 보증금은 이미 끝난 돈인가를 뒤집는 숨은 책임 연결",
+          "lockedSummary": "핵심 책임 연결은 더 확인이 필요합니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:balance_recheck"
+            ]
+          },
+          "revealAtomIds": [
+            "friend-05:a:d-3:s4:core",
+            "friend-05:b:d-3:s4:core",
+            "friend05:a:d-3:unlock:s5:01",
+            "friend05:b:d-3:unlock:s5:01"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "suspects"
+        },
+        "trapSignals": [
+          "꽃장식과 호의를 상환으로 뭉개는 말",
+          "공유 시트의 남은 칸을 '끝난 분위기'로 넘기는 표현",
+          "현재 48만원과 예전 186만원 잔액을 한 계산처럼 섞는 주장"
+        ],
+        "truthExitEvidenceIds": [
+          "e-3",
+          "e-4",
+          "e-5"
+        ],
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어/당황",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석 고착",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "혼란/확신 약화",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해 해소",
+            "npcMode": "clarified"
+          }
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "태오의 현재 차용금에 대한 무단 상계",
+      "truth": true,
+      "truthDescription": "태오는 현재 48만원을 별도 변제하지 않고 예전 남은 채권에서 빼면 된다고 혼자 판단해 임의 상계를 시도했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "채무정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "태오는 무단으로 상계를 시도했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "상계",
+        "혼자 계산",
+        "메모앱",
+        "예전 돈에서 빼기",
+        "동의 없는 정산",
+        "48만원 상쇄"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "태오의 현재 차용금에 대한 무단 상계에서 바로 드러나는 장면",
+          "lockedSummary": "겉으로 드러난 사실선만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend-05:a:d-4:s0:core",
+            "friend-05:b:d-4:s0:core"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "태오의 현재 차용금에 대한 무단 상계 뒤에 깔린 선택 이유",
+          "lockedSummary": "말의 뒤쪽 계산과 감정은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend-05:a:d-4:s2:core",
+            "friend-05:b:d-4:s2:core",
+            "friend05:a:d-4:unlock:s3:01",
+            "friend05:b:d-4:unlock:s3:01"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "태오의 현재 차용금에 대한 무단 상계를 뒤집는 숨은 책임 연결",
+          "lockedSummary": "핵심 책임 연결은 더 확인이 필요합니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              },
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:consent_line_named"
+            ]
+          },
+          "revealAtomIds": [
+            "friend-05:a:d-4:s4:core",
+            "friend-05:b:d-4:s4:core",
+            "friend05:a:d-4:unlock:s5:01",
+            "friend05:b:d-4:unlock:s5:01"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "차용 기록과 상계 합의 규칙의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "둘은 큰돈 차용은 시트에 기록하고 상계는 합의 뒤에만 하기로 했지만, 서윤은 과거 빚을 뺀 현재 피해만 퍼뜨렸고 태오는 현재 빚을 조용히 과거 채권과 상계하려 했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "친구경계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "서윤은 현재 피해만 주장했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "공유 가계시트",
+        "10만원 이상",
+        "상계 합의",
+        "기록 규칙",
+        "분리 정산",
+        "공동 시트"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "차용 기록과 상계 합의 규칙의 쌍방 위반에서 바로 드러나는 장면",
+          "lockedSummary": "겉으로 드러난 사실선만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend-05:a:d-5:s0:core",
+            "friend-05:b:d-5:s0:core"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "차용 기록과 상계 합의 규칙의 쌍방 위반 뒤에 깔린 선택 이유",
+          "lockedSummary": "말의 뒤쪽 계산과 감정은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend-05:a:d-5:s2:core",
+            "friend-05:b:d-5:s2:core",
+            "friend05:a:d-5:unlock:s3:01",
+            "friend05:b:d-5:unlock:s3:01"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "차용 기록과 상계 합의 규칙의 쌍방 위반를 뒤집는 숨은 책임 연결",
+          "lockedSummary": "핵심 책임 연결은 더 확인이 필요합니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              },
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:rule_text_named"
+            ]
+          },
+          "revealAtomIds": [
+            "friend-05:a:d-5:s4:core",
+            "friend-05:b:d-5:s4:core",
+            "friend05:a:d-5:unlock:s5:01",
+            "friend05:b:d-5:unlock:s5:01"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-4:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-4",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-4:surface:consent_line_named"
+      },
+      "uiLabel": "현재 채무 확정"
+    },
+    {
+      "id": "link:d-3:d-4:unlocks_layer",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-4",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "unlockLayer": "core",
+        "grantFlag": "d-4:motive:offset_named"
+      },
+      "uiLabel": "과거 잔액 재확인"
+    },
+    {
+      "id": "link:d-2:d-5:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-5:surface:rule_text_named"
+      },
+      "uiLabel": "확산 맥락 노출"
+    },
+    {
+      "id": "link:d-4:d-5:retaliation",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "retaliation",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-5:motive:dual_breach_named"
+      },
+      "uiLabel": "상계 규칙 충돌"
+    },
+    {
+      "id": "link:d-3:d-1:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPenalty": 11,
+        "grantFlag": "d-1:motive:betrayal_named"
+      },
+      "uiLabel": "현재 피해 단독서사 약화"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "서윤이 공통 친구들에게 보낸 독촉 캡처",
+      "description": "태오가 48만원을 안 갚고 있다는 현재 대화 일부만 보이는 독촉 캡처다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-2"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "현재 독촉 장면이 보이는 캡처 한 장만 먼저 제출됐고 앞뒤 대화는 빠져 있었다.",
+        "check_metadata": "캡처 생성 시각은 서윤이 단체방에 내용을 공유하기 직전으로 남아 있다.",
+        "restore_context": "과거 보증금 대화와 태오의 상계 언급이 잘려 있어 현재 48만원만 유일한 쟁점처럼 보이게 한다.",
+        "verify_source": "서윤 휴대폰 원본과 최하린이 받은 파일의 해시가 일치한다.",
+        "check_edits": "문자열 조작 흔적은 없지만 상단과 하단이 선택적으로 잘려 있다.",
+        "question_acquisition": "사적인 차용 대화를 제3자에게 전달한 자료라 사생활 침해 우려가 크다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "전서윤에게: \"서윤의 피해자식 확산과 과거 채무 은닉\" 관련 해명 요구 (방어 동기: 복수심)",
+          "implication": "이 증거는 전서윤의 \"서윤의 피해자식 확산과 과거 채무 은닉\" 쟁점과 관련된다. 전서윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "민태오에게: \"태오의 현재 48만원 차용금 미반환\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 민태오의 \"태오의 현재 48만원 차용금 미반환\" 쟁점과 관련된다. 민태오은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "현재 피해만 남긴 잘린 맥락을 뒤집는 창"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "48만원 이체내역과 상환 약속 메시지",
+      "description": "서윤이 태오에게 48만원을 보낸 계좌이체 원본과, 태오가 다음 월급 주간에 갚겠다고 답한 메시지 기록이다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은행 발급 이체내역과 메신저 원본 대화가 함께 제출됐다.",
+        "check_metadata": "송금 시각과 태오의 상환 약속 메시지가 같은 밤 20분 간격으로 이어진다.",
+        "restore_context": "이 자료만 보면 현재 차용 자체와 상환 기한 약속은 명확하지만 과거 보증금 맥락은 드러나지 않는다.",
+        "verify_source": "은행 거래번호와 양측 메시지 ID가 일치해 송금과 약속이 연결된다.",
+        "check_edits": "기관 내역과 원본 대화라 후편집 흔적이 없다.",
+        "question_acquisition": "당사자들이 직접 제출한 금융·대화 자료라 절차상 문제는 낮다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S4"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "현재 48만원 미반환과 약속 시점을 못 박는 창"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "2년 전 보증금 186만원 이체기록과 메모란",
+      "description": "태오가 서윤의 작업실 임대 보증금 부족분 186만원을 보낸 은행 원본과 '보증금 먼저 막자'라는 메모가 남은 거래기록이다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은행 발급본에 송금 시각, 수취 계좌, 메모란이 모두 남아 있다.",
+        "check_metadata": "보증금 마감일 당일 오후 송금으로, 임대인 독촉 직후 처리된 사실이 확인된다.",
+        "restore_context": "단순 선물이나 생활비 지원이 아니라 특정 부족분을 막기 위한 대납이었다.",
+        "verify_source": "박주연 임대인이 보관한 입금 확인 시간과 은행 기록이 일치한다.",
+        "check_edits": "기관 발급 PDF라 편집 흔적이 없다.",
+        "question_acquisition": "태오가 제출에 동의한 계좌 내역이라 적법성은 높다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "timeline"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "보증금 대납이 선물이 아니라 미정산 채권임을 여는 창"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "공유 가계시트와 수기 차용 메모",
+      "description": "둘이 함께 쓰던 정산 시트와 노트에 남아 있는 부분 상환 기록, 남은 잔액 표시, 상계는 합의 후만 가능하다는 문구다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "윤지호가 내려받은 시트 export와 서윤의 수기 노트 원본이 함께 대조됐다.",
+        "check_metadata": "보증금 송금 후 두 차례 현금 상환만 입력돼 있고, 이후 장식 제공이나 선물은 상환 항목으로 분류되지 않았다.",
+        "restore_context": "남은 금액 칸이 지워지지 않은 채 남아 있어 두 사람이 끝까지 완전 정산 합의를 하지 못했음을 보여준다.",
+        "verify_source": "공유 시트 수정 시각과 수기 노트 사진의 날짜가 서로 맞아떨어진다.",
+        "check_edits": "시트 버전기록과 노트 필압 흐름상 사후 조작 흔적은 없다.",
+        "question_acquisition": "공동으로 관리하던 정산 자료라 제출은 적법하지만 개인 메모 일부는 최소 공개가 바람직하다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "전서윤에게: \"2년 전 186만원 보증금은 이미 끝난 돈인가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 전서윤의 \"2년 전 186만원 보증금은 이미 끝난 돈인가\" 쟁점과 관련된다. 전서윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "민태오에게: \"차용 기록과 상계 합의 규칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 민태오의 \"차용 기록과 상계 합의 규칙의 쌍방 위반\" 쟁점과 관련된다. 민태오은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "legality",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "기록 규칙과 상계 합의 문구를 비교하는 창"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "태오의 메모앱 계산표와 하린에게 보낸 상계 언급",
+      "description": "태오가 현재 48만원을 예전 남은 돈에서 빼면 된다고 적어 둔 계산 메모와, 같은 취지로 최하린에게 보낸 메시지 원본이다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "태오 휴대폰의 메모앱 원본과 최하린 수신 대화가 함께 제출됐다.",
+        "check_metadata": "계산 메모 생성 시각은 서윤의 마지막 독촉 메시지 직후이고, 하린에게 상계 얘기를 보낸 시각은 그보다 12분 뒤다.",
+        "restore_context": "태오는 현재 빚을 부정하기보다 예전 잔액과 묶어 처리하면 된다고 혼자 결론내리고 있었다.",
+        "verify_source": "메모앱 생성 기록과 카카오톡 전송 순서가 서로 일치한다.",
+        "check_edits": "삭제 복원 흔적은 없지만 메모가 개인 계산표라 해석 여지는 남는다.",
+        "question_acquisition": "당사자와 수신인이 각자 제출한 자료라 위법성은 낮다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "전서윤에게: \"2년 전 186만원 보증금은 이미 끝난 돈인가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 전서윤의 \"2년 전 186만원 보증금은 이미 끝난 돈인가\" 쟁점과 관련된다. 전서윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "민태오에게: \"태오의 현재 차용금에 대한 무단 상계\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 민태오의 \"태오의 현재 차용금에 대한 무단 상계\" 쟁점과 관련된다. 민태오은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "motive"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "무단 상계가 머릿속 계산이 아니라 이미 굳은 판단이었음을 드러내는 창"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "서윤의 단체방 발언과 친한친구 스토리 보관본",
+      "description": "서윤이 공통 친구 단체방에서 태오를 '원래 돈 약속 흐리는 사람'이라고 말하고, 비슷한 취지의 친한친구 스토리를 올린 기록이다.",
+      "type": "sns",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "단체방 원본 대화와 인스타 스토리 아카이브가 함께 제출됐다.",
+        "check_metadata": "단체방 발언 뒤 11분 후 같은 취지의 스토리가 게시됐다.",
+        "restore_context": "현재 48만원 문제만 강조돼 있고, 서윤 자신의 예전 미정산 잔액은 언급되지 않는다.",
+        "verify_source": "서윤 계정 보관함, 조회 로그, 단체방 수신 화면이 동일 게시 흐름을 보여준다.",
+        "check_edits": "앱 내 원본과 대화창이라 후편집 흔적은 없다.",
+        "question_acquisition": "본인 계정 자료이지만 제3자 조회자 목록과 단체방 구성원 정보는 제한적으로 다뤄야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "전서윤에게: \"서윤의 피해자식 확산과 과거 채무 은닉\" 관련 해명 요구 (방어 동기: 복수심)",
+          "implication": "이 증거는 전서윤의 \"서윤의 피해자식 확산과 과거 채무 은닉\" 쟁점과 관련된다. 전서윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "민태오에게: \"차용 기록과 상계 합의 규칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 민태오의 \"차용 기록과 상계 합의 규칙의 쌍방 위반\" 쟁점과 관련된다. 민태오은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "identity",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S3",
+            "multiplier": 1.3,
+            "note": "공개 확산이 피해 호소를 넘어 여론 선점이었는지 가르는 창"
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:repayment_timeline",
+      "intentTag": "timeline_pin",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "friend-05:a:d-1:s2:core",
+          "friend-05:b:d-1:s2:core"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 순서까지 다 풀고 싶지 않아.",
+        "그 시점은 기록을 같이 보면서 말해야 해."
+      ]
+    },
+    {
+      "id": "fq:d-1:core_emotion",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "friend-05:a:d-1:s4:core",
+          "friend-05:b:d-1:s4:core"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "감정 얘기는 지금 꺼내면 더 커져.",
+        "그때 감정은 아직 정리되지 않았어."
+      ]
+    },
+    {
+      "id": "fq:d-2:frame_context",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "friend-05:a:d-2:s2:core",
+          "friend-05:b:d-2:s2:core"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "앞뒤 맥락을 떼면 오히려 더 틀어져.",
+        "그건 한 줄로 자를 수 없는 이야기야."
+      ]
+    },
+    {
+      "id": "fq:d-2:spread_motive",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "friend-05:a:d-2:s3:core",
+          "friend-05:b:d-2:s3:core"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "속내를 지금 바로 입으로 꺼내긴 어렵다.",
+        "의도까지 한 문장으로 잘라 말하고 싶지 않아."
+      ]
+    },
+    {
+      "id": "fq:d-3:misread_identity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "friend-05:a:d-3:s2:core",
+          "friend-05:b:d-3:s2:core"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 부분을 사람 평가로 넓히고 싶진 않아.",
+        "이미지 얘기로 번지면 답을 아끼게 돼."
+      ]
+    },
+    {
+      "id": "fq:d-4:rule_line",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "friend-05:a:d-4:s2:core",
+          "friend-05:b:d-4:s2:core"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "규칙 얘기는 문서랑 같이 봐야 해.",
+        "기억만으로 단정해 말하고 싶진 않아."
+      ]
+    },
+    {
+      "id": "fq:d-5:shared_responsibility",
+      "intentTag": "responsibility_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "friend-05:a:d-5:s5:core",
+          "friend-05:b:d-5:s5:core"
+        ],
+        "preferredAngleTags": [
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "누구 책임인지 한 칼에 자르긴 어렵다.",
+        "그건 더 열린 사실을 보고 말해야 해."
+      ]
+    },
+    {
+      "id": "fq:d-1:identity_pressure",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "friend-05:a:d-1:s3:core",
+          "friend-05:b:d-1:s3:core"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "그 부분을 사람 평가로 넓히고 싶진 않아.",
+        "이미지 얘기로 번지면 답을 아끼게 돼."
+      ]
+    }
+  ],
+  "proposedUnlockAtoms": [
+    {
+      "id": "friend05:a:d-1:unlock:s2:01",
+      "factText": "서윤은 예전 보증금 잔액이 남아 있더라도 현재 48만원은 별도 변제로 남는다고 본다.",
+      "tags": [
+        "context",
+        "rule"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "insist"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "sourceUnlockId": "d1.a.unlock.s2.separate_current_repayment"
+    },
+    {
+      "id": "friend05:a:d-1:unlock:s3:01",
+      "factText": "서윤에게는 응급한 밤에 먼저 돈을 보낸 뒤 답을 기다려야 했던 경험이 배신감으로 남아 있다.",
+      "tags": [
+        "emotion",
+        "harm"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "amount": {
+          "exact": "480,000원",
+          "rounded": "48만원",
+          "neutral": "현재 그 돈"
+        },
+        "time": {
+          "period": "반려견 야간 병원비가 필요하던 밤",
+          "neutral": "그날 밤",
+          "sequence": "송금 뒤 20분 안"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "blame"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "sourceUnlockId": "d1.a.unlock.s3.betrayal_after_emergency"
+    },
+    {
+      "id": "friend05:a:d-1:unlock:s4:01",
+      "factText": "서윤은 현재 피해를 강조하려고 공개 압박을 택한 선택이 대화를 더 어렵게 만들었다는 걸 느끼기 시작한다.",
+      "tags": [
+        "emotion",
+        "responsibility"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "time": {
+          "period": "반려견 야간 병원비가 필요하던 밤",
+          "neutral": "그날 밤",
+          "sequence": "송금 뒤 20분 안"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        },
+        "amount": {
+          "exact": "480,000원",
+          "rounded": "48만원",
+          "neutral": "현재 그 돈"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "sourceUnlockId": "d1.a.unlock.s4.public_pressure_regret"
+    },
+    {
+      "id": "friend05:a:d-1:unlock:s5:01",
+      "factText": "서윤은 현재 48만원 미반환과 자신의 과거 채무 은닉을 분리 정산해야 한다고 인정한다.",
+      "tags": [
+        "responsibility",
+        "rule"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "작년 팝업 정산 싸움 뒤",
+          "neutral": "그때 이후"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "responsibility"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "sourceUnlockId": "d1.a.unlock.s5.balance_current_and_old"
+    },
+    {
+      "id": "friend05:a:d-2:unlock:s2:01",
+      "factText": "서윤은 독촉 캡처가 현재 48만원 장면만 남도록 선택됐다는 점을 부분 인정한다.",
+      "tags": [
+        "evidence",
+        "admission"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-2",
+      "sourceUnlockId": "d2.a.unlock.s2.cropped_present_only"
+    },
+    {
+      "id": "friend05:a:d-2:unlock:s3:01",
+      "factText": "서윤은 친구들 반응을 통해 자신의 피해자 위치를 굳히고 싶었다.",
+      "tags": [
+        "motive",
+        "emotion"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-2",
+      "sourceUnlockId": "d2.a.unlock.s3.support_seeking_revenge"
+    },
+    {
+      "id": "friend05:a:d-2:unlock:s4:01",
+      "factText": "서윤은 상대에게 설명할 여지를 남기지 않는 편이 덜 바보 같을 것 같아 확산을 멈추지 못했다.",
+      "tags": [
+        "shame",
+        "emotion"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-2",
+      "sourceUnlockId": "d2.a.unlock.s4.face_over_fairness"
+    },
+    {
+      "id": "friend05:a:d-2:unlock:s5:01",
+      "factText": "서윤은 더 큰 과거 채무를 의도적으로 빼고 태오를 반복적 미상환자처럼 보이게 했다.",
+      "tags": [
+        "responsibility",
+        "privacy"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-2",
+      "sourceUnlockId": "d2.a.unlock.s5.full_omission_confess"
+    },
+    {
+      "id": "friend05:a:d-3:unlock:s2:01",
+      "factText": "서윤은 186만원 대납과 두 차례 현금 상환이 있었지만 완전 종료 합의는 없었다는 점을 마주한다.",
+      "tags": [
+        "context",
+        "admission"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "institution": {
+          "name": "작업실 임대 보증금",
+          "neutral": "보증금 부족분"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "sourceUnlockId": "d3.a.unlock.s2.deposit_admitted_not_closed"
+    },
+    {
+      "id": "friend05:a:d-3:unlock:s3:01",
+      "factText": "서윤은 꽃장식과 호의 제공을 스스로 상환처럼 계산해 왔다.",
+      "tags": [
+        "self_justification",
+        "context"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "sourceUnlockId": "d3.a.unlock.s3.noncash_selfcounted"
+    },
+    {
+      "id": "friend05:a:d-3:unlock:s4:01",
+      "factText": "서윤은 아직 큰돈을 남긴 사람처럼 보일까 두려워 정산표 재확인을 피했다.",
+      "tags": [
+        "shame",
+        "fear"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "작년 팝업 정산 싸움 뒤",
+          "neutral": "그때 이후"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "sourceUnlockId": "d3.a.unlock.s4.shame_avoids_recheck"
+    },
+    {
+      "id": "friend05:a:d-3:unlock:s5:01",
+      "factText": "서윤은 186만원 보증금이 끝난 돈이 아니었고 더 큰 잔액을 숨겨 왔다.",
+      "tags": [
+        "responsibility",
+        "admission"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "institution": {
+          "name": "작업실 임대 보증금",
+          "neutral": "보증금 부족분"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "sourceUnlockId": "d3.a.unlock.s5.old_balance_confess"
+    },
+    {
+      "id": "friend05:a:d-4:unlock:s2:01",
+      "factText": "서윤은 과거 잔액이 남아 있다는 맥락과 별개로, 현재 48만원 상계 동의를 한 적이 없다고 분명히 한다.",
+      "tags": [
+        "rule",
+        "admission"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "작년 팝업 정산 싸움 뒤",
+          "neutral": "그때 이후"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "insist"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "sourceUnlockId": "d4.a.unlock.s2.no_offset_consent"
+    },
+    {
+      "id": "friend05:a:d-4:unlock:s3:01",
+      "factText": "서윤은 태오가 하린에게 먼저 상계 얘기를 한 것이 자신을 정산 당사자에서 밀어낸 행동처럼 느껴진다.",
+      "tags": [
+        "emotion",
+        "relationship"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "amount": {
+          "exact": "480,000원",
+          "rounded": "48만원",
+          "neutral": "현재 그 돈"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "blame"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "sourceUnlockId": "d4.a.unlock.s3.thirdparty_first_hurt"
+    },
+    {
+      "id": "friend05:a:d-4:unlock:s4:01",
+      "factText": "서윤은 자신의 공개 압박이 직접 대화를 더 어렵게 만든 점을 일부 인정한다.",
+      "tags": [
+        "responsibility",
+        "emotion"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "time": {
+          "period": "반려견 야간 병원비가 필요하던 밤",
+          "neutral": "그날 밤",
+          "sequence": "송금 뒤 20분 안"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        },
+        "amount": {
+          "exact": "480,000원",
+          "rounded": "48만원",
+          "neutral": "현재 그 돈"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "emotional"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "sourceUnlockId": "d4.a.unlock.s4.ack_public_pressure"
+    },
+    {
+      "id": "friend05:a:d-4:unlock:s5:01",
+      "factText": "서윤은 현재 채무와 과거 채권은 동의 없는 상계로 묶이면 안 된다고 정리한다.",
+      "tags": [
+        "rule",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "작년 팝업 정산 싸움 뒤",
+          "neutral": "그때 이후"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        }
+      },
+      "stanceHints": [
+        "confess",
+        "insist"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "sourceUnlockId": "d4.a.unlock.s5.no_silent_offset_rule"
+    },
+    {
+      "id": "friend05:a:d-5:unlock:s2:01",
+      "factText": "서윤은 현재 피해만 퍼뜨린 방식이 기록 규칙의 균형을 흔들었다는 점을 인정한다.",
+      "tags": [
+        "rule",
+        "admission"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "sourceUnlockId": "d5.a.unlock.s2.public_only_breach"
+    },
+    {
+      "id": "friend05:a:d-5:unlock:s3:01",
+      "factText": "서윤은 친구들 앞에서 먼저 피해자 자리를 잡고 싶었다.",
+      "tags": [
+        "motive",
+        "identity"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "sourceUnlockId": "d5.a.unlock.s3.victim_position_grab"
+    },
+    {
+      "id": "friend05:a:d-5:unlock:s4:01",
+      "factText": "서윤은 혼자 손해 본 사람처럼 남기 싫어 주변의 지지를 구했다.",
+      "tags": [
+        "emotion",
+        "fear"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "sourceUnlockId": "d5.a.unlock.s4.support_need_confess"
+    },
+    {
+      "id": "friend05:a:d-5:unlock:s5:01",
+      "factText": "서윤은 자신과 태오가 모두 규칙을 절반만 지켰다고 인정한다.",
+      "tags": [
+        "rule",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ],
+      "caseId": "friend-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "sourceUnlockId": "d5.a.unlock.s5.dual_rule_breach"
+    },
+    {
+      "id": "friend05:b:d-1:unlock:s2:01",
+      "factText": "태오는 48만원을 별도 송금하지 못했고 약속한 월급 주간도 넘겼다는 점을 인정한다.",
+      "tags": [
+        "admission",
+        "timeline"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "amount": {
+          "exact": "480,000원",
+          "rounded": "48만원",
+          "neutral": "현재 그 돈"
+        },
+        "time": {
+          "period": "다음 월급 주간",
+          "neutral": "약속한 시점"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "sourceUnlockId": "d1.b.unlock.s2.loan_due_admitted"
+    },
+    {
+      "id": "friend05:b:d-1:unlock:s3:01",
+      "factText": "태오는 예전 큰돈을 다시 꺼내면 관계가 더 망가질까 봐 현재 채무 설명을 미뤘다.",
+      "tags": [
+        "relationship",
+        "fear"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "다음 월급 주간",
+          "neutral": "약속한 시점"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "emotional"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "sourceUnlockId": "d1.b.unlock.s3.silence_for_relationship"
+    },
+    {
+      "id": "friend05:b:d-1:unlock:s4:01",
+      "factText": "태오는 현재 48만원을 예전 잔액 계산 안에 넣어 생각하고 있었다.",
+      "tags": [
+        "context",
+        "motive"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "sourceUnlockId": "d1.b.unlock.s4.offset_thought_revealed"
+    },
+    {
+      "id": "friend05:b:d-1:unlock:s5:01",
+      "factText": "태오는 현재 48만원은 과거 채권과 별도로 먼저 갚았어야 했다고 시인한다.",
+      "tags": [
+        "responsibility",
+        "rule"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "작년 팝업 정산 싸움 뒤",
+          "neutral": "그때 이후"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "sourceUnlockId": "d1.b.unlock.s5.current_debt_separate"
+    },
+    {
+      "id": "friend05:b:d-2:unlock:s2:01",
+      "factText": "태오는 서윤의 확산에서 더 큰 과거 채무 맥락이 빠졌다고 분명히 말하기 시작한다.",
+      "tags": [
+        "context",
+        "admission"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "sourceUnlockId": "d2.b.unlock.s2.omitted_context_named"
+    },
+    {
+      "id": "friend05:b:d-2:unlock:s3:01",
+      "factText": "태오는 선택적 확산 때문에 자신이 반복적으로 돈을 안 갚는 사람처럼 굳었다고 느낀다.",
+      "tags": [
+        "identity",
+        "harm"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "blame"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "sourceUnlockId": "d2.b.unlock.s3.misread_as_deadbeat"
+    },
+    {
+      "id": "friend05:b:d-2:unlock:s4:01",
+      "factText": "태오는 옛돈을 꺼내는 순간 자신이 옹졸한 사람으로 보일까 두려워 대응을 늦췄다.",
+      "tags": [
+        "fear",
+        "shame"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "sourceUnlockId": "d2.b.unlock.s4.afraid_of_pettiness"
+    },
+    {
+      "id": "friend05:b:d-2:unlock:s5:01",
+      "factText": "태오는 서윤의 선택적 확산과 자신의 침묵이 함께 왜곡된 인상을 만들었다고 인정한다.",
+      "tags": [
+        "responsibility",
+        "relationship"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "sourceUnlockId": "d2.b.unlock.s5.distortion_and_silence"
+    },
+    {
+      "id": "friend05:b:d-3:unlock:s2:01",
+      "factText": "태오는 대납 기록과 부분 상환 기록을 근거로 186만원이 미정산 상태라고 본다.",
+      "tags": [
+        "evidence",
+        "context"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "institution": {
+          "name": "작업실 임대 보증금",
+          "neutral": "보증금 부족분"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "sourceUnlockId": "d3.b.unlock.s2.unclosed_balance_record"
+    },
+    {
+      "id": "friend05:b:d-3:unlock:s3:01",
+      "factText": "태오는 꽃장식과 호의 제공이 상환으로 합의된 적 없었다고 분명히 한다.",
+      "tags": [
+        "rule",
+        "context"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "작년 팝업 정산 싸움 뒤",
+          "neutral": "그때 이후"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "sourceUnlockId": "d3.b.unlock.s3.no_agreement_on_noncash"
+    },
+    {
+      "id": "friend05:b:d-3:unlock:s4:01",
+      "factText": "태오는 치사해 보일까 봐 과거 큰돈 정산을 오래 묻어 두었다.",
+      "tags": [
+        "shame",
+        "fear"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "sourceUnlockId": "d3.b.unlock.s4.left_buried_to_avoid_petty"
+    },
+    {
+      "id": "friend05:b:d-3:unlock:s5:01",
+      "factText": "태오는 186만원 보증금은 끝난 돈이 아니었고 자신도 문서 정산을 미룬 책임이 있다고 인정한다.",
+      "tags": [
+        "responsibility",
+        "admission"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "작년 팝업 정산 싸움 뒤",
+          "neutral": "그때 이후"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "sourceUnlockId": "d3.b.unlock.s5.old_debt_not_finished"
+    },
+    {
+      "id": "friend05:b:d-4:unlock:s2:01",
+      "factText": "태오는 하린에게 먼저 '예전 남은 돈에서 빼면 된다'는 취지로 말해 두었다.",
+      "tags": [
+        "evidence",
+        "context"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-4",
+      "sourceUnlockId": "d4.b.unlock.s2.thirdparty_offset_message"
+    },
+    {
+      "id": "friend05:b:d-4:unlock:s3:01",
+      "factText": "태오는 합의 없는 상계라는 선을 어렴풋이 알면서도 현재 변제를 미뤘다.",
+      "tags": [
+        "rule",
+        "responsibility"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "amount": {
+          "exact": "480,000원",
+          "rounded": "48만원",
+          "neutral": "현재 그 돈"
+        },
+        "time": {
+          "period": "작년 팝업 정산 싸움 뒤",
+          "neutral": "그때 이후"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-4",
+      "sourceUnlockId": "d4.b.unlock.s3.knew_consent_line"
+    },
+    {
+      "id": "friend05:b:d-4:unlock:s4:01",
+      "factText": "태오는 현재 48만원을 따로 보내지 않은 것이 자신의 편의적 계산이었다고 인정한다.",
+      "tags": [
+        "motive",
+        "responsibility"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-4",
+      "sourceUnlockId": "d4.b.unlock.s4.convenient_calculation"
+    },
+    {
+      "id": "friend05:b:d-4:unlock:s5:01",
+      "factText": "태오는 상계는 서로 동의해야 하는데 개인 계산표로 끝내려 했다고 시인한다.",
+      "tags": [
+        "rule",
+        "admission"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "time": {
+          "period": "부분 상환 두 차례 뒤에도 남아 있던 시점",
+          "neutral": "그 뒤"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        },
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-4",
+      "sourceUnlockId": "d4.b.unlock.s5.unilateral_offset_confess"
+    },
+    {
+      "id": "friend05:b:d-5:unlock:s2:01",
+      "factText": "태오는 상계는 합의 후라는 규칙을 알면서도 혼자 계산을 굴렸다.",
+      "tags": [
+        "rule",
+        "admission"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admit"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "sourceUnlockId": "d5.b.unlock.s2.rule_known_but_solo"
+    },
+    {
+      "id": "friend05:b:d-5:unlock:s3:01",
+      "factText": "태오는 자신의 위반을 인정하면서도 서윤 역시 현재 피해만 퍼뜨려 규칙 균형을 깼다고 본다.",
+      "tags": [
+        "context",
+        "responsibility"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "sourceUnlockId": "d5.b.unlock.s3.shared_rule_breach_frame"
+    },
+    {
+      "id": "friend05:b:d-5:unlock:s4:01",
+      "factText": "태오는 기록을 남기는 순간 친구 관계가 장부로만 남을까 두려워했다.",
+      "tags": [
+        "relationship",
+        "fear"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "sourceUnlockId": "d5.b.unlock.s4.recording_feels_final"
+    },
+    {
+      "id": "friend05:b:d-5:unlock:s5:01",
+      "factText": "태오는 둘 다 규칙을 알고도 각자 편한 절반만 지켰다고 인정한다.",
+      "tags": [
+        "rule",
+        "responsibility"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "amount": {
+          "exact": "1,860,000원 중 미정산 잔액",
+          "rounded": "186만원 중 남은 돈",
+          "neutral": "더 큰 예전 잔액"
+        },
+        "time": {
+          "period": "독촉 캡처를 단체방과 친한친구 스토리에 올린 직후",
+          "neutral": "그 시점",
+          "sequence": "단체방 발언 11분 뒤"
+        },
+        "personA": {
+          "fullName": "전서윤",
+          "judgeRef": "서윤 씨",
+          "neutral": "그 사람"
+        },
+        "personB": {
+          "fullName": "민태오",
+          "judgeRef": "태오 씨",
+          "neutral": "그 사람"
+        },
+        "threshold": {
+          "exact": "100,000원",
+          "rounded": "10만원",
+          "neutral": "그 기준 금액"
+        },
+        "institution": {
+          "name": "공유 가계시트",
+          "neutral": "공동 시트"
+        },
+        "personH": {
+          "fullName": "최하린",
+          "judgeRef": "하린 씨",
+          "neutral": "공통 친구"
+        }
+      },
+      "stanceHints": [
+        "confess"
+      ],
+      "caseId": "friend-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "sourceUnlockId": "d5.b.unlock.s5.both_used_half_rule"
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-2"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  }
+}

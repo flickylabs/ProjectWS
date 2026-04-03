@@ -1,0 +1,4448 @@
+export const partnership01BeatsV2Full = {
+  "caseId": "partnership-01",
+  "schemaVersion": "beat_v2_full",
+  "coverageSummary": {
+    "totalBeats": 74,
+    "byActionFamily": {
+      "question": 46,
+      "evidence": 8,
+      "free_question": 2,
+      "fatigue": 6,
+      "interjection": 12
+    },
+    "byParty": {
+      "a": 39,
+      "b": 35
+    },
+    "byDispute": {
+      "d-1": 31,
+      "d-3": 31,
+      "d-4": 2,
+      "d-5": 2,
+      "d-2": 8
+    },
+    "byIssueRole": {
+      "core_truth": 62,
+      "sub_truth": 4,
+      "shared_misconception": 8
+    },
+    "interjectionCount": 12,
+    "interjectionBreakdown": {
+      "emotional_only": 4,
+      "detail_rebuttal": 4,
+      "misbelief_escalation": 4,
+      "allow": 6,
+      "block": 6
+    },
+    "fatigueCount": 6,
+    "freeQuestionCount": 2,
+    "coveredKeys": [
+      "a:d-1:core:late:motive:motive",
+      "a:d-1:motive:mid:pressure:responsibility",
+      "a:d-1:surface:early:pressure:timeline",
+      "a:d-1:surface:mid:evidence:identity",
+      "a:d-1:surface:mid:fatigue:responsibility",
+      "a:d-1:surface:mid:fatigue:timeline",
+      "a:d-1:surface:mid:interjection:detail_rebuttal:block",
+      "a:d-1:surface:mid:interjection:emotional_only:allow",
+      "a:d-2:core:late:trap:context",
+      "a:d-2:surface:early:trap:identity",
+      "a:d-2:surface:mid:interjection:misbelief_escalation:allow",
+      "a:d-2:surface:mid:interjection:misbelief_escalation:block",
+      "a:d-3:core:late:rapport:emotion",
+      "a:d-3:motive:mid:pressure:responsibility",
+      "a:d-3:surface:early:pressure:timeline",
+      "a:d-3:surface:mid:evidence:context",
+      "a:d-3:surface:mid:fatigue:timeline",
+      "a:d-3:surface:mid:interjection:detail_rebuttal:block",
+      "a:d-3:surface:mid:interjection:emotional_only:allow",
+      "a:d-5:motive:mid:evidence:context",
+      "b:d-1:core:late:rapport:emotion",
+      "b:d-1:motive:mid:motive:motive",
+      "b:d-1:surface:early:pressure:identity",
+      "b:d-1:surface:mid:fatigue:responsibility",
+      "b:d-1:surface:mid:interjection:detail_rebuttal:allow",
+      "b:d-1:surface:mid:interjection:emotional_only:block",
+      "b:d-2:core:late:trap:emotion",
+      "b:d-2:surface:early:trap:context",
+      "b:d-2:surface:mid:interjection:misbelief_escalation:allow",
+      "b:d-2:surface:mid:interjection:misbelief_escalation:block",
+      "b:d-3:core:late:rapport:emotion",
+      "b:d-3:motive:mid:motive:motive",
+      "b:d-3:surface:early:pressure:context",
+      "b:d-3:surface:mid:fatigue:responsibility",
+      "b:d-3:surface:mid:fatigue:timeline",
+      "b:d-3:surface:mid:interjection:detail_rebuttal:allow",
+      "b:d-3:surface:mid:interjection:emotional_only:block",
+      "b:d-4:motive:mid:evidence:legality"
+    ],
+    "requirementsSatisfied": {
+      "beatCount_50_74": true,
+      "interjection_12": true,
+      "fatigue_present": true,
+      "free_question_present": true
+    }
+  },
+  "beats": [
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:pressure:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "그 송금은 갑자기 빼돌린 돈이 아니라 이미 논의된 브리지 투자 예치 절차의 일부였습니다. 순서를 빼고 결과만 보면 제 설명은 항상 왜곡됩니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 8,
+      "priority": 34,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:pressure:timeline",
+      "coverageKey": "a:d-1:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:pressure:timeline:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "최종 전자결재가 남지 않은 건 맞지만 9월 3일 안에 신탁계좌를 잡아두지 않으면 투자 검토 창이 닫히는 상황이었습니다. 그 직전 흐름을 자르면 지금 판단은 일부러 한 일처럼만 남습니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:pressure:timeline",
+      "coverageKey": "a:d-1:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:pressure:timeline:03",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "그 송금은 갑자기 빼돌린 돈이 아니라 이미 논의된 브리지 투자 예치 절차의 일부였습니다. 시간선부터 맞춰야 누가 어떤 압박 속에 움직였는지가 보입니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 34,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:pressure:timeline",
+      "coverageKey": "a:d-1:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:pressure:timeline:04",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "최종 전자결재가 남지 않은 건 맞지만 9월 3일 안에 신탁계좌를 잡아두지 않으면 투자 검토 창이 닫히는 상황이었습니다. 발단과 실행 시점을 나눠 보지 않으면 이 쟁점은 풀리지 않습니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:pressure:timeline",
+      "coverageKey": "a:d-1:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:pressure:timeline:05",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "그 송금은 갑자기 빼돌린 돈이 아니라 이미 논의된 브리지 투자 예치 절차의 일부였습니다. 그날의 앞뒤를 같이 봐야 제 말이 방어인지 설명인지 구분됩니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 34,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:pressure:timeline",
+      "coverageKey": "a:d-1:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:pressure:timeline:06",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "최종 전자결재가 남지 않은 건 맞지만 9월 3일 안에 신탁계좌를 잡아두지 않으면 투자 검토 창이 닫히는 상황이었습니다. 먼저 형성된 흐름을 무시하면 결론만 과하게 부풀어집니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:pressure:timeline",
+      "coverageKey": "a:d-1:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:surface:pressure:identity:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "서준이 한 건 간단하게 말해 제 최종 승인 없이 회사 돈 1,800만원을 밖으로 뺀 겁니다. 누가 이름을 올리고 누가 책임을 미뤘는지까지 같이 보셔야 합니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "identity",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 8,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:surface:pressure:identity",
+      "coverageKey": "b:d-1:surface:early:pressure:identity",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:identity_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:surface:pressure:identity:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "브리지 투자 얘기가 오간 건 알아도 얘기와 집행은 다르고 저는 공동승인 없이 눌러버린 송금까지 승인한 적은 없습니다. 이걸 한 사람의 성격 문제로만 몰면 실제 책임선이 흐려집니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "identity",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:surface:pressure:identity",
+      "coverageKey": "b:d-1:surface:early:pressure:identity",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:identity_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:surface:pressure:identity:03",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "서준이 한 건 간단하게 말해 제 최종 승인 없이 회사 돈 1,800만원을 밖으로 뺀 겁니다. 행위자 한 명만 찍으면 그 결정을 떠받친 사람은 빠져버립니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "identity",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:surface:pressure:identity",
+      "coverageKey": "b:d-1:surface:early:pressure:identity",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:identity_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:surface:pressure:identity:04",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "브리지 투자 얘기가 오간 건 알아도 얘기와 집행은 다르고 저는 공동승인 없이 눌러버린 송금까지 승인한 적은 없습니다. 실행자와 유도한 사람을 구분하지 않으면 이 질문은 반쪽 답이 됩니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "identity",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:surface:pressure:identity",
+      "coverageKey": "b:d-1:surface:early:pressure:identity",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:identity_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:surface:pressure:identity:05",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "서준이 한 건 간단하게 말해 제 최종 승인 없이 회사 돈 1,800만원을 밖으로 뺀 겁니다. 사람을 하나로 묶어 찍는 순간 구조가 가려집니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "identity",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:surface:pressure:identity",
+      "coverageKey": "b:d-1:surface:early:pressure:identity",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:identity_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:surface:pressure:identity:06",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "브리지 투자 얘기가 오간 건 알아도 얘기와 집행은 다르고 저는 공동승인 없이 눌러버린 송금까지 승인한 적은 없습니다. 누가 직접 했는지와 누가 그 장면을 만들었는지는 다릅니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "identity",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:surface:pressure:identity",
+      "coverageKey": "b:d-1:surface:early:pressure:identity",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-1:surface:identity_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:pressure:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "해나가 아무 말도 안 했다고 보기는 어렵고 적어도 그 자리에선 예치 방향 자체를 막지는 않았습니다. 순서를 빼고 결과만 보면 제 설명은 항상 왜곡됩니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 8,
+      "priority": 34,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:pressure:timeline",
+      "coverageKey": "a:d-3:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:pressure:timeline:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "그걸 정식 승인이라고 부를지는 다툴 수 있어도 회식 직후 대화에서 2,000만원 한도를 언급한 건 사실입니다. 그 직전 흐름을 자르면 지금 판단은 일부러 한 일처럼만 남습니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:pressure:timeline",
+      "coverageKey": "a:d-3:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:pressure:timeline:03",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "해나가 아무 말도 안 했다고 보기는 어렵고 적어도 그 자리에선 예치 방향 자체를 막지는 않았습니다. 시간선부터 맞춰야 누가 어떤 압박 속에 움직였는지가 보입니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 34,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:pressure:timeline",
+      "coverageKey": "a:d-3:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:pressure:timeline:04",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "그걸 정식 승인이라고 부를지는 다툴 수 있어도 회식 직후 대화에서 2,000만원 한도를 언급한 건 사실입니다. 발단과 실행 시점을 나눠 보지 않으면 이 쟁점은 풀리지 않습니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:pressure:timeline",
+      "coverageKey": "a:d-3:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:pressure:timeline:05",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "해나가 아무 말도 안 했다고 보기는 어렵고 적어도 그 자리에선 예치 방향 자체를 막지는 않았습니다. 그날의 앞뒤를 같이 봐야 제 말이 방어인지 설명인지 구분됩니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 34,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:pressure:timeline",
+      "coverageKey": "a:d-3:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:pressure:timeline:06",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "그걸 정식 승인이라고 부를지는 다툴 수 있어도 회식 직후 대화에서 2,000만원 한도를 언급한 건 사실입니다. 먼저 형성된 흐름을 무시하면 결론만 과하게 부풀어집니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "timeline",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:pressure:timeline",
+      "coverageKey": "a:d-3:surface:early:pressure:timeline",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:surface:pressure:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "저는 먼저 보내라고 승인한 적 없고 검토해보자는 말이 왜 승인으로 바뀌는지 모르겠습니다. 앞뒤 맥락을 같이 놓지 않으면 이 장면은 일부러 그렇게 보이게 됩니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 8,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:pressure:context",
+      "coverageKey": "b:d-3:surface:early:pressure:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:context_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:surface:pressure:context:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "회식 자리에서 분위기상 가능성 얘길 한 건 맞아도 그걸 최종 오케이처럼 들고 오는 건 무리입니다. 그 부분만 떼어 놓으면 지금 질문이 너무 쉽게 단정으로 갑니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:pressure:context",
+      "coverageKey": "b:d-3:surface:early:pressure:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:context_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:surface:pressure:context:03",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "저는 먼저 보내라고 승인한 적 없고 검토해보자는 말이 왜 승인으로 바뀌는지 모르겠습니다. 전후 문장을 같이 봐야 지금 말이 변명인지 맥락인지 구분됩니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:pressure:context",
+      "coverageKey": "b:d-3:surface:early:pressure:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:context_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:surface:pressure:context:04",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "회식 자리에서 분위기상 가능성 얘길 한 건 맞아도 그걸 최종 오케이처럼 들고 오는 건 무리입니다. 배경을 자르고 나면 남는 건 자극적인 결론뿐입니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:pressure:context",
+      "coverageKey": "b:d-3:surface:early:pressure:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:context_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:surface:pressure:context:05",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "저는 먼저 보내라고 승인한 적 없고 검토해보자는 말이 왜 승인으로 바뀌는지 모르겠습니다. 이건 한 줄로 정리할 일이 아니라 앞뒤가 묶여야 하는 문제입니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 33,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:pressure:context",
+      "coverageKey": "b:d-3:surface:early:pressure:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:context_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:surface:pressure:context:06",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "회식 자리에서 분위기상 가능성 얘길 한 건 맞아도 그걸 최종 오케이처럼 들고 오는 건 무리입니다. 맥락을 열지 않으면 서로가 왜 그렇게 읽었는지 설명이 안 됩니다.",
+      "behaviorHint": "질문의 초점을 다시 배열하려 들며 유리한 맥락부터 꺼낸다.",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 32,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:pressure:context",
+      "coverageKey": "b:d-3:surface:early:pressure:context",
+      "variantTarget": 6,
+      "setFlags": [
+        "d-3:surface:context_pinned"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:motive:pressure:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "제가 공동승인 토큰 없이 1,800만원을 보낸 건 맞지만 전날 해나가 2,000만원 한도 안에서 먼저 예치하자고 말한 걸 실행한 겁니다. 제 책임이 없다는 말은 아닙니다. 다만 한쪽만으로 닫을 문제도 아닙니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 29,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:motive:pressure:responsibility",
+      "coverageKey": "a:d-1:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:responsibility_exposed"
+      ],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:motive:pressure:responsibility:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "형식상 최종 승인은 제 손으로 넘어왔지만 그 판단을 혼자 만든 건 아니고 해나가 구두로 한도를 열어놓고 나중에 직원들 앞에서는 승인 자체가 없었다고 선을 그었습니다. 제가 선을 넘은 부분은 있지만 상대 몫까지 사라지진 않습니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 28,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:motive:pressure:responsibility",
+      "coverageKey": "a:d-1:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:responsibility_exposed"
+      ],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:motive:pressure:responsibility:03",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "제가 공동승인 토큰 없이 1,800만원을 보낸 건 맞지만 전날 해나가 2,000만원 한도 안에서 먼저 예치하자고 말한 걸 실행한 겁니다. 여기서 책임을 한 줄로 자르면 실제로 무너진 절차가 숨겨집니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 29,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:motive:pressure:responsibility",
+      "coverageKey": "a:d-1:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:responsibility_exposed"
+      ],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:motive:pressure:responsibility:04",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "형식상 최종 승인은 제 손으로 넘어왔지만 그 판단을 혼자 만든 건 아니고 해나가 구두로 한도를 열어놓고 나중에 직원들 앞에서는 승인 자체가 없었다고 선을 그었습니다. 누가 더 먼저 밀었는지와 누가 끝까지 막지 않았는지는 함께 봐야 합니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 28,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:motive:pressure:responsibility",
+      "coverageKey": "a:d-1:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:responsibility_exposed"
+      ],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:motive:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "더 문제는 그가 그 빈 절차를 제 동의로 덮으려 했다는 거고 자기 태블릿으로 보내놓고 나중엔 제가 다 허락한 것처럼 말했습니다. 그 선택 뒤에는 체면과 불안이 같이 섞여 있었습니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 28,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:motive:motive:motive",
+      "coverageKey": "b:d-1:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:motive_exposed"
+      ],
+      "requiresFlags": [
+        "d-1:surface:identity_pinned"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:motive:motive:motive:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "그 송금이 터졌을 때 저는 공동대표인데도 마지막 책임선에서 지워진 느낌이 들었고 모르고 있었다고 보이면 무능 알고 있었다고 보이면 공범이 되는 상황이었어요. 결국 계산만이 아니라 관계를 잃을까 봐 한 판단이기도 했습니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:motive:motive:motive",
+      "coverageKey": "b:d-1:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:motive_exposed"
+      ],
+      "requiresFlags": [
+        "d-1:surface:identity_pinned"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:motive:motive:motive:03",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "더 문제는 그가 그 빈 절차를 제 동의로 덮으려 했다는 거고 자기 태블릿으로 보내놓고 나중엔 제가 다 허락한 것처럼 말했습니다. 겉으론 구조를 말해도 안쪽에는 자리와 평판에 대한 불안이 있었습니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 28,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:motive:motive:motive",
+      "coverageKey": "b:d-1:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:motive_exposed"
+      ],
+      "requiresFlags": [
+        "d-1:surface:identity_pinned"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:motive:motive:motive:04",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "그 송금이 터졌을 때 저는 공동대표인데도 마지막 책임선에서 지워진 느낌이 들었고 모르고 있었다고 보이면 무능 알고 있었다고 보이면 공범이 되는 상황이었어요. 이걸 단순한 이익 계산으로만 보면 제가 왜 저렇게 밀었는지 설명이 안 됩니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:motive:motive:motive",
+      "coverageKey": "b:d-1:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-1:motive:motive_exposed"
+      ],
+      "requiresFlags": [
+        "d-1:surface:identity_pinned"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:motive:pressure:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "원본 단톡과 음성메모 기준으로 해나는 준비금 2천 안에서 먼저 예치 가자고 말했고 저는 그 말을 실행 허용으로 받아들였습니다. 제 책임이 없다는 말은 아닙니다. 다만 한쪽만으로 닫을 문제도 아닙니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 29,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:motive:pressure:responsibility",
+      "coverageKey": "a:d-3:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-3:motive:responsibility_exposed"
+      ],
+      "requiresFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:motive:pressure:responsibility:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "문제는 투자 분위기가 식자 그 말을 통째로 없던 일처럼 바꿨고 직원들 앞에서는 승인 자체가 없었다고 하면서 제 단독 폭주처럼 만들었다는 겁니다. 제가 선을 넘은 부분은 있지만 상대 몫까지 사라지진 않습니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 28,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:motive:pressure:responsibility",
+      "coverageKey": "a:d-3:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-3:motive:responsibility_exposed"
+      ],
+      "requiresFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:motive:pressure:responsibility:03",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "원본 단톡과 음성메모 기준으로 해나는 준비금 2천 안에서 먼저 예치 가자고 말했고 저는 그 말을 실행 허용으로 받아들였습니다. 여기서 책임을 한 줄로 자르면 실제로 무너진 절차가 숨겨집니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 29,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:motive:pressure:responsibility",
+      "coverageKey": "a:d-3:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-3:motive:responsibility_exposed"
+      ],
+      "requiresFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:motive:pressure:responsibility:04",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "문제는 투자 분위기가 식자 그 말을 통째로 없던 일처럼 바꿨고 직원들 앞에서는 승인 자체가 없었다고 하면서 제 단독 폭주처럼 만들었다는 겁니다. 누가 더 먼저 밀었는지와 누가 끝까지 막지 않았는지는 함께 봐야 합니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 28,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:motive:pressure:responsibility",
+      "coverageKey": "a:d-3:motive:mid:pressure:responsibility",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-3:motive:responsibility_exposed"
+      ],
+      "requiresFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:motive:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "그런데 서준은 그 모호한 말을 자기 면책 증거처럼 들고 나왔고 정식 승인 절차를 안 밟아놓고 제 회식 발언 하나에 다 걸었다는 식으로 말했습니다. 그 선택 뒤에는 체면과 불안이 같이 섞여 있었습니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 28,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:motive:motive:motive",
+      "coverageKey": "b:d-3:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-3:motive:motive_exposed"
+      ],
+      "requiresFlags": [
+        "d-3:surface:context_pinned"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:motive:motive:motive:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "투자가 흔들리기 시작하자 제 말 한마디가 공동 승인 기록으로 남을까 너무 두려워서 저는 없던 승인이라고 밀어붙였습니다. 결국 계산만이 아니라 관계를 잃을까 봐 한 판단이기도 했습니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:motive:motive:motive",
+      "coverageKey": "b:d-3:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-3:motive:motive_exposed"
+      ],
+      "requiresFlags": [
+        "d-3:surface:context_pinned"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:motive:motive:motive:03",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "그런데 서준은 그 모호한 말을 자기 면책 증거처럼 들고 나왔고 정식 승인 절차를 안 밟아놓고 제 회식 발언 하나에 다 걸었다는 식으로 말했습니다. 겉으론 구조를 말해도 안쪽에는 자리와 평판에 대한 불안이 있었습니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 28,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:motive:motive:motive",
+      "coverageKey": "b:d-3:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-3:motive:motive_exposed"
+      ],
+      "requiresFlags": [
+        "d-3:surface:context_pinned"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:motive:motive:motive:04",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "투자가 흔들리기 시작하자 제 말 한마디가 공동 승인 기록으로 남을까 너무 두려워서 저는 없던 승인이라고 밀어붙였습니다. 이걸 단순한 이익 계산으로만 보면 제가 왜 저렇게 밀었는지 설명이 안 됩니다.",
+      "behaviorHint": "책임을 일부 인정하면서도 상대 몫을 곁들여 균형을 되찾으려 한다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "motive",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:motive:motive:motive",
+      "coverageKey": "b:d-3:motive:mid:motive:motive",
+      "variantTarget": 4,
+      "setFlags": [
+        "d-3:motive:motive_exposed"
+      ],
+      "requiresFlags": [
+        "d-3:surface:context_pinned"
+      ],
+      "tags": [
+        "mid"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:evidence:identity:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "제가 공동승인 토큰 없이 1,800만원을 보낸 건 맞지만 전날 해나가 2,000만원 한도 안에서 먼저 예치하자고 말한 걸 실행한 겁니다. 이 로그가 남아 있으면 누가 실제로 움직였는지는 피하기 어렵습니다.",
+      "behaviorHint": "증거를 힐끗 보고 말끝을 낮춘 뒤, 불리한 부분만 최소치로 인정한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "identity",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:admission:2"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:evidence:identity",
+      "coverageKey": "a:d-1:surface:mid:evidence:identity",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-1:surface:evidence_cleaned"
+      ],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "tags": [
+        "cold",
+        "evidence"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:evidence:identity:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "형식상 최종 승인은 제 손으로 넘어왔지만 그 판단을 혼자 만든 건 아니고 해나가 구두로 한도를 열어놓고 나중에 직원들 앞에서는 승인 자체가 없었다고 선을 그었습니다. 실행 주체를 흐리기엔 원본 흔적이 너무 선명합니다.",
+      "behaviorHint": "증거를 힐끗 보고 말끝을 낮춘 뒤, 불리한 부분만 최소치로 인정한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "identity",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:admission:2"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:evidence:identity",
+      "coverageKey": "a:d-1:surface:mid:evidence:identity",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-1:surface:evidence_cleaned"
+      ],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "tags": [
+        "cold",
+        "evidence"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:evidence:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "원본 단톡과 음성메모 기준으로 해나는 준비금 2천 안에서 먼저 예치 가자고 말했고 저는 그 말을 실행 허용으로 받아들였습니다. 이 증거를 같이 보면 앞뒤를 잘라 말하기가 어려워집니다.",
+      "behaviorHint": "증거를 힐끗 보고 말끝을 낮춘 뒤, 불리한 부분만 최소치로 인정한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "context",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:admission:2"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:evidence:context",
+      "coverageKey": "a:d-3:surface:mid:evidence:context",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-3:surface:evidence_cleaned"
+      ],
+      "requiresFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "tags": [
+        "cold",
+        "evidence"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:evidence:context:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "문제는 투자 분위기가 식자 그 말을 통째로 없던 일처럼 바꿨고 직원들 앞에서는 승인 자체가 없었다고 하면서 제 단독 폭주처럼 만들었다는 겁니다. 자료까지 열리면 맥락을 빼고 버티는 건 더 이상 통하지 않습니다.",
+      "behaviorHint": "증거를 힐끗 보고 말끝을 낮춘 뒤, 불리한 부분만 최소치로 인정한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "context",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:admission:2"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:evidence:context",
+      "coverageKey": "a:d-3:surface:mid:evidence:context",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-3:surface:evidence_cleaned"
+      ],
+      "requiresFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "tags": [
+        "cold",
+        "evidence"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-4:motive:evidence:legality:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "제가 '일단 컨설팅비처럼 잡아달라'고 말한 건 맞지만 그건 외부 공지 전 임시 표기 차원이었고 영구 은폐까지 의도한 건 아니었습니다. 이 자료가 나오면 절차를 몰랐다는 말은 더 버티기 어렵습니다.",
+      "behaviorHint": "증거를 힐끗 보고 말끝을 낮춘 뒤, 불리한 부분만 최소치로 인정한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "legality",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-4:admission:2"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-4:admission:5",
+          "partnership-01:b:d-4:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-4:motive:evidence:legality",
+      "coverageKey": "b:d-4:motive:mid:evidence:legality",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-4:motive:evidence_cleaned"
+      ],
+      "requiresFlags": [
+        "d-4:surface:timeline_pressed"
+      ],
+      "tags": [
+        "cold",
+        "evidence"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-4:motive:evidence:legality:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "서준은 그 임시 표현을 자기 방패처럼 썼고 제가 던진 위기관리용 말을 회계 처리의 면허처럼 받아쓴 뒤 책임만 제 쪽에 다시 돌렸습니다. 문서 앞에서는 규정 문제를 흐리기가 어렵습니다.",
+      "behaviorHint": "증거를 힐끗 보고 말끝을 낮춘 뒤, 불리한 부분만 최소치로 인정한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "legality",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-4:admission:2"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-4:admission:5",
+          "partnership-01:b:d-4:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-4:motive:evidence:legality",
+      "coverageKey": "b:d-4:motive:mid:evidence:legality",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-4:motive:evidence_cleaned"
+      ],
+      "requiresFlags": [
+        "d-4:surface:timeline_pressed"
+      ],
+      "tags": [
+        "cold",
+        "evidence"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-5:motive:evidence:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "계약 초안상 법률검토비 전환 조항이 있었던 건 맞고 제가 그 320만원 위험을 충분히 짚어 설명하지 않은 것도 사실입니다. 이 증거를 같이 보면 앞뒤를 잘라 말하기가 어려워집니다.",
+      "behaviorHint": "증거를 힐끗 보고 말끝을 낮춘 뒤, 불리한 부분만 최소치로 인정한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "context",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-5:admission:2"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-5:admission:5",
+          "partnership-01:a:d-5:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 26,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-5:motive:evidence:context",
+      "coverageKey": "a:d-5:motive:mid:evidence:context",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-5:motive:evidence_cleaned"
+      ],
+      "requiresFlags": [
+        "d-5:surface:timeline_pressed"
+      ],
+      "tags": [
+        "cold",
+        "evidence"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-5:motive:evidence:context:02",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "다만 그 문구를 저 혼자만 놓친 건 아니고 모두가 급했던 탓에 초안을 전액 환급처럼 받아들인 채 서둘렀습니다. 자료까지 열리면 맥락을 빼고 버티는 건 더 이상 통하지 않습니다.",
+      "behaviorHint": "증거를 힐끗 보고 말끝을 낮춘 뒤, 불리한 부분만 최소치로 인정한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "motive",
+      "issueRole": "sub_truth",
+      "responseIntent": "evidence_response",
+      "angleTag": "context",
+      "actionFamily": "evidence",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-5:admission:2"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-5:admission:5",
+          "partnership-01:a:d-5:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-5:motive:evidence:context",
+      "coverageKey": "a:d-5:motive:mid:evidence:context",
+      "variantTarget": 2,
+      "setFlags": [
+        "d-5:motive:evidence_cleaned"
+      ],
+      "requiresFlags": [
+        "d-5:surface:timeline_pressed"
+      ],
+      "tags": [
+        "cold",
+        "evidence"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:core:motive:motive:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "emotion",
+      "line": "그때 저는 운영총괄로서 투자 창을 놓치면 회사가 무너질 수 있다는 생각에 사로잡혀 있었고 절차를 건너뛴 순간이 제 잘못인 건 압니다. 그때는 맞고 틀리고보다 제 자리를 잃지 않으려는 마음이 먼저였습니다.",
+      "behaviorHint": "잠깐 시선을 피했다가 비교적 낮은 톤으로 속내를 조금 더 연다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "core_truth",
+      "responseIntent": "motive_response",
+      "angleTag": "motive",
+      "actionFamily": "free_question",
+      "questionTypes": [
+        "motive_search"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "open"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:emotion:4"
+        ],
+        "forbidAtomIds": []
+      },
+      "weight": 4,
+      "priority": 22,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:core:motive:motive",
+      "coverageKey": "a:d-1:core:late:motive:motive",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [
+        "d-1:motive:motive_exposed"
+      ],
+      "tags": [
+        "cold",
+        "free"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "emotion",
+      "line": "그 송금이 터졌을 때 저는 공동대표인데도 마지막 책임선에서 지워진 느낌이 들었고 모르고 있었다고 보이면 무능 알고 있었다고 보이면 공범이 되는 상황이었어요. 그 장면이 아직도 모욕감처럼 남아 있습니다.",
+      "behaviorHint": "잠깐 시선을 피했다가 비교적 낮은 톤으로 속내를 조금 더 연다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "free_question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:emotion:4"
+        ],
+        "forbidAtomIds": []
+      },
+      "weight": 4,
+      "priority": 22,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:core:rapport:emotion",
+      "coverageKey": "b:d-1:core:late:rapport:emotion",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [
+        "d-1:motive:motive_exposed"
+      ],
+      "tags": [
+        "cold",
+        "free"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "emotion",
+      "line": "그때 제일 컸던 감정은 배신감이었고 구두로 같이 밀어놓고 공개석상에선 저만 남겨둔 느낌이었습니다. 결국 저는 그때 배제되거나 낙인찍힐까 봐 더 거칠어졌습니다.",
+      "behaviorHint": "정서가 먼저 비치고 나서야 사실 설명이 따라붙는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 4,
+      "priority": 22,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:core:rapport:emotion",
+      "coverageKey": "a:d-3:core:late:rapport:emotion",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [
+        "d-3:motive:motive_exposed"
+      ],
+      "tags": [
+        "late"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:core:rapport:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "emotion",
+      "line": "투자가 흔들리기 시작하자 제 말 한마디가 공동 승인 기록으로 남을까 너무 두려워서 저는 없던 승인이라고 밀어붙였습니다. 그 장면이 아직도 모욕감처럼 남아 있습니다.",
+      "behaviorHint": "정서가 먼저 비치고 나서야 사실 설명이 따라붙는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "layer": "core",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 4,
+      "priority": 22,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:core:rapport:emotion",
+      "coverageKey": "b:d-3:core:late:rapport:emotion",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [
+        "d-3:motive:motive_exposed"
+      ],
+      "tags": [
+        "late"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-2:surface:trap:identity:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "그 돈이 제 개인 빚으로 간 적은 없고 개인 계좌가 아니라 법무사 신탁계좌에 묶인 예치금이었습니다. 그때는 그 신호를 그렇게 읽을 수밖에 없다고 믿었습니다.",
+      "behaviorHint": "같은 자료를 다시 떠올리며 확신과 흔들림이 교차하는 표정을 보인다.",
+      "applicableStates": [
+        "M0",
+        "M1",
+        "M2"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "identity",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ],
+        "misconceptionStates": [
+          "M0",
+          "M1",
+          "M2"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-2:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-2:admission:5",
+          "partnership-01:a:d-2:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-2:surface:trap:identity",
+      "coverageKey": "a:d-2:surface:early:trap:identity",
+      "variantTarget": 1,
+      "setFlags": [
+        "d-2:surface:misbelief_seen"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "trap",
+        "misconception"
+      ],
+      "beliefMode": "knows"
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-2:surface:trap:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "그 캡처를 처음 봤을 때는 저도 결국 자기 돈 구멍부터 막은 거 아닌가로 읽혔습니다. 앞뒤가 빠진 채 보였으니 오해가 먼저 굳어진 겁니다.",
+      "behaviorHint": "같은 자료를 다시 떠올리며 확신과 흔들림이 교차하는 표정을 보인다.",
+      "applicableStates": [
+        "M0",
+        "M1",
+        "M2"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "fresh",
+          "wary"
+        ],
+        "misconceptionStates": [
+          "M0",
+          "M1",
+          "M2"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-2:denial:0"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-2:admission:5",
+          "partnership-01:b:d-2:emotion:4"
+        ]
+      },
+      "weight": 7,
+      "priority": 27,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:surface:trap:context",
+      "coverageKey": "b:d-2:surface:early:trap:context",
+      "variantTarget": 1,
+      "setFlags": [
+        "d-2:surface:misbelief_seen"
+      ],
+      "requiresFlags": [],
+      "tags": [
+        "trap",
+        "misconception"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-2:core:trap:context:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "clarify",
+      "line": "개인 빚 프레임이 퍼진 건 저보다도 그 크롭 캡처를 들고 온 쪽의 해석 때문이었고 저는 관계를 깨지 않으려고 설명을 늦췄다가 그 공백을 키웠습니다. 이제 보면 같은 자료를 서로 다른 불안에 맞춰 읽은 셈입니다.",
+      "behaviorHint": "같은 자료를 다시 떠올리며 확신과 흔들림이 교차하는 표정을 보인다.",
+      "applicableStates": [
+        "M3",
+        "M4"
+      ],
+      "layer": "core",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "question",
+      "questionTypes": [
+        "evidence_present"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "open"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ],
+        "misconceptionStates": [
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-2:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-2:admission:5",
+          "partnership-01:a:d-2:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 23,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-2:core:trap:context",
+      "coverageKey": "a:d-2:core:late:trap:context",
+      "variantTarget": 1,
+      "setFlags": [
+        "d-2:motive:misbelief_cracked"
+      ],
+      "requiresFlags": [
+        "d-2:surface:misbelief_seen"
+      ],
+      "tags": [
+        "trap",
+        "misconception"
+      ],
+      "beliefMode": "knows"
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-2:core:trap:emotion:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "clarify",
+      "line": "직원들 앞에서 제가 다 알고도 끌려간 사람처럼 보이기 싫어서 모호한 캡처를 가장 불리한 의미로 써서라도 그를 세우고 싶었습니다. 사실보다 감정이 먼저 붙으면서 그 오해가 더 커졌습니다.",
+      "behaviorHint": "같은 자료를 다시 떠올리며 확신과 흔들림이 교차하는 표정을 보인다.",
+      "applicableStates": [
+        "M3",
+        "M4"
+      ],
+      "layer": "core",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "emotion",
+      "actionFamily": "question",
+      "questionTypes": [
+        "empathy_approach"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "open"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ],
+        "misconceptionStates": [
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-2:emotion:4"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-2:admission:5",
+          "partnership-01:b:d-2:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 23,
+      "cooldownTurns": 2,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-2:core:trap:emotion",
+      "coverageKey": "b:d-2:core:late:trap:emotion",
+      "variantTarget": 1,
+      "setFlags": [
+        "d-2:motive:misbelief_cracked"
+      ],
+      "requiresFlags": [
+        "d-2:surface:misbelief_seen"
+      ],
+      "tags": [
+        "trap",
+        "misconception"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:fatigue:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "fatigue",
+      "line": "1,800만원 얘기를 같은 자리에서 또 돌리면, 설명보다 짜증이 먼저 올라옵니다.",
+      "behaviorHint": "답을 밀어내듯 짧게 끊어 말하다가 끝에서 반문이 튀어나온다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:admission:2"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 24,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:fatigue:timeline",
+      "coverageKey": "a:d-1:surface:mid:fatigue:timeline",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "tags": [
+        "fatigue",
+        "annoyed"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:surface:fatigue:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "fatigue",
+      "line": "1,800만원에 대해선 이미 말할 만큼 말했습니다. 같은 추궁에는 더 못 나가겠습니다.",
+      "behaviorHint": "답을 밀어내듯 짧게 끊어 말하다가 끝에서 반문이 튀어나온다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "responsibility",
+      "actionFamily": "fatigue",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 23,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-1:surface:fatigue:responsibility",
+      "coverageKey": "b:d-1:surface:mid:fatigue:responsibility",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "tags": [
+        "fatigue",
+        "block"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:fatigue:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "fatigue",
+      "line": "저만 몰아세우면 1,800만원 뒤에 숨은 다른 책임은 또 빠집니다.",
+      "behaviorHint": "답을 밀어내듯 짧게 끊어 말하다가 끝에서 반문이 튀어나온다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "responsibility",
+      "actionFamily": "fatigue",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 22,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-1:surface:fatigue:responsibility",
+      "coverageKey": "a:d-1:surface:mid:fatigue:responsibility",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [
+        "d-1:surface:timeline_pressed"
+      ],
+      "tags": [
+        "fatigue",
+        "counterattack"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:fatigue:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "fatigue",
+      "line": "2,000만원 한도 얘기를 같은 자리에서 또 돌리면, 설명보다 짜증이 먼저 올라옵니다.",
+      "behaviorHint": "답을 밀어내듯 짧게 끊어 말하다가 끝에서 반문이 튀어나온다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "calm",
+          "agitated"
+        ],
+        "trustWindowBands": [
+          "narrow",
+          "open"
+        ],
+        "fatigueLevels": [
+          "wary",
+          "frayed"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:admission:2"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 24,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "a:d-3:surface:fatigue:timeline",
+      "coverageKey": "a:d-3:surface:mid:fatigue:timeline",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "tags": [
+        "fatigue",
+        "annoyed"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:surface:fatigue:responsibility:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "fatigue",
+      "line": "2,000만원 한도에 대해선 이미 말할 만큼 말했습니다. 같은 추궁에는 더 못 나가겠습니다.",
+      "behaviorHint": "답을 밀어내듯 짧게 끊어 말하다가 끝에서 반문이 튀어나온다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "responsibility",
+      "actionFamily": "fatigue",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "frayed",
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 23,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:fatigue:responsibility",
+      "coverageKey": "b:d-3:surface:mid:fatigue:responsibility",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "tags": [
+        "fatigue",
+        "block"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:surface:fatigue:timeline:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "fatigue",
+      "line": "저만 몰아세우면 2,000만원 한도 뒤에 숨은 다른 책임은 또 빠집니다.",
+      "behaviorHint": "답을 밀어내듯 짧게 끊어 말하다가 끝에서 반문이 튀어나온다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "timeline",
+      "actionFamily": "fatigue",
+      "questionTypes": [
+        "fact_pursuit"
+      ],
+      "conditions": {
+        "emotionTiers": [
+          "agitated",
+          "raw"
+        ],
+        "trustWindowBands": [
+          "closed",
+          "narrow"
+        ],
+        "fatigueLevels": [
+          "spent"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 6,
+      "priority": 22,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "b:d-3:surface:fatigue:timeline",
+      "coverageKey": "b:d-3:surface:mid:fatigue:timeline",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [
+        "d-3:surface:timeline_pressed"
+      ],
+      "tags": [
+        "fatigue",
+        "counterattack"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "interjection",
+      "line": "그 돈 제 빚 막는 데 쓴 적 없습니다. 그 말은 저만이 아니라 회사까지 같이 망가뜨립니다.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a:d-1:surface:mid:interjection:emotional_only:allow",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "interjection",
+      "line": "같이 밀어놓고 저 혼자 폭주한 사람처럼 만들진 마세요.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a:d-3:surface:mid:interjection:emotional_only:allow",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "interjection",
+      "line": "1,800만원 얘기를 상처만으로 밀면 사실선이 또 흐려집니다.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b:d-1:surface:mid:interjection:emotional_only:block",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "interjection",
+      "line": "2,000만원 한도 얘기를 감정만으로 닫아버리면 숨은 책임이 빠집니다.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "rapport_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b:d-3:surface:mid:interjection:emotional_only:block",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-1:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "interjection",
+      "line": "숫자 말고요, 결국 승인 없이 보낸 건 맞냐고요.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-1:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-1:admission:5",
+          "partnership-01:b:d-1:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b:d-1:surface:mid:interjection:detail_rebuttal:allow",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-3:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "interjection",
+      "line": "그 한 줄만 돌리지 말고 돈이 실제로 어디로 갔는지 끝까지 보시죠.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-3:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-3:admission:5",
+          "partnership-01:b:d-3:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b:d-3:surface:mid:interjection:detail_rebuttal:allow",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-1:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "interjection",
+      "line": "1,800만원의 디테일 하나만 붙잡으면 더 큰 구조가 빠집니다.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-1:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-1:admission:5",
+          "partnership-01:a:d-1:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a:d-1:surface:mid:interjection:detail_rebuttal:block",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-3:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "interjection",
+      "line": "2,000만원 한도의 세부 표현만 반복하면 핵심 책임선이 또 가려집니다.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-3:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-3:admission:5",
+          "partnership-01:a:d-3:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a:d-3:surface:mid:interjection:detail_rebuttal:block",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-2:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "interjection",
+      "line": "그 오해가 왜 그렇게 굳었는지부터 지금 열어야 합니다.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "M0",
+        "M1",
+        "M2"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ],
+        "misconceptionStates": [
+          "M0",
+          "M1",
+          "M2"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-2:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-2:admission:5",
+          "partnership-01:a:d-2:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a:d-2:surface:mid:interjection:misbelief_escalation:allow",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "misbelief_escalation",
+        "red_herring"
+      ],
+      "beliefMode": "knows"
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-2:surface:mid:interjection:allow:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "interjection",
+      "line": "그 해석이 왜 그 순간엔 확신처럼 보였는지도 함께 들어야 합니다.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "M0",
+        "M1",
+        "M2"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ],
+        "misconceptionStates": [
+          "M0",
+          "M1",
+          "M2"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-2:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-2:admission:5",
+          "partnership-01:b:d-2:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b:d-2:surface:mid:interjection:misbelief_escalation:allow",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "misbelief_escalation",
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    },
+    {
+      "id": "partnership01:beat_v2:a:d-2:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "interjection",
+      "line": "그 오해를 이미 결론처럼 반복 확인하는 방식이면 지금은 막겠습니다.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ],
+        "misconceptionStates": [
+          "M2",
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:a:d-2:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:a:d-2:admission:5",
+          "partnership-01:a:d-2:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a:d-2:surface:mid:interjection:misbelief_escalation:block",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "misbelief_escalation",
+        "red_herring"
+      ],
+      "beliefMode": "knows"
+    },
+    {
+      "id": "partnership01:beat_v2:b:d-2:surface:mid:interjection:block:01",
+      "schemaVersion": "beat_v2",
+      "caseId": "partnership-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "interjection",
+      "line": "같은 오해를 굳어진 사실처럼 되감는 질문은 더는 허용하기 어렵습니다.",
+      "behaviorHint": "상대 말 사이를 파고들 듯 짧고 빠르게 끊어 말한다.",
+      "applicableStates": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "layer": "surface",
+      "issueRole": "shared_misconception",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [],
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ],
+        "misconceptionStates": [
+          "M2",
+          "M3",
+          "M4"
+        ]
+      },
+      "truthEnvelope": {
+        "allowAtomIds": [
+          "partnership-01:b:d-2:responsibility:3"
+        ],
+        "forbidAtomIds": [
+          "partnership-01:b:d-2:admission:5",
+          "partnership-01:b:d-2:emotion:4"
+        ]
+      },
+      "weight": 5,
+      "priority": 25,
+      "cooldownTurns": 1,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b:d-2:surface:mid:interjection:misbelief_escalation:block",
+      "variantTarget": 1,
+      "setFlags": [],
+      "requiresFlags": [],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "misbelief_escalation",
+        "red_herring"
+      ],
+      "beliefMode": "misbelief"
+    }
+  ]
+} as const;
+
+export default partnership01BeatsV2Full;

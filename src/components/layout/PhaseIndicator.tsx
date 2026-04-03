@@ -24,7 +24,7 @@ const DISPLAY_ORDER: GamePhase[] = [
   GamePhase.Result,
 ]
 
-export default function PhaseIndicator() {
+export default function PhaseIndicator({ compact }: { compact?: boolean } = {}) {
   const currentPhase = useGameStore((s) => s.currentPhase)
 
   // Phase4/5는 Phase3과 같은 '심문'으로 매핑
@@ -38,11 +38,17 @@ export default function PhaseIndicator() {
   const current = PHASE_LABELS[displayPhase] ?? ''
   const next = currentIdx < DISPLAY_ORDER.length - 1 ? PHASE_LABELS[DISPLAY_ORDER[currentIdx + 1]] : null
 
+  if (compact) {
+    return (
+      <span className="text-sm font-bold text-amber-400 px-2.5 py-0.5 bg-amber-500/10 ring-1 ring-amber-500/15 rounded-lg drop-shadow-[0_0_8px_rgba(217,119,6,0.2)]">{current}</span>
+    )
+  }
+
   return (
     <div className="flex items-center justify-center gap-3">
       {prev && <span className="text-xs text-gray-600">{prev}</span>}
       {prev && <span className="text-gray-700 text-xs">›</span>}
-      <span className="text-sm font-bold text-amber-400 px-2 py-0.5 bg-amber-500/10 rounded-lg">{current}</span>
+      <span className="text-sm font-bold text-amber-400 px-2.5 py-0.5 bg-amber-500/10 ring-1 ring-amber-500/15 rounded-lg">{current}</span>
       {next && <span className="text-gray-700 text-xs">›</span>}
       {next && <span className="text-xs text-gray-600">{next}</span>}
     </div>

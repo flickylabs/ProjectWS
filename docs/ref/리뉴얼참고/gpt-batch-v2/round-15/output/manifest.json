@@ -1,0 +1,34 @@
+[
+  {
+    "caseId": "partnership-09",
+    "structureJson": "partnership-09-structure-v2.json",
+    "beatsJson": "partnership-09-beats-v2-full.json",
+    "structureTs": "partnership-09-structure-v2.ts",
+    "beatsTs": "partnership-09-beats-v2-full.ts",
+    "totalBeats": 58
+  },
+  {
+    "caseId": "partnership-10",
+    "structureJson": "partnership-10-structure-v2.json",
+    "beatsJson": "partnership-10-beats-v2-full.json",
+    "structureTs": "partnership-10-structure-v2.ts",
+    "beatsTs": "partnership-10-beats-v2-full.ts",
+    "totalBeats": 58
+  },
+  {
+    "caseId": "partnership-11",
+    "structureJson": "partnership-11-structure-v2.json",
+    "beatsJson": "partnership-11-beats-v2-full.json",
+    "structureTs": "partnership-11-structure-v2.ts",
+    "beatsTs": "partnership-11-beats-v2-full.ts",
+    "totalBeats": 58
+  },
+  {
+    "caseId": "partnership-12",
+    "structureJson": "partnership-12-structure-v2.json",
+    "beatsJson": "partnership-12-beats-v2-full.json",
+    "structureTs": "partnership-12-structure-v2.ts",
+    "beatsTs": "partnership-12-beats-v2-full.ts",
+    "totalBeats": 58
+  }
+]

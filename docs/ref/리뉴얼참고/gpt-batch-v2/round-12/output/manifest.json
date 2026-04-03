@@ -1,0 +1,42 @@
+[
+  {
+    "caseId": "neighbor-09",
+    "structureJson": "neighbor-09-structure-v2.json",
+    "structureTs": "neighbor-09-structure-v2.ts",
+    "beatsJson": "neighbor-09-beats-v2-full.json",
+    "beatsTs": "neighbor-09-beats-v2-full.ts",
+    "totalBeats": 60,
+    "interjections": 12,
+    "freeQuestionHooks": 7
+  },
+  {
+    "caseId": "neighbor-10",
+    "structureJson": "neighbor-10-structure-v2.json",
+    "structureTs": "neighbor-10-structure-v2.ts",
+    "beatsJson": "neighbor-10-beats-v2-full.json",
+    "beatsTs": "neighbor-10-beats-v2-full.ts",
+    "totalBeats": 60,
+    "interjections": 12,
+    "freeQuestionHooks": 7
+  },
+  {
+    "caseId": "neighbor-11",
+    "structureJson": "neighbor-11-structure-v2.json",
+    "structureTs": "neighbor-11-structure-v2.ts",
+    "beatsJson": "neighbor-11-beats-v2-full.json",
+    "beatsTs": "neighbor-11-beats-v2-full.ts",
+    "totalBeats": 60,
+    "interjections": 12,
+    "freeQuestionHooks": 7
+  },
+  {
+    "caseId": "neighbor-12",
+    "structureJson": "neighbor-12-structure-v2.json",
+    "structureTs": "neighbor-12-structure-v2.ts",
+    "beatsJson": "neighbor-12-beats-v2-full.json",
+    "beatsTs": "neighbor-12-beats-v2-full.ts",
+    "totalBeats": 60,
+    "interjections": 12,
+    "freeQuestionHooks": 7
+  }
+]

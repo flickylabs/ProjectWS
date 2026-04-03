@@ -1,0 +1,390 @@
+[
+  {
+    "caseId": "partnership-01",
+    "structureFile": "partnership-01-structure-v2.json",
+    "beatsFile": "partnership-01-beats-v2-full.json",
+    "tsExports": [
+      "partnership-01-structure-v2.ts",
+      "partnership-01-beats-v2-full.ts"
+    ],
+    "structureSummary": {
+      "disputes": 5,
+      "linkEdges": 4,
+      "evidence": 6,
+      "freeQuestionHooks": 7
+    },
+    "beatSummary": {
+      "totalBeats": 74,
+      "byActionFamily": {
+        "question": 46,
+        "evidence": 8,
+        "free_question": 2,
+        "fatigue": 6,
+        "interjection": 12
+      },
+      "byParty": {
+        "a": 39,
+        "b": 35
+      },
+      "byDispute": {
+        "d-1": 31,
+        "d-3": 31,
+        "d-4": 2,
+        "d-5": 2,
+        "d-2": 8
+      },
+      "byIssueRole": {
+        "core_truth": 62,
+        "sub_truth": 4,
+        "shared_misconception": 8
+      },
+      "interjectionCount": 12,
+      "interjectionBreakdown": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 4,
+        "allow": 6,
+        "block": 6
+      },
+      "fatigueCount": 6,
+      "freeQuestionCount": 2,
+      "coveredKeys": [
+        "a:d-1:core:late:motive:motive",
+        "a:d-1:motive:mid:pressure:responsibility",
+        "a:d-1:surface:early:pressure:timeline",
+        "a:d-1:surface:mid:evidence:identity",
+        "a:d-1:surface:mid:fatigue:responsibility",
+        "a:d-1:surface:mid:fatigue:timeline",
+        "a:d-1:surface:mid:interjection:detail_rebuttal:block",
+        "a:d-1:surface:mid:interjection:emotional_only:allow",
+        "a:d-2:core:late:trap:context",
+        "a:d-2:surface:early:trap:identity",
+        "a:d-2:surface:mid:interjection:misbelief_escalation:allow",
+        "a:d-2:surface:mid:interjection:misbelief_escalation:block",
+        "a:d-3:core:late:rapport:emotion",
+        "a:d-3:motive:mid:pressure:responsibility",
+        "a:d-3:surface:early:pressure:timeline",
+        "a:d-3:surface:mid:evidence:context",
+        "a:d-3:surface:mid:fatigue:timeline",
+        "a:d-3:surface:mid:interjection:detail_rebuttal:block",
+        "a:d-3:surface:mid:interjection:emotional_only:allow",
+        "a:d-5:motive:mid:evidence:context",
+        "b:d-1:core:late:rapport:emotion",
+        "b:d-1:motive:mid:motive:motive",
+        "b:d-1:surface:early:pressure:identity",
+        "b:d-1:surface:mid:fatigue:responsibility",
+        "b:d-1:surface:mid:interjection:detail_rebuttal:allow",
+        "b:d-1:surface:mid:interjection:emotional_only:block",
+        "b:d-2:core:late:trap:emotion",
+        "b:d-2:surface:early:trap:context",
+        "b:d-2:surface:mid:interjection:misbelief_escalation:allow",
+        "b:d-2:surface:mid:interjection:misbelief_escalation:block",
+        "b:d-3:core:late:rapport:emotion",
+        "b:d-3:motive:mid:motive:motive",
+        "b:d-3:surface:early:pressure:context",
+        "b:d-3:surface:mid:fatigue:responsibility",
+        "b:d-3:surface:mid:fatigue:timeline",
+        "b:d-3:surface:mid:interjection:detail_rebuttal:allow",
+        "b:d-3:surface:mid:interjection:emotional_only:block",
+        "b:d-4:motive:mid:evidence:legality"
+      ],
+      "requirementsSatisfied": {
+        "beatCount_50_74": true,
+        "interjection_12": true,
+        "fatigue_present": true,
+        "free_question_present": true
+      }
+    }
+  },
+  {
+    "caseId": "partnership-02",
+    "structureFile": "partnership-02-structure-v2.json",
+    "beatsFile": "partnership-02-beats-v2-full.json",
+    "tsExports": [
+      "partnership-02-structure-v2.ts",
+      "partnership-02-beats-v2-full.ts"
+    ],
+    "structureSummary": {
+      "disputes": 5,
+      "linkEdges": 4,
+      "evidence": 6,
+      "freeQuestionHooks": 7
+    },
+    "beatSummary": {
+      "totalBeats": 74,
+      "byActionFamily": {
+        "question": 46,
+        "evidence": 8,
+        "free_question": 2,
+        "fatigue": 6,
+        "interjection": 12
+      },
+      "byParty": {
+        "a": 40,
+        "b": 34
+      },
+      "byDispute": {
+        "d-1": 31,
+        "d-2": 31,
+        "d-4": 2,
+        "d-5": 2,
+        "d-3": 8
+      },
+      "byIssueRole": {
+        "core_truth": 62,
+        "sub_truth": 4,
+        "shared_misconception": 8
+      },
+      "interjectionCount": 12,
+      "interjectionBreakdown": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 4,
+        "allow": 6,
+        "block": 6
+      },
+      "fatigueCount": 6,
+      "freeQuestionCount": 2,
+      "coveredKeys": [
+        "a:d-1:core:late:motive:motive",
+        "a:d-1:motive:mid:pressure:responsibility",
+        "a:d-1:surface:early:pressure:timeline",
+        "a:d-1:surface:mid:evidence:identity",
+        "a:d-1:surface:mid:fatigue:responsibility",
+        "a:d-1:surface:mid:fatigue:timeline",
+        "a:d-1:surface:mid:interjection:detail_rebuttal:block",
+        "a:d-1:surface:mid:interjection:emotional_only:allow",
+        "a:d-2:core:late:rapport:emotion",
+        "a:d-2:motive:mid:motive:motive",
+        "a:d-2:surface:early:pressure:context",
+        "a:d-2:surface:mid:fatigue:responsibility",
+        "a:d-2:surface:mid:fatigue:timeline",
+        "a:d-2:surface:mid:interjection:detail_rebuttal:allow",
+        "a:d-2:surface:mid:interjection:emotional_only:block",
+        "a:d-3:core:late:trap:context",
+        "a:d-3:surface:early:trap:identity",
+        "a:d-3:surface:mid:interjection:misbelief_escalation:allow",
+        "a:d-3:surface:mid:interjection:misbelief_escalation:block",
+        "a:d-4:motive:mid:evidence:legality",
+        "a:d-5:motive:mid:evidence:context",
+        "b:d-1:core:late:rapport:emotion",
+        "b:d-1:motive:mid:motive:motive",
+        "b:d-1:surface:early:pressure:identity",
+        "b:d-1:surface:mid:fatigue:responsibility",
+        "b:d-1:surface:mid:interjection:detail_rebuttal:allow",
+        "b:d-1:surface:mid:interjection:emotional_only:block",
+        "b:d-2:core:late:rapport:emotion",
+        "b:d-2:motive:mid:pressure:responsibility",
+        "b:d-2:surface:early:pressure:timeline",
+        "b:d-2:surface:mid:evidence:context",
+        "b:d-2:surface:mid:fatigue:timeline",
+        "b:d-2:surface:mid:interjection:detail_rebuttal:block",
+        "b:d-2:surface:mid:interjection:emotional_only:allow",
+        "b:d-3:core:late:trap:emotion",
+        "b:d-3:surface:early:trap:context",
+        "b:d-3:surface:mid:interjection:misbelief_escalation:allow",
+        "b:d-3:surface:mid:interjection:misbelief_escalation:block"
+      ],
+      "requirementsSatisfied": {
+        "beatCount_50_74": true,
+        "interjection_12": true,
+        "fatigue_present": true,
+        "free_question_present": true
+      }
+    }
+  },
+  {
+    "caseId": "partnership-03",
+    "structureFile": "partnership-03-structure-v2.json",
+    "beatsFile": "partnership-03-beats-v2-full.json",
+    "tsExports": [
+      "partnership-03-structure-v2.ts",
+      "partnership-03-beats-v2-full.ts"
+    ],
+    "structureSummary": {
+      "disputes": 5,
+      "linkEdges": 4,
+      "evidence": 6,
+      "freeQuestionHooks": 7
+    },
+    "beatSummary": {
+      "totalBeats": 74,
+      "byActionFamily": {
+        "question": 46,
+        "evidence": 8,
+        "free_question": 2,
+        "fatigue": 6,
+        "interjection": 12
+      },
+      "byParty": {
+        "a": 40,
+        "b": 34
+      },
+      "byDispute": {
+        "d-1": 31,
+        "d-2": 31,
+        "d-4": 2,
+        "d-5": 2,
+        "d-3": 8
+      },
+      "byIssueRole": {
+        "core_truth": 62,
+        "sub_truth": 4,
+        "shared_misconception": 8
+      },
+      "interjectionCount": 12,
+      "interjectionBreakdown": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 4,
+        "allow": 6,
+        "block": 6
+      },
+      "fatigueCount": 6,
+      "freeQuestionCount": 2,
+      "coveredKeys": [
+        "a:d-1:core:late:motive:motive",
+        "a:d-1:motive:mid:pressure:responsibility",
+        "a:d-1:surface:early:pressure:timeline",
+        "a:d-1:surface:mid:evidence:identity",
+        "a:d-1:surface:mid:fatigue:responsibility",
+        "a:d-1:surface:mid:fatigue:timeline",
+        "a:d-1:surface:mid:interjection:detail_rebuttal:block",
+        "a:d-1:surface:mid:interjection:emotional_only:allow",
+        "a:d-2:core:late:rapport:emotion",
+        "a:d-2:motive:mid:motive:motive",
+        "a:d-2:surface:early:pressure:context",
+        "a:d-2:surface:mid:fatigue:responsibility",
+        "a:d-2:surface:mid:fatigue:timeline",
+        "a:d-2:surface:mid:interjection:detail_rebuttal:allow",
+        "a:d-2:surface:mid:interjection:emotional_only:block",
+        "a:d-3:core:late:trap:context",
+        "a:d-3:surface:early:trap:identity",
+        "a:d-3:surface:mid:interjection:misbelief_escalation:allow",
+        "a:d-3:surface:mid:interjection:misbelief_escalation:block",
+        "a:d-4:motive:mid:evidence:legality",
+        "a:d-5:motive:mid:evidence:context",
+        "b:d-1:core:late:rapport:emotion",
+        "b:d-1:motive:mid:motive:motive",
+        "b:d-1:surface:early:pressure:identity",
+        "b:d-1:surface:mid:fatigue:responsibility",
+        "b:d-1:surface:mid:interjection:detail_rebuttal:allow",
+        "b:d-1:surface:mid:interjection:emotional_only:block",
+        "b:d-2:core:late:rapport:emotion",
+        "b:d-2:motive:mid:pressure:responsibility",
+        "b:d-2:surface:early:pressure:timeline",
+        "b:d-2:surface:mid:evidence:context",
+        "b:d-2:surface:mid:fatigue:timeline",
+        "b:d-2:surface:mid:interjection:detail_rebuttal:block",
+        "b:d-2:surface:mid:interjection:emotional_only:allow",
+        "b:d-3:core:late:trap:emotion",
+        "b:d-3:surface:early:trap:context",
+        "b:d-3:surface:mid:interjection:misbelief_escalation:allow",
+        "b:d-3:surface:mid:interjection:misbelief_escalation:block"
+      ],
+      "requirementsSatisfied": {
+        "beatCount_50_74": true,
+        "interjection_12": true,
+        "fatigue_present": true,
+        "free_question_present": true
+      }
+    }
+  },
+  {
+    "caseId": "partnership-04",
+    "structureFile": "partnership-04-structure-v2.json",
+    "beatsFile": "partnership-04-beats-v2-full.json",
+    "tsExports": [
+      "partnership-04-structure-v2.ts",
+      "partnership-04-beats-v2-full.ts"
+    ],
+    "structureSummary": {
+      "disputes": 5,
+      "linkEdges": 4,
+      "evidence": 6,
+      "freeQuestionHooks": 7
+    },
+    "beatSummary": {
+      "totalBeats": 74,
+      "byActionFamily": {
+        "question": 46,
+        "evidence": 8,
+        "free_question": 2,
+        "fatigue": 6,
+        "interjection": 12
+      },
+      "byParty": {
+        "b": 36,
+        "a": 38
+      },
+      "byDispute": {
+        "d-1": 31,
+        "d-2": 31,
+        "d-4": 2,
+        "d-5": 2,
+        "d-3": 8
+      },
+      "byIssueRole": {
+        "core_truth": 31,
+        "sub_truth": 35,
+        "shared_misconception": 8
+      },
+      "interjectionCount": 12,
+      "interjectionBreakdown": {
+        "emotional_only": 4,
+        "detail_rebuttal": 4,
+        "misbelief_escalation": 4,
+        "allow": 6,
+        "block": 6
+      },
+      "fatigueCount": 6,
+      "freeQuestionCount": 2,
+      "coveredKeys": [
+        "a:d-1:core:late:rapport:emotion",
+        "a:d-1:motive:mid:motive:motive",
+        "a:d-1:surface:early:pressure:identity",
+        "a:d-1:surface:mid:fatigue:responsibility",
+        "a:d-1:surface:mid:interjection:detail_rebuttal:allow",
+        "a:d-1:surface:mid:interjection:emotional_only:block",
+        "a:d-2:core:late:rapport:emotion",
+        "a:d-2:motive:mid:pressure:responsibility",
+        "a:d-2:surface:early:pressure:timeline",
+        "a:d-2:surface:mid:evidence:context",
+        "a:d-2:surface:mid:fatigue:timeline",
+        "a:d-2:surface:mid:interjection:detail_rebuttal:block",
+        "a:d-2:surface:mid:interjection:emotional_only:allow",
+        "a:d-3:core:late:trap:context",
+        "a:d-3:surface:early:trap:identity",
+        "a:d-3:surface:mid:interjection:misbelief_escalation:allow",
+        "a:d-3:surface:mid:interjection:misbelief_escalation:block",
+        "a:d-4:motive:mid:evidence:legality",
+        "a:d-5:motive:mid:evidence:context",
+        "b:d-1:core:late:motive:motive",
+        "b:d-1:motive:mid:pressure:responsibility",
+        "b:d-1:surface:early:pressure:timeline",
+        "b:d-1:surface:mid:evidence:identity",
+        "b:d-1:surface:mid:fatigue:responsibility",
+        "b:d-1:surface:mid:fatigue:timeline",
+        "b:d-1:surface:mid:interjection:detail_rebuttal:block",
+        "b:d-1:surface:mid:interjection:emotional_only:allow",
+        "b:d-2:core:late:rapport:emotion",
+        "b:d-2:motive:mid:motive:motive",
+        "b:d-2:surface:early:pressure:context",
+        "b:d-2:surface:mid:fatigue:responsibility",
+        "b:d-2:surface:mid:fatigue:timeline",
+        "b:d-2:surface:mid:interjection:detail_rebuttal:allow",
+        "b:d-2:surface:mid:interjection:emotional_only:block",
+        "b:d-3:core:late:trap:emotion",
+        "b:d-3:surface:early:trap:context",
+        "b:d-3:surface:mid:interjection:misbelief_escalation:allow",
+        "b:d-3:surface:mid:interjection:misbelief_escalation:block"
+      ],
+      "requirementsSatisfied": {
+        "beatCount_50_74": true,
+        "interjection_12": true,
+        "fatigue_present": true,
+        "free_question_present": true
+      }
+    }
+  }
+]
