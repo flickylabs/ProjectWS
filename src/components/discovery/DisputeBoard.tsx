@@ -15,7 +15,7 @@ import type { CaseData, PartyId } from '../../types'
 import type { LieState } from '../../types'
 import type { DisputeDepthLayer } from '../../types'
 import { QuestionMeterHUD } from './StateTransitionFeedback'
-import { getDisputeV2, getActiveLayer, getBeatRuntimeState, hasV2Data } from '../../engine/v2DataLoader'
+import { getDisputeV2, getActiveLayer, getBeatRuntimeState, hasStructureV2 } from '../../engine/v2DataLoader'
 import { getMisconceptionState } from '../../engine/misconceptionEngine'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
 
@@ -333,7 +333,7 @@ function DepthLayerDisplay({ disputeId, caseData, aState }: {
   aState: LieState | null
 }) {
   const caseKey = normalizeCaseKey(caseData)
-  if (!hasV2Data(caseKey)) return null
+  if (!hasStructureV2(caseKey)) return null
 
   const disputeV2 = getDisputeV2(caseKey, disputeId)
   if (!disputeV2?.depthLayers || disputeV2.depthLayers.length === 0) return null

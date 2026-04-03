@@ -254,7 +254,12 @@ export function getStructureV2(caseId: string): StructureV2Data | null {
   return structureRegistry.get(caseId) ?? null
 }
 
-/** V2 데이터 존재 여부 */
+/** Structure V2만 있으면 V2 메커닉 활성화 (하이브리드 모드) */
+export function hasStructureV2(caseId: string): boolean {
+  return structureRegistry.has(caseId)
+}
+
+/** V2 beat까지 있으면 스크립트 모드 (V3 점진 적용용) */
 export function hasV2Data(caseId: string): boolean {
   return beatsRegistry.has(caseId) && structureRegistry.has(caseId)
 }

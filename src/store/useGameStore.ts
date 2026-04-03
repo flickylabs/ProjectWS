@@ -169,6 +169,18 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** V2: Phase 3→6 프롬프트 브릿지 캐시 */
   phase3PromptBridge: import('../engine/phase3LogCollector').Phase3PromptBridgeV2 | null
   setPhase3PromptBridge: (bridge: GameStore['phase3PromptBridge']) => void
+  /** V2 하이브리드: LLM에 주입할 V2 엔진 판정 결과 (턴마다 갱신) */
+  _v2Context: {
+    layer: string
+    issueRole: string
+    angleTag: string
+    responseIntent: string
+    fatigueLevel: string
+    npcReaction: string
+    appliedStance: string
+    effectMultiplier: number
+    misconceptionState: string | null
+  } | null
   /** V3: 질문 효과 미터 (파티별) */
   questionMeters: { a: QuestionMeterState; b: QuestionMeterState }
   applyQuestionEffect: (questionType: QuestionType, party: 'a' | 'b', disputeId: string, stance: Stance, emotionTier: EmotionTier, options?: import('../engine/questionEffectEngine').ResolveQuestionEffectOptions) => QuestionEffectResult | null
@@ -293,6 +305,7 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     setPhase3Flags: (flags) => set((s) => ({ phase3Flags: { ...s.phase3Flags, ...flags } })),
     phase3PromptBridge: null,
     setPhase3PromptBridge: (bridge) => set({ phase3PromptBridge: bridge }),
+    _v2Context: null,
     questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
     gameEventLog: [],
 

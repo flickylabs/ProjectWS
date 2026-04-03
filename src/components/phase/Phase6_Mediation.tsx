@@ -4,7 +4,7 @@ import { useGameStore } from '../../store/useGameStore'
 import { resolveLLMDialogue } from '../../engine/llmDialogueResolver'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import { buildBridgeFromStore } from '../../engine/phase6ResultPromptV2'
-import { hasV2Data } from '../../engine/v2DataLoader'
+import { hasStructureV2 } from '../../engine/v2DataLoader'
 import Emoji from '../common/Emoji'
 import type { PlayerAction } from '../../types'
 
@@ -24,7 +24,7 @@ export default function Phase6_Mediation() {
     const store = useGameStore.getState()
     if (store.phase3PromptBridge) return // 이미 빌드됨
     const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
-    if (!hasV2Data(caseKey)) return
+    if (!hasStructureV2(caseKey)) return
     const bridge = buildBridgeFromStore(
       caseKey,
       { emotion: store.agentA.emotionalState.internalValue },

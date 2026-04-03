@@ -663,7 +663,52 @@ function buildUserPrompt(
     // ── 심문 깊이 맥락 ──
     const depthContext = `\n★ 심문 깊이 맥락:\n- 이 쟁점에 대한 질문 횟수: ${interrogationDepth}번째${lastOpponentLine ? `\n- 상대방이 직전에 한 말: "${lastOpponentLine.slice(0, 80)}"` : ''}${mentionedTruthIds.length > 0 ? `\n- 이 쟁점에서 지금까지 드러난 질문 유형: ${mentionedTruthIds.join(', ')}` : ''}\n- 질문 횟수가 많을수록 더 깊고 구체적인 답변을 해야 한다.\n- 1~2번째: 표면적 답변, 3~4번째: 숨겨진 배경 드러남, 5번째+: 핵심 진실에 근접`
 
-    return `${addressRule}${judgeGenRule}${guide}${depthContext}\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n\n규칙:\n- judgeQuestion 필드에 재판관 질문을 자연스럽게 작성한다.\n- npcResponse에는 그 질문에 답한다.\n- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
+    // V2 하이브리드: V2 엔진 판정 결과를 LLM 프롬프트에 주입
+    let v2Directive = ''
+    const v2Ctx = useGameStore.getState()._v2Context
+    if (v2Ctx) {
+      const stanceLabel: Record<string, string> = {
+        deny: '완전 부인', hedge: '애매하게 회피', partial: '부분 인정',
+        blame: '책임 전가', emotional: '감정 폭발', confess: '자백/고백',
+      }
+      const reactionLabel: Record<string, string> = {
+        comply: '순응 (질문에 협조적으로 답한다)',
+        resist: '저항 (방어적이고 꺼려하며 답한다)',
+        counter: '역공 (재판관의 질문에 반박하며 공세로 나온다)',
+      }
+      const fatigueLabel: Record<string, string> = {
+        fresh: '', wary: '이 각도의 질문이 반복되고 있다. 약간 짜증을 섞어라.',
+        high: '같은 추궁이 여러 번 반복됐다. 분명한 짜증과 피로감을 보여라.',
+        exhausted: '추궁이 지나치다. 답변을 거부하거나 최소한으로 줄여라.',
+      }
+      const layerLabel: Record<string, string> = {
+        surface: '표면적 사실만 다룬다',
+        motive: '행동의 동기/배경까지 말할 수 있다',
+        core: '관계의 핵심 상처/두려움까지 드러낼 수 있다',
+      }
+
+      v2Directive = `\n\n★ V2 엔진 판정 (반드시 따르라):`
+      v2Directive += `\n- 응답 모드: ${reactionLabel[v2Ctx.npcReaction] ?? v2Ctx.npcReaction}`
+      v2Directive += `\n- 태도: ${stanceLabel[v2Ctx.appliedStance] ?? v2Ctx.appliedStance}`
+      v2Directive += `\n- 깊이: ${layerLabel[v2Ctx.layer] ?? v2Ctx.layer}`
+      if (fatigueLabel[v2Ctx.fatigueLevel]) {
+        v2Directive += `\n- 피로도: ${fatigueLabel[v2Ctx.fatigueLevel]}`
+      }
+      if (v2Ctx.misconceptionState && v2Ctx.misconceptionState !== 'M0') {
+        const mcLabel: Record<string, string> = {
+          M1: '이 쟁점에 대해 오해가 시작됐다. 잘못된 확신을 살짝 내비쳐라.',
+          M2: '오해가 굳어진 상태다. 잘못된 해석을 확신하듯 말해라.',
+          M3: '오해가 흔들리고 있다. 확신이 줄어들고 혼란을 보여라.',
+          M4: '오해가 해소됐다. 이전의 잘못된 해석을 인정하는 톤으로 말해라.',
+        }
+        v2Directive += `\n- 오해 상태: ${mcLabel[v2Ctx.misconceptionState] ?? ''}`
+      }
+      if (v2Ctx.issueRole === 'red_herring') {
+        v2Directive += `\n- 이 쟁점은 가짜 쟁점(오해)이다. 아직 해소되지 않았으면 진짜처럼 반응하고, 해소됐으면(M4) 오해였음을 인정해라.`
+      }
+    }
+
+    return `${addressRule}${judgeGenRule}${guide}${depthContext}${v2Directive}\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n\n규칙:\n- judgeQuestion 필드에 재판관 질문을 자연스럽게 작성한다.\n- npcResponse에는 그 질문에 답한다.\n- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
   }
 
   // ── 증거 제시 ──

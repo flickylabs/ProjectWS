@@ -5,7 +5,7 @@ import { isLLMMode } from '../../hooks/useActionDispatch'
 import { processFreeQuestion } from '../../engine/llmFreeQuestion'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
 import { canUseFreeQuestionV2, processFreeQuestionV2, buildDisputeAliasMap } from '../../engine/freeQuestionV2'
-import { hasV2Data, getStructureV2, getBeatRuntimeState } from '../../engine/v2DataLoader'
+import { hasStructureV2, getStructureV2, getBeatRuntimeState } from '../../engine/v2DataLoader'
 import { getMisconceptionState } from '../../engine/misconceptionEngine'
 import { recordRevealedAtom, recordTurnStyle } from '../../engine/phase3LogCollector'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
@@ -32,7 +32,7 @@ export default function FreeQuestionInput({ target, onResult }: Props) {
 
     const state = useGameStore.getState()
     const v2CaseId = normalizeCaseKey(caseData)
-    const v2Active = hasV2Data(v2CaseId) && state.phase3Flags.useBeatSelectorV2
+    const v2Active = hasStructureV2(v2CaseId) && state.phase3Flags.useBeatSelectorV2
     const agent = target === 'a' ? state.agentA : state.agentB
     const focusDisputeId = state.disputeBoardAction?.disputeId ?? Object.keys(agent.lieStateMap)[0] ?? ''
     const currentLieState = agent.lieStateMap[focusDisputeId]?.currentState
