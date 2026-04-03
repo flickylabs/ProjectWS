@@ -11,6 +11,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import { useGameStore } from '../../store/useGameStore'
 import type { LieState } from '../../types'
 import { getMeterHudModel, type MeterDisplayMode } from '../../engine/meterStagingV2'
@@ -132,71 +133,101 @@ export function StateTransitionToast() {
 }
 
 /** 미터 바 HUD — meterStagingV2 엔진 기반 */
+const METER_INFO: Record<string, { icon: string; title: string; desc: string }> = {
+  contradiction: { icon: '💥', title: '모순 토큰', desc: '당사자의 진술에서 모순을 발견하면 쌓입니다.\n모순이 누적될수록 거짓말이 흔들리고,\n결정적 순간에 추궁할 수 있습니다.' },
+  leak: { icon: '🕳️', title: '누설 미터', desc: '당사자가 실수로 정보를 흘릴 때 올라갑니다.\n높아지면 새로운 증거 단서가 드러나지만,\n너무 높으면 당사자가 경계합니다.' },
+  trust: { icon: '🤝', title: '신뢰 창구', desc: '공감 접근이나 부드러운 질문으로 올립니다.\n신뢰가 충분하면 자발적 고백을 유도하거나\n숨겨진 정보를 얻을 수 있습니다.' },
+}
+
 export function QuestionMeterHUD({ party }: { party: 'a' | 'b' }) {
   const meters = useGameStore(s => s.questionMeters[party])
   const hardcoreMode = useGameStore(s => s.phase3Flags?.useBeatSelectorV2 === false)
   const mode: MeterDisplayMode = hardcoreMode ? 'exact' : 'staged'
   const hud = getMeterHudModel(meters, mode)
+  const [showInfo, setShowInfo] = useState<string | null>(null)
+
+  const info = showInfo ? METER_INFO[showInfo] : null
 
   return (
-    <div className="flex items-center gap-3">
-      {/* 모순토큰 — 이산형, 변경 없음 */}
-      <MeterPip
-        label={hud.contradiction.label}
-        value={hud.contradiction.value}
-        max={hud.contradiction.max}
-        active={hud.contradiction.active}
-        color="yellow"
-      />
-      {/* 누설미터 — 단계형 */}
-      <MeterBar
-        label={hud.leak.label}
-        value={meters.leakMeter}
-        max={100}
-        warning={meters.leakMeter >= 50}
-        critical={meters.leakMeter >= 80}
-        color="orange"
-        stageLabel={hud.leak.stageLabel}
-      />
-      {/* 신뢰창구 — 단계형 */}
-      <MeterBar
-        label={hud.trust.label}
-        value={meters.trustWindow}
-        max={100}
-        warning={false}
-        critical={false}
-        active={meters.trustWindow >= 60}
-        color="blue"
-        stageLabel={hud.trust.stageLabel}
-      />
-    </div>
+    <>
+      <div className="flex items-stretch gap-1 w-full">
+        <MeterPip
+          label={hud.contradiction.label}
+          value={hud.contradiction.value}
+          max={hud.contradiction.max}
+          active={hud.contradiction.active}
+          color="yellow"
+          onClick={() => setShowInfo('contradiction')}
+        />
+        <MeterBar
+          label={hud.leak.label}
+          value={meters.leakMeter}
+          max={100}
+          warning={meters.leakMeter >= 50}
+          critical={meters.leakMeter >= 80}
+          color="orange"
+          stageLabel={hud.leak.stageLabel}
+          onClick={() => setShowInfo('leak')}
+        />
+        <MeterBar
+          label={hud.trust.label}
+          value={meters.trustWindow}
+          max={100}
+          warning={false}
+          critical={false}
+          active={meters.trustWindow >= 60}
+          color="blue"
+          stageLabel={hud.trust.stageLabel}
+          onClick={() => setShowInfo('trust')}
+        />
+      </div>
+
+      {/* Stat 설명 모달 — Portal로 body에 직접 렌더링하여 z-index 문제 해결 */}
+      {info && createPortal(
+        <div className="fixed inset-0 z-[9999] bg-gray-950/80 backdrop-blur-sm flex items-center justify-center px-5" onClick={() => setShowInfo(null)}>
+          <div className="bg-gray-900 border border-gray-700/60 rounded-2xl p-5 w-full max-w-sm animate-scale-in shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="text-center mb-3">
+              <span className="text-3xl">{info.icon}</span>
+            </div>
+            <h3 className="text-base font-bold text-gray-100 text-center mb-2">{info.title}</h3>
+            <p className="text-sm text-gray-300 text-center whitespace-pre-line leading-relaxed mb-4">{info.desc}</p>
+            <button onClick={() => setShowInfo(null)}
+              className="w-full py-2.5 rounded-xl text-sm font-bold bg-amber-600 text-gray-950 active:scale-95">확인</button>
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
   )
 }
 
-/** 이산형 미터 (토큰 형태) */
-function MeterPip({ label, value, max, active, color }: {
+/** 이산형 미터 (토큰) — 좌: 라벨, 하단: pip 바 */
+function MeterPip({ label, value, max, active, color, onClick }: {
   label: string
   value: number
   max: number
   active: boolean
   color: 'yellow' | 'orange' | 'blue'
+  onClick?: () => void
 }) {
   const colorMap = {
-    yellow: { filled: 'bg-yellow-500', empty: 'bg-gray-700', active: 'text-yellow-400', label: 'text-yellow-500/60' },
-    orange: { filled: 'bg-orange-500', empty: 'bg-gray-700', active: 'text-orange-400', label: 'text-orange-500/60' },
-    blue: { filled: 'bg-blue-500', empty: 'bg-gray-700', active: 'text-blue-400', label: 'text-blue-500/60' },
+    yellow: { filled: 'bg-yellow-400', filledGlow: 'shadow-[0_0_4px_rgba(250,204,21,0.5)]', empty: 'bg-gray-700/50', active: 'text-yellow-400', label: 'text-yellow-500/60', ring: 'ring-yellow-500/15', bg: 'bg-yellow-500/[0.04]' },
+    orange: { filled: 'bg-orange-400', filledGlow: 'shadow-[0_0_4px_rgba(251,146,60,0.5)]', empty: 'bg-gray-700/50', active: 'text-orange-400', label: 'text-orange-500/60', ring: 'ring-orange-500/15', bg: 'bg-orange-500/[0.04]' },
+    blue:   { filled: 'bg-blue-400',   filledGlow: 'shadow-[0_0_4px_rgba(96,165,250,0.5)]',  empty: 'bg-gray-700/50', active: 'text-blue-400',   label: 'text-blue-500/60',   ring: 'ring-blue-500/15',   bg: 'bg-blue-500/[0.04]' },
   }
   const c = colorMap[color]
 
   return (
-    <div className="flex items-center gap-1">
-      <span className={`text-[9px] font-semibold ${active ? c.active : c.label}`}>{label}</span>
-      <div className="flex gap-0.5">
+    <div onClick={onClick} className={`flex flex-col justify-between rounded-lg px-2 py-1.5 flex-1 min-w-0 ring-1 cursor-pointer hover:brightness-110 active:scale-[0.97] transition-all ${active ? `${c.bg} ${c.ring}` : 'bg-white/[0.015] ring-white/[0.04]'}`}>
+      {/* 상단: 라벨 */}
+      <span className={`text-[10px] font-bold mb-1 ${active ? c.active : c.label}`}>{label}</span>
+      {/* 하단: pip 도트 — 균등 분포 */}
+      <div className="flex justify-between">
         {Array.from({ length: max }, (_, i) => (
           <div
             key={i}
-            className={`w-1.5 h-1.5 rounded-full transition-all ${
-              i < value ? `${c.filled} ${active ? 'animate-pulse' : ''}` : c.empty
+            className={`w-2 h-2 rounded-full transition-all ${
+              i < value ? `${c.filled} ${active ? c.filledGlow : ''}` : c.empty
             }`}
           />
         ))}
@@ -205,8 +236,8 @@ function MeterPip({ label, value, max, active, color }: {
   )
 }
 
-/** 연속형 미터 (바 형태) — stageLabel이 있으면 단계형, 없으면 % 표시 */
-function MeterBar({ label, value, max, warning, critical, active, color, stageLabel }: {
+/** 연속형 미터 (바) — 좌상: 라벨, 우상: 단계(작게), 하단: 바 */
+function MeterBar({ label, value, max, warning, critical, active, color, stageLabel, onClick }: {
   label: string
   value: number
   max: number
@@ -215,17 +246,18 @@ function MeterBar({ label, value, max, warning, critical, active, color, stageLa
   active?: boolean
   color: 'yellow' | 'orange' | 'blue'
   stageLabel?: string
+  onClick?: () => void
 }) {
   const pct = Math.round((value / max) * 100)
   const barColor = critical
     ? 'bg-red-500'
     : warning
-      ? 'bg-orange-500'
+      ? 'bg-orange-400'
       : active
         ? 'bg-blue-400'
         : color === 'orange'
-          ? 'bg-orange-600/60'
-          : 'bg-blue-600/60'
+          ? 'bg-orange-600/40'
+          : 'bg-blue-600/40'
 
   const labelColor = critical
     ? 'text-red-400'
@@ -235,18 +267,32 @@ function MeterBar({ label, value, max, warning, critical, active, color, stageLa
         ? 'text-blue-400'
         : 'text-gray-500'
 
+  const stageColor = critical
+    ? 'text-red-400/60'
+    : warning
+      ? 'text-orange-400/60'
+      : active
+        ? 'text-blue-400/60'
+        : 'text-gray-600'
+
+  const isHighlight = warning || critical || active
+  const ringColor = critical ? 'ring-red-500/15' : warning ? 'ring-orange-500/15' : active ? 'ring-blue-500/15' : 'ring-white/[0.04]'
+  const bgColor = critical ? 'bg-red-500/[0.04]' : warning ? 'bg-orange-500/[0.04]' : active ? 'bg-blue-500/[0.04]' : 'bg-white/[0.015]'
+
   return (
-    <div className="flex items-center gap-1">
-      <span className={`text-[9px] font-semibold ${labelColor}`}>{label}</span>
-      <div className="w-12 h-1.5 bg-gray-800 rounded-full overflow-hidden">
+    <div onClick={onClick} className={`flex flex-col justify-between rounded-lg px-2 py-1.5 flex-1 min-w-0 ring-1 cursor-pointer hover:brightness-110 active:scale-[0.97] transition-all ${bgColor} ${ringColor}`}>
+      {/* 상단: 라벨(좌) + 단계(우, 작게) */}
+      <div className="flex items-baseline justify-between mb-1">
+        <span className={`text-[10px] font-bold ${labelColor}`}>{label}</span>
+        <span className={`text-[9px] ${stageColor}`}>{stageLabel ?? `${pct}%`}</span>
+      </div>
+      {/* 하단: 바 */}
+      <div className="w-full h-1.5 bg-gray-800/60 rounded-full overflow-hidden">
         <div
-          className={`h-full rounded-full transition-all duration-300 ${barColor} ${
-            (warning || critical || active) ? 'animate-pulse' : ''
-          }`}
+          className={`h-full rounded-full transition-all duration-300 ${barColor}`}
           style={{ width: `${pct}%` }}
         />
       </div>
-      <span className={`text-[8px] ${labelColor}`}>{stageLabel ?? `${pct}%`}</span>
     </div>
   )
 }

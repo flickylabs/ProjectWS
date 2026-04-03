@@ -1,0 +1,1085 @@
+{
+  "caseId": "friend-03",
+  "schemaVersion": "structure_v2",
+  "proposedUnlockAtoms": [],
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "지후의 협업 게시물 댓글과 스토리를 통한 나래 명예훼손",
+      "truth": true,
+      "truthDescription": "지후는 나래를 직접 실명으로 적지는 않았지만 같은 협업 게시물 아래 '협찬 물건도 자기 서사로 바꿔 판다'는 식의 댓글과 스토리를 올려 나래를 특정 가능하게 비방했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "평판복구",
+      "legitimacyIssue": true,
+      "judgmentStatement": "지후는 나래를 비방했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "협찬 물건",
+        "자기 서사",
+        "같은 협업 게시물",
+        "댓글·스토리",
+        "배송 지연",
+        "지목성"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉으로 드러난 순서와 행동이 보입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend03:a:d-1:s0:atom:1",
+            "friend03:a:d-1:s0:atom:2",
+            "friend03:b:d-1:s0:atom:1",
+            "friend03:b:d-1:s0:atom:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 숨기거나 밀어붙였는지의 심리가 드러납니다.",
+          "lockedSummary": "동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend03:a:d-1:s2:atom:1",
+            "friend03:a:d-1:s2:atom:2",
+            "friend03:b:d-1:s2:atom:1",
+            "friend03:b:d-1:s2:atom:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "실제 책임과 관계 손상이 어디서 갈린 건지 보입니다.",
+          "lockedSummary": "핵심 책임은 아직 관계 규칙까지 열어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:motive_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "friend03:a:d-1:s4:atom:1",
+            "friend03:a:d-1:s4:atom:2",
+            "friend03:b:d-1:s4:atom:1",
+            "friend03:b:d-1:s4:atom:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "나래의 편집 캡처 제작과 재게시",
+      "truth": true,
+      "truthDescription": "나래는 기존 대화 조각을 붙여 지후가 자신을 조롱한 것처럼 보이는 캡처를 만들고, 이를 운영자 신고와 공통 친구 대화, 스토리 암시에 사용했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 78,
+        "b": 22
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "평판복구",
+      "legitimacyIssue": true,
+      "judgmentStatement": "나래는 지후를 조롱하는 캡처를 만들었다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "문제 DM 캡처",
+        "한 장 편집",
+        "운영자 신고",
+        "문소희 전달",
+        "재게시",
+        "편집앱"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉으로 드러난 순서와 행동이 보입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend03:a:d-2:s0:atom:1",
+            "friend03:a:d-2:s0:atom:2",
+            "friend03:b:d-2:s0:atom:1",
+            "friend03:b:d-2:s0:atom:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 숨기거나 밀어붙였는지의 심리가 드러납니다.",
+          "lockedSummary": "동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend03:a:d-2:s2:atom:1",
+            "friend03:a:d-2:s2:atom:2",
+            "friend03:b:d-2:s2:atom:1",
+            "friend03:b:d-2:s2:atom:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "실제 책임과 관계 손상이 어디서 갈린 건지 보입니다.",
+          "lockedSummary": "핵심 책임은 아직 관계 규칙까지 열어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:motive_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "friend03:a:d-2:s4:atom:1",
+            "friend03:a:d-2:s4:atom:2",
+            "friend03:b:d-2:s4:atom:1",
+            "friend03:b:d-2:s4:atom:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "문제의 DM 캡처는 지후가 실제로 보낸 원문인가",
+      "truth": false,
+      "truthDescription": "핵심 캡처는 지후가 보낸 단일 원문이 아니라, 나래가 서로 다른 시기의 대화 버블과 프로필 레이어를 합쳐 만든 위조 이미지였다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "증거검증",
+      "legitimacyIssue": true,
+      "judgmentStatement": "문제의 DM 캡처는 위조 이미지이다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "조회수용 피해자 코스프레",
+        "합성 이미지",
+        "원본 export",
+        "다른 날짜 조각",
+        "프로필 레이어",
+        "위조 DM"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "그럴듯한 외형과 오해의 출발점이 보입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend03:a:d-3:s0:atom:1",
+            "friend03:a:d-3:s0:atom:2",
+            "friend03:b:d-3:s0:atom:1",
+            "friend03:b:d-3:s0:atom:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그 가짜 쟁점이 밀어붙여졌는지 드러납니다.",
+          "lockedSummary": "동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend03:a:d-3:s2:atom:1",
+            "friend03:a:d-3:s2:atom:2",
+            "friend03:b:d-3:s2:atom:1",
+            "friend03:b:d-3:s2:atom:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "오해를 벗겨도 남는 실제 책임이 보입니다.",
+          "lockedSummary": "핵심 책임은 아직 관계 규칙까지 열어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:motive_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "friend03:a:d-3:s4:atom:1",
+            "friend03:a:d-3:s4:atom:2",
+            "friend03:b:d-3:s4:atom:1",
+            "friend03:b:d-3:s4:atom:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "knows",
+          "b": "knows"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심이 먼저 선다.",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "해석을 방어하며 당황한다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석을 사실처럼 붙든다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "맥락이 흔들리며 확신이 약해진다.",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해가 정리되고 책임 층위가 갈린다.",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "한 장짜리 DM 이미지만 보면 원문 그대로라 믿기 쉽다.",
+          "다른 날짜 말풍선을 이어붙인 조합 흔적이 숨어 있다.",
+          "프로필 사진과 시간 레이어가 덧씌워진 편집 자국이 남는다."
+        ],
+        "truthExitEvidenceIds": [
+          "e-3",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "오해가 정리되고 책임 층위가 갈린다."
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "나래의 협찬품 유용 의혹",
+      "truth": false,
+      "truthDescription": "배송 지연과 재고 표기 차이는 협업사의 일괄 반납 등록 지연 때문이었고, 나래가 협찬품을 개인 판매나 보관에 돌린 사실은 확인되지 않았다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 35,
+        "b": 65
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "증거검증",
+      "legitimacyIssue": false,
+      "judgmentStatement": "나래는 협찬품을 유용하지 않았다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "협찬품 유용",
+        "반납 등록 지연",
+        "물류 로그",
+        "재고 착시",
+        "협업사",
+        "미유용"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "양쪽이 같은 자료를 다르게 읽은 외형이 보입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend03:a:d-4:s0:atom:1",
+            "friend03:a:d-4:s0:atom:2",
+            "friend03:b:d-4:s0:atom:1",
+            "friend03:b:d-4:s0:atom:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그 해석이 굳어졌는지의 심리가 드러납니다.",
+          "lockedSummary": "동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend03:a:d-4:s2:atom:1",
+            "friend03:a:d-4:s2:atom:2",
+            "friend03:b:d-4:s2:atom:1",
+            "friend03:b:d-4:s2:atom:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "오해를 걷어낸 뒤 남는 실제 책임이 보입니다.",
+          "lockedSummary": "핵심 책임은 아직 관계 규칙까지 열어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:motive_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "friend03:a:d-4:s4:atom:1",
+            "friend03:a:d-4:s4:atom:2",
+            "friend03:b:d-4:s4:atom:1",
+            "friend03:b:d-4:s4:atom:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "knows",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 의심이 먼저 선다.",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "해석을 방어하며 당황한다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석을 사실처럼 붙든다.",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "맥락이 흔들리며 확신이 약해진다.",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해가 정리되고 책임 층위가 갈린다.",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "반납 등록이 지연된 기간만 보면 유용으로 오해하기 쉽다.",
+          "재고 표기 숫자가 줄어든 화면은 착시를 강하게 유발한다.",
+          "배송 문의 댓글이 남긴 공개 인상이 의혹을 더 굳힌다."
+        ],
+        "truthExitEvidenceIds": [
+          "e-2",
+          "e-4"
+        ],
+        "clarifyOutcomeLabel": "오해가 정리되고 책임 층위가 갈린다."
+      }
+    },
+    {
+      "id": "d-5",
+      "name": "협업 갈등 비공개 원칙의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 협업 갈등을 공개 게시물로 끌고 가지 않기로 했지만, 지후는 공개 댓글과 스토리로 먼저 암시했고 나래는 위조 캡처를 근거로 운영자와 친구들에게 퍼뜨리며 약속을 깼다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 56,
+        "b": 44
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "친구경계재설정",
+      "legitimacyIssue": false,
+      "judgmentStatement": "지후와 나래는 비공식 약속을 위반했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "비공개 원칙",
+        "공개 댓글",
+        "위조 캡처",
+        "스토리 암시",
+        "운영자 신고",
+        "친구 경계"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "보조 사실과 연결 고리가 보입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend03:a:d-5:s0:atom:1",
+            "friend03:a:d-5:s0:atom:2",
+            "friend03:b:d-5:s0:atom:1",
+            "friend03:b:d-5:s0:atom:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "세부 맥락 뒤의 계산과 감정이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend03:a:d-5:s2:atom:1",
+            "friend03:a:d-5:s2:atom:2",
+            "friend03:b:d-5:s2:atom:1",
+            "friend03:b:d-5:s2:atom:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "관계 회복에 필요한 정리 포인트가 보입니다.",
+          "lockedSummary": "핵심 책임은 아직 관계 규칙까지 열어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:motive_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "friend03:a:d-5:s4:atom:1",
+            "friend03:a:d-5:s4:atom:2",
+            "friend03:b:d-5:s4:atom:1",
+            "friend03:b:d-5:s4:atom:2"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-5:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-5:surface:public_first_confirmed"
+      },
+      "uiLabel": "공개 암시가 시작점"
+    },
+    {
+      "id": "link:d-2:d-5:retaliation",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-5:motive:fake_counterattack_visible"
+      },
+      "uiLabel": "위조 대응 확산"
+    },
+    {
+      "id": "link:d-3:d-2:supports",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-2",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 13,
+        "grantFlag": "d-2:core:composite_source_confirmed"
+      },
+      "uiLabel": "합성 이미지 원천"
+    },
+    {
+      "id": "link:d-4:d-1:weakens_counter",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-1:core:misuse_claim_collapses"
+      },
+      "uiLabel": "유용 의혹 붕괴"
+    },
+    {
+      "id": "link:d-3:d-5:retaliation",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-5",
+      "type": "retaliation",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-5:core:fake_evidence_breaks_rule"
+      },
+      "uiLabel": "위조가 약속 위반을 확대"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "나래 스토리와 신고 DM에 첨부된 DM 캡처 파일",
+      "description": "지후가 '조회수용 피해자 코스프레'라고 말하고 루머를 의도했다는 식으로 보이는 한 장짜리 DM 캡처 파일이다.",
+      "type": "sns",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": true,
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "authenticity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.28,
+            "note": "한 장짜리 DM 함정 해소"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "지후의 댓글·스토리 보관본과 삭제 로그",
+      "description": "협업 게시물 아래 남긴 댓글과, 협찬 물건과 서사를 암시한 스토리 보관본 및 삭제 시간 로그다.",
+      "type": "sns",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "공개 비방의 선행성 확인"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "나래의 편집앱 프로젝트 파일과 갤러리 레이어 백업",
+      "description": "문제 캡처를 만들 때 사용된 편집앱 프로젝트 파일과, 서로 다른 날짜의 대화 캡처 조각이 저장된 갤러리 백업이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "authenticity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "합성 경로 확정"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "협업사 물류 확인서와 반납 등록 지연 로그",
+      "description": "사은품과 협찬품이 모두 정상 반납 처리됐고, 앱 재고 표기만 늦게 반영됐음을 보여주는 협업사 백오피스 로그와 확인서다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "유용 의혹 해소"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "나래의 운영자 신고 DM과 문소희 전달 대화 원본",
+      "description": "나래가 위조 캡처를 첨부해 운영자에게 신고하고, 문소희에게도 지후라고 단정하며 전달한 대화 원본이다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "재게시 범위와 전달 책임 확인"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "플랫폼 원본 DM export와 파일 해시 대조 리포트",
+      "description": "지후 계정의 원본 DM export와 e-1 파일을 대조해, 문제 문장이 실제 단일 대화에 존재하지 않음을 보여주는 리포트다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "authenticity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "원문과 합성본 분리"
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:target_specificity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "friend03:a:d-1:s2:atom:1",
+          "friend03:b:d-1:s2:atom:1"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "그 사람 이름부터 바로 못 박고 싶진 않아요.",
+        "지금은 대상을 단정해서 말하기 조심스러워요."
+      ]
+    },
+    {
+      "id": "fq:d-2:edit_reason",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "friend03:a:d-2:s2:atom:1",
+          "friend03:b:d-2:s2:atom:1"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "그 마음을 지금 단어 하나로 자르긴 어렵습니다.",
+        "동기만 떼면 다른 뜻으로 들릴 수 있어요."
+      ]
+    },
+    {
+      "id": "fq:d-3:dm_source",
+      "intentTag": "evidence_origin",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "friend03:a:d-3:s2:atom:1",
+          "friend03:b:d-3:s2:atom:1"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "그 자료 출처를 지금 단정해서 말하긴 조심스러워요.",
+        "원본 흐름을 같이 보지 않으면 또 틀어집니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:misuse_standard",
+      "intentTag": "threshold_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "friend03:a:d-4:s2:atom:1",
+          "friend03:b:d-4:s2:atom:1"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 기준을 한 줄로 자르긴 어렵습니다.",
+        "괜찮음의 범위는 상황을 같이 봐야 해요."
+      ]
+    },
+    {
+      "id": "fq:d-5:public_first",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "friend03:a:d-5:s2:atom:1",
+          "friend03:b:d-5:s2:atom:1"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "순서만 떼어 말하면 또 왜곡될 수 있어요.",
+        "그 시각만 콕 집어 답하긴 아직 부담돼요."
+      ]
+    },
+    {
+      "id": "fq:d-5:private_spread",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "friend03:a:d-5:s2:atom:1",
+          "friend03:b:d-5:s2:atom:1"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "약속 문장만 따로 떼면 제 의도는 빠져요.",
+        "규칙 얘기만 잘라 말하긴 아직 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:repair_channel",
+      "intentTag": "repair_intent",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "friend03:a:d-5:s2:atom:1",
+          "friend03:b:d-5:s2:atom:1"
+        ],
+        "preferredAngleTags": [
+          "emotion",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "회복 얘기는 사실 정리가 더 된 뒤에 하고 싶어요.",
+        "사과 순서까지 지금 약속하긴 아직 감정이 남아 있어요."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  }
+}

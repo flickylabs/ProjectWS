@@ -8,6 +8,8 @@ import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3Game
 import { spouse06V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-batch/spouse-06/spouse-06-v2-atoms'
 import { spouse06TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-batch/spouse-06/spouse-06-tells-beats'
 import { spouse06V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-batch/spouse-06/spouse-06-v3-game-loop-data'
+import { registerStructureV2 } from '../../engine/v2DataLoader'
+import structureV2 from './spouse-06-structure-v2.json'
 
 export function registerSpouse06Data(): void {
   console.log('[Renewal] spouse-06 리뉴얼 데이터 등록 시작')
@@ -21,5 +23,8 @@ export function registerSpouse06Data(): void {
 
   registerBeatScripts('spouse-06', (spouse06TellsBeats as any).beatScripts)
 
-  console.log('[Renewal] spouse-06 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback')
+
+  // V2 Structure 등록
+  registerStructureV2(structureV2 as any)
+  console.log('[Renewal] spouse-06 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback + StructureV2')
 }

@@ -1,0 +1,942 @@
+{
+  "caseId": "family-03",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "정우의 월 60만원·6개월 약속",
+      "disputeKind": "core_truth",
+      "weightTier": "high",
+      "judgmentStatement": "정우는 6개월간 월 60만원을 약속했다.",
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "disputeAliases": [
+        "60만원",
+        "6개월만",
+        "월 지원",
+        "독립 직후",
+        "잘린 카톡",
+        "장남 책임",
+        "약속 캡처",
+        "매달 보낼게"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "무슨 일이 있었는지, 누가 먼저 그렇게 보였는지 정리합니다.",
+          "lockedSummary": "겉으로 보이는 단서만 확인할 수 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family03:b:d-1:s2:surface:0",
+            "family03:b:d-1:s2:support:1",
+            "family03:a:d-1:s2:surface:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "행동과 해석 뒤에 있던 두려움, 체면, 자기정당화를 드러냅니다.",
+          "lockedSummary": "행동의 배경은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "d1.b.unlock.s4.shame_about_limit",
+            "d1.b.unlock.s3.ambiguous_silence",
+            "d1.a.unlock.s4.burden_and_abandonment_fear"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "증거까지 놓고 보면 숨긴 사실, 실제 수취인, 최종 책임선이 어디인지 닫습니다.",
+          "lockedSummary": "핵심 책임선과 실제 사실은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:responsibility_named"
+            ]
+          },
+          "revealAtomIds": [
+            "d1.b.unlock.s5.promise_admission",
+            "d1.a.unlock.s5.promise_was_limited",
+            "family03:b:d-1:s5:surface:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "정우의 자동이체 해지와 2회 감액 송금",
+      "disputeKind": "sub_truth",
+      "weightTier": "high",
+      "judgmentStatement": "정우는 자동이체를 해지했다.",
+      "requiredEvidenceIds": [
+        "e-2"
+      ],
+      "disputeAliases": [
+        "자동이체 해지",
+        "35만원",
+        "40만원",
+        "3개월째",
+        "사전 통보 없음",
+        "늦은 송금",
+        "입금 날짜",
+        "직접 맞춰 보냈다"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "언제 무엇이 늦어졌고, 누가 그 공백을 문제 삼는지 봅니다.",
+          "lockedSummary": "겉으로 보이는 단서만 확인할 수 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family03:b:d-2:s2:surface:0",
+            "family03:b:d-2:s2:support:1",
+            "family03:a:d-2:s2:surface:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "행동과 해석 뒤에 있던 두려움, 체면, 자기정당화를 드러냅니다.",
+          "lockedSummary": "행동의 배경은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "d2.b.unlock.s4.face_saving_minimization",
+            "family03:b:d-2:s4:support:1",
+            "d2.a.unlock.s4.date_anxiety"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "증거까지 놓고 보면 숨긴 사실, 실제 수취인, 최종 책임선이 어디인지 닫습니다.",
+          "lockedSummary": "핵심 책임선과 실제 사실은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              },
+              {
+                "id": "d-5",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:responsibility_named"
+            ]
+          },
+          "revealAtomIds": [
+            "d2.b.unlock.s5.no_notice_admission",
+            "d2.a.unlock.s5.late_but_not_zero",
+            "family03:b:d-2:s5:surface:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "복자의 용돈 전용",
+      "disputeKind": "core_truth",
+      "weightTier": "high",
+      "judgmentStatement": "복자는 용돈을 전용했다.",
+      "requiredEvidenceIds": [
+        "e-3"
+      ],
+      "disputeAliases": [
+        "수빈 학원비",
+        "20만원",
+        "25만원",
+        "교통카드",
+        "같은 날 송금",
+        "약값이라고 했다",
+        "용돈 전용",
+        "학원비 먼저"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "무슨 일이 있었는지, 누가 먼저 그렇게 보였는지 정리합니다.",
+          "lockedSummary": "겉으로 보이는 단서만 확인할 수 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family03:a:d-3:s2:support:1",
+            "d3.a.unlock.s2.same_day_transfers",
+            "family03:b:d-3:s2:support:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "행동과 해석 뒤에 있던 두려움, 체면, 자기정당화를 드러냅니다.",
+          "lockedSummary": "행동의 배경은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "d3.b.unlock.s4.sibling_resentment",
+            "d3.a.unlock.s4.shame_about_two_children",
+            "family03:b:d-3:s4:support:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "증거까지 놓고 보면 숨긴 사실, 실제 수취인, 최종 책임선이 어디인지 닫습니다.",
+          "lockedSummary": "핵심 책임선과 실제 사실은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:motive_opened"
+            ]
+          },
+          "revealAtomIds": [
+            "family03:b:d-3:s5:surface:0",
+            "family03:a:d-3:s5:surface:0",
+            "d3.b.unlock.s5.partial_understanding"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-4",
+      "name": "복자의 친척 단톡 공개 압박",
+      "disputeKind": "red_herring",
+      "weightTier": "high",
+      "judgmentStatement": "복자는 정우의 약속을 공개했다.",
+      "requiredEvidenceIds": [
+        "e-4"
+      ],
+      "disputeAliases": [
+        "친척 단톡",
+        "교회 소모임",
+        "장남이 생활비를 끊었다",
+        "공개 압박",
+        "먼저 올렸다",
+        "망신 주기",
+        "단톡 내보내기",
+        "상의라고 했다"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "잘린 약속 캡처와 단톡 문장이 왜 정우가 생활비를 끊은 결정적 증거처럼 보였는지 정리합니다.",
+          "lockedSummary": "겉으로 보이는 단서만 확인할 수 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family03:b:d-4:s2:support:1",
+            "family03:a:d-4:s2:support:1",
+            "d4.b.unlock.s2.group_message_timing"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "행동과 해석 뒤에 있던 두려움, 체면, 자기정당화를 드러냅니다.",
+          "lockedSummary": "행동의 배경은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "d4.a.unlock.s4.face_and_abandonment_fear",
+            "family03:a:d-4:s4:surface:0",
+            "family03:a:d-4:s4:support:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "원본 대화와 송금 기록을 겹치면 단톡 공개가 생활비 진실을 밝힌 게 아니라 체면 압박을 키운 가짜 중심축이었음을 닫습니다.",
+          "lockedSummary": "핵심 책임선과 실제 사실은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:responsibility_named"
+            ]
+          },
+          "revealAtomIds": [
+            "d4.b.unlock.s5.boundary_rule",
+            "d4.a.unlock.s5.public_shaming_admission",
+            "family03:b:d-4:s5:surface:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "knows"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "친척 단톡에 올라간 잘린 약속 캡처가 먼저 돌며, 정우가 장남 약속을 통째로 끊은 것처럼 보인 단계",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "복자가 '직접 말해도 소용없어서 올렸다'며 공개를 생활고의 증거처럼 말하기 시작한 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "친척 반응과 장남 책임 프레임이 붙어, 6개월 한정 약속과 용돈 전용 맥락이 지워진 채 '정우가 어머니를 버렸다'로 굳어진 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "원본 카톡과 송금 기록, 단톡 업로드 시각이 맞물리며 공개 압박이 먼저였고 캡처도 잘려 있었다는 모순이 보이기 시작한 단계",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "단톡 공개는 생활비 진실을 밝힌 증거가 아니라, 체면 압박으로 갈등을 키운 별도 행동이었다는 실제 맥락이 드러난 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "'매달 60은 내가 보낼게'만 남기고 앞뒤를 자른 약속 캡처",
+          "'장남이 생활비를 끊었다'는 단정 문장",
+          "친척·교회 단톡 반응이 붙으며 공개 글 자체가 판정문처럼 읽히는 흐름"
+        ],
+        "truthExitEvidenceIds": [
+          "e-1",
+          "e-2",
+          "e-4"
+        ]
+      }
+    },
+    {
+      "id": "d-5",
+      "name": "현금 지원에서 공과금 직접 납부로 바꾸자는 합의의 쌍방 미이행",
+      "disputeKind": "sub_truth",
+      "weightTier": "medium",
+      "judgmentStatement": "정우는 공과금을 한 번만 납부했다.",
+      "requiredEvidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "disputeAliases": [
+        "직접 납부",
+        "전기료",
+        "관리비",
+        "영수증 공유",
+        "현금으로 다시",
+        "주민센터 상담",
+        "예산표",
+        "한 번만 냈다"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "무슨 일이 있었는지, 누가 먼저 그렇게 보였는지 정리합니다.",
+          "lockedSummary": "겉으로 보이는 단서만 확인할 수 있습니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family03:b:d-5:s2:support:1",
+            "d5.b.unlock.s2.one_time_payment_only",
+            "family03:b:d-5:s2:surface:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "행동과 해석 뒤에 있던 두려움, 체면, 자기정당화를 드러냅니다.",
+          "lockedSummary": "행동의 배경은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "d5.b.unlock.s4.avoided_bill_dates",
+            "d5.a.unlock.s3.control_discomfort",
+            "family03:b:d-5:s4:surface:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "증거까지 놓고 보면 숨긴 사실, 실제 수취인, 최종 책임선이 어디인지 닫습니다.",
+          "lockedSummary": "핵심 책임선과 실제 사실은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:responsibility_named"
+            ]
+          },
+          "revealAtomIds": [
+            "family03:b:d-5:s5:surface:0",
+            "family03:a:d-5:s5:surface:0",
+            "d5.b.unlock.s5.shared_failure_admission"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-2:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-2",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-2:promise_scope_active"
+      },
+      "uiLabel": "약속 위에 생긴 지연"
+    },
+    {
+      "id": "link:d-3:d-1:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPenalty": 10,
+        "grantFlag": "d-1:usage_trust_broken"
+      },
+      "uiLabel": "사용처가 신뢰를 깼다"
+    },
+    {
+      "id": "link:d-4:d-5:retaliation",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "retaliationBonus": 8,
+        "grantFlag": "d-5:public_pressure_spike"
+      },
+      "uiLabel": "공개 압박이 합의를 흔듦"
+    },
+    {
+      "id": "link:d-5:d-2:unlocks_layer",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-2",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S3",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "unlockLayer": "core",
+        "grantFlag": "d-2:direct_pay_reframe"
+      },
+      "uiLabel": "직접 납부로 다시 읽기"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "잘린 카카오톡 약속 캡처",
+      "proves": [
+        "d-1"
+      ],
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-1 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "은행 자동이체 신청·해지 로그와 송금내역",
+      "proves": [
+        "d-1",
+        "d-2"
+      ],
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-1 책임선을 고정하는 시점입니다."
+          },
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "d-2 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "복자 통장 거래내역과 수빈 계좌 입금 문자",
+      "proves": [
+        "d-3"
+      ],
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-3 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "친척·교회 소모임 단톡 내보내기 파일",
+      "proves": [
+        "d-4"
+      ],
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-4 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "정우-복자 통화 녹음과 관리비 고지서 사진",
+      "proves": [
+        "d-5"
+      ],
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-5 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "주민센터 생활비 상담 확인서와 공동 예산표",
+      "proves": [
+        "d-5"
+      ],
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0",
+          "S1"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "d-5 책임선을 고정하는 시점입니다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:term_scope",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "d1.a.unlock.s2.temporary_term_seen",
+          "family03:a:d-1:s2:support:1"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "정우의 월 60만원·6개월 약속부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:eldest_burden",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "d1.a.unlock.s3.permanent_obligation_framing",
+          "family03:a:d-1:s3:support:1"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "정우의 월 60만원·6개월 약속부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:no_notice_harm",
+      "intentTag": "responsibility_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "d2.a.unlock.s3.no_advance_notice_harm",
+          "family03:a:d-2:s3:surface:0"
+        ],
+        "preferredAngleTags": [
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "정우의 자동이체 해지와 2회 감액 송금부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:use_split",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "d3.a.unlock.s3.academy_support",
+          "d3.a.unlock.s2.same_day_transfers"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "복자의 용돈 전용부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:shame_window",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "d3.a.unlock.s4.shame_about_two_children",
+          "family03:a:d-3:s4:surface:0"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "복자의 용돈 전용부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:group_first_reason",
+      "intentTag": "legality_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "d4.a.unlock.s3.pressure_intent",
+          "d4.a.unlock.s2.group_first_upload"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "복자의 친척 단톡 공개 압박부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:direct_pay_failure",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "family03:b:d-5:s3:surface:0",
+          "d5.b.unlock.s3.receipt_followthrough_gap"
+        ],
+        "preferredAngleTags": [
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "현금 지원에서 공과금 직접 납부로 바꾸자는 합의의 쌍방 미이행부터 정리한 뒤 답하겠습니다.",
+        "지금은 그 질문에 바로 답하면 맥락이 잘립니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-3"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+}

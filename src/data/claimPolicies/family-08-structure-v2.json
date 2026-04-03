@@ -1,0 +1,1168 @@
+{
+  "caseId": "family-08",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "준호의 대기금 송금과 즉시 미통보",
+      "truth": true,
+      "truthDescription": "준호는 은솔요양원에 150만원을 송금하며 평가입소용 대기 자리를 먼저 확보했고, 작년 합의에 있던 '같은 날 공유' 원칙을 지키지 않았다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "입소절차공유",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준호는 대기금 송금을 즉시 미통보했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "150만원",
+        "대기금",
+        "같은 날 공유",
+        "19시간 공백",
+        "침상 확보",
+        "가족 단톡",
+        "즉시 미통보"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "준호의 대기금 송금과 즉시 미통보",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family08:b:d-1:s0:denial:0",
+            "family08:a:d-1:s0:act:0",
+            "family08:b:d-1:s1:uncertainty:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "준호의 대기금 송금과 즉시 미통보 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family08:b:d-1:s3:admission:0",
+            "family08:a:d-1:s3:responsibility:0",
+            "family08:b:d-1:s4:fear:0",
+            "family08:b:d-1:s3:fear:1",
+            "family08:b:d-1:s3:quote:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "준호는 은솔요양원에 150만원을 송금하며 평가입소용 대기 자리를 먼저 확보했고, 작년 합의에 있던 '같은 날 공유' 원칙을 지키지 않았다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family08:b:d-1:s5:admission:0",
+            "family08:a:d-1:s5:admission:0",
+            "family08:b:d-1:s5:admission:1",
+            "family08:b:d-1:s4:fear:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "세라의 친척방 공개 비난",
+      "truth": true,
+      "truthDescription": "세라는 계약의 정확한 성격을 확인하기 전 친척 단톡과 사촌 통화에서 준호가 어머니를 몰래 시설에 넣었다는 취지로 공개 비난을 퍼뜨렸다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "가족신뢰복구",
+      "legitimacyIssue": true,
+      "judgmentStatement": "세라는 준호를 공개 비난했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "친척 단톡",
+        "몰래 넣었다",
+        "사촌 통화",
+        "공개 비난",
+        "도움 요청",
+        "정정 필요"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "세라의 친척방 공개 비난",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family08:a:d-2:s0:denial:0",
+            "family08:b:d-2:s0:identity:0",
+            "family08:a:d-2:s1:uncertainty:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "세라의 친척방 공개 비난 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family08:a:d-2:s3:admission:0",
+            "family08:b:d-2:s3:identity:0",
+            "family08:a:d-2:s4:quote:0",
+            "family08:a:d-2:s3:legacy_sentence:1",
+            "family08:a:d-2:s3:harm:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "세라는 계약의 정확한 성격을 확인하기 전 친척 단톡과 사촌 통화에서 준호가 어머니를 몰래 시설에 넣었다는 취지로 공개 비난을 퍼뜨렸다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family08:a:d-2:s5:admission:0",
+            "family08:b:d-2:s5:admission:0",
+            "family08:a:d-2:s5:admission:1",
+            "family08:a:d-2:s4:quote:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "150만원은 영구입소 계약금인가",
+      "truth": false,
+      "truthDescription": "문제가 된 150만원은 영구입소 확정금이 아니라 2주 평가입소 침상 홀드와 대기등록을 위한 환불 가능 금액이었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "계약의미정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "150만원은 환불 가능 금액이다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "평가입소",
+        "영구입소",
+        "환불 가능",
+        "입금영수증",
+        "요양원 상담",
+        "침상 홀드"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "150만원은 영구입소 계약금인가",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family08:b:d-3:s0:denial:0",
+            "family08:a:d-3:s0:uncertainty:0",
+            "family08:b:d-3:s1:uncertainty:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "150만원은 영구입소 계약금인가 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family08:b:d-3:s3:rule:0",
+            "family08:a:d-3:s3:rule:0",
+            "family08:b:d-3:s4:admission:0",
+            "family08:b:d-3:s3:quote:1",
+            "family08:b:d-3:s3:fear:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "문제가 된 150만원은 영구입소 확정금이 아니라 2주 평가입소 침상 홀드와 대기등록을 위한 환불 가능 금액이었다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:trap_context_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "family08:b:d-3:s5:admission:0",
+            "family08:a:d-3:s5:admission:0",
+            "family08:b:d-3:s5:quote:1",
+            "family08:b:d-3:s4:admission:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "knows"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "준호의 150만원 이체 내역과 침상 확보 문자가 세라에게 영구입소 계약금처럼 전달된 단계",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "세라가 영구입소 확정으로 단정하고, 준호는 평가입소 대기금이라 해명하지만 설명이 부족한 국면",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "은솔요양원 신청서와 영수증을 확인해도 영구입소 프레임이 쉽게 풀리지 않는 상태",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "요양원 환불 규정 메일과 상담 녹취에서 환불 가능 대기금이라는 점이 확인되며 오해가 약해지는 국면",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "150만원이 영구입소 확정금이 아니라 2주 평가입소용 환불 가능 대기금이었음이 밝혀진 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "150만원 이체 내역만 먼저 보이며 영구입소 계약금처럼 읽히는 프레임",
+          "이번 주 침상 확보 문구가 즉시 입소 확정처럼 전달되는 효과",
+          "환불 규정과 평가입소 조건이 확인되지 않은 채 해석이 굳는 흐름"
+        ],
+        "truthExitEvidenceIds": [
+          "e-1",
+          "e-4"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "이미 입소 조건에 합의했는가",
+      "truth": true,
+      "truthDescription": "작년 가을 가족회의와 치매안심센터 기록에는 배회 재발 또는 화재 위험 재발 시 은솔요양원 대기·평가입소를 진행할 수 있다는 사전 합의가 남아 있었다. 다만 준호는 통보 의무를, 세라는 합의 존재 자체를 현재에 와서 서로 다르게 축소했다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "사전합의복원",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준호와 세라는 합의 내용을 다르게 축소했다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "작년 가을 합의",
+        "은솔 대기",
+        "평가입소 진행",
+        "배회 재발",
+        "화재 위험",
+        "같은 날 공유"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "이미 입소 조건에 합의했는가",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family08:a:d-4:s0:denial:0",
+            "family08:b:d-4:s0:denial:0",
+            "family08:a:d-4:s1:uncertainty:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "이미 입소 조건에 합의했는가 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family08:a:d-4:s3:admission:0",
+            "family08:b:d-4:s3:admission:0",
+            "family08:a:d-4:s4:admission:0",
+            "family08:a:d-4:s3:rule:1",
+            "family08:a:d-4:s3:admission:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "작년 가을 가족회의와 치매안심센터 기록에는 배회 재발 또는 화재 위험 재발 시 은솔요양원 대기·평가입소를 진행할 수 있다는 사전 합의가 남아 있었다. 다만 준호는 통보 의무를, 세라는 합의 존재 자체를 현재에 와서 서로 다르게 축소했다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:context_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family08:a:d-4:s5:admission:0",
+            "family08:b:d-4:s5:admission:0",
+            "family08:a:d-4:s5:rule:1",
+            "family08:a:d-4:s4:admission:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "세라와 준호 모두 작년 가을 가족회의에서 요양원 입소 합의가 있었는지를 서로 다르게 기억하는 단계",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "준호는 배회 재발 시 은솔 대기를 확정했다고 주장하고, 세라는 상담 수준이었다고 맞서는 국면",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘린 노트 사진에 배회 두 번 더면 은솔 대기 문장이 보이지만 전체 맥락이 빠져 있는 상태",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "치매안심센터 기록과 가족 돌봄계획서에서 사전 합의 존재가 확인되며 세라의 부정이 약해지는 국면",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "합의 자체는 존재했으나 준호는 통보 의무를, 세라는 합의 존재를 각각 축소했음이 드러난 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "잘린 노트 사진이 준호에게 유리한 부분만 보여주는 효과",
+          "이미 다 합의됐다는 진술이 절반만 사실인 채 통용되는 흐름",
+          "돌봄계획서의 공유 조항과 통보 의무가 누락된 구조"
+        ],
+        "truthExitEvidenceIds": [
+          "e-5",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-5",
+      "name": "배신 프레임을 키운 공동 책임",
+      "truth": true,
+      "truthDescription": "준호는 이번에도 중요한 정보를 늦게 알렸고, 세라는 과거 ICU 지연 연락 기억을 현재 사실확인보다 앞세워 배신 서사를 친척들에게 먼저 확산시켰다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "가족신뢰복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "준호는 정보를 늦게 알렸다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "배신 프레임",
+        "ICU 지연",
+        "또 나만 나중",
+        "공개 확산",
+        "공동 책임"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "배신 프레임을 키운 공동 책임",
+          "lockedSummary": "겉으로 드러난 장면과 주장만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "family08:b:d-5:s0:privacy:0",
+            "family08:a:d-5:s0:denial:0",
+            "family08:b:d-5:s1:admission:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "배신 프레임을 키운 공동 책임 뒤에서 각자가 왜 그렇게 행동했는지",
+          "lockedSummary": "왜 그렇게 말하고 움직였는지는 아직 가려져 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "family08:b:d-5:s3:admission:0",
+            "family08:a:d-5:s3:admission:0",
+            "family08:b:d-5:s4:fear:0",
+            "family08:b:d-5:s3:privacy:1",
+            "family08:b:d-5:s3:relationship:2"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "준호는 이번에도 중요한 정보를 늦게 알렸고, 세라는 과거 ICU 지연 연락 기억을 현재 사실확인보다 앞세워 배신 서사를 친척들에게 먼저 확산시켰다.",
+          "lockedSummary": "실제 책임과 관계 손상의 핵심은 더 깊이 파고들어야 보입니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "family08:b:d-5:s5:admission:0",
+            "family08:a:d-5:s5:admission:0",
+            "family08:b:d-5:s5:legacy_sentence:1",
+            "family08:b:d-5:s4:fear:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "은솔요양원 대기등록 신청서와 150만원 입금영수증",
+      "description": "준호가 보낸 150만원의 성격과 신청 구분이 적힌 은솔요양원 원본 신청서, 평가입소 침상 홀드 안내, 입금 영수증이다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "시설 원본 신청서와 영수증, 환불 규정 첨부문서를 함께 확인하자 계약 종류가 영구입소가 아니라 평가입소 대기임이 분명해졌다.",
+        "check_metadata": "신청은 준호 명의로 접수됐고, 입금 시각은 어머니의 두 번째 야간 배회 신고 다음 날 오전으로 찍혀 있다.",
+        "restore_context": "겉으로는 입소금처럼 보이지만 문서상 명칭과 환불 조항은 임시 평가입소용 홀드에 가깝다.",
+        "verify_source": "시설 접수번호와 회계 영수증 번호가 모두 일치했다.",
+        "check_edits": "기관 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "입소 절차 관련 공문서라 제출 정당성은 높다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "준호의 대기금 송금과 즉시 미통보의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "150만원은 영구입소 계약금인가의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "가족 단톡 내보내기와 준호 통화·알림 로그",
+      "description": "준호가 송금 뒤 19시간 동안 가족 단톡에 아무 설명을 하지 않았고, 세라의 질문 전화를 여러 번 놓친 뒤 다음 날 아침에야 답한 기록이다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "단톡 내보내기와 통화기록 원본을 대조하자 준호가 송금 사실을 같은 날 공유하지 않았음이 드러났다.",
+        "check_metadata": "세라의 부재중 전화는 세 차례, 준호의 첫 설명 메시지는 그 다음 날 오전 7시 12분으로 남아 있다.",
+        "restore_context": "준호는 배회 수습 때문에 바빴다고 하지만, 같은 밤 시설 상담사에게는 추가 문자를 보낸 흔적이 있어 완전한 무통보는 아니었다.",
+        "verify_source": "통신사 발신내역과 메신저 원본 시간이 서로 맞았다.",
+        "check_edits": "내보내기 원본이라 개별 메시지 삭제 흔적은 적다.",
+        "question_acquisition": "형제 공동 대화 자료라 활용 가능하지만 다른 친척 연락처는 비식별 처리돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "이세라에게: \"배신 프레임을 키운 공동 책임\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 이세라의 \"배신 프레임을 키운 공동 책임\" 쟁점과 관련된다. 이세라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "이준호에게: \"준호의 대기금 송금과 즉시 미통보\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 이준호의 \"준호의 대기금 송금과 즉시 미통보\" 쟁점과 관련된다. 이준호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "준호의 대기금 송금과 즉시 미통보의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "배신 프레임을 키운 공동 책임의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "친척 단톡과 사촌 통화 메모",
+      "description": "세라가 친척 단톡에 '준호가 엄마를 몰래 넣었다'고 적고 사촌들에게 비슷한 취지로 말한 내보내기 파일과 통화 메모다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "캡처가 아니라 단톡 내보내기와 통화 직후 남긴 메모 원본을 확인했다.",
+        "check_metadata": "세라의 첫 공개 메시지는 준호의 정식 설명보다 2시간 먼저 올라갔다.",
+        "restore_context": "세라는 도움을 구하려고 한 말이라 하지만, 표현은 사실확인 요청보다 단정적 비난에 가까웠다.",
+        "verify_source": "메신저 원본과 사촌의 회신 시간대가 서로 맞물린다.",
+        "check_edits": "원본 내보내기라 자르기 흔적은 없고, 통화 메모는 작성 시각이 남아 있다.",
+        "question_acquisition": "친척들이 포함된 대화라 사생활 침해 우려가 있어 목적 외 재사용은 제한돼야 한다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "세라의 친척방 공개 비난의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "배신 프레임을 키운 공동 책임의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "요양원 환불 규정 메일과 상담 녹취",
+      "description": "송하린 사회복지사가 보낸 환불 규정 메일과 상담 통화 원본으로, 150만원의 법적·실무적 의미를 구분할 수 있다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "메일 원문과 시설 상담 녹취 전체를 확인하자 '영구입소'라는 표현은 나오지 않았다.",
+        "check_metadata": "메일 발송 시각은 입금 14분 뒤이며, 상담 녹취에서도 준호는 '평가부터'라는 표현을 쓴다.",
+        "restore_context": "세라가 본 계좌 이체만으로는 영구입소처럼 보였지만, 시설 실무에선 평가입소 홀드와 영구입소 계약을 별도로 구분한다.",
+        "verify_source": "시설 메일 서버 헤더와 녹취 원본 파일 정보가 일치한다.",
+        "check_edits": "기관 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "입소 절차 확인 자료여서 제출 정당성은 높다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "legality",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "legality",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "150만원은 영구입소 계약금인가의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "작년 가을 가족회의 노트 사진",
+      "description": "준호가 휴대폰에서 찾아낸 가족회의 노트 사진으로, '배회 두 번 더면 은솔 대기'라는 문장만 먼저 보이고 서명과 뒷부분은 잘려 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "처음에는 잘린 사진만 제출됐고, 서명 여부와 통보 조건은 확인되지 않았다.",
+        "check_metadata": "사진은 작년 회의 당일 찍혔지만 최근 다시 잘라 저장된 흔적이 남아 있다.",
+        "restore_context": "문장 일부만 보면 준호 주장에 유리하게 읽히지만, 실제 합의 범위와 부가 조건을 단정하기엔 정보가 부족하다.",
+        "verify_source": "원본 사진의 촬영 일시는 회의 날짜와 맞는다.",
+        "check_edits": "강한 크롭으로 하단 문장과 서명란이 사라져 있다.",
+        "question_acquisition": "가족 내부 메모라 활용 가능하지만, 맥락 없는 부분제시는 오해를 키울 수 있다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "이세라에게: \"이미 입소 조건에 합의했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 이세라의 \"이미 입소 조건에 합의했는가\" 쟁점과 관련된다. 이세라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "이준호에게: \"이미 입소 조건에 합의했는가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 이준호의 \"이미 입소 조건에 합의했는가\" 쟁점과 관련된다. 이준호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S3",
+            "multiplier": 1.2,
+            "note": "이미 입소 조건에 합의했는가의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "치매안심센터 사례관리 기록과 서명된 가족 돌봄계획서",
+      "description": "배수진 사례관리사가 보관한 상담 기록과 형제·어머니가 서명한 돌봄계획서로, 배회 재발 시 시설 대기·평가입소와 같은 날 공유 원칙이 함께 적혀 있다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "investigationResults": {
+        "request_original": "센터 원본 기록과 서명된 계획서를 대조하자 준호가 기억한 조건도, 세라가 놓친 통보 조항도 함께 확인됐다.",
+        "check_metadata": "기록 작성 시각은 작년 가스 사고 직후 상담일이며, 참석자 서명이 모두 남아 있다.",
+        "restore_context": "사전 합의는 분명 존재했지만, 그것이 준호의 단독 진행권을 뜻한 것은 아니고 같은 날 공유 의무가 핵심 조건으로 붙어 있었다.",
+        "verify_source": "센터 접수번호와 사례관리사 서명이 원본과 일치했다.",
+        "check_edits": "기관 보관 문서라 편집 흔적이 없다.",
+        "question_acquisition": "공적 사례관리 자료라 적법하지만, 어머니의 건강 정보가 포함돼 있어 분쟁 해결 범위 내 사용이 원칙이다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "이세라에게: \"이미 입소 조건에 합의했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 이세라의 \"이미 입소 조건에 합의했는가\" 쟁점과 관련된다. 이세라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "이준호에게: \"이미 입소 조건에 합의했는가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 이준호의 \"이미 입소 조건에 합의했는가\" 쟁점과 관련된다. 이준호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "finish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "이미 입소 조건에 합의했는가의 핵심 주장을 정리하는 전환 구간."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "배신 프레임을 키운 공동 책임의 핵심 주장을 정리하는 전환 구간."
+          }
+        ]
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-4:d-1:supports",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-1:surface:prior_agreement_known"
+      },
+      "uiLabel": "사전합의는 있었음"
+    },
+    {
+      "id": "link:d-1:d-5:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-5:surface:notice_gap_spark"
+      },
+      "uiLabel": "미통보의 불씨"
+    },
+    {
+      "id": "link:d-3:d-2:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-2",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "counterPenalty": 10,
+        "grantFlag": "d-2:motive:amount_misread_exposed"
+      },
+      "uiLabel": "금액 오독 해소"
+    },
+    {
+      "id": "link:d-2:d-5:retaliation",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "retaliation",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-5:core:public_shame_spread"
+      },
+      "uiLabel": "공개 비난 확산"
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:notice_gap",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "family08:b:d-1:s2:admission:0",
+          "family08:b:d-1:s5:admission:0"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "그 순서를 다시 말하면 또 변명처럼 들립니다.",
+        "왜 늦었는지까지는 지금 바로 정리하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:public_spread",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "family08:a:d-2:s2:admission:0",
+          "family08:a:d-2:s5:admission:0"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "친척들 얘기까지는 지금 더 넓히고 싶지 않습니다.",
+        "누구에게 뭐라고 했는지는 당장 다 말하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:amount_meaning",
+      "intentTag": "cause_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "family08:a:d-3:s3:rule:0",
+          "family08:a:d-3:s5:admission:0",
+          "family08:b:d-3:s3:rule:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "돈의 명칭 얘기는 지금도 제일 예민한 부분입니다.",
+        "그 금액 의미를 다시 입에 올리기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:agreement_scope",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "family08:a:d-4:s3:admission:0",
+          "family08:a:d-4:s5:admission:0",
+          "family08:b:d-4:s3:admission:0"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "합의 범위는 지금도 서로 기억이 달라서 조심스럽습니다.",
+        "그 메모 전체를 다시 읽어야 할 얘기라 바로 답하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:betrayal_pattern",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "family08:a:d-5:s3:admission:0",
+          "family08:a:d-5:s5:admission:0"
+        ],
+        "preferredAngleTags": [
+          "emotion",
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "그 표현을 다시 꺼내면 감정부터 무너집니다.",
+        "배신 패턴 얘기는 지금 너무 직접적입니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:repair_after_spread",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "family08:a:d-5:s4:fear:0",
+          "family08:a:d-5:s5:admission:0",
+          "family08:b:d-5:s4:fear:0"
+        ],
+        "preferredAngleTags": [
+          "emotion",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "사과 얘기까지는 아직 바로 못 갑니다.",
+        "복구 규칙은 필요하지만 지금은 감정이 먼저입니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+}

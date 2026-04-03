@@ -1,0 +1,1915 @@
+{
+  "caseId": "partnership-12",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "선우의 외부 프리랜서 상대 불만 유출",
+      "truth": true,
+      "truthDescription": "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+      "quadrant": "a_only",
+      "weight": "medium",
+      "mediationLink": "외부불만금지",
+      "legitimacyIssue": false,
+      "judgmentStatement": "선우는 홍세진에게 불만을 털어놓았다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "홍세진",
+        "개인 카톡",
+        "음성메모",
+        "납기 약속",
+        "외부 프리랜서",
+        "실무 하소연"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "선우의 외부 프리랜서 상대 불만 유출의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-12:a:d-1:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-12:a:d-1:unlock:s3:0",
+            "partnership-12:a:d-1:unlock:s4:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "선우는 행사 운영 프리랜서 홍세진에게 수진이 납기 약속을 너무 쉽게 한다며 내부 불만을 털어놓았다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-12:a:d-1:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "수진의 외부 인력 상대 맞불 불만",
+      "truth": true,
+      "truthDescription": "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+      "quadrant": "b_only",
+      "weight": "medium",
+      "mediationLink": "외부불만금지",
+      "legitimacyIssue": false,
+      "judgmentStatement": "수진은 외부에 내부 불만을 전했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "보조 스태프",
+        "승인 지연",
+        "출고 불안정",
+        "맞불 불만",
+        "상담 직전",
+        "외부 인력"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "수진의 외부 인력 상대 맞불 불만의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-12:b:d-2:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-12:b:d-2:unlock:s3:0",
+            "partnership-12:b:d-2:unlock:s4:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "수진도 같은 행사에서 홍세진과 보조 스태프에게 선우가 승인과 출고를 자꾸 막아 바이어 앞에서 곤란하다고 말하며 내부 불만을 외부에 흘렸다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-12:b:d-2:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "상대가 거래처에 직접 험담했는가",
+      "truth": false,
+      "truthDescription": "둘 다 상대가 바이어에게 직접 자신을 험담했다고 믿었지만, 실제로는 홍세진이 양측 불만을 섞어 '둘이 서로 못 믿는다'는 식으로 와전 전달한 공유 오해였다.",
+      "quadrant": "shared_misconception",
+      "weight": "high",
+      "mediationLink": "대외평판복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "홍세진이 험담을 왜곡 전달했다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "크롭 전사",
+        "직접 험담",
+        "바이어에게 말했다",
+        "수신자 불명",
+        "배신감",
+        "오해"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "상대가 거래처에 직접 험담했는가의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-12:a:d-3:unlock:s2:0",
+            "partnership-12:b:d-3:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-12:a:d-3:unlock:s3:0",
+            "partnership-12:a:d-3:unlock:s4:0",
+            "partnership-12:b:d-3:unlock:s3:0",
+            "partnership-12:b:d-3:unlock:s4:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "둘 다 상대가 바이어에게 직접 자신을 험담했다고 믿었지만, 실제로는 홍세진이 양측 불만을 섞어 '둘이 서로 못 믿는다'는 식으로 와전 전달한 공유 오해였다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:misbelief_shaken"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-12:a:d-3:unlock:s5:0",
+            "partnership-12:b:d-3:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "바이어가 '둘이 서로 욕했더라'고 전하고 크롭된 음성전사 캡처가 겹치며 상대가 직접 험담한 것처럼 보이는 상태",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "수진이 음성전사 한 줄을 선우 발언의 증거로 확대하고, 선우도 수진 메시지를 직접 비방으로 단정하기 시작한 국면",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "바이어 반응과 캡처만 남고 프리랜서 홍세진의 전달 경로가 빠진 채 '서로 뒤에서 깎았다'로 굳어진 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "홍세진의 follow-up 메시지 원문과 행사장 출입 기록이 나오며, 직접 발언이 아니라 제3자 와전 가능성이 보이기 시작한 단계",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "양쪽 불만을 홍세진이 섞어 바이어에게 전달한 경로가 확인되며, 직접 험담이 아닌 프리랜서 와전이었다는 실제 구조가 드러난 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "수신자가 잘린 음성전사 캡처",
+          "바이어 반응 한 줄만 따온 recap",
+          "양쪽 불만이 섞인 follow-up 문장"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "양쪽 불만을 홍세진이 섞어 바이어에게 전달한 경로가 확인되며, 직접 험담이 아닌 프리랜서 와전이었다는 실제 구조가 드러난 단계"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "상호 비방 금지 원칙의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+      "quadrant": "both_know",
+      "weight": "medium",
+      "mediationLink": "이벤트커뮤니케이션재설계",
+      "legitimacyIssue": false,
+      "judgmentStatement": "선우와 수진은 비방 원칙을 위반했다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "debrief 규칙",
+        "외부 비방 금지",
+        "행사 전날 체크",
+        "외부 인력 앞",
+        "공동 위반",
+        "운영 가이드"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "상호 비방 금지 원칙의 쌍방 위반의 겉으로 드러난 장면과 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-12:a:d-4:unlock:s2:0",
+            "partnership-12:b:d-4:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              },
+              {
+                "id": "d-4",
+                "minState": "S1"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-12:a:d-4:unlock:s3:0",
+            "partnership-12:a:d-4:unlock:s4:0",
+            "partnership-12:b:d-4:unlock:s3:0",
+            "partnership-12:b:d-4:unlock:s4:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "두 사람은 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 했지만, 선우와 수진 모두 같은 프리랜서와 스태프에게 상대 불만을 흘리며 그 원칙을 함께 어겼다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:surface:record_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-12:a:d-4:unlock:s5:0",
+            "partnership-12:b:d-4:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "문제의 소문은 프리랜서의 buyer recap에서 시작됐다",
+      "truth": true,
+      "truthDescription": "문제의 문장은 애프터파티 후 홍세진이 보낸 follow-up 메시지에서 처음 등장했고, 둘 중 누구의 직접 발언도 아니었다.",
+      "quadrant": "neither_knows",
+      "weight": "medium",
+      "mediationLink": "대외평판복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "문제의 소문은 홍세진의 메시지이다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "buyer recap",
+        "둘이 서로 못 믿는다",
+        "follow-up",
+        "애프터파티 50분 뒤",
+        "홍세진 계정",
+        "소문 출발"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "문제의 문장이 왜 상대의 직접 바이어 험담처럼 보였는지와 첫 반응",
+          "lockedSummary": "겉으로 드러난 진술과 문서 흐름만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "partnership-12:a:d-5:unlock:s2:0",
+            "partnership-12:b:d-5:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 그렇게 밀어붙였는지와 방어 논리가 드러난다.",
+          "lockedSummary": "왜 그 선택을 했는지는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-12:a:d-5:unlock:s3:0",
+            "partnership-12:a:d-5:unlock:s4:0",
+            "partnership-12:b:d-5:unlock:s3:0",
+            "partnership-12:b:d-5:unlock:s4:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "소문의 발신원을 추적해 직접 비방이라는 가짜 쟁점을 벗기고 실제 와전 경로를 확인한다.",
+          "lockedSummary": "서로의 숨은 책임 구조와 진짜 결말은 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-5:surface:risk_seen"
+            ]
+          },
+          "revealAtomIds": [
+            "partnership-12:a:d-5:unlock:s5:0",
+            "partnership-12:b:d-5:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "애프터파티 뒤 들린 '둘이 서로 못 믿는다' 한 문장이 먼저 꽂혀 직접 험담처럼 보인 단계",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "선우와 수진이 그 문장을 서로의 직접 바이어 험담으로 단정해 말하기 시작한 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "크롭 음성전사와 바이어 반응 한 줄이 붙으며 직접 비방 서사가 굳어진 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "원본 follow-up과 운영사 기록이 나오며 문제 문장이 홍세진 요약에서 처음 생겼다는 점이 보이기 시작한 단계",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "직접 험담이 아니라 외부 불만이 buyer recap으로 재가공된 경로가 드러나 오해가 걷히는 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "수신자 정보가 빠진 음성전사 한 줄",
+          "바이어가 되물은 반응만 남은 해명 메일 일부",
+          "홍세진 follow-up의 요약 문장을 상대 직접 발언처럼 읽게 만드는 전달 방식"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "직접 험담이 아니라 외부 불만이 buyer recap으로 재가공된 경로가 드러나 오해가 걷히는 단계"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "선우와 PR 프리랜서의 원본 카톡과 음성메모",
+      "description": "선우가 홍세진에게 수진이 납기 약속을 너무 쉽게 한다고 털어놓은 원본 카톡과 짧은 음성메모다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "메신저 내보내기 파일과 음성메모 원본이 함께 확보됐다.",
+        "check_metadata": "발화 시각은 바이어 2차 미팅 직후이고, 수신자는 홍세진 개인 계정으로만 남아 있다.",
+        "restore_context": "선우는 구매처에게 직접 말한 것은 아니지만, 외부 프리랜서에게 내부 불만을 털어놓았다는 사실은 분명하다.",
+        "verify_source": "홍세진 기기와 선우 기기의 타임스탬프, 음성 길이가 서로 일치한다.",
+        "check_edits": "원본 대화와 음성 파일에 후편집 흔적이 없다.",
+        "question_acquisition": "행사 운영 관련 업무 대화라 제출 정당성은 높다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"선우의 외부 프리랜서 상대 불만 유출\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 류선우의 \"선우의 외부 프리랜서 상대 불만 유출\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"상호 비방 금지 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 장수진의 \"상호 비방 금지 원칙의 쌍방 위반\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "선우는 구매처에게 직접 말한 것은 아니지만, 외부 프리랜서에게 내부 불만을 털어놓았다는 사실은 분명하다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "선우는 구매처에게 직접 말한 것은 아니지만, 외부 프리랜서에게 내부 불만을 털어놓았다는 사실은 분명하다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "수진의 보조 스태프·홍세진 대화 원본",
+      "description": "수진이 보조 스태프와 홍세진에게 선우의 승인 지연과 출고 불안정을 말한 원본 대화 묶음이다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "1:1 메신저 원본과 행사 스태프 단톡 내보내기 파일이 함께 제출됐다.",
+        "check_metadata": "수진의 메시지는 선우의 음성메모보다 40분 뒤에 전송됐고, 바이어 상담 직전 상황 설명 명목으로 시작됐다.",
+        "restore_context": "수진 역시 직접 바이어에게 말한 것은 아니지만, 외부 인력에게 상대 불만을 흘린 점은 동일하다.",
+        "verify_source": "수신자 두 명의 기기 기록과 수진 발신 시간표가 맞아떨어진다.",
+        "check_edits": "대화 원문과 타임스탬프에 조작 흔적이 없다.",
+        "question_acquisition": "행사 운영 관련 업무 대화라 적법하게 확보됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"상호 비방 금지 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 류선우의 \"상호 비방 금지 원칙의 쌍방 위반\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"수진의 외부 인력 상대 맞불 불만\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 장수진의 \"수진의 외부 인력 상대 맞불 불만\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "수진 역시 직접 바이어에게 말한 것은 아니지만, 외부 인력에게 상대 불만을 흘린 점은 동일하다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "수진 역시 직접 바이어에게 말한 것은 아니지만, 외부 인력에게 상대 불만을 흘린 점은 동일하다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "크롭된 음성전사 캡처",
+      "description": "선우가 수진은 약속만 하고 못 맞춘다고 말한 부분만 남은 자동전사 캡처로, 수신자가 바이어인지 외부 스태프인지 알 수 없게 잘려 있다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "음성파일 전체가 아니라 자동전사 화면 캡처 한 장만 먼저 제출됐다.",
+        "check_metadata": "이미지 생성 시각은 소문이 퍼진 다음 날 새벽이며, 화면 상하단의 채팅방 정보가 제거돼 있다.",
+        "restore_context": "이 문장만으로는 선우가 바이어에게 직접 말했는지, 단순히 행사 스태프에게 하소연했는지 구분할 수 없다.",
+        "verify_source": "선우의 음성메모 앱 화면인 것은 맞지만 원본 수신 대화방 정보는 빠져 있다.",
+        "check_edits": "문자열 조작 흔적은 없으나 선택적 크롭이 분명하다.",
+        "question_acquisition": "개인 기기 캡처라 사생활과 맥락 훼손 문제가 있다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"선우의 외부 프리랜서 상대 불만 유출\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 류선우의 \"선우의 외부 프리랜서 상대 불만 유출\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"상대가 거래처에 직접 험담했는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 장수진의 \"상대가 거래처에 직접 험담했는가\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "contextualize",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "이 문장만으로는 선우가 바이어에게 직접 말했는지, 단순히 행사 스태프에게 하소연했는지 구분할 수 없다."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "이 문장만으로는 선우가 바이어에게 직접 말했는지, 단순히 행사 스태프에게 하소연했는지 구분할 수 없다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "원본 follow-up 대화와 바이어 해명 메일",
+      "description": "홍세진이 바이어들에게 보낸 follow-up 메시지 원본, 그리고 몇몇 바이어가 누구 말이냐고 되물은 해명 메일이다.",
+      "type": "mixed",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "홍세진 발신 메시지 원본과 바이어 회신 메일 전체가 확보됐다.",
+        "check_metadata": "문제의 '둘이 서로 못 믿는다'는 문장은 애프터파티 종료 50분 뒤 홍세진 계정에서 처음 발신됐다.",
+        "restore_context": "선우와 수진의 개별 불만이 각각 직접 인용된 것이 아니라, 홍세진이 상황을 자기식으로 요약하며 과장한 표현이었다.",
+        "verify_source": "바이어 수신함과 홍세진 발신 기록, 운영사 와이파이 접속 로그가 서로 일치한다.",
+        "check_edits": "원본 메시지와 헤더에 후편집 흔적이 없다.",
+        "question_acquisition": "행사 follow-up 관련 업무 메시지와 바이어 회신이라 적법하게 제출됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"상대가 거래처에 직접 험담했는가\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 류선우의 \"상대가 거래처에 직접 험담했는가\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"상대가 거래처에 직접 험담했는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 장수진의 \"상대가 거래처에 직접 험담했는가\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "선우와 수진의 개별 불만이 각각 직접 인용된 것이 아니라, 홍세진이 상황을 자기식으로 요약하며 과장한 표현이었다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "선우와 수진의 개별 불만이 각각 직접 인용된 것이 아니라, 홍세진이 상황을 자기식으로 요약하며 과장한 표현이었다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "이벤트 운영 가이드와 debrief 규칙 문서",
+      "description": "행사 운영 가이드에 적힌 상호 비방 금지 원칙, 외부 인력 앞 평가 금지, 종료 후 debrief만 허용한 규칙 문서다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "행사 준비 노션 원본과 공동 확인 체크리스트가 함께 제출됐다.",
+        "check_metadata": "두 대표 모두 행사 전날 밤 문서를 열람했고, 비방 금지 항목 옆에 확인 체크가 남아 있다.",
+        "restore_context": "외부 인력에게 하소연을 하지 말자는 규칙은 분명했으므로, 단순 실수라기보다 합의 위반의 성격이 강하다.",
+        "verify_source": "노션 히스토리와 체크리스트 로그가 서로 일치한다.",
+        "check_edits": "버전 기록상 조작 흔적이 없다.",
+        "question_acquisition": "회사 공용 운영문서라 적법하게 확보됐다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"선우의 외부 프리랜서 상대 불만 유출\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 류선우의 \"선우의 외부 프리랜서 상대 불만 유출\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"수진의 외부 인력 상대 맞불 불만\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 장수진의 \"수진의 외부 인력 상대 맞불 불만\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "외부 인력에게 하소연을 하지 말자는 규칙은 분명했으므로, 단순 실수라기보다 합의 위반의 성격이 강하다."
+          },
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "외부 인력에게 하소연을 하지 말자는 규칙은 분명했으므로, 단순 실수라기보다 합의 위반의 성격이 강하다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "운영사 출입기록과 buyer complaint",
+      "description": "행사장 라운지 출입기록, 바이어 complaint memo, 그리고 당시 홍세진이 단독으로 바이어들과 대화한 시각을 보여주는 운영사 보관 자료다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "운영사 전산 출입기록과 buyer complaint memo, staff briefing notes가 함께 제출됐다.",
+        "check_metadata": "문제의 소문이 돌기 시작한 시각에 선우와 수진은 각자 부스 데모와 상담 중이었고, 홍세진만 바이어 라운지에 머문 기록이 남아 있다.",
+        "restore_context": "직접 험담은 없었지만, 둘이 외부 인력에게 불만을 남겼고 그 말을 제3자가 buyer recap으로 재가공하면서 평판 훼손이 생긴 경로가 드러난다.",
+        "verify_source": "운영사 출입 로그와 complaint memo의 작성 시각, 홍세진의 follow-up 발신 시각이 정확히 맞아떨어진다.",
+        "check_edits": "기관 보관본이라 후편집 흔적이 없다.",
+        "question_acquisition": "행사 운영사가 분쟁 해결 목적으로 제출한 자료라 적법하지만 외부 배포는 제한된다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "류선우에게: \"상호 비방 금지 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 류선우의 \"상호 비방 금지 원칙의 쌍방 위반\" 쟁점과 관련된다. 류선우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장수진에게: \"상호 비방 금지 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 장수진의 \"상호 비방 금지 원칙의 쌍방 위반\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "직접 험담은 없었지만, 둘이 외부 인력에게 불만을 남겼고 그 말을 제3자가 buyer recap으로 재가공하면서 평판 훼손이 생긴 경로가 드러난다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "직접 험담은 없었지만, 둘이 외부 인력에게 불만을 남겼고 그 말을 제3자가 buyer recap으로 재가공하면서 평판 훼손이 생긴 경로가 드러난다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:freelancer_channel",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-12:a:d-1:admission:0",
+          "partnership-12:b:d-1:evidence:0"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 원본 경로부터 다시 확인해야 합니다.",
+        "그 질문은 자료 맥락이 열려야 답할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:venting_boundary",
+      "intentTag": "context_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "partnership-12:a:d-1:responsibility:0",
+          "partnership-12:b:d-1:context:0"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 맥락은 아직 다 말할 단계가 아닙니다.",
+        "앞뒤 사정까지 꺼내려면 더 확인이 필요합니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:counter_leak",
+      "intentTag": "timeline_fix",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "partnership-12:a:d-2:evidence:0",
+          "partnership-12:b:d-2:admission:0"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "순서를 다시 잡아야 해서 바로 답하긴 어렵습니다.",
+        "시각과 경로가 정리돼야 답할 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:direct_slander_claim",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "partnership-12:a:d-3:context:0",
+          "partnership-12:b:d-3:context:0"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "누가 먼저였는지는 아직 단정 못 하겠습니다.",
+        "그 사람을 바로 지목하는 답은 지금 못 하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:betrayal_reading",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "partnership-12:a:d-3:context:0",
+          "partnership-12:b:d-3:context:0"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "속마음까지 지금 바로 열진 않겠습니다.",
+        "그 이유는 조금 더 압박이 들어와야 말하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:debrief_rule",
+      "intentTag": "rule_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "partnership-12:a:d-4:admission:0",
+          "partnership-12:b:d-4:admission:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "절차 얘기는 문서를 같이 봐야 합니다.",
+        "규칙 문제는 지금 단답으로 못 자르겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:recap_origin",
+      "intentTag": "source_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "partnership-12:a:d-5:context:0",
+          "partnership-12:b:d-5:context:0"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 원본 경로부터 다시 확인해야 합니다.",
+        "그 질문은 자료 맥락이 열려야 답할 수 있습니다."
+      ]
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-4:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-4",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-4:freelancer_leak_seen"
+      },
+      "uiLabel": "프리랜서 경로 노출"
+    },
+    {
+      "id": "link:d-2:d-4:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-4",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-4:staff_leak_seen"
+      },
+      "uiLabel": "맞불 불만 누적"
+    },
+    {
+      "id": "link:d-3:d-1:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "counterPressureBonus": 9,
+        "grantFlag": "d-1:direct_slander_frame_weakened"
+      },
+      "uiLabel": "직접 험담 오해 약화"
+    },
+    {
+      "id": "link:d-5:d-3:unlocks_layer",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-3",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "unlockLayer": "core",
+        "grantFlag": "d-3:recap_source_traced"
+      },
+      "uiLabel": "리캡 발신원이 핵심을 연다"
+    }
+  ],
+  "proposedUnlockAtoms": [
+    {
+      "id": "partnership-12:a:d-1:unlock:s2:0",
+      "factText": "홍세진 개인 계정 대화에 장수진의 '약속을 너무 쉽게 잡는다'는 취지의 불만이 직접 남아 있다.",
+      "tags": [
+        "evidence",
+        "admission"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "person": {
+          "exact": "장수진",
+          "neutral": "그 사람",
+          "fullName": "장수진",
+          "judgeRef": "상대 대표"
+        },
+        "channel": {
+          "exact": "홍세진 개인 카톡",
+          "neutral": "외부 프리랜서 채널"
+        },
+        "issue": {
+          "exact": "납기 약속을 너무 쉽게 잡는다는 불만",
+          "neutral": "그 문제"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-1:unlock:s3:0",
+      "factText": "발화 시각이 바이어 2차 미팅 직후라, 선우가 생산 부담 직후 외부 프리랜서에게 감정을 뺀 경로가 드러난다.",
+      "tags": [
+        "timeline",
+        "motive"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "time": {
+          "exact": "바이어 2차 미팅 직후",
+          "neutral": "그 시점",
+          "period": "행사 중"
+        },
+        "channel": {
+          "exact": "홍세진 개인 카톡과 음성메모",
+          "neutral": "그 채널"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-1:unlock:s4:0",
+      "factText": "선우는 자신이 동업자를 뒤에서 말한 사람으로 업계에 보일까 두려워 '실무 하소연'으로 의미를 축소해 왔다.",
+      "tags": [
+        "fear",
+        "shame"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "fear": {
+          "exact": "동업자를 뒤에서 험담한 사람으로 보일까 하는 두려움",
+          "neutral": "그 두려움"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-1:unlock:s5:0",
+      "factText": "선우는 직접 바이어 험담은 아니어도 외부 비방 금지 원칙을 알고도 깼음을 인정한다.",
+      "tags": [
+        "admission",
+        "rule"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "rule": {
+          "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+          "neutral": "그 규칙"
+        },
+        "channel": {
+          "exact": "홍세진 개인 계정",
+          "neutral": "외부 인력 채널"
+        }
+      },
+      "stanceHints": [
+        "confession"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-3:unlock:s2:0",
+      "factText": "크롭 전사 캡처는 수신자 정보가 사라져 있어 직접 바이어 험담 증거로는 불완전하다.",
+      "tags": [
+        "evidence",
+        "uncertainty"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "evidence": {
+          "exact": "크롭된 음성전사 캡처",
+          "neutral": "그 자료"
+        },
+        "issue": {
+          "exact": "직접 바이어 험담 입증의 한계",
+          "neutral": "그 문제"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-3:unlock:s3:0",
+      "factText": "선우는 행사 직후 바이어 반응과 주문 리스크 때문에 수진의 악의를 먼저 상정했다.",
+      "tags": [
+        "motive",
+        "harm"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "reaction": {
+          "exact": "바이어 반응과 주문 리스크",
+          "neutral": "그 반응"
+        },
+        "person": {
+          "exact": "장수진",
+          "neutral": "그 사람",
+          "fullName": "장수진",
+          "judgeRef": "상대 대표"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-3:unlock:s4:0",
+      "factText": "선우는 경로 확인보다 배신감이 앞섰다고 인정할 준비가 생긴다.",
+      "tags": [
+        "emotion",
+        "admission"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "person": {
+          "exact": "장수진",
+          "neutral": "그 사람",
+          "fullName": "장수진",
+          "judgeRef": "상대 대표"
+        },
+        "impact": {
+          "exact": "배신감이 경로 판단을 앞질렀다는 자각",
+          "neutral": "그 자각"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-3:unlock:s5:0",
+      "factText": "직접 험담이 아니라 홍세진 buyer recap이 '둘이 서로 못 믿는다'는 문장을 처음 만들었다.",
+      "tags": [
+        "quote",
+        "timeline"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "source": {
+          "exact": "홍세진 buyer recap",
+          "neutral": "그 후속 요약"
+        },
+        "phrase": {
+          "exact": "'둘이 서로 못 믿는다'는 문장",
+          "neutral": "그 문장"
+        }
+      },
+      "stanceHints": [
+        "confession"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-4:unlock:s2:0",
+      "factText": "선우는 행사 전날 debrief 규칙 문서의 비방 금지 항목에 직접 체크했다.",
+      "tags": [
+        "rule",
+        "evidence"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "document": {
+          "exact": "이벤트 운영 가이드와 debrief 규칙 문서",
+          "neutral": "그 자료"
+        },
+        "time": {
+          "exact": "행사 전날 밤",
+          "neutral": "그 전날",
+          "period": "행사 전날"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-4:unlock:s3:0",
+      "factText": "선우는 자신의 위반을 설명하면서도 수진 역시 같은 프리랜서·스태프 채널을 썼다는 점을 의식한다.",
+      "tags": [
+        "counter",
+        "relationship"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "장수진",
+          "neutral": "그 사람",
+          "fullName": "장수진",
+          "judgeRef": "상대 대표"
+        },
+        "channel": {
+          "exact": "프리랜서·보조 스태프 채널",
+          "neutral": "외부 인력 채널"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-4:unlock:s4:0",
+      "factText": "체크 후 위반 사실이 선우에게 가장 큰 수치심으로 작용한다.",
+      "tags": [
+        "shame",
+        "rule"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "document": {
+          "exact": "체크 기록이 남은 규칙 문서",
+          "neutral": "그 자료"
+        },
+        "issue": {
+          "exact": "체크 후 위반의 수치심",
+          "neutral": "그 문제"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-4:unlock:s5:0",
+      "factText": "선우는 공동 실패로 보고 외부 인력 채널 통제 재설계를 받아들인다.",
+      "tags": [
+        "responsibility",
+        "relationship"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "rule": {
+          "exact": "외부 인력 채널 통제 재설계",
+          "neutral": "그 규칙"
+        },
+        "person": {
+          "exact": "장수진",
+          "neutral": "그 사람",
+          "fullName": "장수진",
+          "judgeRef": "상대 대표"
+        }
+      },
+      "stanceHints": [
+        "confession"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-5:unlock:s2:0",
+      "factText": "문제의 표현이 직접 발화가 아니라 follow-up 요약 문장일 수 있다는 점을 선우가 처음 인정한다.",
+      "tags": [
+        "evidence",
+        "uncertainty"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "source": {
+          "exact": "follow-up 요약 문장",
+          "neutral": "그 요약"
+        },
+        "phrase": {
+          "exact": "'둘이 서로 못 믿는다'는 문장",
+          "neutral": "그 문장"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-5:unlock:s3:0",
+      "factText": "선우는 자신의 불만과 수진의 불만이 홍세진 recap에서 섞였을 수 있다고 본다.",
+      "tags": [
+        "relationship",
+        "context"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "장수진",
+          "neutral": "그 사람",
+          "fullName": "장수진",
+          "judgeRef": "상대 대표"
+        },
+        "source": {
+          "exact": "홍세진 recap",
+          "neutral": "그 요약"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-5:unlock:s4:0",
+      "factText": "밖에 말을 남긴 순간 해석권을 넘겼다는 후회가 선우에게 드러난다.",
+      "tags": [
+        "emotion",
+        "fear"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "issue": {
+          "exact": "해석권 상실에 대한 후회",
+          "neutral": "그 문제"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-12:a:d-5:unlock:s5:0",
+      "factText": "애프터파티 종료 50분 뒤 홍세진 계정에서 '둘이 서로 못 믿는다'는 문장이 처음 발신됐다.",
+      "tags": [
+        "timeline",
+        "quote"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "time": {
+          "exact": "애프터파티 종료 50분 뒤",
+          "neutral": "그 직후",
+          "period": "애프터파티 이후"
+        },
+        "source": {
+          "exact": "홍세진 계정",
+          "neutral": "그 계정"
+        },
+        "phrase": {
+          "exact": "'둘이 서로 못 믿는다'는 문장",
+          "neutral": "그 문장"
+        }
+      },
+      "stanceHints": [
+        "confession"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-2:unlock:s2:0",
+      "factText": "수진 메시지에는 선우의 승인 지연과 출고 불안정이 외부 인력용 설명으로 직접 적혀 있다.",
+      "tags": [
+        "evidence",
+        "admission"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "person": {
+          "exact": "류선우",
+          "neutral": "그 사람",
+          "fullName": "류선우",
+          "judgeRef": "상대 대표"
+        },
+        "channel": {
+          "exact": "보조 스태프·홍세진 대화",
+          "neutral": "외부 인력 채널"
+        },
+        "issue": {
+          "exact": "승인 지연과 출고 불안정",
+          "neutral": "그 문제"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-2:unlock:s3:0",
+      "factText": "수진은 바이어 상담 직전 압박을 이유로 들며 자기 발화를 정당화하려 한다.",
+      "tags": [
+        "motive",
+        "self_justification"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "time": {
+          "exact": "바이어 상담 직전",
+          "neutral": "그 시점",
+          "period": "행사 중"
+        },
+        "issue": {
+          "exact": "상담 직전 압박",
+          "neutral": "그 문제"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-2:unlock:s4:0",
+      "factText": "수진은 자신의 말도 밖에서 재료가 됐다는 사실에 흔들린다.",
+      "tags": [
+        "emotion",
+        "harm"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "issue": {
+          "exact": "자신의 말이 소문 재료가 됐다는 사실",
+          "neutral": "그 문제"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-2:unlock:s5:0",
+      "factText": "수진은 직접 바이어 험담은 아니어도 외부 비방 금지 원칙을 깬 책임을 인정한다.",
+      "tags": [
+        "admission",
+        "rule"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "rule": {
+          "exact": "행사 중 외부 인력 앞 상호 비방 금지 원칙",
+          "neutral": "그 규칙"
+        },
+        "channel": {
+          "exact": "보조 스태프·홍세진 채널",
+          "neutral": "그 채널"
+        }
+      },
+      "stanceHints": [
+        "confession"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-3:unlock:s2:0",
+      "factText": "캡처 한 장만으로는 선우의 직접 험담을 증명할 수 없다는 한계를 수진이 받아들인다.",
+      "tags": [
+        "evidence",
+        "uncertainty"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "evidence": {
+          "exact": "크롭된 음성전사 캡처",
+          "neutral": "그 자료"
+        },
+        "person": {
+          "exact": "류선우",
+          "neutral": "그 사람",
+          "fullName": "류선우",
+          "judgeRef": "상대 대표"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-3:unlock:s3:0",
+      "factText": "수진은 바이어 신뢰 상실 공포 때문에 의도 단정이 앞섰음을 의식한다.",
+      "tags": [
+        "fear",
+        "motive"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "fear": {
+          "exact": "바이어 신뢰 상실 공포",
+          "neutral": "그 공포"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-3:unlock:s4:0",
+      "factText": "수진은 결론부터 던진 자신의 화법이 오해를 키웠다고 본다.",
+      "tags": [
+        "admission",
+        "emotion"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "issue": {
+          "exact": "결론부터 단정한 화법",
+          "neutral": "그 문제"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-3:unlock:s5:0",
+      "factText": "직접 험담이 아니라 홍세진 요약이 양측 불만을 한 문장으로 묶은 것이었다.",
+      "tags": [
+        "quote",
+        "timeline"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "source": {
+          "exact": "홍세진 요약",
+          "neutral": "그 요약"
+        },
+        "phrase": {
+          "exact": "'둘이 서로 못 믿는다'는 문장",
+          "neutral": "그 문장"
+        }
+      },
+      "stanceHints": [
+        "confession"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-4:unlock:s2:0",
+      "factText": "수진도 행사 전날 비방 금지와 debrief only 규칙을 열람하고 체크했다.",
+      "tags": [
+        "rule",
+        "evidence"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "document": {
+          "exact": "이벤트 운영 가이드와 debrief 규칙",
+          "neutral": "그 자료"
+        },
+        "time": {
+          "exact": "행사 전날 밤",
+          "neutral": "그 전날",
+          "period": "행사 전날"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-4:unlock:s3:0",
+      "factText": "수진은 자기만의 위반이 아니라 양측 모두 외부 채널에 재료를 남겼다고 본다.",
+      "tags": [
+        "counter",
+        "relationship"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "류선우",
+          "neutral": "그 사람",
+          "fullName": "류선우",
+          "judgeRef": "상대 대표"
+        },
+        "channel": {
+          "exact": "외부 프리랜서·스태프 채널",
+          "neutral": "외부 채널"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "blame"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-4:unlock:s4:0",
+      "factText": "감정이 올라오자 스스로 규칙을 접었다는 자책이 드러난다.",
+      "tags": [
+        "shame",
+        "emotion"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "rule": {
+          "exact": "상호 비방 금지 규칙",
+          "neutral": "그 규칙"
+        },
+        "issue": {
+          "exact": "감정적 예외를 만든 자책",
+          "neutral": "그 문제"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-4:unlock:s5:0",
+      "factText": "수진은 누가 먼저냐보다 재발 방지 스크립트가 필요하다고 인정한다.",
+      "tags": [
+        "responsibility",
+        "relationship"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "rule": {
+          "exact": "재발 방지 스크립트",
+          "neutral": "그 규칙"
+        },
+        "person": {
+          "exact": "류선우",
+          "neutral": "그 사람",
+          "fullName": "류선우",
+          "judgeRef": "상대 대표"
+        }
+      },
+      "stanceHints": [
+        "confession"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-5:unlock:s2:0",
+      "factText": "수진은 홍세진 후속 메시지가 소문을 키웠을 가능성을 인정한다.",
+      "tags": [
+        "evidence",
+        "uncertainty"
+      ],
+      "unlockedAtState": "S2",
+      "slots": {
+        "source": {
+          "exact": "홍세진 후속 메시지",
+          "neutral": "그 메시지"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-5:unlock:s3:0",
+      "factText": "수진은 자기 불만과 선우 불만이 buyer recap 안에서 뒤섞였을 수 있다고 본다.",
+      "tags": [
+        "relationship",
+        "context"
+      ],
+      "unlockedAtState": "S3",
+      "slots": {
+        "person": {
+          "exact": "류선우",
+          "neutral": "그 사람",
+          "fullName": "류선우",
+          "judgeRef": "상대 대표"
+        },
+        "source": {
+          "exact": "buyer recap",
+          "neutral": "그 recap"
+        }
+      },
+      "stanceHints": [
+        "partial"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-5:unlock:s4:0",
+      "factText": "밖에서 불만을 말한 순간 누가 결론을 대신 써버릴 틈을 줬다는 후회가 드러난다.",
+      "tags": [
+        "emotion",
+        "harm"
+      ],
+      "unlockedAtState": "S4",
+      "slots": {
+        "issue": {
+          "exact": "결론을 대신 쓰게 한 후회",
+          "neutral": "그 문제"
+        }
+      },
+      "stanceHints": [
+        "emotional"
+      ]
+    },
+    {
+      "id": "partnership-12:b:d-5:unlock:s5:0",
+      "factText": "소문의 첫 문장은 홍세진 buyer recap이었고, 어느 한쪽의 직접 발화가 아니었다.",
+      "tags": [
+        "timeline",
+        "quote"
+      ],
+      "unlockedAtState": "S5",
+      "slots": {
+        "source": {
+          "exact": "홍세진 buyer recap",
+          "neutral": "그 recap"
+        },
+        "phrase": {
+          "exact": "'둘이 서로 못 믿는다'는 문장",
+          "neutral": "그 문장"
+        },
+        "time": {
+          "exact": "애프터파티 종료 50분 뒤",
+          "neutral": "그 직후",
+          "period": "애프터파티 이후"
+        }
+      },
+      "stanceHints": [
+        "confession"
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-3"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  }
+}

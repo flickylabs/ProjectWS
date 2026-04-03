@@ -85,6 +85,28 @@
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
+/* 액션 탭 — 캐릭터 선택 후 "액션을 골라주세요" 넛지 */
+@keyframes action-beckon {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); opacity: 0.75; }
+  50% { box-shadow: 0 0 14px 2px rgba(251, 191, 36, 0.25); opacity: 1; }
+}
+.action-tab-beckon {
+  animation: action-beckon 1.6s ease-in-out infinite;
+}
+
+/* 비선택 캐릭터 버튼 — "탭하세요" 넛지 */
+@keyframes target-nudge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.court-target-idle {
+  animation: target-nudge 2.5s ease-in-out infinite;
+}
+.court-target-idle:hover {
+  animation: none;
+  transform: scale(1.08);
+}
+
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
@@ -159,6 +181,25 @@
 .divider-amber {
   height: 1px;
   background: linear-gradient(90deg, transparent 5%, rgba(217, 119, 6, 0.35) 50%, transparent 95%);
+}
+
+/* 액션 독 테두리 글로우 — 앰버 상단 + 흰 전체 테두리 동시 펄스 */
+@keyframes dock-border-pulse {
+  0%, 100% {
+    border-color: rgba(217, 119, 6, 0.15);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.02),
+      0 -1px 0 0 rgba(217, 119, 6, 0);
+  }
+  50% {
+    border-color: rgba(217, 119, 6, 0.5);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+      0 -1px 12px 0 rgba(217, 119, 6, 0.15);
+  }
+}
+.dock-border-glow {
+  animation: dock-border-pulse 3s ease-in-out infinite;
 }
 
 /* 채팅영역 상단 페이드 마스크 */

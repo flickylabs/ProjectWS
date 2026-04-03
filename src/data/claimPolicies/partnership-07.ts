@@ -8,6 +8,8 @@ import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3Game
 import { partnership07V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-batch/partnership-07/partnership-07-v2-atoms'
 import { partnership07TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-batch/partnership-07/partnership-07-tells-beats'
 import { partnership07V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-batch/partnership-07/partnership-07-v3-game-loop-data'
+import { registerStructureV2 } from '../../engine/v2DataLoader'
+import structureV2 from './partnership-07-structure-v2.json'
 
 export function registerPartnership07Data(): void {
   console.log('[Renewal] partnership-07 리뉴얼 데이터 등록 시작')
@@ -25,5 +27,8 @@ export function registerPartnership07Data(): void {
   // BeatScript 런타임 fallback 등록
   registerBeatScripts('partnership-07', (partnership07TellsBeats as any).beatScripts)
 
-  console.log('[Renewal] partnership-07 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback')
+
+  // V2 Structure 등록
+  registerStructureV2(structureV2 as any)
+  console.log('[Renewal] partnership-07 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback + StructureV2')
 }

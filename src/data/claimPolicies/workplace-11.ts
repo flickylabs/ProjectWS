@@ -8,6 +8,8 @@ import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3Game
 import { workplace11V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-batch/workplace-11/workplace-11-v2-atoms'
 import { workplace11TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-batch/workplace-11/workplace-11-tells-beats'
 import { workplace11V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-batch/workplace-11/workplace-11-v3-game-loop-data'
+import { registerStructureV2 } from '../../engine/v2DataLoader'
+import structureV2 from './workplace-11-structure-v2.json'
 
 export function registerWorkplace11Data(): void {
   console.log('[Renewal] workplace-11 리뉴얼 데이터 등록 시작')
@@ -25,5 +27,8 @@ export function registerWorkplace11Data(): void {
   // BeatScript 런타임 fallback 등록
   registerBeatScripts('workplace-11', (workplace11TellsBeats as any).beatScripts)
 
-  console.log('[Renewal] workplace-11 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback')
+
+  // V2 Structure 등록
+  registerStructureV2(structureV2 as any)
+  console.log('[Renewal] workplace-11 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback + StructureV2')
 }

@@ -33,8 +33,14 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
   const [infoOpen, setInfoOpen] = useState(false)
   const [infoTab, setInfoTab] = useState<InfoTab>('disputes')
   const [showTestimony, setShowTestimony] = useState(false)
+  const [dockOpen, setDockOpen] = useState(true)
   const chatRef = useRef<HTMLDivElement>(null)
   const dialogueLog = useGameStore((s) => s.dialogueLog)
+
+  // 대화 Phase가 아닐 때 독 자동 열림
+  useEffect(() => {
+    if (!isDialoguePhase) setDockOpen(true)
+  }, [isDialoguePhase])
 
   // 새 메시지 시 스크롤
   useEffect(() => {
@@ -116,17 +122,33 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
         </div>
       </div>
 
-      {/* 하단 ActionDock — 항상 표시, 토글 없음 */}
+      {/* 하단 ActionDock — 접기/펼치기 */}
       {actionPanel && (
         <div
           className="shrink-0 z-30"
           style={{ paddingBottom: 'max(env(safe-area-inset-bottom, 0px), 4px)' }}
         >
-          {/* 앰버 디바이더 */}
-          <div className="divider-amber" />
-          <div className="glass-surface inner-glow-amber px-3 pt-2 pb-1.5">
-            {actionPanel}
-          </div>
+          {dockOpen ? (
+            <div className="relative">
+              {/* 접기 핸들 — 독 위에 절대 위치로 떠있음, 완전 투명 */}
+              <button onClick={() => setDockOpen(false)}
+                className="absolute left-1/2 -translate-x-1/2 -top-3 z-20 px-6 h-3 flex items-center justify-center active:scale-95">
+                <svg width="20" height="3" viewBox="0 0 20 3" className="text-gray-600 hover:text-gray-400 transition-colors">
+                  <path d="M2 0.5l8 2 8-2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" fill="none"/>
+                </svg>
+              </button>
+              <div className="glass-surface px-3 pt-2 pb-1.5 border-t border-amber-500/25 ring-1 ring-white/[0.04] rounded-t-xl dock-border-glow">
+                {actionPanel}
+              </div>
+            </div>
+          ) : (
+            <div className="glass-surface border-t border-amber-500/20 px-3 py-1.5">
+              <button onClick={() => setDockOpen(true)}
+                className="w-full py-2.5 rounded-xl bg-amber-600/90 text-gray-950 font-bold text-sm shadow-lg shadow-amber-600/20 active:scale-95 flex items-center justify-center gap-2">
+                <Emoji char="⚖️" size={16} /> 행동 선택
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>

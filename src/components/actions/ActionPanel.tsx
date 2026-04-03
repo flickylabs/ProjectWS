@@ -123,12 +123,13 @@ export default function ActionPanel() {
     highestContradictionTokens: Math.max(metersA.contradictionTokens, metersB.contradictionTokens),
     highestTrustWindow: Math.max(metersA.trustWindow, metersB.trustWindow),
   })
-  if (dossierUnlockResult.newlyUnlocked) {
+  const dossierCardsExist = getDossierCards(caseKey).length > 0
+  if (dossierUnlockResult.newlyUnlocked && dossierCardsExist) {
     dossierUnlockPrevRef.current = true
     showToast(dossierUnlockResult.label, 'success')
   }
   if (dossierUnlockResult.unlocked) dossierUnlockPrevRef.current = true
-  const hasDossierCards = getDossierCards(caseKey).length > 0 && dossierUnlockResult.unlocked
+  const hasDossierCards = dossierCardsExist && dossierUnlockResult.unlocked
 
   // ── 토글 스킬 해금 상태 ──
   const toggles: QuestionToggles = {
@@ -276,6 +277,9 @@ export default function ActionPanel() {
     setShowAdvance(false)
   }
 
+  // 캐릭터 선택됨 + 액션 미선택 → 액션 탭 번쩍임
+  const beckon = target !== null && activeTab === null
+
   return (
     <div className="relative">
       {/* 슬라이드업 콘텐츠 패널 — 독 위에 앵커 */}
@@ -339,43 +343,66 @@ export default function ActionPanel() {
         </div>
       )}
 
-      {/* ActionDock: 1행 pill 타겟 + 인라인 미터 + 2행 탭 */}
+      {/* ActionDock 1행: 캐릭터 + Stat
+           미선택: [😐 A] [placeholder] [B 😐]
+           A선택:  [██ 😐 A ── Stat ──╮] [B 😐]
+           B선택:  [😐 A] [╭── Stat ── B 😐 ██] */}
+      <div className="flex items-stretch gap-1">
+        {/* A 버튼 — 다시 누르면 해제 */}
+        <button onClick={() => setTarget(target === 'a' ? null : 'a')}
+          className={`shrink-0 flex items-center justify-center gap-1 text-xs font-bold transition-all duration-200 active:scale-[0.97] ${
+            target === 'a'
+              ? 'px-2.5 bg-blue-600 text-white rounded-l-xl border-y-2 border-l-2 border-blue-400/60 shadow-lg shadow-blue-600/20'
+              : target === 'b'
+                ? 'px-2 bg-white/[0.03] text-blue-400/70 rounded-xl ring-1 ring-white/[0.06] hover:ring-blue-500/30 hover:text-blue-400 court-target-idle'
+                : 'px-2 bg-transparent text-blue-400 rounded-xl ring-2 ring-blue-500/30 hover:bg-blue-500/10'
+          }`}>
+          <Emoji char={EMOTION_EMOJI[agentA.emotionalState.phase] ?? '😐'} size={target === 'a' ? 18 : 16} />
+          <span>{caseData.duo.partyA.name}</span>
+        </button>
 
-      {/* 1행: pill 타겟 세그먼트 + 인라인 미터 */}
-      <div className="flex items-center gap-2 h-9">
-        {/* pill 세그먼트 컨트롤 */}
-        <div className="flex bg-white/[0.03] rounded-xl p-0.5 ring-1 ring-white/5 shrink-0">
-          <button onClick={() => setTarget('a')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] text-xs font-bold transition-all active:scale-95 ${
-              target === 'a' ? 'bg-blue-600/90 text-white shadow-md shadow-blue-500/20 glow-blue' : 'text-blue-400/60 hover:text-blue-300 hover:bg-white/5'
-            }`}>
-            <Emoji char={EMOTION_EMOJI[agentA.emotionalState.phase] ?? '😐'} size={16} />
-            <span>{caseData.duo.partyA.name}</span>
-          </button>
-          <button onClick={() => setTarget('b')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] text-xs font-bold transition-all active:scale-95 ${
-              target === 'b' ? 'bg-rose-600/90 text-white shadow-md shadow-rose-500/20 glow-rose' : 'text-rose-400/60 hover:text-rose-300 hover:bg-white/5'
-            }`}>
-            <Emoji char={EMOTION_EMOJI[agentB.emotionalState.phase] ?? '😐'} size={16} />
-            <span>{caseData.duo.partyB.name}</span>
-          </button>
+        {/* Stat 영역 — 선택된 캐릭터 테두리가 감쌈 */}
+        <div className={`flex-1 min-w-0 flex items-stretch transition-all duration-200 ${
+          target === 'a'
+            ? 'border-y-2 border-r-2 border-blue-400/60 rounded-r-xl bg-blue-950/30'
+            : target === 'b'
+              ? 'border-y-2 border-l-2 border-rose-400/60 rounded-l-xl bg-rose-950/30'
+              : 'border-y-2 border-transparent'
+        }`}>
+          {target ? (
+            <div className="flex-1 min-w-0 py-0.5 px-0.5">
+              <QuestionMeterHUD party={target} />
+            </div>
+          ) : (
+            <div className="flex-1 flex items-center justify-center text-xs text-gray-600">
+              대상을 선택하세요
+            </div>
+          )}
         </div>
 
-        {/* 인라인 미터 바 */}
-        {target && (
-          <div className="flex-1 min-w-0">
-            <QuestionMeterHUD party={target} />
-          </div>
-        )}
+        {/* B 버튼 — 다시 누르면 해제 */}
+        <button onClick={() => setTarget(target === 'b' ? null : 'b')}
+          className={`shrink-0 flex items-center justify-center gap-1 text-xs font-bold transition-all duration-200 active:scale-[0.97] ${
+            target === 'b'
+              ? 'px-2.5 bg-rose-600 text-white rounded-r-xl border-y-2 border-r-2 border-rose-400/60 shadow-lg shadow-rose-600/20'
+              : target === 'a'
+                ? 'px-2 bg-white/[0.03] text-rose-400/70 rounded-xl ring-1 ring-white/[0.06] hover:ring-rose-500/30 hover:text-rose-400 court-target-idle'
+                : 'px-2 bg-transparent text-rose-400 rounded-xl ring-2 ring-rose-500/30 hover:bg-rose-500/10'
+          }`}>
+          <span>{caseData.duo.partyB.name}</span>
+          <Emoji char={EMOTION_EMOJI[agentB.emotionalState.phase] ?? '😐'} size={target === 'b' ? 18 : 16} />
+        </button>
+      </div>
 
-        {/* 단계 진행 버튼 */}
-        {canAdvance && !showAdvance && (
+      {/* 단계 진행 */}
+      {canAdvance && !showAdvance && (
+        <div className="mt-1">
           <button onClick={() => { setActiveTab(null); setShowAdvance(true) }}
-            className="shrink-0 text-[10px] px-2.5 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20 font-semibold active:scale-95 glow-emerald transition-all hover:bg-emerald-500/15">
+            className="w-full text-[10px] py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20 font-semibold active:scale-95 glow-emerald transition-all hover:bg-emerald-500/15 text-center">
             {advInfo.label} →
           </button>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* 2행: 탭 버튼 */}
       <div className="flex gap-1.5 mt-1.5 h-9">
@@ -383,7 +410,9 @@ export default function ActionPanel() {
           className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all ${
             activeTab === 'question'
               ? 'bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25 glow-amber'
-              : 'bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10'
+              : beckon
+                ? 'bg-amber-500/5 text-amber-300 ring-1 ring-amber-500/15 action-tab-beckon'
+                : 'bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10'
           }`}>
           <Emoji char="❓" size={13} /> 심문
         </button>
@@ -392,7 +421,9 @@ export default function ActionPanel() {
             className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all ${
               activeTab === 'dossier'
                 ? 'bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25 glow-amber'
-                : 'bg-white/[0.03] text-amber-500/60 ring-1 ring-white/5 hover:text-amber-400 hover:ring-white/10'
+                : beckon
+                  ? 'bg-amber-500/5 text-amber-300 ring-1 ring-amber-500/15 action-tab-beckon'
+                  : 'bg-white/[0.03] text-amber-500/60 ring-1 ring-white/5 hover:text-amber-400 hover:ring-white/10'
             }`}>
             <Emoji char="📋" size={13} /> 카드
           </button>
@@ -402,7 +433,9 @@ export default function ActionPanel() {
             evLocked ? 'bg-gray-900/40 text-gray-600 cursor-not-allowed ring-1 ring-gray-800/30'
               : activeTab === 'evidence'
                 ? 'bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25 glow-amber active:scale-95'
-                : 'bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10 active:scale-95'
+                : beckon
+                  ? 'bg-amber-500/5 text-amber-300 ring-1 ring-amber-500/15 action-tab-beckon active:scale-95'
+                  : 'bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10 active:scale-95'
           }`}>
           {evLocked ? <><Emoji char="🔒" size={13} /> 증거</> : <><Emoji char="📄" size={13} /> 증거</>}
           {!evLocked && newEvidenceCount > 0 && activeTab !== 'evidence' && (
@@ -415,7 +448,9 @@ export default function ActionPanel() {
           className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all ${
             activeTab === 'skill'
               ? 'bg-purple-500/15 text-purple-400 ring-1 ring-purple-500/25 shadow-sm shadow-purple-500/10'
-              : 'bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10'
+              : beckon
+                ? 'bg-amber-500/5 text-amber-300 ring-1 ring-amber-500/15 action-tab-beckon'
+                : 'bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10'
           }`}>
           <Emoji char="⚡" size={13} /> 스킬
         </button>

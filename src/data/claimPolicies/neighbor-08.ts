@@ -8,6 +8,8 @@ import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3Game
 import { neighbor08V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-batch/neighbor-08/neighbor-08-v2-atoms'
 import { neighbor08TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-batch/neighbor-08/neighbor-08-tells-beats'
 import { neighbor08V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-batch/neighbor-08/neighbor-08-v3-game-loop-data'
+import { registerStructureV2 } from '../../engine/v2DataLoader'
+import structureV2 from './neighbor-08-structure-v2.json'
 
 export function registerNeighbor08Data(): void {
   console.log('[Renewal] neighbor-08 리뉴얼 데이터 등록 시작')
@@ -21,5 +23,8 @@ export function registerNeighbor08Data(): void {
 
   registerBeatScripts('neighbor-08', (neighbor08TellsBeats as any).beatScripts)
 
-  console.log('[Renewal] neighbor-08 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback')
+
+  // V2 Structure 등록
+  registerStructureV2(structureV2 as any)
+  console.log('[Renewal] neighbor-08 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback + StructureV2')
 }

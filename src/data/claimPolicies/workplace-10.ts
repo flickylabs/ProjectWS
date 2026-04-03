@@ -8,6 +8,8 @@ import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3Game
 import { workplace10V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-batch/workplace-10/workplace-10-v2-atoms'
 import { workplace10TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-batch/workplace-10/workplace-10-tells-beats'
 import { workplace10V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-batch/workplace-10/workplace-10-v3-game-loop-data'
+import { registerStructureV2 } from '../../engine/v2DataLoader'
+import structureV2 from './workplace-10-structure-v2.json'
 
 export function registerWorkplace10Data(): void {
   console.log('[Renewal] workplace-10 리뉴얼 데이터 등록 시작')
@@ -25,5 +27,8 @@ export function registerWorkplace10Data(): void {
   // BeatScript 런타임 fallback 등록
   registerBeatScripts('workplace-10', (workplace10TellsBeats as any).beatScripts)
 
-  console.log('[Renewal] workplace-10 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback')
+
+  // V2 Structure 등록
+  registerStructureV2(structureV2 as any)
+  console.log('[Renewal] workplace-10 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback + StructureV2')
 }

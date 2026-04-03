@@ -1,0 +1,1266 @@
+{
+  "caseId": "workplace-08",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "합의 번복과 책임 전가",
+      "truth": true,
+      "truthDescription": "정훈은 '월말 전 개인분 메우고 닫자'고 합의해 놓고, 감사가 시작되자 합의 자체를 부인하며 나래의 단독 은닉으로 돌렸다.",
+      "weight": "high",
+      "quadrant": "both_know",
+      "legitimacyIssue": false,
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "월말 전에 메우고 닫자",
+        "보류 탭",
+        "개인상환",
+        "상계",
+        "감사 플래그",
+        "합의 번복"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "보류 항목을 월말에 다시 보자는 얘기는 있었습니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-08:a:d-1:denial:0",
+            "workplace-08:a:d-1:responsibility:1",
+            "workplace-08:a:d-1:context:2",
+            "workplace-08:a:d-1:rule:3",
+            "workplace-08:a:d-1:unlock:s2:0",
+            "workplace-08:b:d-1:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "감사가 시작되자 제가 말을 줄인 건 사실입니다.",
+          "lockedSummary": "아직 이 쟁점의 동기층은 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-08:a:d-1:admission:4",
+            "workplace-08:a:d-1:rule:5",
+            "workplace-08:a:d-1:admission:6",
+            "workplace-08:a:d-1:counter:7",
+            "workplace-08:a:d-1:unlock:s2:0",
+            "workplace-08:a:d-1:unlock:s3:0",
+            "workplace-08:b:d-1:admission:4"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "제가 먼저 개인상환·상계로 닫자고 합의했습니다.",
+          "lockedSummary": "핵심 관계와 책임 고리는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:responsibility_named"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-08:a:d-1:emotion:8",
+            "workplace-08:a:d-1:motive:9",
+            "workplace-08:a:d-1:admission:10",
+            "workplace-08:a:d-1:harm:11",
+            "workplace-08:a:d-1:unlock:s4:0",
+            "workplace-08:a:d-1:unlock:s5:0",
+            "workplace-08:b:d-1:emotion:8",
+            "workplace-08:b:d-1:motive:9",
+            "workplace-08:b:d-1:admission:10",
+            "workplace-08:b:d-1:harm:11"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "judgmentStatement": "정훈은 합의를 부인했다.",
+      "mediationLink": "정산절차복구",
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      }
+    },
+    {
+      "id": "d-2",
+      "name": "영수증 세탁과 품목 축소",
+      "truth": true,
+      "truthDescription": "나래는 감사 공지 다음 날 새벽 식당·백화점에 연락해 주류·개인물품 표기를 뺀 영수증을 재발급받았다. '임시 정리'라 주장하지만 타이밍이 감사 직후다.",
+      "weight": "high",
+      "quadrant": "b_only",
+      "legitimacyIssue": true,
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "재발급 영수증",
+        "주류 빼고",
+        "개인물품",
+        "POS 수정",
+        "감사 다음 날 새벽",
+        "품목 축소"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "빠진 품목의 재발급 영수증이 먼저 보이면서 나래가 처음부터 혼자 법인카드를 숨긴 것처럼 읽히는 쟁점입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-08:a:d-2:denial:0",
+            "workplace-08:a:d-2:responsibility:1",
+            "workplace-08:a:d-2:context:2",
+            "workplace-08:a:d-2:rule:3",
+            "workplace-08:b:d-2:denial:0",
+            "workplace-08:b:d-2:responsibility:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "문자와 POS 기록이 나오면 제가 축소한 건 부인 못 해요.",
+          "lockedSummary": "아직 이 쟁점의 동기층은 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-08:a:d-2:admission:4",
+            "workplace-08:a:d-2:rule:5",
+            "workplace-08:a:d-2:admission:6",
+            "workplace-08:a:d-2:counter:7",
+            "workplace-08:b:d-2:admission:4",
+            "workplace-08:b:d-2:rule:5",
+            "workplace-08:b:d-2:unlock:s2:0",
+            "workplace-08:b:d-2:unlock:s3:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "영수증 세탁은 실제였지만, 그 흔적만으로 문제의 시작과 단독 책임까지 확정하면 사전 합의와 오프북 상계 관행을 놓치게 됩니다.",
+          "lockedSummary": "핵심 관계와 책임 고리는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:breach_named"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-08:a:d-2:emotion:8",
+            "workplace-08:a:d-2:motive:9",
+            "workplace-08:a:d-2:admission:10",
+            "workplace-08:a:d-2:harm:11",
+            "workplace-08:b:d-2:emotion:8",
+            "workplace-08:b:d-2:motive:9",
+            "workplace-08:b:d-2:admission:10",
+            "workplace-08:b:d-2:harm:11",
+            "workplace-08:b:d-2:unlock:s4:0",
+            "workplace-08:b:d-2:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "judgmentStatement": "나래는 감사 직후 영수증을 재발급받았다.",
+      "mediationLink": "개인사용차단",
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "knows",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "감사 직후 다시 끊은 영수증에서 주류·개인물품 표기가 빠진 모습이 먼저 보이며, 나래가 처음부터 혼자 숨긴 것처럼 읽히는 단계",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "정훈이 재발급본만 붙잡고 '애초에 네가 혼자 세탁했다'고 말하기 시작하고, 나래도 단순 정리였다고 버티는 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "새벽 POS 수정과 축소된 품목명이 '사전 합의도 없었고 전부 나래 단독 은닉'이라는 잘못된 인과로 굳어지는 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "월말 전 개인상환 합의 메일과 감사 이전 상환 메모가 나오며, 재발급은 사후 세탁이지만 문제의 시작과 단독 책임을 설명하지는 못한다는 균열이 생기는 단계",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "영수증 세탁은 실제 위반이지만, 그 증거만으로 나래가 오프북 정산을 처음부터 혼자 설계한 것으로 볼 수 없고 정훈의 사전 합의와 책임 전가가 따로 남는다는 맥락이 드러나는 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "주류·개인물품 표기가 빠진 재발급 영수증",
+          "감사 공지 직후 새벽 2시에 들어간 POS 품목 축소 요청",
+          "'임시 정리'나 '분류 보정'처럼 세탁 행위를 행정 정리로 들리게 만드는 표현"
+        ],
+        "truthExitEvidenceIds": [
+          "e-1",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "영수증 세탁은 실제 위반이지만, 그 증거만으로 나래가 오프북 정산을 처음부터 혼자 설계한 것으로 볼 수 없고 정훈의 사전 합의와 책임 전가가 따로 남는다는 맥락이 드러나는 단계"
+      }
+    },
+    {
+      "id": "d-3",
+      "name": "상계표의 사후 조작 여부",
+      "truth": false,
+      "truthDescription": "상계표는 나래의 조작이 아니라 홍예진이 클로징 시점에 만든 자동백업 문서다. 감사 전에 이미 상환 계획과 정훈 이니셜이 적혀 있었다.",
+      "weight": "high",
+      "quadrant": "neither_knows",
+      "legitimacyIssue": false,
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "임시 상계표",
+        "절삭 PDF",
+        "홍예진 자동백업",
+        "상환 예정 메모",
+        "정훈 이니셜",
+        "사후 조작"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "재무 쪽 파일일 가능성은 있었습니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-08:a:d-3:denial:0",
+            "workplace-08:a:d-3:responsibility:1",
+            "workplace-08:a:d-3:context:2",
+            "workplace-08:a:d-3:rule:3",
+            "workplace-08:a:d-3:unlock:s2:0",
+            "workplace-08:b:d-3:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "불리한 열이 빠진 PDF만 보고 판단한 건 사실입니다.",
+          "lockedSummary": "아직 이 쟁점의 동기층은 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-08:a:d-3:admission:4",
+            "workplace-08:a:d-3:rule:5",
+            "workplace-08:a:d-3:admission:6",
+            "workplace-08:a:d-3:counter:7",
+            "workplace-08:a:d-3:unlock:s2:0",
+            "workplace-08:a:d-3:unlock:s3:0",
+            "workplace-08:b:d-3:admission:4",
+            "workplace-08:b:d-3:unlock:s2:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "상계표는 사후 조작이 아니라 클로징 당시 자료였습니다.",
+          "lockedSummary": "핵심 관계와 책임 고리는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:misbelief_cracked"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-08:a:d-3:emotion:8",
+            "workplace-08:a:d-3:motive:9",
+            "workplace-08:a:d-3:admission:10",
+            "workplace-08:a:d-3:harm:11",
+            "workplace-08:a:d-3:unlock:s4:0",
+            "workplace-08:a:d-3:unlock:s5:0",
+            "workplace-08:b:d-3:emotion:8",
+            "workplace-08:b:d-3:motive:9",
+            "workplace-08:b:d-3:admission:10",
+            "workplace-08:b:d-3:harm:11"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "requiredEvidence": [
+        "e-3",
+        "e-4",
+        "e-6"
+      ],
+      "judgmentStatement": "상계표는 홍예진이 작성했다.",
+      "mediationLink": "제3자검증",
+      "correctResponsibility": {
+        "a": 65,
+        "b": 35
+      },
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "감사 시점에 갑자기 등장한 상계표와 나래 계정 흔적만 보여 사후 조작물처럼 읽히는 단계",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "정훈이 '그런 합의 자체가 없었다'고 부인하며 상계표를 나래 단독 위조로 몰아가는 국면",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "절삭 PDF에서 상환 메모 열이 빠진 채 유통되며 상계표=나래의 변명이라는 해석이 고착된 상태",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "홍예진 자동백업의 생성 시각과 메일 게이트웨이 로그가 클로징 당시 원본임을 가리키며 조작설에 균열이 생기는 단계",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "상계표가 클로징 시점 동시대 자료였고 정훈의 사전 합의 번복이 핵심 문제로 드러난 국면",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "절삭된 PDF에서 정훈의 승인 열이 빠져 나래 단독 결제처럼 보이게 만든다",
+          "상환 메모의 핵심 열이 누락돼 사전 합의 흔적이 보이지 않는다",
+          "임시 상계표를 전면 승인표로 과장해 읽으면 합의 범위가 부풀려진다"
+        ],
+        "truthExitEvidenceIds": [
+          "e-4",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "상계표가 클로징 시점 동시대 자료였고 정훈의 사전 합의 번복이 핵심 문제로 드러난 국면"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "선행 감사 메모와 평가 개입",
+      "truth": true,
+      "truthDescription": "사실관계 정리 전에 정훈은 감사 초안과 평가란에 나래를 '비용 통제 취약'으로 먼저 적어 선행 낙인을 만들었다.",
+      "weight": "high",
+      "quadrant": "a_only",
+      "legitimacyIssue": false,
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "감사 대응 초안",
+        "비용 통제 취약",
+        "면담 전 입력",
+        "비공식 평가 코멘트",
+        "선행 낙인",
+        "평가 개입"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "초안 메모는 있었지만 참고 수준이었습니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-08:a:d-4:denial:0",
+            "workplace-08:a:d-4:responsibility:1",
+            "workplace-08:a:d-4:context:2",
+            "workplace-08:a:d-4:rule:3",
+            "workplace-08:a:d-4:unlock:s2:0",
+            "workplace-08:b:d-4:denial:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "제가 먼저 프레임을 만든 건 사실입니다.",
+          "lockedSummary": "아직 이 쟁점의 동기층은 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-08:a:d-4:admission:4",
+            "workplace-08:a:d-4:rule:5",
+            "workplace-08:a:d-4:admission:6",
+            "workplace-08:a:d-4:counter:7",
+            "workplace-08:a:d-4:unlock:s2:0",
+            "workplace-08:a:d-4:unlock:s3:0",
+            "workplace-08:b:d-4:admission:4"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "제가 나래 면담 전에 '비용 통제 취약' 문구를 넣었습니다.",
+          "lockedSummary": "핵심 관계와 책임 고리는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:retaliation_named"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-08:a:d-4:emotion:8",
+            "workplace-08:a:d-4:motive:9",
+            "workplace-08:a:d-4:admission:10",
+            "workplace-08:a:d-4:harm:11",
+            "workplace-08:a:d-4:unlock:s4:0",
+            "workplace-08:a:d-4:unlock:s5:0",
+            "workplace-08:b:d-4:emotion:8",
+            "workplace-08:b:d-4:motive:9",
+            "workplace-08:b:d-4:admission:10",
+            "workplace-08:b:d-4:harm:11"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "judgmentStatement": "정훈은 감사 초안에 낙인을 만들었다.",
+      "mediationLink": "감사절차보호",
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      }
+    },
+    {
+      "id": "d-5",
+      "name": "오프북 상계의 쌍방 가담",
+      "truth": true,
+      "truthDescription": "정훈은 사적 결제를 상계표로 돌리게 했고, 나래는 그 방식으로 항목을 묶어 공식 절차 밖에서 넘기려 했다. 오프북 상계에 둘 다 가담했다.",
+      "weight": "medium",
+      "quadrant": "both_know",
+      "legitimacyIssue": false,
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "오프북 상계",
+        "클로징 관행",
+        "공식 절차 밖",
+        "상환 메모",
+        "보류 코드",
+        "월말 클로징"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "임시로 넘긴 적은 있어도 숨기려던 건 아니었습니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-08:a:d-5:denial:0",
+            "workplace-08:a:d-5:responsibility:1",
+            "workplace-08:a:d-5:context:2",
+            "workplace-08:a:d-5:rule:3",
+            "workplace-08:b:d-5:denial:0",
+            "workplace-08:b:d-5:responsibility:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "공식 시스템 밖으로 넘긴 게 관행처럼 굳은 건 인정합니다.",
+          "lockedSummary": "아직 이 쟁점의 동기층은 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-08:a:d-5:admission:4",
+            "workplace-08:a:d-5:rule:5",
+            "workplace-08:a:d-5:admission:6",
+            "workplace-08:a:d-5:counter:7",
+            "workplace-08:b:d-5:admission:4",
+            "workplace-08:b:d-5:rule:5",
+            "workplace-08:b:d-5:unlock:s2:0",
+            "workplace-08:b:d-5:unlock:s3:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "제가 상환 전까지 임시 상계표로 돌리게 했습니다.",
+          "lockedSummary": "핵심 관계와 책임 고리는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:legacy_named"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-08:a:d-5:emotion:8",
+            "workplace-08:a:d-5:motive:9",
+            "workplace-08:a:d-5:admission:10",
+            "workplace-08:a:d-5:harm:11",
+            "workplace-08:b:d-5:emotion:8",
+            "workplace-08:b:d-5:motive:9",
+            "workplace-08:b:d-5:admission:10",
+            "workplace-08:b:d-5:harm:11",
+            "workplace-08:b:d-5:unlock:s4:0",
+            "workplace-08:b:d-5:unlock:s5:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "judgmentStatement": "정훈과 나래는 오프북 상계에 가담했다.",
+      "mediationLink": "정산절차복구",
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-5:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-5:surface:offbook_practice_visible"
+      },
+      "uiLabel": "오프북 상계 시작"
+    },
+    {
+      "id": "link:d-2:d-1:retaliation",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-1",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "retaliationBonus": 9,
+        "grantFlag": "d-1:motive:receipt_wash_backfire"
+      },
+      "uiLabel": "세탁으로 되받기"
+    },
+    {
+      "id": "link:d-3:d-1:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-1",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "weakenCounterBy": 11,
+        "grantFlag": "d-1:motive:cropped_pdf_exposed"
+      },
+      "uiLabel": "절삭본 반전"
+    },
+    {
+      "id": "link:d-4:d-1:retaliation",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "retaliationBonus": 10,
+        "grantFlag": "d-1:motive:prelabel_visible"
+      },
+      "uiLabel": "선행 낙인"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "월말 클로징 메일과 상계표 링크 스레드",
+      "description": "정훈이 '개인분 메우고 닫자'고 적은 메일과 나래가 보류 탭에 묶은 메신저 스레드. 사전 합의 정황이 보인다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약 캡처가 아니라 메일 원문과 상계표 버전 이력을 같이 봐야 한다.",
+        "check_metadata": "'개인분 메우고 닫자'는 정훈 회신이 감사 플래그보다 이틀 먼저 남아 있다.",
+        "restore_context": "같은 스레드에 나래가 보류 탭에 묶고 상환 시점을 묻는 흐름이 이어져 사전 합의 정황이 선명하다.",
+        "verify_source": "메일 서버 아카이브와 협업도구 링크 로그가 동일 문서 ID를 가리킨다.",
+        "check_edits": "원본 메일·링크 기록 — 사후 편집 흔적 없음.",
+        "question_acquisition": "업무 정산 자료 — 감사 범위 내 적법 열람."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최정훈에게: \"합의 번복과 책임 전가\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 최정훈의 \"합의 번복과 책임 전가\" 쟁점과 관련된다. 최정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김나래에게: \"오프북 상계의 쌍방 가담\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 김나래의 \"오프북 상계의 쌍방 가담\" 쟁점과 관련된다. 김나래은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "motive",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "월말 클로징 메일과 상계표 링크 스레드의 해석이 d-1 전개를 가장 크게 바꾸는 창입니다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "월말 클로징 메일과 상계표 링크 스레드의 해석이 d-5 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "재발급 영수증과 POS 품목수정 요청 기록",
+      "description": "나래가 점장에게 '주류 빼고 다시 끊어 달라'고 보낸 문자와 재발급 영수증. 원본과 비교하면 세탁 범위가 드러난다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "재발급 영수증뿐 아니라 점장 문자, POS 수정 이력까지 함께 확보해야 한다.",
+        "check_metadata": "감사 공지 다음 날 새벽 2시에 품목 축소 요청 — 주류·개인물품 표기가 사라졌다.",
+        "restore_context": "'임시 정리'라 주장하지만, 감사에 불편한 항목을 덜 보이게 만든 타이밍이 정황상 세탁에 가깝다.",
+        "verify_source": "가맹점 POS 로그와 점장 문자 시각 일치.",
+        "check_edits": "재발급본은 진본이지만 원본과 차이가 명확해 의도적 세탁 여부를 비교할 수 있다.",
+        "question_acquisition": "가맹점 협조 자료 — 적법하지만 개인 소비 품목 노출은 최소화 필요."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "재발급 영수증과 POS 품목수정 요청 기록의 해석이 d-2 전개를 가장 크게 바꾸는 창입니다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "재발급 영수증과 POS 품목수정 요청 기록의 해석이 d-5 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "정훈이 제출한 카드 승인내역 캡처 PDF",
+      "description": "가족식사·백화점만 발췌한 PDF. 상환 메모·보류 코드 열이 잘려 나래 단독 유용처럼 보이게 편집돼 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "PDF뿐 아니라 카드사 원본 거래내역과 메모필드까지 같이 봐야 한다.",
+        "check_metadata": "문제 거래만 발췌 — 같은 날 상환 예정 메모와 보류 코드가 붙은 열은 잘려 있다.",
+        "restore_context": "단독으론 나래 유용처럼 읽히지만, 결제 직후 내부 메모·임시 분류 흐름이 빠져 있다.",
+        "verify_source": "감사 리포트 형식과 열 구성이 달라 공식 출력본인지 별도 확인 필요.",
+        "check_edits": "문장 변조는 없으나 선택적 절삭·강조로 해석이 나래 단독 유용 쪽으로 기운다.",
+        "question_acquisition": "정훈 자발 제출 — 입수 적법하지만 완전성은 별도 검증 필요."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최정훈에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최정훈의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 최정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김나래에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 김나래의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 김나래은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S3",
+            "multiplier": 1.4,
+            "note": "정훈이 제출한 카드 승인내역 캡처 PDF의 해석이 d-3 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "홍예진의 클로징 폴더 자동백업본과 로컬 시트 히스토리",
+      "description": "홍예진이 클로징 시점에 만든 상계표 자동백업. 감사 전에 이미 상환 날짜와 정훈 이니셜이 적혀 있다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "최종 시트뿐 아니라 자동저장 버전과 로컬 백업의 시간순 파일을 함께 봐야 한다.",
+        "check_metadata": "결제 직후부터 홍예진 계정에서 상환 예정일과 정훈 이니셜이 입력된 버전이 연속으로 남아 있다.",
+        "restore_context": "급조가 아니라 클로징 시 제3자가 실제 관리한 동시대 문서라는 점이 드러난다.",
+        "verify_source": "홍예진 계정 백업과 로컬 시트 히스토리가 동일 셀 변경 순서를 보여 준다.",
+        "check_edits": "자동저장 원본 — 사후 편집 흔적 없이 입력 시점 보존.",
+        "question_acquisition": "업무 백업 적법 — 계약직 개인 폴더 식별 정보는 최소 공개."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최정훈에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최정훈의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 최정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김나래에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 김나래의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 김나래은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "responsibility"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "홍예진의 클로징 폴더 자동백업본과 로컬 시트 히스토리의 해석이 d-3 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "감사 대응 초안과 정훈의 비공식 평가 코멘트",
+      "description": "나래 면담 전에 정훈이 '비용 통제 취약'을 먼저 적은 감사 대응 메모와 평가 초안.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약이 아니라 초기 입력 시각과 수정본까지 모두 확인해야 한다.",
+        "check_metadata": "나래 면담 전 정훈 계정에서 부정 코멘트가 먼저 입력, 이후 표현만 일부 완화됐다.",
+        "restore_context": "사실 정리 전에 '통제 취약' 프레임이 먼저 작동 — 선행 낙인 정황.",
+        "verify_source": "감사 도구와 HR 평가 시스템 타임스탬프가 동일 순서.",
+        "check_edits": "초기본·수정본 모두 남아 사후 정리인지 선행 낙인인지 구분 가능.",
+        "question_acquisition": "인사·감사 자료 — 분쟁 해결 목적에 한정 공개."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "motive",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "감사 대응 초안과 정훈의 비공식 평가 코멘트의 해석이 d-1 전개를 가장 크게 바꾸는 창입니다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "감사 대응 초안과 정훈의 비공식 평가 코멘트의 해석이 d-4 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "공유폴더 회수 로그와 카드사 메모필드 원본",
+      "description": "정산폴더 회수 전 백업 로그와 카드사 메모필드의 '상환 예정' 문구 원본. 감사 공지 이전 입력 시각이 찍혀 있다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "요약이 아니라 회수 직전 백업 스냅샷과 카드사 메모 원본을 같이 추출해야 한다.",
+        "check_metadata": "메모필드의 상환 예정일·보류 코드 입력 시각이 감사 공지 이전으로 찍혀 있다.",
+        "restore_context": "'나래가 꾸몄다'는 주장과 달리 메모·보류 표식이 동시대 기록으로 남아 있다.",
+        "verify_source": "카드사 메타데이터와 협업폴더 백업 로그가 동일 항목 ID를 가리킨다.",
+        "check_edits": "플랫폼 원본 로그 — 사후 편집 흔적 없음.",
+        "question_acquisition": "법인카드 운영 로그 — 감사 범위 내 적법 열람."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최정훈에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최정훈의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 최정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김나래에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 김나래의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 김나래은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "공유폴더 회수 로그와 카드사 메모필드 원본의 해석이 d-3 전개를 가장 크게 바꾸는 창입니다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "공유폴더 회수 로그와 카드사 메모필드 원본의 해석이 d-5 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:credit_identity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "workplace-08:a:d-1:unlock:s3:0",
+          "workplace-08:a:d-1:unlock:s5:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:motive_gap",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "workplace-08:a:d-1:unlock:s2:0",
+          "workplace-08:a:d-1:unlock:s4:0"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:procedure_scope",
+      "intentTag": "legality_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "workplace-08:b:d-2:unlock:s2:0",
+          "workplace-08:b:d-2:unlock:s3:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:origin_or_authenticity",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "workplace-08:a:d-3:unlock:s2:0",
+          "workplace-08:a:d-3:unlock:s3:0"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:preemptive_note",
+      "intentTag": "responsibility_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "workplace-08:a:d-4:unlock:s3:0",
+          "workplace-08:a:d-4:unlock:s5:0"
+        ],
+        "preferredAngleTags": [
+          "responsibility",
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:legacy_pattern",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "workplace-08:a:d-5:admission:4",
+          "workplace-08:a:d-5:admission:6"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:repair_emotion",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "workplace-08:a:d-5:emotion:8",
+          "workplace-08:a:d-5:harm:11"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+}

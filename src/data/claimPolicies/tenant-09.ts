@@ -8,6 +8,8 @@ import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3Game
 import { tenant09V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-batch/tenant-09/tenant-09-v2-atoms'
 import { tenant09TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-batch/tenant-09/tenant-09-tells-beats'
 import { tenant09V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-batch/tenant-09/tenant-09-v3-game-loop-data'
+import { registerStructureV2 } from '../../engine/v2DataLoader'
+import structureV2 from './tenant-09-structure-v2.json'
 
 export function registerTenant09Data(): void {
   console.log('[Renewal] tenant-09 리뉴얼 데이터 등록 시작')
@@ -25,5 +27,8 @@ export function registerTenant09Data(): void {
   // BeatScript 런타임 fallback 등록
   registerBeatScripts('tenant-09', (tenant09TellsBeats as any).beatScripts)
 
-  console.log('[Renewal] tenant-09 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback')
+
+  // V2 Structure 등록
+  registerStructureV2(structureV2 as any)
+  console.log('[Renewal] tenant-09 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback + StructureV2')
 }

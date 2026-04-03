@@ -1,0 +1,2227 @@
+{
+  "caseId": "friend-12",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "수빈의 '내 신곡/내 프로젝트' 단독 홍보",
+      "summary": "수빈은 공개 직후 캡션과 짧은 인터뷰 답변에서 '내 신곡', '내 프로젝트'라는 표현을 써 공동 작업물임에도 단독 성과처럼 보이게 했다.",
+      "requiredEvidenceIds": [
+        "e-1",
+        "e-6"
+      ],
+      "weight": "high",
+      "ambiguity": "none",
+      "mediationLink": "크레딧재정리",
+      "legitimacyIssue": true,
+      "judgmentStatement": "수빈은 단독 성과처럼 홍보했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "내신곡",
+        "내프로젝트",
+        "캡션",
+        "짧은인터뷰",
+        "공개직후",
+        "단독홍보",
+        "크레딧균형"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉으로 드러난 실행과 부인의 모양이 보인다.",
+          "lockedSummary": "겉으로 드러난 실행선만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend12:a:d-1:s0:solo_phrase:0",
+            "friend12:a:d-1:s0:platform_defense:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 이 행동을 택했는지와 누구를 겨냥했는지가 드러난다.",
+          "lockedSummary": "왜 그런 선택이 겹쳤는지는 아직 보이지 않습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend12:a:d-1:unlock:s2:01",
+            "friend12:a:d-1:unlock:s3:01"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "행동, 판단, 사후 책임선이 어떻게 맞물렸는지가 드러난다.",
+          "lockedSummary": "관계와 책임이 얽힌 핵심 구조는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "friend12:a:d-1:unlock:s4:01",
+            "friend12:a:d-1:unlock:s5:01",
+            "friend12:a:d-1:s4:erasure_fear:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "재윤의 포트폴리오 릴과 안내 메일에서 수빈 누락",
+      "summary": "재윤은 포트폴리오 릴과 클라이언트 안내 메일에서 연출·프로듀싱을 강조하며 수빈을 'voice' 수준으로만 적거나 아예 썸네일에서 빼 공동 창작의 균형을 무너뜨렸다.",
+      "requiredEvidenceIds": [
+        "e-4",
+        "e-6"
+      ],
+      "weight": "high",
+      "ambiguity": "none",
+      "mediationLink": "크레딧재정리",
+      "legitimacyIssue": true,
+      "judgmentStatement": "재윤은 수빈을 누락했다.",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "포트폴리오릴",
+        "안내메일",
+        "voice표기",
+        "썸네일",
+        "보조인력",
+        "크레딧축소",
+        "누락"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉으로 드러난 실행과 부인의 모양이 보인다.",
+          "lockedSummary": "겉으로 드러난 실행선만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend12:b:d-2:s0:portfolio_frame:0",
+            "friend12:b:d-2:s1:portfolio_frame:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 이 행동을 택했는지와 누구를 겨냥했는지가 드러난다.",
+          "lockedSummary": "왜 그런 선택이 겹쳤는지는 아직 보이지 않습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend12:b:d-2:unlock:s2:01",
+            "friend12:b:d-2:unlock:s3:01"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "행동, 판단, 사후 책임선이 어떻게 맞물렸는지가 드러난다.",
+          "lockedSummary": "관계와 책임이 얽힌 핵심 구조는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:surface:timeline_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "friend12:b:d-2:unlock:s4:01",
+            "friend12:b:d-2:unlock:s5:01",
+            "friend12:b:d-2:s4:technician_fear:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "최종작 '새벽역'은 사실상 한 사람의 단독 창작물인가",
+      "summary": "가사·보컬·멜로디와 비트·편곡·촬영·편집이 반복 수정으로 얽혀 있어 최종작은 어느 한 사람의 단독 창작물로 보기 어렵고, 핵심 구성요소가 상호 의존적으로 만들어졌다.",
+      "requiredEvidenceIds": [
+        "e-2",
+        "e-3",
+        "e-4"
+      ],
+      "weight": "high",
+      "ambiguity": "low",
+      "mediationLink": "크레딧재정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "최종작 '새벽역'은 단독 창작물이 아니다.",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "songmain",
+        "videomain",
+        "공동창작",
+        "세션로그",
+        "편집로그",
+        "단독창작",
+        "새벽역"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "겉보기엔 그럴듯한 오해의 모양이 보인다.",
+          "lockedSummary": "지금은 오해의 껍데기만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend12:a:d-3:s0:identity_core:0",
+            "friend12:b:d-3:s0:production_core:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 둘 다 그 오해를 붙잡았는지 드러난다.",
+          "lockedSummary": "왜 이 오해가 굳었는지는 아직 보이지 않습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              },
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend12:a:d-3:unlock:s2:01",
+            "friend12:b:d-3:unlock:s2:01"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "오해를 벗기면 실제 책임 배치가 드러난다.",
+          "lockedSummary": "오해 뒤의 실제 구조는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              },
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:misbelief_shaken"
+            ]
+          },
+          "revealAtomIds": [
+            "friend12:a:d-3:unlock:s4:01",
+            "friend12:b:d-3:unlock:s4:01"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "스트리밍 카드엔 수빈, 포스터엔 재윤만 크게 보여 각자 상대가 성과를 훔쳤다고 느끼는 국면",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "수빈은 목소리가 정체성이라, 재윤은 편곡과 편집이 실체라며 단독 핵심을 주장하기 시작한 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "song main과 video main 라벨이 소유권 표기처럼 굳어져 교차 수정 이력이 묻힌 상태",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "DAW 세션과 편집 프로젝트에서 멜로디와 구조가 서로 반복 수정된 흔적이 보이며 단독설이 흔들리는 단계",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "새벽역은 가사와 비트와 촬영이 교차 의존으로 완성된 공동 창작물이었고 크레딧만 비워 둔 채 각자 해석을 굳힌 것이 드러난 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "song main / video main 탭만 보면 전체 소유권처럼 읽힌다.",
+          "플랫폼 첫 화면은 각자 한쪽 이름만 먼저 세운다.",
+          "최종 크레딧 시트 빈칸이 각자 유리한 라벨을 굳히게 했다."
+        ],
+        "truthExitEvidenceIds": [
+          "e-2",
+          "e-3",
+          "e-4",
+          "e-5"
+        ],
+        "clarifyOutcomeLabel": "오해 해소"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "최종 크레딧 시트와 역할 정의를 끝까지 비워 둔 공동 책임",
+      "summary": "둘은 예전부터 제출 전 역할표와 크레딧 문구를 정하자고 했지만, 이번에는 '나중에 정리하자'는 말만 반복한 채 최종 공개 전까지 확정 시트를 만들지 않았다.",
+      "requiredEvidenceIds": [
+        "e-2",
+        "e-6"
+      ],
+      "weight": "medium",
+      "ambiguity": "none",
+      "mediationLink": "작업절차복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "둘은 최종 크레딧 시트를 비워 두었다.",
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "최종크레딧",
+        "역할정의",
+        "공유노션",
+        "빈칸",
+        "나중에정리",
+        "공동책임",
+        "제출전"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "앞뒤 맥락과 후속 조치의 겉면이 보인다.",
+          "lockedSummary": "주변 맥락은 아직 흐릿합니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend12:a:d-4:s0:blank_sheet:0",
+            "friend12:a:d-4:s0:rough_alignment:1",
+            "friend12:b:d-4:s0:blank_sheet:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "체면, 관계, 불안이 왜 개입했는지 드러난다.",
+          "lockedSummary": "왜 그 맥락이 중요해졌는지는 아직 보이지 않습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend12:a:d-4:unlock:s2:01",
+            "friend12:a:d-4:unlock:s3:01",
+            "friend12:a:d-4:s2:blank_sheet:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "주요 쟁점을 지탱하거나 흔드는 연결 구조가 드러난다.",
+          "lockedSummary": "연결된 책임 구조는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:context_open"
+            ]
+          },
+          "revealAtomIds": [
+            "friend12:a:d-4:unlock:s4:01",
+            "friend12:b:d-4:unlock:s4:01",
+            "friend12:a:d-4:s4:relationship_fear:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "재윤의 one-name 화면과 포스터 크롭 재활용",
+      "summary": "재윤은 전체 제출 메타데이터에서 공동 크레딧을 이미 확인했음에도, 자신 이름이 먼저 보이는 포스터와 카드 화면만 잘라 포트폴리오와 소개 메일에 반복 사용해 단독 창작자처럼 보이게 했다.",
+      "requiredEvidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "weight": "high",
+      "ambiguity": "low",
+      "mediationLink": "크레딧재정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "재윤은 단독 창작자로 보이게 했다.",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "one-name화면",
+        "포스터크롭",
+        "메타데이터",
+        "공동크레딧확인",
+        "반복사용",
+        "단독창작자처럼",
+        "소개메일"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "재윤 이름만 먼저 보이는 화면이 작품 전체의 크레딧처럼 그럴듯하게 읽히는 장면",
+          "lockedSummary": "주변 맥락은 아직 흐릿합니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "friend12:b:d-5:s0:screen_defense:0",
+            "friend12:b:d-5:s1:screen_defense:0",
+            "friend12:a:d-5:s0:crop_reuse:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "왜 한 화면 인상을 작품 전체 서사로 굳히려 했는지가 드러난다.",
+          "lockedSummary": "왜 그 맥락이 중요해졌는지는 아직 보이지 않습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "friend12:b:d-5:unlock:s2:01",
+            "friend12:b:d-5:unlock:s3:01",
+            "friend12:b:d-5:s2:crop_act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "one-name 화면이라는 가짜 단독증거를 벗기고, 공동 메타데이터를 알면서도 선택적으로 재활용한 실제 맥락을 확인한다.",
+          "lockedSummary": "연결된 책임 구조는 아직 잠겨 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:context_open"
+            ]
+          },
+          "revealAtomIds": [
+            "friend12:a:d-5:unlock:s4:01",
+            "friend12:b:d-5:unlock:s4:01",
+            "friend12:b:d-5:s4:visibility_fear:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "첫 화면에서 재윤 이름만 크게 뜨는 카드와 포스터 크롭이 반복되어, 그 장면 하나가 작품 전체 크레딧처럼 보이는 단계",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "수빈은 그 화면을 곧바로 '내 몫을 지운 증거'로 읽고, 재윤은 '플랫폼이 원래 그렇게 뜬다'며 형식 문제로만 줄이기 시작한 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "포트폴리오와 소개 메일에 같은 크롭이 반복되며, one-name 화면이 실제 단독 저작권 표기처럼 굳어 버린 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "제출 메타데이터와 크레딧 조율 단톡이 나오며 공동 크레딧을 이미 본 상태에서 유리한 화면만 골랐다는 점, 동시에 첫 화면 구조 자체도 제한적이었다는 점이 함께 보이기 시작한 단계",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "one-name 화면은 전체 소유권 증명도 무해한 형식도 아니며, 공동 크레딧을 알고도 재윤이 선택적으로 재활용한 인상 조작이었다는 실제 맥락이 드러나는 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "스트리밍 카드와 포스터 첫 화면에서 재윤 이름만 먼저 보이게 남긴 크롭 화면",
+          "포트폴리오 릴과 소개 메일에 반복 재사용된 같은 one-name 화면",
+          "전체 메타데이터를 열기 전 단계에만 머무는 부분 캡처"
+        ],
+        "truthExitEvidenceIds": [
+          "e-5",
+          "e-6"
+        ]
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-3:weakens_counter",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-3",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-3:surface:solo_caption_seen"
+      },
+      "uiLabel": "단독 캡션이 단독소유 주장 약화"
+    },
+    {
+      "id": "link:d-2:d-3:weakens_counter",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-3",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-3:surface:voice_only_seen"
+      },
+      "uiLabel": "voice 축소가 단독소유 주장 약화"
+    },
+    {
+      "id": "link:d-4:d-1:unlocks_layer",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-1:core:blank_sheet_context"
+      },
+      "uiLabel": "빈 크레딧 시트가 단독 홍보를 열어줌"
+    },
+    {
+      "id": "link:d-4:d-5:unlocks_layer",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-5:core:blank_sheet_context"
+      },
+      "uiLabel": "빈 시트가 one-name 재활용을 열어줌"
+    },
+    {
+      "id": "link:d-5:d-2:supports",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-2",
+      "type": "supports",
+      "when": {
+        "minState": "S3",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 8,
+        "grantFlag": "d-2:core:crop_reuse_seen"
+      },
+      "uiLabel": "크롭 재활용이 누락 인상을 증폭"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "스트리밍 카드·포스터·릴 썸네일 캡처 모음",
+      "description": "스트리밍 카드에서는 수빈 이름만, 쇼케이스 포스터와 릴 썸네일에서는 재윤 역할만 크게 보이도록 잘린 공개 화면 모음이다.",
+      "type": "sns",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": true,
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "잘린 첫 인상이 굳기 전에 제시할수록 오해를 빨리 걷어낸다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "공유 노션 기획안과 크레딧 메모",
+      "description": "song main, video main 탭이 나뉜 기획안과 '최종 크레딧은 추후 확정'이라는 코멘트가 남은 공유 노션 원본이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "이미 열린 진술을 굳히고 후속 책임선을 정리하는 데 좋다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "DAW 세션 파일과 가사·멜로디 수정 이력",
+      "description": "재윤의 비트 세션, 수빈의 가이드 보컬과 가사 수정, 상호 피드백이 남은 DAW 프로젝트와 문서 이력이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "이미 열린 진술을 굳히고 후속 책임선을 정리하는 데 좋다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "편집 프로젝트 파일과 촬영 큐시트",
+      "description": "재윤의 프리미어/리졸브 프로젝트, 수빈의 재촬영 요청 음성메모, 컷 수정 로그가 남은 편집 원본이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "행위 주체와 시점을 먼저 못 박는 데 가장 강하다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "쇼케이스 제출 폼과 음원유통 메타데이터 export",
+      "description": "쇼케이스는 공동 창작물로, 음원유통 메타데이터에는 primary artist와 producer가 각각 다르게 표시된 제출 원본이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "legality"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "이미 열린 진술을 굳히고 후속 책임선을 정리하는 데 좋다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "인스타·릴스 edit history와 크레딧 조율 단톡",
+      "description": "수빈의 단독형 캡션 수정 내역, 재윤의 릴 썸네일 수정, 그리고 둘이 최종 크레딧 문구를 끝내 확정하지 못한 단톡 원본이다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "motive_search",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "말의 순서와 뉘앙스를 비교해 책임선을 좁히는 데 유리하다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:caption_scope",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "friend12:a:d-1:unlock:s2:01",
+          "friend12:b:d-1:unlock:s2:01"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 주체를 바로 잘라 말하고 싶지 않아요.",
+        "누가 먼저였는지까지는 아직 정리해서 말하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:erasure_fear",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "friend12:a:d-1:unlock:s4:01",
+          "friend12:b:d-1:unlock:s4:01"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 감정은 지금 바로 꺼내기 어렵습니다.",
+        "그 부분은 말하면 제가 먼저 무너질 것 같아요."
+      ]
+    },
+    {
+      "id": "fq:d-2:voice_not_only",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "friend12:a:d-2:unlock:s2:01",
+          "friend12:b:d-2:unlock:s2:01"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 주체를 바로 잘라 말하고 싶지 않아요.",
+        "누가 먼저였는지까지는 아직 정리해서 말하겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:main_tab_scope",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "friend12:a:d-3:unlock:s2:01",
+          "friend12:b:d-3:unlock:s2:01"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "맥락까지 다 풀면 여기서 끝나지 않아요.",
+        "앞뒤를 다 말해야 해서 지금은 짧게 답하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:cross_revision",
+      "intentTag": "timeline_check",
+      "allowedAtStates": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "friend12:a:d-3:unlock:s2:01",
+          "friend12:b:d-3:unlock:s2:01"
+        ],
+        "preferredAngleTags": [
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "그 순서를 다시 꺼내면 얘기가 더 꼬여요.",
+        "그 시점은 지금 한 줄로 잘라 답하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:blank_sheet_reason",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "friend12:a:d-4:unlock:s4:01",
+          "friend12:b:d-4:unlock:s4:01"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "의도 얘기까지 가면 감정이 너무 섞여요.",
+        "왜 그랬는지까지는 아직 바로 말하고 싶지 않습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:crop_reuse_motive",
+      "intentTag": "responsibility_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "friend12:a:d-5:unlock:s2:01",
+          "friend12:b:d-5:unlock:s2:01"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 주체를 바로 잘라 말하고 싶지 않아요.",
+        "누가 먼저였는지까지는 아직 정리해서 말하겠습니다."
+      ]
+    }
+  ],
+  "proposedUnlockAtoms": [
+    {
+      "id": "friend12:a:d-1:unlock:s2:01",
+      "legacySourceId": "d1.unlock.s2.a_caption_exposure",
+      "party": "a",
+      "disputeId": "d-1",
+      "unlockedAtState": "S2",
+      "factText": "문제 캡션과 인터뷰 표현이 공개 직후 가장 노출이 큰 시간대에 함께 유지됐다.",
+      "tags": [
+        "act",
+        "timeline",
+        "evidence"
+      ],
+      "slots": {
+        "evidence": {
+          "exact": "e-6",
+          "judgeRef": "인스타·릴스 edit history와 크레딧 조율 단톡",
+          "neutral": "해당 자료"
+        },
+        "time": {
+          "period": "공개 직후 몇 시간",
+          "neutral": "첫 노출 시간대"
+        },
+        "quote": {
+          "exact": "내 신곡",
+          "neutral": "문제 표현",
+          "alt": "내 프로젝트"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "fact_anchor"
+      ]
+    },
+    {
+      "id": "friend12:a:d-1:unlock:s3:01",
+      "legacySourceId": "d1.unlock.s3.a_reactive_escalation",
+      "party": "a",
+      "disputeId": "d-1",
+      "unlockedAtState": "S3",
+      "factText": "상대 릴과 포트폴리오에 대한 반발이 생긴 뒤 단독형 표현을 더 고집했다.",
+      "tags": [
+        "counter",
+        "motive",
+        "relationship"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "상대"
+        },
+        "platform": {
+          "exact": "릴·포트폴리오",
+          "neutral": "상대 공개물"
+        }
+      },
+      "stanceHints": [
+        "blame",
+        "partial"
+      ]
+    },
+    {
+      "id": "friend12:a:d-1:unlock:s4:01",
+      "legacySourceId": "d1.unlock.s4.a_erasure_fear",
+      "party": "a",
+      "disputeId": "d-1",
+      "unlockedAtState": "S4",
+      "factText": "자신의 목소리와 문장이 보컬 제공 수준으로 축소될까 두려웠다.",
+      "tags": [
+        "fear",
+        "emotion",
+        "identity"
+      ],
+      "slots": {
+        "speaker": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "본인"
+        },
+        "role": {
+          "exact": "목소리·문장",
+          "neutral": "보컬 제공 수준"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "friend12:a:d-1:unlock:s5:01",
+      "legacySourceId": "d1.unlock.s5.a_first_break_credit",
+      "party": "a",
+      "disputeId": "d-1",
+      "unlockedAtState": "S5",
+      "factText": "공동작업 소개 균형을 먼저 깬 쪽이 자신이었다는 점을 인정한다.",
+      "tags": [
+        "admission",
+        "responsibility",
+        "harm"
+      ],
+      "slots": {
+        "speaker": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "본인"
+        },
+        "work": {
+          "exact": "새벽역",
+          "judgeRef": "이 사건 작품",
+          "neutral": "그 작품"
+        }
+      },
+      "stanceHints": [
+        "confession",
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend12:a:d-2:unlock:s2:01",
+      "legacySourceId": "d2.unlock.s2.a_ongoing_input",
+      "party": "a",
+      "disputeId": "d-2",
+      "unlockedAtState": "S2",
+      "factText": "편집 원본과 큐시트에는 본인의 재촬영 요청과 자막 수정이 후반까지 반영돼 있었다.",
+      "tags": [
+        "evidence",
+        "timeline",
+        "context"
+      ],
+      "slots": {
+        "evidence": {
+          "exact": "e-4",
+          "judgeRef": "편집 프로젝트 파일과 촬영 큐시트",
+          "neutral": "해당 자료"
+        },
+        "speaker": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "fact_anchor",
+        "partial"
+      ]
+    },
+    {
+      "id": "friend12:a:d-2:unlock:s3:01",
+      "legacySourceId": "d2.unlock.s3.a_surface_weaponized",
+      "party": "a",
+      "disputeId": "d-2",
+      "unlockedAtState": "S3",
+      "factText": "첫 화면과 메일 인상을 상대 의도의 전부처럼 말하는 데 활용했다.",
+      "tags": [
+        "counter",
+        "self_justification",
+        "context"
+      ],
+      "slots": {
+        "platform": {
+          "exact": "썸네일·안내 메일",
+          "neutral": "첫 인상 화면"
+        },
+        "speaker": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "nuance",
+        "counter"
+      ]
+    },
+    {
+      "id": "friend12:a:d-2:unlock:s4:01",
+      "legacySourceId": "d2.unlock.s4.a_helper_fear",
+      "party": "a",
+      "disputeId": "d-2",
+      "unlockedAtState": "S4",
+      "factText": "이름만 빌려준 사람처럼 남을까 두려워 '지워졌다'는 말을 더 세게 했다.",
+      "tags": [
+        "fear",
+        "emotion",
+        "identity"
+      ],
+      "slots": {
+        "speaker": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "본인"
+        },
+        "role": {
+          "exact": "이름만 빌려준 사람",
+          "neutral": "보조 인력"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "hurt"
+      ]
+    },
+    {
+      "id": "friend12:a:d-2:unlock:s5:01",
+      "legacySourceId": "d2.unlock.s5.a_not_total_erasure",
+      "party": "a",
+      "disputeId": "d-2",
+      "unlockedAtState": "S5",
+      "factText": "상대가 자신을 축소한 건 맞지만 작품 전체에서 완전히 삭제한 것은 아니었다고 정리한다.",
+      "tags": [
+        "admission",
+        "context",
+        "responsibility"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "상대"
+        },
+        "work": {
+          "exact": "새벽역",
+          "judgeRef": "이 사건 작품",
+          "neutral": "그 작품"
+        }
+      },
+      "stanceHints": [
+        "balanced",
+        "admission"
+      ]
+    },
+    {
+      "id": "friend12:a:d-3:unlock:s2:01",
+      "legacySourceId": "d3.unlock.s2.a_main_tab_scope",
+      "party": "a",
+      "disputeId": "d-3",
+      "unlockedAtState": "S2",
+      "factText": "song main 표기는 파트 책임자 의미였지 작품 전체 소유권 표시는 아니었다.",
+      "tags": [
+        "context",
+        "rule",
+        "identity"
+      ],
+      "slots": {
+        "evidence": {
+          "exact": "e-2",
+          "judgeRef": "공유 노션 기획안과 크레딧 메모",
+          "neutral": "해당 자료"
+        },
+        "role": {
+          "exact": "song main",
+          "neutral": "파트 책임자 표기"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "fact_anchor"
+      ]
+    },
+    {
+      "id": "friend12:a:d-3:unlock:s3:01",
+      "legacySourceId": "d3.unlock.s3.a_cross_revision",
+      "party": "a",
+      "disputeId": "d-3",
+      "unlockedAtState": "S3",
+      "factText": "세션과 편집 로그에는 재윤의 구조 변경과 자신의 수정이 교차된 흔적이 선명했다.",
+      "tags": [
+        "evidence",
+        "timeline",
+        "context"
+      ],
+      "slots": {
+        "evidenceA": {
+          "exact": "e-3",
+          "judgeRef": "DAW 세션 파일과 가사·멜로디 수정 이력",
+          "neutral": "해당 자료"
+        },
+        "evidenceB": {
+          "exact": "e-4",
+          "judgeRef": "편집 프로젝트 파일과 촬영 큐시트",
+          "neutral": "해당 자료"
+        },
+        "counterparty": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "상대"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "nuance"
+      ]
+    },
+    {
+      "id": "friend12:a:d-3:unlock:s4:01",
+      "legacySourceId": "d3.unlock.s4.a_identity_panic",
+      "party": "a",
+      "disputeId": "d-3",
+      "unlockedAtState": "S4",
+      "factText": "창작 정체성을 잃을까 두려워 재윤 기여를 '수고' 수준으로 낮춰 말했다.",
+      "tags": [
+        "fear",
+        "motive",
+        "shame"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "상대"
+        },
+        "role": {
+          "exact": "비트·편곡·편집 기여",
+          "neutral": "수고 수준"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "friend12:a:d-3:unlock:s5:01",
+      "legacySourceId": "d3.unlock.s5.a_joint_work_admission",
+      "party": "a",
+      "disputeId": "d-3",
+      "unlockedAtState": "S5",
+      "factText": "최종작은 가사·보컬과 비트·촬영·편집이 서로를 바꿔 가며 완성한 공동 창작물이었다.",
+      "tags": [
+        "admission",
+        "identity",
+        "responsibility"
+      ],
+      "slots": {
+        "work": {
+          "exact": "새벽역",
+          "judgeRef": "이 사건 작품",
+          "neutral": "그 작품"
+        },
+        "counterparty": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "상대"
+        }
+      },
+      "stanceHints": [
+        "confession",
+        "emotional"
+      ]
+    },
+    {
+      "id": "friend12:a:d-4:unlock:s2:01",
+      "legacySourceId": "d4.unlock.s2.a_sheet_left_blank",
+      "party": "a",
+      "disputeId": "d-4",
+      "unlockedAtState": "S2",
+      "factText": "최종 공개 전까지 크레딧 표와 역할 정의 칸이 실제로 비어 있었다.",
+      "tags": [
+        "act",
+        "rule",
+        "timeline"
+      ],
+      "slots": {
+        "evidence": {
+          "exact": "e-2",
+          "judgeRef": "공유 노션 기획안과 크레딧 메모",
+          "neutral": "해당 자료"
+        },
+        "time": {
+          "period": "최종 공개 전",
+          "neutral": "마감 직전"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admission"
+      ]
+    },
+    {
+      "id": "friend12:a:d-4:unlock:s3:01",
+      "legacySourceId": "d4.unlock.s3.a_mutual_delay",
+      "party": "a",
+      "disputeId": "d-4",
+      "unlockedAtState": "S3",
+      "factText": "둘 다 상대가 먼저 문구를 정리하겠지 하고 기다리며 확정 책임을 미뤘다.",
+      "tags": [
+        "responsibility",
+        "relationship",
+        "context"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "상대"
+        },
+        "work": {
+          "exact": "새벽역",
+          "judgeRef": "이 사건 작품",
+          "neutral": "그 작품"
+        }
+      },
+      "stanceHints": [
+        "responsibility",
+        "admission"
+      ]
+    },
+    {
+      "id": "friend12:a:d-4:unlock:s4:01",
+      "legacySourceId": "d4.unlock.s4.a_conflict_avoidance",
+      "party": "a",
+      "disputeId": "d-4",
+      "unlockedAtState": "S4",
+      "factText": "친구 사이를 계약처럼 만들까 봐 먼저 잠그자는 말을 피했다.",
+      "tags": [
+        "fear",
+        "relationship",
+        "emotion"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "상대"
+        },
+        "speaker": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "fear"
+      ]
+    },
+    {
+      "id": "friend12:a:d-4:unlock:s5:01",
+      "legacySourceId": "d4.unlock.s5.a_blank_enabled_solo_promo",
+      "party": "a",
+      "disputeId": "d-4",
+      "unlockedAtState": "S5",
+      "factText": "그 공백이 이후 각자의 단독형 홍보를 가능하게 한 틈이었다고 인정한다.",
+      "tags": [
+        "admission",
+        "harm",
+        "responsibility"
+      ],
+      "slots": {
+        "work": {
+          "exact": "새벽역",
+          "judgeRef": "이 사건 작품",
+          "neutral": "그 작품"
+        },
+        "speaker": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "confession",
+        "responsibility"
+      ]
+    },
+    {
+      "id": "friend12:a:d-5:unlock:s2:01",
+      "legacySourceId": "d5.unlock.s2.a_metadata_known",
+      "party": "a",
+      "disputeId": "d-5",
+      "unlockedAtState": "S2",
+      "factText": "첫 화면 구조의 한계를 알면서도 상대의 크롭 재활용을 문제의 핵심 증거로 봤다.",
+      "tags": [
+        "context",
+        "evidence",
+        "counter"
+      ],
+      "slots": {
+        "evidence": {
+          "exact": "e-5",
+          "judgeRef": "쇼케이스 제출 폼과 음원유통 메타데이터 export",
+          "neutral": "해당 자료"
+        },
+        "platform": {
+          "exact": "첫 화면 구조",
+          "neutral": "플랫폼 노출 구조"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "fact_anchor"
+      ]
+    },
+    {
+      "id": "friend12:a:d-5:unlock:s3:01",
+      "legacySourceId": "d5.unlock.s3.a_intent_overread",
+      "party": "a",
+      "disputeId": "d-5",
+      "unlockedAtState": "S3",
+      "factText": "유리한 화면 반복을 보고 상대 의도를 실제보다 더 계산적으로 읽었다.",
+      "tags": [
+        "counter",
+        "uncertainty",
+        "self_justification"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "상대"
+        },
+        "screen": {
+          "exact": "유리한 화면 반복",
+          "neutral": "그 반복"
+        }
+      },
+      "stanceHints": [
+        "nuance",
+        "counter"
+      ]
+    },
+    {
+      "id": "friend12:a:d-5:unlock:s4:01",
+      "legacySourceId": "d5.unlock.s4.a_vanish_feeling",
+      "party": "a",
+      "disputeId": "d-5",
+      "unlockedAtState": "S4",
+      "factText": "상세 탭 뒤로 밀린 자기 이름을 보며 스스로 사라지는 감각을 강하게 느꼈다.",
+      "tags": [
+        "emotion",
+        "fear",
+        "identity"
+      ],
+      "slots": {
+        "platform": {
+          "exact": "상세 탭 뒤 표기",
+          "neutral": "뒤늦은 표기"
+        },
+        "speaker": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "hurt"
+      ]
+    },
+    {
+      "id": "friend12:a:d-5:unlock:s5:01",
+      "legacySourceId": "d5.unlock.s5.a_contextualized_fault",
+      "party": "a",
+      "disputeId": "d-5",
+      "unlockedAtState": "S5",
+      "factText": "상대 선택은 문제였지만 플랫폼 구조와 공동 크레딧 공백도 함께 배경이었다고 정리한다.",
+      "tags": [
+        "admission",
+        "context",
+        "responsibility"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "상대"
+        },
+        "work": {
+          "exact": "새벽역",
+          "judgeRef": "이 사건 작품",
+          "neutral": "그 작품"
+        }
+      },
+      "stanceHints": [
+        "balanced",
+        "admission"
+      ]
+    },
+    {
+      "id": "friend12:b:d-1:unlock:s2:01",
+      "legacySourceId": "d1.unlock.s2.b_artist_first_context",
+      "party": "b",
+      "disputeId": "d-1",
+      "unlockedAtState": "S2",
+      "factText": "스트리밍 첫 화면이 아티스트를 먼저 보이게 만든다는 구조를 알고 있었다.",
+      "tags": [
+        "context",
+        "institution",
+        "evidence"
+      ],
+      "slots": {
+        "evidence": {
+          "exact": "e-1",
+          "judgeRef": "스트리밍 카드·포스터·릴 썸네일 캡처 모음",
+          "neutral": "해당 자료"
+        },
+        "platform": {
+          "exact": "스트리밍 첫 화면",
+          "neutral": "첫 노출 구조"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "fact_anchor"
+      ]
+    },
+    {
+      "id": "friend12:b:d-1:unlock:s3:01",
+      "legacySourceId": "d1.unlock.s3.b_counter_collection",
+      "party": "b",
+      "disputeId": "d-1",
+      "unlockedAtState": "S3",
+      "factText": "상대 단독형 홍보에 반발해 자신도 유리한 화면과 로그를 더 모았다.",
+      "tags": [
+        "counter",
+        "motive",
+        "context"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "상대"
+        },
+        "speaker": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "nuance",
+        "counter"
+      ]
+    },
+    {
+      "id": "friend12:b:d-1:unlock:s4:01",
+      "legacySourceId": "d1.unlock.s4.b_log_erasure_fear",
+      "party": "b",
+      "disputeId": "d-1",
+      "unlockedAtState": "S4",
+      "factText": "캡션 한 줄에 몇 달 작업 로그가 밀릴까 두려워 상대 의도를 전부 독점으로 읽었다.",
+      "tags": [
+        "fear",
+        "emotion",
+        "identity"
+      ],
+      "slots": {
+        "speaker": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "본인"
+        },
+        "role": {
+          "exact": "몇 달 작업 로그",
+          "neutral": "자기 작업 흔적"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "hurt"
+      ]
+    },
+    {
+      "id": "friend12:b:d-1:unlock:s5:01",
+      "legacySourceId": "d1.unlock.s5.b_shared_blank_spot",
+      "party": "b",
+      "disputeId": "d-1",
+      "unlockedAtState": "S5",
+      "factText": "상대 단독 홍보는 문제였지만 그 판단에서 공동 크레딧 공백을 놓쳤다고 인정한다.",
+      "tags": [
+        "admission",
+        "context",
+        "responsibility"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "상대"
+        },
+        "work": {
+          "exact": "새벽역",
+          "judgeRef": "이 사건 작품",
+          "neutral": "그 작품"
+        }
+      },
+      "stanceHints": [
+        "balanced",
+        "admission"
+      ]
+    },
+    {
+      "id": "friend12:b:d-2:unlock:s2:01",
+      "legacySourceId": "d2.unlock.s2.b_voice_not_only",
+      "party": "b",
+      "disputeId": "d-2",
+      "unlockedAtState": "S2",
+      "factText": "편집 원본에는 상대의 재촬영 요청과 자막 수정이 후반까지 남아 있어 단순 voice 역할이 아니었다.",
+      "tags": [
+        "evidence",
+        "identity",
+        "context"
+      ],
+      "slots": {
+        "evidence": {
+          "exact": "e-4",
+          "judgeRef": "편집 프로젝트 파일과 촬영 큐시트",
+          "neutral": "해당 자료"
+        },
+        "counterparty": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "상대"
+        },
+        "role": {
+          "exact": "voice",
+          "neutral": "단순 voice 역할"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "fact_anchor"
+      ]
+    },
+    {
+      "id": "friend12:b:d-2:unlock:s3:01",
+      "legacySourceId": "d2.unlock.s3.b_retaliatory_framing",
+      "party": "b",
+      "disputeId": "d-2",
+      "unlockedAtState": "S3",
+      "factText": "상대 단독형 홍보에 밀리지 않으려 자신의 연출 로그를 과하게 앞세웠다.",
+      "tags": [
+        "motive",
+        "counter",
+        "relationship"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "상대"
+        },
+        "evidence": {
+          "exact": "e-6",
+          "judgeRef": "인스타·릴스 edit history와 크레딧 조율 단톡",
+          "neutral": "해당 자료"
+        }
+      },
+      "stanceHints": [
+        "blame",
+        "partial"
+      ]
+    },
+    {
+      "id": "friend12:b:d-2:unlock:s4:01",
+      "legacySourceId": "d2.unlock.s4.b_technician_fear",
+      "party": "b",
+      "disputeId": "d-2",
+      "unlockedAtState": "S4",
+      "factText": "편곡과 편집이 또 기술 지원처럼 남을까 두려워 '표시 형식' 문제로 축소했다.",
+      "tags": [
+        "fear",
+        "emotion",
+        "shame"
+      ],
+      "slots": {
+        "role": {
+          "exact": "편곡·편집",
+          "neutral": "기술 지원"
+        },
+        "speaker": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "shame"
+      ]
+    },
+    {
+      "id": "friend12:b:d-2:unlock:s5:01",
+      "legacySourceId": "d2.unlock.s5.b_omission_admission",
+      "party": "b",
+      "disputeId": "d-2",
+      "unlockedAtState": "S5",
+      "factText": "릴과 메일에서 상대를 보조 인력처럼 보이게 한 선택이 자신의 책임이었다고 인정한다.",
+      "tags": [
+        "admission",
+        "harm",
+        "responsibility"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "상대"
+        },
+        "platform": {
+          "exact": "릴·메일",
+          "neutral": "포트폴리오 채널"
+        }
+      },
+      "stanceHints": [
+        "confession",
+        "admission"
+      ]
+    },
+    {
+      "id": "friend12:b:d-3:unlock:s2:01",
+      "legacySourceId": "d3.unlock.s2.b_main_tab_scope",
+      "party": "b",
+      "disputeId": "d-3",
+      "unlockedAtState": "S2",
+      "factText": "video main 표기는 영상 파트 책임자 의미였지 작품 전체 소유권 표시는 아니었다.",
+      "tags": [
+        "context",
+        "rule",
+        "identity"
+      ],
+      "slots": {
+        "evidence": {
+          "exact": "e-2",
+          "judgeRef": "공유 노션 기획안과 크레딧 메모",
+          "neutral": "해당 자료"
+        },
+        "role": {
+          "exact": "video main",
+          "neutral": "파트 책임자 표기"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "fact_anchor"
+      ]
+    },
+    {
+      "id": "friend12:b:d-3:unlock:s3:01",
+      "legacySourceId": "d3.unlock.s3.b_cross_revision",
+      "party": "b",
+      "disputeId": "d-3",
+      "unlockedAtState": "S3",
+      "factText": "세션과 편집 프로젝트에는 수빈 수정과 자신의 재구성이 교차돼 있었다.",
+      "tags": [
+        "evidence",
+        "timeline",
+        "context"
+      ],
+      "slots": {
+        "evidenceA": {
+          "exact": "e-3",
+          "judgeRef": "DAW 세션 파일과 가사·멜로디 수정 이력",
+          "neutral": "해당 자료"
+        },
+        "evidenceB": {
+          "exact": "e-4",
+          "judgeRef": "편집 프로젝트 파일과 촬영 큐시트",
+          "neutral": "해당 자료"
+        },
+        "counterparty": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "상대"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "nuance"
+      ]
+    },
+    {
+      "id": "friend12:b:d-3:unlock:s4:01",
+      "legacySourceId": "d3.unlock.s4.b_maker_narrative",
+      "party": "b",
+      "disputeId": "d-3",
+      "unlockedAtState": "S4",
+      "factText": "기술 지원자로 축소될까 두려워 공동 창작 사실을 알면서도 '실제로 만든 사람' 서사를 강화했다.",
+      "tags": [
+        "fear",
+        "motive",
+        "shame"
+      ],
+      "slots": {
+        "role": {
+          "exact": "실제로 만든 사람",
+          "neutral": "창작자 서사"
+        },
+        "speaker": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "partial"
+      ]
+    },
+    {
+      "id": "friend12:b:d-3:unlock:s5:01",
+      "legacySourceId": "d3.unlock.s5.b_joint_work_admission",
+      "party": "b",
+      "disputeId": "d-3",
+      "unlockedAtState": "S5",
+      "factText": "최종작은 서로의 수정이 떼어낼 수 없을 만큼 얽힌 공동 창작물이었다.",
+      "tags": [
+        "admission",
+        "identity",
+        "responsibility"
+      ],
+      "slots": {
+        "work": {
+          "exact": "새벽역",
+          "judgeRef": "이 사건 작품",
+          "neutral": "그 작품"
+        },
+        "counterparty": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "상대"
+        }
+      },
+      "stanceHints": [
+        "confession",
+        "admission"
+      ]
+    },
+    {
+      "id": "friend12:b:d-4:unlock:s2:01",
+      "legacySourceId": "d4.unlock.s2.b_sheet_left_blank",
+      "party": "b",
+      "disputeId": "d-4",
+      "unlockedAtState": "S2",
+      "factText": "자신도 릴과 메일 문구를 먼저 챙기느라 공동 크레딧 시트를 끝내 비워 뒀다.",
+      "tags": [
+        "act",
+        "rule",
+        "timeline"
+      ],
+      "slots": {
+        "evidence": {
+          "exact": "e-6",
+          "judgeRef": "인스타·릴스 edit history와 크레딧 조율 단톡",
+          "neutral": "해당 자료"
+        },
+        "speaker": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "admission"
+      ]
+    },
+    {
+      "id": "friend12:b:d-4:unlock:s3:01",
+      "legacySourceId": "d4.unlock.s3.b_priority_shift",
+      "party": "b",
+      "disputeId": "d-4",
+      "unlockedAtState": "S3",
+      "factText": "이전 합의를 알면서도 공동 시트보다 자기 포트폴리오 문구를 우선했다.",
+      "tags": [
+        "responsibility",
+        "legacy_sentence",
+        "context"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "상대"
+        },
+        "speaker": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "responsibility",
+        "admission"
+      ]
+    },
+    {
+      "id": "friend12:b:d-4:unlock:s4:01",
+      "legacySourceId": "d4.unlock.s4.b_relationship_avoidance",
+      "party": "b",
+      "disputeId": "d-4",
+      "unlockedAtState": "S4",
+      "factText": "친구 사이에 세부 몫을 문서로 잠그면 더 큰 싸움이 날까 봐 회피했다.",
+      "tags": [
+        "fear",
+        "relationship",
+        "emotion"
+      ],
+      "slots": {
+        "counterparty": {
+          "fullName": "윤수빈",
+          "judgeRef": "윤수빈",
+          "neutral": "상대"
+        },
+        "speaker": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "fear"
+      ]
+    },
+    {
+      "id": "friend12:b:d-4:unlock:s5:01",
+      "legacySourceId": "d4.unlock.s5.b_blank_enabled_portfolio",
+      "party": "b",
+      "disputeId": "d-4",
+      "unlockedAtState": "S5",
+      "factText": "그 공백이 자신의 포트폴리오 과장을 키운 틈이었다고 인정한다.",
+      "tags": [
+        "admission",
+        "harm",
+        "responsibility"
+      ],
+      "slots": {
+        "work": {
+          "exact": "새벽역",
+          "judgeRef": "이 사건 작품",
+          "neutral": "그 작품"
+        },
+        "speaker": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "confession",
+        "responsibility"
+      ]
+    },
+    {
+      "id": "friend12:b:d-5:unlock:s2:01",
+      "legacySourceId": "d5.unlock.s2.b_crop_reuse",
+      "party": "b",
+      "disputeId": "d-5",
+      "unlockedAtState": "S2",
+      "factText": "자기 이름이 먼저 보이는 화면과 포스터 크롭을 반복 사용해 공개 인상을 굳혔다.",
+      "tags": [
+        "act",
+        "identity",
+        "timeline"
+      ],
+      "slots": {
+        "screen": {
+          "exact": "자기 이름이 먼저 보이는 화면·포스터 크롭",
+          "neutral": "유리한 화면"
+        },
+        "platform": {
+          "exact": "포트폴리오·소개 메일",
+          "neutral": "자기 홍보 채널"
+        }
+      },
+      "stanceHints": [
+        "partial",
+        "fact_anchor"
+      ]
+    },
+    {
+      "id": "friend12:b:d-5:unlock:s3:01",
+      "legacySourceId": "d5.unlock.s3.b_knew_joint_metadata",
+      "party": "b",
+      "disputeId": "d-5",
+      "unlockedAtState": "S3",
+      "factText": "공동 메타데이터를 본 뒤에도 그 화면만 골랐다는 점이 선택성을 보여 준다.",
+      "tags": [
+        "evidence",
+        "context",
+        "responsibility"
+      ],
+      "slots": {
+        "evidence": {
+          "exact": "e-5",
+          "judgeRef": "쇼케이스 제출 폼과 음원유통 메타데이터 export",
+          "neutral": "해당 자료"
+        },
+        "screen": {
+          "exact": "그 화면만 골라 사용한 선택",
+          "neutral": "선택 화면"
+        }
+      },
+      "stanceHints": [
+        "blame",
+        "partial"
+      ]
+    },
+    {
+      "id": "friend12:b:d-5:unlock:s4:01",
+      "legacySourceId": "d5.unlock.s4.b_portfolio_panic",
+      "party": "b",
+      "disputeId": "d-5",
+      "unlockedAtState": "S4",
+      "factText": "자기 작업이 한 화면에서 사라질까 두려워 가장 유리한 컷에 집착했다.",
+      "tags": [
+        "fear",
+        "emotion",
+        "identity"
+      ],
+      "slots": {
+        "role": {
+          "exact": "자기 작업 성과",
+          "neutral": "자기 작업"
+        },
+        "speaker": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "emotional",
+        "shame"
+      ]
+    },
+    {
+      "id": "friend12:b:d-5:unlock:s5:01",
+      "legacySourceId": "d5.unlock.s5.b_single_author_impression",
+      "party": "b",
+      "disputeId": "d-5",
+      "unlockedAtState": "S5",
+      "factText": "그 선택이 자신을 단독 창작자처럼 보이게 했다고 인정한다.",
+      "tags": [
+        "admission",
+        "harm",
+        "responsibility"
+      ],
+      "slots": {
+        "work": {
+          "exact": "새벽역",
+          "judgeRef": "이 사건 작품",
+          "neutral": "그 작품"
+        },
+        "speaker": {
+          "fullName": "백재윤",
+          "judgeRef": "백재윤",
+          "neutral": "본인"
+        }
+      },
+      "stanceHints": [
+        "confession",
+        "admission"
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-3",
+      "d-4"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "credit_architect"
+    ]
+  }
+}

@@ -8,6 +8,8 @@ import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3Game
 import { friend01V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-batch/friend-01/friend-01-v2-atoms'
 import { friend01TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-batch/friend-01/friend-01-tells-beats'
 import { friend01V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-batch/friend-01/friend-01-v3-game-loop-data'
+import { registerStructureV2 } from '../../engine/v2DataLoader'
+import structureV2 from './friend-01-structure-v2.json'
 
 export function registerFriend01Data(): void {
   console.log('[Renewal] friend-01 리뉴얼 데이터 등록 시작')
@@ -21,5 +23,8 @@ export function registerFriend01Data(): void {
 
   registerBeatScripts('friend-01', (friend01TellsBeats as any).beatScripts)
 
-  console.log('[Renewal] friend-01 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback')
+
+  // V2 Structure 등록
+  registerStructureV2(structureV2 as any)
+  console.log('[Renewal] friend-01 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback + StructureV2')
 }

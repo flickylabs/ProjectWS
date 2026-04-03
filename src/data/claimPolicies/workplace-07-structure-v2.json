@@ -1,0 +1,1223 @@
+{
+  "caseId": "workplace-07",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "제보자 색출과 선행 낙인",
+      "truth": true,
+      "truthDescription": "포렌식 결과가 나오기 전 태욱은 세린을 유력 작성자로 지목하고, 리뷰 미팅에서 배제한 뒤 평가란에 '협업 부적합' 코멘트를 남겼다.",
+      "weight": "high",
+      "quadrant": "both_know",
+      "legitimacyIssue": false,
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "익명 게시글",
+        "특정 제보자",
+        "보호적 분리",
+        "리뷰 제외",
+        "협업 부적합",
+        "팀 미팅 메모"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "유력 작성자 추정은 했지만 공식 지목이나 낙인은 아니었습니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-07:a:d-1:denial:0",
+            "workplace-07:a:d-1:self_justification:0",
+            "workplace-07:a:d-1:uncertainty:0",
+            "workplace-07:a:d-1:self_justification:1",
+            "workplace-07:a:d-1:admission:0",
+            "workplace-07:a:d-1:motive:0",
+            "workplace-07:b:d-1:act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "익명 글로 제가 증거인멸을 지시한 관리자처럼 굳어질까 두려웠습니다.",
+          "lockedSummary": "아직 이 쟁점의 동기층은 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-07:a:d-1:motive:0",
+            "workplace-07:a:d-1:act:0",
+            "workplace-07:a:d-1:counter:0",
+            "workplace-07:a:d-1:admission:0",
+            "workplace-07:b:d-1:harm:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "포렌식 전에 한세린 씨를 문제 인원처럼 다루고 역할에서 밀어낸 건 제 잘못입니다.",
+          "lockedSummary": "핵심 관계와 책임 고리는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:responsibility_named"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-07:a:d-1:fear:0",
+            "workplace-07:a:d-1:motive:1",
+            "workplace-07:a:d-1:admission:1",
+            "workplace-07:a:d-1:relationship:0",
+            "workplace-07:b:d-1:fear:0",
+            "workplace-07:b:d-1:responsibility:0",
+            "workplace-07:b:d-1:admission:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "judgmentStatement": "태욱은 세린을 유력 작성자로 지목했다.",
+      "mediationLink": "제보절차보호",
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      }
+    },
+    {
+      "id": "d-2",
+      "name": "익명 폭로와 편집 캡처 유포",
+      "truth": true,
+      "truthDescription": "세린은 '증거인멸 지시' 취지의 익명 글을 올린 뒤 편집 캡처를 멘토·동료 7명에게 별도로 퍼뜨려 여론을 선점했다.",
+      "weight": "high",
+      "quadrant": "b_only",
+      "legitimacyIssue": true,
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "익명 폭로",
+        "편집 캡처",
+        "멘토 전송",
+        "동료 7명",
+        "익명 게시판",
+        "확산"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "제가 올린 건 경고였고, 장태욱 씨를 망가뜨리려는 계획적인 유포는 아니었어요.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-07:a:d-2:act:0",
+            "workplace-07:a:d-2:rule:0",
+            "workplace-07:a:d-2:counter:0",
+            "workplace-07:b:d-2:denial:0",
+            "workplace-07:b:d-2:self_justification:0",
+            "workplace-07:b:d-2:admission:0",
+            "workplace-07:b:d-2:motive:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "허위 제보자라는 낙인이 먼저 찍힐까 봐 공개적으로라도 남기고 싶었어요.",
+          "lockedSummary": "아직 이 쟁점의 동기층은 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-07:a:d-2:counter:1",
+            "workplace-07:a:d-2:context:0",
+            "workplace-07:b:d-2:motive:0",
+            "workplace-07:b:d-2:counter:0",
+            "workplace-07:b:d-2:admission:0",
+            "workplace-07:b:d-2:act:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "장태욱 씨가 현재 증거인멸을 지시한 것처럼 보이게 익명 글과 캡처를 퍼뜨린 건 제 책임이에요.",
+          "lockedSummary": "핵심 관계와 책임 고리는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:breach_named"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-07:a:d-2:fear:0",
+            "workplace-07:a:d-2:emotion:0",
+            "workplace-07:a:d-2:responsibility:0",
+            "workplace-07:a:d-2:legacy_sentence:0",
+            "workplace-07:b:d-2:fear:0",
+            "workplace-07:b:d-2:self_justification:2",
+            "workplace-07:b:d-2:admission:1",
+            "workplace-07:b:d-2:harm:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "judgmentStatement": "세린은 익명 글을 올리고 편집 캡처를 유포했다.",
+      "mediationLink": "증거진정성검증",
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      }
+    },
+    {
+      "id": "d-3",
+      "name": "캡처의 증거인멸 지시 진위",
+      "truth": false,
+      "truthDescription": "핵심 캡처는 2년 전 등급 축소 채팅 문장에 현재 프로젝트 채널 헤더를 합성한 편집본이다. 태욱이 이번 사건에서 삭제를 지시한 원본은 존재하지 않는다.",
+      "weight": "high",
+      "quadrant": "b_only",
+      "legitimacyIssue": false,
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "증거인멸 지시",
+        "현재 채널 헤더",
+        "2년 전 채팅",
+        "메시지 해시",
+        "맥락 복원",
+        "합성 캡처"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "원문 그대로라고만 말하긴 어렵지만, 저는 그걸 맥락을 붙인 자료라고 생각했어요.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-07:a:d-3:denial:0",
+            "workplace-07:a:d-3:evidence:0",
+            "workplace-07:b:d-3:denial:0",
+            "workplace-07:b:d-3:self_justification:0",
+            "workplace-07:b:d-3:uncertainty:0",
+            "workplace-07:b:d-3:admission:0",
+            "workplace-07:b:d-3:context:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "솔직히 저는 제 편집을 '합성'이라고 부르면 너무 부끄러워서 계속 '맥락 복원'이라고만 했어요.",
+          "lockedSummary": "아직 이 쟁점의 동기층은 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-07:a:d-3:counter:0",
+            "workplace-07:a:d-3:context:0",
+            "workplace-07:b:d-3:context:0",
+            "workplace-07:b:d-3:counter:0",
+            "workplace-07:b:d-3:admission:0",
+            "workplace-07:b:d-3:evidence:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "그 캡처는 장태욱 씨의 현 시점 증거인멸 지시 원본이 아니었어요.",
+          "lockedSummary": "핵심 관계와 책임 고리는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:motive:misbelief_cracked"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-07:a:d-3:fear:0",
+            "workplace-07:a:d-3:emotion:0",
+            "workplace-07:a:d-3:admission:0",
+            "workplace-07:a:d-3:responsibility:0",
+            "workplace-07:b:d-3:shame:0",
+            "workplace-07:b:d-3:self_justification:2",
+            "workplace-07:b:d-3:admission:1",
+            "workplace-07:b:d-3:responsibility:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "requiredEvidence": [
+        "e-2",
+        "e-3",
+        "e-6"
+      ],
+      "judgmentStatement": "태욱은 삭제 지시한 원본이 없다.",
+      "mediationLink": "평판복구",
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "knows",
+          "b": "knows"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "외형상 그럴듯해 보이는 오해",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "방어적 확신이 붙는 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "잘못된 해석이 고착되는 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "증거가 들어오며 균열이 생기는 단계",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "오해가 해소되고 책임만 남는 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "현재 채널 헤더와 본문 흐름이 자연스럽게 합성된 편집 흔적",
+          "원본 대비 타임스탬프가 잘려 전후 맥락이 사라진 캡처",
+          "편집 PC와 동일 세션에서 작업된 로그가 남아 있는 정황"
+        ],
+        "truthExitEvidenceIds": [
+          "e-3",
+          "e-6"
+        ],
+        "clarifyOutcomeLabel": "오해가 해소되고 책임만 남는 단계"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "과거 제보 축소와 평가 개입",
+      "truth": true,
+      "truthDescription": "2년 전 세린의 품질 우려를 C등급으로 내리고 공개를 만류한 태욱은, 이번 익명 글 뒤에도 세린 평가란에 불이익성 코멘트를 남겼다.",
+      "weight": "high",
+      "quadrant": "a_only",
+      "legitimacyIssue": false,
+      "disputeKind": "sub_truth",
+      "disputeAliases": [
+        "2년 전 회의록",
+        "등급 표현 낮추자",
+        "외부 공포",
+        "C등급",
+        "후속 메일",
+        "과거 제보 축소"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "제가 말한 건 외부 공포를 막기 위한 문구 조정이었지, 문제를 없애자는 뜻은 아니었습니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-07:a:d-4:denial:0",
+            "workplace-07:a:d-4:self_justification:0",
+            "workplace-07:a:d-4:uncertainty:0",
+            "workplace-07:a:d-4:admission:0",
+            "workplace-07:a:d-4:motive:0",
+            "workplace-07:b:d-4:act:0",
+            "workplace-07:b:d-4:context:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "솔직히 말씀드리면 고객 반응과 출하 문제가 더 무서워서 제보를 눌렀습니다.",
+          "lockedSummary": "아직 이 쟁점의 동기층은 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-07:a:d-4:motive:0",
+            "workplace-07:a:d-4:counter:0",
+            "workplace-07:a:d-4:admission:0",
+            "workplace-07:a:d-4:act:0",
+            "workplace-07:b:d-4:legacy_sentence:0",
+            "workplace-07:b:d-4:responsibility:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "2년 전 제보 축소와 이번 평가 개입이 이어진 건 제 잘못입니다.",
+          "lockedSummary": "핵심 관계와 책임 고리는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:retaliation_named"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-07:a:d-4:fear:0",
+            "workplace-07:a:d-4:motive:1",
+            "workplace-07:a:d-4:admission:1",
+            "workplace-07:a:d-4:legacy_sentence:0",
+            "workplace-07:b:d-4:fear:0",
+            "workplace-07:b:d-4:emotion:0",
+            "workplace-07:b:d-4:responsibility:1",
+            "workplace-07:b:d-4:admission:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "judgmentStatement": "태욱은 세린 평가에 개입했다.",
+      "mediationLink": "과거사정리",
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      }
+    },
+    {
+      "id": "d-5",
+      "name": "미종결 사건의 쌍방 재활용",
+      "truth": true,
+      "truthDescription": "태욱은 과거를 떼어 세린을 과장된 사람으로 몰고, 세린은 실제 축소 경험을 허위 캡처에 붙여 명예훼손전을 키웠다. 쌍방이 미종결 사건을 무기로 재활용했다.",
+      "weight": "medium",
+      "quadrant": "both_know",
+      "legitimacyIssue": false,
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "또 과장한다",
+        "현재 건은 현재 건",
+        "미종결 사건",
+        "과거 재소환",
+        "평판 전쟁",
+        "과거 재활용"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "과거 이야기를 먼저 꺼낸 건 맞지만, 저는 왜 그 글을 올렸는지 설명하려고 한 거였어요.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "workplace-07:a:d-5:denial:0",
+            "workplace-07:a:d-5:self_justification:0",
+            "workplace-07:a:d-5:uncertainty:0",
+            "workplace-07:a:d-5:admission:0",
+            "workplace-07:a:d-5:harm:0",
+            "workplace-07:b:d-5:denial:0",
+            "workplace-07:b:d-5:self_justification:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "그때도 묻혔다는 기억 때문에 저는 핫라인보다 게시판이 더 믿겼어요.",
+          "lockedSummary": "아직 이 쟁점의 동기층은 열리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-07:a:d-5:admission:0",
+            "workplace-07:a:d-5:counter:0",
+            "workplace-07:a:d-5:harm:0",
+            "workplace-07:a:d-5:act:0",
+            "workplace-07:b:d-5:admission:0",
+            "workplace-07:b:d-5:fear:0",
+            "workplace-07:b:d-5:act:0",
+            "workplace-07:b:d-5:counter:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "과거의 실제 상처와 현재의 허위 편집 증거를 제가 한 덩어리로 묶어 명예전을 키운 건 제 책임이에요.",
+          "lockedSummary": "핵심 관계와 책임 고리는 아직 닫혀 있습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:legacy_named"
+            ]
+          },
+          "revealAtomIds": [
+            "workplace-07:a:d-5:fear:0",
+            "workplace-07:a:d-5:emotion:0",
+            "workplace-07:a:d-5:admission:1",
+            "workplace-07:a:d-5:relationship:0",
+            "workplace-07:b:d-5:fear:1",
+            "workplace-07:b:d-5:emotion:0",
+            "workplace-07:b:d-5:admission:1",
+            "workplace-07:b:d-5:context:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "judgmentStatement": "태욱과 세린은 사건을 재활용했다.",
+      "mediationLink": "과거사정리",
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-4:d-1:supports",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-1",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 13,
+        "grantFlag": "d-1:surface:retaliation_pattern_visible"
+      },
+      "uiLabel": "과거 억압의 반복"
+    },
+    {
+      "id": "link:d-3:d-2:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-2",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "M3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "weakenCounterBy": 12,
+        "grantFlag": "d-2:motive:edited_scope_exposed"
+      },
+      "uiLabel": "편집본 붕괴"
+    },
+    {
+      "id": "link:d-5:d-1:retaliation",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-1",
+      "type": "retaliation",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "retaliationBonus": 10,
+        "grantFlag": "d-1:motive:legacy_fear_triggered"
+      },
+      "uiLabel": "재소환된 과거"
+    },
+    {
+      "id": "link:d-1:d-5:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-5:surface:protective_split_visible"
+      },
+      "uiLabel": "보호적 분리의 꼬리"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "익명 게시글 보존본과 태욱의 팀 미팅 메모",
+      "description": "익명 글 원본·댓글 타임라인과, 같은 날 태욱이 '안에서 사람 죽이는 글'이라 말한 팀 미팅 메모.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "화면 캡처 외에 보존본, 댓글 타임라인, 팀 미팅 메모를 교차 확인해야 한다.",
+        "check_metadata": "글 게시 1시간 52분 뒤 태욱이 '작성자가 누군지 감이 온다'고 발언한 기록이 남아 있다.",
+        "restore_context": "이름은 안 불렀지만 '최근 결함 보고 올린 사람'이라는 표현이 팀 안에선 세린 지목으로 읽혔다.",
+        "verify_source": "게시판 보존 서버 타임스탬프와 회의록 작성 시각이 동일 순서로 일치한다.",
+        "check_edits": "기관 보존본 — 사후 편집 흔적 없음.",
+        "question_acquisition": "내부 게시판·회의록 모두 조사 범위 내 적법 확보."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "장태욱에게: \"제보자 색출과 선행 낙인\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 장태욱의 \"제보자 색출과 선행 낙인\" 쟁점과 관련된다. 장태욱은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "한세린에게: \"미종결 사건의 쌍방 재활용\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 한세린의 \"미종결 사건의 쌍방 재활용\" 쟁점과 관련된다. 한세린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "motive",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "익명 게시글 보존본과 태욱의 팀 미팅 메모의 해석이 d-1 전개를 가장 크게 바꾸는 창입니다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "익명 게시글 보존본과 태욱의 팀 미팅 메모의 해석이 d-5 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "세린이 제출한 메신저 스크린샷 묶음",
+      "description": "'지워, 밖으로 나가기 전에'가 찍힌 캡처 묶음. 타임스탬프와 채널명이 부분 절삭돼 시기를 특정할 수 없다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "이미지 파일뿐 아니라 전후 연속 캡처, 채팅 내보내기 원문, 저장 경로를 함께 봐야 한다.",
+        "check_metadata": "본문 영역 72dpi, 헤더 영역 96dpi — 해상도·압축 이력이 달라 단일 캡처가 아닐 가능성이 높다.",
+        "restore_context": "단독으론 증거인멸 지시처럼 보이지만, 타임스탬프·대화방 정보가 단절돼 시기를 확정할 수 없다.",
+        "verify_source": "세린 단말 생성 파일명과 업로드 시각이 익명 글 게시 23분 전과 맞물린다.",
+        "check_edits": "문장 변조는 없으나, 헤더 합성과 타임스탬프 절삭 흔적이 3곳에서 관찰된다.",
+        "question_acquisition": "개인 단말 자료 — 조사 목적 외 재배포 제한 필요."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S3",
+            "multiplier": 1.4,
+            "note": "세린이 제출한 메신저 스크린샷 묶음의 해석이 d-2 전개를 가장 크게 바꾸는 창입니다."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S3",
+            "multiplier": 1.4,
+            "note": "세린이 제출한 메신저 스크린샷 묶음의 해석이 d-3 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "메신저 원본 export와 메시지 해시 비교표",
+      "description": "원본 export와 해시 비교표. 현재 채널 헤더와 2년 전 메시지가 섞인 합성 구조를 수치로 보여 준다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "캡처와 대조할 원본 대화 export, 메시지 ID, 해시 비교표를 모두 열어야 한다.",
+        "check_metadata": "문제 문장의 메시지 ID는 2년 전 채팅에 속하며, 현재 채널 헤더와는 ID가 전혀 연결되지 않는다.",
+        "restore_context": "현재 시점 삭제 지시 원문은 미발견. 편집본이 2년 전 문장을 현재 사건으로 재배치한 구조가 드러난다.",
+        "verify_source": "플랫폼 보존 export와 포렌식 비교표가 동일 해시 결론 — 합성 확인.",
+        "check_edits": "플랫폼 원본 export — 사후 편집 흔적 없음.",
+        "question_acquisition": "업무 메신저 보존자료 — 조사 범위 내 적법 활용 가능."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "메신저 원본 export와 메시지 해시 비교표의 해석이 d-3 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "2년 전 결함등급 하향 회의록과 후속 메일",
+      "description": "2년 전 태욱이 세린의 품질 우려를 C등급으로 돌리고 공개를 만류한 회의록·메일 체인.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "회의록 확정본과 후속 메일 전체 체인을 함께 봐야 과거 축소의 강도를 판단할 수 있다.",
+        "check_metadata": "세린 원안 제출 14분 뒤 태욱이 '외부 공포를 키우지 말자'며 등급 하향을 지시한 기록이 연속으로 남아 있다.",
+        "restore_context": "현재 편집과 별개로, 태욱이 실제로 제기를 축소하고 공개를 만류한 과거 패턴이 확인된다.",
+        "verify_source": "품질문서 저장소와 메일 아카이브가 동일 회의 ID·첨부 파일을 가리킨다.",
+        "check_edits": "보존 문서 — 사후 편집 흔적 없음.",
+        "question_acquisition": "과거 품질사건 자료지만 재조사 목적 열람 범위 내."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "장태욱에게: \"과거 제보 축소와 평가 개입\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 장태욱의 \"과거 제보 축소와 평가 개입\" 쟁점과 관련된다. 장태욱은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "한세린에게: \"미종결 사건의 쌍방 재활용\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 한세린의 \"미종결 사건의 쌍방 재활용\" 쟁점과 관련된다. 한세린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "motive",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "2년 전 결함등급 하향 회의록과 후속 메일의 해석이 d-4 전개를 가장 크게 바꾸는 창입니다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "2년 전 결함등급 하향 회의록과 후속 메일의 해석이 d-5 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "윤리경영 조사 접수기록과 태욱의 인사 개입 로그",
+      "description": "익명 글 게시 48시간 내 태욱이 세린을 리뷰 미팅에서 빼고 평가란에 부정 코멘트를 남긴 HR 로그.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약본이 아니라 초기 면담 메모, 역할 재배정 기록, 평가 입력 로그를 모두 확인해야 한다.",
+        "check_metadata": "포렌식 결과 전에 태욱 계정에서 세린 리뷰 제외·부정 코멘트가 먼저 입력됐다.",
+        "restore_context": "제보자 보호가 유효한 시점에 태욱이 색출과 역할 배제를 동시에 진행한 흐름이 드러난다.",
+        "verify_source": "윤리경영 시스템과 HR 평가 로그 타임스탬프 일치.",
+        "check_edits": "원본 로그 — 사후 수정 전 입력 단계까지 추적 가능.",
+        "question_acquisition": "인사·조사 자료 — 분쟁 해결 목적 외 공개 제한."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "motive",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "윤리경영 조사 접수기록과 태욱의 인사 개입 로그의 해석이 d-1 전개를 가장 크게 바꾸는 창입니다."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "윤리경영 조사 접수기록과 태욱의 인사 개입 로그의 해석이 d-4 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "디지털포렌식 레이어 분석 메모와 편집PC 로그",
+      "description": "세린 노트북 포렌식 — 과거 채팅 이미지와 현재 채널 헤더가 같은 편집 세션에서 합쳐진 레이어 흔적 정리.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2",
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "결과물뿐 아니라 최근 파일목록, 임시폴더, 레이어 캐시를 같이 봐야 한다.",
+        "check_metadata": "게시 30분 전 세린 노트북에서 과거 채팅 이미지와 현재 헤더가 같은 편집 세션에 열린 기록이 있다.",
+        "restore_context": "완전한 허구는 아니지만, 과거 실제 압박 문장을 현재 증거로 재조립한 정황이 선명하다.",
+        "verify_source": "포렌식 메모와 작업PC 이벤트 로그가 동일 파일 해시·세션 타임라인을 가리킨다.",
+        "check_edits": "기관 포렌식 원본 — 편집 과정 자체가 증거로 보존돼 있다.",
+        "question_acquisition": "디지털 포렌식 자료 — 접근 엄격 제한, 조사 목적 사용은 적법."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "장태욱에게: \"미종결 사건의 쌍방 재활용\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 장태욱의 \"미종결 사건의 쌍방 재활용\" 쟁점과 관련된다. 장태욱은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "한세린에게: \"캡처의 증거인멸 지시 진위\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 한세린의 \"캡처의 증거인멸 지시 진위\" 쟁점과 관련된다. 한세린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "motive",
+          "emotion"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "디지털포렌식 레이어 분석 메모와 편집PC 로그의 해석이 d-3 전개를 가장 크게 바꾸는 창입니다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "디지털포렌식 레이어 분석 메모와 편집PC 로그의 해석이 d-5 전개를 가장 크게 바꾸는 창입니다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:credit_identity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "workplace-07:a:d-1:admission:0",
+          "workplace-07:a:d-1:motive:0",
+          "workplace-07:a:d-1:act:0",
+          "workplace-07:a:d-1:counter:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:motive_gap",
+      "intentTag": "motive_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "workplace-07:a:d-1:fear:0",
+          "workplace-07:a:d-1:motive:1"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:procedure_scope",
+      "intentTag": "legality_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "workplace-07:b:d-2:admission:0",
+          "workplace-07:b:d-2:motive:0",
+          "workplace-07:b:d-2:admission:1",
+          "workplace-07:b:d-2:harm:0"
+        ],
+        "preferredAngleTags": [
+          "legality",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:origin_or_authenticity",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "workplace-07:b:d-3:counter:0",
+          "workplace-07:b:d-3:evidence:0",
+          "workplace-07:b:d-3:shame:0",
+          "workplace-07:b:d-3:self_justification:2"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-4:preemptive_note",
+      "intentTag": "responsibility_probe",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "workplace-07:a:d-4:admission:1",
+          "workplace-07:a:d-4:legacy_sentence:0",
+          "workplace-07:a:d-4:admission:0"
+        ],
+        "preferredAngleTags": [
+          "responsibility",
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:legacy_pattern",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "workplace-07:b:d-5:admission:0",
+          "workplace-07:b:d-5:fear:0",
+          "workplace-07:b:d-5:act:0",
+          "workplace-07:b:d-5:counter:0"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:repair_emotion",
+      "intentTag": "emotion_probe",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "workplace-07:b:d-5:act:0",
+          "workplace-07:b:d-5:counter:0",
+          "workplace-07:b:d-5:fear:1",
+          "workplace-07:b:d-5:emotion:0"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 그 질문에 바로 답할 만큼 정리가 되지 않았습니다.",
+        "그 부분은 먼저 앞선 사실관계를 정리해야 말씀드릴 수 있습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  },
+  "proposedUnlockAtoms": []
+}

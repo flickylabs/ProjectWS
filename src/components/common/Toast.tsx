@@ -66,24 +66,31 @@ export default function ToastContainer() {
 
   return (
     <>
-      {/* 일반 토스트 */}
+      {/* 일반 토스트 — 화면 중앙 */}
       {toasts.length > 0 && (
-        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-[9999] flex flex-col gap-2 max-w-sm w-full px-4 pointer-events-none">
-          {toasts.map((t) => (
-            <div
-              key={t.id}
-              onClick={() => dismissToast(t.id)}
-              className={`pointer-events-auto cursor-pointer px-4 py-2.5 rounded-xl text-xs font-medium shadow-lg animate-slide-up flex items-center gap-2 ${
-                t.type === 'error' ? 'bg-red-900/90 text-red-200 border border-red-700/50' :
-                t.type === 'warn' ? 'bg-amber-900/90 text-amber-200 border border-amber-700/50' :
-                'bg-gray-800/90 text-gray-200 border border-gray-700/50'
-              }`}
-            >
-              <Emoji char={t.type === 'error' ? '⚠️' : t.type === 'warn' ? '💡' : '✅'} size={14} />
-              <span className="flex-1">{t.text}</span>
-              <span className="text-gray-500 text-[10px] ml-1">✕</span>
-            </div>
-          ))}
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none px-6">
+          <div className="flex flex-col gap-2 w-full max-w-xs">
+            {toasts.map((t) => {
+              const colors = t.type === 'error'
+                ? 'bg-red-950/95 text-red-200 border-red-700/50 shadow-red-900/30'
+                : t.type === 'warn'
+                  ? 'bg-amber-950/95 text-amber-200 border-amber-700/50 shadow-amber-900/30'
+                  : t.type === 'success'
+                    ? 'bg-emerald-950/95 text-emerald-200 border-emerald-700/50 shadow-emerald-900/30'
+                    : 'bg-gray-900/95 text-gray-200 border-gray-700/50 shadow-black/30'
+              const icon = t.type === 'error' ? '⚠️' : t.type === 'warn' ? '💡' : t.type === 'success' ? '✅' : 'ℹ️'
+              return (
+                <div
+                  key={t.id}
+                  onClick={() => dismissToast(t.id)}
+                  className={`pointer-events-auto cursor-pointer px-5 py-3.5 rounded-2xl text-sm font-medium shadow-xl border backdrop-blur-sm animate-scale-in flex items-center gap-3 ${colors}`}
+                >
+                  <Emoji char={icon} size={20} />
+                  <span className="flex-1 leading-snug">{t.text}</span>
+                </div>
+              )
+            })}
+          </div>
         </div>
       )}
 

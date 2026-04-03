@@ -1,0 +1,1172 @@
+{
+  "caseId": "spouse-12",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "재우의 확인 없는 선제 전파",
+      "truth": true,
+      "truthDescription": "재우는 세아 확인 9분 전에 세 채널로 캡처를 돌리며 아마 세아가 맞다고 반복했다. 위조 가능성 검토 없이 2023년 확인 전 전달 금지 합의를 정면으로 어겼다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 15,
+        "b": 85
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "평판복구",
+      "legitimacyIssue": true,
+      "judgmentStatement": "재우는 세아 확인 전에 전파했다.",
+      "caseId": "spouse-12",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "확인 9분 전",
+        "운영진 단톡",
+        "가족 단톡",
+        "직장 인맥",
+        "아마 세아가 맞다",
+        "선제 전파"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "재우의 확인 없는 선제 전파의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse12:a:d-1:denial:0",
+            "spouse12:b:d-1:denial:0",
+            "spouse12:b:d-1:admission:0",
+            "spouse12:b:d-1:quote:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "재우의 확인 없는 선제 전파 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse12:a:d-1:counter:0",
+            "spouse12:b:d-1:admission:0",
+            "spouse12:b:d-1:fear:0",
+            "spouse12:b:d-1:responsibility:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "재우의 확인 없는 선제 전파가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-1:motive:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse12:a:d-1:emotion:0",
+            "spouse12:b:d-1:shame:0",
+            "spouse12:b:d-1:admission:1",
+            "spouse12:b:d-1:beneficiary:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "세아의 백업 선별 은닉",
+      "truth": true,
+      "truthDescription": "세아는 백업 복원 후 한유진에게 보낸 모진 메시지 1건을 별도 폴더로 옮기고 재우 공유 파일에서 뺐다. 원문 조작은 아니지만 노출 범위를 조정한 것은 사실상 증거 은닉.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "세아는 메시지를 은닉했다.",
+      "caseId": "spouse-12",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "옛 백업",
+        "숨긴 메시지",
+        "한유진 1건",
+        "별도 폴더",
+        "복원 로그",
+        "압축파일 누락"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "세아의 백업 선별 은닉의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse12:a:d-2:denial:0",
+            "spouse12:a:d-2:admission:0",
+            "spouse12:a:d-2:fear:1",
+            "spouse12:b:d-2:evidence:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "세아의 백업 선별 은닉 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse12:a:d-2:admission:0",
+            "spouse12:a:d-2:self_justification:0",
+            "spouse12:a:d-2:responsibility:0",
+            "spouse12:b:d-2:evidence:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "세아의 백업 선별 은닉가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-2:motive:responsibility_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse12:a:d-2:shame:0",
+            "spouse12:a:d-2:admission:1",
+            "spouse12:a:d-2:counter:0",
+            "spouse12:b:d-2:emotion:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "익명 계정 — 한유진인가 박하린인가",
+      "truth": false,
+      "truthDescription": "세아와 재우 모두 한유진을 의심했지만, 계정 복구 메일은 박하린 예비 주소, 게시 시각 직전 와이파이에는 박하린 기기가 접속. 동기와 실행자가 다를 수 있다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 40,
+        "b": 60
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "증거검증",
+      "legitimacyIssue": true,
+      "judgmentStatement": "계정 복구 메일은 박하린 것이다.",
+      "caseId": "spouse-12",
+      "disputeKind": "shared_misconception",
+      "disputeAliases": [
+        "한유진 의심",
+        "박하린",
+        "버너계정",
+        "동창회 와이파이",
+        "복구 메일",
+        "익명 계정"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "익명 계정 — 한유진인가 박하린인가의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse12:a:d-3:identity:0",
+            "spouse12:b:d-3:identity:0",
+            "spouse12:b:d-3:admission:0",
+            "spouse12:b:d-3:motive:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "익명 계정 — 한유진인가 박하린인가 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse12:a:d-3:admission:0",
+            "spouse12:b:d-3:admission:0",
+            "spouse12:b:d-3:self_justification:0",
+            "spouse12:b:d-3:harm:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "익명 계정 — 한유진인가 박하린인가가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-3:surface:trap_disarmed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse12:a:d-3:shame:0",
+            "spouse12:b:d-3:shame:0",
+            "spouse12:b:d-3:institution:0",
+            "spouse12:b:d-3:admission:1"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "misbelief",
+          "b": "misbelief"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "버너 계정 닉네임이 한유진 옛 아이디와 비슷하다",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "동창회 직후 게시라 한유진 소행이라고 단정짓는다",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "과거 상처가 실행자 판단을 대신하며 의심이 굳는다",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "복구 메일 주소가 박하린 예비 계정과 일치한다",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "게시 시각 와이파이에 박하린 기기가 접속해 있었다",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "옛 닉네임 유사성이 주는 그럴듯한 연결감",
+          "동창회 직후라는 타이밍을 인과로 오독하는 흐름",
+          "동창회 때 받은 과거 상처를 실행자 판단과 혼동"
+        ],
+        "truthExitEvidenceIds": [
+          "e-5",
+          "e-4"
+        ],
+        "clarifyOutcomeLabel": "오해 해소 직전"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "결정적 증거는 2026년 위조본",
+      "truth": true,
+      "truthDescription": "방명록 배경은 2008년 스킨, 문자 말풍선은 2024년 복원앱 템플릿. 시간대와 출처가 다른 두 소스를 2026년에 합성한 위조본. 세아를 소문 유포자로 단정할 근거가 없다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-3",
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "허위유포정정",
+      "legitimacyIssue": true,
+      "judgmentStatement": "결정적 증거는 2026년 위조본이다.",
+      "caseId": "spouse-12",
+      "disputeKind": "core_truth",
+      "disputeAliases": [
+        "2026년 위조본",
+        "2008년 스킨",
+        "2024년 템플릿",
+        "포렌식 보고서",
+        "합성 캡처",
+        "방명록 이미지"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "결정적 증거는 2026년 위조본의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse12:a:d-4:denial:0",
+            "spouse12:a:d-4:evidence:0",
+            "spouse12:a:d-4:counter:0",
+            "spouse12:b:d-4:denial:0",
+            "spouse12:b:d-4:admission:0",
+            "spouse12:b:d-4:counter:1"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "결정적 증거는 2026년 위조본 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse12:a:d-4:evidence:0",
+            "spouse12:a:d-4:timeline:0",
+            "spouse12:a:d-4:motive:0",
+            "spouse12:b:d-4:admission:0",
+            "spouse12:b:d-4:admission:1",
+            "spouse12:b:d-4:fear:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "결정적 증거는 2026년 위조본가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-4:motive:motive_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse12:a:d-4:emotion:0",
+            "spouse12:a:d-4:admission:0",
+            "spouse12:a:d-4:institution:0",
+            "spouse12:b:d-4:fear:1",
+            "spouse12:b:d-4:institution:0",
+            "spouse12:b:d-4:responsibility:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "세아의 2006년 실제 행위 범위",
+      "truth": true,
+      "truthDescription": "세아가 한유진에게 모진 메시지를 보낸 것은 사실이다. 그러나 생활지도실 메모에 익명 소문 발신자 미특정으로 기록. 모진 메시지와 소문 유포는 별개의 층위.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "과거정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "세아는 한유진에게 모진 메시지를 보냈다.",
+      "caseId": "spouse-12",
+      "disputeKind": "red_herring",
+      "disputeAliases": [
+        "2006년 원문",
+        "생활지도실 메모",
+        "장학금 소문",
+        "모진 메시지",
+        "실제 행위 범위",
+        "과거 상처"
+      ],
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "표면",
+          "summary": "세아의 2006년 실제 행위 범위의 겉면과 즉시 확인 가능한 사실선입니다.",
+          "lockedSummary": "겉으로 보이는 사실만 보입니다.",
+          "unlockCondition": {},
+          "revealAtomIds": [
+            "spouse12:a:d-5:denial:1",
+            "spouse12:a:d-5:admission:0",
+            "spouse12:a:d-5:counter:0",
+            "spouse12:b:d-5:counter:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "동기",
+          "summary": "세아의 2006년 실제 행위 범위 뒤에 깔린 해석, 불안, 계산이 드러납니다.",
+          "lockedSummary": "동기 층은 아직 풀리지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          },
+          "revealAtomIds": [
+            "spouse12:a:d-5:admission:0",
+            "spouse12:a:d-5:shame:0",
+            "spouse12:a:d-5:counter:1",
+            "spouse12:b:d-5:evidence:0"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "core",
+          "label": "핵심",
+          "summary": "세아의 2006년 실제 행위 범위가 관계 책임과 사건 구조에 어떻게 연결되는지 정리됩니다.",
+          "lockedSummary": "핵심 구조는 아직 연결되지 않았습니다.",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S4"
+              },
+              {
+                "id": "d-1",
+                "minState": "S4"
+              }
+            ],
+            "requireFlags": [
+              "d-5:motive:motive_pressed"
+            ]
+          },
+          "revealAtomIds": [
+            "spouse12:a:d-5:shame:1",
+            "spouse12:a:d-5:admission:1",
+            "spouse12:a:d-5:identity:2",
+            "spouse12:b:d-5:shame:0"
+          ],
+          "uiStyle": "relation_core"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "knows",
+          "b": "suspects"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "세아의 2006년 모진 메시지가 소문 유포 증거처럼 보이는 국면",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M1",
+            "summary": "재우가 모진 메시지를 소문 발신 근거로 확신하는 단계",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M2",
+            "summary": "과거 상처와 익명 소문을 동일 행위로 묶어 판단하는 상태",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "생활지도실 메모의 발신자 미특정 기록이 의심을 흔드는 국면",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "모진 메시지와 소문 유포가 별개 층위임이 분리되는 단계",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "세아의 과거 잘못이 현재 익명 게시물의 근거처럼 연결된다",
+          "모진 메시지 원문이 소문 유포 동기의 증거로 둔갑한다",
+          "2006년 행위 범위 논쟁이 2026년 위조본 검증을 지연시킨다"
+        ],
+        "truthExitEvidenceIds": [
+          "e-2",
+          "e-6"
+        ]
+      }
+    }
+  ],
+  "linkEdges": [
+    {
+      "id": "link:d-1:d-4:supports",
+      "fromDisputeId": "d-1",
+      "toDisputeId": "d-4",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-4:surface:forged_capture_amplified"
+      },
+      "uiLabel": "위조 확산"
+    },
+    {
+      "id": "link:d-2:d-5:supports",
+      "fromDisputeId": "d-2",
+      "toDisputeId": "d-5",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 10,
+        "grantFlag": "d-5:surface:past_harm_hidden"
+      },
+      "uiLabel": "과거 상처 은닉"
+    },
+    {
+      "id": "link:d-3:d-4:weakens_counter",
+      "fromDisputeId": "d-3",
+      "toDisputeId": "d-4",
+      "type": "weakens_counter",
+      "when": {
+        "minState": "S3",
+        "minLayer": "surface"
+      },
+      "effect": {
+        "supportBonus": 11,
+        "grantFlag": "d-4:motive:wrong_operator_collapsed"
+      },
+      "uiLabel": "실행자 오인 붕괴"
+    },
+    {
+      "id": "link:d-5:d-2:supports",
+      "fromDisputeId": "d-5",
+      "toDisputeId": "d-2",
+      "type": "supports",
+      "when": {
+        "minState": "S2",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 9,
+        "grantFlag": "d-2:core:actual_harm_noted"
+      },
+      "uiLabel": "실제 상처 확인"
+    },
+    {
+      "id": "link:d-4:d-5:unlocks_layer",
+      "fromDisputeId": "d-4",
+      "toDisputeId": "d-5",
+      "type": "unlocks_layer",
+      "when": {
+        "minState": "S3",
+        "minLayer": "motive"
+      },
+      "effect": {
+        "supportBonus": 12,
+        "grantFlag": "d-5:core:false_and_real_separated"
+      },
+      "uiLabel": "허위와 실제를 분리"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "재우의 전달 로그와 운영진 단톡 원문",
+      "description": "재우가 세아 확인 9분 전에 세 채널로 보낸 캡처와 메시지 원문. 아마 세아가 맞다는 단정형 표현 반복. 위조 가능성 언급 없음.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "동창회 운영진 단톡 서버 백업, 가족 단톡 원문, 재우 휴대폰의 메시지 전달 로그(전송 시각·수신자·첨부 파일 포함)가 함께 제출됐다.",
+        "check_metadata": "첫 외부 전달: 세아 확인 문자 9분 전. 운영진→가족→직장 순서. 9분 시차는 급해서가 아니라 의식적 선택을 시사.",
+        "restore_context": "재우는 조심스럽게 전했다고 하지만 세 채널 모두 아마 세아가 맞다는 단정형 문장이 반복. 완충어가 있어도 확정으로 읽히는 구조.",
+        "verify_source": "세 채널 각 참여자의 기기 백업본에서 동일 캡처·동일 문구가 확인되며, 재우 기기의 전송 시간과 분 단위까지 일치한다.",
+        "check_edits": "메시지 삭제·수정 이력 없이 서버 원문이 그대로 남아 있다. 재우가 사후에 표현을 바꾸려 한 흔적도 없다.",
+        "question_acquisition": "각 채널 대화 참여자의 동의 하에 백업이 제출됐고, 발신자(재우) 기기에서도 교차 확인됐으므로 취득 절차상 문제없다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "재우의 확인 없는 선제 전파의 사실선을 고정하는 타이밍."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "세아의 옛 백업 복원 로그와 삭제 표시된 메시지",
+      "description": "세아의 백업 복원 이력과 폴더 이동 로그. 게시물 확산 2시간 후 모진 메시지를 별도 폴더로 옮겼고 재우 공유 파일에서 빠져 있다. 원문 조작은 없다.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "클라우드 백업 복원 이력, 폴더 이동 기록, 숨김 메시지 메타데이터(발신 시각·수신자·문구 해시)가 함께 확인됐다.",
+        "check_metadata": "모진 메시지 폴더 이동: 게시물 확산 2시간 후. 재우 공유 파일 생성: 이동 30분 후. 의식적으로 빼낸 시간 흐름이 확인된다.",
+        "restore_context": "세아의 의도는 익명 계정이 자기가 아님을 입증하는 것. 모진 메시지는 소문과 무관하다며 뺐다. 갈등 수위 맥락은 사라졌다.",
+        "verify_source": "클라우드 서버 복원·이동 이력과 세아 노트북의 동기화 타임스탬프가 일치한다. 폴더 이동이 세아 기기에서 실행됐음이 확인된다.",
+        "check_edits": "숨긴 메시지 원문에 조작 없다. 텍스트를 바꾼 게 아니라 보여주는 범위만 조정. 위조가 아닌 은닉에 해당.",
+        "question_acquisition": "세아 본인 계정의 클라우드 복원 로그이므로, 본인 제출 자료로서 취득 절차상 문제없다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "timeline"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "세아의 백업 선별 은닉의 사실선을 고정하는 타이밍."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "세아의 2006년 실제 행위 범위의 사실선을 고정하는 타이밍."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "익명 SNS 게시물 캡처와 오래된 문자 이미지",
+      "description": "세아 닉네임이 찍힌 방명록과 피처폰 문자 이미지가 합쳐진 익명 게시물 캡처. 해상도·폰트가 다른 소스가 섞여 있어 단독 증거력이 약하다.",
+      "type": "social_post",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "third_party",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 게시물은 이미 비활성화된 계정에서 삭제됐고, 여러 명이 저장한 캡처와 리포스트 이미지만 남아 있다. 게시물 전문이 아닌 부분 캡처들이다.",
+        "check_metadata": "캡처 저장: 동창회 다음 날 새벽. 상단 계정 생성일과 하단 댓글이 잘림. 계정 연식과 반론을 이 캡처만으로 알 수 없다.",
+        "restore_context": "방명록은 해상도 낮고 2000년대 스킨, 문자 말풍선은 해상도 높고 폰트가 다르다. 두 소스가 섞여 있어 단독 증거력이 약하다.",
+        "verify_source": "참석자 5명 이상 기기에서 동일 캡처 확인. 게시물 존재는 사실이지만 원본 계정이 비활성화돼 직접 열람 불가.",
+        "check_edits": "배경 레이어 해상도 불일치와 재압축 흔적 관찰. 두 이미지 합성 가능성이 높으며 e-4 포렌식에서 확정.",
+        "question_acquisition": "세아 명예를 훼손하는 SNS 캡처가 외부 채널로 유통됐고 재우가 추가 전파. 사생활·명예 침해 소지."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "identity",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S2",
+            "multiplier": 1.4,
+            "note": "익명 계정 — 한유진인가 박하린인가에서 부분 자료의 함정을 벗겨내는 분기점."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.35,
+            "note": "결정적 증거는 2026년 위조본에서 부분 자료의 함정을 벗겨내는 분기점."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "플랫폼 포렌식 보고서와 이미지 레이어 해시 대조표",
+      "description": "포렌식 보고서와 레이어 해시 대조표. 배경은 2008년 스킨, 말풍선은 2024년 템플릿. 합성 지점이 명확하다. 합성자 특정은 e-5 교차 필요.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "플랫폼 대응팀 포렌식 보고서, 이미지 레이어별 해시값 대조표, 2006년 원본과 2026년 게시물의 비교 시트가 함께 제출됐다.",
+        "check_metadata": "방명록: 2008년 스킨 해시 94% 일치. 말풍선: 2024년 복원앱 일치. 저장 포맷도 상이. 두 소스의 시간대·출처가 다르다.",
+        "restore_context": "2006년 원본처럼 보였지만 실제로는 2008년 스킨과 2024년 템플릿을 2026년에 합성한 결과물. 핵심 증거의 원본성이 부정됐다.",
+        "verify_source": "플랫폼 대응팀 내부 검증 결과와 외부 의뢰 이미지 포렌식 자문 결과가 일치한다. 독립된 두 기관이 같은 결론에 도달했으므로 신뢰도가 높다.",
+        "check_edits": "방명록과 문자 이미지 사이 합성 경계선, 저장 재압축 시 발생한 아티팩트가 명확하게 관찰된다. 의도적 합성임이 기술적으로 입증된 상태다.",
+        "question_acquisition": "세아 측의 플랫폼 신고 접수 후, 정식 조사 절차를 거쳐 포렌식 보고서가 발급됐다. 적법한 절차로 확보된 자료다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "결정적 증거는 2026년 위조본의 사실선을 고정하는 타이밍."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "버너계정 복구 메일과 동창회장 와이파이 접속기록",
+      "description": "익명 계정 복구 메일이 박하린 예비 주소와 연결, 게시 직전 와이파이에 박하린 기기 접속. 12시간 내 계정 생성~게시가 집중. 단독 행동 여부는 미확정.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "플랫폼 익명 계정의 복구 이메일 연결 기록, 동창회장 와이파이 접속 로그(MAC 주소·시각), 20주년 동창회 준비위원 명단이 함께 제출됐다.",
+        "check_metadata": "계정 생성~게시 예약: 동창회 후 12시간 내 집중. 같은 시간대 박하린 기기 MAC 접속 확인. 사전 계획을 시사하는 짧은 창.",
+        "restore_context": "한유진 쪽 네트워크에는 접속 흔적 없다. 계정 복구 메일과 와이파이 접속 모두 박하린 쪽에 집중. 실행자는 박하린.",
+        "verify_source": "플랫폼 계정 복구 기록의 IP·시각과 행사장 와이파이 로그의 MAC·시각이 서로 부합한다. 두 독립 출처가 교차 검증된다.",
+        "check_edits": "플랫폼 서버 기록과 행사장 네트워크 관리 시스템에서 직접 추출한 원본이므로 사용자 측 편집이 구조적으로 불가능하다.",
+        "question_acquisition": "행사장 입장 시 네트워크 이용 동의 고지가 이뤄졌고, 플랫폼 신고 절차에 따라 최소 필요 범위 내에서 계정·접속 기록이 제공됐다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "legality"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "timeline"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "익명 계정 — 한유진인가 박하린인가에서 잘못된 해석을 되돌리는 창."
+          },
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "결정적 증거는 2026년 위조본의 사실선을 고정하는 타이밍."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "2006년 원본 메일 묶음과 생활지도실 메모",
+      "description": "2006년 원본 메일(모진 메시지 포함)과 생활지도실 메모. 세아의 상처 준 사실은 입증하지만 익명 소문 발신자는 2006년에도 불명이었다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "2006년 세아↔한유진 원본 메일 묶음, 학교 생활지도실 메모 사본(익명 소문 조사 결과), 당시 학급 운영진 간 공유된 메일이 함께 제출됐다.",
+        "check_metadata": "모진 메시지: 다툼 직후 발신. 익명 소문 시작: 약 2주 후. 시간 순서상 소문 유포 목적 메시지가 아니었다.",
+        "restore_context": "세아가 모진 메시지로 상처를 준 것은 사실. 그러나 생활지도실 메모에 익명 소문 발신자 미특정으로 명시. 과거 잘못과 미확인 혐의는 별개.",
+        "verify_source": "학교 보존 문서(생활지도실 메모)의 날짜와 세아·한유진 개인 이메일 백업의 발신 날짜가 일치한다. 20년 전 기록이지만 교차 검증이 가능하다.",
+        "check_edits": "생활지도실 메모는 종이 원본의 스캔본으로, 밝기·대비 보정 외 원문 조작 흔적은 없다. 메일 원본도 서버 백업과 일치한다.",
+        "question_acquisition": "세아·한유진 동의, 학교 열람 허가 범위 내에서 확인. 20년 전 기록이지만 관계자 동의와 학교 승인을 거쳤다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "corroborate",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "identity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.3,
+            "note": "세아의 백업 선별 은닉의 사실선을 고정하는 타이밍."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "세아의 2006년 실제 행위 범위의 사실선을 고정하는 타이밍."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq:d-1:spread_scope",
+      "intentTag": "legality_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "spouse12:a:d-1:counter:0",
+          "spouse12:b:d-1:admission:0",
+          "spouse12:b:d-1:quote:0"
+        ],
+        "preferredAngleTags": [
+          "legality"
+        ]
+      },
+      "refusalTemplates": [
+        "규칙 이야기만 먼저 꺼내면 제가 숨긴 감정이 또 빠집니다.",
+        "절차만으로는 다 설명되지 않아 지금은 답을 아끼겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-2:omitted_message",
+      "intentTag": "authenticity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "spouse12:a:d-2:admission:0",
+          "spouse12:a:d-2:fear:1",
+          "spouse12:b:d-2:evidence:1"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "원본 맥락 없이 진짜냐부터 묻는 질문엔 신중히 답하겠습니다.",
+        "조각난 자료만 놓고 진위를 단정하는 방식엔 바로 답하지 않겠습니다."
+      ]
+    },
+    {
+      "id": "fq:d-3:operator_identity",
+      "intentTag": "identity_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "shared_misconception"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "spouse12:a:d-3:admission:0",
+          "spouse12:b:d-3:admission:0",
+          "spouse12:b:d-3:motive:0"
+        ],
+        "preferredAngleTags": [
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "지금은 특정인 이름부터 다시 단정하고 싶지 않습니다.",
+        "그 사람을 다시 지목하는 방식으로는 답하고 싶지 않아요."
+      ]
+    },
+    {
+      "id": "fq:d-4:forgery_signal",
+      "intentTag": "context_check",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "spouse12:a:d-4:evidence:0",
+          "spouse12:a:d-4:counter:0",
+          "spouse12:b:d-4:admission:0",
+          "spouse12:b:d-4:counter:1"
+        ],
+        "preferredAngleTags": [
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "맥락을 빼고 한 문장만 답하면 또 오해가 생깁니다.",
+        "앞뒤 사정을 먼저 정리하지 않으면 답을 아끼고 싶습니다."
+      ]
+    },
+    {
+      "id": "fq:d-5:past_vs_present",
+      "intentTag": "motive_check",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "spouse12:a:d-5:admission:0",
+          "spouse12:a:d-5:counter:0",
+          "spouse12:b:d-5:evidence:0"
+        ],
+        "preferredAngleTags": [
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "의도부터 단정하는 질문에는 바로 답하고 싶지 않습니다.",
+        "왜 그랬는지 말하려면 감정선부터 정리해야 합니다."
+      ]
+    },
+    {
+      "id": "fq:d-1:apology_scope",
+      "intentTag": "emotion_check",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "spouse12:a:d-1:counter:0",
+          "spouse12:b:d-1:admission:0",
+          "spouse12:b:d-1:quote:0"
+        ],
+        "preferredAngleTags": [
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 감정은 아직 그대로 말하기 어렵습니다.",
+        "그 부분은 지금 꺼내면 말이 무너질 것 같습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-4"
+    ],
+    "playerStyleTagCandidates": [
+      "pressure_heavy",
+      "rapport_heavy",
+      "evidence_closer",
+      "trap_chaser"
+    ]
+  }
+}
