@@ -324,6 +324,8 @@
       "id": "e-1",
       "name": "프로젝터 점검 요청 메일과 전체 덱 첨부본",
       "description": "행사 전날 운영사가 요청한 프로젝터 점검 메일, 그리고 태경이 도매단가·백화점 팝업 일정이 모두 들어간 전체 덱을 첨부해 회신한 원본 메일이다.",
+      "surfaceName": "프로젝터 점검 메일과 덱 첨부본",
+      "surfaceDescription": "운영사 점검 요청 메일과 회신에 첨부된 발표 덱 파일이다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -360,6 +362,8 @@
       "id": "e-2",
       "name": "유나의 바이어 메시지와 협회 문의 메모",
       "description": "유나가 바이어 두 곳과 협회 사무국에 '태경 쪽에서 샌 것 같다'고 말한 메시지, 그리고 사무국이 남긴 문의 대응 메모다.",
+      "surfaceName": "바이어 메시지와 협회 문의 메모",
+      "surfaceDescription": "바이어에게 보낸 메시지와 협회 사무국 문의 대응 메모다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -384,6 +388,8 @@
       "id": "e-3",
       "name": "크롭된 메신저 캡처",
       "description": "태경이 '자료 넘겼어. 저쪽도 알 거야'라고 말한 부분만 남은 캡처로, 수신자와 앞뒤 문맥이 잘려 있어 경쟁사 전달처럼 보이게 만든다.",
+      "surfaceName": "크롭된 메신저 캡처",
+      "surfaceDescription": "대화 일부만 남은 캡처로, 수신자와 전후 문맥이 잘려 있다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -419,6 +425,8 @@
       "id": "e-4",
       "name": "원본 단톡과 발신메일 로그",
       "description": "문제의 '자료 넘겼어'가 운영사의 프로젝터 체크 요청을 가리킨다는 점, 그리고 유나도 해당 흐름을 읽고 있었다는 원본 단톡과 발신 로그다.",
+      "surfaceName": "원본 단톡과 발신메일 로그",
+      "surfaceDescription": "단체 대화방 원본 내보내기와 메일 발신 로그 묶음이다.",
       "type": "chat",
       "reliability": "hard",
       "completeness": "original",
@@ -450,12 +458,15 @@
           "questionAngle": "서유나에게: \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 서유나의 \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "행사 보안 가이드와 QR 후속자료 링크 수정 이력",
       "description": "비식별 축약본과 추적 링크만 쓰기로 한 행사 보안 가이드, 그리고 유나가 QR 후속자료 폴더를 최신 전체 덱 링크로 바꾼 기록이다.",
+      "surfaceName": "행사 보안 가이드와 링크 수정 이력",
+      "surfaceDescription": "행사 보안 가이드 문서와 QR 링크 변경 로그 기록이다.",
       "type": "cloud_log",
       "reliability": "hard",
       "completeness": "original",
@@ -486,12 +497,15 @@
           "questionAngle": "서유나에게: \"행사 자료 통제 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 서유나의 \"행사 자료 통제 원칙의 쌍방 위반\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "운영사 AE 사과 메일과 후속메일 감사로그",
       "description": "박수민 AE가 후속메일에 스피커용 백업 폴더를 잘못 첨부했다고 인정한 사과 메일과, 경쟁사 바이어가 동일 첨부파일을 수신한 발송 감사로그다.",
+      "surfaceName": "운영사 사과 메일과 발송 감사로그",
+      "surfaceDescription": "운영사 AE 사과 메일과 첨부파일 발송 시스템 로그다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -524,7 +538,8 @@
           "questionAngle": "서유나에게: \"유나의 업계 내 누설자 낙인\" 관련 해명 요구 (방어 동기: 복수심)",
           "implication": "이 증거는 서유나의 \"유나의 업계 내 누설자 낙인\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

@@ -1,0 +1,161 @@
+{
+  "case": "tenant-01",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "입주 당시와 퇴거 전에 실내 사진을 촬영한 사실이 있습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "퇴거 사진이 계약 만료 한 달 전에 촬영된 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "입주 당시 거실 반대편 벽 상태에 대해 기억하는 바를 말씀하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "마지막 두 달 월세의 납부 시점에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "재입금 시점이 약정일보다 5일 늦은 점에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "관리비가 같은 주 안에 함께 정산된 경위를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "중개사를 포함한 대화에서 보증금 반환을 논의한 사실이 있습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 캡처가 정산 다툼 다음 날 새벽에 생성된 이유를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "핵심 문장의 앞뒤가 잘려 있습니다. 왜 전체를 제출하지 않았습니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "거실 벽에 대해 부분 보수와 전면 도배 견적을 받은 사실이 있습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "두 견적이 같은 날 같은 벽 치수로 작성된 점을 알고 계셨습니까?",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "한 면 보수 비용과 전체 도배 비용의 차이에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "욕실 수전 누수에 대해 관리실에 접수한 기록이 있습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "첫 누수 접수 시점이 입주 이전으로 기록된 사실을 알고 계십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "세입자가 재차 알리기 전까지 본수리가 미뤄진 경위를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 계약서 특약란의 원상복구 조항에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "특약 작성일이 대화에서 언급된 일정과 일치하는 점을 확인했습니다. 맞습니까?",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "특약이 통상 마모와 과실 손상을 구분하고 있는데, 공제 범위와 어떻게 다릅니까?",
+          "attackVector": "legality"
+        }
+      }
+    ]
+  }
+}

@@ -37,7 +37,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "대표 발표자",
                   "judgeRef": "대표 발표자",
                   "neutral": "본인"
                 },
@@ -70,7 +70,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "상대 팀원",
                   "judgeRef": "상대 팀원",
                   "neutral": "상대"
                 },
@@ -128,7 +128,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "조 씨",
                   "judgeRef": "대표 발표자",
                   "neutral": "본인"
                 },
@@ -161,7 +161,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "김 씨",
                   "judgeRef": "상대 팀원",
                   "neutral": "상대"
                 },
@@ -586,7 +586,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "기술 담당 팀원",
                   "judgeRef": "기술 담당 팀원",
                   "neutral": "상대"
                 },
@@ -614,7 +614,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "대표 발표자",
                   "judgeRef": "대표 발표자",
                   "neutral": "본인"
                 },
@@ -666,7 +666,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "김 씨",
                   "judgeRef": "기술 담당 팀원",
                   "neutral": "상대"
                 },
@@ -693,7 +693,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "조 씨",
                   "judgeRef": "대표 발표자",
                   "neutral": "본인"
                 },
@@ -1067,7 +1067,7 @@
                   "neutral": "제출 시스템"
                 },
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "팀원",
                   "judgeRef": "팀원",
                   "neutral": "상대"
                 }
@@ -1095,7 +1095,7 @@
                   "neutral": "첫 노출 시점"
                 },
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "대표자",
                   "judgeRef": "대표자",
                   "neutral": "본인"
                 }
@@ -1148,7 +1148,7 @@
                   "neutral": "제출 시스템"
                 },
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "김 씨",
                   "judgeRef": "팀원",
                   "neutral": "상대"
                 }
@@ -1177,7 +1177,7 @@
                   "neutral": "첫 노출 시점"
                 },
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "조 씨",
                   "judgeRef": "대표자",
                   "neutral": "본인"
                 }
@@ -1555,7 +1555,7 @@
                   "neutral": "사전 크레딧 확인 약속"
                 },
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "공동 제출자",
                   "judgeRef": "공동 제출자",
                   "neutral": "상대"
                 }
@@ -1634,7 +1634,7 @@
                   "neutral": "사전 크레딧 확인 약속"
                 },
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "김 씨",
                   "judgeRef": "공동 제출자",
                   "neutral": "상대"
                 }
@@ -2028,7 +2028,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "기술 기여자",
                   "judgeRef": "기술 기여자",
                   "neutral": "상대"
                 },
@@ -2059,7 +2059,7 @@
                   "neutral": "마감 막판"
                 },
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "대표 발표자",
                   "judgeRef": "대표 발표자",
                   "neutral": "본인"
                 }
@@ -2107,7 +2107,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "김 씨",
                   "judgeRef": "기술 기여자",
                   "neutral": "상대"
                 },
@@ -2138,7 +2138,7 @@
                   "neutral": "마감 막판"
                 },
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "조 씨",
                   "judgeRef": "대표 발표자",
                   "neutral": "본인"
                 }
@@ -2513,7 +2513,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "대표 발표자",
                   "judgeRef": "대표 발표자",
                   "neutral": "상대"
                 },
@@ -2546,7 +2546,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "기술 담당 팀원",
                   "judgeRef": "기술 담당 팀원",
                   "neutral": "본인"
                 },
@@ -2597,7 +2597,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "조 씨",
                   "judgeRef": "대표 발표자",
                   "neutral": "상대"
                 },
@@ -2630,7 +2630,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "김 씨",
                   "judgeRef": "기술 담당 팀원",
                   "neutral": "본인"
                 },
@@ -3027,7 +3027,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "기술 담당 팀원",
                   "judgeRef": "기술 담당 팀원",
                   "neutral": "본인"
                 },
@@ -3054,7 +3054,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "대표 발표자",
                   "judgeRef": "대표 발표자",
                   "neutral": "상대"
                 },
@@ -3108,7 +3108,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "김 씨",
                   "judgeRef": "기술 담당 팀원",
                   "neutral": "본인"
                 },
@@ -3136,7 +3136,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "조 씨",
                   "judgeRef": "대표 발표자",
                   "neutral": "상대"
                 },
@@ -3516,7 +3516,7 @@
                   "neutral": "제출 시스템"
                 },
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "팀원",
                   "judgeRef": "팀원",
                   "neutral": "본인"
                 }
@@ -3543,7 +3543,7 @@
                   "neutral": "첫 화면"
                 },
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "대표 발표자",
                   "judgeRef": "대표 발표자",
                   "neutral": "상대"
                 }
@@ -3597,7 +3597,7 @@
                   "neutral": "제출 시스템"
                 },
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "김 씨",
                   "judgeRef": "팀원",
                   "neutral": "본인"
                 }
@@ -3626,7 +3626,7 @@
                   "neutral": "첫 화면"
                 },
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "조 씨",
                   "judgeRef": "대표 발표자",
                   "neutral": "상대"
                 }
@@ -4007,7 +4007,7 @@
                   "neutral": "제출 전 확인 규칙"
                 },
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "대표 제출자",
                   "judgeRef": "대표 제출자",
                   "neutral": "상대"
                 }
@@ -4086,7 +4086,7 @@
                   "neutral": "제출 전 확인 규칙"
                 },
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "조 씨",
                   "judgeRef": "대표 제출자",
                   "neutral": "상대"
                 }
@@ -4477,7 +4477,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "기술 기여자",
                   "judgeRef": "기술 기여자",
                   "neutral": "본인"
                 },
@@ -4506,7 +4506,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "대표 발표자",
                   "judgeRef": "대표 발표자",
                   "neutral": "상대"
                 },
@@ -4557,7 +4557,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "김준혁",
+                  "fullName": "김 씨",
                   "judgeRef": "기술 기여자",
                   "neutral": "본인"
                 },
@@ -4584,7 +4584,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조은비",
+                  "fullName": "조 씨",
                   "judgeRef": "대표 발표자",
                   "neutral": "상대"
                 },

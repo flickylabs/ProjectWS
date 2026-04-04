@@ -38,7 +38,9 @@
                 "blockVector": "legality",
                 "revealAtom": "d2.unlock.a.s4.punitive_intent",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-1.a.q3",
@@ -48,7 +50,9 @@
                 "blockVector": "context",
                 "revealAtom": "d3.unlock.a.s2.capture_basis",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -73,7 +77,9 @@
                 "blockVector": "identity",
                 "revealAtom": "d1.unlock.b.s4.use_friend",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-1.b.q3",
@@ -83,7 +89,9 @@
                 "blockVector": "legality",
                 "revealAtom": "d4.unlock.b.s3.cover_before_route",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -125,7 +133,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "d3.unlock.a.s3.exclusion_known",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-2.a.q3",
@@ -135,7 +145,9 @@
                 "blockVector": "identity",
                 "revealAtom": "d3.unlock.a.s5.no_proof",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -160,7 +172,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "d5.unlock.b.s2.no_pre_record",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-2.b.q3",
@@ -170,7 +184,9 @@
                 "blockVector": "context",
                 "revealAtom": "d5.unlock.b.s3.after_spread",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -213,7 +229,9 @@
                 "blockVector": "legality",
                 "revealAtom": "d4.unlock.a.s3.route_skip",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-3.a.q3",
@@ -223,7 +241,9 @@
                 "blockVector": "identity",
                 "revealAtom": "d4.unlock.a.s4.shame_repeat",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -248,7 +268,9 @@
                 "blockVector": "identity",
                 "revealAtom": "d5.unlock.b.s4.image_preserve",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-3.b.q3",
@@ -258,7 +280,9 @@
                 "blockVector": "legality",
                 "revealAtom": "d1.unlock.b.s5.alibi_confess",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }

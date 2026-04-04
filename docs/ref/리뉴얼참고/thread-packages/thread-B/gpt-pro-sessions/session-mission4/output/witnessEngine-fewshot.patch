@@ -1,0 +1,98 @@
+--- a/witnessEngine.ts
++++ b/witnessEngine.ts
+@@ -8,6 +8,11 @@
+ import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
+ import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
+ import { getRelationLabel } from './llmSpeechGuide'
++import {
++  buildHiddenAgendaPatternBlock,
++  buildWitnessFewShotBlock,
++  type WitnessSlot,
++} from '../data/witnessFewShotExamples'
+ import { WITNESS_BUDGETS } from '../data/witnessBudget'
+ import { normalizeCaseKey } from '../utils/caseHelpers'
+ import { getWitnessSpeechSamples } from '../data/caseEnrichment'
+@@ -127,7 +132,7 @@
+   recentDialogues: { speaker: string; text: string }[],
+   depth: TestimonyDepth = 'full',
+ ): Promise<WitnessTestimony> {
+-  const vars = buildWitnessVars(witness, caseData, recentDialogues)
++  const vars = buildWitnessVars(witness, caseData, recentDialogues, depth)
+ 
+   // 깊이 게이팅 지시를 변수에 추가
+   vars.witnessDepthInstruction = buildDepthInstruction(depth)
+@@ -183,12 +188,19 @@
+ 
+ /* ── 증인 변수 맵 생성 ──────────────────── */
+ 
++function normalizeWitnessSlot(raw: string | undefined): WitnessSlot {
++  if (raw === 'family' || raw === 'colleague' || raw === 'institutional' || raw === 'friend') return raw
++  return 'friend'
++}
++
+ function buildWitnessVars(
+   witness: ThirdParty,
+   caseData: CaseData,
+   recentDialogues: { speaker: string; text: string }[],
++  depth: TestimonyDepth = 'full',
+ ): Record<string, string> {
+   const wp = witness.witnessProfile
++  const witnessSlot = normalizeWitnessSlot(witness.slot)
+   const disputes = caseData.disputes.map(d => `${d.id}: ${d.name}`).join('\n')
+ 
+   // 편향 가이드
+@@ -248,8 +260,12 @@
+     witnessAddressA: wp?.addressA ?? inferWitnessAddress(witness, caseData.duo.partyA.name, 'a'),
+     witnessAddressB: wp?.addressB ?? inferWitnessAddress(witness, caseData.duo.partyB.name, 'b'),
+     witnessSpeechStyle: wp?.speechStyle ?? '조심스럽게 사실 위주로 말한다.',
+-    // few-shot 증언 예시 (보강 데이터)
++    // 기존 케이스별 말투 예시 (있으면 보조적으로 사용)
+     witnessSpeechSamples: buildSpeechSampleBlock(caseData, witness.id),
++    // 유형 × depth few-shot 예시
++    witnessFewShotExamples: buildWitnessFewShotBlock(witnessSlot, depth, 2),
++    // hiddenAgenda가 있을 때의 적극적 회피 패턴
++    witnessHiddenAgendaPatterns: buildHiddenAgendaPatternBlock(witnessSlot),
+     // 최근 대화 (witness_dialogue_rules에서는 사용 안 하지만 참고용)
+     recentDialogue: recentDialogueStr,
+   }
+@@ -286,7 +302,7 @@
+   recentDialogues: { speaker: string; text: string }[],
+   depth: TestimonyDepth = 'full',
+ ): string {
+-  const vars = buildWitnessVars(witness, caseData, recentDialogues)
++  const vars = buildWitnessVars(witness, caseData, recentDialogues, depth)
+   const depthInstruction = buildDepthInstruction(depth)
+   return `당신은 이 사건의 증인 "${vars.witnessName}"입니다.
+ 
+@@ -309,14 +325,21 @@
+ - ${vars.nameA}: "${vars.witnessAddressA}"
+ - ${vars.nameB}: "${vars.witnessAddressB}"
+ 
++${vars.witnessFewShotExamples ? '\n' + vars.witnessFewShotExamples : ''}
++${vars.witnessHiddenAgendaPatterns ? '\n' + vars.witnessHiddenAgendaPatterns : ''}
++${vars.witnessSpeechSamples ? '\n' + vars.witnessSpeechSamples : ''}
++${vars.witnessBudget ? '\n## 증언 예산\n' + vars.witnessBudget : ''}
++
+ ## 사건 쟁점
+ ${vars.disputeList}
+ ${depthInstruction ? '\n' + depthInstruction : ''}
+ 
+ ## 규칙
+-- 재판관에게 존댓말로 3~4문장 증언.
++- 재판관에게 존댓말로 증언하라.
++- 길이는 depth를 따른다: vague는 2문장 이내, partial은 3문장 정도, full은 필요한 만큼 답하되 장황하게 늘이지 마라.
+ - 모르는 것은 "잘 모르겠습니다"로.
+ - 증언 안에 괄호 행동묘사 넣지 말고 behaviorHint에만.
++- hiddenAgenda가 있으면 단순 무응답으로 끝내지 말고, 말을 고르다 멈추거나 화제를 비트는 식으로 회피를 드러내라.
+ 
+ ★ 번역체/보고서 톤 금지:
+ - "~된 것으로 생각됩니다" → 자연스럽게 말하라
+@@ -409,7 +432,7 @@
+       behaviorHint = '눈을 피하며 조심스럽게 말한다.'
+       break
+     case 'partial':
+-      testimony = `재판관님, 네, 그 건에 대해서는 어느 정도 알고 있습니다. ${biasText[witness.bias] ?? biasText.neutral} 다만 자세한 사정까지는 모르겠습니다.`
++      testimony = `재판관님, 그 일은 어느 정도 알고 있습니다. ${biasText[witness.bias] ?? biasText.neutral} 다만 세세한 경위까지는 제가 직접 본 건 아닙니다.`
+       behaviorHint = '신중하게 말을 고르며 답한다.'
+       break
+     default:

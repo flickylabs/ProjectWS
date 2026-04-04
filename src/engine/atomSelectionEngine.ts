@@ -153,10 +153,11 @@ export function buildAtomPlan(input: AtomSelectionInput): BlueprintAtomPlan {
 
   // 5. slot surface 결정
   const slotSelections = resolveSlotSelections(
-    selectedAtoms.map(a => policy.claimAtoms.find(ca => ca.id === a.atomId)!).filter(Boolean),
+    selectedAtoms.map(a => allAtoms.find(ca => ca.id === a.atomId)!).filter(Boolean),
     rule,
     mustUseTell,
     input.isJudgeAudience ?? true,
+    stance,
   )
 
   return {
@@ -176,11 +177,15 @@ function resolveSlotSelections(
   rule: SubActionAtomRule,
   mustUseTell?: string,
   isJudgeAudience: boolean = true,
+  stance?: Stance,
 ): SlotSelection[] {
   const selections: SlotSelection[] = []
 
   // tell에 의한 exact 승격
   const tellPromotesExact = mustUseTell === 'over_precision' || mustUseTell === 'receipt_stack'
+
+  // confess stance에서는 모든 slot을 구체적 값으로 승격
+  const confessPromotesExact = stance === 'confess'
 
   for (const atom of atoms) {
     if (!atom.slots) continue
@@ -191,22 +196,39 @@ function resolveSlotSelections(
       // 기본 mode 결정
       let mode: SlotSurfaceMode = rule.preferredSlotModes[family] ?? 'neutral'
 
+      // confess 승격: 모든 slot을 구체적 값으로
+      if (confessPromotesExact) {
+        if (family === 'amount') mode = 'rounded'      // "280만원" (읽기 쉬운 형태)
+        else if (family === 'time') mode = 'dateExact'  // "9월 20일"
+        else if (family === 'person' || family === 'beneficiary') mode = 'fullName' // "최민정", "오미숙"
+        else if (family === 'evidence') mode = 'fullName' // "재가돌봄센터 간병 예약 확인서"
+        else if (family === 'action') mode = 'exact'
+        else if (family === 'rule') mode = 'exact'
+        else if (family === 'place') mode = 'exact'
+      }
+
       // tell 승격: over_precision이면 amount/time을 exact로
       if (tellPromotesExact && (family === 'amount' || family === 'time')) {
         mode = family === 'amount' ? 'exact' : 'dateExact'
       }
 
-      // tell 비활성 시: amount/time은 neutral 강제
-      if (!tellPromotesExact && !rule.allowExactAmountByDefault && family === 'amount') {
+      // tell 비활성 시: amount/time은 neutral 강제 (단, confess에서는 강제하지 않음)
+      if (!confessPromotesExact && !tellPromotesExact && !rule.allowExactAmountByDefault && family === 'amount') {
         mode = 'neutral'
       }
-      if (!tellPromotesExact && !rule.allowExactTimeByDefault && family === 'time') {
+      if (!confessPromotesExact && !tellPromotesExact && !rule.allowExactTimeByDefault && family === 'time') {
         mode = 'neutral'
       }
 
-      // 호칭: judge audience면 judgeRef
+      // 호칭: judge audience면 judgeRef (단, confess에서는 fullName 우선)
       if (isJudgeAudience && (family === 'person' || family === 'relation' || family === 'beneficiary')) {
-        mode = 'judgeRef'
+        if (!confessPromotesExact) {
+          mode = 'judgeRef'
+        }
+        // confess에서도 relation은 judgeRef 유지 (장모님, 제 아내 등)
+        if (confessPromotesExact && family === 'relation') {
+          mode = 'judgeRef'
+        }
       }
 
       // slot에서 값 추출
@@ -216,6 +238,11 @@ function resolveSlotSelections(
           console.log(`[SlotResolve] ${atom.id}/${family}: mode=${mode}, value=${value}, neutral=${slotData.neutral}`)
         }
         selections.push({ atomId: atom.id, family, mode, value })
+
+        // confess에서 person/beneficiary의 role도 추가 제공 (이름 + 직함)
+        if (confessPromotesExact && (family === 'person' || family === 'beneficiary') && slotData.role) {
+          selections.push({ atomId: atom.id, family, mode: 'role', value: slotData.role })
+        }
       }
     }
   }

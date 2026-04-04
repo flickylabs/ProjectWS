@@ -16,6 +16,7 @@ import type { LieState } from '../types'
 import type { EmotionalPhase } from '../types'
 import type { BeatScriptV2, BeliefMode, MisconceptionState } from '../types'
 import type { DisputeV2 } from '../types'
+import type { Archetype } from '../types/character'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 타입
@@ -99,6 +100,7 @@ export interface InterjectionEvaluationInput {
   isSeparated: boolean
   flags: Set<string>
   tracker: InterjectionTrackerState
+  interruptorArchetype?: Archetype
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -205,7 +207,7 @@ export function evaluateInterjectionOpportunity(
   return {
     type: 'interjection',
     textId: `interjection.v2.${interruptor}.${input.dispute.id}.${triggerReason}`,
-    line: buildFallbackLine(knowledge.infoLevel),
+    line: buildFallbackLine(knowledge.infoLevel, input.interruptorArchetype, input.interruptorEmotionValue),
     choiceLabels: ['허용한다', '제지한다'],
     interruptor,
     target,
@@ -382,11 +384,96 @@ function buildBlockEffects(
   ]
 }
 
-function buildFallbackLine(infoLevel: InterjectionInfoLevel): string {
-  if (infoLevel === 'detail_rebuttal') return '잠깐만요. 그건 제가 아는 맥락과 다릅니다. 그 부분은 바로잡고 넘어가셔야 합니다.'
-  if (infoLevel === 'trap_signal') return '그 자료만 그렇게 떼어 보면 전부 엉뚱한 쪽으로 갑니다. 맥락을 같이 보셔야 합니다.'
-  if (infoLevel === 'misbelief_escalation') return '아니요, 그 조합이면 누가 봐도 그렇게 읽힙니다. 지금 그 의심을 그냥 넘길 수는 없습니다.'
-  return '잠깐만요. 그 문제를 그렇게 한쪽만 몰아가시면 저는 가만히 있을 수 없습니다.'
+// ── archetype별 끼어들기 대사 맵 ──
+
+type ArchetypeLineMap = Record<InterjectionInfoLevel, string>
+
+const ARCHETYPE_LINES: Record<Archetype, ArchetypeLineMap> = {
+  avoidant: {
+    emotional_only: '잠깐만요, 죄송합니다만 그 부분은 제가 아는 것과 좀 다른 것 같습니다.',
+    detail_rebuttal: '재판관님, 지금 상대방이 말한 부분에는 빠진 사정이 있습니다.',
+    trap_signal: '재판관님, 그 자료를 그렇게만 보시면 오해가 생길 수 있습니다.',
+    misbelief_escalation: '죄송합니다만 그건 정말 아닙니다... 제 이야기도 좀 들어주십시오.',
+  },
+  confrontational: {
+    emotional_only: '아니, 그건 틀렸습니다.',
+    detail_rebuttal: '재판관님, 상대방이 핵심을 빼놓고 있습니다.',
+    trap_signal: '그 자료를 그런 식으로 읽으면 곤란합니다. 제가 직접 짚어드리겠습니다.',
+    misbelief_escalation: '그 말은 사실이 아닙니다. 제가 직접 말씀드리겠습니다.',
+  },
+  victim_cosplay: {
+    emotional_only: '재판관님, 저도 할 말이 있습니다...',
+    detail_rebuttal: '왜 제 사정은 안 들어보시는 겁니까. 저쪽만 들으시면 안 됩니다.',
+    trap_signal: '제가 봐도 그건 아닙니다. 왜 자꾸 저만 나쁜 사람으로 모는 겁니까.',
+    misbelief_escalation: '제가 얼마나 힘들었는지 아십니까. 상대방 말만 듣고 판단하시면 안 됩니다.',
+  },
+  cold_logic: {
+    emotional_only: '한 가지 정정하겠습니다.',
+    detail_rebuttal: '재판관님, 사실관계에 오류가 있습니다. 확인이 필요합니다.',
+    trap_signal: '지금 그 자료를 잘못 읽고 계십니다. 논리가 맞지 않습니다.',
+    misbelief_escalation: '사실관계가 틀렸습니다. 정정하겠습니다.',
+  },
+  affect_flattening: {
+    emotional_only: '그 부분은 다릅니다.',
+    detail_rebuttal: '정정이 필요한 부분이 있습니다.',
+    trap_signal: '그 자료의 맥락이 빠져 있습니다.',
+    misbelief_escalation: '사실과 다릅니다. 말씀드리겠습니다.',
+  },
+  premature_summary: {
+    emotional_only: '잠깐, 그건 지금 이 문제에서 핵심이 아닙니다.',
+    detail_rebuttal: '재판관님, 지금 그 이야기보다 더 중요한 맥락이 있습니다.',
+    trap_signal: '그 자료는 핵심이 아닙니다. 엉뚱한 데 시간 쓰지 마시고 본론을 보셔야 합니다.',
+    misbelief_escalation: '상대방이 핵심을 비켜가고 있습니다. 진짜 문제는 따로 있습니다.',
+  },
+}
+
+/** emotion이 높을 때(70+) 격한 톤으로 치환되는 변형 */
+const ARCHETYPE_HIGH_EMOTION_LINES: Partial<Record<Archetype, Partial<ArchetypeLineMap>>> = {
+  avoidant: {
+    emotional_only: '아니, 잠깐만요! 그건 정말 아닙니다!',
+    detail_rebuttal: '재판관님, 제발 제 말도 들어주십시오! 저쪽 말은 사실이 아닙니다!',
+  },
+  confrontational: {
+    emotional_only: '그만하세요! 거짓말하지 마세요!',
+    detail_rebuttal: '재판관님! 저 사람이 지금 거짓말을 하고 있습니다!',
+    misbelief_escalation: '뻔히 거짓말인데 왜 그냥 넘어갑니까! 제가 증명하겠습니다!',
+  },
+  victim_cosplay: {
+    emotional_only: '왜 저만 이러는 겁니까... 저도 사람입니다!',
+    detail_rebuttal: '제 말은 왜 아무도 안 들어주는 겁니까!',
+    misbelief_escalation: '더 이상 못 참겠습니다! 제가 뭘 잘못했다는 겁니까!',
+  },
+  cold_logic: {
+    misbelief_escalation: '더 이상 듣고만 있을 수 없습니다. 명백한 허위입니다.',
+  },
+  premature_summary: {
+    emotional_only: '지금 그게 중요한 게 아니잖습니까!',
+    misbelief_escalation: '재판관님, 저 사람은 계속 핵심을 피하고 있습니다!',
+  },
+}
+
+const HIGH_EMOTION_THRESHOLD = 70
+
+function buildFallbackLine(
+  infoLevel: InterjectionInfoLevel,
+  archetype?: Archetype,
+  emotionValue?: number,
+): string {
+  // archetype이 없으면 기존 고정 대사 (fallback)
+  if (!archetype) {
+    if (infoLevel === 'detail_rebuttal') return '잠깐만요. 그건 제가 아는 맥락과 다릅니다. 그 부분은 바로잡고 넘어가셔야 합니다.'
+    if (infoLevel === 'trap_signal') return '그 자료만 그렇게 떼어 보면 전부 엉뚱한 쪽으로 갑니다. 맥락을 같이 보셔야 합니다.'
+    if (infoLevel === 'misbelief_escalation') return '아니요, 지금 그 말씀은 사실과 다릅니다. 그냥 넘어갈 수 없습니다.'
+    return '잠깐만요. 그 문제를 그렇게 한쪽만 몰아가시면 저는 가만히 있을 수 없습니다.'
+  }
+
+  // emotion 70+ 이면 격한 변형 우선 시도
+  if (emotionValue != null && emotionValue >= HIGH_EMOTION_THRESHOLD) {
+    const highLine = ARCHETYPE_HIGH_EMOTION_LINES[archetype]?.[infoLevel]
+    if (highLine) return highLine
+  }
+
+  return ARCHETYPE_LINES[archetype][infoLevel]
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

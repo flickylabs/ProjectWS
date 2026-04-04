@@ -1,0 +1,161 @@
+{
+  "case": "workplace-01",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 이메일 체인과 회의록에 기재된 내용을 확인한 적이 있습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "초안 작성자와 회의록 입력자가 동일인인 점에 대해 설명하십시오.",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "회신에 적힌 역할 분담과 최종 제출 명의가 다른 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 문서 수정 이력 PDF를 직접 제출하신 것이 맞습니까?",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 PDF의 생성 시각이 추출 시각보다 늦은 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "표 간격이 한 행만 어긋나 있습니다. 이 파일이 원본 그대로입니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "문서 서버의 감사 로그가 존재한다는 사실을 알고 계셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "23시대 기록에 일반 계정이 아닌 토큰이 찍힌 점에 대해 설명하십시오.",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "본문 수정이 20시 이전에 완료된 점과 23시대 기록의 차이를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 평가 초안의 버전 기록과 코멘트를 확인한 적이 있습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "점수 보정 직전에 비공개 메모가 입력된 시점에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "v1에서 v2로 넘어가며 기여 항목이 축소된 경위를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 슬랙 캡처 묶음을 동료 둘에게 전달한 사실이 있습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "캡처 생성 시각이 새벽 1시대에 집중된 이유를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "캡처에서 의도적으로 잘린 부분이 있습니다. 왜 전체를 보내지 않았습니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 포렌식 메모와 토큰 발급 기록의 존재를 알고 계셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "제출 PDF와 공식 추출본 사이에 시차와 해시 불일치가 있습니다. 이유를 아십니까?",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "관련 열이 제거된 채 내보내진 경위에 대해 아는 바를 말씀하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ]
+  }
+}

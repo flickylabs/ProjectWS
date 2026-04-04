@@ -35,8 +35,8 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "1,500,000원",
-                  "rounded": "150만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "해당 금액"
                 },
                 "time": {
@@ -718,7 +718,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "1,500,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "150만원",
                   "neutral": "해당 금액"
                 }
@@ -1122,8 +1122,8 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "1,500,000원",
-                  "rounded": "150만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "해당 금액"
                 },
                 "institution": {
@@ -2692,8 +2692,8 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "1,500,000원",
-                  "rounded": "150만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "해당 금액"
                 },
                 "term": {
@@ -2725,7 +2725,7 @@
                   "neutral": "그 시점"
                 },
                 "person": {
-                  "fullName": "정옥자",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "가족 어르신"
                 }
@@ -3738,8 +3738,8 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "1,500,000원",
-                  "rounded": "150만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "해당 금액"
                 },
                 "term": {
@@ -4838,7 +4838,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "정옥자",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "가족 어르신"
                 }

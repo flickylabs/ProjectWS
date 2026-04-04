@@ -44,7 +44,7 @@
                 },
                 "b": {
                   "exact": "정다혜",
-                  "fullName": "정다혜",
+                  "fullName": "정다혜 씨",
                   "judgeRef": "정다혜 씨",
                   "neutral": "상대방"
                 }
@@ -394,7 +394,7 @@
                 },
                 "b": {
                   "exact": "정다혜",
-                  "fullName": "정다혜",
+                  "fullName": "정 씨",
                   "judgeRef": "정다혜 씨",
                   "neutral": "상대방"
                 }
@@ -651,7 +651,7 @@
                 },
                 "a": {
                   "exact": "이태준",
-                  "fullName": "이태준",
+                  "fullName": "이태준 씨",
                   "judgeRef": "이태준 씨",
                   "neutral": "상대방"
                 },
@@ -1245,7 +1245,7 @@
               "slots": {
                 "b": {
                   "exact": "정다혜",
-                  "fullName": "정다혜",
+                  "fullName": "정다혜 씨",
                   "judgeRef": "정다혜 씨",
                   "neutral": "상대방"
                 },
@@ -1560,7 +1560,7 @@
                 },
                 "a": {
                   "exact": "이태준",
-                  "fullName": "이태준",
+                  "fullName": "이태준 씨",
                   "judgeRef": "이태준 씨",
                   "neutral": "상대방"
                 }
@@ -1855,7 +1855,7 @@
               "slots": {
                 "a": {
                   "exact": "이태준",
-                  "fullName": "이태준",
+                  "fullName": "이태준 씨",
                   "judgeRef": "이태준 씨",
                   "neutral": "본인"
                 },
@@ -2172,7 +2172,7 @@
                 },
                 "a": {
                   "exact": "이태준",
-                  "fullName": "이태준",
+                  "fullName": "이태준 씨",
                   "judgeRef": "이태준 씨",
                   "neutral": "상대방"
                 }
@@ -2767,7 +2767,7 @@
               "slots": {
                 "a": {
                   "exact": "이태준",
-                  "fullName": "이태준",
+                  "fullName": "이태준 씨",
                   "judgeRef": "이태준 씨",
                   "neutral": "상대방"
                 },

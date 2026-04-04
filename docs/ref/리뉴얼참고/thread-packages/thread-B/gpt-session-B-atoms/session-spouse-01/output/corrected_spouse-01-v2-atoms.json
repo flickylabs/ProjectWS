@@ -1,0 +1,5733 @@
+{
+  "caseId": "spouse-01",
+  "schemaVersion": "v2",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.movement_only",
+              "factText": "공동계좌 금액 이동 사실만 인정",
+              "tags": [
+                "act",
+                "timeline",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "dateExact": "그날",
+                  "timeExact": "그날",
+                  "dateTimeExact": "그날",
+                  "period": "추석 연휴 직전",
+                  "neutral": "그날"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ]
+            },
+            {
+              "id": "d1.recipient_name_overread",
+              "factText": "수취인 이름만으로 외도 추정 거부",
+              "tags": [
+                "identity",
+                "context",
+                "denial",
+                "evidence"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "그 사람",
+                  "directRef": "그 사람",
+                  "role": "관계자",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d1.illicit_intent_denial",
+              "factText": "부정한 관계 자금 단정 거부",
+              "tags": [
+                "motive",
+                "denial",
+                "context",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            },
+            {
+              "id": "d1.purpose_withhold",
+              "factText": "송금 용도 설명 유보",
+              "tags": [
+                "motive",
+                "uncertainty",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 60,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ],
+          "fallbackPublicClaim": [
+            "9월 20일 기준으로 2,800,000원이 움직인 사실만으로 그 돈을 부정한 관계 자금처럼 몰아갈 수는 없습니다.",
+            "받는 사람 이름 하나가 낯설다고 해서 제가 가정을 등진 데 돈을 썼다고 단정하는 건 순서가 아닙니다.",
+            "제가 바로 용도를 다 말하지 못했다고 해도, 그 송금 자체가 잘못된 곳으로 간 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "그 2,800,000원은 재가돌봄센터 상담팀장 최민정에게 보낸 추석 연휴 간병 예약금이다.",
+            "대상자는 오세린의 어머니 오미숙이며, 송금은 내 휴대폰과 인증으로 내가 직접 했다.",
+            "100만원 이상은 미리 상의하기로 한 약속을 내가 먼저 어겼다."
+          ],
+          "suppressions": [
+            "최민정이 외도 상대가 아니라 돌봄센터 상담팀장이라는 사실",
+            "오미숙 간병 예약금이라는 정확한 용도",
+            "처가 살림을 감당 못 하는 사람처럼 보일까 두려워 숨겼다는 동기"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "over_precision",
+            "timeline_padding"
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "공동계좌 송금 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "dateExact": "그날",
+                  "timeExact": "그날",
+                  "dateTimeExact": "그날",
+                  "period": "추석 연휴 직전",
+                  "neutral": "그날"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.purpose_withhold",
+              "factText": "송금 용도 설명 유보",
+              "tags": [
+                "motive",
+                "uncertainty",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 60,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d1.recipient_name_overread",
+              "factText": "수취인 이름만으로 외도 추정 거부",
+              "tags": [
+                "identity",
+                "context",
+                "denial",
+                "evidence"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "그 사람",
+                  "directRef": "그 사람",
+                  "role": "관계자",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d1.prior_consult_missed",
+              "factText": "사전 상의 누락 일부 인정",
+              "tags": [
+                "rule",
+                "responsibility",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "공동계좌에서 2,800,000원을 보낸 건 제가 맞습니다.",
+            "다만 그 돈의 용도에는 설명 순서가 있고, 이름만 보고 외도 자금처럼 말하는 건 과합니다.",
+            "미리 상의하지 못한 건 제 잘못이지만, 그 돈이 부정한 데 쓰인 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "그 2,800,000원은 재가돌봄센터 상담팀장 최민정에게 보낸 추석 연휴 간병 예약금이다.",
+            "대상자는 오세린의 어머니 오미숙이며, 송금은 내 휴대폰과 인증으로 내가 직접 했다.",
+            "100만원 이상은 미리 상의하기로 한 약속을 내가 먼저 어겼다."
+          ],
+          "suppressions": [
+            "최민정이 돌봄센터 상담팀장이라는 직함",
+            "오미숙 간병 예약이라는 구체적 목적",
+            "장모님 일과 내 자존심이 얽혀 말을 미뤘다는 사정"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "over_precision",
+            "timeline_padding",
+            "counter_question"
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "공동계좌 송금 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "상당한 금액",
+                  "rounded": "상당한 금액",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "dateExact": "그날",
+                  "timeExact": "그날",
+                  "dateTimeExact": "그날",
+                  "period": "추석 연휴 직전",
+                  "neutral": "그날"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.family_need_generic",
+              "factText": "가족 쪽 급한 일 사용 주장",
+              "tags": [
+                "motive",
+                "context",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "beneficiary": {
+                  "fullName": "가족 어른",
+                  "judgeRef": "가족 어른",
+                  "directRef": "가족 어른",
+                  "role": "가족 관련 인물",
+                  "neutral": "가족 어른"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.professional_link_generic",
+              "factText": "수취인 업무상 연결 인물 주장",
+              "tags": [
+                "identity",
+                "institution",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "최 씨",
+                  "directRef": "그 사람",
+                  "role": "업무 관련 담당자",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.prior_consult_missed",
+              "factText": "사전 상의 누락 일부 인정",
+              "tags": [
+                "rule",
+                "responsibility",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "상당한 금액",
+                  "rounded": "상당한 금액",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.illicit_intent_denial",
+              "factText": "부정한 관계 자금 단정 거부",
+              "tags": [
+                "motive",
+                "denial",
+                "context",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "상당한 금액",
+                  "rounded": "상당한 금액",
+                  "neutral": "해당 금액"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            }
+          ],
+          "fallbackPublicClaim": [
+            "그 송금은 제가 한 게 맞고, 다른 여자에게 생활비를 빼돌린 돈도 아닙니다.",
+            "가족 쪽 급한 일 때문에 먼저 움직인 돈이었는데, 제가 설명을 늦췄습니다.",
+            "약속을 어긴 책임은 인정하지만, 상대를 속여 딴 데 쓴 돈처럼 보시는 건 다릅니다."
+          ],
+          "privateKnowledge": [
+            "그 2,800,000원은 재가돌봄센터 상담팀장 최민정에게 보낸 추석 연휴 간병 예약금이다.",
+            "대상자는 오세린의 어머니 오미숙이며, 송금은 내 휴대폰과 인증으로 내가 직접 했다.",
+            "처가 지원 문제 앞에서 쩔쩔매는 가장으로 보일까 두려워 사실을 숨겼다."
+          ],
+          "suppressions": [
+            "돌봄센터명과 상담팀장 최민정의 정확한 신분",
+            "오미숙 이름이 적힌 예약 문서",
+            "자존심 때문에 장모님 간병 문제를 혼자 처리하려 했다는 감정"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "over_precision",
+            "counter_question",
+            "timeline_padding"
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "공동계좌 송금 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "dateExact": "9월 20일",
+                  "timeExact": "14시 03분",
+                  "dateTimeExact": "9월 20일 14시 03분",
+                  "period": "추석 연휴 직전",
+                  "neutral": "그날"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.family_need_generic",
+              "factText": "가족 쪽 급한 일 사용 주장",
+              "tags": [
+                "motive",
+                "context",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "beneficiary": {
+                  "fullName": "오미숙",
+                  "judgeRef": "장모님",
+                  "directRef": "장모님",
+                  "role": "돌봄 대상자",
+                  "neutral": "가족 어른"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.partner_suspicion_counter",
+              "factText": "배우자의 외도 단정과 열람 책임 역지적",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship",
+                "privacy"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.professional_link_generic",
+              "factText": "수취인 업무상 연결 인물 주장",
+              "tags": [
+                "identity",
+                "institution",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.illicit_intent_denial",
+              "factText": "부정한 관계 자금 단정 거부",
+              "tags": [
+                "motive",
+                "denial",
+                "context",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            }
+          ],
+          "fallbackPublicClaim": [
+            "왜 2,800,000원 숫자만 붙들고 계십니까. 그 전에 왜 제 폰을 열어보고, 왜 바로 외도부터 단정했는지도 같이 보셔야 합니다.",
+            "가족 문제를 혼자 막으려다 설명이 늦어진 건데, 저만 계획적으로 속인 사람처럼 세우면 저도 방어적으로 될 수밖에 없습니다.",
+            "송금 경위는 설명하겠습니다만, 그걸 외도 프레임으로 밀어붙인 쪽 책임도 분명히 있습니다."
+          ],
+          "privateKnowledge": [
+            "그 2,800,000원은 재가돌봄센터 상담팀장 최민정에게 보낸 추석 연휴 간병 예약금이다.",
+            "대상자는 오세린의 어머니 오미숙이며, 송금은 내 휴대폰과 인증으로 내가 직접 했다.",
+            "내가 먼저 상의 규칙을 깼지만, 세린 역시 의심과 우회 송금으로 신뢰를 무너뜨렸다."
+          ],
+          "suppressions": [
+            "최민정과 오미숙을 연결하는 간병 예약의 전모",
+            "내가 먼저 규칙을 어겼다는 핵심 자백",
+            "자존심 때문에 숨겼다는 가장 역할의 수치심"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "counter_question",
+            "timeline_padding",
+            "over_precision"
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "공동계좌 송금 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "dateExact": "9월 20일",
+                  "timeExact": "14시 03분",
+                  "dateTimeExact": "9월 20일 14시 03분",
+                  "period": "추석 연휴 직전",
+                  "neutral": "그날"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.family_need_generic",
+              "factText": "가족 쪽 급한 일 사용 주장",
+              "tags": [
+                "motive",
+                "context",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "beneficiary": {
+                  "fullName": "오미숙",
+                  "judgeRef": "장모님",
+                  "directRef": "장모님",
+                  "role": "돌봄 대상자",
+                  "neutral": "가족 어른"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.provider_shame",
+              "factText": "무능한 가장처럼 보일까 두려워 숨김",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "motive",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "오미숙",
+                  "judgeRef": "장모님",
+                  "directRef": "장모님",
+                  "role": "돌봄 대상자",
+                  "neutral": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d1.prior_consult_missed",
+              "factText": "사전 상의 누락 일부 인정",
+              "tags": [
+                "rule",
+                "responsibility",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.illicit_intent_denial",
+              "factText": "부정한 관계 자금 단정 거부",
+              "tags": [
+                "motive",
+                "denial",
+                "context",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            }
+          ],
+          "fallbackPublicClaim": [
+            "솔직히 말씀드리면, 처가 살림도 제대로 못 챙기는 사람처럼 보일까 봐 그 말을 못 꺼냈습니다.",
+            "돈은 다른 여자에게 간 게 아니라 가족 쪽 급한 일로 쓴 겁니다.",
+            "숨긴 건 잘못이지만, 적어도 가정을 배반하는 데 쓴 돈은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "그 2,800,000원은 재가돌봄센터 상담팀장 최민정에게 보낸 추석 연휴 간병 예약금이다.",
+            "대상자는 오세린의 어머니 오미숙이며, 내가 추석 연휴 간병 공백을 막으려 급히 예약했다.",
+            "처가 지원 문제 앞에서 무능한 가장처럼 보일까 두려워 세린에게 사실을 숨겼다."
+          ],
+          "suppressions": [
+            "예약금이 정확히 장모님 간병 3일치라는 세부 내역",
+            "최민정이 돌봄센터 상담팀장이라는 명시적 신분",
+            "내가 세린보다 먼저 문제를 떠안고 인정받고 싶었다는 속내"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "timeline_padding",
+            "counter_question"
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "공동계좌 송금 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "dateExact": "9월 20일",
+                  "timeExact": "14시 03분",
+                  "dateTimeExact": "9월 20일 14시 03분",
+                  "period": "추석 연휴 직전",
+                  "neutral": "그날"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.recipient_identity_full",
+              "factText": "최민정의 직함과 역할 구체 인정",
+              "tags": [
+                "identity",
+                "institution",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 25,
+              "slots": {
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.care_reservation_confess",
+              "factText": "추석 연휴 간병 예약금 구체 인정",
+              "tags": [
+                "admission",
+                "motive",
+                "evidence",
+                "beneficiary",
+                "institution"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "evidence": {
+                  "fullName": "재가돌봄센터 간병 예약 확인서",
+                  "shortName": "예약서",
+                  "neutral": "그 자료"
+                },
+                "beneficiary": {
+                  "fullName": "오미숙",
+                  "judgeRef": "장모님",
+                  "directRef": "장모님",
+                  "role": "돌봄 대상자",
+                  "neutral": "가족 어른"
+                },
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.breach_full_confess",
+              "factText": "사전 상의 약속 위반 전면 인정",
+              "tags": [
+                "rule",
+                "responsibility",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 25,
+              "slots": {
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.provider_shame",
+              "factText": "무능한 가장처럼 보일까 두려워 숨김",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "motive",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "오미숙",
+                  "judgeRef": "장모님",
+                  "directRef": "장모님",
+                  "role": "돌봄 대상자",
+                  "neutral": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ],
+          "fallbackPublicClaim": [
+            "그 2,800,000원은 최민정 상담팀장을 통해 잡은 추석 연휴 간병 예약금이었습니다.",
+            "대상자는 장모님 오미숙 씨였고, 제가 미리 상의하지 않은 건 명백한 약속 위반입니다.",
+            "외도가 아니라는 점과, 제가 자존심 때문에 숨겼다는 점까지 인정하겠습니다."
+          ],
+          "privateKnowledge": [
+            "그 2,800,000원은 재가돌봄센터 상담팀장 최민정에게 보낸 추석 연휴 간병 예약금이다.",
+            "대상자는 오세린의 어머니 오미숙이며, 송금은 내 휴대폰과 인증으로 내가 직접 했다.",
+            "처가 지원 문제 앞에서 무능한 가장처럼 보일까 두려워 사실을 숨겼다."
+          ],
+          "suppressions": [
+            "오미숙의 건강 상태 같은 불필요한 개인정보",
+            "간병 예약 상담에서 오간 세부 병력",
+            "세린 동생 문제까지 한꺼번에 떠안고 싶지 않았던 속내"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "over_precision",
+            "timeline_padding"
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.affair_denial",
+              "factText": "외도 관계 단정 거부",
+              "tags": [
+                "relationship",
+                "denial",
+                "identity"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "그 사람",
+                  "directRef": "그 사람",
+                  "role": "관계자",
+                  "neutral": "그 사람"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            },
+            {
+              "id": "d3.cropped_chat_context_missing",
+              "factText": "잘린 캡처만으로 맥락 판단 불가",
+              "tags": [
+                "evidence",
+                "context",
+                "quote",
+                "denial"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "evidence": {
+                  "fullName": "그 캡처",
+                  "shortName": "캡처본",
+                  "neutral": "그 캡처"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d3.message_nonromantic",
+              "factText": "문제 문장을 사적 은어로 보지 않음",
+              "tags": [
+                "quote",
+                "context",
+                "denial"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d3.explanation_order_withhold",
+              "factText": "만남 맥락 설명 유보",
+              "tags": [
+                "uncertainty",
+                "motive",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 60,
+              "slots": {
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "9시 12분 메시지 하나와 골목 이미지로 외도를 단정하는 건 너무 빠릅니다.",
+            "그 문장은 사적인 만남을 뜻하는 표현이 아니었습니다.",
+            "최민정 씨를 그저 '낯선 여자'로 부르며 결론부터 내리면 사실이 틀어집니다."
+          ],
+          "privateKnowledge": [
+            "최민정은 외도 상대가 아니라 재가돌봄센터 상담팀장이다.",
+            "그날 밤 만남은 돌봄센터 후문 상담동에서 잡힌 간병 상담 일정이었다.",
+            "메신저의 '조용한 데서 보자'라는 표현이 오해를 부를 걸 알면서도 맥락을 숨겼다."
+          ],
+          "suppressions": [
+            "최민정이 돌봄센터 상담팀장이라는 사실",
+            "그날 만남이 장모님 간병 상담이었다는 목적",
+            "메시지 표현이 오해를 부를 걸 알면서도 설명을 미뤘다는 자각"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "over_precision",
+            "counter_question",
+            "timeline_padding"
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.contact_ack",
+              "factText": "연락과 만남 사실 자체 인정",
+              "tags": [
+                "act",
+                "timeline",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "time": {
+                  "dateExact": "그날 밤",
+                  "timeExact": "그날 밤",
+                  "dateTimeExact": "그날 밤",
+                  "period": "그날 밤",
+                  "neutral": "그날 밤"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.affair_denial",
+              "factText": "외도 관계 단정 거부",
+              "tags": [
+                "relationship",
+                "denial",
+                "identity"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "그 사람",
+                  "directRef": "그 사람",
+                  "role": "관계자",
+                  "neutral": "그 사람"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            },
+            {
+              "id": "d3.cropped_chat_context_missing",
+              "factText": "잘린 캡처만으로 맥락 판단 불가",
+              "tags": [
+                "evidence",
+                "context",
+                "quote",
+                "denial"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "evidence": {
+                  "fullName": "그 캡처",
+                  "shortName": "캡처본",
+                  "neutral": "그 캡처"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d3.explanation_order_withhold",
+              "factText": "만남 맥락 설명 유보",
+              "tags": [
+                "uncertainty",
+                "motive",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 60,
+              "slots": {
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "메시지가 오간 사실은 맞지만 외도는 아닙니다.",
+            "그 만남에는 설명 순서가 있고, 캡처 한 장으로는 맥락이 전혀 보이지 않습니다.",
+            "제가 바로 말 못 한 건 별개로, 관계 자체를 의심받을 내용은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "최민정은 외도 상대가 아니라 재가돌봄센터 상담팀장이다.",
+            "그날 밤 만남은 돌봄센터 후문 상담동에서 잡힌 간병 상담 일정이었다.",
+            "장모님 간병 문제를 내가 먼저 해결하려다 설명을 늦췄다."
+          ],
+          "suppressions": [
+            "돌봄센터와 장모님을 연결하는 정확한 설명",
+            "상담동 후문이라는 구체적 위치",
+            "처가 지원 문제에서 무능해 보일까 두려웠다는 감정"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "over_precision",
+            "timeline_padding",
+            "counter_question"
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.contact_ack",
+              "factText": "연락과 만남 사실 자체 인정",
+              "tags": [
+                "act",
+                "timeline",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "time": {
+                  "dateExact": "그날 밤",
+                  "timeExact": "그날 밤",
+                  "dateTimeExact": "그날 밤",
+                  "period": "그날 밤",
+                  "neutral": "그날 밤"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.family_reason_generic",
+              "factText": "가족 일 때문에 조용한 만남을 잡았다는 주장",
+              "tags": [
+                "motive",
+                "context",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "beneficiary": {
+                  "fullName": "가족 어른",
+                  "judgeRef": "가족 어른",
+                  "directRef": "가족 어른",
+                  "role": "가족 관련 인물",
+                  "neutral": "가족 어른"
+                },
+                "place": {
+                  "exact": "그곳",
+                  "category": "그 골목 안쪽",
+                  "neutral": "그곳"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.work_contact_generic",
+              "factText": "그 사람을 업무상 연결 인물로 규정",
+              "tags": [
+                "identity",
+                "institution",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "최 씨",
+                  "directRef": "그 사람",
+                  "role": "업무 관련 담당자",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.delay_fault_ack",
+              "factText": "설명 지연으로 오해 키운 책임 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "shame",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.affair_denial",
+              "factText": "외도 관계 단정 거부",
+              "tags": [
+                "relationship",
+                "denial",
+                "identity"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "그 사람",
+                  "directRef": "그 사람",
+                  "role": "관계자",
+                  "neutral": "그 사람"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            }
+          ],
+          "fallbackPublicClaim": [
+            "사적으로 숨어 만난 게 아니라 가족 일 때문에 조용한 장소를 잡은 겁니다.",
+            "최민정 씨는 제가 바람난 상대가 아니라 업무로 연결된 사람입니다.",
+            "다만 제가 그 설명을 늦게 한 탓에 오해가 커졌습니다."
+          ],
+          "privateKnowledge": [
+            "최민정은 외도 상대가 아니라 재가돌봄센터 상담팀장이다.",
+            "그날 밤 만남은 돌봄센터 후문 상담동에서 장모님 간병 일정을 잡기 위한 상담이었다.",
+            "내가 자존심 때문에 정확한 맥락과 상대 신분을 숨겨 외도처럼 보이게 만들었다."
+          ],
+          "suppressions": [
+            "오미숙 이름이 걸린 간병 준비라는 핵심",
+            "돌봄센터 후문 상담동이라는 세부 동선",
+            "장모님 문제를 혼자 처리하며 인정받고 싶었다는 속내"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "timeline_padding",
+            "over_precision",
+            "counter_question"
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.contact_ack",
+              "factText": "연락과 만남 사실 자체 인정",
+              "tags": [
+                "act",
+                "timeline",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "time": {
+                  "dateExact": "9월 20일",
+                  "timeExact": "21시 14분",
+                  "dateTimeExact": "9월 20일 21시 14분",
+                  "period": "그날 밤",
+                  "neutral": "그날 밤"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.evidence_incomplete_counter",
+              "factText": "골목 이미지와 캡처의 불완전성 역지적",
+              "tags": [
+                "counter",
+                "evidence",
+                "context",
+                "privacy"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "evidence": {
+                  "fullName": "지석 휴대폰 메신저 캡처본",
+                  "shortName": "캡처본",
+                  "neutral": "그 캡처"
+                },
+                "place": {
+                  "exact": "상담동 후문",
+                  "category": "그 골목 안쪽",
+                  "neutral": "그곳"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.suspicion_frame_counter",
+              "factText": "배우자의 외도 프레임 책임 지적",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.work_contact_generic",
+              "factText": "최민정을 업무상 연결 인물로 규정",
+              "tags": [
+                "identity",
+                "institution",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.family_reason_generic",
+              "factText": "가족 일 때문에 조용한 만남을 잡았다는 주장",
+              "tags": [
+                "motive",
+                "context",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "beneficiary": {
+                  "fullName": "오미숙",
+                  "judgeRef": "장모님",
+                  "directRef": "장모님",
+                  "role": "돌봄 대상자",
+                  "neutral": "가족 어른"
+                },
+                "place": {
+                  "exact": "상담동 후문",
+                  "category": "그 골목 안쪽",
+                  "neutral": "그곳"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "왜 계속 외도라는 단어부터 붙이십니까. 캡처를 잘라놓고 골목만 보고 그렇게 몰아가면 누구라도 왜곡됩니다.",
+            "그날 동선과 장소를 다 들으면 이야기가 달라집니다.",
+            "저를 숨은 남자로 만들기 전에, 그 자료가 얼마나 불완전한지부터 봐주셔야 합니다."
+          ],
+          "privateKnowledge": [
+            "최민정은 외도 상대가 아니라 재가돌봄센터 상담팀장이다.",
+            "캡처와 골목 인상만 떼어 보면 외도처럼 읽히지만 실제 만남은 간병 상담이었다.",
+            "세린이 잘린 캡처와 위치 이미지만 보고 의도를 뛰어넘어 결론을 냈다."
+          ],
+          "suppressions": [
+            "장모님 간병 공백이 있었다는 가족 사정",
+            "상담을 잡으려 센터와 통화하고 예약금까지 냈다는 연결고리",
+            "내 설명 지연이 오해의 토대를 만들었다는 책임"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "counter_question",
+            "timeline_padding",
+            "over_precision"
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.family_reason_generic",
+              "factText": "가족 일 때문에 조용한 만남을 잡았다는 주장",
+              "tags": [
+                "motive",
+                "context",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "beneficiary": {
+                  "fullName": "오미숙",
+                  "judgeRef": "장모님",
+                  "directRef": "장모님",
+                  "role": "돌봄 대상자",
+                  "neutral": "가족 어른"
+                },
+                "place": {
+                  "exact": "상담동 후문",
+                  "category": "그 골목 안쪽",
+                  "neutral": "그곳"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.motherinlaw_shame",
+              "factText": "장모 간병 문제를 혼자 떠안은 수치심",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "beneficiary",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "beneficiary": {
+                  "fullName": "오미숙",
+                  "judgeRef": "장모님",
+                  "directRef": "장모님",
+                  "role": "돌봄 대상자",
+                  "neutral": "가족 어른"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.delay_fault_ack",
+              "factText": "설명 지연으로 오해 키운 책임 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "shame",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.affair_denial",
+              "factText": "외도 관계 단정 거부",
+              "tags": [
+                "relationship",
+                "denial",
+                "identity"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            },
+            {
+              "id": "d3.work_contact_generic",
+              "factText": "최민정을 업무상 연결 인물로 규정",
+              "tags": [
+                "identity",
+                "institution",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "사실 제일 숨기고 싶었던 건 여자가 아니라 장모님 간병 얘기를 제가 혼자 떠안으려 했다는 점이었습니다.",
+            "그래서 '조용한 데서 보자' 같은 말도 굳이 풀어 설명하지 못했습니다.",
+            "외도는 아니지만, 오해를 부를 방식으로 숨긴 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "최민정은 외도 상대가 아니라 재가돌봄센터 상담팀장이다.",
+            "그날 밤 만남은 장모님 간병 공백을 메우기 위한 상담 일정이었다.",
+            "나는 가장으로서 무능해 보일까 두려워 그 맥락을 외도처럼 보일 만큼 숨겼다."
+          ],
+          "suppressions": [
+            "예약금 액수와 간병 일정표 같은 세부 실무",
+            "장모님 건강 상태의 구체 정보",
+            "세린에게 먼저 고맙다는 말을 듣고 싶었던 자존심"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "timeline_padding",
+            "counter_question"
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.contact_ack",
+              "factText": "연락과 만남 사실 자체 인정",
+              "tags": [
+                "act",
+                "timeline",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "time": {
+                  "dateExact": "9월 20일",
+                  "timeExact": "21시 14분",
+                  "dateTimeExact": "9월 20일 21시 14분",
+                  "period": "그날 밤",
+                  "neutral": "그날 밤"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.identity_full",
+              "factText": "최민정의 직함 구체 인정",
+              "tags": [
+                "identity",
+                "institution",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 25,
+              "slots": {
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.location_full",
+              "factText": "상담동 후문 만남 장소 구체 인정",
+              "tags": [
+                "location",
+                "timeline",
+                "context",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "place": {
+                  "exact": "상담동 후문",
+                  "category": "그 골목 안쪽",
+                  "neutral": "그곳"
+                },
+                "time": {
+                  "dateExact": "9월 20일",
+                  "timeExact": "21시 14분",
+                  "dateTimeExact": "9월 20일 21시 14분",
+                  "period": "그날 밤",
+                  "neutral": "그날 밤"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.care_context_full",
+              "factText": "장모 간병 일정 상담 목적 구체 인정",
+              "tags": [
+                "beneficiary",
+                "motive",
+                "context",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "beneficiary": {
+                  "fullName": "오미숙",
+                  "judgeRef": "장모님",
+                  "directRef": "장모님",
+                  "role": "돌봄 대상자",
+                  "neutral": "가족 어른"
+                },
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.delay_fault_ack",
+              "factText": "설명 지연으로 오해 키운 책임 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "shame",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "최민정 씨는 재가돌봄센터 상담팀장입니다.",
+            "그날 밤 만남은 추석 연휴 장모님 간병 일정을 상담동 후문에서 잡은 것이고, 외도는 아니었습니다.",
+            "제가 자존심 때문에 그 맥락을 숨겨 외도처럼 보이게 만든 책임은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "최민정은 외도 상대가 아니라 재가돌봄센터 상담팀장이다.",
+            "그날 밤 만남은 돌봄센터 후문 상담동에서 장모님 간병 일정을 잡은 실제 업무성 상담이었다.",
+            "내가 정확한 상대 신분과 만남 목적을 숨겨 세린의 외도 의심을 키웠다."
+          ],
+          "suppressions": [
+            "장모님의 건강 세부 내역과 보호자 연락처",
+            "센터 내부 운영 정보 같은 불필요한 개인정보",
+            "세린 동생 문제와 엮여 더 말하기 싫었던 내 체면"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "over_precision",
+            "timeline_padding"
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.rule_exists",
+              "factText": "고액 지출 사전 상의 기준 존재 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.money_not_outside_family",
+              "factText": "가정 밖 유출 자금이 아니라는 주장",
+              "tags": [
+                "context",
+                "beneficiary",
+                "denial"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "beneficiary": {
+                  "fullName": "가족 어른",
+                  "judgeRef": "가족 어른",
+                  "directRef": "가족 어른",
+                  "role": "가족 관련 인물",
+                  "neutral": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.intent_rule_split",
+              "factText": "규칙 위반과 지출 목적 구분 요구",
+              "tags": [
+                "rule",
+                "context",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.self_breach_withhold",
+              "factText": "자기 위반성 직접 인정 유보",
+              "tags": [
+                "responsibility",
+                "uncertainty",
+                "rule"
+              ],
+              "source": "v2",
+              "repeatPenalty": 55,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "100만원 넘는 돈은 미리 말하자는 약속이 있었던 건 맞습니다.",
+            "다만 이번 일을 숫자 하나로만 묶으면 각 지출의 성격이 가려집니다.",
+            "제 쪽 지출이 가정 밖으로 새는 돈은 아니었다는 점은 구분해 주셔야 합니다."
+          ],
+          "privateKnowledge": [
+            "100만원 넘는 지출은 미리 상의하기로 한 약속을 둘 다 또렷이 기억한다.",
+            "나는 280만원 간병 예약금으로, 세린은 150만원 우회 송금으로 그 약속을 깼다.",
+            "나는 자존심 때문에 먼저 말하지 못했고, 세린도 추석 뒤에 말하려 했다."
+          ],
+          "suppressions": [
+            "결국 약속을 내가 먼저 어겼다는 사실",
+            "세린도 같은 규칙을 깼다는 상호 위반 구조",
+            "내가 규칙을 깨고도 정당화하려 든다는 수치심"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "over_precision",
+            "timeline_padding"
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.rule_exists",
+              "factText": "고액 지출 사전 상의 기준 존재 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.self_cross_ack",
+              "factText": "자기 지출이 기준 넘긴 사실 인정",
+              "tags": [
+                "act",
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.intent_rule_split",
+              "factText": "규칙 위반과 지출 목적 구분 요구",
+              "tags": [
+                "rule",
+                "context",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.mutual_breach_frame",
+              "factText": "쌍방 위반 구조 제시",
+              "tags": [
+                "rule",
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "100만원 넘는 돈은 미리 말하자는 약속이 있었고, 제가 그 선을 넘긴 건 사실입니다.",
+            "다만 그 약속을 제가 혼자만 깬 것처럼 말하면 틀립니다.",
+            "규칙 위반과 돈의 목적은 구분해서 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "100만원 넘는 지출은 미리 상의하기로 한 약속을 둘 다 기억한다.",
+            "나는 280만원 간병 예약금으로 그 약속을 깼다.",
+            "세린 역시 150만원 우회 송금으로 같은 규칙을 어겼다."
+          ],
+          "suppressions": [
+            "장모님 간병 예약금이라는 정확한 사유",
+            "세린 우회 송금의 구체 경로와 수취인",
+            "내가 먼저 선을 넘겼다는 자책"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "over_precision",
+            "counter_question",
+            "timeline_padding"
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.rule_exists",
+              "factText": "고액 지출 사전 상의 기준 존재 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.self_cross_ack",
+              "factText": "자기 지출이 기준 넘긴 사실 인정",
+              "tags": [
+                "act",
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "상당한 금액",
+                  "rounded": "상당한 금액",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.mutual_breach_frame",
+              "factText": "쌍방 위반 구조 제시",
+              "tags": [
+                "rule",
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.partner_150_reference",
+              "factText": "배우자의 우회 송금 언급",
+              "tags": [
+                "counter",
+                "evidence",
+                "responsibility",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "상당한 금액",
+                  "rounded": "상당한 금액",
+                  "neutral": "그 돈"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.intent_rule_split",
+              "factText": "규칙 위반과 지출 목적 구분 요구",
+              "tags": [
+                "rule",
+                "context",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "결론적으로 그 약속은 둘 다 어겼습니다.",
+            "저는 280만원을 미리 상의하지 못했고, 세린 씨도 150만원을 돌려 보냈습니다.",
+            "누가 더 잘했냐의 문제가 아니라, 왜 서로 말을 못 했는지를 같이 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "100만원 넘는 지출은 미리 상의하기로 한 약속을 둘 다 기억한다.",
+            "나는 280만원 간병 예약금으로, 세린은 150만원 우회 송금으로 그 약속을 깼다.",
+            "두 사람 모두 명절 직전 가족 문제를 혼자 처리하려다 신뢰 규칙을 무너뜨렸다."
+          ],
+          "suppressions": [
+            "내가 자존심 때문에 먼저 숨겼다는 감정적 동기",
+            "세린 동생 문제의 구체적 사정",
+            "쌍방 위반이라 해도 내 책임이 더 무겁다는 생각"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "counter_question",
+            "timeline_padding",
+            "over_precision"
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.mutual_breach_frame",
+              "factText": "쌍방 위반 구조 제시",
+              "tags": [
+                "rule",
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.one_sided_betrayer_reject",
+              "factText": "자신만 배신자로 세우는 프레임 거부",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.partner_150_reference",
+              "factText": "배우자의 150만원 우회 송금 언급",
+              "tags": [
+                "counter",
+                "evidence",
+                "responsibility",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "그 돈"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.self_cross_ack",
+              "factText": "자기 지출이 기준 넘긴 사실 인정",
+              "tags": [
+                "act",
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "저만 약속 파기한 사람처럼 세우는 건 받아들이기 어렵습니다.",
+            "서로 100만원 넘는 돈을 숨겼는데 한쪽만 배신이라고 부르면 기준이 무너집니다.",
+            "이 문제는 쌍방 위반으로 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "100만원 사전 상의 약속은 둘 다 알고 있었다.",
+            "나는 280만원, 세린은 150만원으로 같은 경계선을 넘었다.",
+            "세린은 내 위반만 크게 부르고 자기 위반은 급한 사정으로 축소하려 한다."
+          ],
+          "suppressions": [
+            "내 위반이 먼저였다는 선후관계",
+            "간병 예약과 동생 월세라는 각 지출의 세부 목적",
+            "실은 재작년 투자 실패 기억 때문에 더 부끄럽다는 감정"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "counter_question",
+            "over_precision",
+            "timeline_padding"
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.first_breach_ack",
+              "factText": "자기가 먼저 선 넘긴 사실 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "rule",
+                "threshold"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.investment_shame",
+              "factText": "재작년 투자 실패 뒤 세운 기준이라 더 창피함",
+              "tags": [
+                "shame",
+                "emotion",
+                "rule",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.partner_150_reference",
+              "factText": "배우자의 150만원 우회 송금 언급",
+              "tags": [
+                "counter",
+                "evidence",
+                "responsibility",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "그 돈"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.mutual_breach_frame",
+              "factText": "쌍방 위반 구조 제시",
+              "tags": [
+                "rule",
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "그 약속을 다시 꺼내는 게 사실 제일 창피했습니다.",
+            "재작년 투자 실패 뒤에 어렵게 세운 기준인데, 제가 먼저 280만원으로 그 선을 넘겼으니까요.",
+            "그래도 세린 씨 역시 150만원을 우회 송금하며 같은 규칙을 깼습니다."
+          ],
+          "privateKnowledge": [
+            "100만원 사전 상의 약속은 재작년 투자 실패 뒤 두 사람이 함께 만든 경계선이다.",
+            "나는 그 약속을 280만원 간병 예약금으로, 세린은 150만원 우회 송금으로 각각 어겼다.",
+            "명절과 가족 문제 앞에서 둘 다 상대에게 말하지 못했다."
+          ],
+          "suppressions": [
+            "장모님 간병 공백과 동생 월세 위기가 동시에 겹쳤다는 맥락",
+            "누가 더 큰 책임인지 스스로 계산하고 있다는 점",
+            "세린 앞에서 가장으로 무너진 느낌을 숨기고 싶다는 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "timeline_padding",
+            "over_precision"
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.first_breach_ack",
+              "factText": "자기가 먼저 선 넘긴 사실 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "rule",
+                "threshold"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.shared_trust_break",
+              "factText": "둘 다 신뢰 규칙 무너뜨렸다고 인정",
+              "tags": [
+                "relationship",
+                "responsibility",
+                "admission",
+                "rule"
+              ],
+              "source": "v2",
+              "repeatPenalty": 25,
+              "slots": {
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.partner_150_reference",
+              "factText": "배우자의 150만원 우회 송금 언급",
+              "tags": [
+                "counter",
+                "evidence",
+                "responsibility",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "그 돈"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.rule_exists",
+              "factText": "100만원 사전 상의 기준 존재 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "100만원 이상은 반드시 상의하기로 한 약속을 제가 먼저 어겼습니다.",
+            "그리고 세린 씨도 150만원 우회 송금으로 그 약속을 깼습니다.",
+            "방법은 달라도 둘 다 신뢰 규칙을 무너뜨렸다는 점을 인정합니다."
+          ],
+          "privateKnowledge": [
+            "100만원 사전 상의 약속은 두 사람 모두 분명히 기억한다.",
+            "나는 280만원 간병 예약금으로 그 약속을 어겼고, 세린은 150만원 우회 송금으로 그 약속을 어겼다.",
+            "이번 사건의 핵심은 돈의 액수보다 서로가 말을 미뤄 신뢰를 깨뜨렸다는 점이다."
+          ],
+          "suppressions": [
+            "장모님 건강 정보와 동생 채무 정보 같은 제3자 세부 사정",
+            "누가 몇 퍼센트 더 잘못했는지에 대한 내 속 계산",
+            "가장 노릇을 제대로 못 했다는 내 자존심의 상처"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "over_precision",
+            "timeline_padding"
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.confirmation_need",
+              "factText": "확인 필요성으로 열람 정당화",
+              "tags": [
+                "motive",
+                "self_justification",
+                "privacy"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.cause_first",
+              "factText": "숨긴 정황이 먼저 원인이라고 주장",
+              "tags": [
+                "counter",
+                "responsibility",
+                "motive",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.trigger_transfer_message",
+              "factText": "송금과 메시지가 불안 촉발",
+              "tags": [
+                "evidence",
+                "motive",
+                "harm",
+                "quote"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.no_reasonless_suspicion",
+              "factText": "이유 없는 의심은 아니었다는 주장",
+              "tags": [
+                "denial",
+                "self_justification",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "제가 폰을 본 건 결과적으로 확인하려던 행동이었습니다.",
+            "먼저 저를 그 지경까지 몰아넣은 정황을 빼고 그 장면만 떼어 말하면 안 됩니다.",
+            "숨긴 사람이 따로 있는데 저만 선 넘은 사람으로 남을 수는 없어요."
+          ],
+          "privateKnowledge": [
+            "나는 새벽에 잠든 지석의 휴대폰 잠금을 풀고 캡처를 남겼다.",
+            "확인보다 불안과 의심이 먼저 앞서 있었다.",
+            "잘린 캡처를 제3자에게 보내 외도인지 묻는 행동까지 갔다."
+          ],
+          "suppressions": [
+            "제3자에게 캡처를 보내 확인받으려 했다는 사실",
+            "내가 앞뒤 맥락을 자른 캡처만 들고 확신했다는 점",
+            "내 행동이 사생활 침해라는 자각"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "motive_jump",
+            "selective_quote"
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.phone_access_ack",
+              "factText": "새벽 휴대폰 열람 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "privacy",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "time": {
+                  "timeExact": "그 새벽",
+                  "dateTimeExact": "그 새벽",
+                  "period": "새벽",
+                  "neutral": "그 새벽"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.trigger_transfer_message",
+              "factText": "송금과 메시지가 불안 촉발",
+              "tags": [
+                "evidence",
+                "motive",
+                "harm",
+                "quote"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.action_wrong_but_triggered",
+              "factText": "행동은 잘못일 수 있으나 원인은 있었다는 인정",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "admission",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.no_reasonless_suspicion",
+              "factText": "이유 없는 의심은 아니었다는 주장",
+              "tags": [
+                "denial",
+                "self_justification",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "새벽에 폰을 본 건 잘못일 수 있습니다.",
+            "하지만 280만원 송금과 그 메시지를 보고도 아무것도 묻지 말라는 건 더 말이 안 됩니다.",
+            "저는 이유 없는 의심을 한 게 아닙니다."
+          ],
+          "privateKnowledge": [
+            "나는 새벽에 잠든 지석의 휴대폰 잠금을 풀고 캡처를 남겼다.",
+            "그 캡처를 제3자에게 보내 외도인지 물어봤다.",
+            "내가 불안에 밀려 확인보다 침해를 먼저 택했다."
+          ],
+          "suppressions": [
+            "제3자 공유까지 갔다는 핵심 사실",
+            "캡처가 잘려 있어서 맥락이 빠졌다는 점",
+            "지석이 외도를 한 것이 아닐 수도 있다는 가능성"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "selective_quote",
+            "motive_jump",
+            "evidence_waving"
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.phone_access_ack",
+              "factText": "새벽 휴대폰 열람 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "privacy",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "time": {
+                  "timeExact": "그 새벽",
+                  "dateTimeExact": "그 새벽",
+                  "period": "새벽",
+                  "neutral": "그 새벽"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.action_wrong_but_triggered",
+              "factText": "행동은 잘못일 수 있으나 원인은 있었다는 인정",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "admission",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.trigger_transfer_message",
+              "factText": "송금과 메시지가 불안 촉발",
+              "tags": [
+                "evidence",
+                "motive",
+                "harm",
+                "quote"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "상당한 금액",
+                  "rounded": "상당한 금액",
+                  "neutral": "해당 금액"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.no_reasonless_suspicion",
+              "factText": "이유 없는 의심은 아니었다는 주장",
+              "tags": [
+                "denial",
+                "self_justification",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "네, 제가 제 남편 폰을 열어본 건 사실입니다.",
+            "다만 그때 저는 이미 숨겨진 송금과 이상한 메시지를 본 상태였고, 확인이 필요하다고 생각했습니다.",
+            "행동은 잘못이지만 불안의 원인까지 지워지진 않습니다."
+          ],
+          "privateKnowledge": [
+            "나는 새벽에 잠든 지석의 휴대폰 잠금을 풀고 캡처를 남겼다.",
+            "잘린 캡처를 제3자에게 보내 외도인지 물어본 것도 사실이다.",
+            "내 행동이 잘못이라는 걸 알지만, 당시 나는 배신 정황을 실제라고 믿고 있었다."
+          ],
+          "suppressions": [
+            "캡처를 자른 상태로 확신했다는 점",
+            "정당한 절차 없이 사생활을 침해했다는 사실",
+            "내가 감정적으로 결론을 서둘렀다는 자각"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "selective_quote",
+            "motive_jump"
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.phone_access_ack",
+              "factText": "새벽 휴대폰 열람 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "privacy",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "time": {
+                  "timeExact": "새벽 2시 07분",
+                  "dateTimeExact": "새벽 2시 07분",
+                  "period": "새벽",
+                  "neutral": "그 새벽"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.only_me_counter",
+              "factText": "왜 자신에게만 책임을 묻느냐는 반격",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.you_made_it_look_like_that",
+              "factText": "배우자가 그렇게 보이게 만들었다는 주장",
+              "tags": [
+                "counter",
+                "motive",
+                "relationship",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.action_wrong_but_triggered",
+              "factText": "행동은 잘못일 수 있으나 원인은 있었다는 인정",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "admission",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "왜 저한테만 '왜 폰 봤냐'고 세 번, 네 번 묻습니까.",
+            "그전에 왜 그렇게 보이게 만들었는지는 안 묻고요?",
+            "제가 한 행동을 가볍게 보자는 게 아니라, 원인을 잘라내고 저만 몰아세우지 말라는 겁니다."
+          ],
+          "privateKnowledge": [
+            "내가 휴대폰을 무단 열람한 건 사실이다.",
+            "그 전에 지석이 280만원 송금과 수상한 정황을 숨긴 것도 사실이다.",
+            "나는 내 잘못을 인정하면서도, 그 행동의 촉발 원인을 지석 쪽에서 분리할 수 없다고 본다."
+          ],
+          "suppressions": [
+            "제3자에게 캡처를 보낸 행위",
+            "잘린 캡처만으로 외도라고 점프했다는 점",
+            "내가 먼저 사과해야 한다는 생각"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "motive_jump",
+            "selective_quote",
+            "evidence_waving"
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.phone_access_ack",
+              "factText": "새벽 휴대폰 열람 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "privacy",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "time": {
+                  "timeExact": "새벽 2시 07분",
+                  "dateTimeExact": "새벽 2시 07분",
+                  "period": "새벽",
+                  "neutral": "그 새벽"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.fool_wife_fear",
+              "factText": "바보 같은 아내가 될까 두려웠음",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.action_wrong_but_triggered",
+              "factText": "행동은 잘못일 수 있으나 원인은 있었다는 인정",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "admission",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.trigger_transfer_message",
+              "factText": "송금과 메시지가 불안 촉발",
+              "tags": [
+                "evidence",
+                "motive",
+                "harm",
+                "quote"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "새벽 두 시에 남편 폰을 여는 아내가 되고 싶었던 사람은 없습니다.",
+            "그런데도 제가 그렇게 한 건, 또 속고 있는 건 아닐까 하는 두려움이 너무 컸기 때문입니다.",
+            "그래도 그 방식이 선을 넘었다는 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "나는 새벽에 지석의 휴대폰을 무단으로 열어봤다.",
+            "캡처를 제3자에게 보내며 외도 여부를 확인받으려 한 것도 사실이다.",
+            "두려움이 컸더라도, 확인보다 침해가 먼저 간 건 내 책임이다."
+          ],
+          "suppressions": [
+            "언니/제3자에게까지 퍼뜨렸다는 구체적 부끄러움",
+            "캡처가 잘린 자료라는 점",
+            "지석이 외도는 아닐 수도 있다는 가능성"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "motive_jump",
+            "selective_quote"
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.phone_access_ack",
+              "factText": "새벽 휴대폰 열람 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "privacy",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "time": {
+                  "timeExact": "새벽 2시 07분",
+                  "dateTimeExact": "새벽 2시 07분",
+                  "period": "새벽",
+                  "neutral": "그 새벽"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.third_party_share_confess",
+              "factText": "잘린 캡처를 제3자에게 보내 확인받으려 함 인정",
+              "tags": [
+                "admission",
+                "privacy",
+                "quote",
+                "evidence"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "evidence": {
+                  "fullName": "지석 휴대폰 메신저 캡처본",
+                  "shortName": "캡처본",
+                  "neutral": "그 캡처"
+                },
+                "message": {
+                  "quoteExact": "이거 외도 맞지?",
+                  "quoteShort": "외도 맞지",
+                  "neutral": "그 질문"
+                },
+                "person": {
+                  "judgeRef": "제3자",
+                  "directRef": "그 사람",
+                  "neutral": "제3자"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.cropped_capture_ignore",
+              "factText": "잘린 캡처에 기대 결론을 서둘렀다는 자각",
+              "tags": [
+                "context",
+                "evidence",
+                "shame",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "evidence": {
+                  "fullName": "지석 휴대폰 메신저 캡처본",
+                  "shortName": "캡처본",
+                  "neutral": "그 캡처"
+                },
+                "message": {
+                  "quoteExact": "지난번처럼 조용한 데서 보죠",
+                  "quoteShort": "조용한 데서 보자던 문장",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.privacy_line_confess",
+              "factText": "확인보다 사생활 침해가 먼저 갔다는 책임 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "privacy"
+              ],
+              "source": "v2",
+              "repeatPenalty": 25,
+              "slots": {
+                "action": {
+                  "exact": "새벽 휴대폰 열람",
+                  "neutral": "그 확인"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.fool_wife_fear",
+              "factText": "바보 같은 아내가 될까 두려웠음",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "제가 새벽에 지석 씨 폰을 무단으로 열어본 건 명백히 잘못이었습니다.",
+            "그 잘린 캡처를 제3자에게 보내 외도냐고 확인받으려 한 것도 선을 넘었습니다.",
+            "숨긴 정황이 있었다고 해도, 확인보다 침해가 먼저 간 제 책임을 인정합니다."
+          ],
+          "privateKnowledge": [
+            "나는 새벽에 잠든 지석의 휴대폰을 무단 열람했다.",
+            "잘린 캡처를 제3자에게 보내 외도 여부를 묻는 행동까지 했다.",
+            "지석의 비밀이 있었더라도, 내 행동은 사생활 침해이자 성급한 확신이었다."
+          ],
+          "suppressions": [
+            "누구에게 보냈는지 같은 불필요한 실명 정보",
+            "휴대폰 안 다른 개인 대화 내용",
+            "새벽에 몇 분 동안 더 들여다봤는지 같은 세부 탐색 범위"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "selective_quote",
+            "evidence_waving"
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.family_emergency_frame",
+              "factText": "급한 가족 문제를 막기 위한 임시 조치 주장",
+              "tags": [
+                "motive",
+                "self_justification",
+                "beneficiary",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "amount": {
+                  "exact": "그 돈",
+                  "rounded": "그 돈",
+                  "neutral": "그 돈"
+                },
+                "beneficiary": {
+                  "judgeRef": "가족",
+                  "directRef": "가족",
+                  "role": "가족 관련 인물",
+                  "neutral": "가족"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.route_temporary_frame",
+              "factText": "다른 계좌 경유를 임시 처리로 축소",
+              "tags": [
+                "act",
+                "context",
+                "uncertainty",
+                "evidence"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                },
+                "person": {
+                  "fullName": "그 친구",
+                  "judgeRef": "그 친구",
+                  "directRef": "그 친구",
+                  "neutral": "그 친구"
+                },
+                "amount": {
+                  "exact": "그 돈",
+                  "rounded": "그 돈",
+                  "neutral": "그 돈"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.not_pleasure_money",
+              "factText": "즐기거나 빼돌리려는 돈은 아니었다는 주장",
+              "tags": [
+                "denial",
+                "context",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "그 돈",
+                  "rounded": "그 돈",
+                  "neutral": "그 돈"
+                },
+                "beneficiary": {
+                  "judgeRef": "가족",
+                  "directRef": "가족",
+                  "role": "가족 관련 인물",
+                  "neutral": "가족"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "제 150만원은 급해서 다른 계좌를 거친 겁니다.",
+            "그걸 무슨 음흉한 우회 송금처럼 부풀리는 건 과합니다.",
+            "가족 일 때문에 급히 막아야 할 돈이었지, 숨겨서 즐기려던 돈이 아니었어요."
+          ],
+          "privateKnowledge": [
+            "나는 정우성에게 150만원을 넘겨 세린 동생의 밀린 월세로 보내 달라고 부탁했다.",
+            "추석 지나고 말할 생각으로 남편에게 숨겼다.",
+            "직접 보내지 않고 친구 계좌를 쓴 건 남편에게 바로 들키지 않으려는 계산도 있었다."
+          ],
+          "suppressions": [
+            "정우성 계좌를 끼워 넣은 이유가 들키지 않으려는 계산이었다는 점",
+            "최종 수취인이 동생 월세였다는 사실",
+            "100만원 상의 약속에 이것도 걸린다는 자각"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "motive_jump",
+            "selective_quote"
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.amount_move_ack",
+              "factText": "자금 이동 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "그 돈",
+                  "rounded": "그 돈",
+                  "neutral": "그 돈"
+                },
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.family_emergency_frame",
+              "factText": "급한 가족 문제를 막기 위한 임시 조치 주장",
+              "tags": [
+                "motive",
+                "self_justification",
+                "beneficiary",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "amount": {
+                  "exact": "그 돈",
+                  "rounded": "그 돈",
+                  "neutral": "그 돈"
+                },
+                "beneficiary": {
+                  "judgeRef": "가족",
+                  "directRef": "가족",
+                  "role": "가족 관련 인물",
+                  "neutral": "가족"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.route_temporary_frame",
+              "factText": "다른 계좌 경유를 임시 처리로 축소",
+              "tags": [
+                "act",
+                "context",
+                "uncertainty",
+                "evidence"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                },
+                "person": {
+                  "fullName": "그 친구",
+                  "judgeRef": "그 친구",
+                  "directRef": "그 친구",
+                  "neutral": "그 친구"
+                },
+                "amount": {
+                  "exact": "그 돈",
+                  "rounded": "그 돈",
+                  "neutral": "그 돈"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.not_pleasure_money",
+              "factText": "즐기거나 빼돌리려는 돈은 아니었다는 주장",
+              "tags": [
+                "denial",
+                "context",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "그 돈",
+                  "rounded": "그 돈",
+                  "neutral": "그 돈"
+                },
+                "beneficiary": {
+                  "judgeRef": "가족",
+                  "directRef": "가족",
+                  "role": "가족 관련 인물",
+                  "neutral": "가족"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "150만원이 움직인 건 맞습니다.",
+            "다만 저는 급한 가족 문제를 막으려고 임시로 다른 계좌를 쓴 겁니다.",
+            "그걸 지석 씨 280만원 비밀 송금과 똑같이 볼 수는 없습니다."
+          ],
+          "privateKnowledge": [
+            "나는 정우성에게 150만원을 넘겨 세린 동생의 밀린 월세로 보내 달라고 부탁했다.",
+            "추석 지나고 말할 생각으로 남편에게 숨겼다.",
+            "직접 보내지 않고 친구 계좌를 쓴 건 남편에게 바로 들키지 않으려는 계산도 있었다."
+          ],
+          "suppressions": [
+            "동생 월세라는 최종 목적",
+            "정우성을 중간 전달자로 세운 의도",
+            "사전 상의 약속을 어겼다는 인정"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "selective_quote",
+            "motive_jump",
+            "evidence_waving"
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.amount_move_ack",
+              "factText": "자금 이동 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "상당한 금액",
+                  "rounded": "상당한 금액",
+                  "neutral": "그 돈"
+                },
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.intermediary_ack",
+              "factText": "중간 계좌를 거치게 한 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "그 친구",
+                  "judgeRef": "정 씨",
+                  "directRef": "그 친구",
+                  "neutral": "그 친구"
+                },
+                "amount": {
+                  "exact": "상당한 금액",
+                  "rounded": "상당한 금액",
+                  "neutral": "그 돈"
+                },
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.post_holiday_plan",
+              "factText": "추석 뒤에 설명하려 했다는 계획 인정",
+              "tags": [
+                "motive",
+                "self_justification",
+                "quote",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "message": {
+                  "quoteExact": "지석한테는 추석 지나고 말할게",
+                  "quoteShort": "추석 지나고 말할게",
+                  "neutral": "그 메시지"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.family_need_generic",
+              "factText": "동생 문제라 급했다는 설명",
+              "tags": [
+                "beneficiary",
+                "motive",
+                "relationship",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "beneficiary": {
+                  "judgeRef": "제 동생",
+                  "directRef": "동생",
+                  "role": "가족 관련 인물",
+                  "neutral": "가족"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.method_not_clean_ack",
+              "factText": "우회 방식이 떳떳하지 않았다는 책임 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "shame",
+                "privacy"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "네, 제가 150만원을 바로 보내지 않고 다른 계좌를 거치게 한 건 사실입니다.",
+            "동생 문제라 급했고, 남편한테는 추석 지나고 말하려고 했습니다.",
+            "사정은 있었지만 숨긴 방식까지 깨끗했다고 말하진 않겠습니다."
+          ],
+          "privateKnowledge": [
+            "나는 정우성에게 150만원을 넘겨 세린 동생의 밀린 월세로 보내 달라고 부탁했다.",
+            "추석 지나고 말할 생각으로 남편에게 숨겼다.",
+            "정우성 계좌를 경유한 건 약속과 갈등을 피하려는 우회였다."
+          ],
+          "suppressions": [
+            "정우성이 받은 직후 동생 월세로 바로 빠져나갔다는 흐름",
+            "지석에게 들키지 않으려 했다는 계산",
+            "내 행동도 명백한 약속 위반이라는 사실"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "selective_quote",
+            "motive_jump"
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.amount_move_ack",
+              "factText": "150만원 이동 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "그 돈"
+                },
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.family_need_generic",
+              "factText": "동생 문제라 급했다는 설명",
+              "tags": [
+                "beneficiary",
+                "motive",
+                "relationship",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "beneficiary": {
+                  "judgeRef": "제 동생",
+                  "directRef": "동생",
+                  "role": "최종 수취인",
+                  "neutral": "가족"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.you_started_breach",
+              "factText": "남편이 먼저 신뢰를 무너뜨렸다는 반격",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.post_holiday_plan",
+              "factText": "추석 뒤에 설명하려 했다는 계획 인정",
+              "tags": [
+                "motive",
+                "self_justification",
+                "quote",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "message": {
+                  "quoteExact": "지석한테는 추석 지나고 말할게",
+                  "quoteShort": "추석 지나고 말할게",
+                  "neutral": "그 메시지"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.method_not_clean_ack",
+              "factText": "우회 방식이 떳떳하지 않았다는 책임 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "shame",
+                "privacy"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "제 150만원만 붙들고 계시는데, 자기는 280만원을 이름도 말 안 하고 보낸 사람이잖아요.",
+            "저는 적어도 가족 문제를 막으려 한 거지, 바깥으로 돈을 숨긴 게 아닙니다.",
+            "제 방식이 잘못이었다고 해도, 지석 씨가 먼저 신뢰를 무너뜨린 건 변하지 않아요."
+          ],
+          "privateKnowledge": [
+            "나는 150만원을 우회 송금했고 그것이 숨긴 지출이라는 것도 안다.",
+            "동시에 지석이 280만원 비밀 송금으로 먼저 신뢰를 깨뜨렸다고 믿고 있다.",
+            "나는 내 잘못을 줄이기 위해 동생 문제의 급박함을 더 크게 말하고 싶어진다."
+          ],
+          "suppressions": [
+            "정우성 계좌를 사용한 계산된 우회 방식",
+            "추석 뒤에 말하겠다고 스스로 적은 메시지",
+            "내 지출도 결국 약속 위반이라는 핵심"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "motive_jump",
+            "selective_quote",
+            "evidence_waving"
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.amount_move_ack",
+              "factText": "150만원 이동 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "그 돈"
+                },
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.money_talk_choke",
+              "factText": "동생 월세와 남편에게 또 돈 얘기 꺼내기 막막함",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "judgeRef": "제 동생",
+                  "directRef": "동생",
+                  "role": "최종 수취인",
+                  "neutral": "가족"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.method_not_clean_ack",
+              "factText": "우회 방식이 떳떳하지 않았다는 책임 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "shame",
+                "privacy"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.family_need_generic",
+              "factText": "동생 문제라 급했다는 설명",
+              "tags": [
+                "beneficiary",
+                "motive",
+                "relationship",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "beneficiary": {
+                  "judgeRef": "제 동생",
+                  "directRef": "동생",
+                  "role": "최종 수취인",
+                  "neutral": "가족"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "동생 월세가 터진 상황에서 또 남편에게 돈 얘기를 꺼내는 게 너무 숨 막혔습니다.",
+            "그래서 친구 계좌까지 끌어다 쓰는 비겁한 방법을 택했습니다.",
+            "가족을 막으려던 마음이 있었다고 해도, 그 방식이 떳떳하지 않았다는 건 압니다."
+          ],
+          "privateKnowledge": [
+            "나는 동생의 밀린 월세를 막으려고 정우성 계좌를 경유한 우회 송금을 했다.",
+            "추석 전이라 더 말 못 하겠다는 압박감이 컸다.",
+            "급한 가족 일이라는 명분이 있어도, 숨긴 방식과 우회 방식은 내 책임이다."
+          ],
+          "suppressions": [
+            "정우성에게 남긴 정확한 메시지 문구",
+            "남편에게 들키지 않게 하려 했다는 계산",
+            "제 행동이 지석의 비밀 송금을 비판할 자격까지 깎아먹는다는 자책"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "motive_jump",
+            "selective_quote"
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.amount_move_ack",
+              "factText": "150만원 이동 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "그 돈"
+                },
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.friend_route_full",
+              "factText": "정우성 계좌 경유 사실 구체 인정",
+              "tags": [
+                "identity",
+                "admission",
+                "evidence",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "person": {
+                  "fullName": "정우성",
+                  "judgeRef": "정우성 씨",
+                  "directRef": "정우성",
+                  "neutral": "그 친구"
+                },
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "그 돈"
+                },
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.sibling_rent_full",
+              "factText": "동생 월세 목적 구체 인정",
+              "tags": [
+                "beneficiary",
+                "harm",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "beneficiary": {
+                  "judgeRef": "제 동생",
+                  "directRef": "동생",
+                  "role": "최종 수취인",
+                  "neutral": "가족"
+                },
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "그 돈"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.post_holiday_plan",
+              "factText": "추석 뒤에 설명하려 했다는 계획 인정",
+              "tags": [
+                "motive",
+                "self_justification",
+                "quote",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "message": {
+                  "quoteExact": "지석한테는 추석 지나고 말할게",
+                  "quoteShort": "추석 지나고 말할게",
+                  "neutral": "그 메시지"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.method_not_clean_ack",
+              "factText": "우회 방식이 떳떳하지 않았다는 책임 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "shame",
+                "privacy"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "action": {
+                  "exact": "우회 송금",
+                  "neutral": "그 처리"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "제가 정우성 계좌를 거쳐 150만원을 동생 월세 쪽으로 보낸 건 사실입니다.",
+            "추석 지나고 말하겠다고 하며 남편에게 숨긴 것도 맞습니다.",
+            "급한 가족 일이었다는 사정은 있어도, 우회 송금이라는 방식 자체는 제 책임으로 인정합니다."
+          ],
+          "privateKnowledge": [
+            "나는 정우성에게 150만원을 넘겨 세린 동생의 밀린 월세를 대신 막게 했다.",
+            "추석 지나고 말하려고 하며 남편에게 숨겼다.",
+            "가족을 지키려는 마음과 들키지 않으려는 계산이 동시에 섞여 있었다."
+          ],
+          "suppressions": [
+            "동생과 임대인의 추가 금융 정보",
+            "가족 안에서 반복된 금전 문제의 세부 내역",
+            "지석을 비난하면서도 나도 같은 규칙을 깼다는 부끄러움"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "selective_quote",
+            "evidence_waving"
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.rule_exists",
+              "factText": "고액 지출 사전 상의 기준 존재 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.his_breach_anchor",
+              "factText": "남편의 비밀 송금이 배신감의 출발점이라는 주장",
+              "tags": [
+                "relationship",
+                "responsibility",
+                "counter",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial",
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.my_case_not_same_yet",
+              "factText": "자기 송금을 같은 선상에 두기 어렵다는 주장",
+              "tags": [
+                "denial",
+                "self_justification",
+                "rule"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "amount": {
+                  "exact": "그 돈",
+                  "rounded": "그 돈",
+                  "neutral": "그 돈"
+                },
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "100만원 넘는 돈은 상의하자고 한 약속이 있었죠.",
+            "그래서 저는 더더욱 280만원 비밀 송금이 배신처럼 느껴졌습니다.",
+            "제 150만원 사정까지 같은 선상에 올려놓는 건 아직 받아들이기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "100만원 넘는 지출은 미리 상의하기로 한 약속을 둘 다 또렷이 기억한다.",
+            "지석은 280만원 비밀 송금으로, 나는 150만원 우회 송금으로 그 약속을 깼다.",
+            "나는 내 위반을 급한 가족 사정으로 더 작게 보려는 마음이 있다."
+          ],
+          "suppressions": [
+            "나도 150만원으로 약속을 어겼다는 핵심",
+            "정우성 계좌를 끼운 우회 방식",
+            "쌍방 위반이라는 구조"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "selective_quote",
+            "motive_jump"
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.rule_exists",
+              "factText": "고액 지출 사전 상의 기준 존재 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.his_breach_anchor",
+              "factText": "남편의 비밀 송금이 배신감의 출발점이라는 주장",
+              "tags": [
+                "relationship",
+                "responsibility",
+                "counter",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial",
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.my_breach_reluctant_ack",
+              "factText": "자기 송금도 완전히 떼어놓지 못한다는 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "그 돈",
+                  "rounded": "그 돈",
+                  "neutral": "그 돈"
+                },
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.my_case_not_same_yet",
+              "factText": "자기 송금을 같은 선상에 두기 어렵다는 주장",
+              "tags": [
+                "denial",
+                "self_justification",
+                "rule"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "amount": {
+                  "exact": "그 돈",
+                  "rounded": "그 돈",
+                  "neutral": "그 돈"
+                },
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "약속이 있었고, 지석 씨가 그 선을 먼저 크게 넘긴 건 맞습니다.",
+            "저도 제 150만원 문제를 완전히 떼어놓을 수 없다는 건 압니다.",
+            "하지만 시작이 된 배신감은 지석 씨 비밀 송금에서 왔습니다."
+          ],
+          "privateKnowledge": [
+            "100만원 넘는 지출은 미리 상의하기로 한 약속을 둘 다 또렷이 기억한다.",
+            "지석은 280만원 비밀 송금으로 그 약속을 어겼다.",
+            "나 역시 150만원 우회 송금으로 약속을 어겼지만 아직 그 무게를 완전히 인정하고 싶지 않다."
+          ],
+          "suppressions": [
+            "내 150만원 우회 송금도 같은 규칙 위반이라는 점",
+            "정우성 계좌와 동생 월세의 연결",
+            "쌍방 위반을 말하면 내 비난 명분이 약해진다는 두려움"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "selective_quote",
+            "motive_jump",
+            "evidence_waving"
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.rule_exists",
+              "factText": "고액 지출 사전 상의 기준 존재 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.mutual_breach_ack",
+              "factText": "결국 둘 다 기준 넘겼다는 인정",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.my_breach_reluctant_ack",
+              "factText": "자기 송금도 완전히 떼어놓지 못한다는 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "상당한 금액",
+                  "rounded": "상당한 금액",
+                  "neutral": "그 돈"
+                },
+                "rule": {
+                  "exact": "일정 금액 이상은 미리 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.betrayal_feels_different",
+              "factText": "같은 위반이어도 체감 배신은 달랐다는 주장",
+              "tags": [
+                "emotion",
+                "relationship",
+                "self_justification",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "결국 저희 둘 다 그 약속 선을 넘긴 건 맞습니다.",
+            "다만 저는 급한 가족 문제였고, 지석 씨는 비밀 송금과 외도처럼 보이는 정황이 같이 있었어요.",
+            "같은 약속 위반이라도 체감된 배신의 방식은 달랐습니다."
+          ],
+          "privateKnowledge": [
+            "100만원 넘는 지출은 미리 상의하기로 한 약속을 둘 다 기억한다.",
+            "지석은 280만원 간병 예약금으로, 나는 150만원 우회 송금으로 그 약속을 깼다.",
+            "나는 쌍방 위반을 인정하면서도 내 쪽은 덜 나쁘다고 구분하고 싶어 한다."
+          ],
+          "suppressions": [
+            "내 우회 송금도 남편에게 들키지 않으려는 숨김이었다는 사실",
+            "동생 월세라는 정확한 용도",
+            "쌍방 위반 앞에서 내가 방어적으로 된다는 점"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "motive_jump",
+            "selective_quote"
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.mutual_breach_ack",
+              "factText": "결국 둘 다 기준 넘겼다는 인정",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.his_breach_anchor",
+              "factText": "남편의 280만원 비밀 송금이 배신감의 출발점이라는 주장",
+              "tags": [
+                "relationship",
+                "responsibility",
+                "counter",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial",
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.equivalence_reject",
+              "factText": "둘 다 똑같다는 등가화 거부",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.betrayal_feels_different",
+              "factText": "같은 위반이어도 체감 배신은 달랐다는 주장",
+              "tags": [
+                "emotion",
+                "relationship",
+                "self_justification",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "저만 약속을 어긴 것처럼 몰지 말라는 말에는 동의합니다.",
+            "그런데 자기가 먼저 280만원을 숨기고도 이제 와서 '둘 다 똑같다'고 하면 저는 더 화가 납니다.",
+            "쌍방 위반이라 해도 시작과 충격의 크기가 같다고는 못 하겠습니다."
+          ],
+          "privateKnowledge": [
+            "우리는 둘 다 100만원 사전 상의 약속을 어겼다.",
+            "나는 그 사실을 알면서도 지석의 먼저 숨긴 280만원을 더 크게 말하고 싶어진다.",
+            "내가 방어적으로 굴수록 오히려 쌍방 위반 구조가 더 선명해진다는 것도 안다."
+          ],
+          "suppressions": [
+            "내가 150만원 우회 송금으로 약속을 깼다는 점",
+            "추석 지나고 말하려 했다는 메시지",
+            "지석의 말처럼 기준이 흔들리고 있다는 자각"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "motive_jump",
+            "selective_quote",
+            "evidence_waving"
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.mutual_breach_ack",
+              "factText": "결국 둘 다 기준 넘겼다는 인정",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                },
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.rule_reopen_shame",
+              "factText": "재작년 약속을 다시 어긴 게 창피함",
+              "tags": [
+                "shame",
+                "emotion",
+                "rule",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.betrayal_feels_different",
+              "factText": "같은 위반이어도 체감 배신은 달랐다는 주장",
+              "tags": [
+                "emotion",
+                "relationship",
+                "self_justification",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.my_breach_reluctant_ack",
+              "factText": "자기 150만원도 완전히 떼어놓지 못한다는 인정",
+              "tags": [
+                "responsibility",
+                "admission",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "그 돈"
+                },
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "재작년 일 이후에 그 약속을 다시 어기는 게 저도 너무 창피했습니다.",
+            "그런데 이번엔 제가 바보처럼 속고 있다는 공포까지 겹쳐서, 제 잘못보다 지석 씨 잘못에 더 매달렸습니다.",
+            "지금은 제 150만원도 그 약속을 깬 행동이었다는 걸 부인하기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "100만원 사전 상의 약속은 두 사람 모두 분명히 기억한다.",
+            "나는 150만원 우회 송금으로 그 약속을 어겼다.",
+            "배신 공포와 체면 때문에 내 위반을 축소하고 지석의 위반만 크게 본 면이 있다."
+          ],
+          "suppressions": [
+            "정우성 계좌를 사용한 우회 방식",
+            "동생 월세를 숨기려 했다는 사실",
+            "쌍방 책임 앞에서 내가 먼저 사과해야 한다는 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "motive_jump",
+            "selective_quote"
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.my150_confess",
+              "factText": "150만원 우회 송금도 약속 위반이었다고 인정",
+              "tags": [
+                "act",
+                "admission",
+                "rule",
+                "threshold"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "그 돈"
+                },
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.shared_rule_confess",
+              "factText": "둘 다 같은 신뢰 규칙을 깼다고 인정",
+              "tags": [
+                "relationship",
+                "responsibility",
+                "admission",
+                "rule"
+              ],
+              "source": "v2",
+              "repeatPenalty": 25,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.betrayal_feels_different",
+              "factText": "같은 위반이어도 체감 배신은 달랐다는 주장",
+              "tags": [
+                "emotion",
+                "relationship",
+                "self_justification",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "relation": {
+                  "judgeRef": "제 남편",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.rule_reopen_shame",
+              "factText": "재작년 약속을 다시 어긴 게 창피함",
+              "tags": [
+                "shame",
+                "emotion",
+                "rule",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "100만원 이상은 먼저 상의하자는 약속을 저희 둘 다 어겼습니다.",
+            "지석 씨는 280만원 비밀 송금으로, 저는 150만원 우회 송금으로 그 선을 넘었습니다.",
+            "제가 받은 배신감이 컸던 것과 별개로, 제 행동도 같은 신뢰 규칙을 깬 책임으로 인정하겠습니다."
+          ],
+          "privateKnowledge": [
+            "100만원 사전 상의 약속은 두 사람 모두 분명히 기억한다.",
+            "지석은 280만원 간병 예약금으로, 나는 150만원 우회 송금으로 그 약속을 어겼다.",
+            "이번 사건의 핵심은 두 사람 모두 가족 문제를 숨긴 채 각자 처리하려 했다는 데 있다."
+          ],
+          "suppressions": [
+            "동생과 정우성 관련 불필요한 개인정보",
+            "누가 더 몇 퍼센트 잘못했는지에 대한 감정적 셈법",
+            "내가 외도 의심까지 덧씌워 상황을 더 키웠다는 부끄러움"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "selective_quote",
+            "evidence_waving"
+          ]
+        }
+      }
+    }
+  }
+}

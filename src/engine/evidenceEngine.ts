@@ -8,6 +8,8 @@ export interface EvidenceRuntimeState {
   presentedTo: ('a' | 'b')[]
   investigatedActions: string[]
   confidentialSource?: boolean
+  /** 심층 조사 완료 여부 — 1회 이상 조사 시 true, surface→real 전환 */
+  deepInvestigated?: boolean
 }
 
 export function createInitialEvidenceStates(
@@ -26,10 +28,16 @@ export function createInitialEvidenceStates(
   return map
 }
 
-/** 잠금 해제 체크 — 원본을 mutate하지 않고 새 객체를 반환 */
+const LIE_STATE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+
+/**
+ * 잠금 해제 체크 — 원본을 mutate하지 않고 새 객체를 반환
+ * @param lieStates - dispute별 최대 lieState 맵 (양 파티 통합). 없으면 lieState 조건 무시.
+ */
 export function checkUnlocks(
   states: Record<string, EvidenceRuntimeState>,
   evidence: EvidenceNode[],
+  lieStates?: Record<string, string>,
 ): { updated: Record<string, EvidenceRuntimeState>; newlyUnlocked: string[] } {
   const newlyUnlocked: string[] = []
   const updated = { ...states }
@@ -38,15 +46,27 @@ export function checkUnlocks(
     const state = updated[e.id]
     if (!state || state.unlocked) continue
 
+    // 선행 증거 조건
     const allRequirementsMet = e.requires.every((reqId) => {
       const reqState = updated[reqId]
       return reqState && (reqState.presented || reqState.unlocked)
     })
+    if (!allRequirementsMet) continue
 
-    if (allRequirementsMet) {
-      updated[e.id] = { ...state, unlocked: true }
-      newlyUnlocked.push(e.id)
+    // lieState 조건: proves에 연결된 dispute 중 하나라도 필요 상태 이상
+    if (e.requiredLieState && lieStates) {
+      const reqRank = LIE_STATE_RANK[e.requiredLieState] ?? 0
+      const disputeIds = e.proves ?? []
+      if (disputeIds.length > 0) {
+        const maxDisputeRank = Math.max(
+          ...disputeIds.map(dId => LIE_STATE_RANK[lieStates[dId] ?? 'S0'] ?? 0)
+        )
+        if (maxDisputeRank < reqRank) continue
+      }
     }
+
+    updated[e.id] = { ...state, unlocked: true }
+    newlyUnlocked.push(e.id)
   }
 
   return { updated, newlyUnlocked }
@@ -92,8 +112,37 @@ export function investigateEvidence(
     [evidenceId]: {
       ...state,
       investigatedActions: [...new Set([...state.investigatedActions, subAction])],
+      deepInvestigated: true,
     },
   }
+}
+
+// ─────────────────────────────────────────
+// 조사 단계별 심문 질문 해금
+// ─────────────────────────────────────────
+
+/** 현재 조사 횟수 기반으로 해금된 심문 질문 목록 반환 */
+export function getUnlockedQuestions(
+  evidence: EvidenceNode,
+  state: EvidenceRuntimeState,
+): { text: string; attackVector: string; stage: number }[] {
+  if (!evidence.investigationStages) return []
+  const investigatedCount = state.investigatedActions.length
+  return evidence.investigationStages
+    .filter(s => s.stage <= investigatedCount)
+    .map(s => ({ ...s.question, stage: s.stage }))
+}
+
+/** 아직 잠긴 심문 질문 목록 (힌트 표시용) */
+export function getLockedQuestions(
+  evidence: EvidenceNode,
+  state: EvidenceRuntimeState,
+): { stage: number; hint: string }[] {
+  if (!evidence.investigationStages) return []
+  const investigatedCount = state.investigatedActions.length
+  return evidence.investigationStages
+    .filter(s => s.stage > investigatedCount)
+    .map(s => ({ stage: s.stage, hint: `조사를 ${s.stage - investigatedCount}회 더 진행하면 새로운 질문이 열립니다` }))
 }
 
 // ─────────────────────────────────────────

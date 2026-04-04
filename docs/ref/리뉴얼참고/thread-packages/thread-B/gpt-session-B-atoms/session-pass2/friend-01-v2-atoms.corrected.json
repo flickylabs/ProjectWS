@@ -1,0 +1,4694 @@
+{
+  "caseId": "friend-01",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "보증금 건은 아직 따로 떼어 말할 단계가 아니었다. 체크아웃 직후 숫자가 계속 변해서 전체 정산 안에서 봐야 한다.",
+            "개인 계좌로 들어왔다고 해서 바로 숨긴 걸로 단정하는 건 과하다."
+          ],
+          "privateKnowledge": [
+            "오전 11시 무렵 숙소 호스트 메시지로 보증금 환급 사실을 이미 확인했다.",
+            "환급 사실을 바로 말하면 돈 계산 흐린 사람으로 보일까 걱정했다."
+          ],
+          "suppressions": [
+            "환급 확인 시각이 하린의 중간 캡처 전이었다는 점",
+            "김수아에게 먼저 상계 얘기를 꺼낸 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:a:tell:number_buffering",
+            "tell:a:tell:scope_shift"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-1:S0:refund_received",
+              "factText": "공동 비용과 관련된 금액이 개인 계좌로 들어온 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                },
+                "person": {
+                  "fullName": "당사자",
+                  "judgeRef": "당사자",
+                  "neutral": "당사자"
+                },
+                "institution": {
+                  "name": "호스트",
+                  "judgeRef": "호스트",
+                  "neutral": "호스트"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-1:S0:delayed_share",
+              "factText": "관련 사실을 공용 기록과 상대에게 바로 알리지 않고 뒤로 미룬 경위",
+              "tags": [
+                "act",
+                "rule",
+                "relationship",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "환급이 들어온 건 맞는데 그걸 바로 확정금처럼 말하기엔 택시비랑 같이 봐야 했다.",
+            "나는 항목 하나를 감춘 게 아니라 여행 전체 숫자를 한 번에 맞추려 했던 거다."
+          ],
+          "privateKnowledge": [
+            "오전 11시 무렵 숙소 호스트 메시지로 보증금 환급 사실을 이미 확인했다.",
+            "환급 사실을 바로 말하면 돈 계산 흐린 사람으로 보일까 걱정했다."
+          ],
+          "suppressions": [
+            "환급 확인 시각이 하린의 중간 캡처 전이었다는 점",
+            "김수아에게 먼저 상계 얘기를 꺼낸 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:a:tell:number_buffering",
+            "tell:a:tell:scope_shift"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-1:S1:refund_received",
+              "factText": "공동 비용과 관련된 금액이 개인 계좌로 들어온 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                },
+                "person": {
+                  "fullName": "당사자",
+                  "judgeRef": "당사자",
+                  "neutral": "당사자"
+                },
+                "institution": {
+                  "name": "호스트",
+                  "judgeRef": "호스트",
+                  "neutral": "호스트"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-1:S1:offset_message",
+              "factText": "제3자에게 일부 금액을 먼저 빼고 말하자는 취지의 메시지를 남긴 정황",
+              "tags": [
+                "evidence",
+                "quote",
+                "self_justification",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "제3자",
+                  "judgeRef": "제3자",
+                  "neutral": "제3자"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                },
+                "amount": {
+                  "exact": "택시비 몫",
+                  "rounded": "택시비 몫",
+                  "neutral": "택시비 몫"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "보증금 9만2천원이 내 계좌로 들어온 건 사실이다. 다만 그걸 택시비와 묶어서 정리하려고 바로 올리지 않았다.",
+            "순서가 어색했던 건 인정하지만, 아예 없던 돈처럼 처리한 건 아니다."
+          ],
+          "privateKnowledge": [
+            "오후 2시 김수아에게 '택시값 먼저 빼고 말하자'고 적으며 자기 계산을 우선했다.",
+            "하린보다 제3자에게 먼저 설명하면 덜 직접적으로 보일 거라고 여겼다."
+          ],
+          "suppressions": [
+            "택시비를 먼저 빼고 말하자는 자기 판단의 근거가 빈약했다는 점",
+            "체면 때문에 설명을 늦췄다는 감정의 핵심"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:a:tell:scope_shift",
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-1:S2:delayed_share",
+              "factText": "관련 사실을 공용 기록과 상대에게 바로 알리지 않고 뒤로 미룬 경위",
+              "tags": [
+                "act",
+                "rule",
+                "relationship",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "정 씨",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:a:d-1:S2:offset_message",
+              "factText": "제3자에게 일부 금액을 먼저 빼고 말하자는 취지의 메시지를 남긴 정황",
+              "tags": [
+                "evidence",
+                "quote",
+                "self_justification",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "김 씨",
+                  "neutral": "제3자"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                },
+                "amount": {
+                  "exact": "택시비 몫",
+                  "rounded": "택시비 몫",
+                  "neutral": "택시비 몫"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "내가 먼저 말하지 않은 책임은 있다. 그래도 하린이 중간 캡처부터 돌리기 시작하니 설명을 꺼낼 타이밍이 더 꼬였다.",
+            "질문이 한 항목씩 쪼개질수록 오히려 전체 정산 맥락은 사라졌다."
+          ],
+          "privateKnowledge": [
+            "오후 2시 김수아에게 '택시값 먼저 빼고 말하자'고 적으며 자기 계산을 우선했다.",
+            "하린보다 제3자에게 먼저 설명하면 덜 직접적으로 보일 거라고 여겼다."
+          ],
+          "suppressions": [
+            "택시비를 먼저 빼고 말하자는 자기 판단의 근거가 빈약했다는 점",
+            "체면 때문에 설명을 늦췄다는 감정의 핵심"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:a:tell:scope_shift",
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-1:S3:offset_message",
+              "factText": "김수아에게 택시비를 먼저 빼고 말하자는 취지의 메시지를 남긴 정황",
+              "tags": [
+                "evidence",
+                "quote",
+                "self_justification",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "김수아",
+                  "judgeRef": "공통 친구",
+                  "neutral": "제3자"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "오후 2시"
+                },
+                "amount": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "택시비 몫"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:a:d-1:S3:delayed_share",
+              "factText": "환급 사실을 정산표와 상대방에게 즉시 공유하지 않고 뒤로 미룬 경위",
+              "tags": [
+                "act",
+                "rule",
+                "relationship",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "환급 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 말하면 돈 약속 어긴 사람처럼 보일까 봐 겁이 났다. 그래서 환급 얘기를 바로 못 꺼냈다.",
+            "내 계좌로 들어온 순간 내가 먼저 말했어야 했는데, 체면 지키려다 더 수상하게 만들었다."
+          ],
+          "privateKnowledge": [
+            "프리랜서 수입이 불안정한 시기라 작은 채무도 더 민감하게 들킬까 두려웠다.",
+            "환급금 공개를 늦춘 순간부터 자신이 약속을 어겼다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "상계 판단을 혼자 내렸다는 책임의 무게"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:a:tell:late_disclosure",
+            "tell:a:tell:number_buffering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-1:S4:reputation_fear",
+              "factText": "돈 약속을 어긴 사람으로 보일까 두려워 설명을 늦춘 마음",
+              "tags": [
+                "emotion",
+                "fear",
+                "identity",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:a:d-1:S4:refund_received",
+              "factText": "숙소 보증금이 체크아웃 직후 자신의 개인 계좌로 환급된 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "92,000원",
+                  "rounded": "9만2천원",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "체크아웃 직후"
+                },
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                },
+                "institution": {
+                  "name": "박은지",
+                  "judgeRef": "숙소 운영자",
+                  "neutral": "호스트"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "보증금 환급 9만2천원을 바로 공유하지 않은 건 내 잘못이다. 택시비와 상계할지 여부도 혼자 정할 일이 아니었다.",
+            "하린에게 먼저 알리고 정산표에 즉시 반영했어야 했다."
+          ],
+          "privateKnowledge": [
+            "프리랜서 수입이 불안정한 시기라 작은 채무도 더 민감하게 들킬까 두려웠다.",
+            "환급금 공개를 늦춘 순간부터 자신이 약속을 어겼다는 걸 알고 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-1:S5:unilateral_offset_admission",
+              "factText": "보증금과 택시비 상계 여부를 혼자 정해서는 안 됐다는 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "92,000원",
+                  "rounded": "9만2천원",
+                  "neutral": "보증금"
+                },
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend01:a:d-1:S5:reputation_fear",
+              "factText": "돈 약속을 어긴 사람으로 보일까 두려워 설명을 늦춘 마음",
+              "tags": [
+                "emotion",
+                "fear",
+                "identity",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "정산이 끝나기도 전에 나를 겨냥한 듯한 말이 공통 친구 쪽으로 먼저 돈 건 사실처럼 보였다.",
+            "이름을 안 썼다고 해도 같은 여행 사진과 금액 암시면 누굴 말하는지 다 안다."
+          ],
+          "privateKnowledge": [
+            "자신도 보증금 환급을 바로 말하지 않은 약점이 있어 반격이 두렵다.",
+            "그래도 SNS 저격으로 낙인찍힌 감정이 훨씬 크게 남아 있다."
+          ],
+          "suppressions": [
+            "보증금 환급과 택시 차용에 대해 스스로도 설명을 늦춘 사실",
+            "하린의 분노를 어느 정도 유발했다는 자각"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:a:tell:number_buffering",
+            "tell:a:tell:scope_shift"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-2:S0:preconfirmation_share",
+              "factText": "정산 확정 전에 자신을 겨냥한 듯한 캡처와 게시물이 먼저 공유된 사실",
+              "tags": [
+                "act",
+                "privacy",
+                "harm",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "제3자",
+                  "judgeRef": "제3자",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "SNS",
+                  "judgeRef": "SNS",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "uncertainty",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-2:S0:capture_then_story",
+              "factText": "중간 캡처가 전달된 뒤 짧은 간격으로 게시물이 올라온 흐름",
+              "tags": [
+                "timeline",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                },
+                "amount": {
+                  "exact": "중간 차액",
+                  "rounded": "중간 차액",
+                  "neutral": "중간 차액"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "question"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "스토리가 일반 공개가 아니라는 말은 들을 수 있다. 그래도 원본 확인 전 중간 캡처를 돌린 시점 자체가 문제다.",
+            "나는 내용보다 순서가 더 선명하다고 본다."
+          ],
+          "privateKnowledge": [
+            "자신도 보증금 환급을 바로 말하지 않은 약점이 있어 반격이 두렵다.",
+            "그래도 SNS 저격으로 낙인찍힌 감정이 훨씬 크게 남아 있다."
+          ],
+          "suppressions": [
+            "보증금 환급과 택시 차용에 대해 스스로도 설명을 늦춘 사실",
+            "하린의 분노를 어느 정도 유발했다는 자각"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:a:tell:number_buffering",
+            "tell:a:tell:scope_shift"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-2:S1:capture_then_story",
+              "factText": "중간 캡처가 전달된 뒤 짧은 간격으로 게시물이 올라온 흐름",
+              "tags": [
+                "timeline",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                },
+                "amount": {
+                  "exact": "중간 차액",
+                  "rounded": "중간 차액",
+                  "neutral": "중간 차액"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-2:S1:no_third_party_rule",
+              "factText": "원본 확인 전 제3자에게 정산 해석을 퍼뜨리지 않기로 했던 약속",
+              "tags": [
+                "rule",
+                "relationship",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "김수아에게 중간 화면이 먼저 갔고, 그 뒤 14분 만에 저격성 스토리가 올라온 흐름은 이어져 있다.",
+            "정산이 확정되지 않은 상태에서 이미 평판전이 시작된 셈이다."
+          ],
+          "privateKnowledge": [
+            "친구들 사이에서 프리랜서 수입이 불안한 사람이라 더 쉽게 오해받는다고 느낀다.",
+            "캡처 하나가 설명보다 먼저 움직였다는 사실에 집착하고 있다."
+          ],
+          "suppressions": [
+            "공격받았다는 감정 때문에 정산 복구보다 명예 회복을 앞세우는 마음",
+            "김수아에게 자신도 상계 얘기를 흘렸다는 부분"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:a:tell:scope_shift",
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-2:S2:preconfirmation_share",
+              "factText": "정산 확정 전에 자신을 겨냥한 듯한 캡처와 게시물이 먼저 공유된 사실",
+              "tags": [
+                "act",
+                "privacy",
+                "harm",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "김 씨",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "SNS",
+                  "judgeRef": "SNS",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-2:S2:no_third_party_rule",
+              "factText": "원본 확인 전 제3자에게 정산 해석을 퍼뜨리지 않기로 했던 약속",
+              "tags": [
+                "rule",
+                "relationship",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "정 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "하린은 사실 확인보다 의도 단정을 먼저 붙였다. 그래서 내 해명이 나오기 전에 '돈 안 갚는 사람' 이미지가 굳었다.",
+            "친한친구 범위라고 해도 공통 친구가 보는 구조면 사실상 제3자 확산이다."
+          ],
+          "privateKnowledge": [
+            "친구들 사이에서 프리랜서 수입이 불안한 사람이라 더 쉽게 오해받는다고 느낀다.",
+            "캡처 하나가 설명보다 먼저 움직였다는 사실에 집착하고 있다."
+          ],
+          "suppressions": [
+            "공격받았다는 감정 때문에 정산 복구보다 명예 회복을 앞세우는 마음",
+            "김수아에게 자신도 상계 얘기를 흘렸다는 부분"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:a:tell:scope_shift",
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-2:S3:no_third_party_rule",
+              "factText": "원본 확인 전 제3자에게 정산 해석을 퍼뜨리지 않기로 했던 약속",
+              "tags": [
+                "rule",
+                "relationship",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:a:d-2:S3:reputation_harm",
+              "factText": "중간 숫자 하나로 돈 안 갚는 사람처럼 낙인찍힌 감정",
+              "tags": [
+                "emotion",
+                "harm",
+                "identity",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "hurt",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "돈 문제보다 더 아픈 건 친구들 사이에서 얌체처럼 설명되는 느낌이었다.",
+            "중간 숫자 하나로 사람 성격까지 정리돼 버리는 게 너무 빨랐다."
+          ],
+          "privateKnowledge": [
+            "하린에게 직접 사과보다 공개 정정이 먼저 필요하다고 생각한다.",
+            "정산보다 평판 손상을 더 무겁게 느낀다."
+          ],
+          "suppressions": [
+            "관계 회복보다 평판 회복을 더 먼저 바라고 있다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:a:tell:late_disclosure",
+            "tell:a:tell:number_buffering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-2:S4:reputation_harm",
+              "factText": "중간 숫자 하나로 돈 안 갚는 사람처럼 낙인찍힌 감정",
+              "tags": [
+                "emotion",
+                "harm",
+                "identity",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:a:d-2:S4:preconfirmation_share",
+              "factText": "정산 확정 전에 자신을 겨냥한 듯한 캡처와 스토리가 먼저 공유된 사실",
+              "tags": [
+                "act",
+                "privacy",
+                "harm",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "김수아",
+                  "judgeRef": "공통 친구",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "인스타그램 스토리",
+                  "judgeRef": "스토리",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "accuse",
+                "relationship"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "정산 확정 전 캡처 공유와 저격성 스토리는 약속 위반으로 본다.",
+            "하린은 스토리 삭제와 정정 메시지로 평판 피해를 먼저 바로잡아야 한다."
+          ],
+          "privateKnowledge": [
+            "하린에게 직접 사과보다 공개 정정이 먼저 필요하다고 생각한다.",
+            "정산보다 평판 손상을 더 무겁게 느낀다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-2:S5:need_public_correction",
+              "factText": "스토리 삭제와 제3자 정정이 함께 이뤄져야 한다는 요구",
+              "tags": [
+                "responsibility",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                },
+                "person2": {
+                  "fullName": "김수아",
+                  "judgeRef": "공통 친구",
+                  "neutral": "제3자"
+                }
+              },
+              "stanceHints": [
+                "resolve",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend01:a:d-2:S5:no_third_party_rule",
+              "factText": "원본 확인 전 제3자에게 정산 해석을 퍼뜨리지 않기로 했던 약속",
+              "tags": [
+                "rule",
+                "relationship",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "responsibility",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "18만4천원이라는 숫자는 중간 화면일 뿐 최종 차액이 아니다. 그 숫자만으로 내가 과소비했다고 묶는 건 성급하다.",
+            "여행 전체 정산 순서를 보면 환급과 취소 대기가 아직 안 들어간 단계였다."
+          ],
+          "privateKnowledge": [
+            "18만4천원 숫자가 뜬 화면을 보고 심하게 억울해했다.",
+            "과소비 이미지가 굳으면 다른 쟁점도 전부 불리해질 거라고 느꼈다."
+          ],
+          "suppressions": [
+            "보증금 미반영이 중간 차액을 키운 핵심 원인 중 하나라는 점",
+            "7만원 차용금이 별도 책임이라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:a:tell:number_buffering",
+            "tell:a:tell:scope_shift"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-3:S0:mid_screen_not_final",
+              "factText": "해당 플랫폼의 중간 화면에 보인 큰 차액은 최종 확정액이 아니라는 주장",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "중간 차액",
+                  "rounded": "중간 차액",
+                  "neutral": "중간 차액"
+                },
+                "institution": {
+                  "name": "플랫폼",
+                  "judgeRef": "플랫폼",
+                  "neutral": "플랫폼"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-3:S0:refund_and_reversal_pending",
+              "factText": "일부 환급 미반영과 결제 취소 대기가 숫자를 부풀린 과정",
+              "tags": [
+                "context",
+                "timeline",
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "보증금",
+                  "rounded": "보증금",
+                  "neutral": "보증금"
+                },
+                "amount2": {
+                  "exact": "차용금 몫",
+                  "rounded": "차용금 몫",
+                  "neutral": "차용금 몫"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "중간 캡처만 보면 그렇게 읽힐 수는 있다. 그런데 원본 CSV를 보면 자동분배 전 단계와 취소 대기 금액이 섞여 있다.",
+            "그러니까 숫자 하나로 소비 성향을 재단하면 안 된다."
+          ],
+          "privateKnowledge": [
+            "18만4천원 숫자가 뜬 화면을 보고 심하게 억울해했다.",
+            "과소비 이미지가 굳으면 다른 쟁점도 전부 불리해질 거라고 느꼈다."
+          ],
+          "suppressions": [
+            "보증금 미반영이 중간 차액을 키운 핵심 원인 중 하나라는 점",
+            "7만원 차용금이 별도 책임이라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:a:tell:number_buffering",
+            "tell:a:tell:scope_shift"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-3:S1:refund_and_reversal_pending",
+              "factText": "일부 환급 미반영과 결제 취소 대기가 숫자를 부풀린 과정",
+              "tags": [
+                "context",
+                "timeline",
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "보증금",
+                  "rounded": "보증금",
+                  "neutral": "보증금"
+                },
+                "amount2": {
+                  "exact": "차용금 몫",
+                  "rounded": "차용금 몫",
+                  "neutral": "차용금 몫"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "clarify",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-3:S1:mid_screen_not_final",
+              "factText": "해당 플랫폼의 중간 화면에 보인 큰 차액은 최종 확정액이 아니라는 주장",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "중간 차액",
+                  "rounded": "중간 차액",
+                  "neutral": "중간 차액"
+                },
+                "institution": {
+                  "name": "플랫폼",
+                  "judgeRef": "플랫폼",
+                  "neutral": "플랫폼"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "보증금 9만2천원 미반영과 택시 카드 취소 대기가 18만4천원을 부풀린 건 맞다.",
+            "내 7만원 차용금은 별도였고, 과소비 프레임과는 다른 층위의 문제다."
+          ],
+          "privateKnowledge": [
+            "보증금 미반영이 자신의 책임이라는 점 때문에 숫자 설명에 더 집착하게 됐다.",
+            "7만원 차용금이 따로 남는다는 사실을 일부러 뒤로 밀고 싶어 했다."
+          ],
+          "suppressions": [
+            "과소비 프레임에서 벗어나고 싶어 숫자 설명에 숨어드는 방어성",
+            "하린의 오해를 유발한 자신의 선행 행동"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:a:tell:scope_shift",
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-3:S2:mid_screen_not_final",
+              "factText": "해당 플랫폼의 중간 화면에 보인 큰 차액은 최종 확정액이 아니라는 주장",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "중간 차액",
+                  "rounded": "중간 차액",
+                  "neutral": "중간 차액"
+                },
+                "institution": {
+                  "name": "플랫폼",
+                  "judgeRef": "플랫폼",
+                  "neutral": "플랫폼"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-3:S2:refund_and_reversal_pending",
+              "factText": "일부 환급 미반영과 결제 취소 대기가 숫자를 부풀린 과정",
+              "tags": [
+                "context",
+                "timeline",
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "보증금",
+                  "rounded": "보증금",
+                  "neutral": "보증금"
+                },
+                "amount2": {
+                  "exact": "차용금 몫",
+                  "rounded": "차용금 몫",
+                  "neutral": "차용금 몫"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "내가 숫자 설명만 붙든 건 방어적이었다. 하지만 하린도 중간 화면을 최종 정산처럼 돌리며 과소비 프레임을 키웠다.",
+            "두 문제가 섞이면서 오해가 훨씬 커졌다."
+          ],
+          "privateKnowledge": [
+            "보증금 미반영이 자신의 책임이라는 점 때문에 숫자 설명에 더 집착하게 됐다.",
+            "7만원 차용금이 따로 남는다는 사실을 일부러 뒤로 밀고 싶어 했다."
+          ],
+          "suppressions": [
+            "과소비 프레임에서 벗어나고 싶어 숫자 설명에 숨어드는 방어성",
+            "하린의 오해를 유발한 자신의 선행 행동"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:a:tell:scope_shift",
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-3:S3:overspending_frame",
+              "factText": "과소비 프레임 속에서 차용금과 공용비 정리가 한꺼번에 섞인 점",
+              "tags": [
+                "counter",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-3:S3:refund_and_reversal_pending",
+              "factText": "보증금 환급 미반영과 택시 카드 취소 대기가 숫자를 부풀린 과정",
+              "tags": [
+                "context",
+                "timeline",
+                "evidence",
+                "threshold"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "92,000원",
+                  "rounded": "9만2천원",
+                  "neutral": "보증금"
+                },
+                "amount2": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "차용금 몫"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "다음 날 새벽 3시 취소 확정 전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 과소비한 사람으로 찍히는 게 너무 싫어서 18만4천원부터 반박했다. 그러다 차용금 문제까지 더 복잡하게 만들었다.",
+            "숫자를 바로잡고 싶다는 마음이 책임을 늦추는 핑계가 됐다."
+          ],
+          "privateKnowledge": [
+            "최종 차액이 작아도 자신이 신뢰를 흔든 쟁점은 따로 남는다는 걸 안다.",
+            "정산 숫자를 바로잡는 것과 사과할 부분을 분리해야 한다고 생각한다."
+          ],
+          "suppressions": [
+            "수치 바로잡기와 신뢰 회복이 별개라는 사실"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:a:tell:late_disclosure",
+            "tell:a:tell:number_buffering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-3:S4:spendthrift_stigma_fear",
+              "factText": "과소비한 사람으로 낙인찍힐까 봐 숫자 설명에 매달린 마음",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:a:d-3:S4:overspending_frame",
+              "factText": "과소비 프레임 속에서 차용금과 공용비 정리가 한꺼번에 섞인 점",
+              "tags": [
+                "counter",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "실제 최종 차액은 2만2천원 수준이고, 18만4천원은 착시였다. 다만 내 7만원 차용금은 별도 책임으로 남는다.",
+            "과소비 여부와 차용금 미반환을 분리해 판단해야 한다."
+          ],
+          "privateKnowledge": [
+            "최종 차액이 작아도 자신이 신뢰를 흔든 쟁점은 따로 남는다는 걸 안다.",
+            "정산 숫자를 바로잡는 것과 사과할 부분을 분리해야 한다고 생각한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-3:S5:final_balance_and_separate_loan",
+              "factText": "최종 차액은 작지만 7만원 차용금은 별도 책임으로 남는다는 정리",
+              "tags": [
+                "admission",
+                "responsibility",
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "22,000원",
+                  "rounded": "2만2천원",
+                  "neutral": "최종 차액"
+                },
+                "amount2": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "차용금"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend01:a:d-3:S5:overspending_frame",
+              "factText": "과소비 프레임 속에서 차용금과 공용비 정리가 한꺼번에 섞인 점",
+              "tags": [
+                "counter",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "responsibility",
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "택시비 7만원은 따로 떼어 미반환이라고 보기보다 보증금 환급과 같이 정리할 문제였다.",
+            "그날 결제도 중복 승인과 취소가 겹쳐 있어서 금액을 바로 확정하기 어려웠다."
+          ],
+          "privateKnowledge": [
+            "택시 메모를 남긴 순간 별도 채무처럼 읽힐 수 있다는 걸 알고 있었다.",
+            "보증금이 들어오면 해결된다고 스스로 안심하고 싶었다."
+          ],
+          "suppressions": [
+            "차용 메모가 남아 있어 별도 채무처럼 읽힌다는 점",
+            "실제 송금 의사를 즉시 실행하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:a:tell:number_buffering",
+            "tell:a:tell:scope_shift"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-4:S0:taxi_loan_exists",
+              "factText": "이동 비용 중 자신의 몫이 상대방 선결제로 남아 있다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "beneficiary",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "자신의 몫",
+                  "rounded": "자신의 몫",
+                  "neutral": "자신의 몫"
+                },
+                "amount2": {
+                  "exact": "총 택시비",
+                  "rounded": "총 택시비",
+                  "neutral": "총 택시비"
+                },
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-4:S0:offset_without_agreement",
+              "factText": "관련 금액이 들어오면 주겠다고 해놓고 상계를 혼자 결정한 경위",
+              "tags": [
+                "self_justification",
+                "quote",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "차용금",
+                  "rounded": "차용금",
+                  "neutral": "차용금"
+                },
+                "amount2": {
+                  "exact": "보증금",
+                  "rounded": "보증금",
+                  "neutral": "보증금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "내 몫이 7만원 정도였다는 건 안다. 다만 보증금이 들어오면 상계해도 된다고 생각해서 바로 송금하지 않았다.",
+            "별도 차용으로 남길 생각보다는 한 번에 끝내려는 계산이었다."
+          ],
+          "privateKnowledge": [
+            "택시 메모를 남긴 순간 별도 채무처럼 읽힐 수 있다는 걸 알고 있었다.",
+            "보증금이 들어오면 해결된다고 스스로 안심하고 싶었다."
+          ],
+          "suppressions": [
+            "차용 메모가 남아 있어 별도 채무처럼 읽힌다는 점",
+            "실제 송금 의사를 즉시 실행하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:a:tell:number_buffering",
+            "tell:a:tell:scope_shift"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-4:S1:taxi_loan_exists",
+              "factText": "이동 비용 중 자신의 몫이 상대방 선결제로 남아 있다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "beneficiary",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "자신의 몫",
+                  "rounded": "자신의 몫",
+                  "neutral": "자신의 몫"
+                },
+                "amount2": {
+                  "exact": "총 택시비",
+                  "rounded": "총 택시비",
+                  "neutral": "총 택시비"
+                },
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-4:S1:loan_memo_survives",
+              "factText": "결제 정정과 별개로 차용 메모가 그대로 남아 있는 점",
+              "tags": [
+                "evidence",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "하린이 택시비 14만원을 먼저 냈고 그중 7만원이 내 몫으로 남은 건 사실이다.",
+            "문제는 내가 그 상계를 혼자 정해도 된다고 착각했다는 데 있다."
+          ],
+          "privateKnowledge": [
+            "실제로는 돈이 부족해서 바로 송금하는 장면을 피하고 싶었다.",
+            "좋게 넘어가고 싶다는 명분으로 명확한 확인을 회피했다."
+          ],
+          "suppressions": [
+            "현금 흐름이 빠듯해 송금을 미루고 싶었던 사정",
+            "관계 유지라는 표현 뒤에 숨은 회피성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:a:tell:scope_shift",
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-4:S2:offset_without_agreement",
+              "factText": "관련 금액이 들어오면 주겠다고 해놓고 상계를 혼자 결정한 경위",
+              "tags": [
+                "self_justification",
+                "quote",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "차용금",
+                  "rounded": "차용금",
+                  "neutral": "차용금"
+                },
+                "amount2": {
+                  "exact": "보증금",
+                  "rounded": "보증금",
+                  "neutral": "보증금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-4:S2:loan_memo_survives",
+              "factText": "결제 정정과 별개로 차용 메모가 그대로 남아 있는 점",
+              "tags": [
+                "evidence",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "내가 명확히 갚지 않은 책임은 있다. 하지만 정산 전체가 꼬인 상태에서 택시비만 따로 떼면 설명이 반쪽이 된다.",
+            "나는 관계를 부드럽게 넘기려 했고, 그게 오히려 더 무책임하게 보였다."
+          ],
+          "privateKnowledge": [
+            "실제로는 돈이 부족해서 바로 송금하는 장면을 피하고 싶었다.",
+            "좋게 넘어가고 싶다는 명분으로 명확한 확인을 회피했다."
+          ],
+          "suppressions": [
+            "현금 흐름이 빠듯해 송금을 미루고 싶었던 사정",
+            "관계 유지라는 표현 뒤에 숨은 회피성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:a:tell:scope_shift",
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-4:S3:loan_memo_survives",
+              "factText": "중복 승인 취소와 별개로 차용 메모가 그대로 남아 있는 점",
+              "tags": [
+                "evidence",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "귀가 당일 밤부터 다음 날 새벽까지"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-4:S3:offset_without_agreement",
+              "factText": "보증금이 들어오면 주겠다고 해놓고 상계를 혼자 결정한 경위",
+              "tags": [
+                "self_justification",
+                "quote",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "차용금"
+                },
+                "amount2": {
+                  "exact": "92,000원",
+                  "rounded": "9만2천원",
+                  "neutral": "보증금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "작은 돈도 바로 못 갚는 사람처럼 보이는 게 창피했다. 그래서 '보증금 들어오면 주겠다'고만 남기고 실제 송금을 미뤘다.",
+            "좋게 끝내려던 방식이 결국 책임 회피처럼 남았다."
+          ],
+          "privateKnowledge": [
+            "관계 유지를 핑계로 채무 확인을 미루면 더 신뢰를 잃는다는 걸 인정한다.",
+            "7만원을 갚지 않은 기억이 보증금 은닉보다 더 직접적인 잘못처럼 느껴진다."
+          ],
+          "suppressions": [
+            "상계는 합의가 필요하다는 기본 원칙"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:a:tell:late_disclosure",
+            "tell:a:tell:number_buffering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-4:S4:cashflow_shame",
+              "factText": "작은 돈도 바로 못 갚는 사람처럼 보일까 두려워 송금을 미룬 부끄러움",
+              "tags": [
+                "emotion",
+                "shame",
+                "fear",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:a:d-4:S4:taxi_loan_exists",
+              "factText": "공항 택시비 중 자신의 몫이 상대방 선결제로 남아 있다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "beneficiary",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "자신의 몫"
+                },
+                "amount2": {
+                  "exact": "140,000원",
+                  "rounded": "14만원",
+                  "neutral": "총 택시비"
+                },
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "공항 택시비 7만원은 별도 차용금으로 남았고 나는 그걸 명확히 갚지 않았다.",
+            "상계는 합의가 필요했고, 먼저 송금하거나 최소한 명확히 물었어야 했다."
+          ],
+          "privateKnowledge": [
+            "관계 유지를 핑계로 채무 확인을 미루면 더 신뢰를 잃는다는 걸 인정한다.",
+            "7만원을 갚지 않은 기억이 보증금 은닉보다 더 직접적인 잘못처럼 느껴진다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-4:S5:loan_must_be_repaid_first",
+              "factText": "상계 전에 먼저 갚거나 합의를 구했어야 한다는 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "차용금"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend01:a:d-4:S5:cashflow_shame",
+              "factText": "작은 돈도 바로 못 갚는 사람처럼 보일까 두려워 송금을 미룬 부끄러움",
+              "tags": [
+                "emotion",
+                "shame",
+                "fear",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "원본 확인 전 제3자에게 퍼뜨리지 말자는 약속은 기억한다. 다만 나는 공개적으로 돌린 게 아니라 계산을 설명하려고 한 정도였다.",
+            "하린의 스토리와 내 메시지를 같은 무게로 보는 건 좀 다르다고 생각한다."
+          ],
+          "privateKnowledge": [
+            "하린의 공개 저격보다 자신의 비공개 누설은 덜 나쁘다고 스스로 위안을 삼는다.",
+            "김수아에게 먼저 말한 사실이 들키면 도덕적 우위가 약해진다고 느낀다."
+          ],
+          "suppressions": [
+            "김수아에게 상계 얘기를 먼저 꺼낸 사실",
+            "제3자 설명으로 자기 입장을 먼저 심으려 한 의도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:a:tell:number_buffering",
+            "tell:a:tell:scope_shift"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-5:S0:old_rule_exists",
+              "factText": "원본 확인 전 제3자에게 정산 해석을 퍼뜨리지 않기로 한 약속",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:a:d-5:S0:kimsua_side_message",
+              "factText": "제3자에게 관련 금액과 상계 이야기를 먼저 건넨 정황",
+              "tags": [
+                "act",
+                "privacy",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "제3자",
+                  "judgeRef": "제3자",
+                  "neutral": "제3자"
+                },
+                "amount": {
+                  "exact": "차용금",
+                  "rounded": "차용금",
+                  "neutral": "차용금"
+                },
+                "amount2": {
+                  "exact": "보증금",
+                  "rounded": "보증금",
+                  "neutral": "보증금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "김수아에게 말한 건 맞다. 그래도 그건 상계 설명을 잠깐 꺼낸 거였지, 사람을 몰아가려는 확산은 아니었다.",
+            "약속을 완전히 지켰다고는 못 해도 공개 저격과는 결이 다르다."
+          ],
+          "privateKnowledge": [
+            "하린의 공개 저격보다 자신의 비공개 누설은 덜 나쁘다고 스스로 위안을 삼는다.",
+            "김수아에게 먼저 말한 사실이 들키면 도덕적 우위가 약해진다고 느낀다."
+          ],
+          "suppressions": [
+            "김수아에게 상계 얘기를 먼저 꺼낸 사실",
+            "제3자 설명으로 자기 입장을 먼저 심으려 한 의도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:a:tell:number_buffering",
+            "tell:a:tell:scope_shift"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-5:S1:kimsua_side_message",
+              "factText": "제3자에게 관련 금액과 상계 이야기를 먼저 건넨 정황",
+              "tags": [
+                "act",
+                "privacy",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "제3자",
+                  "judgeRef": "제3자",
+                  "neutral": "제3자"
+                },
+                "amount": {
+                  "exact": "차용금",
+                  "rounded": "차용금",
+                  "neutral": "차용금"
+                },
+                "amount2": {
+                  "exact": "보증금",
+                  "rounded": "보증금",
+                  "neutral": "보증금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend01:a:d-5:S1:old_rule_exists",
+              "factText": "원본 확인 전 제3자에게 정산 해석을 퍼뜨리지 않기로 한 약속",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "원본 전에 제3자에게 보증금과 택시 얘기를 꺼낸 순간 내 쪽도 규칙을 건드린 건 맞다.",
+            "나는 그걸 상담처럼 여겼지만, 듣는 쪽에선 이미 편향된 설명이었다."
+          ],
+          "privateKnowledge": [
+            "상담이라는 표현으로 사실상 자기 편 만들기를 정당화하고 있다.",
+            "원본 전 설명이 이미 해석을 심는 행동이라는 걸 알고 있다."
+          ],
+          "suppressions": [
+            "비공개라도 편향된 정보 확산이라는 점",
+            "규칙 위반을 상담이라는 말로 완화하는 자기합리화"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:a:tell:scope_shift",
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-5:S2:kimsua_side_message",
+              "factText": "제3자에게 관련 금액과 상계 이야기를 먼저 건넨 정황",
+              "tags": [
+                "act",
+                "privacy",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "김 씨",
+                  "neutral": "제3자"
+                },
+                "amount": {
+                  "exact": "차용금",
+                  "rounded": "차용금",
+                  "neutral": "차용금"
+                },
+                "amount2": {
+                  "exact": "보증금",
+                  "rounded": "보증금",
+                  "neutral": "보증금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend01:a:d-5:S2:public_story_is_bigger_breach",
+              "factText": "상대의 공개 게시물이 더 큰 파급을 만들었다고 느끼는 비교 감정",
+              "tags": [
+                "counter",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "institution": {
+                  "name": "SNS",
+                  "judgeRef": "SNS",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "내 위반이 가벼워지는 건 아니다. 하지만 하린의 스토리는 해석과 평판까지 붙어서 파급이 훨씬 컸다.",
+            "우리는 서로 다른 방식으로 같은 약속을 깼다."
+          ],
+          "privateKnowledge": [
+            "상담이라는 표현으로 사실상 자기 편 만들기를 정당화하고 있다.",
+            "원본 전 설명이 이미 해석을 심는 행동이라는 걸 알고 있다."
+          ],
+          "suppressions": [
+            "비공개라도 편향된 정보 확산이라는 점",
+            "규칙 위반을 상담이라는 말로 완화하는 자기합리화"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:a:tell:scope_shift",
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-5:S3:public_story_is_bigger_breach",
+              "factText": "상대의 공개 스토리가 더 큰 파급을 만들었다고 느끼는 비교 감정",
+              "tags": [
+                "counter",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "institution": {
+                  "name": "인스타그램 스토리",
+                  "judgeRef": "스토리",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "compare"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:a:d-5:S3:fear_of_losing_face",
+              "factText": "평판이 흔들릴까 두려워 비공개 누설을 예외처럼 여긴 마음",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 먼저 말하면 내가 더 궁색해 보일까 봐 예외라고 우겼다.",
+            "비공개로 한두 마디 흘린 것도 제3자 확산이라는 걸 인정하기 싫었다."
+          ],
+          "privateKnowledge": [
+            "평판이 흔들릴까 두려워 규칙 예외를 스스로 만들었다.",
+            "이 쟁점에서 완전히 피해자 위치에 설 수 없다는 걸 받아들이기 시작했다."
+          ],
+          "suppressions": [
+            "이 쟁점에서 자신도 사과 주체라는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:a:tell:late_disclosure",
+            "tell:a:tell:number_buffering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-5:S4:fear_of_losing_face",
+              "factText": "평판이 흔들릴까 두려워 비공개 누설을 예외처럼 여긴 마음",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:a:d-5:S4:old_rule_exists",
+              "factText": "원본 확인 전 제3자에게 정산 해석을 퍼뜨리지 않기로 한 약속",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "admission",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "원본 확인 전 김수아에게 정산 해석을 말한 건 내 쪽 위반이다.",
+            "비공개 상담도 제3자 확산에 포함된다고 다시 합의해야 한다."
+          ],
+          "privateKnowledge": [
+            "평판이 흔들릴까 두려워 규칙 예외를 스스로 만들었다.",
+            "이 쟁점에서 완전히 피해자 위치에 설 수 없다는 걸 받아들이기 시작했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:a:tell:late_disclosure"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:a:d-5:S5:private_leak_is_still_breach",
+              "factText": "비공개 상담도 제3자 확산 규칙 위반에 포함된다는 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "김수아",
+                  "judgeRef": "공통 친구",
+                  "neutral": "제3자"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend01:a:d-5:S5:old_rule_exists",
+              "factText": "원본 확인 전 제3자에게 정산 해석을 퍼뜨리지 않기로 한 약속",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "resolve",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "체크아웃 직후 환급이 있었다면 왜 정산표에는 안 보였는지부터 묻고 싶다.",
+            "개인 계좌로 들어간 공동 환급금은 바로 같이 확인했어야 정상 아닌가."
+          ],
+          "privateKnowledge": [
+            "중간 캡처가 퍼지면 자신도 과민한 사람처럼 보일 수 있다는 걸 알고 있었다.",
+            "그래도 도윤이 먼저 말하지 않은 시간차를 가장 큰 단서로 보고 있다."
+          ],
+          "suppressions": [
+            "자신도 중간 캡처를 이미 제3자에게 보낸 사실",
+            "도윤을 의심하는 동시에 공개 저격으로 기울던 마음"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-1:S0:refund_gap",
+              "factText": "공동 비용 관련 환급금이 한동안 공용 기록에서 보이지 않았다는 의심",
+              "tags": [
+                "act",
+                "uncertainty",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "uncertainty",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-1:S0:time_lag",
+              "factText": "환급과 실제 공유 사이에 눈에 띄는 시간차가 있다는 판단",
+              "tags": [
+                "timeline",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "question"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "환급이 아직 확정 전이었다는 말은 들을 수 있다. 그런데 그렇다면 왜 그 사실 자체를 먼저 말하지 않았는지가 남는다.",
+            "나는 숫자보다 시간차가 더 이상하다."
+          ],
+          "privateKnowledge": [
+            "중간 캡처가 퍼지면 자신도 과민한 사람처럼 보일 수 있다는 걸 알고 있었다.",
+            "그래도 도윤이 먼저 말하지 않은 시간차를 가장 큰 단서로 보고 있다."
+          ],
+          "suppressions": [
+            "자신도 중간 캡처를 이미 제3자에게 보낸 사실",
+            "도윤을 의심하는 동시에 공개 저격으로 기울던 마음"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-1:S1:time_lag",
+              "factText": "환급과 실제 공유 사이에 눈에 띄는 시간차가 있다는 판단",
+              "tags": [
+                "timeline",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-1:S1:shared_rule",
+              "factText": "공동 비용 환급금은 원본 확인 뒤 바로 같이 반영해야 한다는 기준",
+              "tags": [
+                "rule",
+                "relationship",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "당사자",
+                  "judgeRef": "당사자",
+                  "neutral": "당사자"
+                },
+                "institution": {
+                  "name": "공용 정산",
+                  "judgeRef": "공용 정산",
+                  "neutral": "공용 정산"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "도윤 계좌로 9만2천원이 들어온 뒤 한동안 공유가 없었다는 사실은 분명하다.",
+            "그 공백 때문에 내가 더 쓴 사람처럼 보이는 화면이 계속 굳어졌다."
+          ],
+          "privateKnowledge": [
+            "김수아에게 캡처를 보낸 행동이 이 쟁점의 신뢰를 더 흔들 수 있다는 걸 느끼기 시작했다.",
+            "도윤의 침묵이 자신의 분노를 정당화한다고 스스로 되뇌고 있다."
+          ],
+          "suppressions": [
+            "증거보다 분노가 먼저 앞섰던 순간들",
+            "관계의 상처를 돈 문제보다 더 크게 느끼는 내심"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-1:S2:refund_gap",
+              "factText": "공동 비용 관련 환급금이 한동안 공용 기록에서 보이지 않았다는 의심",
+              "tags": [
+                "act",
+                "uncertainty",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
+                  "neutral": "해당 금액"
+                },
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "서 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-1:S2:shared_rule",
+              "factText": "공동 비용 환급금은 원본 확인 뒤 바로 같이 반영해야 한다는 기준",
+              "tags": [
+                "rule",
+                "relationship",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "정 씨",
+                  "neutral": "당사자"
+                },
+                "institution": {
+                  "name": "공용 정산",
+                  "judgeRef": "공용 정산",
+                  "neutral": "공용 정산"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "이건 단순 누락이 아니라 공동 환급금을 자기 계산 안에 먼저 넣은 행동으로 보인다.",
+            "원본 확인 전에는 제3자에게 말하지 말자고 해놓고 정작 본인은 내게도 즉시 말하지 않았다."
+          ],
+          "privateKnowledge": [
+            "김수아에게 캡처를 보낸 행동이 이 쟁점의 신뢰를 더 흔들 수 있다는 걸 느끼기 시작했다.",
+            "도윤의 침묵이 자신의 분노를 정당화한다고 스스로 되뇌고 있다."
+          ],
+          "suppressions": [
+            "증거보다 분노가 먼저 앞섰던 순간들",
+            "관계의 상처를 돈 문제보다 더 크게 느끼는 내심"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:b:tell:pressure_loop",
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-1:S3:shared_rule",
+              "factText": "공동 여행 환급금은 원본 확인 뒤 바로 같이 반영해야 한다는 기준",
+              "tags": [
+                "rule",
+                "relationship",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                },
+                "institution": {
+                  "name": "정산 앱",
+                  "judgeRef": "정산표",
+                  "neutral": "공용 정산"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:b:d-1:S3:being_overcharged_fear",
+              "factText": "자신이 더 쓴 사람처럼 남을 수 있다는 부담과 상처",
+              "tags": [
+                "harm",
+                "fear",
+                "emotion",
+                "identity"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "184,000원",
+                  "rounded": "18만4천원",
+                  "neutral": "캡처상의 차액"
+                }
+              },
+              "stanceHints": [
+                "hurt",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "돈 액수보다 더 서운한 건 친구가 나를 정산 파트너로 대하지 않았다는 점이다.",
+            "내가 예민해서 따지는 게 아니라, 같이 낸 돈이 개인 계좌 속 대기금처럼 취급된 게 상처였다."
+          ],
+          "privateKnowledge": [
+            "보증금 은닉을 묻는 동안 자신도 제3자 확산 규칙을 어긴 사실이 걸린다.",
+            "정산보다 관계의 서열이 무너졌다는 감정이 더 커져 있다."
+          ],
+          "suppressions": [
+            "정산 복구와 평판 복구를 함께 요구하고 있다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:b:tell:motive_leap",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-1:S4:being_overcharged_fear",
+              "factText": "자신이 더 쓴 사람처럼 남을 수 있다는 부담과 상처",
+              "tags": [
+                "harm",
+                "fear",
+                "emotion",
+                "identity"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "184,000원",
+                  "rounded": "18만4천원",
+                  "neutral": "캡처상의 차액"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:b:d-1:S4:refund_gap",
+              "factText": "공동 숙소 환급금이 한동안 정산표에서 보이지 않았다는 의심",
+              "tags": [
+                "act",
+                "uncertainty",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "92,000원",
+                  "rounded": "9만2천원",
+                  "neutral": "해당 금액"
+                },
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "accuse",
+                "relationship"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "보증금 환급 은닉은 사실로 본다. 택시비와는 별도로 먼저 공개하고 반영했어야 했다.",
+            "정산은 환급금과 차용금을 분리해서 다시 맞추는 게 맞다."
+          ],
+          "privateKnowledge": [
+            "보증금 은닉을 묻는 동안 자신도 제3자 확산 규칙을 어긴 사실이 걸린다.",
+            "정산보다 관계의 서열이 무너졌다는 감정이 더 커져 있다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-1:S5:rebuild_split",
+              "factText": "보증금 은닉과 택시 차용을 나눠 다시 정산해야 한다는 결론",
+              "tags": [
+                "responsibility",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "92,000원",
+                  "rounded": "9만2천원",
+                  "neutral": "보증금"
+                },
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "resolve",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend01:b:d-1:S5:shared_rule",
+              "factText": "공동 여행 환급금은 원본 확인 뒤 바로 같이 반영해야 한다는 기준",
+              "tags": [
+                "rule",
+                "relationship",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                },
+                "institution": {
+                  "name": "정산 앱",
+                  "judgeRef": "정산표",
+                  "neutral": "공용 정산"
+                }
+              },
+              "stanceHints": [
+                "responsibility",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "나는 도윤 이름을 직접 올린 적 없다. 그냥 정산이 너무 답답해서 내 감정을 적은 수준이었다.",
+            "김수아에게 보낸 것도 결론을 퍼뜨리려는 게 아니라 상황을 보여준 거였다."
+          ],
+          "privateKnowledge": [
+            "도윤이 설명을 늦추는 동안 자신이 또 비용을 떠안을까 봐 불안했다.",
+            "스토리 문구가 누구를 떠올리게 하는지 스스로도 알고 있었다."
+          ],
+          "suppressions": [
+            "스토리가 사실상 도윤을 겨냥한다는 자각",
+            "김수아에게 보낸 순간 이미 제3자 확산이라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-2:S0:capture_and_story",
+              "factText": "정산 확정 전에 중간 캡처를 제3자에게 보내고 암시성 게시물을 올린 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "제3자",
+                  "judgeRef": "제3자",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "SNS",
+                  "judgeRef": "SNS",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-2:S0:indirect_targeting",
+              "factText": "이름을 직접 쓰지 않았어도 사진과 금액 암시로 대상이 특정된 점",
+              "tags": [
+                "context",
+                "evidence",
+                "identity",
+                "privacy"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "중간 차액",
+                  "rounded": "중간 차액",
+                  "neutral": "중간 차액"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "중간 캡처를 보낸 건 맞다. 하지만 그 시점에는 내가 18만4천원을 떠안을 수도 있다고 보였고, 답이 없으니 확인받고 싶었다.",
+            "친한친구 스토리였으니 완전한 공개 저격이라고 부르긴 과하다."
+          ],
+          "privateKnowledge": [
+            "도윤이 설명을 늦추는 동안 자신이 또 비용을 떠안을까 봐 불안했다.",
+            "스토리 문구가 누구를 떠올리게 하는지 스스로도 알고 있었다."
+          ],
+          "suppressions": [
+            "스토리가 사실상 도윤을 겨냥한다는 자각",
+            "김수아에게 보낸 순간 이미 제3자 확산이라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-2:S1:capture_and_story",
+              "factText": "정산 확정 전에 중간 캡처를 제3자에게 보내고 암시성 게시물을 올린 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "제3자",
+                  "judgeRef": "제3자",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "SNS",
+                  "judgeRef": "SNS",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-2:S1:fear_of_being_stuck_with_bill",
+              "factText": "비용을 혼자 떠안을까 봐 설명을 기다리지 못하고 먼저 반응한 경위",
+              "tags": [
+                "self_justification",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "당사자",
+                  "judgeRef": "당사자",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "원본 전에 캡처를 보낸 건 사실이다. 스토리도 도윤을 떠올리게 할 수 있다는 점은 인정한다.",
+            "다만 그때는 환급금이 빠져 있고 택시비도 정리 안 된 걸 전혀 몰랐다."
+          ],
+          "privateKnowledge": [
+            "감정이 올라오자 '일부러 숨겼다'는 해석을 먼저 붙였다.",
+            "공개 저격으로 보이면 자신도 예민한 사람으로 낙인찍힐 수 있다는 걱정을 밀어버렸다."
+          ],
+          "suppressions": [
+            "답답함보다 분노가 먼저 앞섰다는 내적 동기",
+            "원본을 직접 확인하지 않고 의도 단정부터 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-2:S2:indirect_targeting",
+              "factText": "이름을 직접 쓰지 않았어도 사진과 금액 암시로 대상이 특정된 점",
+              "tags": [
+                "context",
+                "evidence",
+                "identity",
+                "privacy"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "중간 차액",
+                  "rounded": "중간 차액",
+                  "neutral": "중간 차액"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-2:S2:fear_of_being_stuck_with_bill",
+              "factText": "비용을 혼자 떠안을까 봐 설명을 기다리지 못하고 먼저 반응한 경위",
+              "tags": [
+                "self_justification",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "정 씨",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "내가 먼저 감정적으로 움직인 건 맞다. 그래도 도윤이 보증금과 택시 얘기를 바로 했다면 여기까지 안 왔다.",
+            "나는 의도를 단정했고, 도윤은 핵심 정보를 늦췄다."
+          ],
+          "privateKnowledge": [
+            "감정이 올라오자 '일부러 숨겼다'는 해석을 먼저 붙였다.",
+            "공개 저격으로 보이면 자신도 예민한 사람으로 낙인찍힐 수 있다는 걱정을 밀어버렸다."
+          ],
+          "suppressions": [
+            "답답함보다 분노가 먼저 앞섰다는 내적 동기",
+            "원본을 직접 확인하지 않고 의도 단정부터 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:b:tell:pressure_loop",
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-2:S3:fear_of_being_stuck_with_bill",
+              "factText": "비용을 혼자 떠안을까 봐 설명을 기다리지 못하고 먼저 반응한 경위",
+              "tags": [
+                "self_justification",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend01:b:d-2:S3:indirect_targeting",
+              "factText": "이름을 직접 쓰지 않았어도 여행 사진과 금액 암시로 대상이 특정된 점",
+              "tags": [
+                "context",
+                "evidence",
+                "identity",
+                "privacy"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "184,000원",
+                  "rounded": "18만4천원",
+                  "neutral": "중간 차액"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 나는 또 내가 뒤집어쓰는 줄 알고 겁부터 났다. 그래서 사실 확인과 비난을 한 문장에 붙여버렸다.",
+            "답답함을 풀려고 올린 스토리가 결국 사람을 겨냥한 말처럼 됐다."
+          ],
+          "privateKnowledge": [
+            "친한친구 범위라도 평판 손상을 만들 수 있다는 점을 인정한다.",
+            "정정 메시지 없이는 이 쟁점이 끝나지 않는다는 걸 알고 있다."
+          ],
+          "suppressions": [
+            "평판 피해 복구 책임이 자신에게도 있다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:b:tell:motive_leap",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-2:S4:anger_fused_with_fact_check",
+              "factText": "사실 확인과 비난을 한 문장에 붙여 압박감을 높인 상태",
+              "tags": [
+                "emotion",
+                "harm",
+                "shame",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:b:d-2:S4:capture_and_story",
+              "factText": "정산 확정 전에 중간 캡처를 김수아에게 보내고 저격성 스토리를 올린 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "김수아",
+                  "judgeRef": "공통 친구",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "인스타그램 스토리",
+                  "judgeRef": "스토리",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "정산 확정 전에 캡처를 공유하고 저격성 스토리를 올린 건 내 책임이다.",
+            "스토리를 내리고 김수아에게도 중간 화면 기준 판단이었다고 바로잡겠다."
+          ],
+          "privateKnowledge": [
+            "친한친구 범위라도 평판 손상을 만들 수 있다는 점을 인정한다.",
+            "정정 메시지 없이는 이 쟁점이 끝나지 않는다는 걸 알고 있다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-2:S5:correction_and_delete",
+              "factText": "스토리 삭제와 제3자 정정까지 해야 쟁점이 정리된다는 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "김수아",
+                  "judgeRef": "공통 친구",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "인스타그램 스토리",
+                  "judgeRef": "스토리",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend01:b:d-2:S5:anger_fused_with_fact_check",
+              "factText": "사실 확인과 비난을 한 문장에 붙여 압박감을 높인 상태",
+              "tags": [
+                "emotion",
+                "harm",
+                "shame",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서도윤",
+                  "judgeRef": "상대방",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "내가 본 화면에는 도윤이 18만4천원을 더 내야 하는 걸로 떴다. 그 숫자를 붙잡은 게 출발점이었다.",
+            "그때는 환급도, 취소 대기도 안 보였으니 내가 과잉 해석만 한 건 아니라고 생각했다."
+          ],
+          "privateKnowledge": [
+            "자신도 숫자 하나에 너무 빨리 의미를 붙였다는 예감이 있다.",
+            "그래도 도윤의 침묵이 자신을 정당화한다고 믿고 싶다."
+          ],
+          "suppressions": [
+            "원본 없이 중간 화면만으로 도윤 의도를 단정하려 한 마음",
+            "자신도 예민하게 보일까 두려웠다는 감정"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-3:S0:capture_as_anchor",
+              "factText": "중간 캡처의 큰 차액을 실제 부담액으로 받아들인 출발점",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "중간 차액",
+                  "rounded": "중간 차액",
+                  "neutral": "중간 차액"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-3:S0:csv_reorders_balance",
+              "factText": "원본 자료와 설정 기록을 보니 자동분배 전 단계와 취소 대기가 섞여 있었다는 사실",
+              "tags": [
+                "context",
+                "evidence",
+                "institution",
+                "timeline"
+              ],
+              "slots": {
+                "institution": {
+                  "name": "원본",
+                  "judgeRef": "원본",
+                  "neutral": "원본"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "원본을 보기 전까지는 그 중간 화면이 사실상 유일한 기준이었다.",
+            "그래도 지금 보면 그 숫자가 최종처럼 보이게 말한 건 과했다는 생각이 든다."
+          ],
+          "privateKnowledge": [
+            "자신도 숫자 하나에 너무 빨리 의미를 붙였다는 예감이 있다.",
+            "그래도 도윤의 침묵이 자신을 정당화한다고 믿고 싶다."
+          ],
+          "suppressions": [
+            "원본 없이 중간 화면만으로 도윤 의도를 단정하려 한 마음",
+            "자신도 예민하게 보일까 두려웠다는 감정"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-3:S1:csv_reorders_balance",
+              "factText": "원본 자료와 설정 기록을 보니 자동분배 전 단계와 취소 대기가 섞여 있었다는 사실",
+              "tags": [
+                "context",
+                "evidence",
+                "institution",
+                "timeline"
+              ],
+              "slots": {
+                "institution": {
+                  "name": "원본",
+                  "judgeRef": "원본",
+                  "neutral": "원본"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "clarify",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-3:S1:capture_as_anchor",
+              "factText": "중간 캡처의 큰 차액을 실제 부담액으로 받아들인 출발점",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "중간 차액",
+                  "rounded": "중간 차액",
+                  "neutral": "중간 차액"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "CSV와 설정 로그를 보니 18만4천원은 자동분배 전 단계 숫자였다. 보증금 환급과 취소 대기가 빠져 있었다.",
+            "내가 '과소비'라고 단정한 말은 원본 기준으로는 맞지 않았다."
+          ],
+          "privateKnowledge": [
+            "원본을 보니 자신이 과소비 프레임을 과장했다는 걸 알기 시작했다.",
+            "하지만 공개 저격과 친구 공유를 이미 해버린 만큼 쉽게 물러나기 어렵다."
+          ],
+          "suppressions": [
+            "과소비 단정이 틀렸다는 확신이 점점 커지는 사실",
+            "숫자를 놓치면 공개 저격도 함께 무너지리라는 불안"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-3:S2:capture_as_anchor",
+              "factText": "중간 캡처의 큰 차액을 실제 부담액으로 받아들인 출발점",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "중간 차액",
+                  "rounded": "중간 차액",
+                  "neutral": "중간 차액"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-3:S2:csv_reorders_balance",
+              "factText": "원본 자료와 설정 기록을 보니 자동분배 전 단계와 취소 대기가 섞여 있었다는 사실",
+              "tags": [
+                "context",
+                "evidence",
+                "institution",
+                "timeline"
+              ],
+              "slots": {
+                "institution": {
+                  "name": "원본",
+                  "judgeRef": "원본",
+                  "neutral": "원본"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "내가 숫자를 너무 빨리 결론으로 쓴 건 맞다. 하지만 도윤이 환급과 차용 얘기를 늦춘 탓에 그 숫자를 더 믿게 됐다.",
+            "오해는 둘이 다른 이유로 키웠다."
+          ],
+          "privateKnowledge": [
+            "원본을 보니 자신이 과소비 프레임을 과장했다는 걸 알기 시작했다.",
+            "하지만 공개 저격과 친구 공유를 이미 해버린 만큼 쉽게 물러나기 어렵다."
+          ],
+          "suppressions": [
+            "과소비 단정이 틀렸다는 확신이 점점 커지는 사실",
+            "숫자를 놓치면 공개 저격도 함께 무너지리라는 불안"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:b:tell:pressure_loop",
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-3:S3:hidden_refund_fueled_suspicion",
+              "factText": "도윤의 환급 은닉과 차용 미반환이 큰 차액을 더 믿게 만든 심리",
+              "tags": [
+                "motive",
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "92,000원",
+                  "rounded": "9만2천원",
+                  "neutral": "보증금"
+                },
+                "amount2": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "차용금"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-3:S3:csv_reorders_balance",
+              "factText": "원본 CSV와 설정 로그를 보니 자동분배 전 단계와 취소 대기가 섞여 있었다는 사실",
+              "tags": [
+                "context",
+                "evidence",
+                "institution",
+                "timeline"
+              ],
+              "slots": {
+                "institution": {
+                  "name": "정산 앱 원본 CSV",
+                  "judgeRef": "원본 CSV",
+                  "neutral": "원본"
+                },
+                "time": {
+                  "neutral": "그 시점",
+                  "period": "다음 날 새벽 3시 취소 확정 전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 또 내가 뒤집어쓰는 줄 알고 창피하고 화가 같이 났다. 그래서 18만4천원이라는 숫자에 매달렸다.",
+            "내가 과민해 보일까 봐 더 세게 확신한 것도 있다."
+          ],
+          "privateKnowledge": [
+            "자신이 과민한 사람이 아니라 불안한 사람이었다는 점을 인정하고 싶지 않다.",
+            "차액 오해를 정정하지 않으면 다른 쟁점도 설득력을 잃는다는 걸 안다."
+          ],
+          "suppressions": [
+            "차액 오해 정정이 자신의 책임 일부라는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:b:tell:motive_leap",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-3:S4:shame_clinging_to_number",
+              "factText": "과민한 사람으로 보일까 봐 오히려 숫자에 더 매달린 감정",
+              "tags": [
+                "emotion",
+                "shame",
+                "identity",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:b:d-3:S4:hidden_refund_fueled_suspicion",
+              "factText": "도윤의 환급 은닉과 차용 미반환이 큰 차액을 더 믿게 만든 심리",
+              "tags": [
+                "motive",
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "92,000원",
+                  "rounded": "9만2천원",
+                  "neutral": "보증금"
+                },
+                "amount2": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "차용금"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "과소비 단정은 틀렸고 최종 차액은 2만2천원 수준이었다. 다만 도윤의 7만원 차용금은 별도 책임으로 남는다.",
+            "중간 화면을 최종 판정처럼 말한 건 내가 거둬야 한다."
+          ],
+          "privateKnowledge": [
+            "자신이 과민한 사람이 아니라 불안한 사람이었다는 점을 인정하고 싶지 않다.",
+            "차액 오해를 정정하지 않으면 다른 쟁점도 설득력을 잃는다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-3:S5:withdraw_overspending_claim",
+              "factText": "과소비 단정을 거두고 최종 2만2천원 기준으로 재정산하자는 결론",
+              "tags": [
+                "admission",
+                "responsibility",
+                "threshold",
+                "relationship"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "22,000원",
+                  "rounded": "2만2천원",
+                  "neutral": "최종 차액"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend01:b:d-3:S5:hidden_refund_fueled_suspicion",
+              "factText": "도윤의 환급 은닉과 차용 미반환이 큰 차액을 더 믿게 만든 심리",
+              "tags": [
+                "motive",
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "92,000원",
+                  "rounded": "9만2천원",
+                  "neutral": "보증금"
+                },
+                "amount2": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "차용금"
+                }
+              },
+              "stanceHints": [
+                "responsibility",
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "귀가 길 택시비는 내가 먼저 냈고, 그중 7만원은 도윤 몫으로 남아 있었다.",
+            "중복 승인 취소가 있었어도 그 차용 자체가 사라지는 건 아니었다."
+          ],
+          "privateKnowledge": [
+            "자신이 화를 더 내면 주변에서 과민하다고 볼 수 있다는 걸 알고 있다.",
+            "그래도 택시 메모 하나만큼은 분명한 증거라고 믿는다."
+          ],
+          "suppressions": [
+            "보증금과 차용이 겹치면서 자신도 감정적으로 확대 해석한 부분",
+            "도윤을 신뢰하지 못하게 된 오래된 누적감"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-4:S0:paid_full_fare",
+              "factText": "귀가 길 이동 비용을 먼저 결제했고 그중 일부가 상대방 몫으로 남았다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "총 택시비",
+                  "rounded": "총 택시비",
+                  "neutral": "총 택시비"
+                },
+                "amount2": {
+                  "exact": "상대 몫",
+                  "rounded": "상대 몫",
+                  "neutral": "상대 몫"
+                }
+              },
+              "stanceHints": [
+                "uncertainty",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-4:S0:offset_requires_agreement",
+              "factText": "차용금 상계는 당사자 합의가 있어야 한다는 기준",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "question"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "보증금이 들어오면 같이 정리하자는 말을 들은 건 맞다. 하지만 상계는 둘이 합의해야지, 한쪽이 혼자 정하면 안 된다.",
+            "나는 택시 영수증보다 차용 메모가 더 선명하다."
+          ],
+          "privateKnowledge": [
+            "자신이 화를 더 내면 주변에서 과민하다고 볼 수 있다는 걸 알고 있다.",
+            "그래도 택시 메모 하나만큼은 분명한 증거라고 믿는다."
+          ],
+          "suppressions": [
+            "보증금과 차용이 겹치면서 자신도 감정적으로 확대 해석한 부분",
+            "도윤을 신뢰하지 못하게 된 오래된 누적감"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-4:S1:offset_requires_agreement",
+              "factText": "차용금 상계는 당사자 합의가 있어야 한다는 기준",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:b:d-4:S1:loan_memo_exists",
+              "factText": "상대방이 관련 금액이 들어오면 주겠다고 적은 차용 메모가 남아 있다는 점",
+              "tags": [
+                "quote",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "차용금",
+                  "rounded": "차용금",
+                  "neutral": "차용금"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "도윤이 '보증금 들어오면 주겠다'고 적은 메모가 남아 있으니 7만원은 별도 차용으로 보는 게 맞다.",
+            "환급금과 차용금이 뒤섞여도 이 부분은 독립적으로 확인된다."
+          ],
+          "privateKnowledge": [
+            "보증금 은닉과 차용 미반환이 겹쳐 분노가 더 커졌다.",
+            "돈 액수보다 태도의 문제라고 생각하지만 실제로는 둘 다 섞여 있다."
+          ],
+          "suppressions": [
+            "차용 문제를 평판 문제와 섞어 판단하는 경향",
+            "관계보다 원칙 확인을 더 우선시하는 순간"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-4:S2:paid_full_fare",
+              "factText": "귀가 길 이동 비용을 먼저 결제했고 그중 일부가 상대방 몫으로 남았다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "총 택시비",
+                  "rounded": "총 택시비",
+                  "neutral": "총 택시비"
+                },
+                "amount2": {
+                  "exact": "상대 몫",
+                  "rounded": "상대 몫",
+                  "neutral": "상대 몫"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-4:S2:loan_memo_exists",
+              "factText": "상대방이 관련 금액이 들어오면 주겠다고 적은 차용 메모가 남아 있다는 점",
+              "tags": [
+                "quote",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "차용금",
+                  "rounded": "차용금",
+                  "neutral": "차용금"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "이건 큰돈이냐 작은돈이냐의 문제가 아니다. 선결제해 준 사람에게 확인도 없이 상계를 선언한 태도가 문제다.",
+            "친구 사이니까 더 분명해야 했다."
+          ],
+          "privateKnowledge": [
+            "보증금 은닉과 차용 미반환이 겹쳐 분노가 더 커졌다.",
+            "돈 액수보다 태도의 문제라고 생각하지만 실제로는 둘 다 섞여 있다."
+          ],
+          "suppressions": [
+            "차용 문제를 평판 문제와 섞어 판단하는 경향",
+            "관계보다 원칙 확인을 더 우선시하는 순간"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:b:tell:pressure_loop",
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-4:S3:loan_memo_exists",
+              "factText": "상대방이 보증금이 들어오면 주겠다고 적은 차용 메모가 남아 있다는 점",
+              "tags": [
+                "quote",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "차용금"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend01:b:d-4:S3:helper_becomes_fussy",
+              "factText": "선결제한 자신이 오히려 돈 밝히는 사람처럼 보인 상처",
+              "tags": [
+                "emotion",
+                "harm",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "hurt",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 나는 택시비를 먼저 낸 사람인데도 나중엔 돈 밝히는 사람처럼 느껴졌다.",
+            "도와준 행동이 오히려 예민함으로 돌아오는 느낌이 상처였다."
+          ],
+          "privateKnowledge": [
+            "정산을 끝내기보다 도윤이 잘못을 분명히 말해주길 더 바라고 있다.",
+            "선결제한 사람이 불리해지는 관계 패턴을 끊고 싶다."
+          ],
+          "suppressions": [
+            "사과 문장 자체를 받고 싶은 욕구"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:b:tell:motive_leap",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-4:S4:helper_becomes_fussy",
+              "factText": "선결제한 자신이 오히려 돈 밝히는 사람처럼 보인 상처",
+              "tags": [
+                "emotion",
+                "harm",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:b:d-4:S4:paid_full_fare",
+              "factText": "귀가 길 택시비를 먼저 결제했고 그중 7만원이 상대방 몫으로 남았다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "140,000원",
+                  "rounded": "14만원",
+                  "neutral": "총 택시비"
+                },
+                "amount2": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "상대 몫"
+                }
+              },
+              "stanceHints": [
+                "accuse",
+                "relationship"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "공항 택시비 7만원은 별도 차용금으로 남았고 미반환이 맞다.",
+            "도윤이 먼저 송금하고, 그다음에 보증금 정산을 따로 맞췄어야 했다."
+          ],
+          "privateKnowledge": [
+            "정산을 끝내기보다 도윤이 잘못을 분명히 말해주길 더 바라고 있다.",
+            "선결제한 사람이 불리해지는 관계 패턴을 끊고 싶다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-4:S5:repay_then_settle",
+              "factText": "차용금 송금과 보증금 정산을 분리해야 한다는 결론",
+              "tags": [
+                "responsibility",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "차용금"
+                },
+                "amount2": {
+                  "exact": "92,000원",
+                  "rounded": "9만2천원",
+                  "neutral": "보증금"
+                }
+              },
+              "stanceHints": [
+                "resolve",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend01:b:d-4:S5:loan_memo_exists",
+              "factText": "상대방이 보증금이 들어오면 주겠다고 적은 차용 메모가 남아 있다는 점",
+              "tags": [
+                "quote",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "70,000원",
+                  "rounded": "7만원",
+                  "neutral": "차용금"
+                }
+              },
+              "stanceHints": [
+                "responsibility",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "약속을 먼저 깬 건 도윤 쪽이라고 생각했다. 나는 답답해서 보여준 거지, 없는 말을 꾸며 퍼뜨린 건 아니다.",
+            "친한친구 스토리였으니 무차별 확산으로 볼 일은 아니라고 봤다."
+          ],
+          "privateKnowledge": [
+            "자신의 공유가 규칙 위반일 수 있다는 걸 처음부터 모른 건 아니다.",
+            "도윤이 먼저 숨겼으니 자신의 행동은 방어라고 여기고 싶다."
+          ],
+          "suppressions": [
+            "친한친구라도 대상 특정이 충분했다는 점",
+            "자신도 약속을 알면서 예외라고 밀어붙인 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-5:S0:no_spread_rule_broken",
+              "factText": "원본 확인 전 제3자 공유 금지 약속이 있었는데 캡처와 해석을 먼저 내보낸 사실",
+              "tags": [
+                "rule",
+                "act",
+                "privacy",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "제3자",
+                  "judgeRef": "제3자",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "SNS",
+                  "judgeRef": "SNS",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-5:S0:doyun_also_leaked",
+              "factText": "상대방도 제3자에게 관련 금액과 상계 이야기를 먼저 전한 점",
+              "tags": [
+                "counter",
+                "evidence",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                },
+                "person2": {
+                  "fullName": "제3자",
+                  "judgeRef": "제3자",
+                  "neutral": "제3자"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "원본 전에 김수아에게 캡처를 보내고 스토리를 올린 건 맞다. 그래도 그때는 도윤이 이미 핵심 정보를 숨긴 뒤였다.",
+            "나는 내 공유가 규칙 위반일 수 있어도, 시작점은 도윤의 침묵이라고 느꼈다."
+          ],
+          "privateKnowledge": [
+            "자신의 공유가 규칙 위반일 수 있다는 걸 처음부터 모른 건 아니다.",
+            "도윤이 먼저 숨겼으니 자신의 행동은 방어라고 여기고 싶다."
+          ],
+          "suppressions": [
+            "친한친구라도 대상 특정이 충분했다는 점",
+            "자신도 약속을 알면서 예외라고 밀어붙인 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-5:S1:doyun_also_leaked",
+              "factText": "상대방도 제3자에게 관련 금액과 상계 이야기를 먼저 전한 점",
+              "tags": [
+                "counter",
+                "evidence",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "상대",
+                  "judgeRef": "상대",
+                  "neutral": "상대"
+                },
+                "person2": {
+                  "fullName": "제3자",
+                  "judgeRef": "제3자",
+                  "neutral": "제3자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:b:d-5:S1:no_spread_rule_broken",
+              "factText": "원본 확인 전 제3자 공유 금지 약속이 있었는데 캡처와 해석을 먼저 내보낸 사실",
+              "tags": [
+                "rule",
+                "act",
+                "privacy",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "제3자",
+                  "judgeRef": "제3자",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "SNS",
+                  "judgeRef": "SNS",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "규칙을 완전히 지키진 못했다. 중간 캡처와 감정 섞인 해석을 먼저 내보낸 순간 내 쪽도 약속을 깼다.",
+            "친한친구 범위라도 공통 친구가 보는 구조면 제3자 확산이라는 걸 인정한다."
+          ],
+          "privateKnowledge": [
+            "친한친구 스토리도 사실상 평판 신호라는 점을 인정하기 시작했다.",
+            "공개 저격이 잘못되면 d-2의 입지도 함께 약해질까 봐 쉽게 물러서지 못한다."
+          ],
+          "suppressions": [
+            "도윤의 위반을 이유로 자신의 공개 저격을 정당화하는 마음",
+            "스토리 삭제와 정정이 필요하다는 내심"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:b:tell:screenshot_tapping",
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-5:S2:doyun_also_leaked",
+              "factText": "상대방도 제3자에게 관련 금액과 상계 이야기를 먼저 전한 점",
+              "tags": [
+                "counter",
+                "evidence",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "그 사람",
+                  "judgeRef": "서 씨",
+                  "neutral": "상대"
+                },
+                "person2": {
+                  "fullName": "그 사람",
+                  "judgeRef": "김 씨",
+                  "neutral": "제3자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:b:d-5:S2:close_friends_not_small_enough",
+              "factText": "제한 공개 범위라도 대상을 특정하는 데 충분했던 점",
+              "tags": [
+                "context",
+                "privacy",
+                "identity"
+              ],
+              "slots": {
+                "institution": {
+                  "name": "제한 공개",
+                  "judgeRef": "제한 공개",
+                  "neutral": "제한 공개"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "내가 공유를 먼저 정당화하려 한 건 사실이다. 그래도 도윤도 김수아에게 상계 얘기를 흘렸으니 서로 다른 방식으로 규칙을 깼다.",
+            "나는 공개성으로, 도윤은 은폐성으로 신뢰를 무너뜨렸다."
+          ],
+          "privateKnowledge": [
+            "친한친구 스토리도 사실상 평판 신호라는 점을 인정하기 시작했다.",
+            "공개 저격이 잘못되면 d-2의 입지도 함께 약해질까 봐 쉽게 물러서지 못한다."
+          ],
+          "suppressions": [
+            "도윤의 위반을 이유로 자신의 공개 저격을 정당화하는 마음",
+            "스토리 삭제와 정정이 필요하다는 내심"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "tell:b:tell:pressure_loop",
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-5:S3:close_friends_not_small_enough",
+              "factText": "친한친구 범위라도 대상을 특정하는 데 충분했던 점",
+              "tags": [
+                "context",
+                "privacy",
+                "identity"
+              ],
+              "slots": {
+                "institution": {
+                  "name": "친한친구 스토리",
+                  "judgeRef": "친한친구",
+                  "neutral": "제한 공개"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "compare"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend01:b:d-5:S3:anger_override_rule",
+              "factText": "배신감이 커지자 약속을 알면서도 예외라고 밀어붙인 분노",
+              "tags": [
+                "emotion",
+                "motive",
+                "shame",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "배신감이 올라오니까 약속을 알면서도 예외라고 밀어붙였다. 화가 사실 확인보다 빨랐다.",
+            "결국 나는 캡처와 스토리로 평판 손상을 만들었다."
+          ],
+          "privateKnowledge": [
+            "분노가 규칙보다 빨랐다는 걸 인정한다.",
+            "양쪽 다 위반이지만 자신의 공유가 더 넓은 상처를 남겼다는 점도 안다."
+          ],
+          "suppressions": [
+            "공개성 때문에 자신의 책임 비중이 더 무겁다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:b:tell:motive_leap",
+            "tell:b:tell:pressure_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-5:S4:anger_override_rule",
+              "factText": "배신감이 커지자 약속을 알면서도 예외라고 밀어붙인 분노",
+              "tags": [
+                "emotion",
+                "motive",
+                "shame",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정하린",
+                  "judgeRef": "본인",
+                  "neutral": "당사자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend01:b:d-5:S4:no_spread_rule_broken",
+              "factText": "원본 확인 전 제3자 공유 금지 약속이 있었는데 캡처와 해석을 먼저 내보낸 사실",
+              "tags": [
+                "rule",
+                "act",
+                "privacy",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "김수아",
+                  "judgeRef": "공통 친구",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "인스타그램 스토리",
+                  "judgeRef": "스토리",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "admission",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "원본 확인 전 제3자 공유 금지 약속은 양쪽 다 어겼다. 그중 내 공유는 공개성 때문에 더 큰 파장을 만들었다.",
+            "스토리 삭제와 정정, 그리고 다시는 중간 캡처로 판단하지 않겠다는 합의가 필요하다."
+          ],
+          "privateKnowledge": [
+            "분노가 규칙보다 빨랐다는 걸 인정한다.",
+            "양쪽 다 위반이지만 자신의 공유가 더 넓은 상처를 남겼다는 점도 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tell:b:tell:motive_leap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend01:b:d-5:S5:shared_breach_needs_repair",
+              "factText": "양쪽 다 위반했지만 자신의 공개 공유는 정정과 삭제 책임까지 따른다는 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "institution": {
+                  "name": "인스타그램 스토리",
+                  "judgeRef": "스토리",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend01:b:d-5:S5:no_spread_rule_broken",
+              "factText": "원본 확인 전 제3자 공유 금지 약속이 있었는데 캡처와 해석을 먼저 내보낸 사실",
+              "tags": [
+                "rule",
+                "act",
+                "privacy",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "김수아",
+                  "judgeRef": "공통 친구",
+                  "neutral": "제3자"
+                },
+                "institution": {
+                  "name": "인스타그램 스토리",
+                  "judgeRef": "스토리",
+                  "neutral": "SNS"
+                }
+              },
+              "stanceHints": [
+                "resolve",
+                "rule_invocation"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

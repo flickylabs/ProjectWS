@@ -324,6 +324,8 @@
       "id": "e-1",
       "name": "선우와 PR 프리랜서의 원본 카톡과 음성메모",
       "description": "선우가 홍세진에게 수진이 납기 약속을 너무 쉽게 한다고 털어놓은 원본 카톡과 짧은 음성메모다.",
+      "surfaceName": "PR 프리랜서 원본 카톡과 음성메모",
+      "surfaceDescription": "외부 프리랜서와 나눈 원본 카톡과 짧은 음성메모다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -359,6 +361,8 @@
       "id": "e-2",
       "name": "수진의 보조 스태프·홍세진 대화 원본",
       "description": "수진이 보조 스태프와 홍세진에게 선우의 승인 지연과 출고 불안정을 말한 원본 대화 묶음이다.",
+      "surfaceName": "보조 스태프 대화 원본",
+      "surfaceDescription": "보조 스태프 및 외부 인력과 나눈 원본 대화 묶음이다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -394,6 +398,8 @@
       "id": "e-3",
       "name": "크롭된 음성전사 캡처",
       "description": "선우가 수진은 약속만 하고 못 맞춘다고 말한 부분만 남은 자동전사 캡처로, 수신자가 바이어인지 외부 스태프인지 알 수 없게 잘려 있다.",
+      "surfaceName": "크롭된 음성전사 캡처",
+      "surfaceDescription": "자동전사된 음성 일부만 남은 캡처로, 수신자가 불분명하다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -429,6 +435,8 @@
       "id": "e-4",
       "name": "원본 follow-up 대화와 바이어 해명 메일",
       "description": "홍세진이 바이어들에게 보낸 follow-up 메시지 원본, 그리고 몇몇 바이어가 누구 말이냐고 되물은 해명 메일이다.",
+      "surfaceName": "후속 대화와 해명 메일",
+      "surfaceDescription": "follow-up 메시지 원본과 해명 메일 스레드 묶음이다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -460,12 +468,15 @@
           "questionAngle": "장수진에게: \"상대가 거래처에 직접 험담했는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 장수진의 \"상대가 거래처에 직접 험담했는가\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "이벤트 운영 가이드와 debrief 규칙 문서",
       "description": "행사 운영 가이드에 적힌 상호 비방 금지 원칙, 외부 인력 앞 평가 금지, 종료 후 debrief만 허용한 규칙 문서다.",
+      "surfaceName": "이벤트 운영 가이드와 규칙 문서",
+      "surfaceDescription": "행사 운영 가이드와 내부 규칙이 적힌 문서다.",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -502,6 +513,8 @@
       "id": "e-6",
       "name": "운영사 출입기록과 buyer complaint",
       "description": "행사장 라운지 출입기록, 바이어 complaint memo, 그리고 당시 홍세진이 단독으로 바이어들과 대화한 시각을 보여주는 운영사 보관 자료다.",
+      "surfaceName": "운영사 출입기록과 불만 메모",
+      "surfaceDescription": "행사장 출입기록과 불만 접수 메모가 묶인 운영사 자료다.",
       "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
@@ -533,7 +546,8 @@
           "questionAngle": "장수진에게: \"상호 비방 금지 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 장수진의 \"상호 비방 금지 원칙의 쌍방 위반\" 쟁점과 관련된다. 장수진은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

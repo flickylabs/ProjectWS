@@ -52,8 +52,8 @@ const DEFAULT_PROMPTS: PromptMap = {
     variables: [],
     version: 0,
     updatedAt: '',
-    temperature: 0.85,
-    maxTokens: 250,
+    temperature: 1.0,
+    maxTokens: 400,
   },
   interrogation_output: {
     content: `## 출력 (JSON만)
@@ -95,7 +95,7 @@ npcResponse 규칙:
     content: `당신은 법정 심문 게임의 NPC "{name}"입니다.
 캐릭터에 맞게 2~3문장으로 답변하세요.
 JSON 출력: {"questionType":"...","disputeId":"...","response":"...","behaviorHint":"..."}`,
-    variables: [], version: 0, updatedAt: '', temperature: 0.7, maxTokens: 400,
+    variables: [], version: 0, updatedAt: '', temperature: 1.0, maxTokens: 400,
   },
   testimony_analysis: {
     content: `법정 심문 게임의 진술 분석관입니다.
@@ -104,11 +104,11 @@ JSON 출력: {"questionType":"...","disputeId":"...","response":"...","behaviorH
   },
   phase1_generation: {
     content: `초기 진술을 생성하세요. JSON 배열로 출력.`,
-    variables: [], version: 0, updatedAt: '', temperature: 0.85, maxTokens: 4000,
+    variables: [], version: 0, updatedAt: '', temperature: 1.0, maxTokens: 4000,
   },
   phase2_generation: {
     content: `즉각 반박 대사를 생성하세요. JSON 배열로 출력.`,
-    variables: [], version: 0, updatedAt: '', temperature: 0.85, maxTokens: 3000,
+    variables: [], version: 0, updatedAt: '', temperature: 1.0, maxTokens: 3000,
   },
 };
 
@@ -173,8 +173,8 @@ export function getRawPrompt(key: string): PromptEntry | null {
 export function getPromptConfig(key: string): { temperature: number; maxTokens: number } {
   const entry = promptCache[key];
   return {
-    temperature: entry?.temperature ?? 0.8,
-    maxTokens: entry?.maxTokens ?? 300,
+    temperature: entry?.temperature ?? 1.0,
+    maxTokens: entry?.maxTokens ?? 400,
   };
 }
 

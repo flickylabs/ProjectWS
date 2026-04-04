@@ -323,6 +323,8 @@
     {
       "id": "e-1",
       "name": "민우가 공통 친구 방에 올린 로그인 차단 캡처",
+      "surfaceName": "로그인 차단 화면 캡처",
+      "surfaceDescription": "공통 지인 채팅방에 올린 로그인 차단 화면 캡처다. 차단 시점과 경위 확인이 필요하다.",
       "description": "로그인 실패 알림과 사라진 프로필 화면만 보이는 민우의 캡처다.",
       "type": "chat",
       "reliability": "soft",
@@ -359,6 +361,8 @@
     {
       "id": "e-2",
       "name": "작년 일회성 본인확인 합의 카톡과 결제 메모",
+      "surfaceName": "본인확인 합의 메시지와 결제 메모",
+      "surfaceDescription": "과거 일회성 본인확인 합의 메시지와 결제 관련 메모다. 합의 범위와 조건 확인이 필요하다.",
       "description": "성인등급 게임 구매와 콘솔 번들 결제를 위해 준석 정보는 한 번만 쓰고 지운다고 약속한 카카오톡 원본과 메모다.",
       "type": "chat",
       "reliability": "hard",
@@ -394,6 +398,8 @@
     {
       "id": "e-3",
       "name": "구독 서비스 보안 로그와 관리자 메일 변경 기록",
+      "surfaceName": "구독 서비스 보안 로그와 관리자 변경 기록",
+      "surfaceDescription": "구독 서비스의 보안 접속 로그와 관리자 메일 변경 기록이다. 접속 주체와 변경 시점 확인이 필요하다.",
       "description": "가족요금제 재인증 후 주 관리자 메일과 복구 정보가 민우 쪽으로 바뀐 보안 로그다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -419,6 +425,8 @@
     {
       "id": "e-4",
       "name": "민우 휴대폰 갤러리의 청구지 캡처와 생년월일 메모",
+      "surfaceName": "청구서 캡처와 개인정보 메모",
+      "surfaceDescription": "휴대폰 갤러리의 청구서 캡처와 개인정보 메모다. 보관 경위와 용도 확인이 필요하다.",
       "description": "민우 휴대폰에 남아 있던 준석 청구지 화면 캡처, 생년월일 메모, 재인증 입력 흔적이다.",
       "type": "document",
       "reliability": "hard",
@@ -441,11 +449,14 @@
         "check_edits": "원본 기기 백업이라 사후 조작 흔적은 없지만, 과거 동의 범위를 넘어 보관된 정보라는 점이 분명하다.",
         "question_acquisition": "타인의 본인확인·청구지 정보가 담겨 있어 사생활 침해 우려가 크고 외부 공유는 엄격히 제한돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "준석의 계정 복구 신청서와 접근권 회수 로그",
+      "surfaceName": "계정 복구 신청서와 접근권 회수 로그",
+      "surfaceDescription": "계정 복구 신청서와 접근권 회수 기록이다. 신청 시점과 처리 결과 확인이 필요하다.",
       "description": "준석이 보안 사고를 이유로 계정 복구를 신청하고 민우 기기 접근을 끊은 기록, 그리고 오현철에게 보낸 경고 메시지다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -478,11 +489,14 @@
           "questionAngle": "배준석에게: \"준석의 일방적 접근 차단과 공유 프로필 정리\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 배준석의 \"준석의 일방적 접근 차단과 공유 프로필 정리\" 쟁점과 관련된다. 배준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "아이템 이전·환불 내역과 프로필 복원 보고서",
+      "surfaceName": "아이템 이전·환불 내역과 복원 보고서",
+      "surfaceDescription": "디지털 아이템 이전·환불 내역과 프로필 복원 보고서다. 처리 경위와 결과 확인이 필요하다.",
       "description": "사라진 시즌패스 아이템 일부가 원계정으로 재귀속되거나 환불 처리됐고, 프로필 슬롯도 복원 과정에서 재배치됐다는 플랫폼 보고서다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -505,7 +519,8 @@
         "check_edits": "서버 보존 기록이라 후편집 흔적은 없다.",
         "question_acquisition": "유료 아이템과 결제 이력이 포함돼 있어 세부 구매 목록은 분쟁 해결 범위까지만 다루어야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

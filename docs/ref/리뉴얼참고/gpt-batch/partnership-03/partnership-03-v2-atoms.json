@@ -34,7 +34,7 @@
               ],
               "slots": {
                 "time": {
-                  "exact": "새벽 0시 47분",
+                  "exact": "그 시각",
                   "neutral": "그 시각",
                   "period": "리허설 종료 후 31분 뒤",
                   "dateExact": "새벽 0시 47분"

@@ -320,6 +320,8 @@
     {
       "id": "e-1",
       "name": "서윤이 돌린 복도 CCTV 캡처와 전달문구",
+      "surfaceName": "복도 CCTV 캡처와 전달문구",
+      "surfaceDescription": "복도 CCTV에서 추출한 캡처와 함께 전달된 문구다. 캡처 시점과 전달 맥락 확인이 필요하다.",
       "description": "재현이 흰 박스를 든 CCTV 정지캡처 두 장. 서윤이 '제 상자 아닐까요'라고 덧붙여 보냈지만, 송장이나 수취인은 식별되지 않는다.",
       "type": "cctv",
       "reliability": "soft",
@@ -355,6 +357,8 @@
     {
       "id": "e-2",
       "name": "재현의 1:1 대화와 층 대화방 발언",
+      "surfaceName": "개인 대화와 층 대화방 발언",
+      "surfaceDescription": "1:1 대화 기록과 층 대화방 발언 캡처다. 발언 맥락과 시점 확인이 필요하다.",
       "description": "재현이 3개 대화방에 '서윤씨가 남의 택배를 먼저 챙긴다'며 절도를 암시한 메시지 캡처. 단정은 피했지만 반복 전파됐다.",
       "type": "chat",
       "reliability": "soft",
@@ -390,6 +394,8 @@
     {
       "id": "e-3",
       "name": "류다은의 배송완료 사진과 실제 수령 상자 대조",
+      "surfaceName": "배송완료 사진과 실제 수령 상자 대조",
+      "surfaceDescription": "배송완료 촬영 사진과 실제 수령 상자를 대조한 자료다. 일치 여부 확인이 필요하다.",
       "description": "류다은 세대의 배송완료 사진과 실물 상자 대조 자료. 모서리 파란 스티커 위치가 일치해 CCTV 속 상자의 실소유자를 특정한다.",
       "type": "delivery_record",
       "reliability": "hard",
@@ -411,11 +417,14 @@
         "check_edits": "EXIF 원본 보존, 비교 이미지도 크롭 외 편집 흔적 없음.",
         "question_acquisition": "본인 자발 제출이라 절차 문제는 적으나, 주문내역 상세 노출은 최소화해야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-4",
       "name": "택배대리점 단말 스캔 로그와 배송예외 보고서",
+      "surfaceName": "택배 단말 스캔 로그와 배송예외 보고서",
+      "surfaceDescription": "택배 대리점 단말의 스캔 로그와 배송 예외 보고서다. 배송 경위와 처리 기록 확인이 필요하다.",
       "description": "대리점 단말 기록. 두 택배가 하차 전 배송완료로 선스캔됐고 젖은 송장 예외코드로 보류함에 남았음을 보여준다.",
       "type": "device_log",
       "reliability": "hard",
@@ -440,6 +449,8 @@
     {
       "id": "e-5",
       "name": "기사 단말 GPS·콜센터 통화요약",
+      "surfaceName": "단말 GPS와 콜센터 통화요약",
+      "surfaceDescription": "배송 기사 단말 GPS 기록과 콜센터 통화 요약이다. 이동 경로와 통화 내용 확인이 필요하다.",
       "description": "기사 GPS 정차기록과 콜센터 통화요약. 문제 시각 차량이 104동 하역장에 있어 102동 택배실엔 하차 자체가 없었음을 증명한다.",
       "type": "institutional_note",
       "reliability": "hard",
@@ -472,11 +483,14 @@
           "questionAngle": "임재현에게: \"CCTV 속 흰 상자의 실제 주인\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 임재현의 \"CCTV 속 흰 상자의 실제 주인\" 쟁점과 관련된다. 임재현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "과거 상호대리수령 약속 대화와 이번 의심 글 순서표",
+      "surfaceName": "과거 대리수령 약속 대화와 의심 글 순서표",
+      "surfaceDescription": "과거 상호 대리수령 약속 대화와 이번 의심 글 게시 순서표다. 약속 범위와 경위 확인이 필요하다.",
       "description": "과거 합의 대화 원문과 이번 공개 의심 발신 시간표. 첫 공개 의심이 배송사 문의 접수보다 앞서 있어 약속 파기 순서가 드러난다.",
       "type": "chat",
       "reliability": "soft",

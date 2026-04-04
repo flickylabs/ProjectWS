@@ -329,6 +329,8 @@
       "id": "e-1",
       "name": "임대차계약서와 출입 특약본",
       "description": "긴급 하자 시 연락 후 출입, 촬영자료 보관 시 별도 고지 의무가 적힌 임대차계약서와 부속 특약이다.",
+      "surfaceName": "임대차계약서와 출입 특약본",
+      "surfaceDescription": "긴급 출입 조건과 촬영자료 고지 의무가 적힌 계약서와 특약이다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -363,6 +365,8 @@
       "id": "e-2",
       "name": "관리비 기록과 누수 민원 접수대장",
       "description": "최근 두 달 수도사용량 변동, 공용배관 점검 메모, 민석의 누수 신고 시각이 남은 관리비·관리실 기록이다.",
+      "surfaceName": "관리비 기록과 민원 접수대장",
+      "surfaceDescription": "수도사용량 변동과 민원 신고 시각이 남은 관리 기록이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -387,6 +391,8 @@
       "id": "e-3",
       "name": "세입자·집주인·수리기사 단톡 캡처",
       "description": "규철이 '오늘은 급하니 잠깐 볼게요'라고 보낸 뒤, 민석이 이후 이틀간 방문을 전면 거부한 대화 일부 캡처다.",
+      "surfaceName": "세입자·집주인·수리기사 단톡 캡처",
+      "surfaceDescription": "세입자, 집주인, 수리기사가 있는 대화방 일부 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -423,6 +429,8 @@
       "id": "e-4",
       "name": "규철 제출 사진 원본·캡처본 비교",
       "description": "주방 천장과 거실 장비 주변을 찍은 사진 12장의 원본 파일과, 규철이 분쟁용으로 제출한 타임스탬프 표시 캡처본 비교 자료다.",
+      "surfaceName": "실내 사진 원본·캡처본 비교",
+      "surfaceDescription": "동일 공간 사진의 원본 파일과 제출용 캡처본 비교 자료다.",
       "type": "photo",
       "reliability": "soft",
       "completeness": "original",
@@ -455,12 +463,15 @@
           "questionAngle": "한규철에게: \"규철의 사전 동의 없는 출입\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 한규철의 \"규철의 사전 동의 없는 출입\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S2"
     },
     {
       "id": "e-5",
       "name": "수리업체 1차 진단서와 공사 견적서",
       "description": "수리 기사 현장 진단과 배관 연결부 교체, 곰팡이 제거 범위를 적은 견적서다.",
+      "surfaceName": "수리 진단서와 공사 견적서",
+      "surfaceDescription": "현장 진단 결과와 수리 범위별 견적이 적힌 업체 자료다.",
       "type": "estimate",
       "reliability": "hard",
       "completeness": "original",
@@ -492,12 +503,15 @@
           "questionAngle": "한규철에게: \"긴급출입 조항의 허용 범위\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 한규철의 \"긴급출입 조항의 허용 범위\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "공사 예약금 입금 내역과 재방문 수수료 영수증",
       "description": "규철이 수리업체에 선지급한 예약금, 민석의 방문 거부 뒤 발생한 재방문 수수료, 이후 일부 환불 내역이 적힌 거래기록이다.",
+      "surfaceName": "공사 예약금 내역과 수수료 영수증",
+      "surfaceDescription": "수리업체 예약금 입금과 재방문 수수료 거래 기록이다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -529,7 +543,8 @@
           "questionAngle": "한규철에게: \"출입 사진 타임스탬프의 진위\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 한규철의 \"출입 사진 타임스탬프의 진위\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

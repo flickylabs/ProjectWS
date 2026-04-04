@@ -7,6 +7,8 @@ export {
   checkCombinations,
   presentEvidence,
   investigateEvidence,
+  getUnlockedQuestions,
+  getLockedQuestions,
   type EvidenceRuntimeState,
 } from './evidenceEngine'
 export { resolveDialogue, resolveEvidenceReaction } from './dialogueResolver'

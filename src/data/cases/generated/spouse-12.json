@@ -342,7 +342,9 @@
         "check_edits": "메시지 삭제·수정 이력 없이 서버 원문이 그대로 남아 있다. 재우가 사후에 표현을 바꾸려 한 흔적도 없다.",
         "question_acquisition": "각 채널 대화 참여자의 동의 하에 백업이 제출됐고, 발신자(재우) 기기에서도 교차 확인됐으므로 취득 절차상 문제없다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "전달 로그와 단톡 원문",
+      "surfaceDescription": "여러 채널로 전송된 캡처와 메시지 원문 기록이다. 전달 시각과 표현이 남아 있다."
     },
     {
       "id": "e-2",
@@ -367,7 +369,9 @@
         "check_edits": "숨긴 메시지 원문에 조작 없다. 텍스트를 바꾼 게 아니라 보여주는 범위만 조정. 위조가 아닌 은닉에 해당.",
         "question_acquisition": "세아 본인 계정의 클라우드 복원 로그이므로, 본인 제출 자료로서 취득 절차상 문제없다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "백업 복원 로그와 삭제 메시지",
+      "surfaceDescription": "과거 백업에서 복원된 로그와 삭제 표시된 메시지 기록이다. 폴더 이동 이력이 함께 있다."
     },
     {
       "id": "e-3",
@@ -392,7 +396,9 @@
         "check_edits": "배경 레이어 해상도 불일치와 재압축 흔적 관찰. 두 이미지 합성 가능성이 높으며 e-4 포렌식에서 확정.",
         "question_acquisition": "세아 명예를 훼손하는 SNS 캡처가 외부 채널로 유통됐고 재우가 추가 전파. 사생활·명예 침해 소지."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "익명 SNS 게시물과 옛 문자 이미지",
+      "surfaceDescription": "익명으로 올라온 SNS 게시물 캡처다. 여러 출처의 이미지가 합쳐져 있어 검증이 필요하다."
     },
     {
       "id": "e-4",
@@ -418,7 +424,10 @@
         "check_edits": "방명록과 문자 이미지 사이 합성 경계선, 저장 재압축 시 발생한 아티팩트가 명확하게 관찰된다. 의도적 합성임이 기술적으로 입증된 상태다.",
         "question_acquisition": "세아 측의 플랫폼 신고 접수 후, 정식 조사 절차를 거쳐 포렌식 보고서가 발급됐다. 적법한 절차로 확보된 자료다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "포렌식 보고서와 해시 대조표",
+      "surfaceDescription": "디지털 포렌식 분석 보고서와 이미지 레이어별 해시 대조표다. 합성 여부를 기술적으로 검증한 자료다.",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
@@ -443,7 +452,9 @@
         "check_edits": "플랫폼 서버 기록과 행사장 네트워크 관리 시스템에서 직접 추출한 원본이므로 사용자 측 편집이 구조적으로 불가능하다.",
         "question_acquisition": "행사장 입장 시 네트워크 이용 동의 고지가 이뤄졌고, 플랫폼 신고 절차에 따라 최소 필요 범위 내에서 계정·접속 기록이 제공됐다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "복구 메일과 와이파이 접속 기록",
+      "surfaceDescription": "계정 복구 메일과 특정 장소의 와이파이 접속 기록이다. 계정 생성과 접속 시점이 남아 있다."
     },
     {
       "id": "e-6",
@@ -468,7 +479,9 @@
         "check_edits": "생활지도실 메모는 종이 원본의 스캔본으로, 밝기·대비 보정 외 원문 조작 흔적은 없다. 메일 원본도 서버 백업과 일치한다.",
         "question_acquisition": "세아·한유진 동의, 학교 열람 허가 범위 내에서 확인. 20년 전 기록이지만 관계자 동의와 학교 승인을 거쳤다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "오래된 메일 묶음과 학교 메모",
+      "surfaceDescription": "과거에 주고받은 메일 원본과 학교 관련 메모다. 오래된 사건의 원본 기록이 보존되어 있다."
     }
   ],
   "evidenceCombinations": [

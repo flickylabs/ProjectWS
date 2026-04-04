@@ -329,6 +329,8 @@
       "id": "e-1",
       "name": "기존 임대차계약서와 갱신 초안",
       "description": "현재 계약서 원본과, 중개사가 작성해 보낸 재계약 초안 PDF 및 서명란 메모다.",
+      "surfaceName": "기존 임대차계약서와 갱신 초안",
+      "surfaceDescription": "현재 계약서 원본과 중개사가 작성한 재계약 초안 PDF다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -364,6 +366,8 @@
       "id": "e-2",
       "name": "중개사 3자 카카오톡 캡처",
       "description": "하나, 도형, 중개사가 함께 있던 대화방에서 인상률과 재계약 일정이 오간 일부 캡처다.",
+      "surfaceName": "중개사 3자 카카오톡 캡처",
+      "surfaceDescription": "세입자, 집주인, 중개사가 함께 있는 대화방 일부 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -399,6 +403,8 @@
       "id": "e-3",
       "name": "관리사무소 과거 민원 종결 기록",
       "description": "복도 자전거 주차와 분리배출 경고가 한 번 접수된 뒤 사과와 정리 후 종결됐다는 관리사무소 기록이다.",
+      "surfaceName": "관리사무소 민원 종결 기록",
+      "surfaceDescription": "과거 민원 접수와 사과 후 종결된 관리사무소 기록이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -433,6 +439,8 @@
       "id": "e-4",
       "name": "진우-중개사 문자와 공실 문의표",
       "description": "진우가 중개사에게 더 높은 금액 문의를 전달한 문자와, 실제로는 예약금이 없는 탐색 문의만 적힌 공실 문의표다.",
+      "surfaceName": "중개사 문자와 공실 문의표",
+      "surfaceDescription": "중개사에게 전달된 문자와 공실 문의 접수표 기록이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "original",
@@ -457,6 +465,8 @@
       "id": "e-5",
       "name": "중개사 상담 녹음 요약과 일정표",
       "description": "재계약 협의 직후 남서희가 남긴 음성메모 요약과, 4% 인상안으로 서류를 보내기로 적힌 일정표다.",
+      "surfaceName": "중개사 상담 녹음 요약과 일정표",
+      "surfaceDescription": "상담 후 남긴 음성메모 요약과 서류 발송 일정표다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -488,12 +498,15 @@
           "questionAngle": "권도형에게: \"도형의 12% 인상·추가 조건 통보\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 권도형의 \"도형의 12% 인상·추가 조건 통보\" 쟁점과 관련된다. 권도형은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "서명본 발송 메일 기록과 신규 예약금 부재 확인서",
       "description": "하나가 서명본을 보낸 이메일 시각과, 문제의 고액 문의에 실제 예약금이 없었다는 중개사 확인서다.",
+      "surfaceName": "서명본 발송 메일과 부재 확인서",
+      "surfaceDescription": "서명 계약서 발송 메일 기록과 중개사 확인서 문서다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -525,7 +538,8 @@
           "questionAngle": "권도형에게: \"진우가 말한 고액 새 임차인 문의의 실체\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 권도형의 \"진우가 말한 고액 새 임차인 문의의 실체\" 쟁점과 관련된다. 권도형은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

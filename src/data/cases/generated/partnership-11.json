@@ -323,6 +323,8 @@
       "id": "e-1",
       "name": "성수 위성매장 임대차계약서와 보증금 이체내역",
       "description": "재원이 본법인 명의로 성수 위성매장 6개월 임대차계약을 체결하고 보증금 1,500만원을 이체한 계약서와 이체내역이다.",
+      "surfaceName": "위성매장 임대차계약서와 이체내역",
+      "surfaceDescription": "임대차계약서 원본과 보증금 이체 거래내역 묶음이다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -358,6 +360,8 @@
       "id": "e-2",
       "name": "2024 공동기회 부속합의서와 확장 승인 시트",
       "description": "팝업 손실 이후 신규 지점, 팝업, 별도 법인을 모두 공동 기회로 보자고 적은 부속합의서와 확장 승인 체크 시트다.",
+      "surfaceName": "공동기회 부속합의서와 승인 시트",
+      "surfaceDescription": "부속합의서와 확장 승인 체크 시트가 함께 묶인 문서다.",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -389,12 +393,15 @@
           "questionAngle": "정아린에게: \"공동 기회 조항의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 정아린의 \"공동 기회 조항의 쌍방 위반\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-3",
       "name": "크롭된 거래처 DM 캡처",
       "description": "아린이 핵심 거래처 MD에게 다음 달부터는 새 법인으로 보자는 대목만 남은 캡처로, 실제 전환 확정인지 아이디어 탐색인지는 앞뒤 맥락이 잘려 있다.",
+      "surfaceName": "크롭된 거래처 DM 캡처",
+      "surfaceDescription": "거래처 담당에게 보낸 DM 일부만 남은 캡처 한 장이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -430,6 +437,8 @@
       "id": "e-4",
       "name": "별도 법인 등기부와 거래처 전환 제안 메일",
       "description": "아린셀렉트F&B 법인 등기부, 도매 전환 견적서, 기존 거래처 MD들에게 보낸 미팅 제안 메일 원본이다.",
+      "surfaceName": "별도 법인 등기부와 전환 제안 메일",
+      "surfaceDescription": "법인 등기부, 견적서, 거래처 미팅 제안 메일 묶음이다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -461,12 +470,15 @@
           "questionAngle": "정아린에게: \"아린의 별도 법인 설립과 거래처 이전 준비\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 정아린의 \"아린의 별도 법인 설립과 거래처 이전 준비\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "거래처 이전 우선순위 시트와 분리 운영 메모",
       "description": "아린이 만든 거래처 이전 우선순위 시트와, 재원이 새 지점 인력·생산 배분을 기존 승인 테이블 밖에서 따로 적어 둔 운영 메모다.",
+      "surfaceName": "거래처 이전 시트와 운영 메모",
+      "surfaceDescription": "거래처 우선순위 시트와 별도 운영 메모가 묶인 자료다.",
       "type": "cloud_log",
       "reliability": "hard",
       "completeness": "original",
@@ -498,12 +510,15 @@
           "questionAngle": "정아린에게: \"공동 기회 조항의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 정아린의 \"공동 기회 조항의 쌍방 위반\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "도매 독점공급계약과 상표사용 법률의견서",
       "description": "핵심 거래처 두 곳과 체결한 독점공급계약, 그리고 동일 브랜드를 별도 법인이나 단독 지점에 그대로 쓰면 위약과 상표 분쟁이 생긴다는 외부 법률의견서다.",
+      "surfaceName": "독점공급계약과 법률의견서",
+      "surfaceDescription": "거래처 독점공급계약서와 외부 법률의견서 묶음이다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -524,7 +539,8 @@
         "check_edits": "기관 발급본과 외부 의견서 원본에 후편집 흔적이 없다.",
         "question_acquisition": "회사 계약과 외부 법률 검토 자료라 제출은 적법하지만 외부 재배포는 제한돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

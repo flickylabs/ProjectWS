@@ -77,7 +77,7 @@
                 "person": {
                   "exact": "서유나",
                   "neutral": "그 사람",
-                  "fullName": "서유나",
+                  "fullName": "서 씨",
                   "judgeRef": "서 대표"
                 }
               },
@@ -322,7 +322,7 @@
                 "institution": {
                   "exact": "박수민 AE",
                   "neutral": "운영사 쪽",
-                  "fullName": "박수민",
+                  "fullName": "운영사 AE",
                   "judgeRef": "운영사 AE"
                 }
               },
@@ -368,7 +368,7 @@
                 "institution": {
                   "exact": "박수민 AE",
                   "neutral": "운영사 쪽",
-                  "fullName": "박수민",
+                  "fullName": "박 씨",
                   "judgeRef": "운영사 AE"
                 },
                 "time": {
@@ -928,7 +928,7 @@
                 "institution": {
                   "exact": "박수민 AE",
                   "neutral": "운영사 쪽",
-                  "fullName": "박수민",
+                  "fullName": "박 씨",
                   "judgeRef": "운영사 AE"
                 }
               },
@@ -1157,7 +1157,7 @@
                 "institution": {
                   "exact": "박수민 AE",
                   "neutral": "운영사 쪽",
-                  "fullName": "박수민",
+                  "fullName": "운영사 AE",
                   "judgeRef": "운영사 AE"
                 }
               },
@@ -1441,7 +1441,7 @@
                 "person": {
                   "exact": "문태경",
                   "neutral": "그 사람",
-                  "fullName": "문태경",
+                  "fullName": "그 사람",
                   "judgeRef": "문 대표"
                 }
               },
@@ -1725,7 +1725,7 @@
                 "person": {
                   "exact": "문태경",
                   "neutral": "그 사람",
-                  "fullName": "문태경",
+                  "fullName": "그 사람",
                   "judgeRef": "문 대표"
                 },
                 "file": {
@@ -1776,7 +1776,7 @@
                 "institution": {
                   "exact": "박수민 AE",
                   "neutral": "운영사 쪽",
-                  "fullName": "박수민",
+                  "fullName": "박 씨",
                   "judgeRef": "운영사 AE"
                 }
               },
@@ -2596,7 +2596,7 @@
                 "institution": {
                   "exact": "박수민 AE",
                   "neutral": "운영사 쪽",
-                  "fullName": "박수민",
+                  "fullName": "박 씨",
                   "judgeRef": "운영사 AE"
                 }
               },

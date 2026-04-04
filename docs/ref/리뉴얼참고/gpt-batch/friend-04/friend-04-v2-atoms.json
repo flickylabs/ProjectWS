@@ -44,7 +44,7 @@
                   "judgeRef": "현우의 메시지"
                 },
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 }
@@ -70,7 +70,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "판매자",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 },
@@ -131,7 +131,7 @@
                   "judgeRef": "현우의 메시지"
                 },
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 }
@@ -157,7 +157,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "한 씨",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 },
@@ -187,12 +187,12 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "3만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "3만 원",
                   "neutral": "예약금"
                 },
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "한 씨",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 },
@@ -678,7 +678,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -707,7 +707,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -760,7 +760,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -1216,7 +1216,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "송다혜",
+                  "fullName": "다혜 씨",
                   "judgeRef": "다혜 씨",
                   "neutral": "상대"
                 },
@@ -1246,7 +1246,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -1305,7 +1305,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -1368,7 +1368,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "송다혜",
+                  "fullName": "송 씨",
                   "judgeRef": "다혜 씨",
                   "neutral": "상대"
                 },
@@ -1842,7 +1842,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "판매자",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 },
@@ -1870,7 +1870,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "판매자",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 },
@@ -1922,7 +1922,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "한 씨",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 },
@@ -1950,7 +1950,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "한 씨",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 },
@@ -1978,7 +1978,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "한 씨",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 }
@@ -2425,7 +2425,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -2503,7 +2503,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -2533,12 +2533,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "송다혜",
+                  "fullName": "송 씨",
                   "judgeRef": "다혜 씨",
                   "neutral": "상대"
                 },
                 "amount": {
-                  "exact": "3만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "3만 원",
                   "neutral": "예약금"
                 },
@@ -2995,13 +2995,13 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "송다혜",
+                  "fullName": "다혜 씨",
                   "judgeRef": "다혜 씨",
                   "neutral": "상대"
                 },
                 "amount": {
-                  "exact": "3만원",
-                  "rounded": "3만 원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "예약금"
                 },
                 "time": {
@@ -3029,7 +3029,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -3083,7 +3083,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -3112,12 +3112,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "송다혜",
+                  "fullName": "송 씨",
                   "judgeRef": "다혜 씨",
                   "neutral": "상대"
                 },
                 "amount": {
-                  "exact": "3만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "3만 원",
                   "neutral": "예약금"
                 },
@@ -3151,7 +3151,7 @@
                   "judgeRef": "현우의 메시지"
                 },
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 }
@@ -3605,7 +3605,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -3634,7 +3634,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -3689,7 +3689,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -3718,7 +3718,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -3752,7 +3752,7 @@
                   "neutral": "그 무렵"
                 },
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 }
@@ -4216,7 +4216,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -4246,7 +4246,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -4299,7 +4299,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -4352,7 +4352,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -4815,7 +4815,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -4844,7 +4844,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "판매자",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 },
@@ -4897,7 +4897,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -4925,7 +4925,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "한 씨",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 },
@@ -4953,7 +4953,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한재필",
+                  "fullName": "한 씨",
                   "judgeRef": "판매자",
                   "neutral": "판매자"
                 },
@@ -5426,13 +5426,13 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "송다혜",
+                  "fullName": "다혜 씨",
                   "judgeRef": "다혜 씨",
                   "neutral": "상대"
                 },
                 "amount": {
-                  "exact": "3만원",
-                  "rounded": "3만 원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "예약금"
                 },
                 "time": {
@@ -5508,7 +5508,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "류현우",
+                  "fullName": "류 씨",
                   "judgeRef": "현우 씨",
                   "neutral": "상대"
                 },
@@ -5537,12 +5537,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "송다혜",
+                  "fullName": "송 씨",
                   "judgeRef": "다혜 씨",
                   "neutral": "상대"
                 },
                 "amount": {
-                  "exact": "3만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "3만 원",
                   "neutral": "예약금"
                 },

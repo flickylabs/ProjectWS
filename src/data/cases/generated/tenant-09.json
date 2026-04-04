@@ -328,6 +328,8 @@
       "id": "e-1",
       "name": "임대차계약서 원본과 초안 변경본",
       "description": "중개사 보관 계약서 원본, 1차 초안, 최종 스캔본이 함께 남아 있는 계약 문서 묶음이다.",
+      "surfaceName": "임대차계약서 원본과 변경본",
+      "surfaceDescription": "중개사 보관 계약서 원본, 초안, 최종 스캔본 문서 묶음이다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -363,6 +365,8 @@
       "id": "e-2",
       "name": "보증금 분할 송금 내역과 우석 측 수령증",
       "description": "세라가 태윤 계좌로 6천만원, 우석 측 계좌로 2천만원을 각각 보낸 은행 내역과 정리비 수령증이다.",
+      "surfaceName": "보증금 분할 송금 내역과 수령증",
+      "surfaceDescription": "분할 송금된 은행 거래내역과 수령증이 묶인 자료다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -388,6 +392,8 @@
       "id": "e-3",
       "name": "세라-우석 카카오톡과 음성메모",
       "description": "보증금을 크게 적어 두면 정책자금과 나중 정리 때 편하다는 취지의 대화가 남은 카카오톡과 짧은 음성메모다.",
+      "surfaceName": "당사자 카카오톡과 음성메모",
+      "surfaceDescription": "당사자 간 카카오톡 대화와 짧은 음성메모 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -412,6 +418,8 @@
       "id": "e-4",
       "name": "우석 사무실 회계전표와 컨설팅비 세금계산서",
       "description": "2천만원이 보증금이 아니라 컨설팅비와 정리비로 처리된 사무실 회계전표, 세금계산서, 카드 사용기록 묶음이다.",
+      "surfaceName": "사무실 회계전표와 세금계산서",
+      "surfaceDescription": "회계전표, 세금계산서, 카드 사용기록이 묶인 정산 자료다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -432,12 +440,15 @@
         "check_edits": "회계 로그가 끊기지 않고 전표 번호도 연속이라 사후 삽입 가능성은 낮다.",
         "question_acquisition": "비용 분쟁 해결을 위해 회계 자료가 제출됐고 관련 항목만 열람돼 적법성 문제는 낮다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "중개사 사무실 스캔 로그와 태윤-우석 통화요약",
       "description": "사무실 복합기 스캔 로그, 계약 파일 업로드 기록, 그리고 태윤이 6천으로 다시 맞춰 달라고 말한 통화 요약 메모다.",
+      "surfaceName": "사무실 스캔 로그와 통화요약",
+      "surfaceDescription": "복합기 스캔 로그와 당사자 통화 요약 메모가 묶여 있다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -458,12 +469,15 @@
         "check_edits": "로그 자체는 기관 시스템 출력본이라 후편집 흔적이 없고 시각 흐름도 연속적이다.",
         "question_acquisition": "중개업소 내부 기록과 통화 메모라 사생활 주의는 필요하지만 분쟁 핵심 경위를 확인하는 데 직접 관련된다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "월세 미납·간판 철거비 정산표와 반환 지연 계좌기록",
       "description": "마지막 월세, 관리비, 간판 철거비, 보증금 반환 지연 시점이 함께 적힌 정산표와 계좌기록이다.",
+      "surfaceName": "미납·철거비 정산표와 반환 기록",
+      "surfaceDescription": "미납 항목과 부대비용, 보증금 반환 시점이 적힌 정산표다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",

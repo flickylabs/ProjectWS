@@ -5,7 +5,7 @@
  * 1콜: free_question_classifier — questionType, disputeId 분류 (temp:0.1)
  * 2콜: free_question_responder — 분류 결과 기반 NPC 응답 생성 (temp:0.75)
  */
-import { chatCompletion } from './llmClient'
+import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 import { enforceHonorifics, fixMisdirectedAddress } from './llmDialogueResolver'
@@ -276,7 +276,7 @@ async function generateResponse(
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userMessage },
       ],
-      { temperature: config.temperature, maxTokens: config.maxTokens },
+      { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
     )
 
     const parsed = parseResponderResponse(raw)

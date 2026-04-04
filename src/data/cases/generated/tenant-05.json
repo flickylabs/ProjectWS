@@ -329,6 +329,8 @@
       "id": "e-1",
       "name": "임대차계약서와 퇴거 점검표",
       "description": "최종 점검을 함께 한 뒤 실제 확인된 손상과 미납만 공제한다는 특약, 출입카드 반납 조항, 퇴거 점검 예약 메모가 적힌 계약서와 점검표다.",
+      "surfaceName": "임대차계약서와 퇴거 점검표",
+      "surfaceDescription": "퇴거 점검 조건과 반납 조항이 적힌 계약서와 점검표다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -364,6 +366,8 @@
       "id": "e-2",
       "name": "입주 예정자·건물 대화방 캡처",
       "description": "민재가 새 입주 예정자에게 '전 세입자가 실내 흡연도 하고 장롱도 깨놨다'고 말한 메시지와, 건물 대화방에서 선우를 문제 세입자처럼 언급한 일부 캡처다.",
+      "surfaceName": "입주 예정자·건물 대화방 캡처",
+      "surfaceDescription": "입주 예정자와 건물 대화방에서 오간 메시지 일부 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -399,6 +403,8 @@
       "id": "e-3",
       "name": "관리비 고지서와 출입카드 재발급 영수증",
       "description": "선우 세대의 마지막 관리비 부속 고지서, 음식물 처리비 미납 표시, 출입카드 1장 재발급 비용이 적힌 영수증이다.",
+      "surfaceName": "관리비 고지서와 카드 재발급 영수증",
+      "surfaceDescription": "마지막 관리비 고지서와 부속 비용 영수증 묶음이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -430,12 +436,15 @@
           "questionAngle": "조민재에게: \"보증금 공제 통보의 정당성\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 조민재의 \"보증금 공제 통보의 정당성\" 쟁점과 관련된다. 조민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-4",
       "name": "복도 CCTV와 현관 도어락 출입기록",
       "description": "선우가 퇴거한 뒤 민재와 조카가 접이식 사다리를 들고 세대에 들어간 장면, 그리고 그 출입 시각이 남은 CCTV와 도어락 로그다.",
+      "surfaceName": "복도 CCTV와 출입기록",
+      "surfaceDescription": "복도 CCTV 영상 캡처와 도어락 출입 시각 로그다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -471,6 +480,8 @@
       "id": "e-5",
       "name": "민재-조카 문자와 사다리 대여 영수증",
       "description": "민재가 조카와 주고받은 '건조대 빼다가 문짝 쳤다'는 문자, 그리고 같은 날 사다리를 빌린 영수증이다.",
+      "surfaceName": "당사자 문자와 대여 영수증",
+      "surfaceDescription": "당사자 간 문자 메시지와 물품 대여 영수증 묶음이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "original",
@@ -491,12 +502,15 @@
         "check_edits": "스크린샷이 아니라 백업 추출본 기준으로 비교해도 문장 누락이나 편집 흔적이 없다.",
         "question_acquisition": "가족 간 사적 대화라 제출 경위에는 사생활 주의가 필요하지만, 당사자 중 한쪽이 자발적으로 제공했다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S2"
     },
     {
       "id": "e-6",
       "name": "과거 옥상 민원 종결 메모와 중개사 확인서",
       "description": "2년 전 옥상 흡연 민원이 1회 경고 후 종결됐다는 관리사무소 메모와, 이후 반복 문제는 없었다는 중개사 확인서다.",
+      "surfaceName": "과거 민원 종결 메모와 중개사 확인서",
+      "surfaceDescription": "과거 민원 종결 기록과 중개사의 확인서 문서다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -528,7 +542,8 @@
           "questionAngle": "조민재에게: \"민재의 전 세입자 비방 발언\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 조민재의 \"민재의 전 세입자 비방 발언\" 쟁점과 관련된다. 조민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

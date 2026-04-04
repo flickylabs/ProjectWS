@@ -1,0 +1,356 @@
+{
+  "caseId": "spouse-01",
+  "session": "partyB-d3d4d5",
+  "beatScriptsV3": [
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "truthLevel": "none",
+      "line": "이게 전부입니다. 그만한 돈에 밤 9시, 모텔 골목이면 제 눈엔 그렇게 보였습니다. 제가 뭘 더 좋게 해석해야 합니까.",
+      "behaviorHint": "evidence_waving tell 발현 — 캡처를 흔들듯 손을 세워 결론부터 던지고, 마지막 문장을 몰아붙이듯 끊는다.",
+      "alternatives": [
+        "캡처 한 장이면 충분했습니다. 적지 않은 돈에 그 시간대 그 골목이면 누가 의심 안 합니까.",
+        "이게 전부입니다. 돈, 시간, 장소가 다 겹치는데 제가 혼자 상상한 일이라고 하시겠습니까."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "applicableStates": [
+        "S2"
+      ],
+      "truthLevel": "hint",
+      "line": "자료가 더 나오니까 제 의심이 틀렸을 수도 있다는 생각은 듭니다. 그래도 그때 제 눈엔 그렇게밖에 안 보였습니다.",
+      "behaviorHint": "evidence_waving tell 약화 — 들고 있던 캡처를 내리지만, 끝 문장에서는 여전히 처음 본 장면에 매달린다.",
+      "alternatives": [
+        "제가 너무 빨리 단정했을 수도 있겠지요. 그래도 숨긴 방식이 의심을 키운 건 사실입니다.",
+        "설마 했는데, 제 판단이 빗나갔을 수도 있겠다는 생각은 듭니다. 그런데 그때는 정말 그렇게 읽혔습니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "applicableStates": [
+        "S3"
+      ],
+      "truthLevel": "partial",
+      "line": "외도가 아닐 수도 있다는 건 이제 봅니다. 그래도 제 남편이 숨긴 방식 자체는 저한테 배신이었습니다.",
+      "behaviorHint": "motive_jump tell 발현 — 의심은 누그러지지만 곧바로 '숨긴 방식=배신'으로 연결해 감정을 다시 세운다.",
+      "alternatives": [
+        "관계 자체는 제가 오해했을 수 있습니다. 그런데 몰래 돈 보내고 밤에 빠져나간 방식까지 괜찮아지는 건 아니지 않습니까.",
+        "그 사람이 외도 상대가 아닐 수도는 있겠지요. 그래도 저를 빼고 움직인 순간 이미 신뢰는 무너진 겁니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "emotional",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "truthLevel": "partial",
+      "line": "외도가 아니었다면 제가 그동안 뭘 한 거예요. 혼자 미쳐가면서 캡처 쥐고 결론부터 내린 제가 너무 창피해요.",
+      "behaviorHint": "evidence_waving tell 붕괴 — 손에 쥔 증거를 더 흔들지 못하고, 자기 판단을 돌아보며 목소리가 무너진다.",
+      "alternatives": [
+        "제 의심이 틀렸다면 저는 혼자 지옥을 만든 사람이 되는 거잖아요. 그게 너무 허망해요.",
+        "저는 진짜라고 믿고 버텼어요. 그런데 아니었다면 제가 제 남편보다 먼저 우리 둘을 망친 거 아닌가 싶어요."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "truthLevel": "none",
+      "line": "그건 제 개인 사정입니다. 지금 여기서 다룰 문제 아닙니다.",
+      "behaviorHint": "selective_quote tell 발현 — '개인 사정'이라는 짧은 말만 반복해 범위를 잘라내고 더 긴 설명을 막는다.",
+      "alternatives": [
+        "제 쪽 돈 문제를 왜 지금 끌고 옵니까. 그건 따로 볼 일입니다.",
+        "여기서 제 사정까지 꺼내실 필요는 없습니다. 지금 핵심은 다른 데 있지 않습니까."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "applicableStates": [
+        "S2"
+      ],
+      "truthLevel": "hint",
+      "line": "급한 일이 있어서 다른 사람 손을 한번 거친 건 맞습니다. 그래도 그걸 제 남편이 숨긴 큰돈이랑 한 덩어리로 묶는 건 다릅니다.",
+      "behaviorHint": "selective_quote tell 발현 — '같은 문제냐'는 한 지점을 붙들고 비교 프레임으로 방어한다.",
+      "alternatives": [
+        "제 쪽에도 급한 일이 있었습니다. 그걸 곧바로 같은 배신으로 묶어버리면 저는 더 할 말이 없어집니다.",
+        "돌려보낸 건 맞지만 맥락은 다릅니다. 그 점까지 지워버리면 너무 거칠게 재는 겁니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "applicableStates": [
+        "S3"
+      ],
+      "truthLevel": "partial",
+      "line": "정우성 씨 계좌를 거친 건 맞습니다. 가족 급한 돈 문제였고, 그 말을 제 남편한테 바로 꺼낼 자신이 없었습니다.",
+      "behaviorHint": "selective_quote tell 발현 — '거친 건 맞아요'만 짧게 인정하고, 핵심 이유는 '가족 급한 돈'으로 축약해 방어한다.",
+      "alternatives": [
+        "우회한 건 제 잘못입니다. 그래도 이유는 결국 가족 급한 돈 문제였습니다.",
+        "다른 계좌를 한 번 거치게 한 건 사실입니다. 그만큼 저는 제 남편 앞에서 그 얘기를 꺼내는 게 겁났습니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "applicableStates": [
+        "S3"
+      ],
+      "truthLevel": "partial",
+      "line": "왜 제 150만원만 따로 떼어 놓습니까. 제 남편이 먼저 큰돈을 숨겨놓고 이제 와서 제 것만 확대하면 공평하지 않습니까.",
+      "behaviorHint": "motive_jump tell 발현 — 자기 방어를 곧바로 '남편이 저를 몰아세운다'는 의도로 점프시켜 반격한다.",
+      "alternatives": [
+        "같은 잣대로 재시려면 먼저 숨긴 쪽부터 보셔야지요. 제 것만 따로 빼서 크게 만들면 저는 당연히 억울합니다.",
+        "한지석 씨 쪽 일은 배경처럼 두고 제 150만원만 전면에 세우면, 그건 비교가 아니라 몰아가기입니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "emotional",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "truthLevel": "partial",
+      "line": "가족 급한 돈 앞에서 또 손 벌리는 사람, 또 같은 구덩이를 메우는 사람처럼 보일까 봐 무서웠어요. 그래서 입을 열기 전에부터 제가 먼저 숨었습니다.",
+      "behaviorHint": "tell 비발현 — 공격 대신 수치심이 먼저 새어 나오고, 두 번째 문장에서 스스로 움츠러든다.",
+      "alternatives": [
+        "저는 그 돈 얘기를 꺼내는 순간 또 체면 구기는 사람이 될까 봐 겁났어요. 그래서 비겁하게 돌려보냈습니다.",
+        "가족 일 때문에 또 돈 구하는 사람처럼 보이고 싶지 않았어요. 그 창피함 때문에 설명보다 숨김을 먼저 택했습니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "truthLevel": "full",
+      "line": "맞습니다. 동생 월세가 세 달 밀려서 정우성 씨 계좌를 경유해 150만원을 보냈어요. 제 남편 눈을 피하려고 우회한 것도 사실이고, 그래서 제 잘못입니다.",
+      "behaviorHint": "selective_quote tell 붕괴 — 더는 약한 고리만 붙들지 못하고, 구체 경로와 숨긴 의도까지 한꺼번에 토해낸다.",
+      "alternatives": [
+        "동생 월세 석 달이 밀렸고 내용증명 얘기까지 나와서 급했습니다. 그래도 정우성 경유로 돌려보내며 제 남편에게 숨긴 건 변명의 여지가 없어요.",
+        "가족 문제였다는 사정은 있지만, 제가 우회 송금을 택한 순간 이미 잘못한 겁니다. 동생 월세를 막겠다고 남편 눈을 피한 건 사실이에요."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "truthLevel": "hint",
+      "afterEvidence": "e-5",
+      "line": "그 메시지까지 나왔으면, 제가 다른 사람 손을 빌린 건 부정 안 하겠습니다. 다만 그때는 급한 일을 먼저 막겠다는 생각뿐이었습니다.",
+      "behaviorHint": "evidence_waving tell 비발현 — 상대가 내민 원본을 보고는 흔들기보다 짧게 인정으로 물러선다.",
+      "alternatives": [
+        "거친 흔적이 남아 있으면 더 버티긴 어렵지요. 그래도 그 순간 제 머릿속엔 급한 일밖에 없었습니다.",
+        "네, 혼자 보낸 건 아닙니다. 그렇다고 그걸 나쁜 마음으로 꾸민 일처럼만 보진 말아 주십시오."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "truthLevel": "partial",
+      "afterEvidence": "e-6",
+      "line": "돈 흐름까지 이어지면 저도 더 버티기 어렵습니다. 가족 급한 돈 문제 때문에 돌려보낸 거고, 제 남편한테 숨긴 방식이 비겁했다는 건 인정합니다.",
+      "behaviorHint": "selective_quote tell 약화 — 숫자보다 '숨긴 방식'이라는 약한 고리를 스스로 붙들며 자책으로 돌아선다.",
+      "alternatives": [
+        "여기까지 이어지면 우회한 사실은 더 부정 못 하겠습니다. 이유가 가족 급한 돈 문제였다고 해도, 숨긴 건 제 책임입니다.",
+        "계좌 흐름이 다 보이면 제가 한 일도 다 보이겠지요. 그래서 더 이상 핑계만 대고 있긴 어렵습니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "truthLevel": "none",
+      "line": "저까지 같이 엮지 마십시오. 먼저 선을 넘은 쪽이 누구인지부터 보셔야지요.",
+      "behaviorHint": "motive_jump tell 발현 — 규칙 위반 논의를 곧바로 선후관계와 상대 책임 문제로 튕겨낸다.",
+      "alternatives": [
+        "그 약속 얘기를 하시려면 순서부터 다시 보십시오. 먼저 판을 깨놓고 이제 와서 저까지 묶을 수는 없습니다.",
+        "저를 같은 줄에 세우기 전에 제 남편이 먼저 뭘 했는지부터 따져야 맞습니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "applicableStates": [
+        "S3"
+      ],
+      "truthLevel": "partial",
+      "line": "네, 제 150만원도 기준을 넘은 건 압니다. 그래도 그때는 이미 배신감이 먼저 올라와서 저도 예외를 만들어버렸습니다.",
+      "behaviorHint": "motive_jump tell 발현 — 자기 위반을 인정하면서도 곧바로 배신감이라는 감정 원인에 기대어 무게를 조정하려 든다.",
+      "alternatives": [
+        "같은 약속을 깬 건 인정합니다. 하지만 그 순간 저는 이미 속았다는 마음으로 움직이고 있었습니다.",
+        "제 돈도 선을 넘은 건 맞습니다. 배신감이 이유였다고 해서 면책은 안 되지만, 그 감정을 빼고는 설명이 안 됩니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "applicableStates": [
+        "S3"
+      ],
+      "truthLevel": "partial",
+      "line": "같은 위반이라고 같은 무게는 아닙니다. 제 남편이 먼저 숨긴 일을 빼고 숫자만 맞춰 놓으면 제 감정은 통째로 지워지지 않습니까.",
+      "behaviorHint": "selective_quote tell 발현 — '같은 위반'이라는 표현만 물고 늘어지며 등가 판단 자체를 거칠게 밀어낸다.",
+      "alternatives": [
+        "둘 다 넘었다고 해서 바로 같은 잘못이 되진 않습니다. 시작과 충격을 빼버리면 제 입장은 사라집니다.",
+        "규칙만 놓고 보면 같아 보일지 몰라도, 제가 받은 배신감까지 같은 무게로 접을 순 없습니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "emotional",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "truthLevel": "partial",
+      "line": "그 약속을 먼저 지키자고 한 쪽이 저였어요. 그래서 제가 그 선을 넘었다는 사실이 더 창피하고, 더 말하기 어려웠습니다.",
+      "behaviorHint": "tell 비발현 — 공격 대신 자기 수치심을 그대로 드러내며, 마지막 문장에서 힘이 빠진다.",
+      "alternatives": [
+        "제가 먼저 기준을 세우자고 해놓고 결국 저도 못 지켰잖아요. 그래서 더 버티고 싶었고, 더 인정하기 싫었습니다.",
+        "남편한테 약속을 들이밀던 사람이 저였어요. 그러니 제가 그 약속을 어겼다는 말이 제일 아프죠."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "truthLevel": "full",
+      "line": "맞습니다. 배신감이 이유였지만, 그걸 핑계로 150만원을 우회 송금한 책임이 없어지진 않아요. 저도 100만원 사전 상의 약속을 깼고, 면책될 수 없다는 점 인정합니다.",
+      "behaviorHint": "motive_jump tell 통제 — 감정을 원인으로는 말하지만 결론은 책임 인정으로 스스로 끊어낸다.",
+      "alternatives": [
+        "제 남편에게 상의 대신 우회 송금을 택한 순간, 저도 같은 규칙을 깬 겁니다. 배신감은 설명이 될 뿐 면죄부는 아니에요.",
+        "왜 그랬냐고 묻는다면 배신감 때문이라고 답하겠습니다. 그래도 약속 위반의 책임은 제 몫으로 남습니다."
+      ]
+    }
+  ],
+  "investigationStageResponses": {
+    "e-5": [
+      {
+        "stage": 0,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "네, 그 메시지는 제가 보낸 거 맞습니다. 그때는 급한 일을 먼저 막아야 했습니다.",
+            "behaviorHint": "selective_quote tell 발현 — '보낸 거 맞아요'까지만 짧게 인정하고, 이유는 '급한 일'로만 흐린다.",
+            "truthLevel": "hint"
+          }
+        }
+      },
+      {
+        "stage": 1,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "그 일 바로 뒤라 더 겁이 났습니다. 그래서 저도 급한 일부터 막고 나중에 말하자는 쪽으로 기울었습니다.",
+            "behaviorHint": "motive_jump tell 발현 — 시간 질문을 받자 곧바로 두려움과 숨김의 동기로 건너뛰어 자기 선택을 정당화한다.",
+            "truthLevel": "hint"
+          }
+        }
+      },
+      {
+        "stage": 2,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "지우면 덜 들킬 줄 알았습니다. 급한 일을 막았다는 사정과 별개로, 숨기려 했다는 건 인정합니다.",
+            "behaviorHint": "tell 비발현 — 더는 공격하지 못하고, 삭제 이유를 낮은 목소리로 털어놓는다.",
+            "truthLevel": "partial"
+          }
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "가족 일로 급한 돈이 필요했습니다. 제 사정이 있어서 제 남편한테 바로 말하기 어려웠습니다.",
+            "behaviorHint": "selective_quote tell 발현 — '바로 보내기 싫었다'는 약한 고리만 집어 말하고, 대상과 끝점은 아직 흐린다.",
+            "truthLevel": "hint"
+          }
+        }
+      },
+      {
+        "stage": 1,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "네, 미리 생각은 하고 있었습니다. 전달되면 바로 정리되게 해둔 건 맞고, 제 남편 몰래 먼저 막겠다는 마음도 있었습니다.",
+            "behaviorHint": "motive_jump tell 약발현 — 계획 여부를 묻자 곧바로 숨기려던 마음까지 튀어나오며 방어가 느슨해진다.",
+            "truthLevel": "partial"
+          }
+        }
+      },
+      {
+        "stage": 2,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "제 동생 월세가 세 달 밀려 있었고 내용증명 얘기까지 나와서 급했습니다. 그래서 정우성 씨 계좌를 경유해 150만원을 보내 먼저 막았습니다.",
+            "behaviorHint": "tell 붕괴 — 더는 약한 표현으로 버티지 못하고, 대상·사유·경로를 순서대로 전부 밝힌다.",
+            "truthLevel": "full"
+          }
+        }
+      }
+    ]
+  }
+}

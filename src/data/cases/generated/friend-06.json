@@ -324,6 +324,8 @@
     {
       "id": "e-1",
       "name": "블로그 revision과 유튜브 변경 로그",
+      "surfaceName": "블로그 수정이력과 영상 변경 로그",
+      "surfaceDescription": "블로그 revision 기록과 영상 플랫폼 변경 로그다. 수정 시점과 변경 내용 확인이 필요하다.",
       "description": "블로그 제목·본문 수정, 유튜브 설명란 편집, 핀댓글 삭제와 관련된 플랫폼 원본 변경 기록이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -349,6 +351,8 @@
     {
       "id": "e-2",
       "name": "해온이 창작자 단톡에 올린 비교 캡처와 비난 메시지",
+      "surfaceName": "비교 캡처와 단톡 비난 메시지",
+      "surfaceDescription": "창작자 단톡에 올라온 비교 캡처와 비난 메시지다. 게시 맥락과 발신자 확인이 필요하다.",
       "description": "바뀐 제목과 썸네일, 삭제된 핀댓글 화면을 비교하며 다솔이 권한을 넘었다고 적은 해온의 단톡 메시지다.",
       "type": "chat",
       "reliability": "soft",
@@ -374,6 +378,8 @@
     {
       "id": "e-3",
       "name": "블로그 초대메일과 유튜브 브랜드계정 역할 화면",
+      "surfaceName": "초대메일과 계정 역할 화면 캡처",
+      "surfaceDescription": "블로그 초대 메일과 영상 계정 역할 설정 화면이다. 권한 부여 경위 확인이 필요하다.",
       "description": "해온이 다솔에게 보낸 블로그 편집자 초대와 유튜브 브랜드계정 매니저 역할 수락 화면, 역할 설명 페이지다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -398,6 +404,8 @@
     {
       "id": "e-4",
       "name": "임세진 코디네이터의 수정 요청 DM과 메일 스레드",
+      "surfaceName": "수정 요청 DM과 메일 스레드",
+      "surfaceDescription": "코디네이터의 수정 요청 DM과 관련 메일 스레드다. 요청 내용과 경위 확인이 필요하다.",
       "description": "브랜드 협찬 담당이 다솔에게 직접 보낸 광고 표기 수정 요청과, 요구 범위가 적힌 메일 원본이다.",
       "type": "chat",
       "reliability": "hard",
@@ -431,11 +439,14 @@
           "questionAngle": "최다솔에게: \"다솔의 직접 수정과 핀댓글 삭제\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 최다솔의 \"다솔의 직접 수정과 핀댓글 삭제\" 쟁점과 관련된다. 최다솔은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "협업 노션 운영 규칙과 버전기록",
+      "surfaceName": "협업 노션 운영 규칙과 버전기록",
+      "surfaceDescription": "협업 노션 페이지의 운영 규칙과 버전 기록이다. 규칙 합의 시점과 변경 이력 확인이 필요하다.",
       "description": "최종 공개 전 상호 확인, 협찬 수정 요청은 공동 스레드에 공유한다는 규칙이 적힌 노션 문서와 버전기록이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -470,6 +481,8 @@
     {
       "id": "e-6",
       "name": "접근권 회수 로그와 업로드 지연 알림",
+      "surfaceName": "접근권 회수 로그와 업로드 지연 알림",
+      "surfaceDescription": "계정 접근권 회수 기록과 업로드 지연 알림이다. 회수 시점과 사유 확인이 필요하다.",
       "description": "해온이 다솔의 편집 권한을 끊은 시각과, 그 결과 예약된 수정 업로드가 지연됐다는 플랫폼 알림 기록이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -502,7 +515,8 @@
           "questionAngle": "최다솔에게: \"최종 확인과 공동 스레드 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 최다솔의 \"최종 확인과 공동 스레드 원칙의 쌍방 위반\" 쟁점과 관련된다. 최다솔은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

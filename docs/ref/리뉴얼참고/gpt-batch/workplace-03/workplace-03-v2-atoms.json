@@ -7,7 +7,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "저는 회식 자리에서 특정인을 비하한 적이 없습니다.",
+            "저는 회식 자리에서 그 사람을 비하한 적이 없습니다.",
             "그날 분위기를 두고 저를 악의적인 사람으로 몰아가는 해석은 과합니다."
           ],
           "privateKnowledge": [
@@ -29,7 +29,7 @@
           "claimAtoms": [
             {
               "id": "workplace-03:a:d-1:denial:0",
-              "factText": "저는 회식 자리에서 특정인을 비하한 적이 없습니다.",
+              "factText": "저는 회식 자리에서 그 사람을 비하한 적이 없습니다.",
               "tags": [
                 "denial",
                 "act"
@@ -47,13 +47,13 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "외부 후보",
                   "judgeRef": "외부 후보"
                 },
                 "fear": {
@@ -89,13 +89,13 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "외부 후보",
                   "judgeRef": "외부 후보"
                 },
                 "fear": {
@@ -117,7 +117,7 @@
           "disputeId": "d-1",
           "state": "S1",
           "publicClaim": [
-            "과한 농담처럼 들릴 수는 있었지만 특정인을 겨냥한 비방은 아니었습니다.",
+            "과한 농담처럼 들릴 수는 있었지만 그 사람을 겨냥한 비방은 아니었습니다.",
             "그 자리가 시끄럽고 다들 취해 있어서 말의 결이 과장됐습니다."
           ],
           "privateKnowledge": [
@@ -138,7 +138,7 @@
           "claimAtoms": [
             {
               "id": "workplace-03:a:d-1:context:0",
-              "factText": "과한 농담처럼 들릴 수는 있었지만 특정인을 겨냥한 비방은 아니었습니다.",
+              "factText": "과한 농담처럼 들릴 수는 있었지만 그 사람을 겨냥한 비방은 아니었습니다.",
               "tags": [
                 "context",
                 "uncertainty"
@@ -156,13 +156,13 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "한 씨",
                   "judgeRef": "외부 후보"
                 },
                 "fear": {
@@ -198,13 +198,13 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "한 씨",
                   "judgeRef": "외부 후보"
                 },
                 "fear": {
@@ -696,7 +696,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "상대방",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "channel": {
@@ -736,7 +736,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "상대방",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "channel": {
@@ -801,7 +801,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "상대방",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "channel": {
@@ -841,7 +841,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "상대방",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "channel": {
@@ -1330,13 +1330,13 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "외부 후보",
                   "judgeRef": "외부 후보"
                 },
                 "phrase": {
@@ -1372,13 +1372,13 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "외부 후보",
                   "judgeRef": "외부 후보"
                 },
                 "phrase": {
@@ -1439,13 +1439,13 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "한 씨",
                   "judgeRef": "외부 후보"
                 },
                 "phrase": {
@@ -1481,13 +1481,13 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "한 씨",
                   "judgeRef": "외부 후보"
                 },
                 "phrase": {
@@ -2001,7 +2001,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "fear": {
@@ -2041,7 +2041,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "fear": {
@@ -2106,7 +2106,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "fear": {
@@ -2146,7 +2146,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "그 팀원",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "fear": {
@@ -2592,7 +2592,7 @@
           "state": "S0",
           "publicClaim": [
             "저는 정식 정정 전에 소문전에 가담한 적이 없습니다.",
-            "팀 회의에서 한 말도 특정인을 겨냥한 암시가 아니었습니다."
+            "팀 회의에서 한 말도 그 사람을 겨냥한 암시가 아니었습니다."
           ],
           "privateKnowledge": [
             "공식 정정 전에 팀 회의에서 '어제 일로 팀 명예가 흔들렸다'는 표현으로 특정인을 떠올리게 했다.",
@@ -2631,7 +2631,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "특정 팀원",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "harm": {
@@ -2653,7 +2653,7 @@
             },
             {
               "id": "workplace-03:a:d-5:fear:0",
-              "factText": "팀 회의에서 한 말도 특정인을 겨냥한 암시가 아니었습니다.",
+              "factText": "팀 회의에서 한 말도 그 사람을 겨냥한 암시가 아니었습니다.",
               "tags": [
                 "fear",
                 "emotion"
@@ -2671,7 +2671,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "특정 팀원",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "harm": {
@@ -2736,7 +2736,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "특정 팀원",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "harm": {
@@ -2776,7 +2776,7 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "특정 팀원",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "harm": {
@@ -3258,7 +3258,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강도윤 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "phrase": {
@@ -3298,7 +3298,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강도윤 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "phrase": {
@@ -3363,7 +3363,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "phrase": {
@@ -3403,7 +3403,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "phrase": {
@@ -3890,7 +3890,7 @@
               ],
               "slots": {
                 "moment": {
-                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "exact": "그 시간대",
                   "neutral": "그 시간대",
                   "dateExact": "회식 다음 날 오전"
                 },
@@ -3905,7 +3905,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강도윤 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "emotion": {
@@ -3930,7 +3930,7 @@
               ],
               "slots": {
                 "moment": {
-                  "exact": "회식 다음 날 오전 7시 42분부터 18분 사이",
+                  "exact": "그 시간대",
                   "neutral": "그 시간대",
                   "dateExact": "회식 다음 날 오전"
                 },
@@ -3945,7 +3945,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강도윤 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "emotion": {
@@ -4010,7 +4010,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "emotion": {
@@ -4050,7 +4050,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "emotion": {
@@ -4528,20 +4528,20 @@
                   "neutral": "그 약어"
                 },
                 "moment": {
-                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "exact": "그 직후",
                   "neutral": "그 직후",
                   "period": "다음 날 아침"
                 },
                 "person": {
                   "exact": "최희주",
                   "neutral": "자기 자신",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "외부 후보",
                   "judgeRef": "외부 후보"
                 },
                 "context": {
@@ -4570,20 +4570,20 @@
                   "neutral": "그 약어"
                 },
                 "moment": {
-                  "exact": "19초 자동 하이라이트를 본 직후",
+                  "exact": "그 직후",
                   "neutral": "그 직후",
                   "period": "다음 날 아침"
                 },
                 "person": {
                   "exact": "최희주",
                   "neutral": "자기 자신",
-                  "fullName": "최희주",
+                  "fullName": "희주 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "외부 후보",
                   "judgeRef": "외부 후보"
                 },
                 "context": {
@@ -4644,13 +4644,13 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "자기 자신",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "한 씨",
                   "judgeRef": "외부 후보"
                 },
                 "context": {
@@ -4686,13 +4686,13 @@
                 "person": {
                   "exact": "최희주",
                   "neutral": "자기 자신",
-                  "fullName": "최희주",
+                  "fullName": "최 씨",
                   "judgeRef": "희주 씨"
                 },
                 "candidate": {
                   "exact": "한재균",
                   "neutral": "다른 HJ",
-                  "fullName": "한재균",
+                  "fullName": "한 씨",
                   "judgeRef": "외부 후보"
                 },
                 "context": {
@@ -5197,7 +5197,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강도윤 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "harm": {
@@ -5237,7 +5237,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강도윤 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "harm": {
@@ -5302,7 +5302,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "harm": {
@@ -5342,7 +5342,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강 씨",
                   "judgeRef": "강도윤 씨"
                 },
                 "harm": {
@@ -5835,7 +5835,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강도윤 씨",
                   "judgeRef": "강도윤 씨"
                 }
               },
@@ -5875,7 +5875,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강도윤 씨",
                   "judgeRef": "강도윤 씨"
                 }
               },
@@ -5940,7 +5940,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강 씨",
                   "judgeRef": "강도윤 씨"
                 }
               },
@@ -5980,7 +5980,7 @@
                 "person": {
                   "exact": "강도윤",
                   "neutral": "상대방",
-                  "fullName": "강도윤",
+                  "fullName": "강 씨",
                   "judgeRef": "강도윤 씨"
                 }
               },
@@ -6419,4 +6419,3 @@
     }
   }
 }
-

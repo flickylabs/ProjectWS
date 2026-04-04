@@ -354,7 +354,9 @@
           "questionAngle": "장혜린에게: \"구두 약속 위의 쌍방 의존\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 장혜린의 \"구두 약속 위의 쌍방 의존\" 쟁점과 관련된다. 장혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "면담 메모와 메신저 약속 스레드",
+      "surfaceDescription": "1:1 면담 메모와 전환 약속이 담긴 메신저 대화 스레드 기록"
     },
     {
       "id": "e-2",
@@ -379,7 +381,9 @@
         "check_edits": "변조 없으나 일부 페이지 누락 — 중복근무 범위 단독 확정 어려움.",
         "question_acquisition": "개인 고용계약 자료 — 공개 범위 최소 제한."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "타사 근로계약서와 온보딩 메일",
+      "surfaceDescription": "타사 근로계약서 사본과 온보딩 관련 이메일이 함께 묶인 문서"
     },
     {
       "id": "e-3",
@@ -404,7 +408,9 @@
         "check_edits": "변조 없으나 절삭·하이라이트로 전환 불가 프레임이 과장됐다.",
         "question_acquisition": "인사 캡처 — 분쟁 해결 목적에만 한정 사용."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "헤드카운트 보류 화면 캡처",
+      "surfaceDescription": "인원 계획 보류 상태를 보여주는 시스템 화면의 캡처 이미지"
     },
     {
       "id": "e-4",
@@ -431,7 +437,10 @@
         "check_edits": "원본 이력 기반 — 사후 편집 흔적 없음.",
         "question_acquisition": "인사자료 — 공개 최소화, 분쟁 해결 목적 적법 열람."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "인사 전환 리뷰 트래커와 코멘트",
+      "surfaceDescription": "인사 전환 리뷰 추적 문서와 매니저 코멘트 변경 이력 기록",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
@@ -466,7 +475,9 @@
           "questionAngle": "장혜린에게: \"구두 약속 위의 쌍방 의존\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 장혜린의 \"구두 약속 위의 쌍방 의존\" 쟁점과 관련된다. 장혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "과거 계약 연장 메일과 잔류 요청",
+      "surfaceDescription": "과거 두 차례 계약 연장 이메일과 잔류 요청 관련 기록 문서"
     },
     {
       "id": "e-6",
@@ -504,7 +515,10 @@
           "questionAngle": "장혜린에게: \"이중 계약과 근무시간 은폐\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 장혜린의 \"이중 계약과 근무시간 은폐\" 쟁점과 관련된다. 장혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "노무 컴플라이언스 메모와 접속 로그",
+      "surfaceDescription": "노무 컴플라이언스 검토 메모와 출입 및 VPN 접속 겹침 로그",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

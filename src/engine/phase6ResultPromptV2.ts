@@ -181,7 +181,16 @@ export function buildResultSystemPrompt(): string {
 2. disprovedFakeIssues는 오해가 풀린 사건으로만 다뤄라.
 3. relationCoreRevealed가 false이면 깊은 화해/완전한 단절을 과장하지 마라.
 4. finalEmotions와 lastLinesByParty를 참고해 즉시 반응의 말투를 이어가라.
-5. keyMoments 중 가장 강한 장면 1~2개를 암시적으로 반영하되, 긴 인용은 하지 마라.`
+5. keyMoments 중 가장 강한 장면 1~2개를 암시적으로 반영하되, 긴 인용은 하지 마라.
+
+★ 번역체/보고서 톤 절대 금지:
+- "~된 것으로 판단됩니다", "~인 측면이 있었습니다" → 자연스러운 한국어로
+- "여러 가지 상황이 얽혀" → 구체적으로 1가지만
+- "해당 건에 대해서는" → "그 일은"
+- "~하는 바입니다", "인지하고 있습니다" → 금지
+- 실제 법정 후일담/에필로그처럼 따뜻하고 인간적인 톤으로 작성하라.
+★ 후일담은 최소 3문단 이상. 양쪽 당사자의 이후 삶을 구체적으로 그려라.
+★ aReaction과 bReaction에 각 당사자의 판결 직후 반응을 구체적으로 써라. shortEpilogue에서도 양쪽의 이후 삶을 반영하라.`
 }
 
 export interface VerdictData {
@@ -256,6 +265,8 @@ export interface ResultV2Response {
 export function formatResultAsNarrative(res: ResultV2Response): string {
   const parts: string[] = []
   if (res.immediateAftermath) parts.push(res.immediateAftermath)
+  if (res.aReaction) parts.push(res.aReaction)
+  if (res.bReaction) parts.push(res.bReaction)
   if (res.shortEpilogue) parts.push(res.shortEpilogue)
   return parts.join('\n\n')
 }

@@ -38,7 +38,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "그 사람",
                   "judgeRef": "민우"
                 },
                 "item": {
@@ -124,7 +124,7 @@
                 "person": {
                   "exact": "이정훈",
                   "neutral": "상대 보호자",
-                  "fullName": "이정훈",
+                  "fullName": "이 씨",
                   "judgeRef": "이정훈 씨"
                 },
                 "timeGap": {
@@ -156,7 +156,7 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "하 씨",
                   "judgeRef": "하윤이"
                 }
               },
@@ -526,11 +526,11 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "그 사람",
                   "judgeRef": "하윤이"
                 },
                 "evidence": {
-                  "exact": "46초 음성메시지",
+                  "exact": "그 음성",
                   "neutral": "그 음성"
                 },
                 "rule": {
@@ -558,7 +558,7 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "그 사람",
                   "judgeRef": "하윤이"
                 },
                 "benefit": {
@@ -608,7 +608,7 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "하 씨",
                   "judgeRef": "하윤이"
                 },
                 "channel": {
@@ -1008,7 +1008,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "그 사람",
                   "judgeRef": "민우"
                 }
               },
@@ -1036,7 +1036,7 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "그 사람",
                   "judgeRef": "하윤이"
                 }
               },
@@ -1108,13 +1108,13 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "하 씨",
                   "judgeRef": "하윤이"
                 },
                 "person2": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "민 씨",
                   "judgeRef": "민우"
                 },
                 "source": {
@@ -1512,7 +1512,7 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "그 사람",
                   "judgeRef": "하윤이"
                 }
               },
@@ -1580,7 +1580,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "민 씨",
                   "judgeRef": "민우"
                 },
                 "place": {
@@ -1987,7 +1987,7 @@
                 "person": {
                   "exact": "이정훈",
                   "neutral": "상대 보호자",
-                  "fullName": "이정훈",
+                  "fullName": "이정훈 씨",
                   "judgeRef": "이정훈 씨"
                 }
               },
@@ -2426,7 +2426,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "그 사람",
                   "judgeRef": "민우"
                 },
                 "channel": {
@@ -2458,7 +2458,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "그 사람",
                   "judgeRef": "민우"
                 },
                 "benefit": {
@@ -2508,7 +2508,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "민 씨",
                   "judgeRef": "민우"
                 },
                 "item": {
@@ -2550,7 +2550,7 @@
                 "person": {
                   "exact": "이정훈",
                   "neutral": "상대 보호자",
-                  "fullName": "이정훈",
+                  "fullName": "이 씨",
                   "judgeRef": "이정훈 씨"
                 }
               },
@@ -2907,7 +2907,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "그 사람",
                   "judgeRef": "민우"
                 },
                 "benefit": {
@@ -2933,7 +2933,7 @@
               ],
               "slots": {
                 "evidence": {
-                  "exact": "46초 음성메시지",
+                  "exact": "그 음성",
                   "neutral": "그 음성"
                 },
                 "channel": {
@@ -3012,7 +3012,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "민 씨",
                   "judgeRef": "민우"
                 },
                 "benefit": {
@@ -3391,7 +3391,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "그 사람",
                   "judgeRef": "민우"
                 },
                 "item": {
@@ -3419,7 +3419,7 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "그 사람",
                   "judgeRef": "하윤이"
                 },
                 "scene": {
@@ -3494,7 +3494,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "민 씨",
                   "judgeRef": "민우"
                 },
                 "benefit": {
@@ -3860,7 +3860,7 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "그 사람",
                   "judgeRef": "하윤이"
                 },
                 "rule": {
@@ -3888,7 +3888,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "그 사람",
                   "judgeRef": "민우"
                 },
                 "rule": {
@@ -3937,7 +3937,7 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "하 씨",
                   "judgeRef": "하윤이"
                 },
                 "rule": {
@@ -3965,7 +3965,7 @@
                 "person": {
                   "exact": "하윤",
                   "neutral": "상대 아이",
-                  "fullName": "하윤",
+                  "fullName": "하 씨",
                   "judgeRef": "하윤이"
                 },
                 "scene": {
@@ -4360,7 +4360,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "그 사람",
                   "judgeRef": "민우"
                 },
                 "benefit": {
@@ -4442,7 +4442,7 @@
                 "person": {
                   "exact": "민우",
                   "neutral": "상대 아이",
-                  "fullName": "민우",
+                  "fullName": "민 씨",
                   "judgeRef": "민우"
                 }
               },

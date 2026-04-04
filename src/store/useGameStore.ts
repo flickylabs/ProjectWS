@@ -108,6 +108,7 @@ import { resetSessionInterjectionTracker } from '../engine/interjectionV2'
 import { resetPhase3Log } from '../engine/phase3LogCollector'
 import { resetMisconceptionState } from '../engine/misconceptionEngine'
 import { resetActivatedLinks } from '../engine/linkEdgeEngine'
+import { resetQuestionRotation } from '../engine/judgeQuestionEngine'
 import type { QuestionType, EmotionTier, Stance } from '../types'
 
 const EMPTY_METRICS: ProcessMetrics = {
@@ -507,7 +508,16 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
         'defensive',    // B 시작 감정 (A와 동일, 게임 진행에 따라 자연스럽게 변화)
       )
 
+      // 핵심 상태 초기화 — 리뉴얼 등록보다 먼저 실행 (등록 실패 시에도 게임 가능)
+      store.initResources()
+      store.initEvidence(caseData.evidence, caseData.evidenceCombinations)
+      store.clearDialogue()
+      store.resetVerdict()
+      store.initDiscovery(caseData)
+
       // 리뉴얼 데이터 등록 (ClaimPolicy/Bridge/EvidenceChallenge/V3)
+      // try-catch로 감싸서 등록 실패가 게임 진행을 막지 않도록 함
+      try {
       resetTellTracker()
       resetEventTriggerState()
       const caseKey2 = caseData.caseId?.replace(/^case-/, '') ?? ''
@@ -520,6 +530,7 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       resetPhase3Log()
       resetMisconceptionState()
       resetActivatedLinks()
+      resetQuestionRotation()
       set({ phase3PromptBridge: null })
       const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
       if (caseKey === 'spouse-01') registerSpouse01Data()
@@ -606,21 +617,9 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       if (caseKey === 'workplace-10') registerWorkplace10Data()
       if (caseKey === 'workplace-11') registerWorkplace11Data()
       if (caseKey === 'workplace-12') registerWorkplace12Data()
-
-      // 리소스 초기화
-      store.initResources()
-
-      // 증거 초기화
-      store.initEvidence(caseData.evidence, caseData.evidenceCombinations)
-
-      // 대화 초기화
-      store.clearDialogue()
-
-      // 판결 초기화
-      store.resetVerdict()
-
-      // 디스커버리 초기화
-      store.initDiscovery(caseData)
+      } catch (err) {
+        console.error('[Solomon] 리뉴얼 데이터 등록 실패 (게임은 계속 진행 가능):', err)
+      }
     },
   }
 }, {

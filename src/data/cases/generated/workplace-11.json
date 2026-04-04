@@ -353,7 +353,9 @@
           "questionAngle": "노서린에게: \"다툼의 공모 은폐 설계 여부\" 관련 해명 요구 (방어 동기: 복수심)",
           "implication": "이 증거는 노서린의 \"다툼의 공모 은폐 설계 여부\" 쟁점과 관련된다. 노서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "기여 배분표와 출원 초안 이력",
+      "surfaceDescription": "기여도 배분표와 출원 초안 문서의 수정 이력이 담긴 버전 기록"
     },
     {
       "id": "e-2",
@@ -388,7 +390,9 @@
           "questionAngle": "노서린에게: \"브로커 우회 접촉과 전달\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 노서린의 \"브로커 우회 접촉과 전달\" 쟁점과 관련된다. 노서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "개인 메일 전달본과 메신저 수수료 대화",
+      "surfaceDescription": "개인 메일 전달 기록과 메신저에서 나눈 수수료 관련 대화 내용"
     },
     {
       "id": "e-3",
@@ -412,7 +416,9 @@
         "check_edits": "변조 없으나 절삭·강조로 서린 단독 유출 프레임이 과장됐다.",
         "question_acquisition": "태준 자발 제출 — 입수 적법하지만 완전성 별도 검증 필요."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "보안 경보 캡처 PDF 문서",
+      "surfaceDescription": "데이터 유출 방지 시스템의 경보 화면을 캡처하여 정리한 PDF"
     },
     {
       "id": "e-4",
@@ -438,7 +444,10 @@
         "check_edits": "플랫폼 원본 추출본 — 사후 편집 흔적 없음.",
         "question_acquisition": "보안사고 조사 범위 원본 로그 — 적법성 높음."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "메일 게이트웨이 로그와 링크 기록",
+      "surfaceDescription": "메일 게이트웨이 원본 로그와 외부 공유 링크 재전송 기록",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
@@ -463,7 +472,9 @@
         "check_edits": "초기본·수정본 모두 남아 사후 미화 여부 구분 가능.",
         "question_acquisition": "인사자료 — 분쟁 해결 목적 외 공개 제한."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "인사 평가 초안과 기밀 위험 메모",
+      "surfaceDescription": "인사 평가 초안 문서와 기밀 취급 관련 위험성을 적은 메모"
     },
     {
       "id": "e-6",
@@ -500,7 +511,10 @@
           "questionAngle": "노서린에게: \"유출 범위 — 브로커 1건인가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 노서린의 \"유출 범위 — 브로커 1건인가\" 쟁점과 관련된다. 노서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "외부 브로커 송장과 입금 추적 정리",
+      "surfaceDescription": "외부 브로커 송장과 가상자산 입금 흐름을 추적한 포렌식 보고",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

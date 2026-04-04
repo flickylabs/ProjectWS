@@ -55,7 +55,7 @@
                 "person": {
                   "exact": "최재우",
                   "neutral": "상대방",
-                  "fullName": "최재우",
+                  "fullName": "최재우 씨",
                   "judgeRef": "최재우 씨"
                 },
                 "time": {
@@ -829,7 +829,7 @@
                 "person": {
                   "exact": "한유진",
                   "neutral": "그 사람",
-                  "fullName": "한유진",
+                  "fullName": "한유진 씨",
                   "judgeRef": "한유진 씨"
                 },
                 "account": {
@@ -899,7 +899,7 @@
                 "person": {
                   "exact": "한유진",
                   "neutral": "그 사람",
-                  "fullName": "한유진",
+                  "fullName": "한 씨",
                   "judgeRef": "한유진 씨"
                 }
               },
@@ -1725,7 +1725,7 @@
                 "person": {
                   "exact": "한유진",
                   "neutral": "그 사람",
-                  "fullName": "한유진",
+                  "fullName": "한 씨",
                   "judgeRef": "한유진 씨"
                 }
               },
@@ -2062,7 +2062,7 @@
                 "person": {
                   "exact": "문세아",
                   "neutral": "상대방",
-                  "fullName": "문세아",
+                  "fullName": "문세아 씨",
                   "judgeRef": "문세아 씨"
                 },
                 "channel": {
@@ -2494,7 +2494,7 @@
                 "person": {
                   "exact": "문세아",
                   "neutral": "상대방",
-                  "fullName": "문세아",
+                  "fullName": "문세아 씨",
                   "judgeRef": "문세아 씨"
                 }
               },
@@ -2842,7 +2842,7 @@
                 "person": {
                   "exact": "한유진",
                   "neutral": "그 사람",
-                  "fullName": "한유진",
+                  "fullName": "한유진 씨",
                   "judgeRef": "한유진 씨"
                 },
                 "account": {
@@ -2913,7 +2913,7 @@
                 "person": {
                   "exact": "한유진",
                   "neutral": "그 사람",
-                  "fullName": "한유진",
+                  "fullName": "한 씨",
                   "judgeRef": "한유진 씨"
                 }
               },
@@ -2935,7 +2935,7 @@
                 "person": {
                   "exact": "박하린",
                   "neutral": "그 사람",
-                  "fullName": "박하린",
+                  "fullName": "박 씨",
                   "judgeRef": "박하린 씨"
                 }
               },
@@ -3689,7 +3689,7 @@
                 "person": {
                   "exact": "한유진",
                   "neutral": "그 사람",
-                  "fullName": "한유진",
+                  "fullName": "한유진 씨",
                   "judgeRef": "한유진 씨"
                 }
               },

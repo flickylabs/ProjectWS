@@ -40,7 +40,7 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
       )}
 
       <div className="space-y-1">
-        {dialogueLog.map((entry, i) => (
+        {dialogueLog.filter(e => !e.isHidden).map((entry, i) => (
           <DialogueEntry
             key={entry.id}
             entry={entry}

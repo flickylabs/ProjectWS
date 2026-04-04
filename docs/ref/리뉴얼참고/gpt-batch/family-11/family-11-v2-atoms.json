@@ -35,7 +35,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "서준서",
+                  "fullName": "아이",
                   "judgeRef": "아이",
                   "neutral": "아이"
                 },
@@ -120,7 +120,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "이선주",
+                  "fullName": "이 씨",
                   "judgeRef": "담임교사",
                   "neutral": "담임"
                 },
@@ -149,7 +149,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오하린",
+                  "fullName": "오 씨",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 },
@@ -515,7 +515,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오하린",
+                  "fullName": "당사자 B",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 },
@@ -548,7 +548,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "서준서",
+                  "fullName": "아이",
                   "judgeRef": "아이",
                   "neutral": "아이"
                 }
@@ -621,7 +621,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오하린",
+                  "fullName": "오 씨",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 }
@@ -950,7 +950,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "이선주",
+                  "fullName": "담임교사",
                   "judgeRef": "담임교사",
                   "neutral": "담임"
                 },
@@ -982,12 +982,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "당사자 A",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 },
                 "person2": {
-                  "fullName": "이선주",
+                  "fullName": "담임교사",
                   "judgeRef": "담임교사",
                   "neutral": "담임"
                 }
@@ -1034,7 +1034,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "이선주",
+                  "fullName": "이 씨",
                   "judgeRef": "담임교사",
                   "neutral": "담임"
                 },
@@ -1063,7 +1063,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "오 씨",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 }
@@ -1429,7 +1429,7 @@
                   "neutral": "의료기관"
                 },
                 "person": {
-                  "fullName": "서준서",
+                  "fullName": "아이",
                   "judgeRef": "아이",
                   "neutral": "아이"
                 }
@@ -1457,7 +1457,7 @@
                   "neutral": "의료 기록"
                 },
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "당사자 A",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 }
@@ -1504,7 +1504,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "서준서",
+                  "fullName": "서 씨",
                   "judgeRef": "아이",
                   "neutral": "아이"
                 },
@@ -1886,7 +1886,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오하린",
+                  "fullName": "당사자 B",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 }
@@ -1910,12 +1910,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "당사자 A",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 },
                 "person2": {
-                  "fullName": "서준서",
+                  "fullName": "아이",
                   "judgeRef": "아이",
                   "neutral": "아이"
                 }
@@ -1984,7 +1984,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오하린",
+                  "fullName": "오 씨",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 },
@@ -2338,7 +2338,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "당사자 A",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 },
@@ -2366,12 +2366,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오하린",
+                  "fullName": "당사자 B",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 },
                 "person2": {
-                  "fullName": "오연숙",
+                  "fullName": "당사자 A",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 },
@@ -2421,12 +2421,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "오 씨",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 },
                 "person2": {
-                  "fullName": "오하린",
+                  "fullName": "오 씨",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 },
@@ -2808,7 +2808,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "서준서",
+                  "fullName": "아이",
                   "judgeRef": "아이",
                   "neutral": "아이"
                 },
@@ -2841,7 +2841,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "당사자 A",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 }
@@ -2915,7 +2915,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오하린",
+                  "fullName": "오 씨",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 }
@@ -3260,7 +3260,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "이선주",
+                  "fullName": "담임교사",
                   "judgeRef": "담임교사",
                   "neutral": "담임"
                 },
@@ -3289,12 +3289,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "당사자 A",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 },
                 "person2": {
-                  "fullName": "오하린",
+                  "fullName": "당사자 B",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 }
@@ -3340,7 +3340,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "이선주",
+                  "fullName": "이 씨",
                   "judgeRef": "담임교사",
                   "neutral": "담임"
                 },
@@ -3368,12 +3368,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "오 씨",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 },
                 "person2": {
-                  "fullName": "서준서",
+                  "fullName": "서 씨",
                   "judgeRef": "아이",
                   "neutral": "아이"
                 }
@@ -3757,7 +3757,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "당사자 A",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 }
@@ -3802,7 +3802,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오연숙",
+                  "fullName": "오 씨",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 },
@@ -4197,12 +4197,12 @@
                   "neutral": "부모 동의 규칙"
                 },
                 "person": {
-                  "fullName": "오하린",
+                  "fullName": "당사자 B",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 },
                 "person2": {
-                  "fullName": "오연숙",
+                  "fullName": "당사자 A",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 }
@@ -4225,7 +4225,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "오하린",
+                  "fullName": "당사자 B",
                   "judgeRef": "당사자 B",
                   "neutral": "엄마"
                 }
@@ -4272,12 +4272,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "서준서",
+                  "fullName": "서 씨",
                   "judgeRef": "아이",
                   "neutral": "아이"
                 },
                 "person2": {
-                  "fullName": "오연숙",
+                  "fullName": "오 씨",
                   "judgeRef": "당사자 A",
                   "neutral": "조모"
                 }

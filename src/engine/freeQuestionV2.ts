@@ -280,6 +280,8 @@ export function renderResponse(params: {
   hook: FreeQuestionHook
   selectedAtoms: ResolvedAtomLike[]
   angleTag: AngleTag
+  archetype?: string
+  hookReuseCount?: number
 }): { response: string; behaviorHint: string } {
   const primary = params.selectedAtoms[0]
   if (!primary) {
@@ -290,13 +292,25 @@ export function renderResponse(params: {
   }
 
   const second = params.selectedAtoms[1]
-  const firstText = primary.factText.trim()
-  const secondText = second?.factText.trim()
+  const firstText = primary.factText.trim().replace(/\.$/, '')
+  const secondText = second?.factText.trim().replace(/\.$/, '')
 
+  // archetype이 있으��� 톤 패턴 기반 조립
+  if (params.archetype) {
+    const tone = pickTonePattern(params.archetype, params.angleTag, params.hookReuseCount ?? 0)
+    if (tone) {
+      const response = secondText
+        ? `${tone.opener}${firstText}${tone.connector}${secondText}${tone.closer}`
+        : `${tone.opener}${firstText}${tone.closer}`
+      return { response, behaviorHint: getBehaviorHint(params.archetype, params.angleTag) }
+    }
+  }
+
+  // fallback: 기존 angleTag 기반 접합
   switch (params.angleTag) {
     case 'identity':
       return {
-        response: secondText ? `${firstText} 그리고 ${secondText}.` : `${firstText}.`,
+        response: secondText ? `${firstText}. 그리고 ${secondText}.` : `${firstText}.`,
         behaviorHint: '실명이나 역할을 꺼낼 때만 짧게 시선을 든다.',
       }
     case 'motive':
@@ -316,6 +330,61 @@ export function renderResponse(params: {
         behaviorHint: '핵심만 짧게 답하고 군더더기는 삼킨다.',
       }
   }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// archetype 톤 패턴 로더
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+import tonePatterns from '../data/freeQuestionTonePatterns.json'
+
+type ToneSpec = typeof tonePatterns.characterTonePatterns
+const TONE_SPEC: ToneSpec = tonePatterns.characterTonePatterns as ToneSpec
+
+const RENDER_ANGLE_TAGS = ['identity', 'motive', 'emotion', 'responsibility', 'context'] as const
+type RenderAngleTag = typeof RENDER_ANGLE_TAGS[number]
+
+function normalizeRenderAngleTag(tag: AngleTag): RenderAngleTag {
+  if (RENDER_ANGLE_TAGS.includes(tag as RenderAngleTag)) return tag as RenderAngleTag
+  return 'context'
+}
+
+function pickTonePattern(
+  archetype: string,
+  angleTag: AngleTag,
+  reuseCount: number,
+): { opener: string; connector: string; closer: string } | null {
+  const archetypeSpec = (TONE_SPEC as any)[archetype]
+  if (!archetypeSpec) return null
+
+  const renderTag = normalizeRenderAngleTag(angleTag)
+  const tagSpec = archetypeSpec[renderTag]
+  if (!tagSpec) return null
+
+  const openers: string[] = tagSpec.opener ?? []
+  const connectors: string[] = tagSpec.connector ?? []
+  const closers: string[] = tagSpec.closer ?? []
+
+  if (openers.length === 0) return null
+
+  const variant = reuseCount % Math.max(openers.length, 1)
+  return {
+    opener: openers[variant % openers.length] ?? '',
+    connector: connectors[variant % connectors.length] ?? '. ',
+    closer: closers[variant % closers.length] ?? '.',
+  }
+}
+
+function getBehaviorHint(archetype: string, _angleTag: AngleTag): string {
+  const hints: Record<string, string> = {
+    avoidant: '시선을 피하듯 말하고, 말끝이 흐려진다.',
+    confrontational: '또박또박 단정적으로 말한다.',
+    victim_cosplay: '억울한 표정으로 호소하듯 말한다.',
+    cold_logic: '감정 없이 짧게 끊어 말한다.',
+    affect_flattening: '무표정하게 최소한으로 답한다.',
+    premature_summary: '빨리 끝내려는 듯 결론부터 말한다.',
+  }
+  return hints[archetype] ?? '차분하게 답한다.'
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -365,6 +434,7 @@ export function processFreeQuestionV2(input: {
   atomIndex: Record<string, ResolvedAtomLike>
   runtime: FreeQuestionRuntimeState
   disputeAliasMap?: Record<string, string[]>
+  archetype?: string
 }): FreeQuestionResultV2 {
   const classification = classifyFreeQuestion({
     question: input.question,
@@ -418,6 +488,8 @@ export function processFreeQuestionV2(input: {
     hook,
     selectedAtoms,
     angleTag: classification.inferredAngleTag,
+    archetype: input.archetype,
+    hookReuseCount: input.runtime.usedHookIds.filter(id => id === hook.id).length,
   })
   const effects = resolveEffects(hook, selectedAtoms, input.runtime, liveState)
 

@@ -1233,7 +1233,7 @@
                   "neutral": "과거"
                 },
                 "person": {
-                  "fullName": "오병철",
+                  "fullName": "외삼촌",
                   "judgeRef": "외삼촌",
                   "neutral": "제3가족"
                 },
@@ -1274,7 +1274,7 @@
                   "neutral": "과거"
                 },
                 "person": {
-                  "fullName": "오병철",
+                  "fullName": "외삼촌",
                   "judgeRef": "외삼촌",
                   "neutral": "제3가족"
                 },
@@ -1338,7 +1338,7 @@
                   "neutral": "과거"
                 },
                 "person": {
-                  "fullName": "오병철",
+                  "fullName": "오 씨",
                   "judgeRef": "외삼촌",
                   "neutral": "제3가족"
                 },
@@ -1379,7 +1379,7 @@
                   "neutral": "과거"
                 },
                 "person": {
-                  "fullName": "오병철",
+                  "fullName": "오 씨",
                   "judgeRef": "외삼촌",
                   "neutral": "제3가족"
                 },
@@ -3059,7 +3059,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "문제의 게시물은 특정인을 저격한 것이 아니라 감정을 은유로 적은 표현이었다고 하준은 주장한다.",
+            "문제의 게시물은 그 사람을 저격한 것이 아니라 감정을 은유로 적은 표현이었다고 하준은 주장한다.",
             "실명을 쓰지 않았고 상실감과 집의 침묵을 표현한 것일 뿐이라는 설명이 앞선다."
           ],
           "privateKnowledge": [
@@ -3078,7 +3078,7 @@
           "claimAtoms": [
             {
               "id": "family06:b:d-1:s0:claim:0",
-              "factText": "문제의 게시물은 특정인을 저격한 것이 아니라 감정을 은유로 적은 표현이었다고 하준은 주장한다.",
+              "factText": "문제의 게시물은 그 사람을 저격한 것이 아니라 감정을 은유로 적은 표현이었다고 하준은 주장한다.",
               "tags": [
                 "act",
                 "identity",
@@ -4285,7 +4285,7 @@
                   "neutral": "과거"
                 },
                 "person": {
-                  "fullName": "오병철",
+                  "fullName": "외삼촌",
                   "judgeRef": "외삼촌",
                   "neutral": "제3가족"
                 },
@@ -4326,7 +4326,7 @@
                   "neutral": "과거"
                 },
                 "person": {
-                  "fullName": "오병철",
+                  "fullName": "외삼촌",
                   "judgeRef": "외삼촌",
                   "neutral": "제3가족"
                 },
@@ -4390,7 +4390,7 @@
                   "neutral": "과거"
                 },
                 "person": {
-                  "fullName": "오병철",
+                  "fullName": "오 씨",
                   "judgeRef": "외삼촌",
                   "neutral": "제3가족"
                 },
@@ -4431,7 +4431,7 @@
                   "neutral": "과거"
                 },
                 "person": {
-                  "fullName": "오병철",
+                  "fullName": "오 씨",
                   "judgeRef": "외삼촌",
                   "neutral": "제3가족"
                 },

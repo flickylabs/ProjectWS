@@ -326,7 +326,7 @@
               ],
               "slots": {
                 "evidence": {
-                  "exact": "31초 편집 클립",
+                  "exact": "그 영상",
                   "neutral": "그 영상"
                 },
                 "problem": {
@@ -375,7 +375,7 @@
                 "person": {
                   "exact": "김라은",
                   "neutral": "그 사람",
-                  "fullName": "김라은",
+                  "fullName": "김 씨",
                   "judgeRef": "김라은 씨"
                 },
                 "evidence": {
@@ -617,7 +617,7 @@
                 "person": {
                   "exact": "김라은",
                   "neutral": "그 사람",
-                  "fullName": "김라은",
+                  "fullName": "김라은 씨",
                   "judgeRef": "김라은 씨"
                 },
                 "problem": {
@@ -665,7 +665,7 @@
                 "person": {
                   "exact": "김라은",
                   "neutral": "그 사람",
-                  "fullName": "김라은",
+                  "fullName": "김 씨",
                   "judgeRef": "김라은 씨"
                 },
                 "time": {
@@ -1492,7 +1492,7 @@
                 "person": {
                   "exact": "유성재",
                   "neutral": "그 사람",
-                  "fullName": "유성재",
+                  "fullName": "유성재 씨",
                   "judgeRef": "유성재 씨"
                 },
                 "location": {
@@ -1787,7 +1787,7 @@
               ],
               "slots": {
                 "evidence": {
-                  "exact": "31초 편집 클립",
+                  "exact": "그 영상",
                   "neutral": "그 영상"
                 },
                 "document": {
@@ -2074,7 +2074,7 @@
                 "person": {
                   "exact": "유성재",
                   "neutral": "그 사람",
-                  "fullName": "유성재",
+                  "fullName": "유성재 씨",
                   "judgeRef": "유성재 씨"
                 },
                 "problem": {
@@ -2122,7 +2122,7 @@
                 "person": {
                   "exact": "유성재",
                   "neutral": "그 사람",
-                  "fullName": "유성재",
+                  "fullName": "유 씨",
                   "judgeRef": "유성재 씨"
                 },
                 "time": {

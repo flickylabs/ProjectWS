@@ -38,7 +38,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "d2.unlock.s2.a.contact_scope",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-1.a.q3",
@@ -48,7 +50,9 @@
                 "blockVector": "legality",
                 "revealAtom": "d4.unlock.s2.a.past_behavior",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -73,7 +77,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "d1.unlock.s3.b.metrics_after_reaction",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-1.b.q3",
@@ -83,7 +89,9 @@
                 "blockVector": "context",
                 "revealAtom": "d2.unlock.s2.b.dm_damage",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -124,7 +132,9 @@
                 "blockVector": "context",
                 "revealAtom": "d3.unlock.s3.a.uncle_backup_known",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-2.a.q3",
@@ -134,7 +144,9 @@
                 "blockVector": "context",
                 "revealAtom": "d3.unlock.s4.a.panic_before_verification",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -159,7 +171,9 @@
                 "blockVector": "context",
                 "revealAtom": "d3.unlock.s3.b.uncle_memory",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-2.b.q3",
@@ -169,7 +183,9 @@
                 "blockVector": "identity",
                 "revealAtom": "d3.unlock.s4.b.third_party_fear",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -211,7 +227,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "d5.unlock.s3.a.brand_risk",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-3.a.q3",
@@ -221,7 +239,9 @@
                 "blockVector": "legality",
                 "revealAtom": "d5.unlock.s5.a.admit_cause",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -246,7 +266,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "d5.unlock.s3.b.first_signal",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-3.b.q3",
@@ -256,7 +278,9 @@
                 "blockVector": "identity",
                 "revealAtom": "d3.unlock.s5.b.real_source",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }

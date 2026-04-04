@@ -13,7 +13,7 @@
  */
 
 import { EVAL_CASES, type EvalCase } from '../data/evalCases'
-import { chatCompletion } from './llmClient'
+import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 
 export interface EvalResult {
@@ -90,7 +90,7 @@ async function runSingleEval(evalCase: EvalCase): Promise<EvalResult> {
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userMessage },
       ],
-      { temperature: config.temperature, maxTokens: config.maxTokens },
+      { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
     )
   } catch (e) {
     return {

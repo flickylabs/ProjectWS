@@ -46,12 +46,12 @@
                   "neutral": "그때"
                 },
                 "person": {
-                  "fullName": "문현우",
+                  "fullName": "그 사람",
                   "judgeRef": "현우",
                   "neutral": "상대방"
                 },
                 "mother": {
-                  "fullName": "문숙희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -90,12 +90,12 @@
                   "neutral": "그때"
                 },
                 "person": {
-                  "fullName": "문현우",
+                  "fullName": "그 사람",
                   "judgeRef": "현우",
                   "neutral": "상대방"
                 },
                 "mother": {
-                  "fullName": "문숙희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -158,12 +158,12 @@
                   "neutral": "그때"
                 },
                 "person": {
-                  "fullName": "문현우",
+                  "fullName": "문 씨",
                   "judgeRef": "현우",
                   "neutral": "상대방"
                 },
                 "mother": {
-                  "fullName": "문숙희",
+                  "fullName": "문 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -202,12 +202,12 @@
                   "neutral": "그때"
                 },
                 "person": {
-                  "fullName": "문현우",
+                  "fullName": "문 씨",
                   "judgeRef": "현우",
                   "neutral": "상대방"
                 },
                 "mother": {
-                  "fullName": "문숙희",
+                  "fullName": "문 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -721,7 +721,7 @@
                   "neutral": "비용 항목들"
                 },
                 "person": {
-                  "fullName": "한서준",
+                  "fullName": "그 사람",
                   "judgeRef": "사촌",
                   "neutral": "제3자"
                 },
@@ -760,7 +760,7 @@
                   "neutral": "비용 항목들"
                 },
                 "person": {
-                  "fullName": "한서준",
+                  "fullName": "그 사람",
                   "judgeRef": "사촌",
                   "neutral": "제3자"
                 },
@@ -822,7 +822,7 @@
                   "neutral": "비용 항목들"
                 },
                 "person": {
-                  "fullName": "한서준",
+                  "fullName": "한 씨",
                   "judgeRef": "사촌",
                   "neutral": "제3자"
                 },
@@ -861,7 +861,7 @@
                   "neutral": "비용 항목들"
                 },
                 "person": {
-                  "fullName": "한서준",
+                  "fullName": "한 씨",
                   "judgeRef": "사촌",
                   "neutral": "제3자"
                 },
@@ -1327,7 +1327,7 @@
                   "neutral": "문제 문구"
                 },
                 "person": {
-                  "fullName": "문숙희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -1366,7 +1366,7 @@
                   "neutral": "문제 문구"
                 },
                 "person": {
-                  "fullName": "문숙희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -1429,7 +1429,7 @@
                   "neutral": "문제 문구"
                 },
                 "person": {
-                  "fullName": "문숙희",
+                  "fullName": "문 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -1468,7 +1468,7 @@
                   "neutral": "문제 문구"
                 },
                 "person": {
-                  "fullName": "문숙희",
+                  "fullName": "문 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -3153,12 +3153,12 @@
                   "neutral": "그때"
                 },
                 "person": {
-                  "fullName": "문현우",
+                  "fullName": "그 사람",
                   "judgeRef": "현우",
                   "neutral": "상대방"
                 },
                 "mother": {
-                  "fullName": "문숙희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -3198,12 +3198,12 @@
                   "neutral": "그때"
                 },
                 "person": {
-                  "fullName": "문현우",
+                  "fullName": "그 사람",
                   "judgeRef": "현우",
                   "neutral": "상대방"
                 },
                 "mother": {
-                  "fullName": "문숙희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -3266,12 +3266,12 @@
                   "neutral": "그때"
                 },
                 "person": {
-                  "fullName": "문현우",
+                  "fullName": "문 씨",
                   "judgeRef": "현우",
                   "neutral": "상대방"
                 },
                 "mother": {
-                  "fullName": "문숙희",
+                  "fullName": "문 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -3311,12 +3311,12 @@
                   "neutral": "그때"
                 },
                 "person": {
-                  "fullName": "문현우",
+                  "fullName": "문 씨",
                   "judgeRef": "현우",
                   "neutral": "상대방"
                 },
                 "mother": {
-                  "fullName": "문숙희",
+                  "fullName": "문 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -3830,7 +3830,7 @@
                   "neutral": "비용 항목들"
                 },
                 "person": {
-                  "fullName": "한서준",
+                  "fullName": "그 사람",
                   "judgeRef": "사촌",
                   "neutral": "제3자"
                 },
@@ -3869,7 +3869,7 @@
                   "neutral": "비용 항목들"
                 },
                 "person": {
-                  "fullName": "한서준",
+                  "fullName": "그 사람",
                   "judgeRef": "사촌",
                   "neutral": "제3자"
                 },
@@ -3931,7 +3931,7 @@
                   "neutral": "비용 항목들"
                 },
                 "person": {
-                  "fullName": "한서준",
+                  "fullName": "한 씨",
                   "judgeRef": "사촌",
                   "neutral": "제3자"
                 },
@@ -3970,7 +3970,7 @@
                   "neutral": "비용 항목들"
                 },
                 "person": {
-                  "fullName": "한서준",
+                  "fullName": "한 씨",
                   "judgeRef": "사촌",
                   "neutral": "제3자"
                 },
@@ -4434,7 +4434,7 @@
                   "neutral": "문제 문구"
                 },
                 "person": {
-                  "fullName": "문숙희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -4473,7 +4473,7 @@
                   "neutral": "문제 문구"
                 },
                 "person": {
-                  "fullName": "문숙희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -4536,7 +4536,7 @@
                   "neutral": "문제 문구"
                 },
                 "person": {
-                  "fullName": "문숙희",
+                  "fullName": "문 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
@@ -4575,7 +4575,7 @@
                   "neutral": "문제 문구"
                 },
                 "person": {
-                  "fullName": "문숙희",
+                  "fullName": "문 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },

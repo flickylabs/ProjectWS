@@ -322,6 +322,8 @@
     {
       "id": "e-1",
       "name": "관리사무소 중재 합의서와 음성 확인 파일",
+      "surfaceName": "중재 합의서와 음성 확인 파일",
+      "surfaceDescription": "관리사무소 중재 합의서와 음성 확인 녹음 파일이다. 합의 내용과 당사자 확인이 필요하다.",
       "description": "'보전 후 잔액 1/2 분담, 200만 원 초과 시 재협의'가 적힌 서면 합의서와 7분 뒤 녹음된 58초 음성 확인 파일. 두 사람 서명이 모두 있다.",
       "type": "institutional_note",
       "reliability": "hard",
@@ -346,6 +348,8 @@
     {
       "id": "e-2",
       "name": "시공 전후 충격음 측정표와 현장 사진",
+      "surfaceName": "충격음 측정표와 현장 사진",
+      "surfaceDescription": "시공 전후 충격음 측정 기록과 현장 사진이다. 측정 조건과 결과 확인이 필요하다.",
       "description": "시공 전·바닥 보강 후·천장 패치 후 세 차례 측정한 충격음 데이터. 바닥 충격과 천장 공진이 동시에 소음을 키웠다는 구조가 드러난다.",
       "type": "inspection_report",
       "reliability": "hard",
@@ -371,6 +375,8 @@
     {
       "id": "e-3",
       "name": "최종 정산서와 추가 보전금 전표",
+      "surfaceName": "최종 정산서와 추가 보전금 전표",
+      "surfaceDescription": "최종 정산서와 추가 보전금 전표다. 금액 내역과 정산 경위 확인이 필요하다.",
       "description": "시공 총액에서 관리사무소 보전금 2회를 차감한 최종 잔여 184만 원이 찍힌 정산서. 사전 상한 200만 원 이내라는 숫자가 바로 보인다.",
       "type": "repair_record",
       "reliability": "hard",
@@ -395,6 +401,8 @@
     {
       "id": "e-4",
       "name": "지훈의 부분 송금 내역과 메시지",
+      "surfaceName": "부분 송금 내역과 메시지",
+      "surfaceDescription": "부분 송금 거래 내역과 관련 메시지다. 송금 시점과 사유 확인이 필요하다.",
       "description": "지훈이 30만 원을 보내며 '내 바닥 책임만 계산하면 이 정도'라고 쓴 메시지 캡처. 합의서 금액 92만 원과의 차이 62만 원이 그대로 보인다.",
       "type": "chat",
       "reliability": "soft",
@@ -430,6 +438,8 @@
     {
       "id": "e-5",
       "name": "윤태성 소장의 변경요청 체크리스트",
+      "surfaceName": "변경요청 체크리스트",
+      "surfaceDescription": "시공 소장의 변경 요청 체크리스트 문서다. 요청 항목과 처리 상태 확인이 필요하다.",
       "description": "연우의 서명이 들어간 천장 패치 추가 요청서. 자재비 11만 원 + 인건비 7만 원 = 18만 원 증액이 최종 계산서에 그대로 반영돼 있다.",
       "type": "document",
       "reliability": "hard",
@@ -452,11 +462,14 @@
         "check_edits": "종이문서 스캔본으로 합성 흔적 없음. 수정액·덧쓰기 흔적도 없다.",
         "question_acquisition": "당사자 요청 문서로 사용 가능하나, 연우 서명 이미지는 확인 용도 외 비공개 처리해야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "주민앱 게시글과 관리실 공지 예약 로그",
+      "surfaceName": "주민앱 게시글과 공지 예약 로그",
+      "surfaceDescription": "주민앱 게시글과 관리실 공지 예약 로그다. 게시 시점과 공지 내용 확인이 필요하다.",
       "description": "연우의 주민앱 불만 글 업로드 시각과 관리사무소 공지 예약 시각을 대조하면 연우가 14분 먼저 움직인 것이 보인다.",
       "type": "chat",
       "reliability": "soft",

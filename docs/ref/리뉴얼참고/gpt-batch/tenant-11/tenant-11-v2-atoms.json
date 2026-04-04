@@ -48,7 +48,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "그 사람",
                   "judgeRef": "임대인"
                 }
               },
@@ -85,7 +85,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "그 사람",
                   "judgeRef": "임대인"
                 }
               },
@@ -145,7 +145,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "오 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -182,7 +182,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "오 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -626,7 +626,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "그 사람",
                   "judgeRef": "임대인"
                 }
               },
@@ -659,7 +659,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "그 사람",
                   "judgeRef": "임대인"
                 }
               },
@@ -715,7 +715,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "오 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -748,7 +748,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "오 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -1123,7 +1123,7 @@
           "disputeId": "d-3",
           "state": "S0",
           "publicClaim": [
-            "430만원은 제가 실제로 쓴 돈이고, 다 이 집 때문에 나간 비용이에요.",
+            "해당 금액은 제가 실제로 쓴 돈이고, 다 이 집 때문에 나간 비용이에요.",
             "그걸 통째로 빼버리면 제가 본 손해가 사라져요."
           ],
           "privateKnowledge": [
@@ -1149,9 +1149,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "430만원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "430만 원"
+                  "rounded": "해당 금액"
                 },
                 "items": {
                   "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
@@ -1160,7 +1160,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "그 사람",
                   "judgeRef": "임대인"
                 }
               },
@@ -1182,9 +1182,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "430만원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "430만 원"
+                  "rounded": "해당 금액"
                 },
                 "items": {
                   "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
@@ -1193,7 +1193,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "그 사람",
                   "judgeRef": "임대인"
                 }
               },
@@ -1238,7 +1238,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "430만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 금액",
                   "rounded": "430만 원"
                 },
@@ -1249,7 +1249,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "오 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -1271,7 +1271,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "430만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 금액",
                   "rounded": "430만 원"
                 },
@@ -1282,7 +1282,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "오 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -1698,7 +1698,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "그 사람",
                   "judgeRef": "임대인"
                 }
               },
@@ -1735,7 +1735,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "그 사람",
                   "judgeRef": "임대인"
                 }
               },
@@ -1795,7 +1795,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "오 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -1832,7 +1832,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "오 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -2239,7 +2239,7 @@
           "disputeId": "d-5",
           "state": "S0",
           "publicClaim": [
-            "480만원 전액 청구는 과해요.",
+            "해당 금액 전액 청구는 과해요.",
             "남겨서 쓰는 조명과 페인트까지 다 뜯는 비용을 왜 제가 내야 하죠."
           ],
           "privateKnowledge": [
@@ -2265,9 +2265,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "480만원",
+                  "exact": "해당 금액",
                   "neutral": "그 청구액",
-                  "rounded": "480만 원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "퇴거 정산 시점",
@@ -2281,7 +2281,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "그 사람",
                   "judgeRef": "임대인"
                 }
               },
@@ -2303,9 +2303,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "480만원",
+                  "exact": "해당 금액",
                   "neutral": "그 청구액",
-                  "rounded": "480만 원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "퇴거 정산 시점",
@@ -2319,7 +2319,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "그 사람",
                   "judgeRef": "임대인"
                 }
               },
@@ -2364,7 +2364,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "480만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 청구액",
                   "rounded": "480만 원"
                 },
@@ -2380,7 +2380,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "오 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -2402,7 +2402,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "480만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 청구액",
                   "rounded": "480만 원"
                 },
@@ -2418,7 +2418,7 @@
                 "person": {
                   "exact": "오성필",
                   "neutral": "임대인",
-                  "fullName": "오성필",
+                  "fullName": "오 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -2876,7 +2876,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -2913,7 +2913,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -2973,7 +2973,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "백 씨",
                   "judgeRef": "세입자"
                 }
               },
@@ -3010,7 +3010,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "백 씨",
                   "judgeRef": "세입자"
                 }
               },
@@ -3454,7 +3454,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -3487,7 +3487,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -3543,7 +3543,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "백 씨",
                   "judgeRef": "세입자"
                 }
               },
@@ -3576,7 +3576,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "백 씨",
                   "judgeRef": "세입자"
                 }
               },
@@ -3951,7 +3951,7 @@
           "disputeId": "d-3",
           "state": "S0",
           "publicClaim": [
-            "430만원이라고 적어온 돈을 전부 집값 올린 비용으로 볼 수는 없어요.",
+            "해당 금액이라고 적어온 돈을 전부 집값 올린 비용으로 볼 수는 없어요.",
             "영수증이 많다고 전부 고정 개선은 아닙니다."
           ],
           "privateKnowledge": [
@@ -3977,9 +3977,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "430만원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "430만 원"
+                  "rounded": "해당 금액"
                 },
                 "items": {
                   "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
@@ -3988,7 +3988,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -4010,9 +4010,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "430만원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "430만 원"
+                  "rounded": "해당 금액"
                 },
                 "items": {
                   "exact": "이동식 거울장·중고 의자·촬영용 소품·지인 인건비",
@@ -4021,7 +4021,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -4066,7 +4066,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "430만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 금액",
                   "rounded": "430만 원"
                 },
@@ -4077,7 +4077,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "백 씨",
                   "judgeRef": "세입자"
                 }
               },
@@ -4099,7 +4099,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "430만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 금액",
                   "rounded": "430만 원"
                 },
@@ -4110,7 +4110,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "백 씨",
                   "judgeRef": "세입자"
                 }
               },
@@ -4526,7 +4526,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -4563,7 +4563,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -4623,7 +4623,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "백 씨",
                   "judgeRef": "세입자"
                 }
               },
@@ -4660,7 +4660,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "백 씨",
                   "judgeRef": "세입자"
                 }
               },
@@ -5067,7 +5067,7 @@
           "disputeId": "d-5",
           "state": "S0",
           "publicClaim": [
-            "원상복구는 원상복구예요. 원래대로 돌리려면 480만원이 듭니다.",
+            "원상복구는 원상복구예요. 원래대로 돌리려면 해당 금액이 듭니다.",
             "집주인 입장에선 전면 정리가 맞아요."
           ],
           "privateKnowledge": [
@@ -5093,9 +5093,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "480만원",
+                  "exact": "해당 금액",
                   "neutral": "그 청구액",
-                  "rounded": "480만 원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "퇴거 정산 시점",
@@ -5109,7 +5109,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -5131,9 +5131,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "480만원",
+                  "exact": "해당 금액",
                   "neutral": "그 청구액",
-                  "rounded": "480만 원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "퇴거 정산 시점",
@@ -5147,7 +5147,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -5192,7 +5192,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "480만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 청구액",
                   "rounded": "480만 원"
                 },
@@ -5208,7 +5208,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "백 씨",
                   "judgeRef": "세입자"
                 }
               },
@@ -5230,7 +5230,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "480만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 청구액",
                   "rounded": "480만 원"
                 },
@@ -5246,7 +5246,7 @@
                 "person": {
                   "exact": "백나래",
                   "neutral": "세입자",
-                  "fullName": "백나래",
+                  "fullName": "백 씨",
                   "judgeRef": "세입자"
                 }
               },
@@ -5659,4 +5659,3 @@
     }
   }
 }
-

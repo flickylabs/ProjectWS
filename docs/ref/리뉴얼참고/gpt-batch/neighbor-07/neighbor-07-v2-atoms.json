@@ -111,7 +111,7 @@
                 "person": {
                   "exact": "윤가영",
                   "neutral": "그 사람",
-                  "fullName": "윤가영",
+                  "fullName": "윤 씨",
                   "judgeRef": "전 세입자"
                 },
                 "marker": {
@@ -503,7 +503,7 @@
                 "person": {
                   "exact": "권성호",
                   "neutral": "그 사람",
-                  "fullName": "권성호",
+                  "fullName": "권성호 씨",
                   "judgeRef": "권성호 씨"
                 },
                 "padlock": {
@@ -615,7 +615,7 @@
                 "person": {
                   "exact": "권성호",
                   "neutral": "그 사람",
-                  "fullName": "권성호",
+                  "fullName": "권 씨",
                   "judgeRef": "권성호 씨"
                 }
               },
@@ -975,7 +975,7 @@
                 "person": {
                   "exact": "윤가영",
                   "neutral": "그 사람",
-                  "fullName": "윤가영",
+                  "fullName": "전 세입자",
                   "judgeRef": "전 세입자"
                 }
               },
@@ -1072,7 +1072,7 @@
                 "person": {
                   "exact": "권성호",
                   "neutral": "그 사람",
-                  "fullName": "권성호",
+                  "fullName": "권 씨",
                   "judgeRef": "권성호 씨"
                 },
                 "place": {
@@ -1501,7 +1501,7 @@
                 "person": {
                   "exact": "윤가영",
                   "neutral": "그 사람",
-                  "fullName": "윤가영",
+                  "fullName": "윤 씨",
                   "judgeRef": "전 세입자"
                 },
                 "marker": {
@@ -2355,7 +2355,7 @@
                 "person": {
                   "exact": "박나리",
                   "neutral": "그 사람",
-                  "fullName": "박나리",
+                  "fullName": "박나리 씨",
                   "judgeRef": "박나리 씨"
                 },
                 "key": {
@@ -2436,7 +2436,7 @@
                 "person": {
                   "exact": "박나리",
                   "neutral": "그 사람",
-                  "fullName": "박나리",
+                  "fullName": "박 씨",
                   "judgeRef": "박나리 씨"
                 },
                 "time": {
@@ -2923,7 +2923,7 @@
                 "person": {
                   "exact": "박나리",
                   "neutral": "그 사람",
-                  "fullName": "박나리",
+                  "fullName": "박 씨",
                   "judgeRef": "박나리 씨"
                 }
               },
@@ -3327,7 +3327,7 @@
                 "person": {
                   "exact": "윤가영",
                   "neutral": "그 사람",
-                  "fullName": "윤가영",
+                  "fullName": "전 세입자",
                   "judgeRef": "전 세입자"
                 },
                 "place": {
@@ -3378,7 +3378,7 @@
                 "person": {
                   "exact": "윤가영",
                   "neutral": "그 사람",
-                  "fullName": "윤가영",
+                  "fullName": "윤 씨",
                   "judgeRef": "전 세입자"
                 },
                 "place": {
@@ -3791,7 +3791,7 @@
                 "person": {
                   "exact": "윤가영",
                   "neutral": "그 사람",
-                  "fullName": "윤가영",
+                  "fullName": "전 세입자",
                   "judgeRef": "전 세입자"
                 },
                 "marker": {

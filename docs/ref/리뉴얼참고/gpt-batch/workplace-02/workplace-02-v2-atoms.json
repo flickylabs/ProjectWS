@@ -34,7 +34,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "audit_before": {
@@ -63,7 +63,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "audit_before": {
@@ -105,7 +105,7 @@
           "claimAtoms": [
             {
               "id": "workplace-02:a:d-1:uncertainty:2",
-              "factText": "특정인 지목 없이 접근을 잠시 묶었다는 해명",
+              "factText": "그 사람 지목 없이 접근을 잠시 묶었다는 해명",
               "tags": [
                 "uncertainty",
                 "act"
@@ -114,7 +114,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 },
                 "team_notice": {
@@ -142,7 +142,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 },
                 "team_notice": {
@@ -539,7 +539,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "drive": {
@@ -571,7 +571,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "drive": {
@@ -1041,7 +1041,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "drive": {
@@ -1073,7 +1073,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "drive": {
@@ -1126,7 +1126,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 },
                 "audit_before": {
@@ -1155,7 +1155,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 },
                 "audit_before": {
@@ -1561,7 +1561,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "verbal_only": {
@@ -1594,7 +1594,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "verbal_only": {
@@ -1656,7 +1656,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -1688,7 +1688,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -2083,7 +2083,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "team_notice": {
@@ -2115,7 +2115,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "team_notice": {
@@ -2138,7 +2138,7 @@
           "disputeId": "d-5",
           "state": "S1",
           "publicClaim": [
-            "공지 문구가 거칠었다는 건 인정하지만, 특정인을 찍어 돌리려던 건 아닙니다."
+            "공지 문구가 거칠었다는 건 인정하지만, 그 사람을 찍어 돌리려던 건 아닙니다."
           ],
           "privateKnowledge": [
             "이름은 안 썼어도 대상을 알 수 있게 만들었다."
@@ -2168,7 +2168,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -2196,7 +2196,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -2592,7 +2592,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -2625,7 +2625,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -2674,13 +2674,13 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 },
                 "gyuwon": {
                   "exact": "한규원",
                   "neutral": "그 상사",
-                  "fullName": "한규원",
+                  "fullName": "한 씨",
                   "judgeRef": "규원 씨"
                 }
               },
@@ -2708,13 +2708,13 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 },
                 "gyuwon": {
                   "exact": "한규원",
                   "neutral": "그 상사",
-                  "fullName": "한규원",
+                  "fullName": "한 씨",
                   "judgeRef": "규원 씨"
                 }
               },
@@ -3582,13 +3582,13 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "gyuwon": {
                   "exact": "한규원",
                   "neutral": "그 상사",
-                  "fullName": "한규원",
+                  "fullName": "규원 씨",
                   "judgeRef": "규원 씨"
                 }
               },
@@ -3612,13 +3612,13 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 },
                 "gyuwon": {
                   "exact": "한규원",
                   "neutral": "그 상사",
-                  "fullName": "한규원",
+                  "fullName": "규원 씨",
                   "judgeRef": "규원 씨"
                 }
               },
@@ -3672,7 +3672,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -3705,7 +3705,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -4090,13 +4090,13 @@
                 "gyuwon": {
                   "exact": "한규원",
                   "neutral": "그 상사",
-                  "fullName": "한규원",
+                  "fullName": "규원 씨",
                   "judgeRef": "규원 씨"
                 },
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -4124,13 +4124,13 @@
                 "gyuwon": {
                   "exact": "한규원",
                   "neutral": "그 상사",
-                  "fullName": "한규원",
+                  "fullName": "규원 씨",
                   "judgeRef": "규원 씨"
                 },
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -4179,13 +4179,13 @@
                 "gyuwon": {
                   "exact": "한규원",
                   "neutral": "그 상사",
-                  "fullName": "한규원",
+                  "fullName": "한 씨",
                   "judgeRef": "규원 씨"
                 },
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -4213,13 +4213,13 @@
                 "gyuwon": {
                   "exact": "한규원",
                   "neutral": "그 상사",
-                  "fullName": "한규원",
+                  "fullName": "한 씨",
                   "judgeRef": "규원 씨"
                 },
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "조 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -4610,7 +4610,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -4642,7 +4642,7 @@
                 "mina": {
                   "exact": "조민아",
                   "neutral": "그 직원",
-                  "fullName": "조민아",
+                  "fullName": "민아 씨",
                   "judgeRef": "민아 씨"
                 }
               },
@@ -4691,7 +4691,7 @@
                 "gyuwon": {
                   "exact": "한규원",
                   "neutral": "그 상사",
-                  "fullName": "한규원",
+                  "fullName": "한 씨",
                   "judgeRef": "규원 씨"
                 }
               },
@@ -4719,7 +4719,7 @@
                 "gyuwon": {
                   "exact": "한규원",
                   "neutral": "그 상사",
-                  "fullName": "한규원",
+                  "fullName": "한 씨",
                   "judgeRef": "규원 씨"
                 }
               },
@@ -5068,4 +5068,3 @@
     }
   }
 }
-

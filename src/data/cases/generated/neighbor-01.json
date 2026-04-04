@@ -321,6 +321,8 @@
     {
       "id": "e-1",
       "name": "한결의 새벽 복도 촬영 영상 캡처",
+      "surfaceName": "새벽 복도 촬영 영상 캡처",
+      "surfaceDescription": "새벽 시간대 복도에서 촬영된 영상의 캡처 이미지다. 촬영 시점과 상황 확인이 필요하다.",
       "description": "504호 현관 앞 제습기와 둔탁한 소리가 담긴 43초 영상. 단, 촬영 전후 5분은 잘려 있고 복도 반대편 기사 동선은 화면 밖이다.",
       "type": "video",
       "reliability": "soft",
@@ -351,11 +353,39 @@
           "questionAngle": "이주연에게: \"새벽 소음의 정체: 발망치 vs 기사 출입\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 이주연의 \"새벽 소음의 정체: 발망치 vs 기사 출입\" 쟁점과 관련된다. 이주연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "새벽 시간대에 공용 복도에서 영상을 촬영한 사실이 있습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "촬영 시각이 7월 12일 새벽 0시 48분으로 확인됩니다. 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 영상의 화각이 특정 방향만 담고 있는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "관리사무소 4라인 누수 점검 보고서",
+      "surfaceName": "누수 점검 보고서",
+      "surfaceDescription": "관리사무소에서 작성한 누수 점검 보고서다. 점검 범위와 결과 확인이 필요하다.",
       "description": "4라인 누수 원인을 '공용 우수관 낙엽 막힘 + 외벽 실리콘 틈'으로 특정한 시설주임 보고서. 세대 배수 경로와는 별개 원인임을 보여준다.",
       "type": "inspection_report",
       "reliability": "hard",
@@ -377,11 +407,40 @@
         "check_edits": "관리사무소 전산 직출력본. PDF 메타데이터상 수정 이력 0건.",
         "question_acquisition": "관리사무소 공식 자료로 절차 적법. 단, 타 세대 위치 정보는 마스킹 후 공개 원칙."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "관리사무소의 4라인 누수 점검 보고서의 존재를 알고 계셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 보고서가 단체방 분쟁 다음 날 작성된 점에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "보고서상 4라인 외벽 코너 여러 곳에서 같은 현상이 반복됩니다. 이에 대해 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "공용복도 CCTV와 야간 기사 출입대장",
+      "surfaceName": "공용복도 CCTV와 출입대장",
+      "surfaceDescription": "공용복도 CCTV 영상과 야간 기사 출입대장이다. 촬영 시간대와 출입 기록 확인이 필요하다.",
       "description": "주연의 복도 적치 장면과 23시 58분 점검 기사 출입이 모두 담긴 CCTV 12분 영상 + 경비실 출입대장. 소음 원인을 특정하는 핵심 자료.",
       "type": "cctv",
       "reliability": "soft",
@@ -402,11 +461,39 @@
         "check_edits": "NVR 원본 저장본으로 프레임 연속성 유지. 편집·삭제 흔적 없음.",
         "question_acquisition": "공용시설 CCTV로 적법 확보. 제3자 얼굴 마스킹 후 활용 가능."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "그 야간 시간대에 점검 기사가 출입한 사실을 알고 계셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "CCTV와 출입기록의 시각이 47초 이내로 일치합니다. 이 점에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "영상에 기사가 공구 가방을 들고 있는 장면이 있습니다. 방문 목적을 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "옥상 우수관 막힘 사진과 긴급 보수 영수증",
+      "surfaceName": "옥상 배관 사진과 긴급 보수 영수증",
+      "surfaceDescription": "옥상 배관 막힘 현장 사진과 긴급 보수 영수증이다. 보수 시점과 비용 확인이 필요하다.",
       "description": "옥상 배수구에 낙엽·흙이 뭉친 현장 사진과 외벽 실리콘 재시공 영수증. 누수가 건물 하자임을 물증으로 보여주지만 세대 과실 유무까지는 증명 못 한다.",
       "type": "repair_record",
       "reliability": "hard",
@@ -428,11 +515,40 @@
         "check_edits": "사진 EXIF GPS·시각과 영수증 원본 대조 완료. 조작·보정 흔적 없음.",
         "question_acquisition": "건물 공용부 보수 자료로 제출 적법. 개인정보 포함 없어 제한 사항 없음."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "옥상 배관 사진과 긴급 보수 기록이 있습니다. 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 사진이 누수 보고서 작성 직전 새벽에 촬영된 점에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "사진에 보이는 막힘 지점에 대해 알고 계신 바를 말씀하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "관리사무소 민원 접수기록과 주연 문자",
+      "surfaceName": "민원 접수기록과 문자 내역",
+      "surfaceDescription": "관리사무소 민원 접수 기록과 관련 문자 내역이다. 접수 시점과 처리 경과 확인이 필요하다.",
       "description": "주연의 베란다 누수 문의, 한결의 단체방 호수 지목 글, 31시간 뒤 주연이 보낸 문자가 시간순으로 묶인 민원 로그. 양측 통보 지연을 대조할 수 있다.",
       "type": "complaint_log",
       "reliability": "hard",
@@ -463,11 +579,39 @@
           "questionAngle": "이주연에게: \"복도 적치와 31시간 늦은 공지\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 이주연의 \"복도 적치와 31시간 늦은 공지\" 쟁점과 관련된다. 이주연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "관리사무소에 누수 관련 민원을 접수한 사실이 있습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "아래층에 직접 알린 시점이 민원 접수보다 31시간 늦습니다. 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "누수를 인지한 시점과 아래층에 알린 시점 사이에 차이가 있는 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "아파트 단체방 캡처와 삭제 요청 메시지",
+      "surfaceName": "단체방 캡처 묶음",
+      "surfaceDescription": "아파트 단체 채팅방 캡처와 삭제 요청 메시지다. 게시 맥락과 삭제 경위 확인이 필요하다.",
       "description": "한결이 '504호에서 또 내려온다'고 올린 글과 이튿날 삭제·사과 요청이 오간 단체방 캡처. 호수 지목 비난의 직접 증거이나 크롭돼 있다.",
       "type": "chat",
       "reliability": "soft",
@@ -497,7 +641,33 @@
           "questionAngle": "이주연에게: \"선통보 약속 쌍방 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 이주연의 \"선통보 약속 쌍방 위반\" 쟁점과 관련된다. 이주연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "아파트 단체방에 특정 호수를 언급한 글을 올린 사실이 있습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 게시가 야간 점검 직후인 새벽 1시에 올라간 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "게시글에서 누수와 소음을 하나로 묶어 표현한 의도를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

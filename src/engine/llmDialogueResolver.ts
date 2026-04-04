@@ -5,7 +5,7 @@
  *
  * 프롬프트는 웹 어드민(promptManager)에서 관리한다.
  */
-import { chatCompletion } from './llmClient'
+import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded, getContextFlags } from '../api/agentManager'
 import { getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
@@ -160,9 +160,48 @@ export async function resolveLLMDialogue(
   const rawSystemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey, investigationResult, interrogationDepth)
   const systemPrompt = rawSystemPrompt + crossDisputeInfo
   const contractResponseMode = (() => { try { return (JSON.parse(actionContract) as { responseMode?: string }).responseMode ?? 'answer_only' } catch { return 'answer_only' } })()
-  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode, target, caseData, interrogationDepth, lastOpponentLine, mentionedTruthIds)
+  let userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode, target, caseData, interrogationDepth, lastOpponentLine, mentionedTruthIds)
+
+  // 사건카드 질문 오버라이드: 재판관 질문이 이미 정해져 있으면 LLM에 직접 전달
+  const { consumeDossierQuestionOverride } = await import('../hooks/useActionDispatch')
+  const dossierRaw = consumeDossierQuestionOverride()
+  if (dossierRaw) {
+    const myName = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+    const opName = target === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
+
+    let dossierDirective = ''
+    try {
+      const ctx = JSON.parse(dossierRaw)
+      dossierDirective = `\n\n★★★ 사건카드 질문 모드 (최우선 — 아래 지시에만 따르라) ★★★`
+      dossierDirective += `\n\n사건카드: "${ctx.cardName}"`
+      dossierDirective += `\n카드 설명: ${ctx.cardDescription}`
+      dossierDirective += `\n공격 벡터: ${ctx.attackVector}`
+      dossierDirective += `\n\n관련 증거:\n${ctx.evidenceDetails}`
+      dossierDirective += `\n\n재판관 질문 (이미 화면에 출력됨):\n"${ctx.questionText}"`
+      dossierDirective += `\n\n★ 응답 규칙:`
+      dossierDirective += `\n- 당신은 ${myName}이다.`
+      dossierDirective += `\n- 위 증거의 구체적 내용(이름, 금액, 장소, 시간)을 반드시 언급하며 답하라.`
+      dossierDirective += `\n- 위 질문이 당신의 행동에 대한 것이면 해명/변명/인정하라.`
+      dossierDirective += `\n- 위 질문이 ${opName}의 행동에 대한 것이면 당신이 아는 바/느낀 바를 답하라. ${opName}인 것처럼 답하지 마라.`
+      dossierDirective += `\n- 두루뭉술하게 답하지 마라. 증거에 언급된 구체적 사실에 대해 답하라.`
+      dossierDirective += `\n- judgeQuestion 필드는 비워라 (이미 추가됨).`
+    } catch {
+      // JSON 파싱 실패 시 원본 텍스트 사용
+      dossierDirective = `\n\n★ 사건카드 질문 (재판관이 이미 물었음):\n"${dossierRaw}"\n- 당신은 ${myName}이다. ${opName}처럼 답하지 마라.\n- judgeQuestion 필드는 비워라.`
+    }
+
+    userPrompt += dossierDirective
+  }
 
   const config = isAgentLoaded() ? getAgentConfig(agentKey) : getPromptConfig('interrogation_system')
+
+  // ── 프롬프트 디버깅 로그 ──
+  console.group(`[LLM Prompt Debug] target=${target}, dispute=${disputeId ?? 'none'}, action=${action.type}`)
+  console.log('[SYSTEM PROMPT]', systemPrompt.slice(0, 500), systemPrompt.length > 500 ? `... (총 ${systemPrompt.length}자)` : '')
+  console.log('[USER PROMPT]', userPrompt.slice(0, 500), userPrompt.length > 500 ? `... (총 ${userPrompt.length}자)` : '')
+  console.log('[knownFacts 포함 여부]', systemPrompt.includes('참고할 수 있는 사실') || systemPrompt.includes('기본 사실') ? 'YES' : 'NO')
+  console.log('[사건 배경 포함 여부]', systemPrompt.includes('사건 배경') ? 'YES' : 'NO')
+  console.groupEnd()
 
   try {
     const response = await chatCompletion(
@@ -170,7 +209,7 @@ export async function resolveLLMDialogue(
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
       ],
-      { temperature: config.temperature, maxTokens: config.maxTokens },
+      { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
     )
 
     if (!response.trim()) throw new Error('Empty response')
@@ -315,8 +354,18 @@ function buildSystemPrompt(
       }
     }
   } else {
-    // allowedTruthIds가 비어있으면 (S0~S1) → 사실을 아예 안 줌
-    // NPC는 자기가 아는 범위에서만 답변 (truthDescription 없이)
+    // allowedTruthIds가 비어있어도 (S0~S1), both_know quadrant의 기본 사실은 제공
+    // NPC가 사건의 기본 맥락은 알아야 일관된 답변이 가능
+    const bothKnowFacts = caseData.truthTable
+      .filter(t => t.quadrant === 'both_know')
+      .slice(0, 3)
+    if (bothKnowFacts.length > 0) {
+      knownFacts = `\n양측 모두 알고 있는 기본 사실 (참고용):`
+      for (const f of bothKnowFacts) {
+        knownFacts += `\n- ${f.fact}`
+      }
+      knownFacts += `\n★ 위 사실만 참고하고, 아직 밝혀지지 않은 진실은 스스로 꺼내지 마세요.`
+    }
   }
 
   // 쟁점 + 거짓말 상태
@@ -360,15 +409,30 @@ function buildSystemPrompt(
       const motiveLabel = motiveHints[myLieConfig?.lieMotive ?? ''] ?? ''
 
       if (lieEntry.currentState <= 'S1') {
-        // S0~S1: 쟁점의 핵심만 알려주되, 진실 내용은 숨김
-        // NPC는 "무엇에 대해 의심받고 있는지"는 알지만 "진짜 뭘 했는지"는 프롬프트에 없음
-        return `상대방이 "${dispute.name}" 건에 대해 당신을 추궁하고 있다.\n당신은 이 사안의 핵심을 부정하는 입장이다.${motiveLabel ? `\n숨기려는 이유: ${motiveLabel}` : ''}\n★ 진실을 모르는 것처럼 행동하세요. 구체적 사실을 스스로 꺼내지 마세요.`
+        // S0~S1: 쟁점의 핵심 + NPC의 "주장 버전"을 알려줘서 일관된 부정이 가능하도록
+        // truthDescription은 여전히 숨기되, judgmentStatement + 배경은 제공
+        const meName = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+        const opponentName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
+        // lieType에 기반한 NPC의 주장 버전 생성
+        const claimVersion: Record<string, string> = {
+          'LT-1': `당신은 "${dispute.name}"에 대해 그런 일 자체가 없었다고 주장한다.`,
+          'LT-2': `당신은 "${dispute.name}"이 있었지만 대수롭지 않은 일이었다고 주장한다.`,
+          'LT-3': `당신은 "${dispute.name}"에 대해 상대방이 먼저 원인을 제공했다고 주장한다.`,
+          'LT-4': `당신은 "${dispute.name}"에 대해 잘 기억나지 않는다고 주장한다.`,
+          'LT-5': `당신은 "${dispute.name}"보다 더 중요한 문제가 있다고 주장한다.`,
+          'LT-6': `당신은 "${dispute.name}"에 대해 당시 사정이 있었다며 동정을 유도한다.`,
+          'LT-7': `당신은 "${dispute.name}"에 대해 상대방이야말로 문제라며 역공한다.`,
+        }
+        const myClaimLine = claimVersion[myLieConfig?.lieType ?? ''] ?? `당신은 이 사안의 핵심을 부정하는 입장이다.`
+        return `## 사건 배경\n${caseData.context.description}\n당신은 ${meName}이고, 상대방은 ${opponentName}이다.\n\n## 현재 쟁점: "${dispute.name}"\n상대방의 주장: "${dispute.judgmentStatement ?? dispute.name}"\n${myClaimLine}${motiveLabel ? `\n숨기려는 이유: ${motiveLabel}` : ''}\n\n★ 진실을 모르는 것처럼 행동하세요. 구체적 사실을 스스로 꺼내지 마세요.\n★ 질문에 대해 위의 주장 입장에서 일관되게 답하세요.`
       } else if (lieEntry.currentState <= 'S3') {
-        // S2~S3: 일부 드러남 — "무언가 있긴 했다"는 인정하되 핵심은 왜곡
-        return `"${dispute.name}" 건에 대해 압박을 받고 있다. 일부 사실이 드러나고 있다.\n당신은 행위 자체는 부분적으로 인정하지만, 의도나 맥락은 다르게 설명하는 입장이다.${motiveLabel ? `\n방어 동기: ${motiveLabel}` : ''}`
+        // S2~S3: 일부 드러남 — 행위 인정하되 의도/맥락은 다르게 설명
+        const bgLine = `## 사건 배경\n${caseData.context.description}\n`
+        return `${bgLine}"${dispute.name}" 건에 대해 압박을 받고 있다. 일부 사실이 드러나고 있다.\n상대방의 주장: "${dispute.judgmentStatement ?? dispute.name}"\n당신은 행위 자체는 부분적으로 인정하지만, 의도나 맥락은 다르게 설명하는 입장이다.${motiveLabel ? `\n방어 동기: ${motiveLabel}` : ''}`
       } else if (lieEntry.currentState === 'S4') {
         // S4: 거의 무너짐 — 감정적 호소
-        return `"${dispute.name}" 건에 대해 거의 모든 것이 드러났다. 더 이상 논리적 부정이 어렵다.\n감정에 기대어 자신의 사정을 호소하는 상태다.${motiveLabel ? `\n핵심 감정: ${motiveLabel}` : ''}`
+        const bgLine = `## 사건 배경\n${caseData.context.description}\n`
+        return `${bgLine}"${dispute.name}" 건에 대해 거의 모든 것이 드러났다. 더 이상 논리적 부정이 어렵다.\n감정에 기대어 자신의 사정을 호소하는 상태다.${motiveLabel ? `\n핵심 감정: ${motiveLabel}` : ''}`
       }
       // S5: 전체 공개
       return `당신은 "${dispute.name}" 건의 진실을 인정한 상태다.\n사실: ${dispute.truthDescription}`
@@ -449,8 +513,15 @@ function buildSystemPrompt(
   if (presentedEvidence.length > 0) {
     evidenceInfo = `\n## 이미 제시된 증거`
     for (const ev of presentedEvidence) {
-      evidenceInfo += `\n- ${ev.name}: ${ev.description.slice(0, 60)}`
+      evidenceInfo += `\n- ${ev.name}: ${ev.description}`
+      // 증거의 주체(subjectParty)와 출처(provenance) 정보 추가
+      if (ev.subjectParty) {
+        const subjectName = ev.subjectParty === 'a' ? caseData.duo.partyA.name
+          : ev.subjectParty === 'b' ? caseData.duo.partyB.name : '양측'
+        evidenceInfo += ` (관련 당사자: ${subjectName})`
+      }
     }
+    evidenceInfo += `\n이 증거들의 구체적 내용(이름, 금액, 날짜, 장소)을 기억하고 그에 맞게 대응하세요.`
     evidenceInfo += `\n부정하기 어려운 증거가 있다면 그에 맞게 대응을 바꾸세요.`
   }
 
@@ -847,7 +918,8 @@ function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string
     if (!text || text.length < 3) return fallback
 
     // 후처리: 재판관에게 반말 → 존댓말 강제 변환 + 호칭 오용 수정
-    const polished = enforceHonorifics(fixMisdirectedAddress(text))
+    const partyNames = { nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name }
+    const polished = enforceHonorifics(fixMisdirectedAddress(text, partyNames))
 
     return {
       npcNode: {
@@ -873,8 +945,13 @@ function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string
  * 재판관에게 답하면서 상대 호칭으로 시작하는 오류 수정.
  * @public — llmFreeQuestion.ts에서도 사용
  * "자기야, ~" → "재판관님, ~" 등
+ *
+ * partyNames를 넘기면 "세린아," / "지석아," 같은 이름 직접 호칭도 교정한다.
  */
-export function fixMisdirectedAddress(text: string): string {
+export function fixMisdirectedAddress(
+  text: string,
+  partyNames?: { nameA: string; nameB: string },
+): string {
   // 상대방 호칭으로 문장이 시작하는 패턴을 재판관님으로 교체
   const partnerAddresses = [
     '자기야,', '자기야 ', '자기,', '자기 ',
@@ -891,12 +968,37 @@ export function fixMisdirectedAddress(text: string): string {
     // 문장 중간에서도 "자기야," 등을 제거
     result = result.replace(new RegExp(`\\. ${addr.replace(',', ',')}`, 'g'), '. 재판관님, ')
   }
+  result = result.replace(/네가\s/g, '상대방이 ')
+  result = result.replace(/니가\s/g, '상대방이 ')
+
+  // ── 이름 직접 호칭 교정 ("세린아,", "지석아," 등) ──
+  // Thread E에서 "이름직접호칭 WARN 5건" 보고됨
+  if (partyNames) {
+    const names = [partyNames.nameA, partyNames.nameB].filter(Boolean)
+    for (const name of names) {
+      // "이름아," / "이름아 " (호격 조사) → "상대방이" or 제거
+      const vocativeComma = new RegExp(`${name}아[,]\\s*`, 'g')
+      const vocativeSpace = new RegExp(`${name}아\\s`, 'g')
+      const vocativeYa = new RegExp(`${name}야[,]?\\s*`, 'g')
+      result = result.replace(vocativeComma, '')
+      result = result.replace(vocativeSpace, '')
+      result = result.replace(vocativeYa, '')
+      // 문장 시작이 이름 호칭으로 시작해서 빈 문자열이 된 경우 정리
+      result = result.replace(/^[,\s]+/, '')
+    }
+  }
+
   return result
 }
 
 /**
  * 반말 문장 끝을 존댓말로 강제 변환.
  * 재판관에게 답하는 NPC 대사에서 반말이 섞이는 문제를 후처리로 해결.
+ *
+ * TODO: beatType='emotional' | 'confession' 일 때는 변환을 약하게 적용하거나
+ * 스킵하는 옵션 필요. 감정 폭발/고백 장면에서 "했어…" → "했습니다…" 변환은
+ * 캐릭터 몰입을 깨뜨릴 수 있다. resolveLLMDialogue()가 beatType을 받도록
+ * 확장한 뒤, enforceHonorifics(text, { skipForBeat?: string }) 형태로 개선할 것.
  */
 export function enforceHonorifics(text: string): string {
   // 문장 단위로 분리 (마침표, 물음표, 느낌표 기준)
@@ -905,7 +1007,7 @@ export function enforceHonorifics(text: string): string {
     if (!trimmed) return sentence
 
     // 이미 존댓말이면 스킵
-    if (/(?:습니다|입니다|습니까|세요|에요|해요|인가요|나요|던가요|을까요|겠습니다|드립니다|합니다|됩니다|봅니다|싶습니다|같습니다|있습니다|없습니다|았습니다|었습니다|겠어요|줄게요|할게요)[.?!…]*$/.test(trimmed)) {
+    if (/(?:습니다|입니다|습니까|인가요|나요|던가요|을까요|겠습니다|드립니다|합니다|됩니다|봅니다|싶습니다|같습니다|있습니다|없습니다|았습니다|었습니다)[.?!…]*$/.test(trimmed)) {
       return sentence
     }
 
@@ -939,6 +1041,34 @@ export function enforceHonorifics(text: string): string {
       [/보냈어([.…]*)$/, '보냈습니다$1'],
       [/받았어([.…]*)$/, '받았습니다$1'],
       [/냈어([.…]*)$/, '냈습니다$1'],
+      // 해요체 → 합니다체 변환
+      [/에요([.?!…]*)$/, '입니다$1'],
+      [/해요([.?!…]*)$/, '합니다$1'],
+      // 세요는 이미 존댓말(해요체)이므로 변환하지 않음 — 십시오는 과도하게 딱딱함
+      // [/세요([.?!…]*)$/, '십시오$1'],  // REMOVED: 캐릭터성 파괴
+      [/겠어요([.?!…]*)$/, '겠습니다$1'],
+      [/줄게요([.?!…]*)$/, '주겠습니다$1'],
+      [/할게요([.?!…]*)$/, '하겠습니다$1'],
+      [/볼게요([.?!…]*)$/, '보겠습니다$1'],
+      [/드릴게요([.?!…]*)$/, '드리겠습니다$1'],
+      [/어때요([.?!…]*)$/, '어떨까요$1'],
+      [/거예요([.?!…]*)$/, '겁니다$1'],
+      [/했어요([.?!…]*)$/, '했습니다$1'],
+      [/없어요([.?!…]*)$/, '없습니다$1'],
+      [/있어요([.?!…]*)$/, '있습니다$1'],
+      [/같아요([.?!…]*)$/, '같습니다$1'],
+      [/왔어요([.?!…]*)$/, '왔습니다$1'],
+      [/됐어요([.?!…]*)$/, '됐습니다$1'],
+      [/봤어요([.?!…]*)$/, '봤습니다$1'],
+      [/줬어요([.?!…]*)$/, '줬습니다$1'],
+      [/갔어요([.?!…]*)$/, '갔습니다$1'],
+      [/냈어요([.?!…]*)$/, '냈습니다$1'],
+      [/받았어요([.?!…]*)$/, '받았습니다$1'],
+      [/보냈어요([.?!…]*)$/, '보냈습니다$1'],
+      [/맞아요([.?!…]*)$/, '맞습니다$1'],
+      [/몰라요([.?!…]*)$/, '모릅니다$1'],
+      [/알아요([.?!…]*)$/, '압니다$1'],
+      [/그래요([.?!…]*)$/, '그렇습니다$1'],
       // 평서문 — ~지/~든/~데 종결
       [/했지([.…]*)$/, '했죠$1'],
       [/거든([.…]*)$/, '거든요$1'],
@@ -954,8 +1084,8 @@ export function enforceHonorifics(text: string): string {
       [/없어\?$/, '없습니까?'],
       [/있어\?$/, '있습니까?'],
       [/맞아\?$/, '맞습니까?'],
-      [/뭐야\?$/, '뭡니까?'],
-      [/왜야\?$/, '왜입니까?'],
+      [/뭐야\?$/, '뭔가요?'],
+      [/왜야\?$/, '왜인가요?'],
       [/인가\?$/, '인가요?'],
       [/알아\?$/, '압니까?'],
       [/했지\?$/, '했죠?'],
@@ -964,6 +1094,8 @@ export function enforceHonorifics(text: string): string {
       [/잖아!$/, '잖아요!'],
       [/거야!$/, '겁니다!'],
       [/했어!$/, '했습니다!'],
+      // "같아서" 문장 종결 — 문장 끝에서만 변환
+      [/같아서([.?!…]*)$/, '같았습니다$1'],
     ]
 
     let result = trimmed
@@ -1391,7 +1523,7 @@ async function tryBlueprintPath(
       currentLieState: lieEntry.currentState,
     })
     systemPrompt = buildBlueprintSystemPromptV2(
-      blueprint, normalizedPolicy, atomPlan, caseData, target, recentDialogues,
+      blueprint, normalizedPolicy, atomPlan, caseData, target, recentDialogues, lieEntry.currentState,
     )
     userPrompt = buildBlueprintUserPromptV2(blueprint, judgeQuestion)
     console.log(`[Blueprint V2] atom 경로: ${atomPlan.selectedAtoms.map(a => a.atomId).join(', ')}`)
@@ -1400,12 +1532,18 @@ async function tryBlueprintPath(
   } else {
     // Legacy V1 경로
     systemPrompt = buildBlueprintSystemPrompt(
-      blueprint, claimPolicy, caseData, target, recentDialogues, questionType,
+      blueprint, claimPolicy, caseData, target, recentDialogues, questionType, lieEntry.currentState,
     )
     userPrompt = buildBlueprintUserPrompt(blueprint, judgeQuestion, dispute?.name ?? '해당 사안')
   }
 
   const config = getPromptConfig('interrogation_system')
+
+  // ── Blueprint 프롬프트 디버깅 로그 ──
+  console.group(`[Blueprint Prompt Debug] target=${target}, dispute=${disputeId}, mode=${normalizedPolicy.compatMode}`)
+  console.log('[SYSTEM PROMPT]', systemPrompt.slice(0, 600), systemPrompt.length > 600 ? `... (총 ${systemPrompt.length}자)` : '')
+  console.log('[USER PROMPT]', userPrompt)
+  console.groupEnd()
 
   try {
     const response = await chatCompletion(
@@ -1413,7 +1551,7 @@ async function tryBlueprintPath(
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
       ],
-      { temperature: config.temperature, maxTokens: config.maxTokens },
+      { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
     )
 
     if (!response.trim()) throw new Error('Empty blueprint response')
@@ -1424,8 +1562,9 @@ async function tryBlueprintPath(
     const parsed = JSON.parse(jsonMatch[0])
     const rawText = (parsed.npcResponse ?? '').replace(/[（(][^)）]+[)）]/g, '').trim()
     if (!rawText || rawText.length < 5) throw new Error('Blueprint response too short')
-    // 호칭 post-process (재판관 앞 애칭 → judgeRef 치환)
-    const text = enforceHonorifics(fixMisdirectedAddress(rawText))
+    // 호칭 post-process (재판관 앞 애칭 → judgeRef 치환 + 이름 호칭 교정)
+    const bpPartyNames = { nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name }
+    const text = enforceHonorifics(fixMisdirectedAddress(rawText, bpPartyNames))
 
     // 재판관 질문 추가
     const { shouldSkipJudgeQuestion } = await import('../hooks/useActionDispatch')

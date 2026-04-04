@@ -35,12 +35,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "윤도건",
+                  "fullName": "도건 씨",
                   "judgeRef": "도건 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -80,12 +80,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "윤도건",
+                  "fullName": "도건 씨",
                   "judgeRef": "도건 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -150,12 +150,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "윤도건",
+                  "fullName": "윤 씨",
                   "judgeRef": "도건 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -196,12 +196,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "윤도건",
+                  "fullName": "윤 씨",
                   "judgeRef": "도건 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -738,12 +738,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "한유리",
+                  "fullName": "유리 씨",
                   "judgeRef": "유리 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -783,12 +783,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "한유리",
+                  "fullName": "유리 씨",
                   "judgeRef": "유리 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -853,12 +853,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "한유리",
+                  "fullName": "한 씨",
                   "judgeRef": "유리 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -899,12 +899,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "한유리",
+                  "fullName": "한 씨",
                   "judgeRef": "유리 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -1441,7 +1441,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -1481,7 +1481,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -1546,7 +1546,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -1587,7 +1587,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -2083,7 +2083,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "경쟁 셀러"
                 },
@@ -2123,7 +2123,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "경쟁 셀러"
                 },
@@ -2188,7 +2188,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "경쟁 셀러"
                 },
@@ -2229,7 +2229,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "경쟁 셀러"
                 },
@@ -2726,7 +2726,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "그 사람"
                 },
@@ -2766,7 +2766,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "그 사람"
                 },
@@ -2831,7 +2831,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "그 사람"
                 },
@@ -2872,7 +2872,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "그 사람"
                 },
@@ -3370,12 +3370,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "윤도건",
+                  "fullName": "도건 씨",
                   "judgeRef": "도건 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -3415,12 +3415,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "윤도건",
+                  "fullName": "도건 씨",
                   "judgeRef": "도건 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -3485,12 +3485,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "윤도건",
+                  "fullName": "윤 씨",
                   "judgeRef": "도건 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -3531,12 +3531,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "윤도건",
+                  "fullName": "윤 씨",
                   "judgeRef": "도건 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -4073,12 +4073,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "한유리",
+                  "fullName": "유리 씨",
                   "judgeRef": "유리 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -4118,12 +4118,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "한유리",
+                  "fullName": "유리 씨",
                   "judgeRef": "유리 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -4188,12 +4188,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "한유리",
+                  "fullName": "한 씨",
                   "judgeRef": "유리 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -4234,12 +4234,12 @@
               ],
               "slots": {
                 "actor": {
-                  "fullName": "한유리",
+                  "fullName": "한 씨",
                   "judgeRef": "유리 씨",
                   "neutral": "그 사람"
                 },
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -4776,7 +4776,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -4816,7 +4816,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -4881,7 +4881,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -4922,7 +4922,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "상대 셀러"
                 },
@@ -5418,7 +5418,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "경쟁 셀러"
                 },
@@ -5458,7 +5458,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "경쟁 셀러"
                 },
@@ -5523,7 +5523,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "경쟁 셀러"
                 },
@@ -5564,7 +5564,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "경쟁 셀러"
                 },
@@ -6061,7 +6061,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "그 사람"
                 },
@@ -6101,7 +6101,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "가람 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "그 사람"
                 },
@@ -6166,7 +6166,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "그 사람"
                 },
@@ -6207,7 +6207,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "조가람",
+                  "fullName": "조 씨",
                   "judgeRef": "가람 씨",
                   "neutral": "그 사람"
                 },

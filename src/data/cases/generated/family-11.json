@@ -352,7 +352,9 @@
           "questionAngle": "오하린에게: \"담임교사가 강한 학습·병원 개입을 권했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 오하린의 \"담임교사가 강한 학습·병원 개입을 권했는가\" 쟁점과 관련된다. 오하린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "잘린 교사 메시지 캡처",
+      "surfaceDescription": "담임교사가 보낸 메시지의 일부만 캡처된 화면이다. 요청 사항이 보이지만 전후 설명이 잘려 있다."
     },
     {
       "id": "e-2",
@@ -378,7 +380,10 @@
         "check_edits": "앱·기관 원본이라 편집 흔적이 없다.",
         "question_acquisition": "아동 일정과 상담 정보가 포함돼 있어 목적 외 확산은 제한돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "하원 변경 로그와 클리닉 신청서",
+      "surfaceDescription": "유치원 하원자 변경 기록과 사설 클리닉 상담 신청서다. 변경 시각과 신청 내용이 남아 있다.",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-3",
@@ -403,7 +408,9 @@
         "check_edits": "원본 내보내기와 장치 보고서라 선택적 편집 흔적이 없다.",
         "question_acquisition": "직장 일정과 아동 기기 기록이 함께 있어 민감하다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "업무 캘린더와 돌봄 요청 메시지",
+      "surfaceDescription": "업무 일정, 태블릿 사용 로그, 긴급 돌봄 요청 메시지를 묶은 자료다. 시간 압박 상황이 보인다."
     },
     {
       "id": "e-4",
@@ -427,7 +434,9 @@
         "check_edits": "기관 보관 원본이라 편집 흔적이 없다.",
         "question_acquisition": "아동 의료정보가 포함돼 있어 사용 범위가 제한돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "과거 응급실 진료기록",
+      "surfaceDescription": "과거 소아 응급실 방문 시 작성된 의무기록과 간호 메모다. 당시 상황이 기록되어 있다."
     },
     {
       "id": "e-5",
@@ -453,7 +462,10 @@
         "check_edits": "사진은 원본이고 영수증도 카드사 조회본과 일치한다.",
         "question_acquisition": "개인 결제기록과 오래된 백업 사진이 포함돼 있어 민감하다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "옛 약봉투 사진과 약국 영수증",
+      "surfaceDescription": "과거 약봉투를 찍은 사진과 당시 약국 결제 영수증이다. 투약 관련 정황이 남아 있다.",
+      "requiredLieState": "S2"
     },
     {
       "id": "e-6",
@@ -488,7 +500,9 @@
           "questionAngle": "오하린에게: \"담임교사가 강한 학습·병원 개입을 권했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 오하린의 \"담임교사가 강한 학습·병원 개입을 권했는가\" 쟁점과 관련된다. 오하린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "상담센터 일지와 가족 동의서",
+      "surfaceDescription": "아동 발달 상담센터의 상담 일지와 가족 동의서다. 합의 조항과 연계 기록이 적혀 있다."
     }
   ],
   "evidenceCombinations": [

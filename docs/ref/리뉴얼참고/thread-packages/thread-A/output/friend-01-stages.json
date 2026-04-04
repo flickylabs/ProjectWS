@@ -1,0 +1,161 @@
+{
+  "case": "friend-01",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 정산 캡처를 제3자에게 전달한 사실을 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 캡처가 환급과 취소 반영 전에 생성된 점을 알고 계셨습니까?",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "공용 비용 확정 전 중간 화면임에도 이를 근거로 삼은 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "정산 앱에 원본 CSV 내역이 보존되어 있다는 사실을 확인하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "환급과 취소가 반영 가능해진 시점이 캡처보다 늦었다는 점을 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "중간 화면 금액과 최종 정산 금액이 다른 이유를 알고 계십니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "숙소 보증금이 특정 계좌로 환급된 이체 기록에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "환급 입금이 중간 캡처보다 먼저 이루어진 점을 알고 계셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "공동 숙박인데 환급 계좌가 한쪽 명의로 지정된 경위를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "숙소 호스트 및 지인과 이 메시지들을 주고받은 사실을 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "환급 확인과 상계 언급 사이의 시간 차이에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "즉시 공유하지 않고 자기 계산을 먼저 한 이유를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 SNS 스토리 게시물과 공개 범위에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 게시물이 정산 캡처 공유 직후에 올라간 점을 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이름 없이 올렸지만 여행 사진과 금액 암시가 함께 있었습니다. 의도를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "공항 택시 영수증과 차용 메모가 있습니다. 이에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "중복 승인이 발생한 시각과 취소 확정 시각의 차이를 알고 계셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "중복 승인 취소 내역이 정산 앱 금액과 어떤 관계인지 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ]
+  }
+}

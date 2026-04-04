@@ -518,7 +518,7 @@
               "slots": {
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오한별",
+                  "fullName": "중개사 한별",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 },
@@ -596,7 +596,7 @@
               "slots": {
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오한별",
+                  "fullName": "오 씨",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 },
@@ -974,7 +974,7 @@
           "disputeId": "d-3",
           "state": "S0",
           "publicClaim": [
-            "180만원이 개인 계좌로 빠졌다면 결국 집주인 쪽으로 가는 돈이라고 생각했습니다.",
+            "해당 금액이 개인 계좌로 빠졌다면 결국 집주인 쪽으로 가는 돈이라고 생각했습니다.",
             "그래서 저는 태수 씨가 모른다고는 믿기 어려웠습니다."
           ],
           "privateKnowledge": [
@@ -1001,8 +1001,8 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "180만원",
-                  "rounded": "180만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 금액"
                 },
                 "account": {
@@ -1032,8 +1032,8 @@
                   "neutral": "정산 자료"
                 },
                 "amount": {
-                  "exact": "180만원",
-                  "rounded": "180만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 금액"
                 }
               },
@@ -1078,7 +1078,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "180만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "180만원",
                   "neutral": "그 금액"
                 },
@@ -1110,7 +1110,7 @@
                   "neutral": "정산 자료"
                 },
                 "amount": {
-                  "exact": "180만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "180만원",
                   "neutral": "그 금액"
                 }
@@ -1997,7 +1997,7 @@
                 },
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오한별",
+                  "fullName": "중개사 한별",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 }
@@ -2077,7 +2077,7 @@
                 },
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오한별",
+                  "fullName": "오 씨",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 }
@@ -2937,7 +2937,7 @@
               "slots": {
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오한별",
+                  "fullName": "중개사 한별",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 },
@@ -3015,7 +3015,7 @@
               "slots": {
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오한별",
+                  "fullName": "오 씨",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 },
@@ -3392,7 +3392,7 @@
           "disputeId": "d-3",
           "state": "S0",
           "publicClaim": [
-            "180만원은 제 돈이 아닙니다. 그런 항목은 중개사 쪽 정산이라 저는 받은 게 없습니다.",
+            "해당 금액은 제 돈이 아닙니다. 그런 항목은 중개사 쪽 정산이라 저는 받은 게 없습니다.",
             "저를 개인 수납이랑 엮는 건 너무 나간 말입니다."
           ],
           "privateKnowledge": [
@@ -3419,8 +3419,8 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "180만원",
-                  "rounded": "180만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 금액"
                 },
                 "account": {
@@ -3450,8 +3450,8 @@
                   "neutral": "정산 자료"
                 },
                 "amount": {
-                  "exact": "180만원",
-                  "rounded": "180만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 금액"
                 }
               },
@@ -3496,7 +3496,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "180만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "180만원",
                   "neutral": "그 금액"
                 },
@@ -3529,7 +3529,7 @@
                   "neutral": "정산 자료"
                 },
                 "amount": {
-                  "exact": "180만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "180만원",
                   "neutral": "그 금액"
                 }
@@ -4415,7 +4415,7 @@
                 },
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오한별",
+                  "fullName": "중개사 한별",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 }
@@ -4495,7 +4495,7 @@
                 },
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오한별",
+                  "fullName": "오 씨",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 }
@@ -4839,4 +4839,3 @@
     }
   }
 }
-

@@ -15,6 +15,8 @@ export interface DialogueEntry {
   witnessName?: string
   /** 증인 전용: 어느 쪽에 유리한 증인인지 */
   witnessFavor?: 'pro_a' | 'pro_b' | 'neutral' | 'mixed'
+  /** LLM 컨텍스트 전용 — UI에 표시하지 않음 */
+  isHidden?: boolean
   /** 모순 감지 전용: 클릭하면 추궁 가능 */
   contradictionMeta?: {
     party: PartyId

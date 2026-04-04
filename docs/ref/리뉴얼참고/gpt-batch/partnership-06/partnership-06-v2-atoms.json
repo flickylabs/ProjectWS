@@ -649,7 +649,7 @@
                 "person": {
                   "exact": "최보라",
                   "neutral": "상대",
-                  "fullName": "최보라",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 },
                 "item": {
@@ -678,7 +678,7 @@
                 "person": {
                   "exact": "이가람",
                   "neutral": "본인",
-                  "fullName": "이가람",
+                  "fullName": "본인",
                   "judgeRef": "본인"
                 }
               },
@@ -726,7 +726,7 @@
                 "person": {
                   "exact": "최보라",
                   "neutral": "상대",
-                  "fullName": "최보라",
+                  "fullName": "최 씨",
                   "judgeRef": "상대방"
                 },
                 "item": {
@@ -782,7 +782,7 @@
                 "person": {
                   "exact": "이가람",
                   "neutral": "본인",
-                  "fullName": "이가람",
+                  "fullName": "이 씨",
                   "judgeRef": "본인"
                 }
               },
@@ -1172,9 +1172,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "300만원 이상",
+                  "exact": "해당 금액",
                   "neutral": "기준 금액 이상의 변경",
-                  "rounded": "300만원대 이상"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "오픈 주간 공정 수정",
@@ -1765,7 +1765,7 @@
                 "person": {
                   "exact": "최보라",
                   "neutral": "상대",
-                  "fullName": "최보라",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 },
                 "item": {
@@ -1817,7 +1817,7 @@
                 "person": {
                   "exact": "최보라",
                   "neutral": "상대",
-                  "fullName": "최보라",
+                  "fullName": "최 씨",
                   "judgeRef": "상대방"
                 },
                 "item": {
@@ -2271,7 +2271,7 @@
                 "person": {
                   "exact": "최보라",
                   "neutral": "상대",
-                  "fullName": "최보라",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 }
               },
@@ -2342,7 +2342,7 @@
                 "person": {
                   "exact": "이가람",
                   "neutral": "본인",
-                  "fullName": "이가람",
+                  "fullName": "이 씨",
                   "judgeRef": "본인"
                 },
                 "item": {
@@ -2829,7 +2829,7 @@
                 "person": {
                   "exact": "이가람",
                   "neutral": "상대",
-                  "fullName": "이가람",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 },
                 "item": {
@@ -2907,7 +2907,7 @@
                 "person": {
                   "exact": "이가람",
                   "neutral": "상대",
-                  "fullName": "이가람",
+                  "fullName": "이 씨",
                   "judgeRef": "상대방"
                 },
                 "item": {
@@ -3952,9 +3952,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "300만원 이상",
+                  "exact": "해당 금액",
                   "neutral": "기준 금액 이상의 변경",
-                  "rounded": "300만원대 이상"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "오픈 주간 공정 수정",
@@ -4461,7 +4461,7 @@
                 "person": {
                   "exact": "이가람",
                   "neutral": "상대",
-                  "fullName": "이가람",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 },
                 "item": {
@@ -4512,7 +4512,7 @@
                 "person": {
                   "exact": "이가람",
                   "neutral": "상대",
-                  "fullName": "이가람",
+                  "fullName": "이 씨",
                   "judgeRef": "상대방"
                 },
                 "item": {
@@ -4999,7 +4999,7 @@
                 "person": {
                   "exact": "최보라",
                   "neutral": "본인",
-                  "fullName": "최보라",
+                  "fullName": "최 씨",
                   "judgeRef": "본인"
                 },
                 "item": {

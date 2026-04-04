@@ -1,5 +1,6 @@
 import type { DuoSeed } from './character'
 import type { LieType, LieIntensity, LieMotive, LieState } from './agent'
+import type { TruthLevel } from './renewal'
 
 export type KnowledgeQuadrant = 'both_know' | 'a_only' | 'b_only' | 'neither_knows' | 'shared_misconception'
 
@@ -31,6 +32,10 @@ export interface EvidenceNode {
   id: string
   name: string
   description: string
+  /** 조사 전 표면 이름 (진실을 숨긴 버전) */
+  surfaceName?: string
+  /** 조사 전 표면 설명 (진실을 숨긴 버전) */
+  surfaceDescription?: string
   type: EvidenceType
   reliability: Reliability
   completeness: Completeness
@@ -39,9 +44,27 @@ export interface EvidenceNode {
   proves: string[]
   isTrap: boolean
   requires: string[]
+  /** 이 증거가 해금되려면 proves에 연결된 dispute의 lieState가 이 값 이상이어야 함 */
+  requiredLieState?: 'S0' | 'S1' | 'S2' | 'S3' | 'S4'
   investigationResults: Record<string, string>
   /** 이 증거가 보여주는 행위의 주체: a/b/both */
   subjectParty?: 'a' | 'b' | 'both'
+  /** 조사 단계별 해금되는 심문 질문. stage 0은 열람만으로, stage N은 N회 조사 후. */
+  investigationStages?: {
+    stage: number
+    /** 이 단계에서 공개되는 investigationResults 키 */
+    revealKey: string
+    /** 이 단계에서 해금되는 심문 질문 */
+    question: {
+      text: string
+      attackVector: string
+    }
+    /** V3: 이 조사 질문에 대한 NPC 스크립트 응답 (party별) */
+    scriptedNpcResponses?: {
+      a?: { npcResponse: string; behaviorHint: string; truthLevel: TruthLevel }
+      b?: { npcResponse: string; behaviorHint: string; truthLevel: TruthLevel }
+    }
+  }[]
   /** 캐릭터별 증거 제시 맥락 (subjectParty: both일 때 활용) */
   partyContext?: {
     a?: {

@@ -186,7 +186,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "백재윤",
+                  "fullName": "백 씨",
                   "judgeRef": "백재윤",
                   "neutral": "상대"
                 },
@@ -631,7 +631,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "백재윤",
+                  "fullName": "그 사람",
                   "judgeRef": "백재윤",
                   "neutral": "상대"
                 },
@@ -663,7 +663,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "그 사람",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 },
@@ -717,7 +717,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "백재윤",
+                  "fullName": "백 씨",
                   "judgeRef": "백재윤",
                   "neutral": "상대"
                 },
@@ -749,7 +749,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 },
@@ -781,7 +781,7 @@
                   "neutral": "초기 공개 인상"
                 },
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 }
@@ -1252,7 +1252,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "그 사람",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 },
@@ -1311,7 +1311,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 },
@@ -1348,7 +1348,7 @@
                   "neutral": "초기 공개 인상"
                 },
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 }
@@ -1828,7 +1828,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "그 사람",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 },
@@ -1911,7 +1911,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 },
@@ -1945,12 +1945,12 @@
                   "neutral": "이전 작업"
                 },
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 },
                 "counterparty": {
-                  "fullName": "백재윤",
+                  "fullName": "백 씨",
                   "judgeRef": "백재윤",
                   "neutral": "상대"
                 }
@@ -2360,7 +2360,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "백재윤",
+                  "fullName": "그 사람",
                   "judgeRef": "백재윤",
                   "neutral": "상대"
                 },
@@ -2392,7 +2392,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "그 사람",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 },
@@ -2446,7 +2446,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "백재윤",
+                  "fullName": "백 씨",
                   "judgeRef": "백재윤",
                   "neutral": "상대"
                 },
@@ -2478,12 +2478,12 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "본인"
                 },
                 "counterparty": {
-                  "fullName": "백재윤",
+                  "fullName": "백 씨",
                   "judgeRef": "백재윤",
                   "neutral": "상대"
                 }
@@ -2926,7 +2926,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤수빈",
+                  "fullName": "그 사람",
                   "judgeRef": "윤수빈",
                   "neutral": "상대"
                 },
@@ -2959,7 +2959,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "백재윤",
+                  "fullName": "그 사람",
                   "judgeRef": "백재윤",
                   "neutral": "본인"
                 },
@@ -3013,7 +3013,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "상대"
                 },
@@ -3046,7 +3046,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "백재윤",
+                  "fullName": "백 씨",
                   "judgeRef": "백재윤",
                   "neutral": "본인"
                 },
@@ -3496,7 +3496,7 @@
                   "neutral": "포트폴리오 채널"
                 },
                 "speaker": {
-                  "fullName": "백재윤",
+                  "fullName": "그 사람",
                   "judgeRef": "백재윤",
                   "neutral": "본인"
                 }
@@ -3550,7 +3550,7 @@
                   "neutral": "포트폴리오 채널"
                 },
                 "speaker": {
-                  "fullName": "백재윤",
+                  "fullName": "백 씨",
                   "judgeRef": "백재윤",
                   "neutral": "본인"
                 }
@@ -3574,7 +3574,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "상대"
                 },
@@ -3996,7 +3996,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "백재윤",
+                  "fullName": "그 사람",
                   "judgeRef": "백재윤",
                   "neutral": "본인"
                 },
@@ -4055,7 +4055,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "백재윤",
+                  "fullName": "백 씨",
                   "judgeRef": "백재윤",
                   "neutral": "본인"
                 },
@@ -4088,7 +4088,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "상대"
                 },
@@ -4572,7 +4572,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "백재윤",
+                  "fullName": "그 사람",
                   "judgeRef": "백재윤",
                   "neutral": "본인"
                 },
@@ -4655,7 +4655,7 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "백재윤",
+                  "fullName": "백 씨",
                   "judgeRef": "백재윤",
                   "neutral": "본인"
                 },
@@ -4684,12 +4684,12 @@
               ],
               "slots": {
                 "speaker": {
-                  "fullName": "백재윤",
+                  "fullName": "백 씨",
                   "judgeRef": "백재윤",
                   "neutral": "본인"
                 },
                 "counterparty": {
-                  "fullName": "윤수빈",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤수빈",
                   "neutral": "상대"
                 }

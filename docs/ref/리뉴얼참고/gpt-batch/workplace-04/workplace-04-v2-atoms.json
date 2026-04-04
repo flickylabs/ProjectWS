@@ -65,7 +65,7 @@
                 "person": {
                   "exact": "배지우",
                   "neutral": "상대",
-                  "fullName": "배지우",
+                  "fullName": "배지우 씨",
                   "judgeRef": "배지우 씨"
                 },
                 "time": {
@@ -152,7 +152,7 @@
                 "person": {
                   "exact": "배지우",
                   "neutral": "상대",
-                  "fullName": "배지우",
+                  "fullName": "배 씨",
                   "judgeRef": "배지우 씨"
                 },
                 "time": {
@@ -579,7 +579,7 @@
                 "person": {
                   "exact": "배지우",
                   "neutral": "상대",
-                  "fullName": "배지우",
+                  "fullName": "배지우 씨",
                   "judgeRef": "배지우 씨"
                 },
                 "task": {
@@ -658,7 +658,7 @@
                 "person": {
                   "exact": "배지우",
                   "neutral": "상대",
-                  "fullName": "배지우",
+                  "fullName": "배 씨",
                   "judgeRef": "배지우 씨"
                 },
                 "task": {
@@ -1049,7 +1049,7 @@
                 "person": {
                   "exact": "배지우",
                   "neutral": "상대",
-                  "fullName": "배지우",
+                  "fullName": "배지우 씨",
                   "judgeRef": "배지우 씨"
                 },
                 "task": {
@@ -1130,7 +1130,7 @@
                 "person": {
                   "exact": "배지우",
                   "neutral": "상대",
-                  "fullName": "배지우",
+                  "fullName": "배 씨",
                   "judgeRef": "배지우 씨"
                 },
                 "task": {
@@ -1499,7 +1499,7 @@
               ],
               "slots": {
                 "time": {
-                  "exact": "19시 48분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "마감 당일 19시 48분",
                   "period": "마감 직전"
@@ -1529,7 +1529,7 @@
                 "person": {
                   "exact": "배지우",
                   "neutral": "상대",
-                  "fullName": "배지우",
+                  "fullName": "배지우 씨",
                   "judgeRef": "배지우 씨"
                 },
                 "task": {
@@ -1610,7 +1610,7 @@
                 "person": {
                   "exact": "배지우",
                   "neutral": "상대",
-                  "fullName": "배지우",
+                  "fullName": "배 씨",
                   "judgeRef": "배지우 씨"
                 },
                 "task": {
@@ -1979,7 +1979,7 @@
               ],
               "slots": {
                 "time": {
-                  "exact": "20시 31분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "마감 당일 20시 31분",
                   "period": "마감 당일 밤"
@@ -2009,7 +2009,7 @@
                 "person": {
                   "exact": "배지우",
                   "neutral": "상대",
-                  "fullName": "배지우",
+                  "fullName": "배지우 씨",
                   "judgeRef": "배지우 씨"
                 },
                 "task": {
@@ -2090,7 +2090,7 @@
                 "person": {
                   "exact": "배지우",
                   "neutral": "상대",
-                  "fullName": "배지우",
+                  "fullName": "배 씨",
                   "judgeRef": "배지우 씨"
                 },
                 "task": {
@@ -2491,7 +2491,7 @@
                 "person": {
                   "exact": "서민석",
                   "neutral": "상대",
-                  "fullName": "서민석",
+                  "fullName": "서민석 씨",
                   "judgeRef": "서민석 씨"
                 },
                 "time": {
@@ -2578,7 +2578,7 @@
                 "person": {
                   "exact": "서민석",
                   "neutral": "상대",
-                  "fullName": "서민석",
+                  "fullName": "서 씨",
                   "judgeRef": "서민석 씨"
                 },
                 "time": {
@@ -3005,7 +3005,7 @@
                 "person": {
                   "exact": "서민석",
                   "neutral": "상대",
-                  "fullName": "서민석",
+                  "fullName": "서민석 씨",
                   "judgeRef": "서민석 씨"
                 },
                 "task": {
@@ -3084,7 +3084,7 @@
                 "person": {
                   "exact": "서민석",
                   "neutral": "상대",
-                  "fullName": "서민석",
+                  "fullName": "서 씨",
                   "judgeRef": "서민석 씨"
                 },
                 "task": {
@@ -3475,7 +3475,7 @@
                 "person": {
                   "exact": "서민석",
                   "neutral": "상대",
-                  "fullName": "서민석",
+                  "fullName": "서민석 씨",
                   "judgeRef": "서민석 씨"
                 },
                 "task": {
@@ -3556,7 +3556,7 @@
                 "person": {
                   "exact": "서민석",
                   "neutral": "상대",
-                  "fullName": "서민석",
+                  "fullName": "서 씨",
                   "judgeRef": "서민석 씨"
                 },
                 "task": {
@@ -3925,7 +3925,7 @@
               ],
               "slots": {
                 "time": {
-                  "exact": "19시 48분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "마감 당일 19시 48분",
                   "period": "마감 직전"
@@ -3955,7 +3955,7 @@
                 "person": {
                   "exact": "서민석",
                   "neutral": "상대",
-                  "fullName": "서민석",
+                  "fullName": "서민석 씨",
                   "judgeRef": "서민석 씨"
                 },
                 "task": {
@@ -4036,7 +4036,7 @@
                 "person": {
                   "exact": "서민석",
                   "neutral": "상대",
-                  "fullName": "서민석",
+                  "fullName": "서 씨",
                   "judgeRef": "서민석 씨"
                 },
                 "task": {
@@ -4405,7 +4405,7 @@
               ],
               "slots": {
                 "time": {
-                  "exact": "20시 31분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "마감 당일 20시 31분",
                   "period": "마감 당일 밤"
@@ -4435,7 +4435,7 @@
                 "person": {
                   "exact": "서민석",
                   "neutral": "상대",
-                  "fullName": "서민석",
+                  "fullName": "서민석 씨",
                   "judgeRef": "서민석 씨"
                 },
                 "task": {
@@ -4516,7 +4516,7 @@
                 "person": {
                   "exact": "서민석",
                   "neutral": "상대",
-                  "fullName": "서민석",
+                  "fullName": "서 씨",
                   "judgeRef": "서민석 씨"
                 },
                 "task": {
@@ -4855,4 +4855,3 @@
     }
   }
 }
-

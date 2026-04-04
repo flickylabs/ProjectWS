@@ -340,7 +340,7 @@
               "slots": {
                 "party_b": {
                   "exact": "주하린",
-                  "fullName": "주하린",
+                  "fullName": "주하린 씨",
                   "judgeRef": "주하린 씨",
                   "neutral": "상대방"
                 },
@@ -623,7 +623,7 @@
               ],
               "slots": {
                 "clip": {
-                  "exact": "27초 클립",
+                  "exact": "그 영상",
                   "neutral": "그 영상"
                 },
                 "source": {
@@ -2046,7 +2046,7 @@
               ],
               "slots": {
                 "clip": {
-                  "exact": "27초 클립",
+                  "exact": "그 영상",
                   "neutral": "그 영상"
                 }
               },

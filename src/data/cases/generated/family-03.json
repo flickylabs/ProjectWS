@@ -339,7 +339,9 @@
         "check_edits": "텍스트 자체 편집은 없지만 상단과 하단이 크게 잘린 크롭이 확인됐다.",
         "question_acquisition": "당사자 간 대화 캡처라 제출은 가능하지만, 제3자 단톡에 재배포한 행위는 별도 쟁점이 된다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "잘린 메신저 약속 캡처",
+      "surfaceDescription": "메신저 대화의 일부만 캡처된 화면이다. 금전 약속 관련 문장이 보이지만 앞부분이 잘려 있다."
     },
     {
       "id": "e-2",
@@ -366,7 +368,10 @@
         "check_edits": "기관 발급 내역이라 편집 흔적이 없다.",
         "question_acquisition": "정우가 직접 제출한 자기 계좌 자료여서 취득 정당성 문제는 낮다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "자동이체 로그와 송금 내역",
+      "surfaceDescription": "은행 자동이체 신청·해지 기록과 이후 송금 내역이다. 금액 변화와 시기를 추적할 수 있다.",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-3",
@@ -392,7 +397,10 @@
         "check_edits": "메시지와 거래내역 모두 원본 내보내기라 선택적 편집 흔적이 적다.",
         "question_acquisition": "복자가 동의해 제출했지만, 수빈의 계좌와 개인 사정이 함께 드러나 사생활 침해 우려가 있다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "통장 거래내역과 입금 문자",
+      "surfaceDescription": "두 계좌의 거래내역과 입금 확인 문자다. 같은 날 연쇄 이체 흐름이 보인다.",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-4",
@@ -416,7 +424,9 @@
         "check_edits": "원본 내보내기라 개별 메시지 잘라내기 흔적은 보이지 않는다.",
         "question_acquisition": "제3자가 포함된 단톡 원본이라 분쟁 외 용도로 재사용하면 사생활 침해 문제가 커질 수 있다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "친척·소모임 단톡 내보내기",
+      "surfaceDescription": "친척 단톡과 소모임 대화의 내보내기 파일이다. 특정인의 발언과 캡처 공유 기록이 남아 있다."
     },
     {
       "id": "e-5",
@@ -452,7 +462,10 @@
           "questionAngle": "박정우에게: \"현금 지원에서 공과금 직접 납부로 바꾸자는 합의의 쌍방 미이행\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 박정우의 \"현금 지원에서 공과금 직접 납부로 바꾸자는 합의의 쌍방 미이행\" 쟁점과 관련된다. 박정우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "가족 통화 녹음과 고지서 사진",
+      "surfaceDescription": "가족 간 통화 녹음과 관리비 고지서 사진이다. 비용 납부 방식에 대한 논의가 담겨 있다.",
+      "requiredLieState": "S2"
     },
     {
       "id": "e-6",
@@ -488,7 +501,10 @@
           "questionAngle": "박정우에게: \"현금 지원에서 공과금 직접 납부로 바꾸자는 합의의 쌍방 미이행\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 박정우의 \"현금 지원에서 공과금 직접 납부로 바꾸자는 합의의 쌍방 미이행\" 쟁점과 관련된다. 박정우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "주민센터 상담 확인서와 예산표",
+      "surfaceDescription": "주민센터 상담 기록과 공동 예산표다. 합의된 납부 방식과 공유 원칙이 적혀 있다.",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

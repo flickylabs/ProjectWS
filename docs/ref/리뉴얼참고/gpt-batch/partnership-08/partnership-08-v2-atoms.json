@@ -74,7 +74,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "80,000,000원",
+                  "exact": "적지 않은 돈",
                   "neutral": "기준 금액",
                   "rounded": "8천만원"
                 },
@@ -342,7 +342,7 @@
                 "person": {
                   "exact": "김나리",
                   "neutral": "그 강사",
-                  "fullName": "김나리",
+                  "fullName": "전 헤드강사",
                   "judgeRef": "전 헤드강사"
                 }
               },
@@ -391,7 +391,7 @@
                 "person": {
                   "exact": "김나리",
                   "neutral": "그 강사",
-                  "fullName": "김나리",
+                  "fullName": "김 씨",
                   "judgeRef": "전 헤드강사"
                 }
               },
@@ -970,7 +970,7 @@
                   "period": "팝업 손실 직후"
                 },
                 "amount": {
-                  "exact": "80,000,000원",
+                  "exact": "적지 않은 돈",
                   "neutral": "기준 금액",
                   "rounded": "8천만원"
                 },
@@ -1214,7 +1214,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "80,000,000원",
+                  "exact": "해당 금액",
                   "neutral": "기준 금액",
                   "rounded": "8천만원"
                 },
@@ -1263,7 +1263,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "80,000,000원",
+                  "exact": "적지 않은 돈",
                   "neutral": "기준 금액",
                   "rounded": "8천만원"
                 },
@@ -1872,7 +1872,7 @@
                 "person": {
                   "exact": "김나리",
                   "neutral": "그 강사",
-                  "fullName": "김나리",
+                  "fullName": "김 씨",
                   "judgeRef": "전 헤드강사"
                 }
               },
@@ -2706,7 +2706,7 @@
                   "period": "기념 시즌 무렵"
                 },
                 "amount": {
-                  "exact": "80,000,000원",
+                  "exact": "해당 금액",
                   "neutral": "기준 금액",
                   "rounded": "8천만원"
                 },

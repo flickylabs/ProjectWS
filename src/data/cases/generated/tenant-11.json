@@ -327,6 +327,8 @@
       "id": "e-1",
       "name": "임대차계약서와 인테리어 특약본",
       "description": "원상복구 조항, 사전 고지 없는 구조 변경 금지 문구, 간단한 페인트·조명 교체는 협의 가능하다고 적힌 임대차계약서와 특약 원본이다.",
+      "surfaceName": "임대차계약서와 인테리어 특약본",
+      "surfaceDescription": "원상복구 조항과 시공 협의 조건이 적힌 계약서와 특약이다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -362,6 +364,8 @@
       "id": "e-2",
       "name": "입주·퇴거 전후 비교 사진 묶음",
       "description": "입주 초기의 어두운 붙박이장과 누수 흔적, 퇴거 직전의 제거된 문짝·상부장·고정 선반 자국이 담긴 비교 사진 원본 묶음이다.",
+      "surfaceName": "입주·퇴거 전후 비교 사진 묶음",
+      "surfaceDescription": "입주 초기와 퇴거 직전 실내 상태를 비교한 사진 세트다.",
       "type": "photo",
       "reliability": "soft",
       "completeness": "original",
@@ -397,6 +401,8 @@
       "id": "e-3",
       "name": "시공비 계좌이체 내역과 품목 영수증",
       "description": "나래가 시공업체와 자재상에 송금한 내역, 자재 영수증, 그리고 총 430만원으로 정리된 개인 비용표다.",
+      "surfaceName": "시공비 계좌이체 내역과 영수증",
+      "surfaceDescription": "시공업체 송금 내역과 자재 영수증이 묶인 비용 자료다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -422,6 +428,8 @@
       "id": "e-4",
       "name": "시공업체 작업범위 톡과 원본 견적서",
       "description": "현장소장이 나래와 주고받은 작업범위 카카오톡, 고정 시공과 이동식 소품을 구분한 원본 견적서다.",
+      "surfaceName": "시공업체 작업범위 톡과 견적서",
+      "surfaceDescription": "시공 현장소장과 나눈 카카오톡과 원본 견적서 묶음이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "original",
@@ -442,12 +450,15 @@
         "check_edits": "본문 편집 흔적은 없고 견적서도 최초 발행본이다.",
         "question_acquisition": "사적 대화가 포함돼 공개 범위에는 주의가 필요하지만, 비용 항목의 성격을 가르는 데 직접 관련된다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S2"
     },
     {
       "id": "e-5",
       "name": "누수 보수 카톡과 새 임차인 모집 캡처",
       "description": "과거 누수·곰팡이 보수 요청 대화 일부와, 성필이 새 임차인 모집글에 개선된 내부 사진을 올린 캡처 묶음이다.",
+      "surfaceName": "설비 보수 카톡과 모집 캡처",
+      "surfaceDescription": "과거 설비 보수 요청 대화와 임차인 모집 게시글 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -483,6 +494,8 @@
       "id": "e-6",
       "name": "부분복구·전면복구 비교 견적서",
       "description": "붙박이장 문 복구와 상부장 패널 복원만 잡은 부분복구 견적, 전체 재도장·타일 보수까지 넣은 전면복구 견적을 비교한 자료다.",
+      "surfaceName": "부분복구·전면복구 비교 견적서",
+      "surfaceDescription": "부분 보수와 전면 시공 범위를 비교한 견적서 자료다.",
       "type": "estimate",
       "reliability": "hard",
       "completeness": "original",
@@ -503,7 +516,8 @@
         "check_edits": "금액 덧쓰기나 항목 삭제 흔적 없는 출력 원본이다.",
         "question_acquisition": "원상복구 범위를 가리는 통상 자료라 제출 절차상 문제는 낮다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

@@ -961,7 +961,7 @@
                 "person": {
                   "exact": "장성호",
                   "neutral": "임대인",
-                  "fullName": "장성호",
+                  "fullName": "장 씨",
                   "judgeRef": "임대인"
                 }
               },
@@ -2898,4 +2898,3 @@
     }
   }
 }
-

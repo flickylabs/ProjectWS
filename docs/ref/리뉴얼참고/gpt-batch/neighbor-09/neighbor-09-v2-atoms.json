@@ -36,9 +36,9 @@
                   "period": "공사 전"
                 },
                 "cap": {
-                  "exact": "200만 원 이하",
+                  "exact": "해당 금액",
                   "neutral": "상한선",
-                  "rounded": "200만 원"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -56,7 +56,7 @@
           "disputeId": "d-1",
           "state": "S1",
           "publicClaim": [
-            "제 이해로는 200만 원 안이면 다시 따로 합의하지 않고 그대로 가는 구조였습니다."
+            "제 이해로는 적지 않은 돈 안이면 다시 따로 합의하지 않고 그대로 가는 구조였습니다."
           ],
           "privateKnowledge": [
             "서면 문구와 58초 음성 확인 파일이 같은 취지를 가리킨다."
@@ -81,7 +81,7 @@
               ],
               "slots": {
                 "cap": {
-                  "exact": "200만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "상한선",
                   "rounded": "200만 원"
                 },
@@ -333,9 +333,9 @@
                   "neutral": "추가 보강 구간"
                 },
                 "amount": {
-                  "exact": "18만 원",
+                  "exact": "해당 금액",
                   "neutral": "추가 비용",
-                  "rounded": "18만 원"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -385,7 +385,7 @@
                 "person": {
                   "exact": "윤태성 소장",
                   "neutral": "시공 소장",
-                  "fullName": "윤태성",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤태성 소장"
                 }
               },
@@ -916,7 +916,7 @@
                 "person": {
                   "exact": "노가은 주임",
                   "neutral": "관리실 담당",
-                  "fullName": "노가은",
+                  "fullName": "노가은 주임",
                   "judgeRef": "노가은 주임"
                 },
                 "time": {
@@ -939,7 +939,7 @@
           "disputeId": "d-4",
           "state": "S1",
           "publicClaim": [
-            "추가 보전금이 반영되면 200만 원 아래로 내려갈 수 있다고는 생각했습니다."
+            "추가 보전금이 반영되면 적지 않은 돈 아래로 내려갈 수 있다고는 생각했습니다."
           ],
           "privateKnowledge": [
             "예약금 차감표까지 보면 상한선 안에 들어올 가능성이 높았다."
@@ -964,12 +964,12 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "200만 원 아래",
+                  "exact": "적지 않은 돈",
                   "neutral": "상한선 안",
                   "rounded": "200만 원 미만"
                 },
                 "benefit": {
-                  "exact": "추가 보전금 36만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "보전금",
                   "rounded": "36만 원"
                 }
@@ -1526,7 +1526,7 @@
           "disputeId": "d-1",
           "state": "S1",
           "publicClaim": [
-            "제 기억에는 200만 원 안이면 다시 보자는 정도였지 바로 확정으로 못 박은 건 아니었습니다."
+            "제 기억에는 적지 않은 돈 안이면 다시 보자는 정도였지 바로 확정으로 못 박은 건 아니었습니다."
           ],
           "privateKnowledge": [
             "음성 확인 파일의 문구가 더 단정적이라는 점이 걸린다."
@@ -1551,7 +1551,7 @@
               ],
               "slots": {
                 "cap": {
-                  "exact": "200만 원 안",
+                  "exact": "적지 않은 돈",
                   "neutral": "상한선 안",
                   "rounded": "200만 원"
                 },
@@ -1845,7 +1845,7 @@
                 "person": {
                   "exact": "최연우",
                   "neutral": "상대방",
-                  "fullName": "최연우",
+                  "fullName": "최 씨",
                   "judgeRef": "연우 씨"
                 },
                 "area": {
@@ -2143,7 +2143,7 @@
                 "person": {
                   "exact": "윤태성 소장",
                   "neutral": "시공 소장",
-                  "fullName": "윤태성",
+                  "fullName": "윤 씨",
                   "judgeRef": "윤태성 소장"
                 }
               },
@@ -2379,9 +2379,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "184만 원",
+                  "exact": "해당 금액",
                   "neutral": "최종 잔액",
-                  "rounded": "184만 원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "최종 공지 전후",
@@ -2428,7 +2428,7 @@
               ],
               "slots": {
                 "benefit": {
-                  "exact": "추가 보전금 36만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "보전금",
                   "rounded": "36만 원"
                 },
@@ -2649,7 +2649,7 @@
           "disputeId": "d-5",
           "state": "S0",
           "publicClaim": [
-            "관리실 공지 전에는 저도 최종 금액을 인정한 적 없고, 30만 원은 일단 제 구간만 보낸 겁니다."
+            "관리실 공지 전에는 저도 최종 금액을 인정한 적 없고, 해당 금액은 일단 제 구간만 보낸 겁니다."
           ],
           "privateKnowledge": [
             "실제로는 그 송금이 공식 공지 예약보다 19분 빨랐다."
@@ -2674,9 +2674,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "30만 원",
+                  "exact": "해당 금액",
                   "neutral": "일부 송금액",
-                  "rounded": "30만 원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "공식 공지 19분 전",
@@ -2724,7 +2724,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "30만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "일부 금액",
                   "rounded": "30만 원"
                 },

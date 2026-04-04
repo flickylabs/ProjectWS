@@ -341,7 +341,9 @@
         "check_edits": "텍스트 편집 흔적은 없으나 상단과 직전 메시지가 크게 잘려 있다.",
         "question_acquisition": "사적 메시지 캡처라 제출 자체는 가능하지만 부모 설득용 재배포 과정은 민감하다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "잘린 메시지 캡처",
+      "surfaceDescription": "중개인과의 메시지 중 일부만 캡처된 화면이다. 금전 이체 알림이 함께 보이지만 전후 맥락이 없다."
     },
     {
       "id": "e-2",
@@ -378,7 +380,10 @@
           "questionAngle": "최도윤에게: \"형제의 계약 외 6,600만원 은닉 공모\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 최도윤의 \"형제의 계약 외 6,600만원 은닉 공모\" 쟁점과 관련된다. 최도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "중개사 원본 메시지와 통화녹취",
+      "surfaceDescription": "부동산 중개사의 원본 채팅과 통화 녹취, 이체 지시 메모다. 거래 조율 흐름이 기록되어 있다.",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-3",
@@ -402,7 +407,9 @@
         "check_edits": "기관 보관 문서라 편집 흔적이 없다.",
         "question_acquisition": "공식 사무실 기록이라 취득은 적법하지만 부모의 의사능력과 설명 수준은 별도 판단이 필요하다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "법무사 예약표와 CCTV 확인서",
+      "surfaceDescription": "법무사 사무실 상담 예약표와 대기실 CCTV 확인서다. 방문자와 시각이 기록되어 있다."
     },
     {
       "id": "e-4",
@@ -428,7 +435,10 @@
         "check_edits": "기관 발급 자료라 편집 흔적이 없다.",
         "question_acquisition": "도윤이 직접 제출한 자기 금융자료라 취득 정당성은 높다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "계좌 입금 내역과 연체 상환서",
+      "surfaceDescription": "계좌 입금 내역과 금융 연체금 상환 기록이다. 입금 후 자금 사용처를 추적할 수 있다.",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
@@ -464,7 +474,10 @@
           "questionAngle": "최도윤에게: \"형제의 계약 외 6,600만원 은닉 공모\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 최도윤의 \"형제의 계약 외 6,600만원 은닉 공모\" 쟁점과 관련된다. 최도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "중개사 수기 메모와 음성메모",
+      "surfaceDescription": "중개사가 남긴 수기 메모와 음성 메모다. 금액 분배 관련 내용이 기록되어 있다.",
+      "requiredLieState": "S2"
     },
     {
       "id": "e-6",
@@ -499,7 +512,9 @@
           "questionAngle": "최도윤에게: \"세금·명도비 핑계의 공동 축소 설명\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 최도윤의 \"세금·명도비 핑계의 공동 축소 설명\" 쟁점과 관련된다. 최도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "공식 계약서와 설명 녹취 확인서",
+      "surfaceDescription": "법무사가 보관한 공식 매매계약서와 설명 녹취 확인서다. 공식 절차와 브리핑 내용이 담겨 있다."
     }
   ],
   "evidenceCombinations": [

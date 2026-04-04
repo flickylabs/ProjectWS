@@ -35,7 +35,7 @@
                 "partner": {
                   "exact": "유은채",
                   "neutral": "상대 직원",
-                  "fullName": "유은채",
+                  "fullName": "유은채 씨",
                   "judgeRef": "유은채 씨"
                 },
                 "channel": {
@@ -112,7 +112,7 @@
                 "partner": {
                   "exact": "유은채",
                   "neutral": "상대 직원",
-                  "fullName": "유은채",
+                  "fullName": "유 씨",
                   "judgeRef": "유은채 씨"
                 },
                 "channel": {
@@ -171,7 +171,7 @@
                 "party": {
                   "exact": "송준석",
                   "neutral": "당사자",
-                  "fullName": "송준석",
+                  "fullName": "송 씨",
                   "judgeRef": "송준석 씨"
                 }
               },
@@ -637,7 +637,7 @@
                 "person": {
                   "exact": "강소라",
                   "neutral": "외부 파트너",
-                  "fullName": "강소라",
+                  "fullName": "강소라 씨",
                   "judgeRef": "강소라 씨"
                 },
                 "material": {
@@ -713,7 +713,7 @@
                 "person": {
                   "exact": "강소라",
                   "neutral": "외부 파트너",
-                  "fullName": "강소라",
+                  "fullName": "강 씨",
                   "judgeRef": "강소라 씨"
                 },
                 "material": {
@@ -1724,7 +1724,7 @@
                 "partner": {
                   "exact": "유은채",
                   "neutral": "상대 직원",
-                  "fullName": "유은채",
+                  "fullName": "유은채 씨",
                   "judgeRef": "유은채 씨"
                 }
               },
@@ -2788,7 +2788,7 @@
                 "partner": {
                   "exact": "송준석",
                   "neutral": "상대 관리자",
-                  "fullName": "송준석",
+                  "fullName": "송준석 씨",
                   "judgeRef": "송준석 씨"
                 },
                 "channel": {
@@ -2866,7 +2866,7 @@
                 "partner": {
                   "exact": "송준석",
                   "neutral": "상대 관리자",
-                  "fullName": "송준석",
+                  "fullName": "송 씨",
                   "judgeRef": "송준석 씨"
                 },
                 "channel": {
@@ -3330,7 +3330,7 @@
                 "person": {
                   "exact": "강소라",
                   "neutral": "외부 파트너",
-                  "fullName": "강소라",
+                  "fullName": "강소라 씨",
                   "judgeRef": "강소라 씨"
                 },
                 "material": {
@@ -3972,7 +3972,7 @@
                 "partner": {
                   "exact": "송준석",
                   "neutral": "상대 관리자",
-                  "fullName": "송준석",
+                  "fullName": "송 씨",
                   "judgeRef": "송준석 씨"
                 },
                 "phrase": {
@@ -4858,7 +4858,7 @@
                 "person": {
                   "exact": "강소라",
                   "neutral": "외부 파트너",
-                  "fullName": "강소라",
+                  "fullName": "강소라 씨",
                   "judgeRef": "강소라 씨"
                 },
                 "action": {
@@ -4935,7 +4935,7 @@
                 "person": {
                   "exact": "강소라",
                   "neutral": "외부 파트너",
-                  "fullName": "강소라",
+                  "fullName": "강 씨",
                   "judgeRef": "강소라 씨"
                 },
                 "action": {
@@ -5390,4 +5390,3 @@
     }
   }
 }
-

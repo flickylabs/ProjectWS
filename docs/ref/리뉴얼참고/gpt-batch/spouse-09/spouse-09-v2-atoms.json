@@ -7,7 +7,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "390만원을 어디론가 빼돌린 건 맞지만 간병 예약이라는 말은 지금도 쉽게 못 믿겠습니다."
+            "해당 금액을 어디론가 빼돌린 건 맞지만 간병 예약이라는 말은 지금도 쉽게 못 믿겠습니다."
           ],
           "privateKnowledge": [
             "여성 이름 수취인과 늦은 밤 병원 주차기록이 겹치자 선아는 다시 돈을 숨긴 남편을 먼저 떠올렸다.",
@@ -33,19 +33,19 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "3,900,000원",
-                  "rounded": "390만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 금액"
                 },
                 "time": {
-                  "exact": "21시 42분",
+                  "exact": "그 시점",
                   "dateExact": "21시 42분",
                   "period": "같은 날 밤",
                   "neutral": "그 시점"
                 },
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "그 사람",
                   "judgeRef": "원무주임",
                   "neutral": "그 수취인"
                 },
@@ -71,19 +71,19 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "3,900,000원",
-                  "rounded": "390만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 금액"
                 },
                 "time": {
-                  "exact": "21시 42분",
+                  "exact": "그 시점",
                   "dateExact": "21시 42분",
                   "period": "같은 날 밤",
                   "neutral": "그 시점"
                 },
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "그 사람",
                   "judgeRef": "원무주임",
                   "neutral": "그 수취인"
                 },
@@ -132,7 +132,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "3,900,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "390만원",
                   "neutral": "그 금액"
                 },
@@ -144,7 +144,7 @@
                 },
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "최 씨",
                   "judgeRef": "원무주임",
                   "neutral": "그 수취인"
                 },
@@ -170,7 +170,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "3,900,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "390만원",
                   "neutral": "그 금액"
                 },
@@ -182,7 +182,7 @@
                 },
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "최 씨",
                   "judgeRef": "원무주임",
                   "neutral": "그 수취인"
                 },
@@ -630,8 +630,8 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "9,300,000원",
-                  "rounded": "930만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 보험금"
                 },
                 "time": {
@@ -642,7 +642,7 @@
                 },
                 "person": {
                   "exact": "유성민",
-                  "fullName": "유성민",
+                  "fullName": "오빠",
                   "judgeRef": "오빠",
                   "neutral": "가족 계좌 명의자"
                 },
@@ -668,8 +668,8 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "9,300,000원",
-                  "rounded": "930만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 보험금"
                 },
                 "time": {
@@ -680,7 +680,7 @@
                 },
                 "person": {
                   "exact": "유성민",
-                  "fullName": "유성민",
+                  "fullName": "오빠",
                   "judgeRef": "오빠",
                   "neutral": "가족 계좌 명의자"
                 },
@@ -729,7 +729,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "9,300,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "930만원",
                   "neutral": "그 보험금"
                 },
@@ -741,7 +741,7 @@
                 },
                 "person": {
                   "exact": "유성민",
-                  "fullName": "유성민",
+                  "fullName": "유 씨",
                   "judgeRef": "오빠",
                   "neutral": "가족 계좌 명의자"
                 },
@@ -767,7 +767,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "9,300,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "930만원",
                   "neutral": "그 보험금"
                 },
@@ -779,7 +779,7 @@
                 },
                 "person": {
                   "exact": "유성민",
-                  "fullName": "유성민",
+                  "fullName": "유 씨",
                   "judgeRef": "오빠",
                   "neutral": "가족 계좌 명의자"
                 },
@@ -1227,7 +1227,7 @@
               "slots": {
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "그 사람",
                   "judgeRef": "원무주임",
                   "neutral": "그 담당자"
                 },
@@ -1264,7 +1264,7 @@
               "slots": {
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "그 사람",
                   "judgeRef": "원무주임",
                   "neutral": "그 담당자"
                 },
@@ -1324,7 +1324,7 @@
               "slots": {
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "최 씨",
                   "judgeRef": "원무주임",
                   "neutral": "그 담당자"
                 },
@@ -1361,7 +1361,7 @@
               "slots": {
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "최 씨",
                   "judgeRef": "원무주임",
                   "neutral": "그 담당자"
                 },
@@ -2266,7 +2266,7 @@
           "disputeId": "d-5",
           "state": "S0",
           "publicClaim": [
-            "지금 병원비가 이렇게 꼬인 건 도현 씨가 390만원을 몰래 빼면서 시작됐습니다."
+            "지금 병원비가 이렇게 꼬인 건 도현 씨가 해당 금액을 몰래 빼면서 시작됐습니다."
           ],
           "privateKnowledge": [
             "선아는 자신의 보험금 은닉이 있었기에 실제 가용자금 판단이 왜곡됐다는 점을 알고 있다.",
@@ -2292,13 +2292,13 @@
               ],
               "slots": {
                 "amountA": {
-                  "exact": "3,900,000원",
-                  "rounded": "390만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 예약금"
                 },
                 "amountB": {
-                  "exact": "9,300,000원",
-                  "rounded": "930만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 보험금"
                 },
                 "time": {
@@ -2328,13 +2328,13 @@
               ],
               "slots": {
                 "amountA": {
-                  "exact": "3,900,000원",
-                  "rounded": "390만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 예약금"
                 },
                 "amountB": {
-                  "exact": "9,300,000원",
-                  "rounded": "930만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 보험금"
                 },
                 "time": {
@@ -2387,12 +2387,12 @@
               ],
               "slots": {
                 "amountA": {
-                  "exact": "3,900,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "390만원",
                   "neutral": "그 예약금"
                 },
                 "amountB": {
-                  "exact": "9,300,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "930만원",
                   "neutral": "그 보험금"
                 },
@@ -2423,12 +2423,12 @@
               ],
               "slots": {
                 "amountA": {
-                  "exact": "3,900,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "390만원",
                   "neutral": "그 예약금"
                 },
                 "amountB": {
-                  "exact": "9,300,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "930만원",
                   "neutral": "그 보험금"
                 },
@@ -2863,19 +2863,19 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "3,900,000원",
-                  "rounded": "390만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 금액"
                 },
                 "time": {
-                  "exact": "21시 42분",
+                  "exact": "그 시점",
                   "dateExact": "21시 42분",
                   "period": "같은 날 밤",
                   "neutral": "그 시점"
                 },
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "그 사람",
                   "judgeRef": "원무주임",
                   "neutral": "그 수취인"
                 },
@@ -2901,19 +2901,19 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "3,900,000원",
-                  "rounded": "390만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 금액"
                 },
                 "time": {
-                  "exact": "21시 42분",
+                  "exact": "그 시점",
                   "dateExact": "21시 42분",
                   "period": "같은 날 밤",
                   "neutral": "그 시점"
                 },
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "그 사람",
                   "judgeRef": "원무주임",
                   "neutral": "그 수취인"
                 },
@@ -2962,7 +2962,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "3,900,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "390만원",
                   "neutral": "그 금액"
                 },
@@ -2974,7 +2974,7 @@
                 },
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "최 씨",
                   "judgeRef": "원무주임",
                   "neutral": "그 수취인"
                 },
@@ -3000,7 +3000,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "3,900,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "390만원",
                   "neutral": "그 금액"
                 },
@@ -3012,7 +3012,7 @@
                 },
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "최 씨",
                   "judgeRef": "원무주임",
                   "neutral": "그 수취인"
                 },
@@ -3456,8 +3456,8 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "9,300,000원",
-                  "rounded": "930만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 보험금"
                 },
                 "time": {
@@ -3468,7 +3468,7 @@
                 },
                 "person": {
                   "exact": "유성민",
-                  "fullName": "유성민",
+                  "fullName": "오빠",
                   "judgeRef": "오빠",
                   "neutral": "가족 계좌 명의자"
                 },
@@ -3494,8 +3494,8 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "9,300,000원",
-                  "rounded": "930만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 보험금"
                 },
                 "time": {
@@ -3506,7 +3506,7 @@
                 },
                 "person": {
                   "exact": "유성민",
-                  "fullName": "유성민",
+                  "fullName": "오빠",
                   "judgeRef": "오빠",
                   "neutral": "가족 계좌 명의자"
                 },
@@ -3555,7 +3555,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "9,300,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "930만원",
                   "neutral": "그 보험금"
                 },
@@ -3567,7 +3567,7 @@
                 },
                 "person": {
                   "exact": "유성민",
-                  "fullName": "유성민",
+                  "fullName": "유 씨",
                   "judgeRef": "오빠",
                   "neutral": "가족 계좌 명의자"
                 },
@@ -3593,7 +3593,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "9,300,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "930만원",
                   "neutral": "그 보험금"
                 },
@@ -3605,7 +3605,7 @@
                 },
                 "person": {
                   "exact": "유성민",
-                  "fullName": "유성민",
+                  "fullName": "유 씨",
                   "judgeRef": "오빠",
                   "neutral": "가족 계좌 명의자"
                 },
@@ -4054,7 +4054,7 @@
               "slots": {
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "그 사람",
                   "judgeRef": "원무주임",
                   "neutral": "그 담당자"
                 },
@@ -4091,7 +4091,7 @@
               "slots": {
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "그 사람",
                   "judgeRef": "원무주임",
                   "neutral": "그 담당자"
                 },
@@ -4151,7 +4151,7 @@
               "slots": {
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "최 씨",
                   "judgeRef": "원무주임",
                   "neutral": "그 담당자"
                 },
@@ -4188,7 +4188,7 @@
               "slots": {
                 "person": {
                   "exact": "최서정",
-                  "fullName": "최서정",
+                  "fullName": "최 씨",
                   "judgeRef": "원무주임",
                   "neutral": "그 담당자"
                 },
@@ -5119,13 +5119,13 @@
               ],
               "slots": {
                 "amountA": {
-                  "exact": "3,900,000원",
-                  "rounded": "390만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 예약금"
                 },
                 "amountB": {
-                  "exact": "9,300,000원",
-                  "rounded": "930만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 보험금"
                 },
                 "time": {
@@ -5155,13 +5155,13 @@
               ],
               "slots": {
                 "amountA": {
-                  "exact": "3,900,000원",
-                  "rounded": "390만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 예약금"
                 },
                 "amountB": {
-                  "exact": "9,300,000원",
-                  "rounded": "930만원",
+                  "exact": "해당 금액",
+                  "rounded": "해당 금액",
                   "neutral": "그 보험금"
                 },
                 "time": {
@@ -5214,12 +5214,12 @@
               ],
               "slots": {
                 "amountA": {
-                  "exact": "3,900,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "390만원",
                   "neutral": "그 예약금"
                 },
                 "amountB": {
-                  "exact": "9,300,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "930만원",
                   "neutral": "그 보험금"
                 },
@@ -5250,12 +5250,12 @@
               ],
               "slots": {
                 "amountA": {
-                  "exact": "3,900,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "390만원",
                   "neutral": "그 예약금"
                 },
                 "amountB": {
-                  "exact": "9,300,000원",
+                  "exact": "적지 않은 돈",
                   "rounded": "930만원",
                   "neutral": "그 보험금"
                 },

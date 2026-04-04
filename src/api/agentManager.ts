@@ -104,8 +104,8 @@ function getActiveBlocks(): Record<string, PromptBlock> {
 export function getAgentConfig(agentKey: string): { temperature: number; maxTokens: number } {
   const agent = getActiveAgents()[agentKey]
   return {
-    temperature: agent?.temperature ?? 0.8,
-    maxTokens: agent?.max_tokens ?? 300,
+    temperature: agent?.temperature ?? 1.0,
+    maxTokens: agent?.max_tokens ?? 400,
   }
 }
 

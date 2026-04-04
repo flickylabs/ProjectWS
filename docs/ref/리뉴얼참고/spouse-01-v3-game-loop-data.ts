@@ -32,6 +32,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-1.a.q2",
               "text": "송금 직전 돌봄센터 대표번호와 두 차례 통화한 점을 보면, 이 돈이 어떤 공백을 메우려던 것인지 설명하십시오.",
               "attackVector": "context",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d1.unlock.s2.holiday_care_gap_exists"
@@ -41,6 +43,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-1.a.q3",
               "text": "이체 내역과 예약서가 모두 기관 원본으로 확인될 경우에도, 여전히 자료 자체를 다투실 겁니까.",
               "attackVector": "authenticity",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "authenticity",
                 "lieAdvance": true
@@ -64,6 +68,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-1.b.q2",
               "text": "대상자란의 오미숙 기재와 상담 사유까지 보신 뒤에도, 외도 의심을 그대로 유지하실 겁니까.",
               "attackVector": "context",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d2.unlock.s4.inlaw_table_fear"
@@ -73,6 +79,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-1.b.q3",
               "text": "최민정 씨가 기관 담당자라는 점까지 확인되면, 여전히 '그 여자'라는 표현을 유지하실 겁니까.",
               "attackVector": "identity",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "identity",
                 "lieAdvance": true
@@ -112,6 +120,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-2.a.q2",
               "text": "이 메시지의 상대가 사적 관계가 아니라 업무상 연락처라는 점을, 지금 분명히 밝히실 수 있습니까.",
               "attackVector": "identity",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "identity",
                 "revealAtom": "d3.unlock.s2.consult_not_date"
@@ -121,6 +131,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-2.a.q3",
               "text": "출입기록과 카페 영수증까지 시각이 맞는데도, 여전히 그날 만남 자체를 흐리게 말씀하실 겁니까.",
               "attackVector": "authenticity",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "authenticity",
                 "lieAdvance": true
@@ -144,6 +156,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-2.b.q2",
               "text": "잘린 캡처 한 장만으로 결론을 내린 점은 인정하십니까, 아니면 앞뒤 대화까지 확인하셨습니까.",
               "attackVector": "context",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d2.unlock.s3.third_party_validation_impulse"
@@ -153,6 +167,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-2.b.q3",
               "text": "최민정 씨의 정체가 확인되더라도, 여전히 외도 상대라는 판단을 유지하실 겁니까.",
               "attackVector": "identity",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "identity",
                 "lieAdvance": true
@@ -181,7 +197,7 @@ export const spouse01V3GameLoopData = {
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "정우성 씨 계좌와 월세 수납증이 모두 원본이라면, 제 아내의 150만원 자체는 더는 부정하지 않으시겠습니까.",
+              "text": "한지석 씨, 정우성 씨의 계좌 내역과 월세 수납증이 모두 원본이라면, 오세린 씨가 150만원을 지급했다는 점은 더는 부정하지 않으시겠습니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -192,6 +208,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-3.a.q2",
               "text": "정우성 씨가 단순 전달자였다는 점이 확인되면, 여전히 상대의 지출 목적 전체를 같은 방식으로 몰아가실 겁니까.",
               "attackVector": "identity",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "identity",
                 "lieAdvance": true
@@ -201,6 +219,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-3.a.q3",
               "text": "이 150만원이 동생 월세용이었다는 흐름을 보면, 자신의 280만원과 상대의 150만원을 같은 칸에 올리기 전에 선후관계를 먼저 말하셔야 하는 것 아닙니까.",
               "attackVector": "context",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d5a.unlock.s5.i_broke_first"
@@ -224,6 +244,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-3.b.q2",
               "text": "입금 18분 뒤 월세로 빠져나간 흐름을 보면, 처음부터 추석 뒤 설명까지 미룰 생각으로 짠 우회 송금이 맞습니까.",
               "attackVector": "context",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d4.unlock.s2.eviction_notice_pressure"
@@ -233,6 +255,8 @@ export const spouse01V3GameLoopData = {
               "id": "dossier-3.b.q3",
               "text": "제3자 자료라도 사건 판단 범위에서 제출된 이상, 이 돈 흐름은 전혀 쓸 수 없다고 계속 주장하실 겁니까.",
               "attackVector": "legality",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "legality",
                 "lieAdvance": true

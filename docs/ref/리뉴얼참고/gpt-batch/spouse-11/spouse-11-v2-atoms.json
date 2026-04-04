@@ -509,7 +509,7 @@
                 "person": {
                   "exact": "차유림",
                   "neutral": "상대",
-                  "fullName": "차유림",
+                  "fullName": "배우자",
                   "judgeRef": "배우자"
                 }
               },
@@ -580,7 +580,7 @@
                 "person": {
                   "exact": "차유림",
                   "neutral": "상대",
-                  "fullName": "차유림",
+                  "fullName": "차 씨",
                   "judgeRef": "배우자"
                 }
               },
@@ -930,7 +930,7 @@
                 "person": {
                   "exact": "홍대성",
                   "neutral": "시공사 쪽 사람",
-                  "fullName": "홍대성",
+                  "fullName": "그 사람",
                   "judgeRef": "현장소장"
                 }
               },
@@ -1004,7 +1004,7 @@
                 "person": {
                   "exact": "홍대성",
                   "neutral": "시공사 쪽 사람",
-                  "fullName": "홍대성",
+                  "fullName": "홍 씨",
                   "judgeRef": "현장소장"
                 },
                 "time": {
@@ -1033,7 +1033,7 @@
                 "person": {
                   "exact": "홍대성",
                   "neutral": "시공사 쪽 사람",
-                  "fullName": "홍대성",
+                  "fullName": "홍 씨",
                   "judgeRef": "현장소장"
                 }
               },
@@ -1803,7 +1803,7 @@
                 "person": {
                   "exact": "홍대성",
                   "neutral": "시공사 쪽 사람",
-                  "fullName": "홍대성",
+                  "fullName": "그 사람",
                   "judgeRef": "현장소장"
                 },
                 "notice": {
@@ -1881,7 +1881,7 @@
                 "person": {
                   "exact": "홍대성",
                   "neutral": "시공사 쪽 사람",
-                  "fullName": "홍대성",
+                  "fullName": "홍 씨",
                   "judgeRef": "현장소장"
                 }
               },
@@ -2281,7 +2281,7 @@
                 "person": {
                   "exact": "백승호",
                   "neutral": "상대",
-                  "fullName": "백승호",
+                  "fullName": "배우자",
                   "judgeRef": "배우자"
                 }
               },
@@ -3147,7 +3147,7 @@
                 "person": {
                   "exact": "홍대성",
                   "neutral": "시공사 쪽 사람",
-                  "fullName": "홍대성",
+                  "fullName": "그 사람",
                   "judgeRef": "현장소장"
                 }
               },
@@ -3240,7 +3240,7 @@
                 "person": {
                   "exact": "홍대성",
                   "neutral": "시공사 쪽 사람",
-                  "fullName": "홍대성",
+                  "fullName": "홍 씨",
                   "judgeRef": "현장소장"
                 },
                 "clip": {
@@ -4016,7 +4016,7 @@
                 "person": {
                   "exact": "홍대성",
                   "neutral": "시공사 쪽 사람",
-                  "fullName": "홍대성",
+                  "fullName": "그 사람",
                   "judgeRef": "현장소장"
                 },
                 "notice": {
@@ -4116,7 +4116,7 @@
                 "person": {
                   "exact": "홍대성",
                   "neutral": "시공사 쪽 사람",
-                  "fullName": "홍대성",
+                  "fullName": "홍 씨",
                   "judgeRef": "현장소장"
                 }
               },

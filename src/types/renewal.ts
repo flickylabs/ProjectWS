@@ -176,6 +176,9 @@ export interface ExecutableVerbalTell {
 
 export type BeatType = 'deny' | 'hedge' | 'partial' | 'blame' | 'emotional' | 'confession' | 'evidence_hit'
 
+/** Truth Throttle 수준 — 대사 내 진실 노출 정도 */
+export type TruthLevel = 'none' | 'hint' | 'partial' | 'full'
+
 export interface BeatScript {
   caseId: string
   party: PartyId
@@ -189,6 +192,18 @@ export interface BeatScript {
   applicableStates: LieState[]
   /** 특정 증거 제시 후에만 사용 */
   afterEvidence?: string
+}
+
+/** V3 확장 BeatScript — LLM 100% 대체용 */
+export interface BeatScriptV3 extends BeatScript {
+  /** 이 대사가 대응하는 질문 유형 (미지정 시 모든 질문에 범용) */
+  questionType?: QuestionType
+  /** 이 대사가 대응하는 증거 조사 단계 번호 (investigationStages 연계) */
+  afterInvestigationStage?: number
+  /** 같은 조건에서의 대체 대사 (반복 방지, 최소 2개 권장) */
+  alternatives?: string[]
+  /** 진실 노출 수준 — Truth Throttle 검증용 */
+  truthLevel: TruthLevel
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -237,11 +252,21 @@ export interface BlueprintInput {
 export interface DossierChallengeQuestion {
   id: string
   text: string
+  /** 스포일러 없는 힌트 텍스트 (잠겨 있을 때 표시) */
+  lockedHint?: string
   attackVector: AttackVector
+  /** 이 질문이 공개되려면 대상 파티의 관련 dispute lieState가 이 값 이상이어야 함 */
+  requiredLieState?: 'S0' | 'S1' | 'S2' | 'S3' | 'S4'
   onSuccess: {
     blockVector: AttackVector
     revealAtom?: string
     lieAdvance?: boolean
+  }
+  /** V3: 카드 질문에 대한 NPC 스크립트 응답 (LLM 대체용) */
+  scriptedResponse?: {
+    npcResponse: string
+    behaviorHint: string
+    truthLevel: TruthLevel
   }
 }
 

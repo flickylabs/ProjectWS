@@ -4,6 +4,11 @@
  * 환경변수 VITE_OPENAI_API_KEY가 있으면 OpenAI, 없으면 로컬.
  */
 
+/** 대화/심문/증언 등 NPC 대사 생성용 — 품질 우선 */
+export const MODEL_DIALOGUE = 'gpt-4o'
+/** 분류/분석/요약 등 내부 처리용 — 비용 우선 */
+export const MODEL_ANALYSIS = 'gpt-4o-mini'
+
 interface ChatMessage {
   role: 'system' | 'user' | 'assistant'
   content: string
@@ -28,7 +33,7 @@ function getConfig(): LLMConfig {
       provider: 'openai',
       baseUrl: 'https://api.openai.com/v1',
       apiKey,
-      modelId: 'gpt-4o-mini',
+      modelId: MODEL_DIALOGUE,
     }
   }
 
@@ -59,10 +64,12 @@ async function resolveModelId(config: LLMConfig): Promise<string> {
 
 export async function chatCompletion(
   messages: ChatMessage[],
-  options: { temperature?: number; maxTokens?: number } = {},
+  options: { temperature?: number; maxTokens?: number; model?: string } = {},
 ): Promise<string> {
   const config = getConfig()
-  const modelId = await resolveModelId(config)
+  const modelId = options.model && config.provider === 'openai'
+    ? options.model
+    : await resolveModelId(config)
 
   const headers: Record<string, string> = { 'Content-Type': 'application/json' }
   if (config.apiKey) {
@@ -77,8 +84,8 @@ export async function chatCompletion(
     body: JSON.stringify({
       model: modelId,
       messages,
-      temperature: options.temperature ?? 0.8,
-      max_tokens: options.maxTokens ?? 300,
+      temperature: options.temperature ?? 1.0,
+      max_tokens: options.maxTokens ?? 400,
       stream: false,
     }),
   })
@@ -132,5 +139,5 @@ export async function checkConnection(): Promise<{
 
 export function getProviderName(): string {
   const config = getConfig()
-  return config.provider === 'openai' ? 'OpenAI GPT-4o-mini' : 'LM Studio (로컬)'
+  return config.provider === 'openai' ? 'OpenAI GPT-4o' : 'LM Studio (로컬)'
 }

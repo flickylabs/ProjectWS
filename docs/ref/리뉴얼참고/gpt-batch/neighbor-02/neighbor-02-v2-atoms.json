@@ -34,7 +34,7 @@
                 "person": {
                   "exact": "장민규",
                   "neutral": "상대방",
-                  "fullName": "장민규",
+                  "fullName": "민규 씨",
                   "judgeRef": "민규 씨"
                 },
                 "time": {
@@ -93,7 +93,7 @@
                 "person": {
                   "exact": "장민규",
                   "neutral": "상대방",
-                  "fullName": "장민규",
+                  "fullName": "장 씨",
                   "judgeRef": "민규 씨"
                 },
                 "time": {
@@ -390,7 +390,7 @@
                 "person": {
                   "exact": "장민규",
                   "neutral": "상대방",
-                  "fullName": "장민규",
+                  "fullName": "민규 씨",
                   "judgeRef": "민규 씨"
                 },
                 "time": {
@@ -449,7 +449,7 @@
                 "person": {
                   "exact": "장민규",
                   "neutral": "상대방",
-                  "fullName": "장민규",
+                  "fullName": "장 씨",
                   "judgeRef": "민규 씨"
                 },
                 "time": {
@@ -746,7 +746,7 @@
                 "person": {
                   "exact": "최병규",
                   "neutral": "그 사람",
-                  "fullName": "최병규",
+                  "fullName": "동대표",
                   "judgeRef": "동대표"
                 },
                 "time": {
@@ -805,7 +805,7 @@
                 "person": {
                   "exact": "최병규",
                   "neutral": "그 사람",
-                  "fullName": "최병규",
+                  "fullName": "최 씨",
                   "judgeRef": "동대표"
                 },
                 "time": {
@@ -1102,11 +1102,11 @@
                 "person": {
                   "exact": "장민규",
                   "neutral": "상대방",
-                  "fullName": "장민규",
+                  "fullName": "민규 씨",
                   "judgeRef": "민규 씨"
                 },
                 "time": {
-                  "exact": "08시 14분 무전 직후",
+                  "exact": "그 시각",
                   "neutral": "그 시각",
                   "period": "아침 시간대"
                 },
@@ -1161,7 +1161,7 @@
                 "person": {
                   "exact": "장민규",
                   "neutral": "상대방",
-                  "fullName": "장민규",
+                  "fullName": "장 씨",
                   "judgeRef": "민규 씨"
                 },
                 "time": {
@@ -1458,7 +1458,7 @@
                 "person": {
                   "exact": "장민규",
                   "neutral": "상대방",
-                  "fullName": "장민규",
+                  "fullName": "민규 씨",
                   "judgeRef": "민규 씨"
                 },
                 "time": {
@@ -1517,7 +1517,7 @@
                 "person": {
                   "exact": "장민규",
                   "neutral": "상대방",
-                  "fullName": "장민규",
+                  "fullName": "장 씨",
                   "judgeRef": "민규 씨"
                 },
                 "time": {
@@ -1816,7 +1816,7 @@
                 "person": {
                   "exact": "서유나",
                   "neutral": "상대방",
-                  "fullName": "서유나",
+                  "fullName": "유나 씨",
                   "judgeRef": "유나 씨"
                 },
                 "time": {
@@ -1875,7 +1875,7 @@
                 "person": {
                   "exact": "서유나",
                   "neutral": "상대방",
-                  "fullName": "서유나",
+                  "fullName": "서 씨",
                   "judgeRef": "유나 씨"
                 },
                 "time": {
@@ -2172,7 +2172,7 @@
                 "person": {
                   "exact": "서유나",
                   "neutral": "상대방",
-                  "fullName": "서유나",
+                  "fullName": "유나 씨",
                   "judgeRef": "유나 씨"
                 },
                 "time": {
@@ -2231,7 +2231,7 @@
                 "person": {
                   "exact": "서유나",
                   "neutral": "상대방",
-                  "fullName": "서유나",
+                  "fullName": "서 씨",
                   "judgeRef": "유나 씨"
                 },
                 "time": {
@@ -2528,7 +2528,7 @@
                 "person": {
                   "exact": "최병규",
                   "neutral": "그 사람",
-                  "fullName": "최병규",
+                  "fullName": "동대표",
                   "judgeRef": "동대표"
                 },
                 "time": {
@@ -2587,7 +2587,7 @@
                 "person": {
                   "exact": "최병규",
                   "neutral": "그 사람",
-                  "fullName": "최병규",
+                  "fullName": "최 씨",
                   "judgeRef": "동대표"
                 },
                 "time": {
@@ -2884,11 +2884,11 @@
                 "person": {
                   "exact": "박정호",
                   "neutral": "경비원",
-                  "fullName": "박정호",
+                  "fullName": "경비원",
                   "judgeRef": "경비원"
                 },
                 "time": {
-                  "exact": "08시 14분 무전과 6분 영상 구간",
+                  "exact": "그 시각",
                   "neutral": "그 시각",
                   "period": "아침 시간대"
                 },
@@ -2943,7 +2943,7 @@
                 "person": {
                   "exact": "박정호",
                   "neutral": "경비원",
-                  "fullName": "박정호",
+                  "fullName": "박 씨",
                   "judgeRef": "경비원"
                 },
                 "time": {
@@ -3240,7 +3240,7 @@
                 "person": {
                   "exact": "서유나",
                   "neutral": "상대방",
-                  "fullName": "서유나",
+                  "fullName": "유나 씨",
                   "judgeRef": "유나 씨"
                 },
                 "time": {
@@ -3299,7 +3299,7 @@
                 "person": {
                   "exact": "서유나",
                   "neutral": "상대방",
-                  "fullName": "서유나",
+                  "fullName": "서 씨",
                   "judgeRef": "유나 씨"
                 },
                 "time": {

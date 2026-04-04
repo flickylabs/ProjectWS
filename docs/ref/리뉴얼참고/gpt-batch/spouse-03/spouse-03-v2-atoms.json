@@ -35,9 +35,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "160만원",
+                  "exact": "해당 금액",
                   "neutral": "해당 금액",
-                  "rounded": "160만원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "이직 첫 주",
@@ -68,7 +68,7 @@
                   "neutral": "그 준비비"
                 },
                 "rule": {
-                  "exact": "50만원 이상 사전 상의",
+                  "exact": "해당 금액",
                   "neutral": "그 규칙"
                 }
               },
@@ -86,7 +86,7 @@
           "disputeId": "d-1",
           "state": "S1",
           "publicClaim": [
-            "세부 금액은 159만 8천원 정도였고 대부분 출근 준비비였어.",
+            "세부 금액은 159만 적지 않은 돈 정도였고 대부분 출근 준비비였어.",
             "미리 말 못 한 건 맞지만 다음 급여 들어오면 바로 채울 생각이었어."
           ],
           "privateKnowledge": [
@@ -113,7 +113,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "160만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "해당 금액",
                   "rounded": "160만원"
                 },
@@ -145,7 +145,7 @@
                   "neutral": "그 준비비"
                 },
                 "rule": {
-                  "exact": "50만원 이상 사전 상의",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 규칙"
                 }
               },
@@ -1470,20 +1470,20 @@
           "claimAtoms": [
             {
               "id": "spouse03:a:d-4:responsibility:0",
-              "factText": "노유진도 비상금 인출로 50만원 이상 사전 상의 규칙을 어긴 사실",
+              "factText": "노유진도 비상금 인출로 50만원 이상 미리 알리기 규칙을 어긴 사실",
               "tags": [
                 "responsibility",
                 "denial"
               ],
               "slots": {
                 "rule": {
-                  "exact": "50만원 이상 사전 상의",
+                  "exact": "해당 금액",
                   "neutral": "그 규칙"
                 },
                 "amount": {
-                  "exact": "50만원 초과",
+                  "exact": "해당 금액",
                   "neutral": "그 기준 금액",
-                  "rounded": "50만원대"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -1549,18 +1549,18 @@
           "claimAtoms": [
             {
               "id": "spouse03:a:d-4:threshold:0",
-              "factText": "50만원 이상 사전 상의 합의가 실제로 비워진 점",
+              "factText": "50만원 이상 미리 알리기 합의가 실제로 비워진 점",
               "tags": [
                 "threshold",
                 "rule"
               ],
               "slots": {
                 "rule": {
-                  "exact": "50만원 이상 사전 상의",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 규칙"
                 },
                 "amount": {
-                  "exact": "50만원 초과",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 기준 금액",
                   "rounded": "50만원대"
                 }
@@ -2395,7 +2395,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "유진이 비상금에서 160만원을 빼고 말도 안 한 건 사실상 혼자 결정한 거지.",
+            "유진이 비상금에서 해당 금액을 빼고 말도 안 한 건 사실상 혼자 결정한 거지.",
             "그걸 나중에 들으니 더 크게 느껴졌어."
           ],
           "privateKnowledge": [
@@ -2422,9 +2422,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "160만원",
+                  "exact": "해당 금액",
                   "neutral": "해당 금액",
-                  "rounded": "160만원"
+                  "rounded": "해당 금액"
                 },
                 "item": {
                   "exact": "공동 비상금",
@@ -2441,7 +2441,7 @@
             },
             {
               "id": "spouse03:b:d-1:rule:0",
-              "factText": "50만원 이상 사전 상의 합의가 깨진 점",
+              "factText": "50만원 이상 미리 알리기 합의가 깨진 점",
               "tags": [
                 "rule",
                 "relationship"
@@ -2452,7 +2452,7 @@
                   "neutral": "그 사정"
                 },
                 "rule": {
-                  "exact": "50만원 이상 사전 상의",
+                  "exact": "해당 금액",
                   "neutral": "그 규칙"
                 }
               },
@@ -2499,7 +2499,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "160만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "해당 금액",
                   "rounded": "160만원"
                 },
@@ -2508,7 +2508,7 @@
                   "neutral": "그 사정"
                 },
                 "rule": {
-                  "exact": "50만원 이상 사전 상의",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 규칙"
                 }
               },
@@ -2523,7 +2523,7 @@
             },
             {
               "id": "spouse03:b:d-1:threshold:0",
-              "factText": "50만원 이상 사전 상의 합의가 깨진 점",
+              "factText": "50만원 이상 미리 알리기 합의가 깨진 점",
               "tags": [
                 "threshold",
                 "rule"
@@ -2534,7 +2534,7 @@
                   "neutral": "그 사정"
                 },
                 "rule": {
-                  "exact": "50만원 이상 사전 상의",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 규칙"
                 }
               },
@@ -3361,7 +3361,7 @@
                   "neutral": "그 알림"
                 },
                 "time": {
-                  "exact": "새벽 1시 18분 캡처",
+                  "exact": "그때",
                   "neutral": "그때",
                   "dateExact": "새벽 1시 18분",
                   "period": "심야 확인 시점"
@@ -3826,7 +3826,7 @@
           "claimAtoms": [
             {
               "id": "spouse03:b:d-4:responsibility:0",
-              "factText": "건조기 할부와 적금 조정을 사전 상의 없이 함께 밀어붙인 사실",
+              "factText": "건조기 할부와 적금 조정을 미리 알리기 없이 함께 밀어붙인 사실",
               "tags": [
                 "responsibility",
                 "denial"
@@ -3837,7 +3837,7 @@
                   "neutral": "그 결정"
                 },
                 "rule": {
-                  "exact": "50만원 이상 사전 상의",
+                  "exact": "해당 금액",
                   "neutral": "그 규칙"
                 }
               },
@@ -3863,9 +3863,9 @@
                   "neutral": "그 생활 편의"
                 },
                 "amount": {
-                  "exact": "84만원 할부",
+                  "exact": "해당 금액",
                   "neutral": "그 할부 금액",
-                  "rounded": "84만원"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -3884,7 +3884,7 @@
           "disputeId": "d-4",
           "state": "S1",
           "publicClaim": [
-            "50만원은 넘었어도 집안일 줄이려는 선택이었어.",
+            "적지 않은 돈은 넘었어도 집안일 줄이려는 선택이었어.",
             "내가 살림 모르냐, 그냥 필요해서 한 거야."
           ],
           "privateKnowledge": [
@@ -3904,7 +3904,7 @@
           "claimAtoms": [
             {
               "id": "spouse03:b:d-4:threshold:0",
-              "factText": "50만원 이상 사전 상의 합의가 깨진 점",
+              "factText": "50만원 이상 미리 알리기 합의가 깨진 점",
               "tags": [
                 "threshold",
                 "rule"
@@ -3915,7 +3915,7 @@
                   "neutral": "그 결정"
                 },
                 "rule": {
-                  "exact": "50만원 이상 사전 상의",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 규칙"
                 }
               },
@@ -3941,7 +3941,7 @@
                   "neutral": "그 생활 편의"
                 },
                 "amount": {
-                  "exact": "84만원 할부",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 할부 금액",
                   "rounded": "84만원"
                 }

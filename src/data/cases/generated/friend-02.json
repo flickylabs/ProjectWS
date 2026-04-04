@@ -321,6 +321,8 @@
     {
       "id": "e-1",
       "name": "민재-박서후 메신저 포워드 내역",
+      "surfaceName": "메신저 포워드 내역",
+      "surfaceDescription": "메신저에서 전달된 대화 기록이다. 원본 여부와 전달 경위는 확인이 필요하다.",
       "description": "민재가 가은의 비밀 음성메모와 요약 문장을 박서후에게 전달하며 '나만 알기엔 너무 무거워'라고 보낸 대화 원본이다.",
       "type": "chat",
       "reliability": "soft",
@@ -356,6 +358,8 @@
     {
       "id": "e-2",
       "name": "온라인 커뮤니티 익명 폭로글과 댓글 캡처",
+      "surfaceName": "커뮤니티 익명 글과 댓글 캡처",
+      "surfaceDescription": "온라인 커뮤니티에 올라온 익명 폭로글과 댓글을 캡처한 이미지다. 작성자와 시점은 불명확하다.",
       "description": "가은의 비밀 연애와 동호회 역할 조정 이야기를 암시하는 익명 게시글과 댓글 캡처다.",
       "type": "sns",
       "reliability": "soft",
@@ -390,6 +394,8 @@
     {
       "id": "e-3",
       "name": "가은의 인스타 친한친구 스토리 보관본",
+      "surfaceName": "SNS 친한친구 스토리 보관본",
+      "surfaceDescription": "SNS 친한친구 공개 스토리의 보관본이다. 게시 시점과 공개 범위 확인이 필요하다.",
       "description": "'비밀 팔아 관계 지키는 척하는 사람이 제일 비겁하다'는 문구와 모임 사진이 함께 담긴 가은의 스토리 보관본이다.",
       "type": "sns",
       "reliability": "soft",
@@ -415,6 +421,8 @@
     {
       "id": "e-4",
       "name": "카페 CCTV와 태블릿 자동로그인 기록",
+      "surfaceName": "CCTV 영상과 자동로그인 기록",
+      "surfaceDescription": "매장 CCTV 영상과 기기의 자동로그인 접속 기록이다. 촬영 시점과 접속 주체 확인이 필요하다.",
       "description": "가은이 민재의 태블릿 화면을 확인한 시간대를 보여주는 카페 CCTV 일부와 태블릿 세션 로그, 단톡 미리보기 기록이다.",
       "type": "photo_video",
       "reliability": "hard",
@@ -436,11 +444,14 @@
         "check_edits": "장비 추출본이라 편집 흔적은 없다.",
         "question_acquisition": "무단 열람 정황을 담은 자료라 취득 목적은 분쟁 해결로 한정돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "온라인 커뮤니티 운영자 보존로그와 보조계정 복구정보",
+      "surfaceName": "커뮤니티 운영 로그와 계정 복구 정보",
+      "surfaceDescription": "커뮤니티 운영자 보존 로그와 보조계정 복구 기록이다. 계정 간 관계 확인이 필요하다.",
       "description": "익명 게시글·댓글을 올린 계정의 접속 기기, 복구 이메일 일부, 삭제 전 보존 로그가 박서후의 보조 계정과 이어지는 자료다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -473,11 +484,14 @@
           "questionAngle": "박민재에게: \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 박민재의 \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 쟁점과 관련된다. 박민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "운영진 제보 음성파일 원본과 편집 비교 리포트",
+      "surfaceName": "음성파일 원본과 편집 비교 리포트",
+      "surfaceDescription": "제보 음성파일 원본과 편집 여부를 분석한 비교 리포트다. 녹음 조건과 변조 확인이 필요하다.",
       "description": "이소담 운영진에게 전달된 음성파일이 가은의 원래 음성메모 일부를 잘라 재배열한 것임을 보여주는 원본 대조 리포트다.",
       "type": "audio_report",
       "reliability": "hard",
@@ -499,7 +513,8 @@
         "check_edits": "문장 사이 무음 구간 절단과 순서 재배열이 기술적으로 검출됐다.",
         "question_acquisition": "당사자 동의 하에 비교용으로 제출됐지만 사적 음성자료라 외부 유포는 엄격히 제한돼야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

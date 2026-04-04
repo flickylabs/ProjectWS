@@ -3,7 +3,7 @@
  *
  * 프롬프트는 웹 어드민(promptManager)에서 관리한다.
  */
-import { chatCompletion } from './llmClient'
+import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 import { buildSpeechGuide, getRelationLabel } from './llmSpeechGuide'
@@ -36,7 +36,7 @@ export async function generatePhase1Dialogues(caseData: CaseData): Promise<Omit<
   try {
     const response = await chatCompletion(
       [{ role: 'user', content: prompt }],
-      { temperature: config.temperature, maxTokens: config.maxTokens },
+      { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
     )
     return parseDialogueArray(response, nameA, nameB)
   } catch (error) {
@@ -72,7 +72,7 @@ export async function generatePhase2Dialogues(caseData: CaseData): Promise<Omit<
   try {
     const response = await chatCompletion(
       [{ role: 'user', content: prompt }],
-      { temperature: config.temperature, maxTokens: config.maxTokens },
+      { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
     )
     return parseDialogueArray(response, nameA, nameB)
   } catch (error) {

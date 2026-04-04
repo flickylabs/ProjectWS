@@ -323,6 +323,8 @@
       "id": "e-1",
       "name": "교부 직후 보도자료 초안과 인센티브 승인안",
       "description": "지원금 수령 직후 배포된 보도자료 초안, 진흥원 브리핑 발표문, 그리고 다예를 단독 주공로자로 기재한 내부 인센티브 승인안 묶음이다.",
+      "surfaceName": "보도자료 초안과 인센티브 승인안",
+      "surfaceDescription": "배포용 보도자료 초안과 내부 인센티브 승인안 묶음이다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -347,6 +349,8 @@
       "id": "e-2",
       "name": "지원사업 제출본 버전 로그와 KPI 수정 코멘트",
       "description": "지원금 신청서의 버전 기록, KPI 표 수정 코멘트, 그리고 매장 수·절감률 문구가 마감 직전 어떻게 바뀌었는지 보여주는 클라우드 로그다.",
+      "surfaceName": "신청서 버전 로그와 수정 코멘트",
+      "surfaceDescription": "클라우드 버전 기록과 KPI 표 수정 코멘트 로그다.",
       "type": "cloud_log",
       "reliability": "hard",
       "completeness": "original",
@@ -381,6 +385,8 @@
       "id": "e-3",
       "name": "평가피드백 크롭 캡처",
       "description": "인호가 팀 단톡에 올린 평가위원 피드백 캡처로, '기술성 최고' 부분만 남고 시장검증·기관협업 관련 문장은 잘려 있다.",
+      "surfaceName": "평가피드백 크롭 캡처",
+      "surfaceDescription": "평가위원 피드백 일부만 남은 캡처로, 잘린 구간이 있다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -416,6 +422,8 @@
       "id": "e-4",
       "name": "원본 평가결과 메일과 이미지 메타데이터 보고",
       "description": "평가위원 피드백 원본 메일, 그리고 e-3 캡처 이미지의 편집 시각과 잘린 구간을 복원한 메타데이터 보고다.",
+      "surfaceName": "평가결과 원본 메일과 메타데이터",
+      "surfaceDescription": "평가 피드백 원본 메일과 이미지 메타데이터 분석 보고다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -447,12 +455,15 @@
           "questionAngle": "손다예에게: \"지원금은 상대 한 명의 순수 성과였는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 손다예의 \"지원금은 상대 한 명의 순수 성과였는가\" 쟁점과 관련된다. 손다예은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "실증 로그와 허위 추천확인서 초안",
       "description": "실증 매장 원본 전력로그 CSV, 실제보다 부풀려진 제출용 요약 PDF, 그리고 유사한 문장으로 작성된 추천확인서 초안 묶음이다.",
+      "surfaceName": "실증 로그와 추천확인서 초안",
+      "surfaceDescription": "실증 데이터 CSV, 요약 PDF, 추천확인서 초안이 묶인 자료다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -485,12 +496,15 @@
           "questionAngle": "손다예에게: \"지원금은 상대 한 명의 순수 성과였는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 손다예의 \"지원금은 상대 한 명의 순수 성과였는가\" 쟁점과 관련된다. 손다예은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "진흥원 사후점검 후보 메모와 브리핑 수정요청 메일",
       "description": "이소진 매니저가 보관한 사후점검 후보 선정 메모와, 다예가 브리핑 발표문에서 자신의 이름을 전면에 두도록 수정 요청한 메일이다.",
+      "surfaceName": "사후점검 메모와 수정요청 메일",
+      "surfaceDescription": "기관 담당이 보관한 점검 메모와 발표문 수정요청 메일이다.",
       "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
@@ -522,7 +536,8 @@
           "questionAngle": "손다예에게: \"다예의 단독 공로 홍보와 인센티브 편취\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 손다예의 \"다예의 단독 공로 홍보와 인센티브 편취\" 쟁점과 관련된다. 손다예은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

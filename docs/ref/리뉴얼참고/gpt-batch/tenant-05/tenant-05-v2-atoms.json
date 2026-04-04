@@ -36,7 +36,7 @@
                 "speaker": {
                   "exact": "조민재",
                   "neutral": "그 사람",
-                  "fullName": "조민재",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 },
                 "forum": {
@@ -120,7 +120,7 @@
                 "speaker": {
                   "exact": "조민재",
                   "neutral": "그 사람",
-                  "fullName": "조민재",
+                  "fullName": "조 씨",
                   "judgeRef": "상대방"
                 },
                 "forum": {
@@ -6336,4 +6336,3 @@
     }
   }
 }
-

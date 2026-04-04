@@ -7,7 +7,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "제가 괜히 그런 말을 한 게 아니에요. 그때는 94만 원이 비는 것처럼 보였고 참가자들이 바로 환불 일정을 물었어요."
+            "제가 괜히 그런 말을 한 게 아니에요. 그때는 해당 금액이 비는 것처럼 보였고 참가자들이 바로 환불 일정을 물었어요."
           ],
           "privateKnowledge": [
             "원본 정산서를 받기 전에 제가 먼저 공개 글을 올렸다.",
@@ -33,9 +33,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "94만 원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "94만원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "공개 글 게시 시점",
@@ -46,7 +46,7 @@
                 "person": {
                   "exact": "서도윤",
                   "neutral": "상대방",
-                  "fullName": "서도윤",
+                  "fullName": "서도윤 씨",
                   "judgeRef": "서도윤 씨"
                 }
               },
@@ -71,9 +71,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "94만 원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "94만원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "공개 글 게시 시점",
@@ -84,7 +84,7 @@
                 "person": {
                   "exact": "서도윤",
                   "neutral": "상대방",
-                  "fullName": "서도윤",
+                  "fullName": "서도윤 씨",
                   "judgeRef": "서도윤 씨"
                 }
               },
@@ -538,9 +538,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "32만 원",
+                  "exact": "해당 금액",
                   "neutral": "카드취소분",
-                  "rounded": "32만원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "사흘 공백",
@@ -569,9 +569,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "32만 원",
+                  "exact": "해당 금액",
                   "neutral": "카드취소분",
-                  "rounded": "32만원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "사흘 공백",
@@ -1018,9 +1018,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "62만 원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "62만원"
+                  "rounded": "해당 금액"
                 },
                 "person": {
                   "exact": "배지연 개인계좌",
@@ -1048,9 +1048,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "62만 원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "62만원"
+                  "rounded": "해당 금액"
                 },
                 "person": {
                   "exact": "배지연 개인계좌",
@@ -1486,7 +1486,7 @@
           "disputeId": "d-4",
           "state": "S0",
           "publicClaim": [
-            "제 눈에는 94만 원이 그냥 사라진 돈이었어요. 그 숫자가 왜 나왔는지 따질 겨를도 없었습니다."
+            "제 눈에는 해당 금액이 그냥 사라진 돈이었어요. 그 숫자가 왜 나왔는지 따질 겨를도 없었습니다."
           ],
           "privateKnowledge": [
             "표의 한 칸에 작년 이월분과 이번 부족분을 함께 적었다."
@@ -1510,9 +1510,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "94만 원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "94만원"
+                  "rounded": "해당 금액"
                 },
                 "relationship": {
                   "exact": "한 칸에 합산된 숫자",
@@ -1540,9 +1540,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "94만 원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "94만원"
+                  "rounded": "해당 금액"
                 },
                 "relationship": {
                   "exact": "한 칸에 합산된 숫자",
@@ -1590,7 +1590,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "94만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 총액",
                   "rounded": "94만원"
                 },
@@ -1620,7 +1620,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "94만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 총액",
                   "rounded": "94만원"
                 },
@@ -2480,7 +2480,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "제가 94만 원을 숨긴 적은 없습니다. 배지연 씨가 확인도 전에 공개방에 올린 겁니다."
+            "제가 해당 금액을 숨긴 적은 없습니다. 배지연 씨가 확인도 전에 공개방에 올린 겁니다."
           ],
           "privateKnowledge": [
             "내 늦은 고지가 그 글의 빌미가 됐다."
@@ -2504,14 +2504,14 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "94만 원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "94만원"
+                  "rounded": "해당 금액"
                 },
                 "person": {
                   "exact": "배지연",
                   "neutral": "상대방",
-                  "fullName": "배지연",
+                  "fullName": "배지연 씨",
                   "judgeRef": "배지연 씨"
                 }
               },
@@ -2536,14 +2536,14 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "94만 원",
+                  "exact": "해당 금액",
                   "neutral": "그 금액",
-                  "rounded": "94만원"
+                  "rounded": "해당 금액"
                 },
                 "person": {
                   "exact": "배지연",
                   "neutral": "상대방",
-                  "fullName": "배지연",
+                  "fullName": "배지연 씨",
                   "judgeRef": "배지연 씨"
                 }
               },
@@ -2970,7 +2970,7 @@
           "disputeId": "d-2",
           "state": "S0",
           "publicClaim": [
-            "숨긴 게 아니라 아직 확정 전이었습니다. 카드취소 32만 원만 따로 말하면 오히려 숫자가 더 틀어질 수 있어서 기다린 겁니다."
+            "숨긴 게 아니라 아직 확정 전이었습니다. 카드취소 해당 금액만 따로 말하면 오히려 숫자가 더 틀어질 수 있어서 기다린 겁니다."
           ],
           "privateKnowledge": [
             "사흘 가까이 알려주지 않았다."
@@ -2994,9 +2994,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "32만 원",
+                  "exact": "해당 금액",
                   "neutral": "카드취소분",
-                  "rounded": "32만원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "사흘 보류",
@@ -3025,9 +3025,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "32만 원",
+                  "exact": "해당 금액",
                   "neutral": "카드취소분",
-                  "rounded": "32만원"
+                  "rounded": "해당 금액"
                 },
                 "time": {
                   "exact": "사흘 보류",
@@ -3448,7 +3448,7 @@
           "disputeId": "d-3",
           "state": "S0",
           "publicClaim": [
-            "작년 62만 원 문제는 제 카드취소랑 별개입니다. 배지연 씨 쪽 계좌에서 시작된 일이지 제가 만든 빈칸이 아닙니다."
+            "작년 해당 금액 문제는 제 카드취소랑 별개입니다. 배지연 씨 쪽 계좌에서 시작된 일이지 제가 만든 빈칸이 아닙니다."
           ],
           "privateKnowledge": [
             "그때 강하게 마감 요구를 했어야 했다."
@@ -3472,9 +3472,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "62만 원",
+                  "exact": "해당 금액",
                   "neutral": "작년 미정산분",
-                  "rounded": "62만원"
+                  "rounded": "해당 금액"
                 },
                 "person": {
                   "exact": "배지연 개인계좌",
@@ -3502,9 +3502,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "62만 원",
+                  "exact": "해당 금액",
                   "neutral": "작년 미정산분",
-                  "rounded": "62만원"
+                  "rounded": "해당 금액"
                 },
                 "person": {
                   "exact": "배지연 개인계좌",
@@ -3528,7 +3528,7 @@
           "disputeId": "d-3",
           "state": "S1",
           "publicClaim": [
-            "작년 캐시백 41만 원, 반품차액 21만 원이 닫히지 않은 채 남아 있었어요. 저는 그게 이번 숫자를 흐리게 만든 핵심이라고 봅니다."
+            "작년 캐시백과 반품차액이 닫히지 않은 채 남아 있었어요. 저는 그게 이번 숫자를 흐리게 만든 핵심이라고 봅니다."
           ],
           "privateKnowledge": [
             "봤다고 하면서도 공식 정산을 끝까지 밀어붙이지 않았다."
@@ -3552,17 +3552,17 @@
               ],
               "slots": {
                 "amount1": {
-                  "exact": "41만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "캐시백 금액",
                   "rounded": "41만원"
                 },
                 "amount2": {
-                  "exact": "21만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "반품차액",
                   "rounded": "21만원"
                 },
                 "amount_total": {
-                  "exact": "62만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "작년 미정산 총액",
                   "rounded": "62만원"
                 }
@@ -3588,17 +3588,17 @@
               ],
               "slots": {
                 "amount1": {
-                  "exact": "41만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "캐시백 금액",
                   "rounded": "41만원"
                 },
                 "amount2": {
-                  "exact": "21만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "반품차액",
                   "rounded": "21만원"
                 },
                 "amount_total": {
-                  "exact": "62만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "작년 미정산 총액",
                   "rounded": "62만원"
                 }
@@ -3944,7 +3944,7 @@
           "disputeId": "d-4",
           "state": "S0",
           "publicClaim": [
-            "94만 원이라는 숫자 자체가 틀렸습니다. 이번 라운드에서 제가 쥐고 있던 환급 가능 금액은 32만 원뿐이었습니다."
+            "해당 금액이라는 숫자 자체가 틀렸습니다. 이번 라운드에서 제가 쥐고 있던 환급 가능 금액은 해당 금액뿐이었습니다."
           ],
           "privateKnowledge": [
             "그 32만 원도 즉시 공유하지 않았다."
@@ -3968,14 +3968,14 @@
               ],
               "slots": {
                 "amount_now": {
-                  "exact": "32만 원",
+                  "exact": "해당 금액",
                   "neutral": "현재 환급분",
-                  "rounded": "32만원"
+                  "rounded": "해당 금액"
                 },
                 "amount_wrong": {
-                  "exact": "94만 원",
+                  "exact": "해당 금액",
                   "neutral": "상대가 든 숫자",
-                  "rounded": "94만원"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -3999,14 +3999,14 @@
               ],
               "slots": {
                 "amount_now": {
-                  "exact": "32만 원",
+                  "exact": "해당 금액",
                   "neutral": "현재 환급분",
-                  "rounded": "32만원"
+                  "rounded": "해당 금액"
                 },
                 "amount_wrong": {
-                  "exact": "94만 원",
+                  "exact": "해당 금액",
                   "neutral": "상대가 든 숫자",
-                  "rounded": "94만원"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -4026,7 +4026,7 @@
           "disputeId": "d-4",
           "state": "S1",
           "publicClaim": [
-            "94만 원은 이번 환급금이 아니라 다른 금액이 섞인 숫자예요. 다만 그 혼입분이 정확히 어디서 왔는지는 그때 바로 펼쳐 설명하지 못했습니다."
+            "적지 않은 돈은 이번 환급금이 아니라 다른 금액이 섞인 숫자예요. 다만 그 혼입분이 정확히 어디서 왔는지는 그때 바로 펼쳐 설명하지 못했습니다."
           ],
           "privateKnowledge": [
             "작년 62만 원과 연결된다는 걸 알고 있었다."
@@ -4050,12 +4050,12 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "94만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 혼합 숫자",
                   "rounded": "94만원"
                 },
                 "amount_old": {
-                  "exact": "62만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "과거 혼입분",
                   "rounded": "62만원"
                 }
@@ -4081,12 +4081,12 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "94만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 혼합 숫자",
                   "rounded": "94만원"
                 },
                 "amount_old": {
-                  "exact": "62만 원",
+                  "exact": "적지 않은 돈",
                   "neutral": "과거 혼입분",
                   "rounded": "62만원"
                 }
@@ -4556,7 +4556,7 @@
                 "person": {
                   "exact": "배지연",
                   "neutral": "상대방",
-                  "fullName": "배지연",
+                  "fullName": "배 씨",
                   "judgeRef": "배지연 씨"
                 },
                 "quote": {
@@ -4587,7 +4587,7 @@
                 "person": {
                   "exact": "배지연",
                   "neutral": "상대방",
-                  "fullName": "배지연",
+                  "fullName": "배 씨",
                   "judgeRef": "배지연 씨"
                 },
                 "quote": {

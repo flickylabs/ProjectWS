@@ -7,7 +7,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "그 6,600만원은 도윤과 중개사가 따로 굴린 얘기였고 저는 잘린 말만 보고 뒤늦게 이상한 줄 알았습니다.",
+            "그 6,해당 금액은 도윤과 중개사가 따로 굴린 얘기였고 저는 잘린 말만 보고 뒤늦게 이상한 줄 알았습니다.",
             "저는 부모 치료비 때문에 공식 계약서에 적힌 금액만 믿고 따라간 쪽입니다."
           ],
           "privateKnowledge": [
@@ -38,12 +38,12 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "해당 금액",
                   "rounded": "6천6백만원",
                   "neutral": "계약 밖 보전금"
                 },
                 "amount_split": {
-                  "exact": "3,300만원",
+                  "exact": "해당 금액",
                   "rounded": "3천3백만원",
                   "neutral": "각자 몫"
                 },
@@ -53,7 +53,7 @@
                   "neutral": "공식 매매가"
                 },
                 "person_broker": {
-                  "fullName": "김태범",
+                  "fullName": "중개사",
                   "judgeRef": "중개사",
                   "neutral": "거래 실무자"
                 },
@@ -84,12 +84,12 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "해당 금액",
                   "rounded": "6천6백만원",
                   "neutral": "계약 밖 보전금"
                 },
                 "amount_split": {
-                  "exact": "3,300만원",
+                  "exact": "해당 금액",
                   "rounded": "3천3백만원",
                   "neutral": "각자 몫"
                 },
@@ -153,12 +153,12 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "6천6백만원",
                   "neutral": "계약 밖 보전금"
                 },
                 "amount_split": {
-                  "exact": "3,300만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "3천3백만원",
                   "neutral": "각자 몫"
                 },
@@ -194,7 +194,7 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "6천6백만원",
                   "neutral": "계약 밖 보전금"
                 },
@@ -909,7 +909,7 @@
                   "neutral": "그날 오후"
                 },
                 "person_mother": {
-                  "fullName": "최정자",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "부모"
                 },
@@ -1022,7 +1022,7 @@
               ],
               "slots": {
                 "person_mother": {
-                  "fullName": "최정자",
+                  "fullName": "최 씨",
                   "judgeRef": "어머니",
                   "neutral": "부모"
                 },
@@ -1649,12 +1649,12 @@
               ],
               "slots": {
                 "amount_received": {
-                  "exact": "2,400만원",
+                  "exact": "해당 금액",
                   "rounded": "2천4백만원",
                   "neutral": "먼저 받은 몫"
                 },
                 "amount_debt": {
-                  "exact": "1,300만원",
+                  "exact": "해당 금액",
                   "rounded": "1천3백만원",
                   "neutral": "채무 상환액"
                 },
@@ -1664,7 +1664,7 @@
                   "neutral": "그 직후"
                 },
                 "person_broker": {
-                  "fullName": "김태범",
+                  "fullName": "중개사",
                   "judgeRef": "중개사",
                   "neutral": "거래 실무자"
                 }
@@ -1690,7 +1690,7 @@
               ],
               "slots": {
                 "amount_received": {
-                  "exact": "2,400만원",
+                  "exact": "해당 금액",
                   "rounded": "2천4백만원",
                   "neutral": "먼저 받은 몫"
                 },
@@ -1744,7 +1744,7 @@
               ],
               "slots": {
                 "amount_received": {
-                  "exact": "2,400만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "2천4백만원",
                   "neutral": "먼저 받은 몫"
                 },
@@ -1775,7 +1775,7 @@
               ],
               "slots": {
                 "amount_received": {
-                  "exact": "2,400만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "2천4백만원",
                   "neutral": "먼저 받은 몫"
                 },
@@ -2397,7 +2397,7 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "해당 금액",
                   "rounded": "6천6백만원",
                   "neutral": "별도 보전금"
                 },
@@ -2433,7 +2433,7 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "해당 금액",
                   "rounded": "6천6백만원",
                   "neutral": "별도 보전금"
                 },
@@ -2486,7 +2486,7 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "6천6백만원",
                   "neutral": "별도 보전금"
                 },
@@ -2522,7 +2522,7 @@
                   "neutral": "부모"
                 },
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "6천6백만원",
                   "neutral": "별도 보전금"
                 },
@@ -3087,7 +3087,7 @@
                   "neutral": "비용 항목"
                 },
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "해당 금액",
                   "rounded": "6천6백만원",
                   "neutral": "숨긴 보전금"
                 },
@@ -3179,7 +3179,7 @@
                   "neutral": "비용 항목"
                 },
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "6천6백만원",
                   "neutral": "숨긴 보전금"
                 },
@@ -3785,12 +3785,12 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "해당 금액",
                   "rounded": "6천6백만원",
                   "neutral": "계약 밖 보전금"
                 },
                 "amount_split": {
-                  "exact": "3,300만원",
+                  "exact": "해당 금액",
                   "rounded": "3천3백만원",
                   "neutral": "각자 몫"
                 },
@@ -3826,7 +3826,7 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "해당 금액",
                   "rounded": "6천6백만원",
                   "neutral": "계약 밖 보전금"
                 },
@@ -3879,12 +3879,12 @@
               ],
               "slots": {
                 "person_broker": {
-                  "fullName": "김태범",
+                  "fullName": "김 씨",
                   "judgeRef": "중개사",
                   "neutral": "거래 실무자"
                 },
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "6천6백만원",
                   "neutral": "계약 밖 보전금"
                 },
@@ -3915,7 +3915,7 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "6천6백만원",
                   "neutral": "계약 밖 보전금"
                 },
@@ -4511,12 +4511,12 @@
                   "neutral": "그날 오후"
                 },
                 "person_mother": {
-                  "fullName": "최정자",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "부모"
                 },
                 "person_notary": {
-                  "fullName": "윤하나",
+                  "fullName": "법무사 사무장",
                   "judgeRef": "법무사 사무장",
                   "neutral": "사무실 담당자"
                 },
@@ -5125,7 +5125,7 @@
           "disputeId": "d-3",
           "state": "S0",
           "publicClaim": [
-            "그 2,400만원은 제 몫을 잠깐 묶어 둔 성격이었고 아직 최종 정산 전이었습니다.",
+            "그 2,해당 금액은 제 몫을 잠깐 묶어 둔 성격이었고 아직 최종 정산 전이었습니다.",
             "개인적으로 써버렸다고 보기엔 당시 현장 비용과 자금 흐름이 너무 급했습니다."
           ],
           "privateKnowledge": [
@@ -5155,12 +5155,12 @@
               ],
               "slots": {
                 "amount_received": {
-                  "exact": "2,400만원",
+                  "exact": "해당 금액",
                   "rounded": "2천4백만원",
                   "neutral": "먼저 받은 몫"
                 },
                 "amount_debt": {
-                  "exact": "1,300만원",
+                  "exact": "해당 금액",
                   "rounded": "1천3백만원",
                   "neutral": "채무 상환액"
                 },
@@ -5191,12 +5191,12 @@
               ],
               "slots": {
                 "amount_received": {
-                  "exact": "2,400만원",
+                  "exact": "해당 금액",
                   "rounded": "2천4백만원",
                   "neutral": "먼저 받은 몫"
                 },
                 "amount_debt": {
-                  "exact": "1,300만원",
+                  "exact": "해당 금액",
                   "rounded": "1천3백만원",
                   "neutral": "채무 상환액"
                 },
@@ -5249,12 +5249,12 @@
               ],
               "slots": {
                 "amount_received": {
-                  "exact": "2,400만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "2천4백만원",
                   "neutral": "먼저 받은 몫"
                 },
                 "amount_debt": {
-                  "exact": "1,300만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "1천3백만원",
                   "neutral": "채무 상환액"
                 },
@@ -5285,12 +5285,12 @@
               ],
               "slots": {
                 "amount_received": {
-                  "exact": "2,400만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "2천4백만원",
                   "neutral": "먼저 받은 몫"
                 },
                 "amount_debt": {
-                  "exact": "1,300만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "1천3백만원",
                   "neutral": "채무 상환액"
                 },
@@ -5865,7 +5865,7 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "해당 금액",
                   "rounded": "6천6백만원",
                   "neutral": "별도 보전금"
                 },
@@ -5901,7 +5901,7 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "해당 금액",
                   "rounded": "6천6백만원",
                   "neutral": "별도 보전금"
                 },
@@ -5953,7 +5953,7 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "6천6백만원",
                   "neutral": "별도 보전금"
                 },
@@ -5984,7 +5984,7 @@
               ],
               "slots": {
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "적지 않은 돈",
                   "rounded": "6천6백만원",
                   "neutral": "별도 보전금"
                 },
@@ -6553,7 +6553,7 @@
                   "neutral": "비용 항목"
                 },
                 "amount_total": {
-                  "exact": "6,600만원",
+                  "exact": "해당 금액",
                   "rounded": "6천6백만원",
                   "neutral": "숨긴 보전금"
                 },

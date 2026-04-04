@@ -331,6 +331,8 @@
       "id": "e-1",
       "name": "임대차계약서와 공용공간 특약 메모",
       "description": "공용공간 전용 사용 금지 문구, 지하 선반 사용 관련 손글씨 메모, 옥상은 안전 범위 내 단시간 건조 용도로 본다는 특약이 적힌 계약서다.",
+      "surfaceName": "임대차계약서와 공용공간 특약",
+      "surfaceDescription": "공용공간 사용 조건과 손글씨 메모가 적힌 계약서와 특약이다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -365,6 +367,8 @@
       "id": "e-2",
       "name": "초기 카카오톡과 중개사 전달 메시지",
       "description": "기성이 유진에게 '옥상이랑 지하 편하게 쓰세요'라고 보낸 초기 메시지와, 바로 뒤 이어진 '안전하게만, 필요할 때 말해요' 부분이 포함된 대화 일부다.",
+      "surfaceName": "초기 카카오톡과 중개사 메시지",
+      "surfaceDescription": "입주 초기에 오간 카카오톡과 중개사 전달 메시지 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -400,6 +404,8 @@
       "id": "e-3",
       "name": "비밀번호 변경 문자와 복도에 나온 박스 사진",
       "description": "기성이 옥상 비밀번호를 바꾼 뒤 보낸 안내 문자와, 유진의 지하 박스가 복도에 임시로 나온 상태를 찍은 사진들이다.",
+      "surfaceName": "비밀번호 변경 문자와 현장 사진",
+      "surfaceDescription": "비밀번호 안내 문자와 복도 상태를 촬영한 사진 묶음이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "original",
@@ -435,6 +441,8 @@
       "id": "e-4",
       "name": "소방점검 사진과 관리실 순찰기록",
       "description": "점검 기사와 관리실이 남긴 옥상 통로 폭, 지하 배수구 주변 적치 사진, 순찰 코멘트가 적힌 기록이다.",
+      "surfaceName": "소방점검 사진과 관리실 순찰기록",
+      "surfaceDescription": "점검 사진과 관리실 순찰 코멘트가 적힌 기록이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -471,6 +479,8 @@
       "id": "e-5",
       "name": "지하 복도 CCTV와 물건 이동 시간표",
       "description": "기성이 유진의 박스를 선반에서 내려 복도로 옮기는 장면과, 같은 시간대에 스프레이 호스가 분리돼 따로 놓인 흐름이 남은 CCTV 기록이다.",
+      "surfaceName": "지하 복도 CCTV와 이동 시간표",
+      "surfaceDescription": "복도 CCTV 기록과 물건 이동 시각이 정리된 표다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -502,12 +512,15 @@
           "questionAngle": "황기성에게: \"기성의 무단 잠금 교체와 물건 이동\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 황기성의 \"기성의 무단 잠금 교체와 물건 이동\" 쟁점과 관련된다. 황기성은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "주민센터 상담 메모와 중개사 확인서",
       "description": "공용공간 사용 갈등으로 주민센터에 문의한 상담 메모와, 입주 당시 중개사가 설명한 '잠깐 사용·한 칸 보관' 취지를 적은 확인서다.",
+      "surfaceName": "주민센터 상담 메모와 중개사 확인서",
+      "surfaceDescription": "주민센터 상담 메모와 입주 당시 중개사 확인서 묶음이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -539,7 +552,8 @@
           "questionAngle": "황기성에게: \"옥상·지하 사용 허용 범위의 해석\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 황기성의 \"옥상·지하 사용 허용 범위의 해석\" 쟁점과 관련된다. 황기성은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

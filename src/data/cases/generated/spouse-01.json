@@ -365,12 +365,40 @@
         "check_edits": "은행 시스템에서 직접 출력한 PDF 발급본이다. 수정 이력이나 이미지 편집 흔적은 없다.",
         "question_acquisition": "부부 공동명의 계좌이므로 어느 쪽이든 조회할 권리가 있다. 다만 280만원을 상의 없이 인출한 행위 자체는 합의 위반이다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "은행 이체 내역서",
+      "surfaceDescription": "은행에서 발급된 계좌 거래 기록이다. 이체 금액과 수취인 정보가 포함되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "공동계좌에서 상당한 금액이 이체된 사실을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 이체를 본인이 직접 실행했다는 점에 대해 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이체 직전 특정 기관에 두 차례 전화한 기록이 있습니다. 이 통화의 목적을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
-      "name": "재가돌봄센터 간병 예약 확인서",
-      "description": "재가돌봄센터가 발급한 추석 연휴 간병 예약서다. 상담팀장 최민정 이름으로 접수돼 있고, 대상자란에 '오미숙(세린 어머니)'이 적혀 있다. 280만원 예약금 영수증이 함께 붙어 있다.",
+      "name": "추석 연휴 예약 관련 문서",
+      "description": "특정 기관 명의로 접수된 예약서다. 신청인 이름과 금액이 기재되어 있으며, 기관 직인이 찍혀 있다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -392,7 +420,36 @@
         "check_edits": "전자서명 유효성 검증 통과. 발급 이후 한 글자도 수정되지 않았다.",
         "question_acquisition": "돌봄센터가 직접 발급한 기관 제출본이라 취득 경위에 문제없다. 다만 대상자(어머니)의 건강 상세는 개인정보 보호를 위해 최소한만 공개된다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "예약 확인 문서",
+      "surfaceDescription": "특정 기관에서 발급된 예약 관련 문서다. 기관명과 예약 내용은 조사가 필요하다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 예약 문서에 기재된 신청인이 본인이 맞습니까?",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 예약이 이체와 같은 날 작성된 점에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "상담 사유란의 기재 내용과 이체 금액의 관계를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -427,7 +484,35 @@
           "questionAngle": "오세린에게: \"세린의 새벽 휴대폰 열람\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 오세린의 \"세린의 새벽 휴대폰 열람\" 쟁점과 관련된다. 오세린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "메신저 대화 캡처",
+      "surfaceDescription": "휴대폰에서 캡처된 메신저 대화 화면이다. 대화 일부만 보여 전체 맥락을 파악하려면 조사가 필요하다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화가 전체 원본이 아니라 일부 캡처인 점을 알고 계셨습니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 캡처가 새벽 시간에 생성된 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "대화의 위아래가 잘려 있습니다. 전체를 제출하지 않은 이유가 있습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -451,7 +536,35 @@
         "check_edits": "카드 영수증은 POS 원본 출력이라 편집 여지가 없다. 출입명부는 수기 작성본을 복사한 것인데, 필적이 일관되어 사후 조작 가능성은 낮다.",
         "question_acquisition": "지석 본인이 자발적으로 제출한 자료다. '제가 그날 어디 있었는지 증명하겠습니다'라며 직접 꺼냈으므로 취득 경위에 문제없다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "건물 출입기록과 영수증",
+      "surfaceDescription": "특정 건물의 출입 기록과 인근 카페 결제 영수증이다. 방문 시각과 장소를 확인할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 건물에 야간에 출입한 사실을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "출입 시각과 특정 대화에서 언급된 시간이 겹치는 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 건물의 용도와 방문 목적에 대해 알고 계신 바를 말씀하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -475,7 +588,35 @@
         "check_edits": "세린 폰에서 이 대화를 한 차례 삭제했다 복원한 흔적이 있다. 증거 인멸을 시도했을 가능성이 있지만, 복원된 본문 자체는 조작되지 않았다.",
         "question_acquisition": "정우성이 자발적으로 제출한 자료다. 본인이 참여한 대화이므로 상대방(세린) 동의 없이 제출해도 위법성은 낮다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "지인 간 송금 메시지",
+      "surfaceDescription": "메신저를 통해 지인에게 송금을 요청한 대화 원본이다. 금액과 전달 경위가 담겨 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 메시지를 보낸 사실을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 메시지가 특정 이체 직후에 발송된 점에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "이 대화에서 삭제된 흔적이 보입니다. 그 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -502,7 +643,36 @@
         "check_edits": "은행 발급 입금확인서와 임대인 직인이 찍힌 수납증, 모두 기관 원본이다. 편집이나 변조 여지가 없다.",
         "question_acquisition": "정우성과 세린 동생이라는 제3자의 금융 정보가 포함돼 있다. 이 사건 판단에 필요한 범위 안에서만 사용해야 하며, 불필요한 공개는 개인정보 침해에 해당한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "계좌 이체 연쇄 내역",
+      "surfaceDescription": "한 계좌에서 다른 계좌로 이어진 이체 기록이다. 입금확인서와 납부증이 첨부되어 있다.",
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 이체가 한 사람을 거쳐 이뤄진 사실을 알고 계셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입금과 납부 사이의 간격이 매우 짧은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "최종 수취인의 연체 상황과 이 이체의 관계를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

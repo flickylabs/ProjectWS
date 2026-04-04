@@ -68,11 +68,19 @@ export function getDossierCard(caseId: string, dossierId: string): DossierCard |
   return getDossierCards(caseId).find(d => d.id === dossierId) ?? null
 }
 
-/** 특정 파티에 대한 미사용 질문 목록 조회 */
+// ── lieState 순위 맵 (게이팅용) ──
+const LIE_STATE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+
+/**
+ * 특정 파티에 대한 미사용 질문 목록 조회 (lieState 게이팅 포함)
+ * @param lieStates - 대상 파티의 dispute별 현재 lieState 맵 (예: { 'd-1': 'S2', 'd-2': 'S1' })
+ *   전달하지 않으면 기존 동작(게이팅 없음)과 동일
+ */
 export function getAvailableDossierQuestions(
   caseId: string,
   dossierId: string,
   targetParty: PartyId,
+  lieStates?: Record<string, LieState>,
 ): DossierChallengeQuestion[] {
   const card = getDossierCard(caseId, dossierId)
   if (!card) return []
@@ -81,7 +89,46 @@ export function getAvailableDossierQuestions(
   const challenge = card.challenges.find(c => c.targetParty === targetParty)
   if (!challenge) return []
 
-  return challenge.questions.filter(q => !used.has(q.id))
+  return challenge.questions.filter(q => {
+    if (used.has(q.id)) return false
+    // requiredLieState 게이팅: 관련 dispute 중 하나라도 필요 상태 이상이면 공개
+    if (q.requiredLieState && lieStates && card.relatedDisputes.length > 0) {
+      const reqRank = LIE_STATE_RANK[q.requiredLieState] ?? 0
+      const maxDisputeRank = Math.max(
+        ...card.relatedDisputes.map(dId => LIE_STATE_RANK[lieStates[dId] ?? 'S0'] ?? 0)
+      )
+      if (maxDisputeRank < reqRank) return false
+    }
+    return true
+  })
+}
+
+/**
+ * 잠긴 질문 목록 조회 (UI에서 "🔒" 표시용)
+ * getAvailableDossierQuestions와 반대: requiredLieState 미충족인 질문만 반환
+ */
+export function getLockedDossierQuestions(
+  caseId: string,
+  dossierId: string,
+  targetParty: PartyId,
+  lieStates: Record<string, LieState>,
+): DossierChallengeQuestion[] {
+  const card = getDossierCard(caseId, dossierId)
+  if (!card) return []
+
+  const used = usedDossierQuestions.get(caseId) ?? new Set()
+  const challenge = card.challenges.find(c => c.targetParty === targetParty)
+  if (!challenge) return []
+
+  return challenge.questions.filter(q => {
+    if (used.has(q.id)) return false
+    if (!q.requiredLieState) return false // 게이팅 없는 질문은 잠기지 않음
+    const reqRank = LIE_STATE_RANK[q.requiredLieState] ?? 0
+    const maxDisputeRank = Math.max(
+      ...card.relatedDisputes.map(dId => LIE_STATE_RANK[lieStates[dId] ?? 'S0'] ?? 0)
+    )
+    return maxDisputeRank < reqRank
+  })
 }
 
 export interface DossierQuestionResult {

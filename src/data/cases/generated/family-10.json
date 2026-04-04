@@ -339,7 +339,9 @@
         "check_edits": "텍스트 편집 흔적은 없으나 상하가 강하게 크롭돼 조건 문장이 빠져 있다.",
         "question_acquisition": "당사자 간 대화 캡처라 활용 가능하지만 제3자 전달은 감정 확산의 별도 문제를 낳는다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "잘린 가족 단톡 캡처",
+      "surfaceDescription": "가족 단체 채팅의 일부만 캡처된 화면이다. 방문 약속 관련 문장이 보이지만 조건이 잘려 있다."
     },
     {
       "id": "e-2",
@@ -366,7 +368,10 @@
         "check_edits": "원본 내보내기와 장치 기록이라 수동 수정 흔적이 없다.",
         "question_acquisition": "개인 이동 기록이 포함돼 있어 분쟁 해결 범위 내에서만 사용해야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "단톡 원본과 일정·통행 기록",
+      "surfaceDescription": "가족 단톡 원본 내보내기와 업무 일정표, 고속도로 통행 기록이다. 출발 시점을 대조할 수 있다.",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-3",
@@ -390,7 +395,9 @@
         "check_edits": "매장 원본 영수증과 수기 예약표라 편집 흔적이 없다.",
         "question_acquisition": "개인 소비자료지만 명절 정산 범위 안에서는 제출 정당성이 높다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "식재료 예약표와 추가 주문 영수증",
+      "surfaceDescription": "정육점 예약 내역과 추가 주문, 반찬가게 영수증이다. 준비 분량의 변화를 확인할 수 있다."
     },
     {
       "id": "e-4",
@@ -414,7 +421,9 @@
         "check_edits": "원본 거래내역과 문자라 편집 흔적이 없다.",
         "question_acquisition": "당사자 가족 간 금융자료라 제출은 가능하지만 제3자 공유는 제한돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "소액 송금 내역과 답장 문자",
+      "surfaceDescription": "계좌이체 내역과 수신자의 답장 문자다. 송금 금액과 감사 표현이 담겨 있다."
     },
     {
       "id": "e-5",
@@ -448,7 +457,9 @@
           "questionAngle": "유민재에게: \"명절 분담 원칙의 공동 실패\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 유민재의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "상담센터 권고 메모와 역할표",
+      "surfaceDescription": "가족상담센터의 권고 메모와 과거 명절 역할 분담표다. 전문가 의견과 이전 합의가 적혀 있다."
     },
     {
       "id": "e-6",
@@ -482,7 +493,9 @@
           "questionAngle": "유민재에게: \"명절 분담 원칙의 공동 실패\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 유민재의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "명절 체크리스트와 주방 사진",
+      "surfaceDescription": "명절 당일 체크리스트와 타임스탬프가 찍힌 주방 사진이다. 준비 과정의 시간 흐름이 보인다."
     }
   ],
   "evidenceCombinations": [

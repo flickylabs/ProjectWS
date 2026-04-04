@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import type { EvidenceNode } from '../../types'
@@ -17,8 +17,17 @@ const SUB_ACTIONS: { key: string; label: string; icon: string }[] = [
 export default function EvidenceBoard() {
   const evidenceStates = useGameStore((s) => s.evidenceStates)
   const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
+  const caseData = useGameStore((s) => s.caseData)
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const dispatch = useActionDispatch()
+
+  // 방어 코드: evidenceDefinitions가 비어있지만 caseData.evidence는 있을 때 자동 복구
+  useEffect(() => {
+    if (evidenceDefinitions.length === 0 && caseData?.evidence && caseData.evidence.length > 0) {
+      console.warn('[EvidenceBoard] evidenceDefinitions 비어있음 — caseData에서 복구')
+      useGameStore.getState().initEvidence(caseData.evidence, caseData.evidenceCombinations ?? [])
+    }
+  }, [evidenceDefinitions.length, caseData])
 
   const { unlocked, locked } = useMemo(() => {
     const u = evidenceDefinitions.filter((e) => evidenceStates[e.id]?.unlocked)

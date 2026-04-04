@@ -1,0 +1,250 @@
+{
+  "caseId": "spouse-01",
+  "session": "partyB-d1d2",
+  "_meta": {
+    "version": "v3-session",
+    "party": "b",
+    "disputes": [
+      "d-1",
+      "d-2"
+    ],
+    "description": "spouse-01 Session 3: Party B (오세린) — BeatScriptV3 + InvestigationStage scriptedNpcResponses"
+  },
+  "beatScriptsV3": [
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "truthLevel": "none",
+      "line": "그만큼의 돈이 문제지, 제가 왜 의심했는지가 먼저입니까. 제 남편이 이름도 설명도 없이 그 돈을 보냈는데 제가 가만히 있었어야 합니까?",
+      "behaviorHint": "evidence_waving tell 발현 — 금액과 '이름도 설명도 없이'를 세게 찍으며 결론부터 민다.",
+      "alternatives": [
+        "제가 폰을 봤다, 그 말만 붙잡으실 겁니까. 적지 않은 돈이 그렇게 빠져나갔는데 아내가 눈감는 게 더 이상하지 않습니까.",
+        "한지석 씨가 먼저 숨긴 돈부터 보셔야 합니다. 제가 왜 가만히 못 있었는지는 그다음 문제 아닙니까."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "applicableStates": [
+        "S2"
+      ],
+      "truthLevel": "hint",
+      "line": "외도 아닐 수도 있겠지요. 그래도 가족 일인지 개인 사정인지 한마디 없이 숨긴 건 사실이지 않습니까.",
+      "behaviorHint": "selective_quote tell 발현 — '숨긴 건 사실'만 남겨 반복하듯 눌러 말한다.",
+      "alternatives": [
+        "제가 너무 빨리 단정했을 수는 있습니다. 그런데 가족 일이면 가족 일이라고, 개인 사정이면 개인 사정이라고 말했어야 합니다.",
+        "그 돈의 성격이 제가 처음 본 그대로는 아닐 수도 있겠습니다. 그래도 끝까지 설명을 피한 건 제 남편입니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "applicableStates": [
+        "S3"
+      ],
+      "truthLevel": "partial",
+      "line": "자료가 더 나오니까 제가 외도라고 너무 빨리 결론 낸 건 흔들립니다. 그래도 280만원을 저 빼고 움직인 그 배제감까지 없던 일은 아닙니다.",
+      "behaviorHint": "motive_jump tell 약화 — 단정은 물러나지만, 마지막에 감정과 사실을 한 문장으로 다시 꽂는다.",
+      "alternatives": [
+        "이제는 외도라고 바로 못 박기 어렵다는 건 압니다. 그런데 제 남편이 저를 빼고 큰돈을 처리한 건 여전히 배신처럼 남습니다.",
+        "제가 본 그림이 전부가 아닐 수 있다는 건 보입니다. 그래도 숨긴 송금이 저한테 상처였다는 말까지 거둘 순 없습니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "truthLevel": "hint",
+      "afterEvidence": "e-1",
+      "line": "네, 원본이면 제 남편이 직접 보낸 건 맞는군요. 그렇다고 제가 본 의심이 전부 맞았다고는 못 해도, 왜 저한테는 숨겼는지는 더 묻게 됩니다.",
+      "behaviorHint": "evidence_waving tell 약화 — 종이 앞에서 확신은 한 톤 낮추지만, '왜 숨겼는지'만 다시 붙잡는다.",
+      "alternatives": [
+        "이체 내역 자체는 부정 못 하겠습니다. 그래서 더 묻는 겁니다, 왜 저만 빼고 결정했는지.",
+        "원본이 나오면 숫자는 맞다는 것이지요. 그렇다면 이제 남는 건 제 남편이 왜 입을 닫았는가입니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "truthLevel": "none",
+      "line": "제가 확인하지 않으면 누가 합니까. 제 남편이 그렇게 수상하게 굴었는데 저는 그냥 모른 척하고 있어야 합니까?",
+      "behaviorHint": "motive_jump tell 발현 — 자기 행동의 책임을 곧장 배우자 쪽 원인으로 돌려 세운다.",
+      "alternatives": [
+        "아내가 남편 폰 본 게 그렇게 큰 죄입니까. 먼저 저를 그 지경까지 몰아넣은 정황이 있지 않았습니까.",
+        "제가 왜 그걸 봤는지만 물으시는군요. 제 남편이 왜 그렇게 보이게 만들었는지는 안 물으십니까."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "applicableStates": [
+        "S0",
+        "S1"
+      ],
+      "truthLevel": "none",
+      "questionType": "fact_pursuit",
+      "line": "몇 시에 봤냐고요? 그 시간이 그렇게 중요합니까, 그 안에 있던 내용이 문제였습니다.",
+      "behaviorHint": "selective_quote tell 발현 — '몇 시에'만 되받아치며 질문의 약한 고리를 반복한다.",
+      "alternatives": [
+        "시각을 캐물으시는군요. 저는 시간보다 제가 뭘 봤는지 때문에 잠이 다 깨 있었습니다.",
+        "몇 시냐는 숫자만 붙잡으실 겁니까. 저는 그 순간 이미 속고 있다는 생각에 멈출 수가 없었습니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "applicableStates": [
+        "S2"
+      ],
+      "truthLevel": "hint",
+      "line": "새벽이었던 건 맞습니다. 잠이 안 와서 뒤척이다가, 불안하면 손이 먼저 갑니다.",
+      "behaviorHint": "motive_jump tell 억제 — 반격 대신 불안만 낮게 인정하며 시선을 내린다.",
+      "alternatives": [
+        "시간이 새벽이었다고 해서 제 불안이 덜한 건 아닙니다. 그때는 확인하지 않으면 제가 무너질 것 같았습니다.",
+        "네, 새벽이었습니다. 머리로는 멈춰야 하는데 손이 먼저 간 건 사실입니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "applicableStates": [
+        "S3"
+      ],
+      "truthLevel": "partial",
+      "line": "캡처를 언니한테 보낸 건 인정합니다. 혼자 들고 있으면 제가 미칠 것 같았습니다.",
+      "behaviorHint": "evidence_waving tell 잔존 — 폰을 쥔 손엔 힘이 남아 있지만, 제3자 공유 자체는 인정한다.",
+      "alternatives": [
+        "언니한테 먼저 보여준 건 잘못입니다. 그래도 그 순간엔 저 혼자 삼키기엔 너무 무서웠습니다.",
+        "확인 전에 남한테 보낸 건 선 넘은 행동이었습니다. 그런데 저는 그때 이미 혼자 감당할 수 있는 상태가 아니었습니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "emotional",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "truthLevel": "partial",
+      "line": "바보 같은 아내가 되는 게 가장 무서웠어요. 속으면서도 명절상만 차리는 사람으로 남을까 봐요.",
+      "behaviorHint": "motive_jump tell 붕괴 — 처음으로 의도 단정 대신 자기 공포를 먼저 꺼낸다.",
+      "alternatives": [
+        "모르고 지나갈 뻔한 제가 더 무서웠어요. 다 보고도 아무것도 모르는 사람처럼 살게 될까 봐요.",
+        "시댁 앞에서 체면만 지키는 바보가 되는 느낌이 제일 싫었어요. 그래서 더 제정신이 아니었습니다."
+      ]
+    },
+    {
+      "caseId": "spouse-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "truthLevel": "hint",
+      "afterEvidence": "e-3",
+      "line": "네, 그 캡처는 제가 찍은 겁니다. 새벽에 잠이 안 와서 확인하려다 손이 먼저 갔습니다.",
+      "behaviorHint": "evidence_waving tell 꺼짐 — 캡처를 흔들던 태도는 사라지고, 손이 먼저 갔다는 말에 힘이 빠진다.",
+      "alternatives": [
+        "그 화면을 남긴 사람 저 맞습니다. 불안이 너무 커서 그 순간엔 멈추지 못했습니다.",
+        "제가 찍은 캡처입니다. 새벽 내내 머릿속이 시끄러워서 결국 확인 쪽으로 기울었습니다."
+      ]
+    }
+  ],
+  "investigationStageResponses": {
+    "e-1": [
+      {
+        "stage": 0,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "저도 그 이체를 보고 무너졌습니다. 상당한 금액이 낯선 이름으로 빠져나갔는데 제 남편 설명은 없었습니다.",
+            "behaviorHint": "evidence_waving tell 발현 — 금액과 수취인 인상만 붙들고 충격을 바로 결론으로 밀어붙인다.",
+            "truthLevel": "none"
+          }
+        }
+      },
+      {
+        "stage": 1,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "제 남편이 직접 보낸 거라면 더 묻는 게 당연합니다. 실수도 아니고 누가 대신한 것도 아니면, 왜 저만 빼고 결정했습니까.",
+            "behaviorHint": "motive_jump tell 발현 — '직접 보냈다'는 행동 하나에서 곧장 배제의 의도로 점프한다.",
+            "truthLevel": "none"
+          }
+        }
+      },
+      {
+        "stage": 2,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "전화 기록까지 붙으면 제가 본 그림이 전부는 아닐 수 있겠습니다. 그래도 저한테 숨긴 채 움직인 사실까지 사라지는 건 아니라고 봅니다.",
+            "behaviorHint": "selective_quote tell 약화 — 확신은 낮아지지만 '숨긴 채'라는 약한 고리만 다시 집어 든다.",
+            "truthLevel": "hint"
+          }
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "알고는 있었습니다. 그때는 그 한 장이면 다라고 생각했습니다.",
+            "behaviorHint": "evidence_waving tell 발현 — 전체 맥락보다 캡처 한 장의 인상을 전부라고 밀어붙인다.",
+            "truthLevel": "none"
+          }
+        }
+      },
+      {
+        "stage": 1,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "새벽이었던 건 맞습니다. 잠이 안 와서 뒤척이다가 확인하려고 손이 먼저 갔습니다.",
+            "behaviorHint": "motive_jump tell 억제 — 배우자 탓으로 돌리기보다 새벽 불안을 먼저 고백한다.",
+            "truthLevel": "hint"
+          }
+        }
+      },
+      {
+        "stage": 2,
+        "scriptedNpcResponses": {
+          "b": {
+            "npcResponse": "제가 그 한 줄만 붙잡고 싶었던 겁니다. 캡처를 언니한테 보내기 전부터 이미 제 머릿속 결론이 너무 빨랐습니다.",
+            "behaviorHint": "selective_quote tell 자인 — 자기 스스로도 불리한 몇 마디만 붙들고 판단했다는 점을 인정한다.",
+            "truthLevel": "partial"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -344,7 +344,9 @@
         "check_edits": "기관 원본이라 편집 흔적이 없다.",
         "question_acquisition": "입소 절차 관련 공문서라 제출 정당성은 높다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "요양원 신청서와 입금 영수증",
+      "surfaceDescription": "요양 시설 대기등록 신청서와 입금 영수증이다. 신청 구분과 금액이 기재되어 있다."
     },
     {
       "id": "e-2",
@@ -379,7 +381,9 @@
           "questionAngle": "이준호에게: \"준호의 대기금 송금과 즉시 미통보\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 이준호의 \"준호의 대기금 송금과 즉시 미통보\" 쟁점과 관련된다. 이준호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "가족 단톡과 통화 알림 로그",
+      "surfaceDescription": "가족 단체 채팅 내보내기와 부재중 통화·알림 기록이다. 연락 시도와 응답 시점이 남아 있다."
     },
     {
       "id": "e-3",
@@ -404,7 +408,9 @@
         "check_edits": "원본 내보내기라 자르기 흔적은 없고, 통화 메모는 작성 시각이 남아 있다.",
         "question_acquisition": "친척들이 포함된 대화라 사생활 침해 우려가 있어 목적 외 재사용은 제한돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "친척 단톡과 통화 메모",
+      "surfaceDescription": "친척 단체 채팅과 사촌과의 통화 메모다. 특정 사안에 대한 가족 간 소통 기록이 담겨 있다."
     },
     {
       "id": "e-4",
@@ -430,7 +436,10 @@
         "check_edits": "기관 원본이라 편집 흔적이 없다.",
         "question_acquisition": "입소 절차 확인 자료여서 제출 정당성은 높다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "시설 환불 규정 메일과 상담 녹취",
+      "surfaceDescription": "시설 담당자가 보낸 환불 규정 안내 메일과 상담 통화 원본이다. 비용의 법적 성격이 설명되어 있다.",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
@@ -464,7 +473,9 @@
           "questionAngle": "이준호에게: \"이미 입소 조건에 합의했는가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 이준호의 \"이미 입소 조건에 합의했는가\" 쟁점과 관련된다. 이준호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "가족회의 노트 사진",
+      "surfaceDescription": "과거 가족 회의 때 작성된 노트의 사진이다. 일부 문장만 보이고 나머지는 잘려 있다."
     },
     {
       "id": "e-6",
@@ -501,7 +512,10 @@
           "questionAngle": "이준호에게: \"이미 입소 조건에 합의했는가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 이준호의 \"이미 입소 조건에 합의했는가\" 쟁점과 관련된다. 이준호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "사례관리 기록과 돌봄 계획서",
+      "surfaceDescription": "전문 기관의 사례관리 기록과 서명된 돌봄 계획서다. 합의 사항과 후속 원칙이 적혀 있다.",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

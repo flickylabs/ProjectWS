@@ -35,7 +35,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한서아",
+                  "fullName": "서아 씨",
                   "judgeRef": "서아 씨",
                   "neutral": "상대"
                 },
@@ -92,7 +92,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한서아",
+                  "fullName": "한 씨",
                   "judgeRef": "서아 씨",
                   "neutral": "상대"
                 },
@@ -839,7 +839,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한서아",
+                  "fullName": "서아 씨",
                   "judgeRef": "서아 씨",
                   "neutral": "상대"
                 },
@@ -895,7 +895,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "한서아",
+                  "fullName": "한 씨",
                   "judgeRef": "서아 씨",
                   "neutral": "상대"
                 },
@@ -3780,7 +3780,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "문다정",
+                  "fullName": "다정 씨",
                   "judgeRef": "다정 씨",
                   "neutral": "상대"
                 },
@@ -3833,7 +3833,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "문다정",
+                  "fullName": "문 씨",
                   "judgeRef": "다정 씨",
                   "neutral": "상대"
                 },
@@ -4583,7 +4583,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "문다정",
+                  "fullName": "문 씨",
                   "judgeRef": "다정 씨",
                   "neutral": "친구"
                 }
@@ -6038,7 +6038,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "문다정",
+                  "fullName": "문 씨",
                   "judgeRef": "다정 씨",
                   "neutral": "친구"
                 }

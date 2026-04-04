@@ -35,7 +35,7 @@
               "slots": {
                 "person": {
                   "exact": "노서린",
-                  "fullName": "노서린",
+                  "fullName": "노서린 씨",
                   "judgeRef": "노서린 씨",
                   "neutral": "상대 연구원"
                 },
@@ -123,7 +123,7 @@
               "slots": {
                 "person": {
                   "exact": "노서린",
-                  "fullName": "노서린",
+                  "fullName": "노 씨",
                   "judgeRef": "노서린 씨",
                   "neutral": "상대 연구원"
                 },
@@ -510,7 +510,7 @@
               "slots": {
                 "person": {
                   "exact": "유다인",
-                  "fullName": "유다인",
+                  "fullName": "유다인 씨",
                   "judgeRef": "유다인 씨",
                   "neutral": "외부 브로커"
                 },
@@ -589,7 +589,7 @@
               "slots": {
                 "person": {
                   "exact": "유다인",
-                  "fullName": "유다인",
+                  "fullName": "유 씨",
                   "judgeRef": "유다인 씨",
                   "neutral": "외부 브로커"
                 },
@@ -970,7 +970,7 @@
                 },
                 "person": {
                   "exact": "유다인",
-                  "fullName": "유다인",
+                  "fullName": "유다인 씨",
                   "judgeRef": "유다인 씨",
                   "neutral": "브로커 측"
                 }
@@ -1045,7 +1045,7 @@
                 },
                 "person": {
                   "exact": "유다인",
-                  "fullName": "유다인",
+                  "fullName": "유 씨",
                   "judgeRef": "유다인 씨",
                   "neutral": "브로커 측"
                 }
@@ -1844,7 +1844,7 @@
                 },
                 "person": {
                   "exact": "노서린",
-                  "fullName": "노서린",
+                  "fullName": "노서린 씨",
                   "judgeRef": "노서린 씨",
                   "neutral": "상대측"
                 }
@@ -1923,7 +1923,7 @@
                 },
                 "person": {
                   "exact": "노서린",
-                  "fullName": "노서린",
+                  "fullName": "노 씨",
                   "judgeRef": "노서린 씨",
                   "neutral": "상대측"
                 }
@@ -2291,7 +2291,7 @@
               "slots": {
                 "person": {
                   "exact": "권태준",
-                  "fullName": "권태준",
+                  "fullName": "권태준 팀장",
                   "judgeRef": "권태준 팀장",
                   "neutral": "상대 팀장"
                 },
@@ -2370,7 +2370,7 @@
               "slots": {
                 "person": {
                   "exact": "권태준",
-                  "fullName": "권태준",
+                  "fullName": "권 씨",
                   "judgeRef": "권태준 팀장",
                   "neutral": "상대 팀장"
                 },
@@ -2768,7 +2768,7 @@
               "slots": {
                 "person": {
                   "exact": "유다인",
-                  "fullName": "유다인",
+                  "fullName": "유다인 씨",
                   "judgeRef": "유다인 씨",
                   "neutral": "외부 브로커"
                 },
@@ -2846,7 +2846,7 @@
               "slots": {
                 "person": {
                   "exact": "유다인",
-                  "fullName": "유다인",
+                  "fullName": "유 씨",
                   "judgeRef": "유다인 씨",
                   "neutral": "외부 브로커"
                 },
@@ -3202,7 +3202,7 @@
               "slots": {
                 "person": {
                   "exact": "유다인",
-                  "fullName": "유다인",
+                  "fullName": "유다인 씨",
                   "judgeRef": "유다인 씨",
                   "neutral": "브로커 측"
                 },
@@ -3276,7 +3276,7 @@
               "slots": {
                 "person": {
                   "exact": "유다인",
-                  "fullName": "유다인",
+                  "fullName": "유 씨",
                   "judgeRef": "유다인 씨",
                   "neutral": "브로커 측"
                 },
@@ -3634,7 +3634,7 @@
               "slots": {
                 "person": {
                   "exact": "권태준",
-                  "fullName": "권태준",
+                  "fullName": "권태준 팀장",
                   "judgeRef": "권태준 팀장",
                   "neutral": "상대 팀장"
                 },
@@ -3713,7 +3713,7 @@
               "slots": {
                 "person": {
                   "exact": "권태준",
-                  "fullName": "권태준",
+                  "fullName": "권 씨",
                   "judgeRef": "권태준 팀장",
                   "neutral": "상대 팀장"
                 },
@@ -4081,7 +4081,7 @@
               "slots": {
                 "person": {
                   "exact": "권태준",
-                  "fullName": "권태준",
+                  "fullName": "권태준 팀장",
                   "judgeRef": "권태준 팀장",
                   "neutral": "상대 팀장"
                 },
@@ -4109,7 +4109,7 @@
               "slots": {
                 "person": {
                   "exact": "권태준",
-                  "fullName": "권태준",
+                  "fullName": "권태준 팀장",
                   "judgeRef": "권태준 팀장",
                   "neutral": "상대 팀장"
                 },
@@ -4162,7 +4162,7 @@
               "slots": {
                 "person": {
                   "exact": "권태준",
-                  "fullName": "권태준",
+                  "fullName": "권 씨",
                   "judgeRef": "권태준 팀장",
                   "neutral": "상대 팀장"
                 },
@@ -4190,7 +4190,7 @@
               "slots": {
                 "person": {
                   "exact": "권태준",
-                  "fullName": "권태준",
+                  "fullName": "권 씨",
                   "judgeRef": "권태준 팀장",
                   "neutral": "상대 팀장"
                 },
@@ -4504,4 +4504,3 @@
     }
   }
 }
-

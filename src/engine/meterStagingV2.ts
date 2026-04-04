@@ -128,23 +128,25 @@ export function evaluateDossierUnlock(input: {
   hasAnyCrack: boolean
   highestContradictionTokens: number
   highestTrustWindow: number
+  /** 양 파티 통틀어 가장 높은 lieState 랭크 (S0=0, S1=1, ..., S5=5) */
+  maxLieStateRank?: number
 }): DossierUnlockResult {
   if (input.alreadyUnlocked) {
     return { unlocked: true, newlyUnlocked: false, reason: null, label: '사건카드 사용 가능' }
   }
-  if (input.hasAnyCrack) {
-    return { unlocked: true, newlyUnlocked: true, reason: 'first_crack', label: '첫 균열이 발생해 사건카드가 해금되었습니다.' }
+  // 카드 = 정답지. 충분히 파고든 후에만 해금.
+  // 조건: lieState S2 이상 도달 + (모순 3개 이상 OR 턴 8 이상)
+  const lieRank = input.maxLieStateRank ?? 0
+  if (lieRank >= 2 && input.highestContradictionTokens >= 3) {
+    return { unlocked: true, newlyUnlocked: true, reason: 'lie_s2_contradiction_3', label: '충분한 증거와 모순이 쌓여 사건카드가 해금되었습니다.' }
   }
-  if (input.highestContradictionTokens >= 2) {
-    return { unlocked: true, newlyUnlocked: true, reason: 'contradiction_2', label: '모순이 쌓여 사건카드가 해금되었습니다.' }
+  if (lieRank >= 2 && input.turn >= 8) {
+    return { unlocked: true, newlyUnlocked: true, reason: 'lie_s2_turn_8', label: '심문이 무르익어 사건카드가 해금되었습니다.' }
   }
-  if (input.highestTrustWindow >= 40) {
-    return { unlocked: true, newlyUnlocked: true, reason: 'trust_40', label: '신뢰 창구가 열려 사건카드가 해금되었습니다.' }
+  if (input.turn >= 10) {
+    return { unlocked: true, newlyUnlocked: true, reason: 'turn_10_safety', label: '시간 경과로 사건카드가 안전 해금되었습니다.' }
   }
-  if (input.turn >= 6) {
-    return { unlocked: true, newlyUnlocked: true, reason: 'turn_6', label: '시간 경과로 사건카드가 안전 해금되었습니다.' }
-  }
-  return { unlocked: false, newlyUnlocked: false, reason: null, label: '사건카드는 심문 흐름이 무르익으면 열립니다.' }
+  return { unlocked: false, newlyUnlocked: false, reason: null, label: '심문을 더 진행하면 사건카드가 열립니다.' }
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

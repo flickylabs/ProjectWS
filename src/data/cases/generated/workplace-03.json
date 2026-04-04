@@ -351,7 +351,9 @@
           "questionAngle": "최희주에게: \"HJ 발언의 실제 대상은 누구인가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 최희주의 \"HJ 발언의 실제 대상은 누구인가\" 쟁점과 관련된다. 최희주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "사내 공유 회식 영상 클립",
+      "surfaceDescription": "사내 공유 앨범에 업로드된 짧은 회식 영상 클립 파일 한 건"
     },
     {
       "id": "e-2",
@@ -386,7 +388,9 @@
           "questionAngle": "최희주에게: \"희주의 단정 DM 전파\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 최희주의 \"희주의 단정 DM 전파\" 쟁점과 관련된다. 최희주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "멘토방 DM과 전달 메시지",
+      "surfaceDescription": "사내 메신저 멘토링 채널의 개인 메시지와 전달된 대화 내용"
     },
     {
       "id": "e-3",
@@ -412,7 +416,10 @@
         "check_edits": "버전 로그 보존 문서. 사후 편집 흔적 없이 원본성 높음.",
         "question_acquisition": "업무용 공유 문서. 분쟁 해결 범위 내 열람 적법."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "인력배치 공유 노트 초안",
+      "surfaceDescription": "인력 배치 계획이 담긴 공유 문서의 초안 버전으로 약어 표기 포함",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-4",
@@ -449,7 +456,10 @@
           "questionAngle": "최희주에게: \"HJ 발언의 실제 대상은 누구인가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 최희주의 \"HJ 발언의 실제 대상은 누구인가\" 쟁점과 관련된다. 최희주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "법인카드 정산과 좌석 정보 메모",
+      "surfaceDescription": "법인카드 사용 정산 내역과 식당 좌석 배치 관련 참고 정보 메모",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
@@ -484,7 +494,9 @@
           "questionAngle": "최희주에게: \"정정 전 쌍방 소문전 가담\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 최희주의 \"정정 전 쌍방 소문전 가담\" 쟁점과 관련된다. 최희주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "인사 상담 접수와 배정 변경",
+      "surfaceDescription": "인사팀 상담 접수 내역과 업무 배정이 변경된 이력을 담은 문서"
     },
     {
       "id": "e-6",
@@ -510,7 +522,10 @@
         "check_edits": "수동 편집이 아닌 시스템 자동 추출. 조작이 아니라 오해가 핵심 문제다.",
         "question_acquisition": "단말 식별자 포함. 필요 메타만 제한 공개해야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "앨범 메타데이터와 생성 로그",
+      "surfaceDescription": "공유 앨범 파일의 원본 메타데이터와 자동 생성 시스템 로그",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

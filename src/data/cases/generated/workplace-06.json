@@ -353,7 +353,9 @@
           "questionAngle": "이서린에게: \"통합 공지의 단독 통제권 부여 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 이서린의 \"통합 공지의 단독 통제권 부여 여부\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "팀즈 통합 공지 캡처와 역할표",
+      "surfaceDescription": "사내 메신저 통합 공지 캡처본과 일부가 잘린 역할 배분표 문서"
     },
     {
       "id": "e-2",
@@ -388,7 +390,9 @@
           "questionAngle": "이서린에게: \"서린의 레거시 권한 사용과 라우팅 변경\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 이서린의 \"서린의 레거시 권한 사용과 라우팅 변경\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "레거시 권한 감사 로그와 변경 내역",
+      "surfaceDescription": "레거시 관리자 권한 감사 로그와 라우팅 규칙 변경 기록 내역"
     },
     {
       "id": "e-3",
@@ -414,7 +418,10 @@
         "check_edits": "버전 이력 보존. 배포 당시 상태 복원 가능.",
         "question_acquisition": "통합 운영 문서. 업무 확인 적법."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "공식 통합 RACI 문서와 해설 메모",
+      "surfaceDescription": "공식 역할 분담 RACI 문서와 임시 권한에 대한 해설 메모",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-4",
@@ -449,7 +456,9 @@
           "questionAngle": "이서린에게: \"지연 경고 후 쌍방 독단 핫픽스\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 이서린의 \"지연 경고 후 쌍방 독단 핫픽스\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "통합 큐 재배정과 편집 이력",
+      "surfaceDescription": "업무 큐 재배정 내역과 대시보드 편집 변경 이력이 담긴 로그"
     },
     {
       "id": "e-5",
@@ -473,7 +482,9 @@
         "check_edits": "수정 이력 보존. 표현 완화 전 원문까지 확인 가능.",
         "question_acquisition": "인사자료. 사용 목적은 분쟁 해결에 한정."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "캘리브레이션 초안과 코멘트 이력",
+      "surfaceDescription": "인사 캘리브레이션 초안 문서와 매니저가 남긴 코멘트 변경 이력"
     },
     {
       "id": "e-6",
@@ -510,7 +521,10 @@
           "questionAngle": "이서린에게: \"통합 공지의 단독 통제권 부여 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 이서린의 \"통합 공지의 단독 통제권 부여 여부\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "PM 회의록과 에스컬레이션 체크리스트",
+      "surfaceDescription": "부서 통합 PM 회의 기록과 에스컬레이션 절차 체크리스트",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

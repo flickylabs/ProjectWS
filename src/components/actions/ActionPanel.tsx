@@ -2,23 +2,24 @@ import React, { useState, useRef, useCallback, useEffect } from 'react'
 import type { PartyId, QuestionType, TrustActionType, SkillType } from '../../types'
 import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
-import { useActionDispatch, isLLMMode, setNextConfidential, setNextEvasionReading } from '../../hooks/useActionDispatch'
+import { useActionDispatch, isLLMMode, setNextConfidential, setNextEvasionReading, setSkipNextJudgeQuestion, setDossierQuestionOverride } from '../../hooks/useActionDispatch'
 import { processFreeQuestion } from '../../engine/llmFreeQuestion'
 import { analyzeTestimony } from '../../engine/llmTestimonyAnalysis'
 // 증인 소환은 EvidencePresenter 내부로 이동
 import QuestionSelector from './QuestionSelector'
 import type { QuestionToggles } from './QuestionSelector'
 import EvidencePresenter from './EvidencePresenter'
-import DossierCardPanel from './DossierCardPanel'
+import DossierHint from './DossierHint'
 import { QuestionMeterHUD } from '../discovery/StateTransitionFeedback'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
-import { getDossierCards } from '../../engine/v3GameLoopLoader'
+import { getDossierCards, getDossierCard, resolveDossierQuestion } from '../../engine/v3GameLoopLoader'
+import { resolveInvestigation } from '../../engine/evidenceChallengeEngine'
 import { evaluateDossierUnlock } from '../../engine/meterStagingV2'
 import { showToast } from '../common/Toast'
 
 import Emoji from '../common/Emoji'
 
-type ActionTab = 'question' | 'evidence' | 'skill' | 'dossier' | null
+type ActionTab = 'question' | 'evidence' | 'skill' | null
 
 const EMOTION_EMOJI: Record<string, string> = { defensive: '😐', confident: '😤', shaken: '😰', angry: '😡', resigned: '😞' }
 
@@ -67,6 +68,8 @@ export default function ActionPanel() {
   // 토글 스킬 상태
   const [confidentialOn, setConfidentialOn] = useState(false)
   const [evasionReadingOn, setEvasionReadingOn] = useState(false)
+  // 사건카드 자동 실행 시퀀스
+  const [autoSequenceActive, setAutoSequenceActive] = useState(false)
 
   // 새 증거 뱃지: 유저가 증거 탭에서 확인한 증거 ID 추적
   const seenEvidenceRef = useRef<Set<string>>(new Set())
@@ -110,18 +113,20 @@ export default function ActionPanel() {
   // 사건카드 조건 해금 (meterStagingV2 엔진 기반)
   const metersA = useGameStore((s) => s.questionMeters.a)
   const metersB = useGameStore((s) => s.questionMeters.b)
-  const anyLieCracked = useGameStore((s) => {
-    const checkAgent = (agent: { lieStateMap: Record<string, { currentState: string }> }) =>
-      Object.values(agent.lieStateMap).some(e => e.currentState !== 'S0')
-    return checkAgent(s.agentA) || checkAgent(s.agentB)
+  const LIE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+  const maxLieStateRank = useGameStore((s) => {
+    const rankOf = (agent: { lieStateMap: Record<string, { currentState: string }> }) =>
+      Math.max(0, ...Object.values(agent.lieStateMap).map(e => LIE_RANK[e.currentState] ?? 0))
+    return Math.max(rankOf(s.agentA), rankOf(s.agentB))
   })
   const dossierUnlockPrevRef = useRef(false)
   const dossierUnlockResult = evaluateDossierUnlock({
     turn: turnCount,
     alreadyUnlocked: dossierUnlockPrevRef.current,
-    hasAnyCrack: anyLieCracked,
+    hasAnyCrack: maxLieStateRank >= 1,
     highestContradictionTokens: Math.max(metersA.contradictionTokens, metersB.contradictionTokens),
     highestTrustWindow: Math.max(metersA.trustWindow, metersB.trustWindow),
+    maxLieStateRank,
   })
   const dossierCardsExist = getDossierCards(caseKey).length > 0
   if (dossierUnlockResult.newlyUnlocked && dossierCardsExist) {
@@ -258,6 +263,104 @@ export default function ActionPanel() {
   const hTrust = (at: TrustActionType) => { if (target) { dispatch({ type: 'trust_action', actionType: at, target }); setActiveTab(null) } }
   const hAdv = () => { const n: Record<string,GamePhase> = { [GamePhase.Phase3_Interrogation]: GamePhase.Phase4_Evidence, [GamePhase.Phase4_Evidence]: GamePhase.Phase5_ReExamination, [GamePhase.Phase5_ReExamination]: GamePhase.Phase6_Mediation }; const x = n[currentPhase]; if (x) advancePhase(x) }
 
+  // ── 사건카드 자동 실행 핸들러 ──
+  const hDossierAutoExecute = (cardId: string, questionId: string, t: PartyId) => {
+    setAutoSequenceActive(true)
+    setActiveTab(null)
+
+    const s = useGameStore.getState()
+    const card = getDossierCard(caseKey, cardId)
+    if (!card) { setAutoSequenceActive(false); return }
+
+    // 질문 찾기
+    let question: import('../../types').DossierChallengeQuestion | null = null
+    for (const ch of card.challenges) {
+      const found = ch.questions.find(q => q.id === questionId)
+      if (found) { question = found; break }
+    }
+    if (!question) { setAutoSequenceActive(false); return }
+
+    // 1. 시스템 연출 메시지
+    s.addDialogue({
+      speaker: 'system',
+      text: `📋 증거 카드 발동 중... [${card.name}]`,
+      relatedDisputes: card.relatedDisputes,
+      turn: s.turnCount,
+    })
+
+    // 2. DossierQuestion 해결 (atom 해금 + 사용 기록)
+    const result = resolveDossierQuestion(caseKey, questionId)
+    if (!result) { setAutoSequenceActive(false); return }
+
+    // 2.5. 카드 자동 실행 시: 관련 증거 조사 단계 자동 완료
+    for (const evId of card.evidenceIds) {
+      const ev = s.evidenceDefinitions.find(e => e.id === evId)
+      if (ev?.investigationStages) {
+        for (const stage of ev.investigationStages) {
+          s.investigateEvidence(evId, stage.revealKey)
+        }
+      }
+    }
+
+    // 3. EvidenceChallenge 벡터 봉쇄
+    for (const evId of card.evidenceIds) {
+      resolveInvestigation(caseKey, evId, 'verify_source', 'trustworthy')
+    }
+
+    // 4. 재판관 질문 대화 추가
+    s.addDialogue({
+      speaker: 'judge',
+      text: question.text,
+      relatedDisputes: card.relatedDisputes,
+      turn: s.turnCount,
+    })
+
+    // 5. lieAdvance 처리
+    if (result.lieAdvance) {
+      for (const dId of card.relatedDisputes) {
+        s.transitionLie(t, dId, 'dossier_challenge')
+      }
+    }
+
+    // 6. 해금된 atom 알림
+    if (result.revealedAtom) {
+      s.addDialogue({
+        speaker: 'system',
+        text: `💡 새로운 사실이 해금되었습니다. 증거 게시판을 확인하십시오.`,
+        relatedDisputes: card.relatedDisputes,
+        turn: s.turnCount,
+      })
+    }
+
+    // 7. 감정 변화
+    s.changeEmotion(t, 10)
+
+    // 8. LLM NPC 응답 트리거
+    const disputeId = card.relatedDisputes[0] ?? ''
+    if (disputeId) {
+      const evidenceDetails = card.evidenceIds.map(evId => {
+        const ev = s.evidenceDefinitions.find(e => e.id === evId)
+        return ev ? `[${ev.name}] ${ev.description}` : ''
+      }).filter(Boolean).join('\n')
+
+      const dossierContext = {
+        questionText: question.text,
+        cardName: card.name,
+        cardDescription: card.description,
+        attackVector: question.attackVector,
+        evidenceDetails,
+        relatedDisputes: card.relatedDisputes,
+      }
+
+      setSkipNextJudgeQuestion(true)
+      setDossierQuestionOverride(JSON.stringify(dossierContext))
+      dispatch({ type: 'question', questionType: 'evidence_present', target: t, disputeId })
+    }
+
+    // 시퀀스 종료 (약간의 지연 후)
+    setTimeout(() => setAutoSequenceActive(false), 500)
+  }
+
   const hasToast = activeTab && target
   const hasAdvanceConfirm = showAdvance
   const advInfo = getAdvanceInfo(currentPhase)
@@ -267,7 +370,6 @@ export default function ActionPanel() {
     question: { border: 'border-blue-500/20', glow: 'shadow-blue-500/10' },
     evidence: { border: 'border-amber-500/20', glow: 'shadow-amber-500/10' },
     skill:    { border: 'border-purple-500/20', glow: 'shadow-purple-500/10' },
-    dossier:  { border: 'border-amber-500/20', glow: 'shadow-amber-500/10' },
   }
 
   const handleTabClick = (tab: ActionTab) => {
@@ -296,17 +398,6 @@ export default function ActionPanel() {
               <div className="p-2">
                 <QuestionSelector target={target!} onSelect={hQ} llmMode={llm} onFreeResult={hFree}
                   toggles={toggles} onToggle={handleToggle} />
-              </div>
-            )}
-            {hasToast && activeTab === 'dossier' && (
-              <div className="p-2">
-                <DossierCardPanel
-                  target={target!}
-                  onQuestionAsked={() => setActiveTab(null)}
-                  onDispatchEvidence={(evId, t) => {
-                    dispatch({ type: 'evidence_present', evidenceId: evId, target: t })
-                  }}
-                />
               </div>
             )}
             {hasToast && activeTab === 'evidence' && (
@@ -404,6 +495,25 @@ export default function ActionPanel() {
         </div>
       )}
 
+      {/* 사건카드 플로팅 힌트 */}
+      <div className="relative">
+        <DossierHint
+          target={target}
+          caseKey={caseKey}
+          hasDossierCards={hasDossierCards}
+          onAutoExecute={hDossierAutoExecute}
+          disabled={autoSequenceActive}
+        />
+      </div>
+
+      {/* 자동 실행 오버레이 */}
+      {autoSequenceActive && (
+        <div className="flex items-center justify-center gap-2 py-1.5 mb-1 rounded-lg bg-amber-950/40 border border-amber-500/30 animate-pulse">
+          <Emoji char="📋" size={14} />
+          <span className="text-xs text-amber-400 font-semibold">증거 카드 발동 중...</span>
+        </div>
+      )}
+
       {/* 2행: 탭 버튼 */}
       <div className="flex gap-1.5 mt-1.5 h-9">
         <button onClick={() => handleTabClick('question')}
@@ -416,18 +526,6 @@ export default function ActionPanel() {
           }`}>
           <Emoji char="❓" size={13} /> 심문
         </button>
-        {hasDossierCards && (
-          <button onClick={() => handleTabClick('dossier')}
-            className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all ${
-              activeTab === 'dossier'
-                ? 'bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25 glow-amber'
-                : beckon
-                  ? 'bg-amber-500/5 text-amber-300 ring-1 ring-amber-500/15 action-tab-beckon'
-                  : 'bg-white/[0.03] text-amber-500/60 ring-1 ring-white/5 hover:text-amber-400 hover:ring-white/10'
-            }`}>
-            <Emoji char="📋" size={13} /> 카드
-          </button>
-        )}
         <button onClick={() => handleTabClick('evidence')}
           className={`flex-1 text-xs rounded-xl font-semibold relative transition-all ${
             evLocked ? 'bg-gray-900/40 text-gray-600 cursor-not-allowed ring-1 ring-gray-800/30'

@@ -351,7 +351,35 @@
           "questionAngle": "윤도현에게: \"공동 기록 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 윤도현의 \"공동 기록 원칙의 쌍방 위반\" 쟁점과 관련된다. 윤도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "관리계좌 거래내역과 입금확인서",
+      "surfaceDescription": "부모 명의 관리계좌의 은행 거래내역과 개인계좌 입금확인서다. 이체 금액과 후속 출금 기록이 첨부되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "부모 관리계좌에서 개인계좌로 이체한 사실을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 이체를 본인 휴대폰으로 직접 실행한 점에 대해 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이체 당일 처리된 출금 항목의 우선순위에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -377,7 +405,36 @@
         "check_edits": "메모 수정은 한 차례뿐이고 본문 조작 흔적은 없다.",
         "question_acquisition": "서아 동의 없이 확보된 개인 단말 자료라 사생활 침해 소지가 크다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "휴대폰 메모 복원본과 연체 알림",
+      "surfaceDescription": "휴대폰에서 복원된 메모와 자동이체 실패 알림이다. 작성 시점과 메모 내용을 확인할 수 있다.",
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "본인 휴대폰에 이 메모가 저장되어 있었다는 사실을 인정하십니까?",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 메모의 생성 시각이 이체 직전으로 확인됩니다. 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이체 메모에 적힌 날짜가 방문 일정보다 앞서는데, 이 시점에서 이미 인출을 계획하신 겁니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -412,7 +469,35 @@
           "questionAngle": "윤도현에게: \"도현의 간병비 분담 지연\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 윤도현의 \"도현의 간병비 분담 지연\" 쟁점과 관련된다. 윤도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "가족 단톡과 돌봄 스케줄표",
+      "surfaceDescription": "가족 단체 채팅과 공유 캘린더, 요양보호사 교대표를 함께 정리한 기록이다. 비용 관련 대화와 일정 내용을 확인할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 가족 단톡과 간병 스케줄표 기록에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "송금 약속과 실제 입금 사이에 상당한 차이가 있습니다. 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 기간 별도로 직접 결제한 항목이 보입니다. 그 부분을 따로 언급하지 않은 이유가 있습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -436,7 +521,35 @@
         "check_edits": "문자 자체 편집 흔적은 없으나 강한 크롭이 확인된다.",
         "question_acquisition": "부친의 사적 수첩 일부라 사용 목적과 공개 범위를 엄격히 제한해야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "오래된 수첩 메모 사진",
+      "surfaceDescription": "과거에 작성된 수첩 한 페이지의 사진이다. 짧은 문장이 적혀 있으나 잘린 상태다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 수첩 메모 사진을 증거로 제출한 경위에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 사진의 촬영 시점이 원본 작성 시점과 다릅니다. 이유가 있습니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "사진에서 잘려 나간 부분에 어떤 내용이 있었는지 알고 계십니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -462,7 +575,36 @@
         "check_edits": "전자스캔본이라 편집 흔적이 없고 페이지 누락도 없다.",
         "question_acquisition": "변호사 제출본은 적법하지만 상속 관련 사적 의사표시는 분쟁 해결 범위 내에서만 써야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "변호사 확인서와 수첩 전체 스캔",
+      "surfaceDescription": "변호사가 확인한 수첩 전체 스캔본과 상담 메모다. 수첩의 전체 내용과 상담 기록이 함께 포함되어 있다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 변호사 확인서와 수첩 전체 스캔본의 존재를 알고 계셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 상담이 분쟁 직후에 이루어진 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "정식 유언장이나 공증 문서가 따로 없는 상황에서, 이 수첩을 어떤 의미로 받아들였는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -486,7 +628,35 @@
         "check_edits": "기관 출력본이라 편집 흔적이 없다.",
         "question_acquisition": "의료·복지 정보가 포함돼 있어 부모 동의 하에 분쟁 해결 목적에 한해 사용해야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "복지 관련 서류",
+      "surfaceDescription": "사회복지사가 작성한 요양 비용 경감 신청 기록과 돌봄 연계표다. 비용 산정 항목이 포함되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "퇴원 전 비용 경감 상담이 있었다는 사실을 알고 계셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 상담이 형제 간 첫 다툼 직전에 완료된 점을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "경감 신청이 실제로 진행되지 않은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

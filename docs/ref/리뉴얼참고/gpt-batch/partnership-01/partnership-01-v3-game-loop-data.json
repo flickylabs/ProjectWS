@@ -36,7 +36,9 @@
                 "blockVector": "context",
                 "revealAtom": "partnership-01:a:d-1:unlock:s3:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-1.a.q3",
@@ -46,7 +48,9 @@
                 "blockVector": "legality",
                 "revealAtom": "partnership-01:a:d-5:unlock:s2:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -55,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "윤해나 씨, 당신도 전날 예치 한도를 말한 사실은 있지만 9월 3일 실제 송금 버튼과 서면 승인 공백의 책임선은 서준에게 있다고 보십니까.",
+              "text": "윤해나 씨, 전날 예치 한도를 언급한 사실은 있지만, 9월 3일 실제 송금 버튼 사용과 서면 승인 공백의 책임은 이서준 씨에게 있다고 보십니까.",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -71,7 +75,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "partnership-01:b:d-5:unlock:s2:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-1.b.q3",
@@ -81,7 +87,9 @@
                 "blockVector": "context",
                 "revealAtom": "partnership-01:b:d-5:unlock:s3:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -123,17 +131,21 @@
                 "blockVector": "context",
                 "revealAtom": "partnership-01:a:d-3:unlock:s2:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-2.a.q3",
-              "text": "직원 불안을 이유로 컨설팅비 명목을 묵인한 순간 당신도 임시 회계은폐에 가담한 것 아닌가요.",
+              "text": "이서준 씨, 직원 불안을 이유로 컨설팅비 명목의 표기를 묵인한 적이 있다면, 그 회계 처리에 관여가 있었는지 설명하십시오.",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
                 "revealAtom": "partnership-01:a:d-4:unlock:s2:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -158,7 +170,9 @@
                 "blockVector": "context",
                 "revealAtom": "partnership-01:b:d-3:unlock:s3:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-2.b.q3",
@@ -168,7 +182,9 @@
                 "blockVector": "legality",
                 "revealAtom": "partnership-01:b:d-4:unlock:s2:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -211,17 +227,21 @@
                 "blockVector": "legality",
                 "revealAtom": "partnership-01:a:d-5:unlock:s5:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-3.a.q3",
-              "text": "해나의 임시 분개 제안이 있었다 해도 당신이 그 표기를 멈추지 않은 공동책임은 인정합니까.",
+              "text": "이서준 씨, 윤해나 씨의 임시 분개 제안이 있었다 하더라도, 그 표기를 중단하지 않았다는 지적에 대해 공동책임 여부를 설명하십시오.",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "partnership-01:a:d-4:unlock:s5:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -246,7 +266,9 @@
                 "blockVector": "context",
                 "revealAtom": "partnership-01:b:d-3:unlock:s5:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-3.b.q3",
@@ -256,7 +278,9 @@
                 "blockVector": "legality",
                 "revealAtom": "partnership-01:b:d-4:unlock:s5:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }

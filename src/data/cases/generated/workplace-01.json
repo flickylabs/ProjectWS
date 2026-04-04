@@ -351,7 +351,35 @@
           "questionAngle": "박서윤에게: \"태성의 단독 명의 제출\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 박서윤의 \"태성의 단독 명의 제출\" 쟁점과 관련된다. 박서윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "프로젝트 이메일 체인과 회의록",
+      "surfaceDescription": "업무 이메일 스레드와 주간회의 기록이 함께 묶인 문서 세트다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 이메일 체인과 회의록에 기재된 내용을 확인한 적이 있습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "초안 작성자와 회의록 입력자가 동일인인 점에 대해 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "회신에 적힌 역할 분담과 최종 제출 명의가 다른 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -375,7 +403,35 @@
         "check_edits": "글꼴 레이어와 표 간격이 한 행만 어긋남. 선택적 행 편집 가능성이 있다.",
         "question_acquisition": "태성 자발 제출이라 입수 경위는 적법. 다만 진본성은 별도 쟁점이다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "문서 수정 이력 PDF",
+      "surfaceDescription": "특정 문서의 편집 이력이 타임라인으로 정리된 PDF 파일이다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 문서 수정 이력 PDF를 직접 제출하신 것이 맞습니까?",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 PDF의 생성 시각이 추출 시각보다 늦은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "표 간격이 한 행만 어긋나 있습니다. 이 파일이 원본 그대로입니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -401,7 +457,36 @@
         "check_edits": "서버 추출 CSV 원본. 사후 편집 흔적 없음.",
         "question_acquisition": "감사팀 입회 하 추출 원본. 증거 능력 높음."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "문서 서버 접근 감사 로그",
+      "surfaceDescription": "사내 문서 서버의 접근과 수정 이력이 시간순으로 기록된 감사 로그다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "문서 서버의 감사 로그가 존재한다는 사실을 알고 계셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "23시대 기록에 일반 계정이 아닌 토큰이 찍힌 점에 대해 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "본문 수정이 20시 이전에 완료된 점과 23시대 기록의 차이를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -436,7 +521,35 @@
           "questionAngle": "박서윤에게: \"태성의 단독 명의 제출\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 박서윤의 \"태성의 단독 명의 제출\" 쟁점과 관련된다. 박서윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "인사 평가 버전 기록과 메모",
+      "surfaceDescription": "인사 평가 문서의 수정 이력과 첨부된 내부 코멘트 메모다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 평가 초안의 버전 기록과 코멘트를 확인한 적이 있습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "점수 보정 직전에 비공개 메모가 입력된 시점에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "v1에서 v2로 넘어가며 기여 항목이 축소된 경위를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -461,7 +574,35 @@
         "check_edits": "텍스트 변조는 없으나 의도적 크롭과 순서 재배치가 확인된다.",
         "question_acquisition": "잔존 권한으로 인사 화면을 열람해 얻은 자료. 인사정보 침해 우려가 크다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "사내 메신저 캡처 묶음",
+      "surfaceDescription": "사내 메신저에서 주고받은 대화 일부를 시간순으로 캡처한 이미지 파일 모음이다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 슬랙 캡처 묶음을 동료 둘에게 전달한 사실이 있습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "캡처 생성 시각이 새벽 1시대에 집중된 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "캡처에서 잘린 부분이 있습니다. 전체를 보내지 않은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -487,7 +628,36 @@
         "check_edits": "감사팀 서명본 포렌식 메모. 사후 수정 흔적 없음.",
         "question_acquisition": "내부 조사 문건으로 적법. 다만 관리자 개인 징계 정보는 최소 공개 원칙 적용."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "내부 감사 기록",
+      "surfaceDescription": "시스템 감사 메모와 관리자 토큰 발급 내역이 정리된 보고서다.",
+      "requiredLieState": "S4",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 포렌식 메모와 토큰 발급 기록의 존재를 알고 계셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "제출 PDF와 공식 추출본 사이에 시차와 해시 불일치가 있습니다. 이유를 아십니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "관련 열이 제거된 채 내보내진 경위에 대해 아는 바를 말씀하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -1,6 +1,7 @@
 import type { PartyId } from './game'
+import type { TruthLevel } from './renewal'
 
-export type Archetype = 'avoidant' | 'confrontational' | 'victim_cosplay' | 'cold_logic'
+export type Archetype = 'avoidant' | 'confrontational' | 'victim_cosplay' | 'cold_logic' | 'affect_flattening' | 'premature_summary'
 export type DigitalHabit = 'sns_active' | 'messenger_main' | 'minimal'
 
 export interface VerbalTell {
@@ -60,6 +61,11 @@ export interface ThirdParty {
   bias: 'pro_a' | 'pro_b' | 'neutral' | 'self_interest' | 'anti_a' | 'anti_b' | 'against_both' | 'pro_self'
   distortionRisk: 'intentional' | 'unconscious' | 'accurate' | 'strategic'
 
+  /** 소환 전 플레이어에게 보이는 모호한 힌트 (스포일러 방지) */
+  surfaceKnowledge?: string
+  /** 이 증인이 관련된 쟁점 ID 목록 (lieState 게이팅에 사용) */
+  relatedDisputeIds?: string[]
+
   /** 증인 상세 프로필 (증인 소환 시 사용) */
   witnessProfile?: {
     age: number
@@ -82,6 +88,16 @@ export interface ThirdParty {
     addressB: string
     /** 숨기고 싶은 것 (증언의 빈틈) */
     hiddenAgenda?: string
+  }
+
+  /** V3: depth별 증인 증언 스크립트 (LLM 대체용) */
+  scriptedTestimonies?: {
+    /** 소환 직후 — 모호하고 조심스러운 증언 */
+    vague: { testimony: string; behaviorHint: string; truthLevel: TruthLevel }
+    /** 추가 질문 후 — 핵심 일부 공개 */
+    partial: { testimony: string; behaviorHint: string; truthLevel: TruthLevel }
+    /** 충분한 압박 후 — 알고 있는 전부 공개 */
+    full: { testimony: string; behaviorHint: string; truthLevel: TruthLevel }
   }
 }
 

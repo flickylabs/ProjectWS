@@ -7,7 +7,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "정우가 매달 60만원 보내겠다고 해 놓고 이제 와 발뺌하는 겁니다."
+            "정우가 매달 해당 금액 보내겠다고 해 놓고 이제 와 발뺌하는 겁니다."
           ],
           "privateKnowledge": [
             "복자는 원본 대화에 '6개월만 먼저 해보자'는 앞 문장이 있었다는 사실을 알고 있었다."
@@ -32,7 +32,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "60만원",
+                  "exact": "해당 금액",
                   "neutral": "해당 금액"
                 },
                 "duration": {
@@ -44,12 +44,12 @@
                   "neutral": "그때"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -71,7 +71,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "60만원",
+                  "exact": "해당 금액",
                   "neutral": "해당 금액"
                 },
                 "duration": {
@@ -83,12 +83,12 @@
                   "neutral": "그때"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 },
@@ -137,7 +137,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "60만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "해당 금액"
                 },
                 "duration": {
@@ -149,12 +149,12 @@
                   "neutral": "그때"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -177,7 +177,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "60만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "해당 금액"
                 },
                 "duration": {
@@ -189,12 +189,12 @@
                   "neutral": "그때"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -669,15 +669,15 @@
                   "neutral": "그 시점"
                 },
                 "amount1": {
-                  "exact": "35만원",
+                  "exact": "해당 금액",
                   "neutral": "감액 송금 1"
                 },
                 "amount2": {
-                  "exact": "40만원",
+                  "exact": "해당 금액",
                   "neutral": "감액 송금 2"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -707,15 +707,15 @@
                   "neutral": "그 시점"
                 },
                 "amount1": {
-                  "exact": "35만원",
+                  "exact": "해당 금액",
                   "neutral": "감액 송금 1"
                 },
                 "amount2": {
-                  "exact": "40만원",
+                  "exact": "해당 금액",
                   "neutral": "감액 송금 2"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 },
@@ -772,15 +772,15 @@
                   "neutral": "그 시점"
                 },
                 "amount1": {
-                  "exact": "35만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "감액 송금 1"
                 },
                 "amount2": {
-                  "exact": "40만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "감액 송금 2"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -811,15 +811,15 @@
                   "neutral": "그 시점"
                 },
                 "amount1": {
-                  "exact": "35만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "감액 송금 1"
                 },
                 "amount2": {
-                  "exact": "40만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "감액 송금 2"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 },
@@ -1278,16 +1278,16 @@
               ],
               "slots": {
                 "beneficiary": {
-                  "fullName": "박수빈",
+                  "fullName": "수빈 씨",
                   "judgeRef": "수빈 씨",
                   "neutral": "누나"
                 },
                 "amount1": {
-                  "exact": "20만원",
+                  "exact": "해당 금액",
                   "neutral": "소액 송금 1"
                 },
                 "amount2": {
-                  "exact": "25만원",
+                  "exact": "해당 금액",
                   "neutral": "소액 송금 2"
                 },
                 "time": {
@@ -1303,12 +1303,12 @@
                   "neutral": "교통비"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -1330,16 +1330,16 @@
               ],
               "slots": {
                 "beneficiary": {
-                  "fullName": "박수빈",
+                  "fullName": "수빈 씨",
                   "judgeRef": "수빈 씨",
                   "neutral": "누나"
                 },
                 "amount1": {
-                  "exact": "20만원",
+                  "exact": "해당 금액",
                   "neutral": "소액 송금 1"
                 },
                 "amount2": {
-                  "exact": "25만원",
+                  "exact": "해당 금액",
                   "neutral": "소액 송금 2"
                 },
                 "time": {
@@ -1355,12 +1355,12 @@
                   "neutral": "교통비"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -1404,16 +1404,16 @@
               ],
               "slots": {
                 "beneficiary": {
-                  "fullName": "박수빈",
+                  "fullName": "박 씨",
                   "judgeRef": "수빈 씨",
                   "neutral": "누나"
                 },
                 "amount1": {
-                  "exact": "20만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "소액 송금 1"
                 },
                 "amount2": {
-                  "exact": "25만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "소액 송금 2"
                 },
                 "time": {
@@ -1429,12 +1429,12 @@
                   "neutral": "교통비"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -1457,16 +1457,16 @@
               ],
               "slots": {
                 "beneficiary": {
-                  "fullName": "박수빈",
+                  "fullName": "박 씨",
                   "judgeRef": "수빈 씨",
                   "neutral": "누나"
                 },
                 "amount1": {
-                  "exact": "20만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "소액 송금 1"
                 },
                 "amount2": {
-                  "exact": "25만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "소액 송금 2"
                 },
                 "time": {
@@ -1482,12 +1482,12 @@
                   "neutral": "교통비"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -2065,12 +2065,12 @@
                   "neutral": "먼저"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -2108,12 +2108,12 @@
                   "neutral": "먼저"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 },
@@ -2178,12 +2178,12 @@
                   "neutral": "먼저"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -2222,12 +2222,12 @@
                   "neutral": "먼저"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -2730,31 +2730,31 @@
                   "neutral": "그 무렵"
                 },
                 "consultationTime": {
-                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "exact": "상담 시점",
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "그 사람",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
                 "manager": {
-                  "fullName": "장민석",
+                  "fullName": "관리소장",
                   "judgeRef": "관리소장",
                   "neutral": "관리소장"
                 },
                 "counselor": {
-                  "fullName": "서주연",
+                  "fullName": "상담사",
                   "judgeRef": "상담사",
                   "neutral": "상담사"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -2788,31 +2788,31 @@
                   "neutral": "그 무렵"
                 },
                 "consultationTime": {
-                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "exact": "상담 시점",
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "그 사람",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
                 "manager": {
-                  "fullName": "장민석",
+                  "fullName": "관리소장",
                   "judgeRef": "관리소장",
                   "neutral": "관리소장"
                 },
                 "counselor": {
-                  "fullName": "서주연",
+                  "fullName": "상담사",
                   "judgeRef": "상담사",
                   "neutral": "상담사"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -2873,27 +2873,27 @@
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "주 씨",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
                 "manager": {
-                  "fullName": "장민석",
+                  "fullName": "장 씨",
                   "judgeRef": "관리소장",
                   "neutral": "관리소장"
                 },
                 "counselor": {
-                  "fullName": "서주연",
+                  "fullName": "서 씨",
                   "judgeRef": "상담사",
                   "neutral": "상담사"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -2932,27 +2932,27 @@
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "주 씨",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
                 "manager": {
-                  "fullName": "장민석",
+                  "fullName": "장 씨",
                   "judgeRef": "관리소장",
                   "neutral": "관리소장"
                 },
                 "counselor": {
-                  "fullName": "서주연",
+                  "fullName": "서 씨",
                   "judgeRef": "상담사",
                   "neutral": "상담사"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -3539,7 +3539,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "제가 평생 60만원씩 책임진다고 한 적은 없습니다. 그건 부풀려진 말입니다."
+            "제가 평생 해당 금액씩 책임진다고 한 적은 없습니다. 그건 부풀려진 말입니다."
           ],
           "privateKnowledge": [
             "원본 대화에는 '6개월만 먼저 해보자' 다음에 '매달 60은 내가 보낼게'가 이어져, 약속의 기간과 금액이 함께 드러난다."
@@ -3564,7 +3564,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "60만원",
+                  "exact": "해당 금액",
                   "neutral": "해당 금액"
                 },
                 "duration": {
@@ -3576,12 +3576,12 @@
                   "neutral": "그때"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -3603,7 +3603,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "60만원",
+                  "exact": "해당 금액",
                   "neutral": "해당 금액"
                 },
                 "duration": {
@@ -3615,12 +3615,12 @@
                   "neutral": "그때"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -3665,7 +3665,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "60만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "해당 금액"
                 },
                 "duration": {
@@ -3677,12 +3677,12 @@
                   "neutral": "그때"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -3705,7 +3705,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "60만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "해당 금액"
                 },
                 "duration": {
@@ -3717,12 +3717,12 @@
                   "neutral": "그때"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -4193,15 +4193,15 @@
                   "neutral": "그 시점"
                 },
                 "amount1": {
-                  "exact": "35만원",
+                  "exact": "해당 금액",
                   "neutral": "감액 송금 1"
                 },
                 "amount2": {
-                  "exact": "40만원",
+                  "exact": "해당 금액",
                   "neutral": "감액 송금 2"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -4231,15 +4231,15 @@
                   "neutral": "그 시점"
                 },
                 "amount1": {
-                  "exact": "35만원",
+                  "exact": "해당 금액",
                   "neutral": "감액 송금 1"
                 },
                 "amount2": {
-                  "exact": "40만원",
+                  "exact": "해당 금액",
                   "neutral": "감액 송금 2"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -4292,15 +4292,15 @@
                   "neutral": "그 시점"
                 },
                 "amount1": {
-                  "exact": "35만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "감액 송금 1"
                 },
                 "amount2": {
-                  "exact": "40만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "감액 송금 2"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -4331,15 +4331,15 @@
                   "neutral": "그 시점"
                 },
                 "amount1": {
-                  "exact": "35만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "감액 송금 1"
                 },
                 "amount2": {
-                  "exact": "40만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "감액 송금 2"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 },
@@ -4799,16 +4799,16 @@
               ],
               "slots": {
                 "beneficiary": {
-                  "fullName": "박수빈",
+                  "fullName": "수빈 씨",
                   "judgeRef": "수빈 씨",
                   "neutral": "누나"
                 },
                 "amount1": {
-                  "exact": "20만원",
+                  "exact": "해당 금액",
                   "neutral": "소액 송금 1"
                 },
                 "amount2": {
-                  "exact": "25만원",
+                  "exact": "해당 금액",
                   "neutral": "소액 송금 2"
                 },
                 "time": {
@@ -4824,12 +4824,12 @@
                   "neutral": "교통비"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -4851,16 +4851,16 @@
               ],
               "slots": {
                 "beneficiary": {
-                  "fullName": "박수빈",
+                  "fullName": "수빈 씨",
                   "judgeRef": "수빈 씨",
                   "neutral": "누나"
                 },
                 "amount1": {
-                  "exact": "20만원",
+                  "exact": "해당 금액",
                   "neutral": "소액 송금 1"
                 },
                 "amount2": {
-                  "exact": "25만원",
+                  "exact": "해당 금액",
                   "neutral": "소액 송금 2"
                 },
                 "time": {
@@ -4876,12 +4876,12 @@
                   "neutral": "교통비"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -4926,16 +4926,16 @@
               ],
               "slots": {
                 "beneficiary": {
-                  "fullName": "박수빈",
+                  "fullName": "박 씨",
                   "judgeRef": "수빈 씨",
                   "neutral": "누나"
                 },
                 "amount1": {
-                  "exact": "20만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "소액 송금 1"
                 },
                 "amount2": {
-                  "exact": "25만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "소액 송금 2"
                 },
                 "time": {
@@ -4951,12 +4951,12 @@
                   "neutral": "교통비"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -4979,16 +4979,16 @@
               ],
               "slots": {
                 "beneficiary": {
-                  "fullName": "박수빈",
+                  "fullName": "박 씨",
                   "judgeRef": "수빈 씨",
                   "neutral": "누나"
                 },
                 "amount1": {
-                  "exact": "20만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "소액 송금 1"
                 },
                 "amount2": {
-                  "exact": "25만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "소액 송금 2"
                 },
                 "time": {
@@ -5004,12 +5004,12 @@
                   "neutral": "교통비"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -5590,12 +5590,12 @@
                   "neutral": "먼저"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -5633,12 +5633,12 @@
                   "neutral": "먼저"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -5699,12 +5699,12 @@
                   "neutral": "먼저"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -5743,12 +5743,12 @@
                   "neutral": "먼저"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -6250,31 +6250,31 @@
                   "neutral": "그 무렵"
                 },
                 "consultationTime": {
-                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "exact": "상담 시점",
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "그 사람",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
                 "manager": {
-                  "fullName": "장민석",
+                  "fullName": "관리소장",
                   "judgeRef": "관리소장",
                   "neutral": "관리소장"
                 },
                 "counselor": {
-                  "fullName": "서주연",
+                  "fullName": "상담사",
                   "judgeRef": "상담사",
                   "neutral": "상담사"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -6308,31 +6308,31 @@
                   "neutral": "그 무렵"
                 },
                 "consultationTime": {
-                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "exact": "상담 시점",
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "그 사람",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
                 "manager": {
-                  "fullName": "장민석",
+                  "fullName": "관리소장",
                   "judgeRef": "관리소장",
                   "neutral": "관리소장"
                 },
                 "counselor": {
-                  "fullName": "서주연",
+                  "fullName": "상담사",
                   "judgeRef": "상담사",
                   "neutral": "상담사"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "복자 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "정우 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -6392,27 +6392,27 @@
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "주 씨",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
                 "manager": {
-                  "fullName": "장민석",
+                  "fullName": "장 씨",
                   "judgeRef": "관리소장",
                   "neutral": "관리소장"
                 },
                 "counselor": {
-                  "fullName": "서주연",
+                  "fullName": "서 씨",
                   "judgeRef": "상담사",
                   "neutral": "상담사"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }
@@ -6451,27 +6451,27 @@
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "주 씨",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
                 "manager": {
-                  "fullName": "장민석",
+                  "fullName": "장 씨",
                   "judgeRef": "관리소장",
                   "neutral": "관리소장"
                 },
                 "counselor": {
-                  "fullName": "서주연",
+                  "fullName": "서 씨",
                   "judgeRef": "상담사",
                   "neutral": "상담사"
                 },
                 "partyA": {
-                  "fullName": "최복자",
+                  "fullName": "최 씨",
                   "judgeRef": "복자 씨",
                   "neutral": "어머니"
                 },
                 "partyB": {
-                  "fullName": "박정우",
+                  "fullName": "박 씨",
                   "judgeRef": "정우 씨",
                   "neutral": "아들"
                 }

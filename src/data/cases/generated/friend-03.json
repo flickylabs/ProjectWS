@@ -324,6 +324,8 @@
     {
       "id": "e-1",
       "name": "나래 스토리와 신고 DM에 첨부된 DM 캡처 파일",
+      "surfaceName": "SNS 스토리와 DM 캡처 파일",
+      "surfaceDescription": "SNS 스토리와 신고 DM에 첨부된 대화 캡처 파일이다. 첨부 맥락과 원본 여부 확인이 필요하다.",
       "description": "지후가 '조회수용 피해자 코스프레'라고 말하고 루머를 의도했다는 식으로 보이는 한 장짜리 DM 캡처 파일이다.",
       "type": "sns",
       "reliability": "soft",
@@ -349,6 +351,8 @@
     {
       "id": "e-2",
       "name": "지후의 댓글·스토리 보관본과 삭제 로그",
+      "surfaceName": "댓글·스토리 보관본과 삭제 로그",
+      "surfaceDescription": "SNS 댓글과 스토리의 보관본, 삭제 기록이다. 삭제 시점과 사유는 확인이 필요하다.",
       "description": "협업 게시물 아래 남긴 댓글과, 협찬 물건과 서사를 암시한 스토리 보관본 및 삭제 시간 로그다.",
       "type": "sns",
       "reliability": "soft",
@@ -385,6 +389,8 @@
     {
       "id": "e-3",
       "name": "나래의 편집앱 프로젝트 파일과 갤러리 레이어 백업",
+      "surfaceName": "편집앱 프로젝트 파일과 갤러리 백업",
+      "surfaceDescription": "이미지 편집앱의 프로젝트 파일과 갤러리 레이어 백업이다. 작업 이력 확인이 필요하다.",
       "description": "문제 캡처를 만들 때 사용된 편집앱 프로젝트 파일과, 서로 다른 날짜의 대화 캡처 조각이 저장된 갤러리 백업이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -407,11 +413,14 @@
         "check_edits": "자르기, 문자 위치 이동, 그림자 적용 이력이 프로젝트 내부에 남아 있다.",
         "question_acquisition": "기기 소유자인 나래가 제출한 자료라 절차상 문제는 적지만 사적 대화 원본 공개는 제한돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-4",
       "name": "협업사 물류 확인서와 반납 등록 지연 로그",
+      "surfaceName": "물류 확인서와 반납 등록 지연 로그",
+      "surfaceDescription": "협업사의 물류 확인서와 반납 등록 지연 기록이다. 처리 경위와 시점 확인이 필요하다.",
       "description": "사은품과 협찬품이 모두 정상 반납 처리됐고, 앱 재고 표기만 늦게 반영됐음을 보여주는 협업사 백오피스 로그와 확인서다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -434,11 +443,14 @@
         "check_edits": "서버 export 파일과 PDF 확인서가 서로 맞아 후편집 흔적이 없다.",
         "question_acquisition": "협업사 내부 자료라 제출은 적법하지만 물류 담당자 연락처와 주문자 정보는 가려야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "나래의 운영자 신고 DM과 문소희 전달 대화 원본",
+      "surfaceName": "운영자 신고 DM과 전달 대화 원본",
+      "surfaceDescription": "플랫폼 운영자에게 보낸 신고 DM과 제3자 전달 대화 원본이다. 전달 경위 확인이 필요하다.",
       "description": "나래가 위조 캡처를 첨부해 운영자에게 신고하고, 문소희에게도 지후라고 단정하며 전달한 대화 원본이다.",
       "type": "chat",
       "reliability": "soft",
@@ -474,6 +486,8 @@
     {
       "id": "e-6",
       "name": "플랫폼 원본 DM export와 파일 해시 대조 리포트",
+      "surfaceName": "DM export와 파일 해시 대조 리포트",
+      "surfaceDescription": "플랫폼에서 내보낸 DM 원본과 파일 해시 대조 분석 리포트다. 무결성 검증 결과 확인이 필요하다.",
       "description": "지후 계정의 원본 DM export와 e-1 파일을 대조해, 문제 문장이 실제 단일 대화에 존재하지 않음을 보여주는 리포트다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -495,7 +509,8 @@
         "check_edits": "e-1 이미지의 텍스트 테두리와 버블 해상도가 원본 DM 렌더링과 다르게 나타난다.",
         "question_acquisition": "당사자 동의와 플랫폼 회신을 통해 확보한 자료라 적법성은 높지만 DM 전체 공개는 제한돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

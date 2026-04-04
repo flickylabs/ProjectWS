@@ -36,7 +36,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "다솔 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -75,7 +75,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "다솔 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -139,7 +139,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "최 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -178,7 +178,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "최 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -645,7 +645,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "다솔 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -690,7 +690,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "다솔 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -761,7 +761,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "최 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -805,7 +805,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "최 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -1322,7 +1322,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "다솔 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -1343,7 +1343,7 @@
                   "neutral": "이미"
                 },
                 "coordinator": {
-                  "fullName": "오한결",
+                  "fullName": "플랫폼 매니저",
                   "judgeRef": "플랫폼 매니저",
                   "neutral": "플랫폼 담당자",
                   "relation": "제3자"
@@ -1373,7 +1373,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "다솔 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -1394,7 +1394,7 @@
                   "neutral": "이미"
                 },
                 "coordinator": {
-                  "fullName": "오한결",
+                  "fullName": "플랫폼 매니저",
                   "judgeRef": "플랫폼 매니저",
                   "neutral": "플랫폼 담당자",
                   "relation": "제3자"
@@ -1450,7 +1450,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "최 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -1471,7 +1471,7 @@
                   "neutral": "이미"
                 },
                 "coordinator": {
-                  "fullName": "오한결",
+                  "fullName": "오 씨",
                   "judgeRef": "플랫폼 매니저",
                   "neutral": "플랫폼 담당자",
                   "relation": "제3자"
@@ -1500,7 +1500,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "최 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -1521,7 +1521,7 @@
                   "neutral": "이미"
                 },
                 "coordinator": {
-                  "fullName": "오한결",
+                  "fullName": "오 씨",
                   "judgeRef": "플랫폼 매니저",
                   "neutral": "플랫폼 담당자",
                   "relation": "제3자"
@@ -2070,13 +2070,13 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "다솔 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "코디네이터",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -2115,13 +2115,13 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "다솔 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "코디네이터",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -2185,13 +2185,13 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "최 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "임 씨",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -2230,13 +2230,13 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "최 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "임 씨",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -2751,7 +2751,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "다솔 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -2796,7 +2796,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "다솔 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -2867,7 +2867,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "최 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -2911,7 +2911,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "최다솔",
+                  "fullName": "최 씨",
                   "judgeRef": "다솔 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -3430,7 +3430,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "해온 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -3470,7 +3470,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "해온 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -3536,7 +3536,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "윤 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -3575,7 +3575,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "윤 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -4046,7 +4046,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "해온 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -4090,7 +4090,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "해온 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -4159,7 +4159,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "윤 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -4203,7 +4203,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "윤 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -4715,7 +4715,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "해온 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -4736,7 +4736,7 @@
                   "neutral": "이전부터"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "코디네이터",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -4765,7 +4765,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "해온 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -4786,7 +4786,7 @@
                   "neutral": "이전부터"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "코디네이터",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -4840,7 +4840,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "윤 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -4861,7 +4861,7 @@
                   "neutral": "이전부터"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "임 씨",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -4890,7 +4890,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "윤 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -4911,7 +4911,7 @@
                   "neutral": "이전부터"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "임 씨",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -5455,13 +5455,13 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "해온 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "코디네이터",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -5501,13 +5501,13 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "해온 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "코디네이터",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -5573,13 +5573,13 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "윤 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "임 씨",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -5618,13 +5618,13 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "윤 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
                 },
                 "coordinator": {
-                  "fullName": "임세진",
+                  "fullName": "임 씨",
                   "judgeRef": "코디네이터",
                   "neutral": "브랜드 담당자",
                   "relation": "제3자"
@@ -6144,7 +6144,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "해온 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -6189,7 +6189,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "해온 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -6260,7 +6260,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "윤 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"
@@ -6304,7 +6304,7 @@
               ],
               "slots": {
                 "counterparty": {
-                  "fullName": "윤해온",
+                  "fullName": "윤 씨",
                   "judgeRef": "해온 씨",
                   "neutral": "상대방",
                   "relation": "협업 파트너"

@@ -12,25 +12,38 @@ import type { DossierCard, DossierChallengeQuestion } from '../../types'
 import {
   getDossierCards,
   getAvailableDossierQuestions,
+  getLockedDossierQuestions,
   resolveDossierQuestion,
 } from '../../engine/v3GameLoopLoader'
+import type { LieState } from '../../types'
 import { resolveInvestigation } from '../../engine/evidenceChallengeEngine'
 
 interface Props {
   target: PartyId
   onQuestionAsked: () => void
-  /** evidence_present 디스패치 함수 — LLM NPC 응답을 받기 위함 */
-  onDispatchEvidence?: (evidenceId: string, target: PartyId) => void
+  /** 사건카드 질문 후 NPC 응답을 위한 dispatch (disputeId, target, questionText) */
+  onDispatchDossier?: (disputeId: string, target: PartyId, questionText: string) => void
 }
 
-export default function DossierCardPanel({ target, onQuestionAsked, onDispatchEvidence }: Props) {
+export default function DossierCardPanel({ target, onQuestionAsked, onDispatchDossier }: Props) {
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
 
   const caseData = useGameStore(s => s.caseData)
+  const lieConfigA = useGameStore(s => s.lieConfigA)
+  const lieConfigB = useGameStore(s => s.lieConfigB)
   if (!caseData) return null
 
   const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
   const cards = getDossierCards(caseKey)
+
+  // 대상 파티의 dispute별 현재 lieState 맵 구성
+  const lieConfig = target === 'a' ? lieConfigA : lieConfigB
+  const lieStates: Record<string, LieState> = {}
+  if (lieConfig) {
+    for (const [dId, cfg] of Object.entries(lieConfig)) {
+      lieStates[dId] = (cfg as any).currentState ?? 'S0'
+    }
+  }
 
   if (cards.length === 0) return null
 
@@ -43,8 +56,9 @@ export default function DossierCardPanel({ target, onQuestionAsked, onDispatchEv
       {/* 카드 목록 */}
       <div className="flex gap-1.5">
         {cards.map(card => {
-          const available = getAvailableDossierQuestions(caseKey, card.id, target)
-          const exhausted = available.length === 0
+          const available = getAvailableDossierQuestions(caseKey, card.id, target, lieStates)
+          const locked = getLockedDossierQuestions(caseKey, card.id, target, lieStates)
+          const exhausted = available.length === 0 && locked.length === 0
           return (
             <button
               key={card.id}
@@ -65,7 +79,9 @@ export default function DossierCardPanel({ target, onQuestionAsked, onDispatchEv
                   {card.evidenceIds.map(id => `e${id.replace('e-', '')}`).join('+')}
                 </span>
                 {!exhausted && (
-                  <span className="text-[9px] text-amber-500/60 ml-auto">{available.length}질문</span>
+                  <span className="text-[9px] text-amber-500/60 ml-auto">
+                    {available.length}질문{locked.length > 0 ? ` +🔒${locked.length}` : ''}
+                  </span>
                 )}
                 {exhausted && (
                   <span className="text-[9px] text-gray-600 ml-auto">완료</span>
@@ -83,23 +99,26 @@ export default function DossierCardPanel({ target, onQuestionAsked, onDispatchEv
           dossierId={selectedCard}
           target={target}
           partyName={partyName}
+          lieStates={lieStates}
           onQuestionAsked={onQuestionAsked}
-          onDispatchEvidence={onDispatchEvidence}
+          onDispatchDossier={onDispatchDossier}
         />
       )}
     </div>
   )
 }
 
-function DossierQuestionList({ caseKey, dossierId, target, partyName, onQuestionAsked, onDispatchEvidence }: {
+function DossierQuestionList({ caseKey, dossierId, target, partyName, lieStates, onQuestionAsked, onDispatchDossier }: {
   caseKey: string
   dossierId: string
   target: PartyId
   partyName: string
+  lieStates: Record<string, LieState>
   onQuestionAsked: () => void
-  onDispatchEvidence?: (evidenceId: string, target: PartyId) => void
+  onDispatchDossier?: (evidenceId: string, target: PartyId) => void
 }) {
-  const questions = getAvailableDossierQuestions(caseKey, dossierId, target)
+  const questions = getAvailableDossierQuestions(caseKey, dossierId, target, lieStates)
+  const lockedQuestions = getLockedDossierQuestions(caseKey, dossierId, target, lieStates)
 
   const handleAsk = (question: DossierChallengeQuestion) => {
     const store = useGameStore.getState()
@@ -137,7 +156,7 @@ function DossierQuestionList({ caseKey, dossierId, target, partyName, onQuestion
     if (result.revealedAtom) {
       store.addDialogue({
         speaker: 'system',
-        text: `💡 새로운 사실 해금: ${result.revealedAtom.factText}`,
+        text: `💡 새로운 사실이 해금되었습니다. 증거 게시판을 확인하십시오.`,
         relatedDisputes: card?.relatedDisputes ?? [],
         turn: store.turnCount,
       })
@@ -146,9 +165,26 @@ function DossierQuestionList({ caseKey, dossierId, target, partyName, onQuestion
     // 6. 감정 변화
     store.changeEmotion(target, 10)
 
-    // 7. LLM NPC 응답 트리거 — evidence_present로 디스패치
-    if (onDispatchEvidence && card) {
-      onDispatchEvidence(card.evidenceIds[0], target)
+    // 7. LLM NPC 응답 트리거 — 사건카드 질문 텍스트 + 증거 맥락과 함께 dispatch
+    if (onDispatchDossier && card) {
+      const disputeId = card.relatedDisputes[0] ?? ''
+      if (disputeId) {
+        // 증거 상세 정보 수집
+        const evidenceDetails = card.evidenceIds.map(evId => {
+          const ev = store.evidenceDefinitions.find(e => e.id === evId)
+          return ev ? `[${ev.name}] ${ev.description}` : ''
+        }).filter(Boolean).join('\n')
+
+        const dossierContext = {
+          questionText: question.text,
+          cardName: card.name,
+          cardDescription: card.description,
+          attackVector: question.attackVector,
+          evidenceDetails,
+          relatedDisputes: card.relatedDisputes,
+        }
+        onDispatchDossier(disputeId, target, JSON.stringify(dossierContext))
+      }
     }
 
     onQuestionAsked()
@@ -188,6 +224,17 @@ function DossierQuestionList({ caseKey, dossierId, target, partyName, onQuestion
             )}
           </div>
         </button>
+      ))}
+      {lockedQuestions.map(q => (
+        <div
+          key={q.id}
+          className="w-full text-left px-3 py-2 rounded-lg border border-gray-800/30 bg-gray-900/30 opacity-50 cursor-not-allowed"
+        >
+          <div className="text-[11px] text-gray-500 leading-tight flex items-center gap-1.5">
+            <span className="text-amber-600/50">&#128274;</span>
+            {q.lockedHint || '심문을 더 진행하면 새로운 질문이 열립니다'}
+          </div>
+        </div>
       ))}
     </div>
   )

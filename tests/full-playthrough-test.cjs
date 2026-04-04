@@ -14,7 +14,7 @@ const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') })
 
 const API_KEY = process.env.VITE_OPENAI_API_KEY
-const MODEL = 'gpt-4o-mini'
+const MODEL = 'gpt-4o'
 const BASE_URL = 'https://api.openai.com/v1'
 
 const v2Data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'src/data/claimPolicies/spouse-01-v2-atoms.json'), 'utf8'))

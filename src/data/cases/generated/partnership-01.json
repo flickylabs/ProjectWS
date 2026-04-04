@@ -323,6 +323,8 @@
       "id": "e-1",
       "name": "법인계좌 송금 내역서",
       "description": "9월 3일 법인 준비금 계좌에서 정민우 법무사 신탁계좌로 1,800만원이 이체된 원본 거래내역이다.",
+      "surfaceName": "법인계좌 송금 내역서",
+      "surfaceDescription": "은행에서 발급된 원본 거래내역 PDF다. 이체 금액과 수취인 정보가 표시돼 있다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -352,12 +354,40 @@
           "questionAngle": "윤해나에게: \"예치금은 서준의 개인 채무 상환이었는가\" 관련 해명 요구 (방어 동기: 복수심)",
           "implication": "이 증거는 윤해나의 \"예치금은 서준의 개인 채무 상환이었는가\" 쟁점과 관련된다. 윤해나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "법인 준비금에서 상당한 금액이 이체된 사실을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 이체에 공동승인 토큰이 사용되지 않은 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "송금 직전 법무사와 두 차례 통화한 기록이 있습니다. 통화 목적을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "브리지 투자 예치계약 초안과 신탁원장",
       "description": "예치금의 목적이 외부 브리지 투자 독점검토와 법률 실사였음을 보여주는 계약 초안, 신탁원장, 비환급 검토비 조항이다.",
+      "surfaceName": "계약 초안과 원장 사본",
+      "surfaceDescription": "계약 초안과 원장이 함께 묶인 법무 문서 세트다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -379,12 +409,41 @@
         "check_edits": "전자서명 검증 결과 편집 흔적이 없다.",
         "question_acquisition": "기관 제출본이라 적법하지만 미완성 투자 조건이 포함돼 사용 범위는 분쟁 해결로 한정해야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 투자 예치계약 초안과 신탁원장 문서에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 초안이 송금 43분 전에 작성된 점에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "초안에 기재된 예치금의 용도와 실제 송금 목적이 일치하는지 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "크롭된 메신저 캡처",
       "description": "서준이 법무사에게 '일단 제 이름으로 돌려놓고 나중에 정리하죠'라고 말한 부분만 잘린 채 남은 캡처다.",
+      "surfaceName": "크롭된 메신저 캡처",
+      "surfaceDescription": "대화 일부만 잘린 채 남은 메신저 화면 캡처 한 장이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -413,12 +472,40 @@
           "questionAngle": "윤해나에게: \"예치금은 서준의 개인 채무 상환이었는가\" 관련 해명 요구 (방어 동기: 복수심)",
           "implication": "이 증거는 윤해나의 \"예치금은 서준의 개인 채무 상환이었는가\" 쟁점과 관련된다. 윤해나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 메신저 대화 캡처를 증거로 제출한 경위에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 캡처가 새벽 1시 14분에 생성된 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "대화의 앞뒤가 잘려 있습니다. 전체를 제출하지 않은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "2주년 회식 후 원본 단톡과 음성메모 전사",
       "description": "해나가 '준비금 2천 안에서 먼저 예치 가자'고 말하고, 직원들에게는 계약 전까지 컨설팅비처럼만 설명하자고 덧붙인 원본 대화와 음성메모 전사다.",
+      "surfaceName": "회식 후 단톡과 음성메모 전사",
+      "surfaceDescription": "단체 대화방 내보내기와 음성메모 자동전사 텍스트 묶음이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "original",
@@ -440,12 +527,41 @@
         "check_edits": "삭제 복원 흔적은 있으나 본문 자체의 조작은 없다.",
         "question_acquisition": "공동 경영 논의를 담은 자료라 제출 정당성은 높지만 사적 감정 대화 일부는 최소한으로만 사용해야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "2주년 회식 후 이 대화와 음성메모가 오간 사실을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 대화가 송금 하루 전 회식 직후에 이루어진 점에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 대화에서 자금 집행과 회계 표기가 함께 언급된 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "세무사 회계분개 지시 메일과 예정신고 메모",
       "description": "해나가 세무사에게 예치금을 일단 2주년 캠페인 컨설팅비로 잡아달라고 보낸 메일과, 320만원 비환급 검토비가 반영된 예정신고 메모다.",
+      "surfaceName": "세무 관련 메일과 메모",
+      "surfaceDescription": "세무사에게 보낸 메일 원본과 예정신고 관련 메모가 첨부돼 있다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -477,12 +593,41 @@
           "questionAngle": "윤해나에게: \"해나의 회계분류 지시 은폐\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 윤해나의 \"해나의 회계분류 지시 은폐\" 쟁점과 관련된다. 윤해나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "세무사에게 회계 분개를 요청한 메일이 있습니다. 이 메일에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 메일이 송금 당일 오전에 발송된 점에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "메일에 '임시 표기'라는 취지의 설명이 함께 붙어 있습니다. 그 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "투자자 측 담당 확인 메일",
       "description": "예치금이 개인 채무 상환이 아니라 브리지 투자 독점검토를 위한 비용이었고, 해나도 1차 브리핑에 참여했다는 투자자 측 담당의 확인 메일이다.",
+      "surfaceName": "외부 담당자 확인 메일",
+      "surfaceDescription": "제3자 담당이 보낸 확인 메일로, 기관 도메인 발신 원본이다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -514,7 +659,34 @@
           "questionAngle": "윤해나에게: \"예치금은 서준의 개인 채무 상환이었는가\" 관련 해명 요구 (방어 동기: 복수심)",
           "implication": "이 증거는 윤해나의 \"예치금은 서준의 개인 채무 상환이었는가\" 쟁점과 관련된다. 윤해나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "외부 담당자가 보낸 이 확인 메일에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 메일이 검토 개시 당일에 발신된 점에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "메일에 기재된 참석자 명단과 자금 흐름의 관계를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

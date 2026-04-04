@@ -329,6 +329,8 @@
       "id": "e-1",
       "name": "관리비 자동이체 내역과 독촉 문자",
       "description": "지현이 두 달 연속 관리비 자동이체를 멈춘 계좌 내역과, 호준이 보낸 독촉 문자가 남은 기록이다.",
+      "surfaceName": "관리비 자동이체 내역과 독촉 문자",
+      "surfaceDescription": "자동이체 중단 계좌 내역과 독촉 문자가 남은 기록이다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -353,6 +355,8 @@
       "id": "e-2",
       "name": "호준이 보낸 관리비 상세 캡처와 PDF",
       "description": "관리실 명의처럼 보이는 도장과 항목표가 들어간 캡처 이미지, 그리고 호준이 따로 보낸 PDF 파일이다.",
+      "surfaceName": "관리비 상세 캡처와 PDF",
+      "surfaceDescription": "관리비 항목표가 들어간 캡처 이미지와 별도 PDF 파일이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -389,6 +393,8 @@
       "id": "e-3",
       "name": "전력회사 원시 계량 로그와 공용부 사용량 보고서",
       "description": "지현 세대와 공용부 계량기의 시간대별 전기사용 로그, 검침일, 공용부 누적 사용량 보고서다.",
+      "surfaceName": "전력회사 계량 로그와 사용량 보고서",
+      "surfaceDescription": "세대별 시간대 전기사용 로그와 누적 사용량 보고서다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -424,6 +430,8 @@
       "id": "e-4",
       "name": "지현 작업장비 전력 로그와 스마트플러그 기록",
       "description": "작업용 PC, 듀얼 모니터, 제습기, 렌더링 시간대가 남은 스마트플러그 기록과 작업 캘린더다.",
+      "surfaceName": "작업장비 전력 로그와 플러그 기록",
+      "surfaceDescription": "스마트플러그 전력 기록과 작업 캘린더가 묶인 자료다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -448,6 +456,8 @@
       "id": "e-5",
       "name": "관리대행 원본 고지 양식과 파일 메타데이터 비교표",
       "description": "한미라가 보관한 원본 고지 양식과, 호준이 보낸 PDF의 글꼴·생성 프로그램·도장 이미지 경계를 비교한 표다.",
+      "surfaceName": "원본 고지 양식과 파일 비교표",
+      "surfaceDescription": "관리대행 원본 양식과 제출 PDF의 메타데이터 비교표다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -469,12 +479,15 @@
         "check_edits": "도장 이미지의 픽셀 경계와 자간이 다르게 나타나 합성 정황이 확인됐다.",
         "question_acquisition": "정식 관리대행 보관 문서라 제출 정당성은 높다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "건물 회계장부와 누수·공실 전기 청구서",
       "description": "빈 1층 상가 기본 전기료, 옥상 누수 탐지 출장비, 각 세대 배분표가 적힌 회계장부와 청구서 묶음이다.",
+      "surfaceName": "건물 회계장부와 전기 청구서",
+      "surfaceDescription": "건물 회계장부와 세대별 배분이 적힌 청구서 묶음이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -506,7 +519,8 @@
           "questionAngle": "임호준에게: \"공실 상가·누수 점검비의 전가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 임호준의 \"공실 상가·누수 점검비의 전가\" 쟁점과 관련된다. 임호준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

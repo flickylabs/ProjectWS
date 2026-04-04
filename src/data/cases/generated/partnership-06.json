@@ -324,6 +324,8 @@
       "id": "e-1",
       "name": "집기 대체 발주서와 시공 PM 변경지시 로그",
       "description": "가람이 기존 확정안과 다른 진열집기·조명 모델을 요청한 발주서, 통화 후 남긴 시공 PM의 변경지시 로그다.",
+      "surfaceName": "집기 발주서와 변경지시 로그",
+      "surfaceDescription": "발주서 원본과 시공 PM이 남긴 변경지시 기록이다.",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -349,6 +351,8 @@
       "id": "e-2",
       "name": "브랜딩 툴 코멘트와 수정 평면도",
       "description": "보라가 카운터 위치와 간판 시야를 바꾸기 위해 시공팀에 남긴 코멘트, 그리고 그 지시가 반영된 수정 평면도다.",
+      "surfaceName": "브랜딩 툴 코멘트와 수정 평면도",
+      "surfaceDescription": "협업 툴 코멘트와 수정된 매장 평면도 파일이다.",
       "type": "platform_log",
       "reliability": "hard",
       "completeness": "original",
@@ -384,6 +388,8 @@
       "id": "e-3",
       "name": "부매니저 단톡 캡처",
       "description": "부매니저가 '가람 대표님 말대로 간판 먼저 철거, 보라 대표님 표로는 카운터부터'라고 적은 단톡 캡처다.",
+      "surfaceName": "부매니저 단톡 캡처",
+      "surfaceDescription": "현장 부매니저가 보낸 작업 지시 관련 단톡 캡처 한 장이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -408,6 +414,8 @@
       "id": "e-4",
       "name": "리뉴얼 역할분담 메모와 변경승인 시트",
       "description": "브랜딩·동선과 예산·공정의 역할 분담, 300만원 이상 변경과 오픈 주간 공정 수정 시 공동 승인을 요구한 메모와 시트다.",
+      "surfaceName": "역할분담 메모와 변경승인 시트",
+      "surfaceDescription": "리뉴얼 역할 분담 메모와 변경 승인 체크 시트 묶음이다.",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -429,12 +437,15 @@
         "check_edits": "버전 기록상 후속 삭제나 조작은 없다.",
         "question_acquisition": "회사 내부 운영문서라 적법하게 확보됐다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "관리소 공사허가 변경 기록과 출입 게이트 로그",
       "description": "보라 요청으로 철거 허가 시간이 조정되고, 가람 요청으로 다른 집기 반입 슬롯이 따로 잡힌 상가 관리소 기록이다.",
+      "surfaceName": "관리소 공사허가 변경 기록",
+      "surfaceDescription": "상가 관리소의 공사허가 변경 기록과 출입 게이트 로그다.",
       "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
@@ -456,12 +467,15 @@
         "check_edits": "기관 출력본이라 편집 흔적이 없다.",
         "question_acquisition": "상가 관리 주체의 공식 기록이어서 적법하다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "시공 PM 현장일지와 추가견적서",
       "description": "집기 재발주와 카운터 재이동이 겹치며 철거·설치 순서가 꼬였고, 이로 인해 하루 지연과 추가비용이 발생했다는 현장일지와 견적서다.",
+      "surfaceName": "시공 현장일지와 추가견적서",
+      "surfaceDescription": "시공 PM이 작성한 현장일지와 추가 비용 견적서 묶음이다.",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -494,7 +508,8 @@
           "questionAngle": "최보라에게: \"직원·협력업체에 서로 다른 최종안을 전달한 혼선\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 최보라의 \"직원·협력업체에 서로 다른 최종안을 전달한 혼선\" 쟁점과 관련된다. 최보라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

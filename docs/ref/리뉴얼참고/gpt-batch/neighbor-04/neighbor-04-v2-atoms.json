@@ -35,7 +35,7 @@
               ],
               "slots": {
                 "time": {
-                  "exact": "평일 오전 7시 20분",
+                  "exact": "반환 시각",
                   "neutral": "반환 시각",
                   "dateExact": "2월 말 이후",
                   "period": "합의 종료 뒤"
@@ -76,7 +76,7 @@
               ],
               "slots": {
                 "time": {
-                  "exact": "평일 오전 7시 20분",
+                  "exact": "반환 시각",
                   "neutral": "반환 시각",
                   "dateExact": "2월 말 이후",
                   "period": "합의 종료 뒤"
@@ -664,7 +664,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "상대방",
-                  "fullName": "최도윤",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 }
               },
@@ -699,7 +699,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "상대방",
-                  "fullName": "최도윤",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 }
               },
@@ -758,7 +758,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "상대방",
-                  "fullName": "최도윤",
+                  "fullName": "최 씨",
                   "judgeRef": "상대방"
                 }
               },
@@ -793,7 +793,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "상대방",
-                  "fullName": "최도윤",
+                  "fullName": "최 씨",
                   "judgeRef": "상대방"
                 }
               },
@@ -1231,7 +1231,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "상대방",
-                  "fullName": "최도윤",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 }
               },
@@ -1269,7 +1269,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "상대방",
-                  "fullName": "최도윤",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 }
               },
@@ -1329,7 +1329,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "상대방",
-                  "fullName": "최도윤",
+                  "fullName": "최 씨",
                   "judgeRef": "상대방"
                 }
               },
@@ -1366,7 +1366,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "상대방",
-                  "fullName": "최도윤",
+                  "fullName": "최 씨",
                   "judgeRef": "상대방"
                 }
               },
@@ -1803,7 +1803,7 @@
                   "neutral": "종료 시점"
                 },
                 "rule": {
-                  "exact": "평일 오전 7시 20분 전 반환",
+                  "exact": "아침 반환 조건",
                   "neutral": "아침 반환 조건"
                 },
                 "person": {
@@ -1838,7 +1838,7 @@
                   "neutral": "종료 시점"
                 },
                 "rule": {
-                  "exact": "평일 오전 7시 20분 전 반환",
+                  "exact": "아침 반환 조건",
                   "neutral": "아침 반환 조건"
                 },
                 "person": {
@@ -2938,7 +2938,7 @@
               ],
               "slots": {
                 "time": {
-                  "exact": "평일 오전 7시 20분",
+                  "exact": "반환 시각",
                   "neutral": "반환 시각",
                   "dateExact": "2월 말 이후",
                   "period": "합의 종료 뒤"
@@ -2955,7 +2955,7 @@
                 "person": {
                   "exact": "박서림",
                   "neutral": "상대방",
-                  "fullName": "박서림",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 }
               },
@@ -2976,7 +2976,7 @@
               ],
               "slots": {
                 "time": {
-                  "exact": "평일 오전 7시 20분",
+                  "exact": "반환 시각",
                   "neutral": "반환 시각",
                   "dateExact": "2월 말 이후",
                   "period": "합의 종료 뒤"
@@ -2993,7 +2993,7 @@
                 "person": {
                   "exact": "박서림",
                   "neutral": "상대방",
-                  "fullName": "박서림",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 }
               },
@@ -3055,7 +3055,7 @@
                 "person": {
                   "exact": "박서림",
                   "neutral": "상대방",
-                  "fullName": "박서림",
+                  "fullName": "박 씨",
                   "judgeRef": "상대방"
                 }
               },
@@ -3093,7 +3093,7 @@
                 "person": {
                   "exact": "박서림",
                   "neutral": "상대방",
-                  "fullName": "박서림",
+                  "fullName": "박 씨",
                   "judgeRef": "상대방"
                 }
               },
@@ -3554,7 +3554,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "본인",
                   "judgeRef": "본인"
                 }
               },
@@ -3592,7 +3592,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "본인",
                   "judgeRef": "본인"
                 }
               },
@@ -3651,7 +3651,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "최 씨",
                   "judgeRef": "본인"
                 }
               },
@@ -3688,7 +3688,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "최 씨",
                   "judgeRef": "본인"
                 }
               },
@@ -4130,7 +4130,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "본인",
                   "judgeRef": "본인"
                 }
               },
@@ -4165,7 +4165,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "본인",
                   "judgeRef": "본인"
                 }
               },
@@ -4224,7 +4224,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "최 씨",
                   "judgeRef": "본인"
                 }
               },
@@ -4259,7 +4259,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "최 씨",
                   "judgeRef": "본인"
                 }
               },
@@ -4690,13 +4690,13 @@
                   "neutral": "종료 시점"
                 },
                 "rule": {
-                  "exact": "평일 오전 7시 20분 전 반환",
+                  "exact": "아침 반환 조건",
                   "neutral": "아침 반환 조건"
                 },
                 "person": {
                   "exact": "박서림",
                   "neutral": "상대방",
-                  "fullName": "박서림",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 }
               },
@@ -4728,13 +4728,13 @@
                   "neutral": "종료 시점"
                 },
                 "rule": {
-                  "exact": "평일 오전 7시 20분 전 반환",
+                  "exact": "아침 반환 조건",
                   "neutral": "아침 반환 조건"
                 },
                 "person": {
                   "exact": "박서림",
                   "neutral": "상대방",
-                  "fullName": "박서림",
+                  "fullName": "상대방",
                   "judgeRef": "상대방"
                 }
               },
@@ -4793,7 +4793,7 @@
                 "person": {
                   "exact": "박서림",
                   "neutral": "상대방",
-                  "fullName": "박서림",
+                  "fullName": "박 씨",
                   "judgeRef": "상대방"
                 }
               },
@@ -4830,7 +4830,7 @@
                 "person": {
                   "exact": "박서림",
                   "neutral": "상대방",
-                  "fullName": "박서림",
+                  "fullName": "박 씨",
                   "judgeRef": "상대방"
                 }
               },
@@ -5273,7 +5273,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "본인",
                   "judgeRef": "본인"
                 }
               },
@@ -5311,7 +5311,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "본인",
                   "judgeRef": "본인"
                 }
               },
@@ -5370,7 +5370,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "최 씨",
                   "judgeRef": "본인"
                 }
               },
@@ -5407,7 +5407,7 @@
                 "person": {
                   "exact": "최도윤",
                   "neutral": "본인",
-                  "fullName": "최도윤",
+                  "fullName": "최 씨",
                   "judgeRef": "본인"
                 }
               },

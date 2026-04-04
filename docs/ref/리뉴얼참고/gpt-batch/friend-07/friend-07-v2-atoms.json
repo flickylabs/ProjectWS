@@ -43,7 +43,7 @@
                   "judgeRef": "소품 정리 커버 요청"
                 },
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박성호 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 }
@@ -143,7 +143,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 }
@@ -653,7 +653,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "양소라",
+                  "fullName": "양 씨",
                   "judgeRef": "양소라 씨",
                   "neutral": "공통 친구"
                 },
@@ -1086,7 +1086,7 @@
                   "judgeRef": "e-1"
                 },
                 "person": {
-                  "fullName": "정선우",
+                  "fullName": "정선우 운영간사",
                   "judgeRef": "정선우 운영간사",
                   "neutral": "운영간사"
                 }
@@ -1138,7 +1138,7 @@
                   "neutral": "그 선발 때"
                 },
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 }
@@ -1162,7 +1162,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "이도현",
+                  "fullName": "이 씨",
                   "judgeRef": "이도현 운영진",
                   "neutral": "지정 운영진"
                 },
@@ -1561,7 +1561,7 @@
                   "judgeRef": "합의 핵심 조항"
                 },
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박성호 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 },
@@ -1652,7 +1652,7 @@
                   "judgeRef": "합의된 고지 경로"
                 },
                 "person": {
-                  "fullName": "이도현",
+                  "fullName": "이 씨",
                   "judgeRef": "이도현 운영진",
                   "neutral": "지정 운영진"
                 }
@@ -1681,7 +1681,7 @@
                   "neutral": "그때"
                 },
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 }
@@ -2073,7 +2073,7 @@
                   "judgeRef": "의도 부인 문구"
                 },
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박성호 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 },
@@ -2107,7 +2107,7 @@
                   "judgeRef": "합의된 고지 경로"
                 },
                 "person": {
-                  "fullName": "이도현",
+                  "fullName": "이도현 운영진",
                   "judgeRef": "이도현 운영진",
                   "neutral": "지정 운영진"
                 }
@@ -2183,7 +2183,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 },
@@ -2586,7 +2586,7 @@
                   "judgeRef": "소품 정리 커버 요청"
                 },
                 "person": {
-                  "fullName": "서진아",
+                  "fullName": "서진아 씨",
                   "judgeRef": "서진아 씨",
                   "neutral": "A"
                 },
@@ -2672,7 +2672,7 @@
                   "judgeRef": "알리바이 부탁 문구"
                 },
                 "person": {
-                  "fullName": "서진아",
+                  "fullName": "서 씨",
                   "judgeRef": "서진아 씨",
                   "neutral": "A"
                 }
@@ -2701,7 +2701,7 @@
                   "neutral": "그 선발 때"
                 },
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 }
@@ -3118,12 +3118,12 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박성호 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 },
                 "person2": {
-                  "fullName": "서진아",
+                  "fullName": "서진아 씨",
                   "judgeRef": "서진아 씨",
                   "neutral": "A"
                 }
@@ -3209,7 +3209,7 @@
                   "neutral": "그 선발 때"
                 },
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 }
@@ -3601,7 +3601,7 @@
                   "neutral": "그 선발 때"
                 },
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박성호 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 }
@@ -4131,7 +4131,7 @@
                   "judgeRef": "의도 부인 문구"
                 },
                 "person": {
-                  "fullName": "서진아",
+                  "fullName": "서진아 씨",
                   "judgeRef": "서진아 씨",
                   "neutral": "A"
                 }
@@ -4183,12 +4183,12 @@
                   "judgeRef": "합의된 고지 경로"
                 },
                 "person1": {
-                  "fullName": "박성호",
+                  "fullName": "박 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 },
                 "person2": {
-                  "fullName": "서진아",
+                  "fullName": "서 씨",
                   "judgeRef": "서진아 씨",
                   "neutral": "A"
                 }
@@ -4212,7 +4212,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "서진아",
+                  "fullName": "서 씨",
                   "judgeRef": "서진아 씨",
                   "neutral": "A"
                 },
@@ -4621,7 +4621,7 @@
                   "judgeRef": "신고 타임스탬프"
                 },
                 "person": {
-                  "fullName": "이도현",
+                  "fullName": "이도현 운영진",
                   "judgeRef": "이도현 운영진",
                   "neutral": "지정 운영진"
                 },
@@ -4707,7 +4707,7 @@
                   "judgeRef": "신고 타임스탬프"
                 },
                 "person": {
-                  "fullName": "이도현",
+                  "fullName": "이 씨",
                   "judgeRef": "이도현 운영진",
                   "neutral": "지정 운영진"
                 }
@@ -4736,7 +4736,7 @@
                   "neutral": "그 선발 때"
                 },
                 "person": {
-                  "fullName": "박성호",
+                  "fullName": "박 씨",
                   "judgeRef": "박성호 씨",
                   "neutral": "B"
                 }

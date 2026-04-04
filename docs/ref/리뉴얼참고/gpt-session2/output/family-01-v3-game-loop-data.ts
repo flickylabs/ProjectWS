@@ -31,6 +31,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-1.a.q2",
               "text": "이체 뒤 부모 병원비보다 카드대금과 보험료가 먼저 빠져나간 점을 보면, 이 선이체의 직접 목적이 무엇이었는지 설명하십시오.",
               "attackVector": "context",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d1.unlock.s2.transfer_before_care_formal_start"
@@ -40,6 +42,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-1.a.q3",
               "text": "복원 메모의 '먼저 메우고 간병비로 정리'라는 표현까지 확인되면, 나중에 간병비 명목으로 맞춰 말하려 한 것 아닙니까.",
               "attackVector": "context",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d1.unlock.s5.relabel_as_care_expense_plan"
@@ -63,6 +67,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-1.b.q2",
               "text": "공유표 원칙을 들이밀기 전에, 약값과 야간보호사 비용을 뒤늦게 올린 기록은 본인도 인정하십니까.",
               "attackVector": "authenticity",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "authenticity",
                 "revealAtom": "d5b.unlock.s2.late_logs_of_drugs_and_carer"
@@ -72,6 +78,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-1.b.q3",
               "text": "누나의 1,800만원이 더 크다는 이유만으로, 자신의 늦은 기록은 규칙 위반이 아니었다고 보시는 겁니까.",
               "attackVector": "context",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d5b.unlock.s2.not_rule_inside_afterall"
@@ -111,6 +119,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-2.a.q2",
               "text": "그 한 줄의 앞뒤 맥락을 보지 않은 채, 상속 예고처럼 꺼내 드신 이유가 무엇입니까.",
               "attackVector": "context",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d3.unlock.s3.used_line_as_authority"
@@ -120,6 +130,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-2.a.q3",
               "text": "결국 그 한 줄을 붙든 이유가 실제 상속보다, 해온 일이 지워질까 두려운 마음 쪽에 가까웠다는 점은 인정하십니까.",
               "attackVector": "context",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d3.unlock.s4.outside_family_role_fear"
@@ -143,6 +155,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-2.b.q2",
               "text": "야간 교대가 한 차례 실제로 비고, 그 시간대에 누나가 대신 움직인 기록은 인정하십니까.",
               "attackVector": "context",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d2.unlock.s2.one_shift_gap_exact"
@@ -152,6 +166,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-2.b.q3",
               "text": "약값 직접 결제 내역이 있다고 해서, 그 지연과 공백 책임까지 없어지는 건 아니라는 점도 인정하십니까.",
               "attackVector": "context",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d2.unlock.s5.direct_payments_do_not_cancel_delay"
@@ -192,6 +208,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-3.a.q2",
               "text": "정식 유언장이나 공증 이력이 없다는 기록까지 확인되면, 그 메모를 재산 권한 근거로 들 수 없다는 점은 인정하십니까.",
               "attackVector": "authenticity",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "authenticity",
                 "lieAdvance": true
@@ -201,6 +219,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-3.a.q3",
               "text": "사회복지사 기록상 첫 달 비용이 98만원 수준까지 낮아질 수 있었다면, 1,800만원을 미리 옮길 필요가 있었다는 주장도 다시 봐야 하는 것 아닙니까.",
               "attackVector": "context",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d1.unlock.s4.propping_self_to_keep_care_going"
@@ -224,6 +244,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-3.b.q2",
               "text": "첫 달 비용이 210만원 전액이 아니라 98만원 수준까지 낮아질 수 있었다면, '전액 사비' 판단은 틀렸다고 보십니까.",
               "attackVector": "context",
+              "requiredLieState": 'S2' as const,
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "d4.unlock.s2.ninetyeight_possible_with_relief"
@@ -233,6 +255,8 @@ export const family01V3GameLoopData = {
               "id": "dossier-3.b.q3",
               "text": "전체 수첩 스캔까지 본 뒤에도 누나를 상속 선점자로 단정하실 겁니까, 아니면 해석을 수정하시겠습니까.",
               "attackVector": "context",
+              "requiredLieState": 'S3' as const,
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다",
               "onSuccess": {
                 "blockVector": "context",
                 "lieAdvance": true

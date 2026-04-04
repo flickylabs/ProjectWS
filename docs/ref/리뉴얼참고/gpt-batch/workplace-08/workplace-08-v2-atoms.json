@@ -37,7 +37,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김나래 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -75,7 +75,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김나래 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -139,7 +139,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -176,7 +176,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -644,7 +644,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김나래 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -682,7 +682,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김나래 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -746,7 +746,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -783,7 +783,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -1251,7 +1251,7 @@
               "slots": {
                 "person": {
                   "exact": "홍예진",
-                  "fullName": "홍예진",
+                  "fullName": "홍예진 씨",
                   "judgeRef": "홍예진 씨",
                   "neutral": "재무 담당자"
                 },
@@ -1289,7 +1289,7 @@
               "slots": {
                 "person": {
                   "exact": "홍예진",
-                  "fullName": "홍예진",
+                  "fullName": "홍예진 씨",
                   "judgeRef": "홍예진 씨",
                   "neutral": "재무 담당자"
                 },
@@ -1353,7 +1353,7 @@
               "slots": {
                 "person": {
                   "exact": "홍예진",
-                  "fullName": "홍예진",
+                  "fullName": "홍 씨",
                   "judgeRef": "홍예진 씨",
                   "neutral": "재무 담당자"
                 },
@@ -1390,7 +1390,7 @@
               "slots": {
                 "person": {
                   "exact": "홍예진",
-                  "fullName": "홍예진",
+                  "fullName": "홍 씨",
                   "judgeRef": "홍예진 씨",
                   "neutral": "재무 담당자"
                 },
@@ -1858,7 +1858,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김나래 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -1896,7 +1896,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김나래 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -1960,7 +1960,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -1997,7 +1997,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -2465,7 +2465,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김나래 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -2503,7 +2503,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김나래 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -2567,7 +2567,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -2604,7 +2604,7 @@
               "slots": {
                 "person": {
                   "exact": "김나래",
-                  "fullName": "김나래",
+                  "fullName": "김 씨",
                   "judgeRef": "김나래 씨",
                   "neutral": "상대 직원"
                 },
@@ -3074,7 +3074,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최정훈 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -3112,7 +3112,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최정훈 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -3176,7 +3176,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -3213,7 +3213,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -3681,7 +3681,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최정훈 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -3719,7 +3719,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최정훈 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -3783,7 +3783,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -3820,7 +3820,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -4288,7 +4288,7 @@
               "slots": {
                 "person": {
                   "exact": "홍예진",
-                  "fullName": "홍예진",
+                  "fullName": "홍예진 씨",
                   "judgeRef": "홍예진 씨",
                   "neutral": "재무 담당자"
                 },
@@ -4326,7 +4326,7 @@
               "slots": {
                 "person": {
                   "exact": "홍예진",
-                  "fullName": "홍예진",
+                  "fullName": "홍예진 씨",
                   "judgeRef": "홍예진 씨",
                   "neutral": "재무 담당자"
                 },
@@ -4390,7 +4390,7 @@
               "slots": {
                 "person": {
                   "exact": "홍예진",
-                  "fullName": "홍예진",
+                  "fullName": "홍 씨",
                   "judgeRef": "홍예진 씨",
                   "neutral": "재무 담당자"
                 },
@@ -4427,7 +4427,7 @@
               "slots": {
                 "person": {
                   "exact": "홍예진",
-                  "fullName": "홍예진",
+                  "fullName": "홍 씨",
                   "judgeRef": "홍예진 씨",
                   "neutral": "재무 담당자"
                 },
@@ -4895,7 +4895,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최정훈 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -4933,7 +4933,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최정훈 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -4997,7 +4997,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -5034,7 +5034,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -5502,7 +5502,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최정훈 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -5540,7 +5540,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최정훈 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -5604,7 +5604,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -5641,7 +5641,7 @@
               "slots": {
                 "person": {
                   "exact": "최정훈",
-                  "fullName": "최정훈",
+                  "fullName": "최 씨",
                   "judgeRef": "최정훈 씨",
                   "neutral": "상대 관리자"
                 },
@@ -6077,4 +6077,3 @@
     }
   }
 }
-

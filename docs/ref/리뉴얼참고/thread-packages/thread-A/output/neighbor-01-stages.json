@@ -1,0 +1,161 @@
+{
+  "case": "neighbor-01",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "새벽 시간대에 공용 복도에서 영상을 촬영한 사실이 있습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "촬영 시각이 7월 12일 새벽 0시 48분으로 확인됩니다. 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이 영상의 화각이 특정 방향만 담고 있는 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "관리사무소의 4라인 누수 점검 보고서의 존재를 알고 계셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 보고서가 단체방 분쟁 다음 날 작성된 점에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "보고서상 4라인 외벽 코너 여러 곳에서 같은 현상이 반복됩니다. 이에 대해 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "그 야간 시간대에 점검 기사가 출입한 사실을 알고 계셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "CCTV와 출입기록의 시각이 47초 이내로 일치합니다. 이 점에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "영상에 기사가 공구 가방을 들고 있는 장면이 있습니다. 방문 목적을 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "옥상 배관 사진과 긴급 보수 기록이 있습니다. 확인하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 사진이 누수 보고서 작성 직전 새벽에 촬영된 점에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "사진상 막힘 지점의 위치가 어디인지 알고 계십니까? 입장을 밝히십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "관리사무소에 누수 관련 민원을 접수한 사실이 있습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "아래층에 직접 알린 시점이 민원 접수보다 31시간 늦습니다. 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "본인이 이미 누수를 인지하고 있었던 시점과 아래층 통보 시점의 차이를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "아파트 단체방에 특정 호수를 언급한 글을 올린 사실이 있습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 게시가 야간 점검 직후인 새벽 1시에 올라간 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "게시글에서 누수와 소음을 하나로 묶어 표현한 의도를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ]
+  }
+}

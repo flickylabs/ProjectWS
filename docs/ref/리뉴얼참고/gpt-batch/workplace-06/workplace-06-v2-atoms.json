@@ -40,7 +40,7 @@
                 "person": {
                   "exact": "이서린",
                   "neutral": "상대방",
-                  "fullName": "이서린",
+                  "fullName": "이서린 씨",
                   "judgeRef": "이서린 씨"
                 },
                 "threshold": {
@@ -76,7 +76,7 @@
                 "institution": {
                   "exact": "권하늘 PM",
                   "neutral": "PM",
-                  "fullName": "권하늘",
+                  "fullName": "권하늘 PM",
                   "judgeRef": "권하늘 PM"
                 },
                 "rule": {
@@ -159,7 +159,7 @@
                 "institution": {
                   "exact": "권하늘 PM",
                   "neutral": "PM",
-                  "fullName": "권하늘",
+                  "fullName": "권 씨",
                   "judgeRef": "권하늘 PM"
                 },
                 "rule": {
@@ -569,7 +569,7 @@
                 "person": {
                   "exact": "이서린",
                   "neutral": "상대방",
-                  "fullName": "이서린",
+                  "fullName": "이서린 씨",
                   "judgeRef": "이서린 씨"
                 },
                 "legacy": {
@@ -658,7 +658,7 @@
                 "person": {
                   "exact": "이서린",
                   "neutral": "상대방",
-                  "fullName": "이서린",
+                  "fullName": "이 씨",
                   "judgeRef": "이서린 씨"
                 }
               },
@@ -1170,7 +1170,7 @@
                 "institution": {
                   "exact": "권하늘 PM",
                   "neutral": "PM",
-                  "fullName": "권하늘",
+                  "fullName": "권 씨",
                   "judgeRef": "권하늘 PM"
                 }
               },
@@ -1512,7 +1512,7 @@
                 "person": {
                   "exact": "이서린",
                   "neutral": "상대방",
-                  "fullName": "이서린",
+                  "fullName": "이서린 씨",
                   "judgeRef": "이서린 씨"
                 },
                 "time": {
@@ -1984,7 +1984,7 @@
                 "person": {
                   "exact": "이서린",
                   "neutral": "상대방",
-                  "fullName": "이서린",
+                  "fullName": "이서린 씨",
                   "judgeRef": "이서린 씨"
                 },
                 "hotfix": {
@@ -2016,7 +2016,7 @@
                 "institution": {
                   "exact": "권하늘 PM",
                   "neutral": "PM",
-                  "fullName": "권하늘",
+                  "fullName": "권하늘 PM",
                   "judgeRef": "권하늘 PM"
                 },
                 "rule": {
@@ -2103,7 +2103,7 @@
                 "institution": {
                   "exact": "권하늘 PM",
                   "neutral": "PM",
-                  "fullName": "권하늘",
+                  "fullName": "권 씨",
                   "judgeRef": "권하늘 PM"
                 },
                 "rule": {
@@ -2500,7 +2500,7 @@
                 "person": {
                   "exact": "박준호",
                   "neutral": "상대방",
-                  "fullName": "박준호",
+                  "fullName": "박준호 씨",
                   "judgeRef": "박준호 씨"
                 },
                 "threshold": {
@@ -2989,7 +2989,7 @@
                 "person": {
                   "exact": "박준호",
                   "neutral": "상대방",
-                  "fullName": "박준호",
+                  "fullName": "박준호 씨",
                   "judgeRef": "박준호 씨"
                 },
                 "legacy": {
@@ -3934,7 +3934,7 @@
                 "person": {
                   "exact": "박준호",
                   "neutral": "상대방",
-                  "fullName": "박준호",
+                  "fullName": "박준호 씨",
                   "judgeRef": "박준호 씨"
                 },
                 "time": {
@@ -3962,7 +3962,7 @@
                 "person": {
                   "exact": "박준호",
                   "neutral": "상대방",
-                  "fullName": "박준호",
+                  "fullName": "박준호 씨",
                   "judgeRef": "박준호 씨"
                 },
                 "time": {
@@ -4418,7 +4418,7 @@
                 "person": {
                   "exact": "박준호",
                   "neutral": "상대방",
-                  "fullName": "박준호",
+                  "fullName": "박준호 씨",
                   "judgeRef": "박준호 씨"
                 },
                 "hotfix": {
@@ -4454,7 +4454,7 @@
                 "institution": {
                   "exact": "권하늘 PM",
                   "neutral": "PM",
-                  "fullName": "권하늘",
+                  "fullName": "권하늘 PM",
                   "judgeRef": "권하늘 PM"
                 },
                 "rule": {
@@ -4544,7 +4544,7 @@
                 "institution": {
                   "exact": "권하늘 PM",
                   "neutral": "PM",
-                  "fullName": "권하늘",
+                  "fullName": "권 씨",
                   "judgeRef": "권하늘 PM"
                 },
                 "rule": {
@@ -4917,4 +4917,3 @@
     }
   }
 }
-

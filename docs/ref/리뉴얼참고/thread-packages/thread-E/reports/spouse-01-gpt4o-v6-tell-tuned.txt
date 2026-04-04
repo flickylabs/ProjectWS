@@ -1,0 +1,18 @@
+[dotenv@17.3.1] injecting env (1) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+═══════════════════════════════════════════════════
+  V2 풀 플레이스루 (심문 + 증거) — 20턴
+  모델: gpt-4o | 2026-04-04T11:27:31.686Z
+═══════════════════════════════════════════════════
+
+━━━ 1~3턴: 한지석 d-1 초기 심문 ━━━
+ReferenceError: tellKey is not defined
+    at run (D:\ProjectWS\tests\full-playthrough-v2.cjs:256:24)
+    at main (D:\ProjectWS\tests\full-playthrough-v2.cjs:307:9)
+    at Object.<anonymous> (D:\ProjectWS\tests\full-playthrough-v2.cjs:428:1)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)

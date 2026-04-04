@@ -34,7 +34,7 @@
               ],
               "slots": {
                 "recipient": {
-                  "fullName": "이민지",
+                  "fullName": "배우자",
                   "judgeRef": "배우자",
                   "neutral": "가족 외 배우자"
                 },
@@ -63,7 +63,7 @@
               ],
               "slots": {
                 "files": {
-                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "exact": "가족 자료",
                   "neutral": "가족 자료",
                   "judgeRef": "음성·등기·부채 자료"
                 },
@@ -115,7 +115,7 @@
               ],
               "slots": {
                 "recipient": {
-                  "fullName": "이민지",
+                  "fullName": "이 씨",
                   "judgeRef": "배우자",
                   "neutral": "가족 외 배우자"
                 },
@@ -563,7 +563,7 @@
               ],
               "slots": {
                 "intermediary": {
-                  "fullName": "이민지",
+                  "fullName": "그 사람",
                   "relation": "배우자",
                   "neutral": "배우자 쪽 사람"
                 },
@@ -645,7 +645,7 @@
               ],
               "slots": {
                 "intermediary": {
-                  "fullName": "이민지",
+                  "fullName": "이 씨",
                   "relation": "배우자",
                   "neutral": "배우자 쪽 사람"
                 },
@@ -1532,12 +1532,12 @@
               ],
               "slots": {
                 "clip": {
-                  "exact": "42초 음성 클립",
+                  "exact": "짧은 클립",
                   "neutral": "짧은 클립",
                   "judgeRef": "그 음성 파일"
                 },
                 "speaker": {
-                  "fullName": "강정호",
+                  "fullName": "아버지",
                   "judgeRef": "아버지",
                   "neutral": "그분"
                 }
@@ -1562,7 +1562,7 @@
               ],
               "slots": {
                 "transcript": {
-                  "exact": "18분 전체 녹취",
+                  "exact": "전체 맥락",
                   "neutral": "전체 맥락",
                   "judgeRef": "전체 녹취"
                 },
@@ -1619,7 +1619,7 @@
                   "judgeRef": "그 음성 파일"
                 },
                 "speaker": {
-                  "fullName": "강정호",
+                  "fullName": "강 씨",
                   "judgeRef": "아버지",
                   "neutral": "그분"
                 }
@@ -2532,7 +2532,7 @@
               ],
               "slots": {
                 "recipient": {
-                  "fullName": "이민지",
+                  "fullName": "배우자",
                   "judgeRef": "배우자",
                   "neutral": "가족 외 배우자"
                 },
@@ -2561,7 +2561,7 @@
               ],
               "slots": {
                 "files": {
-                  "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                  "exact": "가족 자료",
                   "neutral": "가족 자료",
                   "judgeRef": "음성·등기·부채 자료"
                 },
@@ -2613,7 +2613,7 @@
               ],
               "slots": {
                 "recipient": {
-                  "fullName": "이민지",
+                  "fullName": "이 씨",
                   "judgeRef": "배우자",
                   "neutral": "가족 외 배우자"
                 },
@@ -3061,7 +3061,7 @@
               ],
               "slots": {
                 "intermediary": {
-                  "fullName": "이민지",
+                  "fullName": "그 사람",
                   "relation": "배우자",
                   "neutral": "배우자 쪽 사람"
                 },
@@ -3143,7 +3143,7 @@
               ],
               "slots": {
                 "intermediary": {
-                  "fullName": "이민지",
+                  "fullName": "이 씨",
                   "relation": "배우자",
                   "neutral": "배우자 쪽 사람"
                 },
@@ -4030,12 +4030,12 @@
               ],
               "slots": {
                 "clip": {
-                  "exact": "42초 음성 클립",
+                  "exact": "짧은 클립",
                   "neutral": "짧은 클립",
                   "judgeRef": "그 음성 파일"
                 },
                 "speaker": {
-                  "fullName": "강정호",
+                  "fullName": "아버지",
                   "judgeRef": "아버지",
                   "neutral": "그분"
                 }
@@ -4060,7 +4060,7 @@
               ],
               "slots": {
                 "transcript": {
-                  "exact": "18분 전체 녹취",
+                  "exact": "전체 맥락",
                   "neutral": "전체 맥락",
                   "judgeRef": "전체 녹취"
                 },
@@ -4117,7 +4117,7 @@
                   "judgeRef": "그 음성 파일"
                 },
                 "speaker": {
-                  "fullName": "강정호",
+                  "fullName": "강 씨",
                   "judgeRef": "아버지",
                   "neutral": "그분"
                 }

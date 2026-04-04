@@ -324,6 +324,8 @@
     {
       "id": "e-1",
       "name": "서아의 '그 주 비워볼게' 카톡 캡처",
+      "surfaceName": "일정 조율 메시지 캡처",
+      "surfaceDescription": "특정 주간 일정 비움을 언급한 메시지 캡처다. 발신 맥락과 확정 여부 확인이 필요하다.",
       "description": "서아가 그 주를 비워보겠고 노래 키를 보자는 말만 보이는 잘린 카카오톡 캡처다.",
       "type": "chat",
       "reliability": "soft",
@@ -359,6 +361,8 @@
     {
       "id": "e-2",
       "name": "공유 웨딩 체크리스트 revision history와 상태 범례",
+      "surfaceName": "공유 체크리스트 수정 이력",
+      "surfaceDescription": "공유 체크리스트의 revision history와 상태 범례다. 수정 시점과 항목 변경 확인이 필요하다.",
       "description": "서아의 이름이 들러리와 축가 항목에 함께 올라가 있었지만, 들러리는 진행중·축가는 후보로 따로 표시된 공유 문서 원본이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -392,11 +396,14 @@
           "questionAngle": "한서아에게: \"서아의 들러리 참여 자체도 전부 미확정이었는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 한서아의 \"서아의 들러리 참여 자체도 전부 미확정이었는가\" 쟁점과 관련된다. 한서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-3",
       "name": "유상우 반주자 DM과 가예약 메모",
+      "surfaceName": "반주자 DM과 가예약 메모",
+      "surfaceDescription": "반주자와의 DM 대화와 가예약 메모다. 예약 확정 여부와 합의 확인이 필요하다.",
       "description": "유상우가 키를 먼저 확인해 보자고 했고, 축가 슬롯은 가예약 상태로만 잡혀 있었다는 DM과 메모다.",
       "type": "chat",
       "reliability": "hard",
@@ -432,6 +439,8 @@
     {
       "id": "e-4",
       "name": "다정의 가족 단톡·플래너 전달 라인업과 리허설표",
+      "surfaceName": "가족 단톡과 라인업·리허설표",
+      "surfaceDescription": "가족 단체방 대화와 행사 라인업·리허설 일정표다. 전달 내용과 확정 여부 확인이 필요하다.",
       "description": "다정이 서아를 들러리 겸 축가로 적어 가족 단톡과 플래너에게 전달한 라인업, 리허설표 원본이다.",
       "type": "chat",
       "reliability": "hard",
@@ -467,6 +476,8 @@
     {
       "id": "e-5",
       "name": "이전 결혼식 뒤 '확정' 규칙 대화",
+      "surfaceName": "과거 행사 후 확정 규칙 대화",
+      "surfaceDescription": "이전 행사 이후 확정 규칙에 대해 나눈 대화 기록이다. 합의 내용과 적용 범위 확인이 필요하다.",
       "description": "두 사람이 예전에 웨딩 역할은 한 채팅방에서 명시적 '확정'을 받은 뒤에만 알리자고 합의한 카카오톡 원본이다.",
       "type": "chat",
       "reliability": "hard",
@@ -501,6 +512,8 @@
     {
       "id": "e-6",
       "name": "드레스 치수표, 입장 동선 확인표, 서아 음성메모",
+      "surfaceName": "치수표, 동선 확인표, 음성메모",
+      "surfaceDescription": "의상 치수표와 입장 동선 확인표, 음성메모 묶음이다. 작성 시점과 확정 여부 확인이 필요하다.",
       "description": "서아가 들러리 드레스 치수와 입장 동선을 보냈고, 이후 음성메모에서 목 상태 때문에 축가는 아직 확답 못 한다고 말한 자료다.",
       "type": "document",
       "reliability": "hard",
@@ -523,7 +536,8 @@
         "check_edits": "전자문서와 원본 음성파일이라 후편집 흔적은 없다.",
         "question_acquisition": "목 상태와 일정 사유가 포함돼 있어 건강·업무 정보는 최소한만 다루는 것이 좋다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

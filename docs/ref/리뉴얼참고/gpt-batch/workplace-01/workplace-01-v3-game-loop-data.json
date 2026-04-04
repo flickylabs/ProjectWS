@@ -37,7 +37,9 @@
                 "blockVector": "legality",
                 "revealAtom": "workplace-01:a:d-4:unlock:s2:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-1.a.q3",
@@ -47,7 +49,9 @@
                 "blockVector": "context",
                 "revealAtom": "workplace-01:a:d-1:unlock:s3:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -72,7 +76,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "workplace-01:b:d-4:unlock:s2:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-1.b.q3",
@@ -82,7 +88,9 @@
                 "blockVector": "identity",
                 "revealAtom": "workplace-01:b:d-1:unlock:s3:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -122,7 +130,9 @@
                 "blockVector": "context",
                 "revealAtom": "workplace-01:a:d-3:unlock:s3:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-2.a.q3",
@@ -132,7 +142,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "workplace-01:a:d-3:unlock:s4:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -157,17 +169,21 @@
                 "blockVector": "authenticity",
                 "revealAtom": "workplace-01:b:d-3:unlock:s3:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-2.b.q3",
-              "text": "귀하 이름이 찍힌 PDF를 처음 봤을 때 왜 분 단위 시간표를 그렇게 빠르게 내밀었는지, 그 심리까지 설명해 보십시오.",
+              "text": "박서윤 씨, 박서윤 씨 이름이 찍힌 PDF를 처음 봤을 때 분 단위 시간표를 그렇게 빠르게 제시한 경위를 설명해 보십시오.",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
                 "revealAtom": "workplace-01:b:d-3:unlock:s4:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -203,13 +219,15 @@
             },
             {
               "id": "dossier-3.a.q2",
-              "text": "e-5의 소문 확산을 앞세워도, 귀하가 먼저 단독 명의 제출로 규칙을 흔든 사실이 사라지지는 않습니다. 그 선행 위반을 가리기 위해 상대의 유포를 더 크게 부각한 것은 아닙니까?",
+              "text": "윤태성 씨, e-5의 소문 확산과는 별개로 먼저 단독 명의로 제출한 일이 있었다는 주장도 제기되어 있습니다. 앞서 있었던 일과 상대방의 유포 문제를 연결해 말씀하시는 이유를 설명하십시오.",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
                 "revealAtom": "workplace-01:a:d-5:unlock:s4:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-3.a.q3",
@@ -219,7 +237,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "workplace-01:a:d-3:unlock:s5:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -244,7 +264,9 @@
                 "blockVector": "context",
                 "revealAtom": "workplace-01:b:d-5:unlock:s3:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-3.b.q3",
@@ -254,7 +276,9 @@
                 "blockVector": "identity",
                 "revealAtom": "workplace-01:b:d-5:unlock:s4:0",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -1701,4 +1725,3 @@
     }
   ]
 }
-

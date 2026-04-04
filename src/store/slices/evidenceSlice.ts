@@ -45,8 +45,24 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
     // 증거 제시 (immutable)
     const afterPresent = presentEv(evidenceStates, evidenceId, target)
 
-    // 잠금 해제 체크 (immutable)
-    const { updated, newlyUnlocked } = checkUnlocks(afterPresent, evidenceDefinitions)
+    // 잠금 해제 체크 (immutable) — lieState 조건 포함
+    const LIE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+    const agentA = (get() as any).agentA
+    const agentB = (get() as any).agentB
+    const lieStates: Record<string, string> = {}
+    if (agentA?.lieStateMap) {
+      for (const [dId, entry] of Object.entries(agentA.lieStateMap)) {
+        const st = (entry as any).currentState ?? 'S0'
+        lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0) ? st : lieStates[dId]
+      }
+    }
+    if (agentB?.lieStateMap) {
+      for (const [dId, entry] of Object.entries(agentB.lieStateMap)) {
+        const st = (entry as any).currentState ?? 'S0'
+        lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0) ? st : lieStates[dId]
+      }
+    }
+    const { updated, newlyUnlocked } = checkUnlocks(afterPresent, evidenceDefinitions, lieStates)
 
     // 조합 체크 (이미 발동된 조합은 제외)
     const combos = checkCombinations(updated, evidenceCombinations)
@@ -63,7 +79,27 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
 
   investigateEvidence: (evidenceId, subAction) => {
     const { evidenceStates, evidenceDefinitions } = get()
-    const updated = investigateEv(evidenceStates, evidenceId, subAction)
+    const afterInvestigate = investigateEv(evidenceStates, evidenceId, subAction)
+
+    // checkUnlocks 호출: 조사 후 잠금 해제 조건 확인
+    const LIE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+    const agentA = (get() as any).agentA
+    const agentB = (get() as any).agentB
+    const lieStates: Record<string, string> = {}
+    if (agentA?.lieStateMap) {
+      for (const [dId, entry] of Object.entries(agentA.lieStateMap)) {
+        const st = (entry as any).currentState ?? 'S0'
+        lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0) ? st : lieStates[dId]
+      }
+    }
+    if (agentB?.lieStateMap) {
+      for (const [dId, entry] of Object.entries(agentB.lieStateMap)) {
+        const st = (entry as any).currentState ?? 'S0'
+        lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0) ? st : lieStates[dId]
+      }
+    }
+    const { updated } = checkUnlocks(afterInvestigate, evidenceDefinitions, lieStates)
+
     set({ evidenceStates: updated })
 
     const def = evidenceDefinitions.find((e) => e.id === evidenceId)

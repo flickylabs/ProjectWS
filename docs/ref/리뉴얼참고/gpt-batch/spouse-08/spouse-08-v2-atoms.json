@@ -102,7 +102,7 @@
                 "person": {
                   "exact": "정유나",
                   "neutral": "그 사람",
-                  "fullName": "정유나",
+                  "fullName": "정 씨",
                   "judgeRef": "법무사"
                 }
               },
@@ -1250,7 +1250,7 @@
                 "family": {
                   "exact": "류미경",
                   "neutral": "가족",
-                  "fullName": "류미경",
+                  "fullName": "류 씨",
                   "judgeRef": "누나"
                 },
                 "person": {
@@ -2001,7 +2001,7 @@
                 "person": {
                   "exact": "정유나",
                   "neutral": "그 사람",
-                  "fullName": "정유나",
+                  "fullName": "정 씨",
                   "judgeRef": "법무사"
                 }
               },
@@ -3068,7 +3068,7 @@
                 "family": {
                   "exact": "류미경",
                   "neutral": "가족",
-                  "fullName": "류미경",
+                  "fullName": "누나",
                   "judgeRef": "누나"
                 },
                 "person": {
@@ -3136,7 +3136,7 @@
                 "family": {
                   "exact": "류미경",
                   "neutral": "가족",
-                  "fullName": "류미경",
+                  "fullName": "류 씨",
                   "judgeRef": "누나"
                 },
                 "person": {
@@ -3459,7 +3459,7 @@
                 "person": {
                   "exact": "정유나",
                   "neutral": "그 사람",
-                  "fullName": "정유나",
+                  "fullName": "법무사",
                   "judgeRef": "법무사"
                 }
               },

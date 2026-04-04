@@ -328,6 +328,8 @@
       "id": "e-1",
       "name": "전환 논의 음성메모와 통화 녹취 일부",
       "description": "다은이 중개사 사무실 방문 뒤 남긴 음성메모, 그리고 성호와 통화하며 '가자는 방향'이라는 표현이 오간 녹취 일부다.",
+      "surfaceName": "전환 논의 음성메모와 통화 녹취",
+      "surfaceDescription": "방문 후 남긴 음성메모와 당사자 간 통화 녹취 일부다.",
       "type": "record",
       "reliability": "soft",
       "completeness": "original",
@@ -352,6 +354,8 @@
       "id": "e-2",
       "name": "공인중개사 포함 카카오톡 캡처",
       "description": "다은이 '다음 달부터 월세는 멈추는 거죠'라고 묻고, 성호가 즉답 대신 초안 이야기를 꺼내는 대화 일부 캡처다.",
+      "surfaceName": "중개사 포함 카카오톡 캡처",
+      "surfaceDescription": "세입자, 집주인, 중개사가 함께 있는 대화방 일부 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -387,6 +391,8 @@
       "id": "e-3",
       "name": "2천만원 추가 보증금 송금 내역과 영수 메모",
       "description": "다은이 성호 계좌로 2천만원을 보낸 거래내역과, 이체 메모란의 '전환 준비금' 표시 및 간단한 수기 영수 메모다.",
+      "surfaceName": "추가 보증금 송금 내역과 영수 메모",
+      "surfaceDescription": "추가 송금 거래내역과 이체 메모, 수기 영수 메모다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -422,6 +428,8 @@
       "id": "e-4",
       "name": "공동명의 등기부와 담보대출 상환예상서",
       "description": "주택 공동명의 등기부, 기존 담보대출 잔액표, 중도상환수수료 예상액이 적힌 은행 안내서다.",
+      "surfaceName": "등기부와 담보대출 상환예상서",
+      "surfaceDescription": "주택 등기부, 대출 잔액표, 상환 예상액 안내서 묶음이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -446,6 +454,8 @@
       "id": "e-5",
       "name": "중개사 방문일지와 예비 임차인 예약문자",
       "description": "서미현 중개사가 남긴 방문일지와, 성호가 예비 임차인에게 보여주기 시간을 잡은 예약문자다.",
+      "surfaceName": "중개사 방문일지와 예약문자",
+      "surfaceDescription": "중개사 방문일지와 임차인 방문 예약 문자 기록이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -466,12 +476,15 @@
         "check_edits": "방문일지와 문자 원문 모두 편집 흔적 없이 남아 있다.",
         "question_acquisition": "중개 업무 기록과 당사자 문자라 제출 절차상 문제는 낮다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "월세→전세 전환 계약 초안과 은행 상담 접수기록",
       "description": "중개사가 보낸 전환 계약 초안, 빠진 공동명의 서명란, 그리고 다은의 전세대출 상담 접수기록이다.",
+      "surfaceName": "전환 계약 초안과 대출 상담 기록",
+      "surfaceDescription": "계약 전환 초안과 은행 대출 상담 접수기록 묶음이다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -504,7 +517,8 @@
           "questionAngle": "장성호에게: \"성호의 공동명의 동의와 대출 비용 비공개\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 장성호의 \"성호의 공동명의 동의와 대출 비용 비공개\" 쟁점과 관련된다. 장성호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

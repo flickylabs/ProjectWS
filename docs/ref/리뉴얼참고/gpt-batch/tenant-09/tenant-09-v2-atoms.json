@@ -64,7 +64,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오우석",
+                  "fullName": "우석 씨",
                   "judgeRef": "우석 씨"
                 },
                 "time": {
@@ -151,7 +151,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오우석",
+                  "fullName": "오 씨",
                   "judgeRef": "우석 씨"
                 },
                 "contract_amount": {
@@ -529,7 +529,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오우석",
+                  "fullName": "우석 씨",
                   "judgeRef": "우석 씨"
                 },
                 "contract_amount": {
@@ -563,7 +563,7 @@
                 "institution": {
                   "exact": "소상공인정책자금 상담",
                   "neutral": "정책자금 상담",
-                  "fullName": "문정인",
+                  "fullName": "그 사람",
                   "judgeRef": "심사역"
                 }
               },
@@ -610,7 +610,7 @@
                 "institution": {
                   "exact": "소상공인정책자금 상담",
                   "neutral": "정책자금 상담",
-                  "fullName": "문정인",
+                  "fullName": "문 씨",
                   "judgeRef": "심사역"
                 },
                 "contract_amount": {
@@ -645,7 +645,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오우석",
+                  "fullName": "오 씨",
                   "judgeRef": "우석 씨"
                 }
               },
@@ -2034,7 +2034,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오우석",
+                  "fullName": "오 씨",
                   "judgeRef": "우석 씨"
                 },
                 "doc_final": {
@@ -2545,7 +2545,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오우석",
+                  "fullName": "오 씨",
                   "judgeRef": "우석 씨"
                 },
                 "broker_amount": {
@@ -2924,7 +2924,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오우석",
+                  "fullName": "우석 씨",
                   "judgeRef": "우석 씨"
                 },
                 "chat_time": {
@@ -3010,7 +3010,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오우석",
+                  "fullName": "오 씨",
                   "judgeRef": "우석 씨"
                 }
               },
@@ -4350,7 +4350,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오우석",
+                  "fullName": "우석 씨",
                   "judgeRef": "우석 씨"
                 }
               },
@@ -4430,7 +4430,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오우석",
+                  "fullName": "오 씨",
                   "judgeRef": "우석 씨"
                 }
               },
@@ -4798,4 +4798,3 @@
     }
   }
 }
-

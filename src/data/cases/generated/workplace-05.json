@@ -340,7 +340,9 @@
         "check_edits": "버전 로그 기반. 사후 편집 흔적 없이 변경 단계가 선명하다.",
         "question_acquisition": "업무 공동 문서. 분쟁 해결 목적 열람 적법."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "킥오프 회의록과 슬라이드 이력",
+      "surfaceDescription": "브리핑 킥오프 회의 기록과 초안 슬라이드의 수정 이력 문서"
     },
     {
       "id": "e-2",
@@ -375,7 +377,9 @@
           "questionAngle": "문가은에게: \"고객회복 랩의 원출처 진위\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 문가은의 \"고객회복 랩의 원출처 진위\" 쟁점과 관련된다. 문가은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "개인 노트 사진과 보드 캡처 묶음",
+      "surfaceDescription": "손으로 작성한 개인 노트 사진과 화이트보드 캡처 이미지 모음"
     },
     {
       "id": "e-3",
@@ -399,7 +403,9 @@
         "check_edits": "서버 추출 원본. 사후 편집 흔적 없음.",
         "question_acquisition": "업무 폴더·메신저 로그로 적법. 다만 멘토방 수신자 명단은 최소 공개 원칙."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "보안 폴더 다운로드 로그와 전송 기록",
+      "surfaceDescription": "특정 보안 폴더의 다운로드 이력과 파일 외부 전송 보안 로그"
     },
     {
       "id": "e-4",
@@ -436,7 +442,10 @@
           "questionAngle": "문가은에게: \"고객회복 랩의 원출처 진위\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 문가은의 \"고객회복 랩의 원출처 진위\" 쟁점과 관련된다. 문가은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "과거 제안서 보류본과 주석",
+      "surfaceDescription": "이전에 보류된 제안서 문서와 그 안에 남겨진 주석 메모",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
@@ -461,7 +470,9 @@
         "check_edits": "초기 입력→수정본 모두 보존. 문구 완화 과정까지 추적 가능.",
         "question_acquisition": "인사자료. 공개 최소화 원칙이나 분쟁 해결 목적 확인은 가능."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "인사 심사 메모와 발표 순서 변경 기록",
+      "surfaceDescription": "인사 심사 관련 내부 메모와 발표 순서가 변경된 이력 문서"
     },
     {
       "id": "e-6",
@@ -498,7 +509,10 @@
           "questionAngle": "문가은에게: \"고객회복 랩의 원출처 진위\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 문가은의 \"고객회복 랩의 원출처 진위\" 쟁점과 관련된다. 문가은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "과거 출처 정리 이메일 체인",
+      "surfaceDescription": "이전에 발생한 출처 누락 건에 대한 정리 이메일 스레드 전문",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

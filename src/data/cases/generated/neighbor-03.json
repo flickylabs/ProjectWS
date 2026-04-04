@@ -322,6 +322,8 @@
     {
       "id": "e-1",
       "name": "현우가 돌린 지하1층 CCTV 19초 클립",
+      "surfaceName": "지하층 CCTV 짧은 클립",
+      "surfaceDescription": "지하층에서 촬영된 짧은 CCTV 클립 영상이다. 촬영 시점과 편집 여부 확인이 필요하다.",
       "description": "서아가 문을 열고 작은 개가 뛰어드는 19초 클립. 앞 8초가 잘려 현우의 선 입실 장면이 빠져 있다. 위조 의심의 핵심 자료.",
       "type": "video",
       "reliability": "soft",
@@ -357,6 +359,8 @@
     {
       "id": "e-2",
       "name": "세척실 출입 로그와 직원용 PIN 발급 기록",
+      "surfaceName": "출입 로그와 PIN 발급 기록",
+      "surfaceDescription": "세척실 출입 로그와 직원용 PIN 발급 기록이다. 출입 주체와 발급 경위 확인이 필요하다.",
       "description": "세척실 출입 로그상 21:47 사용된 PIN이 청소용역 전용 코드이며, 동일 코드가 현우 휴대폰 메모에 저장돼 있다. 무단 사용의 직접 증거.",
       "type": "device_log",
       "reliability": "hard",
@@ -392,6 +396,8 @@
     {
       "id": "e-3",
       "name": "오세훈 경비원의 현장 사진과 사고보고 메모",
+      "surfaceName": "현장 사진과 사고보고 메모",
+      "surfaceDescription": "경비원이 작성한 현장 사진과 사고보고 메모다. 작성 시점과 현장 상황 확인이 필요하다.",
       "description": "사고 직후 현장 사진 3장: 젖은 바닥, 배수구 철망에 감긴 자동줄, 밀린 청소카트. 경비원 메모와 함께 줄 방치 상황을 보여준다.",
       "type": "incident_report",
       "reliability": "soft",
@@ -428,6 +434,8 @@
     {
       "id": "e-4",
       "name": "24시동물메디컬센터 상처도면과 진료소견",
+      "surfaceName": "동물병원 상처도면과 진료소견",
+      "surfaceDescription": "동물병원에서 발급된 상처 도면과 진료 소견서다. 진료 시점과 소견 내용 확인이 필요하다.",
       "description": "앞발 패드 열상 + 귀 표면 찰과상 진료기록. 수의사 소견은 '철망 접촉에 의한 마찰 손상'으로, 물림 특유의 관통 흔적은 없다고 기재.",
       "type": "medical_record",
       "reliability": "hard",
@@ -452,6 +460,8 @@
     {
       "id": "e-5",
       "name": "원본 CCTV 4분 추출본과 해시·타임코드 비교보고",
+      "surfaceName": "CCTV 원본 추출본과 해시 비교보고",
+      "surfaceDescription": "CCTV 원본 영상 추출본과 해시·타임코드 비교 보고서다. 무결성 검증 결과 확인이 필요하다.",
       "description": "원본 4분 영상 vs 유포 19초 클립 포렌식 비교보고. 앞 8초 삭제, 속도 0.85배 변경, 타임스탬프 글꼴 교체가 확인됐다.",
       "type": "forensic_report",
       "reliability": "hard",
@@ -486,11 +496,14 @@
           "questionAngle": "진서아에게: \"무예약 입실과 자동줄 방치\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 진서아의 \"무예약 입실과 자동줄 방치\" 쟁점과 관련된다. 진서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "세척실 예약 부재 캡처와 사고 직후 단체방 전달본",
+      "surfaceName": "예약 부재 캡처와 단체방 전달본",
+      "surfaceDescription": "시설 예약 부재 화면 캡처와 사고 직후 단체방 전달본이다. 전달 시점과 맥락 확인이 필요하다.",
       "description": "세척실 예약 빈칸 캡처 + 서아가 원본 확인 11분 전 현우를 지목한 단체방·1:1 메시지. 쌍방 절차 위반을 보여주는 자료.",
       "type": "chat",
       "reliability": "soft",
@@ -522,7 +535,8 @@
           "questionAngle": "진서아에게: \"예약·원본 확인 절차 쌍방 위반\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 진서아의 \"예약·원본 확인 절차 쌍방 위반\" 쟁점과 관련된다. 진서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S2"
     }
   ],
   "evidenceCombinations": [

@@ -323,6 +323,8 @@
       "id": "e-1",
       "name": "법인계좌 이체확인서와 자문사 선급금 전표",
       "description": "세무조사 통지 이틀 뒤 법인 운영계좌에서 제휴 자문사 '세움조세자문' 계좌로 2,400만원이 이체된 은행 원본 확인서와 ERP 선급금 전표다.",
+      "surfaceName": "법인계좌 이체확인서와 선급금 전표",
+      "surfaceDescription": "은행 원본 이체확인서와 ERP 선급금 전표가 묶인 자료다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -358,6 +360,8 @@
       "id": "e-2",
       "name": "박태성 세무사의 조사대응 제안 메일과 체크리스트",
       "description": "박태성이 '조사 전에 자문 선급금을 먼저 집행하고 문제 항목은 일반 관리비 계정으로 임시 정리하자'고 제안한 원본 메일과 첨부 체크리스트다.",
+      "surfaceName": "세무사 조사대응 제안 메일",
+      "surfaceDescription": "세무사가 보낸 조사대응 제안 메일과 체크리스트 첨부본이다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -390,12 +394,15 @@
           "questionAngle": "정소라에게: \"선급금 구조의 배후 제안자는 상대 공동대표였는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 정소라의 \"선급금 구조의 배후 제안자는 상대 공동대표였는가\" 쟁점과 관련된다. 정소라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-3",
       "name": "법인등기부 캡처와 동문 단체방 스크린샷",
       "description": "제휴 자문사 대표가 현우의 대학 동문이라는 점과 이름이 겹친다는 이유로 개인 친분 거래처럼 보이게 만든 등기부 캡처와 단체방 스크린샷이다.",
+      "surfaceName": "법인등기부 캡처와 단체방 스크린샷",
+      "surfaceDescription": "법인 등기부 일부 캡처와 동문 단체방 화면 캡처 묶음이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -431,6 +438,8 @@
       "id": "e-4",
       "name": "공동 받은 메일 스레드와 소라의 회신 초안",
       "description": "소라도 조사대응 선급금 제안과 계정 임시 변경 방안을 읽고 '우선 자료만 정리하자'고 답하려다 보낸 흔적이 남은 메일 스레드와 임시 저장 초안이다.",
+      "surfaceName": "공동 수신 메일과 회신 초안",
+      "surfaceDescription": "함께 받은 메일 스레드와 임시 저장된 답장 초안이 남아 있다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -462,12 +471,15 @@
           "questionAngle": "정소라에게: \"소라의 개인 유용 프레임 고착\" 관련 해명 요구 (방어 동기: 복수심)",
           "implication": "이 증거는 정소라의 \"소라의 개인 유용 프레임 고착\" 쟁점과 관련된다. 정소라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "재무대리 노지훈의 회의 메모와 팀 공지 초안",
       "description": "선급금 명목을 팀에는 일반 관리비로만 공유하자는 두 대표의 회의 메모, 그리고 실제로 그렇게 작성된 내부 공지 초안이다.",
+      "surfaceName": "회의 메모와 팀 공지 초안",
+      "surfaceDescription": "내부 회의 메모와 실제로 작성된 팀 공지 초안 문서다.",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -499,12 +511,15 @@
           "questionAngle": "정소라에게: \"소라의 개인 유용 프레임 고착\" 관련 해명 요구 (방어 동기: 복수심)",
           "implication": "이 증거는 정소라의 \"소라의 개인 유용 프레임 고착\" 쟁점과 관련된다. 정소라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "제휴 자문사 소개수수료 약정서와 세무사 사무실 회계메모",
       "description": "박태성이 추천한 세움조세자문과 별도 소개수수료 약정을 맺고 있었음을 보여주는 약정서와 사무실 회계메모다.",
+      "surfaceName": "자문사 수수료 약정서와 회계메모",
+      "surfaceDescription": "제휴 자문사와의 수수료 약정서와 사무실 회계메모 묶음이다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -536,7 +551,8 @@
           "questionAngle": "정소라에게: \"선급금 구조의 배후 제안자는 상대 공동대표였는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 정소라의 \"선급금 구조의 배후 제안자는 상대 공동대표였는가\" 쟁점과 관련된다. 정소라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

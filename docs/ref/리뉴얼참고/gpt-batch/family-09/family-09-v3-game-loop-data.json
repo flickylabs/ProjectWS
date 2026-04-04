@@ -37,7 +37,9 @@
                 "blockVector": "identity",
                 "revealAtom": "d1.a.unlock.s3.equal_split_ack",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-1.a.q3",
@@ -47,7 +49,9 @@
                 "blockVector": "context",
                 "revealAtom": "d5.a.unlock.s2.net_price_alignment",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -72,7 +76,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "d1.b.unlock.s3.split_accept",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-1.b.q3",
@@ -82,7 +88,9 @@
                 "blockVector": "context",
                 "revealAtom": "d5.b.unlock.s2.centered_on_net_price",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -123,7 +131,9 @@
                 "blockVector": "identity",
                 "revealAtom": "d2.a.unlock.s3.partial_signature",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-2.a.q3",
@@ -133,7 +143,9 @@
                 "blockVector": "context",
                 "revealAtom": "d2.a.unlock.s4.control_motive",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -158,7 +170,9 @@
                 "blockVector": "context",
                 "revealAtom": "d3.b.unlock.s4.shame_of_debt",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-2.b.q3",
@@ -168,7 +182,9 @@
                 "blockVector": "legality",
                 "revealAtom": "d3.b.unlock.s5.full_misuse_confession",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }
@@ -210,7 +226,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "d4.a.unlock.s3.parents_did_not_know",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-3.a.q3",
@@ -220,7 +238,9 @@
                 "blockVector": "context",
                 "revealAtom": "d5.a.unlock.s4.care_story_mask",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         },
@@ -245,7 +265,9 @@
                 "blockVector": "authenticity",
                 "revealAtom": "d4.b.unlock.s3.parents_not_informed",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
             },
             {
               "id": "dossier-3.b.q3",
@@ -255,7 +277,9 @@
                 "blockVector": "context",
                 "revealAtom": "d5.b.unlock.s4.fieldwork_shield_breaks",
                 "lieAdvance": true
-              }
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
             }
           ]
         }

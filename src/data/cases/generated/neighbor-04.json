@@ -320,6 +320,8 @@
     {
       "id": "e-1",
       "name": "서림 차량 범퍼 사진과 구겨진 경고문",
+      "surfaceName": "차량 범퍼 사진과 경고문",
+      "surfaceDescription": "차량 범퍼 손상 사진과 부착된 경고문이다. 촬영 시점과 경고문 작성자 확인이 필요하다.",
       "description": "범퍼 흠집 근접 사진 + 와이퍼 쪽지 사진. 흠집 발생 시점과 차량 위치는 담지 않아 보복 여부 판단이 불가하다.",
       "type": "photo",
       "reliability": "soft",
@@ -356,6 +358,8 @@
     {
       "id": "e-2",
       "name": "번호인식 출입기록과 새벽 주차면 CCTV 요약",
+      "surfaceName": "번호인식 출입기록과 주차면 CCTV 요약",
+      "surfaceDescription": "차량 번호인식 출입 기록과 주차면 CCTV 요약 영상이다. 출입 시간대와 주차 상황 확인이 필요하다.",
       "description": "번호인식 로그 + CCTV 요약 캡처. 재활 종료 후 한 달간 7시 20분 이후 B-7 점유 11차례 기록. 반복 위반 패턴의 핵심 증거.",
       "type": "security_log",
       "reliability": "hard",
@@ -377,11 +381,14 @@
         "check_edits": "기관 서버 직출력본. 수정·삭제 흔적 없음.",
         "question_acquisition": "공용주차장 관제자료로 적법. 특정 세대 생활패턴 노출은 최소화 원칙."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-3",
       "name": "지난가을 임시주차 합의 메시지와 종료 확인 문자",
+      "surfaceName": "임시주차 합의 메시지와 종료 확인 문자",
+      "surfaceDescription": "과거 임시주차 합의 메시지와 종료 확인 문자다. 합의 범위와 유효 기간 확인이 필요하다.",
       "description": "메신저 합의 대화: '2월 말 종료, 7시 20분 전 반환' 명시. 수술 다음 날·종료 직전 두 차례 확인돼 합의 존재를 증명한다.",
       "type": "chat",
       "reliability": "soft",
@@ -417,6 +424,8 @@
     {
       "id": "e-4",
       "name": "경비실 순찰일지와 개인 접이식 콘 회수 사진",
+      "surfaceName": "순찰일지와 접이식 콘 회수 사진",
+      "surfaceDescription": "경비실 순찰일지와 개인 접이식 콘 회수 현장 사진이다. 순찰 시점과 경위 확인이 필요하다.",
       "description": "B-7 앞 개인 콘 배치 CCTV + 경비원 회수·와이퍼 메모 확인 기록. 도윤의 자력 제재 시각과 경위를 보여준다.",
       "type": "security_log",
       "reliability": "hard",
@@ -452,6 +461,8 @@
     {
       "id": "e-5",
       "name": "보험 접수 이력과 일주일 전 블랙박스 충돌 영상",
+      "surfaceName": "보험 접수 이력과 블랙박스 충돌 영상",
+      "surfaceDescription": "보험 접수 기록과 블랙박스 충돌 영상이다. 접수 시점과 영상 내용 확인이 필요하다.",
       "description": "7일 전 지하 기둥 접촉 블랙박스 2분 + 같은 날 보험 상담 접수번호. 범퍼 흠집이 사건 이전 손상임을 증명하지만 새 흠집 추가 여부까지는 못 막는다.",
       "type": "dashcam",
       "reliability": "hard",
@@ -473,11 +484,14 @@
         "check_edits": "블랙박스 원본 프레임 연속 + 보험 기록 수정 이력 없음. 조작 가능성 배제.",
         "question_acquisition": "자기 차량 블랙박스 + 본인 보험 접수 자료. 제출 정당성 높음."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "단체방 게시 캡처와 관리사무소 통화 순서표",
+      "surfaceName": "단체방 게시 캡처와 통화 순서표",
+      "surfaceDescription": "단체 채팅방 게시 캡처와 관리사무소 통화 순서표다. 게시 맥락과 통화 경위 확인이 필요하다.",
       "description": "서림의 단체방 피해 게시(민원 9분 전) → 관리사무소 접수 → 도윤 통화 순서를 보여주는 로그·캡처 묶음. 여론전 선제 시점을 특정한다.",
       "type": "chat",
       "reliability": "soft",
@@ -509,7 +523,8 @@
           "questionAngle": "최도윤에게: \"선확인 약속 쌍방 파기\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 최도윤의 \"선확인 약속 쌍방 파기\" 쟁점과 관련된다. 최도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S2"
     }
   ],
   "evidenceCombinations": [

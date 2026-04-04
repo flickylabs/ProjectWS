@@ -8,7 +8,7 @@
           "state": "S0",
           "publicClaim": [
             "저는 실제보다 더 받으려던 게 아니라 견적서 기준으로 반씩 말씀드린 겁니다.",
-            "급해서 먼저 90,000원만 적어 보낸 거지 숨긴 금액은 없었습니다."
+            "급해서 먼저 해당 금액만 적어 보낸 거지 숨긴 금액은 없었습니다."
           ],
           "privateKnowledge": [
             "관리사무소 보전금 60,000원이 반영된 최종 정산 자료를 이미 확인했다.",
@@ -34,14 +34,14 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "90,000원",
+                  "exact": "해당 금액",
                   "neutral": "요구 금액",
-                  "rounded": "9만원"
+                  "rounded": "해당 금액"
                 },
                 "estimate": {
-                  "exact": "180,000원",
+                  "exact": "해당 금액",
                   "neutral": "견적 금액",
-                  "rounded": "18만원"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -141,7 +141,7 @@
                 "person": {
                   "exact": "문세영",
                   "neutral": "세영 씨",
-                  "fullName": "문세영",
+                  "fullName": "문 씨",
                   "judgeRef": "세영 씨"
                 },
                 "pressure": {
@@ -514,7 +514,7 @@
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조인호 씨",
                   "judgeRef": "조인호 씨"
                 },
                 "cart": {
@@ -546,7 +546,7 @@
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조인호 씨",
                   "judgeRef": "조인호 씨"
                 },
                 "behavior": {
@@ -597,7 +597,7 @@
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조 씨",
                   "judgeRef": "조인호 씨"
                 },
                 "quote": {
@@ -625,11 +625,11 @@
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조 씨",
                   "judgeRef": "조인호 씨"
                 },
                 "share": {
-                  "exact": "60,000원",
+                  "exact": "적지 않은 돈",
                   "neutral": "각 세대 몫",
                   "rounded": "6만원"
                 }
@@ -1111,7 +1111,7 @@
                 "person": {
                   "exact": "문세영",
                   "neutral": "세영 씨",
-                  "fullName": "문세영",
+                  "fullName": "문 씨",
                   "judgeRef": "세영 씨"
                 }
               },
@@ -1449,7 +1449,7 @@
           "disputeId": "d-4",
           "state": "S0",
           "publicClaim": [
-            "저는 견적서만 보고 반씩이면 90,000원쯤 되는 줄 알았습니다.",
+            "저는 견적서만 보고 반씩이면 해당 금액쯤 되는 줄 알았습니다.",
             "그때는 실제 주민 부담 총액이 어디까지 깎이는지 분명히 못 봤습니다."
           ],
           "privateKnowledge": [
@@ -1476,14 +1476,14 @@
               ],
               "slots": {
                 "estimate": {
-                  "exact": "180,000원",
+                  "exact": "해당 금액",
                   "neutral": "견적 금액",
-                  "rounded": "18만원"
+                  "rounded": "해당 금액"
                 },
                 "share": {
-                  "exact": "90,000원",
+                  "exact": "해당 금액",
                   "neutral": "요구 금액",
-                  "rounded": "9만원"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -1504,9 +1504,9 @@
               ],
               "slots": {
                 "resident": {
-                  "exact": "120,000원",
+                  "exact": "해당 금액",
                   "neutral": "주민 부담 총액",
-                  "rounded": "12만원"
+                  "rounded": "해당 금액"
                 },
                 "invoice": {
                   "exact": "최종 계산서",
@@ -1554,7 +1554,7 @@
               ],
               "slots": {
                 "subsidy": {
-                  "exact": "60,000원",
+                  "exact": "적지 않은 돈",
                   "neutral": "보전금",
                   "rounded": "6만원"
                 },
@@ -1588,7 +1588,7 @@
                 "person": {
                   "exact": "문세영",
                   "neutral": "세영 씨",
-                  "fullName": "문세영",
+                  "fullName": "문 씨",
                   "judgeRef": "세영 씨"
                 }
               },
@@ -2407,7 +2407,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "세영 씨가 저한테 90,000원을 보내라 한 건 아예 더 받아내려는 걸로 들렸습니다.",
+            "세영 씨가 저한테 해당 금액을 보내라 한 건 아예 더 받아내려는 걸로 들렸습니다.",
             "최종 계산서도 없이 그런 숫자를 먼저 보내면 당연히 부풀린 걸로 보입니다."
           ],
           "privateKnowledge": [
@@ -2434,14 +2434,14 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "90,000원",
+                  "exact": "해당 금액",
                   "neutral": "요구 금액",
-                  "rounded": "9만원"
+                  "rounded": "해당 금액"
                 },
                 "person": {
                   "exact": "문세영",
                   "neutral": "세영 씨",
-                  "fullName": "문세영",
+                  "fullName": "세영 씨",
                   "judgeRef": "세영 씨"
                 }
               },
@@ -2467,9 +2467,9 @@
                   "neutral": "공식 정산"
                 },
                 "estimate": {
-                  "exact": "180,000원",
+                  "exact": "해당 금액",
                   "neutral": "견적 금액",
-                  "rounded": "18만원"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -2487,7 +2487,7 @@
           "state": "S1",
           "publicClaim": [
             "제가 의심한 이유는 최종 계산서가 아니라 견적 캡처만 왔기 때문입니다.",
-            "그 상황에서 90,000원을 실제 제 몫처럼 받는 건 받아들이기 어려웠습니다."
+            "그 상황에서 적지 않은 돈을 실제 제 몫처럼 받는 건 받아들이기 어려웠습니다."
           ],
           "privateKnowledge": [
             "세영이 의도적으로 숨겼는지, 급해서 그랬는지 아직 완전히 구분하지 못한다.",
@@ -2519,7 +2519,7 @@
                 "person": {
                   "exact": "문세영",
                   "neutral": "세영 씨",
-                  "fullName": "문세영",
+                  "fullName": "문 씨",
                   "judgeRef": "세영 씨"
                 }
               },
@@ -2541,14 +2541,14 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "90,000원",
+                  "exact": "적지 않은 돈",
                   "neutral": "요구 금액",
                   "rounded": "9만원"
                 },
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조 씨",
                   "judgeRef": "조인호 씨"
                 }
               },
@@ -3025,7 +3025,7 @@
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조 씨",
                   "judgeRef": "조인호 씨"
                 }
               },
@@ -3392,7 +3392,7 @@
                 "person": {
                   "exact": "문세영",
                   "neutral": "세영 씨",
-                  "fullName": "문세영",
+                  "fullName": "세영 씨",
                   "judgeRef": "세영 씨"
                 },
                 "cart": {
@@ -3420,7 +3420,7 @@
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조인호 씨",
                   "judgeRef": "조인호 씨"
                 },
                 "cart": {
@@ -3496,7 +3496,7 @@
                 "person": {
                   "exact": "문세영",
                   "neutral": "세영 씨",
-                  "fullName": "문세영",
+                  "fullName": "문 씨",
                   "judgeRef": "세영 씨"
                 },
                 "frame": {
@@ -3843,7 +3843,7 @@
           "disputeId": "d-4",
           "state": "S0",
           "publicClaim": [
-            "저는 왜 제가 90,000원을 내야 하는지 근거부터 못 봤습니다.",
+            "저는 왜 제가 해당 금액을 내야 하는지 근거부터 못 봤습니다.",
             "최종 계산서 없이 그 금액을 실제 제 몫이라고 받아들일 수는 없었습니다."
           ],
           "privateKnowledge": [
@@ -3870,9 +3870,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "90,000원",
+                  "exact": "해당 금액",
                   "neutral": "요구 금액",
-                  "rounded": "9만원"
+                  "rounded": "해당 금액"
                 },
                 "invoice": {
                   "exact": "최종 계산서",
@@ -3903,7 +3903,7 @@
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조인호 씨",
                   "judgeRef": "조인호 씨"
                 }
               },
@@ -3954,7 +3954,7 @@
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조 씨",
                   "judgeRef": "조인호 씨"
                 }
               },
@@ -3975,12 +3975,12 @@
               ],
               "slots": {
                 "estimate": {
-                  "exact": "180,000원",
+                  "exact": "적지 않은 돈",
                   "neutral": "견적 금액",
                   "rounded": "18만원"
                 },
                 "amount": {
-                  "exact": "90,000원",
+                  "exact": "적지 않은 돈",
                   "neutral": "요구 금액",
                   "rounded": "9만원"
                 }
@@ -4366,7 +4366,7 @@
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조인호 씨",
                   "judgeRef": "조인호 씨"
                 }
               },
@@ -4393,7 +4393,7 @@
                 "person": {
                   "exact": "문세영",
                   "neutral": "세영 씨",
-                  "fullName": "문세영",
+                  "fullName": "세영 씨",
                   "judgeRef": "세영 씨"
                 }
               },
@@ -4445,7 +4445,7 @@
                 "person": {
                   "exact": "조인호",
                   "neutral": "인호 씨",
-                  "fullName": "조인호",
+                  "fullName": "조 씨",
                   "judgeRef": "조인호 씨"
                 }
               },
@@ -4468,7 +4468,7 @@
                 "person": {
                   "exact": "문세영",
                   "neutral": "세영 씨",
-                  "fullName": "문세영",
+                  "fullName": "문 씨",
                   "judgeRef": "세영 씨"
                 },
                 "reject": {

@@ -354,7 +354,9 @@
           "questionAngle": "황인호에게: \"50만원 사전 상의 약속 쌍방 위반\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 황인호의 \"50만원 사전 상의 약속 쌍방 위반\" 쟁점과 관련된다. 황인호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "surfaceName": "비상금 계좌 인출 내역",
+      "surfaceDescription": "공동 비상금 계좌의 은행 원본 거래내역이다. 인출 금액과 인증 수단이 기록되어 있다."
     },
     {
       "id": "e-2",
@@ -381,7 +383,10 @@
         "check_edits": "전자문서 디지털 서명값이 유효하다. 다운로드 이후 한 글자도 수정되지 않았다.",
         "question_acquisition": "사내 문서라 외부 공개에 제한이 있지만, 지출 사유 입증 범위 내에서 제출됐으므로 적법하다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "입사 안내문과 교통 영수증",
+      "surfaceDescription": "직장 온보딩 안내 자료와 교통 정기권 영수증이 묶인 서류다. 지출 항목을 대조할 수 있다.",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-3",
@@ -405,7 +410,9 @@
         "check_edits": "금액 조작 흔적은 없다. 다만 백화점 건만 골라 크롭한 선택적 편집이 확인된다. 다른 알림은 의도적으로 빠져 있다.",
         "question_acquisition": "새벽에 잠든 배우자의 잠금 화면을 무단 촬영한 자료다. 잠금을 풀지는 않았지만 사생활 침해 소지가 있다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "카드 승인 알림 캡처",
+      "surfaceDescription": "잠금 화면에 뜬 카드 승인 알림을 촬영한 이미지다. 승인 내역이 보이지만 세부 품목은 확인 불가하다."
     },
     {
       "id": "e-4",
@@ -429,7 +436,9 @@
         "check_edits": "유진이 전달한 메일이라 원래 스레드 전체는 없다. 다만 전달된 본문 자체에 조작이나 편집 흔적은 없다.",
         "question_acquisition": "사내 메일이라 외부 제출에 제한이 있지만, 지출 사유 입증 목적에 한정해 제출됐으므로 적법하다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "surfaceName": "사내 복장 가이드 메일",
+      "surfaceDescription": "회사에서 발송한 사내 메일이다. 복장 규정과 복지비 관련 안내가 포함되어 있다."
     },
     {
       "id": "e-5",
@@ -455,7 +464,9 @@
         "check_edits": "은행 변경 로그와 판매점 계약서 모두 기관 원본이다. 편집이나 변조 여지가 없다.",
         "question_acquisition": "인호 본인 명의 은행 기록과 본인이 체결한 할부 계약서를 자발적으로 제출했다. 취득 경위에 문제없다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "자동이체 변경기록과 할부 계약서",
+      "surfaceDescription": "은행 자동이체 변경 내역과 가전 할부 계약서다. 금융 흐름의 변화를 확인할 수 있다."
     },
     {
       "id": "e-6",
@@ -483,7 +494,10 @@
         "check_edits": "메모앱 수정 이력에 편집이 두 차례 있지만 금액이나 핵심 문구 변경은 없다. 오탈자 수정 정도다.",
         "question_acquisition": "인호가 자발적으로 제출한 개인 기기 자료다. 취득 경위에 문제없다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "surfaceName": "생활비 메모와 배송 문자",
+      "surfaceDescription": "메모앱에 적힌 가계 계획과 가전 배송 완료 문자다. 지출 계획의 흔적이 남아 있다.",
+      "requiredLieState": "S2"
     }
   ],
   "evidenceCombinations": [

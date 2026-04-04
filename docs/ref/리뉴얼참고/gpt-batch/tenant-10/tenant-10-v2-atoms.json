@@ -46,7 +46,7 @@
                 "person": {
                   "exact": "김하은",
                   "neutral": "중개사",
-                  "fullName": "김하은",
+                  "fullName": "브로커",
                   "judgeRef": "브로커"
                 }
               },
@@ -75,7 +75,7 @@
                 "person": {
                   "exact": "최상훈",
                   "neutral": "임대인",
-                  "fullName": "최상훈",
+                  "fullName": "집주인",
                   "judgeRef": "집주인"
                 }
               },
@@ -511,7 +511,7 @@
                 "person": {
                   "exact": "김하은",
                   "neutral": "중개사",
-                  "fullName": "김하은",
+                  "fullName": "브로커",
                   "judgeRef": "브로커"
                 }
               },
@@ -536,7 +536,7 @@
                 "person": {
                   "exact": "김하은",
                   "neutral": "중개사",
-                  "fullName": "김하은",
+                  "fullName": "브로커",
                   "judgeRef": "브로커"
                 }
               },
@@ -612,7 +612,7 @@
                 "person": {
                   "exact": "김하은",
                   "neutral": "중개사",
-                  "fullName": "김하은",
+                  "fullName": "김 씨",
                   "judgeRef": "브로커"
                 }
               },
@@ -941,7 +941,7 @@
           "disputeId": "d-3",
           "state": "S0",
           "publicClaim": [
-            "상훈 씨는 갑자기 계약 위반이라고 단정하면서 24시간 안에 강아지를 빼거나 50만원 예치금을 내라고 했습니다."
+            "상훈 씨는 갑자기 계약 위반이라고 단정하면서 24시간 안에 강아지를 빼거나 해당 금액 예치금을 내라고 했습니다."
           ],
           "privateKnowledge": [
             "택배 시간대 짧은 짖음 민원이 두 건 있었던 건 안다.",
@@ -970,14 +970,14 @@
                   "neutral": "즉시 기한"
                 },
                 "amount": {
-                  "exact": "500,000원",
+                  "exact": "해당 금액",
                   "neutral": "특별청소 예치금",
-                  "rounded": "50만원"
+                  "rounded": "해당 금액"
                 },
                 "person": {
                   "exact": "최상훈",
                   "neutral": "임대인",
-                  "fullName": "최상훈",
+                  "fullName": "집주인",
                   "judgeRef": "집주인"
                 }
               },
@@ -1072,7 +1072,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "500,000원",
+                  "exact": "적지 않은 돈",
                   "neutral": "특별청소 예치금",
                   "rounded": "50만원"
                 }
@@ -1447,7 +1447,7 @@
                 "person": {
                   "exact": "윤민주",
                   "neutral": "세입자",
-                  "fullName": "윤민주",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -1833,9 +1833,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "500,000원",
+                  "exact": "해당 금액",
                   "neutral": "특별청소 예치금",
-                  "rounded": "50만원"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -1859,7 +1859,7 @@
                 "person": {
                   "exact": "최상훈",
                   "neutral": "임대인",
-                  "fullName": "최상훈",
+                  "fullName": "집주인",
                   "judgeRef": "집주인"
                 }
               },
@@ -2276,7 +2276,7 @@
                 "person": {
                   "exact": "김하은",
                   "neutral": "중개사",
-                  "fullName": "김하은",
+                  "fullName": "브로커",
                   "judgeRef": "브로커"
                 }
               },
@@ -2346,7 +2346,7 @@
                 "person": {
                   "exact": "최상훈",
                   "neutral": "임대인",
-                  "fullName": "최상훈",
+                  "fullName": "최 씨",
                   "judgeRef": "집주인"
                 }
               },
@@ -2685,7 +2685,7 @@
                 "person": {
                   "exact": "윤민주",
                   "neutral": "세입자",
-                  "fullName": "윤민주",
+                  "fullName": "세입자",
                   "judgeRef": "세입자"
                 }
               },
@@ -3140,7 +3140,7 @@
                 "person": {
                   "exact": "최상훈",
                   "neutral": "임대인",
-                  "fullName": "최상훈",
+                  "fullName": "집주인",
                   "judgeRef": "집주인"
                 }
               },
@@ -3163,9 +3163,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "500,000원",
+                  "exact": "해당 금액",
                   "neutral": "특별청소 예치금",
-                  "rounded": "50만원"
+                  "rounded": "해당 금액"
                 }
               },
               "stanceHints": [
@@ -3231,7 +3231,7 @@
                 "person": {
                   "exact": "최상훈",
                   "neutral": "임대인",
-                  "fullName": "최상훈",
+                  "fullName": "최 씨",
                   "judgeRef": "집주인"
                 }
               },
@@ -3652,7 +3652,7 @@
                 "person": {
                   "exact": "최상훈",
                   "neutral": "임대인",
-                  "fullName": "최상훈",
+                  "fullName": "최 씨",
                   "judgeRef": "집주인"
                 }
               },
@@ -3976,9 +3976,9 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "500,000원",
+                  "exact": "해당 금액",
                   "neutral": "특별청소 예치금",
-                  "rounded": "50만원"
+                  "rounded": "해당 금액"
                 },
                 "document": {
                   "exact": "전문 탈취·보수 견적",
@@ -4071,7 +4071,7 @@
               ],
               "slots": {
                 "amount": {
-                  "exact": "500,000원",
+                  "exact": "적지 않은 돈",
                   "neutral": "특별청소 예치금",
                   "rounded": "50만원"
                 }
@@ -4364,4 +4364,3 @@
     }
   }
 }
-

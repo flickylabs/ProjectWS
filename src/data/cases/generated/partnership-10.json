@@ -323,6 +323,8 @@
       "id": "e-1",
       "name": "오퍼 메일과 온보딩 문서",
       "description": "준서가 민서에게 보낸 정식 오퍼 메일, 계좌정보 요청서, 첫 주 근무 가이드 문서 원본이다.",
+      "surfaceName": "오퍼 메일과 온보딩 문서",
+      "surfaceDescription": "정식 오퍼 메일, 계좌정보 요청서, 근무 가이드 문서 묶음이다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -348,6 +350,8 @@
       "id": "e-2",
       "name": "혜린의 보류 메시지와 기존 트레이너 공지",
       "description": "혜린이 민서에게 합류를 보류한다고 보낸 메시지와, 기존 트레이너 단톡에 '아직 채용 확정 아님'이라고 알린 원본 대화다.",
+      "surfaceName": "합류 보류 메시지와 내부 공지",
+      "surfaceDescription": "합류 보류 메시지와 내부 단톡 공지 원본 대화다.",
       "type": "chat",
       "reliability": "hard",
       "completeness": "original",
@@ -372,6 +376,8 @@
       "id": "e-3",
       "name": "크롭된 단톡 캡처",
       "description": "혜린이 '이번 주부터 바로 써'라고 말한 부분만 남은 캡처로, 앞뒤에 붙은 '트라이얼로' 문장이 잘려 있어 최종 승인처럼 보인다.",
+      "surfaceName": "크롭된 단톡 캡처",
+      "surfaceDescription": "대화 한 줄만 남은 캡처로, 앞뒤 조건 문장이 잘려 있다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -406,6 +412,8 @@
       "id": "e-4",
       "name": "원본 단톡과 후보자 일정조율 메일",
       "description": "e-3의 앞뒤 문맥이 들어 있는 원본 단톡, 그리고 민서가 체험근무 가능한 시간을 보낸 일정조율 메일이다.",
+      "surfaceName": "원본 단톡과 일정조율 메일",
+      "surfaceDescription": "전체 문맥이 포함된 원본 단톡과 일정조율 메일 묶음이다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -438,12 +446,15 @@
           "questionAngle": "박혜린에게: \"혜린의 일방적 보류 통보와 내부 확산\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 박혜린의 \"혜린의 일방적 보류 통보와 내부 확산\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "공동 채용 체크리스트와 미완성 급여 시트",
       "description": "체험평가표, 급여 시트, 공동 final message가 모두 완료돼야 한다고 적힌 채용 체크리스트와 아직 비어 있는 민서 급여 시트다.",
+      "surfaceName": "채용 체크리스트와 급여 시트",
+      "surfaceDescription": "공동 채용 체크리스트와 미완성 급여 시트 문서다.",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -465,12 +476,15 @@
         "check_edits": "버전 히스토리에 삭제나 조작 흔적이 없다.",
         "question_acquisition": "회사 공용 운영문서라 적법하게 확보됐다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "requiredLieState": "S3"
     },
     {
       "id": "e-6",
       "name": "HR 툴 자동 캘린더 발송 로그와 노무사 확인 메모",
       "description": "후보자 이메일을 온보딩 단계에 넣으면 자동으로 'Day 1 Orientation' 일정 초대가 발송된다는 HR 툴 로그와 정우림 노무사의 확인 메모다.",
+      "surfaceName": "HR 툴 발송 로그와 노무사 메모",
+      "surfaceDescription": "HR 시스템 자동 발송 로그와 노무사 확인 메모 묶음이다.",
       "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
@@ -502,7 +516,8 @@
           "questionAngle": "박혜린에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 박혜린의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

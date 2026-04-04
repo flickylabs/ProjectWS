@@ -878,7 +878,7 @@
               ],
               "slots": {
                 "clip": {
-                  "exact": "19초 전달본",
+                  "exact": "그 영상",
                   "neutral": "그 영상"
                 }
               },
@@ -1331,7 +1331,7 @@
                 "person": {
                   "exact": "강현우",
                   "neutral": "상대방",
-                  "fullName": "강현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨"
                 }
               },
@@ -1743,7 +1743,7 @@
               ],
               "slots": {
                 "clip": {
-                  "exact": "19초 전달본",
+                  "exact": "그 영상",
                   "neutral": "그 영상"
                 }
               },
@@ -1812,7 +1812,7 @@
                 "person": {
                   "exact": "진서아",
                   "neutral": "상대방",
-                  "fullName": "진서아",
+                  "fullName": "진 씨",
                   "judgeRef": "서아 씨"
                 }
               },
@@ -2166,7 +2166,7 @@
                 "person": {
                   "exact": "강현우",
                   "neutral": "상대방",
-                  "fullName": "강현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨"
                 }
               },
@@ -2213,7 +2213,7 @@
                 "person": {
                   "exact": "강현우",
                   "neutral": "상대방",
-                  "fullName": "강현우",
+                  "fullName": "강 씨",
                   "judgeRef": "현우 씨"
                 }
               },
@@ -2594,7 +2594,7 @@
                 "person": {
                   "exact": "강현우",
                   "neutral": "상대방",
-                  "fullName": "강현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨"
                 }
               },
@@ -2989,7 +2989,7 @@
               ],
               "slots": {
                 "clip": {
-                  "exact": "19초 전달본",
+                  "exact": "그 영상",
                   "neutral": "그 영상"
                 }
               },
@@ -3014,7 +3014,7 @@
                 "person": {
                   "exact": "진서아",
                   "neutral": "상대방",
-                  "fullName": "진서아",
+                  "fullName": "서아 씨",
                   "judgeRef": "서아 씨"
                 }
               },
@@ -3432,7 +3432,7 @@
                 "person": {
                   "exact": "강현우",
                   "neutral": "상대방",
-                  "fullName": "강현우",
+                  "fullName": "현우 씨",
                   "judgeRef": "현우 씨"
                 }
               },
@@ -3478,7 +3478,7 @@
                 "person": {
                   "exact": "진서아",
                   "neutral": "상대방",
-                  "fullName": "진서아",
+                  "fullName": "진 씨",
                   "judgeRef": "서아 씨"
                 }
               },
@@ -3855,7 +3855,7 @@
                 "person": {
                   "exact": "진서아",
                   "neutral": "상대방",
-                  "fullName": "진서아",
+                  "fullName": "서아 씨",
                   "judgeRef": "서아 씨"
                 }
               },

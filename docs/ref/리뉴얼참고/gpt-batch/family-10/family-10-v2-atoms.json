@@ -34,7 +34,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "동생",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -67,7 +67,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "동생",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -123,7 +123,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "유 씨",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -156,7 +156,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "유 씨",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -570,7 +570,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "동생",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -602,7 +602,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "동생",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -657,7 +657,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "유 씨",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -689,7 +689,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "유 씨",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -1094,7 +1094,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "동생",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -1129,7 +1129,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "동생",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -1187,7 +1187,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "유 씨",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -1222,7 +1222,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "유 씨",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -1627,7 +1627,7 @@
           "disputeId": "d-4",
           "state": "S0",
           "publicClaim": [
-            "명절 직전에 20만원을 보내면 재료비 보탠다는 뜻으로 받아들일 수밖에 없죠.",
+            "명절 직전에 해당 금액을 보내면 재료비 보탠다는 뜻으로 받아들일 수밖에 없죠.",
             "제가 다 쓰고 있는데 그 돈마저 아니라면 더 억울해집니다."
           ],
           "privateKnowledge": [
@@ -1654,17 +1654,17 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "동생",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
                 "beneficiary": {
-                  "fullName": "유옥희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
                 "amount": {
-                  "exact": "20만원",
+                  "exact": "해당 금액",
                   "neutral": "그 돈"
                 },
                 "time": {
@@ -1695,17 +1695,17 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "동생",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
                 "beneficiary": {
-                  "fullName": "유옥희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
                 "amount": {
-                  "exact": "20만원",
+                  "exact": "해당 금액",
                   "neutral": "그 돈"
                 },
                 "time": {
@@ -1759,17 +1759,17 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "유 씨",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
                 "beneficiary": {
-                  "fullName": "유옥희",
+                  "fullName": "유 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
                 "amount": {
-                  "exact": "20만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 돈"
                 },
                 "time": {
@@ -1800,17 +1800,17 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "유 씨",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
                 "beneficiary": {
-                  "fullName": "유옥희",
+                  "fullName": "유 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
                 "amount": {
-                  "exact": "20만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 돈"
                 },
                 "time": {
@@ -2286,7 +2286,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "동생",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -2321,7 +2321,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "동생",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -2379,7 +2379,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "유 씨",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -2414,7 +2414,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유민재",
+                  "fullName": "유 씨",
                   "judgeRef": "동생",
                   "neutral": "상대"
                 },
@@ -2848,7 +2848,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "누나",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -2881,7 +2881,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "누나",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -2937,7 +2937,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "유 씨",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -2970,7 +2970,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "유 씨",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -3384,7 +3384,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "누나",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -3416,7 +3416,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "누나",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -3471,7 +3471,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "유 씨",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -3503,7 +3503,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "유 씨",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -3908,7 +3908,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "누나",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -3943,7 +3943,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "누나",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -4001,7 +4001,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "유 씨",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -4036,7 +4036,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "유 씨",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -4441,7 +4441,7 @@
           "disputeId": "d-4",
           "state": "S0",
           "publicClaim": [
-            "그 20만원은 어머니 용돈입니다.",
+            "그 해당 금액은 어머니 용돈입니다.",
             "재료비로 약속한 돈이 아닙니다."
           ],
           "privateKnowledge": [
@@ -4468,17 +4468,17 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "누나",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
                 "beneficiary": {
-                  "fullName": "유옥희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
                 "amount": {
-                  "exact": "20만원",
+                  "exact": "해당 금액",
                   "neutral": "그 돈"
                 },
                 "time": {
@@ -4509,17 +4509,17 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "누나",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
                 "beneficiary": {
-                  "fullName": "유옥희",
+                  "fullName": "어머니",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
                 "amount": {
-                  "exact": "20만원",
+                  "exact": "해당 금액",
                   "neutral": "그 돈"
                 },
                 "time": {
@@ -4573,17 +4573,17 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "유 씨",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
                 "beneficiary": {
-                  "fullName": "유옥희",
+                  "fullName": "유 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
                 "amount": {
-                  "exact": "20만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 돈"
                 },
                 "time": {
@@ -4614,17 +4614,17 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "유 씨",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
                 "beneficiary": {
-                  "fullName": "유옥희",
+                  "fullName": "유 씨",
                   "judgeRef": "어머니",
                   "neutral": "어머니"
                 },
                 "amount": {
-                  "exact": "20만원",
+                  "exact": "적지 않은 돈",
                   "neutral": "그 돈"
                 },
                 "time": {
@@ -5100,7 +5100,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "누나",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -5135,7 +5135,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "누나",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -5193,7 +5193,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "유 씨",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },
@@ -5228,7 +5228,7 @@
               ],
               "slots": {
                 "person": {
-                  "fullName": "유다은",
+                  "fullName": "유 씨",
                   "judgeRef": "누나",
                   "neutral": "상대"
                 },

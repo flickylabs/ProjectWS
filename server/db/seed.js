@@ -287,9 +287,9 @@ const settings = [
   ['maintenance_mode', 'false'],
   ['max_daily_games', '50'],
   ['llm_provider', 'openai'],
-  ['llm_model', 'gpt-4o-mini'],
-  ['llm_temperature', '0.8'],
-  ['llm_max_tokens', '300'],
+  ['llm_model', 'gpt-4o'],
+  ['llm_temperature', '1.0'],
+  ['llm_max_tokens', '400'],
   ['season_current', 'season-1'],
   ['admin_password', 'solomon2026!'],
 ];

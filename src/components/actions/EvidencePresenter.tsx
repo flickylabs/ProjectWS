@@ -1,9 +1,9 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { PartyId } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
-import { getAvailableWitnesses } from '../../engine/witnessEngine'
-import { canAppraise } from '../../engine/evidenceEngine'
+import { getAvailableWitnesses, getWitnessPreviewText, determineTestimonyDepth, getDepthSystemMessage } from '../../engine/witnessEngine'
+import { canAppraise, getUnlockedQuestions, getLockedQuestions } from '../../engine/evidenceEngine'
 import { playClick, playEvidenceUnlock } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
 import { EvidenceAppraisalModal } from '../discovery'
@@ -25,12 +25,21 @@ const KEY_ORDER = ['request_original', 'restore_context', 'check_edits'] as cons
 export default function EvidencePresenter({ target, onPresent, onConfront, onWitnessCalled, llmMode, newEvidenceIds }: Props) {
   const evidenceStates = useGameStore((s) => s.evidenceStates)
   const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
+  const caseData = useGameStore((s) => s.caseData)
   const resources = useGameStore((s) => s.resources)
   const globalInvest = useGameStore((s) => s.globalInvestTokens)
   const discovery = useGameStore((s) => s.discovery)
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [appraisalTarget, setAppraisalTarget] = useState<string | null>(null)
   const dispatch = useActionDispatch()
+
+  // 방어 코드: evidenceDefinitions가 비어있지만 caseData.evidence는 있을 때 자동 복구
+  useEffect(() => {
+    if (evidenceDefinitions.length === 0 && caseData?.evidence && caseData.evidence.length > 0) {
+      console.warn('[EvidencePresenter] evidenceDefinitions 비어있음 — caseData에서 복구')
+      useGameStore.getState().initEvidence(caseData.evidence, caseData.evidenceCombinations ?? [])
+    }
+  }, [evidenceDefinitions.length, caseData])
 
   const { available, presented, locked } = useMemo(() => {
     // 대상 캐릭터와 관련된 증거만 필터링 (subjectParty 기준)
@@ -201,7 +210,7 @@ function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) 
                 </div>
                 {wp && (
                   <div className="mt-1 text-xs text-gray-500 leading-relaxed">
-                    {w.witnessedDirectly ? '직접 목격' : '전해 들음'} · {w.knowledgeScope.slice(0, 50)}...
+                    {w.witnessedDirectly ? '직접 목격' : '전해 들음'} · {getWitnessPreviewText(w)}
                   </div>
                 )}
               </div>
@@ -241,25 +250,30 @@ const INVESTIGATION_LABELS: Record<string, string> = {
   check_edits: '조작 여부',
 }
 
-/** 증거 기반 자동 제안 질문 생성 */
-function generateSuggestions(ev: any, state: any, target?: PartyId | null): string[] {
-  // V3: DossierCard challenge 질문이 있으면 우선 사용
-  if (target) {
-    const caseData = useGameStore.getState().caseData
-    const caseKey = caseData?.caseId?.replace(/^case-/, '') ?? ''
-    const dossierCards = getDossierCards(caseKey)
-    const matchingCard = dossierCards.find(c => c.evidenceIds.includes(ev.id))
+/** 증거 기반 자동 제안 질문 생성 — investigationStages가 있으면 단계별 해금 질문 사용, 없으면 기존 유형별 폴백 */
+function generateSuggestions(ev: any, state: any, target?: PartyId | null): { text: string; stage?: number; locked?: boolean; hint?: string }[] {
+  // investigationStages가 있으면 staged 시스템 사용
+  if (ev.investigationStages && state) {
+    const unlocked = getUnlockedQuestions(ev, state)
+    const locked = getLockedQuestions(ev, state)
 
-    if (matchingCard) {
-      const dossierQuestions = getAvailableDossierQuestions(caseKey, matchingCard.id, target)
-      if (dossierQuestions.length > 0) {
-        return dossierQuestions.slice(0, 3).map(q => q.text)
-      }
+    const results: { text: string; stage?: number; locked?: boolean; hint?: string }[] = []
+
+    // 해금된 질문
+    for (const q of unlocked) {
+      results.push({ text: q.text, stage: q.stage })
     }
+
+    // 잠긴 질문 힌트
+    for (const l of locked) {
+      results.push({ text: '', stage: l.stage, locked: true, hint: l.hint })
+    }
+
+    return results
   }
 
-  // Fallback: 기존 유형별 제안
-  const suggestions: string[] = []
+  // 폴백: 기존 유형별 제안
+  const suggestions: { text: string }[] = []
   const investigatedCount = state?.investigatedActions?.filter((a: string) => KEY_ORDER.includes(a as any))?.length ?? 0
 
   const typeQuestions: Record<string, string> = {
@@ -272,23 +286,23 @@ function generateSuggestions(ev: any, state: any, target?: PartyId | null): stri
     device: '이 기기 데이터를 확인하셨습니까?',
     sns: '이 게시물을 직접 올리셨습니까?',
   }
-  suggestions.push(typeQuestions[ev.type] ?? '이 증거에 대해 설명하십시오.')
+  suggestions.push({ text: typeQuestions[ev.type] ?? '이 증거에 대해 설명하십시오.' })
 
   if (investigatedCount > 0 && ev.investigationResults) {
     const results = KEY_ORDER.slice(0, investigatedCount).map((k: string) => ev.investigationResults[k]).filter(Boolean)
     if (results.length > 0) {
       const lastResult = results[results.length - 1]
       if (lastResult.includes('캡처') || lastResult.includes('발췌') || lastResult.includes('일부'))
-        suggestions.push('왜 전체가 아닌 일부만 제출하셨습니까?')
+        suggestions.push({ text: '왜 전체가 아닌 일부만 제출하셨습니까?' })
       else if (lastResult.includes('편집') || lastResult.includes('조작'))
-        suggestions.push('이 증거가 조작되지 않았다고 확신합니까?')
+        suggestions.push({ text: '이 증거가 조작되지 않았다고 확신합니까?' })
       else
-        suggestions.push('이 증거의 출처를 설명하십시오.')
+        suggestions.push({ text: '이 증거의 출처를 설명하십시오.' })
     }
   }
 
   if (ev.reliability === 'soft')
-    suggestions.push('이 증거만으로는 부족한데, 추가로 증명할 수 있습니까?')
+    suggestions.push({ text: '이 증거만으로는 부족한데, 추가로 증명할 수 있습니까?' })
 
   return suggestions.slice(0, 3)
 }
@@ -302,17 +316,40 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
 }) {
   const [showPresent, setShowPresent] = useState(false)
   const [confrontText, setConfrontText] = useState('')
+  const [showRevealAnim, setShowRevealAnim] = useState(false)
   const investigatedCount = state?.investigatedActions?.filter((a: string) => KEY_ORDER.includes(a as any))?.length ?? 0
   const fullyInvestigated = investigatedCount >= 3
   const legWarning = ev.legitimacy !== 'lawful'
+
+  // 2-tier evidence: surface vs deep
+  const hasSurfaceInfo = !!(ev.surfaceName || ev.surfaceDescription)
+  const isDeepRevealed = !!(state?.deepInvestigated)
+  const showSurface = hasSurfaceInfo && !isDeepRevealed
+  const displayName = showSurface ? (ev.surfaceName ?? ev.name) : ev.name
+  const displayDescription = showSurface ? (ev.surfaceDescription ?? ev.description) : ev.description
+
+  // Trigger reveal animation when transitioning from surface to deep
+  const prevDeepRef = useRef(isDeepRevealed)
+  useEffect(() => {
+    if (isDeepRevealed && !prevDeepRef.current && hasSurfaceInfo) {
+      setShowRevealAnim(true)
+      const timer = setTimeout(() => setShowRevealAnim(false), 3000)
+      return () => clearTimeout(timer)
+    }
+    prevDeepRef.current = isDeepRevealed
+  }, [isDeepRevealed, hasSurfaceInfo])
 
   return (
     <div className={`border rounded-xl overflow-hidden transition-all ${
       state?.presented
         ? 'border-gray-800 bg-gray-900/30 opacity-70'
-        : isExpanded
-          ? 'border-amber-700/50 bg-gray-800/60 shadow-lg shadow-amber-500/5'
-          : 'border-gray-700 bg-gray-800/40 hover:border-gray-600'
+        : showSurface
+          ? isExpanded
+            ? 'border-blue-700/50 bg-gray-800/60 shadow-lg shadow-blue-500/5'
+            : 'border-blue-800/30 bg-gray-800/40 hover:border-blue-700/40'
+          : isExpanded
+            ? 'border-amber-700/50 bg-gray-800/60 shadow-lg shadow-amber-500/5'
+            : 'border-gray-700 bg-gray-800/40 hover:border-gray-600'
     }`}>
       {/* 헤더 */}
       <button onClick={onToggle} className="w-full text-left px-3 py-2.5 flex items-center justify-between">
@@ -320,7 +357,8 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
           <Emoji char={TYPE_ICON[ev.type] ?? '📄'} size={18} />
           <div className="min-w-0">
             <div className="flex items-center gap-1.5">
-              <span className="text-sm text-gray-200 truncate font-medium">{ev.name}</span>
+              <span className={`text-sm truncate font-medium ${showSurface ? 'text-blue-200' : 'text-gray-200'}`}>{displayName}</span>
+              {showSurface && <span className="bg-blue-600 text-blue-100 text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">조사 필요</span>}
               {isNew && <span className="bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shrink-0">N</span>}
               {state?.presented && <span className="text-emerald-500 text-xs"><Emoji char="✓" size={10} />제시</span>}
               {legWarning && <Emoji char="⚠" size={12} />}
@@ -358,7 +396,18 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
       {/* 확장 */}
       {isExpanded && (
         <div className="px-3 pb-3 space-y-2 border-t border-gray-800">
-          <p className="text-xs text-gray-400 mt-2 leading-relaxed">{ev.description}</p>
+          {/* 심층 조사로 실체가 드러났을 때 알림 */}
+          {hasSurfaceInfo && isDeepRevealed && (
+            <div className={`bg-amber-900/30 border border-amber-700/40 rounded-lg px-2.5 py-1.5 text-xs text-amber-300 mt-2 animate-fade-in ${showRevealAnim ? 'animate-pulse' : ''}`}>
+              <Emoji char="🔓" size={12} /> 조사를 통해 증거의 실체가 드러났습니다
+            </div>
+          )}
+          {showSurface && (
+            <div className="bg-blue-900/20 border border-blue-800/30 rounded-lg px-2.5 py-1.5 text-xs text-blue-300/80 mt-2">
+              <Emoji char="🔎" size={12} /> 표면 정보만 확인 가능합니다. 조사하면 상세 내용이 드러납니다.
+            </div>
+          )}
+          <p className={`text-xs mt-2 leading-relaxed ${showSurface ? 'text-blue-300/70' : 'text-gray-400'}`}>{displayDescription}</p>
 
           {/* 조사 결과 (공개된 것만) */}
           {investigatedCount > 0 && (
@@ -431,12 +480,29 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
               <p className="text-xs text-gray-400">질문과 함께 제시하면 더 효과적입니다:</p>
               <div className="space-y-1">
                 {generateSuggestions(ev, state, target).map((q, i) => (
-                  <button key={i}
-                    onClick={() => { onConfront?.(q); setShowPresent(false); setConfrontText('') }}
-                    className="w-full text-left text-xs px-3 py-2 rounded-lg bg-gray-800/60 border border-gray-700/40 hover:border-amber-600 hover:bg-amber-950/20 text-gray-300 transition-all active:scale-[0.98]"
-                  >
-                    <Emoji char="💬" size={12} /> {q}
-                  </button>
+                  q.locked ? (
+                    <div key={i}
+                      className="w-full text-left text-xs px-3 py-2 rounded-lg bg-gray-800/30 border border-gray-700/20 text-gray-600"
+                    >
+                      <Emoji char="🔒" size={12} /> {q.hint}
+                    </div>
+                  ) : (
+                    <button key={i}
+                      onClick={() => { onConfront?.(q.text); setShowPresent(false); setConfrontText('') }}
+                      className={`w-full text-left text-xs px-3 py-2 rounded-lg border transition-all active:scale-[0.98] ${
+                        q.stage && q.stage > 0
+                          ? 'bg-amber-950/30 border-amber-600/40 hover:border-amber-500 hover:bg-amber-950/40 text-amber-200'
+                          : 'bg-gray-800/60 border-gray-700/40 hover:border-amber-600 hover:bg-amber-950/20 text-gray-300'
+                      }`}
+                    >
+                      {q.stage && q.stage > 0 && (
+                        <span className="inline-block mr-1.5 text-[10px] font-bold bg-amber-600/30 text-amber-400 px-1.5 py-0.5 rounded">
+                          <Emoji char="🔍" size={10} /> 조사 {q.stage}단계
+                        </span>
+                      )}
+                      <Emoji char="💬" size={12} /> {q.text}
+                    </button>
+                  )
                 ))}
               </div>
 

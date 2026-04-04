@@ -329,6 +329,8 @@
       "id": "e-1",
       "name": "임대차계약서 원본과 특약란",
       "description": "잔금일 말소 확인, 전입·확정일자 진행 순서, 추가 비용 항목 부재가 적힌 임대차계약서와 특약 원본이다.",
+      "surfaceName": "임대차계약서 원본과 특약란",
+      "surfaceDescription": "잔금 처리 순서와 추가 비용 조건이 적힌 계약서 원본이다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -364,6 +366,8 @@
       "id": "e-2",
       "name": "서윤-태수-한별 단톡 캡처",
       "description": "한별이 '보험은 거의 된다'고 말하고, 서윤이 잔금 일부를 잠시 보류하겠다고 답한 단톡방 일부 캡처다.",
+      "surfaceName": "3자 단톡 캡처",
+      "surfaceDescription": "세입자, 집주인, 중개사가 함께 있는 대화방 일부 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -389,6 +393,8 @@
       "id": "e-3",
       "name": "180만원 송금 내역과 잔금 보류 계좌기록",
       "description": "서윤이 한별 개인 계좌로 180만원을 송금한 내역, 그리고 약정 잔금이 이틀 뒤 분할 송금된 계좌 거래기록이다.",
+      "surfaceName": "추가 송금 내역과 잔금 계좌기록",
+      "surfaceDescription": "추가 송금 내역과 분할 입금이 표시된 계좌 거래기록이다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -424,6 +430,8 @@
       "id": "e-4",
       "name": "등기부등본과 브리지대출 상환예정 확인서",
       "description": "계약 직전 발급된 등기부등본, 잔금일 기준 말소 예정이라던 확인서, 그리고 실제로 추가된 브리지대출 잔액표다.",
+      "surfaceName": "등기부등본과 대출 상환 확인서",
+      "surfaceDescription": "등기부등본과 대출 잔액·상환 예정 관련 확인 서류 묶음이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -455,12 +463,15 @@
           "questionAngle": "문태수에게: \"태수의 선순위 채무 축소 고지\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 문태수의 \"태수의 선순위 채무 축소 고지\" 쟁점과 관련된다. 문태수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "통화 녹음 파일과 보증상담센터 통화기록",
       "description": "잔금 전날 한별, 태수, 서윤이 차례로 통화한 녹음 일부와, 서윤이 보증상담센터에 문의한 상담 이력이다.",
+      "surfaceName": "통화 녹음과 상담센터 통화기록",
+      "surfaceDescription": "당사자 간 통화 녹음 일부와 상담센터 문의 이력이다.",
       "type": "record",
       "reliability": "soft",
       "completeness": "original",
@@ -496,6 +507,8 @@
       "id": "e-6",
       "name": "중개보수 세금계산서와 사무실 정산표",
       "description": "정식 중개보수로 신고된 금액과 별도로, 180만원이 한별 개인 수납 항목으로 적힌 사무실 정산표 및 카드 결제 내역이다.",
+      "surfaceName": "중개보수 세금계산서와 정산표",
+      "surfaceDescription": "중개보수 신고 내역과 사무실 정산표 및 결제 기록이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -516,7 +529,8 @@
         "check_edits": "전표 번호와 회계 로그가 끊기지 않아 사후 조작 가능성은 낮다.",
         "question_acquisition": "회계 자료는 내부 정보지만 당사자 비용 분쟁 해결을 위해 적법한 요청 절차를 거쳐 제출됐다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 import { useGameStore } from '../store/useGameStore'
 import { resolveDialogue, generateDynamicFallback } from '../engine/dialogueResolver'
 import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
-import { generateWitnessTestimony, canCallWitness } from '../engine/witnessEngine'
+import { generateWitnessTestimony, canCallWitness, determineTestimonyDepth, getDepthSystemMessage } from '../engine/witnessEngine'
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
 import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
 import { iga, eunneun } from '../utils/korean'
@@ -47,6 +47,11 @@ let _nextEvasionTarget: { target: PartyId; disputeId: string } | null = null
 let _skipNextJudgeQuestion = false
 export function setSkipNextJudgeQuestion(skip: boolean) { _skipNextJudgeQuestion = skip }
 export function shouldSkipJudgeQuestion(): boolean { const v = _skipNextJudgeQuestion; _skipNextJudgeQuestion = false; return v }
+
+/** 사건카드 질문 텍스트 — LLM에 직접 전달하여 맥락 유지 */
+let _dossierQuestionOverride: string | null = null
+export function setDossierQuestionOverride(text: string | null) { _dossierQuestionOverride = text }
+export function consumeDossierQuestionOverride(): string | null { const v = _dossierQuestionOverride; _dossierQuestionOverride = null; return v }
 
 export function setNextConfidential(on: boolean) { _nextConfidential = on }
 export function setNextEvasionReading(target: PartyId, disputeId: string) {
@@ -374,12 +379,28 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
     turn: state.turnCount,
   })
 
-  // 증언 생성 (LLM 또는 폴백)
+  // 증언 깊이 결정 (lieState 기반 게이팅)
+  const depth = determineTestimonyDepth(witness, state.getLieState)
+
+  // 깊이 제한 시 시스템 메시지 표시
+  if (depth !== 'full') {
+    const depthMsg = getDepthSystemMessage(depth)
+    if (depthMsg) {
+      state.addDialogue({
+        speaker: 'system',
+        text: `💬 ${depthMsg}`,
+        relatedDisputes: [],
+        turn: state.turnCount,
+      })
+    }
+  }
+
+  // 증언 생성 (LLM 또는 폴백, 깊이 게이팅 적용)
   state.setLLMLoading(true)
   try {
     const recentDialogues = state.dialogueLog.slice(-8)
     const testimony = await generateWitnessTestimony(
-      witness, state.caseData, state.agentA, state.agentB, recentDialogues,
+      witness, state.caseData, state.agentA, state.agentB, recentDialogues, depth,
     )
 
     const fresh = useGameStore.getState()
@@ -468,10 +489,10 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
         if (matchRatio >= 0.4) {
           freshStore.addDiscoveredTruth(truthId)
 
-          // 시스템 메시지: 새로운 사실 발견
+          // 시스템 메시지: 새로운 사실 발견 (진실 내용은 노출하지 않음)
           freshStore.addDialogue({
             speaker: 'system',
-            text: `💡 증인 증언으로 새로운 사실이 확인되었습니다 — "${truth.fact}"`,
+            text: `💡 증인 증언으로 새로운 단서가 확인되었습니다. 증거 게시판을 확인해 보십시오.`,
             relatedDisputes: testimony.relatedDisputes,
             turn: freshStore.turnCount,
           })
@@ -877,6 +898,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
             ? { from: prevLieState2, to: targetLie?.currentState ?? prevLieState2 }
             : null
 
+          const opponentProfile = opponent === 'a' ? freshState.caseData?.duo.partyA : freshState.caseData?.duo.partyB
           const opportunity = evaluateInterjectionOpportunity({
             caseId: v2CaseId,
             turn: state.turnCount,
@@ -891,6 +913,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
             isSeparated,
             flags: runtimeState.flags,
             tracker: getSessionInterjectionTracker(),
+            interruptorArchetype: opponentProfile?.archetype,
           })
 
           if (opportunity) {
@@ -1273,7 +1296,7 @@ export async function allowInterjection() {
   // LLM으로 반박 생성
   state.setLLMLoading(true, ij.party)
   try {
-    const { chatCompletion } = await import('../engine/llmClient')
+    const { chatCompletion, MODEL_DIALOGUE } = await import('../engine/llmClient')
     const caseData = state.caseData!
     const party = ij.party === 'a' ? caseData.duo.partyA : caseData.duo.partyB
     const opponent = ij.party === 'a' ? caseData.duo.partyB : caseData.duo.partyA
@@ -1331,7 +1354,7 @@ JSON만 출력:
 
     const raw = await chatCompletion(
       [{ role: 'user', content: prompt }],
-      { temperature: 0.7, maxTokens: 250 },
+      { temperature: 1.0, maxTokens: 400, model: MODEL_DIALOGUE },
     )
 
     state.setLLMLoading(false)
@@ -1716,7 +1739,7 @@ function showEvasionReadingResult(party: PartyId, disputeId: string) {
 
   state.addDialogue({
     speaker: 'system',
-    text: `🔍 ${name}의 속마음 — "${dispute.name}": ${intensityLabel}`,
+    text: `🔍 ${name}의 속마음 — ${intensityLabel}`,
     relatedDisputes: [disputeId],
     turn: state.turnCount,
   })
@@ -1746,18 +1769,18 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     state.markRevealed(party, disputeId)
   }
   const labels: Record<string, string> = {
-    S1: '표정이 흔들린다!',
-    S2: '일부를 인정하기 시작했다!',
-    S3: '상대 탓을 하기 시작한다!',
-    S4: '감정에 호소하기 시작했다!',
-    S5: '결국 입을 열었다!',
+    S1: '방어적 태도를 보이기 시작했다',
+    S2: '답변에 변화가 감지된다',
+    S3: '감정이 동요하고 있다',
+    S4: '심리적 압박이 커지고 있다',
+    S5: '진술 태도가 크게 변했다',
   }
   if (newState && labels[newState]) {
     if (newState === 'S5') playLieCollapse()
     const icon = newState >= 'S4' ? '💥' : '⚡'
     const text = newState === 'S5'
-      ? `🔥 결정적 순간 — ${name}의 '${dispute?.name}' 거짓말이 무너졌다!`
-      : `${icon} ${name} — "${dispute?.name}" | ${labels[newState]}`
+      ? `🔥 결정적 순간 — ${name}의 진술 태도가 크게 변했다!`
+      : `${icon} ${name} — ${labels[newState]}`
     state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
 
     // S5 도달 시 진실 발견 + 정답지 기록
@@ -1775,10 +1798,10 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
           // 진실 발견 기록
           if (!state.discovery.discoveredTruths.includes(truthId)) {
             state.addDiscoveredTruth(truthId)
-            // 시스템 메시지: 진실 발견
+            // 시스템 메시지: 진실 발견 (구체 내용은 증거 게시판에서 확인)
             state.addDialogue({
               speaker: 'system',
-              text: `✅ 사실 확인 — ${truth?.fact ?? dispute.truthDescription}`,
+              text: `✅ 결정적 진술이 확보되었습니다. 증거 게시판에서 확인하십시오.`,
               relatedDisputes: [disputeId],
               turn: state.turnCount,
             })
@@ -1807,20 +1830,20 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
 
       // 입장 변화 설명 생성 (프로그래밍 기반, LLM 불필요)
       const transitionDesc: Record<string, string> = {
-        'S0→S2': `이전에는 완전히 부정했지만, 이제 일부를 인정하기 시작했습니다`,
-        'S0→S3': `이전에는 완전히 부정했지만, 이제 상대 탓으로 돌리고 있습니다`,
-        'S0→S4': `이전에는 완전히 부정했지만, 이제 감정적으로 호소하고 있습니다`,
-        'S0→S5': `이전에는 완전히 부정했지만, 결국 사실을 인정했습니다`,
-        'S1→S2': `이전에는 핵심을 부정했지만, 이제 일부를 인정하기 시작했습니다`,
-        'S1→S3': `이전에는 핵심을 부정했지만, 이제 책임을 전가하고 있습니다`,
-        'S1→S4': `이전에는 핵심을 부정했지만, 이제 감정적으로 호소하고 있습니다`,
-        'S1→S5': `이전에는 핵심을 부정했지만, 결국 사실을 인정했습니다`,
+        'S0→S2': `이전 답변과 달리, 태도에 변화가 감지됩니다`,
+        'S0→S3': `이전 답변과 달리, 감정적으로 동요하고 있습니다`,
+        'S0→S4': `이전 답변과 달리, 심리적 압박을 받고 있는 듯합니다`,
+        'S0→S5': `이전 답변과 크게 달라진 태도를 보이고 있습니다`,
+        'S1→S2': `이전 답변과 달리, 태도에 변화가 감지됩니다`,
+        'S1→S3': `이전 답변과 달리, 감정적으로 동요하고 있습니다`,
+        'S1→S4': `이전 답변과 달리, 심리적 압박을 받고 있는 듯합니다`,
+        'S1→S5': `이전 답변과 크게 달라진 태도를 보이고 있습니다`,
       }
       const desc = transitionDesc[`${prevState}→${newState}`] ?? `이전 진술과 입장이 달라졌습니다`
 
       state.addDialogue({
         speaker: 'system',
-        text: `⚡ ${name}의 진술이 이전 주장과 모순됩니다! — 탭하여 추궁`,
+        text: `⚡ ${name}의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁`,
         relatedDisputes: [disputeId],
         turn: state.turnCount,
         contradictionMeta: {
@@ -1873,7 +1896,7 @@ export function applyLieCollapseFail(disputeId: string) {
   const state = useGameStore.getState()
   state.addDialogue({
     speaker: 'system',
-    text: `거짓말은 무너졌지만, 결정적 증거는 놓쳤다...`,
+    text: `방어가 무너졌지만, 결정적 증거는 놓쳤다...`,
     relatedDisputes: [disputeId],
     turn: state.turnCount,
   })
@@ -1888,7 +1911,7 @@ export function applyContradictionSuccess(disputeId: string, target: PartyId) {
   // 모순 짚어냄 메시지
   state.addDialogue({
     speaker: 'system',
-    text: `⚡ 모순을 정확히 짚어냈다! — "${dispute?.name ?? '쟁점'}"`,
+    text: `⚡ 모순을 정확히 짚어냈다!`,
     relatedDisputes: disputeId ? [disputeId] : [],
     turn: state.turnCount,
   })
@@ -1902,7 +1925,7 @@ export function applyContradictionSuccess(disputeId: string, target: PartyId) {
     notifyLieTransition(target, disputeId)
     state.addDialogue({
       speaker: 'system',
-      text: `🔓 ${name}의 방어가 흔들렸다! 거짓말 상태가 변했다.`,
+      text: `🔓 ${name}의 방어가 흔들렸다! 진술 태도에 변화가 감지된다.`,
       relatedDisputes: [disputeId],
       turn: state.turnCount,
     })
@@ -2062,38 +2085,10 @@ export async function handleContradictionPursue(
       : state.caseData.duo.partyB.name
     const dispute = state.caseData.disputes.find(d => d.id === disputeId)
 
-    // 핵심 차이점을 요약하여 재판관 질문 생성
-    // LLM으로 정밀 질문 생성 시도, 실패하면 폴백
-    let judgeQuestion = ''
-    try {
-      const { chatCompletion } = await import('../engine/llmClient')
-      const raw = await chatCompletion(
-        [{
-          role: 'user',
-          content: `당신은 재판관입니다. 아래 두 진술 사이의 핵심 차이점을 짚어 추궁하는 질문을 1~2문장으로 작성하세요.
-
-당사자: ${npcName}
-쟁점: ${dispute?.name ?? ''}
-
-이전 진술: "${previousClaim}"
-현재 진술: "${currentClaim}"
-
-규칙:
-- "${npcName} 씨, "로 시작
-- 두 진술의 구체적인 차이점을 명시 ("이전에는 ~라고 했는데 지금은 ~라고 하셨습니다")
-- "어느 쪽이 사실입니까?" 또는 "왜 달라진 것입니까?"로 마무리
-- 격식체 (~십시오, ~입니까)
-- 2문장 이내, 질문만 출력`,
-        }],
-        { temperature: 0.3, maxTokens: 150 },
-      )
-      judgeQuestion = raw.trim()
-      // "재판관님"으로 시작하면 보정
-      judgeQuestion = judgeQuestion.replace(/^재판관님[,\s]*/, '')
-    } catch {
-      // LLM 실패 시 폴백
-      judgeQuestion = `${npcName} 씨, 이전에는 "${previousClaim.slice(0, 30)}…"라고 하셨는데, 방금은 "${currentClaim.slice(0, 30)}…"라고 하셨습니다. 진술이 달라진 이유를 설명해 주십시오.`
-    }
+    // 템플릿 기반 모순 추궁 질문 생성 (LLM 불필요, 즉시 생성)
+    const lieEntry = (party === 'a' ? state.agentA : state.agentB).lieStateMap[disputeId]
+    const currentLieState = lieEntry?.currentState ?? 'S0'
+    const judgeQuestion = buildContradictionQuestion(npcName, previousClaim, currentClaim, currentLieState)
 
     state.addDialogue({
       speaker: 'judge',
@@ -2108,6 +2103,7 @@ export async function handleContradictionPursue(
       text: `[모순 추궁 맥락] 이전: "${previousClaim.slice(0, 60)}" → 현재: "${currentClaim.slice(0, 60)}". 이 모순에 대해 해명해야 합니다.`,
       relatedDisputes: [disputeId],
       turn: state.turnCount,
+      isHidden: true,
     })
 
     // LLM으로 NPC 응답 생성 — 재판관 질문은 이미 추가했으므로 스킵
@@ -2142,4 +2138,64 @@ export async function handleContradictionPursue(
   } finally {
     globalDispatchLock = false
   }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 모순 추궁 질문 템플릿 (15종: soft 5 + mid 5 + hard 5)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+type ContradictionTone = 'soft' | 'mid' | 'hard'
+
+const CONTRADICTION_TEMPLATES: Record<ContradictionTone, string[]> = {
+  soft: [
+    '${name} 씨, 앞서 \'${prev}\'라고 하셨습니다. 그런데 현재 기록에는 \'${curr}\'라는 내용이 보입니다. 기억이 달라진 것인지 차분히 설명해 주시겠습니까?',
+    '${name} 씨, 조금 전 진술의 핵심은 \'${prev}\'였습니다. 반면 지금 정리되는 내용은 \'${curr}\'입니다. 어느 부분에서 설명이 바뀐 것인지 짚어 주시겠습니까?',
+    '${name} 씨, 제가 적어 둔 이전 답변은 \'${prev}\'입니다. 그런데 지금은 \'${curr}\'라는 흐름이 나타납니다. 두 내용을 어떻게 이해해야 합니까?',
+    '${name} 씨, 처음 말씀은 \'${prev}\' 쪽이었는데, 현재는 \'${curr}\'라는 방향이 보입니다. 기억 차이인지, 표현 차이인지 말씀해 주십시오.',
+    '${name} 씨, 앞선 답변과 지금 드러나는 흐름 사이에 간격이 있습니다. 이전에는 \'${prev}\'라고 하셨고, 현재 기록에는 \'${curr}\'라는 내용이 남아 있습니다. 어느 쪽이 더 가까운 설명인지 말씀해 주시겠습니까?',
+  ],
+  mid: [
+    '${name} 씨, 앞서 \'${prev}\'라고 하셨는데, 현재는 \'${curr}\'라는 내용이 확인됩니다. 입장이 달라진 이유를 분명히 설명해 주십시오.',
+    '${name} 씨, \'${prev}\'라는 이전 진술과 지금 \'${curr}\'로 정리되는 내용은 그대로 이어지기 어렵습니다. 어느 쪽을 기준으로 받아들여야 합니까?',
+    '${name} 씨, 제가 기록한 답변은 \'${prev}\'입니다. 그런데 현재 진술의 흐름은 \'${curr}\' 쪽으로 움직이고 있습니다. 왜 이렇게 달라졌는지 설명하십시오.',
+    '${name} 씨, 조금 전까지는 \'${prev}\'라는 취지였는데, 이제는 \'${curr}\'라는 내용이 드러납니다. 무엇 때문에 설명이 달라졌는지 답하십시오.',
+    '${name} 씨, 이전 답변의 요지는 \'${prev}\'였고, 지금 정리되는 내용은 \'${curr}\'입니다. 이 차이를 그대로 넘길 수는 없으니, 정확히 정리해 주십시오.',
+  ],
+  hard: [
+    '${name} 씨, 이전 진술은 \'${prev}\'였는데, 현재는 \'${curr}\'라는 변화가 나타납니다. 더 이상 모호하게 말씀하지 말고, 어느 설명을 기준으로 판단해야 하는지 분명히 답하십시오.',
+    '${name} 씨, 분명히 \'${prev}\'라고 하셨습니다. 그런데 현재 기록은 \'${curr}\'로 바뀌어 있습니다. 이 차이가 왜 생겼는지 분명히 설명하십시오.',
+    '${name} 씨, 처음 답변은 \'${prev}\'였고, 지금은 \'${curr}\'라는 방향으로 내용이 움직였습니다. 이렇게 달라진 이상, 한 문장으로 넘기지 말고 정확한 경위를 말씀하십시오.',
+    '${name} 씨, 앞선 진술과 지금 확인되는 내용이 서로 맞지 않습니다. 앞선 진술은 \'${prev}\'였고, 지금 확인되는 내용은 \'${curr}\'입니다. 설명 없이 지나갈 수 없으니, 핵심을 분명히 밝히십시오.',
+    '${name} 씨, 지금 나타난 진술 변화는 가볍게 볼 수 없습니다. 이전에는 \'${prev}\'였는데 현재는 \'${curr}\'라는 흐름이 확인됩니다. 어느 시점부터 설명이 달라졌는지 명확히 답하십시오.',
+  ],
+}
+
+const _contradictionRotation = new Map<string, number>()
+
+function resolveContradictionTone(lieState: string): ContradictionTone {
+  if (lieState === 'S0' || lieState === 'S1') return 'soft'
+  if (lieState === 'S2') return 'mid'
+  return 'hard'
+}
+
+function buildContradictionQuestion(
+  name: string,
+  previousClaim: string,
+  currentClaim: string,
+  lieState: string,
+): string {
+  const tone = resolveContradictionTone(lieState)
+  const templates = CONTRADICTION_TEMPLATES[tone]
+  const key = `contradiction:${name}:${tone}`
+  const idx = _contradictionRotation.get(key) ?? 0
+  _contradictionRotation.set(key, idx + 1)
+  const template = templates[idx % templates.length]
+
+  const prev = previousClaim.length > 50 ? previousClaim.slice(0, 47) + '…' : previousClaim
+  const curr = currentClaim.length > 50 ? currentClaim.slice(0, 47) + '…' : currentClaim
+
+  return template
+    .replace(/\$\{name\}/g, name)
+    .replace(/\$\{prev\}/g, prev)
+    .replace(/\$\{curr\}/g, curr)
 }

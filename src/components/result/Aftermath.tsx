@@ -143,12 +143,20 @@ export default function Aftermath() {
 점수: ${verdictScore.total}점 (${endingTone})
 
 규칙:
-- 판결 이후 1주~1개월 후 상황을 2~3문단으로 묘사
+- 판결 이후 1주~1개월 후 상황을 최소 3문단으로 묘사
 - 각 문단 2~3문장. 총 270~360자
 - 두 사람의 관계 변화와 내면을 담담하게
 - 호칭을 나이/관계에 맞게 사용
 - 마지막 줄은 반드시 "교훈 한 문장"만. 형식: "~~~" (큰따옴표로 감싼 한 문장). 부연 설명 없이 교훈만.
-- 한국어 소설체`
+- 한국어 소설체
+
+★ 번역체/보고서 톤 절대 금지:
+- "~된 것으로 판단됩니다", "~인 측면이 있었습니다" → 자연스러운 한국어로
+- "여러 가지 상황이 얽혀" → 구체적으로 1가지만
+- "해당 건에 대해서는" → "그 일은"
+- "~하는 바입니다", "인지하고 있습니다" → 금지
+- 실제 법정 후일담/에필로그처럼 따뜻하고 인간적인 톤으로 작성하라.
+★ 후일담은 최소 3문단 이상. 양쪽 당사자의 이후 삶을 구체적으로 그려라.`
 
       // 재시도 로직 (최대 2회)
       let response = ''
@@ -156,7 +164,7 @@ export default function Aftermath() {
         try {
           response = await chatCompletion(
             [{ role: 'user', content: prompt }],
-            { temperature: 0.85, maxTokens: 500 },
+            { temperature: 1.0, maxTokens: 500 },
           )
           if (response.trim()) break
         } catch (retryErr) {
@@ -210,7 +218,7 @@ export default function Aftermath() {
         try {
           response = await chatCompletion(
             [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }],
-            { temperature: 0.85, maxTokens: 600 },
+            { temperature: 1.0, maxTokens: 600 },
           )
           if (response.trim()) break
         } catch (retryErr) {

@@ -33,7 +33,7 @@
                 "person": {
                   "exact": "한세린",
                   "neutral": "상대방",
-                  "fullName": "한세린",
+                  "fullName": "한세린 씨",
                   "judgeRef": "한세린 씨"
                 },
                 "time": {
@@ -110,7 +110,7 @@
                 "person": {
                   "exact": "한세린",
                   "neutral": "상대방",
-                  "fullName": "한세린",
+                  "fullName": "한 씨",
                   "judgeRef": "한세린 씨"
                 },
                 "time": {
@@ -489,7 +489,7 @@
                 "person": {
                   "exact": "한세린",
                   "neutral": "상대방",
-                  "fullName": "한세린",
+                  "fullName": "한세린 씨",
                   "judgeRef": "한세린 씨"
                 },
                 "time": {
@@ -595,7 +595,7 @@
                 "person": {
                   "exact": "한세린",
                   "neutral": "상대방",
-                  "fullName": "한세린",
+                  "fullName": "한 씨",
                   "judgeRef": "한세린 씨"
                 }
               },
@@ -943,7 +943,7 @@
                 "person": {
                   "exact": "한세린",
                   "neutral": "상대방",
-                  "fullName": "한세린",
+                  "fullName": "한세린 씨",
                   "judgeRef": "한세린 씨"
                 },
                 "time": {
@@ -1024,7 +1024,7 @@
                 "person": {
                   "exact": "한세린",
                   "neutral": "상대방",
-                  "fullName": "한세린",
+                  "fullName": "한 씨",
                   "judgeRef": "한세린 씨"
                 }
               },
@@ -1396,7 +1396,7 @@
                 "person": {
                   "exact": "한세린",
                   "neutral": "상대방",
-                  "fullName": "한세린",
+                  "fullName": "한세린 씨",
                   "judgeRef": "한세린 씨"
                 },
                 "place": {
@@ -1469,7 +1469,7 @@
                 "person": {
                   "exact": "한세린",
                   "neutral": "상대방",
-                  "fullName": "한세린",
+                  "fullName": "한 씨",
                   "judgeRef": "한세린 씨"
                 },
                 "time": {
@@ -1897,7 +1897,7 @@
                 "person": {
                   "exact": "한세린",
                   "neutral": "상대방",
-                  "fullName": "한세린",
+                  "fullName": "한 씨",
                   "judgeRef": "한세린 씨"
                 }
               },
@@ -2244,7 +2244,7 @@
                 "person": {
                   "exact": "장태욱",
                   "neutral": "상대방",
-                  "fullName": "장태욱",
+                  "fullName": "장태욱 씨",
                   "judgeRef": "장태욱 씨"
                 },
                 "time": {
@@ -2294,7 +2294,7 @@
                 "person": {
                   "exact": "장태욱",
                   "neutral": "상대방",
-                  "fullName": "장태욱",
+                  "fullName": "장 씨",
                   "judgeRef": "장태욱 씨"
                 },
                 "evidence": {
@@ -2321,7 +2321,7 @@
                 "person": {
                   "exact": "장태욱",
                   "neutral": "상대방",
-                  "fullName": "장태욱",
+                  "fullName": "장 씨",
                   "judgeRef": "장태욱 씨"
                 },
                 "time": {
@@ -2675,7 +2675,7 @@
                 "person": {
                   "exact": "장태욱",
                   "neutral": "상대방",
-                  "fullName": "장태욱",
+                  "fullName": "장태욱 씨",
                   "judgeRef": "장태욱 씨"
                 },
                 "time": {
@@ -2729,7 +2729,7 @@
                 "person": {
                   "exact": "장태욱",
                   "neutral": "상대방",
-                  "fullName": "장태욱",
+                  "fullName": "장 씨",
                   "judgeRef": "장태욱 씨"
                 }
               },
@@ -3104,7 +3104,7 @@
                 "person": {
                   "exact": "장태욱",
                   "neutral": "상대방",
-                  "fullName": "장태욱",
+                  "fullName": "장태욱 씨",
                   "judgeRef": "장태욱 씨"
                 },
                 "place": {
@@ -3178,7 +3178,7 @@
                 "person": {
                   "exact": "장태욱",
                   "neutral": "상대방",
-                  "fullName": "장태욱",
+                  "fullName": "장 씨",
                   "judgeRef": "장태욱 씨"
                 },
                 "place": {
@@ -3545,7 +3545,7 @@
                 "person": {
                   "exact": "장태욱",
                   "neutral": "상대방",
-                  "fullName": "장태욱",
+                  "fullName": "장태욱 씨",
                   "judgeRef": "장태욱 씨"
                 },
                 "evidence": {
@@ -3987,7 +3987,7 @@
                 "person": {
                   "exact": "장태욱",
                   "neutral": "상대방",
-                  "fullName": "장태욱",
+                  "fullName": "장태욱 씨",
                   "judgeRef": "장태욱 씨"
                 },
                 "time": {
@@ -4406,4 +4406,3 @@
     }
   }
 }
-

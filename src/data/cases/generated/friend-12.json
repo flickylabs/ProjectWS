@@ -324,6 +324,8 @@
     {
       "id": "e-1",
       "name": "스트리밍 카드·포스터·릴 썸네일 캡처 모음",
+      "surfaceName": "스트리밍 카드·포스터·릴 썸네일 캡처",
+      "surfaceDescription": "스트리밍 카드, 포스터, 릴 썸네일 캡처 모음이다. 게시 시점과 크레딧 표기 확인이 필요하다.",
       "description": "스트리밍 카드에서는 수빈 이름만, 쇼케이스 포스터와 릴 썸네일에서는 재윤 역할만 크게 보이도록 잘린 공개 화면 모음이다.",
       "type": "sns",
       "reliability": "soft",
@@ -360,6 +362,8 @@
     {
       "id": "e-2",
       "name": "공유 노션 기획안과 크레딧 메모",
+      "surfaceName": "공유 노션 기획안과 크레딧 메모",
+      "surfaceDescription": "공유 노션의 기획안 문서와 크레딧 관련 메모다. 합의 내용과 수정 이력 확인이 필요하다.",
       "description": "song main, video main 탭이 나뉜 기획안과 '최종 크레딧은 추후 확정'이라는 코멘트가 남은 공유 노션 원본이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -395,6 +399,8 @@
     {
       "id": "e-3",
       "name": "DAW 세션 파일과 가사·멜로디 수정 이력",
+      "surfaceName": "DAW 세션 파일과 가사·멜로디 수정 이력",
+      "surfaceDescription": "음악 작업 세션 파일과 가사·멜로디 수정 기록이다. 기여 이력과 수정 시점 확인이 필요하다.",
       "description": "재윤의 비트 세션, 수빈의 가이드 보컬과 가사 수정, 상호 피드백이 남은 DAW 프로젝트와 문서 이력이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -426,11 +432,14 @@
           "questionAngle": "백재윤에게: \"최종작 '새벽역'은 사실상 한 사람의 단독 창작물인가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 백재윤의 \"최종작 '새벽역'은 사실상 한 사람의 단독 창작물인가\" 쟁점과 관련된다. 백재윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-4",
       "name": "편집 프로젝트 파일과 촬영 큐시트",
+      "surfaceName": "편집 프로젝트 파일과 촬영 큐시트",
+      "surfaceDescription": "영상 편집 프로젝트 파일과 촬영 큐시트다. 작업 분담과 촬영 일정 확인이 필요하다.",
       "description": "재윤의 프리미어/리졸브 프로젝트, 수빈의 재촬영 요청 음성메모, 컷 수정 로그가 남은 편집 원본이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -463,11 +472,14 @@
           "questionAngle": "백재윤에게: \"재윤의 포트폴리오 릴과 안내 메일에서 수빈 누락\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 백재윤의 \"재윤의 포트폴리오 릴과 안내 메일에서 수빈 누락\" 쟁점과 관련된다. 백재윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     },
     {
       "id": "e-5",
       "name": "쇼케이스 제출 폼과 음원유통 메타데이터 export",
+      "surfaceName": "쇼케이스 제출 폼과 음원유통 메타데이터",
+      "surfaceDescription": "쇼케이스 제출 양식과 음원 유통 메타데이터 내보내기다. 등록 정보와 크레딧 확인이 필요하다.",
       "description": "쇼케이스는 공동 창작물로, 음원유통 메타데이터에는 primary artist와 producer가 각각 다르게 표시된 제출 원본이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -503,6 +515,8 @@
     {
       "id": "e-6",
       "name": "인스타·릴스 edit history와 크레딧 조율 단톡",
+      "surfaceName": "SNS 편집 이력과 크레딧 조율 단톡",
+      "surfaceDescription": "SNS 게시물 편집 이력과 크레딧 조율 단체 대화다. 수정 내용과 합의 경과 확인이 필요하다.",
       "description": "수빈의 단독형 캡션 수정 내역, 재윤의 릴 썸네일 수정, 그리고 둘이 최종 크레딧 문구를 끝내 확정하지 못한 단톡 원본이다.",
       "type": "chat",
       "reliability": "hard",
@@ -537,7 +551,8 @@
           "questionAngle": "백재윤에게: \"재윤의 포트폴리오 릴과 안내 메일에서 수빈 누락\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 백재윤의 \"재윤의 포트폴리오 릴과 안내 메일에서 수빈 누락\" 쟁점과 관련된다. 백재윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "requiredLieState": "S3"
     }
   ],
   "evidenceCombinations": [

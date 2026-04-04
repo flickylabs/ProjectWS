@@ -35,11 +35,11 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "소담 씨",
                   "judgeRef": "소담 씨"
                 },
                 "time": {
-                  "exact": "14시 08분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "사건 당일 14시 08분",
                   "period": "14시 15분 화상심사 직전"
@@ -79,11 +79,11 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "소담 씨",
                   "judgeRef": "소담 씨"
                 },
                 "time": {
-                  "exact": "14시 08분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "사건 당일 14시 08분",
                   "period": "14시 15분 화상심사 직전"
@@ -144,7 +144,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "이 씨",
                   "judgeRef": "소담 씨"
                 },
                 "time": {
@@ -187,7 +187,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "이 씨",
                   "judgeRef": "소담 씨"
                 },
                 "time": {
@@ -684,11 +684,11 @@
                 "person": {
                   "exact": "강민재",
                   "neutral": "상대방",
-                  "fullName": "강민재",
+                  "fullName": "민재 씨",
                   "judgeRef": "민재 씨"
                 },
                 "time": {
-                  "exact": "사건 사흘 전 밤 11시 47분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "사건 사흘 전 밤 11시 47분",
                   "period": "권한 변경 알림 직후"
@@ -726,11 +726,11 @@
                 "person": {
                   "exact": "강민재",
                   "neutral": "상대방",
-                  "fullName": "강민재",
+                  "fullName": "민재 씨",
                   "judgeRef": "민재 씨"
                 },
                 "time": {
-                  "exact": "사건 사흘 전 밤 11시 47분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "사건 사흘 전 밤 11시 47분",
                   "period": "권한 변경 알림 직후"
@@ -791,7 +791,7 @@
                 "person": {
                   "exact": "강민재",
                   "neutral": "상대방",
-                  "fullName": "강민재",
+                  "fullName": "강 씨",
                   "judgeRef": "민재 씨"
                 },
                 "time": {
@@ -833,7 +833,7 @@
                 "person": {
                   "exact": "강민재",
                   "neutral": "상대방",
-                  "fullName": "강민재",
+                  "fullName": "강 씨",
                   "judgeRef": "민재 씨"
                 },
                 "time": {
@@ -1325,11 +1325,11 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "소담 씨",
                   "judgeRef": "소담 씨"
                 },
                 "file": {
-                  "exact": "1분 12초 m4a 파일",
+                  "exact": "해당 오디오 파일",
                   "neutral": "해당 오디오 파일"
                 },
                 "quote": {
@@ -1341,13 +1341,13 @@
                   "neutral": "다른 문장"
                 },
                 "date1": {
-                  "exact": "7월 8일",
+                  "exact": "첫 녹음일",
                   "neutral": "첫 녹음일",
                   "dateExact": "7월 8일",
                   "period": "거실 소음 불평이 나온 날"
                 },
                 "date2": {
-                  "exact": "7월 11일",
+                  "exact": "둘째 녹음일",
                   "neutral": "둘째 녹음일",
                   "dateExact": "7월 11일",
                   "period": "백업 드라이브 문제를 말한 날"
@@ -1373,11 +1373,11 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "소담 씨",
                   "judgeRef": "소담 씨"
                 },
                 "file": {
-                  "exact": "1분 12초 m4a 파일",
+                  "exact": "해당 오디오 파일",
                   "neutral": "해당 오디오 파일"
                 },
                 "quote": {
@@ -1389,13 +1389,13 @@
                   "neutral": "다른 문장"
                 },
                 "date1": {
-                  "exact": "7월 8일",
+                  "exact": "첫 녹음일",
                   "neutral": "첫 녹음일",
                   "dateExact": "7월 8일",
                   "period": "거실 소음 불평이 나온 날"
                 },
                 "date2": {
-                  "exact": "7월 11일",
+                  "exact": "둘째 녹음일",
                   "neutral": "둘째 녹음일",
                   "dateExact": "7월 11일",
                   "period": "백업 드라이브 문제를 말한 날"
@@ -1443,7 +1443,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "이 씨",
                   "judgeRef": "소담 씨"
                 },
                 "file": {
@@ -1492,7 +1492,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "이 씨",
                   "judgeRef": "소담 씨"
                 },
                 "file": {
@@ -2038,7 +2038,7 @@
                 "person": {
                   "exact": "오한결",
                   "neutral": "보조편집자",
-                  "fullName": "오한결",
+                  "fullName": "오한결 씨",
                   "judgeRef": "오한결 씨"
                 },
                 "file": {
@@ -2050,13 +2050,13 @@
                   "neutral": "그 지시"
                 },
                 "date1": {
-                  "exact": "7월 8일",
+                  "exact": "첫 원본 날짜",
                   "neutral": "첫 원본 날짜",
                   "dateExact": "7월 8일",
                   "period": "첫 번째 원본 녹음일"
                 },
                 "date2": {
-                  "exact": "7월 11일",
+                  "exact": "두 번째 원본 날짜",
                   "neutral": "두 번째 원본 날짜",
                   "dateExact": "7월 11일",
                   "period": "두 번째 원본 녹음일"
@@ -2082,7 +2082,7 @@
                 "person": {
                   "exact": "오한결",
                   "neutral": "보조편집자",
-                  "fullName": "오한결",
+                  "fullName": "오한결 씨",
                   "judgeRef": "오한결 씨"
                 },
                 "file": {
@@ -2094,13 +2094,13 @@
                   "neutral": "그 지시"
                 },
                 "date1": {
-                  "exact": "7월 8일",
+                  "exact": "첫 원본 날짜",
                   "neutral": "첫 원본 날짜",
                   "dateExact": "7월 8일",
                   "period": "첫 번째 원본 녹음일"
                 },
                 "date2": {
-                  "exact": "7월 11일",
+                  "exact": "두 번째 원본 날짜",
                   "neutral": "두 번째 원본 날짜",
                   "dateExact": "7월 11일",
                   "period": "두 번째 원본 녹음일"
@@ -2149,7 +2149,7 @@
                 "person": {
                   "exact": "오한결",
                   "neutral": "보조편집자",
-                  "fullName": "오한결",
+                  "fullName": "오 씨",
                   "judgeRef": "오한결 씨"
                 },
                 "file": {
@@ -2193,7 +2193,7 @@
                 "person": {
                   "exact": "오한결",
                   "neutral": "보조편집자",
-                  "fullName": "오한결",
+                  "fullName": "오 씨",
                   "judgeRef": "오한결 씨"
                 },
                 "file": {
@@ -2701,19 +2701,19 @@
               ],
               "slots": {
                 "time1": {
-                  "exact": "14시 15분",
+                  "exact": "첫 화상 일정",
                   "neutral": "첫 화상 일정",
                   "dateExact": "사건 당일 14시 15분",
                   "period": "소담 화상심사 시간"
                 },
                 "time2": {
-                  "exact": "14시 30분",
+                  "exact": "두 번째 화상 일정",
                   "neutral": "두 번째 화상 일정",
                   "dateExact": "사건 당일 14시 30분",
                   "period": "민재 클라이언트 리뷰 시간"
                 },
                 "net": {
-                  "exact": "13시 41분 장애 접수",
+                  "exact": "그날 회선 장애",
                   "neutral": "그날 회선 장애",
                   "dateExact": "사건 당일 13시 41분",
                   "period": "거실 회선 품질 저하 접수"
@@ -2746,19 +2746,19 @@
               ],
               "slots": {
                 "time1": {
-                  "exact": "14시 15분",
+                  "exact": "첫 화상 일정",
                   "neutral": "첫 화상 일정",
                   "dateExact": "사건 당일 14시 15분",
                   "period": "소담 화상심사 시간"
                 },
                 "time2": {
-                  "exact": "14시 30분",
+                  "exact": "두 번째 화상 일정",
                   "neutral": "두 번째 화상 일정",
                   "dateExact": "사건 당일 14시 30분",
                   "period": "민재 클라이언트 리뷰 시간"
                 },
                 "net": {
-                  "exact": "13시 41분 장애 접수",
+                  "exact": "그날 회선 장애",
                   "neutral": "그날 회선 장애",
                   "dateExact": "사건 당일 13시 41분",
                   "period": "거실 회선 품질 저하 접수"
@@ -3370,11 +3370,11 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "소담 씨",
                   "judgeRef": "소담 씨"
                 },
                 "time": {
-                  "exact": "14시 08분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "사건 당일 14시 08분",
                   "period": "14시 15분 화상심사 직전"
@@ -3413,11 +3413,11 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "소담 씨",
                   "judgeRef": "소담 씨"
                 },
                 "time": {
-                  "exact": "14시 08분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "사건 당일 14시 08분",
                   "period": "14시 15분 화상심사 직전"
@@ -3479,7 +3479,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "이 씨",
                   "judgeRef": "소담 씨"
                 },
                 "time": {
@@ -3522,7 +3522,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "이 씨",
                   "judgeRef": "소담 씨"
                 },
                 "time": {
@@ -4024,11 +4024,11 @@
                 "person": {
                   "exact": "강민재",
                   "neutral": "상대방",
-                  "fullName": "강민재",
+                  "fullName": "민재 씨",
                   "judgeRef": "민재 씨"
                 },
                 "time": {
-                  "exact": "사건 사흘 전 밤 11시 47분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "사건 사흘 전 밤 11시 47분",
                   "period": "권한 변경 알림 직후"
@@ -4067,11 +4067,11 @@
                 "person": {
                   "exact": "강민재",
                   "neutral": "상대방",
-                  "fullName": "강민재",
+                  "fullName": "민재 씨",
                   "judgeRef": "민재 씨"
                 },
                 "time": {
-                  "exact": "사건 사흘 전 밤 11시 47분",
+                  "exact": "그 시점",
                   "neutral": "그 시점",
                   "dateExact": "사건 사흘 전 밤 11시 47분",
                   "period": "권한 변경 알림 직후"
@@ -4131,7 +4131,7 @@
                 "person": {
                   "exact": "강민재",
                   "neutral": "상대방",
-                  "fullName": "강민재",
+                  "fullName": "강 씨",
                   "judgeRef": "민재 씨"
                 },
                 "time": {
@@ -4173,7 +4173,7 @@
                 "person": {
                   "exact": "강민재",
                   "neutral": "상대방",
-                  "fullName": "강민재",
+                  "fullName": "강 씨",
                   "judgeRef": "민재 씨"
                 },
                 "time": {
@@ -4661,11 +4661,11 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "소담 씨",
                   "judgeRef": "소담 씨"
                 },
                 "file": {
-                  "exact": "1분 12초 m4a 파일",
+                  "exact": "해당 오디오 파일",
                   "neutral": "해당 오디오 파일"
                 },
                 "quote": {
@@ -4677,13 +4677,13 @@
                   "neutral": "다른 문장"
                 },
                 "date1": {
-                  "exact": "7월 8일",
+                  "exact": "첫 녹음일",
                   "neutral": "첫 녹음일",
                   "dateExact": "7월 8일",
                   "period": "거실 소음 불평이 나온 날"
                 },
                 "date2": {
-                  "exact": "7월 11일",
+                  "exact": "둘째 녹음일",
                   "neutral": "둘째 녹음일",
                   "dateExact": "7월 11일",
                   "period": "백업 드라이브 문제를 말한 날"
@@ -4709,11 +4709,11 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "소담 씨",
                   "judgeRef": "소담 씨"
                 },
                 "file": {
-                  "exact": "1분 12초 m4a 파일",
+                  "exact": "해당 오디오 파일",
                   "neutral": "해당 오디오 파일"
                 },
                 "quote": {
@@ -4725,13 +4725,13 @@
                   "neutral": "다른 문장"
                 },
                 "date1": {
-                  "exact": "7월 8일",
+                  "exact": "첫 녹음일",
                   "neutral": "첫 녹음일",
                   "dateExact": "7월 8일",
                   "period": "거실 소음 불평이 나온 날"
                 },
                 "date2": {
-                  "exact": "7월 11일",
+                  "exact": "둘째 녹음일",
                   "neutral": "둘째 녹음일",
                   "dateExact": "7월 11일",
                   "period": "백업 드라이브 문제를 말한 날"
@@ -4780,7 +4780,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "이 씨",
                   "judgeRef": "소담 씨"
                 },
                 "file": {
@@ -4830,7 +4830,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대방",
-                  "fullName": "이소담",
+                  "fullName": "이 씨",
                   "judgeRef": "소담 씨"
                 },
                 "file": {
@@ -5374,7 +5374,7 @@
                 "person": {
                   "exact": "오한결",
                   "neutral": "보조편집자",
-                  "fullName": "오한결",
+                  "fullName": "오한결 씨",
                   "judgeRef": "오한결 씨"
                 },
                 "file": {
@@ -5386,13 +5386,13 @@
                   "neutral": "그 지시"
                 },
                 "date1": {
-                  "exact": "7월 8일",
+                  "exact": "첫 원본 날짜",
                   "neutral": "첫 원본 날짜",
                   "dateExact": "7월 8일",
                   "period": "첫 번째 원본 녹음일"
                 },
                 "date2": {
-                  "exact": "7월 11일",
+                  "exact": "두 번째 원본 날짜",
                   "neutral": "두 번째 원본 날짜",
                   "dateExact": "7월 11일",
                   "period": "두 번째 원본 녹음일"
@@ -5419,7 +5419,7 @@
                 "person": {
                   "exact": "오한결",
                   "neutral": "보조편집자",
-                  "fullName": "오한결",
+                  "fullName": "오한결 씨",
                   "judgeRef": "오한결 씨"
                 },
                 "file": {
@@ -5431,13 +5431,13 @@
                   "neutral": "그 지시"
                 },
                 "date1": {
-                  "exact": "7월 8일",
+                  "exact": "첫 원본 날짜",
                   "neutral": "첫 원본 날짜",
                   "dateExact": "7월 8일",
                   "period": "첫 번째 원본 녹음일"
                 },
                 "date2": {
-                  "exact": "7월 11일",
+                  "exact": "두 번째 원본 날짜",
                   "neutral": "두 번째 원본 날짜",
                   "dateExact": "7월 11일",
                   "period": "두 번째 원본 녹음일"
@@ -5485,7 +5485,7 @@
                 "person": {
                   "exact": "오한결",
                   "neutral": "보조편집자",
-                  "fullName": "오한결",
+                  "fullName": "오 씨",
                   "judgeRef": "오한결 씨"
                 },
                 "file": {
@@ -5529,7 +5529,7 @@
                 "person": {
                   "exact": "오한결",
                   "neutral": "보조편집자",
-                  "fullName": "오한결",
+                  "fullName": "오 씨",
                   "judgeRef": "오한결 씨"
                 },
                 "file": {
@@ -6033,19 +6033,19 @@
               ],
               "slots": {
                 "time1": {
-                  "exact": "14시 15분",
+                  "exact": "첫 화상 일정",
                   "neutral": "첫 화상 일정",
                   "dateExact": "사건 당일 14시 15분",
                   "period": "소담 화상심사 시간"
                 },
                 "time2": {
-                  "exact": "14시 30분",
+                  "exact": "두 번째 화상 일정",
                   "neutral": "두 번째 화상 일정",
                   "dateExact": "사건 당일 14시 30분",
                   "period": "민재 클라이언트 리뷰 시간"
                 },
                 "net": {
-                  "exact": "13시 41분 장애 접수",
+                  "exact": "그날 회선 장애",
                   "neutral": "그날 회선 장애",
                   "dateExact": "사건 당일 13시 41분",
                   "period": "거실 회선 품질 저하 접수"
@@ -6078,19 +6078,19 @@
               ],
               "slots": {
                 "time1": {
-                  "exact": "14시 15분",
+                  "exact": "첫 화상 일정",
                   "neutral": "첫 화상 일정",
                   "dateExact": "사건 당일 14시 15분",
                   "period": "소담 화상심사 시간"
                 },
                 "time2": {
-                  "exact": "14시 30분",
+                  "exact": "두 번째 화상 일정",
                   "neutral": "두 번째 화상 일정",
                   "dateExact": "사건 당일 14시 30분",
                   "period": "민재 클라이언트 리뷰 시간"
                 },
                 "net": {
-                  "exact": "13시 41분 장애 접수",
+                  "exact": "그날 회선 장애",
                   "neutral": "그날 회선 장애",
                   "dateExact": "사건 당일 13시 41분",
                   "period": "거실 회선 품질 저하 접수"
