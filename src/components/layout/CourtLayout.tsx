@@ -82,7 +82,7 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
           <div
             onClick={(e) => e.stopPropagation()}
             className="absolute top-0 left-0 right-0 z-30 bg-gray-900/98 backdrop-blur-sm border-b border-gray-700/50 rounded-b-xl shadow-xl shadow-black/30 animate-fade-in"
-            style={{ height: 280, display: 'flex', flexDirection: 'column' }}
+            style={{ maxHeight: 'min(280px, 40vh)', display: 'flex', flexDirection: 'column' }}
           >
             <div className="flex px-3 gap-1 py-2 shrink-0">
               {([

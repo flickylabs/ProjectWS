@@ -105,7 +105,7 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
     return (
       <div
         style={{
-          position: 'fixed', inset: 0, zIndex: 100,
+          position: 'fixed', inset: 0, zIndex: 50,
           background: 'rgba(0,0,0,0.5)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}
@@ -116,6 +116,7 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
             background: '#FFFDF5', borderRadius: 20, width: '90%', maxWidth: 440,
             boxShadow: '0 12px 40px rgba(61,51,40,0.25)',
             overflow: 'hidden', position: 'relative',
+            maxHeight: '90vh', display: 'flex', flexDirection: 'column',
           }}
           onClick={e => e.stopPropagation()}
         >
@@ -172,7 +173,7 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
 
   return (
     <div style={{
-      position: 'fixed', inset: 0, zIndex: 100,
+      position: 'fixed', inset: 0, zIndex: 50,
       background: 'rgba(0,0,0,0.5)',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
     }} onClick={handleClose}>
@@ -181,6 +182,7 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
           background: '#FFFDF5', borderRadius: 20, width: '90%', maxWidth: 440,
           boxShadow: '0 12px 40px rgba(61,51,40,0.25)',
           overflow: 'hidden', position: 'relative',
+          maxHeight: '90vh', display: 'flex', flexDirection: 'column',
           transform: `translateX(${swipeOffset * 0.3}px)`,
           transition: swiping ? 'none' : 'transform 0.3s ease',
         }}
@@ -210,7 +212,7 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
         </div>
 
         {/* 카드 본문 */}
-        <div style={{ padding: '20px 24px' }}>
+        <div style={{ padding: '20px 24px', overflowY: 'auto', flex: 1 }}>
           <div style={{ fontSize: '0.78rem', color: '#A89E90', marginBottom: 6 }}>
             {new Date(current.created_at).toLocaleDateString('ko-KR')}
           </div>

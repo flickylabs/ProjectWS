@@ -27,7 +27,7 @@ const TUTORIAL_STEPS: TutorialStep[] = [
     title: '심문 시작',
     message: '하단에서 대상(민준/서연)을 선택하고, 질문 유형과 쟁점을 골라 질문하세요. 비활성화된 선택지는 현재 의미 없는 조합입니다.',
     icon: '🔍',
-    position: 'bottom',
+    position: 'center',
   },
   {
     phase: GamePhase.Phase4_Evidence,
@@ -119,7 +119,7 @@ export default function Tutorial() {
 
   return (
     <div
-      className={`fixed inset-0 z-30 bg-gray-950/70 flex justify-center px-6 ${positionClass}`}
+      className={`fixed inset-0 z-50 bg-gray-950/70 flex justify-center px-6 ${positionClass}`}
       onClick={handleDismiss}
     >
       <div

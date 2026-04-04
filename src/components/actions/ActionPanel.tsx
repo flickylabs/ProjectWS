@@ -386,7 +386,7 @@ export default function ActionPanel() {
     <div className="relative">
       {/* 슬라이드업 콘텐츠 패널 — 독 위에 앵커 */}
       {(hasToast || (hasAdvanceConfirm && !hasToast)) && (
-        <div className="absolute bottom-full left-0 right-0 mb-0.5 z-40">
+        <div className="absolute bottom-full left-0 right-0 mb-0.5 z-[45]">
           {(() => { const t = TINT_STYLE[activeTab!] ?? { border: 'border-gray-700/30', glow: 'shadow-black/20' }; return (
           <div className={`glass-surface ${t.border} border rounded-t-2xl max-h-[50vh] overflow-y-auto animate-slide-up shadow-lg ${t.glow} inner-glow-subtle`}>
             {/* 드래그 힌트 + 닫기 */}

@@ -113,8 +113,8 @@ export default function HistoryPanel({ onClose }: Props) {
         const tabs = ['score', 'result', 'aftermath'] as const
         const tabLabels = { score: '점수', result: '판결 결과', aftermath: '후일담' }
         return (
-          <div className="fixed inset-0 z-50 bg-gray-950/95 flex flex-col max-w-lg mx-auto"
-            style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
+          <div className="fixed inset-0 z-50 bg-gray-950/95 flex flex-col overflow-hidden max-w-lg mx-auto"
+            style={{ paddingTop: 'max(env(safe-area-inset-top), 8px)', paddingBottom: 'max(env(safe-area-inset-bottom), 8px)' }}>
             <div className="flex items-center justify-between px-4 py-3 border-b border-gray-800">
               <button onClick={() => setSelectedIdx(null)} className="text-gray-400 text-sm">← 목록</button>
               <span className="text-xs text-gray-400">{h.nameA} vs {h.nameB}</span>

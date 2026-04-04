@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import Emoji from './Emoji'
 
 interface ToastMessage {
@@ -67,7 +68,7 @@ export default function ToastContainer() {
   return (
     <>
       {/* 일반 토스트 — 화면 중앙 */}
-      {toasts.length > 0 && (
+      {toasts.length > 0 && createPortal(
         <div className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none px-6">
           <div className="flex flex-col gap-2 w-full max-w-xs">
             {toasts.map((t) => {
@@ -91,11 +92,12 @@ export default function ToastContainer() {
               )
             })}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* LLM 에러 배너 — 자연스러운 에러 메시지 + 신고 버튼 */}
-      {errorBanner && (
+      {errorBanner && createPortal(
         <div className="fixed inset-0 z-[9998] flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="bg-gray-900 border border-gray-700/50 rounded-2xl p-5 w-[320px] shadow-2xl text-center space-y-4">
             <div className="text-2xl">📡</div>
@@ -121,7 +123,8 @@ export default function ToastContainer() {
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   )
