@@ -13,6 +13,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 import type { LieState } from '../../types'
 import { getMeterHudModel, type MeterDisplayMode } from '../../engine/meterStagingV2'
 
@@ -121,7 +122,7 @@ export function StateTransitionToast() {
             onClick={() => dismiss(event.id)}
           >
             <div className="flex items-center gap-2">
-              <span className="text-base">{config.icon}</span>
+              <Emoji char={config.icon} size={18} />
               <span className={`text-xs font-bold ${config.textClass}`}>{config.text}</span>
               <span className="text-[11px] text-gray-400">{event.message}</span>
             </div>
@@ -187,7 +188,7 @@ export function QuestionMeterHUD({ party }: { party: 'a' | 'b' }) {
         <div className="fixed inset-0 z-[9999] bg-gray-950/80 backdrop-blur-sm flex items-center justify-center px-5" onClick={() => setShowInfo(null)}>
           <div className="bg-gray-900 border border-gray-700/60 rounded-2xl p-5 w-full max-w-sm animate-scale-in shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="text-center mb-3">
-              <span className="text-3xl">{info.icon}</span>
+              <Emoji char={info.icon} size={32} />
             </div>
             <h3 className="text-base font-bold text-gray-100 text-center mb-2">{info.title}</h3>
             <p className="text-sm text-gray-300 text-center whitespace-pre-line leading-relaxed mb-4">{info.desc}</p>

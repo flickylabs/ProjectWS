@@ -4,6 +4,7 @@
  */
 
 import { useEffect, useState } from 'react'
+import Emoji from '../common/Emoji'
 
 export type EvidenceResultType = 'hold' | 'crack' | 'collapse'
 
@@ -67,7 +68,7 @@ export default function EvidenceResultToast({ result, evidenceName, onDone }: Pr
         result === 'collapse' ? 'animate-shake' : result === 'crack' ? 'animate-scale-in' : ''
       }`}>
         <div className="flex items-center gap-2">
-          <span className="text-lg">{cfg.icon}</span>
+          <Emoji char={cfg.icon} size={20} />
           <div>
             <div className={`text-sm font-bold ${cfg.color}`}>{cfg.label}</div>
             <div className="text-[11px] text-gray-400">{cfg.description}</div>

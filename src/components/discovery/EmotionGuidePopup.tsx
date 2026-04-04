@@ -2,6 +2,7 @@
  * 감정 안내 팝업 — 감정 아이콘 클릭 시 감정 상태별 설명 표시
  */
 import { EMOTION_TIER_CONFIG, getEmotionTier } from '../../engine/discoveryEngine'
+import Emoji from '../common/Emoji'
 import type { EmotionTier } from '../../types'
 
 interface Props {
@@ -29,7 +30,7 @@ export default function EmotionGuidePopup({ partyName, emotionValue, onClose }: 
         {/* Header */}
         <div className="flex items-center justify-between px-4 pt-4 pb-2 border-b border-gray-800">
           <div className="flex items-center gap-2">
-            <span className="text-lg">{TIER_STYLES[currentTier.tier].icon}</span>
+            <Emoji char={TIER_STYLES[currentTier.tier].icon} size={20} />
             <h2 className="text-sm font-bold text-gray-200">{partyName} 감정 상태</h2>
           </div>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-300 active:scale-95">✕</button>
@@ -78,7 +79,7 @@ export default function EmotionGuidePopup({ partyName, emotionValue, onClose }: 
                 }`}
               >
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-sm">{style.icon}</span>
+                  <Emoji char={style.icon} size={16} />
                   <span className={`text-xs font-bold ${isCurrent ? style.text : 'text-gray-500'}`}>
                     {tier.label} ({tier.min}~{tier.max})
                   </span>

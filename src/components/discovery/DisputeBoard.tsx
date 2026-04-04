@@ -15,6 +15,7 @@ import type { CaseData, PartyId } from '../../types'
 import type { LieState } from '../../types'
 import type { DisputeDepthLayer } from '../../types'
 import { QuestionMeterHUD } from './StateTransitionFeedback'
+import Emoji from '../common/Emoji'
 import { getDisputeV2, getActiveLayer, getBeatRuntimeState, hasStructureV2 } from '../../engine/v2DataLoader'
 import { getMisconceptionState } from '../../engine/misconceptionEngine'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
@@ -362,7 +363,7 @@ function DepthLayerDisplay({ disputeId, caseData, aState }: {
                 isUnlocked ? style.activeClass : style.lockedClass
               } ${isCurrent ? 'ring-1 ring-white/20' : ''}`}
             >
-              <span className="text-sm shrink-0">{isUnlocked ? style.icon : '🔒'}</span>
+              <span className="shrink-0"><Emoji char={isUnlocked ? style.icon : '🔒'} size={16} /></span>
               <div className="min-w-0">
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px] font-bold">{layer.label}</span>

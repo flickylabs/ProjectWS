@@ -2,6 +2,7 @@
  * 숨겨진 쟁점 발현 모달 — 새로운 쟁점이 드러났을 때
  */
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 const ROUTE_LABELS: Record<string, { icon: string; label: string }> = {
   evidence: { icon: '📄', label: '증거를 통해 발견' },
@@ -28,10 +29,10 @@ export default function DisputeEmergenceModal() {
       >
         {/* Header — 극적 연출 */}
         <div className="px-5 pt-6 pb-3 text-center">
-          <div className="text-3xl mb-2 animate-shake">💡</div>
+          <div className="mb-2 animate-shake"><Emoji char="💡" size={32} /></div>
           <h2 className="text-lg font-bold text-amber-400">새로운 쟁점이 드러났습니다</h2>
           <div className="flex items-center justify-center gap-1.5 mt-2">
-            <span className="text-xs">{routeInfo.icon}</span>
+            <Emoji char={routeInfo.icon} size={14} />
             <span className="text-xs text-gray-500">{routeInfo.label}</span>
           </div>
         </div>

@@ -280,7 +280,7 @@ function EmotionGuideContent({ emotionValue, emotionPhase }: { emotionValue: num
           return (
             <div key={tier.tier} className={`rounded-xl border p-3 transition-all ${tier.border} ${isCurrent ? `${tier.bg} ring-1 ring-white/10` : 'bg-gray-800/20 opacity-50'}`}>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-sm">{tier.icon}</span>
+                <Emoji char={tier.icon} size={14} />
                 <span className={`text-xs font-bold ${isCurrent ? tier.text : 'text-gray-500'}`}>{tier.label} ({tier.min}~{tier.max})</span>
                 {isCurrent && <span className="text-[10px] bg-white/10 text-white/70 px-1.5 py-0.5 rounded-full">현재</span>}
               </div>

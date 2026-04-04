@@ -568,9 +568,9 @@ function SkillPanel({ target, disputes, resources, canUseSkill, onObj, onSkill, 
   const [analyzing, setAnalyzing] = useState(false)
 
   const items = [
-    { id:'obj', label:'이의 제기', icon:'❗', desc:'전체 쟁점 압박', cost:'⚡1', type:'obj' as const, nd:false },
-    { id:'sep', label:'분리 심문', icon:'🚪', desc:'3턴간 1:1 환경', cost:'🔍1', type:'trust' as const, tt:'separation' as TrustActionType, nd:false },
-    { id:'imm', label:'즉답 요구', icon:'⚡', desc:'특정 쟁점 즉시 붕괴', cost:'⚡1', type:'skill' as const, st:'immediate_answer' as SkillType, nd:true },
+    { id:'obj', label:'이의 제기', icon:'❗', desc:'전체 쟁점 압박', costIcon:'⚡', costNum:'1', type:'obj' as const, nd:false },
+    { id:'sep', label:'분리 심문', icon:'🚪', desc:'3턴간 1:1 환경', costIcon:'🔍', costNum:'1', type:'trust' as const, tt:'separation' as TrustActionType, nd:false },
+    { id:'imm', label:'즉답 요구', icon:'⚡', desc:'특정 쟁점 즉시 붕괴', costIcon:'⚡', costNum:'1', type:'skill' as const, st:'immediate_answer' as SkillType, nd:true },
   ]
 
   const isPhase5 = phaseAtLeast(currentPhase, GamePhase.Phase5_ReExamination)
@@ -615,14 +615,14 @@ function SkillPanel({ target, disputes, resources, canUseSkill, onObj, onSkill, 
               : ok ? 'border-gray-700 bg-gray-800/60 hover:border-amber-600 text-gray-300'
               : 'border-gray-800/30 bg-gray-900/30 text-gray-600 opacity-50'
             }`}>
-            <span className="text-base">{unlocked ? it.icon : '🔒'}</span>
+            <Emoji char={unlocked ? it.icon : '🔒'} size={18} />
             <div className="flex-1">
               <div className="text-xs font-semibold">{it.label}</div>
               <div className="text-xs text-gray-500">
                 {unlocked ? it.desc : '증거 심리 단계에서 해금'}
               </div>
             </div>
-            {unlocked && <span className="text-xs text-gray-500">{it.cost}</span>}
+            {unlocked && <span className="text-xs text-gray-500 flex items-center gap-0.5"><Emoji char={it.costIcon} size={12} />{it.costNum}</span>}
           </button>
           {exp===it.id&&it.nd&&unlocked&&(<div className="flex flex-wrap gap-1 mt-1 ml-8">{disputes.map(d=>(<button key={d.id} onClick={()=>{if(it.st)onSkill(it.st,d.id);setExp(null)}} className="text-xs px-2 py-0.5 rounded bg-gray-700 hover:bg-amber-700 text-gray-300 hover:text-white">{d.name}</button>))}</div>)}
         </div>)
@@ -639,12 +639,12 @@ function SkillPanel({ target, disputes, resources, canUseSkill, onObj, onSkill, 
             : 'border-gray-800/30 bg-gray-900/30 text-gray-600 opacity-50'
           }`}
         >
-          <span className="text-base">{analyzing ? '⏳' : '📋'}</span>
+          <Emoji char={analyzing ? '⏳' : '📋'} size={18} />
           <div className="flex-1">
             <div className="text-xs font-semibold">{analyzing ? 'AI 분석 중...' : '진술 분석'}</div>
             <div className="text-xs text-gray-500">AI가 전체 진술을 정리 · 모순 탐지</div>
           </div>
-          <span className="text-xs text-gray-500">🔍1</span>
+          <span className="text-xs text-gray-500 flex items-center gap-0.5"><Emoji char="🔍" size={12} />1</span>
         </button>
       )}
     </div>

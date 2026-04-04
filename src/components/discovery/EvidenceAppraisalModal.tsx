@@ -3,6 +3,7 @@
  */
 import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 import type { AppraisalVerdict, PartialTrustDetail } from '../../types/discovery'
 import type { EvidenceNode } from '../../types'
 
@@ -62,7 +63,7 @@ export default function EvidenceAppraisalModal({ evidenceId, onClose }: Props) {
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b border-gray-800">
           <div className="flex items-center gap-2">
-            <span className="text-xl">🔍</span>
+            <Emoji char="🔍" size={22} />
             <h2 className="text-base font-bold text-cyan-400">증거 감별</h2>
           </div>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-300 text-lg active:scale-95">✕</button>
@@ -113,7 +114,7 @@ export default function EvidenceAppraisalModal({ evidenceId, onClose }: Props) {
                 className={`w-full text-left rounded-xl border p-3 transition-all active:scale-[0.98] ${borderColor} ${bgColor} hover:bg-gray-800/60`}
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-sm">{opt.icon}</span>
+                  <Emoji char={opt.icon} size={16} />
                   <span className={`text-sm font-medium ${isSelected ? 'text-gray-200' : 'text-gray-400'}`}>
                     {opt.label}
                   </span>

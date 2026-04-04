@@ -366,19 +366,19 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
             <div className="flex items-center gap-2 mt-0.5">
               {/* 감별 상태에 따른 신뢰도 표시 */}
               {appraisal ? (
-                <span className={`text-xs ${
+                <span className={`text-xs flex items-center gap-0.5 ${
                   appraisal.verdict === 'trustworthy' ? 'text-emerald-400/80' :
                   appraisal.verdict === 'suspicious' ? 'text-red-400/80' :
                   appraisal.verdict === 'partial' ? 'text-amber-400/80' :
                   'text-gray-500'
                 }`}>
-                  {appraisal.verdict === 'trustworthy' ? '✅ 신뢰' :
-                   appraisal.verdict === 'suspicious' ? '❌ 의심' :
-                   appraisal.verdict === 'partial' ? '⚠️ 부분 신뢰' : '미감별'}
+                  {appraisal.verdict === 'trustworthy' ? <><Emoji char="✅" size={12} /> 신뢰</> :
+                   appraisal.verdict === 'suspicious' ? <><Emoji char="❌" size={12} /> 의심</> :
+                   appraisal.verdict === 'partial' ? <><Emoji char="⚠️" size={12} /> 부분 신뢰</> : '미감별'}
                 </span>
               ) : (
-                <span className="text-xs text-gray-600">
-                  {investigatedCount >= 2 ? '🔍 감별 가능' : '미감별'}
+                <span className="text-xs text-gray-600 flex items-center gap-0.5">
+                  {investigatedCount >= 2 ? <><Emoji char="🔍" size={12} /> 감별 가능</> : '미감별'}
                 </span>
               )}
               {/* 조사 진행도 */}
@@ -458,9 +458,9 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
                 appraisal.verdict === 'suspicious' ? 'text-red-400/80 bg-red-950/20' :
                 'text-amber-400/80 bg-amber-950/20'
               }`}>
-                {appraisal.verdict === 'trustworthy' ? '✅ 신뢰 판정' :
-                 appraisal.verdict === 'suspicious' ? '❌ 의심 판정' :
-                 '⚠️ 부분 신뢰'}
+                {appraisal.verdict === 'trustworthy' ? <><Emoji char="✅" size={12} /> 신뢰 판정</> :
+                 appraisal.verdict === 'suspicious' ? <><Emoji char="❌" size={12} /> 의심 판정</> :
+                 <><Emoji char="⚠️" size={12} /> 부분 신뢰</>}
               </div>
             )}
             {canPresent && onPresent && !showPresent && (

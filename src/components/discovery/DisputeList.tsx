@@ -3,6 +3,7 @@
  * 기존 QuestionSelector의 쟁점 선택을 대체/확장하는 컴포넌트
  */
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 import type { PartyId } from '../../types'
 import type { DisputeVisibility, TruthJudgment } from '../../types/discovery'
 
@@ -78,7 +79,7 @@ export default function DisputeList({ target, selectedDisputeId, onSelect, readO
               <div className="flex items-center gap-2 flex-1 min-w-0">
                 {/* 판단 아이콘 */}
                 {judgment && (
-                  <span className="text-xs flex-shrink-0">{JUDGMENT_ICONS[judgment.judgment]}</span>
+                  <span className="flex-shrink-0"><Emoji char={JUDGMENT_ICONS[judgment.judgment]} size={14} /></span>
                 )}
 
                 {/* 쟁점명 */}

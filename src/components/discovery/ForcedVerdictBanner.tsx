@@ -6,6 +6,7 @@
 
 import { useGameStore } from '../../store/useGameStore'
 import { getReadinessHint } from '../../engine/meterStagingV2'
+import Emoji from '../common/Emoji'
 
 export default function ForcedVerdictBanner() {
   const verdictMode = useGameStore((s) => s.verdictMode)
@@ -17,7 +18,7 @@ export default function ForcedVerdictBanner() {
     return (
       <div className="bg-red-950/40 border border-red-700/40 rounded-xl px-3 py-2 mx-3 mb-2 animate-fade-in">
         <div className="flex items-start gap-2">
-          <span className="text-sm mt-0.5">⚠️</span>
+          <span className="mt-0.5"><Emoji char="⚠️" size={16} /></span>
           <div>
             <p className="text-xs font-semibold text-red-400">불충분 심리</p>
             <p className="text-[11px] text-gray-400 mt-0.5">
@@ -53,7 +54,7 @@ export default function ForcedVerdictBanner() {
   return (
     <div className={`${bgMap[hint.highlight]} border rounded-xl px-3 py-2 mx-3 mb-2`}>
       <div className="flex items-start gap-2">
-        <span className="text-sm mt-0.5">{iconMap[hint.highlight]}</span>
+        <span className="mt-0.5"><Emoji char={iconMap[hint.highlight]} size={16} /></span>
         <div>
           <p className={`text-xs font-semibold ${textMap[hint.highlight]}`}>{hint.label}</p>
           <p className="text-[11px] text-gray-400 mt-0.5">{hint.detail}</p>

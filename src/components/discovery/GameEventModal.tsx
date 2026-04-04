@@ -8,6 +8,7 @@
  */
 
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 import type { GameEventTrigger } from '../../engine/gameEventTriggerEngine'
 import {
   getContradictionEvent,
@@ -29,7 +30,7 @@ export default function GameEventModal() {
         <div className="bg-gray-900 border border-gray-700/60 rounded-2xl w-full max-w-sm overflow-hidden animate-fade-in shadow-2xl">
           <div className="p-4">
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-lg">{pendingV2.severity === 'major' ? '💥' : '💬'}</span>
+              <Emoji char={pendingV2.severity === 'major' ? '💥' : '💬'} size={20} />
               <h3 className="text-sm font-bold text-gray-200">{interruptorName}의 끼어들기</h3>
             </div>
             <p className="text-sm text-gray-300 leading-relaxed mb-4">{pendingV2.line}</p>
@@ -332,7 +333,7 @@ function EventHeader({ icon, title, severity, color }: {
   return (
     <div className={`bg-gradient-to-b ${colorMap[color]} border-b px-4 py-3`}>
       <div className="flex items-center gap-2">
-        <span className="text-lg">{icon}</span>
+        <Emoji char={icon} size={20} />
         <span className={`text-sm font-bold ${colorMap[color].split(' ').pop()}`}>{title}</span>
         {severity !== 'minor' && (
           <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-600/30 text-red-400 font-bold ml-auto">

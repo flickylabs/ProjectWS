@@ -294,7 +294,7 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
               className="flex-1 py-2.5 rounded-xl text-sm bg-gray-800 text-gray-400 active:scale-95">아니요</button>
             <button onClick={handleUnlockSummary} disabled={globalSkill < 3}
               className="flex-1 py-2.5 rounded-xl text-sm font-bold bg-amber-600 text-gray-950 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed">
-              활성화 (⚡3)
+              활성화 (<Emoji char="⚡" size={12} />3)
             </button>
           </div>
           {globalSkill < 3 && (
@@ -442,7 +442,7 @@ function ScoreRow({ icon, label, value, weight }: { icon: string; label: string;
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <span className="text-sm">{icon}</span>
+        <Emoji char={icon} size={14} />
         <span className="text-xs text-gray-400">{label}</span>
       </div>
       <div className="flex items-center gap-2">

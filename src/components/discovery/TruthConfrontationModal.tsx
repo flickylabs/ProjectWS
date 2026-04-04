@@ -3,6 +3,7 @@
  */
 import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 import type { TruthJudgment } from '../../types/discovery'
 
 const JUDGMENT_OPTIONS: { value: TruthJudgment; label: string; icon: string; desc: string }[] = [
@@ -41,7 +42,7 @@ export default function TruthConfrontationModal() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b border-gray-800">
           <div className="flex items-center gap-2">
-            <span className="text-xl">⚖️</span>
+            <Emoji char="⚖️" size={22} />
             <h2 className="text-base font-bold text-amber-400">진실 공방</h2>
           </div>
           <button onClick={handleSkip} className="text-gray-500 hover:text-gray-300 text-lg active:scale-95">✕</button>
@@ -58,7 +59,7 @@ export default function TruthConfrontationModal() {
           {/* A 주장 */}
           <div className="bg-blue-950/30 border border-blue-800/40 rounded-xl p-3">
             <div className="flex items-center gap-1.5 mb-1.5">
-              <span className="text-xs">🔵</span>
+              <Emoji char="🔵" size={14} />
               <span className="text-xs font-medium text-blue-400">{partyAName}의 주장</span>
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">{event.claimA.summary}</p>
@@ -72,7 +73,7 @@ export default function TruthConfrontationModal() {
           {/* B 주장 */}
           <div className="bg-rose-950/30 border border-rose-800/40 rounded-xl p-3">
             <div className="flex items-center gap-1.5 mb-1.5">
-              <span className="text-xs">🔴</span>
+              <Emoji char="🔴" size={14} />
               <span className="text-xs font-medium text-rose-400">{partyBName}의 주장</span>
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">{event.claimB.summary}</p>
@@ -93,7 +94,7 @@ export default function TruthConfrontationModal() {
               }`}
             >
               <div className="flex items-center gap-2">
-                <span className="text-sm">{opt.icon}</span>
+                <Emoji char={opt.icon} size={16} />
                 <span className={`text-sm font-medium ${selected === opt.value ? 'text-amber-300' : 'text-gray-300'}`}>
                   {opt.label.replace('A', partyAName).replace('B', partyBName)}
                 </span>

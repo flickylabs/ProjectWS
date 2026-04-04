@@ -406,15 +406,15 @@ function MinigameOverlay() {
           <div className="w-full max-w-xs space-y-3">
             <button onClick={() => setChosenMethod('minigame')}
               className="w-full py-3.5 rounded-2xl text-sm font-bold bg-amber-600 text-gray-950 active:scale-95">
-              🎮 {miniLabel} 미니게임
+              <Emoji char="🎮" size={16} /> {miniLabel} 미니게임
             </button>
             <button onClick={() => { setChosenMethod(null); handleWatchAd() }}
               className="w-full py-3.5 rounded-2xl text-sm font-medium bg-gray-800 text-gray-300 border border-gray-700 active:scale-95">
-              📺 광고 보기
+              <Emoji char="📺" size={16} /> 광고 보기
             </button>
             <button onClick={() => { setChosenMethod(null); handleSuccess() }}
               className="w-full py-3.5 rounded-2xl text-sm font-medium bg-gray-800 text-gray-300 border border-gray-700 active:scale-95">
-              🔍 조사 토큰 사용 (즉시)
+              <Emoji char="🔍" size={16} /> 조사 토큰 사용 (즉시)
             </button>
             <button onClick={() => clearMg(null)}
               className="w-full py-2 text-xs text-gray-600">
