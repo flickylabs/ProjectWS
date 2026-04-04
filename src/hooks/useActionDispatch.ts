@@ -1364,9 +1364,10 @@ JSON만 출력:
     if (match) {
       const parsed = JSON.parse(match[0])
       const { enforceHonorifics } = await import('../engine/llmDialogueResolver')
+      const { fixPostpositions } = await import('../engine/koreanPostposition')
 
-      // 1. 재판관에게 하는 말 (존댓말 강제)
-      const judgeMsg = enforceHonorifics(parsed.toJudge ?? parsed.response ?? '')
+      // 1. 재판관에게 하는 말 (존댓말 강제 + 조사 교정)
+      const judgeMsg = fixPostpositions(enforceHonorifics(parsed.toJudge ?? parsed.response ?? ''))
       if (judgeMsg) {
         state.addDialogue({
           speaker: ij.party,

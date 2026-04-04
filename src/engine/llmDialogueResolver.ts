@@ -9,6 +9,7 @@ import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded, getContextFlags } from '../api/agentManager'
 import { getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
+import { pp이가, pp은는, pp을를, fixPostpositions } from './koreanPostposition'
 import { resolveDialogue as fallbackResolve, type ResolvedDialogue } from './dialogueResolver'
 import type { PlayerAction, PartyId, DialogueNode, AgentState } from '../types'
 import { GamePhase } from '../types'
@@ -601,7 +602,9 @@ function buildSystemPrompt(
 
   // 말투 가이드 (짧은 버전)
   const opponentName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
-  const speechGuideCommon = `\n\n★ 호칭 사용 규칙 (최우선):\n- 재판관에게 상대를 언급할 때: "${judgeRef}"로 지칭 (예: "${judgeRef}이(가) ~했습니다", "${judgeRef}은(는) ~")\n  ✅ "${judgeRef}이 그렇게 했습니다" / "${judgeRef}은 ~라고 주장하지만"\n  ❌ "${callForm}" 또는 애칭으로 재판관에게 말하기 ("자기가~", "여보가~" 등 절대 금지)\n- 상대에게 직접 말할 때: "${callForm}"으로 호칭 (예: "${callForm}, ~했잖아")\n\n★ 인용 시 높임법 규칙:\n- 재판관에게 말할 때 상대의 말/행동을 언급하면, 상대를 높이지 않는다.\n  ✅ "${judgeRef}이(가) ~했다고 하지만" / "~한다고 하지만"\n  ❌ "${judgeRef}이(가) ~하셨지만" (상대를 높이는 것은 잘못)\n- 재판관에게 보고하는 전체 문장은 존댓말로 끝낸다 (~습니다, ~있습니다).\n\n★ 연속 발언 시 대상 전환 규칙:\n- 재판관에게 말한 뒤 이어서 상대에게 직접 말하려면, 반드시 호칭("${callForm}", "${angryCall}" 등)으로 시작하여 대상이 바뀌었음을 명확히 한다.\n  ✅ "책임이 있습니다. ${callForm}, 약속을 지키는 게 그렇게 어려웠어?"\n  ❌ "책임이 있습니다. 약속을 지키는 게 그렇게 어려웠어?" (누구에게 하는 말인지 불명확)\n`
+  const judgeRefGa = pp이가(judgeRef)
+  const judgeRefNeun = pp은는(judgeRef)
+  const speechGuideCommon = `\n\n★ 호칭 사용 규칙 (최우선):\n- 재판관에게 상대를 언급할 때: "${judgeRef}"로 지칭\n  ✅ "${judgeRef}${judgeRefGa} 그렇게 했습니다" / "${judgeRef}${judgeRefNeun} ~라고 주장하지만"\n  ❌ "${callForm}" 또는 애칭으로 재판관에게 말하기 ("자기가~", "여보가~" 등 절대 금지)\n- 상대에게 직접 말할 때: "${callForm}"으로 호칭 (예: "${callForm}, ~했잖아")\n\n★ 인용 시 높임법 규칙:\n- 재판관에게 말할 때 상대의 말/행동을 언급하면, 상대를 높이지 않는다.\n  ✅ "${judgeRef}${judgeRefGa} ~했다고 하지만" / "~한다고 하지만"\n  ❌ "${judgeRef}${judgeRefGa} ~하셨지만" (상대를 높이는 것은 잘못)\n- 재판관에게 보고하는 전체 문장은 존댓말로 끝낸다 (~습니다, ~있습니다).\n\n★ 연속 발언 시 대상 전환 규칙:\n- 재판관에게 말한 뒤 이어서 상대에게 직접 말하려면, 반드시 호칭("${callForm}", "${angryCall}" 등)으로 시작하여 대상이 바뀌었음을 명확히 한다.\n  ✅ "책임이 있습니다. ${callForm}, 약속을 지키는 게 그렇게 어려웠어?"\n  ❌ "책임이 있습니다. 약속을 지키는 게 그렇게 어려웠어?" (누구에게 하는 말인지 불명확)\n`
   const speechGuideShort = canInformalThis
     ? `\n말투 규칙 (최우선 — 위반 시 출력 무효):\n★ 재판관에게는 어떤 상황에서도 반드시 존댓말만 사용 (~습니다, ~요, ~입니다). 반말 절대 금지.\n- 상대에게: 반말만 사용 (~야, ~잖아, ~거야, ~했어)\n- 절대 금지: "~냐?", "~냐고?", "~했냐?", "~것이냐?" → 대신 "~야?", "~한 거야?", "~했어?" 사용\n- 문장 끝에 "~다"로 끝나는 평서문 금지 → "~야", "~거야", "~잖아"로 마무리${speechGuideCommon}`
     : `\n말투 규칙 (최우선 — 위반 시 출력 무효):\n★ 재판관에게는 어떤 상황에서도 반드시 존댓말만 사용 (~습니다, ~요, ~입니다). 반말 절대 금지.\n- 상대에게: 존댓말 (~요, ~습니다, ~했습니다)\n- 절대 금지: "~냐?", "~냐고?", "~했냐?" → 대신 "~요?", "~습니까?" 사용\n- 감정이 격해진 경우에만 상대에게 반말 전환 허용 (재판관에게는 불가)${speechGuideCommon}`
@@ -715,12 +718,12 @@ function buildUserPrompt(
   const callFormOut = myCallTerms?.toPartner ? (myCallTerms.toPartner === '자기' ? '자기야' : myCallTerms.toPartner) : opName + '씨'
 
   const isJudgeOnly = responseMode === 'answer_only' || responseMode === 'private_confession' || responseMode === 'yes_no_first'
-  const honorificRule = `\n★★ 호칭 규칙 (절대 위반 금지):\n- 재판관에게 ${opName}을(를) 언급할 때: 반드시 "${judgeRefOut}"로 지칭\n  ✅ "${judgeRefOut}이 그렇게 했습니다", "${judgeRefOut}도 알고 있었습니다"\n  ❌ "${callFormOut}가~", "${callFormOut}도~" (애칭을 재판관 앞에서 쓰지 마라)\n- ${opName}에게 직접 말할 때만: "${callFormOut}" 사용 가능\n`
+  const honorificRule = `\n★★ 호칭 규칙 (절대 위반 금지):\n- 재판관에게 ${opName}${pp을를(opName)} 언급할 때: 반드시 "${judgeRefOut}"로 지칭\n  ✅ "${judgeRefOut}${pp이가(judgeRefOut)} 그렇게 했습니다", "${judgeRefOut}${pp은는(judgeRefOut)} 알고 있었습니다"\n  ❌ "${callFormOut}가~", "${callFormOut}도~" (애칭을 재판관 앞에서 쓰지 마라)\n- ${opName}에게 직접 말할 때만: "${callFormOut}" 사용 가능\n`
   const addressRule = isJudgeOnly
     ? `★ 당신은 "${myName}"이다. 지금 재판관에게만 답한다. ${opName}에게 말하는 것이 아니다.\n★ 상대 호칭("${callFormOut}" 등)으로 시작 금지. 호칭 없이 바로 답하거나 "재판관님"으로 시작.\n★ npcResponse 전체가 재판관을 향한 존댓말(~습니다, ~요)이어야 한다.\n★ "${opName}"에게 직접 말하는 문장을 넣지 마라.\n${honorificRule}`
     : `★ 당신은 "${myName}"이다. 재판관에게 답한 뒤, ${opName}에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.\n★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.\n${honorificRule}`
 
-  const judgeGenRule = `\n★ judgeQuestion 필드 규칙 (최우선):\n- judgeQuestion은 "재판관"이 "${myName}" 씨에게 묻는 질문이다.\n- 재판관은 제3자 시점의 권위적 심문관이다. 절대로 NPC가 아니다.\n- "${myName} 씨, ~" 로 시작하거나 바로 질문으로 시작한다.\n- ❌ 절대 금지: "재판관님"으로 시작하는 문장. judgeQuestion은 재판관 본인이 말하는 것이므로 자기 자신을 "재판관님"이라 부르지 않는다.\n- ❌ 절대 금지: NPC 입장에서 쓴 문장 (존댓말로 보고하는 톤, "저는~", "제가~" 등)\n- ✅ 올바른 예: "${myName} 씨, ~에 대해 설명해 주십시오", "왜 ~하신 겁니까?", "~한 사실을 인정하십니까?"\n- 재판관 어투: 격식체, 간결, 권위 있는 톤 (~주십시오, ~입니까, ~하셨습니까)\n- "${disputeName}" 쟁점에 대해 질문 유형에 맞는 자연스러운 질문을 만든다.\n- 쟁점명을 그대로 인용하지 말고, 맥락에 맞게 풀어서 질문한다.\n`
+  const judgeGenRule = `\n★ judgeQuestion 필드 규칙 (최우선):\n- judgeQuestion은 "재판관"이 "${myName}" 씨에게 묻는 질문이다.\n- 재판관은 제3자 시점의 권위적 심문관이다. 절대로 NPC가 아니다.\n- "${myName} 씨, ~" 로 시작하거나 바로 질문으로 시작한다.\n- 상대방을 언급할 때: 반드시 "${opName} 씨"로 지칭. (예: "${opName} 씨가 ~", "${opName} 씨에게 ~")\n- ❌ 절대 금지: "재판관님"으로 시작하는 문장. judgeQuestion은 재판관 본인이 말하는 것이므로 자기 자신을 "재판관님"이라 부르지 않는다.\n- ❌ 절대 금지: NPC 입장에서 쓴 문장 (존댓말로 보고하는 톤, "저는~", "제가~" 등)\n- ❌ 절대 금지: 당사자 관점 호칭 사용 ("제 아내", "제 남편", "제 아들", "우리 엄마" 등). 재판관은 3인칭 시점이므로 "${opName} 씨"만 사용.\n- ✅ 올바른 예: "${myName} 씨, ~에 대해 설명해 주십시오", "왜 ~하신 겁니까?", "${opName} 씨가 ~한 사실을 인정하십니까?"\n- 재판관 어투: 격식체, 간결, 권위 있는 톤 (~주십시오, ~입니까, ~하셨습니까)\n- "${disputeName}" 쟁점에 대해 질문 유형에 맞는 자연스러운 질문을 만든다.\n- 쟁점명을 그대로 인용하지 말고, 맥락에 맞게 풀어서 질문한다.\n`
 
   // ── 심문 (fact_pursuit / motive_search / empathy_approach) ──
   if (action.type === 'question') {
@@ -920,7 +923,7 @@ function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string
     // 후처리: 재판관에게 반말 → 존댓말 강제 변환 + 호칭 오용 수정
     const storeCaseData = useGameStore.getState().caseData
     const partyNames = { nameA: storeCaseData?.duo?.partyA?.name ?? 'A', nameB: storeCaseData?.duo?.partyB?.name ?? 'B' }
-    const polished = enforceHonorifics(fixMisdirectedAddress(text, partyNames))
+    const polished = fixPostpositions(enforceHonorifics(fixMisdirectedAddress(text, partyNames)))
 
     return {
       npcNode: {
@@ -1565,7 +1568,7 @@ async function tryBlueprintPath(
     if (!rawText || rawText.length < 5) throw new Error('Blueprint response too short')
     // 호칭 post-process (재판관 앞 애칭 → judgeRef 치환 + 이름 호칭 교정)
     const bpPartyNames = { nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name }
-    const text = enforceHonorifics(fixMisdirectedAddress(rawText, bpPartyNames))
+    const text = fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawText, bpPartyNames)))
 
     // 재판관 질문 추가
     const { shouldSkipJudgeQuestion } = await import('../hooks/useActionDispatch')

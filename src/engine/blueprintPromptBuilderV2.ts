@@ -16,6 +16,7 @@ import type { CaseData, PartyId } from '../types'
 import type { Archetype } from '../types'
 import type { LieState } from '../types/agent'
 import { getMyCall, getJudgeReference, getAngryCall, canUseInformal } from './llmSpeechGuide'
+import { pp이가, pp은는, pp을를 } from './koreanPostposition'
 
 /**
  * V2 시스템 프롬프트 생성
@@ -122,12 +123,16 @@ ${getTruthThrottle(lieState)}
 ${suppressionLabels}
 ${forbiddenLabels}
 
-## 호칭
-- 재판관: 존댓말 (~습니다, ~요)
-- 상대 언급(재판관에게): "${judgeRef}" (예: "${judgeRef}이 그렇게 했습니다")
-- 상대에게 직접: "${callForm}" / 화나면: "${angryCall}"
+## 호칭 (절대 규칙)
+- 당신은 ${profile.name}입니다. 1인칭("저", "제가")으로 말합니다.
+- 재판관에게 말할 때: 존댓말 (합니다체)
+- 상대방을 재판관에게 언급할 때: "${judgeRef}" 사용
+  ✅ "${judgeRef}${pp이가(judgeRef)} 그랬습니다", "${judgeRef}${pp은는(judgeRef)} 그 자리에 없었습니다", "${judgeRef}에게 말했습니다"
+  ❌ "${callForm}" 사용 금지 (재판관에게 애칭 불가)
+- 상대방에게 직접 말할 때: "${callForm}" 사용
+- 화났을 때: "${angryCall}" 허용
 - ${formalityGuide}
-- ❌ 재판관에게 말할 때 상대 애칭("${callForm}") 사용 금지
+- ❌ 재판관의 말을 생성하지 마. 당신은 ${profile.name}만 연기합니다.
 ${recentStr ? `\n## 최근 대화\n${recentStr}` : ''}
 
 ## 출력

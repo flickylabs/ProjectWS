@@ -9,6 +9,7 @@ import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 import { enforceHonorifics, fixMisdirectedAddress } from './llmDialogueResolver'
+import { fixPostpositions } from './koreanPostposition'
 import { buildSpeechGuide, getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
 import { eunneun } from '../utils/korean'
 import type { CaseData, PartyId, QuestionType } from '../types'
@@ -308,7 +309,7 @@ function parseResponderResponse(raw: string): { response: string; behaviorHint: 
     const behaviorMatch = responseText.match(/[（(]([^)）]+)[)）]/)
     const behaviorHint = parsed.behaviorHint || (behaviorMatch ? behaviorMatch[1] : '')
     const rawResponse = responseText.replace(/[（(][^)）]+[)）]/g, '').trim()
-    const response = enforceHonorifics(fixMisdirectedAddress(rawResponse))
+    const response = fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawResponse)))
 
     return { response: response || '...', behaviorHint }
   } catch {
