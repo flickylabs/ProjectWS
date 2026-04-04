@@ -918,7 +918,8 @@ function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string
     if (!text || text.length < 3) return fallback
 
     // 후처리: 재판관에게 반말 → 존댓말 강제 변환 + 호칭 오용 수정
-    const partyNames = { nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name }
+    const storeCaseData = useGameStore.getState().caseData
+    const partyNames = { nameA: storeCaseData?.duo?.partyA?.name ?? 'A', nameB: storeCaseData?.duo?.partyB?.name ?? 'B' }
     const polished = enforceHonorifics(fixMisdirectedAddress(text, partyNames))
 
     return {

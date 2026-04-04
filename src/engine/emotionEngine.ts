@@ -30,6 +30,20 @@ const BEHAVIOR_HINTS: Record<Archetype, Record<EmotionalPhase, string>> = {
     angry: '어조가 날카로워지고, 상대의 논리를 공격한다.',
     resigned: '짧은 단답형으로 바뀌고, 더 이상 반박하지 않는다.',
   },
+  affect_flattening: {
+    defensive: '무표정하게 사실만 나열한다. 감정어를 거의 쓰지 않는다.',
+    confident: '단조로운 어조로 담담하게 설명한다.',
+    shaken: '평소보다 더 짧아지고, 침묵이 길어진다.',
+    angry: '표정은 변하지 않지만 목소리가 미세하게 떨린다.',
+    resigned: '아무런 감정 없이 고개만 끄덕인다.',
+  },
+  premature_summary: {
+    defensive: '"결론부터 말씀드리면"으로 시작하며 빠르게 정리하려 한다.',
+    confident: '"정리하면 이렇습니다"라며 자신감 있게 요약한다.',
+    shaken: '정리하려다 말이 꼬이기 시작한다.',
+    angry: '"그래서 결국 뭘 원하시는 겁니까"라며 조급해한다.',
+    resigned: '"더 드릴 말씀이 없습니다"로 대화를 끊으려 한다.',
+  },
 }
 
 const PHASE_THRESHOLDS: { phase: EmotionalPhase; min: number }[] = [

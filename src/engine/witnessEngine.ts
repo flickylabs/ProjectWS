@@ -188,7 +188,7 @@ function buildDepthInstruction(depth: TestimonyDepth): string {
 
 /** 증인의 slot 문자열을 WitnessSlot 타입으로 정규화 */
 function normalizeWitnessSlot(witness: ThirdParty): WitnessSlot {
-  const raw = (witness as any).slot ?? witness.witnessProfile?.role ?? ''
+  const raw = (witness as any).slot ?? (witness.witnessProfile as any)?.role ?? ''
   if (raw === 'institutional' || raw === 'colleague' || raw === 'family' || raw === 'friend') return raw
   // 관계 기반 추론
   if (witness.relationTo && witness.witnessProfile?.relationToA?.includes('가족')) return 'family'

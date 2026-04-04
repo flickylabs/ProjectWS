@@ -29,8 +29,8 @@ export default function DossierCardPanel({ target, onQuestionAsked, onDispatchDo
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
 
   const caseData = useGameStore(s => s.caseData)
-  const lieConfigA = useGameStore(s => s.lieConfigA)
-  const lieConfigB = useGameStore(s => s.lieConfigB)
+  const lieConfigA = useGameStore(s => s.lieConfigsA)
+  const lieConfigB = useGameStore(s => s.lieConfigsB)
   if (!caseData) return null
 
   const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
@@ -115,7 +115,7 @@ function DossierQuestionList({ caseKey, dossierId, target, partyName, lieStates,
   partyName: string
   lieStates: Record<string, LieState>
   onQuestionAsked: () => void
-  onDispatchDossier?: (evidenceId: string, target: PartyId) => void
+  onDispatchDossier?: (evidenceId: string, target: PartyId, context: string) => void
 }) {
   const questions = getAvailableDossierQuestions(caseKey, dossierId, target, lieStates)
   const lockedQuestions = getLockedDossierQuestions(caseKey, dossierId, target, lieStates)

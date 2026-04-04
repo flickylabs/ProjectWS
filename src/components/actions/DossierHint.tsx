@@ -34,8 +34,8 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
   const [popupOpen, setPopupOpen] = useState(false)
 
   // lie state 맵 구성
-  const lieConfigA = useGameStore(s => s.lieConfigA)
-  const lieConfigB = useGameStore(s => s.lieConfigB)
+  const lieConfigA = useGameStore(s => s.lieConfigsA)
+  const lieConfigB = useGameStore(s => s.lieConfigsB)
 
   const lieStates: Record<string, LieState> = useMemo(() => {
     const config = target === 'a' ? lieConfigA : target === 'b' ? lieConfigB : null

@@ -57,7 +57,7 @@ export default function FreeQuestionInput({ target, onResult }: Props) {
         // structure-v2의 disputeAliases에서 alias map 구축
         const aliasMap = buildDisputeAliasMap(structure.disputes as Array<{ id: string; name?: string; disputeAliases?: string[] }>)
 
-        const targetParty = target === 'a' ? caseData.parties.a : caseData.parties.b
+        const targetParty = target === 'a' ? caseData.duo.partyA : caseData.duo.partyB
         const v2Result = processFreeQuestionV2({
           question: text.trim(),
           activeDisputeId: focusDisputeId,

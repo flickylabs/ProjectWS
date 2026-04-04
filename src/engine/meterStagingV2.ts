@@ -37,7 +37,7 @@ export interface MeterPresentation {
   subLabel: string
 }
 
-export type DossierUnlockReason = 'first_crack' | 'contradiction_2' | 'trust_40' | 'turn_6'
+export type DossierUnlockReason = 'first_crack' | 'contradiction_2' | 'trust_40' | 'turn_6' | 'lie_s2_contradiction_3' | 'lie_s2_turn_8' | 'turn_10_safety'
 
 export interface DossierUnlockResult {
   unlocked: boolean
