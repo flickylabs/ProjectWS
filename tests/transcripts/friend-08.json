@@ -1,13 +1,16 @@
 {
   "caseId": "friend-08",
   "category": "friend",
+  "isMonetary": false,
   "partyA": {
     "name": "조은비",
-    "archetype": "victim_cosplay"
+    "archetype": "victim_cosplay",
+    "tell": "rescue_stack"
   },
   "partyB": {
     "name": "김준혁",
-    "archetype": "cold_logic"
+    "archetype": "cold_logic",
+    "tell": "log_drop"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "조은비 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 시점에 팀원 표기를 늦게 붙인 건 맞습니다. 다만 그걸 고의적인 삭제처럼 말하는 건 과해요.",
-      "behaviorHint": "한숨을 내쉬며 살짝 고개를 돌린다.",
+      "npcResponse": "아닙니다. 그건 제가 일부 캡션에서 제 이름을 강조한 것뿐이었습니다. 팀원 표기를 처음에 못 넣은 건 맞습니다만, 고의적인 건 아니었습니다.",
+      "behaviorHint": "조금 긴장된 듯한 표정으로 손을 마주 잡고 있다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,10 +61,16 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "조은비 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "마감 막판에 너무 급해서 팀원 표기를 늦게 붙인 건 맞습니다. 고의적인 삭제는 아니었어요.",
-      "behaviorHint": "고개를 약간 숙이며 피곤한 표정을 짓는다",
+      "npcResponse": "팀원 표기를 늦게 붙인 건 맞지만, 그걸 고의적인 삭제처럼 말하는 건 과해요. 마감 막판에 일이 급해서 그런 실수가 나왔던 겁니다.",
+      "behaviorHint": "살짝 고개를 숙이며 방어적인 자세를 취한다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
       "error": null
     },
     {
@@ -74,10 +83,16 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "조은비 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 그때는 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서 조용히 있었습니다.",
-      "behaviorHint": "약간 주저하며, 고개를 살짝 숙인 뒤 경직된 자세로 말한다.",
+      "npcResponse": "솔직히 그때는 너무 무서웠습니다. 제가 조금만 더 신중했어야 했는데, 제 친구에게 너무 큰 부담을 주게 될까봐 걱정했어요.",
+      "behaviorHint": "고개를 숙이며 고민하는 표정",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
       "error": null
     },
     {
@@ -90,8 +105,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "김준혁 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 제 기여가 멈춘 것이 아닙니다. 다만, 일부 동기화와 병합 문제로 발표 전날 밤에 예상보다 지연됐습니다.",
-      "behaviorHint": "눈을 살짝 좁히고 고개를 끄덕이며 확신을 보인다.",
+      "npcResponse": "아닙니다. 그건 발표가 멈출 정도로 영향이 크지는 않았습니다.",
+      "behaviorHint": "가볍게 고개를 흔든다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +120,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "조은비 씨, 이 카드뉴스와 포트폴리오 캡처에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 제 이름이 강조된 건 맞아요. 하지만 그 시점에 발표자 계정에서 일시적으로 그렇게 올라간 거고, 처음부터 완전히 개인 작품으로 하려는 의도는 없었습니다.",
-      "behaviorHint": "조금 당황한 듯 고개를 약간 숙이며 말한다.",
+      "judgeQuestion": "조은비 씨, 이 카드뉴스와 포트폴리오 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 카드뉴스와 포트폴리오가 제 이름으로 올라간 건 맞습니다. 하지만 그 시점에서 전체 맥락을 그렇게까지 바꾼 건 아니었어요.",
+      "behaviorHint": "당황하며 손끝을 만지작거린다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -121,9 +136,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "김준혁 씨, 이 제출 문서와 수정 이력를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 은비가 대표자로 입력된 것이 맞습니다. 그러나 역할 서술란이 비어 있는 것만 가지고 제 기여를 논할 수는 없습니다.",
-      "behaviorHint": "차가운 표정으로 문서를 바라보며 설명한다.",
+      "judgeQuestion": "김준혁 씨, 이 제출 문서와 수정 이력을 보시고 설명해 주십시오.",
+      "npcResponse": "그 문서에서 대표자 필드에 은비가 입력된 것은 맞습니다. 하지만 그걸로 제가 팀의 역할을 다하지 않았다고 단정할 수는 없습니다.",
+      "behaviorHint": "차분하게 서류를 가리키며 설명",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +153,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "조은비 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그 시점에 문구가 제 단독 성과처럼 읽힐 수 있었던 건 인정합니다. 다만 공모전 제출 자체는 팀으로 들어갔기 때문에, 대표 발표자로서 제 이름이 전면에 나왔던 겁니다.",
-      "behaviorHint": "단호하지만 살짝 조심스러운 태도로 설명",
+      "npcResponse": "그 시상 직후에 문구가 제 단독 성과처럼 읽히는 건 인정합니다. 하지만 제출 자체는 팀으로 한 거고, 제가 대표 발표자라 그 시점에 제 이름이 먼저 나왔던 겁니다.",
+      "behaviorHint": "조금 긴장하며, 말투는 차분하게 유지한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +169,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "조은비 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "마감 막판에 다급하게 작업을 마무리해야 했기 때문에 제 이름이 먼저 나오게 됐습니다. 팀으로 제출했지만 대표자 계정 관성 때문에 그렇게 된 거예요.",
-      "behaviorHint": "손을 무릎 위에 놓고 약간 피곤한 표정으로 말한다.",
+      "npcResponse": "마감 막판 바쁘게 작업하던 중이라 일단 제 계정으로 제출할 수밖에 없었습니다. 팀 이름을 나중에 수정할 생각이었습니다.",
+      "behaviorHint": "피곤한 표정으로 한숨을 쉬며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +185,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "김준혁 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 최종 리허설 일부를 놓친 건 맞습니다. 그래도 설문 구조와 프로토타입 작업의 핵심은 이미 마감 직전에 끝냈습니다.",
-      "behaviorHint": "냉정하게 고개를 끄덕이며 발언한다.",
+      "npcResponse": "네, 최종 리허설의 일부를 놓친 건 사실입니다. 그러나 설문 구조랑 프로토타입 핵심 작업은 이미 완료했습니다.",
+      "behaviorHint": "냉정하게 사실을 정리하는 태도",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +201,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "김준혁 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 마감 직전이라 너무 불안했습니다. 제 친구가 대표 발표자였고, 제 기술팀 작업이 설문 구조와 프로토타입에 핵심적이라는 걸 증명해야 했으니까요.",
-      "behaviorHint": "눈을 잠시 감고 심호흡하며 차분하게 말한다.",
+      "npcResponse": "사실은 마지막 리허설 일부를 놓쳤던 게 가장 힘들었습니다. 그 순간에 제가 말하면 상황이 더 복잡해질까봐 걱정이었어요.",
+      "behaviorHint": "살짝 눈을 피하며 솔직하게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +216,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "조은비 씨, 이 코드 저장소와 공유드라이브 수정 로그에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 로그는 맞아요. 하지만 그걸 보면 오히려, 그 시점의 밤샘 상황에서 제가 대표 발표자로서 빠르게 행동할 수밖에 없었던 부분도 보일 겁니다.",
-      "behaviorHint": "당황한 듯 손을 만지작거린다.",
+      "judgeQuestion": "조은비 씨, 이 코드 저장소와 공유드라이브 수정 로그를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "이 로그는 맞습니다만, 제 친구의 기여를 간과했다는 것은 아닙니다. 그 시점에서 일 처리가 급해 먼저 올린 것일 뿐입니다.",
+      "behaviorHint": "살짝 고개를 끄덕이며 당황한 듯한 표정을 짓는다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +233,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "조은비 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "네, 그 시점에 제가 발표물을 끝까지 붙잡고 있었습니다. 마감 막판에 너무 압박을 받아서 포트폴리오 톤으로 올린 건데, 제 친구의 이름이 빠진 건 그때 상황에 대한 설명이 될 수 있습니다.",
-      "behaviorHint": "조금 떨리는 손으로 메모를 넘기며 단호하게 말한다.",
+      "npcResponse": "그 시점에서는 준혁이가 비워서 제가 발표물을 끝까지 정리한 건 맞습니다. 급한 상황이라 포트폴리오 톤으로 올렸던 건데, 잘못된 표현이라는 건 알고 있었어요.",
+      "behaviorHint": "약간 긴장된 표정으로 손을 무릎에 올린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +249,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "조은비 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "준혁이가 리허설이랑 자료 정리 비운 밤에 발표물을 끝까지 붙잡고 있었던 건 사실입니다. 그 시점에 포트폴리오 톤으로 먼저 올린 건데, 그게 단순 실수였다고만 보긴 어려울 겁니다.",
-      "behaviorHint": "조용히 한숨을 쉬며, 손으로 이마를 누르는 제스처.",
+      "npcResponse": "준혁이가 리허설을 비운 밤에 제가 발표 작업을 계속하기로 했던 건 사실입니다. 그 압박 때문에 결과물을 포트폴리오 톤으로 먼저 올릴 수밖에 없었습니다.",
+      "behaviorHint": "고개를 약간 숙이며 억울한 표정으로 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +265,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "김준혁 씨, 다시 정리해 주십시오.",
-      "npcResponse": "아닙니다. 그건 제 지각 하나로만 몰아가는 건 부당합니다. 한 사람을 업로드 단일 책임자로 정하지도 않았고, 발표 자료랑 기술 파일이 섞이면서 마지막 손넘김이 꼬였어요.",
-      "behaviorHint": "차가운 눈빛으로 상대의 실수를 지적",
+      "npcResponse": "아닙니다. 그건 제 지각만의 문제가 아닙니다. 발표 자료와 기술 파일이 혼합되어 마지막에 혼란이 생겼습니다.",
+      "behaviorHint": "고개를 살짝 흔들며, 단호한 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -266,10 +281,16 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "김준혁 씨, 공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 제 친구가 대표 발표자로 나섰고, 심사위원은 초기 화면에서 대표자 이름을 먼저 보았을 것입니다.",
-      "behaviorHint": "냉정을 유지하며 사실을 차분하게 설명한다.",
+      "npcResponse": "아닙니다. 그건 오해입니다. 적어도 심사위원도 대표자 이름이랑 발표 화면을 먼저 봤을 거예요.",
+      "behaviorHint": "한쪽 입가를 살짝 올리며 냉정하게 답변한다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
       "error": null
     },
     {
@@ -282,8 +303,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "조은비 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 그 시점에 제 밤샘이 모두 무효가 될까 봐 너무 무서웠습니다. 제 친구가 알아주길 바랐지만, 남의 것처럼 비춰질까 두려웠습니다.",
-      "behaviorHint": "말할 때 손을 살짝 떨며 감정의 부담감을 표현한다.",
+      "npcResponse": "솔직히 그 시점에서는 제 밤샘이 쓸모없게 될까 봐 정말 불안했습니다. 남의 걸 빼앗았다는 말이 두려우면서도, 동시에 제가 버틴 시간이 인정받기를 바랐습니다.",
+      "behaviorHint": "목소리가 약간 떨리며 조심스럽게 심정을 털어놓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +319,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "조은비 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 시상 직후에 카드뉴스와 포트폴리오 초안에 제 이름과 '내 프로젝트'라는 표현을 넣었습니다. 김준혁 이름을 바로 넣지 않고 항의가 온 뒤에야 팀 표기로 바꾼 건 제 공을 더 크게 보이게 하려는 선택이었습니다. 제 잘못입니다.",
-      "behaviorHint": "약간 지친 표정으로 고개를 끄덕이며 설명한다.",
+      "npcResponse": "네, 제가 시상 직후 카드뉴스와 포트폴리오 초안에 제 이름과 '내 프로젝트'라는 표현을 그대로 두었습니다. 김준혁 친구 이름이 약 4시간 동안 빠진 상태였고, 항의 메시지를 받은 뒤에야 팀 표기로 수정했습니다. 이런 선택을 한 건 제 공이 더 크게 보이길 원했기 때문입니다. 지금은 그때 왜 그렇게 했는지 후회합니다.",
+      "behaviorHint": "작은 한숨을 쉬며 시선을 잠시 바닥으로 향한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,8 +335,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "김준혁 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그때는 혼란스러워서 제 기여가 중단된 걸 바로 인정하기 힘들었습니다. 최종 리허설 일부에 빠졌고, 그로 인해 자료 업로드가 지연된 것이 사실입니다. 조은비가 발표 직전에 다시 정리하게 만든 건 제 잘못입니다.",
-      "behaviorHint": "조금 후회하는 표정으로 고개를 숙임. 감정을 억누르려는 모습.",
+      "npcResponse": "네, 제가 최종 리허설 일부에 빠졌고 업로드도 지연됐습니다. 그 때문에 은비가 발표 직전 자료를 다시 정리한 게 맞아요. 그때는 솔직히 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서요.",
+      "behaviorHint": "차분하게 고개를 끄덕이며 인정하는 태도",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,11 +350,17 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "조은비 씨, 준혁의 기여는 아이디어 한 줄뿐이었다는 주장에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 사실과 좀 다릅니다. 기술 표현 몇 개랑 의견은 냈죠.",
-      "behaviorHint": "조금 굳은 표정으로 손을 꽉 쥔다.",
+      "judgeQuestion": "조은비 씨, 기여는 아이디어 한 줄뿐이었다는 주장에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 기술 표현 몇 개랑 의견은 냈죠. 그런데 최종본으로 굳힌 건 거의 제가 했어요.",
+      "behaviorHint": "억울한 표정을 짓고 한숨을 쉰다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
       "error": null
     },
     {
@@ -345,20 +372,20 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "김준혁 씨, 준혁의 기여는 아이디어 한 줄뿐이었다는 주장에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 사실이 아닙니다. 보이는 화면 외에도 로그로 남는 설계 작업도 제 기여에 포함됩니다.",
-      "behaviorHint": "침착한 태도로 재판관을 바라본다.",
+      "judgeQuestion": "김준혁 씨, 기여는 아이디어 한 줄뿐이었다는 주장에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 설계와 구조 작업에도 제 흔적이 남아 있습니다.",
+      "behaviorHint": "차분하게 고개를 끄덕이며 상대를 바라본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T12:51:59.954Z",
-  "finishedAt": "2026-04-05T12:53:24.349Z",
+  "startedAt": "2026-04-05T16:50:30.846Z",
+  "finishedAt": "2026-04-05T16:51:54.032Z",
   "summary": {
     "total": 20,
-    "passed": 20,
-    "warned": 0,
+    "passed": 16,
+    "warned": 4,
     "errors": 0,
     "skipped": 0
   }

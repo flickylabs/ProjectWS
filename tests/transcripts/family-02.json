@@ -1,13 +1,16 @@
 {
   "caseId": "family-02",
   "category": "family",
+  "isMonetary": false,
   "partyA": {
     "name": "정미옥",
-    "archetype": "confrontational"
+    "archetype": "confrontational",
+    "tell": "hierarchy_strike"
   },
   "partyB": {
     "name": "강선우",
-    "archetype": "avoidant"
+    "archetype": "avoidant",
+    "tell": "delay_buffer"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "정미옥 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 제가 확인했습니다. 다만, 제 아들이 왜 그걸 비밀로 했는지도 물어주셔야 하지 않겠습니까.",
-      "behaviorHint": "눈을 살짝 좁히며 상대방을 압박하듯이 쳐다본다.",
+      "npcResponse": "아닙니다. 그건 제 아들이 그 원칙을 어긴 거죠. 저는 그날 아침에야 알았습니다.",
+      "behaviorHint": "눈을 지그시 감고 아들의 쪽을 향해 고개를 살짝 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "정미옥 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "급한 일이 있었기 때문입니다. 미리 알리지 못한 건 제 책임입니다.",
-      "behaviorHint": "고개를 살짝 기울이며 방어적인 자세를 취한다.",
+      "npcResponse": "상황이 급해서 미리 말씀드리지 못했습니다. 그때는 그렇게 해야 한다고 판단했습니다.",
+      "behaviorHint": "조금은 방어적인 자세로, 손을 가슴에 모으고 살짝 고개를 든다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -74,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "정미옥 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히, 그때는 답답했습니다. 저 혼자서 모든 걸 덮어씌울까봐 불안했어요.",
-      "behaviorHint": "살짝 움츠러들며 눈을 떨구고, 작은 한숨을 내쉰다.",
+      "npcResponse": "솔직히 그때는 굉장히 혼란스러웠습니다. 제가 말하면 오히려 더 복잡해질 것 같아서 참았습니다.",
+      "behaviorHint": "약간 고개를 숙이며 눈을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강선우 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "그 부분은 저희 어머니 쪽에서 어떻게 전해 들은 건지는 모르겠습니다. 제가 직접 정보를 전하거나 그럴 위치는 아니었습니다.",
-      "behaviorHint": "두 손을 가볍게 펼치며 설명을 흐린다.",
+      "npcResponse": "아닙니다. 그 부분은 순서가 있어서, 제가 직접 뭔가를 보낸 건 아닙니다.",
+      "behaviorHint": "조심스럽게 눈을 피하며 말을 돌린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +108,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "정미옥 씨, 이 명절 식탁 음성 클립에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 음성만 들으면 선우가 단독으로 공장을 맡는 것처럼 들리겠죠. 하지만, 오히려 그 후에 어떤 대화가 오갔는지를 잘라버린 게 제 의문입니다.",
-      "behaviorHint": "상대의 시선을 피하지 않고, 잠시 미소를 지으며 자신감을 드러낸다.",
+      "judgeQuestion": "정미옥 씨, 이 명절 식탁 음성 클립을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 음성 클립, 아버지가 말한 건 사실입니다. 다만, 단독 승계 선언으로 해석하기엔 그 뒤에 나눈 대화가 더 중요했죠.",
+      "behaviorHint": "약간의 긴장감을 드러내며 고개를 살짝 흔든다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -122,8 +125,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "강선우 씨, 이 클라우드 공유기록과 가족 메시지를 보시고 설명해 주십시오.",
-      "npcResponse": "저희 어머니와 민지 간의 메시지에 나온 클라우드 기록은 확인합니다. 다만, 그걸 단순히 보고 제가 직접 의도를 갖고 보낸 것이라 단정 지을 수는 없습니다.",
-      "behaviorHint": "조심스럽게 설명하면서 눈을 내리깔고 생각하는 듯한 표정.",
+      "npcResponse": "그 기록 자체는 맞습니다. 다만 누가 어떤 과정을 통해서 그 소문을 퍼뜨렸는지는 분명히 알기 어렵습니다.",
+      "behaviorHint": "당황스럽지만 침착하게 설명하려는 태도로, 손을 모으고 가볍게 고개를 끄덕인다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "정미옥 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "클립이 제 아들 휴대폰에서 민지에게 넘어간 건 맞습니다. 그 아침에 일어났는데, 왜 가족 밖으로 보냈는지가 먼저입니다.",
-      "behaviorHint": "짧고 단호한 어조로 재판관을 바라보며 설명한다.",
+      "npcResponse": "죄송합니다, 대화를 준비할 수 없습니다.",
+      "behaviorHint": null,
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "정미옥 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "집안 문제로 상황이 급해졌습니다. 먼저 알리지 못한 건 제 실수입니다.",
-      "behaviorHint": "짧고 단호하게 말하며 재판관을 바라본다.",
+      "npcResponse": "아버지 건강 문제가 급했기 때문입니다. 본의 아니게 가족 자료가 섞여 전달된 건 제 잘못입니다.",
+      "behaviorHint": "약간의 죄책감을 담아 고개를 살짝 숙인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "강선우 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그 부분은 제가 먼저 움직인 건 맞습니다. 다만, 그게 바로 제 계정이 아닌 건, 또 다른 순서가 있어서 그렇습니다.",
-      "behaviorHint": "손끝을 맞대며 천천히 설명하는 듯한 제스처를 한다.",
+      "npcResponse": "그 부분은 제가 한 일이 아닙니다. 다만, 그건 저희 어머니와도 관련이 있을 수 있습니다.",
+      "behaviorHint": "조심스럽고 진지한 표정으로 재판관을 바라본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "강선우 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그때 중개업소 문의 메일이 나와 연결됐다는 오해가 가장 두려웠습니다. 제가 입을 열면 어떤 파장이 일어날지 몰라서, 감추고만 싶었어요.",
-      "behaviorHint": "긴장한 표정으로 눈을 잠시 피한다.",
+      "npcResponse": "솔직히 제가 말하면 일이 더 커질까봐 무서웠습니다. 그 순간의 압박감이 너무 컸습니다.",
+      "behaviorHint": "조심스럽게 말하며 약간 움츠러드는 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +204,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "정미옥 씨, 이 태블릿 접속 로그와 단톡 캡처에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 맞습니다. 다만 가족 밖으로 정보가 나갈 계기를 준 건 제 아들 선우입니다.",
-      "behaviorHint": "책상 위에 손을 짚고 당당하게 서 있는 자세",
+      "judgeQuestion": "정미옥 씨, 이 태블릿 접속 로그와 단톡 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 캡처는 제가 쓴 게 맞습니다. 그날 상황이 다급해서 대응이 필요했습니다.",
+      "behaviorHint": "재판관의 눈을 똑바로 응시하며 차분하게 이야기한다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "정미옥 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "네, 자료를 넘긴 건 맞습니다. 다만 그걸 새벽에 본 이유부터가 중요하지 않겠습니까.",
-      "behaviorHint": "상대방을 직시하며 손으로 테이블을 가볍게 두드린다.",
+      "npcResponse": "아닙니다. 그건 명절 다음 날 아침에 일어난 일입니다. 음성 클립만이 아니라 창고 등기와 자료까지 공유한 사람에겐 물어봐야 하지 않나요?",
+      "behaviorHint": "단호하게 상대의 잘못을 지적하며 도발적인 자세를 취한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +237,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "정미옥 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "선우가 민지에게만 맡겼다고 해도 원칙을 깬 첫 사람은 선우입니다. 그때 명절이었고 급한 상황이라 미리 설명하지 못한 건 제 잘못입니다.",
-      "behaviorHint": "의자를 뒤로 젖히며 상대방을 바라본다.",
+      "npcResponse": "제 아들이 민지에게만 일을 맡겼다고 해도, 원칙을 깬 첫 사람이라는 책임은 변하지 않습니다. 게다가 그 원칙을 만든 것도 저인데, 다른 선택의 여지가 없었겠습니까?",
+      "behaviorHint": "차분한 표정으로 손을 테이블 위에 올려놓고, 상대를 바라본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +253,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "강선우 씨, 다시 정리해 주십시오.",
-      "npcResponse": "제가 몰랐던 부분이 있었습니다. 그 일이 일어나고 나서야 알게 된 사실이 있었는데, 그건 시간이 지나면서 자연스럽게 드러났습니다.",
-      "behaviorHint": "조심스럽게 손을 모으며 설명한다.",
+      "npcResponse": "그날의 통화는 제가 알지 못했던 부분입니다. 제가 알게 된 건 그 직후였고, 그때 상황이 이미 진행 중이었습니다.",
+      "behaviorHint": "조심스럽게 상대방의 반응을 살피며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -265,9 +268,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "강선우 씨, 미옥의 며느리 태블릿 무단 열람과 친척 단톡 확산에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 저희 어머니가 그 기기를 우연히 보았던 것 같습니다. 확실한 건 없지만, 가족 단체방에 의심스러운 문구가 나타난 건 사실입니다.",
-      "behaviorHint": "조심스럽게 시선을 회피하며 말한다.",
+      "judgeQuestion": "강선우 씨, 며느리 태블릿 무단 열람과 친척 단톡 확산에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "저희 어머니가 가족 단체방에 내용을 올린 건 맞습니다. 그렇지만 그 기기를 일부러 열었는지 확실하진 않습니다.",
+      "behaviorHint": "신중하게 고개를 끄덕이며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +285,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "정미옥 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "사실은 너무 화가 났습니다. 제 아들이 그 원칙을 먼저 무너뜨렸다는 생각에 더 거칠어졌습니다.",
-      "behaviorHint": "얼굴에 짙은 감정이 드러나고, 손으로 책상을 살짝 치며 감정을 표현한다.",
+      "npcResponse": "솔직히 그날 아침에 자료를 보고 정말 당황했습니다. 제가 대표로서 지켜야 할 선을 제 아들이 먼저 넘어버렸다는 생각에 화가 났습니다.",
+      "behaviorHint": "눈을 떨구었다가 상대를 바라보며 고개를 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +301,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "정미옥 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 그날 새벽에 제 아들이 외부인에게 정보를 줬다는 건 사실입니다. 하지만 그게 전부는 아닙니다. 그 이후 민지 쪽에서 뭔가 다른 움직임이 있었던 것도 분명히 알게 됐습니다.",
-      "behaviorHint": "정면을 주시하며 약간의 긴장감을 드러낸다.",
+      "npcResponse": "네, 제가 선우에게 정보를 준 건 맞습니다. 명절 다음 날 오전 6시 42분이었죠. 미리 말하지 못한 건 제 판단 오류였습니다. 지금은 그로 인해 혼란이 커진 점에 대해 두려움을 느낍니다.",
+      "behaviorHint": "고개를 약간 숙이며 단호한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,8 +317,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "강선우 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "사실 그때는 상당한 금액이 얽혀 있어서, 아내가 중개업소와 연결될 때까지 지켜봐야만 했습니다. 제가 침묵하면서 오히려 불신을 키웠다는 점, 그 책임을 피할 수 없다는 걸 압니다. 돌이켜보면, 그 순간의 두려움이 더 큰 문제를 초래한 것 같습니다.",
-      "behaviorHint": "눈을 피하고 손을 떨며 솔직하게 말한다.",
+      "npcResponse": "솔직히 그때는 무서웠습니다. 제가 직접 보내고 이 일을 시작한 출발점이 저라는 걸 인정합니다. 아내를 보호하려다 보니 입을 닫게 된 측면이 있었습니다. 지금 생각해보면 그 선택이 더 큰 의심을 낳은 것 같아 후회가 큽니다.",
+      "behaviorHint": "고개를 약간 숙이며 진지한 표정으로 손을 가볍게 모은다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,9 +332,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "정미옥 씨, 가족 비밀 외부 비공유 원칙의 쌍방 파기에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 경계가 이미 내부에서 무너져 있었던 상황입니다. 제가 친척들에게 말한 건 단순히 확인 차원이었죠.",
-      "behaviorHint": "정면을 주시하며 단호하게 말한다.",
+      "judgeQuestion": "정미옥 씨, 가족 비밀 외부 비공유 쌍방 파기에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 상황을 오해한 겁니다. 저는 친척들과 확인 차원에서 말한 것이지, 외부로 유출한 건 아닙니다.",
+      "behaviorHint": "고개를 약간 들고, 자신감 있는 표정으로 상대를 바라본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -345,16 +348,16 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "강선우 씨, 가족 비밀 외부 비공유 원칙의 쌍방 파기에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 민지한테 자료를 보낸 건 맞습니다. 그런데 그건 단지 정리 부탁 때문이었고, 밖으로 퍼뜨릴 생각은 아니었습니다.",
-      "behaviorHint": "조심스럽게 고개를 끄덕이며 설명한다.",
+      "judgeQuestion": "강선우 씨, 가족 비밀 외부 비공유 쌍방 파기에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "제가 민지에게 내용을 넘긴 건 사실입니다. 하지만 그게 외부로 나갈 거라고는 생각하지 못했습니다.",
+      "behaviorHint": "약간 긴장한 표정으로 손을 가볍게 비빕니다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T12:26:28.107Z",
-  "finishedAt": "2026-04-05T12:27:46.992Z",
+  "startedAt": "2026-04-05T16:24:26.403Z",
+  "finishedAt": "2026-04-05T16:25:49.320Z",
   "summary": {
     "total": 20,
     "passed": 20,

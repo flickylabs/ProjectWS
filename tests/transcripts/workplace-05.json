@@ -1,13 +1,16 @@
 {
   "caseId": "workplace-05",
   "category": "workplace",
+  "isMonetary": false,
   "partyA": {
     "name": "오상혁",
-    "archetype": "cold_logic"
+    "archetype": "cold_logic",
+    "tell": "asset_reframe"
   },
   "partyB": {
     "name": "문가은",
-    "archetype": "victim_cosplay"
+    "archetype": "victim_cosplay",
+    "tell": "hurt_claim_loop"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "오상혁 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 문가은 씨와의 관련성은 확인했습니다. 다만 그건 팀 내에서 이미 공유된 자료였고, 개인적으로 단독 실행한 사안은 아닙니다.",
-      "behaviorHint": "침착하게 재판관을 바라보며 말한다.",
+      "npcResponse": "아닙니다. 그건 제 팀의 자산화된 안건으로 개인의 작업이라고 말할 수 없습니다.",
+      "behaviorHint": "고개를 약간 숙이고 침착하게 설명함",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "오상혁 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "그건 팀 자산화된 안건이라 개인 표기를 앞세울 사안이 아닙니다. 해당 발표에서 기획과 발표의 층위가 달랐기 때문입니다.",
-      "behaviorHint": "약간의 불편함을 드러내며 메모를 정리한다.",
+      "npcResponse": "그건 팀 자산화된 안건이라 개인 표기를 앞세울 사안이 아니며, 기획과 발표의 층위도 다릅니다. 제 판단이 부족했던 것 같습니다만, 당시의 결정은 어쩔 수 없었습니다.",
+      "behaviorHint": "차분하게 상대를 바라보며, 손을 살짝 모은다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -74,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "오상혁 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "사실은, 그 시점에서는 제 기여가 애매하게 처리될까 두려웠습니다. 제 의견이 묻힐까 걱정스러웠던 것이 솔직한 심정입니다.",
-      "behaviorHint": "눈을 잠시 아래로 향하며 조용히 말한다.",
+      "npcResponse": "사실은 그때 많이 불안했습니다. 제 발언이 상황을 더욱 악화시킬까 두려웠습니다.",
+      "behaviorHint": "약간 긴장한 듯한 표정으로 눈을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "문가은 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 저장 파일은 그날 이후에 봤습니다.",
-      "behaviorHint": "고개를 살짝 숙이고 떨리는 목소리로 답한다.",
+      "npcResponse": "아닙니다. 그건 제 실장이 저를 먼저 몰아서 남아 있던 권한으로 확인만 한 겁니다.",
+      "behaviorHint": "살짝 고개를 끄덕이며 억울한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +108,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "오상혁 씨, 이 킥오프 회의록과 슬라이드 이력에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 팀 전체가 공동으로 참여한 프로젝트의 기록입니다. 따라서, 개인의 기여를 따로 표기하기보다 팀 자산으로 보는 것이 더 적절합니다.",
-      "behaviorHint": "표정을 최대한 감정 없이 유지하며 침착하게 설명한다.",
+      "judgeQuestion": "오상혁 씨, 이 킥오프 회의록과 슬라이드 이력을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "회의록과 슬라이드 이력은 사실입니다. 다만 그 안건은 팀의 자산으로, 개인 표기를 따로 할 필요가 없었습니다.",
+      "behaviorHint": "약간 긴장한 듯, 손가락으로 종이를 두드린다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -121,9 +124,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "문가은 씨, 이 개인 노트 사진과 보드 캡처 묶음를 보시고 설명해 주십시오.",
-      "npcResponse": "그 노트와 캡처는 제가 썼던 부분이긴 합니다. 그런데 작성 시점이 불분명해서, 오상혁 씨가 먼저 제 권한을 문제삼았을 때 확인만 한 거예요.",
-      "behaviorHint": "캡처와 노트를 가리키며 침착하게 설명하다가 손을 허공으로 내리며 상황을 흐린다.",
+      "judgeQuestion": "문가은 씨, 이 개인 노트 사진과 보드 캡처 묶음을 보시고 설명해 주십시오.",
+      "npcResponse": "그 노트와 보드 캡처는 제 자료 맞습니다. 작성 시점이 불확실한데, 남아 있던 권한으로 확인만 한 겁니다.",
+      "behaviorHint": "한숨 쉬며 자료를 쳐다본다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "오상혁 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 문가은 씨가 고객회복 랩의 구조 초안을 정리한 건 맞습니다. 다만, 최종 발표는 발표 책임에 따라 정리된 것임을 밝힙니다.",
-      "behaviorHint": "서류를 차분하게 정리하며 상황을 설명한다.",
+      "npcResponse": "네, 문가은 씨가 고객회복 랩의 초안을 정리한 건 맞습니다. 다만 최종 발표에서는 발표 책임에 따라 구조를 정리했습니다.",
+      "behaviorHint": "냉정하게 정리된 자료를 참고하며 짧게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "오상혁 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "문가은 씨의 초안을 기반으로 정리한 건 맞습니다만, 발표 기준은 책임자가 최종적으로 정리하는 것이 원칙이었습니다. 그 시점에는 발표 책임 기준으로 표기할 수밖에 없었습니다.",
-      "behaviorHint": "정리된 표기를 설명하며 손짓을 한다.",
+      "npcResponse": "고객회복 랩의 구조 초안을 문가은 씨가 정리한 건 맞습니다만, 최종 브리핑 표기는 발표 책임 기준으로 정리했습니다. 그 시점에서는 발표 책임자가 명확해야 한다고 판단했기 때문입니다.",
+      "behaviorHint": "침착하게 종이에 적힌 내용을 정리하며.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "문가은 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "해당 폴더를 내려받은 건 맞습니다. 다만, 정식 이의 제기를 위해 그 14분 동안 확인한 것입니다.",
-      "behaviorHint": "약간의 한숨을 내쉬며 진지하게 설명한다",
+      "npcResponse": "그 폴더를 확인한 건 사실입니다. 이의 제기를 제대로 준비하려고 한 거였습니다.",
+      "behaviorHint": "차분히 자료를 들여다보며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "문가은 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히 그 14분 동안 모든 게 혼란스러웠습니다. 제가 말을 꺼내면 일이 더 커질 것 같아서 두려웠습니다.",
-      "behaviorHint": "손을 주머니에 넣고 고개를 숙이며 한숨을 쉰다.",
+      "npcResponse": "솔직히, 오상혁 씨의 태도가 정말 무서웠습니다. 그 자리에서 무슨 말을 하면 더 큰일이 날 것 같아서 침묵할 수밖에 없었습니다.",
+      "behaviorHint": "눈을 잠시 감고 고개를 숙인 뒤, 깊은 한숨을 쉰다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +204,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "오상혁 씨, 이 보안 폴더 다운로드 로그와 전송 기록에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 문가은 씨가 정리한 초안을 기반으로 했습니다만, 승진 브리핑 최종 표기는 발표 책임 기준으로 정리했습니다.",
-      "behaviorHint": "침착하고 차분한 표정으로 손을 가볍게 모은다.",
+      "judgeQuestion": "오상혁 씨, 이 보안 폴더 다운로드 로그와 전송 기록을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 가은 씨가 준비한 게 맞습니다. 그러나 최종 발표 준비는 발표 책임자 기준으로 진행했습니다.",
+      "behaviorHint": "차분하게 정리하는 모습을 보인다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "오상혁 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "네, 공동기획 문구는 제가 뺐습니다. 그런데 승진위원회용 브리핑은 팀장들이 정리하는 게 적절하다고 판단했습니다.",
-      "behaviorHint": "냉정한 표정으로 손을 살짝 들어 보이며 설명한다.",
+      "npcResponse": "네, 공동기획 문구를 제가 뺀 건 맞습니다. 다만, 승진위원회용 브리핑은 팀장 단위로 정리해야 한다고 판단했습니다.",
+      "behaviorHint": "차분한 표정으로 정확한 사실을 전달한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,10 +237,16 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "오상혁 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "공동기획 문구를 제가 뺀 건 맞습니다. 그러나 승진위원회용 브리핑은 팀장 단위로 정리해야 한다고 판단했기 때문입니다.",
-      "behaviorHint": "차가운 표정으로 논리적으로 설명한다.",
+      "npcResponse": "문가은 씨와 공동기획 문구를 제가 직접 뺀 건 사실입니다. 그러나 그 시점에서는 승진위원회용 브리핑을 팀장 중심으로 정리하는 게 더 효과적이라고 판단할 수밖에 없었습니다.",
+      "behaviorHint": "차분히 손을 모으고 설명하는 듯한 자세를 취한다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"공동기획 문구를 제가\""
+        }
+      ],
       "error": null
     },
     {
@@ -250,8 +259,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "문가은 씨, 다시 정리해 주십시오.",
-      "npcResponse": "네, 멘토방과 동료 두 명에게 링크를 보낸 건 사실입니다. 그래도 그보다는 제가 지워지는 걸 막으려던 의도가 컸습니다.",
-      "behaviorHint": "조금 긴장한 표정으로 두 손을 살짝 모읍니다.",
+      "npcResponse": "멘토방과 동료 둘에게 링크를 보낸 것도 맞습니다. 하지만 소문을 먼저 만든 것이 아니라, 저를 지우려는 흐름을 막으려던 거였습니다.",
+      "behaviorHint": "억울한 표정으로 살짝 고개를 숙인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -266,8 +275,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "문가은 씨, 고객회복 랩의 원출처 진위에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다, 그 자료는 제 것이 아닙니다. 이미 두 번이나 뺏긴 경험이 있어서, 이번엔 제가 만든 구조입니다.",
-      "behaviorHint": "한숨 섞인 말투로 부정하며 고개를 약간 끄덕이는 모습",
+      "npcResponse": "해당 자료를 참고한 건 맞습니다. 하지만 이번 안건의 구조는 제가 만든 겁니다.",
+      "behaviorHint": "조심스럽게 손가락을 맞물리며 시선을 피함",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +291,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "오상혁 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그때는 제가 무섭고 불안했습니다. 문가은 씨의 기여를 인정해야 했지만, 제 성과가 흐릿해질까 두려웠습니다.",
-      "behaviorHint": "긴장한 듯 손을 모으고 시선을 아래로 내린다.",
+      "npcResponse": "솔직히 그때는 아주 복잡한 기분이었습니다. 제가 그 발표에서 문가은 씨의 기여를 지운 건, 다급한 마음에서 나온 실수였습니다.",
+      "behaviorHint": "고개를 살짝 숙이며 부드러운 목소리로 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,10 +307,16 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "오상혁 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 공동기획 표기를 제가 삭제했습니다. 그 책임은 전적으로 제게 있으며, 문가은 씨의 기여를 가리려던 의도였습니다. 발표 전날 승진 브리핑에서 제 단독 성과처럼 보이고 싶었습니다.",
-      "behaviorHint": "고개를 약간 숙이며 침착하게 말한다.",
+      "npcResponse": "공동기획 표기를 삭제한 건 제가 했습니다. 문가은 씨의 기여를 감춘 건 명백한 제 잘못입니다. 그때 승진 브리핑 발표 전날이라 제가 혼자 성과를 부각하고 싶었습니다. 지금은 깊이 후회하고 있습니다.",
+      "behaviorHint": "고개를 약간 숙이며 정직하게 말한다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"문가은 씨의 기여를\""
+        }
+      ],
       "error": null
     },
     {
@@ -314,8 +329,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "문가은 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "사실 그 순간에는 너무 두려웠습니다. 제가 남은 권한으로 승진위원회 준비 폴더를 내려받고 사적 채널에 퍼뜨린 건 제 잘못이고, 제 책임입니다. 말하면 큰일이 날까 봐 숨겼지만, 이제는 다 털어놓겠습니다.",
-      "behaviorHint": "눈을 감고 숨을 깊게 내쉬며 솔직하게 말한다.",
+      "npcResponse": "솔직히 말씀드리겠습니다. 권한이 남아있던 그 14분 동안 승진위원회 준비 폴더를 내려받아 사적 채널에 퍼뜨렸어요. 이걸 숨긴 건 제 잘못입니다. 그때는 들킬까 봐 너무 무서웠습니다.",
+      "behaviorHint": "한숨을 쉬며 고개를 숙이며 솔직하게 답변한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,9 +344,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "오상혁 씨, 2년 전 출처 누락의 은폐와 반복에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 공식 기록에 반영되지 못한, 단지 정리 순서의 문제였습니다.",
-      "behaviorHint": "차분하게 논리적으로 설명한다.",
+      "judgeQuestion": "오상혁 씨, 2년 전 출처 은폐와 반복에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 대표적인 오해입니다. 다만, 외부 컨설턴트 이름을 바로 넣지 못한 건 정리 순서 문제였습니다.",
+      "behaviorHint": "차가운 표정으로 답하고 고개를 살짝 끄덕입니다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -345,20 +360,20 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "문가은 씨, 2년 전 출처 누락의 은폐와 반복에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 과거 이메일에서도 확인할 수 있듯이, 그 시점에 이미 두 번 뺏겼던 걸 조용히 처리하려 했던 것뿐입니다.",
-      "behaviorHint": "억울한 표정으로 고개를 천천히 저으며 말한다.",
+      "judgeQuestion": "문가은 씨, 2년 전 출처 은폐와 반복에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 반복하지 않았습니다. 이미 두 번 당한 적이 있어서 같은 실수를 피하려고 노력했습니다.",
+      "behaviorHint": "조용히 한숨을 쉬며 손을 모음",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T13:56:25.761Z",
-  "finishedAt": "2026-04-05T13:57:45.899Z",
+  "startedAt": "2026-04-05T17:59:34.052Z",
+  "finishedAt": "2026-04-05T18:03:25.187Z",
   "summary": {
     "total": 20,
-    "passed": 20,
-    "warned": 0,
+    "passed": 18,
+    "warned": 2,
     "errors": 0,
     "skipped": 0
   }

@@ -42,6 +42,14 @@ function getCaseIds(filter) {
   return all
 }
 
+// ── 증거 질문 헬퍼 (조사 처리) ──
+
+function evQuestion(name, surfaceName, verb) {
+  const sn = surfaceName || '증거'
+  const josa = runner.pp을를(sn)
+  return `${name} 씨, 이 ${sn}${josa} ${verb || '보시고 설명해 주십시오.'}`
+}
+
 // ── 자동 시나리오 생성 ──
 
 function generateScenario(caseId, caseData) {
@@ -72,7 +80,7 @@ function generateScenario(caseId, caseData) {
   // 증거 e-1
   if (evidence.length > 0) {
     turns.push({ label: `${aName} e-1 증거제시`, party: 'a', dispute: d1, state: 'S1', action: 'evidence_present',
-      question: `${aName} 씨, 이 ${evidence[0].surfaceName || '증거'}에 대해 입장을 밝혀 주십시오.`, evidenceId: evidence[0].id })
+      question: evQuestion(aName, evidence[0].surfaceName, '보시고 입장을 밝혀 주십시오.'), evidenceId: evidence[0].id })
   } else {
     turns.push({ label: `${bName} ${d2} 동기탐색`, party: 'b', dispute: d2, state: 'S1', action: 'motive_search',
       question: `${bName} 씨, 그렇게 하신 이유가 무엇입니까?` })
@@ -81,7 +89,7 @@ function generateScenario(caseId, caseData) {
   // --- 턴 6-10: 증거 + 동기 (S1→S2) ---
   if (evidence.length > 1) {
     turns.push({ label: `${bName} e-2 증거제시`, party: 'b', dispute: d2, state: 'S1', action: 'evidence_present',
-      question: `${bName} 씨, 이 ${evidence[1].surfaceName || '증거'}를 보시고 설명해 주십시오.`, evidenceId: evidence[1].id })
+      question: evQuestion(bName, evidence[1].surfaceName, '보시고 설명해 주십시오.'), evidenceId: evidence[1].id })
   } else {
     turns.push({ label: `${bName} ${d2} 동기탐색`, party: 'b', dispute: d2, state: 'S1', action: 'motive_search',
       question: `${bName} 씨, 그렇게 하신 이유가 무엇입니까?` })
@@ -99,7 +107,7 @@ function generateScenario(caseId, caseData) {
   // --- 턴 11-15: 공감 + 모순 (S2→S3) ---
   if (evidence.length > 2) {
     turns.push({ label: `${aName} e-3 증거제시 S2`, party: 'a', dispute: d1, state: 'S2', action: 'evidence_present',
-      question: `${aName} 씨, 이 ${evidence[2].surfaceName || '증거'}에 대해 입장을 밝혀 주십시오.`, evidenceId: evidence[2].id })
+      question: evQuestion(aName, evidence[2].surfaceName, '보시고 입장을 밝혀 주십시오.'), evidenceId: evidence[2].id })
   } else {
     turns.push({ label: `${aName} ${d1} S2 공감접근`, party: 'a', dispute: d1, state: 'S2', action: 'empathy_approach',
       question: `${aName} 씨, 당시 가장 힘들었던 점은 무엇입니까?` })
@@ -112,8 +120,9 @@ function generateScenario(caseId, caseData) {
   turns.push({ label: `${bName} ${d2} S3 사실추궁`, party: 'b', dispute: d2, state: 'S3', action: 'fact_pursuit',
     question: `${bName} 씨, 다시 정리해 주십시오.` })
   if (disputes.length > 2) {
+    const d3Label = (disputes[2].name || '이 쟁점').replace(/\d[\d,]*만?\s*원/g, '해당 금액').replace(/[가-힣]{2,3}의\s/g, '')
     turns.push({ label: `${bName} ${disputes[2].id} S1 사실추궁`, party: 'b', dispute: disputes[2].id, state: 'S1', action: 'fact_pursuit',
-      question: `${bName} 씨, ${disputes[2].name || '이 쟁점'}에 대해 사실 여부를 확인하겠습니다.` })
+      question: `${bName} 씨, ${d3Label}에 대해 사실 여부를 확인하겠습니다.` })
   } else {
     turns.push({ label: `${aName} ${d1} S3 공감접근`, party: 'a', dispute: d1, state: 'S3', action: 'empathy_approach',
       question: `${aName} 씨, 솔직한 심정을 말씀해 주십시오.` })
@@ -126,10 +135,12 @@ function generateScenario(caseId, caseData) {
     question: `${aName} 씨, 이제 사실대로 말씀해 주십시오.` })
   turns.push({ label: `${bName} ${d2} S5 고백`, party: 'b', dispute: d2, state: 'S5', action: 'empathy_approach',
     question: `${bName} 씨, 솔직하게 말씀해 주십시오.` })
+  // dispute name에서 금액/인물 제거하여 중립화
+  const lastDisputeLabel = (disputes[disputes.length - 1]?.name || '마지막 쟁점').replace(/\d[\d,]*만?\s*원/g, '해당 금액').replace(/[가-힣]{2,3}의\s/g, '')
   turns.push({ label: `${aName} ${dLast} S1 사실추궁`, party: 'a', dispute: dLast, state: 'S1', action: 'fact_pursuit',
-    question: `${aName} 씨, ${disputes[disputes.length - 1]?.name || '마지막 쟁점'}에 대해 사실 여부를 확인하겠습니다.` })
+    question: `${aName} 씨, ${lastDisputeLabel}에 대해 사실 여부를 확인하겠습니다.` })
   turns.push({ label: `${bName} ${dLast} S1 사실추궁`, party: 'b', dispute: dLast, state: 'S1', action: 'fact_pursuit',
-    question: `${bName} 씨, ${disputes[disputes.length - 1]?.name || '마지막 쟁점'}에 대해 사실 여부를 확인하겠습니다.` })
+    question: `${bName} 씨, ${lastDisputeLabel}에 대해 사실 여부를 확인하겠습니다.` })
 
   return turns
 }
@@ -154,8 +165,9 @@ async function runCase(caseId) {
   const transcript = {
     caseId,
     category: caseId.replace(/-\d+$/, ''),
-    partyA: { name: caseData.duo.partyA.name, archetype: caseData.duo.partyA.archetype },
-    partyB: { name: caseData.duo.partyB.name, archetype: caseData.duo.partyB.archetype },
+    isMonetary: runner.isMonetaryCase(caseData),
+    partyA: { name: caseData.duo.partyA.name, archetype: caseData.duo.partyA.archetype, tell: caseData.duo.partyA.verbalTells?.[0]?.type || null },
+    partyB: { name: caseData.duo.partyB.name, archetype: caseData.duo.partyB.archetype, tell: caseData.duo.partyB.verbalTells?.[0]?.type || null },
     disputes: (caseData.disputes || []).map(d => ({ id: d.id, name: d.name })),
     turns: [],
     startedAt: new Date().toISOString(),

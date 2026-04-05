@@ -1,13 +1,16 @@
 {
   "caseId": "friend-05",
   "category": "friend",
+  "isMonetary": true,
   "partyA": {
     "name": "전서윤",
-    "archetype": "confrontational"
+    "archetype": "confrontational",
+    "tell": "receipt_fan"
   },
   "partyB": {
     "name": "민태오",
-    "archetype": "avoidant"
+    "archetype": "avoidant",
+    "tell": "archive_shuffle"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "전서윤 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 지금 문제와는 다른 얘기입니다.",
-      "behaviorHint": "조금 긴장한 표정으로, 시선을 피하며",
+      "npcResponse": "네, 돈을 보낸 건 사실입니다. 다만 그 돈이 다른 용도로 사용된 건 분명히 따져봐야 합니다.",
+      "behaviorHint": "신경질적으로 손을 탁탁 튕기며 말을 시작한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "전서윤 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "집안의 중요한 일이 터져서 그렇게 할 수밖에 없었습니다. 물론, 미리 알리지 않은 건 제 실수였습니다.",
-      "behaviorHint": "머리를 한 번 긁적이며 약간 미안한 표정을 짓는다.",
+      "npcResponse": "그 당시 상황이 급박했습니다. 제 친구에게 미리 알리지 못한 것은 제 잘못입니다.",
+      "behaviorHint": "잠시 눈을 피하며 고개를 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -74,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "전서윤 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 그때는 무서웠습니다. 제가 뭐라고 하면 더 큰 문제가 생길 것 같아서 몸이 굳었어요.",
-      "behaviorHint": "살짝 고개를 숙이고 눈을 감았다가 천천히 뜨며 옅은 긴장감을 드러낸다.",
+      "npcResponse": "솔직히 그때는 너무 혼란스러웠습니다. 제가 말하면 더 큰일이 날 것 같아 말을 아꼈던 겁니다.",
+      "behaviorHint": "깊게 숨을 들이마셨다 내뱉는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "민태오 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 미리 말하지 못한 저의 실수이지만, 그 돈이 어디로 간 걸 밝히기엔 현재 자료가 부족합니다.",
-      "behaviorHint": "고개를 약간 숙이며 말을 천천히 이어간다.",
+      "npcResponse": "아닙니다. 그 친구들에게 전달된 자료가 잘린 부분이 있다 보니, 모든 맥락이 전달되지 않았습니다.",
+      "behaviorHint": "고개를 약간 숙이며 신중한 표정으로 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +108,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "전서윤 씨, 이 독촉 메시지 캡처에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 메시지는 제가 보낸 게 맞습니다. 하지만 친구에게 적지 않은 돈이 남아 있는데, 그것을 바로잡는 게 먼저 아니겠습니까.",
-      "behaviorHint": "조금씩 고개를 끄덕이며 침착하게 말함",
+      "judgeQuestion": "전서윤 씨, 이 독촉 메시지 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 메시지는 맞습니다. 하지만 거기 적힌 금액만 보고 현재 상황을 넘기려는 건 좀 어렵습니다.",
+      "behaviorHint": "메시지에 대해 차분하고 침착한 태도로 반박하며 손을 들어 강조한다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -122,8 +125,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "민태오 씨, 이 이체내역과 상환 약속 메시지를 보시고 설명해 주십시오.",
-      "npcResponse": "적지 않은 돈이긴 하지만, 그 시점에 그 사람과 다른 이해가 있었던 것 같습니다. 메시지에 적힌 날짜만 보고 그것부터 단정 짓는 건 너무 성급한 것 같네요.",
-      "behaviorHint": "조심스럽게 손을 맞잡으며 고개를 끄덕인다.",
+      "npcResponse": "그 시점에서는 적지 않은 돈이 오갔다는 걸 인정합니다. 다만, 그 메시지만 두고 판단하는 건 너무 빠르다고 생각합니다.",
+      "behaviorHint": "조심스럽게 고개를 끄덕이며 침착하게 말한다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "전서윤 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그 돈은 약속한 시점과 무관하게 별도로 남아 있었습니다. 다만, 그 부분을 미리 말하지 못한 건 제 잘못입니다.",
-      "behaviorHint": "약간의 긴장감을 담아 고개를 끄덕인다",
+      "npcResponse": "네, 그 돈에 대한 약속은 있었습니다. 그런데 그 사람과의 다른 약속도 엇갈리면서 미리 조정하지 못했습니다.",
+      "behaviorHint": "짧게 고개를 끄덕이며 숙연한 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "전서윤 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "그때 이후로 제 친구와 긴밀한 논의를 할 기회가 없었습니다. 그 기준 금액에 대해 혼자 판단할 수밖에 없었습니다.",
-      "behaviorHint": "방어적으로 팔짱을 끼고, 눈을 살짝 피한다.",
+      "npcResponse": "당시 상황이 급박했습니다. 친구에게 미리 말하지 못한 건 제 잘못입니다.",
+      "behaviorHint": "약간의 방어적 태도로 손을 가볍게 들며 설명",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "민태오 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "그 돈을 그때 바로 쓴 건 맞습니다. 다만, 그 당시 어떤 사정이 있었는지는 충분히 설명드리지 못했습니다.",
-      "behaviorHint": "조금 당황한 표정을 지으며 자세를 바로잡는다.",
+      "npcResponse": "네, 그날 송금한 건 맞습니다. 다만, 당시 제 친구가 급한 상황이라 급하게 처리한 점이 있습니다.",
+      "behaviorHint": "조심스러운 표정으로 천천히 말하며, 손끝으로 테이블에 가볍게 톡톡 두드린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "민태오 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그 순간은 정말 두려웠습니다. 제가 잘못 말하면 더 큰일이 날 것 같아서 입을 떼기가 힘들었어요.",
-      "behaviorHint": "고개를 약간 숙이며 감정을 드러내려 애쓴다.",
+      "npcResponse": "솔직히, 그때는 뭔가 말할 엄두가 나지 않았습니다. 제가 말하면 일이 더 복잡해질 것 같아서 두려웠습니다.",
+      "behaviorHint": "고민하는 표정으로 잠시 멈추고, 깊은 숨을 내쉰다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +204,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "전서윤 씨, 이 과거 이체기록과 메모란에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 기록은 맞습니다. 하지만 그 돈은 그때의 문제였고, 지금은 별도 변제할 돈이 남아 있습니다.",
-      "behaviorHint": "살짝 고개를 끄덕이며 차분하게 말하다가, 마지막에 시선을 들어 재판관의 눈을 마주친다.",
+      "judgeQuestion": "전서윤 씨, 이 과거 이체기록과 메모란을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 기록은 맞습니다. 다만, 그때 이후에 남은 48만원은 별도로 처리되어야 할 부분입니다.",
+      "behaviorHint": "침착하게 기록을 인정하면서도, 남은 채무에 대한 별도 처리를 강조한다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "전서윤 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "네, 그날 보냈습니다. 다만, 제 친구가 그걸 왜 그렇게 처리했는지는 따로 물어봐야 할 것 같습니다.",
-      "behaviorHint": "차분하지만 강한 어조로 손을 살짝 들어올린다.",
+      "npcResponse": "네, 그 돈을 보낸 건 맞습니다. 다만, 미리 말하지 못한 건 제 책임입니다만, 다른 맥락이 있었습니다.",
+      "behaviorHint": "눈을 마주치며 자신감 있게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +237,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "전서윤 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "그날 밤에 갑작스러운 일이 생겼기 때문이었습니다. 미리 말하지 못한 건 제 실수지만, 바로 그 시점에서 제 친구와의 신뢰가 흔들렸습니다.",
-      "behaviorHint": "다소 방어적이지만 여전히 자신감 있는 태도",
+      "npcResponse": "급박한 상황이 있었습니다. 그때 이후로 마음에 배신감이 깊어졌습니다.",
+      "behaviorHint": "상대방을 바라보지 않고 정면을 응시하며 떨리는 목소리로 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +253,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "민태오 씨, 다시 정리해 주십시오.",
-      "npcResponse": "송금한 날은 확실히 기억합니다. 하지만 이유를 미리 알리지 못한 점에 대해 아쉬움이 있습니다.",
-      "behaviorHint": "고개를 살짝 숙이며 아쉬운 표정을 짓는다.",
+      "npcResponse": "네, 그건 제가 준비했습니다. 다만 그때 설명할 기회가 없었던 건 맞습니다.",
+      "behaviorHint": "조심스럽게 손을 앞으로 모으며 상대방을 바라본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -265,9 +268,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "민태오 씨, 2년 전 186만원 보증금은 이미 끝난 돈인가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "보증금의 정산은 아직 완전하지 않았습니다. 그 뒤에 발생한 잔액은 더 큽니다.",
-      "behaviorHint": "조용히 고개를 숙이며 말을 이어간다.",
+      "judgeQuestion": "민태오 씨, 2년 전 해당 금액 보증금은 이미 끝난 돈인가에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그 부분은 보증금이 완전히 정산되지 않았던 걸로 기억합니다. 그 뒤에 추가로 발생한 비용이 있었거든요.",
+      "behaviorHint": "잠시 머리를 긁적이며 고민하는 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +285,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "전서윤 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 그때 는 무서웠습니다. 그 돈이 잘못되면 제 모든 게 무너질 것 같아서요.",
-      "behaviorHint": "살짝 당황한 듯한 표정으로 잠시 말문을 잃었다가 솔직하게 털어놓는다.",
+      "npcResponse": "솔직히, 그때는 너무 불안했습니다. 미리 알리지 못한 게 무책임해 보일까 두려웠습니다.",
+      "behaviorHint": "눈을 잠시 감고 착잡한 표정을 지으며, 말을 천천히 꺼낸다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +301,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "전서윤 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 48만원 아직 돌려주지 않았습니다. 그때는 친구에게 돈을 빌려준 상황에서 잠시 혼자 판단했습니다. 이제는 그 방식이 잘못됐다는 걸 이해합니다.",
-      "behaviorHint": "눈을 살짝 내리깔고 진심 어린 톤으로 말한다.",
+      "npcResponse": "네, 48만원을 그 사람에게 약속한 시점에 돌려주지 않았습니다. 이 점에 대해서는 전적으로 인정합니다. 제 친구에게 그 돈을 숨긴 이유는 당시 금전적 상황을 감당하지 못해서였습니다. 하지만 지금은 이 부분을 후회하고 있습니다.",
+      "behaviorHint": "고개를 숙이며 진심으로 사과하는 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,10 +317,16 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "민태오 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 말씀드리면, 그때는 정말 두려웠습니다. 제가 말을 꺼내면 서윤이가 더 큰일을 겪을 것 같아서요. 그 결과로 결국 186만원 중 남은 돈에 대해 미리 알리지 못한 책임이 저에게도 있다는 것을 압니다.",
-      "behaviorHint": "진심 어린 표정으로 고개를 약간 숙인다.",
+      "npcResponse": "솔직히 말하자면, 그 시점에서는 상황이 복잡해서 바로 말씀드리기 어려웠습니다. 제가 그 사람과 관련된 일을 제대로 알지 못한 채로 말을 꺼내면 더 큰일이 날 것 같았거든요. 지금 돌이켜보면, 좀 더 신중하게 대처했어야 했던 게 후회스럽습니다. 그 시점의 저로서는 무서웠습니다.",
+      "behaviorHint": "고개를 숙이며 진지한 표정",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
       "error": null
     },
     {
@@ -329,9 +338,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "전서윤 씨, 차용 기록과 상계 합의 규칙의 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 시점에 적지 않은 돈이 이동한 건 맞습니다. 다만, 상황이 너무 급했고 그 돈은 일시적인 예외라는 의미를 갖습니다.",
-      "behaviorHint": "시선을 잠시 피하고 다시 직시.",
+      "judgeQuestion": "전서윤 씨, 차용 기록과 상계 합의 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아니요, 그건 잘못된 정보입니다. 합의는 일단 급한 상황 때문에 지체된 것일 뿐입니다.",
+      "behaviorHint": "고개를 약간 흔들며 부정적인 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -345,20 +354,20 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "민태오 씨, 차용 기록과 상계 합의 규칙의 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 기록이 누락된 건 사실입니다. 다만 그 순간엔 제 친구와의 관계를 지키려는 마음이 먼저 앞섰습니다.",
-      "behaviorHint": "시선을 피하며 약간 머뭇거리는 동작",
+      "judgeQuestion": "민태오 씨, 차용 기록과 상계 합의 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 차용 기록 중 몇 가지를 적는 걸 놓친 건 맞습니다. 다만 이해 관계를 조금 더 잘하려다 보니, 무심코 그랬던 것 같습니다.",
+      "behaviorHint": "말을 끝내지 않고 시선을 피하며 손으로 머리를 만진다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T12:47:48.627Z",
-  "finishedAt": "2026-04-05T12:49:07.684Z",
+  "startedAt": "2026-04-05T16:46:14.825Z",
+  "finishedAt": "2026-04-05T16:47:35.975Z",
   "summary": {
     "total": 20,
-    "passed": 20,
-    "warned": 0,
+    "passed": 19,
+    "warned": 1,
     "errors": 0,
     "skipped": 0
   }

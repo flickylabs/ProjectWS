@@ -35,7 +35,7 @@
                 "person": {
                   "exact": "문경수",
                   "neutral": "상대",
-                  "fullName": "집주인",
+                  "fullName": "상대",
                   "judgeRef": "집주인"
                 },
                 "rumor": {
@@ -90,7 +90,7 @@
                 "person": {
                   "exact": "조미령",
                   "neutral": "그 사람",
-                  "fullName": "조 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "관리인"
                 },
                 "institution": {
@@ -371,7 +371,7 @@
                 "person": {
                   "exact": "조미령",
                   "neutral": "그 사람",
-                  "fullName": "관리인",
+                  "fullName": "그 사람",
                   "judgeRef": "관리인"
                 },
                 "quote": {
@@ -426,7 +426,7 @@
                 "person": {
                   "exact": "조미령",
                   "neutral": "그 사람",
-                  "fullName": "조 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "관리인"
                 },
                 "channel": {
@@ -1308,7 +1308,7 @@
                 "person": {
                   "exact": "문경수",
                   "neutral": "상대",
-                  "fullName": "집주인",
+                  "fullName": "상대",
                   "judgeRef": "집주인"
                 },
                 "act": {
@@ -1636,7 +1636,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대",
-                  "fullName": "소담 씨",
+                  "fullName": "상대",
                   "judgeRef": "소담 씨"
                 },
                 "quote": {
@@ -1686,7 +1686,7 @@
                 "person": {
                   "exact": "조미령",
                   "neutral": "그 사람",
-                  "fullName": "조 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "관리인"
                 },
                 "act": {
@@ -1954,7 +1954,7 @@
                 "person": {
                   "exact": "조미령",
                   "neutral": "그 사람",
-                  "fullName": "관리인",
+                  "fullName": "그 사람",
                   "judgeRef": "관리인"
                 },
                 "quote": {
@@ -2261,7 +2261,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대",
-                  "fullName": "소담 씨",
+                  "fullName": "상대",
                   "judgeRef": "소담 씨"
                 },
                 "channel": {
@@ -2320,7 +2320,7 @@
                 "person": {
                   "exact": "이소담",
                   "neutral": "상대",
-                  "fullName": "이 씨",
+                  "fullName": "상대",
                   "judgeRef": "소담 씨"
                 }
               },
@@ -2921,7 +2921,7 @@
                 "person": {
                   "exact": "조미령",
                   "neutral": "그 사람",
-                  "fullName": "조 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "관리인"
                 },
                 "act": {

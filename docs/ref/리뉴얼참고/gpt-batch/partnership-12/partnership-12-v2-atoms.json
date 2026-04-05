@@ -37,7 +37,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "상대 대표",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "channel": {
@@ -205,7 +205,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "장수진",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "channel": {
@@ -552,7 +552,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "상대 대표",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "issue": {
@@ -671,7 +671,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "장 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 }
               },
@@ -720,7 +720,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "장수진",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "channel": {
@@ -1051,7 +1051,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "상대 대표",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "evidence": {
@@ -1152,7 +1152,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "장 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 }
               },
@@ -1181,7 +1181,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "장 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 }
               },
@@ -1684,7 +1684,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "장 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "channel": {
@@ -1744,7 +1744,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "장수진",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 }
               },
@@ -2081,7 +2081,7 @@
                 "person": {
                   "exact": "장수진",
                   "neutral": "그 사람",
-                  "fullName": "상대 대표",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "time": {
@@ -2584,7 +2584,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "상대 대표",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "issue": {
@@ -2703,7 +2703,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "류 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 }
               },
@@ -2752,7 +2752,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "류선우",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "channel": {
@@ -3082,7 +3082,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "상대 대표",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "channel": {
@@ -3250,7 +3250,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "류선우",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "channel": {
@@ -3595,7 +3595,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "상대 대표",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "evidence": {
@@ -3696,7 +3696,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "류 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 }
               },
@@ -3725,7 +3725,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "류 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 }
               },
@@ -4229,7 +4229,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "류 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "channel": {
@@ -4289,7 +4289,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "류선우",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 }
               },
@@ -4625,7 +4625,7 @@
                 "person": {
                   "exact": "류선우",
                   "neutral": "그 사람",
-                  "fullName": "상대 대표",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 대표"
                 },
                 "time": {

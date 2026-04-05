@@ -39,7 +39,7 @@
                 "person": {
                   "exact": "한규철",
                   "neutral": "상대방",
-                  "fullName": "집주인",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 },
                 "action": {
@@ -73,7 +73,7 @@
                 "person": {
                   "exact": "한규철",
                   "neutral": "상대방",
-                  "fullName": "집주인",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 },
                 "action": {
@@ -127,7 +127,7 @@
                 "person": {
                   "exact": "한규철",
                   "neutral": "상대방",
-                  "fullName": "한 씨",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 },
                 "action": {
@@ -161,7 +161,7 @@
                 "person": {
                   "exact": "한규철",
                   "neutral": "상대방",
-                  "fullName": "한 씨",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 },
                 "action": {

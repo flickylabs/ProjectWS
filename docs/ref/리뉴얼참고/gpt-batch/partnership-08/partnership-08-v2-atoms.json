@@ -76,7 +76,7 @@
                 "amount": {
                   "exact": "적지 않은 돈",
                   "neutral": "기준 금액",
-                  "rounded": "8천만원"
+                  "rounded": "기준 금액"
                 },
                 "duration": {
                   "exact": "2개월 유지",
@@ -129,7 +129,7 @@
                 "amount": {
                   "exact": "80,000,000원",
                   "neutral": "기준 금액",
-                  "rounded": "8천만원"
+                  "rounded": "기준 금액"
                 },
                 "duration": {
                   "exact": "2개월 유지",
@@ -342,7 +342,7 @@
                 "person": {
                   "exact": "김나리",
                   "neutral": "그 강사",
-                  "fullName": "전 헤드강사",
+                  "fullName": "그 강사",
                   "judgeRef": "전 헤드강사"
                 }
               },
@@ -391,7 +391,7 @@
                 "person": {
                   "exact": "김나리",
                   "neutral": "그 강사",
-                  "fullName": "김 씨",
+                  "fullName": "그 강사",
                   "judgeRef": "전 헤드강사"
                 }
               },
@@ -440,7 +440,7 @@
                 "person": {
                   "exact": "김나리",
                   "neutral": "그 강사",
-                  "fullName": "김나리",
+                  "fullName": "그 강사",
                   "judgeRef": "전 헤드강사"
                 }
               },
@@ -972,7 +972,7 @@
                 "amount": {
                   "exact": "적지 않은 돈",
                   "neutral": "기준 금액",
-                  "rounded": "8천만원"
+                  "rounded": "기준 금액"
                 },
                 "duration": {
                   "exact": "2개월 유지",
@@ -1216,7 +1216,7 @@
                 "amount": {
                   "exact": "해당 금액",
                   "neutral": "기준 금액",
-                  "rounded": "8천만원"
+                  "rounded": "기준 금액"
                 },
                 "duration": {
                   "exact": "2개월 유지",
@@ -1239,7 +1239,7 @@
           "disputeId": "d-5",
           "state": "S1",
           "publicClaim": [
-            "현금성 자산 8천만원 2개월 유지가 안 됐는데 어떻게 약속이 자동이죠."
+            "현금성 자산 기준 금액 2개월 유지가 안 됐는데 어떻게 약속이 자동이죠."
           ],
           "privateKnowledge": [
             "회의에서는 후보지 검토를 돌려 자동 발동처럼 느끼게 만들었다."
@@ -1265,7 +1265,7 @@
                 "amount": {
                   "exact": "적지 않은 돈",
                   "neutral": "기준 금액",
-                  "rounded": "8천만원"
+                  "rounded": "기준 금액"
                 },
                 "duration": {
                   "exact": "2개월 유지",
@@ -1314,7 +1314,7 @@
                 "amount": {
                   "exact": "80,000,000원",
                   "neutral": "기준 금액",
-                  "rounded": "8천만원"
+                  "rounded": "기준 금액"
                 },
                 "duration": {
                   "exact": "2개월 유지",
@@ -1872,7 +1872,7 @@
                 "person": {
                   "exact": "김나리",
                   "neutral": "그 강사",
-                  "fullName": "김 씨",
+                  "fullName": "그 강사",
                   "judgeRef": "전 헤드강사"
                 }
               },
@@ -2708,7 +2708,7 @@
                 "amount": {
                   "exact": "해당 금액",
                   "neutral": "기준 금액",
-                  "rounded": "8천만원"
+                  "rounded": "기준 금액"
                 },
                 "duration": {
                   "exact": "2개월 유지",
@@ -2805,7 +2805,7 @@
                 "amount": {
                   "exact": "80,000,000원",
                   "neutral": "기준 금액",
-                  "rounded": "8천만원"
+                  "rounded": "기준 금액"
                 },
                 "duration": {
                   "exact": "2개월 유지",

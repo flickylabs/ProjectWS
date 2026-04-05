@@ -128,7 +128,7 @@
                 "company": {
                   "exact": "시훈데이터랩",
                   "neutral": "제3자 회사",
-                  "fullName": "시훈데이터랩",
+                  "fullName": "제3자 회사",
                   "judgeRef": "사촌 회사"
                 },
                 "proposal": {
@@ -417,7 +417,7 @@
                 "person": {
                   "exact": "서민경",
                   "neutral": "상대방",
-                  "fullName": "서민경",
+                  "fullName": "상대방",
                   "judgeRef": "공동대표"
                 },
                 "bonus": {
@@ -1842,7 +1842,7 @@
                 "person": {
                   "exact": "서민경",
                   "neutral": "저",
-                  "fullName": "서민경",
+                  "fullName": "저",
                   "judgeRef": "본인"
                 }
               },
@@ -2034,7 +2034,7 @@
                 "person": {
                   "exact": "박준오",
                   "neutral": "준오",
-                  "fullName": "상대 공동대표",
+                  "fullName": "준오",
                   "judgeRef": "상대 공동대표"
                 }
               },

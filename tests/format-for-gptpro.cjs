@@ -22,6 +22,17 @@ function formatCase(transcript) {
   lines.push(`- 당사자 B: ${transcript.partyB.name} (${transcript.partyB.archetype})`)
   lines.push(`- 쟁점: ${transcript.disputes.map(d => `${d.id}(${d.name})`).join(', ')}`)
   lines.push('')
+
+  // v2-atoms 요약 (GPT Pro 오탐 방지)
+  lines.push(`### Truth Throttle 설정`)
+  lines.push(`- S0-S1 공개 가능: 추상적 표현만 (그 사람, 해당 금액, 기관)`)
+  lines.push(`- S2 공개 가능: 성씨(김 씨), 대략적 금액(200만원대), 대략적 시기`)
+  lines.push(`- S3+ 공개 가능: 실명, 정확한 금액, 기관명`)
+  lines.push(`- archetype: A=${transcript.partyA.archetype}, B=${transcript.partyB.archetype}`)
+  if (transcript.partyA.tell) lines.push(`- tell: A=${transcript.partyA.tell}`)
+  if (transcript.partyB.tell) lines.push(`- tell: B=${transcript.partyB.tell}`)
+  lines.push(`- 금전 사건 여부: ${transcript.isMonetary ? '예' : '아니오'}`)
+  lines.push('')
   lines.push(`### 대화 로그`)
 
   for (const t of transcript.turns) {

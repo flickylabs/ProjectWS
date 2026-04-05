@@ -1,13 +1,16 @@
 {
   "caseId": "friend-03",
   "category": "friend",
+  "isMonetary": false,
   "partyA": {
     "name": "강나래",
-    "archetype": "cold_logic"
+    "archetype": "cold_logic",
+    "tell": "format_split"
   },
   "partyB": {
     "name": "오지후",
-    "archetype": "victim_cosplay"
+    "archetype": "victim_cosplay",
+    "tell": "wounded_preface"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강나래 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 맞습니다. 그 게시물에 제가 관련된 건 맞습니다. 다만, 이름을 직접 쓴 건 아니라도 그 상황에선 저로 읽힐 수 있었다는 점을 먼저 봐야 합니다.",
-      "behaviorHint": "강나래가 차가운 눈빛으로 상대방을 바라본다. 말할 때 손을 정리된 자세로 모아 놓는다.",
+      "npcResponse": "네, 그 게시물 올린 건 맞습니다. 하지만 그 표현이 왜 오해를 불러일으켰는지는 다른 요소들이 있습니다.",
+      "behaviorHint": "단호하게 시선을 고정하고 말을 이어나간다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "강나래 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "배송 지연과 사은품, 협찬물건 얘기가 한 게시물에 묶여 있으면 저 말고 다른 사람으로 읽히기 어렵죠. 그 시점에서는 그렇게 할 수밖에 없는 상황이었습니다.",
-      "behaviorHint": "차갑고 이성적으로 설명하려고 하지만, 약간의 방어적 태도가 느껴진다.",
+      "npcResponse": "배송 지연, 사은품, 협찬물건 얘기가 한 게시물에 묶여 있으면 저 말고 다른 사람으로 읽히기 어렵죠. 그 시점에서는 상황이 복잡해 보일 수밖에 없었습니다.",
+      "behaviorHint": "살짝 시선을 옆으로 돌리며 잠시 생각하는 듯한 표정을 지음",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -74,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "강나래 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 그때는 정말 두려웠습니다. 제가 말하면 더 큰일이 날 것 같아서 입을 다물 수밖에 없었습니다.",
-      "behaviorHint": "눈을 잠시 피하고 차분히 설명하는 손짓",
+      "npcResponse": "솔직히, 그때는 너무 당황스러웠습니다. 제가 무슨 말을 하더라도 불리하게 해석될 것 같아서 조용히 있었습니다.",
+      "behaviorHint": "잠시 눈을 아래로 돌리며 입술을 깨문다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,10 +93,16 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "오지후 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 나한테 불리한 문장만 추려 놓은 느낌이 강했습니다.",
-      "behaviorHint": "한숨을 내쉬며 눈을 피한다.",
+      "npcResponse": "아닙니다. 그 이미지는 제가 보낸 게 아니에요.",
+      "behaviorHint": "조심스럽게 부정하고 상황을 지켜보는 눈빛",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
       "error": null
     },
     {
@@ -105,9 +114,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "강나래 씨, 이 대화 캡처 이미지에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 제가 보낸 게 맞습니다. 하지만 제 친구가 특정인을 언급하지 않았으니, 그 의미를 단정하기엔 무리가 있습니다.",
-      "behaviorHint": "차분하게 서류를 정리하듯 대답하며 재판관의 시선을 직접 응시한다.",
+      "judgeQuestion": "강나래 씨, 이 대화 캡처 이미지를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 제가 보낸 것이 맞습니다. 그러나 그 내용을 단순히 조회수용 피해자 코스프레라고 해석하는 건 부적절합니다.",
+      "behaviorHint": "차분하게 캡처 이미지를 살펴본 후, 시선을 재판관에게 돌려 차갑게 답변한다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -122,8 +131,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "오지후 씨, 이 댓글·스토리 보관본과 삭제 로그를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 맞습니다. 다만 제 댓글이 정말로 그 스토리와 연결된다고 확신할 수는 없습니다.",
-      "behaviorHint": "당황한 기색을 숨기며 조심스럽게 눈을 피한다",
+      "npcResponse": "이 자료들이 제가 불평한 조각을 보여주는 건 맞습니다. 하지만 그 이미지처럼 모든 걸 이어서 보낸 적은 없어요.",
+      "behaviorHint": "당황한 듯 눈을 피하면서 손을 움켜쥔다",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +147,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "강나래 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그 문장을 더 크게 받아들인 면은 인정합니다. 다만 그 게시물로 먼저 판을 연 건 제 친구 오지후 씨였습니다.",
-      "behaviorHint": "침착하게 손을 모으고 눈을 마주친다.",
+      "npcResponse": "네, 그 시점에 그 게시물을 올린 건 저입니다. 하지만 그 표현을 먼저 사용한 건 제 친구였습니다.",
+      "behaviorHint": "냉정한 표정으로 재판관의 눈을 마주치며.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +163,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "강나래 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "삭제 로그를 보면 이미 댓글과 스토리가 올라와 있는 상태였습니다. 그 시점에서는 제가 캡처를 돌려야 할 필요를 느꼈습니다.",
-      "behaviorHint": "차갑고 침착하게 증거를 정리하며 설명한다.",
+      "npcResponse": "그 시점에서는 삭제 로그를 확인했을 때 이미 모든 정보가 올라와 있는 상황이었습니다. 설명이 늦어진 건 제 잘못이지만, 더 빠르게 판단할 수밖에 없었습니다.",
+      "behaviorHint": "차분하게 설명하며 자신의 판단 배경을 이야기한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +179,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "오지후 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 확인했습니다. DM 조각 일부가 포함됐을 가능성은 봤어요.",
-      "behaviorHint": "떨리는 손으로 서류를 만지작거리며 긴장된 눈빛으로 앞을 본다.",
+      "npcResponse": "아닙니다. 그건 제가 의도한 결과가 아니었습니다. 편집된 자료가 전달된 시점에 이미 오해가 커져 있었습니다.",
+      "behaviorHint": "억울한 듯 고개를 살짝 들어 한숨을 내쉰다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +195,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "오지후 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히 그때는 너무 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서 조용히 있었어요.",
-      "behaviorHint": "눈을 잠시 감았다가 한숨을 내쉰다.",
+      "npcResponse": "솔직히 모든 시선이 저한테 집중되는 게 무서웠습니다. 제가 무슨 말을 해도 오해받을까 싶어서 입을 닫고 있었습니다.",
+      "behaviorHint": "고개를 숙이며 눈을 피하는 듯한 행동",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +210,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "강나래 씨, 이 이미지 작업 파일과 저장 백업에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "네, 그 자료는 제가 편집한 게 맞습니다. 그러나 '협찬 물건도 자기 서사로 바꿔 판다'는 문장을 만든 건 제 친구였습니다.",
-      "behaviorHint": "차분한 표정으로 자료를 정리하는 듯한 제스처를 취한다.",
+      "judgeQuestion": "강나래 씨, 이 이미지 작업 파일과 저장 백업을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 제가 작업하던 파일과 같습니다. 하지만 그걸 보면 오히려 같은 협업 게시물의 맥락을 먼저 유포한 건 제 친구입니다.",
+      "behaviorHint": "침착하게 재판관을 바라보며 손을 약간 들어 보인다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +227,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "강나래 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 그건 오히려 제 친구가 협찬품 문제로 저를 비방하기 시작한 시점이었습니다.",
-      "behaviorHint": "눈을 잠시 감았다가 뜨며 고개를 약간 흔들며 부정적으로 말한다.",
+      "npcResponse": "그 게시물에서 제 친구가 저를 직접 언급한 시점이 문제입니다. 그때부터 비방으로 넘어갔다고 봅니다.",
+      "behaviorHint": "시선을 직선으로 유지하며 단호하게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +243,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "강나래 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "시간이 촉박했기 때문입니다. 지후가 먼저 문제를 키운 걸 바로잡고 싶었습니다.",
-      "behaviorHint": "차분하지만 조금 긴장된 표정으로 고개를 끄덕인다.",
+      "npcResponse": "그 시점에 그 게시물에 대한 대응이 필요하다고 판단했습니다. 하지만 제가 과열된 방식으로 맞대응하면서 일이 커진 점은 인정합니다.",
+      "behaviorHint": "고개를 약간 숙이며 실수를 인정한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +259,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "오지후 씨, 다시 정리해 주십시오.",
-      "npcResponse": "그 이미지가 퍼진 건 맞습니다. 그렇지만 저는 그걸 꾸민 가해자라는 오해부터 받았다는 걸 아셔야 합니다.",
-      "behaviorHint": "억울한 표정으로 한숨을 짓는다.",
+      "npcResponse": "아닙니다. 그날 제가 한 행동은 타당한 이유가 있습니다.",
+      "behaviorHint": "상대방을 바라보며 억울함을 나타내는 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -265,9 +274,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "오지후 씨, 문제의 DM 캡처는 지후가 실제로 보낸 원문인가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 조작되었습니다. 제가 불평을 했을 순 있어도, 그렇게 조롱하거나 루머를 퍼뜨리는 형태는 아니었습니다.",
-      "behaviorHint": "한숨 섞인 목소리로 말하며 억울한 표정을 짓는다.",
+      "judgeQuestion": "오지후 씨, DM 캡처는 지후가 실제로 보낸 원문인가에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 캡처는 원본 대화와 다릅니다. 불평 섞인 말을 한 적은 있지만, 그 이미지처럼 조롱과 루머 의도를 한 줄로 보낸 적은 없어요.",
+      "behaviorHint": "조금 긴장한 표정으로 손을 꼭 쥔다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +291,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "강나래 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그 문장 보고 협업사 앞에서 인성 문제 있는 사람처럼 굳어질까 제일 무서웠어요. 그래서 사실 확인보다 먼저 방어부터 하려는 쪽으로 기울었습니다.",
-      "behaviorHint": "고개를 약간 숙이고, 손을 깍지 끼고 약간 떨리는 목소리로 말한다.",
+      "npcResponse": "사실은 그 문장을 보고 협업사 앞에서 인성 문제 있는 사람처럼 굳어질까 제일 무서웠습니다. 그래서 사실 확인보다 먼저 방어부터 하려는 쪽으로 기울었습니다.",
+      "behaviorHint": "고개를 약간 숙이고 손을 맞잡는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +307,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "강나래 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 지후 씨가 저를 특정 가능하게 깎아내린 건 사실입니다. 그게 사건의 출발점이었습니다. 그 시점 이후 저는 더 강한 증거를 만들고 싶었습니다.",
-      "behaviorHint": "눈을 지그시 감았다 뜨며 정리된 설명을 한다.",
+      "npcResponse": "네, 그날 지후 씨가 저를 특정 가능하게 깎아내린 건 사실입니다. 같은 협업 게시물의 댓글과 스토리로요. 그 선공이 제가 캡처 유포를 결심하게 만든 계기였습니다. 지금 생각하면 다른 방법을 찾았어야 했다는 후회가 큽니다.",
+      "behaviorHint": "침착하지만 약간의 후회가 담긴 어조로 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,8 +323,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "오지후 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 나래 씨가 캡처를 만들어서 재게시한 건 사실이라고 봅니다. 그때는 너무 무서웠어요, 제가 말하면 더 큰일이 날 것 같아서요. 저에게도 책임이 있다고 인정합니다만, 그 사실이 제 선공성 댓글 책임까지 없애 주지는 않는다는 점도 말씀드리고 싶습니다.",
-      "behaviorHint": "손가락을 꼼지락거리며 당황한 표정",
+      "npcResponse": "솔직히 말해서, 그때는 너무 무서웠습니다. 나래 씨가 편집 캡처를 만들어 운영자와 문소희에게 전달한 건 사실입니다. 저도 제 DM 조각이 합성에 사용됐을 가능성이 있어서 당황했습니다. 진작 설명을 했어야 했는데, 이제 와서 밝히는 게 부끄럽습니다.",
+      "behaviorHint": "눈을 잠시 감고 고개를 숙였다가, 억울한 표정으로 고개를 든다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,9 +338,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "강나래 씨, 협업 갈등 비공개 원칙의 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 예전 약속은 기억합니다. 다만, 제 친구의 공개 게시물과 스토리가 먼저 올라온 상황이었습니다.",
-      "behaviorHint": "차갑게 고개를 끄덕이며 대응",
+      "judgeQuestion": "강나래 씨, 협업 갈등 비공개 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 상황에 따라 달라졌던 부분입니다.",
+      "behaviorHint": "약간의 긴장감을 보이며 시선을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -345,20 +354,20 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "오지후 씨, 협업 갈등 비공개 원칙의 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 제가 먼저 시작했다고 보기는 어렵습니다.",
-      "behaviorHint": "한숨을 쉬며 고개를 살짝 떨군다.",
+      "judgeQuestion": "오지후 씨, 협업 갈등 비공개 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 약속을 기억하고 있습니다. 그런데 저는 그게 공개 폭로로 이어질 줄은 몰랐어요.",
+      "behaviorHint": "한숨을 쉬며 고개를 살짝 숙인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T12:44:51.011Z",
-  "finishedAt": "2026-04-05T12:46:16.311Z",
+  "startedAt": "2026-04-05T16:43:18.904Z",
+  "finishedAt": "2026-04-05T16:44:39.266Z",
   "summary": {
     "total": 20,
-    "passed": 20,
-    "warned": 0,
+    "passed": 19,
+    "warned": 1,
     "errors": 0,
     "skipped": 0
   }

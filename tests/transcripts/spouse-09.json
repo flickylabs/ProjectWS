@@ -1,13 +1,16 @@
 {
   "caseId": "spouse-09",
   "category": "spouse",
+  "isMonetary": true,
   "partyA": {
     "name": "유선아",
-    "archetype": "precautionary_controller"
+    "archetype": "precautionary_controller",
+    "tell": "scope_split"
   },
   "partyB": {
     "name": "강도현",
-    "archetype": "action_first_provider"
+    "archetype": "action_first_provider",
+    "tell": "task_listing"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "유선아 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 금액은 제가 보냈습니다. 다만 그 시점에서 다른 이유가 있었던 건 아직 설명되지 않은 부분입니다.",
-      "behaviorHint": "침착하게 고개를 끄덕이며 말한다.",
+      "npcResponse": "아닙니다. 그건 남편의 이야기가 먼저일 겁니다.",
+      "behaviorHint": "살짝 고개를 숙이며 팔짱을 끼고 긴장한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "유선아 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "그 시점에 그 금액을 움직인 건 제 남편이었습니다. 미리 말씀드리지 못한 건 제 실수이지만, 당시 상황에서 선택의 여지가 없었습니다.",
-      "behaviorHint": "약간 방어적인 자세로 고개를 살짝 끄덕인다.",
+      "npcResponse": "집안에 급한 일이 있었던 때였습니다. 상황이 빠듯해 미리 이야기하지 못한 건 제 잘못이지만.",
+      "behaviorHint": "약간 머뭇거리며 말을 이어간다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -74,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "유선아 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 말씀드리면, 그 시점에는 모든 게 혼란스러웠습니다. 그 금액이 왜 거기에 있는지, 내가 뭘 놓쳤는지 두려웠습니다.",
-      "behaviorHint": "살짝 주저하며 불안한 눈빛으로 재판관을 본다.",
+      "npcResponse": "솔직히, 그 금액이 이동한 걸 알고 나니 순간적으로 불안했습니다. 제 남편에게 말하지 못한 게 많아서 더 큰일이 날 것 같았거든요.",
+      "behaviorHint": "눈을 살짝 내리깔며 잠시 침묵을 유지한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강도현 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 오해입니다. 그 보험금 송금한 건 맞습니다만, 그게 개인계좌로 간 건 순간의 판단이었습니다.",
-      "behaviorHint": "약간 긴장한 태도로, 짧게 설명하며 중요한 부분을 흐린다.",
+      "npcResponse": "네, 그 돈은 이동했습니다. 다만, 이 문제는 내가 먼저 해결해야 할 부분이었습니다.",
+      "behaviorHint": "잠시 눈을 피하며 곤란한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +108,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "유선아 씨, 이 계좌 이체 내역과 주차 기록에 대해 입장을 밝혀 주십시오.",
+      "judgeQuestion": "유선아 씨, 이 계좌 이체 내역과 주차 기록을 보시고 입장을 밝혀 주십시오.",
       "npcResponse": "그 내역서는 맞습니다. 다만 수취인이 누군지까지 그걸로 단정할 순 없습니다.",
-      "behaviorHint": "침착하게 자기 입장을 설명하며 시선을 잠시 피한다.",
+      "behaviorHint": "침착하게 입장을 밝히고, 증거의 해석을 흐리면서 자신의 입장을 방어한다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -121,9 +124,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "강도현 씨, 이 예약 관련 문서와 영수증를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 제 아내가 병원을 대기하면서 작성한 겁니다. 선수금은 적지 않은 돈이긴 하지만, 그 돈이 간병 목적으로만 사용되는 건 아닙니다.",
-      "behaviorHint": "팔짱을 끼고 약간 고개를 돌린다. 한숨을 고르게 쉬고 입술을 다문다.",
+      "judgeQuestion": "강도현 씨, 이 예약 관련 문서와 영수증을 보시고 설명해 주십시오.",
+      "npcResponse": "그 자료는 제 아내의 이름이 적혀 있지만, 이건 가족 전체를 위한 결정이었습니다. 적지 않은 돈이었기에 서둘러 처리할 필요가 있었지만, 설명이 부족했던 점은 인정합니다.",
+      "behaviorHint": "조금 당황한 기색을 보이며, 시선을 아래로 잠시 내리다 다시 재판관을 바라본다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "유선아 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "그 금액을 9월 20일 밤에 옮긴 건 사실입니다. 병원 관련해서 원무주임과 통화하느라 늦었지만, 그 돈을 우리 공동계좌에서 독단적으로 처리한 건 제 실수입니다.",
-      "behaviorHint": "한숨을 쉬며 재판관을 향해 진지한 표정으로 설명한다.",
+      "npcResponse": "그 금액을 움직인 건 맞습니다. 다만 그건 급해서 제가 일단 처리한 것이고, 남편과 공유가 안 됐던 점은 남습니다.",
+      "behaviorHint": "고개를 살짝 숙이며 인정하는 제스처를 취한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,10 +157,16 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "유선아 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "그 시점에서 원무주임과 연락이 있었기에 금액을 옮길 수밖에 없었습니다. 미리 말하지 못한 제 잘못은 인정합니다.",
-      "behaviorHint": "약간의 방어적 몸짓, 손을 가볍게 움직이며 설명하는 모습",
+      "npcResponse": "적지 않은 돈이 움직인 건 맞습니다. 그러나 그 돈을 옮긴 건 급히 처리해야 할 일이 있었기 때문입니다.",
+      "behaviorHint": "차분한 표정을 유지하며 손을 가볍게 모은다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"움직인 건 맞습니다.\""
+        }
+      ],
       "error": null
     },
     {
@@ -170,8 +179,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "강도현 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "그 보험금이 오빠 개인계좌로 들어간 건 맞습니다. 다만 그 돈을 저한테 미리 말하지 않고 옮긴 건 좀 이상했습니다.",
-      "behaviorHint": "살짝 고개를 끄덕이며 약간 불편한 표정을 짓는다.",
+      "npcResponse": "네, 그 보험금은 제 아내의 동의 없이 오빠의 개인계좌로 송금된 것이 맞습니다. 하지만 그 직후에 저를 배제한 채로 진행된 부분에 문제가 있습니다.",
+      "behaviorHint": "침착하게 앉아 있지만, 손을 모아 테이블 위에 올려놓고 약간 긴장한 표정이다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +195,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "강도현 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히 그때는 정말 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서, 그 돈이 제 아내에게 어떻게 쓰여질지 불안했습니다.",
-      "behaviorHint": "감정을 드러내며 잠시 망설이는 모습.",
+      "npcResponse": "솔직히, 그 순간은 정말 무서웠습니다. 제가 상의 없이 진행하면 더 큰일이 날 것 같아서 말조차 꺼낼 수 없었어요.",
+      "behaviorHint": "고개를 약간 숙이며 눈을 피함",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +210,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "유선아 씨, 이 메신저 대화 일부 캡처에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 일부분만 잡힌 것이고, 그걸로 다 설명할 순 없습니다. 밤 10시 전에 다시 보자는 건 병원 관련일 수도 있지 않습니까.",
-      "behaviorHint": "침착하게 반박하며 고개를 살짝 끄덕인다.",
+      "judgeQuestion": "유선아 씨, 이 메신저 대화 일부 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 다만 그걸로 밤 10시 전후의 개인적인 약속을 단정할 순 없습니다.",
+      "behaviorHint": "침착하게 손으로 캡처 이미지를 가리킨다",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +227,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "유선아 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 그건 비상시에 쓸 돈이라 그 시점엔 다른 설명이 우선이었습니다.",
-      "behaviorHint": "냉담하게 상대를 바라보다가 진지하게 재판관을 쳐다본다.",
+      "npcResponse": "적지 않은 돈이 움직인 건 맞습니다. 그런데 그 숫자만 보고 다른 뜻부터 붙이는 건 순서가 아닙니다.",
+      "behaviorHint": "긴장된 표정으로 재판관을 똑바로 본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +243,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "유선아 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "제 남편이 먼저 그 돈을 숨겼기 때문입니다. 남은 상황에서 저는 적지 않은 돈을 스스로 결정할 수밖에 없었습니다.",
-      "behaviorHint": "조금 긴장한 표정으로 고개를 약간 숙이며 설명한다.",
+      "npcResponse": "그 금액이 움직인 건 급박했기 때문입니다. 변명 같은 소릴 하지만, 미리 알리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "눈을 피하면서 다소 방어적인 자세로 몸을 약간 움츠린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +259,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "강도현 씨, 다시 정리해 주십시오.",
-      "npcResponse": "네, 그 보험금을 옮긴 건 맞습니다. 다만, 제 아내가 개인계좌로 따로 처리한 건 미리 알지 못한 상태였습니다.",
-      "behaviorHint": "긴장된 표정으로 손가락을 꼼지락거린다.",
+      "npcResponse": "네, 그 보험금을 제 개인계좌로 옮긴 건 맞습니다. 다만 제 아내가 절차를 무시한 채 저를 배제한 셈이 됐습니다.",
+      "behaviorHint": "손을 가슴에 얹고 진지한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -266,8 +275,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강도현 씨, 도현 송금은 사적 유용이었나에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그게 병동 설명을 두고 원무주임과 이야기한 거였어요.",
-      "behaviorHint": "약간 긴장하며 시선을 피한다.",
+      "npcResponse": "아닙니다. 재무 문제 때문이 아니고, 병원 원무주임과 업무를 이야기한 것입니다.",
+      "behaviorHint": "단호한 표정으로 시선을 유지한다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +291,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "유선아 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그 금액이 나갔을 때 숨이 막혔습니다. 남편이 예전에 돈을 숨겼던 기억이 떠올라서, 그때는 다시 의심할 수밖에 없었습니다.",
-      "behaviorHint": "당시의 불안한 심정을 담담하게 전달한다.",
+      "npcResponse": "솔직히, 그때는 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서.",
+      "behaviorHint": "손을 가볍게 모으며 눈을 잠시 아래로 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +307,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "유선아 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 송금은 21시 42분에 했습니다. 간병인 확보를 위해 최서정 씨에게 390만 원을 보냈고, 설명이 늦어지는 바람에 오해가 커졌습니다. 제 남편이 돈 숨기던 일과 겹쳐 저도 불안했습니다.",
-      "behaviorHint": "고개를 숙이며 손을 쥔다",
+      "npcResponse": "네, 송금한 건 맞습니다. 21시 42분에 최서정이라는 이름으로 390만원을 보냈습니다. 장모님 간병 예약금을 먼저 처리해야 해서 그렇게 했고, 미리 알리지 못한 건 두려움이 앞섰기 때문입니다. 지금은 후회합니다.",
+      "behaviorHint": "고개를 약간 숙이며 진지한 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,8 +323,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "강도현 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그때는 무서웠습니다. 930만원이라는 큰돈이 선아 개인계좌로 이체된 순간, 제가 최종적으로 통보받는 사람이 된 것처럼 느꼈습니다. 사실은 제 과거와 관련된 불안이 있긴 했지만 그 순간의 배제감이 더 컸습니다.",
-      "behaviorHint": "고개를 약간 숙이고 손을 주머니에 넣는다.",
+      "npcResponse": "솔직히, 930만원을 선아 씨 개인계좌에 넣은 건 저도 압니다. 제3자 계좌가 개입된 순간, 제 아내의 불안이 제 과거에서 비롯됐다는 점도 인정합니다. 당시에는 선아를 보호하려고 했지만, 결과적으로 자신이 밀려난 듯한 기분이 들었습니다. 지금은 모든 게 밝혀져 두렵고 후회가 남습니다.",
+      "behaviorHint": "머리를 긁적이며 솔직하게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -330,8 +339,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "유선아 씨, 병원비 공황 — 단독인가 쌍방인가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 제 남편의 비밀 송금이 기폭제가 됐습니다.",
-      "behaviorHint": "지금도 그 송금이 문제의 시작이었다는 듯 단호한 표정을 짓는다.",
+      "npcResponse": "아닙니다. 그건 제 남편의 비밀 송금이 촉발한 문제였습니다.",
+      "behaviorHint": "차분하게 고개를 끄덕이며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -346,19 +355,19 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강도현 씨, 병원비 공황 — 단독인가 쌍방인가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 제 아내도 그 보험금을 미리 말하지 않아서 벌어진 일입니다.",
-      "behaviorHint": "단호한 표정으로 재판관을 바라본다.",
+      "npcResponse": "그때 미리 얘기 못한 건 제 잘못입니다. 하지만, 보험금 문제도 큰 역할을 했다고 생각합니다.",
+      "behaviorHint": "약간 긴장된 표정으로 손을 주머니에 넣는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T12:19:12.996Z",
-  "finishedAt": "2026-04-05T12:20:32.640Z",
+  "startedAt": "2026-04-05T16:17:03.362Z",
+  "finishedAt": "2026-04-05T16:18:23.080Z",
   "summary": {
     "total": 20,
-    "passed": 20,
-    "warned": 0,
+    "passed": 19,
+    "warned": 1,
     "errors": 0,
     "skipped": 0
   }

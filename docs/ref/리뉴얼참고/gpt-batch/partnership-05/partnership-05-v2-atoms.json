@@ -26,7 +26,7 @@
           "claimAtoms": [
             {
               "id": "partnership-05:a:d-1:denial:0",
-              "factText": "그 2,400만원은 개인 용도가 아니라 세무조사 대응 자문을 먼저 붙이기 위한 선급 처리였다.",
+              "factText": "그 해당 금액은 개인 용도가 아니라 세무조사 대응 자문을 먼저 붙이기 위한 선급 처리였다.",
               "tags": [
                 "denial",
                 "act"
@@ -74,7 +74,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 전문가",
-                  "fullName": "세무사",
+                  "fullName": "외부 전문가",
                   "judgeRef": "세무사"
                 }
               },
@@ -120,7 +120,7 @@
                 "amount": {
                   "exact": "적지 않은 돈",
                   "neutral": "그 금액",
-                  "rounded": "2,400만원"
+                  "rounded": "그 금액"
                 },
                 "institution": {
                   "exact": "세움조세자문",
@@ -159,7 +159,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 전문가",
-                  "fullName": "박 씨",
+                  "fullName": "외부 전문가",
                   "judgeRef": "세무사"
                 }
               },
@@ -204,7 +204,7 @@
                 "amount": {
                   "exact": "24,000,000원",
                   "neutral": "그 금액",
-                  "rounded": "2,400만원"
+                  "rounded": "그 금액"
                 },
                 "institution": {
                   "exact": "세움조세자문",
@@ -243,7 +243,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 전문가",
-                  "fullName": "박태성",
+                  "fullName": "외부 전문가",
                   "judgeRef": "세무사"
                 }
               },
@@ -541,7 +541,7 @@
                 "person": {
                   "exact": "최현우",
                   "neutral": "그 사람",
-                  "fullName": "상대 공동대표",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 공동대표"
                 },
                 "frame": {
@@ -623,7 +623,7 @@
                 "person": {
                   "exact": "최현우",
                   "neutral": "그 사람",
-                  "fullName": "최 씨",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 공동대표"
                 },
                 "frame": {
@@ -705,7 +705,7 @@
                 "person": {
                   "exact": "최현우",
                   "neutral": "그 사람",
-                  "fullName": "최현우",
+                  "fullName": "그 사람",
                   "judgeRef": "상대 공동대표"
                 },
                 "frame": {
@@ -1034,7 +1034,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "세무사",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "structure": {
@@ -1048,7 +1048,7 @@
                 "person2": {
                   "exact": "정소라",
                   "neutral": "상대 공동대표",
-                  "fullName": "상대",
+                  "fullName": "상대 공동대표",
                   "judgeRef": "상대"
                 }
               },
@@ -1122,7 +1122,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "박 씨",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "structure": {
@@ -1136,7 +1136,7 @@
                 "person2": {
                   "exact": "정소라",
                   "neutral": "상대 공동대표",
-                  "fullName": "정 씨",
+                  "fullName": "상대 공동대표",
                   "judgeRef": "상대"
                 }
               },
@@ -1210,7 +1210,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "박태성",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "structure": {
@@ -1224,7 +1224,7 @@
                 "person2": {
                   "exact": "정소라",
                   "neutral": "상대 공동대표",
-                  "fullName": "정소라",
+                  "fullName": "상대 공동대표",
                   "judgeRef": "상대"
                 }
               },
@@ -1599,7 +1599,7 @@
                 "person": {
                   "exact": "노지훈 재무대리",
                   "neutral": "실무자",
-                  "fullName": "재무대리",
+                  "fullName": "실무자",
                   "judgeRef": "재무대리"
                 }
               },
@@ -1681,7 +1681,7 @@
                 "person": {
                   "exact": "노지훈 재무대리",
                   "neutral": "실무자",
-                  "fullName": "노 씨",
+                  "fullName": "실무자",
                   "judgeRef": "재무대리"
                 }
               },
@@ -1763,7 +1763,7 @@
                 "person": {
                   "exact": "노지훈 재무대리",
                   "neutral": "실무자",
-                  "fullName": "노지훈",
+                  "fullName": "실무자",
                   "judgeRef": "재무대리"
                 }
               },
@@ -2054,7 +2054,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "세무사",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "institution": {
@@ -2137,7 +2137,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "박 씨",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "institution": {
@@ -2220,7 +2220,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "박태성",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "institution": {
@@ -2545,7 +2545,7 @@
           "claimAtoms": [
             {
               "id": "partnership-05:b:d-1:denial:0",
-              "factText": "공동 승인도 없이 조사 직전 심야에 2,400만원이 빠져나가면 개인 비자금처럼 보일 수밖에 없었다.",
+              "factText": "공동 승인도 없이 조사 직전 심야에 해당 금액이 빠져나가면 개인 비자금처럼 보일 수밖에 없었다.",
               "tags": [
                 "denial",
                 "act"
@@ -2597,7 +2597,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 전문가",
-                  "fullName": "세무사",
+                  "fullName": "외부 전문가",
                   "judgeRef": "세무사"
                 }
               },
@@ -2642,7 +2642,7 @@
                 "amount": {
                   "exact": "적지 않은 돈",
                   "neutral": "그 금액",
-                  "rounded": "2,400만원"
+                  "rounded": "그 금액"
                 },
                 "institution": {
                   "exact": "세움조세자문",
@@ -2685,7 +2685,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 전문가",
-                  "fullName": "박 씨",
+                  "fullName": "외부 전문가",
                   "judgeRef": "세무사"
                 }
               },
@@ -2730,7 +2730,7 @@
                 "amount": {
                   "exact": "24,000,000원",
                   "neutral": "그 금액",
-                  "rounded": "2,400만원"
+                  "rounded": "그 금액"
                 },
                 "institution": {
                   "exact": "세움조세자문",
@@ -2773,7 +2773,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 전문가",
-                  "fullName": "박태성",
+                  "fullName": "외부 전문가",
                   "judgeRef": "세무사"
                 }
               },
@@ -3082,7 +3082,7 @@
                 "person": {
                   "exact": "최현우",
                   "neutral": "상대",
-                  "fullName": "상대 공동대표",
+                  "fullName": "상대",
                   "judgeRef": "상대 공동대표"
                 },
                 "frame": {
@@ -3164,7 +3164,7 @@
                 "person": {
                   "exact": "최현우",
                   "neutral": "상대",
-                  "fullName": "최 씨",
+                  "fullName": "상대",
                   "judgeRef": "상대 공동대표"
                 },
                 "frame": {
@@ -3246,7 +3246,7 @@
                 "person": {
                   "exact": "최현우",
                   "neutral": "상대",
-                  "fullName": "최현우",
+                  "fullName": "상대",
                   "judgeRef": "상대 공동대표"
                 },
                 "frame": {
@@ -3574,7 +3574,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "세무사",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "structure": {
@@ -3588,7 +3588,7 @@
                 "person2": {
                   "exact": "최현우",
                   "neutral": "상대 공동대표",
-                  "fullName": "상대",
+                  "fullName": "상대 공동대표",
                   "judgeRef": "상대"
                 }
               },
@@ -3662,7 +3662,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "박 씨",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "structure": {
@@ -3676,7 +3676,7 @@
                 "person2": {
                   "exact": "최현우",
                   "neutral": "상대 공동대표",
-                  "fullName": "최 씨",
+                  "fullName": "상대 공동대표",
                   "judgeRef": "상대"
                 }
               },
@@ -3750,7 +3750,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "박태성",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "structure": {
@@ -3764,7 +3764,7 @@
                 "person2": {
                   "exact": "최현우",
                   "neutral": "상대 공동대표",
-                  "fullName": "최현우",
+                  "fullName": "상대 공동대표",
                   "judgeRef": "상대"
                 }
               },
@@ -4139,7 +4139,7 @@
                 "person": {
                   "exact": "노지훈 재무대리",
                   "neutral": "실무자",
-                  "fullName": "재무대리",
+                  "fullName": "실무자",
                   "judgeRef": "재무대리"
                 }
               },
@@ -4221,7 +4221,7 @@
                 "person": {
                   "exact": "노지훈 재무대리",
                   "neutral": "실무자",
-                  "fullName": "노 씨",
+                  "fullName": "실무자",
                   "judgeRef": "재무대리"
                 }
               },
@@ -4303,7 +4303,7 @@
                 "person": {
                   "exact": "노지훈 재무대리",
                   "neutral": "실무자",
-                  "fullName": "노지훈",
+                  "fullName": "실무자",
                   "judgeRef": "재무대리"
                 }
               },
@@ -4594,7 +4594,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "세무사",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "institution": {
@@ -4677,7 +4677,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "박 씨",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "institution": {
@@ -4760,7 +4760,7 @@
                 "person": {
                   "exact": "박태성 세무사",
                   "neutral": "외부 세무사",
-                  "fullName": "박태성",
+                  "fullName": "외부 세무사",
                   "judgeRef": "세무사"
                 },
                 "institution": {

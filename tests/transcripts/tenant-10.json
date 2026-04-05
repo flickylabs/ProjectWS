@@ -1,13 +1,16 @@
 {
   "caseId": "tenant-10",
   "category": "tenant",
+  "isMonetary": true,
   "partyA": {
     "name": "윤민주",
-    "archetype": "avoidant"
+    "archetype": "avoidant",
+    "tell": "broker_shield"
   },
   "partyB": {
     "name": "최상훈",
-    "archetype": "cold_logic"
+    "archetype": "cold_logic",
+    "tell": "clause_gate"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "윤민주 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 특약이 전면 금지라고만 보이지 않았습니다. 사진 확인 후 별도 반대 없으니 그렇게 이해했습니다.",
-      "behaviorHint": "조심스럽게 고개를 살짝 끄덕이며 말한다.",
+      "npcResponse": "네, 그날 송금한 건 맞습니다. 다만 그게 어디로 간 건지는 확인이 필요합니다.",
+      "behaviorHint": "조심스럽게 대답하며 눈을 살짝 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "윤민주 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "사진을 확인한 뒤에 별다른 반대가 없어서 괜찮은 줄 알았습니다. 하지만 미리 말씀드리지 못한 건 제 잘못입니다.",
-      "behaviorHint": "시선을 피하며 조심스럽게 말한다.",
+      "npcResponse": "그 부분은 집주인분이 사진 확인 후 별도로 반대를 안 하시길래, 허용하신 걸로 받아들일 수밖에 없었습니다. 예전에 받은 애매한 관리 요청 때문에 조금 급했거든요.",
+      "behaviorHint": "조심스럽게 손을 모으며 방어적인 자세를 취한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -74,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "윤민주 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히, 그때는 많이 불안했습니다. 제가 말하면 더 큰일이 날 것 같아서 조심스러웠습니다.",
-      "behaviorHint": "작게 한숨을 내쉬고 살짝 시선을 피한다.",
+      "npcResponse": "솔직히, 그때는 정말 혼란스러웠습니다. 집주인분의 반대가 없길래, 제가 상황을 잘못 이해한 게 아닌가 싶어 조심스러웠어요.",
+      "behaviorHint": "고개를 약간 숙이고 손끝을 만지작거린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "최상훈 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 고지한 건 맞습니다. 그런데 승인 없이 들어간 건 단계가 달랐습니다.",
-      "behaviorHint": "차분하게 손을 모아 테이블 위에 올린다.",
+      "npcResponse": "네, 그 무렵 연락이 있었던 건 사실입니다. 다만 승인 없이 입주한 부분은 절차가 완료되지 않은 상태였습니다.",
+      "behaviorHint": "차분히 고개를 끄덕이며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +108,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "윤민주 씨, 이 임대차계약서와 반려동물 특약에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 반려동물 제한 특약이지만, 전면 자동 금지로만 보이지 않았습니다. 그걸 보면 오히려 미리 말하지 못한 점이 아쉽습니다.",
-      "behaviorHint": "당황한 표정을 지으며 차분하게 설명하려는 모습",
+      "judgeQuestion": "윤민주 씨, 이 임대차계약서와 반려동물 특약을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 반려동물에 대한 제한이 있음을 보여주지만, 예외적인 상황에서 가능성도 열어둔 부분이 있습니다. 집주인분과의 실제 대화에서는 그 부분이 논의됐던 것처럼 보였습니다.",
+      "behaviorHint": "조금 당황한 기색을 드러내며 시선을 피한다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -121,9 +124,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "최상훈 씨, 이 대화 캡처와 사진 전송 기록를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 입주 직전에 민주씨가 강아지 사진을 보낸 것이 맞습니다. 그러나 그걸 승인으로 보는 것은 절차적으로 맞지 않습니다.",
-      "behaviorHint": "차분히 자료를 바라보고 손끝으로 한 부분을 가리킨다",
+      "judgeQuestion": "최상훈 씨, 이 대화 캡처와 사진 전송 기록을 보시고 설명해 주십시오.",
+      "npcResponse": "해당 캡처는 제가 알고 있는 브로커 단톡방 맞습니다. 그러나 그 사진 전송만으로 승인이 이루어진 것은 아닙니다.",
+      "behaviorHint": "조금 긴장한 듯 하지만 겉으론 침착하게 하며 약간 고개를 끄덕인다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "윤민주 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그 다음 날 관리 요청을 보고 그렇게 판단했습니다. 다만, 집주인분의 메시지가 승인인지 보류인지 애매했습니다.",
-      "behaviorHint": "손끝으로 책상 가장자리를 톡톡 두드리며 약간 긴장한 표정",
+      "npcResponse": "네, 제가 그날 송금을 한 건 맞습니다. 다만, 그 다음 날 집주인분께서 회신해주신 내용이 관리 조건을 확인하는 쪽으로도 느껴질 만큼 애매했습니다.",
+      "behaviorHint": "조금 긴장된 표정으로, 조심스럽게 설명하는 모습을 보인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "윤민주 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "집주인분의 회신이 애매하게 들려서, 확인이 필요하다는 생각에 그렇게 할 수밖에 없었습니다. 그 부분에서 미리 말씀드리지 못한 건 제 책임입니다.",
-      "behaviorHint": "조심스럽게 고개를 약간 숙이며.",
+      "npcResponse": "집주인분의 회신이 승인보다는 보류에 가깝다고 느꼈습니다. 혼자 판단한 건 제 잘못이지만, 관리 요청이 애매하게 전달됐습니다.",
+      "behaviorHint": "상황을 설명하며 손끝을 만지작거린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "최상훈 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 소형 반려견 문제는 입주 전 브로커에게 사진을 전송했었습니다. 하지만 그게 승인 완료를 의미하는 건 아닙니다.",
-      "behaviorHint": "단호하게 고개를 끄덕이며 설명한다.",
+      "npcResponse": "네, 입주 전 사진을 세입자분께 전달한 건 맞습니다. 다만, 그것이 승인 완료를 의미하는 것은 아니었습니다.",
+      "behaviorHint": "차분한 표정으로 재판관을 향해 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "최상훈 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "사실은, 입주 전 브로커에게 사진을 보내면서 마음이 불안했습니다. 제가 그걸 승인된 줄 알고 행동했다는 오해가 더 커질까봐 걱정이었습니다.",
-      "behaviorHint": "고개를 약간 숙이며 어깨를 가볍게 들어올린다.",
+      "npcResponse": "솔직히, 당시 소형 반려견 문제로 인한 복잡한 상황이 매우 부담스러웠습니다. 승인 전이라고 생각했기 때문에, 그 사실을 제대로 설명하지 못한 게 가장 두려웠습니다.",
+      "behaviorHint": "눈을 잠시 감고 숨을 내쉬며 감정을 다잡는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +204,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "윤민주 씨, 이 반려동물 등록증과 훈련 수료증에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 유효합니다. 다만, 집주인분과 미리 말하지 못한 점은 제가 다시 한 번 확인해 보겠습니다.",
-      "behaviorHint": "살짝 긴장하며 손을 깍지 낀다.",
+      "judgeQuestion": "윤민주 씨, 이 반려동물 등록증과 훈련 수료증을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 집주인분의 입장을 이해하는 데 큰 도움이 됩니다. 그걸 보면 오히려 제가 너무 빨리 판단했음을 인정해야 할 것 같습니다.",
+      "behaviorHint": "서류를 천천히 살피며 작은 고개 끄덕임",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "윤민주 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 그건 집주인분이 먼저 관리 요청을 애매하게 하셨습니다. 제가 혼자 판단하게 되는 흐름이 있었습니다.",
-      "behaviorHint": "약간 주저하며 답하고, 손으로 작은 제스처를 하며 강조한다.",
+      "npcResponse": "아닙니다. 집주인분께서 보내신 짧은 문자가 오해의 소지가 있었습니다. 그 부분 때문에 제가 잘못된 판단을 할 수밖에 없었습니다.",
+      "behaviorHint": "윤민주는 약간 긴장한 듯 손끝을 만지작거립니다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +237,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "윤민주 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "그 무렵 급히 거처를 정해야 하는 압박감이 컸습니다. 그 때문에 집주인분의 답변을 좀 더 긍정적으로 해석할 수밖에 없었습니다.",
-      "behaviorHint": "설명하면서 손을 모으고 눈을 마주치지 않으려 함.",
+      "npcResponse": "그 무렵에 입주 날짜가 급하게 다가오고 있었습니다. 먼저 말씀드리지 못한 건 제 잘못이지만, 그 압박을 견디기 힘들었습니다.",
+      "behaviorHint": "조심스럽게 두 손을 모은다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +253,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "최상훈 씨, 다시 정리해 주십시오.",
-      "npcResponse": "아닙니다. 그건 제가 최종 승인을 하지 않은 상태였습니다. 세입자분께서 절차 확인 없이 입주하신 부분도 있습니다.",
-      "behaviorHint": "단호하게 서류를 정리하는 듯한 손동작을 취한다.",
+      "npcResponse": "네, 세입자분이 최종 승인 확인 없이 입주한 건 맞습니다. 하지만 제가 답을 미루며 무응답 상태를 만든 점도 인정합니다.",
+      "behaviorHint": "고개를 살짝 끄덕이며 정리된 태도로 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -265,9 +268,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "최상훈 씨, 상훈의 즉시 반려견 퇴거·예치금 요구에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 즉각적인 조치 요구는 사실입니다. 다만, 다른 세입자분들의 민원도 고려할 수밖에 없었습니다.",
-      "behaviorHint": "침착하게 서류를 정리하고 재판관을 바라본다.",
+      "judgeQuestion": "최상훈 씨, 즉시 반려견 퇴거·예치금 요구에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그런 조치를 취했습니다. 다른 세입자분들의 민원이 있었기 때문에 빠르게 대응해야 했습니다.",
+      "behaviorHint": "냉정하게 고개를 끄덕이며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +285,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "윤민주 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 그 무렵에는 소형 반려견을 맡길 곳이 마땅치 않아 불안감이 커졌습니다. 세입자로서 문제를 일으키는 사람으로 비칠까 두려워, 집주인분께 바로 말씀드리지 못한 것도 사실입니다.",
-      "behaviorHint": "양손을 마주 잡고 눈을 잠시 내리 깐다.",
+      "npcResponse": "사실 그 무렵에 소형 반려견을 맡길 곳이 정해지지 않아 불안했습니다. 세입자로서 문제를 일으킬까 봐 걱정되어 미리 말씀드리지 못했습니다.",
+      "behaviorHint": "고개를 약간 숙이고 눈을 피하면서 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,10 +301,16 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "윤민주 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 애완견과 함께 입주했던 건 맞습니다. 애매하게 답변을 주신 집주인분의 메시지도 있었고, 그래서 상황을 오해하게 됐습니다. 미리 말하지 못한 제 책임도 인정합니다.",
-      "behaviorHint": "솔직한 표정으로 고개를 살짝 끄덕인다.",
+      "npcResponse": "네, 반려견과 함께 입주했습니다. 그 부분은 제가 미리 말씀드리지 못해 책임을 느끼고 있습니다. 다만, 집주인분의 '관리만 잘 해 달라'는 회신이 오해를 키웠던 것 같아요. 지금은 후회를 하고 있습니다.",
+      "behaviorHint": "윤민주는 고개를 약간 숙이며, 반성하는 표정을 지으며 말한다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
       "error": null
     },
     {
@@ -314,10 +323,16 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "최상훈 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 제가 처음에 통지를 명확히 하지 못한 부분이 있습니다. 그러나 서두르면서 세입자분이 성급하게 결정을 내린 것도 맞습니다. 이제는 통지가 있었지만 승인은 없었다는 점을 인정합니다.",
-      "behaviorHint": "조금 민망한 표정을 지으며 고개를 살짝 끄덕인다.",
+      "npcResponse": "솔직히 말씀드리면, 통지를 명확하게 처리하지 못한 점이 있습니다. 이제 인정합니다, 세입자분과의 소통이 부족했습니다. 당시에는 책임을 나누기보다 혼자 해결하려는 생각이 강했습니다. 지금은 그 선택이 잘못이었다는 걸 깨닫고 있습니다.",
+      "behaviorHint": "고개를 숙이고 좌절감을 드러낸다",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
       "error": null
     },
     {
@@ -330,8 +345,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "윤민주 씨, 전문 청소·바닥보수 선공제 필요성에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 전문 청소나 보수를 진행할 단계가 아닌 것 같습니다. 현재 확실히 문제가 되는 건 현관 매트 오염 정도입니다.",
-      "behaviorHint": "말하면서 고개를 약간 숙이며 조심스러운 태도를 보인다.",
+      "npcResponse": "바닥보수까지는 현재 단계에서 필요성이 확인되지 않았습니다. 지금 상태로는 현관매트에 가벼운 청소만 필요할 것 같습니다.",
+      "behaviorHint": "조금 긴장된 눈빛으로 상대의 반응을 엿본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -346,19 +361,19 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "최상훈 씨, 전문 청소·바닥보수 선공제 필요성에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 선공제 결정한 건 맞습니다. 그 냄새 때문이라면, 지금 당장보다 나중에 커지는 게 더 큰 문제라 판단했습니다.",
-      "behaviorHint": "진지하고 단호한 얼굴로 재판관을 직시하며 말한다.",
+      "npcResponse": "아닙니다. 그건 일단 예치금 성격으로 준비했습니다. 다만, 늦게 나타날 냄새 문제는 좀 더 지켜봐야 할 부분입니다.",
+      "behaviorHint": "자료를 검토하는 척하며 고개를 조금 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T13:46:28.958Z",
-  "finishedAt": "2026-04-05T13:47:51.166Z",
+  "startedAt": "2026-04-05T18:32:13.735Z",
+  "finishedAt": "2026-04-05T18:33:33.696Z",
   "summary": {
     "total": 20,
-    "passed": 20,
-    "warned": 0,
+    "passed": 18,
+    "warned": 2,
     "errors": 0,
     "skipped": 0
   }

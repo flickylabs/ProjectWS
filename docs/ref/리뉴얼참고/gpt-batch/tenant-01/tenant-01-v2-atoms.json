@@ -78,7 +78,7 @@
           "disputeId": "d-1",
           "state": "S1",
           "publicClaim": [
-            "은행 한도 쪽 문제가 있어서 바로 못 들어갔던 거예요.",
+            "절차적인 문제가 있어서 바로 못 들어갔던 거예요.",
             "며칠 차이였고 관리비도 같은 주에 맞췄어요."
           ],
           "privateKnowledge": [
@@ -97,7 +97,7 @@
           "claimAtoms": [
             {
               "id": "tenant01:a:d-1:timeline:0",
-              "factText": "약정일을 넘긴 건 맞지만 은행 설정 문제였다고 설명한다.",
+              "factText": "약정일을 넘긴 건 맞지만 절차적 문제였다고 설명한다.",
               "tags": [
                 "timeline",
                 "act"
@@ -2110,7 +2110,7 @@
           "disputeId": "d-1",
           "state": "S1",
           "publicClaim": [
-            "정확히 5일 늦었고 관리비도 같은 주에 들어왔습니다.",
+            "며칠 늦었고 관리비도 같은 주에 들어왔습니다.",
             "금액보다 약정 위반 여부를 본 겁니다."
           ],
           "privateKnowledge": [

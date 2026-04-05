@@ -1,13 +1,16 @@
 {
   "caseId": "spouse-05",
   "category": "spouse",
+  "isMonetary": false,
   "partyA": {
     "name": "강민재",
-    "archetype": "territorial"
+    "archetype": "territorial",
+    "tell": "rule_speak"
   },
   "partyB": {
     "name": "이소담",
-    "archetype": "fairness_guardian"
+    "archetype": "fairness_guardian",
+    "tell": "numeric_comparison"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강민재 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 이전 코드 문제였습니다.",
-      "behaviorHint": "손가락으로 탁자를 톡톡 두드리며 잠시 멈칫합니다.",
+      "npcResponse": "아닙니다. 그건 보안 장비가 있는 방이라 절차상 그냥 넘길 수 없었습니다.",
+      "behaviorHint": "침착하지만 단호한 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,10 +61,16 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "강민재 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "보안 장비가 있는 방이라 사전 고지 없는 출입은 절차상 그냥 넘길 수 없었습니다. 그렇지만 미리 말하지 못한 건 제 잘못입니다.",
-      "behaviorHint": "고개를 살짝 끄덕이며 진지한 표정을 짓는다.",
+      "npcResponse": "그 방에는 보안 장비가 있어서 사전 고지 없는 출입은 절차상 그냥 넘길 수 없었습니다. 나중에 알리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "고개를 약간 숙이며 약간의 방어적 태도를 취한다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"절차상 그냥 넘길\""
+        }
+      ],
       "error": null
     },
     {
@@ -74,8 +83,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "강민재 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히, 그 순간엔 너무 놀랐습니다. 제가 뭐라도 말하면 더 큰일이 날 것 같아서 입을 다물었습니다.",
-      "behaviorHint": "눈을 피하며 살짝 고개를 숙인다.",
+      "npcResponse": "솔직히, 그 순간에는 좀 두려웠습니다. 말하면 일이 더 복잡해질까 봐 입을 열 수가 없었습니다.",
+      "behaviorHint": "말을 하면서 잠시 멈추고 어색한 미소를 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +99,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이소담 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그날 11시 47분에 권한 변경 알림이 온 것은 맞습니다. 그러나 미리 알리지 않고 같은 날 예약 블록을 길게 만든 건 이해가 어렵습니다.",
-      "behaviorHint": "단호하게 사실을 확인하며 고개를 약간 끄덕인다.",
+      "npcResponse": "아닙니다. 그건 일부 오해입니다. 권한 변경과 예약 기록은 같은 날 이루어진 것으로 알고 있습니다.",
+      "behaviorHint": "손을 가볍게 들며 부정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +114,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "강민재 씨, 이 스마트락 출입기록과 접속 로그에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 기록상으로 14시 08분에 출입한 걸 보여줍니다. 하지만 이걸로 상황 전체를 해석하기엔 부족합니다.",
-      "behaviorHint": "침착하게 서류를 정리하는 척하며 당황한 기색을 감추려 한다.",
+      "judgeQuestion": "강민재 씨, 이 스마트락 출입기록과 접속 로그를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 소담 씨가 14시 08분에 서재에 들어갔던 걸 보여줍니다. 하지만 와이파이 접속이 바로 이어졌다는 게 꼭 작업을 의미하는 건 아닙니다.",
+      "behaviorHint": "손가락으로 탁자를 두드리며 천천히 말한다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -121,9 +130,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "이소담 씨, 이 캘린더 변경 이력과 권한 알림를 보시고 설명해 주십시오.",
-      "npcResponse": "그 내역서는 맞습니다. 다만 11시 47분에 권한이 변경된 것과 10시간 전용 블록이 한꺼번에 나타난 걸 보면, 뭔가 다른 해석이 필요할지도 모릅니다.",
-      "behaviorHint": "침착하게 증거를 받아치며 설명한다.",
+      "judgeQuestion": "이소담 씨, 이 캘린더 변경 이력과 권한 알림을 보시고 설명해 주십시오.",
+      "npcResponse": "그 기록은 제가 확인한 것입니다. 단지 그 상황이 민재 씨의 의도와는 다를 수 있다는 점을 말씀드리고 싶습니다.",
+      "behaviorHint": "살짝 당황한 듯 약간 고개를 숙이며 설명한다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +147,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "강민재 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 소담 씨가 제 예약 블록 시간에 서재에 들어간 건 사실입니다. 그 시점에 소담 씨가 14시 15분 화상심사를 앞두고 있다는 것도 알고 있었습니다.",
-      "behaviorHint": "조금 긴장된 표정으로, 두 손을 테이블 위에 얹는다.",
+      "npcResponse": "네, 그 시점에 소담 씨가 제 예약 블록 시간에 서재에 들어간 건 사실입니다. 그날 소담 씨가 14시 15분 화상심사를 앞두고 있었다는 사정은 알고 있었습니다.",
+      "behaviorHint": "냉정한 표정으로 짧게 대답한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,10 +163,16 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "강민재 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "그날 제 아내가 14시 15분 화상심사를 앞두고 있다는 걸 알고 있었습니다. 그런데 작업 일정을 급하게 조정할 수밖에 없는 상황이었어요.",
-      "behaviorHint": "조금 당황한 표정을 지으며 손을 가볍게 들어올린다.",
+      "npcResponse": "소담 씨가 제 예약 블록 시간에 서재에 들어간 건 사실입니다. 그날 소담 씨가 14시 15분 화상심사를 앞두고 있었다는 사정은 알고 있었습니다.",
+      "behaviorHint": "다소 방어적인 몸짓으로 손을 모은다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"예약 블록 시간에\""
+        }
+      ],
       "error": null
     },
     {
@@ -170,8 +185,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "이소담 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "민재 씨가 서재 잠금권한과 프린터 접근을 혼자 바꿨습니다. 그 사실을 몰랐던 제 책임이 없다고 할 수는 없습니다.",
-      "behaviorHint": "단호한 자세로 상대 발언에 집중하며 주의 깊게 대답한다.",
+      "npcResponse": "네, 민재 씨가 서재의 잠금권한과 프린터 접근을 혼자 바꿔 공유 공간을 자신의 방처럼 만든 건 맞습니다. 그 시점에 제가 구 관리자 코드를 지워 두지 않은 책임이 없다고는 말 못 합니다.",
+      "behaviorHint": "조금 긴장된 표정으로, 손을 가볍게 움켜쥐며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +201,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "이소담 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그 시점에서 권한이 제한된 상태로 공유 장비에 접근해야 했다는 게 무서웠습니다. 문제가 더 커질까 두려워 아무 말도 못 했으니까요.",
-      "behaviorHint": "약간 위축된 표정으로 손을 꽉 쥔다.",
+      "npcResponse": "솔직히 그 시점에서는 어떤 말을 해도 벽에 부딪힐 것 같은 느낌이었습니다. 제 남편과의 대화가 이미 막혀 있었거든요.",
+      "behaviorHint": "고개를 약간 숙이며 침착하게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +216,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "강민재 씨, 이 음성 파일에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 녹취는 사실입니다. 다만, 소담 씨가 제 예약 블록 시간에 서재에 들어간 건 사실입니다만, 편집된 부분이 있어서 그걸로 단정할 순 없습니다.",
-      "behaviorHint": "침착하게 일정표를 보면서",
+      "judgeQuestion": "강민재 씨, 이 음성 파일을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 녹취 파일은 편집된 것 같습니다. 소담 씨가 제 예약 블록 시간에 서재에 들어간 건 사실인데, 본래 대화 맥락과는 다르게 들릴 수 있습니다.",
+      "behaviorHint": "녹취 파일을 가리키며 진지한 표정",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,10 +233,16 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "강민재 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "네, 소담 씨가 제 예약 블록 시간에 그 방에 들어간 건 사실입니다. 그런데 그 시점에 이전 코드가 작동하지 않았다는 건 별개의 문제입니다.",
-      "behaviorHint": "탁자를 두드리며 가벼운 한숨을 내쉰다.",
+      "npcResponse": "소담 씨가 제 예약 블록 시간에 서재에 들어간 건 사실입니다. 다만, 제가 사흘 전 권한을 바꿔 정식 진입 경로를 좁혀 놓았습니다.",
+      "behaviorHint": "소담 씨 쪽을 힐끔 쳐다보며 살짝 한숨을 쉰다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"예약 블록 시간에\""
+        }
+      ],
       "error": null
     },
     {
@@ -234,10 +255,16 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "강민재 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "소담 씨가 제 예약 블록 시간에 서재에 들어간 건 사실입니다. 무단 출입은 잘못이지만, 제가 사흘 전 권한을 바꿔 정식 진입 경로를 좁혀 놓은 책임도 있습니다.",
-      "behaviorHint": "약간의 방어적인 자세로 설명하며 눈을 피한다.",
+      "npcResponse": "소담 씨가 그 시점에 제 예약 블록 시간에 서재에 들어가는 바람에 문제를 회피할 수 없었습니다. 물론 이전 코드가 바뀐 것을 먼저 알리지 못한 부분은 제 잘못입니다.",
+      "behaviorHint": "정색하며 진지하게 말한다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"예약 블록 시간에\""
+        }
+      ],
       "error": null
     },
     {
@@ -250,8 +277,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "이소담 씨, 다시 정리해 주십시오.",
-      "npcResponse": "네, 민재 씨가 공유 장비 접근을 혼자 바꾼 건 사실입니다. 보안이 걱정이라 해도 길어진 예약 블록까지 한 건 과하지 않았습니까.",
-      "behaviorHint": "조금 긴장된 태도로 손을 꼭 쥔다.",
+      "npcResponse": "네, 민재 씨가 서재 잠금권한과 프린터 접근을 혼자 바꿨습니다. 보안이 필요했다 해도 공유 장비 접근까지 막은 건 과했죠.",
+      "behaviorHint": "단호한 태도로 조용히 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -265,9 +292,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "이소담 씨, 녹취의 업무방해 입증력에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 실제 방해 예고가 아니라, 책상 배치와 파일 공유 문제로 욱해서 나온 불평이었습니다.",
-      "behaviorHint": "단호하게 손을 가로젓는다",
+      "judgeQuestion": "이소담 씨, 업무방해 입증력에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "제가 협박한 적은 없습니다. 해당 오디오는 책상 배치와 백업 파일 문제로 나온 불평일 뿐입니다.",
+      "behaviorHint": "단호하게 눈을 마주치며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +309,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "강민재 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "사실은 그 방 문이 열렸다는 것보다, 집 안에서 제 일터 경계가 무너졌다는 감각이 더 크게 왔습니다. 그래서 저는 출입 사실 자체를 곧바로 신뢰 붕괴로 받아들였습니다.",
-      "behaviorHint": "긴장한 표정과 약간의 한숨을 쉰다.",
+      "npcResponse": "솔직히 그 방 문이 열렸다는 것보다, 집 안에서 제 일터 경계가 무너졌다는 감각이 더 크게 왔습니다. 그래서 저는 출입 사실 자체를 곧바로 신뢰 붕괴로 받아들였습니다.",
+      "behaviorHint": "감정적으로 취약한 순간을 드러내며, 손으로 가슴 부위를 가리키는 제스처를 사용한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +325,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "강민재 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 제가 서재를 과도하게 잠가 둔 탓에 일이 커졌습니다. 다만, 소담 씨의 무단 출입은 사실입니다. 출입 절차와 대체 작업 공간을 빨리 정해야 합니다.",
-      "behaviorHint": "고개를 약간 숙이고 긴장된 표정으로 관찰한다",
+      "npcResponse": "네, 이소담 씨가 그날 오후 14시 08분에 서재에 무단으로 들어온 건 사실입니다. 하지만 제가 공간을 과도하게 잠가 둔 탓에 이런 충돌이 일어났습니다. 재발을 막으려면 출입 절차와 대체 작업 공간을 같이 정했어야 했습니다. 이걸 미리 조정하지 못한 건 제 잘못입니다.",
+      "behaviorHint": "긴장된 표정으로 고개를 숙이며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,8 +341,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "이소담 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그때는 너무 화가 났습니다. 제 남편이 사전 상의도 없이 프린터 접근 계정을 10시간 전용 블록으로 변경한 게 출발점이었죠. 그 뒤에 제 행동이 상황을 더 악화시켰다는 것도 인정합니다.",
-      "behaviorHint": "약간 굽히고 머리 숙임",
+      "npcResponse": "솔직히 말하면, 그날 밤 11시 47분에 제 남편의 프린터 접근 계정을 읽기 전용으로 변경한 것은 제 잘못입니다. 권한을 일방적으로 바꾸면서 상황이 꼬였다고 인정합니다. 그 뒤 무단으로 들어가 상황을 더 악화시킨 책임이 있습니다. 제 체면 때문에 바로 말하지 못한 점 후회됩니다.",
+      "behaviorHint": "눈을 감고 깊이 숨을 쉰다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,9 +356,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "강민재 씨, 재택 공간 파국의 책임 소재에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 무단 출입이 없었으면 상황이 달라졌을 거라는 판단입니다.",
-      "behaviorHint": "일정표를 보며 침착하게 대처한다.",
+      "judgeQuestion": "강민재 씨, 재택 공간 책임 소재에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 제 아내가 무단으로 출입하지 않았더라면 상황이 이렇게까지 되지 않았을 겁니다.",
+      "behaviorHint": "살짝 고개를 돌리며 말꼬리를 흐린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -345,20 +372,20 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "이소담 씨, 재택 공간 파국의 책임 소재에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 환경의 압박이 컸던 것입니다.",
-      "behaviorHint": "조금 긴장한 표정으로 천천히 고개를 저으며 말한다.",
+      "judgeQuestion": "이소담 씨, 재택 공간 책임 소재에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그날 재택 공간에 대해 명확히 말하지 않았던 건 맞습니다.",
+      "behaviorHint": "약간 긴장한 표정을 지으며 손을 주머니에 넣는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T12:13:35.717Z",
-  "finishedAt": "2026-04-05T12:14:53.541Z",
+  "startedAt": "2026-04-05T16:11:05.097Z",
+  "finishedAt": "2026-04-05T16:12:25.427Z",
   "summary": {
     "total": 20,
-    "passed": 20,
-    "warned": 0,
+    "passed": 16,
+    "warned": 4,
     "errors": 0,
     "skipped": 0
   }

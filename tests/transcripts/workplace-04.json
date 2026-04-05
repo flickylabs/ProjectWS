@@ -1,13 +1,16 @@
 {
   "caseId": "workplace-04",
   "category": "workplace",
+  "isMonetary": false,
   "partyA": {
     "name": "서민석",
-    "archetype": "avoidant"
+    "archetype": "avoidant",
+    "tell": "deadline_shield"
   },
   "partyB": {
     "name": "배지우",
-    "archetype": "confrontational"
+    "archetype": "confrontational",
+    "tell": "quote_back"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "서민석 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "그 시각에는 다들 급하게 움직이고 있었습니다. 제가 보겠다고 말한 부분은 있었지만, 그걸 확정이라고만 이해하긴 어려운 상황이었습니다.",
-      "behaviorHint": "차분하게 손을 모으며 조심스러운 태도로 이야기한다.",
+      "npcResponse": "그 시각에 승인 작업을 진행한 건 맞습니다. 하지만, 그걸 확정으로 보시면 안 될 것 같습니다.",
+      "behaviorHint": "조심스럽게 손을 모으며 말함",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,10 +61,16 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "서민석 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "18시 무렵엔 다들 급했습니다, 승인 메일과 보드 업데이트를 같이 정리하는 상황이었어요. 제가 보겠다고는 했지만 그 말을 확정 승인으로만 들으시면 곤란해요.",
-      "behaviorHint": "조심스럽게 말하며, 손끝으로 책상 위를 가볍게 톡톡 치는 모습",
+      "npcResponse": "그 시각에 다들 급한 상황이었습니다. 배지우 씨와 승인 메일과 보드 업데이트를 동시에 처리해야 했던 탓에, 협의가 지연되었던 겁니다.",
+      "behaviorHint": "눈을 피하며 약간의 한숨을 쉰다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "B2",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 실명 노출: 배지우"
+        }
+      ],
       "error": null
     },
     {
@@ -74,12 +83,10 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "서민석 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히, 그때는 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서.",
-      "behaviorHint": "잠시 눈을 감고 심호흡을 하며 차분하게 답한다.",
+      "npcResponse": "솔직히 그 시각엔 좀 무섭기도 했습니다. 제가 말을 잘못하면 일이 더 커질 것 같았거든요.",
+      "behaviorHint": "눈을 잠시 피하고, 손가락을 꼼지락거린다.",
       "evidenceId": null,
-      "issues": [
-        "반말종결어미:같아서."
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -92,8 +99,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "배지우 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 표현 그대로 적었습니다. 다만, 그 문장 그대로만 보면 세 보일 수 있지만 정확히는 표현 문제였습니다.",
-      "behaviorHint": "단호하지만 긴장된 표정",
+      "npcResponse": "아닙니다. 그건 오해가 있는 것 같습니다.",
+      "behaviorHint": "정면을 응시하며 차분하게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -107,9 +114,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "서민석 씨, 이 스탠드업 회의록과 보드 코멘트에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 회의록과 코멘트를 보면, 18시까지 다들 굉장히 급했던 상황을 기억해 주셔야 합니다. 제가 16시 12분에 남긴 코멘트는 최종 승인이 아닌, 그 전에 단순한 체크 의도였습니다.",
-      "behaviorHint": "회의록을 가리키며 조심스럽게 설명한다.",
+      "judgeQuestion": "서민석 씨, 이 스탠드업 회의록과 보드 코멘트를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 회의록과 코멘트는 제가 남긴 게 맞습니다. 다만, 그때 상황이 급해서 클라이언트 확인과 최종 승인을 동시에 진행하려 했던 것뿐입니다.",
+      "behaviorHint": "서류를 가볍게 넘기는 제스처로 당황스러움을 감추려 한다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -124,10 +131,16 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "배지우 씨, 이 QA 체크리스트와 테스트 로그를 보시고 설명해 주십시오.",
-      "npcResponse": "그 QA 체크리스트는 맞습니다. 그러나 체크리스트의 초록 상태가 회귀 테스트 전체의 완료를 뜻하지 않습니다.",
-      "behaviorHint": "서류를 손에 들고 상대를 똑바로 쳐다보며 설명한다.",
+      "npcResponse": "그 내역서는 제가 체크리스트를 초록으로 바꾼 게 맞습니다. 다만, 이건 실제 테스트를 거의 끝냈다는 의미로 적은 겁니다.",
+      "behaviorHint": "차분하게 증거를 설명하며 자신감 있는 태도로 상대를 직시한다.",
       "evidenceId": "e-2",
-      "issues": [],
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"게 맞습니다. 다만,\""
+        }
+      ],
       "error": null
     },
     {
@@ -140,8 +153,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "서민석 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "18시 전에 제가 보겠다고는 했지만, 다만 확정 승인까지 끝낸다고 못 박은 건 아니에요. 그 시각에 다들 조금 급했거든요.",
-      "behaviorHint": "약간 당황한 듯 시선을 피하고, 살짝 머리를 긁적인다.",
+      "npcResponse": "네, 18시 전에 제가 보겠다고 했습니다. 다만 그 승인 업무를 확정까지 진행한다는 건 아니었어요.",
+      "behaviorHint": "서민석은 약간 긴장한 듯, 그러나 차분히 손을 테이블 위에 올려놓았다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -156,8 +169,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "서민석 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "그 승인 업무가 급했기 때문에, 18시 전에 제가 보겠다고 말씀드렸던 겁니다. 하지만 확정 승인까지 끝내겠다고 못 박은 건 아니었음을 이해해 주시면 좋겠습니다.",
-      "behaviorHint": "신중하게 손을 모으며 약간의 변명하는 듯한 표정",
+      "npcResponse": "그 시각에 급하게 처리해야 할 업무가 있어서, 18시 전에 본다고 말씀드렸습니다. 결과를 미리 알리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "조심스럽게 손가락을 서로 맞대며",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -172,8 +185,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "배지우 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 제가 그렇게 적었습니다. 다만, 그 표현이 오해를 불러일으켰다면 설명이 더 필요했겠죠.",
-      "behaviorHint": "짧고 단호하게 말하며 고개를 끄덕인다.",
+      "npcResponse": "네, 그 표현을 사용한 건 제가 맞습니다. 다만, 그게 마무리된 뜻은 아니었습니다.",
+      "behaviorHint": "약간의 긴장감이 있지만 침착한 표정을 유지하고 있다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -188,8 +201,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "배지우 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, QA 완료처럼 보이게 적은 건 맞습니다. 그때는 오히려 제 매니저에게서 빠르게 압박이 들어오는 게 두려웠습니다.",
-      "behaviorHint": "약간의 긴장감 있는 표정으로 고개를 살짝 끄덕인다.",
+      "npcResponse": "솔직히, 그 순간에는 모든 책임이 저에게 쏠릴까 봐 두려웠습니다. 그래서 제대로 상황을 설명하지 못한 게 제 실수였습니다.",
+      "behaviorHint": "약간의 긴장감과 후회가 담긴 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -203,9 +216,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "서민석 씨, 이 막판 수정 대화 캡처에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 메신저 자료는 맞습니다. 제가 카피 변경까지 묶어 올리자고 한 건 사실인데요, 다만 그때 최종 확인은 제가 하기로 했다는 내용이죠. 이런 상황에서 제가 혼자 결정한 부분이 아쉽습니다.",
-      "behaviorHint": "조심스럽게 손을 들며 설명한다.",
+      "judgeQuestion": "서민석 씨, 이 막판 수정 대화 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 메신저 내용은 제가 보낸 것이 맞습니다. 다만, 그때는 회귀까지 완료하면 제가 최종 확인한다고 한 것이고, 모든 수정안을 다 바로 승인한다는 의미는 아닙니다.",
+      "behaviorHint": "조심스럽게 고개를 끄덕이며 설명한다",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -220,8 +233,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "서민석 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "18시 약속을 제가 가볍게 말한 책임은 있습니다. 하지만 그 시점에 배지우 씨가 저에게 이야기하지 않았다는 점도 무시할 순 없습니다.",
-      "behaviorHint": "손가락으로 책상을 가볍게 두드리며 긴장된 모습을 보인다.",
+      "npcResponse": "그날 승인 업무에서 확실히 미흡한 부분이 있었던 건 인정합니다. 다만, 그 시각의 상황이 급박했던 점도 말씀드립니다.",
+      "behaviorHint": "조금 긴장한 듯, 손을 주머니에 넣고 시선을 피하는 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -236,10 +249,16 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "서민석 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "그 시점에 회신이 오긴 했지만, 그 승인 업무는 예정보다 늦어졌습니다. 그때는 제 팀원과의 일정이 꼬여서, 미리 말하지 못한 건 제 책임입니다.",
-      "behaviorHint": "조심스럽게 손을 모으며 설명한다.",
+      "npcResponse": "그 부분은 팀원 모두가 바쁘게 움직이고 있는 상황이었기 때문입니다. 미리 말씀드리지 못한 건 제 실수였습니다.",
+      "behaviorHint": "손끝을 만지작거리며 조심스럽게 설명하는 듯한 태도.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
       "error": null
     },
     {
@@ -252,8 +271,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "배지우 씨, 다시 정리해 주십시오.",
-      "npcResponse": "아닙니다. 그 표현 자체가 문제가 있었습니다. 하지만 제 매니저가 그 문구를 미리 검토하지 않은 건 다른 문제입니다.",
-      "behaviorHint": "자신감 있게 상대의 검토 부족을 지적하며 반격한다.",
+      "npcResponse": "네, 제가 그 문구를 강하게 쓴 건 사실입니다. 다만 제 매니저가 제 판단을 미리 확인하지 않고 넘어갔다는 점도 있습니다.",
+      "behaviorHint": "서류를 가볍게 정리하며, 상대방의 검토 부족을 지적하는 눈빛",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -267,9 +286,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "배지우 씨, 마감 실패의 공동 책임 여부에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 제가 적은 보고를 잘못 이해했을 수도 있죠.",
-      "behaviorHint": "짧고 단호하게 말하며 상대방이 오해했을 수 있음을 암시한다.",
+      "judgeQuestion": "배지우 씨, 마감 공동 책임 여부에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 제 매니저 측에서 일정 변경을 먼저 제안했기 때문입니다.",
+      "behaviorHint": "짧게 끊어 대답하며 상대방의 시작점을 지적한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -284,8 +303,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "서민석 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 그 시점엔 압박감이 컸습니다. 제 팀원이 더 큰 실수를 할까봐 말을 아꼈던 것 같습니다.",
-      "behaviorHint": "긴장된 표정으로 눈을 피하며 말한다.",
+      "npcResponse": "솔직히 그때는 굉장히 혼란스러웠습니다. 제가 그 일을 어떻게든 해결하지 않으면 안 될 것 같은 압박감이 너무 컸습니다.",
+      "behaviorHint": "손을 가볍게 비비고 눈을 잠시 감았다 뜨며 심정을 털어놓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -300,8 +319,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "서민석 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "마감 당일 18시에 클라이언트 확인과 확정 승인을 마치지 못한 건 제 책임입니다. 제가 배지우 씨와의 약속을 지키지 못했고, 20시 7분에 중간 상태조차 공유하지 않은 건 제 잘못입니다. 그 부분은 깊이 반성하고 있습니다.",
-      "behaviorHint": "고개를 살짝 숙이며 반성하는 표정을 짓는다.",
+      "npcResponse": "네, 마감 당일 18시까지 클라이언트 확인과 최종 승인을 끝내지 못한 건 제 잘못입니다. 그 시간에 꼭 했어야 했는데, 놓치고 말았습니다. 그리고 중간 상태도 20시 7분에야 공유하게 되었고요. 그때는 정말 급해서 그런 거였지만, 지금 돌이켜보면 정말 후회스럽습니다.",
+      "behaviorHint": "조심스럽게 손을 모으고 약간 고개를 숙입니다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -316,8 +335,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "배지우 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 회귀 테스트가 남았는데도 'QA 끝났습니다'라고 적은 건 제 잘못입니다. 그때는 너무 급해서 문제를 있는 그대로 두고 싶지 않았습니다. 제 매니저에게 혼날까 봐 겁이 났던 거죠.",
-      "behaviorHint": "고개를 살짝 숙이고, 진심 어린 표정을 보인다.",
+      "npcResponse": "솔직히, 그때는 큰 실수를 했습니다. 제가 남은 회귀 테스트를 완료로 표시해서 판단을 흐리게 했습니다. 그 사실을 매니저님께 즉시 말하지 못해서 더 큰 일이 된 것 같습니다. 지금은 굉장히 후회하고 있습니다.",
+      "behaviorHint": "눈을 잠시 감고, 손을 가볍게 쥐었다 풀며 후회하는 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -332,10 +351,16 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "서민석 씨, 20시대 경고 후 쌍방 미보고에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 경고는 있었습니다. 그렇지만 그 시점에서는 제 팀원이 QA를 마무리하면 바로 해결될 줄 알았습니다.",
-      "behaviorHint": "서둘러 상황을 설명하려는 듯한 몸짓",
+      "npcResponse": "그 시점에 예측이 조금 달랐습니다. 저는 배지우 씨가 QA를 정리하면 바로 닫힐 줄 알았어요.",
+      "behaviorHint": "조심스럽게 손을 맞잡고 시선을 피함",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "B2",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 실명 노출: 배지우"
+        }
+      ],
       "error": null
     },
     {
@@ -348,19 +373,19 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "배지우 씨, 20시대 경고 후 쌍방 미보고에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "그 시점에 확인했지만, 내용을 정확히 이해하지 못했습니다. 매니저가 마무리할 줄 알았습니다.",
-      "behaviorHint": "배지우는 약간 긴장된 표정으로 짧게 대답하며 자신이 모든 것을 파악하지 못했다고 강조한다.",
+      "npcResponse": "네, 경고가 있었던 건 사실입니다. 하지만 그 시점에서 저는 끝난 걸로 보고했습니다.",
+      "behaviorHint": "자신감 있는 표정으로 짧고 단호하게 대답한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T13:55:00.247Z",
-  "finishedAt": "2026-04-05T13:56:20.750Z",
+  "startedAt": "2026-04-05T17:56:41.301Z",
+  "finishedAt": "2026-04-05T17:59:31.389Z",
   "summary": {
     "total": 20,
-    "passed": 19,
-    "warned": 1,
+    "passed": 16,
+    "warned": 4,
     "errors": 0,
     "skipped": 0
   }

@@ -34,7 +34,7 @@
                 "person": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "민서 씨",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 },
                 "time": {
@@ -106,8 +106,8 @@
                 },
                 "person": {
                   "exact": "박혜린",
-                  "neutral": "공동대표",
-                  "fullName": "박 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "혜린 씨"
                 }
               },
@@ -152,7 +152,7 @@
                 "person": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "한민서",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 },
                 "time": {
@@ -431,14 +431,14 @@
               "slots": {
                 "person": {
                   "exact": "박혜린",
-                  "neutral": "공동대표",
-                  "fullName": "혜린 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "혜린 씨"
                 },
                 "candidate": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "민서 씨",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 },
                 "message": {
@@ -487,8 +487,8 @@
               "slots": {
                 "person": {
                   "exact": "박혜린",
-                  "neutral": "공동대표",
-                  "fullName": "박 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "혜린 씨"
                 },
                 "time": {
@@ -539,7 +539,7 @@
                 "person": {
                   "exact": "박혜린",
                   "neutral": "공동대표",
-                  "fullName": "박혜린",
+                  "fullName": "공동대표",
                   "judgeRef": "혜린 씨"
                 },
                 "message": {
@@ -733,8 +733,8 @@
               "slots": {
                 "person": {
                   "exact": "박혜린",
-                  "neutral": "공동대표",
-                  "fullName": "혜린 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "혜린 씨"
                 }
               },
@@ -782,8 +782,8 @@
                 },
                 "person": {
                   "exact": "박혜린",
-                  "neutral": "공동대표",
-                  "fullName": "박 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "혜린 씨"
                 }
               },
@@ -850,7 +850,7 @@
                 "person": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "한민서",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 },
                 "duration": {
@@ -1126,7 +1126,7 @@
                 "person": {
                   "exact": "박혜린",
                   "neutral": "공동대표",
-                  "fullName": "박혜린",
+                  "fullName": "공동대표",
                   "judgeRef": "혜린 씨"
                 }
               },
@@ -1403,7 +1403,7 @@
                 "person": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "한민서",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 },
                 "stage": {
@@ -1599,14 +1599,14 @@
               "slots": {
                 "person": {
                   "exact": "오준서",
-                  "neutral": "공동대표",
-                  "fullName": "준서 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "준서 씨"
                 },
                 "candidate": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "민서 씨",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 }
               },
@@ -1655,8 +1655,8 @@
                 },
                 "person": {
                   "exact": "오준서",
-                  "neutral": "공동대표",
-                  "fullName": "오 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "준서 씨"
                 }
               },
@@ -1702,7 +1702,7 @@
                 "candidate": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "한민서",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 },
                 "quote": {
@@ -1898,14 +1898,14 @@
               "slots": {
                 "person": {
                   "exact": "오준서",
-                  "neutral": "공동대표",
-                  "fullName": "준서 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "준서 씨"
                 },
                 "candidate": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "민서 씨",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 }
               },
@@ -1995,13 +1995,13 @@
                 "candidate": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "한민서",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 },
                 "person": {
                   "exact": "오준서",
                   "neutral": "공동대표",
-                  "fullName": "오준서",
+                  "fullName": "공동대표",
                   "judgeRef": "준서 씨"
                 }
               },
@@ -2191,8 +2191,8 @@
               "slots": {
                 "person": {
                   "exact": "오준서",
-                  "neutral": "공동대표",
-                  "fullName": "준서 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "준서 씨"
                 }
               },
@@ -2237,14 +2237,14 @@
               "slots": {
                 "person": {
                   "exact": "오준서",
-                  "neutral": "공동대표",
-                  "fullName": "오 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "준서 씨"
                 },
                 "candidate": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "한 씨",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 }
               },
@@ -2294,7 +2294,7 @@
                 "candidate": {
                   "exact": "한민서",
                   "neutral": "지원자",
-                  "fullName": "한민서",
+                  "fullName": "지원자",
                   "judgeRef": "민서 씨"
                 },
                 "duration": {
@@ -2476,8 +2476,8 @@
               "slots": {
                 "person": {
                   "exact": "오준서",
-                  "neutral": "공동대표",
-                  "fullName": "준서 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "준서 씨"
                 },
                 "protocol": {
@@ -2570,7 +2570,7 @@
                 "person": {
                   "exact": "오준서",
                   "neutral": "공동대표",
-                  "fullName": "오준서",
+                  "fullName": "공동대표",
                   "judgeRef": "준서 씨"
                 },
                 "protocol": {
@@ -2851,7 +2851,7 @@
                 "person": {
                   "exact": "오준서",
                   "neutral": "공동대표",
-                  "fullName": "오준서",
+                  "fullName": "공동대표",
                   "judgeRef": "준서 씨"
                 }
               },

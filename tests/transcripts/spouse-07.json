@@ -1,13 +1,16 @@
 {
   "caseId": "spouse-07",
   "category": "spouse",
+  "isMonetary": false,
   "partyA": {
     "name": "이태준",
-    "archetype": "quiet_scorekeeper"
+    "archetype": "quiet_scorekeeper",
+    "tell": "evidence_dump"
   },
   "partyB": {
     "name": "정다혜",
-    "archetype": "recognition_seeker"
+    "archetype": "recognition_seeker",
+    "tell": "scene_expansion"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이태준 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 표현이 제 아내의 돌봄 영역을 전부 포괄한다고 볼 수는 없습니다.",
-      "behaviorHint": "고개를 숙이며 잠시 침묵",
+      "npcResponse": "아닙니다. 그 부분은 보이는 아침 영역만으로 판단하는 건 과장입니다.",
+      "behaviorHint": "침착하게 시선을 살짝 돌린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,10 +61,16 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "이태준 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "실제로 아침 돌봄을 눈에 띄게 많이 하기로 한 건 맞지만, 제 아내가 그 비중을 전체 돌봄 기여와 같은 맥락으로 말씀하신 건 과장처럼 느껴졌습니다. 전체적인 도움을 같이 보고 판단할 필요가 있어서 그랬습니다.",
-      "behaviorHint": "턱을 긁적이며 불편해 하는 모습.",
+      "npcResponse": "제 아내가 보이는 아침 영역만을 강조하셨습니다. 하지만 그 표현은 전체 상황을 다 반영하지 않는다고 생각했습니다.",
+      "behaviorHint": "얼굴을 약간 찡그리며 천천히 고개를 끄덕인다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "C2",
+          "severity": "WARN",
+          "detail": "이중 조사: 만을"
+        }
+      ],
       "error": null
     },
     {
@@ -74,8 +83,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "이태준 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "사실은 그때 너무 두려웠습니다. 제가 더 얘기하면 상황이 더 나빠질 것 같아서 말이 안 나왔습니다.",
-      "behaviorHint": "고개를 약간 숙이고, 손을 무릎 위에 올린 채 가만히 있다.",
+      "npcResponse": "솔직히 그때는 무력감을 느꼈습니다. 제가 무슨 말을 해도 더 큰 오해만 생길 것 같아서요.",
+      "behaviorHint": "고개를 살짝 숙이며 진지한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +99,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "정다혜 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "그날 제 계좌에서 송금이 이뤄진 것은 맞습니다. 하지만 그때 그게 왜 필요한지에 대한 설명은 나중에 하기로 했습니다.",
-      "behaviorHint": "책상을 가볍게 손을 짚고 낯빛이 굳어진다.",
+      "npcResponse": "아닙니다. 그건 오해입니다. 제 남편과 미리 말하지 못한 부분이 있었던 것 같습니다.",
+      "behaviorHint": "시선을 잠시 피하며 곤란함을 표현한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +114,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "이태준 씨, 이 어린이집 출석기록과 상담 메모에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 기록이 아침 출석에 대한 건 맞습니다. 하지만 보이지 않는 밤 준비나 병원 일정, 세탁 같은 부분까지 다 포함한다고 볼 순 없습니다.",
-      "behaviorHint": "약간 당황한 듯한 표정으로 고개를 끄덕이며 답변",
+      "judgeQuestion": "이태준 씨, 이 어린이집 출석기록과 상담 메모를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 기록은 맞습니다. 다만, 아침 등원을 돌봄 전체 활동으로 등치시키기는 어렵습니다.",
+      "behaviorHint": "약간 당황한 듯이 서류를 훑어본다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -121,9 +130,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "정다혜 씨, 이 가사앱 이력과 내보내기 파일를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 제 남편이 밤과 주말만 따로 선택해서 내보낸 겁니다. 원본 전체에는 제가 아침에 처리한 항목도 다수 포함되어 있습니다.",
-      "behaviorHint": "침착하게 자료를 살펴보며 설명한다.",
+      "judgeQuestion": "정다혜 씨, 이 가사앱 이력과 내보내기 파일을 보시고 설명해 주십시오.",
+      "npcResponse": "그 내보내기 파일은 제 남편이 밤과 주말만 골라서 만든 것입니다. 원본에서 아침 항목들을 일부러 뺀 것은 상황을 다르게 보이게 하려는 의도였다고 생각합니다.",
+      "behaviorHint": "침착하게 서류를 가리키며 설명",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +147,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "이태준 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 아침에 제 아내가 그 표현을 보인 건 맞습니다. 다만 그 공개 자리에서의 표현 방식은 적절치 않았다고 생각합니다.",
-      "behaviorHint": "살짝 눈을 내리깔고 입을 꾹 다문다",
+      "npcResponse": "아닙니다. 그 표현은 아침 부담에 대한 건 맞습니다. 다만 그 공개 자리에서 말한 건 적절하지 않았습니다.",
+      "behaviorHint": "고개를 약간 끄덕이며 진지한 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +163,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "이태준 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "제 아내의 아침 부담이 아무리 적지 않다고 해도, 그 표현이 공개적으로 나온 건 잘못이라고 생각했습니다. 불편을 초래한 건 인정하지만, 그런 식의 표현은 옳지 않다고 판단할 수밖에 없었습니다.",
-      "behaviorHint": "눈을 잠시 내리깔고 고개를 끄덕인다.",
+      "npcResponse": "제 아내의 아침 부담을 덜어주고 싶었기 때문입니다. 하지만 그걸 공개적으로 표현하는 방식이 문제였습니다.",
+      "behaviorHint": "손가락을 만지작거리며 약간 불안해한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +179,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "정다혜 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그날 아침에 제 폰에서 문서를 보내긴 했습니다. 다만, 그때는 아이가 울고 출근 준비로 정신이 없던 상황이었습니다.",
-      "behaviorHint": "조금 긴장된 표정으로, 손을 올렸다 내리며 상황을 설명.",
+      "npcResponse": "그날 일부 문서를 선택하고 내보낸 건 사실입니다. 하지만 상황이 복잡해서 미리 말씀드리질 못했습니다.",
+      "behaviorHint": "조금 긴장한 듯한 표정으로 눈길을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +195,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "정다혜 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그때는 제가 선택한 일부 항목들이 문서에서 맥락이 잘린 것 같아 무서웠습니다. 제 남편이 이해하지 못할까 봐 말하는 게 두려웠어요.",
-      "behaviorHint": "고개를 약간 숙이고 손끝을 만지작거린다.",
+      "npcResponse": "솔직히 그때는 무서웠습니다. 제가 뭔가 말하면 더 큰일이 날 것 같아서, 계속 침묵할 수밖에 없었어요.",
+      "behaviorHint": "머리를 살짝 숙이며 조용히 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +210,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "이태준 씨, 이 가족 단톡 캡처와 사진에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "단톡 캡처 속 '평일은 거의 내가 돌린다'는 제 아내가 농담으로 한 말입니다. 어린이집 상담 직후 사진이라 감정이 고조된 상태에서 나온 농담입니다.",
-      "behaviorHint": "침착하게 반박하며 상대의 말을 인정하는 듯한 태도",
+      "judgeQuestion": "이태준 씨, 이 가족 단톡 캡처와 사진을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 내역은 맞습니다. 하지만 앞뒤 맥락이 잘려 있어서 제 아내가 반쯤 농담으로 한 말일 수도 있습니다.",
+      "behaviorHint": "침착하게 시선을 유지하며 재판관에게 설명한다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +227,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "이태준 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 그건 제가 이미 그날 오후 3시에 처리했습니다. 다만 그 공개 자리에서 제 아내가 저를 무심한 사람처럼 보이게 한 게 문제였습니다.",
-      "behaviorHint": "태도를 굳히며 재판관을 똑바로 쳐다본다.",
+      "npcResponse": "그날 제가 그 일을 한 건 맞습니다. 다만 그게 왜 그렇게 된 건지는 맥락이 있습니다.",
+      "behaviorHint": "단호하게 손을 모아 차분하게 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +243,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "이태준 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "집안에 급하게 처리해야 할 일이 있었습니다. 미리 알리지 못한 부분은 변명할 여지가 없습니다.",
-      "behaviorHint": "약간 방어적인 자세로 설명하는 표정",
+      "npcResponse": "그날 그 자리에선 다른 대안을 생각할 여유가 없었습니다. 즉각적인 결정이 필요하다 보니 그렇게 할 수밖에 없었습니다.",
+      "behaviorHint": "약간 당황한 표정, 손으로 이마를 만짐",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +259,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "정다혜 씨, 다시 정리해 주십시오.",
-      "npcResponse": "네, 그날 제가 오전에 적지 않은 돈을 보냈습니다. 그러나 그걸 가지고 제 남편이 뭘 어떻게 해석했는지에 대한 설명이 먼저 필요하지 않을까요.",
-      "behaviorHint": "손을 가볍게 움직이며 설명한다.",
+      "npcResponse": "네, 제가 공개한 부분은 맞습니다. 하지만 제 남편의 편집 방식도 문제였습니다.",
+      "behaviorHint": "조금 긴장된 표정으로 상대방을 언급하며.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -266,8 +275,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "정다혜 씨, 태준은 정말 집안일을 안 했는가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그날 아침에 제 남편이 도와주긴 했습니다. 하지만 보이는 아침 풍경이 너무 강해서 다른 도움이 크게 느껴지지 않았습니다.",
-      "behaviorHint": "아침 풍경을 묘사하며 손을 흔듦",
+      "npcResponse": "아닙니다. 그건 다르게 볼 수 있습니다. 다만 아침에 벌어지는 일들은 제가 주로 맡았습니다.",
+      "behaviorHint": "진지한 표정으로 상대의 반응을 기다린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +291,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "이태준 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그 공개 자리에서 제 평판이 무너질 수 있다는 두려움이 컸습니다. 제가 거기서 말하면 더 큰일이 날 것 같아서 멈췄습니다.",
-      "behaviorHint": "고개를 약간 숙이며 진솔하게 말한다.",
+      "npcResponse": "사실은 그때 너무 불안했습니다. 그 낙인이 찍히면 평판이 무너질까봐 두려웠습니다.",
+      "behaviorHint": "눈을 피하며 살짝 한숨을 쉰다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +307,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "이태준 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 그날 밤 준비 과정에서 병원 일정과 세탁 수거에 대해 미리 말하지 않은 건 사실입니다. 가족 단톡에서 공개 정정도 필요하다는 걸 알고 있습니다. 제 보복적 대응도 문제를 키운 점은 인정합니다.",
-      "behaviorHint": "고개를 끄덕이며 진지하게 말한다",
+      "npcResponse": "그날 어린이집 상담과 가족 단톡에서 제 아내가 거의 다 했다고 인정합니다. 다만 제가 밤 준비와 병원 일정, 세탁 수거를 다 챙겼습니다. 제 행동을 공개적으로 정정해야 하는 건 알지만, 제 보복적 대응도 갈등을 키운 부분입니다. 이제는 숨기지 않고 솔직히 다 털어놓고 싶습니다.",
+      "behaviorHint": "고개를 끄덕이며 약간 어깨를 움츠린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,8 +323,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "정다혜 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 말씀드리면, 제 남편 이태준과 저 모두 밤과 주말에 각자 유리한 장면만 선택했어요. 그때는 서로의 감정을 생각하지 못하고, 제가 미리 말하지 못한 부분도 있었습니다. 하지만 그때는 조용히 넘어가는 게 더 낫다고 생각했어요.",
-      "behaviorHint": "약간의 망설임 후 솔직하게 털어놓는 표정",
+      "npcResponse": "솔직히 제 남편과 저 둘 다 서로의 유리한 부분만 이야기했던 것 같습니다. 밤과 주말에 대해서만 아이의 어린이집 상담에서 이야기한 건 저도 인정합니다. 그때는 정말로 가족 단톡방에서 제 말이 무시될까 두려워서 그렇게 했던 겁니다. 지금은 그 선택이 얼마나 어리석었는지 후회하고 있습니다.",
+      "behaviorHint": "조금 쑥스럽고 솔직한 태도로",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -330,8 +339,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이태준 씨, 붕괴 원인은 태만인가 구조적 과부하인가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 일정 충돌과 시스템 문제의 결과입니다.",
-      "behaviorHint": "침착하게 재판관을 바라보며 말하다.",
+      "npcResponse": "아닙니다. 그건 구조 문제와 그 일정 충돌 때문이었습니다.",
+      "behaviorHint": "차분하게 고개를 끄덕이며 진술",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -346,19 +355,19 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "정다혜 씨, 붕괴 원인은 태만인가 구조적 과부하인가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 과부하와 일정 충돌이 같이 작용한 겁니다.",
-      "behaviorHint": "고개를 약간 숙이고 긴장된 표정으로 대답한다.",
+      "npcResponse": "아닙니다. 그건 일정 충돌이 원인이었습니다. 그 구조 문제도 한몫했습니다.",
+      "behaviorHint": "차분히 설명하며 마치 무언가를 곱씹는 듯한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T12:16:26.773Z",
-  "finishedAt": "2026-04-05T12:17:44.605Z",
+  "startedAt": "2026-04-05T16:14:00.136Z",
+  "finishedAt": "2026-04-05T16:15:21.939Z",
   "summary": {
     "total": 20,
-    "passed": 20,
-    "warned": 0,
+    "passed": 19,
+    "warned": 1,
     "errors": 0,
     "skipped": 0
   }

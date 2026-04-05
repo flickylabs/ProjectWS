@@ -1,13 +1,16 @@
 {
   "caseId": "workplace-11",
   "category": "workplace",
+  "isMonetary": false,
   "partyA": {
     "name": "권태준",
-    "archetype": "cold_logic"
+    "archetype": "cold_logic",
+    "tell": "asset_merge"
   },
   "partyB": {
     "name": "노서린",
-    "archetype": "victim_cosplay"
+    "archetype": "victim_cosplay",
+    "tell": "hurt_stack"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "권태준 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 발명자 표기와 대표 브리핑을 구분해야 합니다.",
-      "behaviorHint": "살짝 머리를 돌려 말의 방향을 바꾸려는 듯한 자세로 대응합니다.",
+      "npcResponse": "네, 그날 발명자 표기 열을 수정한 것은 사실입니다. 그러나 그 당시에는 잠정출원 직전 문서 정리 단계였던 점을 참고해 주십시오.",
+      "behaviorHint": "차분하게 재판관을 바라보며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "권태준 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "그 직전 잠정출원 문서 정리 국면이었기 때문입니다. 사내 특허 시스템에서 빠르게 정리할 수밖에 없었습니다.",
-      "behaviorHint": "조직적 결정을 설명하며 다소 방어적으로 앉아서 손을 모으고 있다.",
+      "npcResponse": "사내 특허 시스템을 통해 잠정출원을 준비하던 중이었기 때문입니다. 그 과정에서 미리 말하지 못한 점은 제 잘못입니다.",
+      "behaviorHint": "약간 긴장된 표정으로 손을 모으고 있음",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -74,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "권태준 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히, 그때는 당황스럽고 무서웠습니다. 제 선택이 잘못되면 더 크게 일이 번질 것 같았기 때문입니다.",
-      "behaviorHint": "옅은 한숨을 내쉬며 눈을 잠시 감았다가 뜬다.",
+      "npcResponse": "솔직히 그때는 많은 압박을 느꼈습니다. 잘못하면 큰일이 날 것 같아 조심스러웠습니다.",
+      "behaviorHint": "침착하게 눈을 내리깐다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "노서린 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그날 보낸 건 정리본이었습니다.",
-      "behaviorHint": "조금 긴장한 얼굴로 눈을 살짝 피한다.",
+      "npcResponse": "아닙니다. 그건 오해가 있는 것 같습니다. 제가 한 건 단순히 정리본을 보낸 것뿐입니다.",
+      "behaviorHint": "약간 긴장한 표정으로 눈을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +108,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "권태준 씨, 이 기여 배분표와 출원 초안 이력에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 기여표와 초안이 변화한 건 사실입니다. 다만 발명자 표기와 최종 브리핑 슬라이드는 서로 다른 맥락에서 만들어졌다는 점을 강조하고 싶습니다.",
-      "behaviorHint": "서류를 넘기며 책상을 톡톡 두드린다.",
+      "judgeQuestion": "권태준 씨, 이 기여 배분표와 출원 초안 이력을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 다만, 발명자 표기와 대표 브리핑을 동일선상에서 보기 어렵습니다. 제 팀원이 브리핑 직전에 수정이 필요하다고 판단했습니다.",
+      "behaviorHint": "침착하게 자료를 확인하며 설명한다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -121,9 +124,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "노서린 씨, 이 개인 메일 전달본과 외부 대화 기록를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 제 메일에서 나간 게 맞습니다. 다만, 그걸 전체 패키지로 단정짓는 건 무리입니다.",
-      "behaviorHint": "억울한 표정으로 자료를 가리키며 천천히 설명",
+      "judgeQuestion": "노서린 씨, 이 개인 메일 전달본과 외부 대화 기록을 보시고 설명해 주십시오.",
+      "npcResponse": "그 메일은 제가 보낸 게 맞지만, 그 안에는 전체 패키지가 아닌 요약본만 들어 있었습니다. 그리고 텔레그램 대화는 그저 기초적인 문의 내용이었습니다.",
+      "behaviorHint": "조금 당황한 표정으로 짧게 한숨을 쉰다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "권태준 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 발명자 이름 열을 최종 버전에서 확인하고 수정하도록 승인한 건 사실입니다. 다만, 그 직전은 사내 특허 시스템에서 잠정출원을 준비 중이었습니다.",
-      "behaviorHint": "재판관을 똑바로 보며 차분하게 설명",
+      "npcResponse": "네, 했습니다. 다만 그 직전에는 잠정출원을 준비하는 단계였고, 사내 특허 시스템에서 발명자 이름 열을 최종 점검한 것뿐입니다.",
+      "behaviorHint": "책상 위의 문서를 가볍게 정리하며 차분하게 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "권태준 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "사내 특허 시스템에서 잠정출원 직전 문서 정리 국면이었습니다. 그 시점에서 서린 씨의 문서를 미리 조정할 여유가 없었습니다.",
-      "behaviorHint": "차분하게 설명하며 손을 가볍게 허벅지 위에 얹는다.",
+      "npcResponse": "그 직전 사내 특허 시스템의 잠정출원 직전 문서 정리 국면이었기 때문입니다. 미리 알리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "고개를 살짝 숙여 반성하는 제스처를 보여준다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "노서린 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그 무렵에 개인메일과 텔레그램을 사용했습니다. 다만, 전 아이디어 설명용 외부 검토라고 생각했어요.",
-      "behaviorHint": "조금 긴장된 표정으로 자신의 정당성을 설명하려 한다.",
+      "npcResponse": "네, 제가 개인메일과 텔레그램을 사용했습니다. 그 무렵엔 외부 검토용으로만 생각했습니다.",
+      "behaviorHint": "조용히 한숨을 쉬며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "노서린 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그때는 제가 이 일을 혼자서 처리해야 했다는 압박감이 컸습니다. 누구에게도 믿고 털어놓지 못할 것 같았어요.",
-      "behaviorHint": "고개를 약간 숙이고 시선을 피하는 제스처",
+      "npcResponse": "솔직히, 그 무렵에는 제가 뭘 말해도 상황이 나아지지 않을 것 같아 무서웠습니다. 제 입장에서는 정말 혼자였다는 느낌이 들었습니다.",
+      "behaviorHint": "손을 가슴에 얹고 고개를 살짝 숙인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +204,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "권태준 씨, 이 보안 경보 캡처 PDF 문서에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 맞습니다. 그러나 서린 계정만 강조된 이유로 단독 유출로 단정짓기는 어렵습니다.",
-      "behaviorHint": "침착하게 손을 가지런히 모은다.",
+      "judgeQuestion": "권태준 씨, 이 보안 경보 캡처 PDF 문서를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 서린 씨 계정만 강조되어 있지만, 재전송 열과 세션 정보가 잘려 있는 걸 보면 상황이 다르게 해석될 여지도 있습니다. 단독 유출로 단정하기엔 충분하지 않은 정보입니다.",
+      "behaviorHint": "잠시 경보 캡처를 가리키며 강조점을 넣는다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "권태준 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 그건 그 직전 해당 문서 묶음을 제가 확인했습니다. 노서린 씨의 기여가 뒤로 밀린 건 맞습니다만, 성과 확립이 첫 번째였습니다.",
-      "behaviorHint": "살짝 고개를 들어 재판관을 향해 단호하게 응시한다.",
+      "npcResponse": "그날 서린 씨의 이름 열을 확인하고 승인한 건 맞습니다. 다만, 최종 버전에서 성과를 대표하기 위한 수정이었습니다.",
+      "behaviorHint": "차분하게 메모를 보며 대답",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +237,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "권태준 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "노서린 씨의 업무 분배가 그 시점에서는 최적화되지 않았기 때문이었습니다. 팀의 원활한 진행을 위해 그녀의 참여를 후순위로 둬야 했습니다.",
-      "behaviorHint": "차분히 눈을 마주치며 설명한다",
+      "npcResponse": "프로젝트의 시급성이 높았기 때문입니다. 노서린 씨의 공로를 고려했으나, 그 순간에는 결정할 수밖에 없었습니다.",
+      "behaviorHint": "한 손으로 이마를 만지며 피곤한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +253,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "노서린 씨, 다시 정리해 주십시오.",
-      "npcResponse": "아닙니다. 그건 팀장님이 내부 채널을 막아서 제가 사설 외부 채널을 쓸 수밖에 없었습니다.",
-      "behaviorHint": "살짝 눈을 피하며 고개를 끄덕인다.",
+      "npcResponse": "네, 개인메일과 텔레그램을 사용했지만, 그 무렵에는 팀장님이 내부 채널을 막으셨습니다. 이로 인해 외부와 소통할 수밖에 없었습니다.",
+      "behaviorHint": "억울한 표정으로 고개를 약간 숙인다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -266,8 +269,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "노서린 씨, 유출 범위 — 브로커 1건인가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 단정할 수 없습니다. 원본 로그를 보면 범위가 명확하지 않습니다.",
-      "behaviorHint": "조심스럽게 손을 테이블 위에 올려놓으며, 약간 긴장된 표정",
+      "npcResponse": "아닙니다. 잘린 DLP 캡처만 보고는 정확한 범위를 단정할 수 없습니다.",
+      "behaviorHint": "서류를 차분히 정리하며 손가락을 꼼지락거린다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +285,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "권태준 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "사실은 많이 두려웠습니다. 조직 소유 논리 뒤에 제 공로 압박과 자기합리화가 있었던 순간이었습니다.",
-      "behaviorHint": "고개를 약간 숙이며 두 손을 테이블 위에 올려놓는다.",
+      "npcResponse": "솔직히 그때는 너무 당황스러웠습니다. 제가 중간에서 잘못된 결정을 내렸다는 불안감이 컸습니다.",
+      "behaviorHint": "눈을 잠시 감고 깊이 숨을 들이마신다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +301,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "권태준 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 상대방의 설계한 핵심 청구항과 실험표가 초안의 뼈대였다는 점을 알고 있었습니다. 최종 브리핑 직전에 제 계정으로 발명자 표기 열과 대표 슬라이드를 수정하도록 승인했습니다. 미리 말하지 못한 상황이었고, 팀의 성과를 보이려는 압박이 있었습니다.",
-      "behaviorHint": "손가락 끝을 맞대며 눈을 마주친다.",
+      "npcResponse": "네, 제 팀원의 청구항과 실험표가 초안의 뼈대였다는 점을 알고 있었습니다. 그리고 최종 브리핑 직전에 발명자 표기 열과 대표 슬라이드를 제 계정으로 수정하도록 했습니다. 조직을 위한 최선의 결정이라고 생각했기 때문입니다. 하지만 지금은 그 판단이 잘못됐음을 인정하고 후회합니다.",
+      "behaviorHint": "말을 하면서 손을 잠시 주먹 쥐었다 풀며 긴장을 드러낸다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,8 +317,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "노서린 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 그때는 정말 무서웠습니다. 제 팀장이 제 이름을 지운 걸 보고 분노에 휩싸여, 개인메일과 텔레그램으로 브로커에게 청구항 정리본과 실험 요약을 보냈습니다. 그러면서 대가를 혼자 결정한 것도 제 잘못입니다.",
-      "behaviorHint": "눈을 피하고 천천히 고개를 숙인다.",
+      "npcResponse": "솔직히 말씀드리면, 제가 개인메일과 텔레그램으로 청구항 정리본과 실험 요약을 브로커에게 보냈습니다. 그때 유다인 팀장과 미리 상의하지 못했던 건 제 잘못입니다. 그 상황에서는 제 이름이 지워진 상황이 억울해서 감정적으로 저지른 일이었습니다. 지금은 두려움으로 가득합니다. 이 모든 일이 밝혀질까 걱정하고 있습니다.",
+      "behaviorHint": "표정이 어둡고, 고개를 약간 떨군다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,9 +332,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "권태준 씨, 다툼의 공모 은폐 설계 여부에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 갈등 구도는 실제 문제였습니다. 노서린 씨와의 외부 검토 이야기도 있었지만, 고발 구도와 연결하지 않았습니다.",
-      "behaviorHint": "조금 긴장된 표정으로 손가락을 테이블에 톡톡 두드린다.",
+      "judgeQuestion": "권태준 씨, 공모 은폐 설계 여부에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 건은 서린 씨와 상의한 게 아닙니다. 그 구도 자체는 오해입니다.",
+      "behaviorHint": "눈을 살짝 내리깔며 답변",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -345,16 +348,16 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "노서린 씨, 다툼의 공모 은폐 설계 여부에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 사실이 아닙니다. 그 갈등은 팀장님과의 관계에서 생긴 진짜 억울함이었습니다.",
-      "behaviorHint": "고개를 약간 숙이며 한숨을 쉰다.",
+      "judgeQuestion": "노서린 씨, 공모 은폐 설계 여부에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아니요, 그건 사실이 아닙니다. 제 팀장과의 갈등은 진짜 억울한 일이었습니다.",
+      "behaviorHint": "눈을 떨구고 억울한 표정을 지어보인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T14:04:57.257Z",
-  "finishedAt": "2026-04-05T14:06:17.224Z",
+  "startedAt": "2026-04-05T18:19:09.800Z",
+  "finishedAt": "2026-04-05T18:23:30.372Z",
   "summary": {
     "total": 20,
     "passed": 20,

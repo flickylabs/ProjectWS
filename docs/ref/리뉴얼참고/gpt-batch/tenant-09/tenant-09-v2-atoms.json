@@ -7,7 +7,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "계약서에 적힌 보증금은 8천만원이었고, 저는 그 기준으로 정산을 요구한 겁니다.",
+            "계약서에 적힌 보증금은 계약서 금액이었고, 저는 그 기준으로 정산을 요구한 겁니다.",
             "송금 구조가 복잡했던 건 맞지만 계약 자체를 제가 따로 비튼 건 아닙니다."
           ],
           "privateKnowledge": [
@@ -35,7 +35,7 @@
                 "contract_amount": {
                   "exact": "8천만원",
                   "neutral": "계약서상 보증금",
-                  "rounded": "8천"
+                  "rounded": "계약서상 보증금"
                 },
                 "final_time": {
                   "exact": "서명 직전",
@@ -64,7 +64,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "우석 씨",
+                  "fullName": "중개사",
                   "judgeRef": "우석 씨"
                 },
                 "time": {
@@ -89,7 +89,7 @@
           "disputeId": "d-1",
           "state": "S1",
           "publicClaim": [
-            "태윤 사장님 계좌와 우석 쪽 정리 계좌가 따로 움직인 건 맞지만, 당시엔 다 계약 정리 과정으로 이해했습니다.",
+            "임대인 계좌와 중개사 쪽 정리 계좌가 따로 움직인 건 맞지만, 당시엔 다 계약 정리 과정으로 이해했습니다.",
             "저는 총액만 맞으면 된다고 들었습니다."
           ],
           "privateKnowledge": [
@@ -117,12 +117,12 @@
                 "received_amount": {
                   "exact": "6천만원",
                   "neutral": "실수령액",
-                  "rounded": "6천"
+                  "rounded": "실수령액"
                 },
                 "broker_amount": {
                   "exact": "2천만원",
                   "neutral": "그 차액",
-                  "rounded": "2천"
+                  "rounded": "그 차액"
                 },
                 "time": {
                   "exact": "같은 날 14분 차이",
@@ -151,13 +151,13 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오 씨",
+                  "fullName": "중개사",
                   "judgeRef": "우석 씨"
                 },
                 "contract_amount": {
                   "exact": "8천만원",
                   "neutral": "계약서상 보증금",
-                  "rounded": "8천"
+                  "rounded": "계약서상 보증금"
                 }
               },
               "stanceHints": [
@@ -501,7 +501,7 @@
           "disputeId": "d-2",
           "state": "S0",
           "publicClaim": [
-            "우석 씨와 공모해서 보증금을 부풀렸다는 표현은 과합니다.",
+            "중개사와 공모해서 보증금을 부풀렸다는 표현은 과합니다.",
             "저는 필요한 서류 정리가 된다고 들었을 뿐, 누가 일부를 가져가는 구조까지 제가 짠 건 아닙니다."
           ],
           "privateKnowledge": [
@@ -529,13 +529,13 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "우석 씨",
+                  "fullName": "중개사",
                   "judgeRef": "우석 씨"
                 },
                 "contract_amount": {
                   "exact": "8천만원",
                   "neutral": "부풀린 보증금 액수",
-                  "rounded": "8천"
+                  "rounded": "부풀린 보증금 액수"
                 }
               },
               "stanceHints": [
@@ -558,12 +558,12 @@
                 "broker_amount": {
                   "exact": "2천만원",
                   "neutral": "허위 정리비 금액",
-                  "rounded": "2천"
+                  "rounded": "허위 정리비 금액"
                 },
                 "institution": {
                   "exact": "소상공인정책자금 상담",
                   "neutral": "정책자금 상담",
-                  "fullName": "그 사람",
+                  "fullName": "정책자금 상담",
                   "judgeRef": "심사역"
                 }
               },
@@ -610,13 +610,13 @@
                 "institution": {
                   "exact": "소상공인정책자금 상담",
                   "neutral": "정책자금 상담",
-                  "fullName": "문 씨",
+                  "fullName": "정책자금 상담",
                   "judgeRef": "심사역"
                 },
                 "contract_amount": {
                   "exact": "8천만원",
                   "neutral": "부풀린 보증금 액수",
-                  "rounded": "8천"
+                  "rounded": "부풀린 보증금 액수"
                 }
               },
               "stanceHints": [
@@ -645,7 +645,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오 씨",
+                  "fullName": "중개사",
                   "judgeRef": "우석 씨"
                 }
               },
@@ -990,7 +990,7 @@
           "state": "S0",
           "publicClaim": [
             "다투는 항목이 있더라도, 최소한 바로 돌려줄 수 있는 보증금까지 한꺼번에 묶어 둘 이유는 없었습니다.",
-            "태윤 사장님은 손실 얘기를 너무 길게 붙였습니다."
+            "임대인은 손실 얘기를 너무 길게 붙였습니다."
           ],
           "privateKnowledge": [
             "세라는 자신의 일부 미정산 항목이 있더라도 6천만원 전체를 오래 붙잡을 근거는 약하다고 본다.",
@@ -1017,7 +1017,7 @@
                 "received_amount": {
                   "exact": "6천만원",
                   "neutral": "다투지 않는 보증금",
-                  "rounded": "6천"
+                  "rounded": "다투지 않는 보증금"
                 },
                 "delay": {
                   "exact": "명도 뒤 5주 넘게",
@@ -1066,7 +1066,7 @@
           "disputeId": "d-3",
           "state": "S1",
           "publicClaim": [
-            "반환이 늦어질 수는 있어도, 적어도 기준이 되는 6천만원은 먼저 떼어서 얘기할 수 있었다고 봅니다.",
+            "반환이 늦어질 수는 있어도, 적어도 기준이 되는 실수령 금액은 먼저 떼어서 얘기할 수 있었다고 봅니다.",
             "정산표에는 나중에 붙인 항목들이 너무 많았습니다."
           ],
           "privateKnowledge": [
@@ -1085,7 +1085,7 @@
           "claimAtoms": [
             {
               "id": "tenant09:a:d-3:rule:2",
-              "factText": "다투지 않는 6천만원은 별도로 논의할 수 있었다는 사실",
+              "factText": "다투지 않는 실수령 금액은 별도로 논의할 수 있었다는 사실",
               "tags": [
                 "rule",
                 "context"
@@ -1094,7 +1094,7 @@
                 "received_amount": {
                   "exact": "6천만원",
                   "neutral": "다투지 않는 보증금",
-                  "rounded": "6천"
+                  "rounded": "다투지 않는 보증금"
                 },
                 "settlement": {
                   "exact": "정산표",
@@ -1455,7 +1455,7 @@
           "disputeId": "d-4",
           "state": "S0",
           "publicClaim": [
-            "월세나 간판 문제는 거의 정리된 상태였고, 태윤 사장님이 그걸 과장해서 붙인 겁니다.",
+            "월세나 간판 문제는 거의 정리된 상태였고, 임대인이 그걸 과장해서 붙인 겁니다.",
             "큰 미납처럼 말할 정도는 아닙니다."
           ],
           "privateKnowledge": [
@@ -1534,7 +1534,7 @@
           "state": "S1",
           "publicClaim": [
             "정확히는 폐업 정리 막바지라 며칠 밀린 항목이 있었습니다.",
-            "그래도 바로 메우려고 했고, 태윤 사장님이 말하는 식의 큰 체납은 아니었습니다."
+            "그래도 바로 메우려고 했고, 임대인이 말하는 식의 큰 체납은 아니었습니다."
           ],
           "privateKnowledge": [
             "월세 일부와 간판 철거비를 즉시 끝내지 못했다.",
@@ -1927,7 +1927,7 @@
           "disputeId": "d-5",
           "state": "S0",
           "publicClaim": [
-            "태윤 사장님은 마지막 계약서만 제대로 대조했어도 이 분쟁이 이렇게 커지진 않았습니다.",
+            "임대인은 마지막 계약서만 제대로 대조했어도 이 분쟁이 이렇게 커지진 않았습니다.",
             "자기 계좌에 들어온 금액하고 서류 숫자를 직접 맞춰봤어야 했습니다."
           ],
           "privateKnowledge": [
@@ -1955,12 +1955,12 @@
                 "draft_amount": {
                   "exact": "6천만원",
                   "neutral": "초안 보증금",
-                  "rounded": "6천"
+                  "rounded": "초안 보증금"
                 },
                 "final_amount": {
                   "exact": "8천만원",
                   "neutral": "최종본 보증금",
-                  "rounded": "8천"
+                  "rounded": "최종본 보증금"
                 }
               },
               "stanceHints": [
@@ -2006,7 +2006,7 @@
           "disputeId": "d-5",
           "state": "S1",
           "publicClaim": [
-            "우석 씨가 수정본을 올린다고 말했더라도, 태윤 사장님이 마지막 출력본을 직접 봤다면 8천만원 줄은 눈에 띄었을 겁니다.",
+            "중개사가 수정본을 올린다고 말했더라도, 임대인이 마지막 출력본을 직접 봤다면 계약서 금액 줄은 눈에 띄었을 겁니다.",
             "그 확인을 남에게 넘긴 건 분명한 실수입니다."
           ],
           "privateKnowledge": [
@@ -2034,7 +2034,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오 씨",
+                  "fullName": "중개사",
                   "judgeRef": "우석 씨"
                 },
                 "doc_final": {
@@ -2053,7 +2053,7 @@
             },
             {
               "id": "tenant09:a:d-5:timeline:3",
-              "factText": "최종 8천만원 줄은 마지막 출력본에서 충분히 눈에 띄었다는 진술",
+              "factText": "최종 계약서 금액 줄은 마지막 출력본에서 충분히 눈에 띄었다는 진술",
               "tags": [
                 "timeline",
                 "evidence"
@@ -2062,7 +2062,7 @@
                 "final_amount": {
                   "exact": "8천만원",
                   "neutral": "최종본 보증금",
-                  "rounded": "8천"
+                  "rounded": "최종본 보증금"
                 },
                 "call_gap": {
                   "exact": "통화 뒤 19분 후",
@@ -2409,8 +2409,8 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "저도 계약서에는 8천만원으로 알고 있었고, 그 기준으로 세입자를 들인 사람입니다.",
-            "분할 송금이 있었다고 해서 제가 2천만원을 떼먹은 사람처럼 몰아가면 안 됩니다."
+            "저도 계약서에는 계약서 금액으로 알고 있었고, 그 기준으로 세입자를 들인 사람입니다.",
+            "분할 송금이 있었다고 해서 제가 차액을 떼먹은 사람처럼 몰아가면 안 됩니다."
           ],
           "privateKnowledge": [
             "자기 계좌로 실제 들어온 돈이 6천만원뿐이라는 건 알고 있었다.",
@@ -2428,7 +2428,7 @@
           "claimAtoms": [
             {
               "id": "tenant09:b:d-1:denial:0",
-              "factText": "계약서 8천만원 기준으로 움직였다는 사실만 앞세우는 진술",
+              "factText": "계약서 계약서 금액 기준으로 움직였다는 사실만 앞세우는 진술",
               "tags": [
                 "denial",
                 "legacy_sentence"
@@ -2437,12 +2437,12 @@
                 "contract_amount": {
                   "exact": "8천만원",
                   "neutral": "계약서상 보증금",
-                  "rounded": "8천"
+                  "rounded": "계약서상 보증금"
                 },
                 "received_amount": {
                   "exact": "6천만원",
                   "neutral": "실수령액",
-                  "rounded": "6천"
+                  "rounded": "실수령액"
                 }
               },
               "stanceHints": [
@@ -2465,7 +2465,7 @@
                 "broker_amount": {
                   "exact": "2천만원",
                   "neutral": "그 차액",
-                  "rounded": "2천"
+                  "rounded": "그 차액"
                 },
                 "time": {
                   "exact": "같은 날 14분 차이",
@@ -2489,7 +2489,7 @@
           "disputeId": "d-1",
           "state": "S1",
           "publicClaim": [
-            "제 계좌에 먼저 들어온 건 6천만원이 맞습니다.",
+            "제 계좌에 먼저 들어온 건 실수령 금액이 맞습니다.",
             "하지만 우석이가 나머지도 정리된다고 해서 전체 구조가 8천으로 맞는 줄 알았습니다."
           ],
           "privateKnowledge": [
@@ -2508,7 +2508,7 @@
           "claimAtoms": [
             {
               "id": "tenant09:b:d-1:uncertainty:2",
-              "factText": "자기 계좌 실수령액은 6천만원이지만 전체 구조는 8천으로 맞는 줄 알았다는 진술",
+              "factText": "자기 계좌 실수령액은 실수령 금액이지만 전체 구조는 8천으로 맞는 줄 알았다는 진술",
               "tags": [
                 "uncertainty",
                 "context"
@@ -2517,12 +2517,12 @@
                 "received_amount": {
                   "exact": "6천만원",
                   "neutral": "실수령액",
-                  "rounded": "6천"
+                  "rounded": "실수령액"
                 },
                 "contract_amount": {
                   "exact": "8천만원",
                   "neutral": "계약서상 보증금",
-                  "rounded": "8천"
+                  "rounded": "계약서상 보증금"
                 }
               },
               "stanceHints": [
@@ -2545,13 +2545,13 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오 씨",
+                  "fullName": "중개사",
                   "judgeRef": "우석 씨"
                 },
                 "broker_amount": {
                   "exact": "2천만원",
                   "neutral": "그 차액",
-                  "rounded": "2천"
+                  "rounded": "그 차액"
                 }
               },
               "stanceHints": [
@@ -2924,7 +2924,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "우석 씨",
+                  "fullName": "중개사",
                   "judgeRef": "우석 씨"
                 },
                 "chat_time": {
@@ -2954,12 +2954,12 @@
                 "contract_amount": {
                   "exact": "8천만원",
                   "neutral": "부풀린 보증금 액수",
-                  "rounded": "8천"
+                  "rounded": "부풀린 보증금 액수"
                 },
                 "broker_amount": {
                   "exact": "2천만원",
                   "neutral": "허위 정리비 금액",
-                  "rounded": "2천"
+                  "rounded": "허위 정리비 금액"
                 }
               },
               "stanceHints": [
@@ -2977,7 +2977,7 @@
           "disputeId": "d-2",
           "state": "S1",
           "publicClaim": [
-            "직접 들은 건 없지만, 2천만원이 제 계좌가 아니라 우석 쪽으로 갔다는 순간부터는 정상적인 보증금 구조가 아니라는 느낌은 있었습니다.",
+            "직접 들은 건 없지만, 차액이 제 계좌가 아니라 중개사 쪽으로 갔다는 순간부터는 정상적인 보증금 구조가 아니라는 느낌은 있었습니다.",
             "그걸 제가 끝까지 못 파고든 겁니다."
           ],
           "privateKnowledge": [
@@ -2996,7 +2996,7 @@
           "claimAtoms": [
             {
               "id": "tenant09:b:d-2:context:2",
-              "factText": "2천만원이 자기 계좌가 아닌 우석 쪽으로 간 순간부터 이상함을 느꼈다는 사실",
+              "factText": "차액이 자기 계좌가 아닌 중개사 쪽으로 간 순간부터 이상함을 느꼈다는 사실",
               "tags": [
                 "context",
                 "uncertainty"
@@ -3005,12 +3005,12 @@
                 "broker_amount": {
                   "exact": "2천만원",
                   "neutral": "허위 정리비 금액",
-                  "rounded": "2천"
+                  "rounded": "허위 정리비 금액"
                 },
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오 씨",
+                  "fullName": "중개사",
                   "judgeRef": "우석 씨"
                 }
               },
@@ -3034,7 +3034,7 @@
                 "contract_amount": {
                   "exact": "8천만원",
                   "neutral": "부풀린 보증금 액수",
-                  "rounded": "8천"
+                  "rounded": "부풀린 보증금 액수"
                 },
                 "chat_time": {
                   "exact": "최종 계약 스캔 30분 전",
@@ -3414,7 +3414,7 @@
                 "received_amount": {
                   "exact": "6천만원",
                   "neutral": "다투지 않는 보증금",
-                  "rounded": "6천"
+                  "rounded": "다투지 않는 보증금"
                 },
                 "settlement": {
                   "exact": "정산표",
@@ -3494,7 +3494,7 @@
                 "received_amount": {
                   "exact": "6천만원",
                   "neutral": "다투지 않는 보증금",
-                  "rounded": "6천"
+                  "rounded": "다투지 않는 보증금"
                 }
               },
               "stanceHints": [
@@ -4350,7 +4350,7 @@
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "우석 씨",
+                  "fullName": "중개사",
                   "judgeRef": "우석 씨"
                 }
               },
@@ -4374,12 +4374,12 @@
                 "draft_amount": {
                   "exact": "6천만원",
                   "neutral": "초안 보증금",
-                  "rounded": "6천"
+                  "rounded": "초안 보증금"
                 },
                 "final_amount": {
                   "exact": "8천만원",
                   "neutral": "최종본 보증금",
-                  "rounded": "8천"
+                  "rounded": "최종본 보증금"
                 }
               },
               "stanceHints": [
@@ -4397,7 +4397,7 @@
           "disputeId": "d-5",
           "state": "S1",
           "publicClaim": [
-            "6천만원으로 다시 맞춰 달라고는 분명히 말했습니다.",
+            "실수령 금액으로 다시 맞춰 달라고는 분명히 말했습니다.",
             "그래서 우석이가 정리한 최종본도 그렇게 돼 있을 거라고 믿었습니다."
           ],
           "privateKnowledge": [
@@ -4416,7 +4416,7 @@
           "claimAtoms": [
             {
               "id": "tenant09:b:d-5:context:2",
-              "factText": "6천만원으로 다시 맞춰 달라고 말한 사실",
+              "factText": "실수령 금액으로 다시 맞춰 달라고 말한 사실",
               "tags": [
                 "context",
                 "quote"
@@ -4425,12 +4425,12 @@
                 "draft_amount": {
                   "exact": "6천만원",
                   "neutral": "초안 보증금",
-                  "rounded": "6천"
+                  "rounded": "초안 보증금"
                 },
                 "broker_person": {
                   "exact": "오우석",
                   "neutral": "중개사",
-                  "fullName": "오 씨",
+                  "fullName": "중개사",
                   "judgeRef": "우석 씨"
                 }
               },
@@ -4458,7 +4458,7 @@
                 "final_amount": {
                   "exact": "8천만원",
                   "neutral": "최종본 보증금",
-                  "rounded": "8천"
+                  "rounded": "최종본 보증금"
                 }
               },
               "stanceHints": [

@@ -1,13 +1,16 @@
 {
   "caseId": "friend-07",
   "category": "friend",
+  "isMonetary": false,
   "partyA": {
     "name": "서진아",
-    "archetype": "cold_logic"
+    "archetype": "cold_logic",
+    "tell": "timeline_stitch"
   },
   "partyB": {
     "name": "박성호",
-    "archetype": "victim_cosplay"
+    "archetype": "victim_cosplay",
+    "tell": "pressure_preface"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "서진아 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 전날 메신저 원본에서 성호의 부탁을 받은 건 맞습니다. 다만 그 부탁의 의미는 따로 해석이 필요합니다.",
-      "behaviorHint": "차분히 손을 앞으로 모으고 말한다.",
+      "npcResponse": "네, 요청이 있었던 건 맞습니다. 하지만 그 요청의 전후 맥락을 보셔야 합니다.",
+      "behaviorHint": "눈을 잠시 깔며 생각하는 듯한 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "서진아 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "박성호 씨가 직접 정리할 수 있을 거라 믿었습니다. 당시 판단은 제 친구를 돕기 위한 선택이었습니다.",
-      "behaviorHint": "고개를 조금 끄덕이며 덤덤하게 대답",
+      "npcResponse": "급박한 상황이라 빠르게 결정을 내릴 수밖에 없었습니다. 그 이후에 미리 알리지 못한 점은 제 잘못이지만, 당시에는 그렇게 판단할 수밖에 없었습니다.",
+      "behaviorHint": "잠시 눈을 내리깔고 손을 주무른다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -74,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "서진아 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히, 그때는 정말 두려웠습니다. 제 친구가 정리할 거라고 믿었지만, 사실은 더 큰일이 날 것 같아 말하지 못했어요.",
-      "behaviorHint": "잠시 눈을 피하며 깊은 숨을 들이마신다.",
+      "npcResponse": "솔직히, 그때는 너무 당황스러웠습니다. 뭐라 말하면 더 큰일이 날 것 같아서 침묵했습니다.",
+      "behaviorHint": "시선을 잠시 피하고 당황한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "박성호 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 다른 대화에서 잘려 나와 한 화면에 재배열된 것 같습니다.",
-      "behaviorHint": "긴장된 표정으로 고개를 살짝 흔들며 부정한다.",
+      "npcResponse": "아닙니다. 그건 다른 날짜 대화에서 잘려 나와 재배열된 겁니다.",
+      "behaviorHint": "약간 긴장된 표정으로 침착하게 설명하는 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +108,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "서진아 씨, 이 대화 캡처 이미지에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "e-2 메신저 export 시점에서 나온 자료는 맞습니다. 다만, 그 내용을 단정하고 해석하는 건 시기적으로 이릅니다.",
-      "behaviorHint": "팔짱을 끼고 차분하게 지켜본다.",
+      "judgeQuestion": "서진아 씨, 이 대화 캡처 이미지를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 대화 캡처는 제가 보낸 것이 맞습니다. 다만, 그 내용이 실제 상황을 전부 보여주는 건 아니라고 생각합니다.",
+      "behaviorHint": "잠시 고개를 들어 대화 캡처를 바라보다가 고개를 살짝 끄덕인다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -122,8 +125,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "박성호 씨, 이 메신저 export와 일정 조율 대화를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 순서가 다소 뒤섞인 것 같습니다. 서로 다른 날짜 대화가 한 화면에 걸쳐있어 오해가 생긴 것일 뿐, 의도한 바는 아니었습니다.",
-      "behaviorHint": "조금 당황한 표정으로 고개를 살짝 흔든다.",
+      "npcResponse": "그 자료는 원래 대화에서 부분적으로 잘려 나와 재배열된 것입니다. 제가 관계를 숨기고자 했던 건 맞지만, 그 맥락을 충분히 이해하셔야 합니다.",
+      "behaviorHint": "침착하게 설명하며 손으로 메신저 대화 내용을 가리킨다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "서진아 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "그 전날, 박성호 씨가 같이 있었다고 말해 달라는 취지였습니다. 제가 미리 말하지 않고 이를 처리한 건 제 실수입니다.",
-      "behaviorHint": "손가락을 교차하며 약간 긴장된 태도",
+      "npcResponse": "아닙니다. 그건 그날 성호 씨와 함께 있었다고만 말해 달라는 취지였습니다. 그 전날 결정된 일정과는 관계가 없었습니다.",
+      "behaviorHint": "차분한 태도로 사실을 차근차근 설명하는 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "서진아 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "제 친구를 앞세운 건, 연애를 당분간 공개할 수 없었기 때문입니다. 제가 먼저 알리지 못한 건 인정하지만, 다른 사정이 있었습니다.",
-      "behaviorHint": "차가운 표정으로 변명하며 자신의 판단을 방어한다.",
+      "npcResponse": "사적인 내용을 당장 공개하기가 부담스러웠습니다. 그래서 친구에게 부탁할 수밖에 없었습니다.",
+      "behaviorHint": "살짝 고개를 숙이며 눈을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "박성호 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 송금한 건 사실입니다. 다만 편집본과 원본을 비교하면 제 친구가 손댔다는 게 분명해질 겁니다.",
-      "behaviorHint": "한숨을 쉬며 잠시 고개를 떨어뜨린 후, 증거 자료를 손에 쥔 채 천천히 고개를 들어올린다.",
+      "npcResponse": "네, 그날 제가 문서를 편집한 건 맞습니다. 다만 원본을 비교해 보면 편집본은 진아가 일부 수정한 부분이 분명히 드러납니다.",
+      "behaviorHint": "약간의 긴장감을 느끼며 말을 이어가고, 손으로 자료를 가리키는 동작을 보인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "박성호 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그때는 정말 두려웠습니다. 제가 말하면 더 큰일이 날 것 같아서 입을 다물고 있었습니다.",
-      "behaviorHint": "고개를 살짝 숙이고, 눈을 아래로 향하며 잠시 한숨을 쉰다.",
+      "npcResponse": "사실은, 그때 너무 두려웠습니다. 제가 뭔가 잘못 말하면 더 큰일이 날 것 같아서요.",
+      "behaviorHint": "어깨를 약간 처지게 하고 시선을 살짝 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +204,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "서진아 씨, 이 제한 공개 합의 문서에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 문서는 맞습니다. 그러나 알리바이는 박성호 씨가 저와 함께 있었다고만 요청한 것입니다.",
-      "behaviorHint": "차분하게 문서의 진위를 인정하고, 알리바이 요청의 범위를 명확히 설명한다.",
+      "judgeQuestion": "서진아 씨, 이 제한 공개 합의 문서를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 문서는 맞습니다. 하지만 성호 씨가 알리바이를 요청한 내용을 근거로 연애와 연결 짓는 건 오해입니다.",
+      "behaviorHint": "서류를 찬찬히 훑으며 차분하게 설명한다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "서진아 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "네, 그 시간대에 성호 씨가 부재중이었음을 뒷받침하는 이동 기록과 일정 변동표가 있습니다. 다만, 이걸 제가 대신 떠안게 만든 건 대단히 불공정합니다.",
-      "behaviorHint": "증거 서류를 손으로 지적하며 강조",
+      "npcResponse": "네, 연습 스케줄 변경표와 택시 영수증, 통화기록이 박성호 씨의 실제 부재를 뒷받침하는 증거입니다. 다만 그 속사정은 상의한 적이 없습니다.",
+      "behaviorHint": "차분하지만 단호하게 말하며 시선을 재판관에게 고정한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +237,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "서진아 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "제 친구의 빈자리를 대신 메워야 했습니다. 그렇지 않으면 공연 진행에 큰 차질이 있었기 때문에 선택의 여지가 없었습니다.",
-      "behaviorHint": "차분하게 손을 모은다",
+      "npcResponse": "제 친구가 제 이름으로 대신 소품 정리를 맡아 달라고 요청했기 때문입니다. 그의 빈자리가 저에게 큰 부담이 될 수밖에 없었습니다.",
+      "behaviorHint": "살짝 고개를 돌려 박성호 씨를 잠시 쳐다본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +253,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "박성호 씨, 다시 정리해 주십시오.",
-      "npcResponse": "양소라에게 전한 뒤 운영진과 동문 단톡, 심지어 스토리까지 퍼졌습니다. 그 넓이와 속도가 확인 요청의 선을 넘어섰다고 생각합니다.",
-      "behaviorHint": "단호한 얼굴로 고개를 끄덕이며",
+      "npcResponse": "아닙니다. 그건 양소라 씨의 이야기를 많은 사람에게 빠르게 퍼뜨린 경로가 문제였다는 겁니다. 단톡방과 스토리에까지 퍼지는 걸 보고 너무 놀랐습니다.",
+      "behaviorHint": "긴장된 표정으로 손을 쥐었다 폈다 하며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -266,8 +269,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "박성호 씨, 성호는 연애 관계를 이용해 리더 선발을 따냈는가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 부회장과의 관계가 채점에 영향을 미치지는 않았습니다. 선발 원본 기록이 이를 뒷받침할 겁니다.",
-      "behaviorHint": "손을 가슴에 올리며 확신을 주려는 몸짓",
+      "npcResponse": "아닙니다. 그 부회장과의 관계는 관계였을 뿐, 채점에 영향을 미치지 않았습니다.",
+      "behaviorHint": "약간 긴장한 표정으로 손을 무릎 위에 얹고, 빠르게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +285,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "서진아 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그때는 정말 혼란스러웠습니다. 제가 뭔가 말하면 더 복잡해질까 봐 두려웠습니다.",
-      "behaviorHint": "당시 상황에 대한 혼란스러운 표정을 짓는다.",
+      "npcResponse": "솔직히 그때는 정말 혼란스러웠습니다. 제 친구가 날 이용했다는 생각이 들어서 마음이 아팠습니다.",
+      "behaviorHint": "두 손을 가슴에 모아 쥐고 잠시 시선을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +301,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "서진아 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "성호가 작년 동호회 부회장으로서 저에게 비밀 연애를 숨겼습니다. 리더 선발 사전 인터뷰 전날 밤, 저에게 연습실에 있었다고 알리바이를 부탁했지만 거절했습니다. 제가 먼저 털어놓지 못한 건 믿고 싶었기 때문입니다.",
-      "behaviorHint": "차분하지만 단호한 어조로, 테이블 앞에서 손을 가지런히 놓고 말한다.",
+      "npcResponse": "네, 그날 연습실에 제가 있었다고 해달라고 요청받았습니다. 정확히는 동호회 부회장 리더 선발 사전 인터뷰 전날 밤이었습니다. 이를 숨긴 건 제 친구를 보호하려는 마음 때문이었습니다. 지금은 그 결정이 잘못되었다고 후회하고 있습니다.",
+      "behaviorHint": "차분하게 재판관을 바라보며 사실을 명확히 밝힌다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,8 +317,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "박성호 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 말씀드리면, 그때는 두려웠습니다. 제가 이 사실을 말하면 더 큰일이 날 것 같았거든요. 하지만 제가 사실을 숨겨서 친구가 화를 낸 건 이해합니다만, 그걸로 모든 게 정당화되는 건 아니라고 생각합니다.",
-      "behaviorHint": "눈을 잠시 감고 한숨을 쉰다.",
+      "npcResponse": "솔직히 그때는 정말 무서웠습니다. 제가 뭔가 잘못 말하면 상황이 더 나빠질까봐 입을 닫고 있었던 겁니다. 그날 B 씨와 지나치게 과장된 대화가 오갔던 것은 사실입니다. 이제 와서 보니 좀 더 솔직하게 말하지 못한 게 후회스럽습니다.",
+      "behaviorHint": "피곤한 표정으로 한숨을 쉬며 고개를 숙인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,9 +332,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "서진아 씨, 성호의 '이미 운영진에게 제한 고지했다' 주장에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 박성호 씨가 말한 운영진 고지 기록은 확인된 것이 없습니다.",
-      "behaviorHint": "눈을 약간 좁히며 재판관을 직시한다.",
+      "judgeQuestion": "서진아 씨, '이미 운영진에게 제한 고지했다' 주장에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그날 사전에 알렸습니다. 다만 그 시점은 이미 선발 이후였습니다.",
+      "behaviorHint": "약간 긴장된 표정으로 재판관을 주시한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -345,16 +348,16 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "박성호 씨, 성호의 '이미 운영진에게 제한 고지했다' 주장에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 운영진 중 한 명에게만 미리 알린 상태였습니다.",
-      "behaviorHint": "약간의 긴장감을 드러내며 시선을 바닥으로 내려다본다.",
+      "judgeQuestion": "박성호 씨, '이미 운영진에게 제한 고지했다' 주장에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 아직 정식으로 고지한 건 아니었습니다.",
+      "behaviorHint": "약간 긴장된 표정으로 손끝을 만지작거림",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T12:50:36.808Z",
-  "finishedAt": "2026-04-05T12:51:54.943Z",
+  "startedAt": "2026-04-05T16:49:05.859Z",
+  "finishedAt": "2026-04-05T16:50:25.836Z",
   "summary": {
     "total": 20,
     "passed": 20,

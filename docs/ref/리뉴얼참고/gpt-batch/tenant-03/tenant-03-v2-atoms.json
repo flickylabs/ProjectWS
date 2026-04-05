@@ -518,7 +518,7 @@
               "slots": {
                 "person": {
                   "exact": "오한별",
-                  "fullName": "중개사 한별",
+                  "fullName": "중개사",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 },
@@ -596,7 +596,7 @@
               "slots": {
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오 씨",
+                  "fullName": "중개사",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 },
@@ -993,7 +993,7 @@
           "claimAtoms": [
             {
               "id": "tenant03:a:d-3:counter:0",
-              "factText": "180만원이 개인 계좌로 빠졌다면 결국 집주인 쪽으로 가는 돈이라고 생각했습니다.",
+              "factText": "해당 금액이 개인 계좌로 빠졌다면 결국 집주인 쪽으로 가는 돈이라고 생각했습니다.",
               "tags": [
                 "counter",
                 "beneficiary",
@@ -1079,7 +1079,7 @@
               "slots": {
                 "amount": {
                   "exact": "적지 않은 돈",
-                  "rounded": "180만원",
+                  "rounded": "그 금액",
                   "neutral": "그 금액"
                 },
                 "account": {
@@ -1111,7 +1111,7 @@
                 },
                 "amount": {
                   "exact": "적지 않은 돈",
-                  "rounded": "180만원",
+                  "rounded": "그 금액",
                   "neutral": "그 금액"
                 }
               },
@@ -1997,7 +1997,7 @@
                 },
                 "person": {
                   "exact": "오한별",
-                  "fullName": "중개사 한별",
+                  "fullName": "중개사",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 }
@@ -2077,7 +2077,7 @@
                 },
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오 씨",
+                  "fullName": "중개사",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 }
@@ -2425,7 +2425,7 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "브리지대출이 그렇게 문제 될 정도는 아니었고 큰 틀은 기존 설명과 같았습니다.",
+            "추가 대출이 그렇게 문제 될 정도는 아니었고 큰 틀은 기존 설명과 같았습니다.",
             "잔금일에 말소만 되면 되는 거라 굳이 다시 길게 말할 사안이 아니었다고 봤습니다."
           ],
           "privateKnowledge": [
@@ -2444,7 +2444,7 @@
           "claimAtoms": [
             {
               "id": "tenant03:b:d-1:denial:0",
-              "factText": "브리지대출이 그렇게 문제 될 정도는 아니었고 큰 틀은 기존 설명과 같았습니다.",
+              "factText": "추가 대출이 그렇게 문제 될 정도는 아니었고 큰 틀은 기존 설명과 같았습니다.",
               "tags": [
                 "denial",
                 "act",
@@ -2937,7 +2937,7 @@
               "slots": {
                 "person": {
                   "exact": "오한별",
-                  "fullName": "중개사 한별",
+                  "fullName": "중개사",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 },
@@ -3015,7 +3015,7 @@
               "slots": {
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오 씨",
+                  "fullName": "중개사",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 },
@@ -3411,7 +3411,7 @@
           "claimAtoms": [
             {
               "id": "tenant03:b:d-3:denial:0",
-              "factText": "180만원은 제 돈이 아닙니다. 그런 항목은 중개사 쪽 정산이라 저는 받은 게 없습니다.",
+              "factText": "해당 금액은 제 돈이 아닙니다. 그런 항목은 중개사 쪽 정산이라 저는 받은 게 없습니다.",
               "tags": [
                 "denial",
                 "beneficiary",
@@ -3497,7 +3497,7 @@
               "slots": {
                 "amount": {
                   "exact": "적지 않은 돈",
-                  "rounded": "180만원",
+                  "rounded": "그 금액",
                   "neutral": "그 금액"
                 },
                 "account": {
@@ -3530,7 +3530,7 @@
                 },
                 "amount": {
                   "exact": "적지 않은 돈",
-                  "rounded": "180만원",
+                  "rounded": "그 금액",
                   "neutral": "그 금액"
                 }
               },
@@ -4415,7 +4415,7 @@
                 },
                 "person": {
                   "exact": "오한별",
-                  "fullName": "중개사 한별",
+                  "fullName": "중개사",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 }
@@ -4495,7 +4495,7 @@
                 },
                 "person": {
                   "exact": "오한별",
-                  "fullName": "오 씨",
+                  "fullName": "중개사",
                   "judgeRef": "중개사 한별",
                   "neutral": "중개사"
                 }

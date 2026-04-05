@@ -1,13 +1,16 @@
 {
   "caseId": "neighbor-03",
   "category": "neighbor",
+  "isMonetary": false,
   "partyA": {
     "name": "강현우",
-    "archetype": "cold_logic"
+    "archetype": "cold_logic",
+    "tell": "rule_buffer"
   },
   "partyB": {
     "name": "진서아",
-    "archetype": "victim_cosplay"
+    "archetype": "victim_cosplay",
+    "tell": "injury_loop"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강현우 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 코드는 제가 사용한 게 아닙니다. 다만, 그 시점의 사용 기록을 보면 다른 이유가 있었음을 알 수 있습니다.",
-      "behaviorHint": "눈을 피하며 기록을 가리킨다.",
+      "npcResponse": "네, 제가 한 건 맞습니다. 그러나 그 시점에서는 급한 상황이었습니다.",
+      "behaviorHint": "차분한 표정으로 고개를 살짝 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,10 +61,16 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "강현우 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "예정에 없던 상황이 발행해 다른 코드로 대처할 수밖에 없었습니다. 미리 말씀드리지 않은 건 제 잘못입니다.",
-      "behaviorHint": "눈을 살짝 감고 고개를 끄덕이며 무게감 있게 인정하는 모습",
+      "npcResponse": "그날 상황이 예상치 못하게 급박하게 돌아가서 잠시 판단이 흐려졌습니다. 미리 알리지 못한 것에 대한 책임은 인지하고 있습니다만, 당시에는 그렇게 할 수밖에 없었습니다.",
+      "behaviorHint": "고개를 약간 숙이며 짧은 한숨을 쉰다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "A2",
+          "severity": "FAIL",
+          "detail": "번역체:인지"
+        }
+      ],
       "error": null
     },
     {
@@ -74,8 +83,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "강현우 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 말하면, 그날 밤은 정말 무서웠습니다. 제가 뭘 잘못했는지도 모르고 말하면 더 큰일이 날 것 같았거든요.",
-      "behaviorHint": "작은 한숨을 쉬며 고개를 살짝 떨군다.",
+      "npcResponse": "솔직히, 그 상황에서는 매우 혼란스러웠습니다. 규정을 어길까 봐 두려웠지만, 그럴 여유가 없었습니다.",
+      "behaviorHint": "잠시 눈을 피하며 생각하는 듯한 표정.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +99,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "진서아 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 옆집 분이 말한 그 상황은 제가 본 것과 다릅니다.",
-      "behaviorHint": "억울한 표정을 짓고 고개를 살짝 저으며",
+      "npcResponse": "네, 그 행동을 한 건 사실입니다. 다만 모든 걸 풀어 놓았던 건 아니고, 비를 피하려고 했던 겁니다.",
+      "behaviorHint": "살짝 주눅 든 표정으로 시선을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +114,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "강현우 씨, 이 지하층 CCTV 짧은 클립에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 클립 자체는 맞습니다만, 8초 앞부분이 누락되어 전체 상황을 보지 못하게 했습니다. 승인 경계가 분명치 않았던 점은 다시 설명드릴 필요가 있습니다.",
-      "behaviorHint": "표정 변화 없이 차분하게 설명한다",
+      "judgeQuestion": "강현우 씨, 이 지하층 CCTV 짧은 클립을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 클립은 제가 촬영한 것이 맞습니다. 다만, 사건 전후의 전체 상황을 이해하기에는 부족한 자료입니다.",
+      "behaviorHint": "차가운 표정으로 클립을 보며 고개를 약간 기울인다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -121,9 +130,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "진서아 씨, 이 출입 로그와 PIN 발급 기록를 보시고 설명해 주십시오.",
-      "npcResponse": "그 세척실 출입 로그는 사실입니다만, 그 PIN 코드가 꼭 제 기기에서 사용된 건 아닙니다. 현우씨의 휴대폰에 저장된 게 의문스럽습니다.",
-      "behaviorHint": "당황한 듯 고개를 옆으로 돌리고 입술을 약간 깨문다.",
+      "judgeQuestion": "진서아 씨, 이 출입 로그와 PIN 발급 기록을 보시고 설명해 주십시오.",
+      "npcResponse": "출입 로그에 사용된 청소용역 코드가 현우씨 메모에 저장된 건 맞습니다. 하지만 그 자료만으로 사건의 전체 맥락을 판단하는 건 성급한 것 같습니다.",
+      "behaviorHint": "손을 약간 떨며 조심스럽게 설명한다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +147,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "강현우 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 코드를 입력한 건 사실입니다. 다만 그 시점에 안이 비어 있다고 판단하고 들어간 겁니다.",
-      "behaviorHint": "냉정하게 고개를 끄덕이며 설명",
+      "npcResponse": "죄송합니다만, 금전 거래와 연관된 표현은 사용할 수 없습니다. 다시 질문해 주시기 바랍니다.",
+      "behaviorHint": null,
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +163,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "강현우 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "건물이 비어있다고 생각해서 행동했습니다. 그 시간에 미리 보고하지 않은 것은 제 실수였습니다.",
-      "behaviorHint": "진지한 표정으로 고개를 살짝 숙이며 인정하는 태도",
+      "npcResponse": "사무실이 비어 있다고 판단했기 때문입니다. 그러나 미리 알리지 못한 건 제 실수입니다.",
+      "behaviorHint": "자신의 판단에 대한 책임을 인정하며 고개를 약간 숙인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +179,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "진서아 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그 입실 방식은 맞습니다. 다만, 문을 열자마자 그 상황을 보고 얼마나 놀랐는지 모릅니다.",
-      "behaviorHint": "한숨을 쉬며 고개를 숙인다.",
+      "npcResponse": "네, 제가 그 입실 방식을 선택한 건 맞습니다. 다만 문을 열었을 때 그 안에 누가 있을 줄은 몰랐습니다.",
+      "behaviorHint": "손을 약간 떨며, 긴장된 표정으로 고개를 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +195,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "진서아 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그 줄을 당장 회수하지 못했을 때 정말 난처했습니다. 반려견 울음 소리가 계속 울려 퍼지는 상황에서 빠르게 판단하기가 어려웠습니다.",
-      "behaviorHint": "어깨를 살짝 움츠리고 한숨을 쉬는 모습",
+      "npcResponse": "솔직히 그때는 너무 혼란스러웠습니다. 반려견이 갑자기 울기 시작해서 그 줄을 바로 회수하지 못했던 게 가장 마음에 걸립니다.",
+      "behaviorHint": "머리를 살짝 숙이며 죄책감을 느끼는 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +210,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "강현우 씨, 이 현장 사진과 사고보고 메모에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "현장 사진 속 배수구 철망에 감긴 자동줄 부분은 제가 직접 처리할 예정이었습니다. 그러나 서아씨가 밀린 청소카트를 남겨둔 점은 제가 미리 말하지 못한 부분입니다.",
-      "behaviorHint": "고개를 살짝 끄덕이며 사진을 다시 확인하는 듯한 태도",
+      "judgeQuestion": "강현우 씨, 이 현장 사진과 사고보고 메모를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 사진과 메모는 현장을 잘 보여주고 있습니다. 다만, 당시 상황은 미리 말하지 못한 급박한 상황이었습니다.",
+      "behaviorHint": "차분하게 서류를 정리하며 증거를 설명합니다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +227,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "강현우 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "네, 제가 먼저 22시 10분에 출입 로그를 찍었습니다. 다만, 그 때 서아 씨가 바로 뒤에 따라왔고, 그 절차에서의 혼선이 있었습니다.",
-      "behaviorHint": "당당하게 설명하며, 상대방과의 동시 출입 상황을 강조한다.",
+      "npcResponse": "아닙니다. 그 절차를 따라야 했지만 그날은 특별한 상황이었습니다.",
+      "behaviorHint": "차분하게 재판관을 바라보며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +243,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "강현우 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "집안에 급한 일정이 발생해서 그 절차를 준수하지 못했습니다. 미리 말씀드리지 못한 것은 제 실수입니다만, 이해를 부탁드립니다.",
-      "behaviorHint": "고개를 조금 숙이며 미안한 표정을 지어 보인다.",
+      "npcResponse": "그 절차가 급한 상황에서는 예외로 적용될 수 있다고 판단했기 때문입니다. 서아씨의 동시 입실도 유사한 상황이었습니다.",
+      "behaviorHint": "차갑고 논리적인 얼굴로 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +259,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "진서아 씨, 다시 정리해 주십시오.",
-      "npcResponse": "네, 제가 그날 행동한 건 맞습니다. 다만 현우 씨가 비켜주셨다면 상황은 덜 얽혔을 겁니다.",
-      "behaviorHint": "억울하다는 듯이 손을 내저으며 말한다.",
+      "npcResponse": "네, 그날 상황을 다시 설명하겠습니다. 옆집 분의 동의 없이 그 환경에 들어갔던 건 맞습니다. 다만, 현우 씨가 자리만 비켜줬다면 다른 결과가 나왔을 겁니다.",
+      "behaviorHint": "억울한 표정으로 서둘러 항변한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -266,8 +275,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "진서아 씨, 19초 CCTV 클립 위조 여부에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 클립은 누가 잘라 돌린 전달본 같다는 생각이 들었습니다.",
-      "behaviorHint": "단호한 눈빛으로 재판관을 바라본다.",
+      "npcResponse": "아닙니다. 그건 제가 할 수 있는 일이 아닙니다.",
+      "behaviorHint": "고개를 가볍게 저으며 부정한다는 느낌을 준다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +291,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "강현우 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그때 문을 먼저 연 선택이 부끄러웠습니다. 경계를 무너뜨리는 것 같아서 망설였던 순간이었습니다.",
-      "behaviorHint": "고개를 약간 숙이며 부끄러워하는 표정을 짓는다.",
+      "npcResponse": "솔직히, 그 순간 제 행동이 잘못되었다는 걸 느꼈습니다. 문을 열면서 경계를 넘었음을 자각하게 되어 부끄러웠습니다.",
+      "behaviorHint": "잠시 눈을 피하고 깊게 숨을 내쉰다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +307,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "강현우 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 청소용역 임시 PIN을 썼습니다. 사고 4분 전에 사용 기록이 있는 건 맞습니다. 옆집 분과의 일이 급작스럽게 터져, 절차를 무시한 제 잘못입니다.",
-      "behaviorHint": "강현우는 재판관에게 시선을 고정하며 단호하게 말한다.",
+      "npcResponse": "네, 청소용역 임시 PIN을 사용해 먼저 헬스장에 들어간 것은 사실입니다. 그 기록은 사고 발생 4분 전에 남아 있습니다. 사실을 숨긴 이유는 제가 출발점을 만든 것이 드러날까 두려웠습니다. 지금은 모든 것을 말하고 나니 체념한 상태입니다.",
+      "behaviorHint": "차갑고 단호한 표정으로, 약간의 긴장감을 가지고",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,8 +323,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "진서아 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 그 순간은 정말 무서웠습니다. 예약 없이 갑자기 옆집 분과 동시에 입실했고, 자동줄을 회수하지 않아 사고 위험이 컸습니다. 그때 제가 얼마나 떨었는지 상상도 못 하실 겁니다.",
-      "behaviorHint": "목소리가 떨리고, 눈을 잠시 감았다가 다시 뜬다.",
+      "npcResponse": "솔직히 예약 없이 동시 입실한 건 제 잘못입니다. 젖은 바닥과 문틈 사이로 미끄러질 뻔한 순간이 있어서 긴 자동줄을 회수하지 못했습니다. 그때는 너무 무서워서 숨겼습니다. 지금은 그때의 판단이 후회스럽고 어떻게든 상황을 바로잡고 싶습니다.",
+      "behaviorHint": "고개를 숙이고 진지한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -330,8 +339,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강현우 씨, 예약·원본 확인 절차 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 절차는 제대로 따랐습니다. 다만 그날 서아 씨 집 앞 날씨가 매우 나빴고, 마감 상황이 긴급해 예외적으로 처리할 수밖에 없었습니다.",
-      "behaviorHint": "차분하게 상황을 설명하며 시선을 아래로 향한다.",
+      "npcResponse": "상황이 급해서 절차를 따르지 않았습니다. 그날 날씨 탓에 서둘렀던 것이지, 고의는 아니었습니다.",
+      "behaviorHint": "낮은 목소리로 차분히 설명",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -346,19 +355,19 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "진서아 씨, 예약·원본 확인 절차 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 단지 절차를 오해했을 뿐입니다.",
-      "behaviorHint": "살짝 고개를 숙이며 죄송하다는 느낌을 전달한다.",
+      "npcResponse": "아닙니다. 그건 상대방에게 미리 알리지 못한 점이 있었던 것뿐입니다.",
+      "behaviorHint": "고개를 살짝 숙이고 미안한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T13:02:07.577Z",
-  "finishedAt": "2026-04-05T13:03:28.794Z",
+  "startedAt": "2026-04-05T17:00:35.002Z",
+  "finishedAt": "2026-04-05T17:01:56.185Z",
   "summary": {
     "total": 20,
-    "passed": 20,
-    "warned": 0,
+    "passed": 19,
+    "warned": 1,
     "errors": 0,
     "skipped": 0
   }

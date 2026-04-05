@@ -1,13 +1,16 @@
 {
   "caseId": "workplace-12",
   "category": "workplace",
+  "isMonetary": false,
   "partyA": {
     "name": "백지훈",
-    "archetype": "cold_logic"
+    "archetype": "cold_logic",
+    "tell": "metric_shield"
   },
   "partyB": {
     "name": "오수민",
-    "archetype": "confrontational"
+    "archetype": "confrontational",
+    "tell": "quote_back"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "백지훈 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 공식 지침에 없었던 추가 확인 수단이었습니다. 오수민 씨에 대한 상태 확인이 필요하다고 판단했습니다.",
-      "behaviorHint": "차가운 표정으로 정면을 응시하며 말한다.",
+      "npcResponse": "네, 출석 확인을 요청한 것은 사실입니다. 다만 추가 확인 수단이 공식 지침 범위를 넘은 건 아니라고 생각합니다.",
+      "behaviorHint": "침착하지만 약간의 방어적인 자세를 취한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "백지훈 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "분기 말 운영 지표 하락 때문에 그렇게 할 수밖에 없었습니다. 특히 응답 공백이 계속 쌓여서 운영 압박이 컸던 상황이었습니다.",
-      "behaviorHint": "차갑고 논리적으로 설명하며 고개를 끄덕인다.",
+      "npcResponse": "분기 말에 SLA가 하락하고 응답 공백이 누적되어 운영 압박이 컸습니다. 제가 바로 설명하지 못한 건 제 잘못입니다.",
+      "behaviorHint": "차분하게 상황을 정리하며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -74,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "백지훈 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히, 그때는 운영 지표가 떨어질까 봐 크게 걱정했습니다. 제 팀원의 상태를 확인하는 게 불가피하다고 느꼈습니다.",
-      "behaviorHint": "살짝 한숨을 쉬며 고개를 끄덕인다.",
+      "npcResponse": "솔직히 그때는 긴장감이 컸습니다. 제가 먼저 나서야 한다는 부담이 있었습니다.",
+      "behaviorHint": "잠시 눈을 감고 숨을 깊게 들이쉰다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -90,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "오수민 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 상태를 온라인으로 유지했습니다. 다만 알림을 늦게 본 책임은 인정합니다.",
-      "behaviorHint": "정면으로 응시",
+      "npcResponse": "아닙니다. 그건 알림을 늦게 본 탓입니다. 모든 걸 서둘러 수습했습니다.",
+      "behaviorHint": "눈을 살짝 피하며 약간 긴장된 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -105,9 +108,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "백지훈 씨, 이 재택근무 지침과 추가 확인 공지에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 재택근무 지침과 공지는 제가 공유한 것이 맞습니다. 다만, 오히려 팀원들의 업무 참여도를 높이려는 목적이었습니다.",
-      "behaviorHint": "차분하게 서류를 넘기며 설명",
+      "judgeQuestion": "백지훈 씨, 이 재택근무 지침과 추가 확인 공지를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 문서는 맞습니다. 다만, 그걸 보면 오히려 팀원의 응답 관리를 위한 최소한의 조치였다는 점을 이해할 수 있습니다.",
+      "behaviorHint": "서류를 손에 들고 차분하게 설명하는 제스처",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -121,9 +124,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "오수민 씨, 이 유휴 로그와 입력 패턴 기록를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 맞습니다. 하지만 자리를 비운 이유까지 이걸로 연결시키는 건 과하다고 봅니다.",
-      "behaviorHint": "살짝 미소 지으며 고개를 들어 상대방을 주시한다",
+      "judgeQuestion": "오수민 씨, 이 유휴 로그와 입력 패턴 기록을 보시고 설명해 주십시오.",
+      "npcResponse": "그 로그는 제 행동을 보여주긴 하지만, 그 상황에는 다른 요인들도 있었습니다. 제가 그 시점에 자리를 잠시 비워야 했던 이유가 있었습니다.",
+      "behaviorHint": "조금 당황한 듯 시선을 잠시 회피하다가 다시 정면을 응시한다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -138,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "백지훈 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 공식 지침을 넘어서 웹캠 확인과 화면 캡처를 한 건 사실입니다. 다만 분기 말 SLA 하락과 응답 공백 누적으로 팀 운영에 압박이 컸습니다.",
-      "behaviorHint": "냉정하게 자리에서 고개를 약간 숙이며, 서류를 정리하는 듯한 태도",
+      "npcResponse": "네, 공식 지침 범위를 넘은 것은 인정합니다. 다만, 운영 지표 악화를 막기 위한 긴급 조치였습니다.",
+      "behaviorHint": "고개를 약간 숙이며 차분한 태도로 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -154,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "백지훈 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "분기 말 SLA 지표가 하락하면서 운영 압박이 심해졌기 때문입니다. 즉각적인 대응이 필요했지만, 그 과정에서 팀원들에게 먼저 알리지 못한 점은 제 책임입니다.",
-      "behaviorHint": "책임감을 느끼며 설명하는 듯한 표정",
+      "npcResponse": "분기 말에 SLA가 하락하고 의사소통 공백이 누적되면서 운영 압박이 컸습니다. 그래서 별다른 대안을 찾기 어려웠습니다.",
+      "behaviorHint": "조금 긴장된 표정으로 재판관을 바라본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -170,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "오수민 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "죄송합니다. 어떤 점을 구체적으로 말씀드려야 하나요? 제가 말할 수 있는 부분은 오늘 여기까지입니다.",
-      "behaviorHint": null,
+      "npcResponse": "온라인 상태를 유지한 것은 사실입니다. 감시 압박이 커서 그렇게 할 수밖에 없었습니다.",
+      "behaviorHint": "담담히 이야기하면서 시선을 재판관에게 고정한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -186,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "오수민 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 집안일과 콜백 대기가 겹쳐서 자리를 비울 수밖에 없었습니다. 그 상황에서 더 큰 문제를 만들까 봐 두려웠습니다.",
-      "behaviorHint": "눈을 살짝 내리깔며 솔직해지려는 노력",
+      "npcResponse": "솔직히, 집안일을 처리하는 동시에 콜백을 기다리는 게 가장 힘들었습니다. 그 시간대에는 모든 것이 겹쳐서 버거웠습니다.",
+      "behaviorHint": "잠시 고개를 숙여 생각에 잠긴 듯한 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,9 +204,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "백지훈 씨, 이 모니터링 요약 제출 PDF에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 유휴구간과 늦은 응답만 발췌된 상태입니다. 하지만 그걸로 제 팀원의 전체 업무 태도를 단정할 순 없습니다.",
-      "behaviorHint": "차분하게 손을 모아 얹고 설명하다",
+      "judgeQuestion": "백지훈 씨, 이 모니터링 요약 제출 PDF를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 문서는 정확합니다. 그러나, 웹캠 확인은 재택근무 지침을 벗어난 것을 인정합니다.",
+      "behaviorHint": "차분한 표정으로 설명하고 PDF를 가리킨다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -218,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "백지훈 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 공식 지침에서 벗어난 요구는 없었습니다. 다만, 분기 말 SLA 하락으로 운영 압박이 컸던 건 사실입니다.",
-      "behaviorHint": "눈을 잠시 감고 손끝을 빠르게 두드린다.",
+      "npcResponse": "아닙니다. 제 팀원이 요구했던 부분이 공식 지침을 넘지 않았습니다. 다만, 응답 공백 문제가 운영에 큰 압박을 주었습니다.",
+      "behaviorHint": "상대방의 억울함을 이해하지 못한 채 차분하게 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -234,8 +237,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "백지훈 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "분기 말 SLA 하락 문제가 워낙 심각해져서 즉각적인 대응이 필요했습니다. 먼저 설명하지 않은 건 제 실수지만, 그때는 운영 지표를 안정시키는 게 우선이었습니다.",
-      "behaviorHint": "차분하게 설명하면서도 약간의 방어적인 자세를 취한다.",
+      "npcResponse": "분기 말이 되면서 SLA 지표가 급격히 하락했고, 응답 공백이 누적되면서 압박이 심했습니다. 그래서 운영의 안정성을 위해 빠르게 판단할 수밖에 없었습니다.",
+      "behaviorHint": "결연한 표정으로 재판관을 바라본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -250,8 +253,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "오수민 씨, 다시 정리해 주십시오.",
-      "npcResponse": "아닙니다. 그건 매니저님이 좀 더 자세히 설명해야 할 부분입니다.",
-      "behaviorHint": "고개를 살짝 들고 매니저 쪽을 가리킨다.",
+      "npcResponse": "네, 알림을 늦게 본 건 맞습니다. 다만, 제 매니저가 지시한 방식으로 마우스 패턴이 고정되지 않았던 점도 있었습니다.",
+      "behaviorHint": "단호하게 시선을 고정한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -266,8 +269,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "오수민 씨, 모니터링 PDF의 과장 편집에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 제 유휴 구간만 눈에 띄게 남아있는 걸 확인했습니다.",
-      "behaviorHint": "재판관을 똑바로 쳐다보며 말한다.",
+      "npcResponse": "아닙니다. 그건 제 유휴 구간만 이상하게 부각된 겁니다.",
+      "behaviorHint": "자신감 있게 고개를 살짝 드는 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -282,8 +285,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "백지훈 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 집 안 배경까지 보이는 게 너무 불안했습니다. 그 순간 제 팀원들의 사생활을 제가 침범한 것 같은 두려움이 컸습니다.",
-      "behaviorHint": "눈을 잠시 피하며 손을 무릎 위에 올린다.",
+      "npcResponse": "솔직히 그때는 두려웠습니다. 제 팀원이 상처받지 않도록 조심해야 한다고 생각했거든요.",
+      "behaviorHint": "눈을 감고 잠시 숨을 고른 후 솔직하게 답변",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -298,8 +301,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "백지훈 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 제 팀원에게 웹캠 확인과 화면 캡처를 요구한 건 공식 재택근무 운영지침을 넘는 일이었습니다. 얼굴과 거실 배경까지 확인한 것 역시 감시였다는 점도 인정합니다. 당시 저는 운영 효율성만을 중시했습니다.",
-      "behaviorHint": "진지한 태도로 재판관을 바라보며 말한다.",
+      "npcResponse": "네, 웹캠 확인과 화면 캡처 요구가 재택근무 운영지침 범위를 넘었던 것은 사실입니다. 얼굴과 거실 배경까지 드러나게 한 것도 감시였다는 점을 인정합니다. 업무 효율을 높이기 위한 조치였지만, 지나쳤습니다. 그로 인해 많은 후회가 남습니다.",
+      "behaviorHint": "책상 위에 놓인 서류를 정리하며 시선을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -314,8 +317,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "오수민 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그때는 정말 당황스러웠습니다. 알림을 늦게 본 제 잘못도 있지만, 그 상황에서 제가 더 큰 문제를 만들까봐 무서웠습니다. 잠깐 비운 시간이 길어졌던 것도 인정합니다.",
-      "behaviorHint": "고개를 약간 숙이며 눈을 피하는 듯한 표정",
+      "npcResponse": "솔직히 당시에는 좀 무서웠습니다. 제가 알림을 늦게 본 부분을 숨긴 건 제 잘못입니다. 그때는 사정 얘기하면 일이 더 커질까 봐 걱정됐거든요. 이제는 후회하고 있고, 더 솔직히 말했어야 했습니다.",
+      "behaviorHint": "약간의 긴장감과 후회하는 표정으로 솔직하게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,9 +332,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "백지훈 씨, 사적 감시·편법의 쌍방 책임에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 감시 대신, 의도한 건 고객 대응 절차 상의 긴급 임시 대응이었습니다. 다만, 그 과정에서 기록에 남지 않은 부분이 있었던 건 사실입니다.",
-      "behaviorHint": "차분하게 서류를 정돈하며 살짝 한숨을 쉰다.",
+      "judgeQuestion": "백지훈 씨, 사적 감시·쌍방 책임에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 제 팀원을 사적으로 감시한 것은 아닙니다. 대신, 급작스러운 상황에 대응하기 위한 조치였습니다.",
+      "behaviorHint": "차분하게 손을 모으고 재판관을 똑바로 바라본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -345,16 +348,16 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "오수민 씨, 사적 감시·편법의 쌍방 책임에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 감시가 먼저 강화된 뒤에 업무량 조정은 제적인 노력으로 시작했습니다.",
-      "behaviorHint": "살짝 긴장한 표정을 짓다가, 눈을 살짝 피하며 조용히 답변한다",
+      "judgeQuestion": "오수민 씨, 사적 감시·쌍방 책임에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 감시 강화가 우선된 부분입니다. 상태 조정은 공식 요청보다 편법으로 버텼습니다.",
+      "behaviorHint": "살짝 긴장된 표정으로 입술을 삐죽이며",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T14:06:22.233Z",
-  "finishedAt": "2026-04-05T14:07:41.146Z",
+  "startedAt": "2026-04-05T18:23:35.389Z",
+  "finishedAt": "2026-04-05T18:26:55.485Z",
   "summary": {
     "total": 20,
     "passed": 20,

@@ -40,13 +40,13 @@
                 "animal": {
                   "exact": "3.2kg 말티즈",
                   "neutral": "소형 반려견",
-                  "rounded": "3kg대",
-                  "fullName": "3.2kg 말티즈"
+                  "rounded": "소형 반려견",
+                  "fullName": "소형 반려견"
                 },
                 "person": {
                   "exact": "김하은",
                   "neutral": "중개사",
-                  "fullName": "브로커",
+                  "fullName": "중개사",
                   "judgeRef": "브로커"
                 }
               },
@@ -74,8 +74,8 @@
                 },
                 "person": {
                   "exact": "최상훈",
-                  "neutral": "임대인",
-                  "fullName": "집주인",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 }
               },
@@ -505,13 +505,13 @@
                 "animal": {
                   "exact": "3.2kg 말티즈",
                   "neutral": "소형 반려견",
-                  "rounded": "3kg대",
-                  "fullName": "3.2kg 말티즈"
+                  "rounded": "소형 반려견",
+                  "fullName": "소형 반려견"
                 },
                 "person": {
                   "exact": "김하은",
                   "neutral": "중개사",
-                  "fullName": "브로커",
+                  "fullName": "중개사",
                   "judgeRef": "브로커"
                 }
               },
@@ -536,7 +536,7 @@
                 "person": {
                   "exact": "김하은",
                   "neutral": "중개사",
-                  "fullName": "브로커",
+                  "fullName": "중개사",
                   "judgeRef": "브로커"
                 }
               },
@@ -606,13 +606,13 @@
                 "animal": {
                   "exact": "3.2kg 말티즈",
                   "neutral": "소형 반려견",
-                  "rounded": "3kg대",
-                  "fullName": "3.2kg 말티즈"
+                  "rounded": "소형 반려견",
+                  "fullName": "소형 반려견"
                 },
                 "person": {
                   "exact": "김하은",
                   "neutral": "중개사",
-                  "fullName": "김 씨",
+                  "fullName": "중개사",
                   "judgeRef": "브로커"
                 }
               },
@@ -976,8 +976,8 @@
                 },
                 "person": {
                   "exact": "최상훈",
-                  "neutral": "임대인",
-                  "fullName": "집주인",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 }
               },
@@ -1050,8 +1050,8 @@
                 "animal": {
                   "exact": "3.2kg 말티즈",
                   "neutral": "소형 반려견",
-                  "rounded": "3kg대",
-                  "fullName": "3.2kg 말티즈"
+                  "rounded": "소형 반려견",
+                  "fullName": "소형 반려견"
                 }
               },
               "stanceHints": [
@@ -1064,7 +1064,7 @@
             },
             {
               "id": "tenant10:a:d-3:threshold:0",
-              "factText": "특별청소 예치금 50만원이 실제 확인 전 선요구였다는 점",
+              "factText": "특별청소 예치금 예치금이 실제 확인 전 선요구였다는 점",
               "tags": [
                 "threshold",
                 "rule",
@@ -1074,7 +1074,7 @@
                 "amount": {
                   "exact": "적지 않은 돈",
                   "neutral": "특별청소 예치금",
-                  "rounded": "50만원"
+                  "rounded": "특별청소 예치금"
                 }
               },
               "stanceHints": [
@@ -1423,8 +1423,8 @@
                 "animal": {
                   "exact": "3.2kg 말티즈",
                   "neutral": "소형 반려견",
-                  "rounded": "3kg대",
-                  "fullName": "3.2kg 말티즈"
+                  "rounded": "소형 반려견",
+                  "fullName": "소형 반려견"
                 }
               },
               "stanceHints": [
@@ -1858,8 +1858,8 @@
               "slots": {
                 "person": {
                   "exact": "최상훈",
-                  "neutral": "임대인",
-                  "fullName": "집주인",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 }
               },
@@ -2270,13 +2270,13 @@
                 "animal": {
                   "exact": "3.2kg 말티즈",
                   "neutral": "소형 반려견",
-                  "rounded": "3kg대",
-                  "fullName": "3.2kg 말티즈"
+                  "rounded": "소형 반려견",
+                  "fullName": "소형 반려견"
                 },
                 "person": {
                   "exact": "김하은",
                   "neutral": "중개사",
-                  "fullName": "브로커",
+                  "fullName": "중개사",
                   "judgeRef": "브로커"
                 }
               },
@@ -2345,8 +2345,8 @@
               "slots": {
                 "person": {
                   "exact": "최상훈",
-                  "neutral": "임대인",
-                  "fullName": "최 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 }
               },
@@ -2679,8 +2679,8 @@
                 "animal": {
                   "exact": "3.2kg 말티즈",
                   "neutral": "소형 반려견",
-                  "rounded": "3kg대",
-                  "fullName": "3.2kg 말티즈"
+                  "rounded": "소형 반려견",
+                  "fullName": "소형 반려견"
                 },
                 "person": {
                   "exact": "윤민주",
@@ -3139,8 +3139,8 @@
                 },
                 "person": {
                   "exact": "최상훈",
-                  "neutral": "임대인",
-                  "fullName": "집주인",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 }
               },
@@ -3230,8 +3230,8 @@
               "slots": {
                 "person": {
                   "exact": "최상훈",
-                  "neutral": "임대인",
-                  "fullName": "최 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 }
               },
@@ -3651,8 +3651,8 @@
               "slots": {
                 "person": {
                   "exact": "최상훈",
-                  "neutral": "임대인",
-                  "fullName": "최 씨",
+                  "neutral": "상대방",
+                  "fullName": "상대방",
                   "judgeRef": "집주인"
                 }
               },
@@ -4006,8 +4006,8 @@
                 "animal": {
                   "exact": "3.2kg 말티즈",
                   "neutral": "소형 반려견",
-                  "rounded": "3kg대",
-                  "fullName": "3.2kg 말티즈"
+                  "rounded": "소형 반려견",
+                  "fullName": "소형 반려견"
                 }
               },
               "stanceHints": [
@@ -4073,7 +4073,7 @@
                 "amount": {
                   "exact": "적지 않은 돈",
                   "neutral": "특별청소 예치금",
-                  "rounded": "50만원"
+                  "rounded": "특별청소 예치금"
                 }
               },
               "stanceHints": [

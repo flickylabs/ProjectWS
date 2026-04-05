@@ -1,13 +1,16 @@
 {
   "caseId": "tenant-02",
   "category": "tenant",
+  "isMonetary": false,
   "partyA": {
     "name": "정민석",
-    "archetype": "confrontational"
+    "archetype": "confrontational",
+    "tell": "screenshot_strike"
   },
   "partyB": {
     "name": "한규철",
-    "archetype": "victim_cosplay"
+    "archetype": "victim_cosplay",
+    "tell": "sacrifice_rollcall"
   },
   "disputes": [
     {
@@ -42,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "정민석 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 출입은 당시에 분명히 확인되지 않았습니다.",
-      "behaviorHint": "단호하게 고개를 젓는다.",
+      "npcResponse": "그 출입이 확인된 건 맞습니다. 그러나 그때 사진과 집 안 상태가 너무 맞물렸습니다.",
+      "behaviorHint": "눈을 가늘게 뜨며 상황을 떠올리는 듯한 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -58,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "정민석 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "그때 집주인분과 약속이 있었기 때문입니다. 먼저 상황을 알리지 못한 건 제 책임이지만, 그 출입이 불가피했습니다.",
-      "behaviorHint": "약간의 방어적 뉘앙스로 말하며, 상대방의 시선에서 잠시 눈을 피함.",
+      "npcResponse": "그 출입은 제가 잘못한 부분이 있었습니다. 그러나 그때 상황이 급박해서 그렇게 할 수밖에 없었습니다.",
+      "behaviorHint": "고개를 약간 숙이며 방어적인 자세를 취한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -74,12 +77,10 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "정민석 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서.",
-      "behaviorHint": "약간의 불안함을 드러내며 말한다.",
+      "npcResponse": "솔직히, 그때 무서웠습니다. 사실은 제가 말하면 더 큰일이 날 것 같아서 침묵했습니다.",
+      "behaviorHint": "손을 살짝 움켜쥔다가 놓으며 긴장하는 모습을 보임",
       "evidenceId": null,
-      "issues": [
-        "반말종결어미:같아서."
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -92,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "한규철 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 배관 문제뿐만 아니라 세입자분들의 대응도 큰 역할을 했습니다.",
-      "behaviorHint": "차분하게 고개를 살짝 끄덕이며 말한다.",
+      "npcResponse": "아닙니다. 그건 다르게 해석할 부분이 있습니다. 배관 문제라는 건 인정하지만, 세입자분들의 생활 관리 문제가 더 컸습니다.",
+      "behaviorHint": "조금 당황한 표정으로 두 손을 가볍게 양옆으로 펼친다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -107,9 +108,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "정민석 씨, 이 임대차계약서와 출입 특약본에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "그 계약서와 특약은 분명히 존재합니다. 하지만, 집주인분이 미리 알리지 않고 출입한 것은 아닌가 싶군요.",
-      "behaviorHint": "침착하게 설명하며 의문을 제기한다",
+      "judgeQuestion": "정민석 씨, 이 임대차계약서와 출입 특약본을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "특약에 써 있는 내용은 이해합니다. 하지만 제가 현장에 갔던 건 집주인분이 응답이 없었을 때였습니다.",
+      "behaviorHint": "침착하게 서류를 손가락으로 한번 가리킨다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -123,9 +124,9 @@
       "lieState": "S1",
       "action": "evidence_present",
       "stance": "hedge",
-      "judgeQuestion": "한규철 씨, 이 관리비 기록과 민원 접수대장를 보시고 설명해 주십시오.",
-      "npcResponse": "그 기록은 관리실에서 확인된 내용이 맞습니다. 다만, 세입자분들이 물건을 적치해 두어서 점검을 지연시킨 부분도 감안해야 한다고 생각합니다.",
-      "behaviorHint": "살짝 당황한 표정으로 천천히 말한다.",
+      "judgeQuestion": "한규철 씨, 이 관리비 기록과 민원 접수대장을 보시고 설명해 주십시오.",
+      "npcResponse": "그 기록이 공용배관의 누수를 보여주는 건 맞습니다. 하지만 생활 관리 측면에서 세입자분 짐 적치 같은 문제도 영향이 있었습니다.",
+      "behaviorHint": "서류를 쳐다보며 약간의 한숨을 쉰다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -140,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "정민석 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그날 집주인분과 만나기로 한 날보다 먼저 움직였습니다. 다만 그 출입 시각을 보면 오히려 왜 그렇게 서둘렀는지가 궁금한 상황입니다.",
-      "behaviorHint": "차분하게 그러나 단호한 표정으로 상대방을 바라본다.",
+      "npcResponse": "그 출입은 그날 미리 정한 약속보다 빨리 이루어졌습니다. 바로 그 흐름이 문제였다고 봅니다.",
+      "behaviorHint": "시선이 약간 날카로워진다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -156,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "정민석 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "집안에 급한 일이 생겨 출입을 결정할 수밖에 없었습니다. 그때 미리 말하지 못한 건 저의 실수입니다.",
-      "behaviorHint": "약간의 방어적 태도로 머리를 숙이지만, 목소리에 단호함이 담겨 있다.",
+      "npcResponse": "집주인과의 사건을 살펴보다가 급하게 판단할 수밖에 없었습니다. 미리 설명하지 못한 건 제 잘못입니다만, 당시에는 그 출입이 이상했습니다.",
+      "behaviorHint": "약간의 방어적 자세로 고개를 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -172,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "한규철 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 관리 기록을 보니 배관 쪽 흔적이 먼저 있었던 건 인정해야겠군요. 하지만 세입자분이 빨리 알려줬다면 초기 대응도 가능했을 겁니다.",
-      "behaviorHint": "약간 움츠러들며 고개를 끄덕인다",
+      "npcResponse": "네, 배관 문제는 먼저 있었습니다. 하지만 세입자분이 좀 더 협조하셨다면 피해가 줄지 않았을까 아쉽습니다.",
+      "behaviorHint": "한숨을 쉬며 억울한 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -188,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "한규철 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "사실은 세입자분과의 의사소통이 가장 힘들었습니다. 제가 말하면 더 큰일이 날 것 같아서, 그저 혼자 끙끙 앓았죠.",
-      "behaviorHint": "고개를 약간 숙이며 한숨을 쉽니다.",
+      "npcResponse": "솔직히, 그때는 너무 무서웠습니다. 제 말이 더 큰 문제로 이어질까봐 두려움이 컸습니다.",
+      "behaviorHint": "얼굴에 긴장과 두려움이 서려 있다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -203,9 +204,9 @@
       "lieState": "S2",
       "action": "evidence_present",
       "stance": "partial",
-      "judgeQuestion": "정민석 씨, 이 세입자·집주인·수리기사 단톡 캡처에 대해 입장을 밝혀 주십시오.",
-      "npcResponse": "단톡 캡처에는 규철씨가 급하다고 먼저 방문하겠다고 한 내용이 담겨 있습니다. 오히려 이를 보고 제가 왜 이후 방문을 거부했는지를 생각해 주셔야 합니다.",
-      "behaviorHint": "손으로 캡처 내용을 가리키며 강조",
+      "judgeQuestion": "정민석 씨, 이 세입자·집주인·수리기사 단톡 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 캡처 속 대화는 맞습니다. 다만 그날 바로 방문한 건 제가 미리 얘기하지 못했던 급박한 상황 때문이었습니다.",
+      "behaviorHint": "자료를 손으로 가리키며 강조한다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -220,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "정민석 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "그 집 출입은 제가 거절한 뒤에 먼저 들어온 겁니다. 급했든 뭐든, 접근 방법이 잘못되었죠.",
-      "behaviorHint": "상대방의 행동을 지적하며, 어이없다는 듯 고개를 젓는다.",
+      "npcResponse": "그 출입은 제가 거절한 뒤에 먼저 들어온 거였습니다. 누수가 급했어도 그것과는 별개 문제입니다.",
+      "behaviorHint": "눈을 마주치며 단호하게 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -236,10 +237,16 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "정민석 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "그때 큰돈 앞에서 제가 주저하고 싶지 않았습니다. 미리 말씀드리지 않은 건 제 잘못입니다만, 시간을 급히 조정할 수밖에 없었습니다.",
-      "behaviorHint": "확신에 찬 눈빛으로 재판관을 바라본다",
+      "npcResponse": "그날 집주인분의 출입이 너무 잦았기 때문에 경계할 수밖에 없었습니다. 미리 말씀드리지 못한 건 제 실수입니다.",
+      "behaviorHint": "정당한 이유를 설명하며 약간 방어적으로 보인다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
       "error": null
     },
     {
@@ -252,8 +259,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "한규철 씨, 다시 정리해 주십시오.",
-      "npcResponse": "아닙니다. 그건 배관 문제로 시작됐습니다. 세입자분이 짐 적치로 대응이 느린 것도 문제였습니다.",
-      "behaviorHint": "손으로 배관을 가리키며 강조",
+      "npcResponse": "네, 그 문제는 배관 누수에서 시작됐습니다. 다만 세입자분이 짐을 그곳에 두고 대응이 늦어져서 일이 커진 건 사실입니다.",
+      "behaviorHint": "조금 긴장된 어조로 손끝을 만지작거린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -267,9 +274,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "한규철 씨, 출입 사진 타임스탬프의 진위에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 시간과 화면에 보이는 게 다른 이유가 있을 수 있습니다.",
-      "behaviorHint": "침착하게 고개를 끄덕이며 재판관을 바라본다.",
+      "judgeQuestion": "한규철 씨, 출입 사진 타임진위에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 화면에 표시된 시간이 원본 시간과 다를 수 있습니다.",
+      "behaviorHint": "약간 긴장한 표정으로 손을 주머니에 넣는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -284,8 +291,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "정민석 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그때는 정말 불안했습니다. 나만 모르게 집주인분이 들어온 게 기분이 나빴죠.",
-      "behaviorHint": "살짝 구부정한 어깨로, 피곤한 듯한 표정.",
+      "npcResponse": "그때 정말 무서웠습니다. 제가 입을 열면 상황이 더 악화될까 봐 두려웠습니다.",
+      "behaviorHint": "눈을 살짝 피하며 느리게 말하다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -300,8 +307,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "정민석 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 점검일 이틀 전에 한규철 씨가 제 동의 없이 집에 들어와 촬영했습니다. 그 뒤로 제 불신이 커졌고, 그게 수리 절차를 엉망으로 만들었습니다. 제 잘못도 인정합니다.",
-      "behaviorHint": "단호한 표정으로 재판관을 바라보며 말한다.",
+      "npcResponse": "네, 합의 전에 무단으로 출입하고 촬영한 건 맞습니다. 그때 한규철 씨가 갑자기 연락이 끊겨서 제가 불신이 커졌습니다. 그래서 절차가 꼬였던 겁니다. 지금은 솔직히 그때 더 신중하지 못했던 게 후회됩니다.",
+      "behaviorHint": "약간 고개를 숙이며 후회하는 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -316,8 +323,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "한규철 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 저는 그때 너무 무서웠습니다. 관리기록과 기사 진단에 따르면 공용배관 연결부에 누수가 있었고, 세입자분들의 짐 적치와 지연도 문제가 됐습니다. 60대40 정도로 책임이 갈린다고 받아들입니다.",
-      "behaviorHint": "한숨을 쉬며 고개를 떨군다.",
+      "npcResponse": "솔직히 말씀드리자면, 그때 공용배관 연결부에 누수가 발생한 건 제 책임이 큽니다. 하지만 세입자분들이 짐을 적치하고 지연된 부분도 작용한 것 같습니다. 그때는 정말 어떻게 말해야 할지 몰라서 입을 다물고 있었습니다. 지금은 모든 걸 털어놓으니 두려운 마음이 큽니다.",
+      "behaviorHint": "낮은 목소리로 천천히 설명하며 고개를 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -331,9 +338,9 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "정민석 씨, 긴급출입 조항의 허용 범위에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 제게도 통보가 필요했습니다. 긴급 확인이 가능하다는 것만으로는 충분치 않습니다.",
-      "behaviorHint": "침착하게, 그러나 단호하게 말하며 상대방을 쏘아본다.",
+      "judgeQuestion": "정민석 씨, 긴급출입 허용 범위에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 긴급 상황이 아니었습니다. 설령 긴급 확인이 가능해도 연락과 통지가 먼저여야 했습니다.",
+      "behaviorHint": "눈썹을 살짝 찌푸리고 의아한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -347,16 +354,16 @@
       "lieState": "S1",
       "action": "fact_pursuit",
       "stance": "hedge",
-      "judgeQuestion": "한규철 씨, 긴급출입 조항의 허용 범위에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 제가 급할 땐 확인이랑 기록 정도는 허용된다고 생각했을 뿐입니다.",
-      "behaviorHint": "약간 긴장된 표정으로 답하며 손을 가볍게 만진다.",
+      "judgeQuestion": "한규철 씨, 긴급출입 허용 범위에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 급한 상황에서는 출입과 관련된 확인과 기록은 허용된다고 이해했습니다. 그러나 일정 부분에서 오해가 있었던 것 같습니다.",
+      "behaviorHint": "약간 긴장한 듯하며 손을 꼭 쥔다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T13:35:10.886Z",
-  "finishedAt": "2026-04-05T13:36:28.672Z",
+  "startedAt": "2026-04-05T18:12:13.740Z",
+  "finishedAt": "2026-04-05T18:14:32.991Z",
   "summary": {
     "total": 20,
     "passed": 19,

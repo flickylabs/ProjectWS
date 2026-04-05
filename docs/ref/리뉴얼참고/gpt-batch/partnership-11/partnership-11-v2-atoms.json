@@ -191,7 +191,7 @@
                 "amount": {
                   "exact": "1,500만원",
                   "neutral": "보증금 일부",
-                  "rounded": "1,500만원"
+                  "rounded": "보증금 일부"
                 }
               },
               "stanceHints": [
@@ -519,7 +519,7 @@
                 "person": {
                   "exact": "정아린",
                   "neutral": "상대",
-                  "fullName": "상대방",
+                  "fullName": "상대",
                   "judgeRef": "상대방"
                 }
               },
@@ -941,7 +941,7 @@
                 "person": {
                   "exact": "정아린",
                   "neutral": "상대",
-                  "fullName": "상대방",
+                  "fullName": "상대",
                   "judgeRef": "상대방"
                 },
                 "company": {
@@ -1024,7 +1024,7 @@
                 "person": {
                   "exact": "정아린",
                   "neutral": "상대",
-                  "fullName": "정 씨",
+                  "fullName": "상대",
                   "judgeRef": "상대방"
                 }
               },
@@ -1124,7 +1124,7 @@
                 "person": {
                   "exact": "정아린",
                   "neutral": "상대",
-                  "fullName": "정아린",
+                  "fullName": "상대",
                   "judgeRef": "상대방"
                 }
               },
@@ -2264,7 +2264,7 @@
                 "person": {
                   "exact": "김재원",
                   "neutral": "상대",
-                  "fullName": "상대방",
+                  "fullName": "상대",
                   "judgeRef": "상대방"
                 }
               },
@@ -2410,7 +2410,7 @@
                 "person": {
                   "exact": "김재원",
                   "neutral": "상대",
-                  "fullName": "김재원",
+                  "fullName": "상대",
                   "judgeRef": "상대방"
                 },
                 "rule": {
@@ -2874,7 +2874,7 @@
                 "person": {
                   "exact": "김재원",
                   "neutral": "상대",
-                  "fullName": "김재원",
+                  "fullName": "상대",
                   "judgeRef": "상대방"
                 }
               },
@@ -3165,7 +3165,7 @@
                 "person": {
                   "exact": "김재원",
                   "neutral": "상대",
-                  "fullName": "상대방",
+                  "fullName": "상대",
                   "judgeRef": "상대방"
                 }
               },
@@ -3235,7 +3235,7 @@
                 "person": {
                   "exact": "김재원",
                   "neutral": "상대",
-                  "fullName": "김 씨",
+                  "fullName": "상대",
                   "judgeRef": "상대방"
                 }
               },
@@ -3568,7 +3568,7 @@
                 "person": {
                   "exact": "김재원",
                   "neutral": "상대",
-                  "fullName": "상대방",
+                  "fullName": "상대",
                   "judgeRef": "상대방"
                 },
                 "rule": {
