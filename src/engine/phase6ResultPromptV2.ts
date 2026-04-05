@@ -191,7 +191,8 @@ export function buildResultSystemPrompt(): string {
 - "~만을" → "~만" 또는 "~만으로" (이중 조사. "이름만을 보고" ❌ → "이름만 보고" ✅)
 - 실제 법정 후일담/에필로그처럼 따뜻하고 인간적인 톤으로 작성하라.
 ★ 후일담은 최소 3문단 이상. 양쪽 당사자의 이후 삶을 구체적으로 그려라.
-★ aReaction과 bReaction에 각 당사자의 판결 직후 반응을 구체적으로 써라. shortEpilogue에서도 양쪽의 이후 삶을 반영하라.`
+★ aReaction과 bReaction에 각 당사자의 판결 직후 반응을 구체적으로 써라. shortEpilogue에서도 양쪽의 이후 삶을 반영하라.
+★ shortEpilogue 형식: 본문 2~3문장 + 빈 줄(\n\n) + 교훈 한 문장("큰따옴표" 또는 —대시 시작). 교훈 문장은 반드시 별도 문단으로 분리하라.`
 }
 
 export interface VerdictData {

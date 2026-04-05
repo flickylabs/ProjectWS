@@ -148,6 +148,7 @@ export default function Aftermath() {
 - 두 사람의 관계 변화와 내면을 담담하게
 - 호칭을 나이/관계에 맞게 사용
 - 마지막 줄은 반드시 "교훈 한 문장"만. 형식: "~~~" (큰따옴표로 감싼 한 문장). 부연 설명 없이 교훈만.
+- ★ 교훈 문장 앞에 반드시 빈 줄(\\n\\n)을 넣어 별도 문단으로 분리하라. 마지막 본문 문단과 교훈을 같은 문단에 합치지 마라.
 - 한국어 소설체
 
 ★ 번역체/보고서 톤 절대 금지:
@@ -270,6 +271,28 @@ export default function Aftermath() {
 
   if (!aftermath) return null
 
+  // 후일담 텍스트를 문단 배열로 분리하되,
+  // 마지막 이탤릭/교훈 문장이 본문 문단에 붙어 있으면 강제 분리
+  const splitAftermathParagraphs = (text: string): string[] => {
+    const paragraphs = text.split('\n\n').map(p => p.trim()).filter(Boolean)
+    if (paragraphs.length === 0) return paragraphs
+
+    // 마지막 문단 내부에서 교훈 문장이 줄바꿈(\n)으로만 붙어 있는 경우 분리
+    const last = paragraphs[paragraphs.length - 1]
+    const lines = last.split('\n').map(l => l.trim()).filter(Boolean)
+    if (lines.length >= 2) {
+      const candidate = lines[lines.length - 1]
+      // 교훈 패턴: "..." 또는 — 로 시작하는 한 문장
+      const isQuoteLine = /^[""\u201C].*[""\u201D]$/.test(candidate) || /^[—\u2014\u2015]/.test(candidate)
+      if (isQuoteLine) {
+        paragraphs[paragraphs.length - 1] = lines.slice(0, -1).join('\n')
+        paragraphs.push(candidate)
+      }
+    }
+
+    return paragraphs
+  }
+
   const renderAftermathImage = (): string | null => {
     const canvas = aftermathCanvasRef.current
     if (!canvas || !aftermath || !caseData || !verdictScore) return null
@@ -277,7 +300,7 @@ export default function Aftermath() {
     const ctx = canvas.getContext('2d')!
     const dpr = window.devicePixelRatio || 1
 
-    const paragraphs = aftermath.split('\n\n')
+    const paragraphs = splitAftermathParagraphs(aftermath)
     const isLastQuote = (i: number) => i === paragraphs.length - 1
 
     // 본문 줄 수 계산 (높이 동적)
@@ -368,7 +391,7 @@ export default function Aftermath() {
     <div className="space-y-4">
       <h3 className="text-sm font-bold text-amber-400 text-center">판결 이후</h3>
       <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-5">
-        {aftermath.split('\n\n').map((paragraph, i, arr) => (
+        {splitAftermathParagraphs(aftermath).map((paragraph, i, arr) => (
           <p key={i} className={`text-sm leading-relaxed ${
             i === arr.length - 1
               ? 'text-amber-400 italic mt-5 text-center font-medium'

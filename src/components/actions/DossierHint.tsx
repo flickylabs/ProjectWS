@@ -114,7 +114,38 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
+      {/* 팝업 (배너 위로 표시) — relative 부모 내에서 bottom-full 사용 */}
+      {effectivePopupOpen && (
+        <div className="absolute left-0 right-0 bottom-full mb-1.5 rounded-xl border border-amber-500/30 bg-gray-900/95 backdrop-blur-sm shadow-xl shadow-black/40 animate-fade-in overflow-hidden z-50">
+          <div className="p-3 space-y-2">
+            {/* 카드 이름 */}
+            <div className="flex items-start gap-2">
+              <Emoji char="📋" size={16} />
+              <div className="flex-1 min-w-0">
+                <div className="text-xs font-semibold text-amber-400">{card.name}</div>
+                <div className="text-[10px] text-gray-500 mt-0.5 line-clamp-2">{card.description}</div>
+              </div>
+            </div>
+
+            {/* 증거 정보 */}
+            <div className="flex items-center gap-1.5 px-1">
+              <span className="text-[9px] text-gray-500">증거:</span>
+              <span className="text-[10px] text-amber-500/70 font-mono">{evidenceShort}</span>
+              <span className="text-[9px] text-gray-600 truncate">({evidenceLabel})</span>
+            </div>
+
+            {/* 자동 실행 버튼 */}
+            <button
+              onClick={handleExecute}
+              className="w-full text-xs py-2 rounded-lg bg-amber-600/90 text-gray-950 font-bold active:scale-95 transition-all hover:bg-amber-500"
+            >
+              자동 실행
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* 배너 버튼 */}
       <button
         onClick={handleClick}
@@ -132,39 +163,6 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
         <Emoji char="❗" size={14} />
         <span className="text-[11px] font-semibold whitespace-nowrap">결정적 질문 가능</span>
       </button>
-
-      {/* 팝업 (배너 위로 표시) */}
-      {effectivePopupOpen && (
-        <div className="relative">
-          <div className="absolute left-0 right-0 bottom-full mb-1.5 rounded-xl border border-amber-500/30 bg-gray-900/95 backdrop-blur-sm shadow-xl shadow-black/40 animate-fade-in overflow-hidden z-50">
-            <div className="p-3 space-y-2">
-              {/* 카드 이름 */}
-              <div className="flex items-start gap-2">
-                <Emoji char="📋" size={16} />
-                <div className="flex-1 min-w-0">
-                  <div className="text-xs font-semibold text-amber-400">{card.name}</div>
-                  <div className="text-[10px] text-gray-500 mt-0.5 line-clamp-2">{card.description}</div>
-                </div>
-              </div>
-
-              {/* 증거 정보 */}
-              <div className="flex items-center gap-1.5 px-1">
-                <span className="text-[9px] text-gray-500">증거:</span>
-                <span className="text-[10px] text-amber-500/70 font-mono">{evidenceShort}</span>
-                <span className="text-[9px] text-gray-600 truncate">({evidenceLabel})</span>
-              </div>
-
-              {/* 자동 실행 버튼 */}
-              <button
-                onClick={handleExecute}
-                className="w-full text-xs py-2 rounded-lg bg-amber-600/90 text-gray-950 font-bold active:scale-95 transition-all hover:bg-amber-500"
-              >
-                자동 실행
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
