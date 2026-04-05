@@ -479,7 +479,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "숙소 보증금이 특정 계좌로 환급된 이체 기록에 대해 설명하십시오.",
+            "text": "숙소 보증금이 해당 계좌로 환급된 이체 기록에 대해 설명하십시오.",
             "attackVector": "context"
           }
         },

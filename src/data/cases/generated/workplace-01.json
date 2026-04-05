@@ -405,7 +405,7 @@
       },
       "subjectParty": "a",
       "surfaceName": "문서 수정 이력 PDF",
-      "surfaceDescription": "특정 문서의 편집 이력이 타임라인으로 정리된 PDF 파일이다.",
+      "surfaceDescription": "해당 문서의 편집 이력이 타임라인으로 정리된 PDF 파일이다.",
       "investigationStages": [
         {
           "stage": 0,
@@ -637,7 +637,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 포렌식 메모와 토큰 발급 기록의 존재를 알고 계셨습니까?",
+            "text": "이 포렌식 메모와 토큰 발급 기록에 대해 설명하십시오.",
             "attackVector": "context"
           }
         },

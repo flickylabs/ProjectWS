@@ -584,7 +584,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 변호사 확인서와 수첩 전체 스캔본의 존재를 알고 계셨습니까?",
+            "text": "이 변호사 확인서와 수첩 전체 스캔본에 대해 설명하십시오.",
             "attackVector": "context"
           }
         },
