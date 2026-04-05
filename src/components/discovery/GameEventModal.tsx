@@ -71,9 +71,7 @@ export default function GameEventModal() {
         {pendingEvent.type === 'emotional_burst' && (
           <EmotionalBurstModal event={pendingEvent} caseKey={caseKey} partyName={partyName} />
         )}
-        {pendingEvent.type === 'dispute_emergence' && (
-          <DisputeEmergenceModal event={pendingEvent} />
-        )}
+        {/* dispute_emergence는 Discovery 경로(DisputeEmergenceModal.tsx)에서 처리 */}
       </div>
     </div>
   )
@@ -282,29 +280,6 @@ function EmotionalBurstModal({ event, caseKey, partyName }: { event: GameEventTr
         <button onClick={handlePress}
           className="flex-1 text-xs py-2.5 rounded-xl bg-red-700 text-white font-bold hover:bg-red-600">
           {v3Event?.options.press.label ?? '더 압박한다'}
-        </button>
-      </div>
-    </>
-  )
-}
-
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// 새 쟁점 출현
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-function DisputeEmergenceModal({ event }: { event: GameEventTrigger }) {
-  const dismiss = useGameStore(s => s.setPendingGameEvent)
-
-  return (
-    <>
-      <EventHeader icon="💡" title="새 쟁점 출현" severity={event.severity} color="cyan" />
-      <div className="px-4 py-3">
-        <p className="text-xs text-gray-300 leading-relaxed">{event.description}</p>
-      </div>
-      <div className="px-4 pb-4">
-        <button onClick={() => dismiss(null)}
-          className="w-full text-xs py-2.5 rounded-xl bg-cyan-800/60 text-cyan-300 font-semibold hover:bg-cyan-800/80">
-          확인
         </button>
       </div>
     </>

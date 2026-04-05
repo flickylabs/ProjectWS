@@ -1,8 +1,8 @@
 import type { StateCreator } from 'zustand'
 import { GamePhase } from '../../types'
 import type { VerdictMode } from '../../types'
-import { PHASE_ORDER, MAX_TURNS } from '../../utils/constants'
-import { checkVerdictEligible } from '../../engine/readinessEngine'
+import { PHASE_ORDER } from '../../utils/constants'
+import { checkVerdictEligible, checkForcedVerdict } from '../../engine/readinessEngine'
 
 export interface PhaseSlice {
   currentPhase: GamePhase
@@ -69,16 +69,20 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     const fullState = get() as any
     if (fullState.updateReadiness) fullState.updateReadiness()
 
-    // 최대 턴 초과 시 강제 판결 전환
-    const { turnCount, currentPhase, advancePhase, setVerdictMode } = get()
+    // 최대 턴 초과 시 강제 판결 전환 (readinessEngine canonical)
+    const state = get() as any
+    const { turnCount, currentPhase, advancePhase, setVerdictMode } = state
     const interrogationPhases = [
       GamePhase.Phase3_Interrogation,
       GamePhase.Phase4_Evidence,
       GamePhase.Phase5_ReExamination,
     ]
-    if (turnCount >= MAX_TURNS && interrogationPhases.includes(currentPhase)) {
-      setVerdictMode('forced_incomplete')
-      advancePhase(GamePhase.Phase6_Mediation)
+    if (interrogationPhases.includes(currentPhase) && state.readinessState) {
+      const { forced, verdictMode } = checkForcedVerdict(turnCount, state.readinessState)
+      if (forced) {
+        setVerdictMode(verdictMode)
+        advancePhase(GamePhase.Phase6_Mediation)
+      }
     }
   },
 

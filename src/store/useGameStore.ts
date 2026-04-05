@@ -397,7 +397,11 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
 
       const trigger = evaluateEventTriggers(snapshot)
       if (trigger) {
-        set({ pendingGameEvent: trigger })
+        // dispute_emergence는 Discovery 경로(pendingEmergence + DisputeEmergenceModal)가 canonical
+        // → pendingGameEvent를 설정하지 않고 effects만 적용
+        if (trigger.type !== 'dispute_emergence') {
+          set({ pendingGameEvent: trigger })
+        }
 
         // 이벤트 로그에 기록
         const eventId = s.gameEventLog.length + 1
