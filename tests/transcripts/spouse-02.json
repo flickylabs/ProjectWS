@@ -45,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "나희주 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "익명 글이 뜬 직후 학교 반응이 바뀌었습니다. 우연이라기보다 집 안 사정을 아는 누군가가 먼저 움직인 흐름에 가깝습니다.",
-      "behaviorHint": "작은 숨을 들이마시며 잠시 생각하는 듯한 자세를 취한다.",
+      "npcResponse": "아닙니다. 그건 제 남편이 도윤 씨와 학교 쪽 사이에 이야기된 걸로 알고 있습니다.",
+      "behaviorHint": "살짝 긴장된 듯 시선을 피하며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -61,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "나희주 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "학교 쪽의 반응이 그 무렵에 급하게 바뀌었습니다. 도윤 씨가 제 집안 사정을 알기 때문에 먼저 움직일 수밖에 없었습니다.",
-      "behaviorHint": "손을 꼬옥 잡으며 말끝을 흐림",
+      "npcResponse": "급한 상황이라서 미리 설명하지 못했습니다. 그 시점에서 판단을 내릴 수밖에 없었습니다.",
+      "behaviorHint": "말을 할 때 손을 가슴 위로 올리고, 약간 긴장한 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -77,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "나희주 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히, 그 무렵 너무 겁이 났습니다. 제가 뭘 말하면 더 큰일이 벌어질까봐 입을 닫고 있었습니다.",
-      "behaviorHint": "손을 꼬며 불안해하고, 고개를 살짝 숙인다.",
+      "npcResponse": "솔직히 말해서 두려웠습니다. 제가 무슨 말을 하면 더 큰일이 벌어질까 봐 겁이 났습니다.",
+      "behaviorHint": "눈을 잠시 피하며 불안한 기색을 보이다가, 숨을 고르고 재판관을 다시 마주본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -93,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강도윤 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "그날 밤 제가 초안을 작성한 건 맞습니다. 다만, 그 초안이 실제로 발송되지 않았고, 그 의도는 오해입니다.",
-      "behaviorHint": "고개를 약간 숙이고 긴장된 표정을 지으며 말한다.",
+      "npcResponse": "그 초안이 학교에 발송된 적은 없습니다. 하지만 저를 연락망에서 빼려는 의도가 느껴졌습니다.",
+      "behaviorHint": "살짝 어깨를 으쓱하며 방어적인 자세를 취한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -109,8 +109,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "나희주 씨, 이 프린터 출력물을 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 제가 한 건 아닙니다. 도윤 씨가 그 무렵 집 안 사정을 염려했을 가능성이 커 보입니다.",
-      "behaviorHint": "고개를 약간 숙이며 침착함을 유지하려고 한다.",
+      "npcResponse": "그 출력물은 사실입니다. 다만 학교와의 소통에서 참조되지 않은 상태에서 멈춰 있던 것이었습니다.",
+      "behaviorHint": "답변하면서 긴장한 듯 시선이 살짝 흔들린다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -125,10 +125,16 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "강도윤 씨, 이 메일 버전기록과 접근 로그를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 초안이 실제로 발송되지 않았다는 걸 보여주지만, 그 자체로 아내가 저를 연락망 밖으로 밀어내려 했던 의도를 감추지 못합니다. 그걸 보면 오히려 제가 얼마나 딜레마에 처했는지 알 수 있습니다.",
-      "behaviorHint": "자료를 가리키며 차분하게 설명함",
+      "npcResponse": "학교 메일 초안은 분명히 존재합니다. 하지만 그걸 보면 오히려 제 아내가 저를 임시 연락망에서 밀어내려 했다는 걸 알 수 있습니다.",
+      "behaviorHint": "서류를 만지작거리며 약간 당황한 듯이 말한다.",
       "evidenceId": "e-2",
-      "issues": [],
+      "issues": [
+        {
+          "code": "B3",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 기관명 노출: 학교 메일 초안"
+        }
+      ],
       "error": null
     },
     {
@@ -141,8 +147,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "나희주 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "아닙니다. 그건 제 남편이 그 무렵 장비를 사용하고 있던 흔적입니다.",
-      "behaviorHint": "긴장된 표정으로 침착하게 진술한다.",
+      "npcResponse": "아닙니다. 그 기록은 제 남편 계정으로 로그인이 되어 있을 때 스캔된 것입니다.",
+      "behaviorHint": "살짝 긴장하며 손을 모으고 고개를 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -157,8 +163,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "나희주 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "가정용 복합기 기록은 그 서류가 집 안 장비에서 먼저 스캔됐다는 점을 보여줍니다. 그 무렵 장비는 대부분 제 남편 로그인 상태로 남아 있었습니다.",
-      "behaviorHint": "살짝 고개를 숙이며 미안한 듯한 표정.",
+      "npcResponse": "그 기록이 가정용 복합기에서 스캔된 것은 사실입니다. 그 당시에 그 기계는 제 남편의 로그인 상태로 남아 있었기 때문입니다.",
+      "behaviorHint": "약간 긴장한 듯 손을 쥐었다 폈다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -173,8 +179,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "강도윤 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "그 초안을 저장한 적은 있습니다. 하지만, 제 아내가 제 계정과 프린터 기록을 무단으로 확인한 부분은 잘못된 행동입니다.",
-      "behaviorHint": "단호한 표정으로 재판관을 직시한다.",
+      "npcResponse": "죄송하지만, 구체적으로 어떤 부분에 대해 더 알고 싶으신가요?",
+      "behaviorHint": null,
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -189,8 +195,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "강도윤 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그때는 제가 말하면 더 큰일이 날 것 같아서 무서웠습니다. 그래서 입을 다물고 있는 게 너무 어려웠습니다.",
-      "behaviorHint": "고개를 약간 숙이고, 불안한 손동작을 한다.",
+      "npcResponse": "솔직히, 그날 밤에는 정말 무서웠습니다. 학교 연락망에 대해 미리 말하지 못한 게 너무 걱정되었습니다.",
+      "behaviorHint": "심각한 표정으로 고개를 숙이며 솔직한 감정을 드러낸다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -205,8 +211,8 @@
       "action": "evidence_present",
       "stance": "partial",
       "judgeQuestion": "나희주 씨, 이 온라인 채팅방 익명 글 캡처를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 제 남편이 참여했던 채팅방에서 나온 것 같습니다. 하지만 작성자가 저라는 증거는 없습니다.",
-      "behaviorHint": "조금 당황한 듯 고개를 살짝 끄덕이며 말한다.",
+      "npcResponse": "그 자료는 제가 작성한 게 아닙니다. 가정용 복합기로 스캔할 때 도윤 씨 로그인 상태가 대부분이었고, 그 상담서 일부 이미지도 그 시점에 만들어졌을 가능성이 높습니다.",
+      "behaviorHint": "약간 당황한 듯 표정이 굳어지며 손을 만진다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -221,8 +227,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "나희주 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 그건 제 남편이 별도 계정으로 기록을 흘린 것으로 보입니다.",
-      "behaviorHint": "불안한 듯 고개를 세게 좌우로 흔든다.",
+      "npcResponse": "아닙니다. 그건 오해입니다. 그 무렵, 제 남편의 행동이 문제가 된 상황이었습니다만, 학교 쪽으로 무언가 흘러간 건 아닙니다.",
+      "behaviorHint": "단호하게 고개를 끄덕이며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -237,8 +243,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "나희주 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "학교 쪽과 관련해서 그 무렵의 상황이 긴박했습니다. 앞서 정리된 것까지 고려하면 내부에서 준비된 걸로 보일 수밖에 없었습니다.",
-      "behaviorHint": "조급한 듯 손을 쥐었다 폈다 한다.",
+      "npcResponse": "제 남편이 학교 쪽과 연락이 정말로 있었던 건지 긴급히 파악할 필요가 있었습니다. 이건 그 무렵 집 안에서 뭔가 준비되고 있었던 상황이었습니다.",
+      "behaviorHint": "손을 살짝 움켜쥔다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -253,8 +259,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "강도윤 씨, 다시 정리해 주십시오.",
-      "npcResponse": "네, 제가 그 초안을 학교 연락망에 게시했습니다. 하지만 아내가 제 계정을 열람한 건 그 직후였습니다.",
-      "behaviorHint": "두 손을 가볍게 가지런히 모으며 말한다.",
+      "npcResponse": "아닙니다. 그건 제 아내가 열람한 게 맞습니다. 하지만 그 계정을 공유한 건 제 책임도 있습니다.",
+      "behaviorHint": "살짝 고개를 돌려 당황한 듯한 표정을 짓는다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -269,8 +275,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강도윤 씨, 학부모방 익명 경고글 — 누가 올렸나에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 글과 첨부가 어디서 나온 건지 확신할 수 없습니다.",
-      "behaviorHint": "당황한 기색을 감추며 차분하게 대응한다.",
+      "npcResponse": "아닙니다. 그 글과 첨부는 캡처가 잘려 있어 출처를 단정하기 어렵습니다. 외부 학부모가 과장해서 올렸을 가능성도 충분히 있습니다.",
+      "behaviorHint": "살짝 긴장하며 손을 주머니에 넣는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -285,8 +291,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "나희주 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 그날은 너무 두려웠습니다. 제가 더 말하면 일이 걷잡을 수 없이 커질 것 같았습니다.",
-      "behaviorHint": "고개를 약간 숙이고, 손을 가슴 앞에 모으는 모습",
+      "npcResponse": "솔직히 그때 너무 당황했습니다. 제가 잘못된 판단을 내릴까봐 두려웠습니다.",
+      "behaviorHint": "눈을 잠시 감고 깊은 숨을 쉰다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -301,8 +307,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "나희주 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 제가 도윤 씨에게 상담 종결서 일부를 보조 이메일로 보낸 건 사실입니다. 그 시점은 익명 글이 올라오기 사흘 전이었습니다. 당시에 아이에게 실질적인 도움이 될까 해서 깊이 고민하지 않고 행동한 거였습니다. 지금은 그때 경솔했던 제 판단을 뼈저리게 후회합니다.",
-      "behaviorHint": "고개를 살짝 숙이며 시선을 피한다.",
+      "npcResponse": "네, 제가 제 상담 종결서 일부를 학교 학부모지원 담당 쪽에 넘긴 건 사실입니다. 익명 글이 게시되기 사흘 전에 보조 이메일을 사용했습니다. 약간 혼란스러워서 시간을 벌려고 했던 건데, 이제 두려움이 커졌습니다. 제 잘못입니다.",
+      "behaviorHint": "고개를 약간 숙이며 입맛을 다신다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -317,8 +323,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "강도윤 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 그때는 정말 무서웠습니다. 제가 익명 글 노출 37분 뒤에 상담 기록을 유포하고, 연락망을 임시로 만든 건 사실입니다. 그런 행동을 숨긴 건 제 불안 때문이었습니다. 지금은 후회가 크고, 모든 걸 인정합니다.",
-      "behaviorHint": "고개를 조금 숙이며 약간의 체념을 느끼게 한다.",
+      "npcResponse": "제가 상담 기록을 유포하고 익명 제보를 돌린 것, 그리고 제 아내가 학교 메일 초안을 썼다는 사실을 알게 된 건 밤 11시 52분이었어요. 솔직히, 그때는 너무 두려웠습니다. 뚫린 계정과 프린터 기록을 확인하는 순간, 더 큰 일이 벌어질까봐 입을 다물고 있었죠. 이제 와서 그걸 숨긴 건 제 잘못이라는 걸 인정합니다.",
+      "behaviorHint": "고개를 약간 숙이며 솔직한 표정을 지어라.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -333,8 +339,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "나희주 씨, 입학 파일 보류 — 신고인가 행정 오류인가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "그건 신고 때문이라고 생각했습니다. 학교가 설명을 아끼는 방식 때문에 더 그렇게 믿었습니다.",
-      "behaviorHint": "조금 긴장된 표정으로 마이크를 잡고 있다.",
+      "npcResponse": "아닙니다. 그건 학교의 설명이 불분명해서 그렇게 믿게 된 겁니다.",
+      "behaviorHint": "조심스럽게 손을 주머니에 넣으며 상황을 정리하려는 듯 고개를 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -349,21 +355,15 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "강도윤 씨, 입학 파일 보류 — 신고인가 행정 오류인가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 학교가 말끝을 흐리는 방식 때문에 더 그렇게 받아들였습니다.",
-      "behaviorHint": "고개를 약간 기울이며 신중하게 말한다.",
+      "npcResponse": "아닙니다. 그건 보류가 행정 실수보다 보호자 신뢰 문제에 가까웠던 것 같습니다.",
+      "behaviorHint": "고개를 약간 숙이며 말을 아끼는 모습",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "D2",
-          "severity": "WARN",
-          "detail": "2턴 연속: \"때문에 더 그렇게\""
-        }
-      ],
+      "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T21:02:13.204Z",
-  "finishedAt": "2026-04-05T21:05:32.433Z",
+  "startedAt": "2026-04-05T22:21:06.839Z",
+  "finishedAt": "2026-04-05T22:22:58.231Z",
   "summary": {
     "total": 20,
     "passed": 19,

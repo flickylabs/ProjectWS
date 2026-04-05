@@ -1,0 +1,1553 @@
+{
+  "cases": [
+    {
+      "caseId": "spouse-08",
+      "fixes": [
+        {
+          "path": "a.d-1.S3.claimAtoms[0].slots",
+          "factText": "겉보기와 달리 실제 제출·신고는 없었다는 반박",
+          "action": "fill",
+          "newSlots": {
+            "procedure": {
+              "exact": "법무사 CRM 접수 번호",
+              "neutral": "그 절차"
+            }
+          }
+        },
+        {
+          "path": "a.d-1.S4.claimAtoms[0].slots",
+          "factText": "업로드 직후 다시 설명하지 않은 책임을 서진도 느끼고 있다는 점",
+          "action": "skip",
+          "reason": "감정/반성 중심, 구체적 사실 참조 없음"
+        },
+        {
+          "path": "a.d-1.S4.claimAtoms[1].slots",
+          "factText": "주거와 생활비를 한꺼번에 잃을까 두려워 상담과 실행을 과도하게 분리했다는 심리",
+          "action": "skip",
+          "reason": "심리 중심 서술로, 특정 사실 슬롯 참조가 없음"
+        },
+        {
+          "path": "a.d-1.S5.claimAtoms[0].slots",
+          "factText": "비밀 이혼 실행은 아니지만 오해를 키운 행동 방식에는 서진의 책임이 있다는 정리",
+          "action": "fill",
+          "newSlots": {
+            "procedure": {
+              "exact": "실제 제출·신고",
+              "neutral": "그 절차"
+            }
+          }
+        },
+        {
+          "path": "a.d-2.S3.claimAtoms[1].slots",
+          "factText": "과거 은폐가 없었다면 첨부까지는 가지 않았을 것이라는 책임 전가",
+          "action": "fill",
+          "newSlots": {
+            "document": {
+              "exact": "2022년 대출정리서",
+              "neutral": "그 문서"
+            }
+          }
+        },
+        {
+          "path": "a.d-2.S4.claimAtoms[1].slots",
+          "factText": "말만으로는 안전을 지킬 수 없다는 공포가 문서 의존을 키웠다는 점",
+          "action": "fill",
+          "newSlots": {
+            "document": {
+              "exact": "2022년 대출정리서",
+              "neutral": "그 문서"
+            }
+          }
+        },
+        {
+          "path": "a.d-2.S5.claimAtoms[1].slots",
+          "factText": "필요성보다 먼저 범위 동의와 절차 확인이 있었어야 한다는 정리",
+          "action": "fill",
+          "newSlots": {
+            "document": {
+              "exact": "2022년 대출정리서",
+              "neutral": "그 문서"
+            },
+            "rule": {
+              "exact": "범위 동의와 절차 확인",
+              "neutral": "그 확인"
+            }
+          }
+        },
+        {
+          "path": "a.d-3.S3.claimAtoms[1].slots",
+          "factText": "합의 부정이 체면 방어를 위한 재서술이라는 서진의 판단",
+          "action": "fill",
+          "newSlots": {
+            "quote": {
+              "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+              "neutral": "그 합의 문구"
+            }
+          }
+        },
+        {
+          "path": "a.d-3.S4.claimAtoms[0].slots",
+          "factText": "합의 부정이 서진에게 독단 프레임과 배신감으로 남았다는 점",
+          "action": "fill",
+          "newSlots": {
+            "quote": {
+              "exact": "서진 독단",
+              "neutral": "그 프레임"
+            }
+          }
+        },
+        {
+          "path": "a.d-3.S4.claimAtoms[1].slots",
+          "factText": "둘 사이의 말이 지워졌다고 느낀 감정",
+          "action": "skip",
+          "reason": "감정 표현 중심으로, 특정 사실 슬롯 참조가 없음"
+        },
+        {
+          "path": "a.d-3.S5.claimAtoms[0].slots",
+          "factText": "합의 관리의 느슨함은 양측 책임이지만 외부에 독단 프레임을 만든 책임은 현석에게 크다는 정리",
+          "action": "fill",
+          "newSlots": {
+            "family": {
+              "exact": "류미경",
+              "neutral": "가족",
+              "fullName": "류미경",
+              "judgeRef": "누나"
+            },
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            },
+            "quote": {
+              "exact": "서진 독단",
+              "neutral": "그 프레임"
+            }
+          }
+        },
+        {
+          "path": "a.d-3.S5.claimAtoms[1].slots",
+          "factText": "서진도 자기 몫과 상대 몫을 나눠 말하려는 태도",
+          "action": "skip",
+          "reason": "관계 태도 중심 서술로, 특정 사실 슬롯 참조가 없음"
+        },
+        {
+          "path": "a.d-4.S3.claimAtoms[1].slots",
+          "factText": "서진은 문서를, 현석은 사람을 넓혔다는 책임 비교",
+          "action": "fill",
+          "newSlots": {
+            "document": {
+              "exact": "2022년 대출정리서",
+              "neutral": "그 문서"
+            },
+            "family": {
+              "exact": "류미경",
+              "neutral": "가족",
+              "fullName": "류미경",
+              "judgeRef": "누나"
+            },
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            }
+          }
+        },
+        {
+          "path": "a.d-4.S4.claimAtoms[0].slots",
+          "factText": "둘 다 불안을 처리하는 방식으로 약속 범위를 깼다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "rule": {
+              "exact": "상담까지만, 가족·임대인에는 아직 비공개",
+              "neutral": "그 비공식 합의"
+            }
+          }
+        },
+        {
+          "path": "a.d-4.S4.claimAtoms[1].slots",
+          "factText": "문서와 사람으로 각자 불안을 처리했다는 심리 해석",
+          "action": "fill",
+          "newSlots": {
+            "document": {
+              "exact": "2022년 대출정리서",
+              "neutral": "그 문서"
+            },
+            "family": {
+              "exact": "류미경",
+              "neutral": "가족",
+              "fullName": "류미경",
+              "judgeRef": "누나"
+            },
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            }
+          }
+        },
+        {
+          "path": "a.d-4.S5.claimAtoms[0].slots",
+          "factText": "문서 범위 초과와 제3자 공개가 모두 비공식 합의 위반이었다는 정리",
+          "action": "fill",
+          "newSlots": {
+            "document": {
+              "exact": "2022년 대출정리서",
+              "neutral": "그 문서"
+            },
+            "family": {
+              "exact": "류미경",
+              "neutral": "가족",
+              "fullName": "류미경",
+              "judgeRef": "누나"
+            },
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            },
+            "rule": {
+              "exact": "상담까지만, 가족·임대인에는 아직 비공개",
+              "neutral": "그 비공식 합의"
+            }
+          }
+        },
+        {
+          "path": "a.d-4.S5.claimAtoms[1].slots",
+          "factText": "양측 위반을 동시에 인정해야 이후 규칙 재설계가 가능하다는 태도",
+          "action": "fill",
+          "newSlots": {
+            "rule": {
+              "exact": "상담까지만, 가족·임대인에는 아직 비공개",
+              "neutral": "그 비공식 합의"
+            }
+          }
+        },
+        {
+          "path": "a.d-5.S3.claimAtoms[1].slots",
+          "factText": "자기 지연과 별개로 상대의 외부 움직임이 결정적이었다는 비교",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            }
+          }
+        },
+        {
+          "path": "a.d-5.S4.claimAtoms[0].slots",
+          "factText": "주거 불안 때문에 직접 결정 대신 시나리오 정리에 머문 심리",
+          "action": "skip",
+          "reason": "심리 중심 서술로, 특정 사실 슬롯 참조가 없음"
+        },
+        {
+          "path": "a.d-5.S4.claimAtoms[1].slots",
+          "factText": "자신의 지연이 상황을 길게 만든 몫이 있다는 인정",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "exact": "상담 직후 사흘 내 확답 시한",
+              "neutral": "그 시한",
+              "period": "갱신 답변 시한 직전"
+            }
+          }
+        },
+        {
+          "path": "a.d-5.S5.claimAtoms[1].slots",
+          "factText": "주거결정과 관계논쟁을 분리했어야 했다는 교훈",
+          "action": "fill",
+          "newSlots": {
+            "rule": {
+              "exact": "주거결정과 관계논쟁 분리",
+              "neutral": "그 분리"
+            }
+          }
+        },
+        {
+          "path": "b.d-1.S3.claimAtoms[1].slots",
+          "factText": "외부 설명도 그 충격의 프레임을 따라갔다는 자기 정당화",
+          "action": "fill",
+          "newSlots": {
+            "alert": {
+              "exact": "정유나 상담폴더 업로드 완료 알림",
+              "neutral": "그 알림"
+            }
+          }
+        },
+        {
+          "path": "b.d-1.S4.claimAtoms[0].slots",
+          "factText": "상담과 실행을 구분할 여유가 없을 만큼 끝난 사람처럼 느꼈다는 감정",
+          "action": "fill",
+          "newSlots": {
+            "alert": {
+              "exact": "정유나 상담폴더 업로드 완료 알림",
+              "neutral": "그 알림"
+            },
+            "quote": {
+              "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+              "neutral": "그 합의 문구"
+            }
+          }
+        },
+        {
+          "path": "b.d-1.S4.claimAtoms[1].slots",
+          "factText": "가족 체면과 버려짐 공포가 판단을 흐렸다는 숨은 수치심",
+          "action": "skip",
+          "reason": "감정/수치심 중심 서술로, 특정 사실 슬롯 참조가 없음"
+        },
+        {
+          "path": "b.d-1.S5.claimAtoms[0].slots",
+          "factText": "실제 접수는 없었는데도 비밀 이혼 준비처럼 과장해 말한 책임 인정",
+          "action": "fill",
+          "newSlots": {
+            "procedure": {
+              "exact": "실제 접수",
+              "neutral": "그 절차"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S3.claimAtoms[1].slots",
+          "factText": "불안 이해와 별개로 방식이 처벌처럼 느껴졌다는 반발",
+          "action": "fill",
+          "newSlots": {
+            "document": {
+              "exact": "2022년 대출정리서",
+              "neutral": "그 문서"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S4.claimAtoms[1].slots",
+          "factText": "수치심 때문에 더 공격적으로 반응했다는 배경",
+          "action": "fill",
+          "newSlots": {
+            "document": {
+              "exact": "2022년 대출정리서",
+              "neutral": "그 문서"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S3.claimAtoms[1].slots",
+          "factText": "과민한 사람처럼 보일까 봐 합의 문구를 뺐다는 체면 방어",
+          "action": "fill",
+          "newSlots": {
+            "quote": {
+              "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+              "neutral": "그 합의 문구"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S4.claimAtoms[0].slots",
+          "factText": "버려지는 사람처럼 느껴져 합의 효력을 스스로 지워버렸다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "quote": {
+              "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+              "neutral": "그 합의 문구"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S4.claimAtoms[1].slots",
+          "factText": "배제 공포가 강할수록 약속의 의미를 줄이는 말버릇",
+          "action": "fill",
+          "newSlots": {
+            "quote": {
+              "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+              "neutral": "그 합의 문구"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S5.claimAtoms[0].slots",
+          "factText": "합의를 알고도 외부에는 독단 프레임으로 설명한 책임 인정",
+          "action": "fill",
+          "newSlots": {
+            "family": {
+              "exact": "류미경",
+              "neutral": "가족",
+              "fullName": "류미경",
+              "judgeRef": "누나"
+            },
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            },
+            "quote": {
+              "exact": "서진 독단",
+              "neutral": "그 프레임"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S5.claimAtoms[1].slots",
+          "factText": "그 왜곡이 다른 쟁점들의 확대에도 영향을 줬다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "quote": {
+              "exact": "서진 독단",
+              "neutral": "그 프레임"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S3.claimAtoms[1].slots",
+          "factText": "빠져나갈 길이 없다고 느껴 제3자를 불렀다는 공포",
+          "action": "fill",
+          "newSlots": {
+            "family": {
+              "exact": "류미경",
+              "neutral": "가족",
+              "fullName": "류미경",
+              "judgeRef": "누나"
+            },
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S4.claimAtoms[0].slots",
+          "factText": "당사자 대화에서 밀려날까 두려워 사람을 넓혔다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "family": {
+              "exact": "류미경",
+              "neutral": "가족",
+              "fullName": "류미경",
+              "judgeRef": "누나"
+            },
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S4.claimAtoms[1].slots",
+          "factText": "정보 확인보다 제 편을 확보하려는 동기가 있었다는 인정",
+          "action": "fill",
+          "newSlots": {
+            "family": {
+              "exact": "류미경",
+              "neutral": "가족",
+              "fullName": "류미경",
+              "judgeRef": "누나"
+            },
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S5.claimAtoms[1].slots",
+          "factText": "비공식 합의의 제3자 비공개 원칙을 자신도 깼다는 정리",
+          "action": "fill",
+          "newSlots": {
+            "family": {
+              "exact": "류미경",
+              "neutral": "가족",
+              "fullName": "류미경",
+              "judgeRef": "누나"
+            },
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            },
+            "rule": {
+              "exact": "가족·임대인에는 아직 비공개",
+              "neutral": "그 비공개 원칙"
+            }
+          }
+        },
+        {
+          "path": "b.d-5.S3.claimAtoms[1].slots",
+          "factText": "가만히 있을 수 없었던 배경이 상실 공포였다는 점",
+          "action": "skip",
+          "reason": "감정 중심 서술로, 특정 사실 슬롯 참조가 없음"
+        },
+        {
+          "path": "b.d-5.S4.claimAtoms[0].slots",
+          "factText": "집과 관계를 동시에 잃을까 두려워 외부 확인을 택했다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "임대인",
+              "neutral": "집주인",
+              "judgeRef": "임대인"
+            }
+          }
+        },
+        {
+          "path": "b.d-5.S5.claimAtoms[1].slots",
+          "factText": "상담 하나로 몰아간 말이 자신의 부끄러움을 가리려는 것이었다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "alert": {
+              "exact": "정유나 상담폴더 업로드 완료 알림",
+              "neutral": "그 알림"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-12",
+      "fixes": [
+        {
+          "path": "a.d-1.S4.claimAtoms[0].slots",
+          "factText": "배우자에게 처리 대상으로 느껴졌다는 정서",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "최재우",
+              "neutral": "상대방",
+              "fullName": "최재우",
+              "judgeRef": "최재우 씨"
+            }
+          }
+        },
+        {
+          "path": "a.d-2.S3.claimAtoms[0].slots",
+          "factText": "문세아는 선택 삭제를 '노출 순서 조정'으로 축소해 말한다",
+          "action": "fill",
+          "newSlots": {
+            "message": {
+              "exact": "한유진에게 보낸 모진 메시지 1건",
+              "neutral": "그 메시지"
+            }
+          }
+        },
+        {
+          "path": "a.d-3.S3.claimAtoms[0].slots",
+          "factText": "문세아는 자신을 지키려다 다른 사람을 빨리 후보로 세웠다고 돌아본다",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "한유진",
+              "neutral": "그 사람",
+              "fullName": "한유진",
+              "judgeRef": "한유진 씨"
+            }
+          }
+        },
+        {
+          "path": "a.d-3.S4.claimAtoms[1].slots",
+          "factText": "문세아는 억울함과 별개로 이 추측 자체는 사과할 일이라고 본다",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "한유진",
+              "neutral": "그 사람",
+              "fullName": "한유진",
+              "judgeRef": "한유진 씨"
+            }
+          }
+        },
+        {
+          "path": "a.d-4.S4.claimAtoms[1].slots",
+          "factText": "과거 장면 일부가 현재 허위 유포의 재료가 된 구조",
+          "action": "fill",
+          "newSlots": {
+            "year1": {
+              "exact": "2006년",
+              "neutral": "그때",
+              "dateExact": "2006년",
+              "period": "학창시절"
+            },
+            "year2": {
+              "exact": "2026년",
+              "neutral": "이번",
+              "dateExact": "2026년",
+              "period": "동창회 직후"
+            }
+          }
+        },
+        {
+          "path": "a.d-5.S3.claimAtoms[1].slots",
+          "factText": "공개 충돌과 익명 유포는 행동 양식이 다르다는 선 긋기",
+          "action": "fill",
+          "newSlots": {
+            "message": {
+              "exact": "한유진에게 보낸 모진 메시지 1건",
+              "neutral": "그 메시지"
+            },
+            "account": {
+              "exact": "장학금 특혜 소문 작성자",
+              "neutral": "그 작성자"
+            }
+          }
+        },
+        {
+          "path": "a.d-5.S4.claimAtoms[1].slots",
+          "factText": "'전부 누명'이라는 표현이 거짓이었다는 자기 정정",
+          "action": "fill",
+          "newSlots": {
+            "message": {
+              "exact": "한유진에게 보낸 모진 메시지 1건",
+              "neutral": "그 메시지"
+            },
+            "year": {
+              "exact": "2006년",
+              "neutral": "그때",
+              "dateExact": "2006년",
+              "period": "학창시절"
+            }
+          }
+        },
+        {
+          "path": "b.d-1.S4.claimAtoms[1].slots",
+          "factText": "부부 사이 확인 후 공유 원칙을 스스로 깼다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "rule": {
+              "exact": "확인 전 전달 금지 합의",
+              "neutral": "그 공유 원칙"
+            },
+            "year": {
+              "exact": "2023년",
+              "neutral": "그때",
+              "dateExact": "2023년",
+              "period": "합의 시점"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S3.claimAtoms[0].slots",
+          "factText": "최재우는 누락을 본 뒤 '더 숨기는 게 있다'는 방향으로 달려갔다고 돌아본다",
+          "action": "fill",
+          "newSlots": {
+            "message": {
+              "exact": "한유진에게 보낸 모진 메시지 1건",
+              "neutral": "그 메시지"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S3.claimAtoms[1].slots",
+          "factText": "선택 삭제를 빌미로 자신의 추정을 사실처럼 밀어붙인 책임",
+          "action": "fill",
+          "newSlots": {
+            "message": {
+              "exact": "한유진에게 보낸 모진 메시지 1건",
+              "neutral": "그 메시지"
+            },
+            "account": {
+              "exact": "익명 SNS 계정",
+              "neutral": "그 계정"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S4.claimAtoms[1].slots",
+          "factText": "문세아의 잘못과 자신의 과잉 대응은 별개로 판단해야 한다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "문세아",
+              "neutral": "상대방",
+              "fullName": "문세아",
+              "judgeRef": "문세아 씨"
+            },
+            "message": {
+              "exact": "한유진에게 보낸 모진 메시지 1건",
+              "neutral": "그 메시지"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S3.claimAtoms[1].slots",
+          "factText": "정정하면 자신의 성급함이 드러날까 망설였다는 두려움",
+          "action": "fill",
+          "newSlots": {
+            "forensic": {
+              "exact": "플랫폼 포렌식 보고서",
+              "neutral": "포렌식 자료"
+            }
+          }
+        },
+        {
+          "path": "b.d-5.S3.claimAtoms[1].slots",
+          "factText": "과거 직접 상처와 현재 허위 유포를 섞을수록 자신의 책임이 커진다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "message": {
+              "exact": "한유진에게 보낸 모진 메시지 1건",
+              "neutral": "그 메시지"
+            },
+            "account": {
+              "exact": "익명 소문 작성자 낙인",
+              "neutral": "그 낙인"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "family-08",
+      "fixes": [
+        {
+          "path": "a.d-1.S3.claimAtoms[1].slots",
+          "factText": "현장 부담은 이해해도 설명 지연은 선택이었다는 판단",
+          "action": "fill",
+          "newSlots": {
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            },
+            "delay": {
+              "exact": "19시간",
+              "rounded": "하룻밤 가까이",
+              "neutral": "상당 시간"
+            }
+          }
+        },
+        {
+          "path": "a.d-1.S4.claimAtoms[1].slots",
+          "factText": "'또 나만 나중에 안다'는 감각이 배신 프레임을 키웠다는 사실",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "2021년 아버지 ICU 전원 때",
+              "period": "그때 ICU 때",
+              "neutral": "과거 그 사건"
+            },
+            "delay": {
+              "exact": "5시간",
+              "neutral": "오래 늦은 시간"
+            }
+          }
+        },
+        {
+          "path": "a.d-1.S4.claimAtoms[2].slots",
+          "factText": "상대의 악의보다 자신의 상처가 먼저 반응했다는 자각",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "2021년 아버지 ICU 전원 때",
+              "period": "그때 ICU 때",
+              "neutral": "과거 그 사건"
+            },
+            "delay": {
+              "exact": "5시간",
+              "neutral": "오래 늦은 시간"
+            }
+          }
+        },
+        {
+          "path": "a.d-2.S3.claimAtoms[2].slots",
+          "factText": "사건의 첫 정의를 친척들 앞에서 선점해 버린 효과",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            }
+          }
+        },
+        {
+          "path": "a.d-2.S4.claimAtoms[0].slots",
+          "factText": "'또 나만 나중이다'라는 감각이 공개 비난 욕구로 이어졌다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "2021년 아버지 ICU 전원 때",
+              "period": "그때 ICU 때",
+              "neutral": "과거 그 사건"
+            },
+            "delay": {
+              "exact": "5시간",
+              "neutral": "오래 늦은 시간"
+            }
+          }
+        },
+        {
+          "path": "a.d-2.S4.claimAtoms[2].slots",
+          "factText": "도움 요청이라는 명분이 분노 표출과 섞여 있었다는 인정",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            }
+          }
+        },
+        {
+          "path": "a.d-2.S5.claimAtoms[1].slots",
+          "factText": "준호의 미통보와 별개로 공개 비난 책임을 자신에게 돌리는 정리",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            }
+          }
+        },
+        {
+          "path": "a.d-2.S5.claimAtoms[2].slots",
+          "factText": "정정과 사과가 신뢰 회복의 전제라는 인식",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            }
+          }
+        },
+        {
+          "path": "a.d-3.S3.claimAtoms[1].slots",
+          "factText": "초기 해석이 계약 자체보다 불안의 투사였다는 자기 진단",
+          "action": "fill",
+          "newSlots": {
+            "term": {
+              "exact": "2주 평가입소 침상 홀드",
+              "neutral": "평가입소용 자리 확보"
+            },
+            "rule": {
+              "exact": "환불 가능",
+              "neutral": "환불 조항 존재"
+            }
+          }
+        },
+        {
+          "path": "a.d-3.S4.claimAtoms[2].slots",
+          "factText": "최악 의미를 스스로 덧씌웠다는 인정",
+          "action": "fill",
+          "newSlots": {
+            "amount": {
+              "exact": "1,500,000원",
+              "rounded": "150만원",
+              "neutral": "해당 금액"
+            },
+            "term": {
+              "exact": "2주 평가입소 침상 홀드",
+              "neutral": "평가입소용 자리 확보"
+            }
+          }
+        },
+        {
+          "path": "a.d-4.S3.claimAtoms[2].slots",
+          "factText": "자신이 합의 존재를 축소해 왔다는 자각",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "작년 가을 가족회의",
+              "period": "작년 가을",
+              "neutral": "그 회의 때"
+            },
+            "threshold": {
+              "exact": "화재 위험 재발",
+              "neutral": "위험 신호 재발"
+            },
+            "institution": {
+              "fullName": "치매안심센터",
+              "neutral": "센터"
+            }
+          }
+        },
+        {
+          "path": "a.d-4.S4.claimAtoms[2].slots",
+          "factText": "합의 부정이 자기방어였다는 인정",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "작년 가을 가족회의",
+              "period": "작년 가을",
+              "neutral": "그 회의 때"
+            },
+            "threshold": {
+              "exact": "화재 위험 재발",
+              "neutral": "위험 신호 재발"
+            },
+            "institution": {
+              "fullName": "치매안심센터",
+              "neutral": "센터"
+            }
+          }
+        },
+        {
+          "path": "a.d-4.S5.claimAtoms[2].slots",
+          "factText": "자신이 합의 존재를 축소해 자기보호를 했다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "작년 가을 가족회의",
+              "period": "작년 가을",
+              "neutral": "그 회의 때"
+            },
+            "threshold": {
+              "exact": "화재 위험 재발",
+              "neutral": "위험 신호 재발"
+            },
+            "institution": {
+              "fullName": "치매안심센터",
+              "neutral": "센터"
+            }
+          }
+        },
+        {
+          "path": "a.d-5.S3.claimAtoms[1].slots",
+          "factText": "미통보 추궁과 별개로 자신이 배신 서사를 확대한 책임 인정",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            }
+          }
+        },
+        {
+          "path": "a.d-5.S4.claimAtoms[0].slots",
+          "factText": "다시는 마지막 사람이 되고 싶지 않았다는 핵심 공포",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "2021년 아버지 ICU 전원 때",
+              "period": "그때 ICU 때",
+              "neutral": "과거 그 사건"
+            }
+          }
+        },
+        {
+          "path": "a.d-5.S4.claimAtoms[1].slots",
+          "factText": "배신당한 사람의 자리를 먼저 확보하려 했다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            }
+          }
+        },
+        {
+          "path": "a.d-5.S5.claimAtoms[0].slots",
+          "factText": "배신 프레임 확대에 자신의 공동 책임을 명시적으로 인정",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "2021년 아버지 ICU 전원 때",
+              "period": "그때 ICU 때",
+              "neutral": "과거 그 사건"
+            },
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            }
+          }
+        },
+        {
+          "path": "a.d-5.S5.claimAtoms[2].slots",
+          "factText": "과거 사건과 현재 사건을 분리해 다뤄야 한다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "2021년 아버지 ICU 전원 때",
+              "period": "그때 ICU 때",
+              "neutral": "과거 그 사건"
+            }
+          }
+        },
+        {
+          "path": "b.d-1.S3.claimAtoms[1].slots",
+          "factText": "세라의 격한 반응을 예상해 설명을 미뤘다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "이세라",
+              "neutral": "상대방",
+              "fullName": "이세라",
+              "judgeRef": "세라 씨"
+            }
+          }
+        },
+        {
+          "path": "b.d-1.S3.claimAtoms[2].slots",
+          "factText": "'일단 안전부터'라는 말로 절차 위반을 눌러온 패턴",
+          "action": "fill",
+          "newSlots": {
+            "quote": {
+              "exact": "일단 안전부터",
+              "neutral": "그 말"
+            },
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            }
+          }
+        },
+        {
+          "path": "b.d-1.S4.claimAtoms[0].slots",
+          "factText": "불효자 낙인 공포가 통보 지연을 부른 면",
+          "action": "fill",
+          "newSlots": {
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            }
+          }
+        },
+        {
+          "path": "b.d-1.S5.claimAtoms[2].slots",
+          "factText": "세라에게 '또 배신'처럼 읽히게 만든 결과 책임",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "이세라",
+              "neutral": "상대방",
+              "fullName": "이세라",
+              "judgeRef": "세라 씨"
+            },
+            "time": {
+              "dateExact": "2021년 아버지 ICU 전원 때",
+              "period": "그때 ICU 때",
+              "neutral": "과거 그 사건"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S3.claimAtoms[2].slots",
+          "factText": "양쪽의 행동이 합쳐져 배신 프레임이 커졌다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            },
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S4.claimAtoms[1].slots",
+          "factText": "사실보다 모욕감이 먼저 올라와 방어적으로 굴었다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S5.claimAtoms[0].slots",
+          "factText": "세라의 공개 비난 잘못을 분명히 하되 미통보 책임도 함께 인정",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            },
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S5.claimAtoms[1].slots",
+          "factText": "양쪽 행동이 모두 가족 신뢰를 깎았다는 정리",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            },
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S5.claimAtoms[2].slots",
+          "factText": "공개 비난과 미통보를 함께 수습해야 한다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            },
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S3.claimAtoms[2].slots",
+          "factText": "갈등 회피 때문에 명칭을 흐렸다는 자기진단",
+          "action": "fill",
+          "newSlots": {
+            "term": {
+              "exact": "2주 평가입소 침상 홀드",
+              "neutral": "평가입소용 자리 확보"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S4.claimAtoms[0].slots",
+          "factText": "사실 관계 하나만 붙잡고 상대 감정을 외면했다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "amount": {
+              "exact": "1,500,000원",
+              "rounded": "150만원",
+              "neutral": "해당 금액"
+            },
+            "term": {
+              "exact": "2주 평가입소 침상 홀드",
+              "neutral": "평가입소용 자리 확보"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S4.claimAtoms[1].slots",
+          "factText": "용어 축소가 싸움을 줄일 거라는 착각",
+          "action": "fill",
+          "newSlots": {
+            "term": {
+              "exact": "2주 평가입소 침상 홀드",
+              "neutral": "평가입소용 자리 확보"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S5.claimAtoms[1].slots",
+          "factText": "'그냥 자리만 잡아둔 거'라는 축약이 오해를 키웠다는 인정",
+          "action": "fill",
+          "newSlots": {
+            "quote": {
+              "exact": "'그냥 자리만 잡아둔 거'",
+              "neutral": "그 축약된 말"
+            },
+            "term": {
+              "exact": "2주 평가입소 침상 홀드",
+              "neutral": "평가입소용 자리 확보"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S5.claimAtoms[2].slots",
+          "factText": "계약 의미와 설명 책임을 함께 받아들이는 태도",
+          "action": "fill",
+          "newSlots": {
+            "term": {
+              "exact": "2주 평가입소 침상 홀드",
+              "neutral": "평가입소용 자리 확보"
+            },
+            "rule": {
+              "exact": "환불 가능",
+              "neutral": "환불 조항 존재"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S3.claimAtoms[2].slots",
+          "factText": "자신도 기억을 유리하게 왜곡했다는 자각",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "작년 가을 가족회의",
+              "period": "작년 가을",
+              "neutral": "그 회의 때"
+            },
+            "threshold": {
+              "exact": "화재 위험 재발",
+              "neutral": "위험 신호 재발"
+            },
+            "institution": {
+              "fullName": "치매안심센터",
+              "neutral": "센터"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S4.claimAtoms[0].slots",
+          "factText": "합의 존재만 강조하면 자신이 덜 나빠 보일 것이라 계산했다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "작년 가을 가족회의",
+              "period": "작년 가을",
+              "neutral": "그 회의 때"
+            },
+            "threshold": {
+              "exact": "화재 위험 재발",
+              "neutral": "위험 신호 재발"
+            },
+            "institution": {
+              "fullName": "치매안심센터",
+              "neutral": "센터"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S4.claimAtoms[2].slots",
+          "factText": "낙인을 피하려 기억을 편의적으로 사용했다는 점",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "작년 가을 가족회의",
+              "period": "작년 가을",
+              "neutral": "그 회의 때"
+            },
+            "threshold": {
+              "exact": "화재 위험 재발",
+              "neutral": "위험 신호 재발"
+            },
+            "institution": {
+              "fullName": "치매안심센터",
+              "neutral": "센터"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S5.claimAtoms[2].slots",
+          "factText": "사전합의와 통보의무를 함께 복원해야 한다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "작년 가을 가족회의",
+              "period": "작년 가을",
+              "neutral": "그 회의 때"
+            },
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            }
+          }
+        },
+        {
+          "path": "b.d-5.S3.claimAtoms[0].slots",
+          "factText": "현장 부담만 내세워 상대 해석을 보지 못했다는 인정",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "fullName": "정옥자",
+              "judgeRef": "어머니",
+              "neutral": "가족 어르신"
+            }
+          }
+        },
+        {
+          "path": "b.d-5.S3.claimAtoms[2].slots",
+          "factText": "서로의 취약점이 맞물려 프레임이 커졌다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "2021년 아버지 ICU 전원 때",
+              "period": "그때 ICU 때",
+              "neutral": "과거 그 사건"
+            },
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            }
+          }
+        },
+        {
+          "path": "b.d-5.S4.claimAtoms[0].slots",
+          "factText": "불효자 낙인 공포 때문에 설명을 늦췄다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            }
+          }
+        },
+        {
+          "path": "b.d-5.S4.claimAtoms[1].slots",
+          "factText": "세라의 버려졌다는 감정과 자신의 공포가 동시에 작동했다는 인식",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "이세라",
+              "neutral": "상대방",
+              "fullName": "이세라",
+              "judgeRef": "세라 씨"
+            },
+            "time": {
+              "dateExact": "2021년 아버지 ICU 전원 때",
+              "period": "그때 ICU 때",
+              "neutral": "과거 그 사건"
+            }
+          }
+        },
+        {
+          "path": "b.d-5.S5.claimAtoms[0].slots",
+          "factText": "배신 프레임 확대에 양측 공동 책임을 분명히 인정",
+          "action": "fill",
+          "newSlots": {
+            "time": {
+              "dateExact": "2021년 아버지 ICU 전원 때",
+              "period": "그때 ICU 때",
+              "neutral": "과거 그 사건"
+            },
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            },
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            }
+          }
+        },
+        {
+          "path": "b.d-5.S5.claimAtoms[2].slots",
+          "factText": "공개 비난 중단과 늦은 통보 중단이 신뢰 복구 규칙이라는 인식",
+          "action": "fill",
+          "newSlots": {
+            "group": {
+              "exact": "친척 단톡방",
+              "neutral": "가족 외 친척 대화방"
+            },
+            "rule": {
+              "exact": "그날 안에 가족 단톡 공유",
+              "neutral": "같은 날 공유 원칙"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "neighbor-08",
+      "fixes": [
+        {
+          "path": "b.d-1.S4.claimAtoms[0].slots",
+          "factText": "작년 밤늦은 방문객 소문까지 겹쳐서, 나는 '문 앞 카메라'라는 말만 들어도 먼저 몸이 굳는다.",
+          "action": "skip",
+          "reason": "과거 소문과 현재 공포를 묶은 감정 서술로, anchorTruth 기준의 구체 슬롯 참조가 없음"
+        }
+      ]
+    },
+    {
+      "caseId": "partnership-07",
+      "fixes": [
+        {
+          "path": "a.d-2.S4.claimAtoms[0].slots",
+          "factText": "의도와 절차를 분리해 버텼지만 결국 통제 실패를 인정하는 진술",
+          "action": "fill",
+          "newSlots": {
+            "file": {
+              "exact": "전체 도매단가·팝업 일정 덱",
+              "neutral": "전체 자료",
+              "judgeRef": "전체 덱"
+            },
+            "person": {
+              "exact": "서유나",
+              "neutral": "그 사람",
+              "fullName": "서유나",
+              "judgeRef": "서 대표"
+            }
+          }
+        },
+        {
+          "path": "a.d-4.S4.claimAtoms[0].slots",
+          "factText": "일정 압박을 이유로 예외를 합리화한 자신의 태도에 대한 고백",
+          "action": "fill",
+          "newSlots": {
+            "rule": {
+              "exact": "비식별 축약본과 추적 링크만 사용",
+              "neutral": "기존 보안 원칙"
+            },
+            "file": {
+              "exact": "전체 도매단가·팝업 일정 덱",
+              "neutral": "전체 자료",
+              "judgeRef": "전체 덱"
+            }
+          }
+        },
+        {
+          "path": "b.d-1.S4.claimAtoms[0].slots",
+          "factText": "영업총괄로서 체면 손상을 막기 위해 범인을 빨리 정하고 싶었다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "문태경",
+              "neutral": "그 사람",
+              "fullName": "문태경",
+              "judgeRef": "문 대표"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S3.claimAtoms[0].slots",
+          "factText": "문맥을 자르고 의도만 키운 자신의 해석 습관을 인정하는 진술",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "문태경",
+              "neutral": "그 사람",
+              "fullName": "문태경",
+              "judgeRef": "문 대표"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S4.claimAtoms[0].slots",
+          "factText": "상처와 체면 때문에 누군가의 고의를 믿고 싶었다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "문태경",
+              "neutral": "그 사람",
+              "fullName": "문태경",
+              "judgeRef": "문 대표"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S4.claimAtoms[0].slots",
+          "factText": "영업총괄로 뒤처져 보일까 봐 최신 전체 덱을 넣었다는 감정 고백",
+          "action": "fill",
+          "newSlots": {
+            "file": {
+              "exact": "전체 도매단가·팝업 일정 덱",
+              "neutral": "전체 자료",
+              "judgeRef": "전체 덱"
+            },
+            "folder": {
+              "exact": "QR 후속자료 폴더",
+              "neutral": "QR 폴더"
+            }
+          }
+        },
+        {
+          "path": "b.d-5.S4.claimAtoms[0].slots",
+          "factText": "배신 서사에 매달리며 외부 오발송 가능성을 밀어냈다는 고백",
+          "action": "fill",
+          "newSlots": {
+            "institution": {
+              "exact": "박수민 AE",
+              "neutral": "운영사 쪽",
+              "fullName": "박수민",
+              "judgeRef": "운영사 AE"
+            },
+            "event": {
+              "exact": "참석자 follow-up 메일",
+              "neutral": "후속메일"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "partnership-10",
+      "fixes": [
+        {
+          "path": "a.d-1.S4.claimAtoms[0].slots",
+          "factText": "후보자 이탈과 운영 공백에 대한 두려움 때문에 승인 확인을 건너뛰었습니다.",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "한민서",
+              "neutral": "지원자",
+              "fullName": "한민서",
+              "judgeRef": "민서 씨"
+            },
+            "protocol": {
+              "exact": "체험평가표, 급여 시트, 공동 final message",
+              "neutral": "합의된 3단계"
+            }
+          }
+        },
+        {
+          "path": "a.d-1.S4.claimAtoms[1].slots",
+          "factText": "배신감 문제를 일정 문제처럼 줄여 말한 것이 제 방어였습니다.",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "박혜린",
+              "neutral": "공동대표",
+              "fullName": "박혜린",
+              "judgeRef": "혜린 씨"
+            },
+            "protocol": {
+              "exact": "체험평가표, 급여 시트, 공동 final message",
+              "neutral": "합의된 3단계"
+            }
+          }
+        },
+        {
+          "path": "a.d-3.S4.claimAtoms[0].slots",
+          "factText": "운영 공백이 두려워 trial 승인과 최종 승인을 제게 유리한 방향으로 묶어 읽었습니다.",
+          "action": "fill",
+          "newSlots": {
+            "quote": {
+              "exact": "'이번 주부터 한번 같이 돌아보자'",
+              "neutral": "그 승인처럼 들린 말"
+            },
+            "tool": {
+              "exact": "'Day 1 Orientation'",
+              "neutral": "첫 출근처럼 보이는 일정 문구"
+            }
+          }
+        },
+        {
+          "path": "b.d-2.S4.claimAtoms[0].slots",
+          "factText": "제 영역이 무시됐다는 감정 때문에 의심을 확인 전에 퍼뜨렸다고 감정적으로 털어놓는다.",
+          "action": "fill",
+          "newSlots": {
+            "person": {
+              "exact": "오준서",
+              "neutral": "공동대표",
+              "fullName": "오준서",
+              "judgeRef": "준서 씨"
+            },
+            "candidate": {
+              "exact": "한민서",
+              "neutral": "지원자",
+              "fullName": "한민서",
+              "judgeRef": "민서 씨"
+            }
+          }
+        },
+        {
+          "path": "b.d-3.S4.claimAtoms[0].slots",
+          "factText": "승인권이 지워진다는 공포 때문에 확인보다 배신이라는 이름을 먼저 붙였어요.",
+          "action": "fill",
+          "newSlots": {
+            "quote": {
+              "exact": "'이번 주부터 한번 같이 돌아보자'",
+              "neutral": "그 승인처럼 들린 말"
+            },
+            "invite": {
+              "exact": "'Day 1 Orientation'",
+              "neutral": "첫 출근처럼 보이는 일정 문구"
+            }
+          }
+        },
+        {
+          "path": "b.d-4.S4.claimAtoms[0].slots",
+          "factText": "배제감이 올라온 순간 저도 규칙을 자기 방식으로 뒤집었다고 감정적으로 인정해요.",
+          "action": "fill",
+          "newSlots": {
+            "protocol": {
+              "exact": "체험평가표, 급여 시트, 공동 final message",
+              "neutral": "합의된 3단계"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "fill": 100,
+    "skip": 8,
+    "total": 108
+  }
+}

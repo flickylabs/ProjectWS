@@ -299,7 +299,14 @@
                 "relationship",
                 "harm"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "최재우",
+                  "neutral": "상대방",
+                  "fullName": "최재우",
+                  "judgeRef": "최재우 씨"
+                }
+              },
               "stanceHints": [
                 "emotional"
               ],
@@ -630,7 +637,12 @@
                 "self_justification",
                 "counter"
               ],
-              "slots": {},
+              "slots": {
+                "message": {
+                  "exact": "한유진에게 보낸 모진 메시지 1건",
+                  "neutral": "그 메시지"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "hedge"
@@ -1029,7 +1041,14 @@
                 "self_justification",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "한유진",
+                  "neutral": "그 사람",
+                  "fullName": "한유진",
+                  "judgeRef": "한유진 씨"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "partial"
@@ -1115,7 +1134,14 @@
                 "admission",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "한유진",
+                  "neutral": "그 사람",
+                  "fullName": "한유진",
+                  "judgeRef": "한유진 씨"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "confess"
@@ -1542,7 +1568,20 @@
                 "context",
                 "harm"
               ],
-              "slots": {},
+              "slots": {
+                "year1": {
+                  "exact": "2006년",
+                  "neutral": "그때",
+                  "dateExact": "2006년",
+                  "period": "학창시절"
+                },
+                "year2": {
+                  "exact": "2026년",
+                  "neutral": "이번",
+                  "dateExact": "2026년",
+                  "period": "동창회 직후"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -1885,7 +1924,16 @@
                 "identity",
                 "rule"
               ],
-              "slots": {},
+              "slots": {
+                "message": {
+                  "exact": "한유진에게 보낸 모진 메시지 1건",
+                  "neutral": "그 메시지"
+                },
+                "account": {
+                  "exact": "장학금 특혜 소문 작성자",
+                  "neutral": "그 작성자"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "partial"
@@ -1949,7 +1997,18 @@
                 "admission",
                 "counter"
               ],
-              "slots": {},
+              "slots": {
+                "message": {
+                  "exact": "한유진에게 보낸 모진 메시지 1건",
+                  "neutral": "그 메시지"
+                },
+                "year": {
+                  "exact": "2006년",
+                  "neutral": "그때",
+                  "dateExact": "2006년",
+                  "period": "학창시절"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "confess"
@@ -2350,7 +2409,18 @@
                 "responsibility",
                 "relationship"
               ],
-              "slots": {},
+              "slots": {
+                "rule": {
+                  "exact": "확인 전 전달 금지 합의",
+                  "neutral": "그 공유 원칙"
+                },
+                "year": {
+                  "exact": "2023년",
+                  "neutral": "그때",
+                  "dateExact": "2023년",
+                  "period": "합의 시점"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -2658,7 +2728,12 @@
                 "motive",
                 "threshold"
               ],
-              "slots": {},
+              "slots": {
+                "message": {
+                  "exact": "한유진에게 보낸 모진 메시지 1건",
+                  "neutral": "그 메시지"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "partial"
@@ -2674,7 +2749,16 @@
                 "responsibility",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "message": {
+                  "exact": "한유진에게 보낸 모진 메시지 1건",
+                  "neutral": "그 메시지"
+                },
+                "account": {
+                  "exact": "익명 SNS 계정",
+                  "neutral": "그 계정"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "blame"
@@ -2734,7 +2818,18 @@
                 "rule",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "문세아",
+                  "neutral": "상대방",
+                  "fullName": "문세아",
+                  "judgeRef": "문세아 씨"
+                },
+                "message": {
+                  "exact": "한유진에게 보낸 모진 메시지 1건",
+                  "neutral": "그 메시지"
+                }
+              },
               "stanceHints": [
                 "emotional"
               ],
@@ -3478,7 +3573,12 @@
                 "shame",
                 "motive"
               ],
-              "slots": {},
+              "slots": {
+                "forensic": {
+                  "exact": "플랫폼 포렌식 보고서",
+                  "neutral": "포렌식 자료"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "emotional"
@@ -3878,7 +3978,16 @@
                 "rule",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "message": {
+                  "exact": "한유진에게 보낸 모진 메시지 1건",
+                  "neutral": "그 메시지"
+                },
+                "account": {
+                  "exact": "익명 소문 작성자 낙인",
+                  "neutral": "그 낙인"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "blame"

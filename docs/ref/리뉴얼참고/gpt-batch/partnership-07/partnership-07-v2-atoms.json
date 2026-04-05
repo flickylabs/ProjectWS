@@ -519,7 +519,19 @@
                 "admission",
                 "rule"
               ],
-              "slots": {},
+              "slots": {
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                },
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "그 사람",
+                  "fullName": "서유나",
+                  "judgeRef": "서 대표"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -1063,7 +1075,17 @@
                 "motive",
                 "self_justification"
               ],
-              "slots": {},
+              "slots": {
+                "rule": {
+                  "exact": "비식별 축약본과 추적 링크만 사용",
+                  "neutral": "기존 보안 원칙"
+                },
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -1631,7 +1653,14 @@
                 "fear",
                 "shame"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -2143,7 +2172,14 @@
                 "admission",
                 "self_justification"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -2180,7 +2216,14 @@
                 "motive",
                 "emotion"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "문태경",
+                  "neutral": "그 사람",
+                  "fullName": "문태경",
+                  "judgeRef": "문 대표"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -2463,7 +2506,17 @@
                 "motive",
                 "emotion"
               ],
-              "slots": {},
+              "slots": {
+                "file": {
+                  "exact": "전체 도매단가·팝업 일정 덱",
+                  "neutral": "전체 자료",
+                  "judgeRef": "전체 덱"
+                },
+                "folder": {
+                  "exact": "QR 후속자료 폴더",
+                  "neutral": "QR 폴더"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -2726,7 +2779,18 @@
                 "motive",
                 "shame"
               ],
-              "slots": {},
+              "slots": {
+                "institution": {
+                  "exact": "박수민 AE",
+                  "neutral": "운영사 쪽",
+                  "fullName": "박수민",
+                  "judgeRef": "운영사 AE"
+                },
+                "event": {
+                  "exact": "참석자 follow-up 메일",
+                  "neutral": "후속메일"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"

@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-04-05T21:35:54.303Z",
+  "generatedAt": "2026-04-05T22:38:47.180Z",
   "summary": {
     "totalCases": 84,
-    "pass": 64,
-    "fail": 20,
+    "pass": 67,
+    "fail": 17,
     "criticalCount": 0,
-    "failCount": 6,
+    "failCount": 2,
     "warnCount": 16,
     "checksTotal": 2352,
-    "checksPass": 2330
+    "checksPass": 2334
   },
   "distribution": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "id": "A4",
-      "count": 6
+      "count": 2
     },
     {
       "id": "E3",
@@ -125,7 +125,7 @@
         {
           "id": "A4",
           "severity": "FAIL",
-          "msg": "S3+ 구체 slots 미보존: a.d-1.S4, a.d-3.S4, a.d-3.S5 +7건"
+          "msg": "S3+ 구체 slots 미보존: a.d-1.S4"
         },
         {
           "id": "B3",
@@ -176,14 +176,9 @@
     {
       "caseId": "spouse-12",
       "pass": false,
-      "passCount": 26,
+      "passCount": 27,
       "totalChecks": 28,
       "failures": [
-        {
-          "id": "A4",
-          "severity": "FAIL",
-          "msg": "S3+ 구체 slots 미보존: b.d-2.S3"
-        },
         {
           "id": "B3",
           "severity": "WARN",
@@ -242,16 +237,10 @@
     },
     {
       "caseId": "family-08",
-      "pass": false,
-      "passCount": 27,
+      "pass": true,
+      "passCount": 28,
       "totalChecks": 28,
-      "failures": [
-        {
-          "id": "A4",
-          "severity": "FAIL",
-          "msg": "S3+ 구체 slots 미보존: b.d-2.S5"
-        }
-      ]
+      "failures": []
     },
     {
       "caseId": "family-09",
@@ -523,16 +512,10 @@
     },
     {
       "caseId": "partnership-07",
-      "pass": false,
-      "passCount": 27,
+      "pass": true,
+      "passCount": 28,
       "totalChecks": 28,
-      "failures": [
-        {
-          "id": "A4",
-          "severity": "FAIL",
-          "msg": "S3+ 구체 slots 미보존: a.d-2.S4, a.d-4.S4, b.d-1.S4 +4건"
-        }
-      ]
+      "failures": []
     },
     {
       "caseId": "partnership-08",
@@ -550,16 +533,10 @@
     },
     {
       "caseId": "partnership-10",
-      "pass": false,
-      "passCount": 27,
+      "pass": true,
+      "passCount": 28,
       "totalChecks": 28,
-      "failures": [
-        {
-          "id": "A4",
-          "severity": "FAIL",
-          "msg": "S3+ 구체 slots 미보존: a.d-1.S4, a.d-3.S4, b.d-2.S4 +2건"
-        }
-      ]
+      "failures": []
     },
     {
       "caseId": "partnership-11",

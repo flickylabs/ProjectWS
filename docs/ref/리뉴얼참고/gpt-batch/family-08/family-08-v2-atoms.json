@@ -360,7 +360,17 @@
                 "counter",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                },
+                "delay": {
+                  "exact": "19시간",
+                  "rounded": "하룻밤 가까이",
+                  "neutral": "상당 시간"
+                }
+              },
               "stanceHints": [
                 "counter",
                 "pressure"
@@ -455,7 +465,17 @@
                 "harm",
                 "relationship"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                },
+                "delay": {
+                  "exact": "5시간",
+                  "neutral": "오래 늦은 시간"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -473,7 +493,17 @@
                 "fear",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                },
+                "delay": {
+                  "exact": "5시간",
+                  "neutral": "오래 늦은 시간"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "reflective"
@@ -918,7 +948,12 @@
                 "privacy",
                 "identity"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "reflective"
@@ -960,7 +995,17 @@
                 "relationship",
                 "harm"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                },
+                "delay": {
+                  "exact": "5시간",
+                  "neutral": "오래 늦은 시간"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "admission"
@@ -999,7 +1044,12 @@
                 "self_justification",
                 "emotion"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "reflective"
@@ -1061,7 +1111,12 @@
                 "counter",
                 "relationship"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "repair"
@@ -1079,7 +1134,12 @@
                 "rule",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "repair"
@@ -1405,7 +1465,16 @@
                 "emotion",
                 "fear"
               ],
-              "slots": {},
+              "slots": {
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                },
+                "rule": {
+                  "exact": "환불 가능",
+                  "neutral": "환불 조항 존재"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "reflective"
@@ -1512,7 +1581,17 @@
                 "uncertainty",
                 "fear"
               ],
-              "slots": {},
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "reflective"
@@ -1962,7 +2041,21 @@
                 "legacy_sentence",
                 "shame"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                },
+                "institution": {
+                  "fullName": "치매안심센터",
+                  "neutral": "센터"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "reflective"
@@ -2048,7 +2141,21 @@
                 "admission",
                 "shame"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                },
+                "institution": {
+                  "fullName": "치매안심센터",
+                  "neutral": "센터"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "reflective"
@@ -2142,7 +2249,21 @@
                 "admission",
                 "shame"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                },
+                "institution": {
+                  "fullName": "치매안심센터",
+                  "neutral": "센터"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "reflective"
@@ -2460,7 +2581,12 @@
                 "harm",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "balanced"
@@ -2521,7 +2647,13 @@
                 "emotion",
                 "relationship"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "admission"
@@ -2538,7 +2670,12 @@
                 "motive",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "confess"
@@ -2600,7 +2737,17 @@
                 "responsibility",
                 "harm"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                },
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "repair"
@@ -2647,7 +2794,13 @@
                 "relationship",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
               "stanceHints": [
                 "repair"
               ],
@@ -3004,7 +3157,14 @@
                 "relationship",
                 "motive"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "이세라",
+                  "neutral": "상대방",
+                  "fullName": "이세라",
+                  "judgeRef": "세라 씨"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "self_protect"
@@ -3022,7 +3182,16 @@
                 "self_justification",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "quote": {
+                  "exact": "일단 안전부터",
+                  "neutral": "그 말"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "justify"
@@ -3062,7 +3231,12 @@
                 "shame",
                 "motive"
               ],
-              "slots": {},
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "admission"
@@ -3208,7 +3382,19 @@
                 "relationship",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "이세라",
+                  "neutral": "상대방",
+                  "fullName": "이세라",
+                  "judgeRef": "세라 씨"
+                },
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "repair"
@@ -3534,7 +3720,16 @@
                 "harm",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "reflective"
@@ -3597,7 +3792,12 @@
                 "emotion",
                 "shame"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "reflective"
@@ -3659,7 +3859,16 @@
                 "relationship",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "balanced"
@@ -3677,7 +3886,16 @@
                 "harm",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "repair"
@@ -3694,7 +3912,16 @@
                 "relationship",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "repair"
@@ -4060,7 +4287,12 @@
                 "self_justification",
                 "relationship"
               ],
-              "slots": {},
+              "slots": {
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "avoidant"
@@ -4100,7 +4332,17 @@
                 "emotion",
                 "relationship"
               ],
-              "slots": {},
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "reflective"
@@ -4117,7 +4359,12 @@
                 "fear",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "admit"
@@ -4217,7 +4464,16 @@
                 "harm",
                 "self_justification"
               ],
-              "slots": {},
+              "slots": {
+                "quote": {
+                  "exact": "'그냥 자리만 잡아둔 거'",
+                  "neutral": "그 축약된 말"
+                },
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "reflective"
@@ -4235,7 +4491,16 @@
                 "relationship",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                },
+                "rule": {
+                  "exact": "환불 가능",
+                  "neutral": "환불 조항 존재"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "repair"
@@ -4591,7 +4856,21 @@
                 "shame",
                 "legacy_sentence"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                },
+                "institution": {
+                  "fullName": "치매안심센터",
+                  "neutral": "센터"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "reflective"
@@ -4630,7 +4909,21 @@
                 "self_justification",
                 "shame"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                },
+                "institution": {
+                  "fullName": "치매안심센터",
+                  "neutral": "센터"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "admit"
@@ -4671,7 +4964,21 @@
                 "fear",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                },
+                "institution": {
+                  "fullName": "치매안심센터",
+                  "neutral": "센터"
+                }
+              },
               "stanceHints": [
                 "emotional"
               ],
@@ -4770,7 +5077,17 @@
                 "rule",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "repair"
@@ -5073,7 +5390,13 @@
                 "context",
                 "emotion"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "fullName": "정옥자",
+                  "judgeRef": "어머니",
+                  "neutral": "가족 어르신"
+                }
+              },
               "stanceHints": [
                 "partial",
                 "reflective"
@@ -5117,7 +5440,17 @@
                 "harm",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                },
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
               "stanceHints": [
                 "partial"
               ],
@@ -5155,7 +5488,12 @@
                 "identity",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "admit"
@@ -5173,7 +5511,19 @@
                 "emotion",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "이세라",
+                  "neutral": "상대방",
+                  "fullName": "이세라",
+                  "judgeRef": "세라 씨"
+                },
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "balanced"
@@ -5236,7 +5586,21 @@
                 "responsibility",
                 "harm"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                },
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "repair"
@@ -5281,7 +5645,16 @@
                 "relationship",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
               "stanceHints": [
                 "repair"
               ],

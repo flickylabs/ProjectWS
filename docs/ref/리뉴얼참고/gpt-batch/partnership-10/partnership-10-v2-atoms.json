@@ -298,7 +298,18 @@
                 "motive",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "한민서",
+                  "neutral": "지원자",
+                  "fullName": "한민서",
+                  "judgeRef": "민서 씨"
+                },
+                "protocol": {
+                  "exact": "체험평가표, 급여 시트, 공동 final message",
+                  "neutral": "합의된 3단계"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -316,7 +327,18 @@
                 "self_justification",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "박혜린",
+                  "neutral": "공동대표",
+                  "fullName": "박혜린",
+                  "judgeRef": "혜린 씨"
+                },
+                "protocol": {
+                  "exact": "체험평가표, 급여 시트, 공동 final message",
+                  "neutral": "합의된 3단계"
+                }
+              },
               "stanceHints": [
                 "emotional"
               ],
@@ -944,7 +966,16 @@
                 "motive",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "quote": {
+                  "exact": "'이번 주부터 한번 같이 돌아보자'",
+                  "neutral": "그 승인처럼 들린 말"
+                },
+                "tool": {
+                  "exact": "'Day 1 Orientation'",
+                  "neutral": "첫 출근처럼 보이는 일정 문구"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -2095,7 +2126,20 @@
                 "fear",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "오준서",
+                  "neutral": "공동대표",
+                  "fullName": "오준서",
+                  "judgeRef": "준서 씨"
+                },
+                "candidate": {
+                  "exact": "한민서",
+                  "neutral": "지원자",
+                  "fullName": "한민서",
+                  "judgeRef": "민서 씨"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -2384,7 +2428,16 @@
                 "emotion",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "quote": {
+                  "exact": "'이번 주부터 한번 같이 돌아보자'",
+                  "neutral": "그 승인처럼 들린 말"
+                },
+                "invite": {
+                  "exact": "'Day 1 Orientation'",
+                  "neutral": "첫 출근처럼 보이는 일정 문구"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"
@@ -2666,7 +2719,12 @@
                 "rule",
                 "admission"
               ],
-              "slots": {},
+              "slots": {
+                "protocol": {
+                  "exact": "체험평가표, 급여 시트, 공동 final message",
+                  "neutral": "합의된 3단계"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "partial"

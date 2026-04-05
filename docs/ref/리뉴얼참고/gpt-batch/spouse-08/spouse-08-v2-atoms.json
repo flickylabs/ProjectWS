@@ -240,7 +240,12 @@
                 "counter",
                 "act"
               ],
-              "slots": {},
+              "slots": {
+                "procedure": {
+                  "exact": "법무사 CRM 접수 번호",
+                  "neutral": "그 절차"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "counter"
@@ -357,7 +362,12 @@
                 "admission",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "procedure": {
+                  "exact": "실제 제출·신고",
+                  "neutral": "그 절차"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "responsibility"
@@ -636,7 +646,12 @@
                 "counter",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "document": {
+                  "exact": "2022년 대출정리서",
+                  "neutral": "그 문서"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "self_justification"
@@ -697,7 +712,12 @@
                 "fear",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "document": {
+                  "exact": "2022년 대출정리서",
+                  "neutral": "그 문서"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "fear"
@@ -758,7 +778,16 @@
                 "rule",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "document": {
+                  "exact": "2022년 대출정리서",
+                  "neutral": "그 문서"
+                },
+                "rule": {
+                  "exact": "범위 동의와 절차 확인",
+                  "neutral": "그 확인"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "balance"
@@ -1019,7 +1048,12 @@
                 "counter",
                 "self_justification"
               ],
-              "slots": {},
+              "slots": {
+                "quote": {
+                  "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+                  "neutral": "그 합의 문구"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "self_justification"
@@ -1058,7 +1092,12 @@
                 "harm",
                 "emotion"
               ],
-              "slots": {},
+              "slots": {
+                "quote": {
+                  "exact": "서진 독단",
+                  "neutral": "그 프레임"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "hurt"
@@ -1114,7 +1153,23 @@
                 "admission",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "family": {
+                  "exact": "류미경",
+                  "neutral": "가족",
+                  "fullName": "류미경",
+                  "judgeRef": "누나"
+                },
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                },
+                "quote": {
+                  "exact": "서진 독단",
+                  "neutral": "그 프레임"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "responsibility"
@@ -1387,7 +1442,23 @@
                 "counter",
                 "relationship"
               ],
-              "slots": {},
+              "slots": {
+                "document": {
+                  "exact": "2022년 대출정리서",
+                  "neutral": "그 문서"
+                },
+                "family": {
+                  "exact": "류미경",
+                  "neutral": "가족",
+                  "fullName": "류미경",
+                  "judgeRef": "누나"
+                },
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "self_justification"
@@ -1426,7 +1497,12 @@
                 "relationship",
                 "emotion"
               ],
-              "slots": {},
+              "slots": {
+                "rule": {
+                  "exact": "상담까지만, 가족·임대인에는 아직 비공개",
+                  "neutral": "그 비공식 합의"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "hurt"
@@ -1443,7 +1519,23 @@
                 "fear",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "document": {
+                  "exact": "2022년 대출정리서",
+                  "neutral": "그 문서"
+                },
+                "family": {
+                  "exact": "류미경",
+                  "neutral": "가족",
+                  "fullName": "류미경",
+                  "judgeRef": "누나"
+                },
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "fear"
@@ -1482,7 +1574,27 @@
                 "admission",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "document": {
+                  "exact": "2022년 대출정리서",
+                  "neutral": "그 문서"
+                },
+                "family": {
+                  "exact": "류미경",
+                  "neutral": "가족",
+                  "fullName": "류미경",
+                  "judgeRef": "누나"
+                },
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                },
+                "rule": {
+                  "exact": "상담까지만, 가족·임대인에는 아직 비공개",
+                  "neutral": "그 비공식 합의"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "responsibility"
@@ -1499,7 +1611,12 @@
                 "relationship",
                 "rule"
               ],
-              "slots": {},
+              "slots": {
+                "rule": {
+                  "exact": "상담까지만, 가족·임대인에는 아직 비공개",
+                  "neutral": "그 비공식 합의"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "balance"
@@ -1759,7 +1876,13 @@
                 "counter",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "self_justification"
@@ -1815,7 +1938,13 @@
                 "admission",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "time": {
+                  "exact": "상담 직후 사흘 내 확답 시한",
+                  "neutral": "그 시한",
+                  "period": "갱신 답변 시한 직전"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "fear"
@@ -1882,7 +2011,12 @@
                 "rule",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "rule": {
+                  "exact": "주거결정과 관계논쟁 분리",
+                  "neutral": "그 분리"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "balance"
@@ -2149,7 +2283,12 @@
                 "self_justification",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "alert": {
+                  "exact": "정유나 상담폴더 업로드 완료 알림",
+                  "neutral": "그 알림"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "self_justification"
@@ -2188,7 +2327,16 @@
                 "emotion",
                 "fear"
               ],
-              "slots": {},
+              "slots": {
+                "alert": {
+                  "exact": "정유나 상담폴더 업로드 완료 알림",
+                  "neutral": "그 알림"
+                },
+                "quote": {
+                  "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+                  "neutral": "그 합의 문구"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "hurt"
@@ -2244,7 +2392,12 @@
                 "admission",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "procedure": {
+                  "exact": "실제 접수",
+                  "neutral": "그 절차"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "responsibility"
@@ -2517,7 +2670,12 @@
                 "counter",
                 "shame"
               ],
-              "slots": {},
+              "slots": {
+                "document": {
+                  "exact": "2022년 대출정리서",
+                  "neutral": "그 문서"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "self_justification"
@@ -2578,7 +2736,12 @@
                 "emotion",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "document": {
+                  "exact": "2022년 대출정리서",
+                  "neutral": "그 문서"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "fear"
@@ -2910,7 +3073,12 @@
                 "shame",
                 "self_justification"
               ],
-              "slots": {},
+              "slots": {
+                "quote": {
+                  "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+                  "neutral": "그 합의 문구"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "self_justification"
@@ -2949,7 +3117,12 @@
                 "fear",
                 "emotion"
               ],
-              "slots": {},
+              "slots": {
+                "quote": {
+                  "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+                  "neutral": "그 합의 문구"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "hurt"
@@ -2966,7 +3139,12 @@
                 "identity",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "quote": {
+                  "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+                  "neutral": "그 합의 문구"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "fear"
@@ -3005,7 +3183,23 @@
                 "admission",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "family": {
+                  "exact": "류미경",
+                  "neutral": "가족",
+                  "fullName": "류미경",
+                  "judgeRef": "누나"
+                },
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                },
+                "quote": {
+                  "exact": "서진 독단",
+                  "neutral": "그 프레임"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "responsibility"
@@ -3022,7 +3216,12 @@
                 "context",
                 "relationship"
               ],
-              "slots": {},
+              "slots": {
+                "quote": {
+                  "exact": "서진 독단",
+                  "neutral": "그 프레임"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "balance"
@@ -3290,7 +3489,19 @@
                 "fear",
                 "self_justification"
               ],
-              "slots": {},
+              "slots": {
+                "family": {
+                  "exact": "류미경",
+                  "neutral": "가족",
+                  "fullName": "류미경",
+                  "judgeRef": "누나"
+                },
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                }
+              },
               "stanceHints": [
                 "blame",
                 "self_justification"
@@ -3329,7 +3540,19 @@
                 "fear",
                 "emotion"
               ],
-              "slots": {},
+              "slots": {
+                "family": {
+                  "exact": "류미경",
+                  "neutral": "가족",
+                  "fullName": "류미경",
+                  "judgeRef": "누나"
+                },
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "hurt"
@@ -3346,7 +3569,19 @@
                 "motive",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "family": {
+                  "exact": "류미경",
+                  "neutral": "가족",
+                  "fullName": "류미경",
+                  "judgeRef": "누나"
+                },
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "fear"
@@ -3414,7 +3649,23 @@
                 "rule",
                 "context"
               ],
-              "slots": {},
+              "slots": {
+                "family": {
+                  "exact": "류미경",
+                  "neutral": "가족",
+                  "fullName": "류미경",
+                  "judgeRef": "누나"
+                },
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                },
+                "rule": {
+                  "exact": "가족·임대인에는 아직 비공개",
+                  "neutral": "그 비공개 원칙"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "balance"
@@ -3724,7 +3975,13 @@
                 "fear",
                 "emotion"
               ],
-              "slots": {},
+              "slots": {
+                "person": {
+                  "exact": "임대인",
+                  "neutral": "집주인",
+                  "judgeRef": "임대인"
+                }
+              },
               "stanceHints": [
                 "emotional",
                 "hurt"
@@ -3814,7 +4071,12 @@
                 "shame",
                 "responsibility"
               ],
-              "slots": {},
+              "slots": {
+                "alert": {
+                  "exact": "정유나 상담폴더 업로드 완료 알림",
+                  "neutral": "그 알림"
+                }
+              },
               "stanceHints": [
                 "confess",
                 "balance"
