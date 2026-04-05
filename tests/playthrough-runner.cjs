@@ -235,7 +235,7 @@ function getStance(lieState, trust) {
 
 // ── P0-2 + P1-2 + P2-1: buildPrompt 전면 개편 ──
 
-function buildPrompt(profile, atoms, slotMaterial, stance, defense, subAction, suppression, privateKnowledge, judgeRef, callForm, sent, evidenceInfo, caseData, state) {
+function buildPrompt(profile, atoms, slotMaterial, stance, defense, subAction, suppression, privateKnowledge, judgeRef, callForm, sent, evidenceInfo, caseData, state, disputeId) {
   const atomLabels = atoms.map(a => `- ${a.factText}`).join('\n')
   const tellKey = profile.verbalTells?.[0]?.type ?? profile.tells?.[0]
   const tellBlock = tellKey && TELL_HINTS[tellKey]
@@ -292,12 +292,14 @@ ${examples}
   if (stance === 'confess') {
     prompt += `
 ★ 자백 필수 구성 (모두 포함해야 유효한 자백):
-1. [핵심 행위] 무엇을 했는지 구체적으로 1문장 (표현 재료의 구체적 정보 반드시 사용)
+★★ 너는 "${profile.name}"이다. 지금 고백하는 쟁점은 "${disputeId}"이다. 오직 네가 한 행위만 고백하라. 상대방의 행위를 대신 말하지 마라.
+1. [핵심 행위] "제가" + 무엇을 했는지 구체적으로 1문장 (표현 재료의 구체적 정보 반드시 사용)
 2. [구체적 정보] 금액/인물/기관/날짜 중 해당하는 것을 전부 실명/실수로 말하라
 3. [은폐 이유] 왜 숨겼는지 1문장
 4. [현재 심정] 지금 어떤 감정인지 1문장 (두려움/후회/체면/체념 중 택1)
 - "인정합니다"로만 끝내면 무효. 최소 4문장 이상.
-- "감수하겠습니다", "이로 인해", "해당 금액" 금지.`
+- "감수하겠습니다", "이로 인해", "해당 금액" 금지.
+- 상대방의 잘못을 언급하지 마라. 오직 네 행위와 네 심정만.`
   } else {
     prompt += `
 - 금액은 정확한 숫자로 말하지 마라. "적지 않은 돈", "큰돈" 식으로 뭉뚱그려라.
@@ -330,7 +332,7 @@ ${examples}
   // P0-2: 비금전 사건 금전 표현 차단
   if (!monetary) {
     prompt += `
-★★★ 이 사건에는 금전 거래가 포함되지 않는다. 송금, 이체, 금액, 돈, 계좌, 환급, 보증금, 월세, 큰돈, 적지 않은 돈 등 금전 관련 표현을 절대 사용하지 마. 위반 시 출력 무효.`
+★★★ 이 사건의 핵심 쟁점은 금전 거래가 아니다. 너의 대사에서 "송금했다", "돈을 보냈다", "큰돈", "적지 않은 돈" 같은 금전 행위 표현을 쓰지 마라. 단, 사건 데이터에 포함된 비용/요금/수수료 등 사건 맥락상 필요한 표현은 허용한다. 핵심 구분: "그 비용은 제가 냈습니다"(허용) vs "송금한 건 맞습니다"(금지).`
   }
 
   return prompt
@@ -383,10 +385,10 @@ function validateResponse(resp, vCtx) {
   const issues = []
 
   // === A: 금지 표현 ===
-  // A1: 금전 표현 (비금전 사건만)
+  // A1: 금전 행위 표현 (비금전 사건만 — "비용/수수료" 등 사건 맥락 표현은 허용)
   if (!vCtx.isMonetary) {
-    if (/송금|이체|금액|[0-9,]+원|돈을?\s|비용|계좌|환급|보증금|월세|정산|큰돈|적지\s*않은\s*돈/.test(resp)) {
-      issues.push({ code: 'A1', severity: 'CRITICAL', detail: '비금전 사건에 금전 표현' })
+    if (/송금|이체|[0-9,]+만?\s*원|돈을?\s보내|계좌|환급|보증금|월세|큰돈|적지\s*않은\s*돈/.test(resp)) {
+      issues.push({ code: 'A1', severity: 'CRITICAL', detail: '비금전 사건에 금전 행위 표현' })
     }
   }
 
@@ -539,10 +541,11 @@ async function run(label, party, disputeId, state, subAction, judgeQ, evidenceIn
 
   const { stance, defense, sent } = getStance(state, 30)
 
-  // P1-1: atoms 없으면 fallback
+  // P1-1: atoms 없거나 빈약하면 fallback (시스템 거절 방지)
   const rawAtoms = policy?.claimAtoms || []
   const atoms = selectAtoms(rawAtoms, subAction)
-  if (atoms.length === 0 || rawAtoms.length === 0) {
+  const hasSlots = atoms.some(a => a.slots && Object.keys(a.slots).length > 0)
+  if (atoms.length === 0 || rawAtoms.length === 0 || (rawAtoms.length <= 1 && !hasSlots)) {
     const fallbackResponses = {
       deny: '그 부분은 제가 지금 바로 말씀드리기 어렵습니다.',
       hedge: '여러 사정이 있었습니다. 다만 지금은 정리가 필요합니다.',
@@ -563,7 +566,7 @@ async function run(label, party, disputeId, state, subAction, judgeQ, evidenceIn
   const judgeRef = profile.callTerms?.toJudge ?? '상대방'
   const callForm = profile.callTerms?.toPartner ?? '상대방'
 
-  const sys = buildPrompt(profile, atoms, slotMaterial, stance, defense, subAction, policy.suppressions ?? [], policy.privateKnowledge ?? [], judgeRef, callForm, sent, evidenceInfo, caseData, state)
+  const sys = buildPrompt(profile, atoms, slotMaterial, stance, defense, subAction, policy.suppressions ?? [], policy.privateKnowledge ?? [], judgeRef, callForm, sent, evidenceInfo, caseData, state, disputeId)
   const usr = `재판관 질문: ${judgeQ}\n${sent}문장으로 연기하라.\n★ 이전 턴과 다른 표현으로. "사전 상의"/"협의" 금지.\n출력: JSON { "npcResponse": "...", "behaviorHint": "..." }`
 
   try {

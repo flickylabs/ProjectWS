@@ -45,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "한지석 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "공동 계좌에서 적지 않은 돈을 송금한 건 맞습니다. 그 부분은 제가 미리 알리지 못한 잘못이 있었습니다.",
-      "behaviorHint": "시계를 흘깃 보며 약간의 긴장감을 드러낸다.",
+      "npcResponse": "네, 송금한 건 맞습니다. 그날 집안의 급한 일이 있어 먼저 움직였고, 설명이 늦어진 건 저의 잘못입니다.",
+      "behaviorHint": "약간 긴장된 표정으로 고개를 약간 숙이며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -61,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "한지석 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "그 부분은 예상치 못한 상황이 생겨서, 집안 문제로 먼저 움직일 수밖에 없었습니다. 미리 말하지 못한 건 제 잘못이지만, 그 금액은 다른 용도로 쓰였습니다.",
-      "behaviorHint": "고개를 약간 숙이고 시선을 피하며 손을 만지작거린다.",
+      "npcResponse": "그 금액에 대해 먼저 얘기하지 못한 건 제 잘못이었습니다. 갑작스럽게 집안에 일이 생겨서, 따로 말씀드릴 시간이 없었습니다.",
+      "behaviorHint": "약간의 안타까움과 미안함을 표현하며 고개를 떨군다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -77,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "한지석 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 그날은 조금 겁이 났습니다. 큰돈을 말하지 않고 움직이는 게 잘못이라는 걸 알면서도, 순간 판단이 흐려졌던 것 같습니다.",
-      "behaviorHint": "어려움을 느끼는 듯 시선이 땅을 향하고 있음",
+      "npcResponse": "솔직히, 무척 불안했습니다. 큰돈을 제 결정으로 움직인 게 부담스러웠습니다.",
+      "behaviorHint": "고개를 약간 숙이며 부담스러운 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -93,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "오세린 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 새벽에 확인했습니다. 그러나 제 남편의 송금과 그 대화가 제 불안을 촉발한 것도 사실입니다.",
-      "behaviorHint": "단호한 표정으로 짧게 대답",
+      "npcResponse": "네, 그 새벽에 제 남편의 휴대폰을 열람했습니다. 다만, 그 메시지가 저에게 상당한 불안을 주었습니다.",
+      "behaviorHint": "휴대폰을 손에 쥐고 있는 듯한 제스처를 취하며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -109,8 +109,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "한지석 씨, 이 은행 이체 내역서를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 이체 내역서는 인정합니다. 하지만 수취인 이름만으로 다른 의미를 추측하는 것은 좀 성급합니다.",
-      "behaviorHint": "조심스럽게 고개를 끄덕이며 말을 덧붙인다.",
+      "npcResponse": "9월 20일에 공동계좌에서 꽤 큰돈이 움직인 건 맞습니다. 다만, 그날 서둘러 해결할 일이 있었던 것뿐입니다.",
+      "behaviorHint": "시각을 강조하며 천천히 말을 꺼낸다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -125,8 +125,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "오세린 씨, 이 예약 확인 문서를 보시고 설명해 주십시오.",
-      "npcResponse": "그 문서는 맞습니다. 하지만 신청인 이름대로 모든 걸 단정 짓기엔 이릅니다.",
-      "behaviorHint": "문서를 손으로 톡톡 두드리며 방어적 태도를 보인다.",
+      "npcResponse": "네, 그 문서는 제 남편이 신청한 게 맞습니다. 그렇다고 그 금액만 보고 더 큰 의도를 단정할 수는 없습니다.",
+      "behaviorHint": "증거를 보며 침착하게 설명한다",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -141,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "한지석 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "그날 송금한 건 맞습니다. 하지만 그 부분에 대해선 순서가 있어서, 왜 그랬는지 말씀드리기 어렵습니다.",
-      "behaviorHint": "손끝으로 책상 위를 톡톡 치며 시선을 옆으로 돌린다.",
+      "npcResponse": "그날 공동계좌에서 적지 않은 돈이 빠져나간 건 맞습니다. 설명을 드리지 않은 건 제 잘못이지만, 그 금액의 성격은 다르다는 점을 알아주셨으면 합니다.",
+      "behaviorHint": "말할 때 손을 천천히 움직이며 조심스럽게 표현한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -157,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "한지석 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "그 선택은 집안 어른의 급한 사정 때문이었습니다. 제 아내와 상의하기 전에 움직인 건 제 잘못입니다.",
-      "behaviorHint": "조심스럽게 말을 시작하며, 상대의 눈을 살짝 피하며 고개를 끄덕인다.",
+      "npcResponse": "집안에 급한 일이 생겨 어쩔 수 없이 움직일 수밖에 없었습니다. 그 부분은 제 아내에게 먼저 알리지 못한 점, 분명히 제 잘못입니다.",
+      "behaviorHint": "표정이 약간 위축되며 사과하는 제스처를 보인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -173,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "오세린 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "그 새벽에 제 남편의 휴대폰을 확인한 건 사실입니다. 행동은 잘못일 수도 있지만, 그때는 원인이 있었습니다.",
-      "behaviorHint": "약간의 긴장감과 단호함을 유지하며 대답한다",
+      "npcResponse": "네, 그 새벽에 제 남편의 휴대폰을 확인했습니다. 잘못일 수 있지만, 그때는 제 감정이 옳다고 생각했습니다.",
+      "behaviorHint": "잠시 멈추고 단호하게 시선을 유지하며 말한다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -189,16 +189,10 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "오세린 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 마음속 의심이 걷잡을 수 없이 커졌던 점이 가장 어려웠습니다. 제 남편의 행동과 말이 불안함을 자극했어요.",
-      "behaviorHint": "약간 숨을 돌리며 허공을 바라본다, 감정을 진정시키려는 듯이.",
+      "npcResponse": "솔직히, 그 메시지 하나하나가 불안의 씨앗이었습니다. 그 확인을 통해서만 안정을 찾을 수 있을 것 같았습니다.",
+      "behaviorHint": "귀에 손을 올리며 집중하고 있다는 신호를 보낸다.",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "C4",
-          "severity": "FAIL",
-          "detail": "해요체 잔존"
-        }
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -211,8 +205,8 @@
       "action": "evidence_present",
       "stance": "partial",
       "judgeQuestion": "한지석 씨, 이 메신저 대화 캡처를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 캡처본은 사실입니다. 다만, 그 부분은 업무상 필요로 인해 다른 목적으로 사용된 메시지입니다.",
-      "behaviorHint": "조심스럽게 휴대폰을 만지작거리며 시선을 피한다.",
+      "npcResponse": "메신저 대화는 맞습니다. 다만 그 문장은 가족 어른과의 급한 약속에 대한 것이었고, 상황 설명을 미리 못 드린 건 제 잘못입니다.",
+      "behaviorHint": "살짝 고개를 숙이며 사과의 제스처를 취한다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -227,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "한지석 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "네, 그날 적지 않은 돈을 송금한 건 사실입니다. 다만, 제 아내가 이런 식으로 제 폰을 열어본 것부터가 문제입니다.",
-      "behaviorHint": "살짝 긴장된 표정으로 말하며 멈칫거린다.",
+      "npcResponse": "네, 그날 적지 않은 돈이 송금된 건 맞습니다. 다만, 제 아내가 폰을 몰래 열어본 건 그대로 놔둘 수 없는 문제입니다.",
+      "behaviorHint": "침착하지만 단호하게, 손으로 시계 시침을 돌리는 듯한 시각적 이미지를 만들어 상대의 침입을 강조한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -243,8 +237,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "한지석 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "집안에 급한 일이 생겨서 그랬습니다. 미리 알리지 못한 건 제 잘못이지만, 상황이 너무 급했습니다.",
-      "behaviorHint": "약간 방어적인 태도로 손을 살짝 흔듭니다",
+      "npcResponse": "집안에 급한 일이 생겨 어쩔 수 없었습니다. 구체적으로는 장모님 때문이었습니다.",
+      "behaviorHint": "손을 앞에 모아 조심스럽게 몸을 살짝 구부린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -259,8 +253,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "오세린 씨, 다시 정리해 주십시오.",
-      "npcResponse": "새벽에 제 남편의 휴대폰을 확인한 건 맞습니다. 다만, 그 큰돈이 왜 제게 책임으로 돌아오는지 이해가 안 되네요.",
-      "behaviorHint": "비판적으로 상대를 바라보며 약간의 피로를 드러낸다",
+      "npcResponse": "네, 그 새벽에 제 남편 휴대폰을 확인한 건 맞습니다. 그런데 왜 저만 문제 삼습니까?",
+      "behaviorHint": "단호하게 주장을 펼치며 상대의 책임을 강조한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -297,8 +291,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "한지석 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 그때는 정말 불안했습니다. 무슨 일이 생길지 두려워서 제 아내에게 말하지 못했습니다.",
-      "behaviorHint": "시선을 살짝 피하며 손을 주머니에 넣고 가만히 서 있는다.",
+      "npcResponse": "솔직히 그때는 무서웠습니다. 가족 쪽 급한 일이 있어 제 아내에게 미리 말하지 못해 죄송합니다.",
+      "behaviorHint": "고개를 약간 숙이며 감정을 숨기지 않고 드러냄",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -313,8 +307,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "한지석 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "280만원을 제 아내의 동의를 받지 않고 공동계좌에서 송금했습니다. 그 돈은 장모님 추석 연휴 간병 예약금이었고, 재가돌봄센터 상담팀장 최민정에게 보낸 것입니다. 제가 미리 말하지 못한 건 처가 쪽 일로 무능해 보일까 두려웠기 때문입니다. 지금은 모든 걸 인정하고 후회를 느끼고 있습니다.",
-      "behaviorHint": "상대의 반응을 조심스럽게 살피며 말한다.",
+      "npcResponse": "제가 9월 20일에 공동계좌에서 2,800,000원을 송금했습니다. 그 돈은 재가돌봄센터 상담팀장 최민정에게 장모님 추석 연휴 간병 예약금으로 보낸 것입니다. 미리 말하지 못한 건 처가 지원에서 무능해 보일까 두려웠기 때문입니다. 지금은 솔직히 후회하고 있습니다.",
+      "behaviorHint": "말이 끊기는 순간마다 시계를 흘깃거리며 숫자에 집중하려는 듯한 자세",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,8 +323,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "오세린 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 그때는 바보 같은 아내가 될까 두려웠습니다. 그래서 제 남편의 휴대폰을 새벽에 열람했고, 그 캡처 하나로 결론을 서둘렀습니다. 잘못된 판단이었다는 점, 인정합니다. 지금은 그때의 감정이 얼마나 무모했는지 후회하고 있습니다.",
-      "behaviorHint": "감정이 드러난 표정. 사과의 기색.",
+      "npcResponse": "솔직히, 당시엔 제가 바보 같은 아내가 될까 두려웠습니다. 그래서 남편의 잠든 사이 폰을 열고, 그 캡처를 다른 사람에게 보내 물어봤죠. 제가 그 잘린 캡처에 기대어 서둘러 결론을 내렸습니다. 지금은 제가 너무 성급했다고 후회하고 있습니다.",
+      "behaviorHint": "작게 고개를 끄덕이며 인정하는 표정을 짓는다",
       "evidenceId": null,
       "issues": [
         {
@@ -351,8 +345,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "한지석 씨, 해당 금액 사전 상의 약속 위반에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "적지 않은 돈이 움직인 건 사실입니다. 하지만 그 약속이 어떻게 운용되는지는 두 사람 모두 같은 선상에 서야 제대로 말할 수 있습니다.",
-      "behaviorHint": "살짝 고개를 갸웃거리며 약간 긴장된 표정을 짓는다.",
+      "npcResponse": "그 약속을 지키지 못한 건 맞습니다. 그렇지만 그 부분은 서로 먼저 넘은 적이 있는 상황이라, 쉽게 말하기 어렵습니다.",
+      "behaviorHint": "적당히 곤란한 표정으로 시선을 피하며 답한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -367,19 +361,19 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "오세린 씨, 해당 금액 사전 상의 약속 위반에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 기준을 깬 건 맞습니다. 하지만 제 송금은 그 방법과 달랐습니다.",
-      "behaviorHint": "약간 긴장된 표정으로 상대방을 응시하다가 고개를 살짝 돌리며 말한다.",
+      "npcResponse": "아닙니다. 그건 다른 상황입니다. 그 약속은 따로 기준이 있었습니다.",
+      "behaviorHint": "단정적으로 말하며 상대방의 시선을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T16:05:18.614Z",
-  "finishedAt": "2026-04-05T16:06:38.970Z",
+  "startedAt": "2026-04-05T20:12:16.067Z",
+  "finishedAt": "2026-04-05T20:16:05.729Z",
   "summary": {
     "total": 20,
-    "passed": 17,
-    "warned": 3,
+    "passed": 18,
+    "warned": 2,
     "errors": 0,
     "skipped": 0
   }

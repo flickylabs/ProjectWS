@@ -45,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "조인호 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 부분은 제가 했습니다. 하지만 최종 결과물을 다룬 부분은 논의 상황이 다릅니다.",
-      "behaviorHint": "차분한 얼굴로 상대방을 한 번 쳐다본다.",
+      "npcResponse": "기준 금액 이상 지원사업에 대해 공동 승인하기로 했던 합의를 지키지 않은 건 맞습니다. 하지만 초안에 있던 제 역할이 최종본에서 빠진 흐름도 감안해야 합니다.",
+      "behaviorHint": "자신 있는 자세를 유지하며 상대방을 쳐다보지 않고 재판관을 향해 단호하게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -61,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "조인호 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "초기 초안에 제가 제품 제작과 데모 문장을 넣었지만 최종본에선 빠졌습니다. 상황이 급박해서 빠르게 결정할 수밖에 없었습니다.",
-      "behaviorHint": "조금 당황한 듯 짧게 숨을 내쉰다.",
+      "npcResponse": "초기 초안에는 제 역할이 포함됐지만, 최종본에서는 빠졌습니다. 그 서면 합의 규정을 지키지 않았던 건 맞습니다.",
+      "behaviorHint": "살짝 고개를 숙이며 시선을 피한다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -77,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "조인호 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 말하자면, 그때는 굉장히 불안했습니다. 제가 어떤 말을 하더라도 상황이 더 복잡해질까 두려웠습니다.",
-      "behaviorHint": "고개를 약간 숙이고 잠시 침묵하다가 조용히 말을 꺼낸다.",
+      "npcResponse": "솔직히, 그때는 굉장히 불안했습니다. 잘못 말하면 일이 더 꼬일 것 같은 느낌이었죠.",
+      "behaviorHint": "잠시 멈춰서 생각하는 듯한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -93,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "손다예 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 원본 메일 전체를 봐야 맥락이 이해됩니다.",
-      "behaviorHint": "고개를 살짝 숙이며 약간의 긴장감을 보입니다.",
+      "npcResponse": "네, 제가 그 지시를 내린 건 맞습니다. 다만, 모든 문맥을 함께 고려할 필요가 있습니다.",
+      "behaviorHint": "약간 긴장된 표정으로 고개를 숙였다가 다시 든다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -109,8 +109,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "조인호 씨, 이 보도자료 초안과 인센티브 승인안을 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료를 보면 오히려 제가 기여한 부분이 초안에서 사라졌다는 흐름을 알 수 있습니다. 그리고 초기 합의에 따라 공동으로 승인했어야 할 문서들이 다예 씨 중심으로 작성된 건 확실히 문제입니다.",
-      "behaviorHint": "살짝 미소를 보이며 자신감 있는 자세",
+      "npcResponse": "그 자료는 보도자료 초안과 인센티브 승인안이 교부 직후에 준비된 것임을 보여줍니다. 그렇다고 해서 그 초안이 최종 버전으로 남았다는 것은 아닙니다.",
+      "behaviorHint": "조인호는 서류를 훑어보면서 어깨를 한번 으쓱한다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -125,8 +125,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "손다예 씨, 이 신청서 버전 로그와 수정 코멘트를 보시고 설명해 주십시오.",
-      "npcResponse": "그 로그가 맞습니다. 하지만 그걸로 제 동업자의 역할이나 기여를 완전히 평가할 수는 없습니다.",
-      "behaviorHint": "조금 당황한 표정을 지으며 침착하게 답한다",
+      "npcResponse": "그 로그가 정확한 건 인정합니다. 하지만, 시장검증과 협업 설계 강점도 원본 평가 메일에 함께 담겨 있다는 점을 고려해 주십시오.",
+      "behaviorHint": "약간 당황한 듯한 목소리로 말하며 시선을 잠시 피한다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -141,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "조인호 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "아닙니다. 그건 제 동업자가 대외 홍보와 성과급 문서를 중심으로 재배열한 건데, 제가 인정한 부분도 있습니다.",
-      "behaviorHint": "약간 긴장한 표정으로 고개를 끄덕인다.",
+      "npcResponse": "네, 재배열된 문서에 제 동업자의 이름이 중심에 있었습니다. 거기에 대응하려고 편집 캡처를 유통한 건 인정합니다.",
+      "behaviorHint": "약간의 당황과 동시에 단호한 태도를 유지하며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -157,16 +157,10 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "조인호 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "공동 승인 원칙이 있었지만, 제 동업자가 대외 홍보와 성과급 문서를 재배열하는 상황이었습니다. 그것이 문제였지만, 저도 이후에 편집 캡처로 대응할 수밖에 없었습니다.",
-      "behaviorHint": "약간의 방어적 태도로 고개를 살짝 들며 설명",
+      "npcResponse": "손다예 대표와의 합의가 있었지만, 그 문서가 다예씨 중심으로 변경된 건 저도 예상치 못했습니다. 저도 이후 바로 편집 관련 자료로 대응할 수밖에 없었습니다.",
+      "behaviorHint": "약간의 당혹감을 드러내며 고개를 끄덕인다.",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "D2",
-          "severity": "WARN",
-          "detail": "2턴 연속: \"제 동업자가 대외\""
-        }
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -179,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "손다예 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 제가 그날 인호씨의 메일에 캡처를 편집해 답장한 건 맞습니다. 다만 그 이전에 제가 한 단독 공로 주장이 문제를 키웠다는 점은 인정합니다.",
-      "behaviorHint": "머리를 가볍게 숙여 사과의 제스처를 취한다",
+      "npcResponse": "조인호 대표의 편집은 문제가 있었습니다. 하지만 이전에 저도 단독 공로를 강조했던 점이 갈등을 키웠던 것 같습니다.",
+      "behaviorHint": "조금 더 긴장된 표정을 짓는다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -195,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "손다예 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그때는 너무 불안했습니다. 제가 뭘 말하면 일이 더 꼬일 것 같아서 침묵할 수밖에 없었습니다.",
-      "behaviorHint": "고개를 서서히 숙이며 손을 무릎 위에 얹는다.",
+      "npcResponse": "솔직히, 매일 다른 문제에 대응하면서 제 역할을 제대로 수행하지 못할까봐 두려웠습니다. 인호씨와의 갈등은 제 통제 밖으로 넘어가는 것 같았고, 정말 막막했습니다.",
+      "behaviorHint": "손을 가슴에 얹고 길게 한숨을 쉰다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -211,8 +205,8 @@
       "action": "evidence_present",
       "stance": "partial",
       "judgeQuestion": "조인호 씨, 이 평가피드백 크롭 캡처를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "캡처한 내용에는 기술성 부분만 강조됐습니다. 제가 그 부분을 선택한 건, 기술적인 기여를 부각하려는 의도에서였습니다.",
-      "behaviorHint": "자신감 있고 당당한 태도로, 손다예 대표를 겨냥하는 듯한 눈빛을 보여준다.",
+      "npcResponse": "캡처가 제 손에서 나온 건 맞습니다. 하지만 이걸 보면 오히려 기술성 부분이 가장 중요한 포인트 아닙니까.",
+      "behaviorHint": "평가피드백 캡처를 내려다보며 자신감 있게 말한다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -227,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "조인호 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 그건 제 동업자가 외부 얼굴을 선점하려 했던 경위 때문입니다. 공동 승인 원칙을 따르지 않았던 책임이 분명히 있습니다.",
-      "behaviorHint": "단호하게 손다예의 잘못을 지적하며 상대의 행동을 설명한다.",
+      "npcResponse": "그 문서는 사실입니다. 하지만 제 동업자가 어떤 의도로 배치했는지 이해가 안 가는 부분이 있습니다.",
+      "behaviorHint": "손가락으로 책상을 톡톡 두드리며 가만히 응시한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -243,16 +237,10 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "조인호 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "제 동업자가 대외 홍보 문서를 독점적으로 재배열했기 때문입니다. 그에 대한 대응으로 공동 승인 원칙을 강조할 수밖에 없었습니다.",
-      "behaviorHint": "상대방의 잘못을 지적하며 고개를 약간 숙이고 압박을 주는 모습",
+      "npcResponse": "홍보 국면에서 제 동업자가 외부에서 중심 역할을 하려는 걸 보고, 같이 결정한 원칙에 어긋난다고 생각했습니다. 그래서 더 이상 둘러볼 수 없어 움직일 수밖에 없었습니다.",
+      "behaviorHint": "조금 흥분한 듯, 강하게 어필하려는 몸짓",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "D2",
-          "severity": "WARN",
-          "detail": "2턴 연속: \"공동 승인 원칙을\""
-        }
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -265,8 +253,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "손다예 씨, 다시 정리해 주십시오.",
-      "npcResponse": "아닙니다. 그건 제 동업자가 먼저 시작한 겁니다. 상황이 아무리 복잡해도, 저는 미리 말하지 못한 부분만 책임질 수 있습니다.",
-      "behaviorHint": "약간 긴장하며 손을 모으고, 단호하게 말한다.",
+      "npcResponse": "아닙니다. 그건 제 동업자가 캡처를 편집해 반격 수단으로 쓴 겁니다. 네, 제가 대외 홍보를 많이 했던 건 맞습니다.",
+      "behaviorHint": "약간의 긴장 속에서 손을 꽉 쥐고 말을 이어간다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -281,8 +269,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "손다예 씨, 지원금은 상대 한 명의 순수 성과였는가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 지원사업은 기술성과 협업 설계를 모두 고려했습니다.",
-      "behaviorHint": "잠시 머뭇거리며 답변하며 시선을 피함",
+      "npcResponse": "아닙니다. 그건 기술성과와 협업 설계가 함께 작용한 결과였습니다.",
+      "behaviorHint": "고개를 살짝 숙이며 억울한 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -297,8 +285,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "조인호 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 말해서, 많이 두려웠습니다. 그 순간 제 입을 열면 상황이 더 악화될까 걱정되었습니다.",
-      "behaviorHint": "조심스럽게 주변을 살피며 말한다.",
+      "npcResponse": "솔직히, 저도 많이 불안했습니다. 기술 담당으로만 축소되거나, 엉뚱한 책임을 뒤집어쓸까봐 두려웠거든요.",
+      "behaviorHint": "고개를 약간 숙이며 진지한 표정으로 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -313,8 +301,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "조인호 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "3천만원 이상 지원사업에 대한 KPI, 확인서, 발표문을 공동 승인하기로 한 서면 합의를 어겼습니다. 사실 제 동업자가 공로를 독식했을 때, 저 역시 압박을 느껴 대응했습니다. 그 결과 보도자료 초안과 발표문 편집 캡처를 유통한 겁니다. 지금은 그때의 판단을 후회하고 있습니다.",
-      "behaviorHint": "약간의 긴장감과 후회를 드러내며 진지한 표정으로 이야기한다.",
+      "npcResponse": "제가 보도자료 초안을 단독으로 승인한 건 인정합니다. 3천만원 이상 지원사업은 원래 KPI와 발표문을 함께 검토하기로 했지만, 그 약속을 어겼습니다. 그때는 손다예 씨의 공로 독식을 막으려 했고, 그게 잘못된 대응으로 이어졌습니다. 지금은 제 행동에 대해 깊이 후회하고 있습니다.",
+      "behaviorHint": "고개를 숙이고 진지한 태도로 반성하는 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,8 +317,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "손다예 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 그때 제 동업자가 인호씨의 편집에 대해 문제를 제기했을 때, 저도 당황했습니다. 원본 평가 메일에서 협업 설계와 사업화 역량 칭찬이 있었던 걸 알고 있었지만, 저의 단독 공로 홍보가 인호씨의 반격을 부추겼다는 점은 인정합니다. 그 당시에는 제가 더 나서면 상황이 악화될까봐 말을 아꼈습니다. 지금은 그때의 판단이 후회스럽습니다.",
-      "behaviorHint": "고개를 숙이며 조용히 한숨을 쉰다.",
+      "npcResponse": "솔직히 말씀드리겠습니다. 제가 조인호 씨와의 협력 성과를 제 단독 공로로 홍보한 점이 있습니다. 그때는 평가위원 피드백과 원본 메일의 칭찬에 너무 고무되어 있었고, 인호 씨의 반발을 불러올지 몰랐습니다. 지금은 그때의 행동이 분쟁을 키웠다는 점을 인정하고 후회하고 있습니다.",
+      "behaviorHint": "고개를 살짝 숙이며 진심 어린 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -345,8 +333,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "조인호 씨, 지사후점검 후보 지정에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 후보로 지목된 건 맞습니다. 그 과정에 어떤 해석이 개입됐는지는 상황에 따라 다릅니다.",
-      "behaviorHint": "단호하고 약간의 긴장감이 느껴지는 표정으로 눈을 살짝 좁힌다.",
+      "npcResponse": "아닙니다. 지사후점검 후보 지정은 제 동업자가 진행했습니다. 그 과정에서 미리 말하지 못한 부분이 있었던 것 같습니다.",
+      "behaviorHint": "침착하게 재판관을 쳐다본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -361,19 +349,19 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "손다예 씨, 지사후점검 후보 지정에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 전혀 생각하지 않은 일이었습니다.",
-      "behaviorHint": "눈을 살짝 피하며 약간 긴장한 표정을 짓는다.",
+      "npcResponse": "아닙니다. 그 후보 지정은 제가 한 게 아닙니다.",
+      "behaviorHint": "차분하지만 약간 긴장된 표정으로 대답한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T17:26:13.814Z",
-  "finishedAt": "2026-04-05T17:27:34.722Z",
+  "startedAt": "2026-04-05T20:15:37.687Z",
+  "finishedAt": "2026-04-05T20:21:03.724Z",
   "summary": {
     "total": 20,
-    "passed": 18,
-    "warned": 2,
+    "passed": 20,
+    "warned": 0,
     "errors": 0,
     "skipped": 0
   }

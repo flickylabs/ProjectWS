@@ -45,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이세라 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "그날 돈이 송금된 건 맞습니다. 다만, 그게 어떻게 사용될지에 대해 바로 알리지 못한 제 잘못도 인정합니다.",
-      "behaviorHint": "단호하지만 약간의 죄책감을 느끼는 표정으로",
+      "npcResponse": "네, 송금한 것은 사실입니다. 다만 그 과정에서 미리 이야기하지 않고 진행했던 건 제 판단 오류입니다.",
+      "behaviorHint": "차갑고 단호하게 말하며 테이블 위에 놓인 송금 내역서를 가리킨다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -61,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "이세라 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "개인적으로 중요한 사정이 생겨 그렇게 할 수밖에 없었습니다. 설명을 제때 드리지 못한 점은 제 잘못입니다.",
-      "behaviorHint": "살짝 고개를 숙이며 다소 방어적인 자세를 취한다.",
+      "npcResponse": "준호가 집안에서 벌어지는 여러 상황에 대해 감정을 상하게 할까 봐 조심했습니다. 미리 알리지 않은 건 제 잘못이지만, 속도를 내야 했던 상황이었습니다.",
+      "behaviorHint": "차분하게 손을 모으고 재판관의 반응을 살피며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -77,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "이세라 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 말하면 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서.",
-      "behaviorHint": "침착하지만 약간 긴장한 표정으로, 손을 테이블 위에 가볍게 올려놓는다.",
+      "npcResponse": "솔직히, 두려웠습니다. 제가 말하면 더 큰일이 날 것 같아서.",
+      "behaviorHint": "고개를 살짝 숙이며 눈을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -93,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이준호 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 누나의 오해입니다. 서류가 있었다면 그런 오해는 덜했을 겁니다.",
-      "behaviorHint": "조심스럽게 고개를 살짝 흔들며 상대를 바라본다.",
+      "npcResponse": "네, 그날 정말 돈이 움직였습니다. 그런데 그 자료가 누나에게 미리 전달되지 않은 건 아쉽습니다.",
+      "behaviorHint": "상황을 설명하며 고개를 살짝 숙이며 아쉬움을 표하는 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -109,8 +109,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "이세라 씨, 이 대기 신청서와 입금 영수증을 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 영수증에 적힌 돈은 제 동생이 보낸 게 맞습니다. 그러나 그게 우리 가족 전체를 위한 결정이었다고는 할 수 없습니다.",
-      "behaviorHint": "서류를 가리키며 차분하게 설명한다.",
+      "npcResponse": "그 내역은 실제로 존재하는 기록입니다. 그러나 가족 단톡방에 통보해야 했다는 점은 함께 언급되어야 합니다.",
+      "behaviorHint": "증거를 차분히 바라보며 논리적으로 설명하는 태도.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -125,8 +125,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "이준호 씨, 이 가족 단톡과 통화 알림 로그를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는, 제가 송금 후 즉시 설명하지 못했던 점이 드러나긴 합니다. 다만, 급히 처리해야 할 상황이 있어서, 그때는 말할 여유가 없었습니다.",
-      "behaviorHint": "당황한 듯 손을 비비며 시선을 피한다.",
+      "npcResponse": "그 로그는 제가 설명을 늦춘 잘못이 있습니다. 서류를 먼저 보여드렸다면 오해가 덜했을 거라는 생각이 듭니다.",
+      "behaviorHint": "당황한 듯 잠시 시선을 피하는 모습",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -141,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "이세라 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "아닙니다. 그건 큰돈이 아니었습니다. 하지만 집안의 급한 상황 때문에 설명을 미뤘습니다.",
-      "behaviorHint": "손끝으로 시계를 가리키며 단호하게 말한다.",
+      "npcResponse": "아닙니다. 그건 제가 미리 설명하지 않은 게 잘못입니다. 하지만 적지 않은 돈이 오간 것과 그 돈의 성격이 다릅니다.",
+      "behaviorHint": "손가락으로 책상 위를 두드리며 말을 이어갑니다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -157,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "이세라 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "당시에는 판단을 빨리 내려야 하는 상황이었습니다. 미리 알리지 못한 것은 제가 감정적으로 흥분했기 때문입니다.",
-      "behaviorHint": "조금 당황한 표정으로 말을 하다, 시선을 잠시 아래로 내린다.",
+      "npcResponse": "집안 사정이 갑작스럽게 생겨 그때 상황에 맞게 판단할 수밖에 없었습니다. 저도 그날 바로 말하지 못한 건 잘못이라고 인정합니다.",
+      "behaviorHint": "고개를 약간 숙이며 솔직함을 강조한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -173,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "이준호 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "그 부분은 제가 설명을 두 시간 뒤에 했습니다. 이로 인해 제 누나의 발언이 오해로 비춰졌던 점은 이해합니다.",
-      "behaviorHint": "고개를 살짝 숙이며 조심스럽게 말한다.",
+      "npcResponse": "네, 제 누나가 말씀하신 그날, 소문이 퍼지기 전에 제가 설명을 드릴 계획이었습니다. 다만, 공개적인 비난과는 성격이 다른 요청으로 보았습니다.",
+      "behaviorHint": "조심스럽게 손을 가볍게 앞으로 모으며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -189,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "이준호 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그 순간에는 제 누나 스스로 이것을 발견했을 때의 충격이 가장 두려웠습니다. 제가 직접 설명하면 오히려 상황이 더 나빠질까 봐 망설였습니다.",
-      "behaviorHint": "눈을 잠시 감고 고개를 흔들며 당시의 두려움을 상기한다.",
+      "npcResponse": "솔직히 그때는 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서요.",
+      "behaviorHint": "머뭇거리며 눈길을 피한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -205,8 +205,8 @@
       "action": "evidence_present",
       "stance": "partial",
       "judgeQuestion": "이세라 씨, 이 단체 대화와 통화 메모를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 단톡방 내용은 제가 쓴 것이 맞습니다. 하지만 이 상황에서 가장 중요했던 건 제 동생이 어머니를 맡긴 사실을 19시간 동안 누구에게도 알리지 않았다는 점입니다.",
-      "behaviorHint": "증거를 보고 논리적으로 지적하며 약간의 불만을 드러낸다.",
+      "npcResponse": "그 자료는 맞습니다. 하지만 그 메시지를 보내기 전에 저에게 전해진 정보가 거의 없었습니다.",
+      "behaviorHint": "냉정하게 단톡방과 메모를 읽고 난 뒤 차분히 설명한다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -221,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "이세라 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 그건 제 동생이 먼저 공유 원칙을 어긴 날이었습니다. 단독으로 결정할 권리는 없었습니다.",
-      "behaviorHint": "재판관을 향해 차분하게 설명하며 상대방을 가리킨다.",
+      "npcResponse": "아닙니다. 그건 제 동생 준호가 같은 날 공유 원칙을 어긴 것입니다. 우리 사전 합의와 별개로 단독 결정권은 없었습니다.",
+      "behaviorHint": "차가운 표정으로 사실관계를 명확히 함.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -237,8 +237,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "이세라 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "그 회의 때 현장 상황이 너무 급박했습니다. 설명을 늦춘 건 제 잘못이지만, 상의 없이 움직일 수는 없었습니다.",
-      "behaviorHint": "손가락으로 회의 시간을 가리키며 차례를 강조하는 제스처",
+      "npcResponse": "그 회의 때 제가 설명을 늦춘 건 제 잘못입니다. 그러나 사전에 약속된 것과 다르게, 제 동생과 상의 없이 단독으로 결정할 수는 없었습니다.",
+      "behaviorHint": "서류를 정리하는 듯한 차분한 자세를 유지하며",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -253,16 +253,10 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "이준호 씨, 다시 정리해 주십시오.",
-      "npcResponse": "네, 그날 적지 않은 돈을 보낸 건 맞습니다. 다만, 그게 집안 사정 때문이었고 미리 말씀드리지 못한 건 제 잘못입니다.",
-      "behaviorHint": "작은 한숨을 쉰다",
+      "npcResponse": "네, 280만원은 다른 용도로 보냈습니다. 미리 알리지 못한 건 정말 제 잘못입니다.",
+      "behaviorHint": "주변을 살피며 조심스럽게 말한다.",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "A4",
-          "severity": "WARN",
-          "detail": "클리셰:미리말씀"
-        }
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -275,8 +269,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이준호 씨, 해당 금액은 영구입소 계약금인가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "그 금액은 평가입소용 자리 확보를 위한 것입니다. 영구입소 계약금과는 다른 성격입니다.",
-      "behaviorHint": "조심스럽게 손을 모으며 부드러운 어조로 설명한다.",
+      "npcResponse": "아닙니다. 그건 일단 평가입소용 자리 확보를 위한 절차였습니다.",
+      "behaviorHint": "조심스럽게 손끝을 맞대며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -291,8 +285,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "이세라 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "사실은 제가 또 나중에 알게 된 거라는 생각이 들면서, 그때는 배신감이 컸습니다. 제 동생이 뭔가 숨기고 있다는 느낌에, 무서웠습니다.",
-      "behaviorHint": "눈을 피하며 잠시 침묵한 후, 조심스럽게 말한다.",
+      "npcResponse": "솔직히 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서, 조용히 지켜보기로 했습니다.",
+      "behaviorHint": "눈을 피하고 어깨를 살짝 움츠린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -307,8 +301,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "이세라 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 그날 150만원 송금은 제가 했습니다. 제 동생의 급한 상황 때문에 가족 단톡에 알리지 못했습니다. 이 일이 오해를 불러일으켰다는 것을 깨달았고, 거기에 대해 미안합니다. 지금은 신뢰 회복이 중요하다는 걸 알고 있습니다.",
-      "behaviorHint": "차분하게 말을 시작하고 눈을 피하지 않고 재판관을 바라본다.",
+      "npcResponse": "네, 그날 가족 단톡에 바로 공유하지 않은 점은 인정합니다. 150만원을 급히 처리할 필요가 있었고, 그로 인해 설명이 19시간이나 늦었습니다. 공개 비난에 대해선 제 진심으로 사과드립니다. 지금은 신뢰 복구를 위해 최선을 다하고자 하는 심정입니다.",
+      "behaviorHint": "고개를 살짝 숙이며 진심 어린 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -323,8 +317,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "이준호 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "사실은, 그 당시 제 누나에게 말하지 못했던 이유가 두려움이었습니다. 280만원을 재가돌봄센터 상담팀장에게 보냈고, 장모님 추석 연휴 간병 예약금이었습니다. 누나가 그 소식을 들으면 더 큰 혼란이 생길 것 같았거든요. 지금은 솔직히 후회가 됩니다.",
-      "behaviorHint": "심각하고 솔직한 표정으로 고개를 약간 숙인다.",
+      "npcResponse": "솔직히, 그때는 압박감이 정말 컸습니다. 제가 회사 운영비에서 일부 금액을 썼습니다, 300만 원 정도였고, 가족 행사 때문이었습니다. 제가 말하면 더 큰 혼란이 생길까 걱정됐습니다. 지금은 그 선택을 후회합니다.",
+      "behaviorHint": "고개를 떨구며 약간의 후회를 드러내는 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -339,8 +333,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이세라 씨, 배신 프레임을 키운 공동 책임에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 제 동생과의 일은 패턴을 미리 인식했을 뿐입니다.",
-      "behaviorHint": "이세라는 팔짱을 끼고 차분하게 고개를 끄덕인다.",
+      "npcResponse": "그날 제 동생과의 소통이 원활하지 않았습니다. 서로 다른 상황을 먼저 해석한 건 아쉬운 점입니다.",
+      "behaviorHint": "차가운 시선으로 고개를 끄덕이며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -355,19 +349,19 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이준호 씨, 배신 프레임을 키운 공동 책임에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "그날 바로 알리지 않은 점은 인정합니다. 다만, 그날 친척들 사이에 처음으로 이야기가 나온 건 제 누나 쪽에서였습니다.",
-      "behaviorHint": "조심스럽게 손을 모으고 눈을 피하는 모습",
+      "npcResponse": "네, 당일에 바로 알리지 않은 건 맞습니다. 하지만, 가족 외의 친척들에게까지 빠르게 확산된 건 제 누나 쪽에서 더 크게 작용했다고 봅니다.",
+      "behaviorHint": "손을 가볍게 접으며 침착하게 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T16:33:05.467Z",
-  "finishedAt": "2026-04-05T16:34:28.542Z",
+  "startedAt": "2026-04-05T20:13:44.010Z",
+  "finishedAt": "2026-04-05T20:19:07.171Z",
   "summary": {
     "total": 20,
-    "passed": 19,
-    "warned": 1,
+    "passed": 20,
+    "warned": 0,
     "errors": 0,
     "skipped": 0
   }

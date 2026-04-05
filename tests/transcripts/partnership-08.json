@@ -45,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "배시원 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 오해입니다. 금액 이동은 있었지만, 목적이 달랐습니다.",
-      "behaviorHint": "차가운 표정으로 고개를 살짝 흔듭니다.",
+      "npcResponse": "네, 적지 않은 금액을 보류한 건 사실입니다. 다만 그 조치는 지아씨가 제시한 조건이 충족되지 않아서입니다.",
+      "behaviorHint": "차갑고 단호하게 말하며 재판관을 응시한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -61,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "배시원 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "그 결정은 기준 금액이 충족되지 않았기 때문입니다. 유지 기간 동안 조건이 맞지 않아 어쩔 수 없었습니다.",
-      "behaviorHint": "냉정한 표정으로 시선을 피하지 않는다.",
+      "npcResponse": "중요한 조건이 충족되지 않았기 때문입니다. 구체적으로 설명하지 못한 점은 제 실수입니다.",
+      "behaviorHint": "살짝 고개를 숙이며 진지한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -77,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "배시원 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 그때는 불안감이 있었습니다. 큰돈이 걸려 있는 상황에서 괜한 말을 하면 더 큰 문제가 생길 것 같았습니다.",
-      "behaviorHint": "눈을 피하며 살짝 한숨을 쉰다.",
+      "npcResponse": "솔직히, 그때는 모든 게 너무 빠르게 변하는 것 같아 두려웠습니다. 내가 무슨 말을 하면 더 큰 문제가 생길까봐 조심스러웠습니다.",
+      "behaviorHint": "눈을 잠시 감고 심호흡을 하며 차분하게 대답한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -93,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "윤지아 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 캡처만으로 모든 걸 알 수는 없습니다.",
-      "behaviorHint": "눈을 피하며 약간 안절부절 못하는 자세를 취한다.",
+      "npcResponse": "네, 그날 적지 않은 금액이 송금된 건 맞습니다. 다만, 그 캡처가 모든 상황을 설명하지는 않습니다.",
+      "behaviorHint": "약간 긴장된 듯한 표정으로 한숨을 쉬며 말을 이어갑니다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -109,8 +109,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "배시원 씨, 이 후보지 관련 메일과 문자를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 문서들은 제가 보낸 게 맞습니다. 다만, 2개월 동안 조건이 충족되지 않아 가계약금 보류는 불가피했습니다.",
-      "behaviorHint": "차분하게 손을 모으고 설명.",
+      "npcResponse": "그 자료는 제가 보낸 것이 맞습니다. 다만, 가계약 보류는 조건이 충족되지 않은 상황에서 내린 판단입니다.",
+      "behaviorHint": "침착하게 말하며 메일과 문자를 가리킨다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -125,8 +125,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "윤지아 씨, 이 확장회의 녹취록과 검토표를 보시고 설명해 주십시오.",
-      "npcResponse": "그 녹취록은 2호점에 대한 논의가 구체적으로 진행되던 시점의 기록입니다. 다만, 그걸로 준비가 다 된 것처럼 보는 건 맞지 않습니다.",
-      "behaviorHint": "살짝 당황한 듯 시선을 돌리며 말한다.",
+      "npcResponse": "그 녹취록에서 제가 2호점을 기정사실처럼 말한 건 맞습니다. 하지만 그 회의에서는 여름에 확장 가능성을 논의한 것일 뿐 실제로 확정된 건 아니었습니다.",
+      "behaviorHint": "녹취록을 피곤한 표정으로 바라봄",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -141,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "배시원 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 제가 보류를 결정한 건 맞습니다. 다만 기준 금액에 대한 검토가 필요했기 때문입니다.",
-      "behaviorHint": "차분하게 재판관을 응시하며, 두 손을 가볍게 모은다.",
+      "npcResponse": "네, 제가 보류를 먼저 결정했습니다. 다만, 큰돈이라 우선 저희 내부에서 조건을 다시 검토할 필요가 있었습니다.",
+      "behaviorHint": "고개를 약간 끄덕이며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -157,8 +157,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "배시원 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "그 메일을 통해 보류를 먼저 결정한 것은 사실입니다. 기준 금액을 맞춰야 했기 때문에 어쩔 수 없었습니다.",
-      "behaviorHint": "책상 위에서 손가락을 차분히 맞물림",
+      "npcResponse": "그 메일에서 명시된 유지 기간이 불확실했기 때문입니다. 제 동업자에게 충분히 공유하지 않은 건 제 실수였습니다.",
+      "behaviorHint": "살짝 한숨을 쉬며 머리를 만진다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -173,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "윤지아 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그 초안을 준비한 건 맞습니다. 다만 그 시기에 별도 준비는 가능한 경우의 일환으로 최소한의 구상이었습니다.",
-      "behaviorHint": "한숨을 쉬며 허리를 약간 구부린다.",
+      "npcResponse": "아닙니다. 그건 일부 구상에 불과했습니다. 그 시기에 미리 준비해둔 문서입니다.",
+      "behaviorHint": "약간 긴장된 표정으로 손을 모으고 있다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -189,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "윤지아 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "사실은, 그 시기에 너무 많은 압박을 받고 있었어요. 솔직히 제 동업자와의 신뢰가 무너질까봐 매일 불안했습니다.",
-      "behaviorHint": "눈을 감고 머리를 가볍게 흔들며 한숨을 쉰다.",
+      "npcResponse": "솔직히, 불안감이 컸습니다. 제가 뭔가를 말하면 상황이 더 악화될 것 같아서 참았습니다.",
+      "behaviorHint": "고개를 숙이며 손을 살짝 떨며",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -205,8 +205,8 @@
       "action": "evidence_present",
       "stance": "partial",
       "judgeQuestion": "배시원 씨, 이 크롭된 DM 캡처를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료는 제 동업자가 전 헤드강사에게 보낸 것이라는 점에서 맞습니다. 다만, 가계약 보류를 결정한 건 제가 먼저였고, 그 후에 설명이 늦어진 점은 인정합니다.",
-      "behaviorHint": "침착하게 캡처 화면을 보며 입장을 설명한다.",
+      "npcResponse": "그 DM 캡처는 맞습니다. 그러나 이걸로 우리 스튜디오의 공식 결정까지 단정 지을 순 없습니다.",
+      "behaviorHint": "침착하게 DM 캡처를 바라보며 손을 모으고 있다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -221,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "배시원 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "네, 개인적인 이유로 급히 결정을 내린 건 맞습니다. 다만 지아씨에게 미리 알리지 못한 점에 대해서는 제 책임입니다.",
-      "behaviorHint": "차분하게 고개를 끄덕이며 인정하는 듯한 태도를 보인다.",
+      "npcResponse": "아닙니다. 그건 제가 혼자 진행한 건 아닙니다. 지아씨의 의견을 청취하려 했으나 최종 조율 없이 상황이 급해서 처리한 것입니다.",
+      "behaviorHint": "침착하게 말하며 서류를 정리하는 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -237,16 +237,10 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "배시원 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "사실, 먼저 결정을 내린 이유는 해당 후보지가 시장에서 빠르게 매물로 나왔기 때문입니다. 미리 말씀드리지 못한 건 급박하게 처리할 수밖에 없던 상황이었습니다.",
-      "behaviorHint": "시계를 한번 확인하며 시간적인 압박을 강조한다.",
+      "npcResponse": "상당한 금액이 움직이는 일이었기 때문에, 정확한 시점에 처리할 필요가 있었습니다. 제 동업자와 상의 없이 진행한 건 급한 상황 때문이었습니다.",
+      "behaviorHint": "약간의 방어적 태도로 몸을 약간 뒤로 기대며 설명한다.",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "A4",
-          "severity": "WARN",
-          "detail": "클리셰:미리말씀"
-        }
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -259,8 +253,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "윤지아 씨, 다시 정리해 주십시오.",
-      "npcResponse": "네, 준비한 건 맞습니다. 다만 저희 동업자의 갑작스러운 결정에 버려질지도 모른다는 불안에서 시작한 일입니다.",
-      "behaviorHint": "억울한 눈빛과 떨리는 목소리로 말한다.",
+      "npcResponse": "네, 전 헤드강사와 비밀리에 준비를 진행했습니다. 다만 그 일을 시작한 건 버려질 것 같은 불안 때문이었다는 점, 이해 부탁드립니다.",
+      "behaviorHint": "억울한 표정과 함께 가벼운 한숨을 내쉰다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -275,8 +269,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "윤지아 씨, 지아는 일방적 약속 순수한 피해자였는가에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 제가 전부 듣지는 못했지만, 동업자가 먼저 나섰던 점은 있습니다.",
-      "behaviorHint": "약간 긴장된 표정으로 살짝 고개를 숙인다.",
+      "npcResponse": "아닙니다. 저도 나름대로 대응할 방법을 찾았던 것입니다.",
+      "behaviorHint": "억울한 표정으로 고개를 숙이며 살짝 떨리는 목소리",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -291,8 +285,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "배시원 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "그때는 정말 당황했습니다. 제가 말하면 지아씨와의 관계가 더 상처받을까 두려웠습니다.",
-      "behaviorHint": "고개를 약간 숙이며 솔직한 표정을 지어 보인다.",
+      "npcResponse": "솔직히, 그때는 모든 게 너무 빠르게 변해서 당황스러웠습니다. 제 동업자와의 신뢰를 깨뜨릴까 봐 두려웠습니다.",
+      "behaviorHint": "순간적으로 시선을 피하며 약간 주저하는 모습",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -307,8 +301,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "배시원 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 성수 2호점 후보지에 8천만원을 단독으로 보류했습니다. 그날 마감 기한을 놓치기 두려웠기 때문입니다. 미리 알리지 않아 제 동업자를 실망시킨 점은 후회합니다. 지금은 제 선택에 대한 책임을 다할 준비가 되어 있습니다.",
-      "behaviorHint": "고개를 숙이며 약간 긴장한 표정으로 말한다.",
+      "npcResponse": "네, 제가 성수 2호점 후보지에 8천만원을 사용했습니다. 다만, 5주년 시즌을 준비하며 지아씨에게 알리지 않았습니다. 미리 말하지 않은 건 제 의도였습니다. 이로 인해 현재 깊이 후회하고 있습니다.",
+      "behaviorHint": "고개를 숙이며 무겁게 한숨을 쉰다",
       "evidenceId": null,
       "issues": [
         {
@@ -329,8 +323,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "윤지아 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 말씀드리자면, 제 동업자 없이 별도 스튜디오 법인 초안을 준비하고 있었습니다. 그때 김나리와 함께 적극적으로 논의하고 있었어요. 5주년 시즌이 다가오면서 혼자서 선택할 수밖에 없었고, 말하지 못했습니다. 지금은 두려움과 후회가 교차합니다.",
-      "behaviorHint": "고개를 숙이며 손으로 이마를 문지른다.",
+      "npcResponse": "솔직히 그때는 무서웠습니다. 제가 김나리와 함께 별도 스튜디오 법인을 준비하면서 그 초안을 실제로 실행 단계에 놓았던 게 맞습니다. 5주년 시즌을 맞아 걱정이 많아 미리 말하지 못한 건 제 잘못입니다. 지금은 후회가 많이 됩니다.",
+      "behaviorHint": "눈을 피하며 솔직한 심정을 말한다.",
       "evidenceId": null,
       "issues": [
         {
@@ -351,8 +345,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "배시원 씨, 원래 합의된 확장 조건은 아직 자동 발동되지 않았다에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 아직 기준 금액과 유지 기간이 충족되지 않았습니다.",
-      "behaviorHint": "차분하게 눈을 마주치며 설명합니다.",
+      "npcResponse": "네, 자동 발동된 사실은 없습니다. 동업자와 명확한 기준을 설정하지 못한 점이 있었습니다.",
+      "behaviorHint": "서류를 차분히 정리하며, 시선을 피하지 않고 재판관을 응시",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -367,19 +361,19 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "윤지아 씨, 원래 합의된 확장 조건은 아직 자동 발동되지 않았다에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 시기에 후보지를 검토한 행동이 자동 발동의 신호로 해석될 수 있는 상황이었습니다.",
-      "behaviorHint": "팔짱을 끼고 고개를 살짝 돌린다.",
+      "npcResponse": "아닙니다. 그건 제 동업자가 후보지 검토를 시작한 시점이 자동 발동의 신호라고 여겨졌습니다.",
+      "behaviorHint": "고개를 조금 숙이며 조심스럽게 진술한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T17:24:49.496Z",
-  "finishedAt": "2026-04-05T17:26:08.803Z",
+  "startedAt": "2026-04-05T20:11:41.902Z",
+  "finishedAt": "2026-04-05T20:15:32.669Z",
   "summary": {
     "total": 20,
-    "passed": 17,
-    "warned": 3,
+    "passed": 18,
+    "warned": 2,
     "errors": 0,
     "skipped": 0
   }
