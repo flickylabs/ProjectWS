@@ -38,6 +38,7 @@ const emojiMap: Record<string, string> = {
   "📬": "1f4ec.png", "🔇": "1f507.png", "🔧": "1f527.png", "🔮": "1f52e.png",
   "🗂️": "1f5c2-fe0f.png", "🗡️": "1f5e1-fe0f.png", "🦅": "1f985.png", "🦉": "1f989.png",
   "🪙": "1fa99.png",
+  "🕳️": "1f573-fe0f.png", "🟡": "1f7e1.png", "⬜": "2b1c.png",
 }
 
 interface EmojiProps {
