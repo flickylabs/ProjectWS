@@ -85,6 +85,14 @@ function getLastKoreanChar(str) {
   return null;
 }
 
+// 일반 어휘 허용 목록 — anchorTruth에서 추출되더라도 오탐으로 간주
+const KEYWORD_ALLOWLIST = new Set([
+  '사진', '기록', '환급', '보수', '범위', '누수', '월세', '보증금',
+  '수리', '계약', '서류', '통화', '문자', '카드', '소음', '공사',
+  '증거', '자료', '내역', '일정', '상담', '연락', '약속', '비용',
+  '관리', '요청', '확인', '통보', '서명', '동의', '합의', '신고',
+]);
+
 function extractKeywords(anchorTruth) {
   // Extract person names (2-3 char Korean names), institution names, exact amounts
   const keywords = [];
@@ -97,7 +105,35 @@ function extractKeywords(anchorTruth) {
   // Specific institution names (3+ chars ending in 센터/원/소/사/국 etc)
   const instMatches = anchorTruth.match(/[가-힣]{2,}(?:센터|병원|사무소|은행|법원|회사|학원|기관)/g);
   if (instMatches) keywords.push(...instMatches);
-  return [...new Set(keywords)];
+  // Filter: 2글자 이하 일반 명사 제외 + 허용 목록 제외
+  const filtered = [...new Set(keywords)].filter(kw => {
+    if (KEYWORD_ALLOWLIST.has(kw)) return false;
+    // 2글자 이하이면서 금액/기관명이 아닌 일반 단어 제외
+    if (kw.length <= 2 && !/\d/.test(kw) && !/센터|병원|은행|법원|회사|학원|기관/.test(kw)) return false;
+    return true;
+  });
+  return filtered;
+}
+
+/**
+ * B3 Phase 1/2 검증용 — 핵심 결론 키워드만 추출
+ * (인물 실명 3글자+, 기관 정식명칭, 서비스명, 금액)
+ */
+function extractCoreKeywords(anchorTruth) {
+  const keywords = [];
+  // 3글자 이상 인물명
+  const nameMatches = anchorTruth.match(/[가-힣]{3}(?=이|가|은|는|의|에게|한테|와|과|도|를|을)/g);
+  if (nameMatches) keywords.push(...nameMatches);
+  // 금액
+  const amountMatches = anchorTruth.match(/\d[\d,]*만\s*원/g);
+  if (amountMatches) keywords.push(...amountMatches);
+  // 기관명 (3글자+ 접미)
+  const instMatches = anchorTruth.match(/[가-힣]{3,}(?:센터|병원|사무소|은행|법원|회사|학원|기관)/g);
+  if (instMatches) keywords.push(...instMatches);
+  // 서비스명 (재가돌봄, 간병 등 — 4글자+)
+  const serviceMatches = anchorTruth.match(/[가-힣]{4,}(?:서비스|프로그램|시스템)/g);
+  if (serviceMatches) keywords.push(...serviceMatches);
+  return [...new Set(keywords)].filter(kw => !KEYWORD_ALLOWLIST.has(kw));
 }
 
 function searchText(text, pattern) {
@@ -296,7 +332,8 @@ for (const caseId of CASE_IDS) {
     pass(caseId, `B2: surfaceDescription에 anchorTruth 키워드 미포함`);
   }
 
-  // B3. Phase 1/2 spoiler check
+  // B3. Phase 1/2 spoiler check — 핵심 결론 키워드만 검출 (오탐 방지)
+  const coreKeywords = extractCoreKeywords(anchorTruth);
   for (const [label, data] of [['Phase1', phase1], ['Phase2', phase2]]) {
     if (!data) {
       warn(caseId, `B3: ${label} 파일 없음 — 스킵`);
@@ -304,16 +341,16 @@ for (const caseId of CASE_IDS) {
     }
     const dialogues = data.dialogues || [];
     let found = false;
-    for (const kw of keywords) {
+    for (const kw of coreKeywords) {
       for (const dlg of dialogues) {
         if (dlg.text && dlg.text.includes(kw)) {
-          fail(caseId, `B3: ${label} 대사에 anchorTruth 키워드 "${kw}" 포함: "${dlg.text.substring(0, 50)}..."`);
+          fail(caseId, `B3: ${label} 대사에 anchorTruth 핵심 키워드 "${kw}" 포함: "${dlg.text.substring(0, 50)}..."`);
           found = true;
         }
       }
     }
-    if (!found && keywords.length > 0) {
-      pass(caseId, `B3: ${label} 대사에 anchorTruth 키워드 미포함`);
+    if (!found && coreKeywords.length > 0) {
+      pass(caseId, `B3: ${label} 대사에 anchorTruth 핵심 키워드 미포함`);
     }
   }
 
