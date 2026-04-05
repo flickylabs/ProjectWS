@@ -1,0 +1,391 @@
+{
+  "caseId": "neighbor-01",
+  "category": "neighbor",
+  "isMonetary": false,
+  "partyA": {
+    "name": "정한결",
+    "archetype": "confrontational",
+    "tell": "visual_stack"
+  },
+  "partyB": {
+    "name": "이주연",
+    "archetype": "avoidant",
+    "tell": "premature_apology"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "504호 현관 무단 촬영"
+    },
+    {
+      "id": "d-2",
+      "name": "복도 적치와 31시간 늦은 공지"
+    },
+    {
+      "id": "d-3",
+      "name": "누수 원인: 윗집인가 건물 하자인가"
+    },
+    {
+      "id": "d-4",
+      "name": "새벽 소음의 정체: 발망치 vs 기사 출입"
+    },
+    {
+      "id": "d-5",
+      "name": "선통보 약속 쌍방 위반"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "정한결 d-1 사실추궁",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "정한결 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그날 복도를 잠깐 확인한 건 맞습니다. 오래 찍은 건 아니었어요.",
+      "behaviorHint": "상대방을 잠시 쏘아보다가 재판관에게 냉정한 표정으로 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "정한결 d-1 동기탐색",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "정한결 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "가까운 데 카메라를 잠깐 세워 둔 확인 영상이었을 뿐입니다. 그때 다른 방법이 없다고 생각했기에 빨리 판단할 수밖에 없었습니다.",
+      "behaviorHint": "약간의 방어적 자세로, 손을 모으며 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "정한결 d-1 공감접근",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "정한결 씨, 당시 어떤 심정이셨습니까?",
+      "npcResponse": "그때는 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서.",
+      "behaviorHint": "잠시 눈을 내리깔며, 감정을 숨기려는 듯 표정이 굳어진다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "이주연 d-2 사실추궁",
+      "party": "b",
+      "partyName": "이주연",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "이주연 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그날 제가 물건을 잠시 밖에 둔 건 맞습니다. 다만, 복도를 막으려던 건 아니었고 물이 보여서 그렇게 한 겁니다.",
+      "behaviorHint": "조심스러워하면서도 조금은 긴장된 모습으로 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "정한결 e-1 증거제시",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "정한결 씨, 이 새벽 복도 촬영 영상 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 복도에서 새벽에 짧게 촬영한 건 맞습니다. 그런데, 그 영상은 전체 상황을 보여주지 않습니다.",
+      "behaviorHint": "약간 미소를 지으며 여유 있게 말한다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "이주연 e-2 증거제시",
+      "party": "b",
+      "partyName": "이주연",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "이주연 씨, 이 누수 점검 보고서를 보시고 설명해 주십시오.",
+      "npcResponse": "보고서에 나온 내용은 사실입니다. 그런데 그 부분은 저희 집과는 직접적인 관련이 없는 문제로 보입니다.",
+      "behaviorHint": "차분하게 자료를 읽으면서 설명한다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "정한결 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "정한결 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그 복도를 찍은 건 사실입니다. 다만 누수와 소음의 원인을 찾으려는 목적이었습니다.",
+      "behaviorHint": "약간 긴장된 표정이지만 자신 있게 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "정한결 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "정한결 씨, 왜 그런 선택을 하셨습니까?",
+      "npcResponse": "현관 쪽이 식별되게 찍힌 건 맞지만, 누수와 소음 원인을 확인하려던 목적이 먼저였습니다. 미리 말씀드리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "살짝 고개를 숙이며 인정하는 듯한 태도를 보인다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "이주연 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "이주연",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "이주연 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그 물건들을 둔 건 맞습니다. 하지만 그때 상황이 급해서, 바로 정리하지 못했습니다.",
+      "behaviorHint": "조심스럽게 고개를 끄덕이며 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "이주연 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "이주연",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "이주연 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히 그때는 너무 당황스러웠습니다. 그 물건들을 빨리 정리하지 못한 게 계속 마음에 걸렸습니다.",
+      "behaviorHint": "약간 눈을 내리깔고 작은 한숨을 쉰다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "정한결 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "정한결 씨, 이 공용복도 CCTV와 출입대장을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 복도에 제가 찍힌 건 맞습니다. 다만, 누수와 소음의 원인을 확인하려던 것이 우선이었습니다.",
+      "behaviorHint": "침착하게 손을 모아 설명",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "정한결 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "정한결 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "네, 그날 제가 본 건 복도에 놓인 제습기와 통이었습니다. 그 장면을 보고 원인을 확인할 수밖에 없다고 여겼습니다.",
+      "behaviorHint": "자신감 있게 설명하며 상대방의 주의를 끈다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "정한결 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "정한결 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
+      "npcResponse": "그 복도에서 제습기랑 통이 놓인 걸 보았습니다. 그 장면을 보고 원인을 확인할 수밖에 없다고 생각했습니다.",
+      "behaviorHint": "자신 있게 말을 이어가며 상대를 똑바로 바라본다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"장면을 보고 원인을\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "이주연 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "이주연",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "이주연 씨, 다시 정리해 주십시오.",
+      "npcResponse": "아닙니다. 그건 포장 작업과 기사 응대가 겹치는 바람에 문자가 늦었고, 그 사이 상황이 꼬여버렸습니다.",
+      "behaviorHint": "살짝 고개를 숙이며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "이주연 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "이주연",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "이주연 씨, 누수 원인: 윗집인가 건물 하자인가에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그 시기에 물건을 문 앞에 두긴 했습니다. 하지만 그게 우리 집 배수가 바로 아래층으로 샜다는 건 증명하지 못했습니다.",
+      "behaviorHint": "조심스러운 태도로 재판관을 응시하며, 손을 모아 가슴 앞에서 가볍게 쥔다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "정한결 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "정한결 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 그때는 무서웠습니다. 딸이 깨어나고 천장에서 물이 떨어지던 밤이라 안절부절못했습니다.",
+      "behaviorHint": "긴장된 표정으로 고개를 숙인다",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "정한결 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "정한결 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 7월 12일에 제가 이주연 씨 현관이 보이도록 휴대폰으로 두 차례 촬영했습니다. 그건 사생활 경계를 넘은 행동이었습니다. 삭제 요구를 받고도 바로 인정하지 못한 건 제 잘못입니다. 지금은 후회하고 있습니다.",
+      "behaviorHint": "진지한 표정으로 고개를 숙이며 사과한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "이주연 d-2 S5 고백",
+      "party": "b",
+      "partyName": "이주연",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "이주연 씨, 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 말씀드리면, 제가 제습기와 물받이 통, 젖은 발판을 이틀가량 복도에 두었습니다. 그리고 아래층 옆집 분께 안내를 드리는 것이 상당히 늦어졌습니다. 그때는 제가 알리면 더 큰 문제가 될 것 같아 두려웠습니다. 지금은 그때 왜 그렇게 판단했는지 후회하고 있습니다.",
+      "behaviorHint": "손가락을 꼬며 머뭇거림",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "정한결 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "정한결",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "정한결 씨, 선통보 약속 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 선통보 원칙을 완전히 지키진 않았습니다. 다만, 누수와 소음이 겹치는 바람에 바로 메시지를 보냈습니다.",
+      "behaviorHint": "약간의 긴장감을 보이며, 시선은 재판관에게 고정한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "이주연 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "이주연",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "이주연 씨, 선통보 약속 쌍방 위반에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 시점에 미리 말씀드리지 못한 부분은 저도 인지하고 있습니다. 다만 상황이 급박해서 그 원칙을 지키지 못했던 점, 이해 부탁드립니다.",
+      "behaviorHint": "미안한 표정으로 고개를 약간 숙이며",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A2",
+          "severity": "FAIL",
+          "detail": "번역체:인지"
+        },
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-05T22:10:57.444Z",
+  "finishedAt": "2026-04-05T22:12:16.273Z",
+  "summary": {
+    "total": 20,
+    "passed": 17,
+    "warned": 3,
+    "errors": 0,
+    "skipped": 0
+  }
+}
