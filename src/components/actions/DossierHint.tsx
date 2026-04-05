@@ -23,6 +23,10 @@ interface Props {
   hasDossierCards: boolean
   onAutoExecute: (cardId: string, questionId: string, target: PartyId) => void
   disabled: boolean
+  /** 사용 완료 마킹 후 리렌더 트리거용 버전 카운터 */
+  usageVersion?: number
+  /** 자동 시연 단계 (0=없음, 3=배너 하이라이트, 4=팝업 자동 열기) */
+  showcaseStep?: number
 }
 
 /** 이미 자동실행한 조합 추적 */
@@ -37,7 +41,7 @@ export function markDossierCombinationUsed(cardId: string, questionId: string) {
   usedCombinations.add(`${cardId}:${questionId}`)
 }
 
-export default function DossierHint({ target, caseKey, hasDossierCards, onAutoExecute, disabled }: Props) {
+export default function DossierHint({ target, caseKey, hasDossierCards, onAutoExecute, disabled, usageVersion = 0, showcaseStep = 0 }: Props) {
   const [popupOpen, setPopupOpen] = useState(false)
 
   // lie state 맵 구성
@@ -73,7 +77,12 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
       }
     }
     return null
-  }, [target, hasDossierCards, caseKey, lieStates])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [target, hasDossierCards, caseKey, lieStates, usageVersion])
+
+  // showcaseStep === 4 → 팝업 자동 열기
+  const shouldForcePopup = showcaseStep >= 4 && !disabled
+  const effectivePopupOpen = popupOpen || shouldForcePopup
 
   // 사용 가능한 카드+질문이 없으면 완전히 숨김
   if (!match || !target) return null
@@ -111,11 +120,13 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
         onClick={handleClick}
         disabled={disabled}
         className={`w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border transition-all ${
-          disabled
+          disabled && showcaseStep < 3
             ? 'border-gray-700/30 bg-gray-800/40 text-gray-600 cursor-not-allowed'
-            : popupOpen
+            : effectivePopupOpen
               ? 'border-amber-500/60 bg-amber-950/40 text-amber-400 shadow-lg shadow-amber-500/15'
-              : 'border-amber-500/40 bg-amber-950/30 text-amber-400 hover:border-amber-500/60 hover:shadow-lg hover:shadow-amber-500/10 animate-pulse'
+              : showcaseStep >= 3
+                ? 'border-amber-400 bg-amber-950/40 text-amber-400 ring-2 ring-amber-400 animate-pulse shadow-lg shadow-amber-500/20'
+                : 'border-amber-500/40 bg-amber-950/30 text-amber-400 hover:border-amber-500/60 hover:shadow-lg hover:shadow-amber-500/10 animate-pulse'
         }`}
       >
         <Emoji char="❗" size={14} />
@@ -123,7 +134,7 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
       </button>
 
       {/* 팝업 (배너 위로 표시) */}
-      {popupOpen && !disabled && (
+      {effectivePopupOpen && (
         <div className="relative">
           <div className="absolute left-0 right-0 bottom-full mb-1.5 rounded-xl border border-amber-500/30 bg-gray-900/95 backdrop-blur-sm shadow-xl shadow-black/40 animate-fade-in overflow-hidden z-50">
             <div className="p-3 space-y-2">
