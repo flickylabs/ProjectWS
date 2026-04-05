@@ -2184,14 +2184,14 @@
           "claimAtoms": [
             {
               "id": "neighbor05:b:d-1:rule:0",
-              "factText": "당사자나 관리사무소 확인이 먼저였어야 했다고 말한다",
+              "factText": "당사자나 관리실 확인이 먼저였어야 했다고 말한다",
               "tags": [
                 "rule",
                 "responsibility"
               ],
               "slots": {
                 "rule": {
-                  "exact": "먼저 배송사와 관리사무소에 확인한다는 합의",
+                  "exact": "먼저 배송사와 관리실에 확인한다는 합의",
                   "neutral": "그 확인 우선 원칙"
                 }
               },

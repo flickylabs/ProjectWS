@@ -1188,11 +1188,6 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
 
   applyDialogueNode(node, target, isConfidential)
 
-  // ── 상대방 끼어들기 (템플릿 기반, answer_only 응답 시)
-  if (action.type === 'question' && llmMeta.responseMode === 'answer_only') {
-    maybeInterjection(target, node.conditions?.disputeId)
-  }
-
   // LLM 모드: 주장 자동 등록 (stance 기반)
   if (llmMeta.stance && node.conditions?.disputeId) {
     const stanceToConfidence: Record<string, 'high' | 'medium' | 'low'> = {

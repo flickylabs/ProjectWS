@@ -2914,7 +2914,7 @@
             },
             {
               "id": "friend01:b:d-2:S0:indirect_targeting",
-              "factText": "이름을 직접 쓰지 않았어도 사진과 금액 암시로 대상이 특정된 점",
+              "factText": "이름을 직접 쓰지 않았어도 사진과 금액 암시로 대상이 드러난 점",
               "tags": [
                 "context",
                 "evidence",
@@ -3038,7 +3038,7 @@
           "claimAtoms": [
             {
               "id": "friend01:b:d-2:S2:indirect_targeting",
-              "factText": "이름을 직접 쓰지 않았어도 사진과 금액 암시로 대상이 특정된 점",
+              "factText": "이름을 직접 쓰지 않았어도 사진과 금액 암시로 대상이 드러난 점",
               "tags": [
                 "context",
                 "evidence",
@@ -3134,7 +3134,7 @@
             },
             {
               "id": "friend01:b:d-2:S3:indirect_targeting",
-              "factText": "이름을 직접 쓰지 않았어도 여행 사진과 금액 암시로 대상이 특정된 점",
+              "factText": "이름을 직접 쓰지 않았어도 여행 사진과 금액 암시로 대상이 드러난 점",
               "tags": [
                 "context",
                 "evidence",
@@ -4234,7 +4234,7 @@
             "상대가 먼저 숨겼으니 자신의 행동은 방어라고 여기고 싶다."
           ],
           "suppressions": [
-            "친한친구라도 대상 특정이 충분했다는 점",
+            "친한친구라도 대상 신원이 충분했다는 점",
             "자신도 약속을 알면서 예외라고 밀어붙인 사실"
           ],
           "emotionalLeakRisk": "low",
@@ -4317,7 +4317,7 @@
             "상대가 먼저 숨겼으니 자신의 행동은 방어라고 여기고 싶다."
           ],
           "suppressions": [
-            "친한친구라도 대상 특정이 충분했다는 점",
+            "친한친구라도 대상 신원이 충분했다는 점",
             "자신도 약속을 알면서 예외라고 밀어붙인 사실"
           ],
           "emotionalLeakRisk": "low",
@@ -4441,7 +4441,7 @@
             },
             {
               "id": "friend01:b:d-5:S2:close_friends_not_small_enough",
-              "factText": "제한 공개 범위라도 대상을 특정하는 데 충분했던 점",
+              "factText": "제한 공개 범위라도 대상을 지목하는 데 충분했던 점",
               "tags": [
                 "context",
                 "privacy",
@@ -4488,7 +4488,7 @@
           "claimAtoms": [
             {
               "id": "friend01:b:d-5:S3:close_friends_not_small_enough",
-              "factText": "친한친구 범위라도 대상을 특정하는 데 충분했던 점",
+              "factText": "친한친구 범위라도 대상을 지목하는 데 충분했던 점",
               "tags": [
                 "context",
                 "privacy",

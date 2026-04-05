@@ -136,7 +136,7 @@
               ],
               "slots": {
                 "institution": {
-                  "exact": "관리사무소",
+                  "exact": "관리실",
                   "neutral": "관리실",
                   "judgeRef": "관리실"
                 },
@@ -1294,7 +1294,7 @@
               ],
               "slots": {
                 "principle": {
-                  "exact": "관리사무소 확인 우선",
+                  "exact": "관리실 확인 우선",
                   "neutral": "그 절차"
                 },
                 "channel": {
@@ -2703,7 +2703,7 @@
               ],
               "slots": {
                 "principle": {
-                  "exact": "관리사무소 확인 우선",
+                  "exact": "관리실 확인 우선",
                   "neutral": "그 절차"
                 },
                 "channel": {

@@ -9,7 +9,7 @@ import HeartbeatDetector from '../minigame/HeartbeatDetector'
 import MatchingPuzzle from '../minigame/MatchingPuzzle'
 import WordScramble from '../minigame/WordScramble'
 import AdCountdown from '../minigame/AdCountdown'
-import { actuallyDiscoverEvidence, applyLieCollapseSuccess, applyLieCollapseFail, applyContradictionSuccess, applyContradictionFail, allowInterjection, denyInterjection } from '../../hooks/useActionDispatch'
+import { actuallyDiscoverEvidence, applyLieCollapseSuccess, applyLieCollapseFail, applyContradictionSuccess, applyContradictionFail } from '../../hooks/useActionDispatch'
 import DisputeChecklist from '../info/DisputeChecklist'
 import ClaimGraph from '../info/ClaimGraph'
 import EvidenceBoard from '../info/EvidenceBoard'
@@ -66,7 +66,6 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
 
       {/* 미니게임 모달 */}
       <MinigameOverlay />
-      <InterjectionOverlay />
 
       {/* 헤더 (1행: 캐릭터/단계, 2행: 요약/리소스/점수/쟁점) */}
       <CourtHeader
@@ -197,74 +196,6 @@ function PhaseOverlay() {
   return (
     <div className="fixed inset-0 z-30 flex items-center justify-center pointer-events-none bg-gray-950/30">
       <div className="text-4xl font-black text-amber-400/50 animate-fade-in tracking-wider">{label}</div>
-    </div>
-  )
-}
-
-/** 끼어들기 선택지 — 말풍선 형태 + 버튼 */
-function InterjectionOverlay() {
-  const ij = useGameStore((s) => s.pendingInterjection)
-  const caseData = useGameStore((s) => s.caseData)
-  const [showConfirm, setShowConfirm] = useState(false)
-  const [processing, setProcessing] = useState(false)
-  if (!ij || !caseData) return null
-
-  const isA = ij.party === 'a'
-  const name = isA ? caseData.duo.partyA.name : caseData.duo.partyB.name
-
-  const handleAllow = () => {
-    if (processing) return
-    setProcessing(true)
-    void allowInterjection()
-  }
-  const handleDeny = () => {
-    if (processing) return
-    setProcessing(true)
-    denyInterjection()
-  }
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
-      <div className="bg-gray-900 border border-gray-700 rounded-2xl p-5 w-full max-w-sm animate-fade-in shadow-2xl">
-        {!showConfirm ? (
-          <>
-            <div className="flex items-center gap-2 mb-3">
-              <Emoji char="✋" size={24} />
-              <div>
-                <span className={`text-sm font-bold ${isA ? 'text-blue-400' : 'text-rose-400'}`}>{name}</span>
-                <span className="text-sm text-gray-400">이 끼어들려 합니다</span>
-              </div>
-            </div>
-            <div className={`border rounded-xl px-3.5 py-2.5 mb-4 ${isA ? 'bg-blue-950/30 border-blue-800/30' : 'bg-rose-950/30 border-rose-800/30'}`}>
-              <p className="text-sm text-gray-200 leading-relaxed">"{ij.text}"</p>
-            </div>
-            <div className="flex gap-2">
-              <button onClick={() => { if (!processing) setShowConfirm(true) }} disabled={processing}
-                className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600 text-gray-950 active:scale-95 disabled:opacity-50">
-                발언 허용
-              </button>
-              <button onClick={handleDeny} disabled={processing}
-                className="flex-1 py-2.5 rounded-xl text-xs bg-gray-800 text-gray-400 active:scale-95 disabled:opacity-50">
-                제지하기
-              </button>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="text-center mb-3">
-              <Emoji char="⚠️" size={28} />
-            </div>
-            <p className="text-sm text-gray-200 font-semibold text-center mb-1">정말 허용하시겠습니까?</p>
-            <p className="text-xs text-amber-400/80 text-center mb-4">추가 정보를 얻을 수 있지만,<br />재판관의 <span className="font-bold">권위가 소폭 하락</span>합니다.</p>
-            <div className="flex gap-2">
-              <button onClick={() => { if (!processing) setShowConfirm(false) }} disabled={processing}
-                className="flex-1 py-2.5 rounded-xl text-xs bg-gray-800 text-gray-400 active:scale-95 disabled:opacity-50">돌아가기</button>
-              <button onClick={handleAllow} disabled={processing}
-                className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600 text-gray-950 active:scale-95 disabled:opacity-50">허용</button>
-            </div>
-          </>
-        )}
-      </div>
     </div>
   )
 }

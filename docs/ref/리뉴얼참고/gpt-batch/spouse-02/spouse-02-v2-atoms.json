@@ -2960,8 +2960,8 @@
                   "neutral": "그 서류"
                 },
                 "institution": {
-                  "exact": "관리사무소",
-                  "neutral": "관리사무소"
+                  "exact": "관리실",
+                  "neutral": "관리실"
                 },
                 "school": {
                   "exact": "학교 파일 보류 메모",
@@ -3000,8 +3000,8 @@
                   "neutral": "그 서류"
                 },
                 "institution": {
-                  "exact": "관리사무소",
-                  "neutral": "관리사무소"
+                  "exact": "관리실",
+                  "neutral": "관리실"
                 },
                 "school": {
                   "exact": "학교 파일 보류 메모",
@@ -6377,8 +6377,8 @@
                   "neutral": "그 서류"
                 },
                 "institution": {
-                  "exact": "관리사무소",
-                  "neutral": "관리사무소"
+                  "exact": "관리실",
+                  "neutral": "관리실"
                 },
                 "school": {
                   "exact": "학교 파일 보류 메모",
@@ -6417,8 +6417,8 @@
                   "neutral": "그 서류"
                 },
                 "institution": {
-                  "exact": "관리사무소",
-                  "neutral": "관리사무소"
+                  "exact": "관리실",
+                  "neutral": "관리실"
                 },
                 "school": {
                   "exact": "학교 파일 보류 메모",

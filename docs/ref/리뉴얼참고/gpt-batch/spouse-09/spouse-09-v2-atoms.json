@@ -26,7 +26,7 @@
           "claimAtoms": [
             {
               "id": "spouse09:a:d-1:counter:0",
-              "factText": "390만원을 어디론가 빼돌린 건 맞지만 간병 예약이라는 말은 지금도 쉽게 못 믿겠습니다.",
+              "factText": "해당 금액을 어디론가 빼돌린 건 맞지만 간병 예약이라는 말은 지금도 쉽게 못 믿겠습니다.",
               "tags": [
                 "counter",
                 "evidence"
@@ -2285,7 +2285,7 @@
           "claimAtoms": [
             {
               "id": "spouse09:a:d-5:counter:0",
-              "factText": "지금 병원비가 이렇게 꼬인 건 도현 씨가 390만원을 몰래 빼면서 시작됐습니다.",
+              "factText": "지금 병원비가 이렇게 꼬인 건 도현 씨가 해당 금액을 몰래 빼면서 시작됐습니다.",
               "tags": [
                 "counter",
                 "harm"

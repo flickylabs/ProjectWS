@@ -1,0 +1,747 @@
+{
+  "generatedAt": "2026-04-05T21:35:54.303Z",
+  "summary": {
+    "totalCases": 84,
+    "pass": 64,
+    "fail": 20,
+    "criticalCount": 0,
+    "failCount": 6,
+    "warnCount": 16,
+    "checksTotal": 2352,
+    "checksPass": 2330
+  },
+  "distribution": [
+    {
+      "id": "B3",
+      "count": 15
+    },
+    {
+      "id": "A4",
+      "count": 6
+    },
+    {
+      "id": "E3",
+      "count": 1
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "spouse-01",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "E3",
+          "severity": "WARN",
+          "msg": "DossierCard 데이터 없음"
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-02",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"hyper_responsible\", partyB.archetype=\"martyr\""
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-03",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"planner\", partyB.archetype=\"improviser\""
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-04",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"appeaser\", partyB.archetype=\"precision_seeker\""
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-05",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"territorial\", partyB.archetype=\"fairness_guardian\""
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-06",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"indirect_expressive\", partyB.archetype=\"status_defender\""
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-07",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"quiet_scorekeeper\", partyB.archetype=\"recognition_seeker\""
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-08",
+      "pass": false,
+      "passCount": 26,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "A4",
+          "severity": "FAIL",
+          "msg": "S3+ 구체 slots 미보존: a.d-1.S4, a.d-3.S4, a.d-3.S5 +7건"
+        },
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"contingency_planner\", partyB.archetype=\"mood_negotiator\""
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-09",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"precautionary_controller\", partyB.archetype=\"action_first_provider\""
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-10",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"schedule_literalist\", partyB.archetype=\"spoken_assumer\""
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-11",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"image_controller\", partyB.archetype=\"expedient_restorer\""
+        }
+      ]
+    },
+    {
+      "caseId": "spouse-12",
+      "pass": false,
+      "passCount": 26,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "A4",
+          "severity": "FAIL",
+          "msg": "S3+ 구체 slots 미보존: b.d-2.S3"
+        },
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"reputation_shield\", partyB.archetype=\"panic_distancer\""
+        }
+      ]
+    },
+    {
+      "caseId": "family-01",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "family-02",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "family-03",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "family-04",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "family-05",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "family-06",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "family-07",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "family-08",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "A4",
+          "severity": "FAIL",
+          "msg": "S3+ 구체 slots 미보존: b.d-2.S5"
+        }
+      ]
+    },
+    {
+      "caseId": "family-09",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "family-10",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "family-11",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "family-12",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-01",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-02",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-03",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-04",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-05",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-06",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-07",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-08",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-09",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-10",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-11",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "friend-12",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "neighbor-01",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "neighbor-02",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "neighbor-03",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "neighbor-04",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "neighbor-05",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"suspicious_guardian\", partyB.archetype=\"image_manager\""
+        }
+      ]
+    },
+    {
+      "caseId": "neighbor-06",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"micro_manager\", partyB.archetype=\"stubborn_bargainer\""
+        }
+      ]
+    },
+    {
+      "caseId": "neighbor-07",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "neighbor-08",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "A4",
+          "severity": "FAIL",
+          "msg": "S3+ 구체 slots 미보존: b.d-1.S4"
+        }
+      ]
+    },
+    {
+      "caseId": "neighbor-09",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"micro_manager\", partyB.archetype=\"stubborn_bargainer\""
+        }
+      ]
+    },
+    {
+      "caseId": "neighbor-10",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "B3",
+          "severity": "WARN",
+          "msg": "비표준 archetype: partyA.archetype=\"suspicious_guardian\", partyB.archetype=\"image_manager\""
+        }
+      ]
+    },
+    {
+      "caseId": "neighbor-11",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "neighbor-12",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "partnership-01",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "partnership-02",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "partnership-03",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "partnership-04",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "partnership-05",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "partnership-06",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "partnership-07",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "A4",
+          "severity": "FAIL",
+          "msg": "S3+ 구체 slots 미보존: a.d-2.S4, a.d-4.S4, b.d-1.S4 +4건"
+        }
+      ]
+    },
+    {
+      "caseId": "partnership-08",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "partnership-09",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "partnership-10",
+      "pass": false,
+      "passCount": 27,
+      "totalChecks": 28,
+      "failures": [
+        {
+          "id": "A4",
+          "severity": "FAIL",
+          "msg": "S3+ 구체 slots 미보존: a.d-1.S4, a.d-3.S4, b.d-2.S4 +2건"
+        }
+      ]
+    },
+    {
+      "caseId": "partnership-11",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "partnership-12",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-01",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-02",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-03",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-04",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-05",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-06",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-07",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-08",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-09",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-10",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-11",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "tenant-12",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-01",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-02",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-03",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-04",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-05",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-06",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-07",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-08",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-09",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-10",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-11",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    },
+    {
+      "caseId": "workplace-12",
+      "pass": true,
+      "passCount": 28,
+      "totalChecks": 28,
+      "failures": []
+    }
+  ]
+}

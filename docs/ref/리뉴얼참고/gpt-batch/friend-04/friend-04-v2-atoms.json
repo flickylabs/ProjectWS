@@ -179,7 +179,7 @@
             },
             {
               "id": "friend04:a:d-1:s1:deposit_sent:2",
-              "factText": "명시적 확정 문구 없이 판매자에게 예약금 3만원을 먼저 송금한 행동",
+              "factText": "명시적 확정 문구 없이 판매자에게 예약금 적지 않은 돈을 먼저 송금한 행동",
               "tags": [
                 "act",
                 "timeline",
@@ -2987,7 +2987,7 @@
           "claimAtoms": [
             {
               "id": "friend04:b:d-1:s0:dahye_sent_deposit:0",
-              "factText": "송다혜가 최종 확정 없이 예약금 3만원을 송금했다는 사실",
+              "factText": "송다혜가 최종 확정 없이 예약금 해당 금액을 송금했다는 사실",
               "tags": [
                 "act",
                 "timeline",
@@ -3104,7 +3104,7 @@
             },
             {
               "id": "friend04:b:d-1:s1:dahye_sent_deposit:1",
-              "factText": "송다혜가 최종 확정 없이 예약금 3만원을 송금했다는 사실",
+              "factText": "송다혜가 최종 확정 없이 예약금 적지 않은 돈을 송금했다는 사실",
               "tags": [
                 "act",
                 "timeline",

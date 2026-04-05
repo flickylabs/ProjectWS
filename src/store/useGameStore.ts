@@ -148,9 +148,6 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
     | { type: 'contradiction'; text: string; disputeId: string; target: PartyId }
     | null
   setPendingMinigame: (mg: GameStore['pendingMinigame']) => void
-  /** 끼어들기 대기 (legacy) */
-  pendingInterjection: { party: PartyId; disputeId: string; text: string; followUp: string } | null
-  setPendingInterjection: (v: GameStore['pendingInterjection']) => void
   /** V2 끼어들기 대기 — GameEventModal에서 allow/block 선택 */
   pendingInterjectionV2: import('../engine/interjectionV2').InterjectionOpportunityV2 | null
   setPendingInterjectionV2: (v: GameStore['pendingInterjectionV2']) => void
@@ -241,8 +238,6 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     addCalledWitness: (witnessId) => set((prev) => ({ calledWitnesses: [...prev.calledWitnesses, witnessId] })),
     pendingMinigame: null,
     setPendingMinigame: (mg) => set({ pendingMinigame: mg }),
-    pendingInterjection: null,
-    setPendingInterjection: (v) => set({ pendingInterjection: v }),
     pendingInterjectionV2: null,
     setPendingInterjectionV2: (v) => set({ pendingInterjectionV2: v }),
 
@@ -487,7 +482,6 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
         calledWitnesses: [],
         interrogationHistory: { a: {}, b: {} },
         pendingMinigame: null,
-        pendingInterjection: null,
         questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
         gameEventLog: [],
         pendingGameEvent: null,

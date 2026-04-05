@@ -25,7 +25,7 @@
           "claimAtoms": [
             {
               "id": "workplace-02:a:d-1:act:0",
-              "factText": "특정 직원의 접근권 조정이 표준 보안 조치였다는 주장",
+              "factText": "직원의 접근권 조정이 표준 보안 조치였다는 주장",
               "tags": [
                 "act",
                 "rule"
@@ -269,7 +269,7 @@
           "claimAtoms": [
             {
               "id": "workplace-02:a:d-1:responsibility:6",
-              "factText": "여러 정황을 묶어 특정 직원 한 사람을 먼저 의심한 사실",
+              "factText": "여러 정황을 묶어 직원 한 사람을 먼저 의심한 사실",
               "tags": [
                 "responsibility",
                 "act"
@@ -441,7 +441,7 @@
           "claimAtoms": [
             {
               "id": "workplace-02:a:d-1:admission:10",
-              "factText": "확정 증거 없이 특정 직원을 유출자로 몰고 접근권을 끊은 사실",
+              "factText": "확정 증거 없이 직원을 유출자로 몰고 접근권을 끊은 사실",
               "tags": [
                 "admission",
                 "responsibility"
@@ -1117,7 +1117,7 @@
           "claimAtoms": [
             {
               "id": "workplace-02:a:d-3:uncertainty:2",
-              "factText": "직접 증거 없이도 가장 가까운 용의자로 특정한 상태",
+              "factText": "직접 증거 없이도 가장 가까운 용의자로 지목한 상태",
               "tags": [
                 "uncertainty",
                 "identity"
@@ -1376,7 +1376,7 @@
           "claimAtoms": [
             {
               "id": "workplace-02:a:d-3:fear:8",
-              "factText": "정확한 로그보다 빠른 범인 특정이 우선이 된 심리",
+              "factText": "정확한 로그보다 빠른 범인 신원이 우선이 된 심리",
               "tags": [
                 "fear",
                 "motive"

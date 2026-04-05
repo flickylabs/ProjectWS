@@ -26,7 +26,7 @@
           "claimAtoms": [
             {
               "id": "family04:a:d-1:s0:atom0",
-              "factText": "3,200만원이 빠진 직후 민규 쪽 접근 가능성이 먼저 눈에 들어왔다는 판단",
+              "factText": "3,해당 금액이 빠진 직후 민규 쪽 접근 가능성이 먼저 눈에 들어왔다는 판단",
               "tags": [
                 "act",
                 "context",
@@ -2407,7 +2407,7 @@
               ],
               "slots": {
                 "institution": {
-                  "fullName": "향토장학재단",
+                  "fullName": "장학처",
                   "judgeRef": "장학재단",
                   "neutral": "외부 기관"
                 }

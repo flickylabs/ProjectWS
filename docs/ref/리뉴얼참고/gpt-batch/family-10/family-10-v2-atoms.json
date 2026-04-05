@@ -1646,7 +1646,7 @@
           "claimAtoms": [
             {
               "id": "family10:a:d-4:S0:atom:0",
-              "factText": "명절 직전에 20만원을 보내면 재료비 보탠다는 뜻으로 받아들일 수밖에 없죠.",
+              "factText": "명절 직전에 해당 금액을 보내면 재료비 보탠다는 뜻으로 받아들일 수밖에 없죠.",
               "tags": [
                 "act",
                 "timeline",
@@ -4460,7 +4460,7 @@
           "claimAtoms": [
             {
               "id": "family10:b:d-4:S0:atom:0",
-              "factText": "그 20만원은 어머니 용돈입니다.",
+              "factText": "그 해당 금액은 어머니 용돈입니다.",
               "tags": [
                 "act",
                 "timeline",

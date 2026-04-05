@@ -27,7 +27,7 @@
           "claimAtoms": [
             {
               "id": "neighbor06:a:d-1:act:0",
-              "factText": "보전 전 견적을 기준으로 90,000원을 먼저 요구했다는 말",
+              "factText": "보전 전 견적을 기준으로 해당 금액을 먼저 요구했다는 말",
               "tags": [
                 "act",
                 "evidence"
@@ -1642,9 +1642,9 @@
                   "neutral": "공식 정산"
                 },
                 "office": {
-                  "exact": "관리사무소",
+                  "exact": "관리실",
                   "neutral": "사무소",
-                  "fullName": "관리사무소",
+                  "fullName": "관리실",
                   "judgeRef": "관리사무소"
                 }
               },
@@ -2427,7 +2427,7 @@
           "claimAtoms": [
             {
               "id": "neighbor06:b:d-1:counter:0",
-              "factText": "90,000원 요구를 곧바로 과다 청구 의도로 해석한 반발",
+              "factText": "해당 금액 요구를 곧바로 과다 청구 의도로 해석한 반발",
               "tags": [
                 "counter",
                 "evidence"
@@ -2534,7 +2534,7 @@
             },
             {
               "id": "neighbor06:b:d-1:beneficiary:0",
-              "factText": "90,000원이 자신의 실제 몫처럼 제시된 방식에 거부감이 있었다는 주장",
+              "factText": "적지 않은 돈이 자신의 실제 몫처럼 제시된 방식에 거부감이 있었다는 주장",
               "tags": [
                 "beneficiary",
                 "emotion"
@@ -3863,7 +3863,7 @@
           "claimAtoms": [
             {
               "id": "neighbor06:b:d-4:uncertainty:0",
-              "factText": "90,000원의 근거를 못 봤다는 금액 중심 의문",
+              "factText": "해당 금액의 근거를 못 봤다는 금액 중심 의문",
               "tags": [
                 "uncertainty",
                 "evidence"
@@ -4035,9 +4035,9 @@
                   "neutral": "공식 정산"
                 },
                 "office": {
-                  "exact": "관리사무소",
+                  "exact": "관리실",
                   "neutral": "사무소",
-                  "fullName": "관리사무소",
+                  "fullName": "관리실",
                   "judgeRef": "관리사무소"
                 }
               },

@@ -25,7 +25,7 @@
           "claimAtoms": [
             {
               "id": "neighbor12:a:d-1:act:0",
-              "factText": "배지연이 참가자 압박을 이유로 공개방에 94만 원 은닉 취지의 글을 먼저 올린 사실",
+              "factText": "배지연이 참가자 압박을 이유로 공개방에 해당 금액 은닉 취지의 글을 먼저 올린 사실",
               "tags": [
                 "act",
                 "timeline",
@@ -63,7 +63,7 @@
             },
             {
               "id": "neighbor12:a:d-1:emotion:1",
-              "factText": "그때는 94만 원이 비는 것처럼 보였고 참가자들이 바로 환불 일정을 물었어요.",
+              "factText": "그때는 해당 금액이 비는 것처럼 보였고 참가자들이 바로 환불 일정을 물었어요.",
               "tags": [
                 "emotion",
                 "act",
@@ -1010,7 +1010,7 @@
           "claimAtoms": [
             {
               "id": "neighbor12:a:d-3:denial:0",
-              "factText": "배지연이 작년 62만 원의 개인계좌 잔존을 임시 정산처럼 축소하며 부인하는 단계",
+              "factText": "배지연이 작년 해당 금액의 개인계좌 잔존을 임시 정산처럼 축소하며 부인하는 단계",
               "tags": [
                 "denial",
                 "legacy_sentence",
@@ -1502,7 +1502,7 @@
           "claimAtoms": [
             {
               "id": "neighbor12:a:d-4:act:0",
-              "factText": "배지연이 94만 원을 하나의 현재 손실처럼 받아들이고 그대로 공개 주장한 단계",
+              "factText": "배지연이 해당 금액을 하나의 현재 손실처럼 받아들이고 그대로 공개 주장한 단계",
               "tags": [
                 "act",
                 "uncertainty",
@@ -1582,7 +1582,7 @@
           "claimAtoms": [
             {
               "id": "neighbor12:a:d-4:uncertainty:0",
-              "factText": "배지연이 94만 원을 빈칸 보정 총액으로 설명하며 현재 환불금과 과거 미정산의 혼합을 흐리는 단계",
+              "factText": "배지연이 적지 않은 돈을 빈칸 보정 총액으로 설명하며 현재 환불금과 과거 미정산의 혼합을 흐리는 단계",
               "tags": [
                 "uncertainty",
                 "context",
@@ -2496,7 +2496,7 @@
           "claimAtoms": [
             {
               "id": "neighbor12:b:d-1:denial:0",
-              "factText": "서도윤이 94만 원 은닉 자체를 부인하며 공개 지목의 선행성을 강조하는 단계",
+              "factText": "서도윤이 해당 금액 은닉 자체를 부인하며 공개 지목의 선행성을 강조하는 단계",
               "tags": [
                 "denial",
                 "timeline",
@@ -2986,7 +2986,7 @@
           "claimAtoms": [
             {
               "id": "neighbor12:b:d-2:act:0",
-              "factText": "서도윤이 32만 원 카드취소를 확정 전 항목이라며 사흘 보류한 사실",
+              "factText": "서도윤이 해당 금액 카드취소를 확정 전 항목이라며 사흘 보류한 사실",
               "tags": [
                 "act",
                 "timeline",
@@ -3017,7 +3017,7 @@
             },
             {
               "id": "neighbor12:b:d-2:emotion:1",
-              "factText": "카드취소 32만 원만 따로 말하면 오히려 숫자가 더 틀어질 수 있어서 기다린 겁니다.",
+              "factText": "카드취소 해당 금액만 따로 말하면 오히려 숫자가 더 틀어질 수 있어서 기다린 겁니다.",
               "tags": [
                 "emotion",
                 "act",
@@ -3464,7 +3464,7 @@
           "claimAtoms": [
             {
               "id": "neighbor12:b:d-3:act:0",
-              "factText": "서도윤이 작년 62만 원 미정산의 출발점이 배지연 개인계좌였다고 선을 긋는 단계",
+              "factText": "서도윤이 작년 해당 금액 미정산의 출발점이 배지연 개인계좌였다고 선을 긋는 단계",
               "tags": [
                 "act",
                 "timeline",
@@ -3544,7 +3544,7 @@
           "claimAtoms": [
             {
               "id": "neighbor12:b:d-3:evidence:0",
-              "factText": "서도윤이 41만 원과 21만 원의 작년 미정산 구조를 사실 근거로 제시하는 단계",
+              "factText": "서도윤이 적지 않은 돈과 적지 않은 돈의 작년 미정산 구조를 사실 근거로 제시하는 단계",
               "tags": [
                 "evidence",
                 "timeline",
@@ -3960,7 +3960,7 @@
           "claimAtoms": [
             {
               "id": "neighbor12:b:d-4:act:0",
-              "factText": "서도윤이 현재 라운드 환급 가능 금액이 32만 원뿐이었다고 잘라 말하는 단계",
+              "factText": "서도윤이 현재 라운드 환급 가능 금액이 해당 금액뿐이었다고 잘라 말하는 단계",
               "tags": [
                 "act",
                 "threshold",
@@ -3991,7 +3991,7 @@
             },
             {
               "id": "neighbor12:b:d-4:emotion:1",
-              "factText": "이번 라운드에서 제가 쥐고 있던 환급 가능 금액은 32만 원뿐이었습니다.",
+              "factText": "이번 라운드에서 제가 쥐고 있던 환급 가능 금액은 해당 금액뿐이었습니다.",
               "tags": [
                 "emotion",
                 "act",
@@ -4042,7 +4042,7 @@
           "claimAtoms": [
             {
               "id": "neighbor12:b:d-4:uncertainty:0",
-              "factText": "서도윤이 94만 원의 혼합 가능성은 말하면서도 혼입 출처 설명을 미루는 단계",
+              "factText": "서도윤이 적지 않은 돈의 혼합 가능성은 말하면서도 혼입 출처 설명을 미루는 단계",
               "tags": [
                 "uncertainty",
                 "context",

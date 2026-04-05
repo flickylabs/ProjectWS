@@ -2501,7 +2501,7 @@
                 },
                 "institution": {
                   "exact": "지역산업진흥원",
-                  "neutral": "지원기관"
+                  "neutral": "해당 기관"
                 },
                 "person": {
                   "exact": "손다예",
@@ -2537,7 +2537,7 @@
                 },
                 "institution": {
                   "exact": "지역산업진흥원",
-                  "neutral": "지원기관"
+                  "neutral": "해당 기관"
                 },
                 "person": {
                   "exact": "손다예",
@@ -5344,7 +5344,7 @@
                 },
                 "institution": {
                   "exact": "지역산업진흥원",
-                  "neutral": "지원기관"
+                  "neutral": "해당 기관"
                 },
                 "person": {
                   "exact": "조인호",
@@ -5379,7 +5379,7 @@
                 },
                 "institution": {
                   "exact": "지역산업진흥원",
-                  "neutral": "지원기관"
+                  "neutral": "해당 기관"
                 },
                 "person": {
                   "exact": "조인호",

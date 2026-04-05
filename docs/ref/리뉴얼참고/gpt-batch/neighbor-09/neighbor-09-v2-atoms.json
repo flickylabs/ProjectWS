@@ -73,7 +73,7 @@
           "claimAtoms": [
             {
               "id": "neighbor09:a:d-1:threshold:0",
-              "factText": "잔여 공사비가 200만 원 이하일 때는 재협의 없이 진행한다는 상한선 조건을 기억하고 있다는 내용",
+              "factText": "잔여 공사비가 적지 않은 돈 이하일 때는 재협의 없이 진행한다는 상한선 조건을 기억하고 있다는 내용",
               "tags": [
                 "threshold",
                 "rule",
@@ -123,7 +123,7 @@
           "claimAtoms": [
             {
               "id": "neighbor09:a:d-1:institution:0",
-              "factText": "관리사무소 확인을 믿고 방학 전 시공을 진행하도록 동의했다는 사실",
+              "factText": "관리실 확인을 믿고 방학 전 시공을 진행하도록 동의했다는 사실",
               "tags": [
                 "institution",
                 "context",
@@ -131,7 +131,7 @@
               ],
               "slots": {
                 "place": {
-                  "exact": "관리사무소 중재석",
+                  "exact": "관리실 중재석",
                   "neutral": "그 자리"
                 },
                 "time": {
@@ -649,7 +649,7 @@
             "공진 얘기가 아예 없었던 건 아니지만 처음부터 체감된 건 윗집 소음이라 그렇게 본 겁니다."
           ],
           "privateKnowledge": [
-            "측정 기사도 특정 천장 줄에서 울림이 큰 편이라고 설명했다."
+            "측정 기사도 천장 줄에서 울림이 큰 편이라고 설명했다."
           ],
           "suppressions": [
             "구조 요인을 들으면 일방 피해자 프레임이 흐려질까 봐 먼저 말하지 않는다."
@@ -671,7 +671,7 @@
               ],
               "slots": {
                 "measure": {
-                  "exact": "특정 천장 줄 공진",
+                  "exact": "천장 줄 공진",
                   "neutral": "구조 요인"
                 },
                 "time": {
@@ -956,7 +956,7 @@
           "claimAtoms": [
             {
               "id": "neighbor09:a:d-4:threshold:0",
-              "factText": "추가 보전금이 붙으면 잔여 공사비가 200만 원 아래로 내려갈 수 있다고 판단했다는 내용",
+              "factText": "추가 보전금이 붙으면 잔여 공사비가 적지 않은 돈 아래로 내려갈 수 있다고 판단했다는 내용",
               "tags": [
                 "threshold",
                 "context",
@@ -1543,7 +1543,7 @@
           "claimAtoms": [
             {
               "id": "neighbor09:b:d-1:uncertainty:0",
-              "factText": "200만 원 이하일 때도 최종 검토가 남아 있었다는 식으로 합의를 흔드는 설명",
+              "factText": "적지 않은 돈 이하일 때도 최종 검토가 남아 있었다는 식으로 합의를 흔드는 설명",
               "tags": [
                 "uncertainty",
                 "threshold",
@@ -2112,7 +2112,7 @@
           "disputeId": "d-3",
           "state": "S1",
           "publicClaim": [
-            "측정표를 보면 아래층 특정 천장 줄이 같이 울리는 걸로 찍혀 있었습니다."
+            "측정표를 보면 아래층 천장 줄이 같이 울리는 걸로 찍혀 있었습니다."
           ],
           "privateKnowledge": [
             "윤태성 소장도 바닥 보강만으로 끝나지 않을 수 있다고 말했다."
@@ -2129,7 +2129,7 @@
           "claimAtoms": [
             {
               "id": "neighbor09:b:d-3:evidence:0",
-              "factText": "실측 자료상 아래층 특정 천장 줄이 공진을 크게 보인다는 설명",
+              "factText": "실측 자료상 아래층 천장 줄이 공진을 크게 보인다는 설명",
               "tags": [
                 "evidence",
                 "context",
@@ -2137,7 +2137,7 @@
               ],
               "slots": {
                 "area": {
-                  "exact": "특정 천장 줄 공진",
+                  "exact": "천장 줄 공진",
                   "neutral": "표시 구간"
                 },
                 "person": {
@@ -2666,7 +2666,7 @@
           "claimAtoms": [
             {
               "id": "neighbor09:b:d-5:denial:0",
-              "factText": "30만 원 송금을 임시 정리라고 말하며 공식 공지 전 거부 의사를 흐리는 태도",
+              "factText": "해당 금액 송금을 임시 정리라고 말하며 공식 공지 전 거부 의사를 흐리는 태도",
               "tags": [
                 "denial",
                 "self_justification",

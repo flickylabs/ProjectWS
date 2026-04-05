@@ -1114,7 +1114,7 @@
           "claimAtoms": [
             {
               "id": "family08:a:d-3:s0:uncertainty:0",
-              "factText": "150만원 이체와 침상 확보 문구가 영구입소처럼 보였다는 초기 인식",
+              "factText": "해당 금액 이체와 침상 확보 문구가 영구입소처럼 보였다는 초기 인식",
               "tags": [
                 "uncertainty",
                 "context",
@@ -2684,7 +2684,7 @@
           "claimAtoms": [
             {
               "id": "family08:b:d-1:s0:denial:0",
-              "factText": "150만원을 정식 입소 확정금이 아니라 자리 확보 성격으로 축소해 말하는 태도",
+              "factText": "해당 금액을 정식 입소 확정금이 아니라 자리 확보 성격으로 축소해 말하는 태도",
               "tags": [
                 "denial",
                 "self_justification",
@@ -3729,7 +3729,7 @@
           "claimAtoms": [
             {
               "id": "family08:b:d-3:s0:denial:0",
-              "factText": "150만원을 '그냥 자리만 잡아두는 돈'으로 축약해 말하는 태도",
+              "factText": "해당 금액을 '그냥 자리만 잡아두는 돈'으로 축약해 말하는 태도",
               "tags": [
                 "denial",
                 "quote",

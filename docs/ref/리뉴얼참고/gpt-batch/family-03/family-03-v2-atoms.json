@@ -24,7 +24,7 @@
           "claimAtoms": [
             {
               "id": "family03:a:d-1:s0:surface:0",
-              "factText": "정우가 매달 60만원 보내겠다고 해 놓고 이제 와 발뺌하는 겁니다.",
+              "factText": "정우가 매달 해당 금액 보내겠다고 해 놓고 이제 와 발뺌하는 겁니다.",
               "tags": [
                 "rule",
                 "timeline",
@@ -3011,7 +3011,7 @@
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "주민처",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
@@ -3070,7 +3070,7 @@
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "주민처",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
@@ -3556,7 +3556,7 @@
           "claimAtoms": [
             {
               "id": "family03:b:d-1:s0:surface:0",
-              "factText": "제가 평생 60만원씩 책임진다고 한 적은 없습니다. 그건 부풀려진 말입니다.",
+              "factText": "제가 평생 해당 금액씩 책임진다고 한 적은 없습니다. 그건 부풀려진 말입니다.",
               "tags": [
                 "rule",
                 "timeline",
@@ -6531,7 +6531,7 @@
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "주민처",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },
@@ -6590,7 +6590,7 @@
                   "neutral": "상담 시점"
                 },
                 "institution": {
-                  "fullName": "주민센터",
+                  "fullName": "주민처",
                   "judgeRef": "주민센터",
                   "neutral": "기관"
                 },

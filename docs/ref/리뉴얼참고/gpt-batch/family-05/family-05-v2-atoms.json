@@ -1824,9 +1824,9 @@
               ],
               "slots": {
                 "institution": {
-                  "exact": "청년주거상담센터",
+                  "exact": "상담처",
                   "judgeRef": "상담센터",
-                  "neutral": "상담기관"
+                  "neutral": "해당 기관"
                 },
                 "person": {
                   "fullName": "박은주",
@@ -1857,9 +1857,9 @@
               ],
               "slots": {
                 "institution": {
-                  "exact": "청년주거상담센터",
+                  "exact": "상담처",
                   "judgeRef": "상담센터",
-                  "neutral": "상담기관"
+                  "neutral": "해당 기관"
                 },
                 "person": {
                   "fullName": "박은주",
@@ -4446,9 +4446,9 @@
               ],
               "slots": {
                 "institution": {
-                  "exact": "청년주거상담센터",
+                  "exact": "상담처",
                   "judgeRef": "상담센터",
-                  "neutral": "상담기관"
+                  "neutral": "해당 기관"
                 },
                 "person": {
                   "fullName": "박소현",
@@ -4479,9 +4479,9 @@
               ],
               "slots": {
                 "institution": {
-                  "exact": "청년주거상담센터",
+                  "exact": "상담처",
                   "judgeRef": "상담센터",
-                  "neutral": "상담기관"
+                  "neutral": "해당 기관"
                 },
                 "person": {
                   "fullName": "박소현",

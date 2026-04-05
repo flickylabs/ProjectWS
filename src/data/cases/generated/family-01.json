@@ -576,8 +576,8 @@
         "question_acquisition": "변호사 제출본은 적법하지만 상속 관련 사적 의사표시는 분쟁 해결 범위 내에서만 써야 한다."
       },
       "subjectParty": "a",
-      "surfaceName": "변호사 확인서와 수첩 전체 스캔",
-      "surfaceDescription": "변호사가 확인한 수첩 전체 스캔본과 상담 메모다. 수첩의 전체 내용과 상담 기록이 함께 포함되어 있다.",
+      "surfaceName": "법률 확인서와 수첩 전체 스캔",
+      "surfaceDescription": "법률 전문가가 확인한 수첩 전체 스캔본과 상담 메모다. 수첩의 전체 내용과 상담 기록이 함께 포함되어 있다.",
       "requiredLieState": "S3",
       "investigationStages": [
         {

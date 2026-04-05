@@ -7,13 +7,13 @@
           "disputeId": "d-1",
           "state": "S0",
           "publicClaim": [
-            "저는 익명 글 작성자를 특정해 한세린 씨를 찍어낸 적이 없습니다."
+            "저는 익명 글 작성자를 지목해 한세린 씨를 찍어낸 적이 없습니다."
           ],
           "privateKnowledge": [
             "익명 글 직후 가장 먼저 한세린 씨를 유력 작성자로 의심했다."
           ],
           "suppressions": [
-            "팀 미팅에서 특정 제보자를 암시하는 표현을 먼저 꺼낸 사실."
+            "팀 미팅에서 제보자를 암시하는 표현을 먼저 꺼낸 사실."
           ],
           "emotionalLeakRisk": "low",
           "tellPool": [
@@ -24,7 +24,7 @@
           "claimAtoms": [
             {
               "id": "workplace-07:a:d-1:denial:0",
-              "factText": "익명 글 작성자를 특정하지 않았다는 주장",
+              "factText": "익명 글 작성자를 지목하지 않았다는 주장",
               "tags": [
                 "denial",
                 "identity"
@@ -101,7 +101,7 @@
           "claimAtoms": [
             {
               "id": "workplace-07:a:d-1:uncertainty:0",
-              "factText": "유력 작성자 추정이 있었지만 공식 특정은 아니었다는 주장",
+              "factText": "유력 작성자 추정이 있었지만 공식 지목은 아니었다는 주장",
               "tags": [
                 "uncertainty",
                 "identity"

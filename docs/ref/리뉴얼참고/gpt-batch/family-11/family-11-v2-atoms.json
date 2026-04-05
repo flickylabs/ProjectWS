@@ -2035,7 +2035,7 @@
               ],
               "slots": {
                 "institution": {
-                  "exact": "아동발달상담센터 상담일지·조부모 동의서",
+                  "exact": "상담처 상담일지·조부모 동의서",
                   "judgeRef": "상담일지와 동의서",
                   "neutral": "센터 원본"
                 },
@@ -2880,7 +2880,7 @@
           "claimAtoms": [
             {
               "id": "family11:b:d-2:s1:scope_narrow:0",
-              "factText": "루틴 붕괴를 특정 야근 주간의 제한된 예외로 좁혀 말한다.",
+              "factText": "루틴 붕괴를 야근 주간의 제한된 예외로 좁혀 말한다.",
               "tags": [
                 "timeline",
                 "denial",
