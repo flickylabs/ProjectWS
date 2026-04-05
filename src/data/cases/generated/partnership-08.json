@@ -324,8 +324,8 @@
       "id": "e-1",
       "name": "가계약 보류 메일과 홀드 포기 문자",
       "description": "시원이 브로커와 건물주 측에 2호점 후보지 가계약금 이체를 보류하고 더 이상 홀드 연장을 하지 않겠다고 보낸 메일·문자 원본이다.",
-      "surfaceName": "가계약 보류 메일과 포기 문자",
-      "surfaceDescription": "브로커에게 보낸 보류 메일과 홀드 포기 문자 원본이다.",
+      "surfaceName": "후보지 관련 메일과 문자",
+      "surfaceDescription": "후보지 논의 과정에서 오간 메일과 문자를 묶은 자료다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -355,7 +355,33 @@
           "questionAngle": "윤지아에게: \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 윤지아의 \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 쟁점과 관련된다. 윤지아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 보류 메일과 홀드 포기 문자가 오간 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "마지막 대면 직후 공동 결재 없이 통보한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "후보지를 놓는 방향을 혼자 정한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -395,14 +421,40 @@
           "implication": "이 증거는 윤지아의 \"지아는 일방적 약속 파기의 순수한 피해자였는가\" 쟁점과 관련된다. 윤지아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회의 녹취와 검토표가 공유된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "후보지 세부 검토를 직접 지시한 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "조건부였더라도 확장 기대를 키운 정황을 부인하십니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
-      "name": "크롭된 DM 캡처",
+      "name": "DM 캡처",
       "description": "지아가 전 헤드강사에게 '우리 쪽으로 옮겨타면 돼. 다음 달엔 따로 간다'고 말한 부분만 남은 DM 캡처로, 맥락에 따라 위로인지 실제 분리 준비인지 다르게 읽힌다.",
       "surfaceName": "크롭된 DM 캡처",
-      "surfaceDescription": "DM 대화 일부만 남은 캡처로, 전후 맥락에 따라 다르게 읽힌다.",
+      "surfaceDescription": "대화 일부를 담은 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -432,14 +484,40 @@
           "questionAngle": "윤지아에게: \"지아의 별도 스튜디오 준비\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 윤지아의 \"지아의 별도 스튜디오 준비\" 쟁점과 관련된다. 윤지아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 DM 캡처를 증거로 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "홀드 해제 직전 저장된 화면이 일부만 남은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "잘린 앞뒤 대화에 실제 준비 정황이 이어져 있었습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "별도 스튜디오 법인 초안과 강사 합류 시트",
       "description": "지아가 전 헤드강사와 공유한 별도 스튜디오 법인 등기 초안, 공간 탐색 메일, 강사 합류 가능성 시트를 묶은 자료다.",
-      "surfaceName": "별도 법인 초안과 합류 시트",
-      "surfaceDescription": "법인 등기 초안, 공간 탐색 메일, 합류 가능성 시트 묶음이다.",
+      "surfaceName": "준비 문서와 검토 시트",
+      "surfaceDescription": "준비 과정에서 만든 문서와 검토 시트를 묶은 자료다.",
       "type": "cloud_log",
       "reliability": "hard",
       "completeness": "original",
@@ -473,7 +551,33 @@
           "implication": "이 증거는 윤지아의 \"지아의 별도 스튜디오 준비\" 쟁점과 관련된다. 윤지아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 초안 문서와 합류 시트가 작성된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "첫 초안이 후보지 보류 통보 전부터 만들어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "감정적 대비를 넘어 실제 준비가 진행된 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -513,14 +617,40 @@
           "implication": "이 증거는 윤지아의 \"2024년 부속합의의 쌍방 위반\" 쟁점과 관련된다. 윤지아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 부속메모와 월말 보고서가 함께 제시된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "홀드 만료 직전 최신 보유액이 다시 정리된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확장 전제 조건이 아직 충족되지 않은 정황을 부인하십니까?",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "대출 사전심사 체크리스트와 회계사 확인 메모",
-      "description": "오혜린 회계사가 정리한 대출 사전심사 체크리스트와 확인 메모로, 최근 리스료·부가세 반영 후 현금보유 요건이 미달했고 공동대표의 전념 구조가 불안정하면 승인 가능성이 낮았다는 자료다.",
+      "description": "오혜린 회계사가 정리한 심사 체크리스트와 확인 메모로, 최근 리스료·부가세 반영 후 현금보유 요건이 미달했고 공동대표의 전념 구조가 불안정하면 승인 가능성이 낮았다는 자료다.",
       "surfaceName": "대출 사전심사 체크리스트와 확인 메모",
-      "surfaceDescription": "회계사가 정리한 사전심사 체크리스트와 확인 메모다.",
+      "surfaceDescription": "사전 검토 체크리스트와 확인 메모를 묶은 자료다.",
       "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
@@ -542,7 +672,33 @@
         "question_acquisition": "외부 회계 검토자료로 적법하게 제출됐지만 사용 범위는 분쟁 해결로 제한된다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 사전심사 체크리스트와 확인 메모를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "홀드 만료 직전 산식에 고정 지출이 반영된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "감정과 별개로 준비 기준이 미달된 점을 부인하십니까?",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

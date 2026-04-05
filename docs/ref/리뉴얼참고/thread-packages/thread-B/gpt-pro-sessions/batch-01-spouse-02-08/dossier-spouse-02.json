@@ -1,0 +1,1423 @@
+{
+  "caseId": "spouse-02",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "초안과 접근 흔적",
+      "description": "보내지 않은 초안과 실제 접근 시점을 분리해 보는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "나희주 씨, 공유 프린터에서 나온 이 초안 출력물을 직접 만든 사람이 본인 맞습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse02:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "익명 글을 본 뒤 37분 만에 상대 계정에 접속한 이유를 시간순으로 설명해 주십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse02:a:d-2:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "학교 초안에 예전 별거 위기 문장까지 적어 넣은 이유가 무엇입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse02:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "강도윤 씨, 발송되지 않은 초안을 실제 공격 계획처럼 부풀려 말한 이유를 설명하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse02:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "2023년 약속을 기억하면서도 상담 기록 문제를 현재 위협 판단에 끌어온 이유가 있습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse02:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "배우자 과거를 꺼내는 것이 약속 파기라는 점을 알고도 말을 이어간 겁니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse02:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "헤더와 익명 글",
+      "description": "외부 소문처럼 보인 제보의 계정 출처를 겨누는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "나희주 씨, 익명 글이 외부 소문이 아니라 내부 정보 유출이라고 보게 된 결정적 이유가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse02:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "학교 회신을 보고 어느 쪽 연결이라고 판단했는지 근거를 말씀해 주십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse02:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "그 사실을 확인한 뒤 본인이 가장 크게 무너진 지점이 무엇이었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse02:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "강도윤 씨, 보조 계정을 따로 사용한 이유부터 설명하십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse02:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "스캔 자료를 학교 판단용으로 정리할 때 어떤 명분을 붙였습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse02:b:d-1:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "배우자 동의 없는 상담 기록 전달이 아직도 보호라고 보십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse02:b:d-1:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "스캔 로그와 보류 메모",
+      "description": "유포의 준비 시점과 파일 보류의 실제 원인을 동시에 확인하는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "나희주 씨, 스캔 시각과 익명 글 시점 사이에 차이가 있습니다. 이 점이 본인 판단을 바꿨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse02:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "보류 메모 시각이 익명 메일보다 앞선다면 본인 판단은 어디서부터 틀렸습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse02:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "그 사실을 알고 나서 아이 문제를 어떻게 잘못 해석했는지 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse02:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "강도윤 씨, 집에서 스캔한 서류를 가족 공유 공간에 올린 이유를 설명하십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse02:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "보류의 직접 원인이 주소 오류였다는 점을 알고도 왜 희주 문제처럼 말했습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse02:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "익명 글과 스캔 기록, 보조 계정이 한 흐름이라는 점을 인정합니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse02:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "spouse02:a:d-1:unlock:s2:0",
+            "factText": "학교 회신 헤더의 복구 정보 일부가 도윤의 보조 이메일 정보와 맞닿는다.",
+            "tags": [
+              "evidence",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "강도윤",
+                "fullName": "강도윤",
+                "judgeRef": "남편",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "상담 종결서 일부",
+                "neutral": "그 기록"
+              },
+              "institution": {
+                "exact": "학교 학부모지원 담당",
+                "neutral": "학교 쪽"
+              },
+              "time": {
+                "exact": "익명 글 게시 사흘 전",
+                "neutral": "그 무렵",
+                "dateExact": "익명 글 게시 사흘 전",
+                "period": "익명 글 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [],
+        "S4": [
+          {
+            "id": "spouse02:a:d-1:unlock:s4:0",
+            "factText": "희주는 익명 글보다 사흘 먼저 찍힌 스캔 시각 때문에 외부 오해설을 버렸다.",
+            "tags": [
+              "timeline",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "강도윤",
+                "fullName": "강도윤",
+                "judgeRef": "남편",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "상담 종결서 일부",
+                "neutral": "그 기록"
+              },
+              "institution": {
+                "exact": "학교 학부모지원 담당",
+                "neutral": "학교 쪽"
+              },
+              "time": {
+                "exact": "익명 글 게시 사흘 전",
+                "neutral": "그 무렵",
+                "dateExact": "익명 글 게시 사흘 전",
+                "period": "익명 글 직전"
+              },
+              "account": {
+                "exact": "보조 이메일",
+                "neutral": "별도 계정"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "blame"
+            ]
+          }
+        ],
+        "S5": []
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse02:a:d-2:unlock:s2:0",
+            "factText": "공유 프린터에 남은 출력물은 희주가 직접 만든 학교 메일 초안이지만 실제 발송본은 없다.",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "강도윤",
+                "fullName": "강도윤",
+                "judgeRef": "남편",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "학교 메일 초안",
+                "neutral": "그 초안"
+              },
+              "institution": {
+                "exact": "임시 연락망",
+                "neutral": "학교 연락망"
+              },
+              "time": {
+                "exact": "밤 11시 52분",
+                "neutral": "그날 밤",
+                "dateExact": "밤 11시 52분",
+                "period": "익명 글 직후"
+              },
+              "accessTime": {
+                "exact": "익명 글 노출 37분 뒤",
+                "neutral": "그 직후",
+                "dateExact": "익명 글 노출 37분 뒤",
+                "period": "같은 밤"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse02:a:d-2:unlock:s3:0",
+            "factText": "희주의 무단 계정 접근 시각은 익명 글 노출 뒤 37분 후로 기록돼 있다.",
+            "tags": [
+              "timeline",
+              "privacy"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "강도윤",
+                "fullName": "강도윤",
+                "judgeRef": "남편",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "학교 메일 초안",
+                "neutral": "그 초안"
+              },
+              "institution": {
+                "exact": "임시 연락망",
+                "neutral": "학교 연락망"
+              },
+              "time": {
+                "exact": "밤 11시 52분",
+                "neutral": "그날 밤",
+                "dateExact": "밤 11시 52분",
+                "period": "익명 글 직후"
+              },
+              "accessTime": {
+                "exact": "익명 글 노출 37분 뒤",
+                "neutral": "그 직후",
+                "dateExact": "익명 글 노출 37분 뒤",
+                "period": "같은 밤"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [],
+        "S5": []
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse02:a:d-3:unlock:s2:0",
+            "factText": "익명 글의 표현인 '보호자 한쪽의 과거 기록'은 내부 사정을 아는 사람이 쓴 흔적이었다.",
+            "tags": [
+              "context",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "강도윤",
+                "fullName": "강도윤",
+                "judgeRef": "남편",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "익명 경고글과 첨부 파일",
+                "neutral": "그 글과 첨부"
+              },
+              "institution": {
+                "exact": "입학 예정 학부모방",
+                "neutral": "학부모방"
+              },
+              "time": {
+                "exact": "오리엔테이션 명단 공지 직후",
+                "neutral": "그 직후",
+                "dateExact": "오리엔테이션 명단 공지 직후",
+                "period": "입학 준비 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [],
+        "S4": [],
+        "S5": []
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse02:a:d-4:unlock:s2:0",
+            "factText": "희주 초안 본문에는 도윤의 예전 별거 위기 발언이 학교 판단 자료처럼 적혀 있었다.",
+            "tags": [
+              "rule",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "강도윤",
+                "fullName": "강도윤",
+                "judgeRef": "남편",
+                "neutral": "상대 배우자"
+              },
+              "rule": {
+                "exact": "과거 상처 비무기화 약속",
+                "neutral": "그 약속"
+              },
+              "time": {
+                "exact": "2023년 별거 직전",
+                "neutral": "그때",
+                "dateExact": "2023년 별거 직전",
+                "period": "별거 위기 무렵"
+              },
+              "past": {
+                "exact": "예전 별거 위기 발언",
+                "neutral": "그 과거 발언"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [],
+        "S4": [],
+        "S5": [
+          {
+            "id": "spouse02:a:d-4:unlock:s5:0",
+            "factText": "희주는 2023년 약속 이후만은 상담 기록이 다시 무기화되지 않을 거라고 믿고 있었다.",
+            "tags": [
+              "relationship",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "강도윤",
+                "fullName": "강도윤",
+                "judgeRef": "남편",
+                "neutral": "상대 배우자"
+              },
+              "rule": {
+                "exact": "과거 상처 비무기화 약속",
+                "neutral": "그 약속"
+              },
+              "time": {
+                "exact": "2023년 별거 직전",
+                "neutral": "그때",
+                "dateExact": "2023년 별거 직전",
+                "period": "별거 위기 무렵"
+              },
+              "past": {
+                "exact": "예전 별거 위기 발언",
+                "neutral": "그 과거 발언"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse02:a:d-5:unlock:s2:0",
+            "factText": "학교 파일 보류는 익명 메일보다 앞서 주소 오류 때문에 자동 처리됐다.",
+            "tags": [
+              "timeline",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "전입 확인서",
+                "neutral": "그 서류"
+              },
+              "institution": {
+                "exact": "관리사무소",
+                "neutral": "관리사무소"
+              },
+              "school": {
+                "exact": "학교 파일 보류 메모",
+                "neutral": "학교 메모"
+              },
+              "time": {
+                "exact": "익명 메일 도착 전",
+                "neutral": "그보다 앞선 시점",
+                "dateExact": "익명 메일 도착 전",
+                "period": "보류 처리 시점"
+              },
+              "address": {
+                "exact": "구 동호수",
+                "neutral": "이전 주소 정보"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [],
+        "S4": [],
+        "S5": [
+          {
+            "id": "spouse02:a:d-5:unlock:s5:0",
+            "factText": "희주는 파일 보류를 도윤 탓으로 단정해 아이 문제를 부부 싸움 프레임으로 좁혔다.",
+            "tags": [
+              "admission",
+              "shame"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "document": {
+                "exact": "전입 확인서",
+                "neutral": "그 서류"
+              },
+              "institution": {
+                "exact": "관리사무소",
+                "neutral": "관리사무소"
+              },
+              "school": {
+                "exact": "학교 파일 보류 메모",
+                "neutral": "학교 메모"
+              },
+              "time": {
+                "exact": "익명 메일 도착 전",
+                "neutral": "그보다 앞선 시점",
+                "dateExact": "익명 메일 도착 전",
+                "period": "보류 처리 시점"
+              },
+              "address": {
+                "exact": "구 동호수",
+                "neutral": "이전 주소 정보"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [],
+        "S3": [],
+        "S4": [
+          {
+            "id": "spouse02:b:d-1:unlock:s4:0",
+            "factText": "도윤은 '학교가 미리 알아야 할 사정'이라는 문구로 상담 기록 전달을 보호 행위처럼 포장했다.",
+            "tags": [
+              "self_justification",
+              "institution"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "나희주",
+                "fullName": "나희주",
+                "judgeRef": "아내",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "상담 종결서 일부",
+                "neutral": "그 기록"
+              },
+              "institution": {
+                "exact": "학교 학부모지원 담당",
+                "neutral": "학교 쪽"
+              },
+              "time": {
+                "exact": "익명 글 게시 사흘 전",
+                "neutral": "그 무렵",
+                "dateExact": "익명 글 게시 사흘 전",
+                "period": "익명 글 직전"
+              },
+              "account": {
+                "exact": "보조 이메일",
+                "neutral": "별도 계정"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse02:b:d-1:unlock:s5:0",
+            "factText": "도윤은 배우자 동의 없는 상담 기록 전달이 아이 보호 명분으로도 정당화되지 않는다는 점을 안다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "나희주",
+                "fullName": "나희주",
+                "judgeRef": "아내",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "상담 종결서 일부",
+                "neutral": "그 기록"
+              },
+              "institution": {
+                "exact": "학교 학부모지원 담당",
+                "neutral": "학교 쪽"
+              },
+              "time": {
+                "exact": "익명 글 게시 사흘 전",
+                "neutral": "그 무렵",
+                "dateExact": "익명 글 게시 사흘 전",
+                "period": "익명 글 직전"
+              },
+              "account": {
+                "exact": "보조 이메일",
+                "neutral": "별도 계정"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse02:b:d-2:unlock:s2:0",
+            "factText": "도윤은 연락망 제외 초안이 발송되지 않았다는 사실을 알고도 의도만 앞세워 말했다.",
+            "tags": [
+              "context",
+              "motive"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "나희주",
+                "fullName": "나희주",
+                "judgeRef": "아내",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "학교 메일 초안",
+                "neutral": "그 초안"
+              },
+              "institution": {
+                "exact": "임시 연락망",
+                "neutral": "학교 연락망"
+              },
+              "time": {
+                "exact": "밤 11시 52분",
+                "neutral": "그날 밤",
+                "dateExact": "밤 11시 52분",
+                "period": "익명 글 직후"
+              },
+              "accessTime": {
+                "exact": "익명 글 노출 37분 뒤",
+                "neutral": "그 직후",
+                "dateExact": "익명 글 노출 37분 뒤",
+                "period": "같은 밤"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [],
+        "S4": [],
+        "S5": []
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse02:b:d-3:unlock:s2:0",
+            "factText": "학교가 받은 익명 제보 메일 헤더는 도윤 보조 계정의 복구 정보와 일부 일치한다.",
+            "tags": [
+              "evidence",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "나희주",
+                "fullName": "나희주",
+                "judgeRef": "아내",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "익명 경고글과 첨부 파일",
+                "neutral": "그 글과 첨부"
+              },
+              "institution": {
+                "exact": "입학 예정 학부모방",
+                "neutral": "학부모방"
+              },
+              "time": {
+                "exact": "오리엔테이션 명단 공지 직후",
+                "neutral": "그 직후",
+                "dateExact": "오리엔테이션 명단 공지 직후",
+                "period": "입학 준비 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse02:b:d-3:unlock:s3:0",
+            "factText": "상담 종결서는 도윤 로그인 상태에서 스캔돼 가족클라우드 임시폴더로 동기화됐다.",
+            "tags": [
+              "privacy",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "나희주",
+                "fullName": "나희주",
+                "judgeRef": "아내",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "익명 경고글과 첨부 파일",
+                "neutral": "그 글과 첨부"
+              },
+              "institution": {
+                "exact": "입학 예정 학부모방",
+                "neutral": "학부모방"
+              },
+              "time": {
+                "exact": "오리엔테이션 명단 공지 직후",
+                "neutral": "그 직후",
+                "dateExact": "오리엔테이션 명단 공지 직후",
+                "period": "입학 준비 직전"
+              },
+              "account": {
+                "exact": "보조 계정",
+                "neutral": "별도 계정"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [],
+        "S5": [
+          {
+            "id": "spouse02:b:d-3:unlock:s5:0",
+            "factText": "익명 글과 첨부 파일의 실질적 출발점은 스캔 자료와 보조 계정이 결합된 도윤의 행동이었다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "나희주",
+                "fullName": "나희주",
+                "judgeRef": "아내",
+                "neutral": "상대 배우자"
+              },
+              "document": {
+                "exact": "익명 경고글과 첨부 파일",
+                "neutral": "그 글과 첨부"
+              },
+              "institution": {
+                "exact": "입학 예정 학부모방",
+                "neutral": "학부모방"
+              },
+              "time": {
+                "exact": "오리엔테이션 명단 공지 직후",
+                "neutral": "그 직후",
+                "dateExact": "오리엔테이션 명단 공지 직후",
+                "period": "입학 준비 직전"
+              },
+              "account": {
+                "exact": "보조 계정",
+                "neutral": "별도 계정"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse02:b:d-4:unlock:s2:0",
+            "factText": "도윤은 2023년 약속을 기억한 채 상담 기록 유포를 아이 문제의 예외라고 합리화했다.",
+            "tags": [
+              "rule",
+              "self_justification"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "나희주",
+                "fullName": "나희주",
+                "judgeRef": "아내",
+                "neutral": "상대 배우자"
+              },
+              "rule": {
+                "exact": "과거 상처 비무기화 약속",
+                "neutral": "그 약속"
+              },
+              "time": {
+                "exact": "2023년 별거 직전",
+                "neutral": "그때",
+                "dateExact": "2023년 별거 직전",
+                "period": "별거 위기 무렵"
+              },
+              "past": {
+                "exact": "상담 기록",
+                "neutral": "그 과거 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse02:b:d-4:unlock:s3:0",
+            "factText": "희주 초안을 근거로 책임을 나누려 했지만 실제 유포와 약속 파기의 시작은 도윤 쪽이 먼저였다.",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "나희주",
+                "fullName": "나희주",
+                "judgeRef": "아내",
+                "neutral": "상대 배우자"
+              },
+              "rule": {
+                "exact": "과거 상처 비무기화 약속",
+                "neutral": "그 약속"
+              },
+              "time": {
+                "exact": "2023년 별거 직전",
+                "neutral": "그때",
+                "dateExact": "2023년 별거 직전",
+                "period": "별거 위기 무렵"
+              },
+              "past": {
+                "exact": "상담 기록",
+                "neutral": "그 과거 기록"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [],
+        "S5": []
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse02:b:d-5:unlock:s2:0",
+            "factText": "도윤은 보류 원인을 확인하지 않은 채 희주의 양육 적합성 문제로 해석했다.",
+            "tags": [
+              "context",
+              "motive"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "전입 확인서",
+                "neutral": "그 서류"
+              },
+              "institution": {
+                "exact": "관리사무소",
+                "neutral": "관리사무소"
+              },
+              "school": {
+                "exact": "학교 파일 보류 메모",
+                "neutral": "학교 메모"
+              },
+              "time": {
+                "exact": "익명 메일 도착 전",
+                "neutral": "그보다 앞선 시점",
+                "dateExact": "익명 메일 도착 전",
+                "period": "보류 처리 시점"
+              },
+              "address": {
+                "exact": "구 동호수",
+                "neutral": "이전 주소 정보"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [],
+        "S4": [],
+        "S5": []
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "spouse02:contradiction:0",
+        "targetParty": "a",
+        "trigger": "희주가 '보낸 적 없다'만 반복하면서 프린터 초안과 버전기록 질문을 동시에 받을 때",
+        "text": "발송은 없었지만 초안 작성과 출력, 삭제 시도는 모두 본인 흔적입니다. 실행이 없었다는 말만으로 준비 과정이 지워지지는 않습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-2"
+        ]
+      },
+      {
+        "id": "spouse02:contradiction:1",
+        "targetParty": "b",
+        "trigger": "도윤이 학교 전달과 익명 글을 모두 외부 오해라고 밀어붙일 때",
+        "text": "집 안 스캔 기록과 학교 메일 헤더가 같은 방향을 가리키는데도 외부 소문만 말하면 설명이 끊깁니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-5"
+        ]
+      },
+      {
+        "id": "spouse02:contradiction:2",
+        "targetParty": "b",
+        "trigger": "도윤이 입학 파일 보류를 끝까지 희주 문제 때문이라고 단정할 때",
+        "text": "학교 보류 메모 시각이 익명 메일보다 앞서 있습니다. 보류의 직접 원인을 배우자 흠결로 돌리려던 해석과 시간순이 맞지 않습니다.",
+        "relatedDisputes": [
+          "d-5",
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      },
+      {
+        "id": "spouse02:contradiction:3",
+        "targetParty": "a",
+        "trigger": "희주가 비무기화 약속을 전적으로 도윤만의 위반이라고 말할 때",
+        "text": "희주 초안 안에도 예전 별거 위기 문장이 들어 있었습니다. 실행 여부와 별개로 약속 경계에 손을 댄 흔적은 남습니다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "spouse02:interjection:0",
+        "speaker": "b",
+        "trigger": "도윤이 스캔 기록 질문으로 몰리다가 아이 명분을 붙일 틈을 찾을 때",
+        "text": "난 아이 생각만 했다고요. 그 말까지 죄처럼 들리게 만들진 마세요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "spouse02:interjection:1",
+        "speaker": "a",
+        "trigger": "희주가 발송되지 않은 초안만으로 가해자로 단정되는 흐름을 느낄 때",
+        "text": "초안은 남았지만 보내진 적은 없습니다. 그 순서만은 분명히 해 주세요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse02:interjection:2",
+        "speaker": "judge",
+        "trigger": "입학 파일 보류 원인을 두 사람이 서로에게만 돌리며 시간순 확인을 놓칠 때",
+        "text": "감정 해석보다 먼저 시각과 문서의 선후를 맞추십시오. 직접 원인과 사후 혼선을 구분해야 합니다.",
+        "relatedDisputes": [
+          "d-5",
+          "d-1"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "spouse02:outburst:a:0",
+        "party": "a",
+        "trigger": "도윤이 상담 기록 전달을 끝까지 보호라고 부를 때",
+        "text": "제 기록을 밖에 돌려놓고 보호였다고 말하면, 저는 평생 다시 안전하다고 못 느낍니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse02:outburst:a:1",
+        "party": "a",
+        "trigger": "입학 파일 보류가 자기 탓이라는 수치심과 아이 미안함이 동시에 올라올 때",
+        "text": "저도 잘못 본 건 압니다. 그런데 아이 문제를 이렇게 서로의 흠으로만 읽게 만든 것 자체가 너무 끔찍했습니다.",
+        "relatedDisputes": [
+          "d-5",
+          "d-2"
+        ]
+      },
+      {
+        "id": "spouse02:outburst:b:0",
+        "party": "b",
+        "trigger": "도윤이 좋은 아빠 이미지와 실제 유포 책임이 동시에 무너지는 순간",
+        "text": "내가 다 버텼다고 믿었는데, 결국 제일 먼저 집 안 일을 밖으로 던진 사람이 나였다는 게 미치겠어요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "spouse02:outburst:b:1",
+        "party": "b",
+        "trigger": "보류 원인이 행정 오류였다는 사실로 자기 명분이 무너질 때",
+        "text": "그럼 나는 아이 문제를 지킨 것도 아니고, 그냥 희주를 몰아붙인 사람만 된 거잖아요.",
+        "relatedDisputes": [
+          "d-5",
+          "d-4"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "spouse02:transition:a:d-2:s0_s1",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "printer_draft_question",
+      "line": "프린터 초안 얘기가 나오니까 표현을 바로잡고 싶습니다. 아니, 정확히는 실행 직전까지 간 적은 있어도 보낸 건 아니었습니다.",
+      "behaviorHint": "희주가 숨을 세 번 고르고 문장 중간에서 단어를 스스로 수정한다."
+    },
+    {
+      "id": "spouse02:transition:a:d-2:s1_s2",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "출력본이 남아 있다면 그건 제가 뽑은 겁니다. 그래도 그때는 겁이 나서 정리만 한 거였습니다.",
+      "behaviorHint": "시선이 내려가고 마지막 문장에서 목소리가 약해진다."
+    },
+    {
+      "id": "spouse02:transition:a:d-2:s2_s3",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "login_log_question",
+      "line": "로그까지 묻는다면 더 돌려 말하긴 어렵습니다. 제가 직접 확인하려고 계정 안으로 들어갔습니다.",
+      "behaviorHint": "말속도가 빨라졌다가 '직접' 대목에서 스스로 멈춘다."
+    },
+    {
+      "id": "spouse02:transition:a:d-2:s3_s5",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_presented",
+      "line": "버전기록과 접속 시각이 다 맞으면 인정하겠습니다. 무단 열람과 초안 작성, 둘 다 제 행동입니다.",
+      "behaviorHint": "손끝 힘이 풀리고 책상에서 손을 떼며 체념한다."
+    },
+    {
+      "id": "spouse02:transition:a:d-4:s0_s1",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_promise_reminder",
+      "line": "그 약속을 잊은 건 아닙니다. 다만 초안 속 생각과 실제로 던진 상처는 다르다고 붙들고 있었습니다.",
+      "behaviorHint": "턱을 조인 채 첫 문장을 짧게 끊고 두 번째 문장을 길게 잇는다."
+    },
+    {
+      "id": "spouse02:transition:a:d-4:s1_s2",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "draft_content_question",
+      "line": "초안 내용을 구체적으로 묻는다면 숨길 수는 없습니다. 예전 별거 위기 말을 적어 넣었습니다.",
+      "behaviorHint": "눈을 한 번 감았다 뜨고 바로 사실만 말하려 한다."
+    },
+    {
+      "id": "spouse02:transition:a:d-4:s2_s5",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "공동 책임을 묻는다면 저도 빠질 수 없습니다. 보내지 않았어도 약속을 건드린 사람 중 하나였습니다.",
+      "behaviorHint": "희주가 어깨를 내리고 자책을 억누른 채 천천히 말한다."
+    },
+    {
+      "id": "spouse02:transition:a:d-5:s0_s1",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "school_hold_reason_question",
+      "line": "학교 보류 이유를 묻자 저는 배우자 문제부터 떠올렸습니다. 그래서 설명을 안 하는 태도까지 전부 그쪽으로 읽었습니다.",
+      "behaviorHint": "메모를 더듬듯 손가락을 접으며 추론 과정을 설명한다."
+    },
+    {
+      "id": "spouse02:transition:a:d-5:s1_s2",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "정정서가 나오면 제 해석이 흔들립니다. 적어도 직접 원인은 다른 행정 문제였다고 봐야 합니다.",
+      "behaviorHint": "말끝이 낮아지고 고개가 조금 숙는다."
+    },
+    {
+      "id": "spouse02:transition:a:d-5:s2_s5",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S5",
+      "trigger": "timeline_reconstruction",
+      "line": "타임라인을 다시 맞춰보면 답이 분명해집니다. 파일을 멈춘 건 주소 오류였고, 저는 그걸 도윤 탓으로 먼저 묶었습니다.",
+      "behaviorHint": "희주가 숨을 길게 내쉬고 마지막 문장을 또렷하게 자책한다."
+    },
+    {
+      "id": "spouse02:transition:b:d-1:s0_s1",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "school_mail_question",
+      "line": "학교 메일 얘기가 나오면 또 내가 나쁜 사람 되네. 걱정은 했지만 바로 보냈다고까지는 말 못 하겠어.",
+      "behaviorHint": "상처받은 표정을 먼저 만들고 손을 반쯤 든 채 변명한다."
+    },
+    {
+      "id": "spouse02:transition:b:d-1:s1_s2",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "스캔 기록이 있으면 그건 내가 한 거지. 그래도 그때는 자료를 정리해 둔 정도라고 생각했어.",
+      "behaviorHint": "손가락으로 책상면을 두드리며 인정 범위를 좁힌다."
+    },
+    {
+      "id": "spouse02:transition:b:d-1:s2_s4",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "child_safety_nonjudgment_question",
+      "line": "비난 없이 아이 안전만 묻는다면 솔직히 말할 수 있어. 난 아이 생각만 했다고 믿고 움직였어.",
+      "behaviorHint": "가슴을 가리키며 명분을 앞세우고 목소리를 낮춘다."
+    },
+    {
+      "id": "spouse02:transition:b:d-1:s4_s5",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "헤더까지 내밀면 더 돌릴 곳이 없지. 보조 계정으로 학교 쪽에 보낸 사람, 나야.",
+      "behaviorHint": "어깨가 떨어지고 시선이 바닥으로 내려간다."
+    },
+    {
+      "id": "spouse02:transition:b:d-3:s0_s1",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "anonymous_post_question",
+      "line": "익명 글 질문을 받으면 처음엔 소문이라 하고 싶지. 근데 캡처가 있으니 외부 과장일 수도 있다는 말밖에 못 하겠어.",
+      "behaviorHint": "입꼬리를 억지로 올리다 금방 굳어진다."
+    },
+    {
+      "id": "spouse02:transition:b:d-3:s1_s2",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "캡처가 실제라면 글이 있었던 건 인정해야지. 다만 누가 올렸는지까지 바로 나라고 할 수는 없다고 버텼어.",
+      "behaviorHint": "시선을 피하며 문장을 길게 늘인다."
+    },
+    {
+      "id": "spouse02:transition:b:d-3:s2_s3",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "scan_log_question",
+      "line": "스캔 로그를 들이대면 더는 모른 척 못 해. 자료를 만든 흐름엔 내가 들어가 있어.",
+      "behaviorHint": "관자놀이를 문지르며 인정 범위를 조금 더 넓힌다."
+    },
+    {
+      "id": "spouse02:transition:b:d-3:s3_s5",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_or_e-5_presented",
+      "line": "헤더나 스캔 기록이 같이 맞물리면 끝이야. 익명성 뒤에서 시작 버튼을 누른 사람이 나였어.",
+      "behaviorHint": "긴 침묵 뒤 한 문장씩 끊어 고백한다."
+    },
+    {
+      "id": "spouse02:transition:b:d-4:s0_s1",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_promise_reminder",
+      "line": "옛 약속을 다시 들으면 솔직히 흔들려. 그래도 난 걱정이었지 공격은 아니었다고 붙들고 있었어.",
+      "behaviorHint": "말 앞머리를 낮추고 손으로 공중에 선을 그린다."
+    },
+    {
+      "id": "spouse02:transition:b:d-4:s1_s2",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_worry",
+      "line": "작게라도 불안을 인정하라고 하면 피할 수 없지. 상담 기록을 꺼낸 건 내 걱정이 과했기 때문이야.",
+      "behaviorHint": "희생을 열거하듯 시작하다가 마지막에 인정으로 접는다."
+    },
+    {
+      "id": "spouse02:transition:b:d-4:s2_s3",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "medical_record_specific_question",
+      "line": "의료기록을 구체적으로 묻는 순간 숨길 명분이 줄어들어. 그래서 희주도 과거를 건드렸다고 같이 말하게 돼.",
+      "behaviorHint": "책임을 나누려는 듯 손바닥을 뒤집는다."
+    },
+    {
+      "id": "spouse02:transition:b:d-4:s3_s5",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "책임을 정면으로 묻는다면 돌아갈 데가 없어. 먼저 약속을 크게 깬 쪽은 나고, 그 파장을 만든 것도 나야.",
+      "behaviorHint": "목소리가 낮아지고 마지막 문장에서 더는 눈을 맞추지 못한다."
+    }
+  ]
+}

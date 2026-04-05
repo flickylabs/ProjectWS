@@ -1,0 +1,658 @@
+# batch-14 investigationStages
+
+```json
+{
+  "case": "spouse-10",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 단톡 원문과 픽업 예약 내역에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "전날 밤 연락 뒤 13시간 안에 준비가 이어진 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이 문구가 일정 문의가 아니라 통보처럼 읽힐 수 있음을 인정하십니까?",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 일정 문구를 수정 없이 유지한 사실을 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 일정이 밤늦게 생성된 뒤 그대로 남은 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이 표현만으로는 어느 집인지 구분되지 않는 점을 알고 계셨습니까?",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 메시지 캡처를 제출한 경위에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "출발 차질 34분 뒤 이 문구만 저장한 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "앞뒤 대화를 제외하고 이 문구만 남긴 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 통화기록과 이동 이력을 함께 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "출발 7분 전 통화가 짧게 끝난 경위를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "그 통화가 조율보다 기존 일정 확인에 그친 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 음성파일과 답장 기록의 존재를 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "음성메시지 뒤 두 시간 뒤에 답한 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이 대화에서 집 이름이 끝내 명시되지 않은 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 두 주문서와 수령 메모에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "서로 다른 주소 준비가 5시간 차로 진행된 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "상대 선물의 목적지를 확인하지 않은 채 각자 진행한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ]
+  }
+}
+```
+
+```json
+{
+  "case": "spouse-11",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 접속 로그와 관리자 기록의 존재를 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 계정 접속이 다른 기기 흔적과 함께 남은 이유를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이 자료 확보가 단순 열람이 아니라 권한 행사로 이어진 이유를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 전원 로그와 일정 변경 기록에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "전원을 끈 상태가 6시간 넘게 유지된 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "전원 차단 뒤 권한 변경과 취소까지 이어진 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 영상과 캡처 자료를 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "생성 직후 앞뒤 11초가 빠진 상태로 저장된 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "전체 흐름 대신 일부 장면만 남긴 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 복원 대화와 메모 기록에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "비슷한 계산 대화가 두 시점에 반복된 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이 대화가 충동이 아니라 서로 계산을 보탠 흐름인 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 청구 초안과 분석 자료를 함께 낸 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "사진 순서 재배치와 센서 흐름이 어긋난 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "시간축상 단계적 변화인데 한 번의 사고처럼 적은 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 보류 통지와 현장 진술서에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 결정이 외부 충돌 이틀 전 내려진 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "보류 사유가 외부 신고와 별개로 적힌 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ]
+  }
+}
+```
+
+```json
+{
+  "case": "spouse-12",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 전달 로그와 단톡 원문에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "확인 답 9분 전 세 채널로 보낸 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "세 채널 모두 같은 단정 표현을 쓴 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 복원 로그와 이동 기록의 존재를 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "확산 2시간 뒤 일부 대화를 옮긴 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "공유 파일에서 일부 대화를 제외한 기준을 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 게시물 캡처 묶음을 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "계정 정보와 댓글 구간이 잘린 채 저장된 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "서로 다른 해상도 자료가 한 이미지에 묶인 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 포렌식 보고서와 대조표에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "서로 다른 시기 템플릿이 함께 검출된 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "레이어 경계와 재압축 흔적이 함께 나온 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 복구 기록과 접속 로그의 존재를 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "계정 생성과 게시 준비가 12시간 안에 몰린 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "복구 수단과 현장 접속이 한쪽에 모인 이유를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 옛 메일 묶음과 메모 사본에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "두 기록 사이에 2주가량 간격이 벌어진 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "과거의 거친 표현과 익명 게시 주체를 묶은 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ]
+  }
+}
+```
+
+```json
+{
+  "case": "tenant-02",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 계약서와 출입 특약본에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "특약 작성일과 갱신일이 보관대장과 맞는 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이 조항이 긴급 확인과 촬영 보관을 구분하는 점을 인정하십니까?",
+          "attackVector": "legality"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 관리 기록과 접수대장을 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "점검 메모가 확산 직전 날짜에 남은 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이 기록만으로 환기 문제만을 원인으로 보기 어려운 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 단톡 캡처를 증거로 낸 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "문제의 통지가 합의일보다 이틀 앞선 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "거절 문장을 제외하고 뒤 대화만 남긴 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 원본 사진과 제출 캡처본에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "원본 촬영일이 합의일보다 앞선 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "촬영일과 제출본 표시 시각이 갈리는 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 진단서와 견적서를 함께 낸 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "첫 진단 시각이 거부 해제 다음 날인 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "기사 소견이 생활 습관보다 설비 문제를 먼저 지목한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 입금 내역과 영수증을 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "예약 접수가 사진 캡처 날짜보다 앞선 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "합의일 전부터 이 자료를 바탕으로 일정을 잡은 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      }
+    ]
+  }
+}
+```
+

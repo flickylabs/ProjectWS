@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "강도윤 씨, 발송되지 않은 초안을 실제 공격 계획처럼 부풀려 말한 이유를 설명하십시오.",
+              "text": "강도윤 씨, 그 출력물을 보고 왜 실제 발송처럼 받아들였는지 설명하십시오.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "강도윤 씨, 복구 정보가 본인 쪽과 맞아떨어지는 보조 계정을 왜 사용했습니까?",
+              "text": "강도윤 씨, 본계정 말고 다른 경로를 따로 둔 이유부터 설명하십시오.",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "나희주 씨, 스캔 시각이 익명 글보다 사흘 전이라는 점이 본인 판단을 어떻게 바꿨습니까?",
+              "text": "나희주 씨, 자료의 시점이 익명 글 시점과 어긋난다는 점이 본인 판단을 바꿨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "강도윤 씨, 의료정보가 포함된 서류를 집 장비에서 스캔해 가족클라우드에 올린 이유를 설명하십시오.",
+              "text": "강도윤 씨, 그 서류가 집 안 공유 공간까지 이어진 경위를 설명하십시오.",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

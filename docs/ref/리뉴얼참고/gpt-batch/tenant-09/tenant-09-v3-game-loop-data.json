@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "김세라 씨, 계약서에는 8천만원이 적혀 있는데 실제로 박태윤 씨 계좌에 먼저 들어간 돈은 얼마였습니까?",
+              "text": "김세라 씨, 계약서 숫자와 실제 돈 흐름이 처음부터 같은 건 아니지요?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "박태윤 씨, 본인 계좌 거래내역상 실제 수령액이 6천만원뿐이라는 점은 부인하지 않으시죠?",
+              "text": "박태윤 씨, 계약서 금액과 실제 수령액 사이에 차이가 있었던 건 맞지요?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -114,7 +114,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "김세라 씨, 최종 스캔 30분 전 대화에서 '큰 숫자가 정책자금에 낫다'는 말을 듣고도 왜 구조를 멈추지 않았습니까?",
+              "text": "김세라 씨, 그 구조가 그대로 가면 누구에게 유리한지 알고도 멈추지 않은 것 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -153,7 +153,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "박태윤 씨, 지금 자료를 보면 세라 씨와 우석 씨가 8천만원 숫자에서 같이 이익을 봤다는 정황이 보이는데, 언제 처음 이상함을 느끼셨습니까?",
+              "text": "박태윤 씨, 그 숫자가 이상하다고 느낀 순간이 있었던 것 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -209,7 +209,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "김세라 씨, 마지막 월세 일부가 약정일보다 9일 늦었다는 점은 인정하십니까?",
+              "text": "김세라 씨, 마지막 정산이 깔끔하게 끝난 건 아니지요?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -248,7 +248,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "박태윤 씨, 다투지 않는 6천만원 부분을 먼저 떼어 반환하지 않고 5주 넘게 묶어 둔 이유가 정확히 무엇입니까?",
+              "text": "박태윤 씨, 다툼과 별개로 먼저 돌려줄 수 있는 몫까지 함께 붙잡고 있었던 것 아닙니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

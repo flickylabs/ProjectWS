@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "유다은 씨, 잘린 캡처를 원문보다 먼저 내민 이유가 무엇입니까. '되면'과 '안 되면 토요일 아침' 구절을 보고도 왜 금요일 밤 확정이라고 단정했는지 답하십시오.",
+              "text": "유다은 씨, 원문을 보기 전후로 민재 씨 도착 약속을 어떻게 받아들이고 계셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "유민재 씨, 원문이 조건부였다면 왜 상대가 확정처럼 받아들일 표현을 그대로 놔두었습니까.",
+              "text": "유민재 씨, 누나가 다르게 받아들일 수 있다는 점을 왜 더 분명히 풀어 말하지 않으셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -114,7 +114,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "유다은 씨, 추가 주문 시점이 저녁 6시 무렵이라면 민재의 최종 통보 이전에 이미 메뉴를 키운 이유가 무엇입니까.",
+              "text": "유다은 씨, 준비 규모를 키우기로 마음먹은 이유가 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -153,7 +153,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "유민재 씨, 이 영수증 흐름을 보면 유다은이 메뉴를 키운 사실 자체는 분명합니다. 그 점을 먼저 인정합니까.",
+              "text": "유민재 씨, 누나가 준비를 늘린 흐름 자체는 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -207,7 +207,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "유다은 씨, 작년 역할표 권고를 알고도 올해 다시 업데이트하지 않은 이유를 답하십시오.",
+              "text": "유다은 씨, 작년에 정해 둔 분담 기준을 올해 다시 확인하지 않은 이유가 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -246,7 +246,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "유민재 씨, 작년 역할표 원칙을 알면서도 올해 한 줄 문장으로 다시 못 박지 않은 이유가 무엇입니까.",
+              "text": "유민재 씨, 작년에 정한 분담 기준을 올해 다시 못 박지 않은 이유가 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

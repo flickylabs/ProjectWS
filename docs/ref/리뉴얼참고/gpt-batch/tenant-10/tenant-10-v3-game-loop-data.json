@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "윤민주 씨, 처음 제출한 단톡방 화면에는 '집주인 답은 아직'이라는 문장이 빠져 있는데, 그 잘린 화면을 승인 근거처럼 먼저 내세운 이유가 무엇입니까?",
+              "text": "윤민주 씨, 처음 낸 대화 화면이 전체 흐름을 다 담지 못했다면, 왜 그 장면부터 승인 근거처럼 내세우셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "최상훈 씨, 특약 원문에는 협의 여지가 남아 있는데, 왜 사진 확인 단계를 전면 금지와 같은 뜻으로 밀어 말씀하십니까?",
+              "text": "최상훈 씨, 그 특약을 사실상 금지처럼 받아들이게 만든 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "윤민주 씨, 관리실 일지에 택배 시간대 짧은 짖음 민원 두 건이 남아 있는데, '거의 없었다'는 진술은 과장 아닙니까?",
+              "text": "윤민주 씨, 반려견 관련 불편이 거의 없었다고만 말하기엔 남는 기록이 있는데, 그 표현을 그렇게 단정하신 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "최상훈 씨, 관리실 기록상 현재 확인된 건 세탁 가능한 현관매트 오염 정도인데, 왜 이미 전문 청소 전제가 깔린 것처럼 말씀하셨습니까?",
+              "text": "최상훈 씨, 확인된 상황보다 손해를 더 크게 보신 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "윤민주 씨, 상훈의 문자 원문 어디에도 '승인' 표현은 없는데, 그 문장을 허락으로 붙잡은 데에는 입주 압박이 크게 작용한 것 아닙니까?",
+              "text": "윤민주 씨, 그 답장을 허락 쪽으로 해석하게 된 가장 큰 이유가 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "최상훈 씨, 사진은 봤고 관리만 잘 해 달라는 문자만 남긴 채, 승인도 거절도 분명히 안 하신 책임을 인정하십니까?",
+              "text": "최상훈 씨, 그때 허용 여부를 분명히 정리하지 않은 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

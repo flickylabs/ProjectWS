@@ -1,0 +1,113 @@
+# 배치 11 검수 결과
+
+- Evidence 교정: 61건
+- DossierCard 교정: 44건
+
+[Evidence 위반]
+{"caseId": "workplace-06", "evidenceId": "e-1", "field": "surfaceName", "before": "팀즈 통합 공지 캡처와 역할표", "after": "공지 캡처와 역할표", "reason": "서비스명이 노출되고 있어 surfaceName은 증거 종류 중심으로만 잡는 편이 안전합니다."}
+{"caseId": "workplace-06", "evidenceId": "e-1", "field": "surfaceDescription", "before": "사내 메신저 통합 공지 캡처본과 일부가 잘린 역할 배분표 문서", "after": "공지 캡처본과 역할표 일부를 함께 묶은 문서", "reason": "서비스 성격이 드러나고 해석이 앞서 나가므로, 첫 노출 문구는 더 중립적으로 눌러야 합니다."}
+{"caseId": "workplace-06", "evidenceId": "e-2", "field": "surfaceName", "before": "레거시 권한 감사 로그와 변경 내역", "after": "권한 로그와 변경 내역", "reason": "'레거시 권한'이 핵심 쟁점을 먼저 알려 줍니다. surfaceName은 범용적인 증거 종류로 낮추는 편이 좋습니다."}
+{"caseId": "workplace-06", "evidenceId": "e-2", "field": "surfaceDescription", "before": "레거시 관리자 권한 감사 로그와 라우팅 규칙 변경 기록 내역", "after": "권한 사용 기록과 규칙 변경이 함께 남은 로그", "reason": "'관리자'와 구체 규칙까지 먼저 드러나 핵심 사실을 앞당깁니다."}
+{"caseId": "workplace-06", "evidenceId": "e-3", "field": "surfaceName", "before": "공식 통합 RACI 문서와 해설 메모", "after": "역할 기준 문서와 설명 메모", "reason": "RACI 같은 내부 용어가 바로 노출됩니다. 증거 종류만 보이게 낮추는 편이 안전합니다."}
+{"caseId": "workplace-06", "evidenceId": "e-3", "field": "surfaceDescription", "before": "공식 역할 분담 RACI 문서와 임시 권한에 대한 해설 메모", "after": "역할 기준과 보조 설명이 함께 담긴 문서", "reason": "내부 체계 용어와 권한 해석이 너무 빨리 드러납니다."}
+{"caseId": "workplace-06", "evidenceId": "e-4", "field": "surfaceName", "before": "통합 큐 재배정과 편집 이력", "after": "운영 로그와 편집 이력", "reason": "'재배정'이 핵심 분쟁을 바로 까므로, 보다 중립적인 로그 표기로 낮춰야 합니다."}
+{"caseId": "workplace-06", "evidenceId": "e-4", "field": "surfaceDescription", "before": "업무 큐 재배정 내역과 대시보드 편집 변경 이력이 담긴 로그", "after": "업무 흐름 변화와 설정 수정이 함께 남은 기록", "reason": "구체 행위를 그대로 드러내 핵심 진실을 너무 먼저 노출합니다."}
+{"caseId": "workplace-06", "evidenceId": "e-5", "field": "surfaceName", "before": "캘리브레이션 초안과 코멘트 이력", "after": "평가 초안과 코멘트 이력", "reason": "내부 제도 용어가 앞에 나옵니다. 첫 노출 문구는 더 일반적인 명칭이 낫습니다."}
+{"caseId": "workplace-06", "evidenceId": "e-5", "field": "surfaceDescription", "before": "인사 캘리브레이션 초안 문서와 매니저가 남긴 코멘트 변경 이력", "after": "초안 문서와 코멘트 변경 흐름이 보이는 기록", "reason": "직함과 제도명이 드러나고 의미가 지나치게 선명합니다."}
+{"caseId": "workplace-06", "evidenceId": "e-6", "field": "surfaceName", "before": "PM 회의록과 에스컬레이션 체크리스트", "after": "회의록과 절차 체크리스트", "reason": "직함 약어가 노출됩니다. surfaceName은 증거 종류 중심으로 단순화하는 편이 좋습니다."}
+{"caseId": "workplace-06", "evidenceId": "e-6", "field": "surfaceDescription", "before": "부서 통합 PM 회의 기록과 에스컬레이션 절차 체크리스트", "after": "회의 기록과 대응 절차가 함께 묶인 문서", "reason": "직함과 절차 구조가 너무 또렷해 플레이어가 핵심 규칙을 먼저 읽게 됩니다."}
+{"caseId": "workplace-07", "evidenceId": "e-3", "field": "surfaceName", "before": "메신저 원본 export와 해시 비교표", "after": "대화 원본과 비교표", "reason": "technical term과 비교 구도가 너무 노골적이라 합성 검증 흐름이 먼저 읽힙니다."}
+{"caseId": "workplace-07", "evidenceId": "e-3", "field": "surfaceDescription", "before": "메신저 대화 원본 내보내기 파일과 메시지 해시 비교 문서", "after": "대화 원본 파일과 비교 기록을 함께 정리한 문서", "reason": "export·해시 같은 표현이 포렌식 결론을 너무 빨리 암시합니다."}
+{"caseId": "workplace-07", "evidenceId": "e-5", "field": "surfaceName", "before": "윤리 조사 접수 기록과 인사 개입 로그", "after": "조사 접수 기록과 역할 변경 로그", "reason": "기관 성격과 '인사 개입' 결론이 surfaceName에 너무 직접적으로 드러납니다."}
+{"caseId": "workplace-07", "evidenceId": "e-5", "field": "surfaceDescription", "before": "윤리경영 조사 접수 문서와 인사 시스템 개입이 기록된 로그", "after": "접수 문서와 역할 조정 흔적이 남은 기록", "reason": "기관명과 '개입'이라는 결론형 표현이 첫 노출 문구로는 과합니다."}
+{"caseId": "workplace-07", "evidenceId": "e-6", "field": "surfaceName", "before": "디지털 포렌식 메모와 PC 로그", "after": "분석 메모와 기기 로그", "reason": "포렌식이라는 단어가 편집 진위를 너무 일찍 암시합니다."}
+{"caseId": "workplace-07", "evidenceId": "e-6", "field": "surfaceDescription", "before": "디지털 포렌식 분석 결과 메모와 편집 PC의 접근 이력 로그", "after": "분석 정리 문서와 작업 기기의 접근 기록", "reason": "편집 여부를 사실상 먼저 알려 주는 표현이라 더 중립적으로 바꿔야 합니다."}
+{"caseId": "workplace-08", "evidenceId": "e-1", "field": "surfaceName", "before": "월말 클로징 메일과 상계표 스레드", "after": "마감 메일과 정리표 스레드", "reason": "'상계표'가 처리 방식의 핵심을 먼저 드러냅니다."}
+{"caseId": "workplace-08", "evidenceId": "e-1", "field": "surfaceDescription", "before": "월말 정산 관련 이메일과 상계표 링크가 포함된 메일 스레드", "after": "마감 정산 관련 메일과 참고 문서 링크가 묶인 스레드", "reason": "처리 구조를 너무 구체적으로 알려 줘 첫 노출 정보로는 과합니다."}
+{"caseId": "workplace-08", "evidenceId": "e-2", "field": "surfaceName", "before": "재발급 영수증과 수정 요청 기록", "after": "영수증과 수정 요청 기록", "reason": "'재발급'이 세탁 방향을 너무 먼저 알려 줍니다."}
+{"caseId": "workplace-08", "evidenceId": "e-2", "field": "surfaceDescription", "before": "재발급된 영수증과 POS 품목 수정 요청이 담긴 메신저 기록", "after": "영수증 사본과 항목 수정 요청이 담긴 대화 기록", "reason": "서비스명과 핵심 처리 방식이 너무 직접적으로 드러납니다."}
+{"caseId": "workplace-09", "evidenceId": "e-2", "field": "surfaceName", "before": "에이전시 DM과 내부 화면 캡처", "after": "외부 대화와 내부 화면 캡처", "reason": "외부 역할과 DM 표현이 너무 직접적이라 더 일반화하는 편이 좋습니다."}
+{"caseId": "workplace-09", "evidenceId": "e-2", "field": "surfaceDescription", "before": "에이전시 담당자와의 메신저 대화 캡처와 내부 시스템 화면 캡처", "after": "외부와 주고받은 대화와 화면 캡처를 묶은 자료", "reason": "외부 주체와 시스템 성격이 surfaceDescription에 너무 많이 남아 있습니다."}
+{"caseId": "workplace-09", "evidenceId": "e-3", "field": "surfaceDescription", "before": "특정 공유 문서의 열람 기록이 시간순으로 정리된 PDF 파일", "after": "공유 문서 열람 기록을 발췌해 정리한 PDF 파일", "reason": "'특정 X' 금지 패턴에 걸리고, 첫 문구가 너무 딱 잘라 특정 대상을 지목합니다."}
+{"caseId": "workplace-09", "evidenceId": "e-4", "field": "surfaceName", "before": "협업 드라이브 링크 맵과 버전 이력", "after": "문서 링크 맵과 버전 이력", "reason": "서비스 성격이 드러나는 표현을 빼고 증거 종류만 남기는 편이 안전합니다."}
+{"caseId": "workplace-09", "evidenceId": "e-4", "field": "surfaceDescription", "before": "협업 드라이브의 링크 구조도와 문서 버전 변경 이력 정리본", "after": "문서 링크 구조와 버전 변화가 정리된 기록", "reason": "도구 성격이 직접 노출돼 첫 인상 정보가 과해집니다."}
+{"caseId": "workplace-09", "evidenceId": "e-5", "field": "surfaceName", "before": "에이전시 후속 메일과 회의 요약본", "after": "외부 후속 메일과 회의 요약본", "reason": "외부 역할명이 먼저 튀어 증거 자체보다 관계 구도가 앞섭니다."}
+{"caseId": "workplace-09", "evidenceId": "e-5", "field": "surfaceDescription", "before": "에이전시 담당자의 후속 이메일 회신과 거래처 회의 요약 문서", "after": "외부 발신 메일과 회의 내용을 정리한 문서", "reason": "외부 주체와 맥락이 너무 상세해 첫 노출 문구로는 무겁습니다."}
+{"caseId": "workplace-09", "evidenceId": "e-6", "field": "surfaceName", "before": "CRM 역할 변경 로그와 리스크 메모", "after": "역할 변경 로그와 리스크 메모", "reason": "서비스명이 그대로 노출됩니다."}
+{"caseId": "workplace-09", "evidenceId": "e-6", "field": "surfaceDescription", "before": "CRM 시스템의 역할 변경 기록과 리스크 관련 내부 메모", "after": "역할 조정 기록과 내부 메모", "reason": "서비스명 노출을 줄이고 더 중립적으로 잡아야 합니다."}
+{"caseId": "workplace-10", "evidenceId": "e-1", "field": "surfaceName", "before": "면담 메모와 메신저 약속 스레드", "after": "면담 메모와 대화 스레드", "reason": "'약속'이 핵심 분쟁의 결론을 너무 빨리 앞당깁니다."}
+{"caseId": "workplace-10", "evidenceId": "e-1", "field": "surfaceDescription", "before": "1:1 면담 메모와 전환 약속이 담긴 메신저 대화 스레드 기록", "after": "면담 기록과 관련 대화가 이어진 스레드", "reason": "핵심 진실인 전환 약속 존재를 surfaceDescription에서 직접 드러내고 있습니다."}
+{"caseId": "workplace-10", "evidenceId": "e-2", "field": "surfaceName", "before": "타사 근로계약서와 온보딩 메일", "after": "근로계약서 사본과 안내 메일", "reason": "숨겨진 다른 계약이 surfaceName에서 바로 드러납니다."}
+{"caseId": "workplace-10", "evidenceId": "e-2", "field": "surfaceDescription", "before": "타사 근로계약서 사본과 온보딩 관련 이메일이 함께 묶인 문서", "after": "계약서 사본과 안내 메일이 함께 묶인 문서", "reason": "핵심 반전인 외부 계약 존재를 너무 직접적으로 노출합니다."}
+{"caseId": "workplace-10", "evidenceId": "e-4", "field": "surfaceName", "before": "인사 전환 리뷰 트래커와 코멘트", "after": "검토 기록과 코멘트 이력", "reason": "기관·프로세스 용어가 그대로 드러납니다."}
+{"caseId": "workplace-10", "evidenceId": "e-4", "field": "surfaceDescription", "before": "인사 전환 리뷰 추적 문서와 매니저 코멘트 변경 이력 기록", "after": "검토 상태와 코멘트 흐름이 남은 기록", "reason": "직함과 내부 프로세스명이 먼저 노출돼 첫 문구가 무겁습니다."}
+{"caseId": "workplace-10", "evidenceId": "e-5", "field": "surfaceName", "before": "과거 계약 연장 메일과 잔류 요청", "after": "이전 갱신 메일과 요청 기록", "reason": "'잔류 요청'이 반복 유인 구조를 너무 먼저 보여 줍니다."}
+{"caseId": "workplace-10", "evidenceId": "e-5", "field": "surfaceDescription", "before": "과거 두 차례 계약 연장 이메일과 잔류 요청 관련 기록 문서", "after": "이전 갱신 과정의 메일과 관련 요청 기록", "reason": "핵심 패턴을 먼저 규정하는 표현이라 더 중립적으로 눌러야 합니다."}
+{"caseId": "workplace-10", "evidenceId": "e-6", "field": "surfaceName", "before": "노무 컴플라이언스 메모와 접속 로그", "after": "검토 메모와 접속 로그", "reason": "기관 성격을 드러내는 용어가 앞에 나옵니다."}
+{"caseId": "workplace-10", "evidenceId": "e-6", "field": "surfaceDescription", "before": "노무 컴플라이언스 검토 메모와 출입 및 VPN 접속 겹침 로그", "after": "검토 문서와 접속 기록이 함께 남은 자료", "reason": "기관명과 서비스명이 노출되고, 겹침 구조를 너무 선명하게 알려 줍니다."}
+{"caseId": "workplace-11", "evidenceId": "e-2", "field": "surfaceName", "before": "개인 메일 전달본과 메신저 수수료 대화", "after": "개인 메일 전달본과 외부 대화 기록", "reason": "'수수료'가 대가 흐름을 너무 먼저 노출합니다."}
+{"caseId": "workplace-11", "evidenceId": "e-2", "field": "surfaceDescription", "before": "개인 메일 전달 기록과 메신저에서 나눈 수수료 관련 대화 내용", "after": "개인 메일 전달 기록과 외부 대화가 함께 남은 자료", "reason": "핵심 반전인 대가 논의를 surfaceDescription에서 곧바로 드러냅니다."}
+{"caseId": "workplace-11", "evidenceId": "e-3", "field": "surfaceDescription", "before": "데이터 유출 방지 시스템의 경보 화면을 캡처하여 정리한 PDF", "after": "보안 경보 화면을 정리한 PDF", "reason": "서비스 성격이 직접 노출됩니다."}
+{"caseId": "workplace-11", "evidenceId": "e-4", "field": "surfaceName", "before": "메일 게이트웨이 로그와 링크 기록", "after": "전송 로그와 링크 기록", "reason": "시스템 용어가 너무 직접적이라 surfaceName을 더 일반화하는 편이 좋습니다."}
+{"caseId": "workplace-11", "evidenceId": "e-4", "field": "surfaceDescription", "before": "메일 게이트웨이 원본 로그와 외부 공유 링크 재전송 기록", "after": "원본 전송 흐름과 링크 이동 기록", "reason": "시스템명과 재전송 구조가 너무 선명해 핵심 확산 사실을 먼저 읽게 합니다."}
+{"caseId": "workplace-11", "evidenceId": "e-5", "field": "surfaceName", "before": "인사 평가 초안과 기밀 위험 메모", "after": "평가 초안과 내부 메모", "reason": "'기밀 위험'이 선행 낙인 결론을 surfaceName에서 직접 말합니다."}
+{"caseId": "workplace-11", "evidenceId": "e-5", "field": "surfaceDescription", "before": "인사 평가 초안 문서와 기밀 취급 관련 위험성을 적은 메모", "after": "평가 초안과 별도 메모가 함께 남은 문서", "reason": "핵심 판단 문구를 앞에서 바로 알려 줘 플레이어가 추론할 여지를 줄입니다."}
+{"caseId": "workplace-11", "evidenceId": "e-6", "field": "surfaceName", "before": "외부 브로커 송장과 입금 추적 정리", "after": "송장 자료와 입금 추적 정리", "reason": "'브로커'가 핵심 반전을 너무 먼저 노출합니다."}
+{"caseId": "workplace-11", "evidenceId": "e-6", "field": "surfaceDescription", "before": "외부 브로커 송장과 가상자산 입금 흐름을 추적한 포렌식 보고", "after": "송장 자료와 입금 흐름을 정리한 문서", "reason": "브로커·가상자산·포렌식까지 한 번에 드러나 핵심 진실이 과도하게 선노출됩니다."}
+{"caseId": "workplace-12", "evidenceId": "e-1", "field": "surfaceName", "before": "재택근무 지침과 웹캠 체크 공지", "after": "재택근무 지침과 추가 확인 공지", "reason": "웹캠 체크가 핵심 위법감을 너무 먼저 드러냅니다."}
+{"caseId": "workplace-12", "evidenceId": "e-1", "field": "surfaceDescription", "before": "재택근무 운영 지침서와 일일 웹캠 점검 공지가 포함된 문서", "after": "재택 운영 지침서와 별도 확인 공지가 함께 담긴 문서", "reason": "핵심 분쟁인 웹캠 점검 범위를 surfaceDescription에서 바로 밝히고 있습니다."}
+{"caseId": "workplace-12", "evidenceId": "e-2", "field": "surfaceName", "before": "유휴 로그와 지글러 탐지 기록", "after": "유휴 로그와 입력 패턴 기록", "reason": "'지글러'가 핵심 반전 단서를 너무 먼저 노출합니다."}
+{"caseId": "workplace-12", "evidenceId": "e-2", "field": "surfaceDescription", "before": "엔드포인트 유휴 상태 로그와 마우스 지글러 탐지 보고서", "after": "유휴 상태와 입력 움직임이 함께 남은 기록", "reason": "도구명과 탐지 결론이 직접 드러나 플레이어 추론 여지를 줄입니다."}
+{"caseId": "workplace-12", "evidenceId": "e-3", "field": "surfaceDescription", "before": "모니터링 결과를 요약하여 인사팀에 제출된 형식의 PDF 문서", "after": "모니터링 결과를 요약해 제출한 PDF 문서", "reason": "기관명이 노출됩니다."}
+{"caseId": "workplace-12", "evidenceId": "e-4", "field": "surfaceName", "before": "모니터링 raw export와 설정 로그", "after": "모니터링 원본 기록과 설정 로그", "reason": "raw export 같은 기술 용어가 그대로 노출됩니다."}
+{"caseId": "workplace-12", "evidenceId": "e-4", "field": "surfaceDescription", "before": "모니터링 도구의 원시 데이터 내보내기와 관리자 설정 로그", "after": "원본 기록과 설정 변경이 함께 남은 로그", "reason": "기술 용어와 직함 성격의 표현이 앞에 나옵니다."}
+{"caseId": "workplace-12", "evidenceId": "e-5", "field": "surfaceName", "before": "작업 편집 스크린샷과 동료 DM", "after": "상태 캡처와 동료 대화", "reason": "'편집'이 조작 결론을 너무 먼저 알려 줍니다."}
+{"caseId": "workplace-12", "evidenceId": "e-5", "field": "surfaceDescription", "before": "작업 편집 상태를 보여주는 스크린샷과 동료와의 메신저 대화", "after": "상태 화면 캡처와 동료와의 대화가 함께 담긴 자료", "reason": "조작 성격을 곧바로 드러내는 표현이라 더 중립화가 필요합니다."}
+{"caseId": "workplace-12", "evidenceId": "e-6", "field": "surfaceName", "before": "인사 코칭 메모와 SLA 티켓 기록", "after": "코칭 메모와 응답 기록", "reason": "기관 성격과 SLA 약어가 그대로 드러납니다."}
+{"caseId": "workplace-12", "evidenceId": "e-6", "field": "surfaceDescription", "before": "인사 코칭 메모와 응답 시간 SLA 관련 티켓 처리 이력 기록", "after": "코칭 기록과 응답 관련 티켓 이력", "reason": "기관명과 약어가 과하게 노출됩니다."}
+
+[DossierCard 위반]
+{"caseId": "workplace-06", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "박준호 씨, 공지를 보고 본인이 먼저 움직여도 된다고 판단하신 근거가 무엇이었습니까?"}
+{"caseId": "workplace-06", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "이서린 씨, 본인 권한 범위를 어디까지로 보고 그 규칙을 손보신 겁니까?"}
+{"caseId": "workplace-06", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1인데 evidence ID와 결론까지 직접 넣어 힌트 단계를 넘어섰습니다. 자연스러운 한국어로 낮춰야 합니다.", "fix": "박준호 씨, 그 조치를 단독으로 해도 된다고 판단하신 근거는 무엇이었습니까?"}
+{"caseId": "workplace-06", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "이서린 씨, 공지를 예외 권한으로 읽으신 근거를 다시 말씀해 주시겠습니까?"}
+{"caseId": "workplace-06", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "박준호 씨, 사실관계가 정리되기 전에 사람 평가부터 남긴 이유가 무엇입니까?"}
+{"caseId": "workplace-06", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "이서린 씨, 절차보다 대응을 먼저 택하신 이유가 무엇입니까?"}
+{"caseId": "workplace-07", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1인데 시간 정보와 '특정 X' 표현까지 들어가 너무 직접적입니다. 힌트 단계에 맞게 완화해야 합니다.", "fix": "장태욱 씨, 익명 글이 올라온 직후 팀 안에 작성자를 짐작하게 하는 말을 꺼낸 이유가 무엇입니까?"}
+{"caseId": "workplace-07", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "한세린 씨, 그 게시글에 자료를 함께 올린 경위부터 설명해 주시겠습니까?"}
+{"caseId": "workplace-07", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "장태욱 씨, 예전에도 문제 표현 수위를 낮추는 쪽으로 판단하신 적이 있습니까?"}
+{"caseId": "workplace-07", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "한세린 씨, 그 문장의 시기를 이번 일과 같은 때로 보신 근거는 무엇입니까?"}
+{"caseId": "workplace-07", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "장태욱 씨, 사실확인 전에 세린 씨 역할을 먼저 줄인 이유가 무엇입니까?"}
+{"caseId": "workplace-07", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "한세린 씨, 그 이미지를 직접 손본 적이 있는지부터 답해 주시겠습니까?"}
+{"caseId": "workplace-08", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1인데 evidence ID와 합의 문구를 직접 꺼내 힌트 단계를 넘었습니다.", "fix": "최정훈 씨, 그 결제를 나중에 정리하면 된다고 본 근거가 무엇이었습니까?"}
+{"caseId": "workplace-08", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1인데 evidence ID와 번호 일치 여부까지 바로 묻고 있어 지나치게 구체적입니다.", "fix": "김나래 씨, 영수증을 다시 정리해 달라고 한 경위부터 말씀해 주시겠습니까?"}
+{"caseId": "workplace-08", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1인데 evidence ID와 절삭 결론을 직접 제시해 플레이어에게 핵심 판단을 먼저 줍니다.", "fix": "최정훈 씨, 제출 자료를 왜 원본 그대로 내지 않으셨습니까?"}
+{"caseId": "workplace-08", "cardId": "dossier-2", "questionId": "dossier-2.a.q3", "issue": "대사에 evidence ID가 들어가 자연스러운 한국어를 해칩니다.", "fix": "최정훈 씨, 시트 이력을 보면 감사 전에 이미 입력이 이어졌는데도 그 정리표를 변명용 자료로 몰아간 책임을 인정하십니까?"}
+{"caseId": "workplace-08", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "김나래 씨, 그 정리표가 처음부터 본인 손에서만 나온 자료는 아니라는 점은 인정하십니까?"}
+{"caseId": "workplace-08", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1인데 evidence ID와 입력 시점을 바로 까고 있어 힌트 단계가 아닙니다.", "fix": "최정훈 씨, 사실관계가 정리되기 전에 평가 문구부터 남긴 이유가 무엇입니까?"}
+{"caseId": "workplace-08", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1인데 evidence ID와 로그 결론을 한꺼번에 노출합니다.", "fix": "김나래 씨, 그 정산 흐름을 직접 맞춰 넣은 쪽이 본인입니까?"}
+{"caseId": "workplace-09", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "송준석 씨, 사실확인보다 사람을 먼저 빼야 한다고 판단하신 이유가 무엇입니까?"}
+{"caseId": "workplace-09", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "유은채 씨, 결백을 확인받겠다는 생각으로 외부에까지 손을 뻗으신 겁니까?"}
+{"caseId": "workplace-09", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "송준석 씨, 문서 하나만 보고 실제 유출이라고 단정하신 근거는 무엇입니까?"}
+{"caseId": "workplace-09", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "유은채 씨, 그 문서를 실제 유출로 본 판단 근거를 먼저 말씀해 주시겠습니까?"}
+{"caseId": "workplace-09", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1인데 evidence ID를 직접 넣어 대사 톤이 무너집니다.", "fix": "송준석 씨, 사실이 정리되기 전에 리스크 메모부터 남긴 이유가 무엇입니까?"}
+{"caseId": "workplace-09", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "유은채 씨, 그 표현이 꼭 유출에서만 나왔다고 보신 이유가 무엇입니까?"}
+{"caseId": "workplace-10", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "임도현 씨, 그 말을 들은 사람이 전환을 기대할 수 있다는 점은 알고 계셨습니까?"}
+{"caseId": "workplace-10", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "장혜린 씨, 다른 선택지를 준비하면서도 그 사실을 회사에 말하지 않은 이유가 무엇입니까?"}
+{"caseId": "workplace-10", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "임도현 씨, 보류 화면만 따로 보여 주신 이유가 무엇입니까?"}
+{"caseId": "workplace-10", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "장혜린 씨, 그 화면 하나만 보고 확정이라고 믿게 된 까닭이 무엇입니까?"}
+{"caseId": "workplace-10", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "임도현 씨, 비슷한 말을 반복해 온 데는 어떤 의도가 있었습니까?"}
+{"caseId": "workplace-10", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "장혜린 씨, 그 시기 근무 일정이 다른 일과 겹친 적은 없습니까?"}
+{"caseId": "workplace-11", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1인데 evidence ID와 버전 이력 결론을 바로 내세워 너무 직접적입니다.", "fix": "권태준 씨, 기여 표기를 손본 이유가 무엇입니까?"}
+{"caseId": "workplace-11", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "노서린 씨, 승인 절차 밖에서 외부와 따로 접촉하신 이유가 무엇입니까?"}
+{"caseId": "workplace-11", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "권태준 씨, 왜 전체 기록보다 일부 자료를 먼저 내셨습니까?"}
+{"caseId": "workplace-11", "cardId": "dossier-2", "questionId": "dossier-2.a.q2", "issue": "대사에 evidence ID가 들어가 몰입을 해칩니다. 증거 자체를 가리키는 자연어로 바꿔야 합니다.", "fix": "브로커 한 건만 갔다고 하셨는데, 재전송 흔적까지 드러난 뒤에도 그 설명을 계속 유지하실 겁니까?"}
+{"caseId": "workplace-11", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "노서린 씨, 외부로 건너간 자료의 범위를 충분히 확인하셨습니까?"}
+{"caseId": "workplace-11", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1인데 evidence ID와 '기밀위험 인원' 결론을 함께 노출합니다.", "fix": "권태준 씨, 사실확인 전에 상대를 먼저 문제 인원처럼 본 이유가 무엇입니까?"}
+{"caseId": "workplace-11", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "노서린 씨, 외부 접촉이 단순 상담 수준이었다고만 보십니까?"}
+{"caseId": "workplace-12", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "백지훈 씨, 상태 확인 범위를 넓힌 이유가 무엇입니까?"}
+{"caseId": "workplace-12", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "오수민 씨, 근무시간 중 실제 공백이 있었는지부터 답해 주시겠습니까?"}
+{"caseId": "workplace-12", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "백지훈 씨, 제출 자료 순서를 그렇게 잡은 이유가 무엇입니까?"}
+{"caseId": "workplace-12", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "오수민 씨, 문제를 느끼고도 정식 요청보다 버티기를 택한 이유가 무엇입니까?"}
+{"caseId": "workplace-12", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "백지훈 씨, 절차보다 직접 통제를 먼저 강화한 이유가 무엇입니까?"}
+{"caseId": "workplace-12", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1은 힌트 단계여야 하는데 시점·증거·결론을 너무 먼저 드러냅니다. 방향만 제시하는 질문으로 낮춰야 합니다.", "fix": "오수민 씨, 보고 화면을 보내기 전에 일정을 손본 이유가 무엇입니까?"}

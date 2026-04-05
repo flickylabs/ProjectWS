@@ -354,13 +354,39 @@
           "questionAngle": "진서아에게: \"무예약 입실과 자동줄 방치\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 진서아의 \"무예약 입실과 자동줄 방치\" 쟁점과 관련된다. 진서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 19초 클립을 단체방에 전달한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "사고 34분 뒤 생성된 화면녹화본인 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞 구간 삭제와 속도 변경이 들어간 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "세척실 출입 로그와 직원용 PIN 발급 기록",
       "surfaceName": "출입 로그와 PIN 발급 기록",
-      "surfaceDescription": "세척실 출입 로그와 직원용 PIN 발급 기록이다. 출입 주체와 발급 경위 확인이 필요하다.",
+      "surfaceDescription": "세척실 출입 기록과 코드 발급 기록이다. 출입 경로와 발급 경위 확인이 필요하다.",
       "description": "세척실 출입 로그상 21:47 사용된 PIN이 청소용역 전용 코드이며, 동일 코드가 현우 휴대폰 메모에 저장돼 있다. 무단 사용의 직접 증거.",
       "type": "device_log",
       "reliability": "hard",
@@ -391,7 +417,33 @@
           "questionAngle": "진서아에게: \"예약·원본 확인 절차 쌍방 위반\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 진서아의 \"예약·원본 확인 절차 쌍방 위반\" 쟁점과 관련된다. 진서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 출입 로그와 PIN 기록을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 코드 사용 시각과 사고 신고가 4분 차인 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "주민 예약과 별개인 경로를 왜 사용했는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -429,13 +481,39 @@
           "questionAngle": "진서아에게: \"무예약 입실과 자동줄 방치\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 진서아의 \"무예약 입실과 자동줄 방치\" 쟁점과 관련된다. 진서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 현장 사진과 사고 메모를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "사진 세 장이 신고 직후 연속 촬영된 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "줄의 방향과 철망 상태를 가볍게 본 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "24시동물메디컬센터 상처도면과 진료소견",
-      "surfaceName": "동물병원 상처도면과 진료소견",
-      "surfaceDescription": "동물병원에서 발급된 상처 도면과 진료 소견서다. 진료 시점과 소견 내용 확인이 필요하다.",
+      "surfaceName": "상처도면과 진료소견",
+      "surfaceDescription": "상처 위치 도면과 진료 소견서다. 진료 시점과 손상 유형 확인이 필요하다.",
       "description": "앞발 패드 열상 + 귀 표면 찰과상 진료기록. 수의사 소견은 '철망 접촉에 의한 마찰 손상'으로, 물림 특유의 관통 흔적은 없다고 기재.",
       "type": "medical_record",
       "reliability": "hard",
@@ -455,13 +533,39 @@
         "check_edits": "EMR 의무기록 출력본. 수정 이력 없음 확인.",
         "question_acquisition": "동물의료기록으로 보호자(서아) 동의 범위 내에서만 공개 가능."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 진료기록과 상처 도면의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "접수 시각이 사고 신고 27분 뒤인 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "관통 흔적 없이도 다른 원인을 배제한 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "원본 CCTV 4분 추출본과 해시·타임코드 비교보고",
-      "surfaceName": "CCTV 원본 추출본과 해시 비교보고",
-      "surfaceDescription": "CCTV 원본 영상 추출본과 해시·타임코드 비교 보고서다. 무결성 검증 결과 확인이 필요하다.",
+      "surfaceName": "원본 영상과 비교 보고서",
+      "surfaceDescription": "원본 영상 추출본과 비교 보고서다. 파일 차이와 무결성 확인이 필요하다.",
       "description": "원본 4분 영상 vs 유포 19초 클립 포렌식 비교보고. 앞 8초 삭제, 속도 0.85배 변경, 타임스탬프 글꼴 교체가 확인됐다.",
       "type": "forensic_report",
       "reliability": "hard",
@@ -497,13 +601,39 @@
           "implication": "이 증거는 진서아의 \"무예약 입실과 자동줄 방치\" 쟁점과 관련된다. 진서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 영상과 비교보고서를 확보한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "유포본 생성 시각이 원본보다 34분 늦은 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "타임코드 글꼴까지 바뀐 파일을 그대로 믿은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "세척실 예약 부재 캡처와 사고 직후 단체방 전달본",
-      "surfaceName": "예약 부재 캡처와 단체방 전달본",
-      "surfaceDescription": "시설 예약 부재 화면 캡처와 사고 직후 단체방 전달본이다. 전달 시점과 맥락 확인이 필요하다.",
+      "surfaceName": "시설 화면 캡처와 단체방 전달본",
+      "surfaceDescription": "시설 화면 캡처와 사고 직후 전달본이다. 전달 시점과 전후 맥락 확인이 필요하다.",
       "description": "세척실 예약 빈칸 캡처 + 서아가 원본 확인 11분 전 현우를 지목한 단체방·1:1 메시지. 쌍방 절차 위반을 보여주는 자료.",
       "type": "chat",
       "reliability": "soft",
@@ -536,7 +666,33 @@
           "implication": "이 증거는 진서아의 \"예약·원본 확인 절차 쌍방 위반\" 쟁점과 관련된다. 진서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 예약 캡처와 전달 메시지를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "지목 메시지가 원본 요청보다 11분 먼저 간 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "예약 여부와 원본 확인 전에 상대를 지목한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

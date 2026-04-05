@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "유하나 씨, 이 3자 대화에서 '4%에서 정리'라는 문장이 먼저 나온 뒤에 남은 건 무엇이었다고 보십니까?",
+              "text": "유하나 씨, 그 대화 뒤에 남은 게 정말 전부 빈칸뿐이었는지부터 보셔야 하는 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "권도형 씨, 기존 초안에는 없던 12% 인상과 추가 조건이 왜 이후에 한꺼번에 등장했습니까?",
+              "text": "권도형 씨, 이미 정리되던 조건이 왜 뒤늦게 흔들렸는지부터 답해 보시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "유하나 씨, 관리사무소 기록상 2년 전 한 차례 경고가 남아 있는데 그 사실 자체를 왜 초반엔 부정했습니까?",
+              "text": "유하나 씨, 예전 경고 자체를 왜 통째로 지우려 했는지부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "권도형 씨, 진우 씨 문의표 어디에도 예약금이나 가예약 표시가 없는데 왜 실제 대안처럼 말하셨습니까?",
+              "text": "권도형 씨, 그 새 문의를 실제 대안처럼 본 근거가 정말 충분했습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "유하나 씨, 중개사 음성메모에 '4%로 먼저 묶고 서명본 받기'가 남아 있는데 그 문구를 거의 확정 계약처럼 더 세게 말한 이유가 있었습니까?",
+              "text": "유하나 씨, 그 합의를 스스로 더 단단한 말로 붙잡은 부분은 없었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "권도형 씨, 문의가 들어온 지 두 시간 만에 증액안을 다시 낸 이유가 정말 '시세 일반론'뿐이었습니까?",
+              "text": "권도형 씨, 그 새 문의가 들어오고 나서 마음이 급해진 건 아니었습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

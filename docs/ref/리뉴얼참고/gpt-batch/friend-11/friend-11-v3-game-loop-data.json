@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "작년 카톡에 '한 번만 쓰고 지운다'고 남겨 놓고도 자료가 왜 남아 있었습니까?",
+              "text": "예전에 한 번만 쓰기로 했던 자료를 왜 계속 들고 있게 된지부터 설명해 주시겠습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "그 합의가 그렇게 중요했다면 왜 같은 방에서 민우 씨에게 먼저 설명하지 않았습니까?",
+              "text": "그 약속이 중요했다면 왜 같은 방에서 먼저 말을 붙이지 못했는지부터 말씀해 주시겠습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "context",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "민우 씨 기기에서 관리자 메일이 바뀐 로그와 휴대폰의 청구지 캡처가 이어집니다. 정확히 어떤 입력을 했습니까?",
+              "text": "본인 쪽 기기에서 설정이 바뀐 흐름에 대해 먼저 어떻게 설명하시겠습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "서버 로그 기준 출발점이 민우 씨 재인증이라면, 왜 처음엔 시간표만 들이밀고 사람 설명은 빼버렸습니까?",
+              "text": "출발점을 알고도 처음 설명에서 그 부분을 왜 앞세우지 않았는지부터 말씀해 주시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "복원 보고서상 아이템은 재귀속·환불로 움직였는데, 왜 바로 '준석이 가져갔다'고 말했습니까?",
+              "text": "손실을 본 뒤 곷바로 상대가 가져갔다고 확신한 이유부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "복구 신청 후 30분 안에 접근권 회수와 프로필 정리가 이어졌는데, 왜 직접 설명은 뒤로 밀렸습니까?",
+              "text": "복구 조치 뒤 바로 설명하지 않고 정리부터 한 이유가 무엇인지부터 말씀해 주시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

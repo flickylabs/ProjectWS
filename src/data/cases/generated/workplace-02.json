@@ -353,7 +353,33 @@
         }
       },
       "surfaceName": "접근권 회수 메일과 팀 공지",
-      "surfaceDescription": "보안 폴더 접근 권한 변경을 알리는 이메일과 팀 공지 문서"
+      "surfaceDescription": "보안 폴더 접근 권한 변경을 알리는 이메일과 팀 공지 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 권한 회수 메일과 공지를 함께 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "조사 번호보다 먼저 권한이 회수된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "정식 절차 전 한 사람만 먼저 묶은 근거를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -390,7 +416,33 @@
         }
       },
       "surfaceName": "개인 드라이브 업로드 이력과 DM",
-      "surfaceDescription": "클라우드 드라이브 업로드 기록과 메신저 개인 대화 캡처"
+      "surfaceDescription": "클라우드 드라이브 업로드 기록과 메신저 개인 대화 캡처",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 개인 저장 이력과 대화 캡처를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "유출 소문 직후 개인 공간에 올린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "방어 목적이라면 왜 외부인에게 문장을 먼저 보냈습니까?",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -417,9 +469,35 @@
         "question_acquisition": "보안사고 조사 범위 내 원본 로그. 적법성 높음."
       },
       "subjectParty": "b",
-      "surfaceName": "공유 링크 접속 로그와 토큰 기록",
-      "surfaceDescription": "공유 링크의 접속 이력과 임시 다운로드 토큰 발급 기록",
-      "requiredLieState": "S3"
+      "surfaceName": "접속 로그와 다운로드 기록",
+      "surfaceDescription": "접속 이력과 임시 내려받기 기록이다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공유링크 원본 로그를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 세션에서 열람과 임시 토큰 발급이 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "개인 업로드 전 다른 단말이 먼저 원본에 닿은 경위를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -444,8 +522,34 @@
         "question_acquisition": "제3자 자발 제출로 위법성은 낮으나 업무비밀 포함. 사용 범위 제한 필요."
       },
       "subjectParty": "b",
-      "surfaceName": "메신저 전달 캡처와 링크 메모",
-      "surfaceDescription": "사내 메신저에서 전달된 내용의 캡처본과 관련 링크 메모"
+      "surfaceName": "전달 캡처와 메모",
+      "surfaceDescription": "전달된 내용의 캡처본과 관련 메모다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 전달 메시지와 회수 누락 메모를 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "개인 업로드 전날 외부 전달이 이뤄진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "회수되지 않은 링크를 계속 살려 둔 근거를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -471,8 +575,34 @@
         "question_acquisition": "인사조사 자료. 제출 목적은 분쟁 해결에 한정돼야 한다."
       },
       "subjectParty": "a",
-      "surfaceName": "인사 조사 접수 메모와 코멘트",
-      "surfaceDescription": "인사팀 조사 접수 기록과 타임스탬프가 찍힌 내부 코멘트"
+      "surfaceName": "조사 접수 메모와 코멘트",
+      "surfaceDescription": "조사 접수 기록과 타임스탬프가 찍힌 내부 코멘트다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 조사 접수 메모의 입력 흐름을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "면담 전 평가 문구가 먼저 적힌 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다른 문제 제기를 뒤로 미룬 판단 근거를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -499,9 +629,35 @@
         "question_acquisition": "보안사고 조사 목적 열람으로 적법. 개인 동선은 최소 범위만 공개해야 한다."
       },
       "subjectParty": "b",
-      "surfaceName": "감사 면담 확인서와 출입 로그",
-      "surfaceDescription": "감사실 면담 확인 문서와 회의실 출입 기록 및 좌석 배치 로그",
-      "requiredLieState": "S3"
+      "surfaceName": "면담 확인서와 출입 로그",
+      "surfaceDescription": "면담 확인 문서와 회의실 출입 기록 및 좌석 배치 로그다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 면담확인서와 동선 기록을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계정 잠금 구간과 해당 동선이 겹친 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "내려받기 뒤 외부 전달로 이어진 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

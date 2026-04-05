@@ -329,7 +329,7 @@
       "name": "임대차계약서 원본과 초안 변경본",
       "description": "중개사 보관 계약서 원본, 1차 초안, 최종 스캔본이 함께 남아 있는 계약 문서 묶음이다.",
       "surfaceName": "임대차계약서 원본과 변경본",
-      "surfaceDescription": "중개사 보관 계약서 원본, 초안, 최종 스캔본 문서 묶음이다.",
+      "surfaceDescription": "계약서와 관련 문서 여러 버전을 묶은 자료다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -359,14 +359,40 @@
           "questionAngle": "박태윤에게: \"계약서상 8천만원 보증금의 실제 귀속\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 박태윤의 \"계약서상 8천만원 보증금의 실제 귀속\" 쟁점과 관련된다. 박태윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계약서 원본과 초안 변경본 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "서명 직전 보증금 항목만 커진 최종본이 나온 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다른 조항은 그대로인데 보증금 줄만 바뀐 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "보증금 분할 송금 내역과 우석 측 수령증",
       "description": "세라가 태윤 계좌로 6천만원, 우석 측 계좌로 2천만원을 각각 보낸 은행 내역과 정리비 수령증이다.",
-      "surfaceName": "보증금 분할 송금 내역과 수령증",
-      "surfaceDescription": "분할 송금된 은행 거래내역과 수령증이 묶인 자료다.",
+      "surfaceName": "보증금 송금 내역과 수령증",
+      "surfaceDescription": "보증금 관련 거래내역과 수령증을 묶은 자료다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -386,14 +412,40 @@
         "check_edits": "기관 발급 PDF와 앱 원본 화면 대조 결과 수정 흔적이 없다.",
         "question_acquisition": "분쟁 정산을 위한 계좌 자료 제출로 정당성은 충분하지만 계좌번호는 최소 범위만 사용해야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 분할 송금 내역과 수령증 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 날 14분 차이 송금의 항목명이 다른 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "한쪽 수령액만 고정돼 있는데 전액 수령 주장한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "세라-우석 카카오톡과 음성메모",
       "description": "보증금을 크게 적어 두면 정책자금과 나중 정리 때 편하다는 취지의 대화가 남은 카카오톡과 짧은 음성메모다.",
-      "surfaceName": "당사자 카카오톡과 음성메모",
-      "surfaceDescription": "당사자 간 카카오톡 대화와 짧은 음성메모 캡처다.",
+      "surfaceName": "당사자 대화 기록과 음성메모",
+      "surfaceDescription": "당사자 대화 일부와 음성메모를 담은 자료다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -412,7 +464,33 @@
         "check_edits": "본문 편집은 없지만 앞뒤 문장을 잘라 의도성을 약하게 보이게 한 선택적 크롭이 확인된다.",
         "question_acquisition": "당사자와 제3자 사이 사적 대화라 공개 범위는 분쟁 해결에 필요한 최소 부분으로 제한돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화와 음성메모 원본을 추가 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "최종 스캔 직전 대화가 길게 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞뒤 문장을 덜어 대화 흐름을 바꾼 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -441,7 +519,33 @@
         "question_acquisition": "비용 분쟁 해결을 위해 회계 자료가 제출됐고 관련 항목만 열람돼 적법성 문제는 낮다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회계전표와 세금계산서를 묶어 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "수납 당일 일반 수익 처리 뒤 다른 결제가 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "보관 계정이 아닌 일반 수익으로 처리한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -470,7 +574,33 @@
         "question_acquisition": "중개업소 내부 기록과 통화 메모라 사생활 주의는 필요하지만 분쟁 핵심 경위를 확인하는 데 직접 관련된다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 스캔 로그와 통화요약 메모를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "통화 뒤 19분 만에 최종본이 올라간 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "통화 직후 올라간 파일이 정리된 수정본과 달랐던 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -507,7 +637,33 @@
           "questionAngle": "박태윤에게: \"태윤의 무항목 보증금 반환 지연\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 박태윤의 \"태윤의 무항목 보증금 반환 지연\" 쟁점과 관련된다. 박태윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 정산표와 반환 지연 계좌기록을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "마지막 미납 정리와 반환이 모두 늦어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "원본 견적도 없이 일부 항목을 크게 적어 넣은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "차유림 씨, 배우자 계정으로 들어간 목적이 단순 열람이었다면 왜 같은 기기 흔적이 공사중지 요청 직전까지 이어집니까?",
+              "text": "차유림 씨, 배우자 계정에 들어간 목적이 단순 확인이었다면 왜 접근 흔적이 한참 더 이어집니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "백승호 씨, 제습기 전원 차단과 권한 재설정이 같은 흐름에서 처리된 이유를 절차상으로 설명해 보십시오.",
+              "text": "백승호 씨, 기기 조치와 권한 변경이 같은 흐름에서 이뤄진 이유를 설명해 보십시오.",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "차유림 씨, 왜 원본 영상이 아니라 앞뒤가 잘린 심야 캡처만 먼저 제출했습니까?",
+              "text": "차유림 씨, 왜 전체 영상이 아니라 잘린 장면만 먼저 내셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "차유림 씨, 수분센서 곡선이 점진적 확대를 보이는데도 가장 큰 손상 사진을 앞에 놓은 이유가 무엇입니까?",
+              "text": "차유림 씨, 손상이 서서히 커진 흐름이 보이는데도 가장 큰 장면을 앞세운 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "백승호 씨, 건조 지연 로그와 센서 곡선이 함께 나오는데도 대규모 손상이 전부 시공사 탓이라고 하시겠습니까?",
+              "text": "백승호 씨, 지연 흔적과 손상 흐름이 함께 보이는데도 여전히 전부 시공사 탓이라고 하시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

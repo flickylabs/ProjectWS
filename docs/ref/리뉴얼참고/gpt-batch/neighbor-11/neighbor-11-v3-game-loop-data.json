@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "출입로그와 휴대폰 NFC 기록이 같은 UID를 가리키는데, 정식 승인 없이 4층 서비스도어를 연 사실부터 답하십시오.",
+              "text": "그 출입이 정식 절차를 거친 것이 맞는지부터 분명히 해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "이 31초 클립이 원본이 아니라 편집본이라는 점을 알고도 핵심 증거라고 주장했습니까.",
+              "text": "처음 제시한 영상이 그대로의 자료였는지부터 답해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "라은 측 사진과 메모가 실제 누수 피해와 연출 손실을 섞고 있다는 걸 알고도 왜 그대로 보상 요구 근거로 썼습니까.",
+              "text": "사진과 메모를 보상 근거로 삼을 때 자료를 어떻게 가려 봤는지부터 말씀해 주시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "같은 상자를 각도만 바꿔 반복 촬영한 사진까지 손실 범위 입증이라고 제출한 이유를 말씀하십시오.",
+              "text": "제출한 사진이 손실 범위를 보여 주는 방식부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -176,7 +176,7 @@
             },
             {
               "id": "dossier-2.b.q3",
-              "text": "건물주 측이 이미 보수·감면안을 검토 중이었다면, 당신이 말한 '완전 무시'는 과장 아닙니까.",
+              "text": "건물주 측이 이미 보수·감면안을 검토 중이었다면, 그때 말한 '완전 무시'는 과장 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "이 비밀 대화에서 '이제 들어가면 된다'는 취지의 확인은 무엇을 위한 것이었습니까.",
+              "text": "그 대화가 어떤 상황에서 오간 말이었는지부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "공동 피해자라고 했지만, 메신저에서 보상 금액과 시점을 맞춘 건 사실이지요.",
+              "text": "상대와 보상 시점을 맞춰 본 적이 있는지부터 분명히 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

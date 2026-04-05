@@ -342,7 +342,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "킥오프 회의록과 슬라이드 이력",
-      "surfaceDescription": "브리핑 킥오프 회의 기록과 초안 슬라이드의 수정 이력 문서"
+      "surfaceDescription": "브리핑 킥오프 회의 기록과 초안 슬라이드의 수정 이력 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회의록과 슬라이드 버전 이력을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "초안 작성 계정과 표기 삭제 계정이 갈리는 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "제목만 손본 뒤 뼈대와 사례 배열을 그대로 둔 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -379,7 +405,33 @@
         }
       },
       "surfaceName": "개인 노트 사진과 보드 캡처 묶음",
-      "surfaceDescription": "손으로 작성한 개인 노트 사진과 화이트보드 캡처 이미지 모음"
+      "surfaceDescription": "손으로 작성한 개인 노트 사진과 화이트보드 캡처 이미지 모음",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 노트 사진과 화이트보드 캡처의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "날짜가 잘린 상태로 제출된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "프레임 밖 날짜가 보이면 작성 시점 판단이 달라지는지 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -405,7 +457,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "보안 폴더 다운로드 로그와 전송 기록",
-      "surfaceDescription": "특정 보안 폴더의 다운로드 이력과 파일 외부 전송 보안 로그"
+      "surfaceDescription": "자료 다운로드 이력과 파일 전송 로그다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 다운로드 로그와 전송 기록이 남게 된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "권한 회수 직전 일괄 확보와 링크 전송이 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "정식 이의 제기 전 비공식 공유를 먼저 한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -445,7 +523,33 @@
       },
       "surfaceName": "과거 제안서 보류본과 주석",
       "surfaceDescription": "이전에 보류된 제안서 문서와 그 안에 남겨진 주석 메모",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 보류 제안서와 주석본을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "현재 실험명과 닮은 표현이 과거 주석에 남은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "보류 뒤에도 남아 있던 자료를 이후 작업에 연결한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -471,8 +575,34 @@
         "question_acquisition": "인사자료. 공개 최소화 원칙이나 분쟁 해결 목적 확인은 가능."
       },
       "subjectParty": "a",
-      "surfaceName": "인사 심사 메모와 발표 순서 변경 기록",
-      "surfaceDescription": "인사 심사 관련 내부 메모와 발표 순서가 변경된 이력 문서"
+      "surfaceName": "심사 메모와 발표 순서 변경 기록",
+      "surfaceDescription": "심사 관련 내부 메모와 발표 순서가 변경된 이력 문서다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 심사 메모와 발표 순서 변경 기록의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해명 전날 비공개 위험 메모가 먼저 입력된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "순서 조정이 실질 평가에 미칠 영향을 왜 먼저 반영했는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -510,9 +640,35 @@
           "implication": "이 증거는 문가은의 \"고객회복 랩의 원출처 진위\" 쟁점과 관련된다. 문가은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "과거 출처 정리 이메일 체인",
-      "surfaceDescription": "이전에 발생한 출처 누락 건에 대한 정리 이메일 스레드 전문",
-      "requiredLieState": "S3"
+      "surfaceName": "과거 이메일 체인",
+      "surfaceDescription": "이전 안건을 둘러싼 논의가 오간 이메일 스레드 전문이다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 이메일 스레드와 첨부 문서의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "내부 공유만 하자는 회신 직후 감사 메일이 이어진 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "당시 출처 문제를 공식 정리하지 않고 넘긴 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

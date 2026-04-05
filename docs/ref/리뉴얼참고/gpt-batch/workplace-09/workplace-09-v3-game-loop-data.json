@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "송준석 씨, 미팅 직후 왜 유은채 씨를 거래처 후속 메일 참조에서 먼저 제외했습니까?",
+              "text": "송준석 씨, 사실확인보다 사람을 먼저 빼야 한다고 판단하신 이유가 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "유은채 씨, 강소라 씨에게 보낸 DM이 단순 확인 요청이었다면 왜 내부 화면이 함께 갔습니까?",
+              "text": "유은채 씨, 결백을 확인받겠다는 생각으로 외부에까지 손을 뻗으신 겁니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -114,7 +114,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "송준석 씨, 이 PDF는 제목만 같을 뿐 문서 ID가 없는데도 왜 실제 유출 정황이라고 단정하셨습니까?",
+              "text": "송준석 씨, 문서 하나만 보고 실제 유출이라고 단정하신 근거는 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -153,7 +153,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "유은채 씨, 문서 제목과 발신 시각만으로 실제 유출이라고 본 근거를 다시 설명해 주시겠습니까?",
+              "text": "유은채 씨, 그 문서를 실제 유출로 본 판단 근거를 먼저 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -209,7 +209,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "송준석 씨, e-6 기준으로 사실확인 전에 '외부 커뮤니케이션 리스크' 메모를 넣은 이유를 설명해 주시겠습니까?",
+              "text": "송준석 씨, 사실이 정리되기 전에 리스크 메모부터 남긴 이유가 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -248,7 +248,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "유은채 씨, e-5를 보면 거래처 표현이 AE 요약에서 온 것인데도 왜 실제 유출이라고 더 강하게 보셨습니까?",
+              "text": "유은채 씨, 그 표현이 꼭 유출에서만 나왔다고 보신 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

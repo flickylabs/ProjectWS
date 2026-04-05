@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "정미옥 씨, 42초 파일만으로 아버지 발언 전체를 단독 승계 선언이라 단정한 근거가 어디까지입니까.",
+              "text": "정미옥 씨, 짧게 남은 음성만으로 아버지 뜻 전체를 단정하신 근거가 무엇입니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "강선우 씨, 민지에게 보낸 42초 파일은 '보여준 것'입니까, 아니면 전달한 것입니까.",
+              "text": "강선우 씨, 배우자에게 보낸 그 파일은 잠깐 보여준 것입니까, 아니면 넘겨준 것입니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "태블릿 접속 뒤 6분 만에 친척 단톡이 올라갔다면, 그 행위를 확인이라고만 부를 수 있습니까.",
+              "text": "정미옥 씨, 그 기기를 확인한 직후 단체방 글까지 올린 일을 단순 확인이었다고만 하시겠습니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "중개업소 문의메일이 본인 계정이 아니더라도, 배우자 쪽 경로라는 점을 언제부터 알고 있었습니까.",
+              "text": "강선우 씨, 외부로 이어진 흔적에 배우자 쪽 정황이 얽혀 있다는 점을 언제부터 알고 있었습니까.",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "전체 녹취에 '지분과 상속은 나중'이라는 문장이 있는데도, 단독 승계라고 단정한 표현을 유지하시겠습니까.",
+              "text": "정미옥 씨, 짧은 음성 밖에 더 봐야 할 맥락이 있다면도 지금 같은 단정은 유지하시겠습니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "사촌 중개사 통화와 노트 초안이 같은 날 이어졌다면, 그 경로를 정말 몰랐다고만 말할 수 있습니까.",
+              "text": "강선우 씨, 배우자 쪽 메모와 외부 연락 흔적이 이어진다면 그 경로를 몰랐다고만 하실 겁니까.",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

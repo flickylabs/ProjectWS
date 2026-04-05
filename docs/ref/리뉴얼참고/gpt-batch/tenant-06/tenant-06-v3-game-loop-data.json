@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "오유진 씨, '편하게 쓰세요' 다음 문장까지 읽으면 허용 범위가 달라지지 않습니까?",
+              "text": "오유진 씨, 처음 들은 말의 뒷부분까지 함께 봐야 하는 것 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "황기성 씨, 이 계약 특약은 전면 금지가 아니라 제한적 허용으로 읽히는 것 아닙니까?",
+              "text": "황기성 씨, 애초에 전면 금지로만 볼 수는 없는 여지가 있었던 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "오유진 씨, 이 점검 사진에서 같은 물건들이 다음날까지 남아 있는 점은 인정하시죠?",
+              "text": "오유진 씨, 물건이 잠깐 놓였다가 바로 빠진 정도는 아니었던 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "황기성 씨, 비밀번호 변경 문자가 실제 교체 뒤에 간 점, 이 시각 정보로는 부인하기 어렵죠?",
+              "text": "황기성 씨, 먼저 조치하고 나중에 알린 흐름이었던 건 아니지요?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -212,7 +212,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "오유진 씨, 손상 논쟁이 이동 직후 시작된 점은 이 시간표만으로도 분명하지요?",
+              "text": "오유진 씨, 손상 얘기가 나온 시점이 그 조치 뒤였다는 점부터 봐야 하지 않습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -251,7 +251,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "황기성 씨, 손상 문제 제기가 이동 이후라는 점은 이제 부정하기 어렵죠?",
+              "text": "황기성 씨, 손상 문제가 커진 계기가 언제였는지부터 다시 짚어야 하는 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

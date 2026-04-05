@@ -1,0 +1,161 @@
+{
+  "case": "family-04",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 잔액 화면과 폴더 화면을 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "추궁 직전 연속으로 잘라 저장한 경위를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "메모와 설명란이 안 보이게 남긴 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 계좌 원본 내역과 상세 메모의 내용을 확인하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 이체가 공동 승인으로 처리된 점을 설명하십시오.",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "개인 수령이 아닌 흐름으로 표시된 내역을 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 출입기록과 봉투 사진의 제출 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 봉투를 옮긴 뒤 같은 날 다시 들르지 않은 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "원본 서류를 보관하고도 바로 알리지 않은 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 공동 폴더의 파일명 변경 기록에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "모호한 이름으로 바꾼 시점이 앞선 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "별도 설명 없이 파일 이름만 바꿔 둔 경위를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 영수증과 준비 메모가 함께 남은 사실을 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "지출 다음 날 별도 준비 기록이 이어진 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "부모 의사 표시와 지출 흐름이 맞물린 경위를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 문의 메시지와 통화기록을 남긴 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "같은 날 외부 문의가 잇따라 이뤄진 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "사실 확인 전에 단정적으로 물은 배경을 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ]
+  }
+}

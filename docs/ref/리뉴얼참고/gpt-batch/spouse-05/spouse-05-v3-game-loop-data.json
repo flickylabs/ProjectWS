@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "민재 씨, 사건 사흘 전 밤 11시 47분에 서재 잠금권한과 프린터 접근을 함께 바꾼 이유를 절차 순서대로 설명해 주십시오.",
+              "text": "민재 씨, 사건 사흘 전 밤에 사용 규칙을 바꾼 이유를 순서대로 설명하십시오.",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "소담 씨, 사건 당일 14시 08분에 구 관리자 코드로 서재 문을 연 사실을 인정하십니까.",
+              "text": "소담 씨, 사건 당일 예약 시간에 서재에 들어간 사실은 인정하십니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "민재 씨가 제출한 1분 12초 파일은 왜 원본 세션 전체가 아니라 export된 오디오였습니까.",
+              "text": "민재 씨, 제출한 파일은 왜 원본 전체가 아니라 따로 정리된 형태였습니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "소담 씨, '회의 망쳐버릴까'라는 표현 자체는 했더라도 그것이 같은 대화의 연속 발언이 아니라는 점을 설명해 주십시오.",
+              "text": "소담 씨, 그 표현이 나온 앞뒤 상황부터 설명해 주십시오.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "민재 씨는 왜 오한결 씨에게 '핵심만 하나로 정리'하라는 지시를 내린 뒤, 그 결과물을 원본처럼 제시했습니까.",
+              "text": "민재 씨, 그 파일을 정리하는 과정에 다른 사람의 손이 들어간 이유를 설명하십시오.",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",

@@ -1,0 +1,161 @@
+{
+  "case": "family-10",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 대화 캡처의 원본 전체를 바로 제출하지 않은 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 이미지가 다시 저장된 시점이 하소연 직전인 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "잘려 나간 앞뒤 문장이 같은 의미를 유지한다고 보십니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 대화 원본과 이동 기록 자료의 제출 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "출발이 어려운 정황을 늦은 밤까지 알리지 않은 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "당시 먼저 가능성이 높던 도착 방식이 무엇이었는지 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 예약표와 추가 주문 영수증의 제출 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "추가 주문 시점이 상대 통보보다 앞선 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "늘어난 품목과 비용을 다시 상의하지 않은 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 송금 내역과 답장 문자를 어떤 취지로 제출하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "송금 직후 받은 답장 표현을 확인하고도 해석이 달라진 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이 돈이 어떤 항목으로 받아들여졌는지 먼저 확인하셨습니까?",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 권고 메모와 역할표 사진의 보관 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 기록이 이전 갈등 직후 작성된 점을 알고도 따르지 않은 이유는 무엇입니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이미 합의했던 적기 원칙 가운데 이번에 빠진 항목이 무엇입니까?",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 체크리스트와 사진 기록을 어떤 판단 근거로 제출하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "도착 전후 사진 시각이 서로 다른 부담을 보여 주는 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "당일 참여 여부와 별개로 체감 불균형이 커진 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ]
+  }
+}

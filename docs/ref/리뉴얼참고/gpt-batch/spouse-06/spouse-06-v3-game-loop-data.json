@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "전서희 씨, 예약본엔 #연재문장 #fictiondraft가 붙어 있는데, 최종 화면에선 왜 장르 표시가 거의 보이지 않게 밀렸습니까?",
+              "text": "전서희 씨, 원래 붙여 둔 창작 맥락이 최종 화면에서 충분히 보였다고 생각하십니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "전서희 씨, 조회자 로그상 김태훈 계정이 실제로 스토리를 봤습니다. 아직도 '회사 사람은 없었다'고 말하시겠습니까?",
+              "text": "전서희 씨, 회사 쪽 인물이 그 게시물을 본 사실이 드러난 뒤에도 같은 말을 하시겠습니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "정우람 씨, 원본 대화 첫 문장이 '혹시 우람 팀장 컨퍼런스 건 얘기예요?'입니다. 이걸 여전히 노골적 폭로로만 보십니까?",
+              "text": "정우람 씨, 동료의 첫 반응이 곧바로 단정이었다고 보긴 어려운데도 왜 폭로로만 받아들였습니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "전서희 씨, 팀채널 해명문이 배우자 확인 문자보다 6분 빠릅니다. 이 순서를 본 뒤에도 우람 씨 대응이 '불가피한 최소조치'였다고 보십니까?",
+              "text": "전서희 씨, 배우자와 확인하기도 전에 회사 쪽 대응이 먼저 나간 순서를 어떻게 보십니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "정우람 씨, 해명문과 HR 문의가 모두 배우자 확인 전입니다. 이 기록 앞에서 아직도 '순서상 문제는 없었다'고 하시겠습니까?",
+              "text": "정우람 씨, 배우자 확인보다 회사 대응이 앞선 순서를 지금도 문제없다고 보십니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

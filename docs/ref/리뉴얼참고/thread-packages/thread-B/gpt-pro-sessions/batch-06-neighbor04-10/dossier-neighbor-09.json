@@ -1,0 +1,1708 @@
+{
+  "caseId": "neighbor09",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "사전 합의와 구조 원인 카드",
+      "description": "중재 합의서와 초기 측정 자료를 묶어 약속 내용과 구조 문제의 출발점을 동시에 압박한다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "2차 측정표에 침실 천장 공진 구간이 따로 표시된 걸 알고도, 처음엔 윗집 바닥만 원인이라고 말씀하신 겁니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor09:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "측정 직후 윤태성 소장에게 침실 천장 한 줄을 더 봐 달라고 요청하신 사실을 부인하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor09:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "에어컨 배관 뒤 공진이 심해졌다는 말을 초기에 가볍게 넘기신 적도 있지요?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor09:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "관리사무소 합의서의 '보전 후 잔액 1/2' 문구를 보고도, 여전히 그걸 검토 단계라고만 보십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor09:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "추가 항목이 생겨도 200만 원 안이면 반반이라는 구조 자체는 알고 계셨던 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor09:b:d-1:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "결국 천장 쪽 자료를 핑계 삼아 '내 바닥 구간만' 따로 계산하려 하신 겁니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor09:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "정산 숫자와 부분 송금 카드",
+      "description": "최종 정산표와 부분 송금 메시지를 함께 제시해 금액 계산과 공지 전 행동의 순서를 가른다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "30만 원만 보내겠다는 메시지를 받은 시점이 공사 완료 뒤였다는 건 분명하지요?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor09:a:d-1:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "추가 보전금 승인 시각이 그 일부 송금보다 2시간 빨랐다는 점도 알고 계셨습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor09:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "정산표에 잔액 184만 원, 각 92만 원 계산이 자동으로 이어진다는 걸 확인하셨지요?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor09:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "추가 보전금 36만 원이 반영돼 각 92만 원이라는 계산서를 실제로 보셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor09:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "그 계산을 보고도 '아래층 요청 몫'을 떼어 92만 원 전액을 거부하신 겁니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor09:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "공식 공지 19분 전에 30만 원만 보낸 사실은 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor09:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "변경 요청과 공개 확산 카드",
+      "description": "현장 변경요청서와 주민앱 확산 로그를 묶어 추가 요청 책임과 공개 압박의 감정선을 동시에 끌어낸다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "변경요청서에 연우 씨 서명이 남아 있는데, 침실 천장 한 줄 추가와 18만 원 증액이 실제였지요?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor09:a:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "구조 문제를 먼저 말하면 '예민한 아래층'으로 보일까 걱정돼 그 부분을 숨기신 겁니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor09:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "결국 공식 공지 전에 주민앱에 올린 글이 절차를 흔든 점까지는 지금 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor09:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "부분 지급 뒤 나머지 돈은 의도적으로 멈춰 두신 상태였던 것 아닙니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor09:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "주민앱 글이 퍼진 뒤 아이 문제와 윗집 낙인이 커질까 두려워 전액 송금을 더 미루신 겁니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor09:b:d-5:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "연우 씨의 추가 요청 사실과 반반 약속을 뒤집은 문제는 별개라는 점, 지금은 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor09:b:d-2:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "neighbor09:a:d-1:unlock:s2:0",
+            "factText": "58초 음성 확인 파일에서 '200만 안이면 그대로 간다'는 취지의 확인이 다시 남아 있었다.",
+            "tags": [
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "58초 음성 확인 파일",
+                "neutral": "음성 자료"
+              },
+              "cap": {
+                "exact": "200만 원 안",
+                "neutral": "상한선 안",
+                "rounded": "200만 원"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor09:a:d-1:unlock:s3:0",
+            "factText": "같은 라인 주민 배수정이 중재석 옆에서 두 사람이 반반 분담 이야기를 나누는 장면을 들었다.",
+            "tags": [
+              "evidence",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "배수정",
+                "neutral": "이웃 주민",
+                "fullName": "배수정",
+                "judgeRef": "배수정 씨"
+              },
+              "place": {
+                "exact": "관리사무소 중재석 옆",
+                "neutral": "그 자리"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor09:a:d-1:unlock:s4:0",
+            "factText": "연우는 반반 합의를 믿고 방학 전 녹음 일정까지 비워 공사를 허락했다.",
+            "tags": [
+              "motive",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "work": {
+                "exact": "방학 전 녹음 일정",
+                "neutral": "제 일정"
+              },
+              "time": {
+                "exact": "공사 승인 직전",
+                "neutral": "그때",
+                "period": "공사 전"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor09:a:d-1:unlock:s5:0",
+            "factText": "30만 원 메시지를 받은 뒤 공개적으로 압박했어도, 연우는 약속 번복이 먼저였다는 순서를 분명히 기억한다.",
+            "tags": [
+              "admission",
+              "timeline"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "30만 원 송금 메시지",
+                "neutral": "부분 송금 메시지",
+                "rounded": "30만 원"
+              },
+              "time": {
+                "exact": "시공 완료 뒤",
+                "neutral": "그 뒤"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "neighbor09:a:d-2:unlock:s2:0",
+            "factText": "변경요청서에는 연우 서명과 함께 침실 천장 한 줄 추가가 명시돼 있다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "area": {
+                "exact": "침실 천장 한 줄",
+                "neutral": "추가 보강 구간"
+              },
+              "evidence": {
+                "exact": "변경요청서 서명",
+                "neutral": "서명 문서"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor09:a:d-2:unlock:s3:0",
+            "factText": "추가 자재와 인건비 18만 원이 최종 계산서에 같은 금액으로 반영돼 있다.",
+            "tags": [
+              "evidence",
+              "threshold"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "18만 원",
+                "neutral": "증액분",
+                "rounded": "18만 원"
+              },
+              "evidence": {
+                "exact": "최종 계산서",
+                "neutral": "정산 자료"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor09:a:d-2:unlock:s4:0",
+            "factText": "연우는 추가 요청의 무게를 줄이려고 '미세 조정'이나 '마감 보완' 같은 표현을 스스로 골라 썼다.",
+            "tags": [
+              "shame",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "quote": {
+                "exact": "미세 조정·마감 보완",
+                "neutral": "작게 말한 표현"
+              },
+              "area": {
+                "exact": "침실 천장 추가 요청",
+                "neutral": "그 요청"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor09:a:d-2:unlock:s5:0",
+            "factText": "연우는 천장 추가 요청 책임이 자신 쪽에 더 크게 잡힌다는 계산까지 알고도 처음엔 그 비중을 숨겼다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "share": {
+                "exact": "연우 75 대 지훈 25",
+                "neutral": "책임 비중"
+              },
+              "amount": {
+                "exact": "18만 원 증액",
+                "neutral": "추가 비용"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "neighbor09:a:d-3:unlock:s2:0",
+            "factText": "1차부터 3차까지의 측정표에는 연우 세대 천장 공진 구간이 계속 별도로 표시돼 있다.",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "1차~3차 측정표",
+                "neutral": "연속 측정 자료"
+              },
+              "area": {
+                "exact": "천장 공진 구간",
+                "neutral": "표시 구간"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor09:a:d-3:unlock:s3:0",
+            "factText": "연우는 에어컨 배관 공사 뒤 공진이 심해졌다는 말을 들었지만 초기에 대수롭지 않게 넘겼다.",
+            "tags": [
+              "context",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "이전 에어컨 배관 공사 뒤",
+                "neutral": "예전부터"
+              },
+              "area": {
+                "exact": "천장 공진",
+                "neutral": "구조 문제"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor09:a:d-3:unlock:s4:0",
+            "factText": "예민한 사람으로 낙인찍힐까 두려워 구조 문제를 먼저 말하지 못했다는 자각이 있다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "identity": {
+                "exact": "예민한 아래층",
+                "neutral": "그 낙인"
+              },
+              "area": {
+                "exact": "구조 문제 설명",
+                "neutral": "그 설명"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor09:a:d-3:unlock:s5:0",
+            "factText": "연우는 소음 책임이 자신 45, 지훈 55 정도로 겹친 공동 문제라는 설명까지 받아들인다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "share": {
+                "exact": "연우 45 대 지훈 55",
+                "neutral": "책임 비중"
+              },
+              "area": {
+                "exact": "바닥 충격과 천장 공진",
+                "neutral": "두 원인"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "neighbor09:a:d-4:unlock:s2:0",
+            "factText": "추가 보전금 승인 시각은 지훈의 일부 송금보다 2시간 앞서 있었다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "benefit": {
+                "exact": "추가 보전금 승인 시각",
+                "neutral": "보전금 승인 시각"
+              },
+              "time": {
+                "exact": "부분 송금보다 2시간 전",
+                "neutral": "그보다 앞서"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor09:a:d-4:unlock:s3:0",
+            "factText": "정산표에는 잔액 184만 원과 각 세대 92만 원 계산이 자동으로 연결돼 있었다.",
+            "tags": [
+              "evidence",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "184만 원",
+                "neutral": "잔액",
+                "rounded": "184만 원"
+              },
+              "share": {
+                "exact": "각 92만 원",
+                "neutral": "각자 부담액",
+                "rounded": "92만 원"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor09:a:d-4:unlock:s4:0",
+            "factText": "연우는 공식 공지가 늦어질수록 또 말이 바뀔까 봐 숫자보다 순서를 더 불안해했다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "최종 공지 지연 구간",
+                "neutral": "기다리던 시간"
+              },
+              "amount": {
+                "exact": "184만 원과 92만 원",
+                "neutral": "그 숫자들"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor09:a:d-4:unlock:s5:0",
+            "factText": "숫자 자체는 이미 확정돼 있었고, 남은 것은 관리사무소가 그 계산을 언제 공지하느냐뿐이었다.",
+            "tags": [
+              "admission",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "관리사무소",
+                "neutral": "관리실"
+              },
+              "amount": {
+                "exact": "184만 원과 각 92만 원",
+                "neutral": "확정 숫자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor09:a:d-5:unlock:s2:0",
+            "factText": "연우의 주민앱 글은 관리사무소 공식 공지보다 14분 먼저 올라갔다.",
+            "tags": [
+              "privacy",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "공식 공지 14분 전",
+                "neutral": "공지 전",
+                "period": "최종 공지 직전"
+              },
+              "place": {
+                "exact": "주민앱 게시글",
+                "neutral": "공개 글"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor09:a:d-5:unlock:s3:0",
+            "factText": "게시글의 의도에는 '더 미루지 말라'는 공개 압박이 분명히 섞여 있었다.",
+            "tags": [
+              "motive",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "place": {
+                "exact": "주민앱 게시글 본문",
+                "neutral": "공개 글"
+              },
+              "time": {
+                "exact": "최종 공지 직전",
+                "neutral": "그때"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor09:a:d-5:unlock:s4:0",
+            "factText": "끊긴 녹음 파일과 밀린 마감이 쌓이면서 연우는 절차보다 감정이 먼저 나가는 상태가 됐다.",
+            "tags": [
+              "emotion",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "work": {
+                "exact": "끊긴 녹음 파일과 밀린 마감",
+                "neutral": "작업 손해"
+              },
+              "time": {
+                "exact": "게시글 작성 직전",
+                "neutral": "그 직전"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor09:a:d-5:unlock:s5:0",
+            "factText": "연우는 자신의 선공개가 관리사무소 절차를 흔들었다는 점을 지금은 분명히 인정한다.",
+            "tags": [
+              "admission",
+              "privacy"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "관리사무소",
+                "neutral": "관리실"
+              },
+              "place": {
+                "exact": "선공개 게시글",
+                "neutral": "그 글"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "neighbor09:b:d-1:unlock:s2:0",
+            "factText": "지훈은 합의서의 '보전 후 잔액 1/2 분담' 문구를 읽고도 별도 이의를 제기하지 않았다.",
+            "tags": [
+              "rule",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "합의서 문구",
+                "neutral": "서면 문구"
+              },
+              "cap": {
+                "exact": "잔액 1/2 분담",
+                "neutral": "반반 분담"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor09:b:d-1:unlock:s3:0",
+            "factText": "30만 원 송금 메시지에는 지훈이 직접 '내 바닥 책임만'이라고 적어 책임 범위를 잘라냈다.",
+            "tags": [
+              "quote",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "30만 원",
+                "neutral": "일부 송금액",
+                "rounded": "30만 원"
+              },
+              "quote": {
+                "exact": "내 바닥 책임만",
+                "neutral": "그 표현"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor09:b:d-1:unlock:s4:0",
+            "factText": "추가 항목이 억울해도 상한선 안이면 반반이라는 구조 자체는 지훈도 알고 있었다.",
+            "tags": [
+              "threshold",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "cap": {
+                "exact": "200만 원 안",
+                "neutral": "상한선 안",
+                "rounded": "200만 원"
+              },
+              "rule": {
+                "exact": "반반 부담",
+                "neutral": "그 기준"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor09:b:d-1:unlock:s5:0",
+            "factText": "약속 번복은 공사 후에 일어났고, 그 출발점이 30만 원만 보내겠다는 자기 메시지였다는 점을 지훈도 인정한다.",
+            "tags": [
+              "admission",
+              "timeline"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "공사 완료 뒤",
+                "neutral": "그 뒤"
+              },
+              "amount": {
+                "exact": "30만 원만 송금",
+                "neutral": "일부 송금"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "neighbor09:b:d-2:unlock:s2:0",
+            "factText": "변경요청서에는 연우의 추가 요청과 18만 원 증액이 함께 적혀 있다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "최연우",
+                "neutral": "상대방",
+                "fullName": "최연우",
+                "judgeRef": "연우 씨"
+              },
+              "amount": {
+                "exact": "18만 원",
+                "neutral": "증액분",
+                "rounded": "18만 원"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor09:b:d-2:unlock:s3:0",
+            "factText": "지훈은 그 18만 원 증액 사실을 전체 합의를 다시 해석하는 근거로 스스로 끌어다 썼다.",
+            "tags": [
+              "motive",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "18만 원",
+                "neutral": "추가 비용",
+                "rounded": "18만 원"
+              },
+              "rule": {
+                "exact": "전체 합의 재해석",
+                "neutral": "그 해석"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor09:b:d-2:unlock:s4:0",
+            "factText": "매트 설치와 생활습관 개선을 먼저 말하며 비용 논점을 따로 잘라내는 습관이 더 강해졌다.",
+            "tags": [
+              "self_justification",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "object": {
+                "exact": "매트 설치와 생활습관 개선",
+                "neutral": "기존 조치"
+              },
+              "amount": {
+                "exact": "추가 비용 18만 원",
+                "neutral": "증액분"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor09:b:d-2:unlock:s5:0",
+            "factText": "지훈은 추가 요청 사실과 반반 약속을 뒤집은 문제가 별개라는 점까지는 인정하게 된다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "최연우의 추가 요청",
+                "neutral": "상대 요청"
+              },
+              "rule": {
+                "exact": "반반 약속 번복 문제",
+                "neutral": "별도의 문제"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "neighbor09:b:d-3:unlock:s2:0",
+            "factText": "바닥 보강 뒤에도 천장 패치가 추가된 사실 자체가 단독 과실이 아니었다는 자료로 남아 있다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "area": {
+                "exact": "바닥 보강 뒤 천장 패치 추가",
+                "neutral": "공동 보강"
+              },
+              "evidence": {
+                "exact": "측정표와 체크리스트",
+                "neutral": "현장 자료"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor09:b:d-3:unlock:s3:0",
+            "factText": "지훈은 아이에게 주의를 주고 매트를 깐 사실로 자신을 계속 방어했다.",
+            "tags": [
+              "self_justification",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "object": {
+                "exact": "아이 주의와 매트 설치",
+                "neutral": "생활개선 조치"
+              },
+              "identity": {
+                "exact": "윗집 가해자 낙인",
+                "neutral": "그 낙인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor09:b:d-3:unlock:s4:0",
+            "factText": "윗집 가해자 낙인이 두려워 구조 공진 설명을 반복하며 방어적으로 굳어졌다.",
+            "tags": [
+              "fear",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "identity": {
+                "exact": "윗집 가해자 낙인",
+                "neutral": "그 낙인"
+              },
+              "area": {
+                "exact": "구조 공진 설명",
+                "neutral": "그 설명"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor09:b:d-3:unlock:s5:0",
+            "factText": "지훈은 자신의 생활소음 책임 일부와 아래층 구조 공진의 병존을 함께 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "share": {
+                "exact": "지훈 55 대 연우 45",
+                "neutral": "책임 비중"
+              },
+              "area": {
+                "exact": "생활소음과 구조 공진",
+                "neutral": "두 원인"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "neighbor09:b:d-4:unlock:s2:0",
+            "factText": "보전금 36만 원 반영 후 잔액 184만 원, 각 92만 원 계산서를 지훈도 확인했다.",
+            "tags": [
+              "evidence",
+              "threshold"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "benefit": {
+                "exact": "36만 원 보전금",
+                "neutral": "추가 보전금",
+                "rounded": "36만 원"
+              },
+              "share": {
+                "exact": "각 92만 원",
+                "neutral": "반반 부담액",
+                "rounded": "92만 원"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor09:b:d-4:unlock:s3:0",
+            "factText": "그래도 지훈은 '아래층 요청 몫'을 떼어 생각하며 92만 원 전액을 거부했다.",
+            "tags": [
+              "counter",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "area": {
+                "exact": "아래층 요청 몫",
+                "neutral": "상대 요청분"
+              },
+              "share": {
+                "exact": "92만 원",
+                "neutral": "전액 부담액",
+                "rounded": "92만 원"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor09:b:d-4:unlock:s4:0",
+            "factText": "돈 문제에서 체면을 지키려 숫자를 축소해 말한 자신을 지훈도 의식하고 있다.",
+            "tags": [
+              "shame",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "share": {
+                "exact": "92만 원",
+                "neutral": "그 금액",
+                "rounded": "92만 원"
+              },
+              "identity": {
+                "exact": "돈을 못 내는 사람처럼 보이는 일",
+                "neutral": "그 인상"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor09:b:d-4:unlock:s5:0",
+            "factText": "최종 금액 자체는 맞지만 자신이 그 계산을 받아들이지 않고 버텼다는 점을 지훈은 인정한다.",
+            "tags": [
+              "admission",
+              "evidence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "184만 원 잔액",
+                "neutral": "최종 잔액",
+                "rounded": "184만 원"
+              },
+              "share": {
+                "exact": "각 92만 원",
+                "neutral": "각 세대 부담액",
+                "rounded": "92만 원"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor09:b:d-5:unlock:s2:0",
+            "factText": "공식 공지 19분 전에 이뤄진 30만 원 송금은 예약 로그보다 확실히 앞선다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "공식 공지 19분 전",
+                "neutral": "공지 전",
+                "period": "최종 공지 직전"
+              },
+              "amount": {
+                "exact": "30만 원",
+                "neutral": "일부 송금액",
+                "rounded": "30만 원"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor09:b:d-5:unlock:s3:0",
+            "factText": "지훈은 30만 원을 보낸 뒤 나머지 지급을 의도적으로 멈춰 두었다.",
+            "tags": [
+              "act",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "30만 원 송금 뒤",
+                "neutral": "부분 지급 뒤"
+              },
+              "time": {
+                "exact": "공식 공지 전후 공백",
+                "neutral": "그 사이"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor09:b:d-5:unlock:s4:0",
+            "factText": "주민앱 글이 퍼진 뒤 아이 문제와 윗집 낙인이 더 커질까 두려워 전액 송금을 미뤘다.",
+            "tags": [
+              "fear",
+              "privacy"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "identity": {
+                "exact": "아이 문제와 윗집 낙인",
+                "neutral": "그 이미지"
+              },
+              "place": {
+                "exact": "주민앱 댓글 확산",
+                "neutral": "공개 반응"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor09:b:d-5:unlock:s5:0",
+            "factText": "부분 지급과 나머지 거부가 관리사무소 절차를 꼬이게 했다는 점을 지훈도 인정한다.",
+            "tags": [
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "관리사무소",
+                "neutral": "관리실"
+              },
+              "amount": {
+                "exact": "30만 원만 지급",
+                "neutral": "부분 지급"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "neighbor09:contradiction:0",
+        "targetParty": "b",
+        "trigger": "지훈이 반반 분담을 끝까지 '검토 수준'이었다고만 주장할 때",
+        "text": "중재 합의서에는 '보전 후 잔액 1/2 분담'이 적혀 있고, 이후 메시지에서는 다시 '내 바닥 책임만'이라고 선을 긋습니다. 확정이 아니었다면 왜 나중에 자기 구간만 따로 계산합니까?",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-4"
+        ]
+      },
+      {
+        "id": "neighbor09:contradiction:1",
+        "targetParty": "a",
+        "trigger": "연우가 소음 원인을 윗집 바닥만의 문제로 고정해 말할 때",
+        "text": "측정표에는 아래층 천장 공진 구간이 따로 표시돼 있고, 변경요청서에는 침실 천장 추가 보강까지 남아 있습니다. 그런데 어떻게 '윗집만의 문제'라고 단정하십니까?",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-5"
+        ]
+      },
+      {
+        "id": "neighbor09:contradiction:2",
+        "targetParty": "a",
+        "trigger": "연우가 주민앱 글을 단순 하소연이었다고만 축소할 때",
+        "text": "공식 공지보다 14분 먼저 올라간 공개 글이라면 단순 기록이 아니라 압박 효과를 노린 행동으로도 읽힙니다. 순서를 어긴 건 인정하십니까?",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      },
+      {
+        "id": "neighbor09:contradiction:3",
+        "targetParty": "b",
+        "trigger": "지훈이 최종 금액이 불명확했다고 버틸 때",
+        "text": "추가 보전금이 반영된 정산표는 이미 있었고, 그보다 뒤에 30만 원만 송금한 기록도 남아 있습니다. 계산을 몰라서가 아니라 받아들이지 않아서 버틴 것 아닙니까?",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-4"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "neighbor09:interjection:0",
+        "speaker": "a",
+        "trigger": "지훈이 매트와 생활습관 개선만 길게 말하며 비용 약속 질문을 피할 때",
+        "text": "매트 얘기만 하시면 돈 약속은 또 비껴 가는 거잖아요. 그날 관리실에서 반반이라고 하신 건 왜 자꾸 흐리세요?",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "neighbor09:interjection:1",
+        "speaker": "b",
+        "trigger": "연우가 측정 수치만 길게 나열하며 천장 추가 요청을 빼먹을 때",
+        "text": "수치표만 읽지 마시고 침실 천장 한 줄 더 넣어 달라고 한 얘기도 같이 하셔야죠. 그게 비용을 키운 건 사실이잖아요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      },
+      {
+        "id": "neighbor09:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 공지 전 행동과 공사비 계산을 서로 섞어 말하며 순서를 흐릴 때",
+        "text": "공사비 계산과 공지 전 행동은 분리해서 보겠습니다. 먼저 언제 어떤 약속이 있었고, 그다음 누가 어떤 순서를 어겼는지 차례로 답하십시오.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "neighbor09:outburst:a:0",
+        "party": "a",
+        "trigger": "지훈이 연우를 예민한 사람으로만 몰아갈 때",
+        "text": "밤마다 녹음 파일이 끊기는데 제가 예민해서 그런 거라고요? 그 소리 기록 안 해 보셨으면 그렇게 쉽게 말하지 마세요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "neighbor09:outburst:a:1",
+        "party": "a",
+        "trigger": "추가 보강 요청을 연우의 욕심으로만 규정할 때",
+        "text": "제가 더 챙기려 든 사람이면 왜 관리실을 그렇게 오가고 녹음까지 접었겠어요. 버티려고 한 요청까지 욕심처럼 말하지 마세요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "neighbor09:outburst:b:0",
+        "party": "b",
+        "trigger": "소음 문제를 아이와 지훈 세대 단독 책임으로 몰아붙일 때",
+        "text": "아이 얘기만 꺼내면 제가 처음부터 무책임한 사람처럼 찍힙니다. 구조 문제까지 같이 봐야 한다고 몇 번을 말합니까.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      },
+      {
+        "id": "neighbor09:outburst:b:1",
+        "party": "b",
+        "trigger": "지훈이 처음부터 공사비를 떼먹을 생각이었다고 단정할 때",
+        "text": "저를 처음부터 돈 안 낼 사람처럼 몰지 마세요. 억울해서 버틴 건 맞아도, 그 감정이랑 약속 번복은 지금 구분해서 말하겠습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "neighbor09:transition:a:d-2:s0_s1",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "extra_patch_question",
+      "line": "'큰 추가는 아니고요, 침실 쪽을 조금 더 봐 달라고 한 정도였습니다.'라며 연우가 요청 규모를 한 단계 낮춰 말한다.",
+      "behaviorHint": "자료를 보지 않고 손가락으로 작은 폭을 그린다."
+    },
+    {
+      "id": "neighbor09:transition:a:d-2:s1_s2",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "변경요청서가 제시되자 연우가 '한 줄 더 넣어 달라고 한 건 맞습니다.'라고 문장을 짧게 고쳐 말한다.",
+      "behaviorHint": "서명란을 확인하고 숨을 한 번 고른다."
+    },
+    {
+      "id": "neighbor09:transition:a:d-2:s2_s3",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "added_cost_followup",
+      "line": "증액 질문이 이어지면 연우가 '그때는 바닥만으론 안 끝날 구조라고 봤습니다.'라며 필요성을 앞세운다.",
+      "behaviorHint": "어깨를 움츠렸다가 측정표 쪽으로 시선을 돌린다."
+    },
+    {
+      "id": "neighbor09:transition:a:d-2:s3_s5",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "책임 질문에 연우가 '제가 요청했고 18만 원이 늘었습니다.'라고 결국 숫자를 포함해 인정한다.",
+      "behaviorHint": "입술을 다물었다가 짧게 끊어 인정한다."
+    },
+    {
+      "id": "neighbor09:transition:a:d-3:s0_s1",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "sole_upstairs_fault_question",
+      "line": "'처음엔 위층 소음이 핵심이라고 봤지만 공진 얘기가 아주 없던 건 아닙니다.'라며 연우가 표현을 누그러뜨린다.",
+      "behaviorHint": "고개를 살짝 기울이며 단정적 어조를 줄인다."
+    },
+    {
+      "id": "neighbor09:transition:a:d-3:s1_s2",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "측정표가 나오면 연우가 '제 침실 천장 구간이 따로 찍힌 건 압니다.'라고 한 발 물러선다.",
+      "behaviorHint": "자료의 특정 줄을 손끝으로 짚는다."
+    },
+    {
+      "id": "neighbor09:transition:a:d-3:s2_s3",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "ceiling_resonance_followup",
+      "line": "공진 후속 질문에 연우가 '그래도 그 울림을 키운 건 반복된 충격입니다.'라고 원인 결합을 말한다.",
+      "behaviorHint": "말속도가 잠깐 빨라진다."
+    },
+    {
+      "id": "neighbor09:transition:a:d-3:s3_s5",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "변경요청서까지 제시되면 연우가 '결국 공동 문제였고 제가 구조 쪽을 숨긴 겁니다.'라고 인정한다.",
+      "behaviorHint": "시선을 피하다가 마지막 문장에서 다시 맞춘다."
+    },
+    {
+      "id": "neighbor09:transition:a:d-5:s0_s1",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "management_notice_order_question",
+      "line": "공지 순서 질문에 연우가 '제가 먼저 적긴 했지만 그렇게 번질 줄은 몰랐습니다.'라고 한 번 물러난다.",
+      "behaviorHint": "손을 모아 쥐고 목소리를 낮춘다."
+    },
+    {
+      "id": "neighbor09:transition:a:d-5:s1_s4",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_recording_deadline_stress",
+      "line": "비판 없는 공감 질문이 들어오면 연우가 '녹음 마감이 무너져 더 기다리면 또 묻힐까 겁났습니다.'라고 감정을 먼저 턴다.",
+      "behaviorHint": "어깨 힘이 빠지고 시선이 아래로 떨어진다."
+    },
+    {
+      "id": "neighbor09:transition:a:d-5:s4_s5",
+      "caseId": "neighbor09",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "게시 시각 로그가 제시되자 연우가 '제가 공지 전에 올린 건 맞고 절차를 흔들었습니다.'라고 명확히 인정한다.",
+      "behaviorHint": "휴대폰 화면을 내려놓고 고개를 작게 끄덕인다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-1:s0_s1",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "half_share_promise_question",
+      "line": "반반 약속을 바로 묻자 지훈이 '검토 취지였지 확정이라고까지는 생각 안 했습니다.'라며 후퇴한 부인을 한다.",
+      "behaviorHint": "의자 등받이에 기대며 어조를 눌러 말한다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-1:s1_s2",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "합의서가 제시되면 지훈이 '반반 얘기가 나온 건 맞습니다.'라고 일부를 받아들인다.",
+      "behaviorHint": "서류를 한 번 들여다보고 턱을 굳힌다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-1:s2_s3",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_only_300k_followup",
+      "line": "30만 원만 보낸 이유를 묻자 지훈이 '추가된 부분 때문에 제 바닥 구간만 계산했습니다.'라고 구간 논리로 넘어간다.",
+      "behaviorHint": "손날로 허공에 선을 긋는다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-1:s3_s5",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "송금 메시지까지 나오면 지훈이 '제가 제 계산을 앞세워 약속을 뒤집었습니다.'라고 인정한다.",
+      "behaviorHint": "짧게 한숨을 쉬고 시선을 피한다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-4:s0_s1",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "final_amount_question",
+      "line": "최종 금액 질문에 지훈이 '공지가 늦어서 계산표를 보기 전엔 믿기 어려웠습니다.'라고 불신 쪽으로 물러선다.",
+      "behaviorHint": "손가락으로 책상 모서리를 두드린다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-4:s1_s2",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "정산서가 나오면 지훈이 '184만 원으로 찍힌 건 압니다.'라고 숫자를 인정한다.",
+      "behaviorHint": "정산표 특정 금액에서 시선이 멈춘다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-4:s2_s3",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "cap_amount_followup",
+      "line": "상한선 질문이 이어지면 지훈이 '그래도 그 안에 아래층 요청 몫이 섞였다고 봤습니다.'라고 책임 분리를 시도한다.",
+      "behaviorHint": "짧게 고개를 젓고 손날을 세운다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-4:s3_s5",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "책임 질문에 지훈이 '결국 계산은 맞는데 제가 받아들이지 않았습니다.'라고 물러선다.",
+      "behaviorHint": "입술을 다문 뒤 낮은 목소리로 인정한다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-5:s0_s1",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "management_notice_order_question",
+      "line": "공지 순서를 묻자 지훈이 '일부라도 먼저 보낸 거라 바로 거부라고만 보긴 억울합니다.'라고 표현을 누그러뜨린다.",
+      "behaviorHint": "어깨를 좁게 웅크리며 말을 짧게 잇는다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-5:s1_s2",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "송금 캡처가 제시되면 지훈이 '공식 공지 전에 30만 원을 보낸 건 맞습니다.'라고 사실을 인정한다.",
+      "behaviorHint": "휴대폰 화면을 보고 고개를 작게 끄덕인다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-5:s2_s3",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "partial_payment_before_notice",
+      "line": "나머지 지급 여부를 캐묻자 지훈이 '그때는 그게 제 선이라고 생각했습니다.'라며 의도적 선긋기를 드러낸다.",
+      "behaviorHint": "몸을 앞으로 숙였다가 바로 뒤로 젖힌다."
+    },
+    {
+      "id": "neighbor09:transition:b:d-5:s3_s5",
+      "caseId": "neighbor09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "주민앱 확산 로그까지 나오면 지훈이 '제가 일부만 보내고 버틴 게 절차를 더 꼬이게 했습니다.'라고 인정한다.",
+      "behaviorHint": "시선을 아래로 떨군 채 마지막 문장을 천천히 말한다."
+    }
+  ]
+}

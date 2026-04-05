@@ -1,0 +1,770 @@
+{
+  "caseId": "case-work-02",
+  "meta": {
+    "relationshipType": "boss_employee",
+    "conflictSeed": "CS-4",
+    "variableModules": [
+      "VM-A"
+    ],
+    "twistModule": "TW-2",
+    "difficulty": "hard",
+    "anchorTruth": "외부로 먼저 나간 원본은 민아가 아니라 회수 안 된 공유링크를 재사용한 파견 컨설턴트 노지원 쪽에서 반출됐다.",
+    "emotionalBait": "새벽 다운로드, 개인 드라이브 업로드, 전 직장 동료에게 보낸 DM이 겹치자 민아가 유출자라는 그림이 너무 깔끔하게 완성된다.",
+    "resolutionDilemma": "규원의 증거 없는 선제 낙인과 민아의 무단 복사·외부 상담 중 어느 쪽이 더 무거운가. 진짜 유출자가 제3자로 밝혀진 뒤, 내부 고발과 보안 위반을 어떻게 분리하는가."
+  },
+  "duo": {
+    "partyA": {
+      "name": "한규원",
+      "age": 44,
+      "occupation": "운영기획실장",
+      "incomeBracket": "high",
+      "archetype": "avoidant",
+      "speechStyle": "\"감사 끝나고 보자.\" 민감한 질문엔 타이밍을 앞세워 결론을 미룬다. 궁지에 몰리면 조직 안정을 방패로 들어 판단을 흐린다.",
+      "pride": 8,
+      "fear": "감사 착수 전날 팀 관리 실패와 보복성 대응이 한꺼번에 드러나 본부 신뢰가 무너지는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "mail_and_permissions_split",
+      "dailyRoutine": "아침에는 감사 체크리스트를 훑고, 낮에는 부서별 자료를 취합하며, 밤에는 권한 변경과 보고 문안을 직접 확인한다.",
+      "sensitivePoints": [
+        "감사 대응 평판",
+        "팀 보안 관리",
+        "비용처리 이상 징후"
+      ],
+      "verbalTells": [
+        {
+          "type": "delay_frame",
+          "trigger": "lying",
+          "pattern": "\"지금 그걸 따질 때가 아닙니다.\" 사실 판단 전에 타이밍 논리를 먼저 꺼내 쟁점을 미룬다."
+        },
+        {
+          "type": "softened_order",
+          "trigger": "cornered",
+          "pattern": "\"그런 취지로 말한 거지, 지시가 아니었어요.\" 명확한 지시도 조언으로 후퇴시킨다."
+        },
+        {
+          "type": "topic_glide",
+          "trigger": "avoiding",
+          "pattern": "유출 경로를 물으면 \"지금 팀이 흔들리면...\" 하고 감사 일정·팀 안정 쪽으로 화제를 튼다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "민아씨",
+        "toJudge": "제 팀원",
+        "angry": "조민아!"
+      }
+    },
+    "partyB": {
+      "name": "조민아",
+      "age": 29,
+      "occupation": "내부통제 분석사원",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "\"정확히 말하면 22시 14분입니다.\" 감정 대신 시각·로그부터 꺼낸다. 억울함이 차면 상대 의도를 단정하는 문장이 튀어나온다.",
+      "pride": 7,
+      "fear": "제보자도 유출자도 아닌데 두 딱지를 동시에 뒤집어쓰고 회사를 나가게 되는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "folder_mirroring",
+      "dailyRoutine": "오전에는 비용처리 표본을 검토하고, 오후에는 감사 대응 자료를 정리하며, 밤에는 권한이 남은 폴더를 다시 확인해 누락 여부를 점검한다.",
+      "sensitivePoints": [
+        "희생양 취급",
+        "접근권 회수",
+        "외부상담 정당성"
+      ],
+      "verbalTells": [
+        {
+          "type": "log_recital",
+          "trigger": "lying",
+          "pattern": "\"audit_v3_final.xlsx, 22시 14분 37초요.\" 핵심 행위 대신 파일명·초 단위 시각으로 무게를 분산."
+        },
+        {
+          "type": "precision_wall",
+          "trigger": "cornered",
+          "pattern": "\"기술적으로는 복사가 아니라 동기화예요.\" 인정 범위를 극단적으로 좁게 잘라 말한다."
+        },
+        {
+          "type": "jaw_set_pause",
+          "trigger": "emotional",
+          "pattern": "2초간 입을 다물었다가 한 번에 긴 문장으로 쏟아낸다. 멈춤이 길수록 단정이 강해진다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "실장님",
+        "toJudge": "제 실장",
+        "angry": "한규원 실장!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "분기 초 합의: 감사 대응 자료와 제보 자료를 분리 보관하고, 조사 전까지 개인 혐의를 단정하지 않는다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "지난달 민아가 전 직장 동료와 점심을 먹은 일을 규원은 '외부 접촉', 민아는 '개인 약속'으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '감사 직전에 외부 접촉은 위험 신호였다' / B: '경력 상담 자리였지 자료 이야기는 없었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "민아가 비용처리 이상 징후를 정식 제보하려다 규원의 냉담한 반응에 구두 정리로 물러섰다. 그 초안이 남아 있다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "임재호 (사업부 팀장)",
+        "relationTo": "a",
+        "knowledgeScope": "규원이 보안사고를 암시한 시점과 민아 접근권이 공식 조사 전에 회수된 사실을 안다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 49,
+          "occupation": "사업부 팀장",
+          "relationToA": "사업부 팀장",
+          "relationToB": "조민아와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "규원씨",
+          "addressB": "민아씨"
+        },
+        "addressA": "규원씨",
+        "addressB": "민아씨"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "서다은 (HR 조사담당)",
+        "relationTo": "both",
+        "knowledgeScope": "규원의 HR 초기 접수 메모, 민아의 보복 우려 진술, 차단 절차 순서를 확인 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 38,
+          "occupation": "HR 조사담당",
+          "relationToA": "한규원을 업무상 알고 있음",
+          "relationToB": "조민아을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "규원씨",
+          "addressB": "민아씨"
+        },
+        "addressA": "한규원씨",
+        "addressB": "조민아씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "정우림 (감사팀 선임)",
+        "relationTo": "both",
+        "knowledgeScope": "공유링크 원본 로그, 노지원의 접근 흔적, 회의실 CCTV·면담 정리를 원본 대조 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "감사팀 선임",
+          "relationToA": "한규원을 업무상 알고 있음",
+          "relationToB": "조민아을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "한규원씨",
+          "addressB": "조민아씨"
+        },
+        "addressA": "한규원씨",
+        "addressB": "조민아씨"
+      }
+    ],
+    "relationshipType": "boss_employee"
+  },
+  "context": {
+    "contextType": "audit_review",
+    "description": "외부 감사 착수 48시간 전. 운영기획실은 비용처리 이상 징후와 내부통제 보고서를 동시에 정리하고 있었다. 누가 자료를 봤고 누가 먼저 밖과 접촉했는지 한 줄만 어긋나도 감사 대응이 무너지는 시점이다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "감사 직전이라 유출자 낙인은 곧 권한 회수와 인사 불이익으로 직결된다. 문제 제기 자체가 조직 배신으로 읽히는 시점이다.",
+    "caseNumber": "E-WK-H-0002",
+    "caseName": "감사 대응 혼란"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "규원의 선제 낙인과 권한 회수",
+      "truth": true,
+      "truthDescription": "규원은 증거 없이 민아를 유출자로 지목해 폴더·보고 권한을 HR 사건번호 생성 52분 전에 회수하고 팀 앞에서 징계를 암시했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "조사분리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "규원은 민아를 유출자로 지목했다."
+    },
+    {
+      "id": "d-2",
+      "name": "민아의 무단 복사·외부 상담",
+      "truth": true,
+      "truthDescription": "민아는 자기 방어용으로 감사 초안 일부를 개인 드라이브에 올렸고, 전 직장 동료에게 \"법무 시각 좀 봐 달라\"며 문장을 보냈다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "증거취급경계",
+      "legitimacyIssue": true,
+      "judgmentStatement": "민아는 감사 초안을 개인 드라이브에 올렸다."
+    },
+    {
+      "id": "d-3",
+      "name": "실제 유출 경로의 진위",
+      "truth": false,
+      "truthDescription": "원본 반출은 민아가 아니라 회수 안 된 공유링크를 재사용한 파견 컨설턴트 노지원 쪽이었다. 시각상 민아 업로드보다 2시간 앞선다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-3",
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "유출경로복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "원본 반출자는 노지원이다."
+    },
+    {
+      "id": "d-4",
+      "name": "규원의 입막음 지시와 HR 메모",
+      "truth": true,
+      "truthDescription": "규원은 민아가 비용 이상 징후를 공식 제보하기 전에 HR에 '보안상 위험 인물'이라 적고, \"감사 끝날 때까지 구두로만\"이라고 지시했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "제보절차보호",
+      "legitimacyIssue": false,
+      "judgmentStatement": "규원은 민아를 입막음 지시했다."
+    },
+    {
+      "id": "d-5",
+      "name": "조사 전 소문전의 쌍방 가담",
+      "truth": true,
+      "truthDescription": "규원은 팀에 \"민아가 외부랑 붙었다\"고 흘렸고, 민아는 단톡에 \"나는 희생양\"이라며 상사 비리설을 키웠다. 쌍방 소문전이다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "조사분리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "규원과 민아는 서로 소문을 퍼뜨렸다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "보안폴더 접근권 회수 메일과 팀 공지",
+      "description": "민아 접근권이 HR 사건번호보다 52분 먼저 회수됐고, 같은 날 '보안 리스크 인원 정리' 문구가 팀 메일에 올라갔다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "IT 권한 변경 티켓(ITSM)과 공지 메일 원본이 함께 보존돼 있다.",
+        "check_metadata": "접근권 회수 시각이 HR 사건번호 생성보다 52분 앞선다.",
+        "restore_context": "공지에 이름은 없지만 권한 변경 대상이 민아 한 명뿐임이 ITSM 기록으로 드러난다.",
+        "verify_source": "메일 서버 아카이브와 ITSM 기록의 타임스탬프·대상자가 일치한다.",
+        "check_edits": "메일과 티켓 로그 모두 사후 편집 흔적 없음.",
+        "question_acquisition": "회사 시스템 기록. 적법하게 확인 가능."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "한규원에게: \"규원의 선제 낙인과 권한 회수\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 한규원의 \"규원의 선제 낙인과 권한 회수\" 쟁점과 관련된다. 한규원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "조민아에게: \"조사 전 소문전의 쌍방 가담\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 조민아의 \"조사 전 소문전의 쌍방 가담\" 쟁점과 관련된다. 조민아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "접근권 회수 메일과 팀 공지",
+      "surfaceDescription": "보안 폴더 접근 권한 변경을 알리는 이메일과 팀 공지 문서"
+    },
+    {
+      "id": "e-2",
+      "name": "민아의 개인 드라이브 업로드 이력과 전 직장 동료 DM",
+      "description": "민아의 개인 드라이브 업로드 기록과 전 직장 동료에게 \"법무 쪽 시각 좀 봐줘\"라고 보낸 DM 캡처.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "개인 드라이브 스크린샷과 DM 캡처만 제출. 전체 대화 원본은 미확보.",
+        "check_metadata": "업로드 시각이 유출 소문이 돌기 시작한 직후에 찍혀 있다.",
+        "restore_context": "DM에 포함된 문장은 감사 초안 일부. 실제 유출 범위 단정은 어렵다.",
+        "verify_source": "민아 단말 파일명과 수신자 단말 캡처의 파일명·시각이 일치한다.",
+        "check_edits": "내용 변조는 없으나 크롭·블러 처리가 있어 누락된 맥락이 있을 수 있다.",
+        "question_acquisition": "개인 대화·저장공간 기록 포함. 사생활 침해 우려가 크다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "한규원에게: \"조사 전 소문전의 쌍방 가담\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 한규원의 \"조사 전 소문전의 쌍방 가담\" 쟁점과 관련된다. 한규원은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "조민아에게: \"민아의 무단 복사·외부 상담\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 조민아의 \"민아의 무단 복사·외부 상담\" 쟁점과 관련된다. 조민아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "개인 드라이브 업로드 이력과 DM",
+      "surfaceDescription": "클라우드 드라이브 업로드 기록과 메신저 개인 대화 캡처"
+    },
+    {
+      "id": "e-3",
+      "name": "공유링크 접속 원본 로그와 임시다운로드 토큰 기록",
+      "description": "공유링크가 민아 업로드보다 2시간 앞서 노지원 노트북 IP에서 열렸고, 같은 세션에 임시다운로드 토큰이 발급된 원본 로그.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "링크 생성→열람→다운로드 raw log가 타임스탬프 순으로 보존돼 있다.",
+        "check_metadata": "노지원 파견 노트북 IP와 임시토큰 발급 세션 ID가 같은 행으로 연결된다.",
+        "restore_context": "민아 업로드보다 2시간 앞서 동일 원본이 노지원 세션에서 접근된 것이 드러난다.",
+        "verify_source": "보안관제 서버와 협업 플랫폼 로그의 시퀀스가 일치한다.",
+        "check_edits": "서버 추출 원본. 사후 편집 흔적 없음.",
+        "question_acquisition": "보안사고 조사 범위 내 원본 로그. 적법성 높음."
+      },
+      "subjectParty": "b",
+      "surfaceName": "공유 링크 접속 로그와 토큰 기록",
+      "surfaceDescription": "공유 링크의 접속 이력과 임시 다운로드 토큰 발급 기록",
+      "requiredLieState": "S3"
+    },
+    {
+      "id": "e-4",
+      "name": "노지원의 팀즈 전달 캡처와 회수되지 않은 링크 메모",
+      "description": "노지원이 번역업체에 \"예전 링크 아직 살아 있으니 이걸로 보라\"고 보낸 팀즈 메시지와 링크 회수 누락 메모.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "번역업체가 보관한 화면 캡처와 전달 메모 사본이 제출됐다.",
+        "check_metadata": "전송 시각이 민아의 드라이브 업로드 전날 오후로 찍혀 있다.",
+        "restore_context": "노지원은 번역 검토용이라 주장하지만 링크 회수 누락은 부인하지 못한다.",
+        "verify_source": "업체 담당자 수신 단말 기록과 팀즈 메시지 시각이 일치한다.",
+        "check_edits": "캡처본이라 여백 손실이 있으나 본문 편집 흔적은 미약하다.",
+        "question_acquisition": "제3자 자발 제출로 위법성은 낮으나 업무비밀 포함. 사용 범위 제한 필요."
+      },
+      "subjectParty": "b",
+      "surfaceName": "메신저 전달 캡처와 링크 메모",
+      "surfaceDescription": "사내 메신저에서 전달된 내용의 캡처본과 관련 링크 메모"
+    },
+    {
+      "id": "e-5",
+      "name": "HR 조사 접수 메모와 규원 코멘트 타임스탬프",
+      "description": "규원이 '보안상 위험 인물: 민아'라고 먼저 적고, '비용 건은 감사 후'라고 남긴 HR 접수 메모.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "HR 사건 접수 화면 원본 로그와 메모 본문이 보존돼 있다.",
+        "check_metadata": "민아 면담 전에 규원 코멘트가 먼저 입력됐고, 이후 '위험 인물'이 '주의 대상'으로 완화됐다.",
+        "restore_context": "같은 메모에 '비용 건은 감사 후에 처리'라는 지시가 있어 입막음 정황이 이어진다.",
+        "verify_source": "HR 관리자 조회 화면과 출력본이 일치한다.",
+        "check_edits": "초기 입력본→수정본 모두 남아 있어 편집 경로가 투명하다.",
+        "question_acquisition": "인사조사 자료. 제출 목적은 분쟁 해결에 한정돼야 한다."
+      },
+      "subjectParty": "a",
+      "surfaceName": "인사 조사 접수 메모와 코멘트",
+      "surfaceDescription": "인사팀 조사 접수 기록과 타임스탬프가 찍힌 내부 코멘트"
+    },
+    {
+      "id": "e-6",
+      "name": "감사실 면담확인서와 회의실 CCTV·좌석 로그",
+      "description": "노지원이 문제 시각에 프린터 존↔착석 구역을 오가며 원본을 내려받은 CCTV 동선과 감사실 면담확인서.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "CCTV 출입 시각, 좌석 배치 로그, 면담확인서 원본 3종이 함께 제출됐다.",
+        "check_metadata": "민아 계정 잠금 시각과 노지원의 착석·프린터 사용 시각이 같은 구간에 겹친다.",
+        "restore_context": "노지원은 번역 검토라 했으나, 다운로드→프린터→외부 전달이 하나의 동선으로 이어진다.",
+        "verify_source": "감사실 기록과 시설팀 CCTV 로그가 동일한 시퀀스를 보여준다.",
+        "check_edits": "기관 보존본. 편집 흔적 없음.",
+        "question_acquisition": "보안사고 조사 목적 열람으로 적법. 개인 동선은 최소 범위만 공개해야 한다."
+      },
+      "subjectParty": "b",
+      "surfaceName": "감사 면담 확인서와 출입 로그",
+      "surfaceDescription": "감사실 면담 확인 문서와 회의실 출입 기록 및 좌석 배치 로그",
+      "requiredLieState": "S3"
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-2",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "규원은 확정 증거 없이 민아의 접근권을 먼저 회수하고 사실상 유출자로 지목했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "민아는 자신을 보호하려고 감사 초안 일부를 개인 드라이브와 외부 대화에 옮겼다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "외부로 먼저 나간 원본 자료는 노지원이 회수되지 않은 공유링크로 반출한 것이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-4",
+      "fact": "규원은 민아의 비용처리 이상 징후 제기를 공식화하지 말라고 하며 HR에 선행 낙인을 남겼다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 공식 조사 전 소문을 이용해 상대를 먼저 압박했다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "access_suspension_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_only_mina_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L3",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "whistleblower_channel_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonpunitive_question_about_audit_pressure"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "retaliation_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "rumor_spread_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "team_notice_followup"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "specific_phrase_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "personal_drive_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "outside_contact_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "data_scope_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_framing_claim"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "link_timeline_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "group_chat_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_fear"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "formal_reporting_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "조사분리": [
+      "유출 의심이 생겨도 접근권 회수와 혐의 통보는 HR·보안 공동승인 후에만 하도록 분리한다.",
+      "규원과 민아를 감사 대응 체인에서 잠시 분리하고, 사실조사와 실무 수행을 별도 라인으로 운영한다.",
+      "공식 조사 전 혐의 발언이나 소문 유포가 반복되면 직속 보고권과 팀 관리권을 즉시 보류하는 강경 조치를 둔다."
+    ],
+    "증거취급경계": [
+      "자기방어 목적이라도 개인 드라이브나 외부 메신저로 자료를 옮기지 않고, 지정된 보안 보관함과 사내 법무 채널만 사용한다.",
+      "외부 자문이 필요하면 문장 일부를 임의 전송하지 말고 회사 지정 변호사나 감사 담당을 통해 비식별 검토를 받는다.",
+      "무단 복사와 외부상담이 반복되면 제보 여부와 별개로 기기 격리와 접근권 제한을 우선 적용한다."
+    ],
+    "유출경로복구": [
+      "모든 살아 있는 공유링크와 임시토큰을 전량 회수하고, 파견·외주 인력의 재사용 링크 정책을 즉시 폐기한다.",
+      "노지원 경로를 중심으로 외부 전달 범위와 원본 파일 도달 지점을 다시 추적해 감사 대응 자료를 재발급한다.",
+      "제3자 유출이 확인되면 계약상 책임과 징계를 분리해 진행하고, 향후 감사자료는 만료형 링크만 허용한다."
+    ],
+    "제보절차보호": [
+      "비용처리 이상 징후 같은 제보는 직속상사를 거치지 않고 HR·감사 공동 채널로 바로 올리게 한다.",
+      "감사 기간 중 제보자에 대한 선행 낙인 메모나 비공식 평판 기록은 자동으로 재검토 대상이 되게 한다.",
+      "입막음 지시나 보복성 접근권 차단이 확인되면 해당 관리자의 감사 대응 권한을 일시 정지하는 강한 규칙을 둔다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

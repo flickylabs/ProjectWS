@@ -357,7 +357,33 @@
           "questionAngle": "류현우에게: \"현우의 사실상 구매 의사 표시 후 철회\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 류현우의 \"현우의 사실상 구매 의사 표시 후 철회\" 쟁점과 관련된다. 류현우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공동구매 대화 원본의 흐름을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "조건부 답장 뒤 곧바로 거래가 묶인 경위를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확정 표현 없이도 합의처럼 받아들인 근거를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -393,13 +419,39 @@
           "questionAngle": "류현우에게: \"두 사람이 '상태 괜찮음'의 의미를 동일하게 합의했는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 류현우의 \"두 사람이 '상태 괜찮음'의 의미를 동일하게 합의했는가\" 쟁점과 관련된다. 류현우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 판매글 화면을 저장해 전달한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "저장 직후 곧바로 그 화면을 공유한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "하단 설명이 잘린 화면만 보낸 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "예약금 3만원 계좌이체 내역",
-      "surfaceName": "예약금 계좌이체 내역",
-      "surfaceDescription": "금융기관의 예약금 이체 기록이다. 거래 당사자와 금액 확인이 필요하다.",
+      "surfaceName": "계좌이체 내역",
+      "surfaceDescription": "금융기관의 이체 기록이다. 거래 당사자와 금액 확인이 필요하다.",
       "description": "다혜가 판매자에게 보낸 비환불 예약금 3만원의 원본 이체 내역이다.",
       "type": "bank",
       "reliability": "hard",
@@ -420,13 +472,39 @@
         "check_edits": "기관 발급본이라 편집 흔적이 없다.",
         "question_acquisition": "본인 계좌 자료라 적법하지만 계좌번호 일부는 비식별화가 바람직하다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 예약금 이체 내역을 먼저 남긴 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "상태 확인보다 송금이 앞선 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "거래를 먼저 묶어야 한다고 본 기준을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "판매자와의 전체 메신저 대화 및 환불 고지",
-      "surfaceName": "판매자 메신저 대화와 환불 고지",
-      "surfaceDescription": "판매자와의 전체 메신저 대화 및 환불 안내 기록이다. 대화 흐름과 합의 확인이 필요하다.",
+      "surfaceName": "거래 대화와 환불 안내 기록",
+      "surfaceDescription": "거래 상대와 주고받은 대화 및 환불 안내 기록이다. 대화 흐름과 합의 확인이 필요하다.",
       "description": "판매자가 비환불 예약금 조건을 알렸고, 다혜와 현우가 각각 거래 의사가 있는 듯한 메시지를 보낸 전체 대화 원본이다.",
       "type": "chat",
       "reliability": "hard",
@@ -460,7 +538,33 @@
           "implication": "이 증거는 류현우의 \"판매자에게 각자 다른 확정 신호를 보내 거래를 혼선시킴\" 쟁점과 관련된다. 류현우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 판매자 대화 전체가 제출된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "환불 불가 고지를 송금 전에 본 점을 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "각자 다른 채팅에서 거래 의사를 보낸 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -499,7 +603,33 @@
           "implication": "이 증거는 류현우의 \"두 사람이 '상태 괜찮음'의 의미를 동일하게 합의했는가\" 쟁점과 관련된다. 류현우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 현장 사진과 상태 메모를 남긴 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "재판매 등록보다 앞서 촬영된 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "외관 외에 어떤 하자 기준까지 함께 보려 했습니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -528,7 +658,33 @@
         "question_acquisition": "거래 완료 자료는 적법하지만 재판매 상대의 닉네임과 연락처는 가려야 한다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 철회 메시지와 재판매 로그를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "현장 확인 직후 곧바로 빠지겠다고 한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이미 현장 인수까지 간 뒤에도 부담을 거둔 기준을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

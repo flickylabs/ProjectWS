@@ -22,7 +22,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "윤수빈 씨, 첫 노출이 가장 큰 시점에 '내 신곡'과 '내 프로젝트'라는 표현이 실제로 같이 걸려 있었지요?",
+              "text": "공개 직후 표현이 왜 한쪽 작품처럼 읽히게 된지부터 설명해 주시겠습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -61,7 +61,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "백재윤 씨, 첫 화면과 포스터 일부만 반복 사용하면 보는 사람에겐 단독 작업처럼 읽힐 수 있다는 점을 알고도 그 화면을 골랐습니까?",
+              "text": "한쪽 이름만 먼저 보이는 화면을 굳이 골라 쓴 이유부터 말씀해 주시겠습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "윤수빈 씨, 세션과 편집 로그를 보면 백재윤 씨의 구조 변경과 본인 수정이 교차한 흔적이 선명합니다. 그 상태에서도 단독작이라고 부를 수 있습니까?",
+              "text": "작업 로그가 섞여 있는데도 왜 단독작처럼 말하게 된지부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "백재윤 씨, 편집 원본에 남은 수빈 씨의 재촬영 요청과 자막 수정까지 보면 상대를 단순 'voice'로 축소할 수는 없지요?",
+              "text": "상대 기여를 단순 보조처럼 본 이유부터 먼저 말씀해 주시겠습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -212,7 +212,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "윤수빈 씨, 항의가 오간 뒤에도 단독형 표현을 바로 걷지 않고 더 고집한 이유가 상대 공개물에 대한 반발이었습니까?",
+              "text": "항의가 오간 뒤에도 왜 단독형 표현을 바로 걷지 못했는지부터 설명해 주시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -251,7 +251,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "백재윤 씨, 공동 메타데이터를 본 뒤에도 본인 이름이 먼저 뜨는 화면만 골랐다는 점은 부인하실 수 없지요?",
+              "text": "공동 표기를 알고도 왜 본인 쪽에 유리한 화면만 골라 쓰게 된지부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

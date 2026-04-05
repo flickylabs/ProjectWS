@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "백지훈 씨, 공식 지침에 없는 웹캠 확인을 왜 출석 확인으로만 설명하십니까?",
+              "text": "백지훈 씨, 상태 확인 범위를 넓힌 이유가 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "오수민 씨, 유휴 로그와 VPN 기록이 겹친 시간대에 실제로 자리를 비운 적이 있었습니까?",
+              "text": "오수민 씨, 근무시간 중 실제 공백이 있었는지부터 답해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "백지훈 씨, HR에 낸 PDF에서 정상 응답 구간보다 유휴 구간을 먼저 붙인 이유가 뭡니까?",
+              "text": "백지훈 씨, 제출 자료 순서를 그렇게 잡은 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "오수민 씨, 그 PDF가 편집됐다고 느낀 뒤에도 왜 정식 workload 조정 요청보다 버티기를 택했습니까?",
+              "text": "오수민 씨, 문제를 느끼고도 정식 요청보다 버티기를 택한 이유가 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "백지훈 씨, 지연 티켓이 쌓일 때 정식 코칭 계획 입력보다 사적 감시를 먼저 강화한 이유가 뭡니까?",
+              "text": "백지훈 씨, 절차보다 직접 통제를 먼저 강화한 이유가 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "오수민 씨, 캡처를 보내기 직전에 캘린더 블록을 바꾼 이유가 뭡니까?",
+              "text": "오수민 씨, 보고 화면을 보내기 전에 일정을 손본 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

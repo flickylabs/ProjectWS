@@ -320,8 +320,8 @@
     {
       "id": "e-1",
       "name": "소연의 부모방·입주민방 캡처",
-      "surfaceName": "학부모방·입주민방 캡처",
-      "surfaceDescription": "학부모 채팅방과 입주민 채팅방 캡처 이미지다. 게시 맥락과 발언 내용 확인이 필요하다.",
+      "surfaceName": "단체 대화 캡처",
+      "surfaceDescription": "단체 대화 내용을 캡처한 자료다. 게시 맥락과 발언 내용 확인이 필요하다.",
       "description": "부모방과 동 채팅방에 민우 실명과 한정판 이름이 적힌 소연의 '절도 의심' 글. 정훈에게 직접 보낸 메시지보다 8분 앞서 올라갔다.",
       "type": "chat",
       "reliability": "soft",
@@ -352,7 +352,33 @@
           "questionAngle": "이정훈에게: \"부모 간 직접 확인 약속 파기\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 이정훈의 \"부모 간 직접 확인 약속 파기\" 쟁점과 관련된다. 이정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공개 글과 직접 메시지 순서에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "직접 확인보다 공개 글이 먼저 올라간 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "아이 실명과 물건 종류를 먼저 공개한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -378,7 +404,33 @@
         "check_edits": "음성 파형에 분할·편집 흔적 없음. 캡처 핵심 문장도 원문과 동일하다.",
         "question_acquisition": "미성년자 평판이 담긴 사적 대화이므로 아이 이름과 프로필 사진은 전부 마스킹 필수다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 음성메시지와 1대1 전달 캡처에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공개 글 직후 짧은 시간에 여러 전파를 한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "사실 확인 전 상대 아이의 평판을 흔든 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -415,13 +467,39 @@
           "questionAngle": "이정훈에게: \"싸움의 원인: 절도인가 규칙 오해인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 이정훈의 \"싸움의 원인: 절도인가 규칙 오해인가\" 쟁점과 관련된다. 이정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "사건 전후 연속 영상과 열람 기록에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "두 아이가 각자 자기 앨범으로 이동한 시점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 페이지를 잡고 실랑이한 흐름을 보고도 가져갔다고 본 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "담임교사 상담 메모와 아이들 규칙 그림",
       "surfaceName": "상담 메모와 아이들 규칙 그림",
-      "surfaceDescription": "담임교사 상담 메모와 아이들이 그린 규칙 그림이다. 상담 내용과 맥락 확인이 필요하다.",
+      "surfaceDescription": "상담 메모와 아이들이 그린 규칙 그림이다. 상담 내용과 맥락 확인이 필요하다.",
       "description": "담임 상담 메모에 하윤은 '보면 교환 완료', 민우는 '보고 다시 고르기'로 적혀 있다. 같은 규칙을 다르게 이해한 기록이다.",
       "type": "institutional_note",
       "reliability": "hard",
@@ -441,13 +519,39 @@
         "check_edits": "학교 공식 기록으로 편집 이력 없음. 아이들 그림도 원본 촬영 사진으로 보관돼 있다.",
         "question_acquisition": "학교 상담 기록이므로 교환 규칙 오해 부분만 최소 범위로 발췌해 활용해야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "상담 메모와 규칙 그림 두 장에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "다음 날 바로 남은 두 설명이 엇갈린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "서로 다른 규칙 이해가 남았는데 한쪽 주장만 믿은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
-      "name": "하윤 앨범 안쪽 투명포켓 발견 사진",
+      "name": "하윤 앨범 내부 사진",
       "surfaceName": "앨범 안쪽 투명포켓 발견 사진",
-      "surfaceDescription": "앨범 안쪽 투명포켓에서 발견된 물건의 사진이다. 발견 경위와 소유자 확인이 필요하다.",
+      "surfaceDescription": "앨범 내부에서 확인된 물건 사진이다. 발견 경위와 소유자 확인이 필요하다.",
       "description": "하윤 앨범 뒷표지 안쪽 투명포켓에 반쯤 밀착된 한정판 스티커 발견 사진. 코드 대조로 분실 신고된 바로 그 스티커임이 확인된다.",
       "type": "photo",
       "reliability": "hard",
@@ -478,7 +582,33 @@
           "questionAngle": "이정훈에게: \"싸움의 원인: 절도인가 규칙 오해인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 이정훈의 \"싸움의 원인: 절도인가 규칙 오해인가\" 쟁점과 관련된다. 이정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 연속 사진과 코드 확대 촬영에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "발견 촬영이 공개 글과 역전파 뒤에 이뤄진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "겉칸이 아닌 안쪽 보관칸 확인이 늦어진 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -514,7 +644,33 @@
           "questionAngle": "이정훈에게: \"부모 간 직접 확인 약속 파기\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 이정훈의 \"부모 간 직접 확인 약속 파기\" 쟁점과 관련된다. 이정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "과거 약속 대화와 당일 연락 순서에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "직접 연락보다 공개와 전파가 앞선 흐름을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "먼저 연락하기로 해놓고 여론부터 만든 배경을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

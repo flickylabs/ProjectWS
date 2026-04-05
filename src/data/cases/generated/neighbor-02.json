@@ -354,13 +354,39 @@
           "questionAngle": "장민규에게: \"선확인 약속 쌍방 파기\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 장민규의 \"선확인 약속 쌍방 파기\" 쟁점과 관련된다. 장민규은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 택배실 정지 화면을 이웃에게 보낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "저장 시각이 반상회 다음 날 오전으로 찍힌 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "전후 영상 없이 한 장만 돌려도 행위 판단이 된다고 보셨습니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "경비실 오배송 처리대장과 원본 CCTV 6분 영상",
-      "surfaceName": "오배송 처리대장과 CCTV 원본 영상",
-      "surfaceDescription": "경비실 오배송 처리대장과 CCTV 원본 영상이다. 처리 경위와 영상 시간대 확인이 필요하다.",
+      "surfaceName": "처리대장과 원본 영상",
+      "surfaceDescription": "관련 처리대장과 원본 영상이다. 처리 경위와 전후 흐름 확인이 필요하다.",
       "description": "택배실 원본 CCTV 6분 + 경비원 무전 메모. 민규가 박스를 열지 않고 선반만 옮긴 전 과정이 담겨 절도 의심을 반박한다.",
       "type": "security_log",
       "reliability": "hard",
@@ -383,7 +409,33 @@
         "question_acquisition": "공식 보안기록으로 적법. 타 주민 택배 송장 정보는 마스킹 후 사용 원칙."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 영상과 처리대장을 확보한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "무전과 대장 기재 시각이 2분 안에 맞물린 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "해당 장면을 절도 의심으로 단정한 기준을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -420,13 +472,39 @@
           "questionAngle": "장민규에게: \"악취 소문 무검증 전파\" 관련 해명 요구 (방어 동기: 복수심)",
           "implication": "이 증거는 장민규의 \"악취 소문 무검증 전파\" 쟁점과 관련된다. 장민규은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단체방과 개인 대화 캡처를 보낸 취지를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 문구가 14시간 내 여러 대화방에 반복된 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "관리 확인 전에 해당 표현을 사실처럼 돌린 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "관리사무소 악취 민원 원문과 음식물수거 사고보고",
-      "surfaceName": "악취 민원 원문과 수거 사고보고",
-      "surfaceDescription": "관리사무소 악취 민원 원문과 음식물 수거 사고 보고서다. 접수 시점과 경위 확인이 필요하다.",
+      "surfaceName": "민원 문서와 보고서",
+      "surfaceDescription": "민원 원문과 관련 보고서다. 접수 시점과 발생 경위 확인이 필요하다.",
       "description": "악취 민원 원문 + 찢어진 김치봉투 처리 사고보고서. 반려견 배변봉투는 현장에서 확인되지 않았다는 메모가 포함돼 있다.",
       "type": "institutional_note",
       "reliability": "hard",
@@ -449,7 +527,33 @@
         "question_acquisition": "공동주택 민원 자료로 적법 확보. 세대 지목 표현 재유포는 제한."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 민원 원문과 사고보고를 증거로 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "신고 시각이 산책 시간과 어긋나는 점을 알고 계셨습니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "현장 확인 전 어느 근거로 원인을 한쪽으로 좁혔습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -475,7 +579,33 @@
         "check_edits": "발췌본이라 단독 증거력은 약하나 음성 파형상 합성·이어붙이기 흔적 없음.",
         "question_acquisition": "공개 회의 녹음으로 위법성 낮음. 참석자 음성 재유포 범위는 제한 필요."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 반상회 녹음과 수정 회의록을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "녹음 파일이 배포 회의록보다 먼저 생성된 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "배포본에서 표현이 순화된 부분을 그대로 둔 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -504,7 +634,33 @@
         "question_acquisition": "기관 장비 로그로 적법 확보. 계정 접근 이력은 분쟁 해결 범위로만 한정 사용."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공용프린터 로그와 전단 PDF를 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "출력 시각이 부착보다 27분 앞선 점을 어떻게 설명하시겠습니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "민원 문구와 회의 발언이 함께 묶인 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

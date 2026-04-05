@@ -345,7 +345,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "가족 단톡과 픽업 예약",
-      "surfaceDescription": "가족 단체 채팅 기록과 선물 픽업 예약 내역이다. 방문 계획 관련 대화가 담겨 있다."
+      "surfaceDescription": "가족 단체 채팅 기록과 선물 픽업 예약 내역이다. 방문 계획 관련 대화가 담겨 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단톡 원문과 픽업 예약 내역에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "전날 밤 연락 뒤 13시간 안에 준비가 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 문구가 일정 문의가 아니라 통보처럼 읽힐 수 있음을 인정하십니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -372,7 +398,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "공유 캘린더 버전 이력",
-      "surfaceDescription": "공유 캘린더의 일정 변경 이력이다. 일정 내용과 수정 여부를 확인할 수 있다."
+      "surfaceDescription": "공유 캘린더의 일정 변경 이력이다. 일정 내용과 수정 여부를 확인할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 일정 문구를 수정 없이 유지한 사실을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 일정이 밤늦게 생성된 뒤 그대로 남은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 표현만으로는 어느 집인지 구분되지 않는 점을 알고 계셨습니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -399,7 +451,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "친척 메시지 캡처",
-      "surfaceDescription": "친척이 보낸 메시지의 캡처 화면이다. 감정이 담긴 내용이지만 구체적 경위는 불분명하다."
+      "surfaceDescription": "친척이 보낸 메시지의 캡처 화면이다. 감정이 담긴 내용이지만 구체적 경위는 불분명하다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 메시지 캡처를 제출한 경위에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "출발 차질 34분 뒤 이 문구만 저장한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞뒤 대화를 제외하고 이 문구만 남긴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -436,7 +514,33 @@
         }
       },
       "surfaceName": "통화기록과 교통 이동 이력",
-      "surfaceDescription": "통화 기록과 하이패스·주차 이력이다. 이동 방향과 시각을 교차 확인할 수 있다."
+      "surfaceDescription": "통화 기록과 하이패스·주차 이력이다. 이동 방향과 시각을 교차 확인할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 통화기록과 이동 이력을 함께 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "출발 7분 전 통화가 짧게 끝난 경위를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "그 통화가 조율보다 기존 일정 확인에 그친 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -474,7 +578,33 @@
         }
       },
       "surfaceName": "부부 음성메시지와 메신저",
-      "surfaceDescription": "부부 간 주고받은 음성메시지와 텍스트 메신저다. 핵심 논의 내용이 담겨 있다."
+      "surfaceDescription": "부부 간 주고받은 음성메시지와 텍스트 메신저다. 핵심 논의 내용이 담겨 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 음성파일과 답장 기록의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "음성메시지 뒤 두 시간 뒤에 답한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 대화에서 집 이름이 끝내 명시되지 않은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -501,7 +631,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "선물세트 픽업 내역과 수령 메모",
-      "surfaceDescription": "두 곳의 선물세트 픽업 예약 내역과 수령 확인 메모다. 시간과 주소가 기록되어 있다."
+      "surfaceDescription": "두 곳의 선물세트 픽업 예약 내역과 수령 확인 메모다. 시간과 주소가 기록되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 두 주문서와 수령 메모에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "서로 다른 주소 준비가 5시간 차로 진행된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "상대 선물의 목적지를 확인하지 않은 채 각자 진행한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

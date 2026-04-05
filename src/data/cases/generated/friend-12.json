@@ -323,9 +323,9 @@
   "evidence": [
     {
       "id": "e-1",
-      "name": "스트리밍 카드·포스터·릴 썸네일 캡처 모음",
+      "name": "공개 화면 캡처 묶음 모음",
       "surfaceName": "스트리밍 카드·포스터·릴 썸네일 캡처",
-      "surfaceDescription": "스트리밍 카드, 포스터, 릴 썸네일 캡처 모음이다. 게시 시점과 크레딧 표기 확인이 필요하다.",
+      "surfaceDescription": "여러 공개 화면을 모은 캡처다. 게시 시점과 표기 방식 확인이 필요하다.",
       "description": "스트리밍 카드에서는 수빈 이름만, 쇼케이스 포스터와 릴 썸네일에서는 재윤 역할만 크게 보이도록 잘린 공개 화면 모음이다.",
       "type": "sns",
       "reliability": "soft",
@@ -357,13 +357,39 @@
           "questionAngle": "백재윤에게: \"재윤의 포트폴리오 릴과 안내 메일에서 수빈 누락\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 백재윤의 \"재윤의 포트폴리오 릴과 안내 메일에서 수빈 누락\" 쟁점과 관련된다. 백재윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공개 화면 캡처 모음을 어떤 취지로 제시하셨는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "모든 캡처가 공개 직후 첫 노출 화면인 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "다른 크레딧이 빠진 구간만 잘라 반복 활용한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
-      "name": "공유 노션 기획안과 크레딧 메모",
+      "name": "공유 기획안과 크레딧 메모",
       "surfaceName": "공유 노션 기획안과 크레딧 메모",
-      "surfaceDescription": "공유 노션의 기획안 문서와 크레딧 관련 메모다. 합의 내용과 수정 이력 확인이 필요하다.",
+      "surfaceDescription": "공유 기획 문서와 크레딧 관련 메모다. 합의 내용과 수정 이력 확인이 필요하다.",
       "description": "song main, video main 탭이 나뉜 기획안과 '최종 크레딧은 추후 확정'이라는 코멘트가 남은 공유 노션 원본이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -394,7 +420,33 @@
           "questionAngle": "백재윤에게: \"최종작 '새벽역'은 사실상 한 사람의 단독 창작물인가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 백재윤의 \"최종작 '새벽역'은 사실상 한 사람의 단독 창작물인가\" 쟁점과 관련된다. 백재윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공유 기획안과 크레딧 메모의 작성 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "메인 표기가 초중반에 생기고 최종표는 비어 있던 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "해당 표기를 전체 성과 표시처럼 받아들인 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -433,7 +485,33 @@
           "implication": "이 증거는 백재윤의 \"최종작 '새벽역'은 사실상 한 사람의 단독 창작물인가\" 쟁점과 관련된다. 백재윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 세션 파일과 수정 이력을 증거로 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "초기 구상과 후반 편곡이 교차 수정된 흐름을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "한쪽 초안에 보조만 더한 작업이었다는 주장의 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -473,13 +551,39 @@
           "implication": "이 증거는 백재윤의 \"재윤의 포트폴리오 릴과 안내 메일에서 수빈 누락\" 쟁점과 관련된다. 백재윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 편집 원본과 촬영 큐시트의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "후반 수정이 한 차례가 아니라 반복 반영된 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "화면 구성 요청을 단순 참고로만 봤던 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
-      "name": "쇼케이스 제출 폼과 음원유통 메타데이터 export",
+      "name": "제출 문서와 등록 정보 내보내기 export",
       "surfaceName": "쇼케이스 제출 폼과 음원유통 메타데이터",
-      "surfaceDescription": "쇼케이스 제출 양식과 음원 유통 메타데이터 내보내기다. 등록 정보와 크레딧 확인이 필요하다.",
+      "surfaceDescription": "제출 양식과 등록 정보 내보내기 자료다. 등록 시점과 표기 내용 확인이 필요하다.",
       "description": "쇼케이스는 공동 창작물로, 음원유통 메타데이터에는 primary artist와 producer가 각각 다르게 표시된 제출 원본이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -510,7 +614,33 @@
           "questionAngle": "백재윤에게: \"최종작 '새벽역'은 사실상 한 사람의 단독 창작물인가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 백재윤의 \"최종작 '새벽역'은 사실상 한 사람의 단독 창작물인가\" 쟁점과 관련된다. 백재윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 제출 폼과 유통 메타데이터를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "첫 화면과 상세 정보의 표시 방식이 다른 점을 알고 계셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "한 역할만 먼저 보이는 화면을 따로 활용한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -552,7 +682,33 @@
           "implication": "이 증거는 백재윤의 \"재윤의 포트폴리오 릴과 안내 메일에서 수빈 누락\" 쟁점과 관련된다. 백재윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 수정 기록과 단톡 원본을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문제 표현이 공개 직후 몇 시간 유지된 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "최종 문구를 미룬 채 각자 해석대로 홍보한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "오준서 씨, 계좌정보 요청과 온보딩 문서까지 붙여 보내고도, 그 메일이 최종 오퍼가 아니었다고 지금도 말하십니까?",
+              "text": "오준서 씨, 지원자에게 보낸 첫 안내가 공동 승인보다 앞서 나간 건 아니었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -43,7 +43,7 @@
             },
             {
               "id": "dossier-1.a.q3",
-              "text": "당신이 먼저 체크리스트를 벗어나지 않았다면 이후 별도 보류 통보도 이렇게 커졌겠습니까?",
+              "text": "먼저 체크리스트를 벗어난 행동이 뒤의 보류 통보 갈등까지 키웠다는 점은 인정하십니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "박혜린 씨, 재확인도 없이 후보자와 직원들에게 먼저 '아직 채용 확정 아님'이라고 알린 이유를 설명하십시오.",
+              "text": "박혜린 씨, 상황을 다시 확인하기도 전에 보류부터 알린 건 아니었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -82,7 +82,7 @@
             },
             {
               "id": "dossier-1.b.q3",
-              "text": "당신 역시 공동 final message 대신 별도 보류를 돌린 건 프로토콜 위반 아닌가요?",
+              "text": "본인 역시 공동 최종 안내 대신 별도 보류를 돌린 점은 프로토콜 위반 아닌가요?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "오준서 씨, 크롭된 캡처만 보면 독단처럼 보이는데, 원본의 어떤 문맥을 근거로 여전히 속일 의도는 없었다고 말합니까?",
+              "text": "오준서 씨, 그 캡처가 독단처럼 보일 수 있다는 점은 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "박혜린 씨, 이 캡처가 잘린 화면이라는 점을 알고도 왜 의도를 확정하는 근거로 삼았습니까?",
+              "text": "박혜린 씨, 잘린 캡처 한 장만으로 의도를 단정한 건 아니었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "오준서 씨, 체크리스트가 비어 있는데도 온보딩 단계로 넘긴 건 규칙보다 인력 공백을 우선한 결정 아닙니까?",
+              "text": "오준서 씨, 절차가 덜 갖춰진 상태에서도 일단 다음 단계로 넘긴 건 아닙니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "박혜린 씨, 당신도 같은 체크리스트를 알면서 별도 보류를 돌렸습니다. 왜 공동 절차를 지키지 않았습니까?",
+              "text": "박혜린 씨, 공동 절차를 알고도 따로 움직인 부분이 있었던 것 아닙니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "권태준 씨, e-1 버전 이력에서 브리핑 직전 발명자 표기 열을 직접 바꾼 이유가 무엇입니까?",
+              "text": "권태준 씨, 기여 표기를 손본 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "노서린 씨, 개인메일과 텔레그램이 같은 밤 이어진 이유를 승인 절차와 함께 설명해 주시겠습니까?",
+              "text": "노서린 씨, 승인 절차 밖에서 외부와 따로 접촉하신 이유가 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "권태준 씨, 잘린 DLP 캡처만 제출하고 원본 게이트웨이 로그는 뒤로 미룬 이유가 있습니까?",
+              "text": "권태준 씨, 왜 전체 기록보다 일부 자료를 먼저 내셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -125,7 +125,7 @@
             },
             {
               "id": "dossier-2.a.q2",
-              "text": "브로커 한 건만 갔다고 하셨는데 e-4 재전송 경로까지 보면 그 설명을 계속 유지하실 겁니까?",
+              "text": "브로커 한 건만 갔다고 하셨는데, 재전송 흔적까지 드러난 뒤에도 그 설명을 계속 유지하실 겁니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "노서린 씨, 재공유 가능한 링크 설정을 본인이 확인했는지 먼저 답해 주시겠습니까?",
+              "text": "노서린 씨, 외부로 건너간 자료의 범위를 충분히 확인하셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "권태준 씨, e-5에서 포렌식 전부터 노서린 씨를 기밀위험 인원으로 적은 이유가 정확히 무엇입니까?",
+              "text": "권태준 씨, 사실확인 전에 상대를 먼저 문제 인원처럼 본 이유가 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "노서린 씨, e-6의 수수료 흐름이 나온 지금 브로커 전달과 대가 논의를 직접 인정하실 수 있습니까?",
+              "text": "노서린 씨, 외부 접촉이 단순 상담 수준이었다고만 보십니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

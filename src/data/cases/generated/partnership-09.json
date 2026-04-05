@@ -343,7 +343,33 @@
         "check_edits": "트랙체인지와 결재 이력이 남아 있어 후편집 흐름이 명확하다.",
         "question_acquisition": "회사 홍보자료와 내부 결재문서라 적법하게 확보됐다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "교부 직후 작성된 이 홍보 초안과 승인안에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "최종 저장과 마지막 수정이 한 계정에 집중된 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "초기 초안에 있던 문장이 최종본에서 사라진 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -379,14 +405,40 @@
           "questionAngle": "손다예에게: \"허위 실적 공모\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 손다예의 \"허위 실적 공모\" 쟁점과 관련된다. 손다예은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 제출본 버전 로그와 수정 코멘트의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "마감 직전 수치와 표현이 연속 수정된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "실제 현장 기록보다 유리한 수치가 반영된 경위를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
-      "name": "평가피드백 크롭 캡처",
+      "name": "피드백 캡처",
       "description": "인호가 팀 단톡에 올린 평가위원 피드백 캡처로, '기술성 최고' 부분만 남고 시장검증·기관협업 관련 문장은 잘려 있다.",
       "surfaceName": "평가피드백 크롭 캡처",
-      "surfaceDescription": "평가위원 피드백 일부만 남은 캡처로, 잘린 구간이 있다.",
+      "surfaceDescription": "피드백 일부를 담은 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -416,7 +468,33 @@
           "questionAngle": "손다예에게: \"지원금은 상대 한 명의 순수 성과였는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 손다예의 \"지원금은 상대 한 명의 순수 성과였는가\" 쟁점과 관련된다. 손다예은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 평가피드백 캡처를 직접 공유한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "분쟁 직후 저장된 이 이미지가 편집 앱을 거친 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "잘려 나간 문단을 제외한 채 제출한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -456,14 +534,40 @@
           "implication": "이 증거는 손다예의 \"지원금은 상대 한 명의 순수 성과였는가\" 쟁점과 관련된다. 손다예은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 메일과 메타데이터 보고를 확보한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "원본 메일의 평가 문단과 제출 캡처가 다른 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "전체 문맥이 함께 제시되면 해석이 달라지는 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "실증 로그와 허위 추천확인서 초안",
       "description": "실증 매장 원본 전력로그 CSV, 실제보다 부풀려진 제출용 요약 PDF, 그리고 유사한 문장으로 작성된 추천확인서 초안 묶음이다.",
-      "surfaceName": "실증 로그와 추천확인서 초안",
-      "surfaceDescription": "실증 데이터 CSV, 요약 PDF, 추천확인서 초안이 묶인 자료다.",
+      "surfaceName": "실증 자료와 확인 문서",
+      "surfaceDescription": "실증 자료와 확인 관련 문서를 묶은 자료다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -497,14 +601,40 @@
           "implication": "이 증거는 손다예의 \"지원금은 상대 한 명의 순수 성과였는가\" 쟁점과 관련된다. 손다예은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원시 로그와 제출용 요약본이 함께 존재한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "원시 기록과 제출본 수치가 서로 다른 경위를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "여러 증빙 문장이 거의 같은 형태로 정리된 배경을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "진흥원 사후점검 후보 메모와 브리핑 수정요청 메일",
       "description": "이소진 매니저가 보관한 사후점검 후보 선정 메모와, 다예가 브리핑 발표문에서 자신의 이름을 전면에 두도록 수정 요청한 메일이다.",
-      "surfaceName": "사후점검 메모와 수정요청 메일",
-      "surfaceDescription": "기관 담당이 보관한 점검 메모와 발표문 수정요청 메일이다.",
+      "surfaceName": "검토 메모와 수정 요청 메일",
+      "surfaceDescription": "검토 메모와 문서 수정 요청 메일을 묶은 자료다.",
       "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
@@ -537,7 +667,33 @@
           "implication": "이 증거는 손다예의 \"다예의 단독 공로 홍보와 인센티브 편취\" 쟁점과 관련된다. 손다예은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 기관 메모와 발표문 수정요청 메일에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "교부 직후 발표문 서사를 다시 조정하려 한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "대외 브리핑 문안과 내부 점검 흐름이 맞물린 배경을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

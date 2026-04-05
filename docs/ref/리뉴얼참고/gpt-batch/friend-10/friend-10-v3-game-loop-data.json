@@ -22,7 +22,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "문다정 씨, e-1의 잘린 한 줄만으로 들러리와 축가를 모두 확정으로 보신 근거가 정확히 무엇입니까.",
+              "text": "잘린 대화를 보고 두 역할을 한꺼번에 확정으로 읽은 이유부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -61,7 +61,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "한서아 씨, 같은 자료상 들러리 칸은 녹색으로 바뀌었습니다. 그 단계까지 가고도 들러리조차 미확정이었다고 하십니까.",
+              "text": "들러리 쪽 준비가 꿔 진행된는데도 왜 끝까지 미확정이라고 보시는지부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -118,7 +118,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "반주자 DM은 가예약과 키 확인에 그칩니다. 그런데 가족 단톡과 플래너에는 왜 이미 '축가'까지 넣으셨습니까.",
+              "text": "아직 정리가 덜 된 단계였는데도 왜 주변에는 이미 확정처럼 알리게 된지부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -157,7 +157,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "키를 먼저 보자고 반주자와 DM까지 이어 간 건 축가 가능성을 적극적으로 열어둔 행동 아닙니까.",
+              "text": "노래 쪽 가능성을 열어 두는 신호를 계속 준 건 아닌지부터 답해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -213,7 +213,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "2년 전 '확정 후 공지' 규칙을 함께 정한 뒤에도, 왜 이번에는 그 문구 없이 이름을 먼저 쓰셨습니까.",
+              "text": "예전 규칙을 알고도 이번에는 왜 먼저 이름을 쓰게 된지부터 말씀해 주시겠습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -223,7 +223,7 @@
             },
             {
               "id": "dossier-3.a.q2",
-              "text": "e-6상 들러리 준비는 진행됐어도 축가는 별도 유보였습니다. 두 역할을 다시 가르지 않은 이유가 무엇입니까.",
+              "text": "들러리 준비는 진행된어도 축가는 따로 남아 있었는데, 두 역할을 다시 가르지 않은 이유가 무엇입니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -252,7 +252,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "같은 규칙을 기억했다면, 왜 '확정 아니다'라는 문자 한 줄을 바로 보내지 않으셨습니까.",
+              "text": "같은 규칙을 기억하고도 왜 바로 선을 그지 못했는지부터 설명해 주시겠습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

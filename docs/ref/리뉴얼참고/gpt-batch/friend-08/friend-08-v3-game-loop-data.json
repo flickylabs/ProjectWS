@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "조은비, 시상 직후 카드뉴스 첫 장과 포트폴리오 캡처에서 왜 본인 이름만 전면에 두었습니까?",
+              "text": "시상 직후 공개 방식이 왜 한쪽 성과처럼 읽혀는지부터 설명해 주시겠습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -31,7 +31,7 @@
             },
             {
               "id": "dossier-1.a.q2",
-              "text": "공모전 제출 form엔 팀원 칸이 살아 있는데, 공개 게시물에선 그 맥락을 왜 지웠습니까?",
+              "text": "제출 양식엔 팀원 칸이 살아 있는데, 공개 게시물에선 그 맥락을 왜 지웠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "김준혁, 공식 제출본에 본인 이름이 들어간 걸 알면서도 왜 '공모전 전체가 개인작으로 인식됐다'고 단정합니까?",
+              "text": "공식 제출과 바깥에서 받은 인상을 왜 같은 결론으로 묶어 보게 된지부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "조은비, 깃 로그에 남은 설문 구조와 프로토타입 흐름을 보고도 왜 준혁 기여를 '거의 없었다'고 말합니까?",
+              "text": "상대 기여를 거의 없었다고 보게 된 이유부터 차근차근 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "김준혁, 리허설 출석표와 회의록상 최종 리허설 공백을 부인하실 겁니까?",
+              "text": "마감 직전 빠진 부분이 있었는지부터 먼저 분명히 해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "항의 메시지 뒤에야 팀 표기로 고친 edit history를 보면, 처음 표현이 실수 이상이었다는 점을 인정합니까?",
+              "text": "문제가 된 표현을 나중에 고친 흐름을 보면, 처음 선택을 어떻게 설명하시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "심사위원 회신과 상장 원본이 팀 기준임을 보고도 아직 '외부가 전부 개인작으로 봤다'고 말하겠습니까?",
+              "text": "바깥 평가가 정말 한 사람 성과처럼 읽혔다고 본 근거부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "배수아 씨, 공유캘린더 원본에 '토 11시 본가'만 적혀 있습니다. 제3자가 봐도 어느 집인지 분명했다고 보십니까?",
+              "text": "배수아 씨, 공유 일정표의 표현만으로도 어느 집인지 분명했다고 보십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "남기현 씨, 가족 단톡에서 '토 점심쯤 먼저 갈게요'라고 보낸 뒤 선물 픽업까지 예약하셨습니다. 배우자 확인 전 이미 방문 준비 단계로 들어간 것 아닙니까?",
+              "text": "남기현 씨, 가족 쪽에 먼저 가겠다는 뜻을 전하고 선물 준비까지 하셨다면, 배우자 확인 전 이미 방문 수순에 들어간 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "남기현 씨, 최종 통화 직후 차량이 서로 다른 방향으로 움직인 기록이 있습니다. 장인댁을 버리려 했다기보다 각자 다른 계획을 믿은 상태였던 겁니까?",
+              "text": "남기현 씨, 마지막 통화 뒤에도 두 분이 서로 다른 계획을 믿고 움직였다는 가능성은 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "배수아 씨, 음성메시지의 '가까운 쪽 먼저'와 대화 원문을 함께 보면, 표현 자체가 서로 다른 동선을 허용한 것 아닙니까?",
+              "text": "배수아 씨, 그 표현만 놓고 보면 서로 다른 동선을 떠올릴 여지도 있었던 것 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "남기현 씨, 처음엔 길 문제라고만 설명하셨지만, 실제로는 서로 다른 확정안이 동시에 굴러가고 있었던 것 아닙니까?",
+              "text": "남기현 씨, 처음엔 길 문제라고만 하셨지만 실제론 서로 다른 일정 이해가 함께 굴러간 것 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

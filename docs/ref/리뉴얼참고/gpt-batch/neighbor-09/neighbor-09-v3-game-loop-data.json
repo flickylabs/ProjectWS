@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "2차 측정표에 침실 천장 공진 구간이 따로 표시된 걸 알고도, 처음엔 윗집 바닥만 원인이라고 말씀하신 겁니까?",
+              "text": "최연우 씨, 원인을 한쪽으로만 좁혀 본 부분이 있었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "관리사무소 합의서의 '보전 후 잔액 1/2' 문구를 보고도, 여전히 그걸 검토 단계라고만 보십니까?",
+              "text": "남지훈 씨, 처음 합의 내용을 단순 검토로만 보기엔 무리가 있지 않습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "30만 원만 보내겠다는 메시지를 받은 시점이 공사 완료 뒤였다는 건 분명하지요?",
+              "text": "최연우 씨, 약속이 뒤집힌 시점이 공사 뒤였다는 점은 부인하기 어렵지 않습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "추가 보전금 36만 원이 반영돼 각 92만 원이라는 계산서를 실제로 보셨습니까?",
+              "text": "남지훈 씨, 최종 정산 결과를 충분히 확인한 뒤 움직이셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "변경요청서에 연우 씨 서명이 남아 있는데, 침실 천장 한 줄 추가와 18만 원 증액이 실제였지요?",
+              "text": "최연우 씨, 공사 범위를 더 늘려 달라고 한 부분이 전혀 없다고 보십니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "부분 지급 뒤 나머지 돈은 의도적으로 멈춰 두신 상태였던 것 아닙니까?",
+              "text": "남지훈 씨, 일부만 보내고 나머지를 붙들어 둠 채 상황을 본 건 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

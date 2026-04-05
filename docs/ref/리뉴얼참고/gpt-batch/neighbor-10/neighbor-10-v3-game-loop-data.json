@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "박소연 씨, 민우 이름과 한정판 종류를 함께 적은 글을 올리고도 단순 확인 요청이었다고 보십니까?",
+              "text": "박소연 씨, 공개 글이 단순 확인 요청으로만 받아들여질 거라고 보셨습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "이정훈 씨, 이 46초 음성에서 하윤이가 '또 규칙을 바꾸고 울었다'고 말한 건 사실 설명이 아니라 성격 일반화 아닙니까?",
+              "text": "이정훈 씨, 그 음성이 상황 설명을 넘어 상대 아이 성향을 단정하는 말로 들릴 수 있다는 점은 의식하셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "CCTV에는 두 아이가 각자 자기 앨범을 들고 나갑니다. 이 장면 앞에서도 민우가 가져갔다고 단정하실 수 있습니까?",
+              "text": "박소연 씨, 아이 말만 듣고 판단이 먼저 굳은 건 아니었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "담임교사 메모에는 두 아이가 교환 규칙을 다르게 이해했다고 적혀 있습니다. 단순히 하윤 쪽 문제라고만 보실 수 있습니까?",
+              "text": "이정훈 씨, 이번 다툸의 구체적 오해보다 아이 성향 문제로 넓혀 말하신 건 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -176,7 +176,7 @@
             },
             {
               "id": "dossier-2.b.q3",
-              "text": "민우가 도둑처럼 보일까 두려워 규칙 오해 설명보다 상대 아이 책임을 먼저 세운 것인지, 그 동기를 말씀해 보십시오.",
+              "text": "민우가 도둑처럼 보일까 두려워 규칙 오해 설명보다 상대 아이 책임을 먼저 세운 건 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -209,7 +209,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "스티커가 하윤 앨범 안쪽 투명포켓에서 나온 이상, 이제는 민우 절도 의심이 틀렸다는 점을 명확히 인정하셔야 하지 않겠습니까?",
+              "text": "박소연 씨, 뒤늦게 확인된 사실을 보면 처음 의심을 그대로 유지하기 어렵지 않습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -248,7 +248,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "연락 순서표를 보면 이정훈 씨 쪽도 직접 정리보다 다른 부모 연락이 먼저입니다. 약속을 깬 출발점이 본인 쪽에도 있었던 것 아닙니까?",
+              "text": "이정훈 씨, 직접 정리보다 주변 연락이 먼저였던 부분은 부인하기 어렵지 않습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "최현우 씨, 공동 전자승인 토큰 없이 본인 노트북으로 2,400만원을 집행한 사실 자체는 부인하지 않으시겠습니까?",
+              "text": "공동 승인 없이 먼저 집행한 부분이 있었는지부터 분명히 해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "정소라 씨, 본인도 공동 수신자로 제안 메일을 받았다면 현우의 이체를 처음부터 순수한 개인 유용이라고만 몰 수는 없지 않습니까?",
+              "text": "그 이체를 처음부터 개인 유용으로 단정한 근거가 충분했다고 보시는지부터 답해 주시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "최현우 씨, 동문 캡처가 크롭된 soft 자료라는 점을 알고도 소라의 의심을 전부 악의로만 해석한 것은 아닙니까?",
+              "text": "상대 의심을 전부 악의로만 읽은 건 아닌지부터 돌아봐 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -126,7 +126,7 @@
             },
             {
               "id": "dossier-2.a.q2",
-              "text": "소라의 드래프트가 남아 있었다 해도, 당신의 문서화 누락이 그 프레임의 빌미를 준 사실까지 부정하실 수 있습니까?",
+              "text": "소라의 드래프트가 남아 있었다 해도, 문서화 누락이 그 프레임의 빌미를 준 사실까지 부정하실 수 있습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "정소라 씨, 전체 대화가 아니라 크롭된 동문 캡처 두 장만으로 개인 비자금 의혹을 공식석상에서 키운 것 아닙니까?",
+              "text": "캡처 몇 장만으로 의혹을 키운 판단부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "최현우 씨, 노지훈 회의 메모에 따르면 팀에는 일반 관리비로만 공유하자고 두 대표가 함께 정했는데, 그 축소 문구를 운영총괄인 당신이 더 밀어 넣은 것 아닙니까?",
+              "text": "비용 설명을 완화해 전달하는 데 본인 판단이 더 실린 건 아닌지 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "정소라 씨, 팀 공지 초안의 최종 문구를 당신도 확인했다면, '현우만 숨겼다'는 말은 더 유지하기 어렵지 않습니까?",
+              "text": "공지 문구를 함께 보고도 책임을 한쪽에만 돌릴 수 있다고 보십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -272,7 +272,7 @@
             },
             {
               "id": "dossier-3.b.q3",
-              "text": "재무책임자인 당신이 경고 신호를 놓쳤다는 두려움 때문에 피해자 서사를 더 세게 밀었던 것 아닙니까?",
+              "text": "재무책임자로서 경고 신호를 놓쳤다는 두려움 때문에 피해자 서사를 더 세게 밀었던 것 아닙니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",

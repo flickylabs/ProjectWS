@@ -353,13 +353,39 @@
           "questionAngle": "박민재에게: \"민재의 비밀 제3자 전달\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 박민재의 \"민재의 비밀 제3자 전달\" 쟁점과 관련된다. 박민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 전달 대화 원본과 전달 로그의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "전달 시점이 익명 게시보다 이틀 앞선 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "당사자 비밀을 제3자 조언 대상으로 돌린 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "온라인 커뮤니티 익명 폭로글과 댓글 캡처",
       "surfaceName": "커뮤니티 익명 글과 댓글 캡처",
-      "surfaceDescription": "온라인 커뮤니티에 올라온 익명 폭로글과 댓글을 캡처한 이미지다. 작성자와 시점은 불명확하다.",
+      "surfaceDescription": "온라인 게시판에 올라온 익명 게시글과 댓글을 담은 이미지다. 작성자와 시점은 더 확인이 필요하다.",
       "description": "가은의 비밀 연애와 동호회 역할 조정 이야기를 암시하는 익명 게시글과 댓글 캡처다.",
       "type": "sns",
       "reliability": "soft",
@@ -389,13 +415,39 @@
           "questionAngle": "박민재에게: \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 박민재의 \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 쟁점과 관련된다. 박민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 익명글과 댓글 캡처의 확보 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "게시 시점이 운영 공지 직후인 점이 왜 중요하다고 보십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "표현 유사성만으로 작성자를 단정한 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "가은의 인스타 친한친구 스토리 보관본",
-      "surfaceName": "SNS 친한친구 스토리 보관본",
-      "surfaceDescription": "SNS 친한친구 공개 스토리의 보관본이다. 게시 시점과 공개 범위 확인이 필요하다.",
+      "surfaceName": "제한 공개 스토리 보관본",
+      "surfaceDescription": "제한 공개로 올라간 스토리의 보관본이다. 게시 시점과 공개 범위 확인이 필요하다.",
       "description": "'비밀 팔아 관계 지키는 척하는 사람이 제일 비겁하다'는 문구와 모임 사진이 함께 담긴 가은의 스토리 보관본이다.",
       "type": "sns",
       "reliability": "soft",
@@ -416,7 +468,33 @@
         "check_edits": "앱 내 저장본이라 후편집 흔적이 없다.",
         "question_acquisition": "본인 계정 자료라 적법하나 조회자 목록에는 제3자 정보가 섞여 있어 제한적 열람이 바람직하다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공개범위 설정된 게시물 보관본의 제출 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 게시가 기기 확인 직후 올라온 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "그 조합이 보는 사람에게 어떤 지목 효과를 냈는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -445,13 +523,39 @@
         "question_acquisition": "무단 열람 정황을 담은 자료라 취득 목적은 분쟁 해결로 한정돼야 한다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 영상과 기기 로그를 함께 제출한 취지를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "머문 시각과 알림 개방 기록이 겹치는 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "잠깐 본 것이라면 목록을 넘긴 동작은 왜 남아 있습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "온라인 커뮤니티 운영자 보존로그와 보조계정 복구정보",
-      "surfaceName": "커뮤니티 운영 로그와 계정 복구 정보",
-      "surfaceDescription": "커뮤니티 운영자 보존 로그와 보조계정 복구 기록이다. 계정 간 관계 확인이 필요하다.",
+      "surfaceName": "게시 기록과 계정 복구 정보",
+      "surfaceDescription": "게시 보존 기록과 계정 복구 자료다. 계정 간 연결 여부 확인이 필요하다.",
       "description": "익명 게시글·댓글을 올린 계정의 접속 기기, 복구 이메일 일부, 삭제 전 보존 로그가 박서후의 보조 계정과 이어지는 자료다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -485,13 +589,39 @@
           "implication": "이 증거는 박민재의 \"익명 폭로글과 댓글의 직접 작성자는 민재인가\" 쟁점과 관련된다. 박민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 운영자 보존자료와 계정 복구정보의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "복구 정보 일부와 접속 패턴이 같은 쪽을 가리키는 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "글투는 닮았는데 작성 기기가 다른 점을 어떻게 보십니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
-      "name": "운영진 제보 음성파일 원본과 편집 비교 리포트",
+      "name": "운영진 제보 음성파일 원본과 대조 문서",
       "surfaceName": "음성파일 원본과 편집 비교 리포트",
-      "surfaceDescription": "제보 음성파일 원본과 편집 여부를 분석한 비교 리포트다. 녹음 조건과 변조 확인이 필요하다.",
+      "surfaceDescription": "제보 음성파일과 대조 문서다. 파일 사이 차이와 녹음 조건 확인이 필요하다.",
       "description": "이소담 운영진에게 전달된 음성파일이 가은의 원래 음성메모 일부를 잘라 재배열한 것임을 보여주는 원본 대조 리포트다.",
       "type": "audio_report",
       "reliability": "hard",
@@ -514,7 +644,33 @@
         "question_acquisition": "당사자 동의 하에 비교용으로 제출됐지만 사적 음성자료라 외부 유포는 엄격히 제한돼야 한다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 음성 원본과 비교 리포트의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "편집본 생성 시점이 전달 이후인 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "무음 절단과 순서 재배열이 자연 편집이라고 보십니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

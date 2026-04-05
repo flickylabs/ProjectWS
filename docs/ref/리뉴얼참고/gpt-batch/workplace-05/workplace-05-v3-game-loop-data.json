@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "오상혁 씨, 킥오프 회의록과 버전 이력상 공동기획 문구가 실장님 수정 단계에서만 사라지는데, 그 삭제를 단순 발표 책임 정리라고만 보라는 말씀이십니까?",
+              "text": "오상혁 씨, 발표 자료에서 함께 한 사람의 흔적이 빠지게 된 이유를 어떻게 설명하시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "문가은 씨, 날짜가 잘린 노트 사진만으로 순수 창작을 단정하긴 어렵습니다. 이 사진을 현재 분기 원안 증명으로 먼저 낸 이유가 뭡니까?",
+              "text": "문가은 씨, 그 사진을 먼저 내세워 원안이라고 주장한 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "오상혁 씨, 2년 전 보류안 주석본에 배수진 씨 문구가 남아 있는데, 그 이름을 공식 기록 밖으로 밀어둔 결정을 기억하십니까?",
+              "text": "오상혁 씨, 예전 안건의 기여 흔적을 공식 기록 밖에 두려 했던 판단을 기억하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "문가은 씨, 다운로드 로그상 권한 회수 전 14분 사이에 폴더 일괄 저장과 링크 전송이 연달아 있습니다. 확인만 하려던 행동이라고 보긴 어렵지 않습니까?",
+              "text": "문가은 씨, 자료를 한꺼번에 챙긴 행동이 확인만 하려던 수준이었다고 보십니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "오상혁 씨, 가은 씨 해명 전날 밤 HR 메모에 'source citation risk'를 먼저 입력한 이유가 단순 관리 기록뿐이었다고 보십니까?",
+              "text": "오상혁 씨, 해명 전에 부정적인 메모가 먼저 남은 이유가 정말 단순 관리 차원이었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "문가은 씨, 과거 이메일 체인에선 배수진 씨 이름이 빠진 상태를 그대로 두고 계셨습니다. 그 선례를 이번에도 이용한 것 아닙니까?",
+              "text": "문가은 씨, 예전 기록을 그대로 둔 채 이번에도 비슷한 방식으로 대응한 건 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

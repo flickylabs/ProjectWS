@@ -1,0 +1,161 @@
+{
+  "case": "family-11",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 메시지 캡처의 원본 전체를 함께 제출하지 않은 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 이미지가 가족 공유 직전에 다시 잘린 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "빠진 앞뒤 문장이 권고의 방향을 바꾸지 않는다고 보십니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 하원 기록과 외부 상담 신청서의 제출 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "보호자 선택과 예약 진행이 통보보다 앞선 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "당시 조치가 실제 결정 단계로 이어진 이유를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 일정표와 기기 기록, 돌봄 요청 대화를 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "같은 기간 긴급 요청과 사용시간 증가가 겹친 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "말한 원칙과 실제 생활 흐름이 달라진 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 오래된 진료기록과 초진 메모의 제출 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "직전 투약 간격과 종류가 시각별로 남은 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "그 밤을 단순한 증상만의 문제로 보기 어려운 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 약봉투 사진과 결제 영수증을 어떤 취지로 제출하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "별도 구매 시점이 내원 직전으로 이어지는 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "집에 있던 약 외에 추가로 사용한 판단 근거를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 상담일지와 서명 문서의 보관 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "갈등 전 같은 문서에 함께 서명한 경위를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "먼저 맞추기로 한 생활 원칙을 건너뛴 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ]
+  }
+}

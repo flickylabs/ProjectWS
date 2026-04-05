@@ -341,8 +341,34 @@
         "question_acquisition": "회사 공동 문서와 당사자 이메일이라 제출 정당성은 높다."
       },
       "subjectParty": "a",
-      "surfaceName": "사업 지원서와 기사 교정본",
-      "surfaceDescription": "지원사업 신청서의 초안·최종본과 지역 기사 교정본이다. 작성자와 내용 변화를 비교할 수 있다."
+      "surfaceName": "신청서 초안과 기사 교정본",
+      "surfaceDescription": "신청서의 초안·최종본과 기사 교정본이다. 문장 변화와 작성 흐름을 비교할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "초안·최종본·교정본이 서로 다르게 남은 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "초안 작성 계정과 최종 제출 계정이 갈린 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "최종본에서 빠진 역할 문구를 어떤 판단으로 정리했는지 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -368,7 +394,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "인터뷰 영상과 홍보 게시물",
-      "surfaceDescription": "지역 창업 인터뷰 영상과 홍보 게시물 아카이브다. 발언 내용과 자기 표현이 담겨 있다."
+      "surfaceDescription": "지역 창업 인터뷰 영상과 홍보 게시물 아카이브다. 발언 내용과 자기 표현이 담겨 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "인터뷰 전체본과 홍보 게시물 아카이브에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "수상 직후 같은 표현을 연달아 올린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "온라인만 말한 것이라면 공방 전체를 바꾼 듯한 문장은 왜 남겼습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -405,7 +457,33 @@
         }
       },
       "surfaceName": "매출 대시보드와 생산 품질 로그",
-      "surfaceDescription": "온라인 매출 지표 대시보드와 생산 불량률·납기 로그를 묶은 자료다. 실적 수치를 비교할 수 있다."
+      "surfaceDescription": "온라인 매출 지표 대시보드와 생산 불량률·납기 로그를 묶은 자료다. 실적 수치를 비교할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "온라인 지표와 생산 로그를 함께 묶어 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "유입 급증과 납기 회복 시점이 겹치는 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "반품 감소와 신규 유입을 한 축만으로 설명하기 어려운 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -430,8 +508,34 @@
         "question_acquisition": "공개 신청 기준 자료라 활용 문제는 낮다."
       },
       "subjectParty": "a",
-      "surfaceName": "지역상 신청 안내문과 주문서",
-      "surfaceDescription": "지역상 신청 규정과 상패 제작 주문서다. 대표자 등록 기준과 관련 서류가 포함되어 있다."
+      "surfaceName": "신청 안내문과 주문서",
+      "surfaceDescription": "신청 규정과 제작 주문서다. 명의 표기 기준을 확인할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "신청 안내문과 주문서 원본을 근거로 든 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "대표자 표기가 등록정보 기준으로 처리된 점을 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 표기를 곧바로 후계 판단으로 연결한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -470,7 +574,33 @@
       },
       "surfaceName": "KPI 비교표와 수정 이력",
       "surfaceDescription": "월별 KPI 비교표와 클라우드 파일 수정 이력이다. 발표용 자료에서 어떤 데이터가 빠졌는지 확인 가능하다.",
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "월별 비교표와 수정 이력 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "서로 다른 저점과 고점 구간만 남긴 기준을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "숨김 처리된 달을 빼고도 공정한 비교라 본 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -506,8 +636,34 @@
           "implication": "이 증거는 백지수의 \"실제 반등의 핵심 기여는 누구인가\" 쟁점과 관련된다. 백지수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "컨설턴트 회의록과 진단표",
-      "surfaceDescription": "외부 컨설턴트가 남긴 회의록과 역할 진단 평가표다. 전문가의 분석 결과가 기재되어 있다."
+      "surfaceName": "회의록과 진단표",
+      "surfaceDescription": "외부 자문 내용을 정리한 회의록과 역할 진단표다. 역할 구분에 대한 의견이 담겨 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "회의록과 역할 진단표 원본을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "수상 전 회의에서 단독 결정이 보류된 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "외부 평가와 별개로 역할 분리부터 권고된 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

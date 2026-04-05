@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "오민재 씨, 친구 회사 계약과 정산 메모를 보면 단순 예외 운영보다 비공개 정산이 먼저 보입니다. 그 누락을 언제부터 의도적으로 유지했습니까?",
+              "text": "과거 외주 정산에서 숨기고 넘어간 부분이 있었는지부터 분명히 해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -43,7 +43,7 @@
             },
             {
               "id": "dossier-1.a.q3",
-              "text": "원본 이체확인서상 수취계좌가 정산용 계좌라면, 당신은 왜 처음부터 '외부 유출이 아니다'를 구조 설명으로 못 바꾸고 방어 문장으로만 말했습니까?",
+              "text": "원본 이체확인서상 수취계좌가 정산용 계좌라면, 왜 처음부터 '외부 유출이 아니다'를 구조 설명으로 바꾸지 않고 방어 문장으로만 말했습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "김라희 씨, 당신은 세 줄 이체를 세 건 외부유출로 읽었습니다. 그 단정이 원본보다 인상에 먼저 기대고 있었다는 점을 인정합니까?",
+              "text": "현재 이체를 해석할 때 인상에 기대어 단정한 부분은 없었는지부터 답해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "오민재 씨, 메타데이터상 은행 발급 PDF가 아니라는 흔적을 본 뒤에도, 당신은 왜 원본 대조 절차보다 방어 문구를 먼저 세웠습니까?",
+              "text": "그 자료의 출처를 확인하는 일보다 방어부터 앞세운 이유가 무엇이었는지 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -125,7 +125,7 @@
             },
             {
               "id": "dossier-2.a.q2",
-              "text": "그 캡처를 보는 순간 과거 사건이 덮쳐 와 당신 판단도 거칠어졌던 것 아닙니까? 현재 쟁점과 과거 상처를 정말 분리하고 있었습니까?",
+              "text": "그 캡처를 보는 순간 과거 사건이 덮쳐 와 판단도 거칠어졌던 것 아닙니까? 현재 쟁점과 과거 상처를 정말 분리하고 있었습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -137,7 +137,7 @@
             },
             {
               "id": "dossier-2.a.q3",
-              "text": "편집본이 개인 유용 서사와 겹치자, 당신도 숫자 설명보다 '횡령 아님' 방어를 먼저 세운 것 아닙니까?",
+              "text": "편집본이 개인 유용 서사와 격치자, 숫자 설명보다 '횡령 아님'이라는 방어를 먼저 세운 것 아닙니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "김라희 씨, 이 PDF가 은행 발급본이 아니라 팀 폴더 스프레드시트 산출물이라는 점, 제출 시점에 이미 알고 있었습니까?",
+              "text": "처음 낸 거래 자료가 원문 그대로였는지부터 분명히 해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -212,7 +212,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "오민재 씨, 조정인 메일이 과거 사건과 현재 협상을 분리하라고 요구했는데도, 당신은 왜 계속 '이미 정리된 건'이라는 문장으로만 막았습니까?",
+              "text": "과거 사건과 현재 협상을 나눠 설명하지 못한 이유부터 말씀해 주시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -222,7 +222,7 @@
             },
             {
               "id": "dossier-3.a.q2",
-              "text": "은행 설명서가 분리 표기를 풀어 주는데도, 당신은 왜 그 구조를 더 일찍 설명하지 못해 손실 오해를 방치했습니까?",
+              "text": "은행 설명서가 분리 표기를 풀어 주는데도, 왜 그 구조를 더 일찍 설명하지 못해 손실 오해를 방치했습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -234,7 +234,7 @@
             },
             {
               "id": "dossier-3.a.q3",
-              "text": "이제 과거 리베이트 자료와 조정인 메일까지 모두 나온 상태입니다. 당신의 과거 은폐가 지금 방어 말투까지 오염시켰다는 점을 인정합니까?",
+              "text": "이제 과거 리베이트 자료와 조정인 메일까지 모두 나온 상태입니다. 과거 은폐가 지금 방어 말투까지 오염시켰다는 점을 인정합니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -251,7 +251,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "김라희 씨, 조정인에게 '정리본이지만 흐름은 같다'고 회신한 뒤에도 그 자료를 유지한 건, 결국 현재 협상 압박을 놓지 않으려는 선택이었죠?",
+              "text": "자료의 형식을 알면서도 같은 자료를 계속 쓴 이유부터 설명해 주시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

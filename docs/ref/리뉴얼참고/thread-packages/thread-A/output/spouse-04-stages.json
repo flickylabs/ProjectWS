@@ -1,0 +1,161 @@
+{
+  "case": "case-spouse-04",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 출입기록과 일정표를 함께 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "퇴실 뒤 긴급 일정이 비어 있던 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "해당 문자와 실제 동선이 어긋난 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 대화 기록과 주차 기록을 낸 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 문자 직후 곧장 그곳으로 이동한 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이미 오전에 잡혀 있던 방문 약속을 숨긴 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 예약 변경 알림 캡처를 확보한 경위에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "상대방보다 먼저 이 캡처를 외부에 보낸 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "알림 하단 정보를 보이지 않게 남긴 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 예약 변경 통화기록과 변경대장을 낸 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "당사자가 다른 장소에 있던 시각에 변경이 이뤄진 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "코드를 아는 다른 누군가가 개입한 정황을 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 음성메모와 문자 기록이 남아 있는 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "변경 직후 곧바로 이 메모를 남긴 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "두 사람만의 일정을 그냥 두지 않으려 한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 가족 대화 백업본을 증거로 낸 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "행사 전부터 관련 정보가 한곳에 모인 흐름을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "해당 일정의 핵심 정보가 모두 전달된 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ]
+  }
+}

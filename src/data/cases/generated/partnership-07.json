@@ -325,7 +325,7 @@
       "name": "프로젝터 점검 요청 메일과 전체 덱 첨부본",
       "description": "행사 전날 운영사가 요청한 프로젝터 점검 메일, 그리고 태경이 도매단가·백화점 팝업 일정이 모두 들어간 전체 덱을 첨부해 회신한 원본 메일이다.",
       "surfaceName": "프로젝터 점검 메일과 덱 첨부본",
-      "surfaceDescription": "운영사 점검 요청 메일과 회신에 첨부된 발표 덱 파일이다.",
+      "surfaceDescription": "점검 요청 메일과 회신에 첨부된 자료를 함께 묶은 기록이다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -356,14 +356,40 @@
           "questionAngle": "서유나에게: \"행사 자료 통제 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 서유나의 \"행사 자료 통제 원칙의 쌍방 위반\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 점검 요청 메일과 첨부 회신이 오간 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "행사 전날 밤 비식별본 대신 전체 파일을 보낸 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "단순 테스트 요청에 링크 대신 파일을 첨부한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
-      "name": "유나의 바이어 메시지와 협회 문의 메모",
+      "name": "유나의 외부 연락 메시지와 문의 메모",
       "description": "유나가 바이어 두 곳과 협회 사무국에 '태경 쪽에서 샌 것 같다'고 말한 메시지, 그리고 사무국이 남긴 문의 대응 메모다.",
       "surfaceName": "바이어 메시지와 협회 문의 메모",
-      "surfaceDescription": "바이어에게 보낸 메시지와 협회 사무국 문의 대응 메모다.",
+      "surfaceDescription": "외부 연락 내용과 문의 대응 기록을 묶은 자료다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -382,14 +408,40 @@
         "check_edits": "원본 내보내기와 기관 메모에 조작 흔적이 없다.",
         "question_acquisition": "업무상 대화와 협회 기록으로 적법하지만 대외 유포 범위는 제한돼야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 바이어 메시지와 문의 메모를 보낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "동일 정보가 언급된 직후 의심 메시지를 보낸 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확인 전부터 상대를 누설자로 굳혀 말한 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
-      "name": "크롭된 메신저 캡처",
+      "name": "메신저 캡처",
       "description": "태경이 '자료 넘겼어. 저쪽도 알 거야'라고 말한 부분만 남은 캡처로, 수신자와 앞뒤 문맥이 잘려 있어 경쟁사 전달처럼 보이게 만든다.",
       "surfaceName": "크롭된 메신저 캡처",
-      "surfaceDescription": "대화 일부만 남은 캡처로, 수신자와 전후 문맥이 잘려 있다.",
+      "surfaceDescription": "대화 내용을 담은 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -419,7 +471,33 @@
           "questionAngle": "서유나에게: \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 서유나의 \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 메신저 캡처를 근거로 제시한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "저장 시각과 잘린 알림 흔적이 함께 남은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "잘린 부분에 수신자나 대상이 드러나는 문장이 있었습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -459,7 +537,33 @@
           "implication": "이 증거는 서유나의 \"동업자 중 누군가 경쟁사에 고의로 정보를 흘렸는가\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 단톡과 발신 로그가 이어지는 흐름을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문제 문장 직후 보충 메시지가 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 흐름을 읽고도 다른 뜻으로 몰아간 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -498,14 +602,40 @@
           "implication": "이 증거는 서유나의 \"행사 자료 통제 원칙의 쌍방 위반\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 보안 가이드와 링크 수정 기록의 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "행사 당일 아침 축약본 링크를 바꾼 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "자료 통제 원칙을 스스로 흔든 정황을 부인하십니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "운영사 AE 사과 메일과 후속메일 감사로그",
       "description": "박수민 AE가 후속메일에 스피커용 백업 폴더를 잘못 첨부했다고 인정한 사과 메일과, 경쟁사 바이어가 동일 첨부파일을 수신한 발송 감사로그다.",
-      "surfaceName": "운영사 사과 메일과 발송 감사로그",
-      "surfaceDescription": "운영사 AE 사과 메일과 첨부파일 발송 시스템 로그다.",
+      "surfaceName": "후속 메일과 발송 로그",
+      "surfaceDescription": "후속 메일과 발송 이력을 확인할 수 있는 자료다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -539,7 +669,33 @@
           "implication": "이 증거는 서유나의 \"유나의 업계 내 누설자 낙인\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 사과 메일과 발송 로그가 확보된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "행사 다음 날 일괄 발송 중 같은 첨부가 나간 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "외부 발송 과정의 실수가 유입 경로일 가능성을 부인하십니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

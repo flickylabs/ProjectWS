@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "서유나 씨, 이 한 컷을 누구에게 어떤 설명과 함께 보냈습니까. '확인 요청'이었다면 왜 장면 해석까지 붙였습니까.",
+              "text": "그 장면을 왜 주변에 먼저 보여 주게 된지부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "장민규 씨, 이 캡처가 퍼진 뒤 본인이 어떤 사람으로 보였는지, 그리고 그 오해를 바로잡기 위해 즉시 한 조치는 무엇입니까.",
+              "text": "그 캡처가 돌았을 때 본인에게 어떤 오해가 붙었는지부터 말씀해 주시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "서유나 씨, 민규 씨가 단체방과 1:1에서 같은 문구를 반복한 사실을 언제 어떤 경로로 확인했습니까.",
+              "text": "상대가 같은 말을 여러 곳에 퍼뜨렸다는 걸 언제 어떻게 알게 된지부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "장민규 씨, '307호 개봉투 냄새 또 난다'는 문구를 확인 전 여러 대화방에 반복한 사실을 부인하십니까.",
+              "text": "확인되지 않은 말을 왜 여러 대화방에 반복하게 된지부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -209,7 +209,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "서유나 씨, 반상회 녹음과 수정 회의록을 보면 문제 문구가 먼저 회의 안에서 만들어졌습니다. 왜 곧바로 민규 씨를 배후로 단정했습니까.",
+              "text": "전단과 첫 소문 배후를 왜 곧바로 상대로 단정했는지부터 설명해 주시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -248,7 +248,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "장민규 씨, 전단 문구와 반상회 발언이 거의 겹칩니다. 처음부터 유나 씨가 아니라 다른 손이 개입했을 가능성을 검토했습니까.",
+              "text": "전단 문구가 어디서 시작된지 다른 가능성은 왜 먼저 살피지 않았는지부터 말씀해 주시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

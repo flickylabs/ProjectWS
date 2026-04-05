@@ -1,0 +1,161 @@
+{
+  "case": "family-12",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 캡처 이미지의 원본 대화 내보내기를 바로 내지 않은 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 파일이 다른 기기 저장을 거쳐 다시 올라온 경위를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "말풍선 간격과 글꼴 차이가 우연이라고 보십니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 원본 대화와 정산 질문 기록을 함께 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "비용 질문이 공개 캡처보다 몇 시간 앞선 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "거친 문의와 공개 비난 문장이 같은 맥락이라고 보십니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 감정서와 캐시 기록의 제출 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "업로드 직전 여러 대화창과 편집 실행이 이어진 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "핵심 말풍선 둘의 압축 흔적이 다른 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 임시문장과 자동저장 파일들이 남게 된 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "임시문장 작성 뒤 편집본이 연속 저장된 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "자동저장본마다 문장과 위치가 달라진 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 여러 대화방 전달 기록을 증거로 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "직접 확인보다 여러 방 업로드가 먼저였던 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "같은 이미지를 연달아 퍼뜨린 목적이 무엇이었는지 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 정산 규칙 메모와 확인서의 보관 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "제한된 채널 사용 합의가 갈등 전 존재한 점을 부인하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "공개방 사용이 기존 합의와 어떻게 달랐는지 설명하십시오.",
+          "attackVector": "legality"
+        }
+      }
+    ]
+  }
+}

@@ -22,7 +22,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "임도현 씨, '이번 런칭 끝나면 전환안 올릴게'라는 1:1 문구를 남기고도 확정 약속이 아니었다고 하시는 겁니까?",
+              "text": "임도현 씨, 그 말을 들은 사람이 전환을 기대할 수 있다는 점은 알고 계셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -61,7 +61,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "장혜린 씨, 다른 회사 계약서 서명 시점이 마지막 전환 기대 기간과 겹치는데도 왜 회사에 알리지 않으셨습니까?",
+              "text": "장혜린 씨, 다른 선택지를 준비하면서도 그 사실을 회사에 말하지 않은 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "임도현 씨, 이 보류 캡처에서 '추가요청 가능'과 코멘트 영역을 왜 잘라 내셨습니까?",
+              "text": "임도현 씨, 보류 화면만 따로 보여 주신 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "장혜린 씨, 헤드카운트 보류 화면만으로도 왜 이번에는 확실하다고 판단하셨습니까?",
+              "text": "장혜린 씨, 그 화면 하나만 보고 확정이라고 믿게 된 까닭이 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -212,7 +212,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "임도현 씨, 지난 두 차례 연장 메일까지 보면 이번 건은 단발성 표현이 아니라 반복 잔류 유인 아닌가요?",
+              "text": "임도현 씨, 비슷한 말을 반복해 온 데는 어떤 의도가 있었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -251,7 +251,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "장혜린 씨, 출입·VPN 로그가 평일 시간대와 겹치는데도 '실제 병행은 아니었다'고 계속 말하시겠습니까?",
+              "text": "장혜린 씨, 그 시기 근무 일정이 다른 일과 겹친 적은 없습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

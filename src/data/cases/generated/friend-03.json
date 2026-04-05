@@ -324,8 +324,8 @@
     {
       "id": "e-1",
       "name": "나래 스토리와 신고 DM에 첨부된 DM 캡처 파일",
-      "surfaceName": "SNS 스토리와 DM 캡처 파일",
-      "surfaceDescription": "SNS 스토리와 신고 DM에 첨부된 대화 캡처 파일이다. 첨부 맥락과 원본 여부 확인이 필요하다.",
+      "surfaceName": "대화 캡처 이미지",
+      "surfaceDescription": "전달 과정에서 첨부된 대화 캡처 이미지다. 어떤 맥락에서 붙었는지와 원본 여부 확인이 필요하다.",
       "description": "지후가 '조회수용 피해자 코스프레'라고 말하고 루머를 의도했다는 식으로 보이는 한 장짜리 DM 캡처 파일이다.",
       "type": "sns",
       "reliability": "soft",
@@ -346,7 +346,33 @@
         "check_edits": "확대하면 글자 간격과 말풍선 그림자 값이 일정하지 않아 합성 흔적이 보인다.",
         "question_acquisition": "사적인 DM처럼 보이게 만든 자료라 출처 신뢰성뿐 아니라 개인정보 침해 문제도 크다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "신고에 첨부한 이 대화 이미지의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문제 발언 시점보다 늦게 생성된 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "문자 간격과 말풍선 그림자가 다른 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -384,13 +410,39 @@
           "questionAngle": "오지후에게: \"지후의 협업 게시물 댓글과 스토리를 통한 나래 명예훼손\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 오지후의 \"지후의 협업 게시물 댓글과 스토리를 통한 나래 명예훼손\" 쟁점과 관련된다. 오지후은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 댓글과 스토리를 본인 계정에 올린 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 게시물이 이 자료 유포보다 먼저 올라온 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 협업 사진과 배송 언급을 붙인 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "나래의 편집앱 프로젝트 파일과 갤러리 레이어 백업",
-      "surfaceName": "편집앱 프로젝트 파일과 갤러리 백업",
-      "surfaceDescription": "이미지 편집앱의 프로젝트 파일과 갤러리 레이어 백업이다. 작업 이력 확인이 필요하다.",
+      "surfaceName": "이미지 작업 파일과 저장 백업",
+      "surfaceDescription": "이미지 작업 파일과 저장 백업 묶음이다. 파일 구성과 저장 순서 확인이 필요하다.",
       "description": "문제 캡처를 만들 때 사용된 편집앱 프로젝트 파일과, 서로 다른 날짜의 대화 캡처 조각이 저장된 갤러리 백업이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -414,13 +466,39 @@
         "question_acquisition": "기기 소유자인 나래가 제출한 자료라 절차상 문제는 적지만 사적 대화 원본 공개는 제한돼야 한다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 편집 프로젝트와 원본 폴더를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "프로젝트 생성 시각이 신고 직전인 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "서로 다른 날짜 화면에 자르기와 이동을 반복한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
-      "name": "협업사 물류 확인서와 반납 등록 지연 로그",
+      "name": "협업사 처리 기록과 확인 문서",
       "surfaceName": "물류 확인서와 반납 등록 지연 로그",
-      "surfaceDescription": "협업사의 물류 확인서와 반납 등록 지연 기록이다. 처리 경위와 시점 확인이 필요하다.",
+      "surfaceDescription": "관련 물품 처리 기록과 확인 문서다. 처리 시점과 반영 순서 확인이 필요하다.",
       "description": "사은품과 협찬품이 모두 정상 반납 처리됐고, 앱 재고 표기만 늦게 반영됐음을 보여주는 협업사 백오피스 로그와 확인서다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -444,13 +522,39 @@
         "question_acquisition": "협업사 내부 자료라 제출은 적법하지만 물류 담당자 연락처와 주문자 정보는 가려야 한다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 물류 확인서와 등록 로그가 제출된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "반납 접수는 끝났는데 공개 표기만 늦은 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "송장 등록 지연 가능성을 왜 확인하지 않았습니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "나래의 운영자 신고 DM과 문소희 전달 대화 원본",
-      "surfaceName": "운영자 신고 DM과 전달 대화 원본",
-      "surfaceDescription": "플랫폼 운영자에게 보낸 신고 DM과 제3자 전달 대화 원본이다. 전달 경위 확인이 필요하다.",
+      "surfaceName": "신고 메시지와 전달 대화 원본",
+      "surfaceDescription": "신고용 메시지와 제3자 전달 대화 원본이다. 어떤 순서로 전해졌는지 확인이 필요하다.",
       "description": "나래가 위조 캡처를 첨부해 운영자에게 신고하고, 문소희에게도 지후라고 단정하며 전달한 대화 원본이다.",
       "type": "chat",
       "reliability": "soft",
@@ -481,13 +585,39 @@
           "questionAngle": "오지후에게: \"협업 갈등 비공개 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 오지후의 \"협업 갈등 비공개 원칙의 쌍방 위반\" 쟁점과 관련된다. 오지후은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 신고 대화와 전달 메시지를 보낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "첨부 파일 생성 직후 연달아 전송한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확인 요청 뒤 곧바로 상대를 단정한 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
-      "name": "플랫폼 원본 DM export와 파일 해시 대조 리포트",
+      "name": "플랫폼 원본 원본 대화 내보내기와 파일 대조 문서",
       "surfaceName": "DM export와 파일 해시 대조 리포트",
-      "surfaceDescription": "플랫폼에서 내보낸 DM 원본과 파일 해시 대조 분석 리포트다. 무결성 검증 결과 확인이 필요하다.",
+      "surfaceDescription": "원본 대화 내보내기와 파일 대조 문서다. 두 자료가 얼마나 맞는지 확인이 필요하다.",
       "description": "지후 계정의 원본 DM export와 e-1 파일을 대조해, 문제 문장이 실제 단일 대화에 존재하지 않음을 보여주는 리포트다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -510,7 +640,33 @@
         "question_acquisition": "당사자 동의와 플랫폼 회신을 통해 확보한 자료라 적법성은 높지만 DM 전체 공개는 제한돼야 한다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 대화 내역과 대조 리포트 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "화면 속 시간표시 조합이 원본에 없는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다른 날의 문장 조각이 한 흐름처럼 보이는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

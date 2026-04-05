@@ -343,7 +343,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "작업실 출입기록과 업무 캘린더",
-      "surfaceDescription": "작업실 게이트 출입 로그와 납품 일정 캘린더다. 특정 날짜의 동선과 일정을 대조할 수 있다."
+      "surfaceDescription": "작업실 게이트 출입 로그와 납품 일정 캘린더다. 일별 동선과 일정을 대조할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 출입기록과 일정표를 함께 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "퇴실 뒤 긴급 일정이 비어 있던 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "해당 문자와 실제 동선이 어긋난 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -383,7 +409,33 @@
       },
       "surfaceName": "메신저 대화와 주차 기록",
       "surfaceDescription": "가족 간 메신저 대화와 아파트 주차 입출차 기록이다. 이동 시각과 행선지를 추적할 수 있다.",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화 기록과 주차 기록을 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 문자 직후 곧장 그곳으로 이동한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이미 오전에 잡혀 있던 방문 약속을 숨긴 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -410,7 +462,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "태블릿 알림 캡처와 단톡 전송본",
-      "surfaceDescription": "태블릿에 뜬 예약 변경 알림 캡처와 단체 채팅 전송 기록이다. 변경 요청자는 표시되지 않았다."
+      "surfaceDescription": "태블릿에 뜬 예약 변경 알림 캡처와 단체 채팅 전송 기록이다. 변경 요청자는 표시되지 않았다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 예약 변경 알림 캡처를 확보한 경위에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "상대방보다 먼저 이 캡처를 외부에 보낸 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "알림 하단 정보를 보이지 않게 남긴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -446,12 +524,38 @@
           "implication": "이 증거는 백다은의 \"예약 변경의 실제 요청자\" 쟁점과 관련된다. 백다은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "예약 변경 통화기록과 픽업 대장",
-      "surfaceDescription": "예약센터 통화기록과 제과점 변경 대장이다. 발신 번호와 변경 시각이 기록되어 있다."
+      "surfaceName": "예약 변경 통화기록과 수령 대장",
+      "surfaceDescription": "예약센터 통화기록과 제과점 변경 대장이다. 발신 번호와 변경 시각이 기록되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 예약 변경 통화기록과 변경대장을 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "당사자가 다른 장소에 있던 시각에 변경이 이뤄진 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "코드를 아는 다른 누군가가 개입한 정황을 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
-      "name": "정희의 음성메모 복원본과 제과점 문자",
+      "name": "정희의 음성 파일과 문자 기록",
       "description": "강정희가 딸에게 남긴 음성메모와 제과점에 보낸 픽업지 변경 문자다. 기념일 일정을 의도적으로 자기 집 쪽으로 돌리려 한 동기와 실행이 함께 담겨 있다.",
       "type": "chat",
       "reliability": "soft",
@@ -475,8 +579,34 @@
       },
       "subjectParty": "a",
       "surfaceName": "음성메모 복원본과 제과점 문자",
-      "surfaceDescription": "복원된 음성메모와 제과점에 보낸 문자다. 일정 변경 관련 의도와 실행 흔적이 담겨 있다.",
-      "requiredLieState": "S2"
+      "surfaceDescription": "음성 파일과 문자 기록이 함께 묶인 자료다. 일정 관련 대화 흐름을 확인할 수 있다.",
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 음성메모와 문자 기록이 남아 있는 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "변경 직후 곧바로 이 메모를 남긴 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "두 사람만의 일정을 그냥 두지 않으려 한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -516,7 +646,33 @@
       },
       "surfaceName": "가족 단톡 백업본",
       "surfaceDescription": "가족 단체 채팅의 백업 데이터다. 여러 가족 구성원 간 대화와 공유된 정보가 남아 있다.",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 가족 대화 백업본을 증거로 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "행사 전부터 관련 정보가 한곳에 모인 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "해당 일정의 핵심 정보가 모두 전달된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

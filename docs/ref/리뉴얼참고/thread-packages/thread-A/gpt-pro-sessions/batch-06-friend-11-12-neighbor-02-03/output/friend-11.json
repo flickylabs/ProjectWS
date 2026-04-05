@@ -1,0 +1,161 @@
+{
+  "case": "case-friend-11",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 로그인 차단 화면을 공통 지인 방에 올린 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 캡처 생성 시각이 접근 회수 직후로 확인되는데, 앞선 설정 변경은 왜 보이지 않습니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "상단 보안 알림과 하단 대화가 잘린 상태로 돌린 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 일회성 확인 합의 대화와 결제 메모를 제출한 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 대화가 작년 겨울 같은 날 오간 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "한 번만 쓰고 지우기로 한 정보를 이후에도 보관한 이유를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 보안 로그와 관리자 변경 기록을 확인하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 변경 시각이 잠금 주장보다 앞선 점을 어떻게 설명하시겠습니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "재인증 직후 관리 구조를 급히 손본 배경을 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 기기 백업에 상대방 확인 정보가 남아 있던 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 캡처와 메모가 삭제되지 않은 채 재인증 당일까지 남은 이유는 무엇입니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "한시 사용 전제로 받은 정보를 다시 입력한 판단 근거를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 복구 신청과 접근 회수 기록이 남은 사실을 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "관리 변경 확인 뒤 30분 안에 조치가 이어진 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "보안 대응이라면 왜 상대방에게 먼저 알리지 않았는지 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 아이템 이동 내역과 복원 보고서를 확인하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "피해 주장 시점과 자동 복원 기록이 거의 겹치는 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "사라진 항목 전부가 임의 반출인지 다시 판단한 근거를 말씀하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ]
+  }
+}

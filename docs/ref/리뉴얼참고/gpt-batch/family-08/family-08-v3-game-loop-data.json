@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "영수증과 침상 확보 문자를 먼저 봤을 때, 재판관에게는 무엇이 가장 큰 위반으로 보였습니까.",
+              "text": "이세라 씨, 이번 기록을 처음 봤을 때 가장 크게 걸린 지점이 무엇이었습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "신청서 접수와 송금은 먼저 하면서 가족 단톡 설명은 같은 날 하지 않았죠. 그 순서를 부인하십니까.",
+              "text": "이준호 씨, 먼저 움직인 뒤 설명을 미룬 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "친척 단톡에 올린 말이 단순 확인 요청이 아니라 공개 비난으로 읽힐 수 있었다는 점을 인정하십니까.",
+              "text": "이세라 씨, 친척들 앞에 먼저 말을 꺼낸 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "친척방 단정적 표현 때문에 이미 불효자처럼 찍혔다고 느꼈다는 말, 그 모욕감이 사실 판단보다 먼저였습니까.",
+              "text": "이준호 씨, 친척들 반응을 본 뒤 가장 먼저 든 감정은 무엇이었습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "잘린 노트 사진만으로 합의 전부를 단정할 수는 없더라도, '은솔 대기' 문구 자체까지 부인하십니까.",
+              "text": "이세라 씨, 잘린 노트를 보고도 끝까지 확인하고 싶었던 문구가 있었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "이 노트 사진이 잘려 있다는 점, 본인에게 유리한 문장만 먼저 내민 건 맞습니까.",
+              "text": "이준호 씨, 노트 사진을 먼저 내밀 때 왜 그 방식이 더 설득력 있다고 보셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "문태경 씨, 행사 전날 밤 운영사 회신에 final_all_v3 전체 덱을 붙여 보낸 사실부터 인정하십니까?",
+              "text": "문태경 씨, 행사 직전 외부로 자료를 보낸 경위부터 다시 짚어 보시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "서유나 씨, 경쟁사가 같은 정보들을 언급한 직후 바이어와 협회에 문 대표 이름을 먼저 올린 사실을 인정합니까?",
+              "text": "서유나 씨, 같은 정보가 밖에서 돌기 시작했을 때 의심을 어디로 돌렸는지부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "문태경 씨, 이 크롭 캡처만으로는 '저쪽'이 누구인지도 확정되지 않는다는 점에 동의하십니까?",
+              "text": "문태경 씨, 그 캡처 한 장만으로 상대를 단정할 수 없다는 점은 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "서유나 씨, 이 캡처가 원본이 아니라 잘린 조각이라는 점을 알고도 결론 문장부터 던진 것 아닙니까?",
+              "text": "서유나 씨, 일부 화면만 보고 결론을 너무 서둘렀던 건 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "문태경 씨, 계속 '의도와 전달은 다르다'고 선을 그은 데에는 기본 통제 실패를 인정하기 싫은 마음도 있었습니까?",
+              "text": "문태경 씨, 계속 선을 그은 데에는 자신의 관리 책임을 인정하기 어려운 마음도 있었습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "서유나 씨, 운영사 오발송 가능성이 드러난 뒤에도 문 대표 누설자 프레임을 놓지 못한 데에는 체면 문제도 있었습니까?",
+              "text": "서유나 씨, 다른 가능성이 보이기 시작한 뒤에도 기존 판단을 쉽게 거두지 못한 이유가 있었습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",

@@ -323,8 +323,8 @@
       "id": "e-1",
       "name": "성수 위성매장 임대차계약서와 보증금 이체내역",
       "description": "재원이 본법인 명의로 성수 위성매장 6개월 임대차계약을 체결하고 보증금 1,500만원을 이체한 계약서와 이체내역이다.",
-      "surfaceName": "위성매장 임대차계약서와 이체내역",
-      "surfaceDescription": "임대차계약서 원본과 보증금 이체 거래내역 묶음이다.",
+      "surfaceName": "점포 관련 계약 자료와 거래내역",
+      "surfaceDescription": "점포 확보 과정의 계약 자료와 거래내역을 묶은 자료다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -354,7 +354,33 @@
           "questionAngle": "정아린에게: \"아린은 일방적 확장 침해의 순수한 피해자였는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 정아린의 \"아린은 일방적 확장 침해의 순수한 피해자였는가\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 임대차계약서와 보증금 이체내역에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "내일 다시 보자고 한 뒤 단독 서명한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공동 승인 없이 본법인 자금이 먼저 집행된 경위를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -394,14 +420,40 @@
           "implication": "이 증거는 정아린의 \"공동 기회 조항의 쌍방 위반\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 부속합의서와 확장 승인 시트 내용을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "신규 지점과 별도 법인을 같은 절차로 관리한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "서면 승인 전 집행 금지 조항을 어떻게 이해하셨는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
-      "name": "크롭된 거래처 DM 캡처",
+      "name": "DM 캡처",
       "description": "아린이 핵심 거래처 MD에게 다음 달부터는 새 법인으로 보자는 대목만 남은 캡처로, 실제 전환 확정인지 아이디어 탐색인지는 앞뒤 맥락이 잘려 있다.",
       "surfaceName": "크롭된 거래처 DM 캡처",
-      "surfaceDescription": "거래처 담당에게 보낸 DM 일부만 남은 캡처 한 장이다.",
+      "surfaceDescription": "대화 일부를 담은 캡처 한 장이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -431,14 +483,40 @@
           "questionAngle": "정아린에게: \"아린의 별도 법인 설립과 거래처 이전 준비\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 정아린의 \"아린의 별도 법인 설립과 거래처 이전 준비\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 거래처 DM 캡처를 먼저 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계약 공개 전 저장된 이 이미지가 잘린 상태인 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞뒤 대화를 뺀 채 해당 문장만 남긴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "별도 법인 등기부와 거래처 전환 제안 메일",
       "description": "아린셀렉트F&B 법인 등기부, 도매 전환 견적서, 기존 거래처 MD들에게 보낸 미팅 제안 메일 원본이다.",
-      "surfaceName": "별도 법인 등기부와 전환 제안 메일",
-      "surfaceDescription": "법인 등기부, 견적서, 거래처 미팅 제안 메일 묶음이다.",
+      "surfaceName": "등록 서류와 제안 메일",
+      "surfaceDescription": "등록 서류와 제안 메일을 묶은 자료다.",
       "type": "mixed",
       "reliability": "hard",
       "completeness": "original",
@@ -471,14 +549,40 @@
           "implication": "이 증거는 정아린의 \"아린의 별도 법인 설립과 거래처 이전 준비\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 별도 법인 등기와 제안 메일에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "별도 법인 설립과 제안 메일 발송 시점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "견적서와 일정표까지 미리 준비한 배경을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "거래처 이전 우선순위 시트와 분리 운영 메모",
       "description": "아린이 만든 거래처 이전 우선순위 시트와, 재원이 새 지점 인력·생산 배분을 기존 승인 테이블 밖에서 따로 적어 둔 운영 메모다.",
-      "surfaceName": "거래처 이전 시트와 운영 메모",
-      "surfaceDescription": "거래처 우선순위 시트와 별도 운영 메모가 묶인 자료다.",
+      "surfaceName": "검토 시트와 운영 메모",
+      "surfaceDescription": "우선순위 검토 시트와 운영 메모를 함께 묶은 자료다.",
       "type": "cloud_log",
       "reliability": "hard",
       "completeness": "original",
@@ -511,7 +615,33 @@
           "implication": "이 증거는 정아린의 \"공동 기회 조항의 쌍방 위반\" 쟁점과 관련된다. 정아린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 이전 우선순위 시트와 운영 메모에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공동 승인 보드 밖에서 문서를 만든 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "겹치는 핵심 거래처를 따로 정리한 배경을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -540,7 +670,33 @@
         "question_acquisition": "회사 계약과 외부 법률 검토 자료라 제출은 적법하지만 외부 재배포는 제한돼야 한다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 독점공급계약과 법률의견서의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "분쟁 전 체결된 계약 구조를 왜 간과했는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "기존 동의 없이 확장을 밀어붙일 경우의 위험을 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

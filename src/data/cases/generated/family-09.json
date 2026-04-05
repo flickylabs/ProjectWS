@@ -343,7 +343,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "잘린 메시지 캡처",
-      "surfaceDescription": "중개인과의 메시지 중 일부만 캡처된 화면이다. 금전 이체 알림이 함께 보이지만 전후 맥락이 없다."
+      "surfaceDescription": "중개인과의 메시지 중 일부만 캡처된 화면이다. 금전 이체 알림이 함께 보이지만 전후 맥락이 없다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "잘린 메시지 캡처를 증거로 제시한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "부모에게 보여주기 직전 해당 캡처를 다시 저장한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "직전 대화가 빠진 상태로도 단독 선수령처럼 제시한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -381,9 +407,35 @@
           "implication": "이 증거는 최도윤의 \"형제의 계약 외 6,600만원 은닉 공모\" 쟁점과 관련된다. 최도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "중개사 원본 메시지와 통화녹취",
-      "surfaceDescription": "부동산 중개사의 원본 채팅과 통화 녹취, 이체 지시 메모다. 거래 조율 흐름이 기록되어 있다.",
-      "requiredLieState": "S3"
+      "surfaceName": "원본 메시지와 통화 녹취",
+      "surfaceDescription": "거래 과정에서 오간 원본 채팅, 통화 녹취, 이체 메모다. 조율 흐름을 시간순으로 볼 수 있다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "원본 대화와 통화녹취, 이체 메모에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "통화와 메시지, 이체 메모가 한날 이어진 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공식 계약 밖 정산을 누가 어떤 순서로 맞춘 것인지 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -408,8 +460,34 @@
         "question_acquisition": "공식 사무실 기록이라 취득은 적법하지만 부모의 의사능력과 설명 수준은 별도 판단이 필요하다."
       },
       "subjectParty": "a",
-      "surfaceName": "법무사 예약표와 CCTV 확인서",
-      "surfaceDescription": "법무사 사무실 상담 예약표와 대기실 CCTV 확인서다. 방문자와 시각이 기록되어 있다."
+      "surfaceName": "사무실 예약표와 CCTV 확인서",
+      "surfaceDescription": "상담 예약표와 대기실 CCTV 확인서다. 방문자와 시각이 남아 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "예약표와 위임장 초안, 대기실 확인서에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공식 설명 전 먼저 방문해 서류를 준비한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "가격 문의라면 매매 관련 문구가 이미 들어간 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -438,7 +516,33 @@
       "subjectParty": "b",
       "surfaceName": "계좌 입금 내역과 연체 상환서",
       "surfaceDescription": "계좌 입금 내역과 금융 연체금 상환 기록이다. 입금 후 자금 사용처를 추적할 수 있다.",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "입금내역과 상환서 원본을 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이체 직후 개인 채무를 먼저 정리한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "잠시 보관이라면 공동 보관이 아닌 개인 상환으로 흐른 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -475,9 +579,35 @@
           "implication": "이 증거는 최도윤의 \"형제의 계약 외 6,600만원 은닉 공모\" 쟁점과 관련된다. 최도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "중개사 수기 메모와 음성메모",
-      "surfaceDescription": "중개사가 남긴 수기 메모와 음성 메모다. 금액 분배 관련 내용이 기록되어 있다.",
-      "requiredLieState": "S2"
+      "surfaceName": "수기 메모와 음성 메모",
+      "surfaceDescription": "현장에서 남긴 수기 메모와 음성 메모다. 금액 정리와 순서를 짐작할 수 있다.",
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "수기 메모와 음성메모 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공식 계약 전날 밤 분배 메모를 남긴 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "사후 정산이 아니라 사전 설계처럼 보이는 대목을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -514,7 +644,33 @@
         }
       },
       "surfaceName": "공식 계약서와 설명 녹취 확인서",
-      "surfaceDescription": "법무사가 보관한 공식 매매계약서와 설명 녹취 확인서다. 공식 절차와 브리핑 내용이 담겨 있다."
+      "surfaceDescription": "공식 매매계약서와 설명 녹취 확인서다. 절차상 어떤 설명이 오갔는지 볼 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "공식 계약서와 설명 확인서를 근거로 든 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공식 브리핑 시점을 잔금 조건 직전에 둔 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "설명 과정에서 빠진 외부 정산 항목을 왜 언급하지 않았습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

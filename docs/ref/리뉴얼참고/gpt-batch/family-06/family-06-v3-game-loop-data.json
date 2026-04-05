@@ -22,7 +22,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "게시물을 보자마자 가족임을 알아보셨다면, 왜 곧바로 삭제를 요구하기보다 외부로 캡처를 돌리셨습니까?",
+              "text": "오선영 씨, 게시물이 가족 이야기처럼 느껴졌을 때 가장 먼저 어떤 대응을 하셨습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -61,7 +61,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "흐린 영정사진, 체육관 태그, 가족만 아는 문구를 한 묶음으로 올리고도 식별 가능성이 없었다고 보십니까?",
+              "text": "임하준 씨, 게시물이 가족을 짐작하게 만들 수 있다는 점은 어디까지 생각하셨습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "잘린 캡처만 보고 하준 씨 쪽으로 단정하신 근거가 무엇이었습니까?",
+              "text": "오선영 씨, 짧게 잘린 자료만 보고 방향을 정한 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "맘카페 캡처만으로 어머니나 연인을 범인처럼 말한 건, 함정 자료에 끌린 성급한 판단 아닙니까?",
+              "text": "임하준 씨, 한 장의 캡처만으로 범인을 짐작한 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "휴학기와 예전 문제행동을 다시 꺼낸 순간, '과거 기록을 새 싸움에 쓰지 않겠다'는 약속은 이미 깨진 것 아닙니까?",
+              "text": "오선영 씨, 예전 일을 다시 끌어온 기준이 무엇이었습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "직접 문서를 올리지 않았다는 이유만으로, 빚과 쉼터를 암시한 게시물이 약속 위반이 아니라고 말할 수 있습니까?",
+              "text": "임하준 씨, 과거 가족사를 암시한 글이 약속과 어긋나지 않는다고 본 이유는 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

@@ -1,0 +1,1594 @@
+{
+  "caseId": "partnership-03",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "새벽 편집 흔적 카드",
+      "description": "공유 캘린더 변경과 덱 출력 로그를 나란히 확인해 누가 먼저 어떤 도구를 움직였는지 가른다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "강도윤 씨, 새벽 0시 47분 최종본 편집자가 본인 계정인데 최종 확인 없이 왜 오프닝 표기를 바꿨습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "partnership-03:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "도윤 씨는 서린의 디자인 툴 원본 코멘트를 보고도 왜 바로 의도 문제로 읽었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-03:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "lead presenter 표기 하나를 근거로 투자자 요청 전체를 단독 리드로 읽은 이유를 설명하십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-03:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "나서린 씨, 디자이너에게 '내 오프닝 버전 먼저'를 남긴 사람이 본인 맞습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "partnership-03:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "서린 씨는 바뀐 아젠다를 보고 왜 원본 맥락을 다시 묻지 않고 바로 배제 신호로 읽었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-03:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "투자자 요청을 회의 전체 단독 주도로 받아들인 근거가 정확히 무엇이었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-03:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "크롭 캡처와 음성메모 카드",
+      "description": "잘린 캡처와 원본 단톡, 컨설턴트 음성메모를 대조해 의도 단정이 어디서 시작됐는지 드러낸다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "강도윤 씨, '처음은 내가 끊을게' 한 줄만으로 나서린의 고의를 확정한 근거가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-03:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "원본 단톡과 음성메모가 모호했다면, 본인 수정 판단을 왜 계속 정당화했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-03:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "도윤 씨에게 오프닝 발표권은 단순 순서 문제가 아니라 어떤 자리의 문제였습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "partnership-03:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "나서린 씨, '도윤 lead' 표기와 잘린 캡처만으로 상대의 악의를 확정한 이유가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-03:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "컨설턴트 원본 음성메모가 애매했다면, 왜 그 수정 자체를 곧 의도적 배제로 보았습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-03:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "서린 씨에게 그 순간 빠지는 이름 하나가 왜 대표성 상실처럼 느껴졌습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "partnership-03:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "리허설 흔적과 투자자 확인 카드",
+      "description": "체크리스트·화이트보드 사진과 투자사 확인 메일을 함께 열어 쌍방 위반과 실제 요청 범위를 정리한다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "강도윤 씨, 본인 12분 버전 리허설을 하면서도 왜 밤 10시 문서 확정 절차를 다시 열지 않았습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-03:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "투자사 확인 메일이 오프닝 4분과 시간관리만 말하는데, 왜 그 범위를 전체 리드로 넓혔습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-03:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "원본 메일과 단톡까지 본 지금도 상대의 의도적 탈취라고 보십니까, 아니면 다른 설명을 인정합니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "partnership-03:a:d-3:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "나서린 씨, 본인 11분 버전 리허설을 하면서도 왜 10시 문서 확정 약속을 다시 열지 않았습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-03:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "투자사 확인 메일이 회의 전체 단독 진행을 요구하지 않는데, 왜 그 해석을 끝까지 밀었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-03:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "디자인 툴 출력 로그와 체크리스트까지 본 지금, 본인 출력 지시의 책임을 어디까지 인정합니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "partnership-03:b:d-2:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "partnership-03:a:d-1:unlock:s2:0",
+            "factText": "도윤이 새벽 0시 47분 공유 캘린더 아젠다를 수정해 자신을 오프닝 발표자로 올렸다.",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "새벽 0시 47분",
+                "neutral": "그 시각",
+                "dateExact": "새벽 0시 47분",
+                "period": "리허설 종료 후"
+              },
+              "artifact": {
+                "exact": "공유 캘린더 아젠다",
+                "neutral": "그 문서"
+              },
+              "role": {
+                "exact": "도윤 lead",
+                "neutral": "그 표기"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-03:a:d-1:unlock:s3:0",
+            "factText": "도윤은 최종 확인 없이 수정했지만 컨설턴트 음성메모와 서린의 별도 준비 정황을 근거로 정당화했다.",
+            "tags": [
+              "responsibility",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "source": {
+                "exact": "IR 컨설턴트 음성메모",
+                "neutral": "그 자료"
+              },
+              "person": {
+                "exact": "나서린",
+                "neutral": "상대",
+                "fullName": "나서린",
+                "judgeRef": "상대방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-03:a:d-1:unlock:s4:0",
+            "factText": "도윤은 오프닝을 놓치면 기술창업자 위상이 약해질까 두려워 행동이 빨라졌다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "role": {
+                "exact": "오프닝 발표권",
+                "neutral": "그 자리"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-03:a:d-1:unlock:s5:0",
+            "factText": "효율 판단과 체면이 섞여 무통보 수정을 했다는 점을 도윤이 시인한다.",
+            "tags": [
+              "admission",
+              "shame"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "artifact": {
+                "exact": "공유 캘린더 아젠다",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "partnership-03:a:d-2:unlock:s2:0",
+            "factText": "도윤은 서린이 디자이너에게 '내 오프닝 버전 먼저' 코멘트를 남긴 원본 로그가 있다는 사실을 인정한다.",
+            "tags": [
+              "evidence",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "내 오프닝 버전 먼저",
+                "neutral": "그 코멘트"
+              },
+              "artifact": {
+                "exact": "디자인 툴 코멘트 로그",
+                "neutral": "그 로그"
+              },
+              "person": {
+                "exact": "나서린",
+                "neutral": "상대",
+                "fullName": "나서린",
+                "judgeRef": "상대방"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-03:a:d-2:unlock:s3:0",
+            "factText": "도윤은 그 코멘트를 보는 순간 발표권 탈취 신호로 읽었고 바로 재확인하지 않았다.",
+            "tags": [
+              "context",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "내 오프닝 버전 먼저",
+                "neutral": "그 코멘트"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-03:a:d-2:unlock:s4:0",
+            "factText": "도윤은 자신이 보조 설명자로 밀릴까 봐 서린의 행동을 더 공격적으로 해석했다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "role": {
+                "exact": "보조 설명자처럼 밀려나는 그림",
+                "neutral": "그 그림"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-03:a:d-2:unlock:s5:0",
+            "factText": "서린의 선행 출력 지시 자체는 사실이지만, 도윤도 의도를 과하게 단정했다는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "artifact": {
+                "exact": "단독 발표용 덱과 인쇄본 요청",
+                "neutral": "그 출력 요청"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "partnership-03:a:d-3:unlock:s2:0",
+            "factText": "도윤의 의도 판단 근거는 크롭된 '처음은 내가 끊을게' 캡처와 일부 정황에 크게 기대고 있었다.",
+            "tags": [
+              "evidence",
+              "quote"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "처음은 내가 끊을게",
+                "neutral": "그 문구"
+              },
+              "artifact": {
+                "exact": "크롭된 메신저 캡처",
+                "neutral": "그 캡처"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-03:a:d-3:unlock:s3:0",
+            "factText": "IR 컨설턴트 음성메모와 lead presenter 문구는 오프닝 담당과 전체 리드 발표를 명확히 구분하지 않았다.",
+            "tags": [
+              "context",
+              "institution"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "source": {
+                "exact": "IR 컨설턴트 음성메모",
+                "neutral": "그 자료"
+              },
+              "template": {
+                "exact": "lead presenter",
+                "neutral": "그 문구"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-03:a:d-3:unlock:s4:0",
+            "factText": "도윤은 발표권 상실이 기술창업자 위상 손상으로 이어질까 두려워 악의를 먼저 읽었다.",
+            "tags": [
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "role": {
+                "exact": "기술창업자 위상",
+                "neutral": "그 위치"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-03:a:d-3:unlock:s5:0",
+            "factText": "의도적 발표권 탈취는 사실이 아니고, 같은 모호한 지시를 다르게 읽은 공유 오해였다는 점을 도윤이 인정한다.",
+            "tags": [
+              "admission",
+              "context"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "source": {
+                "exact": "같은 모호한 IR 지시",
+                "neutral": "그 지시"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "partnership-03:a:d-4:unlock:s2:0",
+            "factText": "도윤 체크리스트에는 자신이 12분을 맡는 버전이 별도로 적혀 있었다.",
+            "tags": [
+              "evidence",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "artifact": {
+                "exact": "도윤 12분 버전 체크리스트",
+                "neutral": "그 체크리스트"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-03:a:d-4:unlock:s3:0",
+            "factText": "서로 다른 버전으로 리허설하면서도 밤 10시 문서 확정 절차를 다시 열지 않았다.",
+            "tags": [
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "전날 밤 10시 문서화 약속",
+                "neutral": "그 약속"
+              },
+              "artifact": {
+                "exact": "공유 캘린더 아젠다",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-03:a:d-4:unlock:s4:0",
+            "factText": "도윤은 피치 실패가 회사 운영 위기로 이어질까 봐 절차보다 실행을 앞세웠다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "threshold": {
+                "exact": "다음 달 인건비와 연결되는 미팅",
+                "neutral": "그 압박"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-03:a:d-4:unlock:s5:0",
+            "factText": "도윤은 10시 문서화 약속을 자신도 어겼고 공동 위반이라는 점을 시인한다.",
+            "tags": [
+              "admission",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "전날 밤 10시 문서화 약속",
+                "neutral": "그 약속"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "partnership-03:a:d-5:unlock:s2:0",
+            "factText": "도윤은 투자자 요청 범위를 원문으로 다시 확인하지 않고 lead presenter 문구를 넓게 해석했다.",
+            "tags": [
+              "institution",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "template": {
+                "exact": "lead presenter",
+                "neutral": "그 문구"
+              },
+              "institution": {
+                "exact": "투자자 측 요청 범위",
+                "neutral": "그 요청"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-03:a:d-5:unlock:s3:0",
+            "factText": "실제 요청은 첫 4분 오프닝과 시간관리였을 가능성이 더 크다는 점을 도윤이 받아들이기 시작한다.",
+            "tags": [
+              "institution",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "request": {
+                "exact": "첫 4분 오프닝과 시간관리",
+                "neutral": "그 범위"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-03:a:d-5:unlock:s4:0",
+            "factText": "도윤은 그 넓은 해석이 자기 오프닝을 정당화해준다는 점에 끌렸다.",
+            "tags": [
+              "beneficiary",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "benefit": {
+                "exact": "오프닝 정당화",
+                "neutral": "그 이득"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-03:a:d-5:unlock:s5:0",
+            "factText": "투자자 측의 실제 요청이 전체 단독 발표가 아니라는 점과 자신의 오독을 도윤이 인정한다.",
+            "tags": [
+              "admission",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "request": {
+                "exact": "첫 4분 오프닝과 시간관리",
+                "neutral": "그 요청"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "partnership-03:b:d-1:unlock:s2:0",
+            "factText": "나서린은 e-1 로그상 도윤이 새벽 0시 47분 아젠다를 바꾼 사실을 확인한다.",
+            "tags": [
+              "evidence",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "새벽 0시 47분",
+                "neutral": "그 시각",
+                "dateExact": "새벽 0시 47분",
+                "period": "리허설 종료 후"
+              },
+              "artifact": {
+                "exact": "공유 캘린더 아젠다",
+                "neutral": "그 문서"
+              },
+              "person": {
+                "exact": "강도윤",
+                "neutral": "상대",
+                "fullName": "강도윤",
+                "judgeRef": "상대방"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-03:b:d-1:unlock:s3:0",
+            "factText": "나서린은 그 수정 사실을 곧바로 의도적 배제로 해석했고 원본 맥락을 다시 묻지 않았다.",
+            "tags": [
+              "responsibility",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "artifact": {
+                "exact": "공유 캘린더 아젠다",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-03:b:d-1:unlock:s4:0",
+            "factText": "나서린은 자기 이름이 빠지는 신호를 공동대표 지위 상실처럼 느꼈다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "role": {
+                "exact": "공동대표 지위",
+                "neutral": "그 자리"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-03:b:d-1:unlock:s5:0",
+            "factText": "도윤의 무통보 수정은 사실이지만, 나서린도 그것을 악의적 탈취로 단정한 건 과했다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "artifact": {
+                "exact": "공유 캘린더 아젠다 수정",
+                "neutral": "그 수정"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "partnership-03:b:d-2:unlock:s2:0",
+            "factText": "나서린은 도윤과 재확인하기 전에 단독 발표용 덱과 인쇄본을 먼저 뽑아달라고 지시했다.",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "artifact": {
+                "exact": "단독 발표용 덱과 인쇄본 요청",
+                "neutral": "그 출력 요청"
+              },
+              "time": {
+                "exact": "도윤의 캘린더 수정 12분 뒤",
+                "neutral": "그 직후",
+                "period": "새벽 직후",
+                "dateExact": "도윤의 캘린더 수정 12분 뒤"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-03:b:d-2:unlock:s3:0",
+            "factText": "나서린은 배제당한다고 느껴 출력 요청으로 물리적 기정사실을 만들려 했다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "artifact": {
+                "exact": "발표자용 덱과 인쇄본",
+                "neutral": "그 자료"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-03:b:d-2:unlock:s4:0",
+            "factText": "나서린은 들러리처럼 보일까 두려워 자기 이름이 붙은 버전을 먼저 확보하고 싶었다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "role": {
+                "exact": "내 이름이 붙은 버전",
+                "neutral": "그 버전"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-03:b:d-2:unlock:s5:0",
+            "factText": "나서린은 무통보 출력 지시가 자기보호에서 나온 절차 위반이었다는 점을 시인한다.",
+            "tags": [
+              "admission",
+              "shame"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "artifact": {
+                "exact": "단독 발표용 덱과 인쇄본 요청",
+                "neutral": "그 출력 요청"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "partnership-03:b:d-3:unlock:s2:0",
+            "factText": "나서린의 의도 판단 근거는 '도윤 lead' 표기와 일부 캡처처럼 잘린 신호에 크게 기대고 있었다.",
+            "tags": [
+              "evidence",
+              "quote"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "도윤 lead",
+                "neutral": "그 표기"
+              },
+              "artifact": {
+                "exact": "크롭된 메신저 캡처",
+                "neutral": "그 캡처"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-03:b:d-3:unlock:s3:0",
+            "factText": "IR 음성메모와 자동 템플릿 문구는 한 명의 오프닝 담당과 전체 리드 발표자를 분명히 나누지 않았다.",
+            "tags": [
+              "context",
+              "institution"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "source": {
+                "exact": "IR 컨설턴트 음성메모",
+                "neutral": "그 자료"
+              },
+              "template": {
+                "exact": "lead presenter",
+                "neutral": "그 문구"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-03:b:d-3:unlock:s4:0",
+            "factText": "나서린은 자기 스토리와 대표성이 빼앗길까 두려워 의도를 먼저 배신으로 읽었다.",
+            "tags": [
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "role": {
+                "exact": "시장·재무 파트 주도권",
+                "neutral": "그 주도권"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-03:b:d-3:unlock:s5:0",
+            "factText": "의도적 탈취는 사실이 아니고, 모호한 지시의 공유 오해가 핵심이었다는 점을 나서린이 인정한다.",
+            "tags": [
+              "admission",
+              "context"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "source": {
+                "exact": "같은 모호한 IR 지시",
+                "neutral": "그 지시"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "partnership-03:b:d-4:unlock:s2:0",
+            "factText": "나서린 체크리스트에는 자신이 11분을 끊는 버전이 따로 적혀 있었다.",
+            "tags": [
+              "evidence",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "artifact": {
+                "exact": "나서린 11분 버전 체크리스트",
+                "neutral": "그 체크리스트"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-03:b:d-4:unlock:s3:0",
+            "factText": "나서린도 밤 10시 문서 확정 절차를 다시 열지 않은 채 별도 리허설을 밀었다.",
+            "tags": [
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "전날 밤 10시 문서화 약속",
+                "neutral": "그 약속"
+              },
+              "artifact": {
+                "exact": "공유 캘린더 아젠다",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-03:b:d-4:unlock:s4:0",
+            "factText": "나서린은 투자 스토리 주도권이 밀릴까 봐 절차보다 자리 방어를 앞세웠다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "role": {
+                "exact": "투자 스토리 주도권",
+                "neutral": "그 주도권"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-03:b:d-4:unlock:s5:0",
+            "factText": "나서린은 10시 문서화 약속을 자신도 어겼고 공동 위반이라는 점을 시인한다.",
+            "tags": [
+              "admission",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "전날 밤 10시 문서화 약속",
+                "neutral": "그 약속"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "partnership-03:b:d-5:unlock:s2:0",
+            "factText": "나서린은 투자자 요청을 직접 확인하지 않은 채 lead presenter 문구를 회의 전체 주도 요청으로 읽었다.",
+            "tags": [
+              "institution",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "template": {
+                "exact": "lead presenter",
+                "neutral": "그 문구"
+              },
+              "institution": {
+                "exact": "투자자 측 요청 범위",
+                "neutral": "그 요청"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-03:b:d-5:unlock:s3:0",
+            "factText": "실제 요청이 첫 4분 오프닝과 시간관리 정도였을 수 있다는 점을 나서린도 받아들이기 시작한다.",
+            "tags": [
+              "institution",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "request": {
+                "exact": "첫 4분 오프닝과 시간관리",
+                "neutral": "그 범위"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-03:b:d-5:unlock:s4:0",
+            "factText": "나서린은 그 넓은 해석이 자기 시장·재무 파트 주도권을 지켜준다고 느꼈다.",
+            "tags": [
+              "beneficiary",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "benefit": {
+                "exact": "시장·재무 파트 주도권",
+                "neutral": "그 이득"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-03:b:d-5:unlock:s5:0",
+            "factText": "투자자 요청 범위를 과장해 읽었고 그 오독이 '오프닝을 빼앗긴다'는 공포를 키웠다는 점을 나서린이 인정한다.",
+            "tags": [
+              "admission",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "request": {
+                "exact": "첫 4분 오프닝과 시간관리",
+                "neutral": "그 요청"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "partnership-03:contradiction:0",
+        "targetParty": "a",
+        "trigger": "도윤이 '확정이 아니었다'고 주장하는데 e-1 원본 로그가 제시될 때",
+        "text": "임시 정리였다면 왜 최종본에 '도윤 lead' 표기가 남아 있습니까?",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "partnership-03:contradiction:1",
+        "targetParty": "b",
+        "trigger": "서린이 '대비용 버전'이었다고 말하는데 e-2 코멘트 로그가 제시될 때",
+        "text": "대비용이라면 왜 디자이너에게 인쇄본까지 먼저 뽑아달라고 했습니까?",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "partnership-03:contradiction:2",
+        "targetParty": "a",
+        "trigger": "도윤이 상대의 고의를 단정하는데 e-4 원본 단톡과 음성메모가 열린 직후",
+        "text": "원본 자료에 모호성이 남아 있는데도 아직 의도적 탈취라고만 말할 수 있습니까?",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      },
+      {
+        "id": "partnership-03:contradiction:3",
+        "targetParty": "b",
+        "trigger": "서린이 투자자 요청을 전체 단독 발표라고 말하는데 e-6 확인 메일이 제시될 때",
+        "text": "메일에는 첫 4분 오프닝과 시간관리만 적혀 있는데, 왜 회의 전체 단독 진행으로 받아들였습니까?",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "partnership-03:interjection:0",
+        "speaker": "b",
+        "trigger": "도윤이 효율 논리로 감정 쟁점을 지우려 할 때",
+        "text": "효율 말고요, 왜 제 이름이 빠졌는지만 먼저 답하세요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "partnership-03:interjection:1",
+        "speaker": "a",
+        "trigger": "서린이 곧바로 고의 탈취라고 단정할 때",
+        "text": "의도 단정부터 하지 말고 원본 타임라인부터 보시죠.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ]
+      },
+      {
+        "id": "partnership-03:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 발표권만 반복하며 질문을 비껴갈 때",
+        "text": "의도 추측보다 10시 문서화 약속과 실제 투자자 요청 범위를 구분해 답하십시오.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "partnership-03:outburst:a:0",
+        "party": "a",
+        "trigger": "도윤이 기술창업자 위상 문제를 직접 찌르는 질문을 받을 때",
+        "text": "제가 만든 제품인데 오프닝에서 빠지면 그냥 보조 설명자처럼 보입니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "partnership-03:outburst:a:1",
+        "party": "a",
+        "trigger": "도윤에게 무통보 수정 책임을 연속 제시할 때",
+        "text": "네, 바꿨습니다. 그런데 그 밤에 무너진 건 저 혼자만의 절차가 아니었습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "partnership-03:outburst:b:0",
+        "party": "b",
+        "trigger": "서린에게 배제 신호를 과대해석한 것 아니냐는 질문이 들어올 때",
+        "text": "파일 하나에서 제 이름이 빠지면 그건 신호죠. 공동대표한테 그건 작지 않아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "partnership-03:outburst:b:1",
+        "party": "b",
+        "trigger": "서린에게 단독 출력 지시 로그가 연속 제시될 때",
+        "text": "가만히 있으면 제 파트가 통째로 밀릴 것 같았어요. 그래서 먼저 붙잡은 겁니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "partnership-03:transition:a:d-1:s0_s1",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "opening_order_question",
+      "line": "오프닝 순서를 묻는다면, 저는 흐름상 먼저 끊는 쪽이 효율적이라고 본 겁니다.",
+      "behaviorHint": "손가락으로 첫 슬라이드 위치를 짚는 시늉을 한다."
+    },
+    {
+      "id": "partnership-03:transition:a:d-1:s1_s2",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "로그가 남아 있으면 수정 자체는 인정하겠습니다. 다만 그걸 곧 탈취로 보진 않았습니다.",
+      "behaviorHint": "증거를 보고 한 번 멈춘 뒤 낮은 톤으로 수긍한다."
+    },
+    {
+      "id": "partnership-03:transition:a:d-1:s2_s3",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "final_confirmation_question",
+      "line": "최종 확인을 다시 안 한 건 제 책임입니다. 그때는 이미 판이 흔들리고 있다고 봤습니다.",
+      "behaviorHint": "눈을 잠깐 감았다 뜨며 변명과 인정 사이를 오간다."
+    },
+    {
+      "id": "partnership-03:transition:a:d-1:s3_s5",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_or_responsibility_question",
+      "line": "네, 결국 제가 무통보로 바꿨습니다. 의도보다 효율과 체면을 앞세운 선택이었습니다.",
+      "behaviorHint": "말끝이 짧아지고 시선이 아래로 떨어진다."
+    },
+    {
+      "id": "partnership-03:transition:a:d-3:s0_s1",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "intention_to_steal_opening_question",
+      "line": "일부러였는지 단정하긴 이르지만, 그때 제겐 그렇게 읽혔습니다.",
+      "behaviorHint": "턱을 굳히고 단정 대신 '읽혔다'는 표현으로 물러난다."
+    },
+    {
+      "id": "partnership-03:transition:a:d-3:s1_s2",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "캡처 하나에 많이 기대고 있었다는 건 인정합니다. 그래도 당시엔 그 신호가 너무 강했습니다.",
+      "behaviorHint": "짧게 인정한 뒤 바로 해석을 덧붙인다."
+    },
+    {
+      "id": "partnership-03:transition:a:d-3:s2_s4",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_ir_note_interpretation",
+      "line": "비난 없이 묻는다면, 네, 그 음성메모를 제가 제 불안 쪽으로 해석한 면이 있습니다.",
+      "behaviorHint": "목소리가 낮아지고 손을 모은 채 잠시 생각한다."
+    },
+    {
+      "id": "partnership-03:transition:a:d-3:s4_s5",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-4_or_e-6_presented",
+      "line": "원본까지 보면 의도적 탈취는 아닙니다. 같은 모호한 지시를 다르게 읽은 거였습니다.",
+      "behaviorHint": "길게 숨을 내쉰 뒤 마침내 결론을 바꾼다."
+    },
+    {
+      "id": "partnership-03:transition:a:d-4:s0_s1",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "documentation_rule_question",
+      "line": "10시 룰은 알고 있었습니다. 다만 그 밤엔 문서보다 리허설이 더 급하다고 봤습니다.",
+      "behaviorHint": "규칙을 인정하면서도 급박함을 먼저 강조한다."
+    },
+    {
+      "id": "partnership-03:transition:a:d-4:s1_s2",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "체크리스트가 나오면 인정해야죠. 저도 제 버전으로 따로 준비했습니다.",
+      "behaviorHint": "자료를 보며 고개를 짧게 끄덕인다."
+    },
+    {
+      "id": "partnership-03:transition:a:d-4:s2_s5",
+      "caseId": "partnership-03",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "네, 공동 책임입니다. 저도 약속을 다시 열지 않은 채 밀어붙였습니다.",
+      "behaviorHint": "한 박자 쉬고 스스로의 몫을 또렷하게 말한다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-2:s0_s1",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "solo_deck_question",
+      "line": "결국 그건 제 자리를 지키려는 대비였어요. 단독 선언까지는 아니었다고요.",
+      "behaviorHint": "결론 문장을 먼저 던지고 뒤에 해명을 붙인다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-2:s1_s2",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "로그가 있으면 출력 지시 자체는 인정해요. 다만 그 전에 이미 배제 신호를 봤어요.",
+      "behaviorHint": "증거를 향해 턱을 들고 짧게 인정한다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-2:s2_s3",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "print_instruction_followup",
+      "line": "재확인하지 않은 건 제 책임이죠. 그래도 가만히 있으면 제 파트가 사라질 것 같았어요.",
+      "behaviorHint": "어깨를 굳히고 마지막 문장에 힘을 준다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-2:s3_s5",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "화이트보드랑 체크리스트까지 보면 숨길 건 없어요. 제가 먼저 붙잡으려 했습니다.",
+      "behaviorHint": "고개를 숙였다가 다시 들며 솔직하게 밀어낸다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-3:s0_s1",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "promise_breaking_question",
+      "line": "약속을 깼다고 단정하긴 이르더라도, 그 밤엔 그렇게밖에 안 보였어요.",
+      "behaviorHint": "반문하듯 시작했다가 끝은 단정으로 닫는다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-3:s1_s2",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "맞아요, 근거가 잘린 캡처에 많이 기대고 있었어요. 그래도 그땐 배신처럼 느껴졌어요.",
+      "behaviorHint": "입술을 깨물고 감정 단어를 먼저 올린다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-3:s2_s4",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_shared_confusion",
+      "line": "공유 오해였을 수 있냐고요? 네, 지금은 그 가능성을 부인하긴 어렵습니다.",
+      "behaviorHint": "짧게 되묻고 한 박자 늦게 수긍한다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-3:s4_s5",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-4_or_e-6_presented",
+      "line": "원본 자료까지 보면 일부러 뺏은 건 아니에요. 제가 너무 빨리 결론냈어요.",
+      "behaviorHint": "강한 어조가 꺾이며 마지막 문장이 낮아진다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-4:s0_s1",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "ten_pm_rule_reminder",
+      "line": "그 약속은 알았어요. 그래도 현장에선 그 룰보다 먼저 움직여야 한다고 느꼈어요.",
+      "behaviorHint": "손을 접었다 펴며 조급함을 드러낸다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-4:s1_s2",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "사진과 체크리스트가 있으면 저도 따로 리허설한 건 인정합니다.",
+      "behaviorHint": "증거를 확인하고 시선을 피하지 않는다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-4:s2_s3",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "shared_blame_question",
+      "line": "제 책임만은 아니에요. 도윤도 자기 버전으로 그대로 밀고 있었잖아요.",
+      "behaviorHint": "검지를 들어 상대 쪽을 짚듯 말한다."
+    },
+    {
+      "id": "partnership-03:transition:b:d-4:s3_s5",
+      "caseId": "partnership-03",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "네, 저도 약속을 어겼어요. 자리 방어가 먼저였고 그게 문제를 키웠습니다.",
+      "behaviorHint": "짧게 고개를 끄덕인 뒤 변명 없이 마무리한다."
+    }
+  ]
+}

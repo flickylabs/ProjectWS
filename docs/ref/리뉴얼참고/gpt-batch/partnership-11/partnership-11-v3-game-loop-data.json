@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "김재원 씨, 성수 위성매장 임대차계약과 보증금 이체가 이미 끝난 상태였다면 이를 단순 hold라고만 말할 수 있습니까.",
+              "text": "김재원 씨, 지점 확보를 단순 보류나 선점 정도로만 말하기 어려운 단계까지 간 것 아닙니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "정아린 씨, 승인 시트에 별도 법인도 공동 기회로 묶여 있었다면 대표님도 그 규칙을 알고 계셨던 것 아닙니까.",
+              "text": "정아린 씨, 별도 법인도 공동 검토 대상이라는 점은 이미 알고 계셨던 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "김재원 씨, 아린 대표의 선행 준비를 말하는 취지는 알겠지만 그것을 대표님 계약 책임의 반증처럼 사용해 온 것 아닙니까.",
+              "text": "김재원 씨, 상대의 선행 준비를 자신의 책임을 덜어 주는 근거처럼 붙들고 계신 것 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "정아린 씨, 크롭된 DM만 놓고 보면 여지가 있어도 등기 시점과 원본 메일을 함께 보면 이미 준비가 상당히 진행된 것 아닙니까.",
+              "text": "정아린 씨, 일부 메시지보다 전체 흐름을 보면 준비가 생각보다 더 앞서 있었던 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -209,7 +209,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "김재원 씨, 분리 운영 메모를 공동 승인 보드 밖에서 작성한 시점부터 이미 기존 법인을 우회한 실행 구조를 상정한 것 아닙니까.",
+              "text": "김재원 씨, 공동 승인 바깥에서 이미 따로 굴릴 운영안을 상정한 것 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -248,7 +248,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "정아린 씨, 개인 폴더의 거래처 이전 우선순위 시트는 공동 승인 보드 밖에서 만든 별도 실행판이라고 봐야 하지 않습니까.",
+              "text": "정아린 씨, 개인 폴더 자료가 공동 보드 밖의 별도 실행판처럼 움직인 건 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

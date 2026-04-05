@@ -355,7 +355,33 @@
         }
       },
       "surfaceName": "스마트락 출입기록과 접속 로그",
-      "surfaceDescription": "스마트락 개폐 기록과 와이파이 접속 로그다. 출입 시각과 기기 접속 시점을 대조할 수 있다."
+      "surfaceDescription": "스마트락 개폐 기록과 와이파이 접속 로그다. 출입 시각과 기기 접속 시점을 대조할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 출입기록과 와이파이 접속로그에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문을 연 뒤 곧바로 해당 공간에 접속한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다급한 일정 속에 그 공간을 택한 배경을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -392,7 +418,33 @@
         }
       },
       "surfaceName": "캘린더 변경 이력과 권한 알림",
-      "surfaceDescription": "공유 캘린더의 버전 변경 기록과 앱 권한 변경 알림이다. 누가 언제 설정을 바꿨는지 추적 가능하다."
+      "surfaceDescription": "공유 캘린더의 버전 변경 기록과 앱 권한 변경 알림이다. 누가 언제 설정을 바꿨는지 추적 가능하다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 버전기록과 권한 변경 알림에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "사건 며칠 전 밤에 권한을 바꾼 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "교대 사용 약속을 사실상 한쪽 전용으로 돌린 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -418,8 +470,34 @@
         "question_acquisition": "소담 동의 없이 가정 내 대화를 녹음·편집해 상담과 면담에 제출했다. 동의 없는 녹음과 편집이 겹쳐 증거 신뢰성에 의문이 붙는다."
       },
       "subjectParty": "a",
-      "surfaceName": "음성 녹취 파일",
-      "surfaceDescription": "휴대폰에서 추출된 짧은 음성 녹취 파일이다. 대화 내용이 담겨 있으나 편집 여부 확인이 필요하다."
+      "surfaceName": "음성 파일",
+      "surfaceDescription": "휴대폰에서 추출된 짧은 음성 파일이다. 대화가 담겨 있으나 앞뒤 맥락은 이 자료만으로 확인하기 어렵다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 녹취 파일을 증거로 제출하게 된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "녹음이 아닌 편집 앱 정보가 남아 있는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "중간 소리결이 두 차례 끊겨 이어진 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -447,9 +525,35 @@
         "question_acquisition": "회의메모 앱 클라우드 백업에서 공식 원본 확인 절차를 거쳐 추출됐다. 소담 본인의 계정 백업이므로 확보 절차상 문제가 없다."
       },
       "subjectParty": "a",
-      "surfaceName": "음성 원본과 파형 대조 보고서",
-      "surfaceDescription": "여러 날짜의 음성 원본 파일과 파형 분석 대조표다. 녹취 파일의 진위를 검증할 수 있다.",
-      "requiredLieState": "S3"
+      "surfaceName": "음성 파일 묶음과 분석표",
+      "surfaceDescription": "여러 시점의 음성 파일과 분석 자료다. 구간별 차이를 비교할 수 있다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 백업과 파형 대조표를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "서로 다른 날짜 녹음이 한 흐름처럼 붙은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "연결 지점 앞뒤의 빠진 발언이 무엇을 바꾸는지 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -474,8 +578,34 @@
         "question_acquisition": "민재와 오한결 모두 자발적으로 대화·로그를 제출했다. 자기 자료의 자발적 제출이므로 취득 경위상 위법성은 낮다."
       },
       "subjectParty": "a",
-      "surfaceName": "편집 의뢰 메신저와 작업 내역",
-      "surfaceDescription": "음성 편집을 의뢰한 메신저 대화와 렌더링 작업 로그다. 의뢰자와 작업 시점이 기록되어 있다."
+      "surfaceName": "메신저 대화와 작업 내역",
+      "surfaceDescription": "메신저 대화와 렌더링 작업 로그다. 참여자와 작업 시점이 기록되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 메신저 대화와 렌더 기록을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "면담 전날 급히 파일을 보내 정리시킨 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "설명용 결과물을 원본처럼 내세운 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -512,7 +642,33 @@
         }
       },
       "surfaceName": "인터넷 장애 접수와 일정표",
-      "surfaceDescription": "회선 장애 접수 내역과 양측의 화상 일정표다. 특정 시간대의 상황 배경을 파악할 수 있다."
+      "surfaceDescription": "회선 장애 접수 내역과 양측의 화상 일정표다. 그날 상황 배경을 파악할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 장애 접수와 양측 일정표를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "짧은 시간 안에 세 일정이 겹친 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "두 사람이 같은 공간을 동시에 필요로 한 배경을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

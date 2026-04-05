@@ -1,0 +1,52 @@
+# spouse-02 ~ spouse-08 이중 검증 결과
+
+Evidence 교정 13건, DossierCard 교정 25건.
+
+## Evidence 위반
+
+{ "caseId": "spouse-02", "evidenceId": "e-5", "field": "surfaceName", "before": "복합기 스캔 기록과 클라우드 동기화 이력", "after": "복합기 기록과 동기화 이력", "reason": "anchorTruth 핵심어 '스캔' 직접 노출" }
+{ "caseId": "spouse-02", "evidenceId": "e-5", "field": "surfaceDescription", "before": "가정용 복합기의 스캔 이력과 클라우드 동기화 로그다. 파일명과 시각이 기록되어 있다.", "after": "가정용 복합기 기록과 클라우드 동기화 로그다. 파일명과 시각이 기록되어 있다.", "reason": "anchorTruth 핵심 경로를 surface에서 먼저 드러냄" }
+{ "caseId": "spouse-04", "evidenceId": "e-5", "field": "surfaceName", "before": "음성메모 복원본과 제과점 문자", "after": "음성 파일과 문자 기록", "reason": "복원 경위와 자료 성격을 지나치게 직접 노출" }
+{ "caseId": "spouse-04", "evidenceId": "e-5", "field": "surfaceDescription", "before": "복원된 음성메모와 제과점에 보낸 문자다. 일정 변경 관련 의도와 실행 흔적이 담겨 있다.", "after": "음성 파일과 문자 기록이 함께 묶인 자료다. 일정 관련 대화 흐름을 확인할 수 있다.", "reason": "'의도와 실행'으로 핵심 진실을 선노출" }
+{ "caseId": "spouse-05", "evidenceId": "e-3", "field": "surfaceName", "before": "음성 녹취 파일", "after": "음성 파일", "reason": "anchorTruth 핵심어와 사건 성격을 먼저 노출" }
+{ "caseId": "spouse-05", "evidenceId": "e-3", "field": "surfaceDescription", "before": "휴대폰에서 추출된 짧은 음성 녹취 파일이다. 대화 내용이 담겨 있으나 편집 여부 확인이 필요하다.", "after": "휴대폰에서 추출된 짧은 음성 파일이다. 대화가 담겨 있으나 앞뒤 맥락은 이 자료만으로 확인하기 어렵다.", "reason": "편집 의심을 surface에서 직접 제시" }
+{ "caseId": "spouse-05", "evidenceId": "e-4", "field": "surfaceName", "before": "음성 원본과 파형 대조 보고서", "after": "음성 파일 묶음과 분석표", "reason": "진위 검증 방향을 surfaceName에서 선노출" }
+{ "caseId": "spouse-05", "evidenceId": "e-4", "field": "surfaceDescription", "before": "여러 날짜의 음성 원본 파일과 파형 분석 대조표다. 녹취 파일의 진위를 검증할 수 있다.", "after": "여러 시점의 음성 파일과 분석 자료다. 구간별 차이를 비교할 수 있다.", "reason": "핵심 진실을 사실상 정답 방향으로 유도" }
+{ "caseId": "spouse-05", "evidenceId": "e-5", "field": "surfaceName", "before": "편집 의뢰 메신저와 작업 내역", "after": "메신저 대화와 작업 내역", "reason": "편집 사실을 surfaceName에서 먼저 노출" }
+{ "caseId": "spouse-05", "evidenceId": "e-5", "field": "surfaceDescription", "before": "편집을 의뢰한 메신저 대화와 렌더링 작업 로그다. 의뢰자와 작업 시점이 기록되어 있다.", "after": "메신저 대화와 렌더링 작업 로그다. 참여자와 작업 시점이 기록되어 있다.", "reason": "핵심 진실인 편집 의도를 먼저 드러냄" }
+{ "caseId": "spouse-05", "evidenceId": "e-6", "field": "surfaceDescription", "before": "회선 장애 접수 내역과 양측의 화상 일정표다. 특정 시간대의 상황 배경을 파악할 수 있다.", "after": "회선 장애 접수 내역과 양측의 화상 일정표다. 그날 상황 배경을 파악할 수 있다.", "reason": "금지된 '특정 X' 패턴" }
+{ "caseId": "spouse-08", "evidenceId": "e-1", "field": "surfaceName", "before": "음성메모와 결제 영수증", "after": "녹음 파일과 결제 영수증", "reason": "anchorTruth 핵심어 '음성메모' 직접 노출" }
+{ "caseId": "spouse-08", "evidenceId": "e-1", "field": "surfaceDescription", "before": "녹음된 음성메모와 당일 결제 영수증이다. 두 사람의 대화가 포함되어 있다.", "after": "녹음 파일과 당일 결제 영수증이다. 같은 장소에서 오간 대화를 확인할 수 있다.", "reason": "anchorTruth 핵심 장치를 surface에서 먼저 공개" }
+
+## DossierCard 위반
+
+{ "caseId": "spouse-02", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1인데 '발송되지 않은'과 '공격 계획처럼 부풀려'까지 넣어 결론을 선반영함.", "fix": "강도윤 씨, 그 출력물을 보고 왜 실제 발송처럼 받아들였는지 설명하십시오." }
+{ "caseId": "spouse-02", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1에서 anchorTruth 핵심어인 '보조 계정'을 직접 노출함.", "fix": "강도윤 씨, 본계정 말고 다른 경로를 따로 둔 이유부터 설명하십시오." }
+{ "caseId": "spouse-02", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1에서 '스캔 시각'이라는 구체 증거 요소를 먼저 공개함.", "fix": "나희주 씨, 자료의 시점이 익명 글 시점과 어긋난다는 점이 본인 판단을 바꿨습니까?" }
+{ "caseId": "spouse-02", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1에서 '집에서 스캔한 서류를 가족 공유 공간에 올렸다'는 핵심 행위를 거의 완성형으로 노출함.", "fix": "강도윤 씨, 그 서류가 집 안 공유 공간까지 이어진 경위를 설명하십시오." }
+{ "caseId": "spouse-04", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1에서 '캡처를 먼저 남겼다'는 순서를 확정해 partial 수준으로 올라감.", "fix": "백다은 씨, 동기화된 태블릿을 확인하게 된 경위와 왜 바로 대면하지 않았는지 설명하십시오." }
+{ "caseId": "spouse-04", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1이 '우연한 참견이라 보기 어렵다'고 결론을 먼저 깔아 둠.", "fix": "윤하준 씨, 그 개입이 단순한 우연만은 아니었다는 지적에 대해 설명하십시오." }
+{ "caseId": "spouse-05", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1에 구체 시각과 변경 항목 두 개를 함께 넣어 hint 범위를 넘음.", "fix": "민재 씨, 사건 사흘 전 밤에 사용 규칙을 바꾼 이유를 순서대로 설명하십시오." }
+{ "caseId": "spouse-05", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1에 구체 시각과 '구 관리자 코드'까지 제시해 hint가 아니라 partial처럼 보임.", "fix": "소담 씨, 사건 당일 예약 시간에 서재에 들어간 사실은 인정하십니까." }
+{ "caseId": "spouse-05", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1에 파일 길이와 export 형식을 직접 제시함.", "fix": "민재 씨, 제출한 파일은 왜 원본 전체가 아니라 따로 정리된 형태였습니까." }
+{ "caseId": "spouse-05", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1에서 '같은 대화의 연속 발언이 아니다'라는 핵심 진실을 먼저 공개함.", "fix": "소담 씨, 그 표현이 나온 앞뒤 상황부터 설명해 주십시오." }
+{ "caseId": "spouse-05", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1에 제3자 실명, 직접 지시 문구, '원본처럼 제시'까지 한꺼번에 들어가 full 수준임.", "fix": "민재 씨, 그 파일을 정리하는 과정에 다른 사람의 손이 들어간 이유를 설명하십시오." }
+{ "caseId": "spouse-06", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1에 해시태그 원문과 최종 노출 상태를 그대로 제시해 너무 구체적임.", "fix": "전서희 씨, 원래 붙여 둔 창작 맥락이 최종 화면에서 충분히 보였다고 생각하십니까." }
+{ "caseId": "spouse-06", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1에 조회자 실명과 로그 결과를 직접 공개함.", "fix": "전서희 씨, 회사 쪽 인물이 그 게시물을 본 사실이 드러난 뒤에도 같은 말을 하시겠습니까." }
+{ "caseId": "spouse-06", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1에 동료의 첫 문장을 통째로 인용해 partial 수준으로 올라감.", "fix": "정우람 씨, 동료의 첫 반응이 곧바로 단정이었다고 보긴 어려운데도 왜 폭로로만 받아들였습니까." }
+{ "caseId": "spouse-06", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1에 6분 차이와 평가 문구까지 넣어 과도하게 구체적임.", "fix": "전서희 씨, 배우자와 확인하기도 전에 회사 쪽 대응이 먼저 나간 순서를 어떻게 보십니까." }
+{ "caseId": "spouse-06", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1에 해명문·HR·확인 전이라는 타임라인 결론을 먼저 공개함.", "fix": "정우람 씨, 배우자 확인보다 회사 대응이 앞선 순서를 지금도 문제없다고 보십니까." }
+{ "caseId": "spouse-07", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1에서 '아침 카테고리만 빠졌다'는 핵심 편집 결과를 먼저 확정함.", "fix": "이태준 씨, 원본 이력과 내보내기 파일 사이에 빠진 부분이 생긴 이유를 설명해 보십시오." }
+{ "caseId": "spouse-07", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1에 병원 예약·세탁 수거·주문 기록을 한꺼번에 나열해 보이지 않는 노동를 너무 많이 공개함.", "fix": "이태준 씨, 보이지 않는 기록들을 들이밀면서도 왜 냉장고에는 횟수부터 적기 시작했습니까." }
+{ "caseId": "spouse-07", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1에 사흘·세 번이라는 구체 횟수를 먼저 노출함.", "fix": "이태준 씨, 그 숫자 메모를 계속 고쳐 붙인 진짜 이유가 무엇입니까." }
+{ "caseId": "spouse-07", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1에 '오늘 아침만 4번'이라는 구체 문구와 횟수를 먼저 노출함.", "fix": "정다혜 씨, 메신저에 횟수로 말하기 시작한 순간 이미 점수판 언어가 됐다는 걸 알고 있었습니까." }
+{ "caseId": "spouse-08", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1에 anchorTruth 핵심 문구 '상담까지만'과 단계별 설명 요구가 들어가 full에 가까움.", "fix": "한서진 씨, 카페에서 정한 선 안에서 움직였다고 보시는 근거를 설명하십시오." }
+{ "caseId": "spouse-08", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1에 합의 문구를 그대로 인용함.", "fix": "류현석 씨, 카페에서 법률 상담을 언급한 합의 자체는 부인하십니까." }
+{ "caseId": "spouse-08", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1에 47분과 2022년 대출정리서까지 넣어 구체성이 과도함.", "fix": "한서진 씨, 기본 서류를 보낸 뒤 과거 금융문서가 추가된 사실은 맞습니까." }
+{ "caseId": "spouse-08", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1에 신청 번호·사건 번호 부재라는 핵심 판단 근거를 먼저 노출함.", "fix": "류현석 씨, 상담 자료만 보고 실제 실행으로 단정한 근거가 무엇입니까." }
+{ "caseId": "spouse-08", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1에 메시지 원문을 그대로 인용함.", "fix": "류현석 씨, 누나에게 보낸 설명이 알고 있던 합의까지 포함한 전체 진술이었습니까." }
+
+## 참고 지적
+
+- internal evidence `name/description`는 surface보다 훨씬 강한 스포일러를 담고 있는 항목이 남아 있습니다. 운영 툴이나 디버그 화면에 노출될 가능성이 있으면 별도 마스킹을 권장합니다.
+- 특히 `case-spouse-04 e-5`, `case-spouse-05 e-4/e-5`, `case-spouse-08 e-1/e-3/e-5`는 실명·의도·핵심 진실이 거의 직설적으로 적혀 있습니다.

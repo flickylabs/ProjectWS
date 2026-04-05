@@ -1,0 +1,126 @@
+[Evidence 위반]
+{"caseId": "case-neighbor-11", "evidenceId": "e-1", "field": "surfaceDescription", "before": "창고 침입 장면을 촬영한 짧은 클립 영상이다. 촬영 시점과 편집 여부 확인이 필요하다.", "after": "한 구간만 담긴 짧은 영상이다. 생성 시점과 앞뒤 맥락 확인이 필요하다.", "reason": "\"침입 장면\"이라고 단정해 핵심 쟁점을 먼저 노출합니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-1", "field": "surfaceName", "before": "창고 침입 짧은 클립 영상", "after": "짧은 영상 클립", "reason": "혐의를 먼저 단정하는 표현(침입)이 들어가 표면 단계에서 사건 방향을 고정합니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-2", "field": "surfaceDescription", "before": "서비스도어 출입 로그와 NFC 복제 앱 사용 기록이다. 출입 주체와 앱 사용 경위 확인이 필요하다.", "after": "출입 관련 기록과 휴대기기 사용 기록이다. 기록의 연결성과 사용 경위 확인이 필요하다.", "reason": "앱 종류와 방식이 너무 구체적이라 초기 단서 단계에서 숨은 방법을 노출합니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-2", "field": "surfaceName", "before": "서비스도어 출입로그와 NFC 복제앱 기록", "after": "출입 기록과 기기 사용 기록", "reason": "서비스명·기술수단(NFC 복제앱)을 surfaceName에 직접 노출합니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-3", "field": "surfaceDescription", "before": "재고 손실 현장 사진과 직원 진술 초안 문서다. 손실 규모와 진술 내용 확인이 필요하다.", "after": "현장 사진과 진술 관련 초안 문서다. 촬영 경위와 문서 작성 맥락 확인이 필요하다.", "reason": "손실을 기정사실화해 연출 가능성 검토 여지를 줄입니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-3", "field": "surfaceName", "before": "재고손실 사진과 직원 진술 초안", "after": "현장 사진과 진술 초안", "reason": "\"재고손실\"이라고 결과를 먼저 규정해 표면 정보가 기울어집니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-4", "field": "surfaceDescription", "before": "건물주 측의 보수 및 임대료 감면안 초안 이메일이다. 제안 내용과 경위 확인이 필요하다.", "after": "어떤 조치를 검토하는 내용이 담긴 내부 메일이다. 작성 시점과 전달 경위 확인이 필요하다.", "reason": "건물주 측 검토 사실을 표면 설명에서 직접 노출합니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-4", "field": "surfaceName", "before": "보수·임대료 감면안 초안 이메일", "after": "내부 검토 메일", "reason": "핵심 반전인 보수·감면 검토 사실을 surfaceName에서 바로 드러냅니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-5", "field": "surfaceDescription", "before": "당사자 간 비밀 메신저 대화 기록이다. 대화 내용과 맥락 확인이 필요하다.", "after": "당사자 사이 대화 기록이다. 시점과 맥락 확인이 필요하다.", "reason": "\"비밀 메신저\"라는 표현이 불필요하게 성격을 먼저 규정합니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-5", "field": "surfaceName", "before": "비밀 메신저 대화 기록", "after": "대화 기록", "reason": "\"비밀\"이라는 판단어가 들어가 선입견을 줍니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-6", "field": "surfaceDescription", "before": "보상요구서 문서 메타데이터와 포렌식 비교 분석표다. 문서 작성 경위와 무결성 확인이 필요하다.", "after": "문서 속성과 비교 내용을 정리한 자료다. 작성 경위와 문서 간 연결성 확인이 필요하다.", "reason": "\"보상요구서\"와 \"포렌식\"을 전면에 두면 공모·문서 동일성 추론을 너무 빨리 유도합니다."}
+{"caseId": "case-neighbor-11", "evidenceId": "e-6", "field": "surfaceName", "before": "보상요구서 메타데이터와 포렌식 비교표", "after": "문서 정보표와 비교 자료", "reason": "포렌식 비교표라는 표현이 분석 방향을 너무 빨리 열어 줍니다."}
+{"caseId": "case-neighbor-12", "evidenceId": "e-1", "field": "surfaceDescription", "before": "환불을 요구하는 게시글과 자작 정산표 캡처 이미지다. 정산 근거와 요구 내용 확인이 필요하다.", "after": "게시글 캡처와 정산표 이미지다. 작성 근거와 계산 방식 확인이 필요하다.", "reason": "\"자작\"은 평가어라서 초기 단계에서 신뢰도를 먼저 깎아 버립니다."}
+{"caseId": "case-neighbor-12", "evidenceId": "e-1", "field": "surfaceName", "before": "환불 요구 글과 정산표 캡처", "after": "게시글 캡처와 표 이미지", "reason": "요구 성격을 먼저 강조하고 있어 표면 정보가 공격적으로 기웁니다."}
+{"caseId": "case-neighbor-12", "evidenceId": "e-2", "field": "surfaceDescription", "before": "카드 결제 취소 알림과 뒤늦게 보낸 안내 메시지다. 취소 시점과 안내 경위 확인이 필요하다.", "after": "결제 취소 알림과 이후 안내 메시지다. 발생 시점과 전달 순서 확인이 필요하다.", "reason": "\"뒤늦게\"는 책임 판단을 먼저 실어 줍니다."}
+{"caseId": "case-neighbor-12", "evidenceId": "e-2", "field": "surfaceName", "before": "카드취소 알림과 늦은 안내 메시지", "after": "결제 취소 알림과 안내 메시지", "reason": "\"늦은\"은 해석이 섞인 표현이라 표면 텍스트에 부적절합니다."}
+{"caseId": "case-neighbor-12", "evidenceId": "e-3", "field": "surfaceDescription", "before": "과거 공동구매의 캐시백과 반품 차액 정산 내역이다. 정산 기준과 처리 경위 확인이 필요하다.", "after": "이전 라운드 정산 관련 내역이다. 처리 경위와 정산 기준 확인이 필요하다.", "reason": "캐시백·반품차액을 표면 단계에서 바로 제시하면 숨은 금액 구조를 지나치게 노출합니다."}
+{"caseId": "case-neighbor-12", "evidenceId": "e-3", "field": "surfaceName", "before": "과거 공동구매 캐시백·반품차액 내역", "after": "과거 정산 내역", "reason": "세부 항목을 먼저 열어 핵심 반전인 이전 라운드 자금 문제를 너무 빨리 짚습니다."}
+{"caseId": "case-neighbor-12", "evidenceId": "e-4", "field": "surfaceDescription", "before": "참가금 관련 계좌 거래내역과 개인계좌 이체 기록이다. 거래 당사자와 금액 확인이 필요하다.", "after": "관련 계좌 거래내역과 이체 기록이다. 이동 경로와 사용 맥락 확인이 필요하다.", "reason": "개인계좌 이동을 표면 설명에서 직접 밝히면 반전이 사라집니다."}
+{"caseId": "case-neighbor-12", "evidenceId": "e-4", "field": "surfaceName", "before": "참가금 계좌거래내역과 개인계좌 이체 기록", "after": "계좌거래내역과 이체 기록", "reason": "\"개인계좌\"를 드러내면 핵심 숨은 구조를 초반에 바로 노출합니다."}
+{"caseId": "case-neighbor-12", "evidenceId": "e-5", "field": "surfaceDescription", "before": "수입사 최종 정산서와 국제 배송료 재계산 자료다. 정산 내역과 계산 근거 확인이 필요하다.", "after": "정산 내용과 재계산 결과를 담은 자료다. 계산 기준과 확정 시점 확인이 필요하다.", "reason": "수입사·국제배송료를 전면에 두면 숨은 계산 구조를 너무 빨리 안내합니다."}
+{"caseId": "case-neighbor-12", "evidenceId": "e-5", "field": "surfaceName", "before": "수입사 정산서와 국제배송료 재계산표", "after": "정산서와 재계산표", "reason": "기관 유형과 계산 항목을 너무 구체적으로 드러냅니다."}
+{"caseId": "case-partner-02", "evidenceId": "e-1", "field": "surfaceDescription", "before": "CRM 시스템의 리드 등록 기록과 제안서 수정 이력 로그 묶음이다.", "after": "영업 등록 이력과 제안 문서 수정 기록이 묶인 자료다. 작성 순서와 기여 흐름 확인이 필요하다.", "reason": "서비스명을 직접 드러내면 표면 단계 정보가 과도하게 구체적입니다."}
+{"caseId": "case-partner-02", "evidenceId": "e-1", "field": "surfaceName", "before": "CRM 리드 이력과 제안서 버전 로그", "after": "영업 이력과 문서 버전 로그", "reason": "서비스명(CRM)을 surfaceName에 직접 노출합니다."}
+{"caseId": "case-partner-02", "evidenceId": "e-2", "field": "surfaceDescription", "before": "부속 계약문서와 사내 성과급 승인안이 함께 묶인 자료다.", "after": "부속 계약문서와 내부 승인안이 함께 묶인 자료다. 작성 시점과 반영 범위 확인이 필요하다.", "reason": "성과급 승인안을 표면 설명에서 직접 못 박으면 공로·보상 갈등을 너무 빨리 노출합니다."}
+{"caseId": "case-partner-02", "evidenceId": "e-2", "field": "surfaceName", "before": "계약 부속합의서와 성과급 승인안", "after": "부속 계약문서와 내부 승인안", "reason": "\"성과급\"을 surfaceName에 앞세우면 분쟁의 성격을 너무 일찍 좁힙니다."}
+{"caseId": "case-partner-02", "evidenceId": "e-4", "field": "surfaceDescription", "before": "메일 스레드 원본과 사업자등록증 첨부 파일이 함께 묶여 있다.", "after": "메일 기록과 첨부 문서가 함께 묶인 자료다. 발신 경로와 첨부 목적 확인이 필요하다.", "reason": "원본 여부와 등록증 첨부 사실을 표면에서 바로 말하면 숨은 거래 시도가 노출됩니다."}
+{"caseId": "case-partner-02", "evidenceId": "e-4", "field": "surfaceName", "before": "원본 이메일 스레드와 사업자등록증", "after": "메일 기록과 첨부 문서", "reason": "\"원본\"과 \"사업자등록증\"은 신뢰도와 제3자 연결고리를 너무 빨리 드러냅니다."}
+{"caseId": "case-partner-02", "evidenceId": "e-5", "field": "surfaceDescription", "before": "고객사 내부 검토 메모와 담당자 회신이 포함된 기관 자료다.", "after": "내부 검토 내용과 회신이 함께 담긴 자료다. 검토 배경과 전달 맥락 확인이 필요하다.", "reason": "고객사·담당자·컴플라이언스를 표면 설명에서 직접 드러내면 반전 축이 먼저 열립니다."}
+{"caseId": "case-partner-02", "evidenceId": "e-5", "field": "surfaceName", "before": "고객사 컴플라이언스 검토 메모", "after": "내부 검토 메모", "reason": "기관 유형과 컴플라이언스라는 쟁점 단어를 surfaceName에서 바로 노출합니다."}
+{"caseId": "case-partner-02", "evidenceId": "e-6", "field": "surfaceDescription", "before": "역할 배분 시트와 보고서 편집 로그가 함께 묶인 문서다.", "after": "역할 정리 시트와 문서 수정 기록이 함께 묶인 자료다. 변경 흐름과 반영 범위 확인이 필요하다.", "reason": "공로 판단 방향을 표면 설명에서 먼저 제시합니다."}
+{"caseId": "case-partner-02", "evidenceId": "e-6", "field": "surfaceName", "before": "공로배분 시트와 보고서 편집 이력", "after": "역할 배분 시트와 문서 편집 이력", "reason": "\"공로배분\"은 분쟁 결론을 먼저 암시하는 표현입니다."}
+{"caseId": "case-partner-03", "evidenceId": "e-1", "field": "surfaceDescription", "before": "캘린더 초대장과 아젠다 문서의 수정 로그가 남은 기록이다.", "after": "일정 문서와 관련 첨부안의 수정 흐름이 남은 기록이다. 변경 시점과 반영 내용 확인이 필요하다.", "reason": "구체 도구를 먼저 말할 필요가 없습니다."}
+{"caseId": "case-partner-03", "evidenceId": "e-1", "field": "surfaceName", "before": "공유 캘린더 수정 이력", "after": "일정 문서 수정 이력", "reason": "도구 성격(공유 캘린더)을 너무 직접 드러냅니다."}
+{"caseId": "case-partner-03", "evidenceId": "e-2", "field": "surfaceDescription", "before": "디자인 협업 툴에 남은 코멘트와 인쇄 요청 기록이다.", "after": "디자인 관련 코멘트와 출력 요청 기록이다. 지시 순서와 반영 범위 확인이 필요하다.", "reason": "도구명을 전면에 두기보다 증거 종류 중심으로 정리하는 편이 안전합니다."}
+{"caseId": "case-partner-03", "evidenceId": "e-2", "field": "surfaceName", "before": "디자인 툴 출력 요청 로그", "after": "디자인 협업 기록과 출력 요청", "reason": "서비스 성격(툴)을 surfaceName에 직접 노출합니다."}
+{"caseId": "case-partner-03", "evidenceId": "e-3", "field": "surfaceDescription", "before": "대화 한 줄만 남은 캡처로, 발신자와 전후 맥락이 빠져 있다.", "after": "대화 일부가 담긴 캡처다. 앞뒤 맥락 확인이 필요하다.", "reason": "잘린 상태를 너무 직설적으로 말하면 함정 증거임이 바로 드러납니다."}
+{"caseId": "case-partner-03", "evidenceId": "e-3", "field": "surfaceName", "before": "크롭된 메신저 캡처", "after": "메신저 캡처 이미지", "reason": "\"크롭된\"은 신뢰도 판단을 먼저 알려 주는 표현입니다."}
+{"caseId": "case-partner-03", "evidenceId": "e-4", "field": "surfaceDescription", "before": "외부 컨설턴트 음성메모와 단체 대화방 내보내기 묶음이다.", "after": "음성메모와 대화 기록이 함께 묶인 자료다. 발언 시점과 해석 맥락 확인이 필요하다.", "reason": "직함과 원본 여부를 먼저 노출할 필요가 없습니다."}
+{"caseId": "case-partner-03", "evidenceId": "e-4", "field": "surfaceName", "before": "컨설턴트 음성메모와 원본 단톡", "after": "음성메모와 대화 기록", "reason": "직함(컨설턴트)과 \"원본\" 표시가 표면 단계에서 과합니다."}
+{"caseId": "case-partner-03", "evidenceId": "e-6", "field": "surfaceDescription", "before": "투자사 측에서 보낸 확인 메일과 초대장 양식 설명이 첨부돼 있다.", "after": "확인 메일과 관련 설명 자료가 첨부된 문서다. 요청 범위와 전달 맥락 확인이 필요하다.", "reason": "투자사·담당자 정보를 표면 설명에서 직접 드러냅니다."}
+{"caseId": "case-partner-03", "evidenceId": "e-6", "field": "surfaceName", "before": "투자사 담당자 확인 메일", "after": "확인 메일과 첨부 설명", "reason": "기관 유형과 직함(담당자)을 surfaceName에 직접 노출합니다."}
+{"caseId": "case-partner-04", "evidenceId": "e-1", "field": "surfaceDescription", "before": "은행 원본 CSV와 PDF 이체확인서, 수취계좌 확인 자료 묶음이다.", "after": "거래내역과 이체확인 자료가 함께 묶인 문서다. 발급 경로와 수취 정보 확인이 필요하다.", "reason": "은행 원본·CSV·수취계좌 확인까지 전면에 두면 복구 방향을 너무 빨리 알려 줍니다."}
+{"caseId": "case-partner-04", "evidenceId": "e-1", "field": "surfaceName", "before": "은행 거래내역과 이체확인서", "after": "거래내역과 이체확인서", "reason": "기관 유형(은행)을 surfaceName에 직접 드러냅니다."}
+{"caseId": "case-partner-04", "evidenceId": "e-3", "field": "surfaceDescription", "before": "은행 양식처럼 보이는 거래내역 PDF 캡처 한 장이다.", "after": "거래내역처럼 보이는 캡처 이미지 한 장이다. 출처와 작성 경로 확인이 필요하다.", "reason": "표면 설명에서 은행 양식처럼 보인다고 규정하면 함정 성격을 먼저 암시합니다."}
+{"caseId": "case-partner-04", "evidenceId": "e-3", "field": "surfaceName", "before": "은행 직인 표시 거래내역 캡처", "after": "거래내역 캡처 이미지", "reason": "\"직인 표시\"는 편집 의심을 바로 열어 버리는 판단어입니다."}
+{"caseId": "case-partner-04", "evidenceId": "e-4", "field": "surfaceDescription", "before": "스프레드시트 원본과 숨김 열, 삽입된 이미지 파일 묶음이다.", "after": "표 파일과 삽입 이미지가 함께 묶인 자료다. 작성 순서와 파일 간 관계 확인이 필요하다.", "reason": "편집본임을 바로 알려 주면 핵심 반전이 사라집니다."}
+{"caseId": "case-partner-04", "evidenceId": "e-4", "field": "surfaceName", "before": "편집 스프레드시트와 이미지 파일", "after": "표 파일과 이미지 파일", "reason": "\"편집\"은 결론형 표현이라 표면 노출에 부적절합니다."}
+{"caseId": "case-partner-04", "evidenceId": "e-5", "field": "surfaceDescription", "before": "외부 조정인이 보낸 문의 메일과 답변 회신 스레드다.", "after": "문의 메일과 답변 회신이 이어진 자료다. 요청 내용과 회신 경위 확인이 필요하다.", "reason": "직함을 전면에 두기보다 증거 종류 중심으로 제시하는 편이 안전합니다."}
+{"caseId": "case-partner-04", "evidenceId": "e-5", "field": "surfaceName", "before": "조정인 메일과 확인 회신", "after": "문의 메일과 회신", "reason": "직함(조정인)을 surfaceName에 직접 노출합니다."}
+{"caseId": "case-partner-04", "evidenceId": "e-6", "field": "surfaceDescription", "before": "은행 표기 방식 변경 공지문과 세부 적용 설명서다.", "after": "표시 방식 변경 공지와 적용 설명이 담긴 자료다. 변경 시점과 적용 범위 확인이 필요하다.", "reason": "은행 표시 방식 변화가 핵심 반전 축이므로 표면 설명을 더 중립적으로 눌러야 합니다."}
+{"caseId": "case-partner-04", "evidenceId": "e-6", "field": "surfaceName", "before": "은행 시스템 변경 공지와 설명서", "after": "시스템 변경 공지와 설명서", "reason": "기관 유형(은행)과 핵심 복구 축을 표면에서 너무 직접 보여 줍니다."}
+{"caseId": "case-partner-05", "evidenceId": "e-1", "field": "surfaceDescription", "before": "은행 원본 이체확인서와 ERP 선급금 전표가 묶인 자료다.", "after": "이체확인 자료와 선급 전표가 함께 묶인 문서다. 집행 시점과 전표 연결 관계 확인이 필요하다.", "reason": "서비스명(ERP)과 \"원본\" 표시가 표면 설명에 과하게 들어가 있습니다."}
+{"caseId": "case-partner-05", "evidenceId": "e-2", "field": "surfaceDescription", "before": "세무사가 보낸 조사대응 제안 메일과 체크리스트 첨부본이다.", "after": "외부 조언이 담긴 제안 메일과 체크리스트 첨부본이다. 발신 경위와 제안 범위 확인이 필요하다.", "reason": "직함과 조사대응 방향을 표면 설명에서 직접 말하면 배후 제안 구조가 너무 빨리 드러납니다."}
+{"caseId": "case-partner-05", "evidenceId": "e-2", "field": "surfaceName", "before": "세무사 조사대응 제안 메일", "after": "제안 메일과 체크리스트", "reason": "직함(세무사)이 들어가고 핵심 반전 축을 너무 빨리 노출합니다."}
+{"caseId": "case-partner-05", "evidenceId": "e-3", "field": "surfaceDescription", "before": "법인 등기부 일부 캡처와 동문 단체방 화면 캡처 묶음이다.", "after": "등기 정보 일부와 대화방 화면 캡처 묶음이다. 연관성 확인이 필요하다.", "reason": "\"동문\"이라는 관계 설명이 표면 단계에서 불필요한 추정을 유도합니다."}
+{"caseId": "case-partner-05", "evidenceId": "e-4", "field": "surfaceDescription", "before": "함께 받은 메일 스레드와 임시 저장된 답장 초안이 남아 있다.", "after": "메일 기록과 임시 저장된 답장 초안이 남아 있는 자료다. 열람 시점과 검토 맥락 확인이 필요하다.", "reason": "둘 다 받았다는 점이 핵심 쟁점이므로 표면 설명에서는 눌러 두는 편이 안전합니다."}
+{"caseId": "case-partner-05", "evidenceId": "e-4", "field": "surfaceName", "before": "공동 수신 메일과 회신 초안", "after": "메일 기록과 회신 초안", "reason": "\"공동 수신\"은 숨은 지식 구조를 표면에서 먼저 노출합니다."}
+{"caseId": "case-partner-05", "evidenceId": "e-6", "field": "surfaceDescription", "before": "제휴 자문사와의 수수료 약정서와 사무실 회계메모 묶음이다.", "after": "외부 계약 관련 문서와 회계 메모가 함께 묶인 자료다. 작성 시점과 관계 확인이 필요하다.", "reason": "자문사 수수료 구조를 표면 설명에서 직접 밝히면 반전이 사라집니다."}
+{"caseId": "case-partner-05", "evidenceId": "e-6", "field": "surfaceName", "before": "자문사 수수료 약정서와 회계메모", "after": "약정서와 회계 메모", "reason": "\"수수료 약정서\"는 핵심 반전인 이해충돌 구조를 너무 빨리 엽니다."}
+{"caseId": "case-partner-06", "evidenceId": "e-1", "field": "surfaceDescription", "before": "발주서 원본과 시공 PM이 남긴 변경지시 기록이다.", "after": "발주서와 현장 변경 기록이 함께 묶인 자료다. 반영 시점과 변경 범위 확인이 필요하다.", "reason": "직함(PM)을 surfaceDescription에 직접 노출합니다."}
+{"caseId": "case-partner-06", "evidenceId": "e-2", "field": "surfaceDescription", "before": "협업 툴 코멘트와 수정된 매장 평면도 파일이다.", "after": "디자인 관련 코멘트와 평면도 버전 파일이다. 지시 시점과 반영 범위 확인이 필요하다.", "reason": "도구명을 직접 드러내기보다 증거 종류로 정리하는 편이 안전합니다."}
+{"caseId": "case-partner-06", "evidenceId": "e-2", "field": "surfaceName", "before": "브랜딩 툴 코멘트와 수정 평면도", "after": "디자인 코멘트와 평면도 버전", "reason": "서비스 성격(브랜딩 툴)을 surfaceName에 직접 노출합니다."}
+{"caseId": "case-partner-06", "evidenceId": "e-3", "field": "surfaceDescription", "before": "현장 부매니저가 보낸 작업 지시 관련 단톡 캡처 한 장이다.", "after": "작업 지시 관련 대화 일부가 담긴 단톡 캡처 한 장이다. 전달 맥락 확인이 필요하다.", "reason": "직함을 빼고 캡처의 종류만 남기는 편이 안전합니다."}
+{"caseId": "case-partner-06", "evidenceId": "e-3", "field": "surfaceName", "before": "부매니저 단톡 캡처", "after": "단톡 캡처 이미지", "reason": "직함(부매니저)이 surfaceName에 직접 들어가 있습니다."}
+{"caseId": "case-partner-06", "evidenceId": "e-5", "field": "surfaceDescription", "before": "상가 관리소의 공사허가 변경 기록과 출입 게이트 로그다.", "after": "공사허가 변경 기록과 출입 관련 로그가 함께 묶인 자료다. 접수 시점과 전달 범위 확인이 필요하다.", "reason": "상가 관리소를 전면에 두기보다 기록 종류 중심으로 제시하는 편이 안전합니다."}
+{"caseId": "case-partner-06", "evidenceId": "e-5", "field": "surfaceName", "before": "관리소 공사허가 변경 기록", "after": "공사허가 변경 기록", "reason": "기관 유형(관리소)을 표면에서 직접 노출합니다."}
+{"caseId": "case-partner-06", "evidenceId": "e-6", "field": "surfaceDescription", "before": "시공 PM이 작성한 현장일지와 추가 비용 견적서 묶음이다.", "after": "현장일지와 추가 비용 견적서가 함께 묶인 자료다. 작성 시점과 변경 사유 확인이 필요하다.", "reason": "직함(PM)을 surfaceDescription에 직접 노출합니다."}
+
+[DossierCard 위반]
+{"caseId": "neighbor-11", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1 과노출: UID·NFC·서비스도어 등 구체 증거를 직접 제시해 hint 단계를 넘깁니다.", "fix": "그 출입이 정식 절차를 거친 것이 맞는지부터 분명히 해 주시겠습니까?"}
+{"caseId": "neighbor-11", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1 과노출: 31초·원본/편집본을 직접 제시해 hint 단계가 아니라 검증 결론처럼 들립니다.", "fix": "처음 제시한 영상이 그대로의 자료였는지부터 답해 주시겠습니까?"}
+{"caseId": "neighbor-11", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1 과노출: 실제 피해와 연출 손실을 섞었다는 결론을 먼저 말해 버립니다.", "fix": "사진과 메모를 보상 근거로 삼을 때 자료를 어떻게 가려 봤는지부터 말씀해 주시겠습니까?"}
+{"caseId": "neighbor-11", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1 과노출: 같은 상자를 반복 촬영했다는 검증 결과를 바로 제시합니다.", "fix": "제출한 사진이 손실 범위를 보여 주는 방식부터 설명해 주시겠습니까?"}
+{"caseId": "neighbor-11", "cardId": "dossier-2", "questionId": "dossier-2.b.q3", "issue": "금지 표현: \"당신\" 사용.", "fix": "건물주 측이 이미 보수·감면안을 검토 중이었다면, 그때 말한 '완전 무시'는 과장 아닙니까?"}
+{"caseId": "neighbor-11", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1 과노출: 핵심 문구를 그대로 제시해 대화의 숨은 맥락을 먼저 열어 버립니다.", "fix": "그 대화가 어떤 상황에서 오간 말이었는지부터 설명해 주시겠습니까?"}
+{"caseId": "neighbor-11", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1 과노출: 보상 금액과 시점 조율이라는 핵심 사실을 바로 확정합니다.", "fix": "상대와 보상 시점을 맞춰 본 적이 있는지부터 분명히 말씀해 주시겠습니까?"}
+{"caseId": "neighbor-12", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1 과노출: 공개 글과 원본 요구의 선후를 바로 제시해 hint 단계를 넘깁니다.", "fix": "공개 글을 올리기 전에 어떤 확인을 했는지부터 말씀해 주시겠습니까?"}
+{"caseId": "neighbor-12", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1 과노출: 금액과 사흘 공백을 직접 제시해 결론 압박이 너무 강합니다.", "fix": "취소 사실을 알게 된 뒤 안내가 왜 바로 나가지 않았는지부터 설명해 주시겠습니까?"}
+{"caseId": "neighbor-12", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1 과노출: 41만 원·21만 원·개인계좌라는 핵심 구조를 한 번에 공개합니다.", "fix": "작년 정산이 남은 부분이 있었는지부터 분명히 해 주시겠습니까?"}
+{"caseId": "neighbor-12", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1 과노출: 같은 계좌 구조 재시작이라는 판단을 먼저 확정합니다.", "fix": "작년 정산을 마무리하지 못한 책임이 전혀 없다고 보시는지부터 답해 주시겠습니까?"}
+{"caseId": "neighbor-12", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1 과노출: 같은 개인계좌 재사용 제안을 직접 들이밀어 hint 단계를 넘깁니다.", "fix": "같은 계좌를 계속 쓰자는 이야기가 먼저 나온 경위부터 말씀해 주시겠습니까?"}
+{"caseId": "neighbor-12", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1 과노출: 32만 원과 94만 원 구조를 한 번에 꺼내 full 단계에 가깝습니다.", "fix": "이번 환급 규모를 처음부터 충분히 설명했는지부터 짚어 보시겠습니까?"}
+{"caseId": "partnership-02", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1 과노출 + 금지 표현: CRM 로그와 피해자 서사를 직접 겨냥하고 \"당신\"도 사용합니다.", "fix": "초기 영업 기여가 있었다는 점과 별개로, 본인 판단을 다시 볼 부분은 없다고 보십니까?"}
+{"caseId": "partnership-02", "cardId": "dossier-1", "questionId": "dossier-1.a.q2", "issue": "금지 표현: \"당신\" 사용.", "fix": "성과급 승인안에서 이름이 빠진 건 보입니다. 그렇다면 왜 다른 행동에 대한 설명은 계속 뒤로 미뤘습니까?"}
+{"caseId": "partnership-02", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1 과노출 + 금지 표현: 최종 문서 상태를 거의 결론처럼 제시하고 \"당신\"을 씁니다.", "fix": "최종 문서에서 공로 정리가 한쪽으로 기운 이유부터 설명해 주시겠습니까?"}
+{"caseId": "partnership-02", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1 과노출: 원본 메일·첨부·시훈데이터랩 파일럿까지 직접 제시해 hint 단계를 넘깁니다.", "fix": "공식 라인 밖에서 따로 타진한 내용이 있었는지부터 분명히 말씀해 주시겠습니까?"}
+{"caseId": "partnership-02", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1 과노출 + 금지 표현: 단일 창구 요청의 선후를 직진으로 묻고 \"당신\"을 사용합니다.", "fix": "단일 창구 정리가 어떻게 시작됐는지부터 순서대로 말씀해 주시겠습니까?"}
+{"caseId": "partnership-02", "cardId": "dossier-2", "questionId": "dossier-2.b.q3", "issue": "금지 표현: \"당신\" 사용.", "fix": "계약이 흔들릴까 두려웠다는 이유가 있더라도, 그 공백이 결국 단독 통제에 유리하게 작동한 건 사실 아닙니까?"}
+{"caseId": "partnership-02", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1 과노출: RACI 6대4 구조와 외부 라인 우회를 바로 결론처럼 제시합니다.", "fix": "기존에 합의한 역할 기준을 스스로 넘은 부분이 있었는지부터 답해 주시겠습니까?"}
+{"caseId": "partnership-02", "cardId": "dossier-3", "questionId": "dossier-3.a.q2", "issue": "금지 표현: \"당신\" 사용.", "fix": "RACI를 공로 문제에서는 방패처럼 들었지만, 자기 우회 행동에는 같은 기준을 늦게 적용한 것 아닙니까?"}
+{"caseId": "partnership-02", "cardId": "dossier-3", "questionId": "dossier-3.a.q3", "issue": "금지 표현: \"당신\" 사용.", "fix": "결국 우회와 상대의 단독 구조 만들기가 같은 합의를 무너뜨렸다는 점까지 인정하십니까?"}
+{"caseId": "partnership-02", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1 과노출: 고객사 검토 메모와 직접 계기를 곧바로 제시해 full 단계처럼 들립니다.", "fix": "단일 창구가 된 배경을 내부에 충분히 설명했는지부터 말씀해 주시겠습니까?"}
+{"caseId": "partnership-03", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1 과노출: 정확한 시각과 편집 주체를 직접 제시해 hint 단계를 넘깁니다.", "fix": "막판 아젠다를 바꿀 때 상대와 다시 확인할 여지는 없었는지부터 말씀해 주시겠습니까?"}
+{"caseId": "partnership-03", "cardId": "dossier-1", "questionId": "dossier-1.a.q3", "issue": "불자연한 영어 혼용: \"lead presenter\".", "fix": "리드 발표자 표기 하나를 근거로 투자자 요청 전체를 단독 리드로 읽은 이유를 설명해 주시겠습니까?"}
+{"caseId": "partnership-03", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1 과노출: 댓글 문구를 그대로 제시해 핵심 단서를 바로 열어 버립니다.", "fix": "출력 요청을 먼저 보낸 경위부터 차근차근 설명해 주시겠습니까?"}
+{"caseId": "partnership-03", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1 과노출: 잘린 문구를 그대로 제시해 해석의 핵심 단서를 먼저 공개합니다.", "fix": "짧은 캡처만으로 상대 의도를 단정한 이유부터 말씀해 주시겠습니까?"}
+{"caseId": "partnership-03", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1 과노출: '도윤 lead'라는 핵심 표기를 직접 꺼내 hint 단계를 넘깁니다.", "fix": "잘린 신호들만 보고 악의로 읽은 이유가 무엇이었는지부터 설명해 주시겠습니까?"}
+{"caseId": "partnership-03", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1 과노출: 12분 버전과 10시 문서화 약속을 한 번에 제시해 partial 단계에 가깝습니다.", "fix": "다른 안으로 준비하면서도 문서 확정을 다시 열지 않은 이유부터 말씀해 주시겠습니까?"}
+{"caseId": "partnership-03", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1 과노출: 11분 버전과 10시 확정 약속을 직접 묶어 제시합니다.", "fix": "별도 리허설을 하면서도 약속을 다시 확인하지 않은 이유부터 답해 주시겠습니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1 과노출: 친구 회사 계약과 비공개 정산이라는 결론을 먼저 제시합니다.", "fix": "과거 외주 정산에서 숨기고 넘어간 부분이 있었는지부터 분명히 해 주시겠습니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-1", "questionId": "dossier-1.a.q3", "issue": "금지 표현: \"당신\" 사용.", "fix": "원본 이체확인서상 수취계좌가 정산용 계좌라면, 왜 처음부터 '외부 유출이 아니다'를 구조 설명으로 바꾸지 않고 방어 문장으로만 말했습니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1 과노출 + 금지 표현: 세 줄 이체를 세 건 외부유출로 읽었다는 판단을 확정하고 \"당신\"을 사용합니다.", "fix": "현재 이체를 해석할 때 인상에 기대어 단정한 부분은 없었는지부터 답해 주시겠습니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1 과노출 + 금지 표현: 메타데이터·은행 발급 PDF 여부를 직접 제시하고 \"당신\"을 사용합니다.", "fix": "그 자료의 출처를 확인하는 일보다 방어부터 앞세운 이유가 무엇이었는지 말씀해 주시겠습니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-2", "questionId": "dossier-2.a.q2", "issue": "금지 표현: \"당신\" 사용.", "fix": "그 캡처를 보는 순간 과거 사건이 덮쳐 와 판단도 거칠어졌던 것 아닙니까? 현재 쟁점과 과거 상처를 정말 분리하고 있었습니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-2", "questionId": "dossier-2.a.q3", "issue": "금지 표현: \"당신\" 사용.", "fix": "편집본이 개인 유용 서사와 겹치자, 숫자 설명보다 '횡령 아님'이라는 방어를 먼저 세운 것 아닙니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1 과노출: 팀 폴더 스프레드시트 산출물이라는 검증 결론을 바로 제시합니다.", "fix": "처음 낸 거래 자료가 원문 그대로였는지부터 분명히 해 주시겠습니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1 과노출 + 금지 표현: 조정인 메일의 요구 내용을 직접 제시하고 \"당신\"을 사용합니다.", "fix": "과거 사건과 현재 협상을 나눠 설명하지 못한 이유부터 말씀해 주시겠습니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-3", "questionId": "dossier-3.a.q2", "issue": "금지 표현: \"당신\" 사용.", "fix": "은행 설명서가 분리 표기를 풀어 주는데도, 왜 그 구조를 더 일찍 설명하지 못해 손실 오해를 방치했습니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-3", "questionId": "dossier-3.a.q3", "issue": "금지 표현: \"당신\" 사용.", "fix": "이제 과거 리베이트 자료와 조정인 메일까지 모두 나온 상태입니다. 과거 은폐가 지금 방어 말투까지 오염시켰다는 점을 인정합니까?"}
+{"caseId": "partnership-04", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1 과노출: 회신 문구와 자료 유지 사실을 직접 제시해 hint 단계를 넘깁니다.", "fix": "자료의 형식을 알면서도 같은 자료를 계속 쓴 이유부터 설명해 주시겠습니까?"}
+{"caseId": "partnership-05", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1 과노출: 공동 전자승인 토큰·노트북·2,400만원을 한 번에 제시해 hint 단계를 넘깁니다.", "fix": "공동 승인 없이 먼저 집행한 부분이 있었는지부터 분명히 해 주시겠습니까?"}
+{"caseId": "partnership-05", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1 과노출: 공동 수신 사실과 개인 유용 프레임을 직접 맞붙여 결론 압박이 강합니다.", "fix": "그 이체를 처음부터 개인 유용으로 단정한 근거가 충분했다고 보시는지부터 답해 주시겠습니까?"}
+{"caseId": "partnership-05", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1 과노출 + 불자연한 영어 혼용: \"크롭된 soft 자료\" 표현과 평가를 한 번에 넣었습니다.", "fix": "상대 의심을 전부 악의로만 읽은 건 아닌지부터 돌아봐 주시겠습니까?"}
+{"caseId": "partnership-05", "cardId": "dossier-2", "questionId": "dossier-2.a.q2", "issue": "금지 표현: \"당신\" 사용.", "fix": "소라의 드래프트가 남아 있었다 해도, 문서화 누락이 그 프레임의 빌미를 준 사실까지 부정하실 수 있습니까?"}
+{"caseId": "partnership-05", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1 과노출: 캡처 두 장만으로 공식석상에서 의혹을 키웠다는 결론을 바로 제시합니다.", "fix": "캡처 몇 장만으로 의혹을 키운 판단부터 설명해 주시겠습니까?"}
+{"caseId": "partnership-05", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1 과노출 + 금지 표현: 회의 메모 결론을 그대로 제시하고 \"당신\"을 사용합니다.", "fix": "비용 설명을 완화해 전달하는 데 본인 판단이 더 실린 건 아닌지 말씀해 주시겠습니까?"}
+{"caseId": "partnership-05", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1 과노출 + 금지 표현: 공지 문구 확인 사실과 책임 귀속을 한 번에 제시하고 \"당신\"을 사용합니다.", "fix": "공지 문구를 함께 보고도 책임을 한쪽에만 돌릴 수 있다고 보십니까?"}
+{"caseId": "partnership-05", "cardId": "dossier-3", "questionId": "dossier-3.b.q3", "issue": "금지 표현: \"당신\" 사용.", "fix": "재무책임자로서 경고 신호를 놓쳤다는 두려움 때문에 피해자 서사를 더 세게 밀었던 것 아닙니까?"}
+{"caseId": "partnership-06", "cardId": "dossier-1", "questionId": "dossier-1.a.q1", "issue": "q1 과노출: 14분·발주서·PM 로그·대체 모델 코드를 직접 제시해 hint 단계가 아닙니다.", "fix": "확정 전 발주를 먼저 밀어 넣은 부분이 있었는지부터 설명해 주시겠습니까?"}
+{"caseId": "partnership-06", "cardId": "dossier-1", "questionId": "dossier-1.b.q1", "issue": "q1 과노출: 댓글 속 세부 문구를 직접 제시해 핵심 단서를 너무 빨리 공개합니다.", "fix": "디자인 조정이 일정 변경으로까지 이어진 이유부터 말씀해 주시겠습니까?"}
+{"caseId": "partnership-06", "cardId": "dossier-2", "questionId": "dossier-2.a.q1", "issue": "q1 과노출: 관리소 시간 압박과 승인선 예외 취급을 한 번에 결론처럼 묶습니다.", "fix": "긴급하다는 이유로 승인선을 넘은 판단이 있었는지부터 답해 주시겠습니까?"}
+{"caseId": "partnership-06", "cardId": "dossier-2", "questionId": "dossier-2.b.q1", "issue": "q1 과노출: 한 줄 정리가 또 다른 최종안처럼 읽혔다는 효과를 먼저 확정합니다.", "fix": "정리하려던 메시지가 다른 사람에게는 최종안처럼 읽힐 수 있었다는 점부터 보시겠습니까?"}
+{"caseId": "partnership-06", "cardId": "dossier-3", "questionId": "dossier-3.a.q1", "issue": "q1 과노출: 현장일지의 핵심 결론을 직접 제시해 지연 구조를 먼저 공개합니다.", "fix": "지연 원인을 한쪽 책임으로만 정리한 이유부터 설명해 주시겠습니까?"}
+{"caseId": "partnership-06", "cardId": "dossier-3", "questionId": "dossier-3.b.q1", "issue": "q1 과노출: \"브랜드 일관성\"이라는 자기방어 문구와 일정 개입 축소를 직접 결론냅니다.", "fix": "본인 변경을 작게 말한 부분이 있었는지부터 분명히 해 주시겠습니까?"}

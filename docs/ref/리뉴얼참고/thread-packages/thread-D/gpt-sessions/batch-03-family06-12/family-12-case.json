@@ -1,0 +1,781 @@
+{
+  "caseId": "case-family-12",
+  "meta": {
+    "relationshipType": "family",
+    "conflictSeed": "CS-5",
+    "variableModules": [
+      "VM-B"
+    ],
+    "twistModule": "TW-4",
+    "difficulty": "hard",
+    "anchorTruth": "문지연이 가족방에 올린 '현우가 상갓집도 결국 정산이라며 엄마 통장부터 보자고 했다'는 캡처는 현우의 원문이 아니라, 현우의 비용 문의 두 줄과 지연이 나와의 채팅에 적어 둔 문장을 이어 붙여 만든 위조본이었다.",
+    "emotionalBait": "읽음 표시가 선명한 카톡 캡처, '장례도 결국 돈'이라는 문구, 친척방 전달 흔적이 겹치면서 처음에는 현우가 애도보다 돈부터 챙긴 비정한 사람처럼 보인다.",
+    "resolutionDilemma": "현우가 장례 중 사적으로 비용 불만을 흘린 건 분명 문제지만, 지연이 그 불만을 위조 캡처로 부풀려 가족방들에 퍼뜨린 순간 명예 훼손의 무게가 훨씬 커져, 누가 먼저 상처를 줬는지보다 훼손된 평판과 정산 절차를 어떻게 동시에 복구할지가 어렵다.",
+    "familyRelation": "siblings"
+  },
+  "duo": {
+    "partyA": {
+      "name": "문지연",
+      "age": 43,
+      "occupation": "보험심사팀 대리",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "먼저 '아버지 장례를 돈 얘기로 만든 건 현우'라고 도덕 프레임을 세운 뒤 자신은 가족을 보호한 것뿐이라고 말한다.",
+      "pride": 7,
+      "fear": "장례 정산을 맡은 장녀가 돈을 숨긴 사람처럼 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "family_chat_admin_and_album_sorter",
+      "dailyRoutine": "어머니 약과 장례 후 서류를 정리하고, 영수증 사진과 가족 단톡 공지를 나눠 관리한다.",
+      "sensitivePoints": [
+        "장례 정산",
+        "장녀 역할",
+        "동생의 돈 질문"
+      ],
+      "verbalTells": [
+        {
+          "type": "moral_frame",
+          "trigger": "lying",
+          "pattern": "'애도 중에 그런 말을 한 것 자체가 문제'를 반복해 위조와 확산보다 현우의 태도를 더 큰 잘못처럼 만든다."
+        },
+        {
+          "type": "public_protection_claim",
+          "trigger": "cornered",
+          "pattern": "가족방 공개를 '어머니 보호'라고 재포장한다."
+        },
+        {
+          "type": "ranking_recall",
+          "trigger": "emotional",
+          "pattern": "장례식 첫날부터 자신이 한 절차를 번호 매기듯 늘어놓으며 발언권을 독점한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "현우야",
+        "toJudge": "제 동생",
+        "angry": "현우!"
+      }
+    },
+    "partyB": {
+      "name": "문현우",
+      "age": 39,
+      "occupation": "냉동물류 배차팀장",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "영수증 번호, 식대 합계, 화환 수량처럼 숫자와 표를 앞세워 자신을 방어한다.",
+      "pride": 5,
+      "fear": "아버지 장례를 돈 계산으로만 본 비정한 아들로 낙인찍히는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "spreadsheet_export_and_receipt_keeper",
+      "dailyRoutine": "공유 스프레드시트와 장례비 영수증, 이체내역을 폴더별로 모은다.",
+      "sensitivePoints": [
+        "비정한 아들 낙인",
+        "비용 질문의 오해",
+        "가족방 공개 망신"
+      ],
+      "verbalTells": [
+        {
+          "type": "number_stack",
+          "trigger": "cornered",
+          "pattern": "화환 수량, 식대, 부의금 정산표를 연달아 읊어 감정 공방을 회계 검증으로 바꾼다."
+        },
+        {
+          "type": "scope_narrowing",
+          "trigger": "lying",
+          "pattern": "자신의 무심한 문장은 '중복 비용만 물은 것'이라고 좁혀 말한다."
+        },
+        {
+          "type": "injured_logic",
+          "trigger": "emotional",
+          "pattern": "'나는 사실만 물었다'를 반복하며 타인의 상처와 시기 문제를 거의 인정하지 않는다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "누나",
+        "toJudge": "제 누나",
+        "angry": "누나!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "아버지 장례 직후 지연과 현우는 장례비와 어머니 생활비 질문은 공유 스프레드시트와 1:1 통화로만 다루고 친척이 있는 가족방에서는 논쟁하지 않기로 했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "어머니가 '지연이가 먼저 정리 좀 해'라고 말한 일을 두 사람은 권한 위임인지 서류 정리 부탁인지 다르게 해석한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: 외부 설명까지 맡긴 뜻 / B: 영수증 정리만 먼저 하라는 뜻",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "할머니 장례 때 현우가 식대 영수증부터 물어 지연이 크게 서운해했던 일은 '현우는 상을 돈으로 본다'는 오래된 프레임으로 남아 있다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "문숙희 (어머니)",
+        "relationTo": "both",
+        "knowledgeScope": "두 자녀가 장례 후 정산은 조용히 하자고 약속한 사실과, 지연이 캡처를 보여준 뒤 친척들이 현우를 비난하기 시작했다는 점을 안다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 66,
+          "occupation": "주부",
+          "relationToA": "문지연을 업무상 알고 있음",
+          "relationToB": "문현우을 업무상 알고 있음",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "자식 편을 들면서도 객관적으로 보이려 한다. 어른 특유의 훈계 톤이 섞인다.",
+          "addressJudge": "재판관님",
+          "addressA": "지연씨",
+          "addressB": "현우"
+        },
+        "addressA": "우리 지연",
+        "addressB": "우리 현우"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "한서준 (사촌)",
+        "relationTo": "both",
+        "knowledgeScope": "현우가 보낸 원래 비용 문의 메시지와 지연이 나중에 돌린 캡처 문장이 서로 다르다는 점을 직접 비교할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 43,
+          "occupation": "사촌",
+          "relationToA": "문지연을 업무상 알고 있음",
+          "relationToB": "문현우을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "지연씨",
+          "addressB": "현우씨"
+        },
+        "addressA": "지연씨",
+        "addressB": "현우씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "문가람 (디지털포렌식 분석관)",
+        "relationTo": "both",
+        "knowledgeScope": "문제의 이미지가 여러 메시지를 이어 붙인 합성본인지, PC 카카오톡 캐시와 클라우드 동기화 기록으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 46,
+          "occupation": "디지털포렌식 분석관",
+          "relationToA": "문지연을 업무상 알고 있음",
+          "relationToB": "문현우을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "문지연씨",
+          "addressB": "문현우씨"
+        },
+        "addressA": "지연씨",
+        "addressB": "현우씨"
+      }
+    ],
+    "relationshipType": "family"
+  },
+  "context": {
+    "contextType": "family_group_chat_funeral_settlement_conflict",
+    "description": "아버지 장례가 끝난 뒤 지연은 장례비와 부의금, 어머니 생활비 정산을 맡아 공유 시트를 정리했고, 현우는 일부 숫자가 중복된다고 느껴 사촌에게 불만을 흘리기 시작했다. 그러다 지연이 현우의 사적 질문을 더 악질적인 문장처럼 꾸민 캡처를 가족 카톡방에 올리면서, 장례 후 피로와 슬픔이 명예 훼손과 증거 위조 싸움으로 번졌다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "장례 직후라 누구도 냉정하지 못한 상황에서 카톡 캡처 한 장이 곧 본심처럼 받아들여졌고, 친척방 전달 속도가 빨라 사실 확인보다 낙인이 먼저 굳어졌다.",
+    "caseNumber": "E-FM-H-0012",
+    "caseName": "장례비 정산 갈등"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "지연의 가족방 공개 비난과 타방 전파",
+      "truth": true,
+      "truthDescription": "지연은 문제의 캡처를 가족방, 고모방, 제사준비방에 차례로 올리며 현우가 장례를 돈 계산으로만 본 사람이라는 취지로 공개 비난했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "명예회복",
+      "legitimacyIssue": true,
+      "judgmentStatement": "지연은 현우를 공개 비난했다."
+    },
+    {
+      "id": "d-2",
+      "name": "현우의 무심한 사적 비용 불만 메시지",
+      "truth": true,
+      "truthDescription": "현우는 사촌과의 카톡에서 화환과 식대가 겹친다며 장례 중에도 차갑고 무심한 표현으로 비용 불만을 털어놓았다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "정산절차복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "현우는 장례 중 비용 불만을 표현했다."
+    },
+    {
+      "id": "d-3",
+      "name": "현우가 '상갓집도 결국 정산, 엄마 통장부터 보자'고 실제로 말했는가",
+      "truth": false,
+      "truthDescription": "현우는 정산 질문과 중복 비용 문제를 제기한 적은 있지만, 문제의 캡처처럼 아버지 장례와 어머니 통장을 한 문장으로 비하한 표현을 보내지 않았다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "가족방운영",
+      "legitimacyIssue": false,
+      "judgmentStatement": "현우는 해당 발언을 하지 않았다."
+    },
+    {
+      "id": "d-4",
+      "name": "문제가 된 카톡 캡처는 위조본인가",
+      "truth": true,
+      "truthDescription": "가족방에 올라간 캡처는 현우의 원문이 아니라 서로 다른 대화의 말풍선과 지연의 임시문장을 이어 붙인 위조 이미지였다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 95,
+        "b": 5
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "증거검증",
+      "legitimacyIssue": true,
+      "judgmentStatement": "카톡 캡처는 위조본이다."
+    },
+    {
+      "id": "d-5",
+      "name": "장례 후 정산 원칙의 공동 파기",
+      "truth": true,
+      "truthDescription": "비용 질문은 스프레드시트와 1:1 통화로만 다루기로 했지만 현우는 사촌 사이드채팅으로 불만을 흘렸고 지연은 가족방 공개 망신으로 대응해 합의를 함께 깨뜨렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "정산절차복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "현우와 지연은 합의를 파기했다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "가족방에 올라온 문제의 카톡 캡처",
+      "description": "지연이 올린 이미지로, 현우 프로필과 읽음 표시가 붙은 채 '상갓집도 결국 정산'과 '엄마 통장부터 보자'가 같은 대화처럼 보인다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 채팅 내보내기를 요구했지만 처음엔 캡처 이미지 한 장만 제출됐다.",
+        "check_metadata": "가족방 업로드 직전 PC에서 저장된 뒤 휴대폰으로 다시 저장된 흔적이 남아 있다.",
+        "restore_context": "겉으로는 현우의 동일 대화처럼 보이지만 말풍선 간격과 상태바 폰트가 미세하게 어긋난다.",
+        "verify_source": "지연 단말 앨범의 생성 경로와 업로드 시각이 서로 맞는다.",
+        "check_edits": "구간마다 폰트와 줄간격이 달라 합성 가능성이 강하게 보인다.",
+        "question_acquisition": "가족 사적 대화가 포함된 이미지라 분쟁 외 확산은 명예와 사생활을 동시에 해칠 수 있다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "문지연에게: \"지연의 가족방 공개 비난과 타방 전파\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 문지연의 \"지연의 가족방 공개 비난과 타방 전파\" 쟁점과 관련된다. 문지연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "문현우에게: \"현우가 '상갓집도 결국 정산, 엄마 통장부터 보자'고 실제로 말했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 문현우의 \"현우가 '상갓집도 결국 정산, 엄마 통장부터 보자'고 실제로 말했는가\" 쟁점과 관련된다. 문현우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "가족방에 올라온 카톡 캡처",
+      "surfaceDescription": "가족 단체 채팅에 공유된 카카오톡 캡처 이미지다. 대화 내용이 보이지만 맥락 확인이 필요하다."
+    },
+    {
+      "id": "e-2",
+      "name": "현우-사촌 원본 채팅과 장례비 시트 질문 로그",
+      "description": "현우가 사촌에게 보낸 원본 카톡과 장례비 공유 시트에 남긴 코멘트 기록이다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "사촌과의 원본 대화, 시트 댓글, 알림 메일까지 함께 확인했다.",
+        "check_metadata": "비용 질문은 장례 사흘째 밤에 몰려 있고 가족방 공개 캡처보다 몇 시간 먼저 존재한다.",
+        "restore_context": "말투는 차갑고 타이밍도 부적절했지만, 문제 캡처의 모욕적 문장은 원본에 없다.",
+        "verify_source": "사촌 단말 백업과 현우 계정의 원본 시각이 모두 일치한다.",
+        "check_edits": "내보내기 원본과 시트 기록이라 수동 편집 흔적이 없다.",
+        "question_acquisition": "본인 대화라 적법하지만 제3자인 사촌 정보는 비식별 처리돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "문지연에게: \"장례 후 정산 원칙의 공동 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 문지연의 \"장례 후 정산 원칙의 공동 파기\" 쟁점과 관련된다. 문지연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "문현우에게: \"현우의 무심한 사적 비용 불만 메시지\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 문현우의 \"현우의 무심한 사적 비용 불만 메시지\" 쟁점과 관련된다. 문현우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "원본 채팅과 공유 시트 로그",
+      "surfaceDescription": "가족 간 원본 카카오톡 대화와 공유 시트에 남긴 코멘트 기록이다. 질문과 응답이 시간순으로 남아 있다."
+    },
+    {
+      "id": "e-3",
+      "name": "디지털포렌식 감정서와 PC 카카오 캐시 로그",
+      "description": "분석관이 작성한 감정서와 지연 PC의 카카오톡 캐시·클립보드 로그로, 문제 이미지가 합성된 흐름을 보여 준다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "감정서 원본에는 이미지 레이어 분석 결과와 PC 캐시 경로, 복사·붙여넣기 순서가 시간대별로 정리돼 있다.",
+        "check_metadata": "가족방 업로드 직전 서로 다른 세 대화창 캡처와 편집 앱 실행 기록이 연속으로 남아 있다.",
+        "restore_context": "문제 캡처는 단순 자르기가 아니라 여러 대화에서 가져온 말풍선을 한 장에 배열한 조합본에 가깝다.",
+        "verify_source": "PC 로그와 최종 업로드 이미지 해시가 감정서 내용과 일치한다.",
+        "check_edits": "두 핵심 말풍선의 압축 패턴과 픽셀 경계가 달라 합성 흔적이 명확하다.",
+        "question_acquisition": "개인 PC 사용 로그가 포함돼 있어 필요한 범위만 제한적으로 활용해야 한다."
+      },
+      "subjectParty": "a",
+      "surfaceName": "포렌식 감정서와 캐시 로그",
+      "surfaceDescription": "디지털 포렌식 분석 감정서와 PC 메신저 캐시·클립보드 로그다. 이미지 생성 경로를 추적할 수 있다.",
+      "requiredLieState": "S3"
+    },
+    {
+      "id": "e-4",
+      "name": "지연의 나와의 채팅 임시문장과 편집본 자동저장 파일",
+      "description": "지연 계정의 나와의 채팅에 남아 있던 '엄마 통장부터 보자' 임시문장과 편집 앱 자동저장 PNG 파일들이다.",
+      "type": "cloud_log",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "클라우드 백업과 자동저장 폴더 원본을 열자 문제 문구와 유사한 임시문장과 중간 편집본이 순서대로 남아 있었다.",
+        "check_metadata": "나와의 채팅 문장은 최종 캡처 생성 몇 분 전, 자동저장 PNG는 그 직후 두 차례 생성됐다.",
+        "restore_context": "현우 원문을 그대로 캡처한 것이 아니라 별도 문장을 만들어 합성에 활용했을 가능성이 높다.",
+        "verify_source": "플랫폼 백업 시각과 편집 앱 저장 로그가 포렌식 보고서와 일치한다.",
+        "check_edits": "자동저장 파일들 사이에 말풍선 위치와 문장이 조금씩 달라지는 흔적이 남아 있다.",
+        "question_acquisition": "사적 메모와 개인 백업이 포함돼 있어 분쟁 핵심 구간 외 확산은 사생활 침해 소지가 크다."
+      },
+      "subjectParty": "a",
+      "surfaceName": "임시 문장과 편집 자동저장 파일",
+      "surfaceDescription": "메신저 임시 저장 문장과 이미지 편집 앱의 자동저장 파일이다. 편집 흔적이 남아 있다.",
+      "requiredLieState": "S2"
+    },
+    {
+      "id": "e-5",
+      "name": "가족방·고모방·제사준비방 전달 로그",
+      "description": "지연이 문제의 캡처를 올린 가족방, 고모방, 제사준비방의 내보내기 파일과 전달 순서 로그다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "방별 내보내기 파일을 시간순으로 맞추자 지연이 현우에게 직접 확인하기 전 세 개 방에 먼저 캡처를 올린 흐름이 드러났다.",
+        "check_metadata": "첫 업로드는 가족방, 그다음 고모방, 마지막으로 제사준비방 순으로 이어진다.",
+        "restore_context": "단순 하소연이 아니라 복수의 친척 채널에 같은 프레임을 빠르게 퍼뜨린 적극적 확산이었다.",
+        "verify_source": "각 방 참여자들의 내보내기 파일 시간이 서로 일치한다.",
+        "check_edits": "원본 내보내기라 메시지 선택 삭제 흔적은 보이지 않는다.",
+        "question_acquisition": "여러 친척이 포함된 대화라 분쟁 외 재전송은 더 큰 명예훼손을 낳을 수 있다."
+      },
+      "subjectParty": "a",
+      "surfaceName": "여러 채팅방 전달 로그",
+      "surfaceDescription": "여러 단체 채팅방의 내보내기 파일과 메시지 전달 순서 로그다. 유포 경로와 시각이 기록되어 있다."
+    },
+    {
+      "id": "e-6",
+      "name": "장례정산 공유규칙 메모와 상담센터 권고 확인서",
+      "description": "장례 직후 남매가 남긴 공유정산 메모와, 친척방이 아닌 스프레드시트와 1:1 소통을 권고한 확인서다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "메모 원본과 상담센터 확인서를 함께 대조했다.",
+        "check_metadata": "메모는 발인 다음 날, 확인서는 갈등이 터지기 2주 전 발급됐다.",
+        "restore_context": "공개방이 아닌 제한된 채널을 쓰자는 합의가 사전에 존재했다.",
+        "verify_source": "상담센터 접수번호와 메모 촬영 시각이 서로 맞는다.",
+        "check_edits": "기관 확인서와 원본 사진이라 편집 흔적이 없다.",
+        "question_acquisition": "장례 정산과 상담 기록이 포함돼 있어 목적 외 사용은 제한돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "문지연에게: \"장례 후 정산 원칙의 공동 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 문지연의 \"장례 후 정산 원칙의 공동 파기\" 쟁점과 관련된다. 문지연은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "문현우에게: \"장례 후 정산 원칙의 공동 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 문현우의 \"장례 후 정산 원칙의 공동 파기\" 쟁점과 관련된다. 문현우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "정산 공유규칙 메모와 상담 확인서",
+      "surfaceDescription": "가족이 남긴 공유 정산 메모와 상담센터 권고 확인서다. 합의된 소통 원칙이 적혀 있다."
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "지연은 문제의 캡처를 여러 가족방에 올리며 현우를 공개적으로 비난했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "현우는 장례 중에도 사적으로 비용 불만과 정산 질문을 차갑게 흘렸다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "현우는 비용 질문을 했지만 문제 캡처처럼 장례와 어머니 통장을 함께 모욕하는 문장은 보내지 않았다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "가족방에 올라간 캡처는 서로 다른 메시지와 임시문장을 합성한 위조 이미지였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "남매는 장례 후 정산 갈등을 친척방 밖에서 처리하기로 한 원칙을 둘 다 지키지 못했다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "family_room_forward_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "direct_confirmation_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "edited_capture_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "forensic_report_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_and_e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-5",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "shared_sheet_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_being_doubted_as_treasurer"
+        },
+        {
+          "from": "S4",
+          "to": "S3",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "private_complaint_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "timing_during_mourning_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-6",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "money_first_frame_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "original_chat_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-2_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-5",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "shared_sheet_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_not_trusting_spreadsheet"
+        },
+        {
+          "from": "S4",
+          "to": "S3",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "가족방운영": [
+      "장례·정산·어머니 생활비처럼 민감한 의제는 친척이 있는 가족방이 아니라 제한된 정산 채널에서만 다루고 가족방에는 결과 공지만 남긴다.",
+      "카톡 캡처 한 장으로 성격 판단을 하지 않도록 원문 내보내기와 생성 시각을 함께 보지 않으면 논평하지 않는 규칙을 만든다.",
+      "공개방에서 인격 비난이 다시 나오면 해당 방에서는 민감한 재정·돌봄 대화를 잠시 중단한다."
+    ],
+    "증거검증": [
+      "가족 갈등에서 카톡 캡처를 증거로 쓸 때는 원문 내보내기, 생성 경로, 저장 시각까지 함께 확인하는 절차를 기본으로 둔다.",
+      "합성 가능성이 보이는 캡처는 즉시 사실로 유통하지 말고 필요한 경우 포렌식이나 대화 원본 비교를 먼저 거친다.",
+      "위조 캡처 제출이 다시 발생하면 보존조치와 공식 사과, 필요 시 법률 검토를 바로 진행한다."
+    ],
+    "정산절차복구": [
+      "장례비·부의금·어머니 생활비 질문은 공유 스프레드시트와 영수증 폴더로만 주고받고 불만이 있어도 사이드채팅으로 우회하지 않는다.",
+      "숫자 질문은 가능하되 시기와 표현 기준을 정해, 애도 기간 중에는 요약 질의만 남기고 평가 문장은 빼도록 한다.",
+      "정산 질문이 반복해서 감정 싸움으로 번지면 외부 회계 검토나 제3자 중재자를 둔다."
+    ],
+    "명예회복": [
+      "지연은 캡처가 잘못됐음을 가족방들과 친척 개인방에 동일 문구로 정정하고, 현우 역시 자신의 무심한 표현에 대해 별도로 사과한다.",
+      "어머니와 가까운 친척들에게는 위조 여부와 실제 원문을 구분한 짧은 설명문을 한 번만 보내 추가 추측을 줄인다.",
+      "훼손된 평판을 둘러싼 보복성 폭로가 다시 시작되면 직접 메시지를 멈추고 상담센터나 법률대리인을 통한 문서 소통으로 전환한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "정민석 씨, 특약 원문상 긴급 확인 자체는 열려 있는데도 왜 그 조항을 전면 출입 금지처럼 받아들였습니까?",
+              "text": "정민석 씨, 그 특약을 너무 넓게 막는 조항으로 받아들인 건 아니었습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "한규철 씨, 특약 문구에 촬영자료 보관은 별도 고지라고 적혀 있는데 왜 긴급 확인 조항 하나로 함께 처리했다고 보셨습니까?",
+              "text": "한규철 씨, 특약을 자신에게 유리한 쪽으로 넓혀 해석한 건 아니었습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "정민석 씨, 이 단톡 전체 문맥을 보면 실제로는 이틀간 기사 방문을 전면 거부한 구간이 있습니다. 그 사실 자체는 인정하십니까?",
+              "text": "정민석 씨, 실제로 일정이 며칠 더 막힌 구간이 있었다는 점은 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "한규철 씨, 세입자가 '오늘은 안 된다'고 한 뒤에도 이틀 먼저 들어간 사실을 부인하실 수 있습니까?",
+              "text": "한규철 씨, 세입자가 거절한 뒤에도 출입을 앞당긴 사실은 부인하기 어렵지 않습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -212,7 +212,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "정민석 씨, 진단서상 1차 원인이 배관 누수라 해도 본인의 적치와 늦은 대응이 악화 요인이었다는 점까지 받아들이십니까?",
+              "text": "정민석 씨, 주된 원인과 별개로 본인 대응도 피해를 키운 면이 있었다는 점은 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -251,7 +251,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "한규철 씨, 누수 확산이 두려웠다는 사정이 있더라도 사전 동의 없는 출입 자체는 잘못이었다고 인정하십니까?",
+              "text": "한규철 씨, 급한 사정이 있었다 해도 동의 없는 출입 자체는 잘못이었다고 보십니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

@@ -1,0 +1,161 @@
+{
+  "case": "case-neighbor-02",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 택배실 정지 화면을 이웃에게 보낸 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "저장 시각이 반상회 다음 날 오전으로 찍힌 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "전후 영상 없이 한 장만 돌려도 행위 판단이 된다고 보셨습니까?",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 원본 영상과 처리대장을 확보한 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "무전과 대장 기재 시각이 2분 안에 맞물린 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "해당 장면을 절도 의심으로 단정한 기준을 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 단체방과 개인 대화 캡처를 보낸 취지를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "같은 문구가 14시간 내 여러 대화방에 반복된 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "관리 확인 전에 해당 표현을 사실처럼 돌린 이유를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 민원 원문과 사고보고를 증거로 낸 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "신고 시각이 산책 시간과 어긋나는 점을 알고 계셨습니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "현장 확인 전 어느 근거로 원인을 한쪽으로 좁혔습니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 반상회 녹음과 수정 회의록을 제출한 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "녹음 파일이 배포 회의록보다 먼저 생성된 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "배포본에서 표현이 순화된 부분을 그대로 둔 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 공용프린터 로그와 전단 PDF를 확인하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "출력 시각이 부착보다 27분 앞선 점을 어떻게 설명하시겠습니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "민원 문구와 회의 발언이 함께 묶인 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ]
+  }
+}

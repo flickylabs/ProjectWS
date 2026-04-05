@@ -1,0 +1,1356 @@
+{
+  "caseId": "neighbor-12",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "공개 지목과 늦은 고지의 시차",
+      "description": "공개방 캡처와 카드취소 안내 시각을 맞춰, 의심이 커진 순서를 가르는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "배지연 씨, 이 캡처 기준으로는 원본 정산서를 직접 요구하기도 전에 공개 글이 먼저 올라갑니다. 확인보다 지목이 앞선 이유를 설명해 보시겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor12:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "참가자 재촉이 있었다 해도, 왜 하필 공개방에서 먼저 이름을 특정했는지 묻겠습니다. 불안과 평판 압박이 판단을 앞질렀던 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor12:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "그렇다면 지금 이 자리에서, 94만 원을 현재 환불금 은닉처럼 적은 표현을 철회할 수 있습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor12:a:d-1:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "서도윤 씨, 카드취소 32만 원 알림이 뜬 뒤 실제 안내까지 사흘 가까운 공백이 보입니다. 이 지연 자체는 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor12:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "국제배송료 재계산을 기다렸다는 이유로, 그 공백을 '이틀, 삼일 늦은 정도'로만 축소해도 된다고 보십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor12:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "운영자라면 미확정 항목이라도 잠정 공지를 먼저 했어야 한다는 점까지는 받아들이십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor12:b:d-2:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "작년 62만 원과 이번 계좌 이동",
+      "description": "작년 미정산 62만 원과 이번 참가금 이체가 같은 계좌에서 연결되는지를 보는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "배지연 씨, 작년 캐시백 41만 원과 반품차액 21만 원이 공식 정산 없이 개인계좌에 남아 있었다는 점부터 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor12:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "이번 참가금 일부를 옮기며 '지난번 정리'라는 메모를 남긴 이유는, 과거 구멍을 현재 돈으로 메우려 했기 때문 아닌가요?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor12:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "결국 이번 분쟁의 출발점이 서도윤 씨의 환불 은닉이 아니라, 배지연 씨 쪽 미정산 62만 원이었다는 점을 인정하십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor12:a:d-3:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "서도윤 씨는 작년 라운드를 먼저 닫자고 말했지만, 실제로는 같은 계좌 구조가 다시 시작되도록 두었습니다. 그 소극적 허용은 사실입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor12:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "지금도 '먼저 제안한 쪽은 상대'라고만 말하면, 본인이 위험을 알고도 허용한 책임은 가려지지 않겠습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor12:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "숫자를 아는 운영자였다면 서면 마감과 분리 계좌를 끝까지 요구했어야 한다는 점까지 받아들이십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor12:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "32만 원의 현재 환급과 닫히지 않은 과거",
+      "description": "최종 정산서와 라운드 종료 대화를 나란히 두고 현재 환급과 과거 미정산을 분리하는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "배지연 씨, 새 공동구매를 열 때도 같은 개인계좌를 계속 쓰자고 직접 제안한 점은 이 대화로 확인됩니다. 그 제안부터 인정하시겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor12:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "왜 종료 공지를 미루고 같은 계좌를 다시 썼는지 묻겠습니다. 설명하기 창피해서 '이번에 같이 맞추자'로 넘긴 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor12:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "그렇다면 같은 개인계좌 구조를 계속 밀어붙인 핵심 책임이 본인에게 있다는 점을 지금 인정하실 수 있습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor12:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "서도윤 씨, 최종 정산서상 현재 라운드 환급분이 32만 원뿐이라는 점과, 94만 원이 그 금액 하나만을 뜻하지 않는다는 점을 명확히 설명해 주십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor12:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "그 구조를 알고도 왜 '94만 원은 틀렸다'는 말만 반복했습니까? 32만 원과 62만 원의 혼합이라는 설명을 늦춘 이유를 묻습니다.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor12:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "지금 이 자리에서는, 94만 원이 이번 환급 32만 원과 작년 미정산 62만 원이 섞인 숫자라는 점을 분명히 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor12:b:d-4:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "neighbor12:a:d-1:unlock:s2:0",
+            "factText": "배지연의 공개 글 게시 시각이 도윤에게 원본 정산서를 직접 요구한 시각보다 11분 빨랐다는 사실",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "11분 먼저 게시",
+                "neutral": "그 시차",
+                "dateExact": "원본 요구 11분 전"
+              },
+              "evidence": {
+                "exact": "공개 글 캡처",
+                "neutral": "그 게시 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "defensive"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor12:a:d-1:unlock:s3:0",
+            "factText": "배지연이 공개 지목 책임을 줄이기 위해 도윤의 사흘 침묵을 핵심 원인으로 붙잡고 있다는 사실",
+            "tags": [
+              "counter",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "사흘 침묵",
+                "neutral": "그 공백",
+                "period": "카드취소 알림 후 약 3일"
+              },
+              "person": {
+                "exact": "서도윤",
+                "neutral": "상대방",
+                "fullName": "서도윤",
+                "judgeRef": "서도윤 씨"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "counter"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor12:a:d-1:unlock:s4:0",
+            "factText": "배지연이 참가자 재촉과 평판 공포 때문에 피해자 자리를 먼저 선점하려 했다는 사실",
+            "tags": [
+              "emotion",
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "relationship": {
+                "exact": "참가자 재촉",
+                "neutral": "그 압박"
+              },
+              "emotion": {
+                "exact": "평판 공포",
+                "neutral": "그 두려움"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor12:a:d-1:unlock:s5:0",
+            "factText": "배지연이 94만 원 은닉 표현을 철회하고 공개 정정문이 필요하다고 인정하는 사실",
+            "tags": [
+              "admission",
+              "harm",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "94만 원",
+                "neutral": "그 금액",
+                "rounded": "94만원"
+              },
+              "person": {
+                "exact": "서도윤",
+                "neutral": "상대방",
+                "fullName": "서도윤",
+                "judgeRef": "서도윤 씨"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "neighbor12:a:d-3:unlock:s2:0",
+            "factText": "작년 캐시백 41만 원과 반품차액 21만 원, 총 62만 원이 공식 정산 없이 배지연 개인계좌에 남아 있었다는 사실",
+            "tags": [
+              "timeline",
+              "evidence",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount1": {
+                "exact": "41만 원",
+                "neutral": "캐시백 금액",
+                "rounded": "41만원"
+              },
+              "amount2": {
+                "exact": "21만 원",
+                "neutral": "반품차액",
+                "rounded": "21만원"
+              },
+              "amount_total": {
+                "exact": "62만 원",
+                "neutral": "작년 미정산 총액",
+                "rounded": "62만원"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor12:a:d-3:unlock:s3:0",
+            "factText": "배지연이 이번 참가금 일부를 '지난번 정리' 메모와 함께 옮기며 과거 구멍을 현재 돈으로 메우려 했다는 정황",
+            "tags": [
+              "act",
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "evidence": {
+                "exact": "지난번 정리 메모",
+                "neutral": "그 메모"
+              },
+              "relationship": {
+                "exact": "이번 참가금 일부",
+                "neutral": "현재 라운드 돈"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "cornered"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor12:a:d-3:unlock:s4:0",
+            "factText": "배지연이 공동구매 신뢰를 잃을까 두려워 작년 62만 원 문제를 먼저 피해자 서사로 덮으려 했다는 사실",
+            "tags": [
+              "fear",
+              "emotion",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "62만 원",
+                "neutral": "작년 문제 금액",
+                "rounded": "62만원"
+              },
+              "relationship": {
+                "exact": "공동구매 신뢰",
+                "neutral": "그 신뢰"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "self_justification"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor12:a:d-3:unlock:s5:0",
+            "factText": "실제 재정 은닉의 출발이 배지연의 작년 62만 원 미정산과 이번 참가금 전용 시도였다는 자백",
+            "tags": [
+              "admission",
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "62만 원",
+                "neutral": "작년 미정산분",
+                "rounded": "62만원"
+              },
+              "relationship": {
+                "exact": "이번 참가금 일부",
+                "neutral": "현재 라운드 돈"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor12:a:d-5:unlock:s2:0",
+            "factText": "배지연이 새 공동구매를 시작할 때도 같은 개인계좌를 계속 쓰자고 직접 제안했다는 사실",
+            "tags": [
+              "act",
+              "rule"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "배지연 개인계좌",
+                "neutral": "같은 계좌"
+              },
+              "time": {
+                "exact": "새 공동구매 시작 시점",
+                "neutral": "그 시작 시점",
+                "period": "작년 라운드 미마감 상태"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor12:a:d-5:unlock:s3:0",
+            "factText": "배지연이 공동 책임을 말하면서도 실제로는 자신의 제안 책임을 반반처럼 보이게 만들려 한다는 사실",
+            "tags": [
+              "counter",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "서도윤",
+                "neutral": "상대방",
+                "fullName": "서도윤",
+                "judgeRef": "서도윤 씨"
+              },
+              "relationship": {
+                "exact": "공동 책임",
+                "neutral": "그 책임 구조"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "counter"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor12:a:d-5:unlock:s4:0",
+            "factText": "배지연이 종료 공지를 미루고 같은 계좌를 재사용한 이유에 창피함과 설명 회피가 있었다는 사실",
+            "tags": [
+              "shame",
+              "emotion",
+              "rule"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "relationship": {
+                "exact": "종료 공지",
+                "neutral": "그 마감 절차"
+              },
+              "emotion": {
+                "exact": "창피함",
+                "neutral": "그 감정"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor12:a:d-5:unlock:s5:0",
+            "factText": "배지연이 같은 개인계좌 구조를 계속 밀어붙인 주된 책임이 자신에게 있다고 인정하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "배지연 개인계좌",
+                "neutral": "같은 개인계좌"
+              },
+              "person_other": {
+                "exact": "서도윤",
+                "neutral": "상대방",
+                "fullName": "서도윤",
+                "judgeRef": "서도윤 씨"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "neighbor12:b:d-2:unlock:s2:0",
+            "factText": "서도윤이 카드취소 32만 원 알림을 받고도 국제배송료 재계산을 이유로 사흘 가까이 지연 고지했다는 사실",
+            "tags": [
+              "timeline",
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "32만 원",
+                "neutral": "카드취소분",
+                "rounded": "32만원"
+              },
+              "time": {
+                "exact": "사흘 가까운 지연",
+                "neutral": "그 공백",
+                "period": "카드취소 알림 후"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "defensive"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor12:b:d-2:unlock:s3:0",
+            "factText": "서도윤이 늦은 고지를 '이틀, 삼일 늦은 정도'로 축소하며 감정 책임을 숫자 논리 뒤에 숨긴다는 사실",
+            "tags": [
+              "counter",
+              "threshold",
+              "emotion"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "이틀, 삼일 늦은 정도",
+                "neutral": "그 지연"
+              },
+              "institution": {
+                "exact": "국제배송료 재계산",
+                "neutral": "그 재계산"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "minimize"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor12:b:d-2:unlock:s4:0",
+            "factText": "서도윤이 숫자만 맞으면 된다는 태도로 참가자와 배지연의 불안을 과소평가했다는 사실",
+            "tags": [
+              "emotion",
+              "rule",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "relationship": {
+                "exact": "참가자 불안",
+                "neutral": "그 반응"
+              },
+              "person": {
+                "exact": "배지연",
+                "neutral": "상대방",
+                "fullName": "배지연",
+                "judgeRef": "배지연 씨"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor12:b:d-2:unlock:s5:0",
+            "factText": "서도윤이 미확정 항목이라도 잠정 공지를 했어야 했다고 명확히 시인하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "32만 원",
+                "neutral": "그 취소분",
+                "rounded": "32만원"
+              },
+              "rule": {
+                "exact": "잠정 금액 즉시 공지",
+                "neutral": "그 공지 원칙"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "neighbor12:b:d-4:unlock:s2:0",
+            "factText": "이번 라운드 환급분은 32만 원뿐이고 94만 원은 여기에 작년 미정산 금액이 겹쳐진 수치라는 사실",
+            "tags": [
+              "context",
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount_now": {
+                "exact": "32만 원",
+                "neutral": "현재 환급분",
+                "rounded": "32만원"
+              },
+              "amount_mix": {
+                "exact": "94만 원",
+                "neutral": "혼합 총액",
+                "rounded": "94만원"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor12:b:d-4:unlock:s3:0",
+            "factText": "서도윤이 '94만 원은 틀렸다'는 말만 반복하고 32만 원과 62만 원의 혼합 구조 설명은 늦췄다는 사실",
+            "tags": [
+              "admission",
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount_now": {
+                "exact": "32만 원",
+                "neutral": "이번 환급분",
+                "rounded": "32만원"
+              },
+              "amount_old": {
+                "exact": "62만 원",
+                "neutral": "작년 미정산분",
+                "rounded": "62만원"
+              }
+            },
+            "stanceHints": [
+              "cornered",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor12:b:d-4:unlock:s4:0",
+            "factText": "서도윤이 무정하게 보일까 봐 더 건조하게 굴면서도 94만 원의 발생 구조를 사람 말로 풀지 못했다는 사실",
+            "tags": [
+              "emotion",
+              "harm",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "94만 원",
+                "neutral": "그 숫자",
+                "rounded": "94만원"
+              },
+              "relationship": {
+                "exact": "사람 말로 풀어 설명",
+                "neutral": "그 설명"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "defensive"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor12:b:d-4:unlock:s5:0",
+            "factText": "서도윤이 94만 원의 실제 구성을 이번 32만 원과 작년 62만 원의 혼합으로 명확히 인정하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount_now": {
+                "exact": "32만 원",
+                "neutral": "이번 환급분",
+                "rounded": "32만원"
+              },
+              "amount_old": {
+                "exact": "62만 원",
+                "neutral": "작년 미정산분",
+                "rounded": "62만원"
+              },
+              "amount_mix": {
+                "exact": "94만 원",
+                "neutral": "혼합 총액",
+                "rounded": "94만원"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "clarify"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor12:b:d-5:unlock:s2:0",
+            "factText": "서도윤이 작년 라운드를 먼저 닫자고 말하고도 서면 마감과 분리 계좌 요구를 끝까지 밀지 않았다는 사실",
+            "tags": [
+              "act",
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "작년 금액부터 닫자",
+                "neutral": "그 마감 요구"
+              },
+              "rule": {
+                "exact": "서면 종료 공지",
+                "neutral": "그 문서 절차"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor12:b:d-5:unlock:s3:0",
+            "factText": "서도윤이 제안 주체는 배지연이었다고 말하면서 자신의 허용 책임을 줄이려 한다는 사실",
+            "tags": [
+              "counter",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "배지연",
+                "neutral": "상대방",
+                "fullName": "배지연",
+                "judgeRef": "배지연 씨"
+              },
+              "person_account": {
+                "exact": "같은 개인계좌",
+                "neutral": "그 계좌"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "counter"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor12:b:d-5:unlock:s4:0",
+            "factText": "서도윤이 갈등을 키우기 싫어 같은 개인계좌 구조를 다시 밟게 놔뒀다는 사실",
+            "tags": [
+              "emotion",
+              "fear",
+              "rule"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "emotion": {
+                "exact": "갈등 회피",
+                "neutral": "그 회피"
+              },
+              "person_account": {
+                "exact": "같은 개인계좌",
+                "neutral": "그 구조"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor12:b:d-5:unlock:s5:0",
+            "factText": "서도윤이 숫자를 아는 사람으로서 분리 계좌와 종료 절차를 끝까지 요구하지 않은 책임을 인정하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "배지연",
+                "neutral": "상대방",
+                "fullName": "배지연",
+                "judgeRef": "배지연 씨"
+              },
+              "rule": {
+                "exact": "분리 계좌와 종료 절차",
+                "neutral": "그 운영 기준"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "neighbor12:contradiction:0",
+        "targetParty": "a",
+        "trigger": "배지연이 94만 원이 전부 이번 환불금이라고 계속 주장한 뒤 e-5 또는 d-4 관련 설명이 열렸을 때",
+        "text": "배지연 씨는 이번 라운드 돈만 비었다고 말하지만, 최종 정산서상 현재 환급분은 32만 원뿐입니다. 남은 62만 원이 어디서 왔는지 분리하지 않으면 '사라진 94만 원' 주장은 스스로 무너집니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-5"
+        ]
+      },
+      {
+        "id": "neighbor12:contradiction:1",
+        "targetParty": "b",
+        "trigger": "서도윤이 숨긴 건 없었다며 고지 지연의 무게를 축소할 때",
+        "text": "숨긴 의도와 별개로, 카드취소 알림과 실제 안내 사이에는 사흘 가까운 공백이 있습니다. 그 공백을 '이틀, 삼일 늦은 정도'로 줄이면 기록과 충돌합니다.",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "neighbor12:contradiction:2",
+        "targetParty": "a",
+        "trigger": "배지연이 작년 돈과 이번 돈은 섞이지 않았다고 버틸 때",
+        "text": "계좌 원장에는 이번 참가금 일부가 공급사 최종 정산 전부터 배지연 개인계좌로 분할 이체된 흔적과 '지난번 정리' 메모가 남아 있습니다. 과거 구멍과 현재 자금이 분리돼 있었다는 말과 맞지 않습니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      },
+      {
+        "id": "neighbor12:contradiction:3",
+        "targetParty": "b",
+        "trigger": "서도윤이 과거 라운드는 이번 사건과 무관하다고 선을 그을 때",
+        "text": "과거를 끊자고 말하면서도 실제로는 새 공동구매 직전에 '작년 금액부터 닫자'고 먼저 언급한 사람이 서도윤 씨입니다. 알고도 구조를 반복했다면 무관하다고만 할 수 없습니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "neighbor12:interjection:0",
+        "speaker": "a",
+        "trigger": "서도윤이 32만 원과 94만 원 구성을 건조하게만 읽어 내려갈 때",
+        "text": "숫자만 읽지 말고, 그 사흘 동안 제가 왜 그렇게 몰렸는지도 같이 말해 주세요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "neighbor12:interjection:1",
+        "speaker": "b",
+        "trigger": "배지연이 참가자 재촉과 자기 부담을 길게 열거하며 책임 질문을 흐릴 때",
+        "text": "그 압박이 있었다 해도, 작년 62만 원을 이번 환불금처럼 섞어 부른 건 설명이 안 됩니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ]
+      },
+      {
+        "id": "neighbor12:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 공개 지목과 늦은 고지 중 하나만 문제라고 고집할 때",
+        "text": "지금 법정은 한쪽의 잘못만 고르는 자리가 아닙니다. 현재 환급 32만 원, 작년 미정산 62만 원, 그리고 사흘 고지 지연을 서로 분리해 말하십시오.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2",
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "neighbor12:outburst:a:0",
+        "party": "a",
+        "trigger": "배지연이 공개 지목 경위와 참가자 단체방 이야기를 연달아 추궁받을 때",
+        "text": "다들 저한테만 환불 언제 되냐고 몰아붙였어요. 제가 그 방에서 혼자 서 있던 기분이 뭔지 아무도 모르잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "neighbor12:outburst:a:1",
+        "party": "a",
+        "trigger": "작년 62만 원과 이번 참가금 전용 정황이 동시에 제시될 때",
+        "text": "맞아요, 제가 무서워서 덮으려고 했어요. 그런데 그걸 말하는 순간 다 끝날 것 같아서 자꾸 먼저 공격한 거예요.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      },
+      {
+        "id": "neighbor12:outburst:b:0",
+        "party": "b",
+        "trigger": "서도윤이 공개방 지목 화면과 함께 횡령 의심을 다시 듣게 될 때",
+        "text": "저는 그 글 하나로 돈 떼먹은 사람처럼 찍혔습니다. 그래서 더 숫자 뒤로 숨은 것도 맞아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "neighbor12:outburst:b:1",
+        "party": "b",
+        "trigger": "서도윤이 같은 계좌 구조를 알면서도 끝내 끊지 못한 점을 반복 추궁받을 때",
+        "text": "제가 더 세게 끊었어야 했다는 말, 저도 압니다. 그런데 그때마다 싸움 커질까 봐 문서만 맞추면 된다고 도망쳤어요.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "neighbor12:transition:a:d-1:s0_s1",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "공개 지목의 이유를 직접 묻는 질문이 들어왔을 때",
+      "line": "제가 단정하려던 게 아니라 비어 보인다고 올린 거예요. 제가 본 표에는 분명 빈칸이 있었어요.",
+      "behaviorHint": "처음보다 목소리를 낮추지만 자기 표를 내려놓지는 않는다."
+    },
+    {
+      "id": "neighbor12:transition:a:d-1:s1_s2",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1이 제시되어 공개 글 시각과 자작표 맥락이 드러났을 때",
+      "line": "이 캡처대로라면 제가 너무 앞서 나간 건 맞네요. 그래도 카드취소 얘기가 바로 안 와서 의심이 커졌어요.",
+      "behaviorHint": "증거를 보는 순간 말을 멈췄다가 변명보다 설명 쪽으로 옮겨 간다."
+    },
+    {
+      "id": "neighbor12:transition:a:d-1:s2_s4",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "참가자 압박과 평판 공포를 비난 없이 묻는 질문이 들어왔을 때",
+      "line": "그때는 제가 먼저 의심받을까 무서웠어요. 그래서 피해자인 척 먼저 자리를 잡으려 했던 것도 있습니다.",
+      "behaviorHint": "목이 잠기고 시선이 바닥으로 떨어진다."
+    },
+    {
+      "id": "neighbor12:transition:a:d-1:s4_s5",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "공개 지목 책임을 정면으로 묻는 질문이 들어왔을 때",
+      "line": "확인 전에 서도윤 씨 이름을 공개한 건 제 잘못입니다. 그 표현은 제가 철회하겠습니다.",
+      "behaviorHint": "짧게 고개를 숙이고 문장을 끊어 인정한다."
+    },
+    {
+      "id": "neighbor12:transition:a:d-3:s0_s1",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "작년 캐시백과 반품차액을 직접 묻는 질문이 들어왔을 때",
+      "line": "개인계좌로 들어온 건 맞지만 먹으려던 건 아니었어요. 계속 맞추다 보니 경계가 흐려졌습니다.",
+      "behaviorHint": "손으로 작게 원을 그리며 '맞추다 보니'를 반복한다."
+    },
+    {
+      "id": "neighbor12:transition:a:d-3:s1_s2",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3이 제시되어 작년 62만 원 입금 기록이 확인됐을 때",
+      "line": "작년 캐시백 41만 원과 반품차액 21만 원을 따로 닫지 못한 건 맞아요. 그래서 그 빈칸부터 메워야 한다고 생각했습니다.",
+      "behaviorHint": "액수를 말할 때만 시선이 잠깐 올라온다."
+    },
+    {
+      "id": "neighbor12:transition:a:d-3:s2_s3",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "왜 현재 참가금까지 섞어 옮겼는지 추궁받을 때",
+      "line": "도윤 씨도 그 구조를 몰랐던 건 아니잖아요. 제가 먼저 손댄 건 맞지만 저 혼자만의 일처럼 말하면 곤란해요.",
+      "behaviorHint": "인정과 전가가 한 문장 안에서 교차한다."
+    },
+    {
+      "id": "neighbor12:transition:a:d-3:s3_s5",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4가 제시되어 '지난번 정리' 메모와 계좌 이동이 확인됐을 때",
+      "line": "네, 실제 출발점은 제 쪽이었습니다. 작년 62만 원을 닫지 못한 채 이번 참가금 일부로 그 구멍을 메우려 했습니다.",
+      "behaviorHint": "증거를 보고 더는 우회하지 못한 듯 숨을 길게 내쉰다."
+    },
+    {
+      "id": "neighbor12:transition:a:d-5:s0_s1",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "이전 라운드를 왜 닫지 않았는지 묻는 질문이 들어왔을 때",
+      "line": "시간이 없어서 이번에 같이 맞추자는 뜻이었지, 숨기려던 건 아니었어요.",
+      "behaviorHint": "예전 관행을 방패 삼다가 실무 편의 쪽으로 물러난다."
+    },
+    {
+      "id": "neighbor12:transition:a:d-5:s1_s4",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "여러 공동구매를 한꺼번에 굴린 부담을 비난 없이 묻는 질문이 들어왔을 때",
+      "line": "끝난 돈과 새 돈을 구분해 닫는 절차를 제가 피했습니다. 솔직히 창피해서 그냥 이번에 맞추자고 한 거예요.",
+      "behaviorHint": "어깨가 작게 움츠러든다."
+    },
+    {
+      "id": "neighbor12:transition:a:d-5:s4_s5",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6이 제시되어 '이번에 같이 맞추자'는 원문이 확인됐을 때",
+      "line": "작년 라운드를 닫지 않고 같은 개인계좌를 다시 쓴 건 제 잘못이 큽니다. 그 구조를 계속 민 건 저였습니다.",
+      "behaviorHint": "메신저 원문을 끝까지 보지 못하고 시선을 뗀다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-2:s0_s1",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "늦은 고지 자체를 묻는 질문이 들어왔을 때",
+      "line": "이틀, 삼일 늦은 정도를 바로 은닉으로 볼 수는 없습니다. 최종 정산을 기다린 겁니다.",
+      "behaviorHint": "단문으로 답하며 기간만 짧게 축소한다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-2:s1_s2",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2가 제시되어 알림 시각과 안내 시각 차이가 확인됐을 때",
+      "line": "즉시 알리지 않은 건 제 잘못입니다. 다만 32만 원만 먼저 말하면 정산과 어긋날까 봐 한 번에 설명하려 했습니다.",
+      "behaviorHint": "인정 뒤에 바로 계산 논리를 붙인다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-2:s2_s3",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "왜 국제배송료 재계산까지 기다렸는지 재차 묻는 질문이 들어왔을 때",
+      "line": "사흘 지연이 짧다고만 말할 일은 아니었습니다. 그래도 그 지연이 곧 은닉이라는 뜻은 아닙니다.",
+      "behaviorHint": "표정은 굳은 채 말수만 더 줄어든다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-2:s3_s5",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5가 제시되어 최종 정산 구조와 잠정 공지 가능성이 확인됐을 때",
+      "line": "카드취소 32만 원 알림을 받고도 즉시 공유하지 않은 건 제 책임입니다. 미확정 항목이라도 잠정 공지를 했어야 했습니다.",
+      "behaviorHint": "서류를 정리하듯 반듯하게 놓고 책임 문장을 분명히 말한다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-4:s0_s1",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "94만 원의 정체를 직접 묻는 질문이 들어왔을 때",
+      "line": "94만 원은 이번 환급금이 아니라 다른 금액이 섞인 숫자입니다. 다만 그 출처를 그때 바로 풀지는 못했습니다.",
+      "behaviorHint": "숫자는 바로 답하지만 구조 설명은 한 박자 늦춘다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-4:s1_s2",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5가 제시되어 현재 환급분 32만 원이 확정됐을 때",
+      "line": "최종 정산서상 현재 라운드 환급분은 32만 원입니다. 94만 원은 여기에 과거 미정산이 겹친 숫자로 봐야 합니다.",
+      "behaviorHint": "정산서를 손가락으로 짚으며 건조하게 읽는다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-4:s2_s3",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "작년 라운드와 왜 겹쳤는지 후속 질문이 들어왔을 때",
+      "line": "제가 94만 원이 틀렸다고만 말한 건 부족했습니다. 32만 원과 62만 원이 뒤섞였다는 구조까지 같이 열었어야 했어요.",
+      "behaviorHint": "짧게 눈을 감았다가 인정 문장으로 넘어간다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-4:s3_s5",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-3 또는 e-4가 제시되어 작년 62만 원의 실체가 함께 확인됐을 때",
+      "line": "네, 94만 원은 이번 32만 원과 작년 62만 원이 섞인 숫자였습니다. 그 구조를 제가 더 빨리 설명했어야 했습니다.",
+      "behaviorHint": "처음으로 설명보다 시인을 앞세운다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-5:s0_s1",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "이전 라운드를 왜 닫지 않았는지 묻는 질문이 들어왔을 때",
+      "line": "제가 먼저 마감 얘기를 하긴 했습니다. 다만 배지연 씨가 이번에 같이 맞추자고 해서 실무상 넘어간 겁니다.",
+      "behaviorHint": "과거를 자르던 태도에서 자신이 먼저 말한 사실만 남긴다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-5:s1_s2",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6이 제시되어 선마감 요구와 재사용 합의가 동시에 확인됐을 때",
+      "line": "같은 계좌를 다시 쓴 건 잘못이었습니다. 제가 서면 종료를 더 분명히 요구했어야 했습니다.",
+      "behaviorHint": "대화 원문을 본 뒤 대답이 짧아진다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-5:s2_s3",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "왜 위험을 알고도 같은 계좌를 허용했는지 추궁받을 때",
+      "line": "계좌를 계속 쓰자고 먼저 민 건 배지연 씨지만, 그걸 허용한 저는 책임에서 빠질 수 없습니다.",
+      "behaviorHint": "상대 책임을 먼저 말한 뒤 자신의 몫을 덧붙인다."
+    },
+    {
+      "id": "neighbor12:transition:b:d-5:s3_s5",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "공동 책임을 정면으로 묻는 질문이 들어왔을 때",
+      "line": "작년 라운드를 닫지 않은 채 같은 개인계좌를 다시 쓰게 둔 건 공동 책임입니다. 제가 분리 계좌와 종료 절차를 끝까지 요구하지 않은 책임을 인정합니다.",
+      "behaviorHint": "문장을 자르지 않고 한 번에 말해 회피를 멈춘다."
+    }
+  ]
+}

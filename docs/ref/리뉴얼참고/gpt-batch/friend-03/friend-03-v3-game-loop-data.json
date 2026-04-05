@@ -22,7 +22,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "강나래 씨, 이 DM 이미지는 왜 단일 원본처럼 보이게 정리했습니까. 보기 쉽게 만든 것과 원문처럼 보이게 만든 것은 다르지 않습니까.",
+              "text": "강나래 씨, 그 이미지를 왜 처음 대화 그대로처럼 보이게 만들었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -32,7 +32,7 @@
             },
             {
               "id": "dossier-1.a.q2",
-              "text": "오지후 씨 댓글이 먼저였다고 해도, 같은 협업 게시물 맥락만으로 저격성을 입증하려면 무엇이 강나래 씨를 특정하게 만들었는지 정확히 설명해 보시죠.",
+              "text": "오지후 씨 댓글이 먼저였다고 해도, 같은 협업 게시물 맥락만으로 저격성을 입증하려면 무엇이 강나래 씨를 바로 떠올리게 했는지 정확히 설명해 보시죠.",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -61,7 +61,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "오지후 씨, 같은 협업 게시물 아래 '협찬 물건도 자기 서사로 바꿔 판다'는 취지의 문장을 올리면 누구를 떠올리게 되는지 정말 몰랐습니까.",
+              "text": "오지후 씨, 그 공개 글이 누구를 가리킨다는 인상을 줄 수 있다는 점을 정말 몰랐습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -118,7 +118,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "편집앱 프로젝트에 서로 다른 날짜 소스와 레이어 이동 흔적이 남아 있는데도, 아직 '정리'라는 표현만으로 충분하다고 보십니까.",
+              "text": "강나래 씨, 그 자료를 손본 적이 없다고 지금도 말씀하시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -157,7 +157,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "물류 확인서가 이미 반납 완료를 보이는데도, 왜 협찬품 유용 의혹을 공개 댓글로 먼저 던졌습니까.",
+              "text": "오지후 씨, 사실을 더 확인하기 전에 공개 의심부터 던진 건 아닙니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -167,7 +167,7 @@
             },
             {
               "id": "dossier-2.b.q2",
-              "text": "같은 게시물이라는 맥락을 알면서도, 실명만 없으면 특정성이 사라진다고 본 근거가 실제로 있었습니까.",
+              "text": "같은 게시물이라는 맥락을 알면서도, 실명만 없으면 누굴 가리키는지 흐려진다고 본 근거가 실제로 있었습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -213,7 +213,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "플랫폼 원본 export에 없는 문장 배열을 왜 '실질적 원문'처럼 단정해서 보냈습니까. 그 선택은 체면을 지키기 위한 것이었습니까.",
+              "text": "강나래 씨, 왜 그 자료를 그렇게 강한 증거처럼 내보냈습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -223,7 +223,7 @@
             },
             {
               "id": "dossier-3.a.q2",
-              "text": "운영자 신고 DM에서 '확인 부탁' 다음에 곧바로 오지후 씨라고 특정한 이유는 무엇입니까. 확인보다 유통 효과를 먼저 노린 것 아닙니까.",
+              "text": "운영자 신고 DM에서 '확인 부탁' 다음에 곧바로 오지후 씨라고 찍어 말한 이유는 무엇입니까? 확인보다 유통 효과를 먼저 노린 것 아닙니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -252,7 +252,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "원본 export가 문제 문장 전체를 부정해 주더라도, 그 사실이 초반 공개 댓글 책임까지 줄여 준다고 보십니까.",
+              "text": "오지후 씨, 나중에 자료가 달라진다고 해도 초반 공개 발언 책임까지 사라진다고 보십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

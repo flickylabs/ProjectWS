@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "이가람 씨, 옵션 확보였다고 하셨는데, 통화 14분 뒤 발주서와 PM 로그에 대체 모델 코드가 연속 반영된 이유를 설명하시겠습니까?",
+              "text": "확정 전 발주를 먼저 밀어 넣은 부분이 있었는지부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "최보라 씨, 디자인 조정이라고 하셨는데, 왜 댓글 안에 카운터 위치와 함께 철거 순서 변경 문구까지 들어가 있습니까?",
+              "text": "디자인 조정이 일정 변경으로까지 이어진 이유부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "이가람 씨, 관리소 시간 압박이 있었다 해도, 공동 승인선을 스스로 예외처럼 취급한 순간을 인정하십니까?",
+              "text": "긴급하다는 이유로 승인선을 넘은 판단이 있었는지부터 답해 주시겠습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "최보라 씨, 대표님이 보낸 한 줄 정리가 직원 입장에선 또 다른 최종안처럼 읽혔다는 점은 인정하십니까?",
+              "text": "정리하려던 메시지가 다른 사람에게는 최종안처럼 읽힐 수 있었다는 점부터 보시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "이가람 씨, 현장일지가 지연 사유를 대체 발주와 카운터 재이동의 충돌로 나눠 적고 있는데, 아직도 한 사람 탓이라고 보십니까?",
+              "text": "지연 원인을 한쪽 책임으로만 정리한 이유부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "최보라 씨, 브랜드 일관성이라는 표현으로 일정 개입을 작게 보이게 만든 점을 이제는 인정하십니까?",
+              "text": "본인 변경을 작게 말한 부분이 있었는지부터 분명히 해 주시겠습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",

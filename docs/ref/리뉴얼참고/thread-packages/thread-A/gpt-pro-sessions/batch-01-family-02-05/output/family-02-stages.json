@@ -1,0 +1,161 @@
+{
+  "case": "family-02",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 음성 파일의 입수 경위와 제출 배경을 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 파일이 한 기기에서 곧바로 전달된 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "앞뒤 구간이 끊긴 상태로 따로 저장된 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 공유 링크와 대화 기록을 주고받은 사실을 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 자료가 이른 시간 개인 계정으로 전송된 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "정리만 맡긴다며 자료 범위를 넓힌 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 기기 접속 기록과 단톡 메시지에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "기기 확인 직후 단체방에 글을 올린 흐름을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "동기화 화면만 보고 외부 유출로 단정한 근거를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 문의 메일과 첨부 문서가 발송된 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 메일 계정의 복구 정보가 한 번호와 겹치는 점을 설명하십시오.",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "정리 가능성을 전제로 시세를 먼저 묻는 취지를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 메모 초안과 통화기록이 남은 사실을 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "자료를 받은 직후 별도 메모를 작성한 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "당사자를 제외하고 먼저 확인하려 한 배경을 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 전체 녹취 파일과 상담 확인서의 내용을 확인하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "짧은 파일과 달리 연속 녹음이 남아 있는 점을 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "후속 정리 발언까지 이어진 전체 흐름을 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ]
+  }
+}

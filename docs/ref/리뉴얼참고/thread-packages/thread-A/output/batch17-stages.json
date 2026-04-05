@@ -1,0 +1,646 @@
+[
+  {
+    "case": "tenant-11",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계약 특약 원본의 문구에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계약 당일 확정된 특약인데 별도 승인 기록이 없는 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "되돌릴 수 있는 손보기와 고정 변경을 왜 같은 범위로 보셨습니까?",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 비교 사진이 같은 공간의 원본 묶음임을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입주 당일과 점검 직전 같은 구도로 촬영한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "도배와 조명 외에 원래 고정된 부분이 달라진 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 비용표와 이체 내역을 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 주간 결제 안에 시공비와 다른 지출이 섞인 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "제출한 총액이 전부 현장에 남는 비용인지 다시 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 작업 대화와 견적서 원본을 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "고정 작업 뒤 별도 결제가 이어진 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공간에 남지 않는 항목까지 한 묶음으로 본 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화 캡처와 모집 화면을 증거로 낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "보수 대화 뒤 퇴거 직후 곧바로 게시가 이뤄진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "처음 캡처에서 빠진 단서 문장을 왜 함께 내지 않았습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 두 복구 견적을 함께 받아 비교한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 날 작성된 두 견적의 범위 차이를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "일부 고정 부분 보수인데 전면 공사처럼 본 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "tenant-12",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 생활규칙 원본의 안내 문구를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입주 시점부터 같은 규칙이 배포된 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "개별 고지가 우선인데 공개 대응이 앞선 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화 캡처와 음성 원본이 같은 흐름인지 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공개 반박 전날 저녁 생성된 발언이라는 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "처음 캡처에서 앞뒤 맥락이 빠진 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 업무일지와 문자 원문을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문제 발언 전후 같은 시간대 문자가 오간 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "애매한 표현을 알고도 바로 바로잡지 않은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공개 반박문을 직접 올린 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 캡처를 받은 뒤 곧바로 공개 글을 올린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "별도 확인 없이 여러 사람 앞에서 단정한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 전달 순서표와 채팅 내보내기 파일을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "표현이 두 차례 옮겨지며 강해진 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "처음 들은 말이 이미 변형됐을 가능성을 왜 배제하셨습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 민원 기록 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "한 달 기록이 몇 차례에 그친 점을 어떻게 설명하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "일시적 불편과 상습 문제를 왜 같은 무게로 보셨습니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "workplace-02",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 권한 회수 메일과 공지를 함께 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "조사 번호보다 먼저 권한이 회수된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "정식 절차 전 한 사람만 먼저 묶은 근거를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 개인 저장 이력과 대화 캡처를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "유출 소문 직후 개인 공간에 올린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "방어 목적이라면 왜 외부인에게 문장을 먼저 보냈습니까?",
+            "attackVector": "identity"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공유링크 원본 로그를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 세션에서 열람과 임시 토큰 발급이 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "개인 업로드 전 다른 단말이 먼저 원본에 닿은 경위를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 전달 메시지와 회수 누락 메모를 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "개인 업로드 전날 외부 전달이 이뤄진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "회수되지 않은 링크를 계속 살려 둔 근거를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 조사 접수 메모의 입력 흐름을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "면담 전 평가 문구가 먼저 적힌 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다른 문제 제기를 뒤로 미룬 판단 근거를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 면담확인서와 동선 기록을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계정 잠금 구간과 해당 동선이 겹친 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "내려받기 뒤 외부 전달로 이어진 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "workplace-03",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회식 클립의 원본 여부를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "클립 시작이 촬영보다 늦은 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞부분이 잘린 상태에서 약어 대상을 단정한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 전달 메시지를 출근 전에 보낸 사실을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "짧은 시간에 여러 명에게 연속 전송한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확인 전 자신의 일로 단정한 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 배치 초안의 약어 표기를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 약어 옆 메모가 회식 전 입력된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 문서에서 다른 인물이 따로 적힌 점을 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 좌석 정보와 정산 메모를 함께 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "클립 직전 다른 화제가 먼저 나온 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "당사자가 그 자리에 없었다면 판단 근거가 무엇입니까?",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 상담 접수와 배정 변경 기록을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "면담 전날 밤 평가 메모가 먼저 남은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "비공식 메모 뒤 곧바로 배정을 바꾼 근거를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 생성 로그와 원본 메타를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "웃음 직후 자동 추출이 시작된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "잘린 앞부분 없이도 대상을 단정할 수 있다고 보십니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
+    }
+  }
+]

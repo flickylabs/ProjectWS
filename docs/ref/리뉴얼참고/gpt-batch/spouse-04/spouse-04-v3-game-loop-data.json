@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "윤하준 씨, 출입기록상 18시 07분 퇴실 뒤 긴급 납품이 비어 있습니다. 방금 말한 '클라이언트 긴급 호출'의 실체가 무엇입니까?",
+              "text": "윤하준 씨, 출입기록과 방금 말한 '클라이언트 긴급 호출' 사이에 빈 시간이 있습니다. 설명하십시오.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "백다은 씨, 브로치를 빌리려 연락하면서 예약 캡처까지 보낸 시점부터 설명하세요. 그 연락이 왜 약속 위반이 아니라고 판단됐습니까?",
+              "text": "백다은 씨, 가족에게 연락한 시점과 그 내용부터 설명하세요. 왜 약속 위반이 아니라고 판단됐습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "윤하준 씨, 예약 변경 알림은 결과만 보여주고 실제 요청자는 따로입니다. 코드와 케이크 문구를 알고 움직일 사람이 누구였는지 먼저 답하십시오.",
+              "text": "윤하준 씨, 예약 변경 알림에 나온 결과와 실제 요청 경위가 다를 수 있습니다. 그 흐름을 먼저 설명하십시오.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "백다은 씨, 동기화된 태블릿을 확인한 경위와, 왜 본인 확인보다 캡처를 먼저 남겼는지 설명하십시오.",
+              "text": "백다은 씨, 동기화된 태블릿을 확인하게 된 경위와 왜 바로 대면하지 않았는지 설명하십시오.",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "윤하준 씨, 음성메모엔 '둘만 보내면 다음부터도 빠질 거다'는 취지가 남아 있습니다. 이제도 우연한 참견이라고 보십니까?",
+              "text": "윤하준 씨, 그 개입이 단순한 우연만은 아니었다는 지적에 대해 설명하십시오.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "백다은 씨, 브로치를 빌리려는 연락에서 왜 예약 캡처와 코드까지 함께 보냈습니까?",
+              "text": "백다은 씨, 브로치 건 외에 추가로 전달한 정보가 있었습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

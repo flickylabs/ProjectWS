@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "전서윤 씨, 왜 원본 대화 전체가 아니라 현재 독촉 장면만 잘린 캡처가 먼저 공통 친구들에게 갔습니까.",
+              "text": "전서윤 씨, 왜 앞뒤 맥락보다 현재 장면만 먼저 꺼내 보였습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "민태오 씨, 이체 뒤 20분 안에 '다음 월급 주간' 상환을 약속한 건 맞습니까.",
+              "text": "민태오 씨, 그 돈을 곧 갚겠다고 약속한 사실 자체는 맞습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "전서윤 씨, 186만원 대납 뒤 현금 상환 기록은 있어도 '완전 종료'라는 문장은 없습니다. 그 돈이 정말 끝났다고 말할 근거가 있습니까.",
+              "text": "전서윤 씨, 그 오래된 큰돈이 완전히 끝난 일이라고 단정할 근거가 충분합니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "민태오 씨, 이 원본 기록만 보면 186만원은 부분 상환만 있었고 남은 칸이 지워지지 않았습니다. '끝난 돈이 아니다'라는 판단을 지금도 유지합니까.",
+              "text": "민태오 씨, 예전 큰돈이 아직 정리되지 않았다는 판단을 지금도 유지합니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "전서윤 씨는 왜 '원래 돈 약속 흐리는 사람'이라는 인상을 먼저 퍼뜨리면서, 더 큰 과거 채무는 단 한 줄도 붙이지 않았습니까.",
+              "text": "전서윤 씨, 왜 지금 불리한 맥락보다 현재 피해 인상부터 앞세웠습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "민태오 씨, 이 메모앱 계산표와 하린에게 보낸 메시지는 '예전 남은 돈에서 빼면 된다'는 개인 결론이 이미 서 있었다는 뜻 아닙니까.",
+              "text": "민태오 씨, 이미 혼자 계산을 끝내 놓고 있던 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

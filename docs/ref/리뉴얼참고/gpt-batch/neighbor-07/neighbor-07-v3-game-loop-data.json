@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "박나리 씨, 그 봉투 사진 어디에도 관리사무소 승인 주체나 기간은 없습니다. 무엇을 근거로 공식 허가처럼 받아들이셨습니까?",
+              "text": "박나리 씨, 그 열쇠와 메모만으로 써도 된다고 단정하신 건 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "권성호 씨, 영상을 보기 전에는 박나리 씨가 실제로 언제부터 얼마나 넣었는지 직접 확인하신 건 아니지요?",
+              "text": "권성호 씨, 당시 상황을 끝까지 확인하기 전에 먼저 판단하신 건 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "임시사용 승인대장을 보신 적도 없는데, 왜 그 잠금함을 803 전용처럼 단정하셨습니까?",
+              "text": "박나리 씨, 공식 기록을 보지 않은 채 자기 공간처럼 받아들인 건 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "관리실 답변 전 직접 자물쇠를 건 사실, 임시조치라는 말만으로 절차 위반이 사라집니까?",
+              "text": "권성호 씨, 관리실 답을 기다리지 않고 먼저 막아선 부분이 있었습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "첫 안내 문자로 관리실 먼저라는 기준을 알았는데도, 왜 '곧 확인하면 된다'고 스스로 기준을 바꾸셨습니까?",
+              "text": "박나리 씨, 관리실 확인이 먼저라는 말을 듣고도 스스로 기준을 느슨하게 잡으신 건 아닙니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "관리실 답보다 단지앱 글이 먼저 올라간 순서, 지금도 안전상 불가피했다고만 보십니까?",
+              "text": "권성호 씨, 관리실 답변보다 공개 경고를 앞세운 건 아니었습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

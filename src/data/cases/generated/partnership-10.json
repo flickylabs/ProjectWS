@@ -321,10 +321,10 @@
   "evidence": [
     {
       "id": "e-1",
-      "name": "오퍼 메일과 온보딩 문서",
+      "name": "안내 메일과 첨부 문서",
       "description": "준서가 민서에게 보낸 정식 오퍼 메일, 계좌정보 요청서, 첫 주 근무 가이드 문서 원본이다.",
       "surfaceName": "오퍼 메일과 온보딩 문서",
-      "surfaceDescription": "정식 오퍼 메일, 계좌정보 요청서, 근무 가이드 문서 묶음이다.",
+      "surfaceDescription": "지원자에게 전달된 안내 메일과 첨부 문서를 묶은 자료다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -344,14 +344,40 @@
         "check_edits": "메일 본문과 첨부문서에 후편집 흔적이 없다.",
         "question_acquisition": "업무용 계정에서 오간 채용 메일이라 적법하게 확보됐다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 오퍼 메일과 온보딩 문서를 직접 보낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "급여 협의 전 정식 단계 서류를 보낸 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "수신자가 이를 최종 합류로 오인할 구조였던 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "혜린의 보류 메시지와 기존 트레이너 공지",
       "description": "혜린이 민서에게 합류를 보류한다고 보낸 메시지와, 기존 트레이너 단톡에 '아직 채용 확정 아님'이라고 알린 원본 대화다.",
-      "surfaceName": "합류 보류 메시지와 내부 공지",
-      "surfaceDescription": "합류 보류 메시지와 내부 단톡 공지 원본 대화다.",
+      "surfaceName": "메시지와 내부 대화",
+      "surfaceDescription": "개별 메시지와 내부 대화 기록을 함께 묶은 자료다.",
       "type": "chat",
       "reliability": "hard",
       "completeness": "original",
@@ -370,14 +396,40 @@
         "check_edits": "대화 원문과 타임스탬프에 조작 흔적이 없다.",
         "question_acquisition": "채용 관련 업무 대화라 제출 정당성은 높다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 보류 메시지와 내부 공지를 먼저 올린 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "오퍼 직후 기존 직원들에게 먼저 알린 경위를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확인 절차 없이 독단처럼 전달한 표현의 배경을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
-      "name": "크롭된 단톡 캡처",
+      "name": "단톡 캡처",
       "description": "혜린이 '이번 주부터 바로 써'라고 말한 부분만 남은 캡처로, 앞뒤에 붙은 '트라이얼로' 문장이 잘려 있어 최종 승인처럼 보인다.",
       "surfaceName": "크롭된 단톡 캡처",
-      "surfaceDescription": "대화 한 줄만 남은 캡처로, 앞뒤 조건 문장이 잘려 있다.",
+      "surfaceDescription": "대화 일부를 담은 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -406,7 +458,33 @@
           "questionAngle": "박혜린에게: \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 박혜린의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단톡 캡처를 증거로 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "상하단이 제거된 캡처를 논쟁 직후 저장한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞뒤 문장을 제외한 채 한 줄만 남긴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -447,7 +525,33 @@
           "implication": "이 증거는 박혜린의 \"혜린의 일방적 보류 통보와 내부 확산\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 단톡과 일정조율 메일에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "메시지 원문에 붙은 수식어와 회신 일정의 의미를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 대화를 서로 다르게 받아들인 배경을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -477,14 +581,40 @@
         "question_acquisition": "회사 공용 운영문서라 적법하게 확보됐다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 채용 체크리스트와 급여 시트 기록을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "평가와 급여 확정 칸이 비어 있던 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공동 확인 없이 다음 단계로 넘어간 판단 근거를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "HR 툴 자동 캘린더 발송 로그와 노무사 확인 메모",
       "description": "후보자 이메일을 온보딩 단계에 넣으면 자동으로 'Day 1 Orientation' 일정 초대가 발송된다는 HR 툴 로그와 정우림 노무사의 확인 메모다.",
-      "surfaceName": "HR 툴 발송 로그와 노무사 메모",
-      "surfaceDescription": "HR 시스템 자동 발송 로그와 노무사 확인 메모 묶음이다.",
+      "surfaceName": "발송 로그와 확인 메모",
+      "surfaceDescription": "발송 기록과 확인 메모를 묶은 자료다.",
       "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
@@ -517,7 +647,33 @@
           "implication": "이 증거는 박혜린의 \"준서가 의도적으로 동업자를 속여 독단 채용했는가\" 쟁점과 관련된다. 박혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 자동 발송 로그와 확인 메모에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "온보딩 단계 이동 직후 일정 초대가 발송된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "시스템 문구가 합류 확정처럼 읽힌 구조를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

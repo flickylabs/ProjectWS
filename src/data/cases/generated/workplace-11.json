@@ -355,7 +355,33 @@
         }
       },
       "surfaceName": "기여 배분표와 출원 초안 이력",
-      "surfaceDescription": "기여도 배분표와 출원 초안 문서의 수정 이력이 담긴 버전 기록"
+      "surfaceDescription": "기여도 배분표와 출원 초안 문서의 수정 이력이 담긴 버전 기록",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 기여표와 출원 초안 이력을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "핵심 문구 입력 뒤 표기 열이 수정된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "발표 정리와 초안 기여가 엇갈린 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -391,8 +417,34 @@
           "implication": "이 증거는 노서린의 \"브로커 우회 접촉과 전달\" 쟁점과 관련된다. 노서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "개인 메일 전달본과 메신저 수수료 대화",
-      "surfaceDescription": "개인 메일 전달 기록과 메신저에서 나눈 수수료 관련 대화 내용"
+      "surfaceName": "개인 메일 전달본과 외부 대화 기록",
+      "surfaceDescription": "개인 메일 전달 기록과 외부 대화가 함께 남은 자료",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 개인메일 전달본과 대화 기록을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "검토 전날 밤 파일 발송과 대화가 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "설명용이라던 첨부에 핵심 정리본이 포함된 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -418,7 +470,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "보안 경보 캡처 PDF 문서",
-      "surfaceDescription": "데이터 유출 방지 시스템의 경보 화면을 캡처하여 정리한 PDF"
+      "surfaceDescription": "보안 경보 화면을 정리한 PDF",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 DLP 경보 PDF를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "재전송 열과 세션 정보가 빠진 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "단독 행위처럼 읽히게 한 제시 방식의 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -445,9 +523,35 @@
         "question_acquisition": "보안사고 조사 범위 원본 로그 — 적법성 높음."
       },
       "subjectParty": "b",
-      "surfaceName": "메일 게이트웨이 로그와 링크 기록",
-      "surfaceDescription": "메일 게이트웨이 원본 로그와 외부 공유 링크 재전송 기록",
-      "requiredLieState": "S3"
+      "surfaceName": "전송 로그와 링크 기록",
+      "surfaceDescription": "원본 전송 흐름과 링크 이동 기록",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 게이트웨이 로그와 재전송 기록을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "첫 수신 뒤 다른 도메인 재공유가 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "통제 밖 전달 경로가 더 넓어진 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -473,8 +577,34 @@
         "question_acquisition": "인사자료 — 분쟁 해결 목적 외 공개 제한."
       },
       "subjectParty": "a",
-      "surfaceName": "인사 평가 초안과 기밀 위험 메모",
-      "surfaceDescription": "인사 평가 초안 문서와 기밀 취급 관련 위험성을 적은 메모"
+      "surfaceName": "평가 초안과 내부 메모",
+      "surfaceDescription": "평가 초안과 별도 메모가 함께 남은 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 평가 초안과 위험 메모 작성 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "결과 확인 전 제외 메모가 먼저 들어간 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "예방 조치보다 선행 낙인이 먼저 반영된 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -512,9 +642,35 @@
           "implication": "이 증거는 노서린의 \"유출 범위 — 브로커 1건인가\" 쟁점과 관련된다. 노서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "외부 브로커 송장과 입금 추적 정리",
-      "surfaceDescription": "외부 브로커 송장과 가상자산 입금 흐름을 추적한 포렌식 보고",
-      "requiredLieState": "S3"
+      "surfaceName": "송장 자료와 입금 추적 정리",
+      "surfaceDescription": "송장 자료와 입금 흐름을 정리한 문서",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 송장과 입금 추적 정리 자료를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "대가가 분할 입금된 직후 전달 흔적이 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "대가 흐름이 자료 전달과 함께 움직인 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

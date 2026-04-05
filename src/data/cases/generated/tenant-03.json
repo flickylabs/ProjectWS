@@ -360,14 +360,40 @@
           "questionAngle": "문태수에게: \"태수의 선순위 채무 축소 고지\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 문태수의 \"태수의 선순위 채무 축소 고지\" 쟁점과 관련된다. 문태수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계약서 원본과 특약 문구를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "작성일과 잔금 일정이 당시 문자 순서와 맞는 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "계약서 문구 밖 별도 비용과 수납 방식이 생긴 경위를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "서윤-태수-한별 단톡 캡처",
       "description": "한별이 '보험은 거의 된다'고 말하고, 서윤이 잔금 일부를 잠시 보류하겠다고 답한 단톡방 일부 캡처다.",
       "surfaceName": "3자 단톡 캡처",
-      "surfaceDescription": "세입자, 집주인, 중개사가 함께 있는 대화방 일부 캡처다.",
+      "surfaceDescription": "세 사람이 오간 대화 일부를 담은 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -387,14 +413,40 @@
         "check_edits": "문장 자체 편집은 없지만 앞뒤 두세 줄이 빠져 인상이 달라지는 선택적 크롭이 확인됐다.",
         "question_acquisition": "당사자 대화지만 제3자인 중개사 발언까지 외부 공유돼 사생활 우려가 남는다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단톡 원본의 안내 흐름에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "잔금 연기 통보 직후 새벽에 캡처를 만든 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞뒤 몇 줄을 뺀 채 제출해 의미가 달라진 점을 인정하십니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "180만원 송금 내역과 잔금 보류 계좌기록",
       "description": "서윤이 한별 개인 계좌로 180만원을 송금한 내역, 그리고 약정 잔금이 이틀 뒤 분할 송금된 계좌 거래기록이다.",
       "surfaceName": "추가 송금 내역과 잔금 계좌기록",
-      "surfaceDescription": "추가 송금 내역과 분할 입금이 표시된 계좌 거래기록이다.",
+      "surfaceDescription": "추가 송금과 계약 관련 입출금 흐름을 확인할 수 있는 계좌 기록이다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -424,7 +476,33 @@
           "questionAngle": "문태수에게: \"중개보수 외 180만원의 실제 수령자\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 문태수의 \"중개보수 외 180만원의 실제 수령자\" 쟁점과 관련된다. 문태수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 송금 내역과 분할 이체 기록의 취지를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계약 다음 날 별도 송금이 먼저 이뤄진 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "정식 수납이 아닌 개인 명의 계좌를 택한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -464,14 +542,40 @@
           "implication": "이 증거는 문태수의 \"태수의 선순위 채무 축소 고지\" 쟁점과 관련된다. 문태수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 등기와 상환예정 확인서를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "추가 대출 실행 시점이 계약 뒤로 찍힌 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "처음 제시한 말소 예정 기준이 최신 채무를 반영했는지 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "통화 녹음 파일과 보증상담센터 통화기록",
       "description": "잔금 전날 한별, 태수, 서윤이 차례로 통화한 녹음 일부와, 서윤이 보증상담센터에 문의한 상담 이력이다.",
-      "surfaceName": "통화 녹음과 상담센터 통화기록",
-      "surfaceDescription": "당사자 간 통화 녹음 일부와 상담센터 문의 이력이다.",
+      "surfaceName": "통화 녹음과 문의 기록",
+      "surfaceDescription": "관련 통화 녹음과 문의 흐름을 묶은 기록이다.",
       "type": "record",
       "reliability": "soft",
       "completeness": "original",
@@ -501,7 +605,33 @@
           "questionAngle": "문태수에게: \"당일 확인 원칙의 쌍방 붕괴\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 문태수의 \"당일 확인 원칙의 쌍방 붕괴\" 쟁점과 관련된다. 문태수은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 통화 녹음과 상담 기록을 모두 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "안심 발언 뒤 곧바로 다시 문의가 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "해당 설명을 누가 먼저 꺼냈는지 분명히 기억하십니까?",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -530,7 +660,33 @@
         "question_acquisition": "회계 자료는 내부 정보지만 당사자 비용 분쟁 해결을 위해 적법한 요청 절차를 거쳐 제출됐다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 세금계산서와 정산표를 함께 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "별도 수납일과 사무실 지출 시각이 겹치는 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "정식 보수 밖의 비용이 어떤 명목으로 처리됐는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

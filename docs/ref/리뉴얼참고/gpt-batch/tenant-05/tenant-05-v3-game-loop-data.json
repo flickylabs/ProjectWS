@@ -22,7 +22,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "배선우, 계약 특약상 정산 항목을 최종 점검 때 함께 말하려 했다는 설명을 지금 구체적으로 해 보십시오.",
+              "text": "배선우 씨, 정산 이야기를 왜 끝까지 미뤘는지부터 설명해 보시겠습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -61,7 +61,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "조민재, 손상 통보보다 먼저 '전 세입자 문제' 취지의 말을 한 이유가 무엇입니까.",
+              "text": "조민재 씨, 손상 얘기보다 사람 평가가 먼저 나온 이유부터 짚어 보시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -117,7 +117,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "배선우 씨, 관리기록상 카드 분실 접수가 최종 점검 전날 밤입니다. 그 사실을 왜 먼저 알리지 않았습니까.",
+              "text": "배선우 씨, 먼저 알렸어야 할 작은 정산 문제가 있었던 건 맞지요?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -156,7 +156,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "조민재 씨, CCTV상 선우 퇴거 뒤 6시간 후 사다리를 들고 들어간 것이 맞습니까.",
+              "text": "조민재 씨, 공동 점검 전에 먼저 들어간 건 사실이지요?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -212,7 +212,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "배선우 씨, 종결 메모상 옥상 민원은 1회입니다. 그런데 왜 처음엔 '아예 없었다'고 답했습니까.",
+              "text": "배선우 씨, 예전 일을 통째로 없던 것처럼 말한 데엔 이유가 있었던 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -251,7 +251,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "조민재 씨, 조카 문자에 '문짝 쳤다'는 표현이 남아 있습니다. 그 문장을 부인하십니까.",
+              "text": "조민재 씨, 그 손상 시점을 다시 보게 하는 자료가 나온 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

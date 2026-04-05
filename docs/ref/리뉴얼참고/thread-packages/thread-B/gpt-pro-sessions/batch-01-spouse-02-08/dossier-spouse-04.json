@@ -1,0 +1,1335 @@
+{
+  "caseId": "spouse-04",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "동선과 가족 경유",
+      "description": "출입기록과 메신저를 묶어, 거짓 긴급업무와 가족 경유 동선을 동시에 찌르는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "윤하준 씨, 출입기록과 방금 말한 '클라이언트 긴급 호출' 사이에 빈 시간이 있습니다. 설명하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse04:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "문자 14분 뒤 어머니 아파트 주차기록이 찍힙니다. 공방에서 그곳으로 간 실제 이유를 동선 순서대로 말씀하십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse04:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "가족을 끼우지 않기로 한 약속이 있었는데, 왜 선물 케이스와 장식을 어머니에게 맡겼습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse04:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "백다은 씨, 가족에게 연락한 시점과 그 내용부터 설명하세요. 왜 약속 위반이 아니라고 판단됐습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse04:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "가족을 '준비만 도와준 사람'으로 보셨다면, 코드까지 공유된 사실은 어떻게 설명하시겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse04:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "첫 결혼기념일에 가족을 빼자는 문장을 기억하면서도, 왜 그 선을 예외 처리하셨습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse04:b:d-4:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "알림의 함정과 실제 변경",
+      "description": "잘린 알림 화면과 기관 기록을 겹쳐, 누가 무엇을 봤고 누가 실제로 움직였는지 가른다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "윤하준 씨, 예약 변경 알림에 나온 결과와 실제 요청 경위가 다를 수 있습니다. 그 흐름을 먼저 설명하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse04:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "레스토랑과 제과점 기록을 함께 보면 어머니 연결이 가장 강합니다. 그 가능성을 언제부터 의심했습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse04:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "직접 취소는 아니었다면서도, 왜 다은에게 '누가 바꿨는지'를 바로 말하지 않았습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse04:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "백다은 씨, 동기화된 태블릿을 확인한 경위와, 왜 본인 확인보다 캡처를 먼저 남겼는지 설명하십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse04:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "캡처 직후 친구 단톡으로 전송한 이유는 무엇입니까? 대면보다 외부 확인이 먼저였던 이유를 말해 보세요.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse04:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "이 알림 화면만으로 하준이 직접 취소했다고 단정하신 근거는 무엇이었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse04:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "의도와 정보 경로",
+      "description": "음성메모와 가족단톡을 묶어, 개입의 의도와 정보 유출 경로를 최종적으로 봉합하는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-4",
+        "d-5",
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "윤하준 씨, 음성메모에 남아 있는 취지를 보면 우연한 참견이라 보기 어렵습니다. 설명하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse04:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "어머니가 선물 케이스, 케이크 장식, 예약 코드 흐름까지 닿게 된 출발점이 무엇이었는지 답하십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse04:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "가족을 끼우지 않겠다는 약속을 먼저 느슨하게 만든 쪽이 본인이라는 점을 인정합니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse04:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "백다은 씨, 브로치 건 외에 추가로 전달한 정보가 있었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse04:b:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "변경 알림 결과와 실제 요청 주체를 분리해 보십시오. 왜 분 단위 대조가 오히려 결론을 먼저 굳혔습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse04:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "통화기록과 음성메모까지 나온 지금, 예약 변경 요청자가 별도였다는 점은 인정하십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse04:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "spouse04:a:d-1:unlock:s2:0",
+            "factText": "긴급업무라고 했던 문자 뒤 실제 동선은 어머니 아파트 쪽으로 꺾였다는 사실",
+            "tags": [
+              "context",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "문자 발송 14분 뒤",
+                "neutral": "그 직후",
+                "dateExact": "문자 발송 14분 뒤",
+                "period": "문자 직후"
+              },
+              "person": {
+                "exact": "강정희",
+                "neutral": "그 사람",
+                "fullName": "강정희",
+                "judgeRef": "어머니"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse04:a:d-1:unlock:s3:0",
+            "factText": "시계 케이스 수령이 기념일 선물 준비와 연결돼 있었다는 사실",
+            "tags": [
+              "motive",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "item": {
+                "exact": "시계 케이스",
+                "neutral": "그 물건"
+              },
+              "occasion": {
+                "exact": "기념일 선물",
+                "neutral": "그 준비"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse04:a:d-1:unlock:s4:0",
+            "factText": "하준이 선물 때문에 거짓말했다고 해도 신뢰 훼손이 더 컸다는 자각",
+            "tags": [
+              "emotion",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "occasion": {
+                "exact": "첫 결혼기념일 약속",
+                "neutral": "그 약속"
+              },
+              "person": {
+                "exact": "백다은",
+                "neutral": "상대",
+                "fullName": "백다은",
+                "judgeRef": "배우자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse04:a:d-1:unlock:s5:0",
+            "factText": "하준이 긴급업무를 꾸며 말하고 실제로는 어머니 아파트로 갔음을 전면 인정하는 진술",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "강정희",
+                "neutral": "그 사람",
+                "fullName": "강정희",
+                "judgeRef": "어머니"
+              },
+              "time": {
+                "exact": "기념일 당일 저녁",
+                "neutral": "그 시점",
+                "dateExact": "기념일 당일 저녁",
+                "period": "저녁 약속 직전"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse04:a:d-4:unlock:s2:0",
+            "factText": "하준이 선물 케이스와 케이크 장식을 어머니에게 맡겨 두었다는 사실",
+            "tags": [
+              "act",
+              "relationship"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "item": {
+                "exact": "시계 케이스와 케이크 장식",
+                "neutral": "그 준비물"
+              },
+              "person": {
+                "exact": "강정희",
+                "neutral": "그 사람",
+                "fullName": "강정희",
+                "judgeRef": "어머니"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "justify"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse04:a:d-4:unlock:s3:0",
+            "factText": "하준이 다은의 브로치 연락을 방패로 삼아 자신의 약속 위반을 분산하려는 심리",
+            "tags": [
+              "counter",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "가족을 끼우지 않겠다는 약속",
+                "neutral": "그 약속"
+              },
+              "person": {
+                "exact": "백다은",
+                "neutral": "상대",
+                "fullName": "백다은",
+                "judgeRef": "배우자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse04:a:d-4:unlock:s4:0",
+            "factText": "서프라이즈 명분이 가족 경계 원칙을 깨뜨렸다는 자각",
+            "tags": [
+              "emotion",
+              "rule"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "rule": {
+                "exact": "가족을 끼우지 않겠다는 기념일 약속",
+                "neutral": "그 약속"
+              },
+              "occasion": {
+                "exact": "첫 결혼기념일",
+                "neutral": "그날"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse04:a:d-4:unlock:s5:0",
+            "factText": "하준이 자신 쪽에서 먼저 가족 개입의 문을 열었다고 인정하는 진술",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "강정희",
+                "neutral": "그 사람",
+                "fullName": "강정희",
+                "judgeRef": "어머니"
+              },
+              "item": {
+                "exact": "선물 케이스와 장식",
+                "neutral": "그 준비물"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse04:a:d-5:unlock:s2:0",
+            "factText": "예약 코드와 케이크 문구를 아는 제3자가 실제로 움직였다는 사실",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "code": {
+                "exact": "예약 코드와 케이크 문구",
+                "neutral": "그 정보"
+              },
+              "institution": {
+                "exact": "레스토랑 예약센터와 제과점",
+                "neutral": "해당 업체들"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "justify"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse04:a:d-5:unlock:s3:0",
+            "factText": "하준이 강정희 개입 가능성을 이미 의심하고도 입 밖에 내지 않았다는 사실",
+            "tags": [
+              "fear",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "강정희",
+                "neutral": "그 사람",
+                "fullName": "강정희",
+                "judgeRef": "어머니"
+              },
+              "code": {
+                "exact": "예약 코드",
+                "neutral": "그 코드"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse04:a:d-5:unlock:s4:0",
+            "factText": "가족 충성심 때문에 진실을 늦춘 것이 다은의 불신을 키웠다는 자각",
+            "tags": [
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "백다은",
+                "neutral": "상대",
+                "fullName": "백다은",
+                "judgeRef": "배우자"
+              },
+              "person2": {
+                "exact": "강정희",
+                "neutral": "그 사람",
+                "fullName": "강정희",
+                "judgeRef": "어머니"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse04:a:d-5:unlock:s5:0",
+            "factText": "강정희가 의도적으로 예약과 케이크 동선을 비틀었다는 사실",
+            "tags": [
+              "admission",
+              "motive"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "강정희",
+                "neutral": "그 사람",
+                "fullName": "강정희",
+                "judgeRef": "어머니"
+              },
+              "institution": {
+                "exact": "레스토랑 예약센터와 제과점",
+                "neutral": "해당 업체들"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse04:b:d-2:unlock:s2:0",
+            "factText": "다은이 동기화된 태블릿 알림을 직접 캡처했다는 사실",
+            "tags": [
+              "act",
+              "privacy"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "device": {
+                "exact": "동기화된 태블릿",
+                "neutral": "그 기기"
+              },
+              "time": {
+                "exact": "대면 26분 전",
+                "neutral": "그때",
+                "dateExact": "대면 26분 전",
+                "period": "대면 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "justify"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse04:b:d-2:unlock:s3:0",
+            "factText": "다은이 하준과 대면하기 전 친구 단톡으로 먼저 자료를 돌렸다는 사실",
+            "tags": [
+              "timeline",
+              "privacy"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "recipient": {
+                "exact": "친구 단톡",
+                "neutral": "외부 대화방"
+              },
+              "person": {
+                "exact": "한예슬",
+                "neutral": "그 친구",
+                "fullName": "한예슬",
+                "judgeRef": "친구"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse04:b:d-2:unlock:s4:0",
+            "factText": "상처를 증명받고 싶은 마음이 사생활 경계를 넘게 만들었다는 자각",
+            "tags": [
+              "emotion",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "occasion": {
+                "exact": "첫 결혼기념일",
+                "neutral": "그날"
+              },
+              "device": {
+                "exact": "동기화된 태블릿",
+                "neutral": "그 기기"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse04:b:d-2:unlock:s5:0",
+            "factText": "무단 열람과 제3자 공유 모두 다은의 선택이었다는 전면 인정",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "device": {
+                "exact": "동기화된 태블릿",
+                "neutral": "그 기기"
+              },
+              "recipient": {
+                "exact": "친구 단톡",
+                "neutral": "외부 대화방"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse04:b:d-3:unlock:s2:0",
+            "factText": "알림 화면만으로는 변경 요청자의 신원을 알 수 없었다는 사실",
+            "tags": [
+              "evidence",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "notice": {
+                "exact": "예약 변경 완료 알림",
+                "neutral": "그 알림"
+              },
+              "institution": {
+                "exact": "레스토랑 예약센터",
+                "neutral": "그 예약처"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "justify"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse04:b:d-3:unlock:s3:0",
+            "factText": "다은이 결과 알림을 직접 취소와 동일시해 오판을 굳혔다는 사실",
+            "tags": [
+              "timeline",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "notice": {
+                "exact": "예약 변경 완료 알림",
+                "neutral": "그 알림"
+              },
+              "time": {
+                "exact": "대면 직전",
+                "neutral": "그때",
+                "dateExact": "대면 직전",
+                "period": "그 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse04:b:d-3:unlock:s4:0",
+            "factText": "분 단위 타임라인 집착이 사실 확인보다 결론을 앞서게 만들었다는 자각",
+            "tags": [
+              "emotion",
+              "threshold"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "분 단위 대조",
+                "neutral": "그 확인"
+              },
+              "occasion": {
+                "exact": "첫 결혼기념일 저녁",
+                "neutral": "그 약속"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse04:b:d-3:unlock:s5:0",
+            "factText": "실제 예약 변경 요청자는 별도 발신자였다는 인정",
+            "tags": [
+              "admission",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "institution": {
+                "exact": "레스토랑 예약센터",
+                "neutral": "그 예약처"
+              },
+              "code": {
+                "exact": "예약 코드",
+                "neutral": "그 코드"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse04:b:d-4:unlock:s2:0",
+            "factText": "다은이 브로치 대여를 위해 예약 캡처와 코드를 시어머니에게 보냈다는 사실",
+            "tags": [
+              "act",
+              "relationship"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "item": {
+                "exact": "브로치와 예약 캡처",
+                "neutral": "그 준비물"
+              },
+              "person": {
+                "exact": "강정희",
+                "neutral": "그 사람",
+                "fullName": "강정희",
+                "judgeRef": "강정희 씨"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "justify"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse04:b:d-4:unlock:s3:0",
+            "factText": "하준도 이미 선물과 케이크를 어머니 쪽에 맡겼다는 맞대응 논리",
+            "tags": [
+              "counter",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "윤하준",
+                "neutral": "상대",
+                "fullName": "윤하준",
+                "judgeRef": "배우자"
+              },
+              "rule": {
+                "exact": "가족을 끼우지 않겠다는 약속",
+                "neutral": "그 약속"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse04:b:d-4:unlock:s4:0",
+            "factText": "상징을 지키려다 원칙을 깨뜨린 자기수치의 표면화",
+            "tags": [
+              "shame",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "occasion": {
+                "exact": "첫 결혼기념일",
+                "neutral": "그날"
+              },
+              "rule": {
+                "exact": "가족을 끼우지 않겠다는 기념일 약속",
+                "neutral": "그 약속"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse04:b:d-4:unlock:s5:0",
+            "factText": "다은 자신도 가족 개입의 통로를 열었다고 인정하는 진술",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "item": {
+                "exact": "예약 캡처와 코드",
+                "neutral": "그 정보"
+              },
+              "person": {
+                "exact": "강정희",
+                "neutral": "그 사람",
+                "fullName": "강정희",
+                "judgeRef": "강정희 씨"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "spouse04:contradiction:0",
+        "targetParty": "a",
+        "trigger": "하준이 끝까지 긴급업무를 주장한 상태에서 e-1이 제시될 때",
+        "text": "작업실 출입기록상 18시 07분 퇴실 뒤 긴급 납품 일정은 비어 있습니다. '클라이언트 호출' 설명과 실제 일정이 맞지 않습니다.",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "spouse04:contradiction:1",
+        "targetParty": "b",
+        "trigger": "다은이 직접 취소를 단정한 상태에서 e-3와 e-4가 함께 제시될 때",
+        "text": "태블릿 알림은 변경 결과만 보여주고, 레스토랑 기록은 별도 발신자의 요청을 가리킵니다. '알림=하준 직접 취소'는 그대로 이어지지 않습니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-4"
+        ]
+      },
+      {
+        "id": "spouse04:contradiction:2",
+        "targetParty": "a",
+        "trigger": "양측 모두 가족은 끼우지 않았다고 축소하는 상태에서 e-2와 e-6이 나올 때",
+        "text": "하준은 선물 케이스와 장식을 맡겼고, 다은은 예약 캡처와 코드를 보냈습니다. 두 사람 모두 '가족은 빼자'는 문장을 이미 각자 깨뜨렸습니다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-6"
+        ]
+      },
+      {
+        "id": "spouse04:contradiction:3",
+        "targetParty": "a",
+        "trigger": "하준이 강정희의 의도를 계속 부정하는 상태에서 e-5가 공개될 때",
+        "text": "음성메모에는 둘만의 기념일을 못마땅해하며 일부러 집 쪽으로 돌리려는 취지가 남아 있습니다. 단순 참견으로만 보기 어려운 대목입니다.",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "spouse04:interjection:0",
+        "speaker": "a",
+        "trigger": "다은이 하준을 직접 취소 범인으로 몰아붙일 때",
+        "text": "제가 취소한 건 아니라니까요. 알림이 왔다고 다 제가 한 건 아니잖아요.",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      },
+      {
+        "id": "spouse04:interjection:1",
+        "speaker": "b",
+        "trigger": "하준이 '30분만 이해했으면 됐잖아' 식으로 시간을 깎아 말할 때",
+        "text": "30분이 아니라 첫 결혼기념일이었어요. 시간을 줄이면 그날 의미까지 줄어드는 건 아니잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse04:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측 모두 가족 개입을 '잠깐 도움'으로 축소할 때",
+        "text": "두 사람 모두 '잠깐'이라 표현하지만, 예약 코드와 선물 동선은 이미 가족에게 넘어가 있었습니다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "spouse04:outburst:a:0",
+        "party": "a",
+        "trigger": "어머니 책임을 직접 묻고 e-5까지 제시될 때",
+        "text": "어머니가 그런 뜻까지였는지, 저는 끝까지 모른 척하고 싶었습니다. 그게 제일 비겁했습니다.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      },
+      {
+        "id": "spouse04:outburst:a:1",
+        "party": "a",
+        "trigger": "첫 기념일 약속보다 가족 눈치를 먼저 본 것이냐는 질문을 받을 때",
+        "text": "둘 다 잃을까 봐 아무 말도 못 했고, 그래서 더 크게 망쳤습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse04:outburst:b:0",
+        "party": "b",
+        "trigger": "태블릿 무단 확인과 친구 단톡 전송을 동시에 지적받을 때",
+        "text": "그때는 누가 제 상처를 확인해 줘야 제가 안 미칠 것 같았어요.",
+        "relatedDisputes": [
+          "d-2"
+        ]
+      },
+      {
+        "id": "spouse04:outburst:b:1",
+        "party": "b",
+        "trigger": "직접 취소가 아니었다는 사실이 굳어질 때",
+        "text": "그러면 저는 그 알림 하나 붙들고 남편을 저를 버린 사람으로 확정해 버린 거네요.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "spouse04:transition:a:d-1:s0_s1",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "emergency_text_question",
+      "line": "그때는 다 급했습니다. 공방 정리하고 차 빼고 전화 받고, 설명은 나중에 하면 된다고 생각했습니다.",
+      "behaviorHint": "손가락으로 동선을 세며 시선을 피한다."
+    },
+    {
+      "id": "spouse04:transition:a:d-1:s1_s2",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "…클라이언트 호출은 아니었습니다. 맡겨 둔 물건을 찾으러 간 쪽이 더 맞습니다.",
+      "behaviorHint": "말끝이 짧아지고 숨을 한 번 길게 고른다."
+    },
+    {
+      "id": "spouse04:transition:a:d-1:s2_s3",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "route_question",
+      "line": "어머니 댁으로 간 건 맞습니다. 선물 케이스 때문이었고, 그래서 더 바로 말을 못 했습니다.",
+      "behaviorHint": "어머니라는 단어 앞에서 주어를 흐린다."
+    },
+    {
+      "id": "spouse04:transition:a:d-1:s3_s5",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_or_responsibility_question",
+      "line": "긴급업무는 거짓말이었습니다. 저는 작업실에서 바로 어머니 아파트로 갔고, 그 선택이 기념일을 무너뜨렸습니다.",
+      "behaviorHint": "어깨가 내려앉고 변명 없이 인정한다."
+    },
+    {
+      "id": "spouse04:transition:a:d-4:s0_s1",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "family_involvement_question",
+      "line": "가족을 불러들인 건 아니고 준비를 조금 맡긴 정도였습니다. 그때는 그 차이가 중요하다고 생각했습니다.",
+      "behaviorHint": "손바닥을 펴 보이며 개입의 크기를 줄여 말한다."
+    },
+    {
+      "id": "spouse04:transition:a:d-4:s1_s2",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "네, 케이스와 장식을 어머니에게 맡긴 건 사실입니다. 그 순간 약속 경계가 흔들린 것도 맞습니다.",
+      "behaviorHint": "짧게 고개를 끄덕이며 사실관계를 정리한다."
+    },
+    {
+      "id": "spouse04:transition:a:d-4:s2_s4",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_surprise_gift",
+      "line": "서프라이즈를 지키겠다는 핑계로 둘 다 가족을 우회로로 썼습니다. 문제는 도움의 크기가 아니라 원칙을 깬 거였네요.",
+      "behaviorHint": "한숨을 내쉬고 목소리가 낮아진다."
+    },
+    {
+      "id": "spouse04:transition:a:d-4:s4_s5",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6_or_emotion_threshold",
+      "line": "제가 먼저 경계를 느슨하게 만든 책임이 있습니다. 다은 쪽 잘못이 있어도, 제 예외가 시작점이었습니다.",
+      "behaviorHint": "손을 모은 채 시선을 들지 못한다."
+    },
+    {
+      "id": "spouse04:transition:a:d-5:s0_s1",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "mother_influence_question",
+      "line": "어머니가 참견한 건 맞을지 몰라도, 그때는 의도적이라고까지 말하고 싶지 않았습니다.",
+      "behaviorHint": "턱을 굳히고 짧은 침묵 뒤에 대답한다."
+    },
+    {
+      "id": "spouse04:transition:a:d-5:s1_s2",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "적어도 누군가 코드와 문구를 알고 움직였다는 건 부인할 수 없습니다. 그 연결점이 어머니라는 것도 알고 있었습니다.",
+      "behaviorHint": "문장 앞부분은 단정하고 끝은 흐린다."
+    },
+    {
+      "id": "spouse04:transition:a:d-5:s2_s3",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "intent_followup",
+      "line": "솔직히 의심은 했습니다. 그런데 제가 그 가능성을 말하는 순간 모든 책임이 가족 쪽으로 확정될까 봐 버텼습니다.",
+      "behaviorHint": "손끝을 비비며 불안하게 호흡한다."
+    },
+    {
+      "id": "spouse04:transition:a:d-5:s3_s5",
+      "caseId": "spouse-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_or_responsibility_question",
+      "line": "배후에는 어머니 강정희의 의도적 개입이 있었습니다. 저는 그 징후를 보고도 감췄고, 그래서 다은에게 거짓말까지 했습니다.",
+      "behaviorHint": "끝 문장을 또렷하게 끊어 말한다."
+    },
+    {
+      "id": "spouse04:transition:b:d-2:s0_s1",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "tablet_access_question",
+      "line": "저는 뒤진 게 아니라 알림을 본 거라고 생각했습니다. 그 차이가 제겐 중요했습니다.",
+      "behaviorHint": "문장마다 단어를 고쳐 말하며 선을 긋는다."
+    },
+    {
+      "id": "spouse04:transition:b:d-2:s1_s2",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "네, 캡처한 건 맞습니다. 그 순간엔 하준이 직접 기념일을 버렸다고 믿었습니다.",
+      "behaviorHint": "턱을 들고 사실과 판단을 분리해 말한다."
+    },
+    {
+      "id": "spouse04:transition:b:d-2:s2_s3",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "friend_share_question",
+      "line": "친구들에게 보낸 것도 맞아요. 혼자 보면 제가 과민한 사람처럼 보일까 봐 누군가 확인해 주길 원했습니다.",
+      "behaviorHint": "입술을 깨물고도 시선을 피하지 않는다."
+    },
+    {
+      "id": "spouse04:transition:b:d-2:s3_s5",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "friend_name_reference",
+      "line": "저는 무단으로 확인했고 친구 단톡에 먼저 공유했습니다. 하준에게 먼저 묻지 않은 건 분명한 제 잘못입니다.",
+      "behaviorHint": "목소리가 낮아지며 호흡이 길어진다."
+    },
+    {
+      "id": "spouse04:transition:b:d-3:s0_s1",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "cancellation_question",
+      "line": "알림이 하준 태블릿에 왔다는 사실 하나만 붙들고 있었어요. 그때는 그게 전부라고 생각했습니다.",
+      "behaviorHint": "기록을 짚듯 손끝으로 테이블을 두드린다."
+    },
+    {
+      "id": "spouse04:transition:b:d-3:s1_s2",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "맞아요, 알림만으로 직접 취소를 단정할 수는 없었습니다. 그런데 그날은 그렇게밖에 읽히지 않았습니다.",
+      "behaviorHint": "인정과 반박 사이에서 잠시 멈칫한다."
+    },
+    {
+      "id": "spouse04:transition:b:d-3:s2_s3",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "caller_identity_question",
+      "line": "이제 보니 누가 요청했는지와 누가 알림을 받았는지는 다른 문제였네요. 제가 둘을 같은 줄로 이어 버렸습니다.",
+      "behaviorHint": "종이 위에 보이지 않는 선을 그리듯 손을 움직인다."
+    },
+    {
+      "id": "spouse04:transition:b:d-3:s3_s5",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "실제 변경 요청자는 별도 발신자였습니다. 저는 잘린 알림 하나로 하준이 직접 취소했다고 몰아갔습니다.",
+      "behaviorHint": "시선을 내리고 문장을 짧게 끊는다."
+    },
+    {
+      "id": "spouse04:transition:b:d-4:s0_s1",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "mother_contact_question",
+      "line": "그때는 브로치를 빌리는 연락이 약속 위반이라고 생각하지 못했습니다. 그냥 준비의 일부라고 여겼습니다.",
+      "behaviorHint": "말끝을 낮추며 의미를 줄여 말한다."
+    },
+    {
+      "id": "spouse04:transition:b:d-4:s1_s2",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_brooch",
+      "line": "네, 예약 캡처를 보냈고 코드까지 같이 넘어갔습니다. 그건 제가 선을 넘은 겁니다.",
+      "behaviorHint": "정확한 순서를 되짚으며 사실을 인정한다."
+    },
+    {
+      "id": "spouse04:transition:b:d-4:s2_s3",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "booking_code_question",
+      "line": "하지만 하준도 이미 선물과 케이크를 어머니 쪽에 맡기고 있었어요. 둘 다 각자 예외를 만든 셈입니다.",
+      "behaviorHint": "양손을 번갈아 펴 보이며 균형을 맞추려 한다."
+    },
+    {
+      "id": "spouse04:transition:b:d-4:s3_s5",
+      "caseId": "spouse-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "저도 가족 개입의 통로를 열었습니다. 첫 기념일 약속을 하준만 어긴 것처럼 말할 수 없다는 걸 인정합니다.",
+      "behaviorHint": "표정이 무너진 채 한 문장씩 또박또박 말한다."
+    }
+  ]
+}

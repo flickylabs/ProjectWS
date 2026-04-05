@@ -322,10 +322,10 @@
   "evidence": [
     {
       "id": "e-1",
-      "name": "원본 은행 거래내역과 이체확인서",
+      "name": "원본 거래내역과 이체확인서",
       "description": "문제의 주말 이체에 대한 은행 원본 CSV, PDF 이체확인서, 실제 수취계좌 귀속 확인 자료로 환급보증금과 퇴직충당금 이동이었음을 보여준다.",
       "surfaceName": "은행 거래내역과 이체확인서",
-      "surfaceDescription": "은행 원본 CSV와 PDF 이체확인서, 수취계좌 확인 자료 묶음이다.",
+      "surfaceDescription": "거래내역과 이체확인 자료가 함께 묶인 문서다. 발급 경로와 수취 정보 확인이 필요하다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -355,7 +355,33 @@
           "questionAngle": "김라희에게: \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 관련 해명 요구 (방어 동기: 복수심)",
           "implication": "이 증거는 김라희의 \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 쟁점과 관련된다. 김라희은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 거래내역과 이체확인서에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "수취 계좌 명의와 지정 용도를 확인한 경위를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "주말 분할 이체를 어떤 정산 흐름으로 봐야 하는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -392,14 +418,40 @@
           "questionAngle": "김라희에게: \"과거 배신 사건의 협상용 소환\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 김라희의 \"과거 배신 사건의 협상용 소환\" 쟁점과 관련된다. 김라희은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 과거 회의록과 계약서 묶음에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "당시 시인 메일이 뒤늦게 붙은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이전 신뢰 위반이 현재 해석에 미친 영향을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "은행 도장처럼 보이는 거래내역 PDF 캡처",
       "description": "라희가 해지 협상 테이블에 처음 제출한 자료로, 주말 이체 세 건이 특정 외주업체로 흘러간 것처럼 표시되고 은행 직인처럼 보이는 이미지가 들어가 있다.",
-      "surfaceName": "은행 직인 표시 거래내역 캡처",
-      "surfaceDescription": "은행 양식처럼 보이는 거래내역 PDF 캡처 한 장이다.",
+      "surfaceName": "거래내역 캡처 이미지",
+      "surfaceDescription": "거래내역처럼 보이는 캡처 이미지 한 장이다. 출처와 작성 경로 확인이 필요하다.",
       "type": "document",
       "reliability": "soft",
       "completeness": "cropped",
@@ -429,14 +481,40 @@
           "questionAngle": "김라희에게: \"라희 측 편집 거래내역의 제출과 지속 사용\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 김라희의 \"라희 측 편집 거래내역의 제출과 지속 사용\" 쟁점과 관련된다. 김라희은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 거래내역 PDF 캡처를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "생성 프로그램 정보가 일반 변환기로 남은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "표기와 강조 행을 은행 양식처럼 보이게 만든 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "편집 원본 스프레드시트와 위조 직인 이미지 파일",
       "description": "거래내역 PDF의 바탕이 된 스프레드시트 원본, 숨김 열, 삽입된 직인 PNG 파일로 수취인 별칭과 금액 강조 행이 수동 편집됐음을 보여준다.",
-      "surfaceName": "편집 스프레드시트와 이미지 파일",
-      "surfaceDescription": "스프레드시트 원본과 숨김 열, 삽입된 이미지 파일 묶음이다.",
+      "surfaceName": "표 파일과 이미지 파일",
+      "surfaceDescription": "표 파일과 삽입 이미지가 함께 묶인 자료다. 작성 순서와 파일 간 관계 확인이 필요하다.",
       "type": "cloud_log",
       "reliability": "hard",
       "completeness": "original",
@@ -458,14 +536,40 @@
         "question_acquisition": "회사 공용 드라이브 자료라 적법하게 확보됐지만 사용 목적은 분쟁 해결로 제한돼야 한다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 스프레드시트와 이미지 삽입 로그에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "팀 폴더에서 편집본이 만들어진 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "숨김 열과 별칭 변경을 거쳐 뜻이 달라진 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "조정인 메일과 라희의 확인 회신",
       "description": "외부 조정인이 제출 자료의 원본 여부를 묻자 라희가 '정리본이지만 흐름은 같다'고 답한 메일과, 과거 사건을 현재 협상에 다시 얹겠다고 언급한 회신이다.",
-      "surfaceName": "조정인 메일과 확인 회신",
-      "surfaceDescription": "외부 조정인이 보낸 문의 메일과 답변 회신 스레드다.",
+      "surfaceName": "문의 메일과 회신",
+      "surfaceDescription": "문의 메일과 답변 회신이 이어진 자료다. 요청 내용과 회신 경위 확인이 필요하다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -499,14 +603,40 @@
           "implication": "이 증거는 김라희의 \"라희 측 편집 거래내역의 제출과 지속 사용\" 쟁점과 관련된다. 김라희은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 조정인 메일과 회신 원문에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "원본 요청 뒤에도 같은 자료를 다시 보낸 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "정리본이라면서도 협상 판단에 쓰려 한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "은행 마이그레이션 공지와 표기 방식 설명서",
       "description": "은행이 시스템 변경 후 예약이체를 원금·부가세·수수료로 분리 표기하고 수취인 별칭을 축약 표시하게 됐다는 공지와, 해당 거래에 적용된 세부 설명서다.",
-      "surfaceName": "은행 시스템 변경 공지와 설명서",
-      "surfaceDescription": "은행 표기 방식 변경 공지문과 세부 적용 설명서다.",
+      "surfaceName": "시스템 변경 공지와 설명서",
+      "surfaceDescription": "표시 방식 변경 공지와 적용 설명이 담긴 자료다. 변경 시점과 적용 범위 확인이 필요하다.",
       "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
@@ -539,7 +669,33 @@
           "implication": "이 증거는 김라희의 \"주말 세 줄 이체는 서로 다른 비정상 외부유출 세 건이었는가\" 쟁점과 관련된다. 김라희은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 시스템 공지와 표기 설명서에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문제 거래 직전 표기 규칙이 바뀐 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "주말 세 줄을 각각 독립 거래로 본 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

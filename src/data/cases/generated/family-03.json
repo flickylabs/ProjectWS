@@ -341,7 +341,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "잘린 메신저 약속 캡처",
-      "surfaceDescription": "메신저 대화의 일부만 캡처된 화면이다. 금전 약속 관련 문장이 보이지만 앞부분이 잘려 있다."
+      "surfaceDescription": "메신저 대화의 일부만 캡처된 화면이다. 금전 약속 관련 문장이 보이지만 앞부분이 잘려 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 약속 관련 대화 화면을 제출하게 된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "단체방에 올리기 직전 따로 저장한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "기한이 적힌 앞부분을 뺀 화면만 남긴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -371,7 +397,33 @@
       "subjectParty": "b",
       "surfaceName": "자동이체 로그와 송금 내역",
       "surfaceDescription": "은행 자동이체 신청·해지 기록과 이후 송금 내역이다. 금액 변화와 시기를 추적할 수 있다.",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 정기이체 신청과 해지 기록에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "본인 인증으로 정기이체를 끊은 시점을 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "해지 뒤 지급 시점과 액수가 흔들린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -400,7 +452,33 @@
       "subjectParty": "a",
       "surfaceName": "통장 거래내역과 입금 문자",
       "surfaceDescription": "두 계좌의 거래내역과 입금 확인 문자다. 같은 날 연쇄 이체 흐름이 보인다.",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 거래내역과 문자 내용이 함께 남은 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "지원금 입금 직후 다른 계좌로 옮긴 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "생활비라고 하던 돈의 용도가 달라진 사정을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -426,7 +504,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "친척·소모임 단톡 내보내기",
-      "surfaceDescription": "친척 단톡과 소모임 대화의 내보내기 파일이다. 특정인의 발언과 캡처 공유 기록이 남아 있다."
+      "surfaceDescription": "단체 대화의 내보내기 파일이다. 대화 흐름과 캡처 공유 기록이 남아 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단체 대화에 같은 취지의 글을 올린 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "직접 항의보다 공개 메시지가 먼저 올라간 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "상의보다 압박으로 읽힐 표현을 쓴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -465,7 +569,33 @@
       },
       "surfaceName": "가족 통화 녹음과 고지서 사진",
       "surfaceDescription": "가족 간 통화 녹음과 관리비 고지서 사진이다. 비용 납부 방식에 대한 논의가 담겨 있다.",
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 통화 녹음과 고지서 사진을 보낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "감액 송금 다음 날 방식 변경을 말한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "현금 대신 직접 납부로 돌리자던 취지를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -502,9 +632,35 @@
           "implication": "이 증거는 박정우의 \"현금 지원에서 공과금 직접 납부로 바꾸자는 합의의 쌍방 미이행\" 쟁점과 관련된다. 박정우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "주민센터 상담 확인서와 예산표",
-      "surfaceDescription": "주민센터 상담 기록과 공동 예산표다. 합의된 납부 방식과 공유 원칙이 적혀 있다.",
-      "requiredLieState": "S3"
+      "surfaceName": "상담 확인서와 예산표",
+      "surfaceDescription": "상담 기록과 공동 예산표다. 이후 기준이 되는 내용이 적혀 있다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 상담 확인서와 공동 예산표가 작성된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "두 사람 통화 이틀 뒤 상담이 잡힌 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "직접 납부와 증빙 공유가 함께 적힌 배경을 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

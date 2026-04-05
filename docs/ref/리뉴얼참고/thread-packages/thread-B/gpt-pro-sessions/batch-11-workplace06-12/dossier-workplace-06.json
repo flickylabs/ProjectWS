@@ -1,0 +1,1508 @@
+{
+  "caseId": "workplace-06",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "공지 절삭과 권한 로그",
+      "description": "잘린 공지 캡처와 숨은 관리자 권한 로그를 함께 대조해 초기 해석과 실제 수정 흔적을 가른다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "박준호 씨, 잘린 공지 캡처만 보고 자신에게 먼저 손볼 재량이 있다고 받아들이신 겁니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-06:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "박준호 씨, 고객 지연 신호가 뜬 뒤 PM에게 남기기 전에 계정 이동부터 한 이유를 절차 기준으로 설명해 보시겠습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-06:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "이서린 씨 로그가 찍힌 뒤에도, 여전히 본인 조치가 먼저였다는 순서를 부정하시겠습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-06:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "이서린 씨, 삭제돼야 할 레거시 관리자 권한이 남아 있다는 걸 알고 그 계정으로 규칙을 만지셨습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-06:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "이서린 씨, 잘린 공지 캡처에 빠진 뒷문장을 확인하지 않은 채 '내 영역은 예외'라고 판단한 겁니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-06:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "같은 변경을 두고 '수정'이 아니라 '복구'라고 부른 이유가 권한 범위를 줄여 보이려는 의도였습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-06:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "공식 문서와 실행 로그",
+      "description": "공식 RACI 문서와 실제 실행 로그를 겹쳐 누가 어떤 규칙을 언제 넘어섰는지 확인한다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "박준호 씨, e-4 로그와 e-3 규칙을 함께 보면 공동 승인 없는 재배정이 바로 보이는데, 그때도 자신에게 단독 재량이 있다고 생각하셨습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-06:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "지연 알림 이후 계정 이동과 기준 수정이 이어진 순서를 보면, 상대 조치 전부터 이미 핫픽스를 시작하신 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-06:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "RACI 문서까지 확인한 지금, 그 재배정과 기준 수정의 책임이 본인에게 있다는 점은 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-06:a:d-1:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "이서린 씨, RACI 문서에 'co-sign + PM log'가 적혀 있는데도 아직 공지를 예외 권한으로 읽으십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-06:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "e-4에서 계정이 흔들린 뒤에 본인 쪽 자동화 규칙도 손댄 흐름이 보이는데, 그때 PM 기록은 왜 먼저 남기지 않으셨습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-06:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "결국 고객 흐름이 끊겼다는 사정을 근거로 절차를 뒤로 미루신 것 아닙니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-06:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "평가 메모와 늦은 에스컬레이션",
+      "description": "선행 평가 메모와 PM 체크리스트를 나란히 두고 낙인과 절차 지연의 동기를 압박한다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "박준호 씨, 역할 경계가 정리되기 전날 밤에 HR 초안에 이서린 씨 코멘트를 넣은 이유가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-06:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "PM 체크리스트까지 있던 상황에서, 리더십 압박 때문에 사람 평가를 먼저 적어 둔 겁니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-06:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "이 메모가 선행 낙인으로 작동했다는 점까지 포함해 본인 책임으로 정리하실 수 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-06:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "이서린 씨, 체크리스트를 열어 보고도 PM 핑을 늦춘 건 책임이 본인에게 쏠릴까 두려웠기 때문입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-06:b:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "회의록까지 확인한 지금도 공지 한 줄에 기대어 '내 영역 예외'라고 말하시겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-06:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "공식 문서와 회의록을 다 본 뒤에도, 여전히 그 공지가 단독 재량을 줬다고 주장하실 수 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-06:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-06:a:d-1:unlock:s2:0",
+            "factText": "재배정과 대시보드 수정이 박준호 계정의 같은 세션에서 연속 실행됐다는 사실",
+            "tags": [
+              "evidence",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박준호",
+                "neutral": "상대방",
+                "fullName": "박준호",
+                "judgeRef": "박준호 씨"
+              },
+              "account": {
+                "exact": "고객 계정 오너십",
+                "neutral": "그 계정 배정"
+              },
+              "threshold": {
+                "exact": "헬스 점수 대시보드 기준",
+                "neutral": "그 기준"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-06:a:d-1:unlock:s3:0",
+            "factText": "박준호가 권하늘 PM 기록 없이 이서린 씨 담당 계정을 먼저 넘겼다는 순서가 확인된다는 사실",
+            "tags": [
+              "timeline",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "박준호",
+                "neutral": "상대방",
+                "fullName": "박준호",
+                "judgeRef": "박준호 씨"
+              },
+              "institution": {
+                "exact": "권하늘 PM",
+                "neutral": "PM",
+                "fullName": "권하늘",
+                "judgeRef": "권하늘 PM"
+              },
+              "account": {
+                "exact": "고객 계정 오너십",
+                "neutral": "그 계정 배정"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-06:a:d-1:unlock:s4:0",
+            "factText": "이보라 디렉터의 안정화 압박이 준호의 단독 조치를 스스로 정당화하는 근거로 쓰였다는 사실",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박준호",
+                "neutral": "상대방",
+                "fullName": "박준호",
+                "judgeRef": "박준호 씨"
+              },
+              "institution": {
+                "exact": "이보라 디렉터",
+                "neutral": "상위 리더",
+                "fullName": "이보라",
+                "judgeRef": "이보라 디렉터"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-06:a:d-1:unlock:s5:0",
+            "factText": "준호 자신도 공동 승인 원칙을 알고 있었지만 결과부터 막았다고 받아들이는 단계에 가까워졌다는 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박준호",
+                "neutral": "상대방",
+                "fullName": "박준호",
+                "judgeRef": "박준호 씨"
+              },
+              "rule": {
+                "exact": "공동 승인 + PM 기록 규칙",
+                "neutral": "그 절차"
+              },
+              "institution": {
+                "exact": "권하늘 PM",
+                "neutral": "PM",
+                "fullName": "권하늘",
+                "judgeRef": "권하늘 PM"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [],
+        "S3": [],
+        "S4": [],
+        "S5": []
+      },
+      "d-3": {
+        "S2": [],
+        "S3": [],
+        "S4": [],
+        "S5": []
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-06:a:d-4:unlock:s2:0",
+            "factText": "HR 초안의 첫 입력 시점이 역할 경계 정리 전날 밤이었다는 사실",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박준호",
+                "neutral": "상대방",
+                "fullName": "박준호",
+                "judgeRef": "박준호 씨"
+              },
+              "document": {
+                "exact": "HR 캘리브레이션 초안",
+                "neutral": "그 메모"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-06:a:d-4:unlock:s3:0",
+            "factText": "지난 분기 야간 라우팅 사건 기억이 준호의 선입견을 키워 메모 문구를 세게 만든 사실",
+            "tags": [
+              "context",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "document": {
+                "exact": "HR 캘리브레이션 초안",
+                "neutral": "그 메모"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-06:a:d-4:unlock:s4:0",
+            "factText": "리더십 평가 불안 때문에 메모가 사실 확인보다 먼저 남겨졌다는 사실",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박준호",
+                "neutral": "상대방",
+                "fullName": "박준호",
+                "judgeRef": "박준호 씨"
+              },
+              "document": {
+                "exact": "HR 캘리브레이션 초안",
+                "neutral": "그 메모"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-06:a:d-4:unlock:s5:0",
+            "factText": "준호가 메모 철회나 병기 필요성까지 받아들일 수밖에 없는 단계라는 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박준호",
+                "neutral": "상대방",
+                "fullName": "박준호",
+                "judgeRef": "박준호 씨"
+              },
+              "document": {
+                "exact": "HR 캘리브레이션 초안",
+                "neutral": "그 메모"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-06:a:d-5:unlock:s2:0",
+            "factText": "고객 지연 알림 뒤 박준호가 PM 핑보다 계정 이동을 먼저 했다는 사실",
+            "tags": [
+              "timeline",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박준호",
+                "neutral": "상대방",
+                "fullName": "박준호",
+                "judgeRef": "박준호 씨"
+              },
+              "institution": {
+                "exact": "권하늘 PM",
+                "neutral": "PM",
+                "fullName": "권하늘",
+                "judgeRef": "권하늘 PM"
+              },
+              "hotfix": {
+                "exact": "고객 지연 신호 후 핫픽스",
+                "neutral": "그 조치"
+              },
+              "time": {
+                "exact": "고객 지연 신호 직후",
+                "neutral": "그 시점",
+                "period": "지연 경보 직후"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-06:a:d-5:unlock:s3:0",
+            "factText": "박준호의 계정 이동과 이서린의 규칙 수정이 서로를 자극한 연속 반응이었다는 사실",
+            "tags": [
+              "context",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "hotfix": {
+                "exact": "고객 지연 신호 후 핫픽스",
+                "neutral": "그 조치"
+              },
+              "time": {
+                "exact": "고객 지연 신호 직후",
+                "neutral": "그 시점",
+                "period": "지연 경보 직후"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-06:a:d-5:unlock:s4:0",
+            "factText": "준호가 숫자 급락을 막는 일을 절차 위반보다 먼저 둔 내적 판단",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박준호",
+                "neutral": "상대방",
+                "fullName": "박준호",
+                "judgeRef": "박준호 씨"
+              },
+              "time": {
+                "exact": "고객 지연 신호 직후",
+                "neutral": "그 시점",
+                "period": "지연 경보 직후"
+              },
+              "hotfix": {
+                "exact": "고객 지연 신호 후 핫픽스",
+                "neutral": "그 조치"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-06:a:d-5:unlock:s5:0",
+            "factText": "준호가 공동운영 복구보다 단독 핫픽스를 먼저 택한 책임을 인정할 단계라는 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박준호",
+                "neutral": "상대방",
+                "fullName": "박준호",
+                "judgeRef": "박준호 씨"
+              },
+              "rule": {
+                "exact": "공동 승인 + PM 기록 규칙",
+                "neutral": "그 절차"
+              },
+              "hotfix": {
+                "exact": "고객 지연 신호 후 핫픽스",
+                "neutral": "그 조치"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [],
+        "S3": [],
+        "S4": [],
+        "S5": []
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-06:b:d-2:unlock:s2:0",
+            "factText": "삭제되지 않은 관리자 그룹 때문에 이서린 계정으로 새벽 수정이 가능했다는 사실",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "legacy": {
+                "exact": "레거시 관리자 권한",
+                "neutral": "그 권한"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-06:b:d-2:unlock:s3:0",
+            "factText": "서린이 규칙 변경을 '복구'라고 부르며 행동 범위를 줄여 말하고 있다는 사실",
+            "tags": [
+              "self_justification",
+              "quote"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "routing": {
+                "exact": "라우팅 규칙",
+                "neutral": "그 규칙"
+              },
+              "tag": {
+                "exact": "벤더 태그",
+                "neutral": "그 태그"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-06:b:d-2:unlock:s4:0",
+            "factText": "자기 영역을 잃을까 두려워 남은 권한을 방패처럼 썼다는 심리",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "legacy": {
+                "exact": "레거시 관리자 권한",
+                "neutral": "그 권한"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-06:b:d-2:unlock:s5:0",
+            "factText": "서린이 타팀 큐를 승인 없이 건드렸음을 인정할 수밖에 없는 단계라는 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "rule": {
+                "exact": "공동 승인 + PM 기록 규칙",
+                "neutral": "그 절차"
+              },
+              "routing": {
+                "exact": "라우팅 규칙",
+                "neutral": "그 규칙"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-06:b:d-3:unlock:s2:0",
+            "factText": "잘린 공지 캡처에는 공동 승인 뒷문장이 빠져 있었다는 사실",
+            "tags": [
+              "quote",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "팀즈 통합공지",
+                "neutral": "그 공지"
+              },
+              "rule": {
+                "exact": "통합 RACI 문서",
+                "neutral": "그 문서"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-06:b:d-3:unlock:s3:0",
+            "factText": "RACI와 체크리스트는 누구에게도 단독 통제권을 주지 않았다는 사실",
+            "tags": [
+              "rule",
+              "institution"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "document": {
+                "exact": "통합 RACI 문서",
+                "neutral": "그 문서"
+              },
+              "institution": {
+                "exact": "권하늘 PM",
+                "neutral": "PM",
+                "fullName": "권하늘",
+                "judgeRef": "권하늘 PM"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-06:b:d-3:unlock:s4:0",
+            "factText": "서린이 자기 영역 상실 두려움 때문에 공지 한 줄에 기대었다는 사실",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "document": {
+                "exact": "팀즈 통합공지",
+                "neutral": "그 공지"
+              },
+              "time": {
+                "exact": "통합 첫 2주",
+                "neutral": "그 시기",
+                "period": "통합 초기"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-06:b:d-3:unlock:s5:0",
+            "factText": "서린의 '임시 재량' 해석이 문서 원문과 배치된다는 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "document": {
+                "exact": "팀즈 통합공지",
+                "neutral": "그 공지"
+              },
+              "rule": {
+                "exact": "통합 RACI 문서",
+                "neutral": "그 문서"
+              },
+              "institution": {
+                "exact": "권하늘 PM",
+                "neutral": "PM",
+                "fullName": "권하늘",
+                "judgeRef": "권하늘 PM"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [],
+        "S3": [],
+        "S4": [],
+        "S5": []
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-06:b:d-5:unlock:s2:0",
+            "factText": "고객 지연 신호 뒤 서린이 자동화 규칙을 먼저 손보고 PM 기록을 미뤘다는 사실",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "routing": {
+                "exact": "라우팅 규칙",
+                "neutral": "그 규칙"
+              },
+              "institution": {
+                "exact": "권하늘 PM",
+                "neutral": "PM",
+                "fullName": "권하늘",
+                "judgeRef": "권하늘 PM"
+              },
+              "time": {
+                "exact": "고객 지연 신호 직후",
+                "neutral": "그 시점",
+                "period": "지연 경보 직후"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-06:b:d-5:unlock:s3:0",
+            "factText": "서린이 끊긴 고객 흐름을 핑계로 핫픽스를 정당화하고 있다는 사실",
+            "tags": [
+              "self_justification",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "hotfix": {
+                "exact": "고객 지연 신호 후 핫픽스",
+                "neutral": "그 조치"
+              },
+              "time": {
+                "exact": "고객 지연 신호 직후",
+                "neutral": "그 시점",
+                "period": "지연 경보 직후"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-06:b:d-5:unlock:s4:0",
+            "factText": "책임이 자기 몫으로 쏠릴까 두려워 더 공격적으로 수정했다는 사실",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "hotfix": {
+                "exact": "고객 지연 신호 후 핫픽스",
+                "neutral": "그 조치"
+              },
+              "time": {
+                "exact": "고객 지연 신호 직후",
+                "neutral": "그 시점",
+                "period": "지연 경보 직후"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-06:b:d-5:unlock:s5:0",
+            "factText": "서린도 공동운영 복구 원칙을 넘겨 단독 조치를 택했다는 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "이서린",
+                "neutral": "상대방",
+                "fullName": "이서린",
+                "judgeRef": "이서린 씨"
+              },
+              "rule": {
+                "exact": "공동 승인 + PM 기록 규칙",
+                "neutral": "그 절차"
+              },
+              "hotfix": {
+                "exact": "고객 지연 신호 후 핫픽스",
+                "neutral": "그 조치"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "workplace-06:contradiction:0",
+        "targetParty": "a",
+        "trigger": "박준호가 d-1에서 '정리만 했다'고 주장한 뒤 e-4가 제시될 때",
+        "text": "박준호 씨는 흐름만 정리했다고 했지만, e-4에는 같은 세션에서 계정 재배정과 대시보드 기준 수정이 연속 기록됩니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      },
+      {
+        "id": "workplace-06:contradiction:1",
+        "targetParty": "b",
+        "trigger": "이서린이 d-2에서 '복구일 뿐'이라고 축소한 뒤 e-2가 제시될 때",
+        "text": "이서린 씨는 복구라고 부르지만, e-2는 레거시 관리자 권한으로 라우팅 규칙과 벤더 태그까지 바꾼 변경 이력을 보여 줍니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "workplace-06:contradiction:2",
+        "targetParty": "b",
+        "trigger": "이서린이 d-3에서 통합 공지가 자기 영역 예외를 줬다고 주장한 뒤 e-3와 e-6이 함께 제시될 때",
+        "text": "잘린 공지 캡처와 달리, e-3와 e-6의 원문은 누구에게도 단독 통제권을 주지 않고 공동 승인과 PM 기록을 요구합니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-6"
+        ]
+      },
+      {
+        "id": "workplace-06:contradiction:3",
+        "targetParty": "a",
+        "trigger": "박준호가 d-4에서 평가 메모를 부정한 뒤 e-5가 제시될 때",
+        "text": "박준호 씨는 단순 우려 기록이라고 하지만, e-5의 초기 입력본은 역할 경계 정리 전에 이미 이서린 씨를 경계 위반 성향으로 읽히게 적고 있습니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "workplace-06:interjection:0",
+        "speaker": "b",
+        "trigger": "박준호가 KPI와 혼선만 반복하며 구체적 승인 질문을 피할 때",
+        "text": "지금도 숫자 얘기만 하시잖아요. 누가 언제 버튼을 눌렀는지가 먼저예요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-06:interjection:1",
+        "speaker": "a",
+        "trigger": "이서린이 공지 한 문장을 반복 인용하며 자기 조치 범위를 줄일 때",
+        "text": "그 문장만 떼서 읽으면 안 되는 거잖아요. 전체 운영 흐름이 이미 무너지고 있었어요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-06:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 동시에 상대 월권만 지적하며 겹쳐 말할 때",
+        "text": "두 분 다 상대 이야기 말고, 본인이 승인 절차를 건너뛴 시점부터 답하십시오.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "workplace-06:outburst:a:0",
+        "party": "a",
+        "trigger": "e-5가 나온 뒤 박준호가 선행 낙인 질문을 연속으로 받을 때",
+        "text": "저도 그때 팀이 무너지는 줄 알았어요. 사람을 먼저 적으면 안 됐다는 건 알지만, 전부 제가 통제 못 한 팀장처럼 보일까 너무 무서웠어요.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-06:outburst:a:1",
+        "party": "a",
+        "trigger": "e-4와 e-6이 함께 제시되어 d-1과 d-5가 동시에 압박될 때",
+        "text": "매출이랑 지연이 한 번에 무너질 때 가만히 서 있으라는 게 더 어려웠어요. 그래서 먼저 손댄 겁니다, 그건 인정할게요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-06:outburst:b:0",
+        "party": "b",
+        "trigger": "e-3 원문이 제시되어 공지 해석이 무너지면서도 d-2 책임 추궁이 이어질 때",
+        "text": "계속 저만 월권한 사람처럼 말하지 마세요. 제 업무영역이 무너지는 걸 보고도 아무도 안 막았잖아요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      },
+      {
+        "id": "workplace-06:outburst:b:1",
+        "party": "b",
+        "trigger": "박준호의 평가 메모와 서린의 독단 수정이 한 묶음으로 지적될 때",
+        "text": "사람을 먼저 문제 인력처럼 적어 놓고, 나중에는 왜 제가 방어적으로 굴었냐고 묻는 건 너무하잖아요.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "workplace-06:transition:a:d-1:s0_s1",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "account_owner_question",
+      "line": "통합 첫 2주에 전체 KPI랑 지연률이 흔들려서 제가 먼저 본 건 맞는 것 같아요. 그래도 바로 재배정했다고 단정하긴 아직 어려워요.",
+      "behaviorHint": "답을 미루듯 말을 길게 끌고 마지막 문장에서 속도를 늦춘다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-1:s1_s2",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "e-4가 저렇게 나오면 제가 잠깐 손댄 겁니다라고만 하긴 어렵네요. 멈추지 않게 하려던 겁니다만, 계정 조정이 있었던 건 맞아요.",
+      "behaviorHint": "로그를 본 뒤 짧게 고개를 끄덕이며 인정 폭을 넓힌다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-1:s2_s3",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "dashboard_edit_question",
+      "line": "대시보드 기준까지 건드린 건 인정할게요. 그래도 이서린 씨 쪽도 현장 정보를 쥐고 있어서 제가 더 세게 움직였어요.",
+      "behaviorHint": "한숨을 쉬고 나서 상대 쪽 사정을 끌어온다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-1:s3_s5",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-3_or_responsibility_question",
+      "line": "RACI까지 보면 제가 선을 넘은 게 맞아요. 전체 KPI를 핑계로 절차를 무시한 건 제 책임이에요.",
+      "behaviorHint": "더는 둘러대지 않고 정면을 본다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-4:s0_s1",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "calibration_note_question",
+      "line": "메모가 전혀 없었다고 하긴 어려워요. 통합 첫 2주에 전체 KPI가 흔들려 관리 메모를 남긴 건 맞는 것 같아요.",
+      "behaviorHint": "목소리가 낮아지고 문장 사이 간격이 길어진다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-4:s1_s2",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "e-5가 나오면 초안에 제가 먼저 적은 건 부정할 수 없어요. 다만 그때는 잠깐 손댄 겁니다라는 관리 기록이라고 여겼어요.",
+      "behaviorHint": "초안 시점을 확인하고 바로 단서를 붙인다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-4:s2_s4",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_merge_pressure",
+      "line": "통합 첫 2주에 리더십이 흔들리면 끝난다고 느꼈어요. 그래서 사람보다 먼저 위험 신호를 적어 두려 했어요.",
+      "behaviorHint": "어깨가 내려가고 시선이 바닥으로 향한다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-4:s4_s5",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "note_withdrawal_or_responsibility_question",
+      "line": "그 메모는 결국 이서린 씨를 먼저 규정한 거였어요. 철회하거나 병기해야 하고, 그건 제 잘못이에요.",
+      "behaviorHint": "천천히 고개를 끄덕이며 문장을 끊지 않고 끝낸다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-5:s0_s1",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "escalation_delay_question",
+      "line": "PM 핑이 늦은 건 맞아요. 그때 전체 KPI와 지연률이 같이 깨져서 먼저 흐름을 본 거예요.",
+      "behaviorHint": "처음으로 절차 지연을 부분 인정하며 손을 모은다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-5:s1_s2",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "e-6까지 보면 제가 멈추지 않게 하려던 겁니다라는 말만 하긴 어렵네요. 계정을 먼저 돌리고 기록을 늦춘 건 맞아요.",
+      "behaviorHint": "체크리스트 문구를 보고 짧게 숨을 들이쉰다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-5:s2_s3",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_no_pm_ping_question",
+      "line": "왜 PM을 바로 안 불렀냐고 하시면, 매출이 먼저 무너질까 겁났다고밖에 못 말하겠어요. 그래도 이서린 씨 쪽도 규칙을 손봤어요.",
+      "behaviorHint": "불안이 먼저 새어 나오다가 다시 책임을 나누려 한다."
+    },
+    {
+      "id": "workplace-06:transition:a:d-5:s3_s5",
+      "caseId": "workplace-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 같이 망가뜨린 셈이지만, 제가 먼저 절차를 깬 책임도 분명해요. 그건 제 책임으로 인정할게요.",
+      "behaviorHint": "어깨의 힘이 빠지며 문장이 짧아진다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-2:s0_s1",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "routing_rule_question",
+      "line": "문장 그대로 보시면 '공동 승인'이 원칙이지만, 저는 제 업무영역은 고객 흐름을 막는 쪽이라고 봤어요. 그래서 수정이 아니라 복구라고 생각했어요.",
+      "behaviorHint": "손으로 문서 한 줄을 짚듯 허공을 가른다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-2:s1_s2",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "e-2가 뜨면 문장 그대로 보시면 제 계정이 찍혀 있잖아요. 막기 위한 임시 조치였다고 해도 제가 손댄 건 맞아요.",
+      "behaviorHint": "말이 빨라지다가 '맞아요'에서 짧게 멈춘다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-2:s2_s3",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "legacy_admin_rights_question",
+      "line": "남아 있던 관리자 권한을 알고도 쓴 건 맞아요. 그래도 박준호 씨 쪽도 먼저 큐를 흔들어서 수정이 아니라 복구라고 붙들었어요.",
+      "behaviorHint": "상대 이름에서만 힘이 들어가며 턱이 굳는다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-2:s3_s5",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "결국 타팀 큐를 건드린 건 저예요. 수정이 아니라 복구라고 버틴 건 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "짧고 단단하게 마무리하며 시선을 고정한다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-3:s0_s1",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "exclusive_authority_claim",
+      "line": "문장 그대로 보시면 앞문장이 더 강하게 보였어요. 제 업무영역은 예외라고 느낀 건 사실이에요.",
+      "behaviorHint": "문장을 되읽듯 같은 표현을 두 번 반복한다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-3:s1_s2",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "e-1만 보면 제가 그 잘린 문장에 기대었던 것도 맞아요. 다만 그때는 막기 위한 임시 조치라고 생각했어요.",
+      "behaviorHint": "캡처의 잘린 부분을 본 뒤 입술을 잠깐 깨문다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-3:s2_s3",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-3_presented",
+      "line": "e-3 원문까지 보면 '공동 승인'을 빼고 읽을 수 없네요. 그래도 박준호 씨 쪽도 그 문장을 자기 권한처럼 말했어요.",
+      "behaviorHint": "원문 문구를 따라 읽고 나서 상대를 곁눈질한다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-3:s3_s5",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "co_sign_rule_question",
+      "line": "공동 승인 규칙을 알면서도 제가 제 쪽에 유리하게 읽었어요. 그 해석은 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "말끝이 낮아지고 더는 겹쳐 말하지 않는다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-5:s0_s1",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "queue_delay_question",
+      "line": "문장 그대로 보시면 '공동 승인'이 원칙이지만, 제 업무영역은 끊긴 흐름을 막는 쪽이라고 본 거예요. 그래서 먼저 확인했다고 생각했어요.",
+      "behaviorHint": "손을 모았다 펴며 스스로 논리를 정리한다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-5:s1_s2",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_being_cut_out",
+      "line": "제가 조금은 건드린 건 맞아요. 다만 수정이 아니라 복구였고, 막기 위한 임시 조치라고 본 거예요.",
+      "behaviorHint": "빠르게 인정하고 바로 방어 문장을 붙인다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-5:s2_s3",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-6_presented",
+      "line": "e-6까지 나오면 PM 기록을 미룬 것도 부정할 수 없어요. 그래도 박준호 씨 쪽도 계정부터 건드렸잖아요.",
+      "behaviorHint": "체크리스트를 확인한 뒤 목소리가 날카로워진다."
+    },
+    {
+      "id": "workplace-06:transition:b:d-5:s3_s5",
+      "caseId": "workplace-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 저도 자동화 규칙을 독단으로 바꿨고 기록도 늦췄어요. 수정이 아니라 복구라고 버틴 건 제 잘못이고 제 책임이에요.",
+      "behaviorHint": "끝 문장에서 힘을 빼고 인정으로 마무리한다."
+    }
+  ]
+}

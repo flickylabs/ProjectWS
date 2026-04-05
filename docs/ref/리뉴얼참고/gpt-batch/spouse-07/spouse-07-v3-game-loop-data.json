@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "원본 이력과 내보내기 파일을 같이 보면, 왜 아침 카테고리만 빠졌습니까?",
+              "text": "이태준 씨, 원본 이력과 내보내기 파일 사이에 빠진 부분이 생긴 이유를 설명해 보십시오.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -117,7 +117,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "병원 예약·세탁 수거·주문 기록을 따로 들이밀면서도, 왜 냉장고에는 횟수부터 적기 시작했습니까?",
+              "text": "이태준 씨, 보이지 않는 기록들을 들이밀면서도 왜 냉장고에는 횟수부터 적기 시작했습니까.",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "메모 사진이 사흘 동안 세 번 갱신됐습니다. 그 숫자를 계속 붙잡은 진짜 이유가 무엇입니까?",
+              "text": "이태준 씨, 그 숫자 메모를 계속 고쳐 붙인 진짜 이유가 무엇입니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "메신저에 '오늘 아침만 4번'이라고 적던 순간, 이미 점수판 언어가 됐다는 걸 알고 있었습니까?",
+              "text": "정다혜 씨, 메신저에 횟수로 말하기 시작한 순간 이미 점수판 언어가 됐다는 걸 알고 있었습니까.",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

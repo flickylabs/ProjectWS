@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "오연숙 씨, 부모 통보보다 앞서 하원자를 바꾼 시점이 맞다면 그것을 단순 보호로만 부를 수 있습니까?",
+              "text": "오연숙 씨, 아이 일정에 손을 대기 전에 누구와 상의하셨습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "오하린 씨, 긴급 하원을 여러 차례 부탁한 생활 패턴이 조모에게 재량이 있다고 느끼게 한 부분은 없었습니까?",
+              "text": "오하린 씨, 돌봄을 맡긴 범위를 어디까지로 보고 계셨습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "오연숙 씨, 잦은 긴급돌봄 요청이 있었다고 해서 교육·병원 결정 권한까지 생긴다고 믿게 된 이유는 무엇입니까?",
+              "text": "오연숙 씨, 자주 돌봐 왔다고 느낄 때 판단 범위를 어디까지로 보셨습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "오하린 씨, '야근 주간만'이라는 설명이 로그 전체와 맞지 않는다면 예외의 반복을 인정하십니까?",
+              "text": "오하린 씨, 예외가 반복될 때 기준을 다시 적지 않은 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "오연숙 씨, 성인용 감기약 구매 영수증과 사진이 같은 밤을 가리킨다면 그 판단이 왜 정당했다고 보십니까?",
+              "text": "오연숙 씨, 그 밤의 약 선택이 적절했다고 본 근거는 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "오하린 씨, 상담일지 원문을 기준으로 보면 전문가 방향은 생활리듬 정리인데 왜 강한 개입 인상을 정정하지 않았습니까?",
+              "text": "오하린 씨, 전문가 조언을 어떤 방향으로 이해하고 계셨습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "authenticity",

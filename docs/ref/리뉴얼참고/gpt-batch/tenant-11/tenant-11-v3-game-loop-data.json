@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "백나래 씨, 입주 초 특약을 봤을 때, '되돌릴 수 있게'라는 조건을 붙박이장 문과 상부장 철거까지 포함된다고 본 근거가 무엇입니까?",
+              "text": "백나래 씨, 그때 허용 범위를 어디까지로 이해하셨습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "오성필 씨, 계약서 특약과 별개로, 입주 초에 '크게만 안 건드리면 된다'고 말한 사실 자체는 인정하십니까?",
+              "text": "오성필 씨, 입주 초에 남긴 말이 어떤 범위까지 허용한다는 뜻이었다고 보십니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "백나래 씨, 430만원 항목 중 이동식 거울장과 소품을 고정 개선비와 같이 묶은 이유가 무엇입니까?",
+              "text": "백나래 씨, 비용 항목을 한데 묶어 제시한 기준이 무엇이었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "오성필 씨, 430만원 전부는 아니더라도 집에 남는 고정 개선비가 있었다는 점은 인정하십니까?",
+              "text": "오성필 씨, 그 비용 가운데 공간에 남는 부분이 있었다는 점은 보십니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "백나래 씨, 전체 대화 문맥까지 보면 허용이 구조 변경 승인과는 달랐다는 점을 이제 어떻게 보십니까?",
+              "text": "백나래 씨, 전체 대화 흐름을 다시 보면 그 허용을 지금은 어떻게 이해하십니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "오성필 씨, 새 임차인 모집글에서 '집주인 감성 리뉴얼 완료'라고 적은 건 누구의 공로를 전제로 한 표현이었습니까?",
+              "text": "오성필 씨, 그 홍보 문구를 쓸 때 누구의 손이 닿은 공간인지 어떻게 생각하고 계셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

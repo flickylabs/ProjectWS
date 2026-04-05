@@ -353,8 +353,34 @@
           "implication": "이 증거는 문현우의 \"현우가 '상갓집도 결국 정산, 엄마 통장부터 보자'고 실제로 말했는가\" 쟁점과 관련된다. 문현우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "가족방에 올라온 카톡 캡처",
-      "surfaceDescription": "가족 단체 채팅에 공유된 카카오톡 캡처 이미지다. 대화 내용이 보이지만 맥락 확인이 필요하다."
+      "surfaceName": "단체 대화 캡처 이미지",
+      "surfaceDescription": "단체 대화방에 공유된 대화 캡처 이미지다. 어떤 부분이 잘렸는지 확인이 필요하다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 캡처 이미지의 원본 대화 내보내기를 바로 내지 않은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 파일이 다른 기기 저장을 거쳐 다시 올라온 경위를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "말풍선 간격과 글꼴 차이가 우연이라고 보십니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -392,7 +418,33 @@
         }
       },
       "surfaceName": "원본 채팅과 공유 시트 로그",
-      "surfaceDescription": "가족 간 원본 카카오톡 대화와 공유 시트에 남긴 코멘트 기록이다. 질문과 응답이 시간순으로 남아 있다."
+      "surfaceDescription": "원본 대화 기록과 정산 메모가 함께 남아 있다. 질문과 응답의 흐름을 대조할 필요가 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 대화와 정산 질문 기록을 함께 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "비용 질문이 공개 캡처보다 몇 시간 앞선 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "거친 문의와 공개 비난 문장이 같은 맥락이라고 보십니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -419,9 +471,35 @@
         "question_acquisition": "개인 PC 사용 로그가 포함돼 있어 필요한 범위만 제한적으로 활용해야 한다."
       },
       "subjectParty": "a",
-      "surfaceName": "포렌식 감정서와 캐시 로그",
-      "surfaceDescription": "디지털 포렌식 분석 감정서와 PC 메신저 캐시·클립보드 로그다. 이미지 생성 경로를 추적할 수 있다.",
-      "requiredLieState": "S3"
+      "surfaceName": "파일 분석 문서와 저장 기록",
+      "surfaceDescription": "파일 분석 문서와 저장 기록 묶음이다. 생성 시점과 저장 흐름 확인이 필요하다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 감정서와 캐시 기록의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "업로드 직전 여러 대화창과 편집 실행이 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "핵심 말풍선 둘의 압축 흔적이 다른 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -448,9 +526,35 @@
         "question_acquisition": "사적 메모와 개인 백업이 포함돼 있어 분쟁 핵심 구간 외 확산은 사생활 침해 소지가 크다."
       },
       "subjectParty": "a",
-      "surfaceName": "임시 문장과 편집 자동저장 파일",
-      "surfaceDescription": "메신저 임시 저장 문장과 이미지 편집 앱의 자동저장 파일이다. 편집 흔적이 남아 있다.",
-      "requiredLieState": "S2"
+      "surfaceName": "저장 문구 기록과 자동저장 이미지",
+      "surfaceDescription": "저장된 문구 기록과 자동저장 이미지 묶음이다. 작성 순서와 파일 변화를 확인할 필요가 있다.",
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 임시문장과 자동저장 파일들이 남게 된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "임시문장 작성 뒤 편집본이 연속 저장된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "자동저장본마다 문장과 위치가 달라진 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -476,7 +580,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "여러 채팅방 전달 로그",
-      "surfaceDescription": "여러 단체 채팅방의 내보내기 파일과 메시지 전달 순서 로그다. 유포 경로와 시각이 기록되어 있다."
+      "surfaceDescription": "여러 대화방 기록과 전달 순서가 담긴 자료다. 전송 흐름과 시점을 확인할 필요가 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 여러 대화방 전달 기록을 증거로 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "직접 확인보다 여러 방 업로드가 먼저였던 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 이미지를 연달아 퍼뜨린 목적이 무엇이었는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -512,7 +642,33 @@
         }
       },
       "surfaceName": "정산 공유규칙 메모와 상담 확인서",
-      "surfaceDescription": "가족이 남긴 공유 정산 메모와 상담센터 권고 확인서다. 합의된 소통 원칙이 적혀 있다."
+      "surfaceDescription": "정산 관련 메모와 안내 문서다. 어떤 소통 기준이 적혀 있는지 확���이 필요하다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 정산 규칙 메모와 확인서의 보관 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "제한된 채널 사용 합의가 갈등 전 존재한 점을 부인하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공개방 사용이 기존 합의와 어떻게 달랐는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

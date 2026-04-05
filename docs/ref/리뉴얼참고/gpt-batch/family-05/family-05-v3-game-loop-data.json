@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "은주 씨 휴대폰으로 현관이 열리고 곧바로 방 문 센서가 반응한 날, 방 안에서 무엇을 확인했습니까?",
+              "text": "박은주 씨, 소현 씨 방과 계약 문제를 직접 확인해야겠다고 마음먹은 계기가 무엇이었습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "홈앱 로그상 어머니 휴대폰 출입과 방 문 센서 반응이 같은 분 단위로 찍힙니다. 이 기록을 언제, 어떻게 확인했습니까?",
+              "text": "박소현 씨, 어머니가 방 안을 확인했다고 판단한 근거를 언제부터 모으기 시작했습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "소현 씨 설명이 불완전했다 해도, 그 사실만으로 방 출입까지 정당화된다고 본 겁니까?",
+              "text": "박은주 씨, 소현 씨 설명이 다르다고 느꼈을 때 어디까지 확인해도 된다고 보셨습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "공유주거 초안과 계약금 이체가 이미 있었는데도 부모에게 단독 원룸처럼 설명한 이유는 무엇입니까?",
+              "text": "박소현 씨, 주거 형태를 부모에게 바로 설명하지 않은 이유는 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "포렌식 결과 '엄마 카드' 구절이 7개월 전 다른 통화로 확인됐는데, 이 부분을 언제부터 알고 있었습니까?",
+              "text": "박은주 씨, 짧은 음성 파일의 전후 맥락을 어느 정도 알고 계셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -220,7 +220,7 @@
             },
             {
               "id": "dossier-3.a.q2",
-              "text": "상담센터 기록까지 보면 선개입은 은주 씨, 선계약은 소현 씨로 정리됩니다. 먼저 인정할 부분은 무엇입니까?",
+              "text": "박은주 씨, 상담 전에 이미 움직인 부분이 있었다는 점부터 어떻게 설명하시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "11분 원본 통화와 포렌식 감정서를 함께 본 뒤, 31초 파일을 어떤 기준으로 위조라고 판단합니까?",
+              "text": "박소현 씨, 짧은 음성 파일이 그대로 믿기 어렵다고 본 근거는 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

@@ -1,0 +1,58 @@
+{
+  "lineIndexBasis": "0-based dialogues array index",
+  "summary": [
+    {
+      "caseId": "tenant-06",
+      "phase1_dialogue_count": 10,
+      "phase2_dialogue_count": 7,
+      "correction_count": 17
+    },
+    {
+      "caseId": "tenant-07",
+      "phase1_dialogue_count": 10,
+      "phase2_dialogue_count": 7,
+      "correction_count": 17
+    },
+    {
+      "caseId": "tenant-08",
+      "phase1_dialogue_count": 10,
+      "phase2_dialogue_count": 7,
+      "correction_count": 17
+    },
+    {
+      "caseId": "tenant-09",
+      "phase1_dialogue_count": 10,
+      "phase2_dialogue_count": 7,
+      "correction_count": 17
+    },
+    {
+      "caseId": "tenant-10",
+      "phase1_dialogue_count": 10,
+      "phase2_dialogue_count": 7,
+      "correction_count": 16
+    },
+    {
+      "caseId": "tenant-11",
+      "phase1_dialogue_count": 10,
+      "phase2_dialogue_count": 7,
+      "correction_count": 16
+    },
+    {
+      "caseId": "tenant-12",
+      "phase1_dialogue_count": 10,
+      "phase2_dialogue_count": 7,
+      "correction_count": 16
+    }
+  ],
+  "reasonCounts": {
+    "스포일러-anchorTruth직접노출": 33,
+    "스포일러-서비스명": 2,
+    "자연스러움": 8,
+    "스포일러-날짜": 10,
+    "호칭": 7,
+    "스포일러-금액": 36,
+    "스포일러-인물명": 6,
+    "스포일러-기관명": 6,
+    "해요체": 8
+  }
+}

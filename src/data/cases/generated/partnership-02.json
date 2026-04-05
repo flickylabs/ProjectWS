@@ -323,8 +323,8 @@
       "id": "e-1",
       "name": "CRM 리드 이력과 초기 제안서 버전 로그",
       "description": "세한리테일 리드가 준오 계정으로 처음 등록됐고, 초기 제안서의 핵심 구조와 첫 미팅 메모가 준오 작성으로 남아 있는 CRM 기록과 버전 로그다.",
-      "surfaceName": "CRM 리드 이력과 제안서 버전 로그",
-      "surfaceDescription": "CRM 시스템의 리드 등록 기록과 제안서 수정 이력 로그 묶음이다.",
+      "surfaceName": "영업 이력과 문서 버전 로그",
+      "surfaceDescription": "영업 등록 이력과 제안 문서 수정 기록이 묶인 자료다. 작성 순서와 기여 흐름 확인이 필요하다.",
       "type": "cloud_log",
       "reliability": "hard",
       "completeness": "original",
@@ -354,14 +354,40 @@
           "questionAngle": "서민경에게: \"민경의 공로 축소와 성과급 독식 시도\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 서민경의 \"민경의 공로 축소와 성과급 독식 시도\" 쟁점과 관련된다. 서민경은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 리드 이력과 초기 제안서 기록에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "최초 등록자와 첫 초안 작성자가 같은 계정인 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "후반 운영 문단이 보강되며 역할 평가가 달라진 점을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
-      "name": "최종 계약 부속합의서와 성과급 승인안",
+      "name": "최종 부속 계약문서와 내부 승인안",
       "description": "최종 계약 부속문서, 보도자료 초안, 그리고 민경을 단독 주공로자로 적은 사내 성과급 승인안 묶음이다.",
       "surfaceName": "계약 부속합의서와 성과급 승인안",
-      "surfaceDescription": "부속 계약문서와 사내 성과급 승인안이 함께 묶인 자료다.",
+      "surfaceDescription": "부속 계약문서와 내부 승인안이 함께 묶인 자료다. 작성 시점과 반영 범위 확인이 필요하다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -394,7 +420,33 @@
           "implication": "이 증거는 서민경의 \"민경의 공로 축소와 성과급 독식 시도\" 쟁점과 관련된다. 서민경은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 부속문서와 보상안 원본을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "단일 창구 요청 직후 문서 구성이 바뀐 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "마지막 편집에서 공동 발표 문구를 뺀 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -421,14 +473,40 @@
         "check_edits": "텍스트 조작 흔적은 없지만 앞뒤 문장이 제거돼 선택적 편집이 뚜렷하다.",
         "question_acquisition": "공유기기 동기화 자료를 명시적 동의 없이 확보한 것이어서 사생활·영업비밀 침해 우려가 있다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 자동전사 캡처를 증거로 낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공유기기 동기화 직후 캡처가 저장된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞뒤 문장을 제외한 채 한 대목만 남긴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "원본 이메일 스레드와 시훈데이터랩 사업자등록증 첨부본",
       "description": "준오가 세한리테일 구매팀에 본계약과 별도로 사촌 회사 시훈데이터랩의 유지보수 파일럿 가능성을 묻고 사업자등록증을 첨부한 원본 메일 스레드다.",
-      "surfaceName": "원본 이메일 스레드와 사업자등록증",
-      "surfaceDescription": "메일 스레드 원본과 사업자등록증 첨부 파일이 함께 묶여 있다.",
+      "surfaceName": "메일 기록과 첨부 문서",
+      "surfaceDescription": "메일 기록과 첨부 문서가 함께 묶인 자료다. 발신 경로와 첨부 목적 확인이 필요하다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -462,14 +540,40 @@
           "implication": "이 증거는 서민경의 \"고객사가 민경을 단독 창구로 지정한 실제 원인\" 쟁점과 관련된다. 서민경은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 이메일 원본과 첨부 서류에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계약 직전 발송하면서 내부 참조를 비운 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공식 논의와 별도로 다른 범위를 타진한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "세한리테일 컴플라이언스 검토 메모와 담당자 회신",
       "description": "고객사가 별도 유지보수 제안과 제3자 사업자등록증 첨부를 리스크로 보고, 민경을 단일 공식 창구로 요청한 이유가 적힌 검토 메모와 담당자 회신이다.",
-      "surfaceName": "고객사 컴플라이언스 검토 메모",
-      "surfaceDescription": "고객사 내부 검토 메모와 담당자 회신이 포함된 기관 자료다.",
+      "surfaceName": "내부 검토 메모",
+      "surfaceDescription": "내부 검토 내용과 회신이 함께 담긴 자료다. 검토 배경과 전달 맥락 확인이 필요하다.",
       "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
@@ -492,14 +596,40 @@
         "question_acquisition": "거래처 내부 검토자료라 제공 범위는 엄격히 제한되지만 분쟁 해결 목적 제출은 허용됐다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 검토 메모와 확인 회신이 제출된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문제 메일 다음 날 단일 창구 요청이 생긴 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "단일 창구 지정이 공로 인정과 다른 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "공로배분 RACI 시트와 최종 보고서 편집 이력",
       "description": "원천 발굴·최종 협상·실행 인수인계의 공로 배분과 외부 발표 원칙을 적은 서명 RACI 시트, 그리고 준오 이름이 빠진 최종 보고서 편집 이력이다.",
-      "surfaceName": "공로배분 시트와 보고서 편집 이력",
-      "surfaceDescription": "역할 배분 시트와 보고서 편집 로그가 함께 묶인 문서다.",
+      "surfaceName": "역할 배분 시트와 문서 편집 이력",
+      "surfaceDescription": "역할 정리 시트와 문서 수정 기록이 함께 묶인 자료다. 변경 흐름과 반영 범위 확인이 필요하다.",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -532,7 +662,33 @@
           "implication": "이 증거는 서민경의 \"민경의 공로 축소와 성과급 독식 시도\" 쟁점과 관련된다. 서민경은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 역할배분표와 편집 로그에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "서명된 배분표 뒤 최종본이 달라진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "최종본에서 한쪽 기여 줄이 삭제된 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

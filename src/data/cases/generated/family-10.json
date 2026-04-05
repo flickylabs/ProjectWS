@@ -341,7 +341,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "잘린 가족 단톡 캡처",
-      "surfaceDescription": "가족 단체 채팅의 일부만 캡처된 화면이다. 방문 약속 관련 문장이 보이지만 조건이 잘려 있다."
+      "surfaceDescription": "가족 단체 채팅의 일부만 캡처된 화면이다. 방문 약속 관련 문장이 보이지만 조건이 잘려 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화 캡처의 원본 전체를 바로 제출하지 않은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 이미지가 다시 저장된 시점이 하소연 직전인 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "잘려 나간 앞뒤 문장이 같은 의미를 유지한다고 보십니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -371,7 +397,33 @@
       "subjectParty": "b",
       "surfaceName": "단톡 원본과 일정·통행 기록",
       "surfaceDescription": "가족 단톡 원본 내보내기와 업무 일정표, 고속도로 통행 기록이다. 출발 시점을 대조할 수 있다.",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화 원본과 이동 기록 자료의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "출발이 어려운 정황을 늦은 밤까지 알리지 않은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "당시 먼저 가능성이 높던 도착 방식이 무엇이었는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -397,7 +449,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "식재료 예약표와 추가 주문 영수증",
-      "surfaceDescription": "정육점 예약 내역과 추가 주문, 반찬가게 영수증이다. 준비 분량의 변화를 확인할 수 있다."
+      "surfaceDescription": "정육점 예약 내역과 추가 주문, 반찬가게 영수증이다. 준비 분량의 변화를 확인할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 예약표와 추가 주문 영수증의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "추가 주문 시점이 상대 통보보다 앞선 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "늘어난 품목과 비용을 다시 상의하지 않은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -423,7 +501,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "소액 송금 내역과 답장 문자",
-      "surfaceDescription": "계좌이체 내역과 수신자의 답장 문자다. 송금 금액과 감사 표현이 담겨 있다."
+      "surfaceDescription": "계좌이체 내역과 수신자의 답장 문자다. 송금 금액과 감사 표현이 담겨 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 송금 내역과 답장 문자의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "송금 직후 받은 답장 표현을 확인하고도 해석이 달라진 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 돈이 어떤 항목으로 받아들여졌는지 먼저 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -458,8 +562,34 @@
           "implication": "이 증거는 유민재의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "상담센터 권고 메모와 역할표",
-      "surfaceDescription": "가족상담센터의 권고 메모와 과거 명절 역할 분담표다. 전문가 의견과 이전 합의가 적혀 있다."
+      "surfaceName": "권고 메모와 역할표",
+      "surfaceDescription": "짧은 권고 메모와 과거 역할 분담표다. 이전에 적어 둔 기준을 확인할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 권고 메모와 역할표 사진의 보관 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 기록이 이전 갈등 직후 작성된 점을 알고도 따르지 않은 이유는 무엇입니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이미 합의했던 적기 원칙 가운데 이번에 빠진 항목이 무엇입니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -495,7 +625,33 @@
         }
       },
       "surfaceName": "명절 체크리스트와 주방 사진",
-      "surfaceDescription": "명절 당일 체크리스트와 타임스탬프가 찍힌 주방 사진이다. 준비 과정의 시간 흐름이 보인다."
+      "surfaceDescription": "명절 당일 체크리스트와 타임스탬프가 찍힌 주방 사진이다. 준비 과정의 시간 흐름이 보인다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 체크리스트와 사진 기록의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "도착 전후 사진 시각이 서로 다른 부담을 보여 주는 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "당일 참여 여부와 별개로 체감 불균형이 커진 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -355,7 +355,33 @@
           "questionAngle": "민태오에게: \"태오의 현재 48만원 차용금 미반환\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 민태오의 \"태오의 현재 48만원 차용금 미반환\" 쟁점과 관련된다. 민태오은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 독촉 화면을 제3자에게 보낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공유 직전에 이 화면을 새로 만든 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "상단과 하단 대화를 잘라낸 기준을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -382,13 +408,39 @@
         "check_edits": "기관 내역과 원본 대화라 후편집 흔적이 없다.",
         "question_acquisition": "당사자들이 직접 제출한 금융·대화 자료라 절차상 문제는 낮다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 차용 송금 내역과 약속 메시지를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "송금 직후 같은 밤에 상환 기한을 정한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 약속을 다른 정산 문제와 분리해 본 근거를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "2년 전 보증금 186만원 이체기록과 메모란",
-      "surfaceName": "보증금 이체기록과 메모란",
-      "surfaceDescription": "과거 보증금 이체 기록과 메모란 내용이다. 이체 목적과 당사자 확인이 필요하다.",
+      "surfaceName": "과거 이체기록과 메모란",
+      "surfaceDescription": "과거 이체 기록과 메모란 내용이다. 이체 목적과 당사자 확인이 필요하다.",
       "description": "태오가 서윤의 작업실 임대 보증금 부족분 186만원을 보낸 은행 원본과 '보증금 먼저 막자'라는 메모가 남은 거래기록이다.",
       "type": "bank",
       "reliability": "hard",
@@ -408,13 +460,39 @@
         "check_edits": "기관 발급 PDF라 편집 흔적이 없다.",
         "question_acquisition": "태오가 제출에 동의한 계좌 내역이라 적법성은 높다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 보증금 대납 이체 기록의 성격을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "마감일 당일 급히 송금된 경위를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 송금이 급한 부족분 처리와 연결된 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "공유 가계시트와 수기 차용 메모",
       "surfaceName": "공유 가계시트와 수기 차용 메모",
-      "surfaceDescription": "공유 스프레드시트의 가계 기록과 손글씨 차용 메모다. 작성자와 합의 내용 확인이 필요하다.",
+      "surfaceDescription": "공동 정산 기록과 손글씨 메모다. 작성자와 메모의 의미 확인이 필요하다.",
       "description": "둘이 함께 쓰던 정산 시트와 노트에 남아 있는 부분 상환 기록, 남은 잔액 표시, 상계는 합의 후만 가능하다는 문구다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -448,13 +526,39 @@
           "implication": "이 증거는 민태오의 \"차용 기록과 상계 합의 규칙의 쌍방 위반\" 쟁점과 관련된다. 민태오은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 정산 시트와 수기 메모의 작성 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "현금 상환만 두 차례 기록된 점을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "남은 금액 칸이 계속 비워지지 않은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "태오의 메모앱 계산표와 하린에게 보낸 상계 언급",
-      "surfaceName": "메모앱 계산표와 상계 언급 메시지",
-      "surfaceDescription": "메모앱의 계산 내역과 상계를 언급한 메시지다. 계산 근거와 합의 여부 확인이 필요하다.",
+      "surfaceName": "개인 계산 메모와 관련 메시지",
+      "surfaceDescription": "개인 계산 메모와 관련 메시지다. 계산 근거와 사전 합의 여부 확인이 필요하다.",
       "description": "태오가 현재 48만원을 예전 남은 돈에서 빼면 된다고 적어 둔 계산 메모와, 같은 취지로 최하린에게 보낸 메시지 원본이다.",
       "type": "chat",
       "reliability": "soft",
@@ -488,7 +592,33 @@
           "implication": "이 증거는 민태오의 \"태오의 현재 차용금에 대한 무단 상계\" 쟁점과 관련된다. 민태오은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계산 메모와 전달 메시지를 작성한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "독촉 직후 곧바로 계산표를 만든 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "상대와 합의 없이 함께 정리해도 된다고 본 근거를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -528,7 +658,33 @@
           "implication": "이 증거는 민태오의 \"차용 기록과 상계 합의 규칙의 쌍방 위반\" 쟁점과 관련된다. 민태오은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단체방 발언과 스토리 게시 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "단체방 직후 같은 취지의 게시를 올린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이전 정산 문제를 빼고 현재 상황만 강조한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

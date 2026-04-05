@@ -1,0 +1,1511 @@
+{
+  "caseId": "spouse-08",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "카페 합의와 업로드 알림",
+      "description": "카페 음성메모와 클라우드 알림을 대조해 상담 합의와 오해의 시작점을 가르는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "카페 음성메모에서 '상담까지만'이라는 선을 잡은 뒤, 재논의 없이 어디까지 움직였는지 단계별로 답하십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse08:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "이 업로드 알림 캡처만으로 실제 접수나 신고가 있었다고 단정할 수 없다는 점에 동의하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse08:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "상담과 실행을 다르게 보았다면, 왜 업로드 직후 상대방에게 그 구분을 다시 고지하지 않았습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse08:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "카페에서 '상담까지만'이라는 말이 나온 사실 자체는 부인하십니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse08:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "누나와 임대인에게 설명할 때 그 합의 문구를 빼고 말한 이유를 분명히 설명하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse08:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "업로드 알림을 본 충격이 있었다고 해도, 합의를 감정적 말로 축소해도 된다고 본 근거는 무엇입니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse08:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "상담 범위와 과거 문서",
+      "description": "버전 이력과 상담요약을 맞춰 보며 상담 범위 초과와 실제 상담 성격을 가르는 카드.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "전세계약서 전송 뒤 47분 후에 2022년 대출정리서를 추가 업로드한 사실은 맞습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse08:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "'과거 숨긴 부채 관련 참고'라는 메모를 붙인 이유가 단순 보관이 아니라 판단 유도였던 것은 아닙니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse08:a:d-2:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "사전 정보 문의 단계에서 과거 금융문서까지 넘기는 것이 합의 범위 안이라고 본 법적·관계적 근거를 답하십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse08:a:d-2:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "상담 접수표에 실제 신청 번호나 사건 번호가 없다는 점을 확인하고도 이를 '실행'으로 단정했습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse08:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "법무사 사무실이 임대인 통보 전 재논의를 안내했다면, 업로드 알림만 보고 최종 결별로 읽은 과정에 과장이 있지 않았습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse08:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "상담 자체가 곧 보증금 위기를 만든 것처럼 말한 판단은, 시한 압박보다 감정 반응이 앞선 해석이 아니었습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse08:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "외부 개입과 갱신 시한",
+      "description": "누나·임대인 개입과 갱신 확답 시한을 맞춰 보며 위기의 실제 증폭 지점을 짚는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "임대인 확답 시한이 이미 다가왔다는 점을 알면서도, 왜 직접 결정을 미루고 시나리오 정리에 더 머물렀습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse08:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "현석의 선제 통화가 위기를 키운 것은 맞더라도, 본인이 주거 판단을 늦춘 몫까지 부인할 수는 없는 것 아닙니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse08:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "가족·임대인 비공개 원칙이 깨진 뒤에도, 본인 쪽 문서 범위 초과는 별도 책임이라고 인정하십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse08:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "누나에게 '법무사 끼운 건 서진 단독'이라고 보낸 문장이, 알고 있던 사전 합의까지 포함한 전체 진술이었습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse08:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "임대인 통화가 상담보다 먼저 압박을 키웠다는 시간순서를 인정하십니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse08:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "재논의 전 제3자 비공개 원칙이 있었는데도, 체면과 불안을 이유로 외부 설명을 먼저 만든 책임을 인정하십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse08:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "spouse08:a:d-1:unlock:s2:0",
+            "factText": "한 달 전 카페에서 '상담까지만' 보기로 한 합의가 있었고, 서진은 그 선 안이라고 여겼다.",
+            "tags": [
+              "rule",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "한 달 전 카페 음성메모",
+                "neutral": "그때",
+                "dateExact": "한 달 전",
+                "period": "카페 합의 시점"
+              },
+              "quote": {
+                "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+                "neutral": "그 합의 문구"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "fact"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse08:a:d-1:unlock:s3:0",
+            "factText": "서진은 실제 제출 없이 가능성만 물었지만, 폴더 구성이 비밀 실행처럼 보일 수 있었다.",
+            "tags": [
+              "act",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {},
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse08:a:d-1:unlock:s4:0",
+            "factText": "서진은 주거를 잃을 두려움 때문에 상담과 실행을 과도하게 분리해 스스로를 안심시켰다.",
+            "tags": [
+              "fear",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse08:a:d-1:unlock:s5:0",
+            "factText": "비밀 이혼 실행은 아니었지만, 서진은 업로드 직후 다시 상의하지 않아 오해를 키운 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {},
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse08:a:d-2:unlock:s2:0",
+            "factText": "전세계약서 전송 47분 뒤 2022년 대출정리서가 추가 업로드됐다.",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "기본 계약서 전송 47분 뒤 추가 업로드",
+                "neutral": "그 뒤 추가 업로드"
+              },
+              "document": {
+                "exact": "2022년 대출정리서",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "fact"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse08:a:d-2:unlock:s3:0",
+            "factText": "추가 파일에는 '과거 숨긴 부채 관련 참고'라는 메모가 붙어 있었다.",
+            "tags": [
+              "evidence",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "document": {
+                "exact": "2022년 대출정리서",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "justify"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse08:a:d-2:unlock:s4:0",
+            "factText": "서진은 과거 숨김이 현재 주거 판단의 위험 신호라고 믿어 제3자에게까지 맥락을 설명하고 싶었다.",
+            "tags": [
+              "motive",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "justify"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse08:a:d-2:unlock:s5:0",
+            "factText": "서진은 별도 동의 없이 과거 금융문서를 넣은 것이 상담 범위를 넘긴 책임이라는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "document": {
+                "exact": "2022년 대출정리서",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse08:a:d-3:unlock:s2:0",
+            "factText": "서진은 합의가 문서로 남지 않아 현석이 의미를 축소할 여지가 생겼다고 본다.",
+            "tags": [
+              "context",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {},
+            "stanceHints": [
+              "partial",
+              "fact"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse08:a:d-3:unlock:s3:0",
+            "factText": "현석은 누나와 임대인에게 설명하면서 '상담까지만' 합의를 뺐다고 서진은 느낀다.",
+            "tags": [
+              "quote",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "family": {
+                "exact": "류미경",
+                "neutral": "가족",
+                "fullName": "류미경",
+                "judgeRef": "누나"
+              },
+              "person": {
+                "exact": "임대인",
+                "neutral": "집주인",
+                "judgeRef": "임대인"
+              },
+              "quote": {
+                "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+                "neutral": "그 합의 문구"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "fact"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse08:a:d-3:unlock:s4:0",
+            "factText": "서진에게는 합의 부정이 상담 자체보다 더 큰 배신으로 남았다.",
+            "tags": [
+              "emotion",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse08:a:d-3:unlock:s5:0",
+            "factText": "서진은 합의를 느슨하게 남긴 자신의 몫도 있지만, 현석이 알고도 독단 프레임을 만든 책임이 크다고 정리한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {},
+            "stanceHints": [
+              "confess",
+              "counter"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse08:a:d-4:unlock:s2:0",
+            "factText": "서진은 과거 대출 문서를 넣으며 문서 범위를 넘어섰다.",
+            "tags": [
+              "admission",
+              "rule"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "2022년 대출정리서",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "responsibility"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse08:a:d-4:unlock:s3:0",
+            "factText": "현석은 누나와 임대인에게 먼저 연락하며 비공개 원칙을 깼다고 서진은 본다.",
+            "tags": [
+              "responsibility",
+              "privacy"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "family": {
+                "exact": "류미경",
+                "neutral": "가족",
+                "fullName": "류미경",
+                "judgeRef": "누나"
+              },
+              "person": {
+                "exact": "임대인",
+                "neutral": "집주인",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "fact"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse08:a:d-4:unlock:s4:0",
+            "factText": "두 사람 모두 파국을 확정하기 싫어하면서도 선은 각자 방식으로 넘겼다.",
+            "tags": [
+              "relationship",
+              "context"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse08:a:d-4:unlock:s5:0",
+            "factText": "서진은 자신이 문서 선을 흐렸고, 현석은 사람 선을 넓혔다고 결론낸다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {},
+            "stanceHints": [
+              "confess",
+              "balance"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse08:a:d-5:unlock:s2:0",
+            "factText": "임대인 확답 시한은 상담과 별개로 이미 가까워지고 있었다.",
+            "tags": [
+              "timeline",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "임대인",
+                "neutral": "집주인",
+                "judgeRef": "임대인"
+              },
+              "time": {
+                "exact": "상담 직후 사흘 내 확답 시한",
+                "neutral": "그 시한",
+                "period": "갱신 답변 시한 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "fact"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse08:a:d-5:unlock:s3:0",
+            "factText": "현석의 선제 통화가 보증금 위기를 가시화한 전환점이었다고 서진은 본다.",
+            "tags": [
+              "act",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "임대인",
+                "neutral": "집주인",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "fact"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse08:a:d-5:unlock:s4:0",
+            "factText": "서진은 주거안정 공포 때문에 결정을 미루며 표와 시나리오에 더 매달렸다.",
+            "tags": [
+              "fear",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "justify"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse08:a:d-5:unlock:s5:0",
+            "factText": "갱신 위기는 상담 하나가 아니라 시한 압박, 현석의 통화, 양측 지연이 겹친 결과라고 정리한다.",
+            "tags": [
+              "admission",
+              "context"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "exact": "상담 직후 사흘 내 확답 시한",
+                "neutral": "그 시한",
+                "period": "갱신 답변 시한 직전"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "balance"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "spouse08:b:d-1:unlock:s2:0",
+            "factText": "현석도 카페에서 상담 언급이 있었던 사실 자체는 기억한다.",
+            "tags": [
+              "timeline",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "한 달 전 카페 음성메모",
+                "neutral": "그때",
+                "dateExact": "한 달 전",
+                "period": "카페 합의 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "fact"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse08:b:d-1:unlock:s3:0",
+            "factText": "현석은 클라우드 알림과 폴더 이름을 보고 상담을 바로 실행으로 읽어버렸다.",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "alert": {
+                "exact": "정유나 상담폴더 업로드 완료 알림",
+                "neutral": "그 알림"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "fear"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse08:b:d-1:unlock:s4:0",
+            "factText": "현석은 자신이 이미 끝난 사람처럼 취급될까 두려워 상담을 최종 결별 신호로 받아들였다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse08:b:d-1:unlock:s5:0",
+            "factText": "현석은 실제 접수나 통보가 없었는데도 이를 비밀 이혼 준비처럼 외부에 설명한 것을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {},
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse08:b:d-2:unlock:s2:0",
+            "factText": "현석은 2022년 숨긴 대출 사건이 여전히 서진의 판단 기준에 남아 있다는 점을 안다.",
+            "tags": [
+              "legacy_sentence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "2022년 대출정리서",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "fact"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse08:b:d-2:unlock:s3:0",
+            "factText": "대출정리서 첨부가 범위 초과라는 주장에는 서진의 불안이 섞여 있음을 현석도 이해한다.",
+            "tags": [
+              "counter",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "document": {
+                "exact": "2022년 대출정리서",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse08:b:d-2:unlock:s4:0",
+            "factText": "현석에게 그 문서는 끝난 과거가 아니라 다시 소환된 수치심이었다.",
+            "tags": [
+              "shame",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "document": {
+                "exact": "2022년 대출정리서",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse08:b:d-2:unlock:s5:0",
+            "factText": "현석은 첨부 자체는 범위 초과였다고 보면서도, 자기 과거 은폐가 그 불신의 토양을 만든 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "document": {
+                "exact": "2022년 대출정리서",
+                "neutral": "그 문서"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse08:b:d-3:unlock:s2:0",
+            "factText": "카페의 '상담까지만' 합의를 현석이 뒤늦게 축소하기 시작했다.",
+            "tags": [
+              "admission",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "상담까지만, 실제 제출 전엔 다시 얘기",
+                "neutral": "그 합의 문구"
+              },
+              "time": {
+                "exact": "한 달 전 카페 음성메모",
+                "neutral": "그때",
+                "dateExact": "한 달 전",
+                "period": "카페 합의 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "fact"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse08:b:d-3:unlock:s3:0",
+            "factText": "현석은 누나와 임대인에게 '서진 단독' 프레임을 먼저 설명했다.",
+            "tags": [
+              "quote",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "family": {
+                "exact": "류미경",
+                "neutral": "가족",
+                "fullName": "류미경",
+                "judgeRef": "누나"
+              },
+              "person": {
+                "exact": "임대인",
+                "neutral": "집주인",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "fact"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse08:b:d-3:unlock:s4:0",
+            "factText": "현석은 버림받는 이미지와 가족 체면이 무너질까 봐 말을 바꿨다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse08:b:d-3:unlock:s5:0",
+            "factText": "현석은 합의를 알고도 외부에는 독단처럼 말한 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {},
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse08:b:d-4:unlock:s2:0",
+            "factText": "현석은 재논의 전에 누나와 임대인에게 연락해 제3자 비공개 원칙을 깼다.",
+            "tags": [
+              "privacy",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "family": {
+                "exact": "류미경",
+                "neutral": "가족",
+                "fullName": "류미경",
+                "judgeRef": "누나"
+              },
+              "person": {
+                "exact": "임대인",
+                "neutral": "집주인",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "responsibility"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse08:b:d-4:unlock:s3:0",
+            "factText": "그는 이를 안전장치라고 설명하지만 실제로는 자신의 편을 먼저 만들려 했다.",
+            "tags": [
+              "self_justification",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {},
+            "stanceHints": [
+              "blame",
+              "justify"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse08:b:d-4:unlock:s4:0",
+            "factText": "현석은 마지막 당사자 대화에서 밀려날까 두려워 사람을 넓혔다.",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse08:b:d-4:unlock:s5:0",
+            "factText": "현석은 자신도 약속 범위를 깼으며, 서진의 범위 초과와 별개 책임이 있음을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {},
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse08:b:d-5:unlock:s2:0",
+            "factText": "임대인 확답 시한과 현석의 선제 통화가 상담 전후의 압박을 키웠다.",
+            "tags": [
+              "timeline",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "임대인",
+                "neutral": "집주인",
+                "judgeRef": "임대인"
+              },
+              "time": {
+                "exact": "상담 직후 사흘 내 확답 시한",
+                "neutral": "그 시한",
+                "period": "갱신 답변 시한 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "fact"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse08:b:d-5:unlock:s3:0",
+            "factText": "현석은 상담 폴더를 본 뒤 곧바로 임대인에게 움직이며 위기를 앞당겼다.",
+            "tags": [
+              "act",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "임대인",
+                "neutral": "집주인",
+                "judgeRef": "임대인"
+              },
+              "alert": {
+                "exact": "정유나 상담폴더 업로드 완료 알림",
+                "neutral": "그 알림"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "fact"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse08:b:d-5:unlock:s4:0",
+            "factText": "현석은 집과 관계를 동시에 잃을까 봐 먼저 외부 확인을 택했다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "임대인",
+                "neutral": "집주인",
+                "judgeRef": "임대인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse08:b:d-5:unlock:s5:0",
+            "factText": "갱신 위기는 상담 때문만이 아니라 시한, 선제 통화, 양측 지연이 함께 만든 결과라고 현석도 인정한다.",
+            "tags": [
+              "admission",
+              "context"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "임대인",
+                "neutral": "집주인",
+                "judgeRef": "임대인"
+              },
+              "time": {
+                "exact": "상담 직후 사흘 내 확답 시한",
+                "neutral": "그 시한",
+                "period": "갱신 답변 시한 직전"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "balance"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "spouse08:contradiction:0",
+        "targetParty": "b",
+        "trigger": "현석이 사전 합의가 전혀 없었다고 말한 뒤 e-1이 제시될 때",
+        "text": "카페 음성메모에는 '상담까지만, 실제 제출 전엔 다시 얘기'가 남아 있습니다. 왜 이를 없던 합의처럼 말했습니까.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "spouse08:contradiction:1",
+        "targetParty": "a",
+        "trigger": "서진이 상담 범위를 한 번도 넘기지 않았다고 주장한 뒤 e-3이 제시될 때",
+        "text": "기본 계약서 전송 뒤 47분 후 과거 대출정리서가 추가됐습니다. 아직도 범위 초과가 아니라고 하시겠습니까.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-3"
+        ]
+      },
+      {
+        "id": "spouse08:contradiction:2",
+        "targetParty": "b",
+        "trigger": "현석이 보증금 위기가 상담 때문에 즉시 생겼다고 단정한 뒤 e-5와 e-6이 함께 제시될 때",
+        "text": "임대인 통화와 확답 시한이 이미 먼저 움직이고 있었습니다. 왜 위기의 원인을 상담 하나로만 돌립니까.",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-5",
+          "e-6"
+        ]
+      },
+      {
+        "id": "spouse08:contradiction:3",
+        "targetParty": "a",
+        "trigger": "서진이 제3자 개입만을 핵심 위반으로 강조하며 자신의 문서 업로드를 부수적으로 말할 때",
+        "text": "가족과 임대인 개입은 중대한 위반이지만, 과거 금융문서를 먼저 끼워 넣은 책임까지 사라지지는 않습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "spouse08:interjection:0",
+        "speaker": "a",
+        "trigger": "현석이 카페 합의를 달래기용 말로만 축소할 때",
+        "text": "없던 말로 만들지 마요. 그 카페에서 분명히 선을 정했잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "spouse08:interjection:1",
+        "speaker": "b",
+        "trigger": "서진이 상담과 실행을 완전히 별개라고만 말하며 대출정리서 첨부를 축소할 때",
+        "text": "상담이라면서 왜 그 옛날 문서까지 넣었는데요. 그걸 그냥 문의라고만 할 수 있어요?",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse08:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 모두 제3자 개입 책임을 상대에게만 돌릴 때",
+        "text": "누가 더 아팠는지가 아니라 누가 어떤 선을 언제 넘었는지 순서대로 답하십시오.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "spouse08:outburst:a:0",
+        "party": "a",
+        "trigger": "현석이 2022년 대출 사건을 이미 끝난 일이라고만 축소할 때",
+        "text": "끝난 일이라고 말하면 쉬웠겠죠. 저는 그때부터 집이 한 번에 무너질 수도 있다는 걸 배웠어요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "spouse08:outburst:a:1",
+        "party": "a",
+        "trigger": "현석이 상담 자체를 비밀 이혼 실행으로 몰아갈 때",
+        "text": "실행할 거였으면 숨기지도 않았어요. 무서워서 확인한 거였어요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse08:outburst:b:0",
+        "party": "b",
+        "trigger": "서진이 누나와 임대인 개입만을 비난하며 자신의 범위 초과를 비중 낮게 말할 때",
+        "text": "그 알림 보고도 가만있으라는 게 더 이상했어. 나는 이미 혼자 남겨진 줄 알았다고.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "spouse08:outburst:b:1",
+        "party": "b",
+        "trigger": "서진이 대출정리서 첨부를 순수한 설명 행위로만 포장할 때",
+        "text": "그 문서까지 다시 꺼내면 나는 계속 그 한 번의 실수로만 남잖아.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "spouse08:transition:a:d-2:s0_s1",
+      "caseId": "spouse-08",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "재판관이 대출정리서 첨부 경위를 직접 묻자",
+      "line": "그 문서는 본안이 아니라 배경이었습니다. 저는 그걸 설명 자료로만 본 거예요.",
+      "behaviorHint": "문장 첫머리를 고쳐 말하며 방어선을 좁힌다."
+    },
+    {
+      "id": "spouse08:transition:a:d-2:s1_s2",
+      "caseId": "spouse-08",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3이 제시되어 추가 업로드 시각이 고정되자",
+      "line": "네, 나중에 추가한 건 맞습니다. 그 순간에는 불안을 설명해야 한다고만 생각했어요.",
+      "behaviorHint": "짧게 인정한 뒤 어깨가 내려간다."
+    },
+    {
+      "id": "spouse08:transition:a:d-2:s2_s3",
+      "caseId": "spouse-08",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "재판관이 상담 범위와 과거 문서의 연결 이유를 재차 묻자",
+      "line": "범위를 넓힌 건 맞지만, 그 불안의 출발점이 어디였는지도 같이 봐야 합니다.",
+      "behaviorHint": "손끝으로 책상 모서리를 짚으며 과거 사건을 끌어온다."
+    },
+    {
+      "id": "spouse08:transition:a:d-2:s3_s5",
+      "caseId": "spouse-08",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4 또는 책임 비율 질문으로 별도 동의 여부가 선명해지자",
+      "line": "결국 동의 없이 넣은 건 제 책임입니다. 필요와 서운함이 섞여 있었어요.",
+      "behaviorHint": "시선을 내리고 마지막엔 변명 없이 끝낸다."
+    },
+    {
+      "id": "spouse08:transition:a:d-4:s0_s1",
+      "caseId": "spouse-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "재판관이 비공식 합의의 정확한 범위를 묻자",
+      "line": "저는 상담 안에서만 움직였다고 생각했습니다. 다만 폴더 구성이 넓어 보였을 수는 있어요.",
+      "behaviorHint": "양손을 평행하게 벌려 두 종류의 선을 그린다."
+    },
+    {
+      "id": "spouse08:transition:a:d-4:s1_s2",
+      "caseId": "spouse-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "불안 때문에 범위를 넓힌 점을 조금이라도 인정해 보라는 질문이 들어오자",
+      "line": "네, 과거 대출 문서를 넣은 건 제가 불안해서 선을 흐린 부분입니다.",
+      "behaviorHint": "짧게 숨을 들이마신 뒤 고개를 끄덕인다."
+    },
+    {
+      "id": "spouse08:transition:a:d-4:s2_s3",
+      "caseId": "spouse-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "재판관이 왜 과거 사건을 다시 끌어왔는지 후속 질문하자",
+      "line": "그 일 이후로 저는 확인 없이 못 넘깁니다. 그래서 문서로 설명하려고 했어요.",
+      "behaviorHint": "말끝이 단단해지며 자기 정당화를 섞는다."
+    },
+    {
+      "id": "spouse08:transition:a:d-4:s3_s5",
+      "caseId": "spouse-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "재판관이 '상담까지만, 제3자 비공개' 약속을 함께 상기시키자",
+      "line": "맞습니다. 저는 문서 선을 넘겼고, 현석 씨는 사람 선을 넘겼습니다. 둘 다 약속을 깼어요.",
+      "behaviorHint": "상대를 보지 않고 판정문처럼 정리한다."
+    },
+    {
+      "id": "spouse08:transition:b:d-3:s0_s1",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "재판관이 카페 합의 존재를 먼저 확인하자",
+      "line": "그 표현이 있긴 했습니다. 다만 저는 그걸 확정된 합의라고 생각하지 않았어요.",
+      "behaviorHint": "입꼬리를 굳힌 채 의미를 줄여 말한다."
+    },
+    {
+      "id": "spouse08:transition:b:d-3:s1_s2",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1이 제시되어 합의 문구가 재생되자",
+      "line": "그 말을 한 건 맞죠. 그런데 저는 바로 자료를 올릴 줄은 몰랐습니다.",
+      "behaviorHint": "파형을 보다가 시선을 잠깐 피한다."
+    },
+    {
+      "id": "spouse08:transition:b:d-3:s2_s3",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "재판관이 누나와 임대인에게 왜 다르게 설명했는지 묻자",
+      "line": "그때는 제가 본 상황을 먼저 설명한 겁니다. 솔직히 합의 얘기까지 꺼내고 싶지 않았어요.",
+      "behaviorHint": "말속도가 빨라지고 방어가 공격으로 바뀐다."
+    },
+    {
+      "id": "spouse08:transition:b:d-3:s3_s4",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S4",
+      "trigger": "비난 없이 '버림받는 두려움'을 묻는 질문이 들어오자",
+      "line": "그 알림을 보니까 제가 이미 끝난 사람처럼 느껴졌습니다. 그래서 말을 줄였습니다.",
+      "behaviorHint": "어깨가 처지고 눈을 맞추지 못한다."
+    },
+    {
+      "id": "spouse08:transition:b:d-3:s4_s5",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-5가 제시되어 외부 설명의 문장이 그대로 드러나자",
+      "line": "네, 알고도 독단처럼 말했습니다. 창피했고, 제 체면을 먼저 지키고 싶었습니다.",
+      "behaviorHint": "목소리가 낮아지며 인정 쪽으로 무너진다."
+    },
+    {
+      "id": "spouse08:transition:b:d-4:s0_s1",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "재판관이 가족 개입의 이유를 직접 묻자",
+      "line": "누나에게 말한 건 열쇠와 집 문제 때문이었습니다. 그때는 그게 안전장치라고 생각했어요.",
+      "behaviorHint": "손바닥을 펴며 실무처럼 보이게 말한다."
+    },
+    {
+      "id": "spouse08:transition:b:d-4:s1_s2",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5가 제시되어 연락 시각과 내용이 고정되자",
+      "line": "재논의 전에 밖으로 나간 건 맞습니다. 그 부분은 제가 부정할 수 없어요.",
+      "behaviorHint": "입술을 깨문 뒤 짧게 인정한다."
+    },
+    {
+      "id": "spouse08:transition:b:d-4:s2_s3",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "재판관이 임대인 통화까지 이어진 이유를 후속 질문하자",
+      "line": "서진 씨 쪽에서 이미 선이 흐려졌다고 느껴서 저도 먼저 대비하려 했습니다.",
+      "behaviorHint": "상대의 선행 위반을 끌어오며 책임을 나눈다."
+    },
+    {
+      "id": "spouse08:transition:b:d-4:s3_s5",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "재논의 전 제3자 비공개 원칙을 판사가 다시 읽어주자",
+      "line": "결국 저는 제 편을 먼저 만들었습니다. 누나와 임대인을 부른 건 제 책임입니다.",
+      "behaviorHint": "고개를 떨구고 문장을 짧게 끊는다."
+    },
+    {
+      "id": "spouse08:transition:b:d-5:s0_s1",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "재판관이 주거 위기의 직접 원인을 묻자",
+      "line": "시한이 있던 건 맞습니다. 그래도 상담이 붙는 순간 집 문제도 끝난 방향으로 굴러간다고 느꼈어요.",
+      "behaviorHint": "체감과 사실을 섞어 말하며 여지를 남긴다."
+    },
+    {
+      "id": "spouse08:transition:b:d-5:s1_s2",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6이 제시되어 확답 시한과 일정표가 드러나자",
+      "line": "네, 시한 압박은 이미 있었습니다. 그래서 더 조급해졌던 것도 맞습니다.",
+      "behaviorHint": "자료를 읽고 말을 고쳐 낸다."
+    },
+    {
+      "id": "spouse08:transition:b:d-5:s2_s3",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "재판관이 시간순서를 다시 재구성해 묻자",
+      "line": "그래도 상담 폴더를 본 뒤엔 제가 가만히 있을 수 없었습니다. 그래서 임대인에게 먼저 확인한 겁니다.",
+      "behaviorHint": "자기 행동을 불가피한 대응처럼 밀어붙인다."
+    },
+    {
+      "id": "spouse08:transition:b:d-5:s3_s5",
+      "caseId": "spouse-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "재판관이 공동 책임을 직접 묻자",
+      "line": "결국 위기는 상담 하나가 아니라 시한, 제 통화, 우리 둘의 지연이 겹친 겁니다. 상담만 탓한 건 제 부끄러움을 숨기려는 말이었어요.",
+      "behaviorHint": "숨을 길게 뱉고 체념한 표정으로 인정한다."
+    }
+  ]
+}

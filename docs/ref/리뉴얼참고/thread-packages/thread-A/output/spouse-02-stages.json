@@ -1,0 +1,161 @@
+{
+  "case": "case-spouse-02",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 메일 초안을 출력해 두게 된 경위에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "밤늦은 시각에 이 초안을 곧바로 출력한 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "직전 상황을 본 뒤 상대방의 참여 범위를 문제 삼은 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 계정 접속 기록과 초안 버전 내역에 대해 설명하십시오.",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 글 유포 직후 이 계정에 접속한 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "초안을 남겨 둔 뒤 다음 날 정리하려 한 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 익명 글 캡처를 확보하고 보관한 경위에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "명단 공지 직후 이 이미지가 만들어진 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "가정 내부 사정을 아는 듯한 문장이 들어간 이유를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 익명 메일 헤더 자료가 제출된 경위에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "복구 정보 일부가 본인 정보와 이어지는 이유를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "아이를 위한 알림처럼 꾸미며 상대방 사정을 덧붙인 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 스캔 기록과 동기화 이력이 남게 된 경위에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 글이 돌기 며칠 전 이 문서를 스캔한 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "전체 문서 중 일부 페이지만 남겨 둔 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 정정 공문과 보류 메모가 함께 제출된 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "보류 시각이 해당 메일보다 먼저 찍힌 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "보류가 외부 제보와 별개로 먼저 진행된 이유를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      }
+    ]
+  }
+}

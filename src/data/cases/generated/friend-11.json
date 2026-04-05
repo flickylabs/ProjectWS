@@ -356,13 +356,39 @@
           "questionAngle": "배준석에게: \"준석의 일방적 접근 차단과 공유 프로필 정리\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 배준석의 \"준석의 일방적 접근 차단과 공유 프로필 정리\" 쟁점과 관련된다. 배준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 로그인 차단 화면을 공통 지인 방에 올린 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 캡처 생성 시각이 접근 회수 직후로 확인되는데, 앞선 설정 변경은 왜 보이지 않습니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "상단 보안 알림과 하단 대화가 잘린 상태로 돌린 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "작년 일회성 본인확인 합의 카톡과 결제 메모",
-      "surfaceName": "본인확인 합의 메시지와 결제 메모",
-      "surfaceDescription": "과거 일회성 본인확인 합의 메시지와 결제 관련 메모다. 합의 범위와 조건 확인이 필요하다.",
+      "surfaceName": "과거 합의 대화와 결제 메모",
+      "surfaceDescription": "이전 합의 대화와 관련 메모다. 합의 범위와 조건 확인이 필요하다.",
       "description": "성인등급 게임 구매와 콘솔 번들 결제를 위해 준석 정보는 한 번만 쓰고 지운다고 약속한 카카오톡 원본과 메모다.",
       "type": "chat",
       "reliability": "hard",
@@ -393,13 +419,39 @@
           "questionAngle": "배준석에게: \"작년 '일회성 본인확인 후 삭제' 규칙의 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 배준석의 \"작년 '일회성 본인확인 후 삭제' 규칙의 파기\" 쟁점과 관련된다. 배준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 일회성 확인 합의 대화와 결제 메모를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 대화가 작년 겨울 같은 날 오간 점을 인정하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "한 번만 쓰고 지우기로 한 정보를 이후에도 보관한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "구독 서비스 보안 로그와 관리자 메일 변경 기록",
-      "surfaceName": "구독 서비스 보안 로그와 관리자 변경 기록",
-      "surfaceDescription": "구독 서비스의 보안 접속 로그와 관리자 메일 변경 기록이다. 접속 주체와 변경 시점 확인이 필요하다.",
+      "surfaceName": "보안 로그와 설정 변경 기록",
+      "surfaceDescription": "보안 접속 기록과 설정 변경 내역이다. 변경 시점과 주체 확인이 필요하다.",
       "description": "가족요금제 재인증 후 주 관리자 메일과 복구 정보가 민우 쪽으로 바뀐 보안 로그다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -420,13 +472,39 @@
         "check_edits": "서버 보존본이라 후편집 흔적은 없다.",
         "question_acquisition": "기기와 메일 식별 정보가 포함돼 있어 분쟁 범위 밖 세부 접속 정보는 비식별화가 필요하다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 보안 로그와 관리자 변경 기록을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 변경 시각이 잠금 주장보다 앞선 점을 어떻게 설명하시겠습니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "재인증 직후 관리 구조를 급히 손본 배경을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "민우 휴대폰 갤러리의 청구지 캡처와 생년월일 메모",
-      "surfaceName": "청구서 캡처와 개인정보 메모",
-      "surfaceDescription": "휴대폰 갤러리의 청구서 캡처와 개인정보 메모다. 보관 경위와 용도 확인이 필요하다.",
+      "surfaceName": "청구서 캡처와 관련 메모",
+      "surfaceDescription": "휴대폰에 남아 있던 청구서 캡처와 관련 메모다. 보관 경위와 사용 흐름 확인이 필요하다.",
       "description": "민우 휴대폰에 남아 있던 준석 청구지 화면 캡처, 생년월일 메모, 재인증 입력 흔적이다.",
       "type": "document",
       "reliability": "hard",
@@ -450,13 +528,39 @@
         "question_acquisition": "타인의 본인확인·청구지 정보가 담겨 있어 사생활 침해 우려가 크고 외부 공유는 엄격히 제한돼야 한다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 기기 백업에 상대방 확인 정보가 남아 있던 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 캡처와 메모가 삭제되지 않은 채 재인증 당일까지 남은 이유는 무엇입니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "한시 사용 전제로 받은 정보를 다시 입력한 판단 근거를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
-      "name": "준석의 계정 복구 신청서와 접근권 회수 로그",
+      "name": "준석의 복구 신청서와 조치 기록",
       "surfaceName": "계정 복구 신청서와 접근권 회수 로그",
-      "surfaceDescription": "계정 복구 신청서와 접근권 회수 기록이다. 신청 시점과 처리 결과 확인이 필요하다.",
+      "surfaceDescription": "복구 신청 문서와 후속 조치 기록이다. 신청 시점과 처리 흐름 확인이 필요하다.",
       "description": "준석이 보안 사고를 이유로 계정 복구를 신청하고 민우 기기 접근을 끊은 기록, 그리고 오현철에게 보낸 경고 메시지다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -490,13 +594,39 @@
           "implication": "이 증거는 배준석의 \"준석의 일방적 접근 차단과 공유 프로필 정리\" 쟁점과 관련된다. 배준석은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 복구 신청과 접근 회수 기록이 남은 사실을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "관리 변경 확인 뒤 30분 안에 조치가 이어진 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "보안 대응이라면 왜 상대방에게 먼저 알리지 않았는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "아이템 이전·환불 내역과 프로필 복원 보고서",
-      "surfaceName": "아이템 이전·환불 내역과 복원 보고서",
-      "surfaceDescription": "디지털 아이템 이전·환불 내역과 프로필 복원 보고서다. 처리 경위와 결과 확인이 필요하다.",
+      "surfaceName": "처리 내역과 복원 보고서",
+      "surfaceDescription": "디지털 항목 처리 내역과 프로필 복원 보고서다. 처리 경위와 결과 확인이 필요하다.",
       "description": "사라진 시즌패스 아이템 일부가 원계정으로 재귀속되거나 환불 처리됐고, 프로필 슬롯도 복원 과정에서 재배치됐다는 플랫폼 보고서다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -520,7 +650,33 @@
         "question_acquisition": "유료 아이템과 결제 이력이 포함돼 있어 세부 구매 목록은 분쟁 해결 범위까지만 다루어야 한다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 아이템 이동 내역과 복원 보고서를 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "피해 주장 시점과 자동 복원 기록이 거의 겹치는 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "사라진 항목 전부가 임의 반출인지 다시 판단한 근거를 말씀하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -355,8 +355,34 @@
           "implication": "이 증거는 황인호의 \"50만원 사전 상의 약속 쌍방 위반\" 쟁점과 관련된다. 황인호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "비상금 계좌 인출 내역",
-      "surfaceDescription": "공동 비상금 계좌의 은행 원본 거래내역이다. 인출 금액과 인증 수단이 기록되어 있다."
+      "surfaceName": "공동 계좌 인출 내역",
+      "surfaceDescription": "공동 계좌의 은행 원본 거래내역이다. 인출 금액과 인증 수단이 기록되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계좌 인출 내역이 남아 있는 경위에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "인출 직전 본인 기기로 앱에 접속한 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "인출 뒤 며칠간 이어진 결제 흐름의 목적을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -386,7 +412,33 @@
       "subjectParty": "a",
       "surfaceName": "입사 안내문과 교통 영수증",
       "surfaceDescription": "직장 온보딩 안내 자료와 교통 정기권 영수증이 묶인 서류다. 지출 항목을 대조할 수 있다.",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 안내문과 영수증 묶음을 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "인출 뒤 이틀 안에 문서가 한꺼번에 생긴 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "먼저 부담한 비용이 뒤늦게 정산되는 구조를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -412,7 +464,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "카드 승인 알림 캡처",
-      "surfaceDescription": "잠금 화면에 뜬 카드 승인 알림을 촬영한 이미지다. 승인 내역이 보이지만 세부 품목은 확인 불가하다."
+      "surfaceDescription": "잠금 화면에 뜬 카드 승인 알림을 촬영한 이미지다. 승인 내역이 보이지만 세부 품목은 확인 불가하다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 카드 승인 알림 사진을 남긴 경위에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "새벽 시간대에 잠금 화면을 촬영한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "다른 알림을 빼고 해당 승인만 남겨 둔 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -438,7 +516,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "사내 복장 가이드 메일",
-      "surfaceDescription": "회사에서 발송한 사내 메일이다. 복장 규정과 복지비 관련 안내가 포함되어 있다."
+      "surfaceDescription": "회사에서 발송한 사내 메일이다. 복장 규정과 복지비 관련 안내가 포함되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회사 안내 메일과 규정 문서를 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "첫 출근 전날 이 안내가 발송된 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "해당 결제가 개인 취향보다 준비 성격이 큰 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -466,7 +570,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "자동이체 변경기록과 할부 계약서",
-      "surfaceDescription": "은행 자동이체 변경 내역과 가전 할부 계약서다. 금융 흐름의 변화를 확인할 수 있다."
+      "surfaceDescription": "은행 자동이체 변경 내역과 가전 할부 계약서다. 금융 흐름의 변화를 확인할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 자동이체 변경 기록과 할부 계약서에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 날 두 시간 간격으로 두 조치를 한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "먼저 자금을 비워 두고 바로 계약까지 이어간 판단을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -497,7 +627,33 @@
       "subjectParty": "b",
       "surfaceName": "생활비 메모와 배송 문자",
       "surfaceDescription": "메모앱에 적힌 가계 계획과 가전 배송 완료 문자다. 지출 계획의 흔적이 남아 있다.",
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 메모와 배송 완료 문자를 함께 보관한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "변경 당일 밤에 상환 순서를 적어 둔 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "나중 계획은 세우고도 상대방과 공유하지 않은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -22,7 +22,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "문세영 씨, 이 90,000원 요청은 최종 계산서가 아니라 견적 캡처 절반 기준으로 적어 보낸 것 아닙니까?",
+              "text": "문세영 씨, 보내신 금액이 최종 정산을 반영한 것인지 스스로도 다시 확인하셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -61,7 +61,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "조인호 씨, CCTV에 카트와 박스로 문을 받친 장면이 반복되는데도 '잠깐'이었다고만 하시겠습니까?",
+              "text": "조인호 씨, 문을 잠깐 받쳤다는 설명만으로 반복 사용이 아니었다고 보십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -118,7 +118,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "문세영 씨, 보전금 60,000원이 이미 반영된 뒤였는데 왜 그 사실은 빼고 말했습니까?",
+              "text": "문세영 씨, 정산에 반영된 금액 변동을 상대에게 온전히 알리셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -157,7 +157,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "조인호 씨, 기사 보고서가 카트 사용 습관도 손상을 키웠다고 적는데 아직 공동 책임을 부정하십니까?",
+              "text": "조인호 씨, 본인 사용이 고장에 전혀 보탬이 되지 않았다고 단정하십니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -213,7 +213,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "문세영 씨, 이미 작년 대화에 '최종 계산서 확인 후 분담' 원칙이 있는데 왜 이번엔 그 순서를 바꿨습니까?",
+              "text": "문세영 씨, 예전 정산 원칙과 다른 순서로 이번 일을 밀어붙인 건 아닙니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -252,7 +252,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "조인호 씨, 통화 순서표를 보면 송금 요구 직후 곧바로 전액 거부 메시지를 보냈습니다. 그 순서는 맞지요?",
+              "text": "조인호 씨, 금액을 따지기 전에 거부부터 하신 건 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

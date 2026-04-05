@@ -1,0 +1,1417 @@
+{
+  "caseId": "tenant-12",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "발화 원점과 생활규칙",
+      "description": "잘린 캡처, 음성 원문, 생활규칙을 대조해 발언 취지와 낙인 가능성을 가른다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "이소담 씨, 이 캡처에서 '문제 세입자'라는 표현을 집주인 직언으로 본 근거가 정확히 무엇입니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant12:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "잘린 캡처가 아니라 음성 원문까지 들었을 때도, 관리인 말과 집주인 책임을 같은 선으로 보신 이유를 설명하십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant12:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "계약서상 확인되지 않은 생활 문제는 개별 고지가 원칙인데, 그 규칙을 알면서도 실제 불편이 전혀 없었다고 단정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant12:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "문경수 씨, 음성 원문 그대로라면 '조용히 보고 있다'는 문장은 관리인의 확인 취지입니까, 특정 세대 감시 표현입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant12:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "앞뒤 문맥을 붙여 보면 옆집을 달래는 말이었는데, 왜 그 표현이 낙인처럼 들릴 수 있다는 점을 놓쳤습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant12:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "계약서 규칙상 특정 세대를 암시하는 공개 인상 자체를 피해야 하는데, 그 기준에서 이 문장이 안전했다고 보십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant12:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "지연된 정정과 공개 반박",
+      "description": "관리실 문자와 공개 단톡 원문을 맞대어 정정 지연과 즉시 반박의 책임을 본다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "이소담 씨, 소문 캡처를 받은 뒤 25분 만에 공개 단톡에 올리기 전에, 왜 1:1 확인 절차를 건너뛰었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant12:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "이 게시문에서 '집주인과 관리인이 거짓 소문을 낸다'고 단정한 문장은 사실 확인이 끝난 표현입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant12:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "재판관이 비난보다 감정의 출발점을 묻는다면, 그 글을 올릴 때 무엇이 가장 수치스러웠습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant12:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "문경수 씨, 관리인 업무일지와 문자 원문을 보면 표현의 모호함을 알 수 있는데, 왜 즉시 정정 지시를 하지 않았습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "tenant12:b:d-2:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "소문이 돈다는 말을 들은 직후에도 별도 정정문을 내지 않은 이유를 시각 순서대로 답하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant12:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "관리인이 알아서 설명할 것이라 본 판단은 책임 이양입니까, 상황 관리입니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "tenant12:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "전파 시간표와 실제 생활기록",
+      "description": "루머 전파 시간표와 민원 기록을 겹쳐 보며 누가 오해를 키웠는지, 실제 불편은 어느 정도였는지 따진다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "이소담 씨, 루머 전파 시간표를 보면 표현이 두 차례 재전달 뒤 바뀌는데, 그 흐름을 알고도 경수 씨 직접 발언이라 단정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant12:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "공개 글 이후 루머 전파 속도가 더 빨라진 구간을 보면, 본인 글이 갈등을 확대했다는 점을 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant12:a:d-3:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "민원대장과 복도 확인 기록으로 보아 상습 악취·무단투숙은 없는데, 생활 불편 문제를 어디까지 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant12:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "문경수 씨, 전파 시간표상 정정 공백이 길어지는 동안 인상이 굳었습니다. 그 시간을 왜 방치했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant12:b:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "이 시간표가 보여 주는 '정정 부재 구간'을 보면, 방관 책임을 이제도 부인하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "tenant12:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "민원 기록이 제한적인데도 반복 문제처럼 설명한 건 체감입니까, 과장입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "tenant12:b:d-4:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "tenant12:a:d-1:unlock:s2:0",
+            "factText": "잘린 캡처의 원문을 잇자, 소문의 직접 출발점이 경수의 직언보다 미령의 애매한 말에 가깝게 복원된다.",
+            "tags": [
+              "context",
+              "quote",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "조미령",
+                "neutral": "그 사람",
+                "fullName": "조미령",
+                "judgeRef": "관리인"
+              },
+              "quote": {
+                "exact": "4층 분 건은 제가 조용히 보고 있다",
+                "neutral": "그 문장"
+              },
+              "record": {
+                "exact": "e-2 원문 복원",
+                "neutral": "그 자료"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "uncertainty"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant12:a:d-1:unlock:s3:0",
+            "factText": "루머 전파 시간표상 '문제 세입자'라는 표현은 두 차례 재전달 뒤에 굳어진다.",
+            "tags": [
+              "timeline",
+              "quote",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "문제 세입자",
+                "neutral": "그 표현"
+              },
+              "record": {
+                "exact": "e-5 전파 시간표",
+                "neutral": "그 시간표"
+              },
+              "time": {
+                "exact": "두 차례 재전달 뒤",
+                "neutral": "그 흐름",
+                "period": "전파 중간"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant12:a:d-1:unlock:s4:0",
+            "factText": "소담은 이웃 시선에 눌려 관리인 발언과 집주인 책임을 하나의 낙인으로 받아들였다.",
+            "tags": [
+              "fear",
+              "context",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "이웃 세입자들",
+                "neutral": "주변 사람들",
+                "fullName": "이웃 세입자들",
+                "judgeRef": "이웃들"
+              },
+              "person2": {
+                "exact": "문경수",
+                "neutral": "상대",
+                "fullName": "문경수",
+                "judgeRef": "집주인"
+              },
+              "fear": {
+                "exact": "문제 세입자 낙인",
+                "neutral": "그 낙인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant12:a:d-1:unlock:s5:0",
+            "factText": "경수의 직접 유포 정황은 약하지만, 정정 지연이 소담에게 남은 낙인을 굳히는 데 영향을 줬다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "문경수",
+                "neutral": "상대",
+                "fullName": "문경수",
+                "judgeRef": "집주인"
+              },
+              "act": {
+                "exact": "정정 지연",
+                "neutral": "그 대응"
+              },
+              "effect": {
+                "exact": "낙인 고착",
+                "neutral": "그 결과"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "blame"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "tenant12:a:d-3:unlock:s2:0",
+            "factText": "단톡 공개 반박은 소문 캡처를 전달받은 지 약 25분 뒤, 별도 사실 확인 없이 게시됐다.",
+            "tags": [
+              "timeline",
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "약 25분 뒤",
+                "neutral": "그 직후",
+                "period": "캡처 수신 직후"
+              },
+              "channel": {
+                "exact": "건물 단톡방",
+                "neutral": "그 방"
+              },
+              "record": {
+                "exact": "e-4 관리자 백업",
+                "neutral": "그 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant12:a:d-3:unlock:s3:0",
+            "factText": "공개 게시문에는 '집주인과 관리인이 거짓 소문을 낸다'는 단정형 문장이 포함돼 있었다.",
+            "tags": [
+              "quote",
+              "harm",
+              "privacy"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "집주인과 관리인이 거짓 소문을 낸다",
+                "neutral": "그 문장"
+              },
+              "personA": {
+                "exact": "문경수",
+                "neutral": "상대",
+                "fullName": "문경수",
+                "judgeRef": "집주인"
+              },
+              "personB": {
+                "exact": "조미령",
+                "neutral": "그 사람",
+                "fullName": "조미령",
+                "judgeRef": "관리인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant12:a:d-3:unlock:s4:0",
+            "factText": "소담은 공개 반박에서 확인된 사실과 추정을 한 문장에 섞어 수치심을 공격성으로 바꿨다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "context"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "act": {
+                "exact": "사실과 추정 혼합",
+                "neutral": "그 방식"
+              },
+              "fear": {
+                "exact": "문제 세입자 취급",
+                "neutral": "그 취급"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant12:a:d-3:unlock:s5:0",
+            "factText": "루머 전파 시간표를 보면 소담의 공개 글이 기존 오해를 정면충돌 국면으로 확대했다.",
+            "tags": [
+              "admission",
+              "harm",
+              "timeline"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "record": {
+                "exact": "e-5 루머 전파 시간표",
+                "neutral": "그 시간표"
+              },
+              "channel": {
+                "exact": "공개 단톡 글",
+                "neutral": "그 게시"
+              },
+              "effect": {
+                "exact": "정면충돌 국면 확대",
+                "neutral": "그 파장"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit_harm"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant12:a:d-4:unlock:s2:0",
+            "factText": "민원대장에는 한 달 동안 짧은 복도 소음 두 건과 분리배출 재안내 한 건만 남아 있다.",
+            "tags": [
+              "evidence",
+              "timeline",
+              "threshold"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "record": {
+                "exact": "민원대장 세 건",
+                "neutral": "그 기록"
+              },
+              "issue": {
+                "exact": "짧은 복도 소음 두 건과 분리배출 재안내 한 건",
+                "neutral": "그 정도 불편"
+              },
+              "time": {
+                "exact": "한 달 동안",
+                "neutral": "그 기간",
+                "period": "최근 한 달"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant12:a:d-4:unlock:s3:0",
+            "factText": "반복 악취·무단투숙·심야 소음 같은 중대 기록은 확인되지 않는다.",
+            "tags": [
+              "threshold",
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "major": {
+                "exact": "반복 악취·무단투숙·심야 소음",
+                "neutral": "그 수준"
+              },
+              "record": {
+                "exact": "복도 확인 기록",
+                "neutral": "그 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "contextualize"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant12:a:d-4:unlock:s4:0",
+            "factText": "소담은 늦은 방문객 응대와 문 앞 동선이 복도에서 눈에 띌 수 있다는 점을 뒤늦게 받아들인다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "context"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "issue": {
+                "exact": "늦은 방문객 응대와 문 앞 동선",
+                "neutral": "그 생활 동선"
+              },
+              "location": {
+                "exact": "복도",
+                "neutral": "그 공간"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant12:a:d-4:unlock:s5:0",
+            "factText": "계약서와 생활규칙은 생활 불편 확인과 낙인성 공개를 분리하도록 설계돼 있다.",
+            "tags": [
+              "rule",
+              "evidence",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "record": {
+                "exact": "임대차계약서와 생활규칙",
+                "neutral": "그 문서"
+              },
+              "rule": {
+                "exact": "개별 고지 후 사실 확인",
+                "neutral": "그 원칙"
+              },
+              "quote": {
+                "exact": "낙인성 공개 금지",
+                "neutral": "그 금지선"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "contextualize"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "tenant12:b:d-2:unlock:s2:0",
+            "factText": "미령 음성메모 원문에는 '4층 분 건은 제가 조용히 보고 있다'는 문장이 그대로 남아 있다.",
+            "tags": [
+              "quote",
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "조미령",
+                "neutral": "그 사람",
+                "fullName": "조미령",
+                "judgeRef": "관리인"
+              },
+              "quote": {
+                "exact": "4층 분 건은 제가 조용히 보고 있다",
+                "neutral": "그 문장"
+              },
+              "record": {
+                "exact": "e-2 음성 원문",
+                "neutral": "그 파일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant12:b:d-2:unlock:s3:0",
+            "factText": "전체 대화 문맥을 붙이면 그 발언은 냄새 질문을 달래며 먼저 확인하겠다는 취지였다.",
+            "tags": [
+              "context",
+              "quote",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "channel": {
+                "exact": "옆집 달래기 대화 전체 문맥",
+                "neutral": "그 문맥"
+              },
+              "quote": {
+                "exact": "제가 먼저 확인하겠다",
+                "neutral": "그 취지"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "contextualize"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant12:b:d-2:unlock:s4:0",
+            "factText": "그 취지와 별개로 문장 형태는 특정 세대를 감시 중인 듯한 인상을 남겼다.",
+            "tags": [
+              "context",
+              "harm",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "quote": {
+                "exact": "조용히 보고 있다",
+                "neutral": "그 문장 형태"
+              },
+              "effect": {
+                "exact": "감시 인상",
+                "neutral": "그 인상"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant12:b:d-2:unlock:s5:0",
+            "factText": "경수는 해당 표현의 모호함을 알고도 미령에게 즉시 정정 지시를 하지 않았다.",
+            "tags": [
+              "responsibility",
+              "admission",
+              "evidence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "문경수",
+                "neutral": "저",
+                "fullName": "문경수",
+                "judgeRef": "본인"
+              },
+              "person2": {
+                "exact": "조미령",
+                "neutral": "그 사람",
+                "fullName": "조미령",
+                "judgeRef": "관리인"
+              },
+              "act": {
+                "exact": "즉시 정정 지시 부재",
+                "neutral": "그 대응"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit_responsibility"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "tenant12:b:d-4:unlock:s2:0",
+            "factText": "공식 민원 기록은 한 달 세 건으로 제한되어 있다.",
+            "tags": [
+              "evidence",
+              "timeline",
+              "threshold"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "record": {
+                "exact": "민원대장 세 건",
+                "neutral": "그 기록"
+              },
+              "time": {
+                "exact": "한 달",
+                "neutral": "그 기간",
+                "period": "최근 한 달"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant12:b:d-4:unlock:s3:0",
+            "factText": "복도 확인 기록에도 상습 악취나 무단투숙 정황은 없다.",
+            "tags": [
+              "evidence",
+              "threshold",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "record": {
+                "exact": "복도 확인 기록",
+                "neutral": "그 기록"
+              },
+              "major": {
+                "exact": "상습 악취·무단투숙 정황 없음",
+                "neutral": "그 부재"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "contextualize"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant12:b:d-4:unlock:s4:0",
+            "factText": "문경수는 다른 세입자들의 체감 민원을 생활기록보다 더 크게 받아들였다.",
+            "tags": [
+              "motive",
+              "context",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "다른 세입자들",
+                "neutral": "주변 사람들",
+                "fullName": "다른 세입자들",
+                "judgeRef": "세입자들"
+              },
+              "record": {
+                "exact": "공식 생활기록",
+                "neutral": "그 기록"
+              },
+              "issue": {
+                "exact": "체감 민원",
+                "neutral": "그 불편감"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant12:b:d-4:unlock:s5:0",
+            "factText": "생활 불편 자체는 경미했는데도 문경수의 설명은 그것을 반복 문제처럼 부풀렸다.",
+            "tags": [
+              "admission",
+              "harm",
+              "threshold"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "문경수",
+                "neutral": "저",
+                "fullName": "문경수",
+                "judgeRef": "본인"
+              },
+              "minor": {
+                "exact": "경미한 생활 불편",
+                "neutral": "그 정도"
+              },
+              "major": {
+                "exact": "반복 문제처럼 보인 인상",
+                "neutral": "그 인상"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit_responsibility"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "tenant12:b:d-5:unlock:s2:0",
+            "factText": "경수-미령 문자에는 '민원은 조용히 처리하라'는 지시가 남아 있고, 즉각 정정문 흔적은 없다.",
+            "tags": [
+              "evidence",
+              "quote",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "record": {
+                "exact": "경수-미령 문자",
+                "neutral": "그 문자"
+              },
+              "quote": {
+                "exact": "민원은 조용히 처리하라",
+                "neutral": "그 지시"
+              },
+              "act": {
+                "exact": "즉각 정정문 없음",
+                "neutral": "그 부재"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_hit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "tenant12:b:d-5:unlock:s3:0",
+            "factText": "경수는 소문 이후에도 관리인이 알아서 설명할 것이라 보고 직접 공지를 미뤘다.",
+            "tags": [
+              "context",
+              "responsibility",
+              "institution"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "조미령",
+                "neutral": "그 사람",
+                "fullName": "조미령",
+                "judgeRef": "관리인"
+              },
+              "act": {
+                "exact": "직접 공지 미룸",
+                "neutral": "그 대응"
+              },
+              "channel": {
+                "exact": "관리인 설명에 기대기",
+                "neutral": "그 판단"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit_issue"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "tenant12:b:d-5:unlock:s4:0",
+            "factText": "경수의 지연 동기에는 건물 이미지 악화 우려와 갈등 확대 회피가 겹쳐 있다.",
+            "tags": [
+              "motive",
+              "fear",
+              "context"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "건물 이미지 악화",
+                "neutral": "그 우려"
+              },
+              "motive": {
+                "exact": "갈등 확대 회피",
+                "neutral": "그 계산"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "tenant12:b:d-5:unlock:s5:0",
+            "factText": "루머 전파 시간표상 정정 공백 동안 '문제 세입자' 인상이 굳어졌다.",
+            "tags": [
+              "timeline",
+              "harm",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "record": {
+                "exact": "e-5 루머 전파 시간표",
+                "neutral": "그 시간표"
+              },
+              "quote": {
+                "exact": "문제 세입자 인상",
+                "neutral": "그 인상"
+              },
+              "time": {
+                "exact": "정정 공백 동안",
+                "neutral": "그 기간",
+                "period": "지연 구간"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit_harm"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "tenant12:contradiction:0",
+        "targetParty": "a",
+        "trigger": "소담이 e-2와 e-5가 열린 뒤에도 경수의 직접 유포를 계속 단정할 때",
+        "text": "재전달 시간표상 '문제 세입자' 표현은 두 번 거친 뒤 굳어졌습니다. 직접 발화로 곧장 묶는 진술과 어긋납니다.",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-5"
+        ]
+      },
+      {
+        "id": "tenant12:contradiction:1",
+        "targetParty": "b",
+        "trigger": "경수가 e-2 원문이 열린 뒤에도 문제의 표현에 위험한 모호함이 없었다고 밀 때",
+        "text": "원문 전체를 보면 취지는 조용한 확인이지만, 문장 자체는 특정 세대를 감시하는 인상을 남깁니다.",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "tenant12:contradiction:2",
+        "targetParty": "a",
+        "trigger": "소담이 공개 단톡 반박이 단순 정정이었다고만 주장할 때",
+        "text": "공개 반박 시각이 캡처 수신 약 25분 뒤로 확인됩니다. 충분한 확인 뒤의 정정이라는 설명과 충돌합니다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      },
+      {
+        "id": "tenant12:contradiction:3",
+        "targetParty": "b",
+        "trigger": "경수가 실제 생활 불편을 반복 중대 문제처럼 말할 때",
+        "text": "민원대장은 한 달 세 건뿐이고 중대 누적 기록은 없습니다. '반복 문제'라는 표현이 공식 기록보다 앞서 있습니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "tenant12:interjection:0",
+        "speaker": "judge",
+        "trigger": "양측이 누가 시작했는지만 반복하며 직접 발화와 정정 지연을 섞어 말할 때",
+        "text": "직접 발화와 정정 지연은 다른 질문입니다. 둘을 섞지 말고 각각 답하십시오.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant12:interjection:1",
+        "speaker": "a",
+        "trigger": "경수가 '관리인이 응대한 일'만 반복하며 자신을 뒤로 뺄 때",
+        "text": "관리인 뒤에 숨기 전에, 집주인으로서 아니라고 한 적이 있는지부터 답하세요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant12:interjection:2",
+        "speaker": "b",
+        "trigger": "소담이 캡처 출처만 몰아붙이고 공개 단톡 게시 수위를 축소할 때",
+        "text": "캡처만 흔들지 말고, 단톡에 올린 문장 수위가 적절했는지도 같이 말씀하시죠.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "tenant12:outburst:a:0",
+        "party": "a",
+        "trigger": "소담이 '문제 세입자' 표현이 다시 언급되거나 이웃 시선 이야기가 나올 때",
+        "text": "저는 그 말 한 줄로 건물 전체에서 찍힌 사람처럼 살았어요!",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant12:outburst:a:1",
+        "party": "a",
+        "trigger": "공개 단톡 캡처가 제시돼 자신의 문장 수위를 부인하기 어려워질 때",
+        "text": "억울해서 올린 건데, 왜 제가 한 반응만 죄다 문제라는 식으로 말하세요?",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      },
+      {
+        "id": "tenant12:outburst:b:0",
+        "party": "b",
+        "trigger": "경수가 관리인 통제 실패와 방관 책임을 한꺼번에 추궁받을 때",
+        "text": "제가 건물을 일부러 그렇게 몰고 간 사람처럼 말하시면 곤란합니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "tenant12:outburst:b:1",
+        "party": "b",
+        "trigger": "경수가 생활 불편 과장을 기록으로 반박당할 때",
+        "text": "불편이 없었다는 건 아니지 않습니까, 기록 몇 줄로 체감이 다 사라집니까?",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "tenant12:transition:a:d-1:s0_s1",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "rumor_source_question",
+      "line": "제가 직접 들은 건 아니어도, 그 말이 집주인 라인에서 나온 거라면 같은 거죠.",
+      "behaviorHint": "발신자 목록을 더듬듯 캡처를 빠르게 넘긴다."
+    },
+    {
+      "id": "tenant12:transition:a:d-1:s1_s2",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "음성까지 들으니 처음 말은 미령 씨일 수 있겠네요. 그래도 관리실 선에서 나온 말 아닙니까.",
+      "behaviorHint": "스크린을 보다가 한 박자 쉬고 문장을 고쳐 말한다."
+    },
+    {
+      "id": "tenant12:transition:a:d-1:s2_s4",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_neighbor_stares",
+      "line": "저는 그때 이웃들 눈빛이 너무 무서웠어요. 누가 먼저 말했는지보다 이미 저를 찍어놨다고 느꼈습니다.",
+      "behaviorHint": "시선을 피하다가 마지막 문장에서는 감정이 앞선다."
+    },
+    {
+      "id": "tenant12:transition:a:d-1:s4_s5",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "전파 시간표를 보니 경수 씨가 직접 퍼뜨렸다고는 못 하겠습니다. 대신 아무도 바로잡지 않은 책임은 남습니다.",
+      "behaviorHint": "말끝을 낮추지만 책임을 짚는 순간 다시 또렷해진다."
+    },
+    {
+      "id": "tenant12:transition:a:d-3:s0_s1",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "public_accusation_question",
+      "line": "가만히 있으면 제 말이 묻힐 것 같았어요. 그래서 공개적으로라도 정정하려 한 겁니다.",
+      "behaviorHint": "질문이 끝나기 전에 끼어들 듯 빠르게 대답한다."
+    },
+    {
+      "id": "tenant12:transition:a:d-3:s1_s2",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "네, 공개로 올린 건 맞아요. 그때는 캡처가 오자마자 바로 반응했습니다.",
+      "behaviorHint": "휴대폰 시간 표시를 보고 입술을 잠깐 깨문다."
+    },
+    {
+      "id": "tenant12:transition:a:d-3:s2_s3",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "fact_check_followup",
+      "line": "출처를 다 따지기 전에 올린 건 성급했어요. 그래도 그 순간엔 그렇게라도 해야 할 줄 알았습니다.",
+      "behaviorHint": "목소리가 낮아졌다가 마지막에 다시 올라간다."
+    },
+    {
+      "id": "tenant12:transition:a:d-3:s3_s5",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "시간표까지 보니 제가 상황을 더 크게 만든 건 인정합니다.",
+      "behaviorHint": "어깨 힘이 빠지며 짧게 인정 문장을 끊어 읽는다."
+    },
+    {
+      "id": "tenant12:transition:a:d-4:s0_s1",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "actual_inconvenience_question",
+      "line": "생활이 전혀 문제 없었다는 말만 하긴 어렵네요. 그래도 누구나 겪는 수준이었습니다.",
+      "behaviorHint": "손으로 크기를 작게 그리며 불편 강도를 낮춘다."
+    },
+    {
+      "id": "tenant12:transition:a:d-4:s1_s2",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "복도 대화랑 분리배출 재안내가 있었던 건 맞습니다.",
+      "behaviorHint": "민원 항목을 보자 말수가 잠시 줄어든다."
+    },
+    {
+      "id": "tenant12:transition:a:d-4:s2_s4",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_late_visitors",
+      "line": "늦은 방문객 응대가 남들 눈에 꽂혔을 수 있다는 건 이제 알아요.",
+      "behaviorHint": "처음으로 방어보다 민망함이 얼굴에 비친다."
+    },
+    {
+      "id": "tenant12:transition:a:d-4:s4_s5",
+      "caseId": "tenant-12",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-1_presented",
+      "line": "계약서 규칙까지 보면, 그 정도 생활 문제를 낙인처럼 퍼뜨린 건 분리해서 봐야 합니다.",
+      "behaviorHint": "인정 후 바로 규칙 문구를 짚으며 선을 다시 긋는다."
+    },
+    {
+      "id": "tenant12:transition:b:d-2:s0_s1",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "manager_phrase_question",
+      "line": "미령이 그냥 조용히 확인하겠다는 뜻으로 말한 겁니다. 저는 그렇게만 이해했습니다.",
+      "behaviorHint": "의자에 기대고 짧게 답한 뒤 말을 아낀다."
+    },
+    {
+      "id": "tenant12:transition:b:d-2:s1_s2",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "음성 원문을 들으니 표현이 애매했던 건 인정합니다.",
+      "behaviorHint": "잠깐 침묵한 뒤 핵심 단어만 낮게 말한다."
+    },
+    {
+      "id": "tenant12:transition:b:d-2:s2_s4",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_neighbor_pressure",
+      "line": "이웃들 민원이 몰릴 때는 말 한 줄이 더 세게 들릴 수 있다는 걸 제가 늦게 봤습니다.",
+      "behaviorHint": "시선을 내리며 부담을 인정하는 표정으로 바뀐다."
+    },
+    {
+      "id": "tenant12:transition:b:d-2:s4_s5",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-3_presented",
+      "line": "문자와 일지를 같이 보니, 그 표현을 알면서도 제가 바로잡지 못한 게 맞습니다.",
+      "behaviorHint": "손가락으로 서류 모서리를 눌러 잡은 채 또박또박 말한다."
+    },
+    {
+      "id": "tenant12:transition:b:d-5:s0_s1",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "correction_delay_question",
+      "line": "그땐 관리인이 설명 중이라 굳이 제가 공지를 낼 일은 아니라고 봤습니다.",
+      "behaviorHint": "관리인을 언급하며 손바닥을 아래로 눌러 상황을 작게 만든다."
+    },
+    {
+      "id": "tenant12:transition:b:d-5:s1_s2",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "네, 정정문을 바로 내진 않았습니다.",
+      "behaviorHint": "문자 시각을 본 뒤 짧게 인정하고 입을 다문다."
+    },
+    {
+      "id": "tenant12:transition:b:d-5:s2_s3",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_no_notice_followup",
+      "line": "전달 과정이 정리될 줄 알고 미뤘는데, 그게 결국 제 손을 놓은 거였죠.",
+      "behaviorHint": "말끝에서 스스로의 회피를 인정하듯 고개를 끄덕인다."
+    },
+    {
+      "id": "tenant12:transition:b:d-5:s3_s5",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "전파 시간표를 보니 제가 기다린 사이 인상이 굳었습니다. 방관 책임을 피하긴 어렵습니다.",
+      "behaviorHint": "종이 위 시간대를 따라가다 마지막에 시선이 멈춘다."
+    },
+    {
+      "id": "tenant12:transition:b:d-4:s0_s1",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "actual_problem_question",
+      "line": "불편이 있었던 건 맞고, 저는 그걸 반복으로 받아들였습니다.",
+      "behaviorHint": "초반의 단정 대신 말을 조금 눌러서 한다."
+    },
+    {
+      "id": "tenant12:transition:b:d-4:s1_s2",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "기록상 큰 민원이 누적된 건 아니군요. 그래도 불편 호소 자체는 있었습니다.",
+      "behaviorHint": "기록 숫자를 확인하고 문장을 나눠서 천천히 말한다."
+    },
+    {
+      "id": "tenant12:transition:b:d-4:s2_s3",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "repeat_incident_followup",
+      "line": "반복이라고 말한 건 제 체감이 앞선 면이 있습니다.",
+      "behaviorHint": "한숨 뒤에 자신의 표현을 한 단계 낮춘다."
+    },
+    {
+      "id": "tenant12:transition:b:d-4:s3_s5",
+      "caseId": "tenant-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "생활 불편은 제한적이었고, 제가 다른 세입자 말에 끌려 인상을 키운 것도 사실입니다.",
+      "behaviorHint": "허리를 세운 채 책임 인정 문장을 규칙 읽듯 정리한다."
+    }
+  ]
+}

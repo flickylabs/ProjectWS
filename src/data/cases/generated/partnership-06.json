@@ -325,7 +325,7 @@
       "name": "집기 대체 발주서와 시공 PM 변경지시 로그",
       "description": "가람이 기존 확정안과 다른 진열집기·조명 모델을 요청한 발주서, 통화 후 남긴 시공 PM의 변경지시 로그다.",
       "surfaceName": "집기 발주서와 변경지시 로그",
-      "surfaceDescription": "발주서 원본과 시공 PM이 남긴 변경지시 기록이다.",
+      "surfaceDescription": "발주서와 현장 변경 기록이 함께 묶인 자료다. 반영 시점과 변경 범위 확인이 필요하다.",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -345,14 +345,40 @@
         "check_edits": "문서 히스토리에 후편집 흔적 없이 최초 발주 흐름이 남아 있다.",
         "question_acquisition": "회사 발주 자료와 협력업체 로그라 적법하게 확보됐다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대체 발주서와 변경지시 로그가 남은 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "통화 직후 변경 코드가 연속 반영된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "납기 사유라면서 변경 대상이 한 구역에 몰린 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
-      "name": "브랜딩 툴 코멘트와 수정 평면도",
+      "name": "디자인 코멘트와 평면도 버전",
       "description": "보라가 카운터 위치와 간판 시야를 바꾸기 위해 시공팀에 남긴 코멘트, 그리고 그 지시가 반영된 수정 평면도다.",
       "surfaceName": "브랜딩 툴 코멘트와 수정 평면도",
-      "surfaceDescription": "협업 툴 코멘트와 수정된 매장 평면도 파일이다.",
+      "surfaceDescription": "디자인 관련 코멘트와 평면도 버전 파일이다. 지시 시점과 반영 범위 확인이 필요하다.",
       "type": "platform_log",
       "reliability": "hard",
       "completeness": "original",
@@ -382,14 +408,40 @@
           "questionAngle": "최보라에게: \"보라의 카운터 위치·철거 일정 단독 변경\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 최보라의 \"보라의 카운터 위치·철거 일정 단독 변경\" 쟁점과 관련된다. 최보라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 댓글 기록과 수정 평면도가 만들어진 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "댓글 뒤 짧은 시간 안에 배치가 바뀐 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "동선 조정 외에 공정 순서까지 건드린 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
-      "name": "부매니저 단톡 캡처",
+      "name": "단톡 캡처 이미지",
       "description": "부매니저가 '가람 대표님 말대로 간판 먼저 철거, 보라 대표님 표로는 카운터부터'라고 적은 단톡 캡처다.",
       "surfaceName": "부매니저 단톡 캡처",
-      "surfaceDescription": "현장 부매니저가 보낸 작업 지시 관련 단톡 캡처 한 장이다.",
+      "surfaceDescription": "작업 지시 관련 대화 일부가 담긴 단톡 캡처 한 장이다. 전달 맥락 확인이 필요하다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -408,7 +460,33 @@
         "check_edits": "텍스트 변조 흔적은 없으나 선택적 크롭이 분명하다.",
         "question_acquisition": "직원 개인 기기 캡처라 사생활 및 내부 대화 보호 이슈가 있다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단톡 캡처를 단독 근거로 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "철거 전날 밤 저장된 화면에서 다른 대화가 잘린 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "잘린 앞뒤 문장에 최종안 판단 근거가 들어 있었습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -438,14 +516,40 @@
         "question_acquisition": "회사 내부 운영문서라 적법하게 확보됐다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 역할분담 메모와 승인 시트를 남겨 둔 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "리뉴얼 직전 두 분 모두 승인 표시를 남긴 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공동 승인 원칙을 넘어서 단독 변경이 가능했다고 보십니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
-      "name": "관리소 공사허가 변경 기록과 출입 게이트 로그",
+      "name": "공사허가 변경 기록과 출입 게이트 로그",
       "description": "보라 요청으로 철거 허가 시간이 조정되고, 가람 요청으로 다른 집기 반입 슬롯이 따로 잡힌 상가 관리소 기록이다.",
       "surfaceName": "관리소 공사허가 변경 기록",
-      "surfaceDescription": "상가 관리소의 공사허가 변경 기록과 출입 게이트 로그다.",
+      "surfaceDescription": "공사허가 변경 기록과 출입 관련 로그가 함께 묶인 자료다. 접수 시점과 전달 범위 확인이 필요하다.",
       "type": "institutional_note",
       "reliability": "hard",
       "completeness": "original",
@@ -468,14 +572,40 @@
         "question_acquisition": "상가 관리 주체의 공식 기록이어서 적법하다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 허가 변경 기록과 출입 로그가 남은 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 날 서로 다른 요청이 따로 접수된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "각자 자신의 안을 최종안처럼 전달한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "시공 PM 현장일지와 추가견적서",
       "description": "집기 재발주와 카운터 재이동이 겹치며 철거·설치 순서가 꼬였고, 이로 인해 하루 지연과 추가비용이 발생했다는 현장일지와 견적서다.",
       "surfaceName": "시공 현장일지와 추가견적서",
-      "surfaceDescription": "시공 PM이 작성한 현장일지와 추가 비용 견적서 묶음이다.",
+      "surfaceDescription": "현장일지와 추가 비용 견적서가 함께 묶인 자료다. 작성 시점과 변경 사유 확인이 필요하다.",
       "type": "document",
       "reliability": "hard",
       "completeness": "original",
@@ -509,7 +639,33 @@
           "implication": "이 증거는 최보라의 \"직원·협력업체에 서로 다른 최종안을 전달한 혼선\" 쟁점과 관련된다. 최보라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 현장일지와 추가견적서가 작성된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "지연 사유에 두 분 지시가 각각 구분된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "한쪽 지시만으로 설명되지 않는 공정 충돌을 부인하십니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

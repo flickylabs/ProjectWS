@@ -353,7 +353,33 @@
         }
       },
       "surfaceName": "사내 공유 회식 영상 클립",
-      "surfaceDescription": "사내 공유 앨범에 업로드된 짧은 회식 영상 클립 파일 한 건"
+      "surfaceDescription": "사내 공유 앨범에 업로드된 짧은 회식 영상 클립 파일 한 건",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회식 클립의 원본 여부를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "클립 시작이 촬영보다 늦은 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞부분이 잘린 상태에서 약어 대상을 단정한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -389,8 +415,34 @@
           "implication": "이 증거는 최희주의 \"희주의 단정 DM 전파\" 쟁점과 관련된다. 최희주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "멘토방 DM과 전달 메시지",
-      "surfaceDescription": "사내 메신저 멘토링 채널의 개인 메시지와 전달된 대화 내용"
+      "surfaceName": "대화방 메시지와 전달 기록",
+      "surfaceDescription": "개인 메시지와 전달된 대화 내용이다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 전달 메시지를 출근 전에 보낸 사실을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "짧은 시간에 여러 명에게 연속 전송한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확인 전 자신의 일로 단정한 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -419,7 +471,33 @@
       "subjectParty": "b",
       "surfaceName": "인력배치 공유 노트 초안",
       "surfaceDescription": "인력 배치 계획이 담긴 공유 문서의 초안 버전으로 약어 표기 포함",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 배치 초안의 약어 표기를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 약어 옆 메모가 회식 전 입력된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 문서에서 다른 인물이 따로 적힌 점을 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -459,7 +537,33 @@
       },
       "surfaceName": "법인카드 정산과 좌석 정보 메모",
       "surfaceDescription": "법인카드 사용 정산 내역과 식당 좌석 배치 관련 참고 정보 메모",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 좌석 정보와 정산 메모를 함께 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "클립 직전 다른 화제가 먼저 나온 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "당사자가 그 자리에 없었다면 판단 근거가 무엇입니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -495,8 +599,34 @@
           "implication": "이 증거는 최희주의 \"정정 전 쌍방 소문전 가담\" 쟁점과 관련된다. 최희주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "인사 상담 접수와 배정 변경",
-      "surfaceDescription": "인사팀 상담 접수 내역과 업무 배정이 변경된 이력을 담은 문서"
+      "surfaceName": "상담 접수와 배정 변경",
+      "surfaceDescription": "상담 접수 내역과 업무 배정이 변경된 이력을 담은 문서다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 상담 접수와 배정 변경 기록을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "면담 전날 밤 평가 메모가 먼저 남은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "비공식 메모 뒤 곧바로 배정을 바꾼 근거를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -525,7 +655,33 @@
       "subjectParty": "b",
       "surfaceName": "앨범 메타데이터와 생성 로그",
       "surfaceDescription": "공유 앨범 파일의 원본 메타데이터와 자동 생성 시스템 로그",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 생성 로그와 원본 메타를 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "웃음 직후 자동 추출이 시작된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "잘린 앞부분 없이도 대상을 단정할 수 있다고 보십니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

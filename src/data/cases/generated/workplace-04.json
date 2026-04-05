@@ -356,7 +356,33 @@
         }
       },
       "surfaceName": "스탠드업 회의록과 보드 코멘트",
-      "surfaceDescription": "스탠드업 회의 기록과 업무 보드에 남겨진 약속 관련 코멘트 내역"
+      "surfaceDescription": "스탠드업 회의 기록과 업무 보드에 남겨진 약속 관련 코멘트 내역",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회의록과 보드 코멘트 작성 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "16시대에 남긴 승인 확인 코멘트의 실행 경과를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 회의록에 적힌 역할 분리를 이후 다르게 해석한 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -384,7 +410,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "QA 체크리스트와 테스트 로그",
-      "surfaceDescription": "QA 체크리스트 상태 변경 내역과 테스트 실행 시스템 로그"
+      "surfaceDescription": "QA 체크리스트 상태 변경 내역과 테스트 실행 시스템 로그",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 체크리스트 상태 변경과 실행 로그의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "스모크만 끝난 시점에 상태를 초록으로 바꾼 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "파일 교체가 이어지던 중 전체 검증을 뒤로 미룬 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -410,8 +462,34 @@
         "question_acquisition": "업무 대화이나 읽음 표시·이모지 반응 포함. 제한적으로 다뤄야 한다."
       },
       "subjectParty": "a",
-      "surfaceName": "막판 수정 메신저 캡처",
-      "surfaceDescription": "마감 직전 업무 메신저에서 주고받은 대화를 캡처한 이미지 파일"
+      "surfaceName": "막판 수정 대화 캡처",
+      "surfaceDescription": "마감 직전 주고받은 대화를 캡처한 이미지 파일이다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 메신저 캡처를 제출한 범위와 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "21시 06분 장면만 남긴 기준이 무엇인지 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "잘려 나간 앞 대화에 다른 역할 지시가 있었는지 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -437,7 +515,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "외부 승인 이메일 체인",
-      "surfaceDescription": "외부 승인 요청과 회신이 담긴 이메일 스레드의 전체 회신 기록"
+      "surfaceDescription": "외부 승인 요청과 회신이 담긴 이메일 스레드의 전체 회신 기록",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 승인 메일 체인과 내부 전달 기록을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "리마인드 뒤 장시간 공백 동안 어떤 중간 공유를 했는지 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "최종 회신 전까지 중간 상태 공유를 비워 둔 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -466,8 +570,34 @@
       },
       "subjectParty": "b",
       "surfaceName": "파이프라인 실패 로그와 사고 메모",
-      "surfaceDescription": "배포 파이프라인의 오류 로그와 운영팀이 작성한 사고 메모",
-      "requiredLieState": "S3"
+      "surfaceDescription": "배포 파이프라인의 오류 로그와 사고 메모다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 파이프라인 로그와 사고 메모를 확인한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "20시 31분 동시 경고를 본 뒤 누구에게 먼저 알렸는지 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "서로 다른 경고를 왜 한쪽 문제로만 판단했는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -497,7 +627,33 @@
       "subjectParty": "a",
       "surfaceName": "보드 버전 이력과 범위 변경 기록",
       "surfaceDescription": "업무 보드의 버전 이력과 작업 범위 변경 사항이 기록된 로그",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 보드 버전 이력과 변경 기록의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "19시 48분 새 작업 추가 뒤 책임 재지정을 하지 않은 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "메신저 요청만 남기고 공식 책임 구조를 갱신하지 않은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

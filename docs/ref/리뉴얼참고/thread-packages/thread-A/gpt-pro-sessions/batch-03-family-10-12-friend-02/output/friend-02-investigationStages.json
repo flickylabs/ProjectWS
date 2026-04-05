@@ -1,0 +1,161 @@
+{
+  "case": "friend-02",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 전달 대화 원본과 전달 로그의 제출 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "전달 시점이 익명 게시보다 이틀 앞선 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "당사자 비밀을 제3자 조언 대상으로 돌린 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 익명글과 댓글 캡처를 어떤 경로로 확보하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "게시 시점이 운영 공지 직후인 점이 왜 중요하다고 보십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "표현 유사성만으로 작성자를 단정한 근거를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 공개범위 설정된 게시물 보관본의 제출 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "해당 게시가 기기 확인 직후 올라온 점을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "그 조합이 보는 사람에게 어떤 지목 효과를 냈는지 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 영상과 기기 로그를 함께 제출한 취지를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "머문 시각과 알림 개방 기록이 겹치는 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "잠깐 본 것이라면 목록을 넘긴 동작은 왜 남아 있습니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 운영자 보존자료와 계정 복구정보의 제출 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "복구 정보 일부와 접속 패턴이 같은 쪽을 가리키는 이유를 설명하십시오.",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "글투는 닮았는데 작성 기기가 다른 점을 어떻게 보십니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 음성 원본과 비교 리포트를 어떤 목적으로 제출하셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "편집본 생성 시점이 전달 이후인 점을 인정하십니까?",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "무음 절단과 순서 재배열이 자연 편집이라고 보십니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ]
+  }
+}

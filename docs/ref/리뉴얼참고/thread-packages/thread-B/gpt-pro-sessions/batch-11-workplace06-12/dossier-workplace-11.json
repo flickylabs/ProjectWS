@@ -1,0 +1,1306 @@
+{
+  "caseId": "workplace-11",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "발명자 흔적과 우회 전달",
+      "description": "발명자 기여 변경과 최초 외부 전달이 거의 같은 구간에서 겹친다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "권태준 씨, e-1 버전 이력에서 브리핑 직전 발명자 표기 열을 직접 바꾼 이유가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-11:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "발명자 기준과 대표 슬라이드를 함께 묶어 설명하셨는데, 그 방식이 외부 접촉 시선을 다른 데로 돌리는 데도 쓰인 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-11:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "노서린 씨 이름이 빠진 뒤에도 그 자료를 대표 성과처럼 들고 간 건 고의가 아니었다고 지금도 말씀하시겠습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-11:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "노서린 씨, 개인메일과 텔레그램이 같은 밤 이어진 이유를 승인 절차와 함께 설명해 주시겠습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-11:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "발명자 삭제를 문제 삼으면서도 같은 시점에 브로커 접촉을 진행한 건 갈등을 다른 용도로 쓴 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-11:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "정리본이라고 부르신 파일에 청구항과 실험 요약이 함께 들어간 이유는 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-11:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "잘린 경보와 원본 재전송",
+      "description": "선택적으로 잘린 캡처와 전체 로그를 대조하면 제3자 확산 경로가 드러난다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "권태준 씨, 잘린 DLP 캡처만 제출하고 원본 게이트웨이 로그는 뒤로 미룬 이유가 있습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-11:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "브로커 한 건만 갔다고 하셨는데 e-4 재전송 경로까지 보면 그 설명을 계속 유지하실 겁니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-11:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "상대 단독 유출처럼 보이게 만든 뒤 본인 책임만 분리하려 한 것 아닙니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-11:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "노서린 씨, 재공유 가능한 링크 설정을 본인이 확인했는지 먼저 답해 주시겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-11:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "잘린 DLP 캡처만으로 범위를 줄여 설명한 건 실제 확산 범위를 가리기 위한 선택 아니었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-11:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "경쟁사 자문 폴더 도달 기록이 나온 뒤에도 한 건 검토라고 하실 겁니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-11:b:d-3:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "낙인 메모와 대가 추적",
+      "description": "선행 인사 개입과 외부 대가 흐름이 함께 드러나며 연출된 갈등의 목적이 선명해진다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "권태준 씨, e-5에서 포렌식 전부터 노서린 씨를 기밀위험 인원으로 적은 이유가 정확히 무엇입니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-11:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "승진 심사와 보안 감사 압박이 있었다는 사정이 이름 삭제와 발표 제외를 정당화합니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-11:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "발표 권한 축소와 위험 메모가 사실확인보다 먼저 움직였다는 점을 이제는 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "workplace-11:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "노서린 씨, e-6의 수수료 흐름이 나온 지금 브로커 전달과 대가 논의를 직접 인정하실 수 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "workplace-11:b:d-2:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "권태준 씨와 서로 책임을 갈라 숨길 계산이 없었다고 지금도 말씀하시겠습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "workplace-11:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "브로커 송장과 지갑 메모까지 보인 이상 두 분이 갈등을 일부러 키워 공모를 가린 사실을 인정하십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "workplace-11:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "workplace-11:a:d-1:unlock:s2:0",
+            "factText": "최종 브리핑 직전 자신의 계정에서 발명자 표기 열이 수정된 사실",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "브리핑 직전",
+                "neutral": "그 직전",
+                "period": "잠정출원 직전"
+              },
+              "scope": {
+                "exact": "발명자 기여표와 대표 슬라이드",
+                "neutral": "해당 문서 묶음"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-11:a:d-1:unlock:s3:0",
+            "factText": "대표 성과 확보를 위해 발명자 표기와 발표 대표자를 의도적으로 묶은 사실",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "노서린",
+                "fullName": "노서린",
+                "judgeRef": "노서린 씨",
+                "neutral": "상대 연구원"
+              },
+              "scope": {
+                "exact": "발명자 기여표와 대표 슬라이드",
+                "neutral": "해당 문서 묶음"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "responsibility"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-11:a:d-1:unlock:s4:0",
+            "factText": "조직 소유라는 표현이 상대방 공로 삭제를 정당화하는 방패로 쓰인 사실",
+            "tags": [
+              "emotion",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "institution": {
+                "exact": "특허관리 시스템",
+                "neutral": "사내 특허 시스템"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-11:a:d-1:unlock:s5:0",
+            "factText": "상대방의 청구항 기여를 알고도 이름을 뺀 행위를 스스로 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "노서린",
+                "fullName": "노서린",
+                "judgeRef": "노서린 씨",
+                "neutral": "상대 연구원"
+              },
+              "scope": {
+                "exact": "발명자 기여표와 대표 슬라이드",
+                "neutral": "해당 문서 묶음"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "workplace-11:a:d-4:unlock:s2:0",
+            "factText": "포렌식 전에 인사 초안에 상대방의 기밀위험 코멘트가 먼저 입력된 사실",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "포렌식 전",
+                "neutral": "그 전",
+                "period": "사실확인 이전"
+              },
+              "institution": {
+                "exact": "HR 평가 초안과 기밀위험 메모",
+                "neutral": "인사·보안 메모"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-11:a:d-4:unlock:s3:0",
+            "factText": "발표 제외와 평가 코멘트가 발명자 분쟁 처리와 함께 묶여 움직인 사실",
+            "tags": [
+              "context",
+              "institution"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "scope": {
+                "exact": "발표 제외와 위험 코멘트",
+                "neutral": "선행 조치"
+              },
+              "institution": {
+                "exact": "HR 평가 초안과 기밀위험 메모",
+                "neutral": "인사·보안 메모"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "context"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-11:a:d-4:unlock:s4:0",
+            "factText": "승진 심사와 보안 감사 압박이 선행 낙인 선택의 직접 동기였던 사실",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "exact": "포렌식 전",
+                "neutral": "그 전",
+                "period": "사실확인 이전"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "motive"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-11:a:d-4:unlock:s5:0",
+            "factText": "상대방 발표 권한 축소가 사실확인 전에 이미 실행됐음을 본인이 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "노서린",
+                "fullName": "노서린",
+                "judgeRef": "노서린 씨",
+                "neutral": "상대 연구원"
+              },
+              "scope": {
+                "exact": "발표 제외와 위험 코멘트",
+                "neutral": "선행 조치"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-11:a:d-5:unlock:s2:0",
+            "factText": "분쟁이 외부 시선을 돌릴 수 있다는 점을 양측이 알고 있던 사실",
+            "tags": [
+              "context",
+              "motive"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "scope": {
+                "exact": "발명자 다툼과 외부 브로커 접촉",
+                "neutral": "그 갈등 구도"
+              },
+              "time": {
+                "exact": "고발 구도 형성 직전",
+                "neutral": "그 시점",
+                "period": "분쟁 연출 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "context"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-11:a:d-5:unlock:s3:0",
+            "factText": "브로커 수수료와 추가 청구항 전달이 갈등 연출과 병행된 사실",
+            "tags": [
+              "act",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "institution": {
+                "exact": "외부 브로커 송장과 지갑 메모",
+                "neutral": "외부 대가 흔적"
+              },
+              "scope": {
+                "exact": "발명자 다툼과 외부 브로커 접촉",
+                "neutral": "그 갈등 구도"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "evidence"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-11:a:d-5:unlock:s4:0",
+            "factText": "잘린 DLP 자료 제출이 상대방 단독 유출처럼 보이게 하려는 계산과 연결된 사실",
+            "tags": [
+              "evidence",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "institution": {
+                "exact": "DLP 경보 캡처 PDF",
+                "neutral": "잘린 캡처 자료"
+              },
+              "person": {
+                "exact": "노서린",
+                "fullName": "노서린",
+                "judgeRef": "노서린 씨",
+                "neutral": "상대측"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "context"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-11:a:d-5:unlock:s5:0",
+            "factText": "갈등 연출이 외부 브로커 공모를 가리는 장치였음을 본인이 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "노서린",
+                "fullName": "노서린",
+                "judgeRef": "노서린 씨",
+                "neutral": "상대측"
+              },
+              "scope": {
+                "exact": "발명자 다툼과 외부 브로커 접촉",
+                "neutral": "그 갈등 구도"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "responsibility"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "workplace-11:b:d-2:unlock:s2:0",
+            "factText": "개인메일과 텔레그램이 같은 밤 연속 사용된 사실",
+            "tags": [
+              "timeline",
+              "privacy"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "channel": {
+                "exact": "개인메일과 텔레그램",
+                "neutral": "사설 외부 채널"
+              },
+              "time": {
+                "exact": "내부검토 전날 밤",
+                "neutral": "그 무렵",
+                "period": "발송 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-11:b:d-2:unlock:s3:0",
+            "factText": "정리본이라는 표현과 달리 첨부 범위에 청구항과 실험 요약이 포함된 사실",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "scope": {
+                "exact": "청구항 정리본과 실험 요약",
+                "neutral": "정리본"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "context"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-11:b:d-2:unlock:s4:0",
+            "factText": "지워졌다는 피해감이 외부 접촉 합리화 문장으로 쓰인 사실",
+            "tags": [
+              "emotion",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "권태준",
+                "fullName": "권태준",
+                "judgeRef": "권태준 팀장",
+                "neutral": "상대 팀장"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "motive"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-11:b:d-2:unlock:s5:0",
+            "factText": "승인 없는 브로커 전달과 대가 논의를 본인이 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "유다인",
+                "fullName": "유다인",
+                "judgeRef": "유다인 씨",
+                "neutral": "외부 브로커"
+              },
+              "channel": {
+                "exact": "개인메일과 텔레그램",
+                "neutral": "사설 외부 채널"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "workplace-11:b:d-3:unlock:s2:0",
+            "factText": "재공유 가능한 링크 설정을 본인이 충분히 확인하지 않은 사실",
+            "tags": [
+              "act",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "scope": {
+                "exact": "재공유 가능한 작업 링크",
+                "neutral": "외부 공유 링크"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-11:b:d-3:unlock:s3:0",
+            "factText": "잘린 DLP 캡처만으로는 실제 확산 범위를 설명할 수 없다는 사실",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "institution": {
+                "exact": "DLP 경보 캡처 PDF",
+                "neutral": "잘린 캡처 자료"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "context"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-11:b:d-3:unlock:s4:0",
+            "factText": "브로커 한 건이면 끝날 것이라는 기대가 위험 판단을 흐린 사실",
+            "tags": [
+              "emotion",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "유다인",
+                "fullName": "유다인",
+                "judgeRef": "유다인 씨",
+                "neutral": "브로커 측"
+              },
+              "time": {
+                "exact": "브로커 수신 직후",
+                "neutral": "그 직후",
+                "period": "재전송 시작 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "motive"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-11:b:d-3:unlock:s5:0",
+            "factText": "제3자 자문 폴더 확산을 막지 못한 책임을 본인이 인정한 사실",
+            "tags": [
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "institution": {
+                "exact": "메일 게이트웨이 원본 로그",
+                "neutral": "원본 로그"
+              },
+              "scope": {
+                "exact": "재공유 가능한 작업 링크",
+                "neutral": "외부 공유 링크"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "workplace-11:b:d-5:unlock:s2:0",
+            "factText": "지워졌다는 감정과 외부 브로커 접촉이 하나의 서사로 묶인 사실",
+            "tags": [
+              "relationship",
+              "emotion"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "권태준",
+                "fullName": "권태준",
+                "judgeRef": "권태준 팀장",
+                "neutral": "상대 팀장"
+              },
+              "scope": {
+                "exact": "발명자 다툼과 외부 브로커 접촉",
+                "neutral": "그 갈등 구도"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotion"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "workplace-11:b:d-5:unlock:s3:0",
+            "factText": "상대방과 서로 책임을 갈라 숨길 수 있다는 계산이 있었던 사실",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "권태준",
+                "fullName": "권태준",
+                "judgeRef": "권태준 팀장",
+                "neutral": "상대 팀장"
+              },
+              "time": {
+                "exact": "고발 구도 형성 직전",
+                "neutral": "그 시점",
+                "period": "분쟁 연출 시점"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "motive"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "workplace-11:b:d-5:unlock:s4:0",
+            "factText": "피해자 서사가 수수료 흐름과 갈등 연출을 가리는 방패로 쓰인 사실",
+            "tags": [
+              "self_justification",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "institution": {
+                "exact": "외부 브로커 송장과 지갑 메모",
+                "neutral": "외부 대가 흔적"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "context"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "workplace-11:b:d-5:unlock:s5:0",
+            "factText": "갈등을 일부러 키워 공모를 가렸음을 본인이 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "권태준",
+                "fullName": "권태준",
+                "judgeRef": "권태준 팀장",
+                "neutral": "상대 팀장"
+              },
+              "scope": {
+                "exact": "발명자 다툼과 외부 브로커 접촉",
+                "neutral": "그 갈등 구도"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "responsibility"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "workplace-11:contradiction:0",
+        "targetParty": "a",
+        "trigger": "권태준이 e-3만 근거로 노서린 단독 유출을 단정할 때",
+        "text": "잘린 DLP 캡처만으로는 단독 유출을 확정할 수 없습니다. e-4 원본 로그를 열면 재전송 경로와 외부 세션이 따로 보입니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-4"
+        ]
+      },
+      {
+        "id": "workplace-11:contradiction:1",
+        "targetParty": "b",
+        "trigger": "노서린이 정리본은 아이디어 설명용일 뿐이라고 범위를 줄여 말할 때",
+        "text": "정리본이라는 표현과 달리 첨부 범위에는 청구항 문장과 실험 요약이 함께 들어 있습니다. 수수료 대화까지 이어져 단순 설명으로 보기 어렵습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-6"
+        ]
+      },
+      {
+        "id": "workplace-11:contradiction:2",
+        "targetParty": "a",
+        "trigger": "권태준이 보안 메모는 사후 예방 조치였다고 말할 때",
+        "text": "e-5 초기 입력본의 시간순서는 반대입니다. 포렌식 결과보다 먼저 위험 코멘트와 발표 제외 흔적이 들어가 있습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      },
+      {
+        "id": "workplace-11:contradiction:3",
+        "targetParty": "b",
+        "trigger": "노서린이 발명자 삭제와 외부 접촉은 완전히 별개라고 선을 그을 때",
+        "text": "발명자 기여 변경 시점과 외부 브로커 전달 시점이 가까워 두 갈등이 서로를 가리는 장치처럼 작동합니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-2"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "workplace-11:interjection:0",
+        "speaker": "a",
+        "trigger": "노서린이 외부 접촉을 전부 발명자 삭제의 후폭풍으로만 설명할 때",
+        "text": "재판장님, 정리본이라더니 텔레그램 수수료 얘기까지 있지 않았습니까. 그건 감정과 별개로 보셔야 합니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-11:interjection:1",
+        "speaker": "b",
+        "trigger": "권태준이 조직 소유만 반복하며 발명자 삭제를 희석할 때",
+        "text": "조직 소유라고만 하지 마세요. 제 이름이 빠진 시점부터 설명하셔야죠, 권태준 팀장님.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-11:interjection:2",
+        "speaker": "judge",
+        "trigger": "e-3와 e-4가 함께 제시되었을 때",
+        "text": "잘린 캡처와 원본 로그는 증거 완전성이 다릅니다. 이 법정에서는 편집본보다 원본 연쇄를 우선 보겠습니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "workplace-11:outburst:a:0",
+        "party": "a",
+        "trigger": "e-1과 e-5가 함께 제시되어 발명자 삭제와 선행 낙인이 한 흐름으로 묶일 때",
+        "text": "제가 다 훔쳐 간 관리자처럼만 몰아가시면 안 됩니다. 그 주간엔 출원, 투자사, 보안 감사가 한꺼번에 밀려왔습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "workplace-11:outburst:a:1",
+        "party": "a",
+        "trigger": "e-6로 공모 대가 흐름이 확인된 뒤 노서린의 피해자 프레임이 반복될 때",
+        "text": "노서린 씨만 억울한 사람처럼 말하지 마십시오. 서로 위험한 선택을 한 판이었고, 저 혼자 꾸민 일처럼 만들 순 없습니다.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      },
+      {
+        "id": "workplace-11:outburst:b:0",
+        "party": "b",
+        "trigger": "e-1로 발명자 기여 삭제가 명확해진 뒤 권태준이 여전히 대표 정리라고 말할 때",
+        "text": "제 이름이 지워진 걸 보고도 아직 정리라고 하세요? 그 한 줄 때문에 제 몇 달이 통째로 사라졌어요.",
+        "relatedDisputes": [
+          "d-1"
+        ]
+      },
+      {
+        "id": "workplace-11:outburst:b:1",
+        "party": "b",
+        "trigger": "e-6의 수수료 흐름까지 제시되어 브로커 전달과 공모 은폐가 동시에 드러날 때",
+        "text": "네, 제가 버틴 것도 알아요. 그런데 먼저 빼앗겼다는 생각이 너무 컸고, 그 분노를 잘못된 데 썼어요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "workplace-11:transition:a:d-1:s0_s1",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "inventor_credit_question",
+      "line": "발명자 기준과 발표 대표는 분리해서 보셔야 합니다. 그 단계에서는 정리의 문제였지, 노서린 씨를 배제하려는 조치는 아니었습니다.",
+      "behaviorHint": "표정 변화 없이 기준선을 먼저 긋는다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-1:s1_s2",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "버전 이력이 나오면 제 계정에서 열을 본 사실은 부인하지 못합니다. 다만 청구항 정리와 회사 자산 기준을 먼저 맞추려 한 것이라고 말씀드리겠습니다.",
+      "behaviorHint": "문서를 다시 보며 말끝을 조금 늦춘다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-1:s2_s3",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_remove_name_question",
+      "line": "대표 슬라이드에서 노서린 씨 표기가 빠진 책임은 있습니다. 다만 외부 검토 리스크와 발표 혼선을 고려했다는 점도 보셔야 합니다.",
+      "behaviorHint": "시선을 피한 채 책임과 사유를 분리해 말한다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-1:s3_s5",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_or_responsibility_question",
+      "line": "네, 제가 이름을 빼고 제 성과처럼 보이게 만들었습니다. 조직 소유라는 말로 숨겼지만 제 책임입니다.",
+      "behaviorHint": "짧게 숨을 고른 뒤 회피 없이 인정한다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-4:s0_s1",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "risk_note_question",
+      "line": "위험 메모는 예방 기록이었습니다. 인사 낙인으로 보실 건 아니고, 보안 감사 일정 때문이었습니다.",
+      "behaviorHint": "손을 모은 채 절차라는 표현을 반복한다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-4:s1_s2",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "초기 입력본이 나오면 제가 먼저 메모한 사실은 인정합니다. 다만 발표 리스크를 줄이려는 선제 대응이라고 여겼습니다.",
+      "behaviorHint": "메모 시점을 인정하면서도 목적을 설명하려 든다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-4:s2_s4",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_board_pressure",
+      "line": "승진 심사와 투자사 데모 압박 때문에 통제를 서둘렀습니다. 사실 확인보다 관리가 앞선 건 사실입니다.",
+      "behaviorHint": "어깨가 굳은 채 압박을 처음으로 입에 올린다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-4:s4_s5",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "briefing_exclusion_or_responsibility_question",
+      "line": "제가 노서린 씨를 먼저 위험 인원으로 굳히고 발표까지 빼려 했습니다. 그 판단은 제 책임입니다.",
+      "behaviorHint": "고개를 짧게 숙이며 문장을 끊지 않고 끝낸다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-5:s0_s1",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "collusion_denial_question",
+      "line": "저희 갈등 자체는 실제였습니다. 외부 검토가 있었다고 해서 그걸 곧바로 공모 은폐로 묶는 건 비약입니다.",
+      "behaviorHint": "갈등과 공모를 손짓으로 분리한다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-5:s1_s2",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "서린 씨의 외부 접촉 흔적이 나와도, 다만 저는 그 분쟁이 시선을 돌릴 수 있다는 정도만 인식했습니다.",
+      "behaviorHint": "효과만 인정하고 의도는 줄여 말한다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-5:s2_s3",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "broker_fee_question",
+      "line": "수수료 흐름까지 보면 제 설명이 가벼웠다는 건 압니다. 그래도 노서린 씨 쪽 실무가 먼저 굴러간 면도 있습니다.",
+      "behaviorHint": "입술을 굳히며 상대 역할을 곁들인다."
+    },
+    {
+      "id": "workplace-11:transition:a:d-5:s3_s5",
+      "caseId": "workplace-11",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_or_shared_intent_question",
+      "line": "네, 서로 싸우는 모양을 만들어 공모를 가렸습니다. 제가 그 계산을 멈추지 않았고 제 잘못입니다.",
+      "behaviorHint": "더는 문장을 쪼개지 않고 주어를 자신에게 둔다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-2:s0_s1",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "private_broker_contact_question",
+      "line": "정리본 정도는 확인받을 수 있다고 생각했어요. 그때는 외부 변리사 의견 비슷한 걸 기대한 거예요.",
+      "behaviorHint": "억울한 표정을 먼저 보이며 범위를 줄여 말한다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-2:s1_s2",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "메일 원문이 나오면 개인메일과 텔레그램을 쓴 건 인정할게요. 다만 저는 먼저 지워졌다는 생각에 너무 매달렸어요.",
+      "behaviorHint": "손끝을 모았다가 천천히 푼다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-2:s2_s3",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "zip_attachment_scope_question",
+      "line": "첨부 범위를 줄여 말한 건 맞아요. 그래도 권태준 팀장 쪽이 저를 밖으로 밀어낸 건 사실이라고 느꼈어요.",
+      "behaviorHint": "울먹이는 톤으로 상대 책임을 덧붙인다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-2:s3_s5",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "payment_discussion_question",
+      "line": "네, 제가 브로커에게 보냈고 돈 얘기도 했어요. 피해자라는 말 뒤에 숨었지만 제 잘못이에요.",
+      "behaviorHint": "눈을 내리깔고 짧은 문장으로 인정한다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-3:s0_s1",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "limited_share_claim_question",
+      "line": "저는 한 건만 간다고 믿었어요. 결과 범위는 몰랐다고밖에 못 말씀드려요.",
+      "behaviorHint": "양손을 펼치며 범위를 축소해 설명한다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-3:s1_s2",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "잘린 DLP 화면이 나오면 제가 보낸 흔적 자체는 인정할게요. 다만 그걸로 전체 확산을 다 안다고는 못 했어요.",
+      "behaviorHint": "캡처와 원본을 다르게 부르며 버틴다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-3:s2_s4",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_what_she_expected_broker_to_do",
+      "line": "브로커가 한 번 보고 끝낼 줄 알았어요. 제가 링크 설정을 너무 가볍게 본 건 맞아요.",
+      "behaviorHint": "목소리가 낮아지며 링크 설정을 인정한다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-3:s4_s5",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-4_or_e-6_presented",
+      "line": "원본 로그까지 보면 제 변명이 안 됩니다. 제가 재전송 가능 구조를 방치해서 퍼진 거고 제 책임이에요.",
+      "behaviorHint": "고개를 숙인 채 더는 되묻지 않는다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-5:s0_s1",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "staged_fight_question",
+      "line": "억울함은 진짜였어요. 그래서 그 싸움이 전부 연출이었다는 말은 바로 못 받아들였어요.",
+      "behaviorHint": "감정을 먼저 꺼내며 질문을 늦춘다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-5:s1_s2",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_being_erased",
+      "line": "제가 먼저 지워졌다는 감정이 갈등을 더 키운 건 인정해요. 다만 그때도 저는 그걸 그냥 방패처럼 썼다는 말은 버티고 싶었어요.",
+      "behaviorHint": "숨을 고른 뒤 일부만 인정한다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-5:s2_s3",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_use_external_broker_question",
+      "line": "외부 브로커를 쓴 건 복수심과 조급함이 섞였기 때문이에요. 그래도 권태준 팀장 쪽도 그 판을 같이 이용했어요.",
+      "behaviorHint": "목이 잠긴 채 상대 이름을 또렷하게 부른다."
+    },
+    {
+      "id": "workplace-11:transition:b:d-5:s3_s5",
+      "caseId": "workplace-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "네, 저희는 갈등을 키워 책임을 나눠 숨기려 했어요. 복수심까지 얹어서 공모를 가린 제 책임입니다.",
+      "behaviorHint": "울음을 누르듯 마지막 단어를 힘줘 말한다."
+    }
+  ]
+}

@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "류선우 씨, 홍세진 개인 계정으로 남은 원본에서 장수진 대표의 납기 약속 방식을 직접 언급하셨습니다. 이것이 단순 일정 정리였다는 근거가 무엇입니까?",
+              "text": "류선우 씨, 외부 인력에게 상대에 대한 불만을 직접 꺼낸 건 사실 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -43,7 +43,7 @@
             },
             {
               "id": "dossier-1.a.q3",
-              "text": "행사 전날 확인 체크까지 한 debrief 규칙 문서를 보고도 외부 프리랜서에게 상대 평가를 꺼낸 점은 원칙 위반 아닌가요?",
+              "text": "행사 전날 확인한 사후 정리 규칙을 알고도 외부 프리랜서에게 상대 평가를 꺼낸 점은 원칙 위반 아닌가요?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "장수진 씨, 보조 스태프와 홍세진 원본 대화에 류선우 대표 승인 지연과 출고 문제가 직접 적혀 있습니다. 이게 단순 상황 설명이었다는 근거가 무엇입니까?",
+              "text": "장수진 씨, 외부 인력에게 내부 문제를 설명하는 선을 넘은 건 아니었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -82,7 +82,7 @@
             },
             {
               "id": "dossier-1.b.q3",
-              "text": "비방 금지와 debrief only 규칙을 확인한 뒤에도 같은 말을 한 점은 문서상 합의를 깬 것 아닌가요?",
+              "text": "비방 금지와 사후 정리 원칙을 확인한 뒤에도 같은 말을 한 점은 문서상 합의를 깬 것 아닌가요?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "류선우 씨, 크롭 전사 캡처는 수신자 정보가 잘려 있습니다. 이 한 장만으로 장수진 대표가 바이어에게 직접 말했다고 단정하신 이유가 무엇입니까?",
+              "text": "류선우 씨, 그 캡처 한 장만으로 상대의 직접 발언을 단정한 건 아니었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "장수진 씨, 캡처 한 장으로는 수신자도 앞뒤도 보이지 않습니다. 그런데도 왜 선우 대표의 직접 험담이라고 결론부터 말씀하셨습니까?",
+              "text": "장수진 씨, 맥락이 빠진 캡처를 결정적 증거처럼 받아들인 건 아니었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "류선우 씨, 규칙 문서와 라운지 동선을 함께 보면 양측 모두 외부 채널에 재료를 남겼습니다. 선우 대표님은 지금도 본인 위반을 단독 예외로 보십니까?",
+              "text": "류선우 씨, 규칙과 동선을 함께 보면 본인 쪽 말도 밖으로 새어 나간 건 아니었습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "장수진 씨, 규칙 문서와 운영사 기록을 같이 보면, 수진 대표님도 선우 대표님도 바깥에 말을 남겼습니다. 아직도 본인 쪽만 예외라고 보십니까?",
+              "text": "장수진 씨, 바깥에 남긴 말은 상대 쪽만이 아니라 본인 쪽에도 있었다는 점을 인정하십니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -260,7 +260,7 @@
             },
             {
               "id": "dossier-3.b.q2",
-              "text": "라운지 출입기록과 buyer complaint memo까지 보면, 소문 첫 문장은 홍세진 recap입니다. 이 점을 인정하십니까?",
+              "text": "라운지 출입기록과 바이어 불만 메모까지 보면, 소문 첫 문장은 홍세진 요약 메시지입니다. 이 점을 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

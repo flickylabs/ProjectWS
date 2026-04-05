@@ -1,0 +1,791 @@
+{
+  "caseId": "case-work-07",
+  "meta": {
+    "relationshipType": "boss_employee",
+    "conflictSeed": "CS-1",
+    "variableModules": [
+      "VM-A"
+    ],
+    "twistModule": "TW-5",
+    "difficulty": "hard",
+    "anchorTruth": "정훈은 주말 가족식사 42만원·백화점 결제 38만원을 월말 전 상환하자고 나래와 합의해 놓고, 감사가 터지자 합의 자체를 부인했다.",
+    "emotionalBait": "가족식사·백화점·심야 택시가 한 장의 PDF에 묶이자 '실무자가 법인카드를 돌려 쓴 사건'으로 읽힌다. 정훈 요약표에는 나래 계정만 남아 상사 개입은 처음부터 없던 것처럼 보인다.",
+    "resolutionDilemma": "정훈의 합의 번복·책임 전가와 나래의 영수증 세탁·오프북 정산 가담 중 어느 쪽이 더 무거운가. 구두 합의를 근거로 누락된 감사 코멘트와 인사평가를 어디까지 되돌릴 수 있는가."
+  },
+  "duo": {
+    "partyA": {
+      "name": "최정훈",
+      "age": 43,
+      "occupation": "영업전략실장",
+      "incomeBracket": "high",
+      "archetype": "cold_logic",
+      "speechStyle": "\"접대비 예산 코드 기준부터 말씀드리면요.\" 규정을 먼저 깔고, 몰리면 '월말 전에 정리될 건이었다'를 반복해 위반을 미래 상환으로 축소한다.",
+      "pride": 8,
+      "fear": "감사 보고서에 '부하에게 사적 결제 떠넘긴 관리자'로 찍혀 승진 후보군에서 밀려나는 장면 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "expense_sheet_controller",
+      "dailyRoutine": "아침에는 영업지표와 카드 승인내역을 훑고, 오후에는 접대비와 고객 미팅 비용을 승인하며, 밤에는 임원 동선과 지출 코드를 직접 조정한다.",
+      "sensitivePoints": [
+        "감사 시즌",
+        "법인카드 사적 사용",
+        "승진 심사 평판"
+      ],
+      "verbalTells": [
+        {
+          "type": "policy_detour",
+          "trigger": "lying",
+          "pattern": "\"카드 운영원칙상 예산 예외 항목이라서요.\" 승인 여부 질문에 규정부터 깔며 주체를 흐린다."
+        },
+        {
+          "type": "future_cleanup",
+          "trigger": "cornered",
+          "pattern": "\"곧 개인 정산될 건이었어요.\" 이미 발생한 위반을 아직 끝나지 않은 상환으로 축소한다."
+        },
+        {
+          "type": "subject_blur",
+          "trigger": "avoiding",
+          "pattern": "\"재무 쪽에서 그렇게 돌렸어요.\" 주어를 항상 다른 부서로 돌려 직접 지시를 희미하게 만든다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "나래씨",
+        "toJudge": "제 팀원",
+        "angry": "김나래!"
+      }
+    },
+    "partyB": {
+      "name": "김나래",
+      "age": 30,
+      "occupation": "영업운영 대리",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "\"이 건 11시 43분 승인, 품목 '회식 식대'예요.\" 시각·품목을 줄줄이 읊으며 상사 허락을 집요하게 짚지만, 재발급 추궁엔 '분류 보정'이라 축소한다.",
+      "pride": 6,
+      "fear": "상사 지시를 따랐을 뿐인데 혼자 '법인카드 유용자'로 낙인찍혀 경력이 끝나는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "receipt_folder_keeper",
+      "dailyRoutine": "오전에는 법인카드 승인 알림과 정산 요청을 정리하고, 오후에는 고객 미팅 영수증을 취합하며, 마감 주간 밤에는 보류 탭과 상환 메모를 다시 맞춘다.",
+      "sensitivePoints": [
+        "사적 사용 낙인",
+        "지시 따르기와 책임 경계",
+        "영수증 재분류"
+      ],
+      "verbalTells": [
+        {
+          "type": "line_item_barrage",
+          "trigger": "lying",
+          "pattern": "\"이 건 12,400원, 이 건 38,000원...\" 금액·품목을 길게 늘어놓아 핵심 질문의 초점을 분산시킨다."
+        },
+        {
+          "type": "approval_echo",
+          "trigger": "cornered",
+          "pattern": "\"정훈 팀장님이 '처리해'라고 보낸 문자 그대로예요.\" 승인 문구를 되읽으며 세탁 책임을 뒤로 민다."
+        },
+        {
+          "type": "paper_shuffle",
+          "trigger": "emotional",
+          "pattern": "영수증 뭉치를 뒤적이며 \"이건 지시받은 거예요\"를 반복 — 억울함으로 검증을 밀어붙인다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "실장님",
+        "toJudge": "제 실장",
+        "angry": "최정훈 실장!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "마감 전 애매한 접대비는 시스템 업로드 전 임시 상계표에서 둘이 확인 후 닫는 것이 암묵적 관행이었다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "지난 겨울 고객 택시비 8만원을 법인카드로 먼저 돌린 일을 정훈은 '내가 허락', 나래는 '내가 제안'으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '내가 예외 처리로 살려 준 일이다' / B: '그때부터 구두 합의로 미루는 관행을 당신이 만들었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "정훈이 '주말 건은 개인분 메우고 닫자'고 했고, 나래는 문제인 줄 알면서도 정식 기록을 남기지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "오세진 (영업본부장)",
+        "relationTo": "a",
+        "knowledgeScope": "정훈이 감사 전 '운영 쪽 정산 실수'로 보고한 시점과 승진 심사에서 비용통제를 의식한 흐름을 안다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 48,
+          "occupation": "영업본부장",
+          "relationToA": "영업본부장",
+          "relationToB": "김나래와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "정훈씨",
+          "addressB": "나래씨"
+        },
+        "addressA": "정훈씨",
+        "addressB": "나래씨"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "홍예진 (재무 계약직 클로징 담당)",
+        "relationTo": "both",
+        "knowledgeScope": "상계표 최초 작성자, 상환 메모, 정훈·나래 구두 합의 전제의 대화 흐름을 확인 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 38,
+          "occupation": "재무 계약직 클로징 담당",
+          "relationToA": "최정훈을 업무상 알고 있음",
+          "relationToB": "김나래을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "정훈씨",
+          "addressB": "나래씨"
+        },
+        "addressA": "최정훈씨",
+        "addressB": "김나래씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "문승재 (감사팀 카드포렌식 담당)",
+        "relationTo": "both",
+        "knowledgeScope": "카드 승인 로그, 메모필드, POS 재발급 이력, 정산폴더 백업을 원본 대조로 확인 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "감사팀 카드포렌식 담당",
+          "relationToA": "최정훈을 업무상 알고 있음",
+          "relationToB": "김나래을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "최정훈씨",
+          "addressB": "김나래씨"
+        },
+        "addressA": "최정훈씨",
+        "addressB": "김나래씨"
+      }
+    ],
+    "relationshipType": "boss_employee"
+  },
+  "context": {
+    "contextType": "expense_audit",
+    "description": "분기 말 법인카드 감사가 열리자 영업전략실 주말 결제 5건이 재검토 대상에 올랐다. 고객 접대와 개인 소비가 뒤섞인 항목이 터지며, 구두로만 미뤄 온 상계 관행이 한꺼번에 폭발해 감사 결과와 인사평가에 직결됐다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "감사 시즌이라 결제 한 건만 걸려도 비용통제 평판·승진 심사·포렌식이 연쇄로 터질 수 있었고, 구두 합의는 문서가 없으면 단독 유용으로 읽혔다.",
+    "caseNumber": "E-WK-H-0007",
+    "caseName": "법인카드 감사"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "합의 번복과 책임 전가",
+      "truth": true,
+      "truthDescription": "정훈은 '월말 전 개인분 메우고 닫자'고 합의해 놓고, 감사가 시작되자 합의 자체를 부인하며 나래의 단독 은닉으로 돌렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "정산절차복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "정훈은 합의를 부인했다."
+    },
+    {
+      "id": "d-2",
+      "name": "영수증 세탁과 품목 축소",
+      "truth": true,
+      "truthDescription": "나래는 감사 공지 다음 날 새벽 식당·백화점에 연락해 주류·개인물품 표기를 뺀 영수증을 재발급받았다. '임시 정리'라 주장하지만 타이밍이 감사 직후다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "개인사용차단",
+      "legitimacyIssue": true,
+      "judgmentStatement": "나래는 감사 직후 영수증을 재발급받았다."
+    },
+    {
+      "id": "d-3",
+      "name": "상계표의 사후 조작 여부",
+      "truth": false,
+      "truthDescription": "상계표는 나래의 조작이 아니라 홍예진이 클로징 시점에 만든 자동백업 문서다. 감사 전에 이미 상환 계획과 정훈 이니셜이 적혀 있었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-3",
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 65,
+        "b": 35
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "제3자검증",
+      "legitimacyIssue": false,
+      "judgmentStatement": "상계표는 홍예진이 작성했다."
+    },
+    {
+      "id": "d-4",
+      "name": "선행 감사 메모와 평가 개입",
+      "truth": true,
+      "truthDescription": "사실관계 정리 전에 정훈은 감사 초안과 평가란에 나래를 '비용 통제 취약'으로 먼저 적어 선행 낙인을 만들었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "감사절차보호",
+      "legitimacyIssue": false,
+      "judgmentStatement": "정훈은 감사 초안에 낙인을 만들었다."
+    },
+    {
+      "id": "d-5",
+      "name": "오프북 상계의 쌍방 가담",
+      "truth": true,
+      "truthDescription": "정훈은 사적 결제를 상계표로 돌리게 했고, 나래는 그 방식으로 항목을 묶어 공식 절차 밖에서 넘기려 했다. 오프북 상계에 둘 다 가담했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "정산절차복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "정훈과 나래는 오프북 상계에 가담했다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "월말 클로징 메일과 상계표 링크 스레드",
+      "description": "정훈이 '개인분 메우고 닫자'고 적은 메일과 나래가 보류 탭에 묶은 메신저 스레드. 사전 합의 정황이 보인다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약 캡처가 아니라 메일 원문과 상계표 버전 이력을 같이 봐야 한다.",
+        "check_metadata": "'개인분 메우고 닫자'는 정훈 회신이 감사 플래그보다 이틀 먼저 남아 있다.",
+        "restore_context": "같은 스레드에 나래가 보류 탭에 묶고 상환 시점을 묻는 흐름이 이어져 사전 합의 정황이 선명하다.",
+        "verify_source": "메일 서버 아카이브와 협업도구 링크 로그가 동일 문서 ID를 가리킨다.",
+        "check_edits": "원본 메일·링크 기록 — 사후 편집 흔적 없음.",
+        "question_acquisition": "업무 정산 자료 — 감사 범위 내 적법 열람."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최정훈에게: \"합의 번복과 책임 전가\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 최정훈의 \"합의 번복과 책임 전가\" 쟁점과 관련된다. 최정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김나래에게: \"오프북 상계의 쌍방 가담\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 김나래의 \"오프북 상계의 쌍방 가담\" 쟁점과 관련된다. 김나래은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "월말 클로징 메일과 상계표 스레드",
+      "surfaceDescription": "월말 정산 관련 이메일과 상계표 링크가 포함된 메일 스레드"
+    },
+    {
+      "id": "e-2",
+      "name": "재발급 영수증과 POS 품목수정 요청 기록",
+      "description": "나래가 점장에게 '주류 빼고 다시 끊어 달라'고 보낸 문자와 재발급 영수증. 원본과 비교하면 세탁 범위가 드러난다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "재발급 영수증뿐 아니라 점장 문자, POS 수정 이력까지 함께 확보해야 한다.",
+        "check_metadata": "감사 공지 다음 날 새벽 2시에 품목 축소 요청 — 주류·개인물품 표기가 사라졌다.",
+        "restore_context": "'임시 정리'라 주장하지만, 감사에 불편한 항목을 덜 보이게 만든 타이밍이 정황상 세탁에 가깝다.",
+        "verify_source": "가맹점 POS 로그와 점장 문자 시각 일치.",
+        "check_edits": "재발급본은 진본이지만 원본과 차이가 명확해 의도적 세탁 여부를 비교할 수 있다.",
+        "question_acquisition": "가맹점 협조 자료 — 적법하지만 개인 소비 품목 노출은 최소화 필요."
+      },
+      "subjectParty": "b",
+      "surfaceName": "재발급 영수증과 수정 요청 기록",
+      "surfaceDescription": "재발급된 영수증과 POS 품목 수정 요청이 담긴 메신저 기록"
+    },
+    {
+      "id": "e-3",
+      "name": "정훈이 제출한 카드 승인내역 캡처 PDF",
+      "description": "가족식사·백화점만 발췌한 PDF. 상환 메모·보류 코드 열이 잘려 나래 단독 유용처럼 보이게 편집돼 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "PDF뿐 아니라 카드사 원본 거래내역과 메모필드까지 같이 봐야 한다.",
+        "check_metadata": "문제 거래만 발췌 — 같은 날 상환 예정 메모와 보류 코드가 붙은 열은 잘려 있다.",
+        "restore_context": "단독으론 나래 유용처럼 읽히지만, 결제 직후 내부 메모·임시 분류 흐름이 빠져 있다.",
+        "verify_source": "감사 리포트 형식과 열 구성이 달라 공식 출력본인지 별도 확인 필요.",
+        "check_edits": "문장 변조는 없으나 선택적 절삭·강조로 해석이 나래 단독 유용 쪽으로 기운다.",
+        "question_acquisition": "정훈 자발 제출 — 입수 적법하지만 완전성은 별도 검증 필요."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최정훈에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최정훈의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 최정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김나래에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 김나래의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 김나래은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "카드 승인 내역 캡처 PDF 문서",
+      "surfaceDescription": "카드 승인 내역을 캡처하여 정리한 PDF 형식의 제출 문서"
+    },
+    {
+      "id": "e-4",
+      "name": "홍예진의 클로징 폴더 자동백업본과 로컬 시트 히스토리",
+      "description": "홍예진이 클로징 시점에 만든 상계표 자동백업. 감사 전에 이미 상환 날짜와 정훈 이니셜이 적혀 있다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "최종 시트뿐 아니라 자동저장 버전과 로컬 백업의 시간순 파일을 함께 봐야 한다.",
+        "check_metadata": "결제 직후부터 홍예진 계정에서 상환 예정일과 정훈 이니셜이 입력된 버전이 연속으로 남아 있다.",
+        "restore_context": "급조가 아니라 클로징 시 제3자가 실제 관리한 동시대 문서라는 점이 드러난다.",
+        "verify_source": "홍예진 계정 백업과 로컬 시트 히스토리가 동일 셀 변경 순서를 보여 준다.",
+        "check_edits": "자동저장 원본 — 사후 편집 흔적 없이 입력 시점 보존.",
+        "question_acquisition": "업무 백업 적법 — 계약직 개인 폴더 식별 정보는 최소 공개."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최정훈에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최정훈의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 최정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김나래에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 김나래의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 김나래은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "정산 폴더 백업본과 시트 편집 이력",
+      "surfaceDescription": "정산 폴더의 자동 백업본과 로컬 스프레드시트 편집 히스토리",
+      "requiredLieState": "S3"
+    },
+    {
+      "id": "e-5",
+      "name": "감사 대응 초안과 정훈의 비공식 평가 코멘트",
+      "description": "나래 면담 전에 정훈이 '비용 통제 취약'을 먼저 적은 감사 대응 메모와 평가 초안.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약이 아니라 초기 입력 시각과 수정본까지 모두 확인해야 한다.",
+        "check_metadata": "나래 면담 전 정훈 계정에서 부정 코멘트가 먼저 입력, 이후 표현만 일부 완화됐다.",
+        "restore_context": "사실 정리 전에 '통제 취약' 프레임이 먼저 작동 — 선행 낙인 정황.",
+        "verify_source": "감사 도구와 HR 평가 시스템 타임스탬프가 동일 순서.",
+        "check_edits": "초기본·수정본 모두 남아 사후 정리인지 선행 낙인인지 구분 가능.",
+        "question_acquisition": "인사·감사 자료 — 분쟁 해결 목적에 한정 공개."
+      },
+      "subjectParty": "a",
+      "surfaceName": "감사 대응 초안과 비공식 코멘트",
+      "surfaceDescription": "감사 대응용 초안 문서와 비공식으로 남겨진 평가 코멘트"
+    },
+    {
+      "id": "e-6",
+      "name": "공유폴더 회수 로그와 카드사 메모필드 원본",
+      "description": "정산폴더 회수 전 백업 로그와 카드사 메모필드의 '상환 예정' 문구 원본. 감사 공지 이전 입력 시각이 찍혀 있다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "요약이 아니라 회수 직전 백업 스냅샷과 카드사 메모 원본을 같이 추출해야 한다.",
+        "check_metadata": "메모필드의 상환 예정일·보류 코드 입력 시각이 감사 공지 이전으로 찍혀 있다.",
+        "restore_context": "'나래가 꾸몄다'는 주장과 달리 메모·보류 표식이 동시대 기록으로 남아 있다.",
+        "verify_source": "카드사 메타데이터와 협업폴더 백업 로그가 동일 항목 ID를 가리킨다.",
+        "check_edits": "플랫폼 원본 로그 — 사후 편집 흔적 없음.",
+        "question_acquisition": "법인카드 운영 로그 — 감사 범위 내 적법 열람."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최정훈에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최정훈의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 최정훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "김나래에게: \"상계표의 사후 조작 여부\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 김나래의 \"상계표의 사후 조작 여부\" 쟁점과 관련된다. 김나래은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "폴더 회수 로그와 메모필드 원본",
+      "surfaceDescription": "공유 폴더 접근 회수 로그와 카드사 메모 필드 원본 기록",
+      "requiredLieState": "S3"
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "정훈은 문제 결제를 사전 합의로 미뤄 놓고 감사가 시작되자 나래 단독 책임처럼 돌렸다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "나래는 영수증 품목을 축소해 보이도록 재발급을 요청했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "상계표는 사후 조작물이 아니라 홍예진이 동시대에 관리하던 실제 클로징 자료였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-4",
+      "fact": "정훈은 사실확인 전에 감사 메모와 평가 코멘트로 나래에게 선행 낙인을 남겼다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 법인카드 사적 사용을 공식 시스템 밖 상계 관행으로 넘기려 했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L3",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "prior_approval_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_hold_in_temp_tab_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "fabricated_sheet_claim_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_missing_originals"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "audit_note_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_before_interview_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "receipt_reissue_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "item_name_change_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "vendor_contact_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "sheet_origin_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "how_much_was_explicitly_approved_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L2",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "offbook_practice_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_pressure"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_not_finance_escalation_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "정산절차복구": [
+      "법인카드의 애매한 항목은 임시 상계표가 아니라 시스템 안 보류코드와 이중 승인으로만 처리하고, 사후 개인상환 약속은 예외 없이 문서화한다.",
+      "이번 감사 건은 누가 먼저 숨겼는지보다 승인, 사용, 상환 약속, 업로드 누락을 분리해 책임 비율을 다시 계산한다.",
+      "오프북 상계 관행이 반복되면 해당 팀의 법인카드 운용권을 재무팀 공동관리 체제로 전환한다."
+    ],
+    "개인사용차단": [
+      "사적 성격이 섞인 결제는 어떤 이유로도 법인카드로 먼저 결제하지 못하게 하고, 긴급 상황은 별도 선지급 또는 현금성 가불 절차로 우회한다.",
+      "영수증 재발급이나 품목 축소 요청은 자동 경고 대상으로 두고, 원본과 재발급본을 함께 보존한다.",
+      "재차 품목 세탁이 확인되면 상급자 지시 여부와 별개로 실사용자와 처리자 모두에게 보안·회계 징계를 적용한다."
+    ],
+    "제3자검증": [
+      "비공식 합의가 있었다는 주장은 메신저 캡처만으로 판단하지 않고 재무 담당자, 자동백업, 카드사 메모필드 같은 제3자 원본으로 교차검증한다.",
+      "감사 중 제출되는 요약 PDF는 원본 로그와 함께만 증거로 인정하고, 절삭본 단독 제출은 불완전 증거로 분류한다.",
+      "임시 정산폴더와 클로징 시트는 담당자 변경 전 자동백업을 의무화해 사후 조작과 사후 부인을 동시에 막는다."
+    ],
+    "감사절차보호": [
+      "사실관계 확인 전 관리자가 부하를 감사 취약 인원으로 먼저 적어 넣지 못하게 하고, 초기 코멘트는 감사팀과 HR 공동확인 후에만 반영한다.",
+      "감사 대상자와 관리자의 인사평가를 분리해 카드 이슈가 확인되기 전까지는 선행 낙인이 승진이나 배치에 작동하지 않게 한다.",
+      "선행 낙인과 책임 전가가 반복되면 해당 관리자의 비용승인 권한과 평가 코멘트 권한을 일정 기간 보류한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

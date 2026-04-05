@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "서지현 씨, 원본을 못 받았더라도 두 달 전체 자동이체를 멈춘 건 사실입니까?",
+              "text": "서지현 씨, 자료가 미심쩍었더라도 대응이 너무 크게 간 건 아닌지부터 보셔야 하는 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "임호준 씨, 처음 보낸 캡처와 PDF는 관리대행 원본을 바로 추출한 자료입니까, 개인 파일을 다시 만든 자료입니까?",
+              "text": "임호준 씨, 처음 보낸 자료가 그대로 받은 원본은 아니었던 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "서지현 씨, 밤샘 렌더링 주간의 전력 피크가 본인 장비 기록과 겹친다는 점은 인정하십니까?",
+              "text": "서지현 씨, 본인 사용량이 아예 그대로였다고만 하긴 어렵지 않습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "임호준 씨, 공용부와 빈 상가 구간이 같은 달 따로 급증한 걸 장부상 이미 알고 계셨습니까?",
+              "text": "임호준 씨, 세대 사용분 말고도 함께 봐야 할 항목이 이미 있었던 것 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "서지현 씨, 원본 양식과 합계 행 순서가 다르다는 점이 단순 재전송이 아니라 편집이라고 본 결정적 이유였습니까?",
+              "text": "서지현 씨, 그 표가 단순 재전송이 아니라고 느낀 이유부터 짚어 보시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "임호준 씨, 회계 프로그램이 아닌 개인 엑셀·편집 경로 흔적이 남는데도 공식처럼 보이게 한 건 아니라고 하시겠습니까?",
+              "text": "임호준 씨, 겉모양을 더 공식처럼 보이게 만든 손길이 있었던 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

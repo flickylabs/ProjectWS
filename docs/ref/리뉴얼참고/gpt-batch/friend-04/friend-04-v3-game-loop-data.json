@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "송다혜 씨, 현우에게 보낸 판매글 캡처에서 냄새와 누락 부속품 문구를 빼고 전달한 이유가 무엇입니까?",
+              "text": "송다혜 씨, 현우 씨에게 보여 준 판매글이 전체 설명을 다 담고 있었다고 보십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "류현우 씨, '텐트만 멀쩡하면 반반 가능, 일단 잡아줘'라는 문장이 참여 의사로 읽혀도 괜찮다고 본 겁니까?",
+              "text": "류현우 씨, 그 답장이 참여 의사로 읽힐 수 있다는 점은 예상하셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "송다혜 씨, 비환불 고지를 읽은 뒤에도 바로 3만원을 송금한 것은 사실입니까?",
+              "text": "송다혜 씨, 최종 확인이 없는데도 먼저 돈을 보낸 사실은 인정하십니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "류현우 씨, 판매자에게 '사진대로면 갈게요'라고 따로 보낸 메시지를 왜 바로 정정하지 않았습니까?",
+              "text": "류현우 씨, 거래가 진행되는 듯한 신호를 준 뒤 바로 선을 긋지 않은 이유가 있습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "송다혜 씨, 픽업 영상과 메모를 본 뒤에도 구조만 멀쩡하면 충분하다고 보셨습니까?",
+              "text": "송다혜 씨, 현장에서 드러난 하자 기준이 현우 씨와 다를 수 있다는 생각은 안 하셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "류현우 씨, 픽업 후 40분 안쪽 철회가 다혜에게 재판매 부담을 남긴다는 걸 알고도 그렇게 결정하신 겁니까?",
+              "text": "류현우 씨, 픽업 직후 빠지면 다혜 씨 부담이 커진다는 점을 알고도 결정을 미루셨습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

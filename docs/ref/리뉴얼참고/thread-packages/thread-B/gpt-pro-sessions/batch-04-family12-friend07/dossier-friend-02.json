@@ -1,0 +1,1748 @@
+{
+  "caseId": "friend-02",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "출발점과 필체의 함정",
+      "description": "포워드 내역과 캡처 함정을 함께 대조해 최초 전달자와 직접 작성자를 분리하는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "윤가은, 마지막으로 비밀을 상세히 들은 사람이 박민재뿐이었다는 판단은 어떤 범위의 비밀에 근거합니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d1.unlock.s2.a.only_confidant",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "이 캡처만으로 직접 작성자를 박민재로 단정할 때, 어떤 비약이 함께 섞였습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d3.unlock.s4.a.doubt_on_authorship",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "친한친구 스토리가 약속 위반일 수 있다는 점을, 그 시점의 본인은 어디까지 알고 있었습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.unlock.s2.a.story_broke_rule",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "박민재, 조언 명목이었다면 왜 하필 박서후에게 원자료를 포워드했습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d1.unlock.s2.b.forwarded_summary",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "직접 작성자는 아니라 해도, 본인 전달이 익명글 의심의 재료가 됐다는 점은 인정합니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.s3.b.my_forward_created_suspicion",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "두 사람이 세운 비밀 외부화 금지 약속을 본인이 먼저 깼다는 사실은 언제 자각했습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.unlock.s2.b.forward_broke_rule",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "스크롤과 스토리의 19분",
+      "description": "기기 접근과 SNS 반응의 시간차를 묶어 우발적 노출인지 감정적 보복인지 가르는 카드.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "윤가은, 화면을 본 것과 채팅 목록을 넘긴 것의 차이를 이 자리에서 어떻게 구분하시겠습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d2.unlock.s2.a.preview_not_just_glance",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "태블릿 확인 뒤 19분 만에 스토리를 올린 이유는 무엇이었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.unlock.s3.a.story_post_timing",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "그 게시물이 민재를 겨누는 공개 암시였다는 점을 지금은 인정합니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.unlock.s3.a.acted_on_unconfirmed_certainty",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "박민재, 자동 로그인 상태로 둔 기기 관리 실패는 어디까지 본인 책임으로 인정합니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.unlock.s2.b.tablet_left_logged_in",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "스토리를 본 직후 그것이 본인을 겨눈 글이라고 판단한 근거는 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.unlock.s4.b.story_targeted_me",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "그럼에도 가은의 경계 위반과 본인의 최초 누설을 별개로 설명할 수 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.unlock.s3.b.story_hurt_but_not_excuse",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "보조계정과 편집 파일",
+      "description": "운영자 보존로그와 음성 비교 리포트로 박서후의 직접 작성·편집 개입을 드러내는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "윤가은, 운영자 로그가 나오면 민재 직접 작성 판단을 수정할 수 있습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d3.unlock.s5.a.accepts_wrong_author",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "원문과 제보 파일 차이에서 가장 먼저 느낀 어색함은 무엇이었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d4.unlock.s2.a.voice_file_feels_cut",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "박서후가 배후로 개입했을 가능성을 언제부터 의심했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.unlock.s3.a.seohoo_possible_motive",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "박민재, 편집 가능성을 느끼고도 박서후 이름을 숨긴 이유는 무엇입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.unlock.s4.b.protected_friend_out_of_guilt",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "운영자 보존로그가 박서후 보조계정을 가리키면, 당신의 책임은 어떤 형태로 남습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.s5.b.accepts_suspicion_responsibility",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "지금 이 자리에서 박서후의 배후 개입을 명시적으로 인정합니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d4.unlock.s5.b.names_seohoo",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.s2.a.only_confidant",
+            "factText": "그 직후 그 비밀을 자세히 들은 사람은 상대뿐이었다는 점",
+            "tags": [
+              "context",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "박민재",
+                "judgeRef": "상대",
+                "neutral": "그 사람"
+              },
+              "time": {
+                "period": "뒤풀이 직후",
+                "neutral": "그 직후"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "fact_locked"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.s3.a.scope_overlap",
+            "factText": "퍼진 내용 범위가 자신이 상대에게 말한 비밀 범위와 거의 겹친다는 점",
+            "tags": [
+              "privacy",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "material": {
+                "exact": "비밀 연애와 역할 조정 고민",
+                "neutral": "그 내용"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.s4.a.rule_memory",
+            "factText": "예전에 사적인 비밀을 동호회 평판 싸움에 쓰지 않기로 약속했던 기억",
+            "tags": [
+              "rule",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "period": "작년 겨울",
+                "neutral": "그때"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "motive_search"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.s5.a.betrayal_threshold",
+            "factText": "조언 목적이었더라도 익명화 없는 제3자 전달 자체를 배신으로 본다는 기준",
+            "tags": [
+              "threshold",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "제3자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.s2.a.preview_not_just_glance",
+            "factText": "알림을 스친 수준이 아니라 채팅 목록을 몇 초 넘겨 본 행동이 있었다는 점",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "device": {
+                "exact": "자동 로그인 태블릿",
+                "neutral": "그 기기"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.s3.a.story_post_timing",
+            "factText": "기기 확인 뒤 짧은 시간 만에 제한 공개 스토리를 올렸다는 시간 연결",
+            "tags": [
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "19분 뒤",
+                "neutral": "곧바로"
+              },
+              "channel": {
+                "exact": "친한친구 스토리",
+                "neutral": "그 게시물"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.s4.a.betrayal_certainty",
+            "factText": "그 순간에는 상대가 직접 익명 폭로까지 했다고 거의 확신하고 있었다는 내면",
+            "tags": [
+              "motive",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "박민재",
+                "judgeRef": "상대",
+                "neutral": "그 사람"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "motive_search"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.s5.a.admits_boundary_break",
+            "factText": "배신감이 있었더라도 기기 열람과 저격성 게시물 업로드는 자신의 경계 위반이었다는 인정",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "channel": {
+                "exact": "친한친구 스토리",
+                "neutral": "그 게시물"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.s2.a.style_match_suspicion",
+            "factText": "캡처 표현 일부가 상대의 평소 말투와 닮았다고 느낀 의심의 근거",
+            "tags": [
+              "quote",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "soft": "e-2 캡처",
+                "neutral": "그 캡처"
+              },
+              "person": {
+                "fullName": "박민재",
+                "judgeRef": "상대",
+                "neutral": "그 사람"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "uncertain"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.s3.a.need_someone_to_blame",
+            "factText": "마지막 전달자였던 상대에게 분노를 집중시키며 직접 작성자 자리까지 겹쳐 씌웠다는 심리",
+            "tags": [
+              "motive",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "박민재",
+                "judgeRef": "상대",
+                "neutral": "그 사람"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "emotion"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.s4.a.doubt_on_authorship",
+            "factText": "캡처만으로는 작성자를 단정할 수 없다는 점을 알고도 밀어붙였다는 자각",
+            "tags": [
+              "uncertainty",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "evidence": {
+                "soft": "e-2 캡처",
+                "hard": "e-5 보존로그",
+                "neutral": "자료"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "motive_search"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.s5.a.accepts_wrong_author",
+            "factText": "직접 작성자는 상대가 아니라 공통 친구 쪽 보조 계정이었다는 사실 수용",
+            "tags": [
+              "identity",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "다른 사람"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "acceptance"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.s2.a.voice_file_feels_cut",
+            "factText": "운영진 제보 파일을 듣자 원래 말 흐름이 잘린 듯한 이질감을 느꼈다는 사실",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "file": {
+                "exact": "운영진 제보 음성파일",
+                "neutral": "그 파일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "evidence_locked"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.s3.a.seohoo_possible_motive",
+            "factText": "공통 친구가 예전부터 자신의 사생활과 모임 자리 문제에 유난히 끼어들었다는 기억",
+            "tags": [
+              "context",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "그 사람"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.s4.a.editing_explains_tone",
+            "factText": "원문에서는 망설임이던 대목이 편집본에서는 타인을 비웃는 말처럼 재배열됐다는 이해",
+            "tags": [
+              "evidence",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "file": {
+                "exact": "원본 음성메모와 제보 편집본",
+                "neutral": "두 파일"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "recognition"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "motive_search"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.s5.a.recognizes_third_party_manipulation",
+            "factText": "상대의 전달 잘못과 별개로 배후 조작의 중심은 공통 친구였다는 정리",
+            "tags": [
+              "identity",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "제3자"
+              }
+            },
+            "stanceHints": [
+              "admission",
+              "balance"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.s2.a.story_broke_rule",
+            "factText": "이름을 쓰지 않았더라도 자신의 스토리 역시 약속 취지를 어겼다는 자각",
+            "tags": [
+              "rule",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "channel": {
+                "exact": "친한친구 스토리",
+                "neutral": "그 스토리"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.s3.a.acted_on_unconfirmed_certainty",
+            "factText": "확인되지 않은 확신을 바탕으로 공개 암시를 했다는 자기 판단",
+            "tags": [
+              "uncertainty",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "비밀 외부화 금지 약속",
+                "neutral": "그 약속"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "self_reflection"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.s4.a.separate_friendship_and_club",
+            "factText": "앞으로는 사적 고민과 동호회 운영 문제를 같은 채널에 섞지 말아야 한다는 결론",
+            "tags": [
+              "rule",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "channel": {
+                "exact": "개인 고민과 동호회 운영 채널",
+                "neutral": "그 채널"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "future_rule"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "motive_search"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.s5.a.accepts_shared_breach",
+            "factText": "상대의 전달과 자신의 저격성 스토리 모두 약속 위반이었다는 최종 인정",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "사적인 비밀 외부화 금지 약속",
+                "neutral": "그 약속"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "shared_responsibility"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.s2.b.forwarded_summary",
+            "factText": "공통 친구에게 비밀 음성메모와 요약 대화를 직접 포워드했다는 사실",
+            "tags": [
+              "act",
+              "privacy"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "제3자"
+              },
+              "time": {
+                "period": "정모 다음 날 오전",
+                "neutral": "그 다음날"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.s3.b.asked_advice_excuse",
+            "factText": "중간에서 풀 수 있을 거라며 조언을 구한다는 핑계로 자신의 죄책감을 덜려 했다는 내면",
+            "tags": [
+              "motive",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "material": {
+                "exact": "음성메모와 요약 대화",
+                "neutral": "그 자료"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "self_reflection"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.s4.b.knew_rule_break",
+            "factText": "보내는 순간 둘 사이 약속을 깨는 일이라는 걸 이미 알고 있었다는 자각",
+            "tags": [
+              "rule",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "rule": {
+                "exact": "비밀 외부화 금지 약속",
+                "neutral": "그 약속"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "motive_search"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.s5.b.shame_of_betrayal",
+            "factText": "직접 작성자가 아니어도 신뢰를 깨는 출발점을 만든 책임은 자신에게 있다는 시인",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "윤가은",
+                "judgeRef": "상대",
+                "neutral": "그 사람"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.s2.b.tablet_left_logged_in",
+            "factText": "카페에 둔 태블릿이 자동 로그인 상태였고 실제로 창이 열릴 수 있었다는 사실",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "device": {
+                "exact": "자동 로그인 태블릿",
+                "neutral": "그 기기"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "fact_locked"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.s3.b.saw_scroll",
+            "factText": "상대가 단순히 스친 게 아니라 화면을 몇 초 넘겼다는 정황이 로그와 영상으로 겹친다는 점",
+            "tags": [
+              "evidence",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "evidence": {
+                "hard": "CCTV와 세션 로그",
+                "neutral": "기록"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "evidence_present"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.s4.b.story_targeted_me",
+            "factText": "이름은 없었지만 정모 사진과 '비밀' 문구 때문에 스토리가 자신을 겨눈 말로 느껴졌다는 상처",
+            "tags": [
+              "harm",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "channel": {
+                "exact": "친한친구 스토리",
+                "neutral": "그 스토리"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "motive_search"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.s5.b.own_security_fault",
+            "factText": "기기를 방치한 자기 잘못이 있어도 그것이 무단 확인을 정당화하지는 않는다는 입장",
+            "tags": [
+              "counter",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "device": {
+                "exact": "카페 태블릿",
+                "neutral": "그 기기"
+              }
+            },
+            "stanceHints": [
+              "admission",
+              "boundary"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.s2.b.did_not_write_posts",
+            "factText": "익명 게시글과 댓글을 직접 입력한 사람은 자신이 아니라는 핵심 사실",
+            "tags": [
+              "identity",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "channel": {
+                "exact": "익명글과 댓글",
+                "neutral": "그 게시글"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "deny_direct_authorship"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.s3.b.my_forward_created_suspicion",
+            "factText": "자신이 넘긴 자료와 표현이 흘러가며 결과적으로 자기 말투처럼 보이는 재료가 됐다는 인정",
+            "tags": [
+              "context",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "다른 사람"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "self_reflection"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.s4.b.failed_to_stop_it",
+            "factText": "중간에 이상한 방향인 걸 느끼고도 포워드 사실이 들킬까 봐 바로 끊어내지 못했다는 두려움",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "evidence": {
+                "soft": "e-2 캡처",
+                "hard": "e-5 보존로그",
+                "neutral": "자료"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "fear"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "motive_search"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.s5.b.accepts_suspicion_responsibility",
+            "factText": "직접 작성자는 아니어도 자신이 만든 오해 구조 때문에 의심이 굳었다는 책임 수용",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "다른 사람"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.s2.b.seohoo_received_files",
+            "factText": "자신이 넘긴 자료를 공통 친구가 더 들여다보며 운영진 쪽 얘기를 꺼냈다는 사실",
+            "tags": [
+              "context",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "그 사람"
+              },
+              "institution": {
+                "fullName": "이소담",
+                "judgeRef": "운영진",
+                "neutral": "운영진"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.s3.b.suspected_editing",
+            "factText": "제보 음성이 원본보다 더 독하게 들려 편집 가능성을 어렴풋이 의심했다는 점",
+            "tags": [
+              "evidence",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "file": {
+                "exact": "제보 음성파일",
+                "neutral": "그 파일"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "fear"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.s4.b.protected_friend_out_of_guilt",
+            "factText": "처음 자료를 넘긴 죄책감 때문에 공통 친구 이름까지 나오면 전부 자신의 탓이 될까 봐 숨겼다는 동기",
+            "tags": [
+              "motive",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "그 사람"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "motive_search"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.s5.b.names_seohoo",
+            "factText": "익명계정과 편집 파일 배후가 공통 친구였다는 사실을 이제는 숨기지 않겠다는 시인",
+            "tags": [
+              "identity",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "그 사람"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "naming"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.s2.b.forward_broke_rule",
+            "factText": "공통 친구에게 조언을 구한 순간 이미 약속 취지를 깼다는 인정",
+            "tags": [
+              "rule",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "thirdParty": {
+                "fullName": "박서후",
+                "judgeRef": "공통 친구",
+                "neutral": "제3자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.s3.b.story_hurt_but_not_excuse",
+            "factText": "상대의 스토리가 자신을 찔렀어도 그것이 최초 전달을 정당화하진 않는다는 인정",
+            "tags": [
+              "harm",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "channel": {
+                "exact": "친한친구 스토리",
+                "neutral": "그 스토리"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "self_reflection"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.s4.b.need_clear_rule",
+            "factText": "앞으로는 익명화 없는 제3자 전달 자체를 금지하는 명확한 규칙이 필요하다는 결론",
+            "tags": [
+              "rule",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "rule": {
+                "exact": "익명화 없는 제3자 전달 금지",
+                "neutral": "새 규칙"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "future_rule"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "motive_search"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.s5.b.accepts_shared_breach",
+            "factText": "둘이 서로 다른 방식으로 약속을 무너뜨렸다는 결론을 피하지 않겠다는 최종 인정",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "사적인 비밀 외부화 금지 약속",
+                "neutral": "그 약속"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "shared_responsibility"
+            ],
+            "usableInSubActions": [
+              "empathy_approach",
+              "fact_pursuit",
+              "evidence_present"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "ctr-1",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "trigger": "민재가 '몇 마디 상의'였다고 축소할 때",
+        "line": "윤가은이 바로 끼어들어 '몇 마디 상의라면서 왜 원본 음성까지 포워드했죠?'라고 받아친다.",
+        "effectHint": "민재의 의도 프레임을 깨고 자료 전달 범위 자체를 전면화한다."
+      },
+      {
+        "id": "ctr-2",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "trigger": "가은이 '확인이지 열람은 아니었다'고 선을 그을 때",
+        "line": "박민재가 '확인인데 왜 목록이 넘어가요?'라고 되묻는다.",
+        "effectHint": "행위 명칭을 쪼개는 가은의 qualification_split을 무력화한다."
+      },
+      {
+        "id": "ctr-3",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "trigger": "가은이 말투 유사만으로 직접 작성자 판단을 고수할 때",
+        "line": "재판관이 '말투 유사와 작성 로그는 같은 증거가 아닙니다'라고 제동을 건다.",
+        "effectHint": "함정 증거 e-2의 한계를 드러내며 identity 블록을 해제한다."
+      },
+      {
+        "id": "ctr-4",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "trigger": "민재가 박서후를 끝까지 배후에서 분리하려 할 때",
+        "line": "음성 편집 리포트가 제시되자 '이건 단순 전달이 아니라 재배열입니다'라는 문장이 탁 들어온다.",
+        "effectHint": "민재의 third_party_protection 서사를 강제로 무너뜨린다."
+      }
+    ],
+    "interjections": [
+      {
+        "id": "int-1",
+        "speaker": "a",
+        "trigger": "민재가 '더 나빠질까 봐'를 반복할 때",
+        "line": "윤가은: '의도 말고요. 실제로 한 행동 순서부터 말해 주세요.'",
+        "behaviorHint": "말수를 줄이고 손가락으로 순서를 셈하듯 탁탁 짚는다."
+      },
+      {
+        "id": "int-2",
+        "speaker": "b",
+        "trigger": "가은이 민재를 직접 작성자로 몰아붙일 때",
+        "line": "박민재: '저만 끝까지 범인인 그림으로 가는 거잖아요?'",
+        "behaviorHint": "숨을 크게 들이마신 뒤 억울함을 앞세워 시선을 재판관에게 돌린다."
+      },
+      {
+        "id": "int-3",
+        "speaker": "system",
+        "trigger": "양측이 박서후 이름을 피하며 원인과 결과를 섞을 때",
+        "line": "재판관: '최초 전달자, 직접 작성자, 편집 배후를 각각 따로 답하십시오.'",
+        "behaviorHint": "질문 축을 셋으로 분리해 lieAdvance 경로를 강제한다."
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "emo-a-1",
+        "party": "a",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "trigger": "민재가 전달을 '조언'으로만 포장할 때",
+        "line": "윤가은: '조언이면 내 이름과 목소리가 왜 남의 손에 가 있죠. 그건 배려가 아니라 선택이잖아요.'",
+        "behaviorHint": "볼륨은 낮아지는데 단어 사이 간격이 길어지고 시선은 흔들리지 않는다."
+      },
+      {
+        "id": "emo-a-2",
+        "party": "a",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ],
+        "trigger": "직접 작성자와 배후 조작이 분리되어 드러날 때",
+        "line": "윤가은: '내가 틀린 부분은 고치겠어요. 그렇다고 처음 상처가 가짜가 되는 건 아니에요.'",
+        "behaviorHint": "스스로를 다잡듯 손을 맞잡고 한 박자 늦게 말한다."
+      },
+      {
+        "id": "emo-b-1",
+        "party": "b",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "trigger": "포워드 사실과 익명글 의심이 한 번에 압박될 때",
+        "line": "박민재: '제가 잘못 안 했다는 게 아니라, 제가 다 했다는 식으로는 못 버팁니다.'",
+        "behaviorHint": "목이 잠기고 문장 끝에서 숨을 삼킨다."
+      },
+      {
+        "id": "emo-b-2",
+        "party": "b",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ],
+        "trigger": "박서후 이름을 끝내 말해야 하는 순간",
+        "line": "박민재: '처음 넘긴 사람이 저라서, 그다음 이름까지 말하면 진짜 다 제 탓이 될까 봤어요.'",
+        "behaviorHint": "한동안 시선을 내리깔다가 마지막 이름을 또렷하게 말한다."
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "friend02:transition:a:d-2:s0_s1",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "tablet_access_question",
+      "line": "열람이라는 단어는 피한 채 '화면이 떠 있었다'는 설명으로 한 단계 물러난다.",
+      "behaviorHint": "눈동자만 잠깐 흔들리고 말끝을 짧게 끊는다."
+    },
+    {
+      "id": "friend02:transition:a:d-2:s1_s2",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "스토리 아카이브가 나오자 알림만 본 게 아니라 목록을 잠깐 넘겼다고 좁게 인정한다.",
+      "behaviorHint": "손가락으로 책상 위를 한 번 짚고 사실을 분절해 말한다."
+    },
+    {
+      "id": "friend02:transition:a:d-2:s2_s3",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "wifi_or_preview_log_question",
+      "line": "로그 질문이 들어오면 '먼저 배신한 쪽'을 꺼내며 이유를 방패로 세운다.",
+      "behaviorHint": "상대가 했다는 표현을 따옴표처럼 되받아친다."
+    },
+    {
+      "id": "friend02:transition:a:d-2:s3_s5",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "CCTV와 세션 로그가 겹치면 무단 열람과 저격성 스토리를 함께 시인한다.",
+      "behaviorHint": "긴 호흡 뒤 목소리를 더 낮추고 문장을 짧게 정리한다."
+    },
+    {
+      "id": "friend02:transition:a:d-3:s0_s1",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "anonymous_post_question",
+      "line": "민재 말투라는 확신은 유지하되 다른 가능성을 완전히 닫진 않는다고 톤을 누른다.",
+      "behaviorHint": "초기 확신을 거두지 않지만 부사를 늘려 완충한다."
+    },
+    {
+      "id": "friend02:transition:a:d-3:s1_s2",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "캡처가 함정일 수 있음을 알면서도 당시엔 충분한 근거였다고 설명한다.",
+      "behaviorHint": "캡처를 직접 보지 않은 채 기억을 재배열하듯 말한다."
+    },
+    {
+      "id": "friend02:transition:a:d-3:s2_s3",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_only_minjae_suspected_question",
+      "line": "마지막 전달자가 민재였다는 사실을 내세우며 직접 작성자 단정과 출발점 책임을 섞었다고 일부 인정한다.",
+      "behaviorHint": "표정은 굳지만 문장 첫머리에서 먼저 인정한다."
+    },
+    {
+      "id": "friend02:transition:a:d-3:s3_s5",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "운영자 로그가 제시되면 직접 작성자가 아니라는 점을 받아들이고 오판을 시인한다.",
+      "behaviorHint": "턱을 한번 당긴 뒤 정정 문장을 건조하게 꺼낸다."
+    },
+    {
+      "id": "friend02:transition:a:d-5:s0_s1",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_rule_reminder",
+      "line": "약속의 존재를 들이대면 스토리의 수위만 낮추려 하며 동일급 위반은 아니라고 버틴다.",
+      "behaviorHint": "두 손을 접었다 펴며 무게 차이를 강조한다."
+    },
+    {
+      "id": "friend02:transition:a:d-5:s1_s2",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "스토리 아카이브 앞에서는 지목성을 인정하며 약속 취지 위반을 일부 수긍한다.",
+      "behaviorHint": "입술을 한 번 깨물고 짧게 고개를 끄덕인다."
+    },
+    {
+      "id": "friend02:transition:a:d-5:s2_s4",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "shared_responsibility_question",
+      "line": "누가 먼저였는지 따지다가도 자신도 약속을 붙잡지 못했다고 감정이 새어 나온다.",
+      "behaviorHint": "건조한 톤이 무너지며 호흡 간격이 길어진다."
+    },
+    {
+      "id": "friend02:transition:a:d-5:s4_s5",
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "mutual_breach_reframing",
+      "line": "최종적으로 쌍방 위반을 인정하되 책임 방식의 차이를 함께 제시한다.",
+      "behaviorHint": "인정과 계산을 한 문단 안에 묶어 정리한다."
+    },
+    {
+      "id": "friend02:transition:b:d-1:s0_s1",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "third_party_forward_question",
+      "line": "포워드 자체를 완전히 부정하지 못하고 '조언'이라는 의도 프레임으로 물러난다.",
+      "behaviorHint": "한숨 섞인 웃음을 짧게 내고 설명을 길게 끈다."
+    },
+    {
+      "id": "friend02:transition:b:d-1:s1_s2",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "원본 대화가 제시되면 음성메모와 요약 전송 사실을 좁게 인정한다.",
+      "behaviorHint": "눈을 내리깔고 핵심 명사만 낮게 말한다."
+    },
+    {
+      "id": "friend02:transition:b:d-1:s2_s3",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "voice_memo_specific_question",
+      "line": "왜 하필 원본까지 보냈는지 묻자 박서후가 판을 키웠다고 선을 그으며 책임을 분산한다.",
+      "behaviorHint": "말을 멈췄다가 제3자 이름을 어렵게 꺼낸다."
+    },
+    {
+      "id": "friend02:transition:b:d-1:s3_s5",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "trust_breach_question",
+      "line": "신뢰 파기라는 언어가 들어오면 더는 의도만 앞세우지 못하고 최초 전달 책임을 시인한다.",
+      "behaviorHint": "목이 잠긴 채 마지막 문장을 짧게 닫는다."
+    },
+    {
+      "id": "friend02:transition:b:d-3:s0_s1",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "author_identity_question",
+      "line": "직접 작성 부인은 유지하면서도 의심받을 만한 사정은 있었다고 인정한다.",
+      "behaviorHint": "되묻는 어조가 줄고 억울함을 길게 설명한다."
+    },
+    {
+      "id": "friend02:transition:b:d-3:s1_s2",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "캡처가 자신처럼 보인다는 점을 인정하고 자료가 재료가 됐을 수 있다고 좁힌다.",
+      "behaviorHint": "어깨를 움츠리며 인정 범위를 최소화한다."
+    },
+    {
+      "id": "friend02:transition:b:d-3:s2_s3",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "forwarded_material_question",
+      "line": "포워드 질문이 깊어지면 오해의 구조를 자신이 만들었다고 마지못해 인정한다.",
+      "behaviorHint": "손을 모았다가 풀며 불안하게 시선을 돌린다."
+    },
+    {
+      "id": "friend02:transition:b:d-3:s3_s5",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_or_role_in_suspicion_question",
+      "line": "보존로그가 나오면 직접 작성자를 박서후 계정으로 특정하며 자기 책임을 별도로 수락한다.",
+      "behaviorHint": "이름을 말한 뒤 곧바로 자기 책임 문장을 덧붙인다."
+    },
+    {
+      "id": "friend02:transition:b:d-4:s0_s1",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "park_seohoo_question",
+      "line": "박서후 이름이 나오면 모른 척하진 못하고 과정이 끊겨 있었다는 말로 피한다.",
+      "behaviorHint": "입을 떼기 전 숨을 길게 멈춘다."
+    },
+    {
+      "id": "friend02:transition:b:d-4:s1_s2",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "편집 리포트가 제시되면 박서후가 자료를 더 들여다본 사실까지는 인정한다.",
+      "behaviorHint": "목소리가 작아지고 문장이 길어진다."
+    },
+    {
+      "id": "friend02:transition:b:d-4:s2_s4",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_why_he_protected_friend",
+      "line": "비난 대신 이유를 묻는 질문 앞에서 처음 자료를 넘긴 죄책감 때문에 이름을 숨겼다고 감정이 무너진다.",
+      "behaviorHint": "눈을 감았다 뜨며 문장 중간에 두 번 멈춘다."
+    },
+    {
+      "id": "friend02:transition:b:d-4:s4_s5",
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-5_or_emotion_threshold",
+      "line": "운영자 로그나 감정 임계점이 넘으면 박서후의 배후 개입을 명시적으로 밝힌다.",
+      "behaviorHint": "이름을 또렷이 발음한 뒤 어깨가 내려앉는다."
+    }
+  ]
+}

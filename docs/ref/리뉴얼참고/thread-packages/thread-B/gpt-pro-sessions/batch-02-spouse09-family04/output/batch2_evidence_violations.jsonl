@@ -1,0 +1,35 @@
+{"caseId": "family-02", "evidenceId": "e-4", "field": "surfaceName", "before": "중개업소 문의 메일과 등기 PDF", "after": "문의 메일과 첨부 문서", "reason": "anchorTruth 핵심어(중개업소·등기)를 직접 노출함"}
+{"caseId": "family-02", "evidenceId": "e-4", "field": "surfaceDescription", "before": "부동산 중개업소에 전달된 문의 메일 헤더와 첨부된 등기 문서다. 발신 경로 추적이 가능하다.", "after": "외부로 전달된 메일 원본과 첨부 문서다. 전달 경로를 대조할 수 있다.", "reason": "기관 성격과 문서 종류를 먼저 밝혀 외부 유출 경로를 너무 일찍 노출함"}
+{"caseId": "family-02", "evidenceId": "e-5", "field": "surfaceName", "before": "노트앱 초안과 중개사 통화기록", "after": "메모 초안과 통화 기록", "reason": "anchorTruth 핵심어(중개사) 노출"}
+{"caseId": "family-02", "evidenceId": "e-5", "field": "surfaceDescription", "before": "노트앱에 적힌 계획 초안과 중개사와의 통화 기록이다. 부동산 관련 조사 흔적이 남아 있다.", "after": "개인 메모와 통화 기록이다. 어떤 계획을 세운 흔적이 남아 있다.", "reason": "외부 조사 방향을 너무 빨리 드러냄"}
+{"caseId": "family-02", "evidenceId": "e-6", "field": "surfaceName", "before": "변호사 확인서와 전체 녹취", "after": "검토 문서와 전체 녹음 파일", "reason": "직함(변호사) 노출 + 잘린 음성의 반전 자료임을 쉽게 짐작하게 함"}
+{"caseId": "family-02", "evidenceId": "e-6", "field": "surfaceDescription", "before": "변호사가 확인한 전체 녹취본과 상담 메모다. 잘린 음성의 원래 맥락을 확인할 수 있다.", "after": "검토 문서와 길이가 더 긴 녹음 자료다. 앞서 제시된 자료보다 넓은 맥락을 볼 수 있다.", "reason": "직함 노출 + 핵심 진실(짧은 음성의 맥락 복원)을 직접 설명함"}
+{"caseId": "family-03", "evidenceId": "e-4", "field": "surfaceDescription", "before": "친척 단톡과 소모임 대화의 내보내기 파일이다. 특정인의 발언과 캡처 공유 기록이 남아 있다.", "after": "단체 대화의 내보내기 파일이다. 대화 흐름과 캡처 공유 기록이 남아 있다.", "reason": "금지 패턴('특정 X') 사용"}
+{"caseId": "family-03", "evidenceId": "e-6", "field": "surfaceName", "before": "주민센터 상담 확인서와 예산표", "after": "상담 확인서와 예산표", "reason": "기관명 노출"}
+{"caseId": "family-03", "evidenceId": "e-6", "field": "surfaceDescription", "before": "주민센터 상담 기록과 공동 예산표다. 합의된 납부 방식과 공유 원칙이 적혀 있다.", "after": "상담 기록과 공동 예산표다. 이후 기준이 되는 내용이 적혀 있다.", "reason": "기관명 노출 + 합의 내용까지 먼저 요약해 설명함"}
+{"caseId": "family-04", "evidenceId": "e-1", "field": "surfaceName", "before": "잘린 잔액 캡처와 폴더 화면", "after": "잔액 캡처와 폴더 화면", "reason": "anchorTruth 핵심어(잘린 자료) 직접 노출"}
+{"caseId": "family-04", "evidenceId": "e-1", "field": "surfaceDescription", "before": "계좌 잔액 캡처와 공동 폴더 화면이다. 일부 정보가 잘려 있어 전체 맥락 파악이 필요하다.", "after": "계좌 화면과 폴더 화면이다. 보이지 않는 부분이 있어 전체 맥락을 더 확인해야 한다.", "reason": "크롭 여부를 먼저 설명해 함정 성격을 너무 빨리 드러냄"}
+{"caseId": "family-04", "evidenceId": "e-4", "field": "surfaceName", "before": "클라우드 파일명 변경 이력", "after": "공유 폴더 변경 이력", "reason": "anchorTruth 핵심어(파일명) 직접 노출"}
+{"caseId": "family-04", "evidenceId": "e-5", "field": "surfaceName", "before": "기부 영수증과 공증 메모", "after": "영수증과 준비 메모", "reason": "핵심 진실(기부)과 절차 성격을 직접 노출"}
+{"caseId": "family-04", "evidenceId": "e-5", "field": "surfaceDescription", "before": "재단 기부 영수증과 변호사의 공증 준비 메모다. 자산 처분의 경위와 법적 절차가 기록되어 있다.", "after": "자금 이동과 관련된 영수증, 그리고 후속 준비 메모다. 처리 경위가 기록되어 있다.", "reason": "기관 성격·직함·핵심 진실을 한 번에 노출함"}
+{"caseId": "spouse-09", "evidenceId": "e-2", "field": "surfaceName", "before": "병동 대기 확약서와 영수증", "after": "예약 관련 문서와 영수증", "reason": "핵심 진실(병동 대기/간병 예약) 노출"}
+{"caseId": "spouse-09", "evidenceId": "e-2", "field": "surfaceDescription", "before": "병원 병동 대기 확약서와 선수금 영수증이다. 담당자 이름과 예약번호가 기재되어 있다.", "after": "예약 관련 문서와 금전 처리 기록이다. 번호와 처리 시점이 적혀 있다.", "reason": "기관 맥락과 선수금 성격을 먼저 밝혀 사적 유용 오해를 너무 빨리 해소함"}
+{"caseId": "spouse-09", "evidenceId": "e-4", "field": "surfaceName", "before": "보험금 지급 결정서와 입금 내역", "after": "지급 결정 문서와 입금 내역", "reason": "anchorTruth 핵심어(보험금) 직접 노출"}
+{"caseId": "spouse-09", "evidenceId": "e-4", "field": "surfaceDescription", "before": "보험사 지급 결정서와 개인 계좌 입금 내역이다. 금액과 입금 시점이 기록되어 있다.", "after": "지급 사실이 적힌 문서와 계좌 입금 내역이다. 금액과 시점을 대조할 수 있다.", "reason": "기관명과 숨겨진 자금의 성격을 먼저 드러냄"}
+{"caseId": "spouse-11", "evidenceId": "e-1", "field": "surfaceName", "before": "관리 포털 접속 로그와 도어락 기록", "after": "관리 시스템 접속 로그와 출입 기록", "reason": "anchorTruth 핵심어(포털) 직접 노출"}
+{"caseId": "spouse-11", "evidenceId": "e-1", "field": "surfaceDescription", "before": "웹 포털 접속 감사 로그와 도어락 관리자 기록이다. 접속 계정과 시각이 남아 있다.", "after": "시스템 접속 로그와 출입 기록이다. 접근 시각과 계정 정보가 남아 있다.", "reason": "권한 침범의 구체 수단을 너무 일찍 노출함"}
+{"caseId": "spouse-11", "evidenceId": "e-2", "field": "surfaceDescription", "before": "IoT 기기 작동 로그와 업체 취소 기록, 권한 재설정 보고서다. 조치 시점과 내용이 기록되어 있다.", "after": "기기 작동 로그와 현장 보고서다. 여러 조치의 시점을 대조할 수 있다.", "reason": "취소·권한 재설정까지 먼저 적어 핵심 행위를 직접 노출함"}
+{"caseId": "spouse-11", "evidenceId": "e-3", "field": "surfaceName", "before": "심야 CCTV 캡처와 알람 이력", "after": "심야 캡처 이미지와 알림 이력", "reason": "anchorTruth 핵심어(CCTV) 직접 노출"}
+{"caseId": "spouse-11", "evidenceId": "e-3", "field": "surfaceDescription", "before": "심야 시간대 CCTV 캡처 이미지와 도어락 알람 기록이다. 출입 시각이 표시되어 있다.", "after": "심야 시간대에 저장된 이미지와 출입 알림 기록이다. 시각을 대조할 수 있다.", "reason": "핵심 진실과 맞닿은 촬영 수단을 먼저 노출함"}
+{"caseId": "spouse-11", "evidenceId": "e-5", "field": "surfaceName", "before": "보험 청구서 초안과 센서 보고", "after": "청구 문서 초안과 센서 보고", "reason": "anchorTruth 핵심어(보험) 직접 노출"}
+{"caseId": "spouse-11", "evidenceId": "e-5", "field": "surfaceDescription", "before": "보험 청구서 초안 문서와 수분 센서 분석 보고서다. 수치 데이터와 시간 흐름이 기록되어 있다.", "after": "청구 문서 초안과 센서 분석 보고서다. 수치 데이터와 시간 흐름을 함께 볼 수 있다.", "reason": "청구 목적을 먼저 드러내 공동 시나리오를 쉽게 짐작하게 함"}
+{"caseId": "spouse-11", "evidenceId": "e-6", "field": "surfaceName", "before": "보험사 통지서와 업체 진술서", "after": "조사 통지서와 업체 진술서", "reason": "기관명 노출"}
+{"caseId": "spouse-11", "evidenceId": "e-6", "field": "surfaceDescription", "before": "보험사가 보낸 조사 관련 통지서와 복구업체의 진술서다. 보류 사유와 현장 소견이 담겨 있다.", "after": "조사 관련 통지서와 업체 진술서다. 보류 이유와 현장 소견이 담겨 있다.", "reason": "기관명 노출"}
+{"caseId": "spouse-12", "evidenceId": "e-2", "field": "surfaceName", "before": "백업 복원 로그와 삭제 메시지", "after": "백업 복원 로그와 메시지 기록", "reason": "핵심 갈등(선별 은닉)을 너무 먼저 드러냄"}
+{"caseId": "spouse-12", "evidenceId": "e-2", "field": "surfaceDescription", "before": "과거 백업에서 복원된 로그와 삭제 표시된 메시지 기록이다. 폴더 이동 이력이 함께 있다.", "after": "과거 백업에서 복원된 로그와 메시지 기록이다. 정리 과정의 이동 이력이 함께 있다.", "reason": "삭제·은닉 정황을 직접 설명해 플레이어가 바로 결론에 닿게 함"}
+{"caseId": "spouse-12", "evidenceId": "e-3", "field": "surfaceName", "before": "익명 SNS 게시물과 옛 문자 이미지", "after": "익명 게시물 캡처와 옛 이미지 묶음", "reason": "anchorTruth 핵심어(문자 이미지) 직접 노출"}
+{"caseId": "spouse-12", "evidenceId": "e-3", "field": "surfaceDescription", "before": "익명으로 올라온 SNS 게시물 캡처다. 여러 출처의 이미지가 합쳐져 있어 검증이 필요하다.", "after": "익명으로 올라온 게시물 캡처다. 서로 다른 이미지가 함께 묶여 있어 검증이 필요하다.", "reason": "서비스 성격과 합성 정황을 너무 노골적으로 시사함"}
+{"caseId": "spouse-12", "evidenceId": "e-4", "field": "surfaceName", "before": "포렌식 보고서와 해시 대조표", "after": "분석 보고서와 대조표", "reason": "anchorTruth 핵심어(포렌식) 직접 노출"}
+{"caseId": "spouse-12", "evidenceId": "e-4", "field": "surfaceDescription", "before": "디지털 포렌식 분석 보고서와 이미지 레이어별 해시 대조표다. 합성 여부를 기술적으로 검증한 자료다.", "after": "이미지 차이를 기술적으로 비교한 분석 보고서와 대조표다. 원본성을 검토한 흔적이 담겨 있다.", "reason": "핵심 진실(합성 여부 검증)을 너무 직접 설명함"}
+{"caseId": "spouse-12", "evidenceId": "e-5", "field": "surfaceName", "before": "복구 메일과 와이파이 접속 기록", "after": "계정 관련 메일과 접속 기록", "reason": "anchorTruth 핵심어(와이파이 접속) 직접 노출"}
+{"caseId": "spouse-12", "evidenceId": "e-5", "field": "surfaceDescription", "before": "계정 복구 메일과 특정 장소의 와이파이 접속 기록이다. 계정 생성과 접속 시점이 남아 있다.", "after": "계정 관련 메일과 행사장 접속 기록이다. 생성과 접속 시점을 대조할 수 있다.", "reason": "금지 패턴('특정 X') 사용 + 실제 운영자 추적 경로를 너무 일찍 노출함"}

@@ -324,7 +324,7 @@
   "evidence": [
     {
       "id": "e-1",
-      "name": "커뮤니티에 퍼진 후기 비교 콜라주 캡처",
+      "name": "커뮤니티에 퍼진 후기 이미지 캡처",
       "surfaceName": "후기 비교 콜라주 캡처",
       "surfaceDescription": "커뮤니티에 퍼진 후기 비교 콜라주 캡처 이미지다. 출처와 편집 여부 확인이 필요하다.",
       "description": "조가람의 후기와 구매자 DM 일부가 한 장에 붙어 있어 상습 문제 셀러처럼 보이게 만드는 콜라주 이미지다.",
@@ -357,7 +357,33 @@
           "questionAngle": "윤도건에게: \"문제의 명예훼손은 도건의 단독 범행인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 윤도건의 \"문제의 명예훼손은 도건의 단독 범행인가\" 쟁점과 관련된다. 윤도건은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 후기 비교 이미지와 재전달본을 보관한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "게시 직전 만든 이미지에 다른 날짜 캡처를 섞은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "말풍선 여백과 테두리 값이 일정하지 않은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -398,13 +424,39 @@
           "implication": "이 증거는 윤도건의 \"도건의 익명 계정 개설과 최종 폭로글 업로드\" 쟁점과 관련된다. 윤도건은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 대화와 음성메모를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "게시 전날 밤부터 당일 오전까지 문구와 시점을 맞춘 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "계정 사용, 자료 정리, 외부 확산을 따로 나눠 맡은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "8개월 전 조가람 공개 지적 글과 후속 DM",
-      "surfaceName": "과거 공개 지적 글과 후속 DM",
-      "surfaceDescription": "과거에 올라온 공개 지적 게시글과 후속 DM 기록이다. 작성 경위와 맥락 확인이 필요하다.",
+      "surfaceName": "과거 게시글과 후속 대화",
+      "surfaceDescription": "이전 게시글과 뒤이어 오간 대화 기록이다. 작성 경위와 전후 맥락 확인이 필요하다.",
       "description": "조가람이 유리의 향료 라벨 문제를 공개 지적했던 글과, 그 뒤 유리와 도건이 앙금을 나누는 후속 DM 원본이다.",
       "type": "document",
       "reliability": "hard",
@@ -435,13 +487,39 @@
           "questionAngle": "윤도건에게: \"과거 가람 분쟁을 숨긴 사후 책임전가\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 윤도건의 \"과거 가람 분쟁을 숨긴 사후 책임전가\" 쟁점과 관련된다. 윤도건은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 과거 공개 글과 후속 대화 기록을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공개 지적 직후 주문 취소와 공지 변경이 이어진 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이번 행동이 그전 손실 경험과 어떤 관련이 있는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
-      "name": "커뮤니티 익명계정 가입·로그인·삭제 로그",
+      "name": "커뮤니티 계정 활동 로그",
       "surfaceName": "익명계정 가입·로그인·삭제 로그",
-      "surfaceDescription": "커뮤니티 익명계정의 가입·로그인·삭제 기록이다. 계정 소유와 활동 이력 확인이 필요하다.",
+      "surfaceDescription": "관련 계정의 생성·접속·삭제 기록이다. 사용 흐름과 시점 확인이 필요하다.",
       "description": "문제 익명계정이 도건의 보조 메일과 기기에서 생성되어 폭로글과 첫 댓글을 올린 뒤 급히 삭제된 기록이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -462,7 +540,33 @@
         "check_edits": "서버 보존 로그라 후편집 흔적은 없다.",
         "question_acquisition": "계정과 기기 정보가 포함돼 있어 분쟁 해결 범위 밖의 세부 로그인 정보는 제한적으로 써야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 가입 로그와 삭제 기록을 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 계정이 게시 두 시간 전에 만들어지고 곧 삭제 시도된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "계정 주체와 별도 준비 자료가 연결되는 경위를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -504,13 +608,39 @@
           "implication": "이 증거는 윤도건의 \"문제의 명예훼손은 도건의 단독 범행인가\" 쟁점과 관련된다. 윤도건은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 편집 프로젝트 파일과 원본 캡처 묶음에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "편집 프로젝트가 대화 직후 만들어지고 소스 날짜도 다른 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "자르기, 그림자, 강조 문구를 어떤 기준으로 배치했는지 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "운영자 소명 DM과 둘의 삭제·책임전가 대화",
-      "surfaceName": "운영자 소명 DM과 삭제·책임전가 대화",
-      "surfaceDescription": "운영자에게 보낸 소명 DM과 상호 삭제·책임전가 대화다. 대화 흐름과 시점 확인이 필요하다.",
+      "surfaceName": "해명 대화와 후속 대화 기록",
+      "surfaceDescription": "문제 이후 오간 해명과 후속 대화 기록이다. 대화 흐름과 시점 확인이 필요하다.",
       "description": "운영자 조사가 시작된 뒤 도건과 유리가 서로 다른 소명서를 보내고, 동시에 게시물 삭제와 책임선을 조율한 대화 원본이다.",
       "type": "chat",
       "reliability": "hard",
@@ -544,7 +674,33 @@
           "implication": "이 증거는 윤도건의 \"도건의 익명 계정 개설과 최종 폭로글 업로드\" 쟁점과 관련된다. 윤도건은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 소명 DM과 후속 대화를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문의 직후 삭제와 표현 수정을 먼저 상의한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "상대를 따로 지목하면서도 어떤 사정을 빼자고 맞춘 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -1,0 +1,117 @@
+{
+  "caseId": "case-work-03",
+  "anchorTruth": "'라인 타고 들어온 HJ'는 희주가 아니라 외부 연계 후보 한재균을 가리킨 취중 발언이었다. 자동 클립에서 앞 8초가 잘렸다.",
+  "contextDescription": "캠페인 통과 축하 회식, 2차까지 이어진 술자리. 본부 차장과 임원 추천 전배자가 같은 테이블에 있었다. 다음 날 아침 7시 42분, 19초짜리 클립과 DM이 회사 안을 돌기 시작했다.",
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "사내 공유앨범 19초 회식 영상 클립",
+      "description": "회식 2차 자동 하이라이트 19초 클립. 발언 앞 8초가 잘려 대상 설명이 빠져 있다.",
+      "investigationResults": {
+        "request_original": "19초 클립이 아닌 원본 라이브포토와 연속 영상 전체를 요청해야 한다.",
+        "check_metadata": "클립 시작이 촬영보다 7.8초 늦다. 대상 설명이 빠진 채 발언 중간부터 담겼다.",
+        "restore_context": "앞부분 누락으로 HJ를 누가 먼저 꺼냈는지, 내부인인지 외부 후보인지 판단 불가.",
+        "verify_source": "앨범 업로드 시각과 참석자 단말 백업 시각 일치. 당일 생성본 확인.",
+        "check_edits": "이어붙이기 흔적은 없으나 자동 추출이라 맥락 손실이 핵심 문제다.",
+        "question_acquisition": "직원 얼굴·음성이 포함된 사적 회식 영상. 활용 범위를 제한해야 한다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "희주의 멘토방 DM와 동료 전달 메시지",
+      "description": "희주가 아침 7시 42분~8시 사이 멘토방·동료 둘에게 보낸 \"팀장이 내 배경을 씹었다\" DM 캡처 묶음.",
+      "investigationResults": {
+        "request_original": "캡처가 아닌 대화방 전체 원본과 전달 순서를 확인해야 한다.",
+        "check_metadata": "07:42~08:00 사이 3명에게 연속 전송. 출근 전 확산이 시작됐다.",
+        "restore_context": "첫 메시지는 확인 질문이었으나 후반에 '내 얘기 맞다'로 단정이 강해진다.",
+        "verify_source": "멘토방과 동료 수신자 단말의 파일명·시각이 서로 일치한다.",
+        "check_edits": "본문 변조 없으나 일부 답장이 잘려 있어 반박 맥락이 누락됐다.",
+        "question_acquisition": "사적 조언 대화. 정당한 문제 제기와 명예훼손 경계를 구분해 다뤄야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "인력배치 공유노트 초안의 HJ 표기",
+      "description": "인력배치 공유노트 초안. HJ 옆에 'Han Jae-gyun/partner shortlist' 메모가 회식 전 시각에 입력돼 있다.",
+      "investigationResults": {
+        "request_original": "현재본이 아닌 회식 당일 밤 버전 이력과 약어 설명 칸을 함께 확인해야 한다.",
+        "check_metadata": "HJ 옆 메모 'Han Jae-gyun/partner shortlist' 입력 시각이 회식 전으로 찍혀 있다.",
+        "restore_context": "같은 페이지에 희주는 한글 실명으로 별도 기재. HJ와 분리돼 있다.",
+        "verify_source": "공유드라이브 버전 이력과 본부 차장 열람 기록이 일치한다.",
+        "check_edits": "버전 로그 보존 문서. 사후 편집 흔적 없이 원본성 높음.",
+        "question_acquisition": "업무용 공유 문서. 분쟁 해결 범위 내 열람 적법."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "법인카드 정산 메모와 식당 CCTV 좌석 정보",
+      "description": "법인카드 정산 메모와 식당 CCTV. 희주는 다른 테이블에 앉아 발언을 실시간으로 듣지 못한 것이 확인된다.",
+      "investigationResults": {
+        "request_original": "클립 시각에 해당하는 CCTV 구간과 정산 메모 원본을 함께 확인해야 한다.",
+        "check_metadata": "클립 시작 직전 윤세아가 '한재균 라인 이슈'를 꺼내는 장면이 CCTV에 찍혀 있다.",
+        "restore_context": "희주는 다른 테이블에 앉아 발언을 직접 못 듣고 나중에 클립으로 접했다.",
+        "verify_source": "총무팀 CCTV와 법인카드 정산 시각이 같은 타임라인을 형성한다.",
+        "check_edits": "기관 보존본. 편집·절삭 흔적 없음.",
+        "question_acquisition": "CCTV·결제 정보 포함. 필요 구간만 제한적으로 확인해야 한다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "HR 상담 접수와 발표 리허설 배정 변경 기록",
+      "description": "도윤의 HR 비공식 '평판 리스크' 메모와, 희주가 리허설 발표에서 빠진 배정 변경 기록.",
+      "investigationResults": {
+        "request_original": "HR 상담 로그 원본과 발표 배정표의 변경 전·후 버전을 함께 확인해야 한다.",
+        "check_metadata": "도윤의 '평판 리스크' 메모가 희주 면담 전날 밤에, 배정 변경은 다음 날 오전에 처리됐다.",
+        "restore_context": "공식 징계가 아닌 발표 배제가 사실상 선제 불이익처럼 작동했다.",
+        "verify_source": "HR 관리자 조회본과 팀 캘린더 배정 이력이 일치한다.",
+        "check_edits": "초기 메모→수정본 모두 보존. 편집 경로 투명.",
+        "question_acquisition": "인사자료. 분쟁 해결 목적 외 공개는 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "공유앨범 원본 메타데이터와 자동 하이라이트 생성 로그",
+      "description": "자동 클립 생성 로그. 웃음 소리 급등 시점에서 추출이 시작돼 앞 7.8초가 잘린 과정이 기록돼 있다.",
+      "investigationResults": {
+        "request_original": "관리자 권한으로 원본 파일 패키지와 하이라이트 생성 로그를 추출해야 한다.",
+        "check_metadata": "웃음 급등 시점에서 자동 클립 시작. 대상 설명이 담긴 앞 8초가 잘렸다.",
+        "restore_context": "잘린 앞부분에 '외부 후보 HJ'라는 표현이 있어 희주 직접 지칭으로 보기 어렵다.",
+        "verify_source": "플랫폼 로그와 관리 콘솔 기록이 같은 자동 추출 규칙을 보여준다.",
+        "check_edits": "수동 편집이 아닌 시스템 자동 추출. 조작이 아니라 오해가 핵심 문제다.",
+        "question_acquisition": "단말 식별자 포함. 필요 메타만 제한 공개해야 한다."
+      }
+    }
+  ],
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "도윤의 취중 HJ 발언",
+      "truth": true,
+      "truthDescription": "도윤은 2차에서 \"라인 타고 들어온 HJ, 포장이 실력보다 앞서\"라고 말했다. 대상을 특정하지 않았지만 오해를 부를 위험한 발언이었다."
+    },
+    {
+      "id": "d-2",
+      "name": "희주의 단정 DM 전파",
+      "truth": true,
+      "truthDescription": "희주는 HJ=자신이라 단정하고 \"팀장이 내 채용 배경을 씹었다\"는 DM을 멘토방·동료 둘에게 아침 7시에 보냈다."
+    },
+    {
+      "id": "d-3",
+      "name": "HJ 발언의 실제 대상은 누구인가",
+      "truth": false,
+      "truthDescription": "HJ는 외부 연계 후보 한재균이었다. 인력배치 메모에 'HJ=Han Jae-gyun'으로 표기돼 있고, 자동 클립이 앞 8초를 잘라 양쪽 모두 오해했다."
+    },
+    {
+      "id": "d-4",
+      "name": "도윤의 선제 HR 메모와 발표 배제",
+      "truth": true,
+      "truthDescription": "도윤은 희주 면담 전 HR에 '평판 리스크 인원'이라 적고, 다음 주 리허설 발표에서 희주를 뺐다. 사실상 선제 조치다."
+    },
+    {
+      "id": "d-5",
+      "name": "정정 전 쌍방 소문전 가담",
+      "truth": true,
+      "truthDescription": "도윤은 팀 회의에서 \"어제 일로 팀 명예가 흔들렸다\"고 암시했고, 희주는 단정 DM을 여러 명에게 돌렸다. 쌍방 소문전이다."
+    }
+  ]
+}

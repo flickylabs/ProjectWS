@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "조인호 씨, 마감 6시간 전 KPI 코멘트에서 실제 수치보다 큰 값을 승인한 이유를 설명하십시오.",
+              "text": "조인호 씨, 제출 막판 수치 정리에 직접 관여한 부분이 있었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "손다예 씨, e-1 전자결재 기록상 최종 수정자가 본인 계정인 점을 부인하십니까?",
+              "text": "손다예 씨, 대외 문서의 마지막 손질을 주도한 쪽이 본인이라는 점은 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -114,7 +114,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "조인호 씨, 왜 '기술성 최고'만 남긴 캡처를 팀 단톡에 먼저 올렸습니까?",
+              "text": "조인호 씨, 왜 평가 내용 일부만 먼저 공유하셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -153,7 +153,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "손다예 씨, 원본 평가 메일 전체를 보면 지원금이 본인 단독 성과라는 주장이 유지됩니까?",
+              "text": "손다예 씨, 원본 전체를 보면 단독 공로 주장에 무리가 있다는 점은 느껴셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "조인호 씨, 원시 로그보다 높아진 제출용 요약 PDF 수치를 끝까지 전망치라고만 보십니까?",
+              "text": "조인호 씨, 제출본 수치가 실제 기록보다 앞서 나간 부분을 끝까지 가볍게 볼 수 있습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "손다예 씨, 유사 문구의 추천확인서 초안과 본인 승인 흔적을 보면 이 제출이 형식 정리였다고만 말할 수 있습니까?",
+              "text": "손다예 씨, 제출 문서가 단순 정리 수준을 넘었다는 정황이 보이는데도 같은 해명을 유지하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

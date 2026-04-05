@@ -324,8 +324,8 @@
     {
       "id": "e-1",
       "name": "블로그 revision과 유튜브 변경 로그",
-      "surfaceName": "블로그 수정이력과 영상 변경 로그",
-      "surfaceDescription": "블로그 revision 기록과 영상 플랫폼 변경 로그다. 수정 시점과 변경 내용 확인이 필요하다.",
+      "surfaceName": "게시물 수정 이력과 채널 변경 로그",
+      "surfaceDescription": "게시물 수정 이력과 채널 변경 로그다. 수정 시점과 변경 내용 확인이 필요하다.",
       "description": "블로그 제목·본문 수정, 유튜브 설명란 편집, 핀댓글 삭제와 관련된 플랫폼 원본 변경 기록이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -346,13 +346,39 @@
         "check_edits": "서버 보존본이라 사후 편집 흔적은 없다.",
         "question_acquisition": "공동 채널의 운영 로그라 적법하지만 조회수와 수익 수치는 최소 범위만 공개해야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 변경 로그가 남게 된 수정 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "외부 연락 직후 연속 수정이 이뤄진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "표기 수정 외에 제목과 댓글까지 건드린 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "해온이 창작자 단톡에 올린 비교 캡처와 비난 메시지",
-      "surfaceName": "비교 캡처와 단톡 비난 메시지",
-      "surfaceDescription": "창작자 단톡에 올라온 비교 캡처와 비난 메시지다. 게시 맥락과 발신자 확인이 필요하다.",
+      "surfaceName": "비교 캡처와 단체 대화 메시지",
+      "surfaceDescription": "단체 대화방에 올라온 비교 캡처와 관련 메시지다. 게시 맥락과 발신자 확인이 필요하다.",
       "description": "바뀐 제목과 썸네일, 삭제된 핀댓글 화면을 비교하며 다솔이 권한을 넘었다고 적은 해온의 단톡 메시지다.",
       "type": "chat",
       "reliability": "soft",
@@ -373,13 +399,39 @@
         "check_edits": "문자 조작 흔적은 없지만 비교 대상과 시간표시가 선택적으로 잘려 있다.",
         "question_acquisition": "업계 단톡 자료라 제3자 닉네임과 반응이 섞여 있어 사적 확산 문제를 낳는다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 비교 화면과 단톡 메시지를 올린 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "수정 직후 곧바로 단톡에 공유한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "권한 화면과 요청 범위를 뺀 채 비교한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "블로그 초대메일과 유튜브 브랜드계정 역할 화면",
-      "surfaceName": "초대메일과 계정 역할 화면 캡처",
-      "surfaceDescription": "블로그 초대 메일과 영상 계정 역할 설정 화면이다. 권한 부여 경위 확인이 필요하다.",
+      "surfaceName": "초대 메일과 역할 화면 캡처",
+      "surfaceDescription": "초대 메일과 계정 역할 설정 화면이다. 권한이 어떻게 열렸는��� 확인이 필요하다.",
       "description": "해온이 다솔에게 보낸 블로그 편집자 초대와 유튜브 브랜드계정 매니저 역할 수락 화면, 역할 설명 페이지다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -399,13 +451,39 @@
         "check_edits": "플랫폼 출력본이라 후편집 흔적이 없다.",
         "question_acquisition": "당사자 동의와 플랫폼 회신을 통해 확보한 자료라 적법성은 높다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 초대메일과 역할 화면을 수락한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 권한이 분쟁 전부터 활성화된 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "모바일 안내 문구를 어떤 범위의 권한으로 이해했습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "임세진 코디네이터의 수정 요청 DM과 메일 스레드",
       "surfaceName": "수정 요청 DM과 메일 스레드",
-      "surfaceDescription": "코디네이터의 수정 요청 DM과 관련 메일 스레드다. 요청 내용과 경위 확인이 필요하다.",
+      "surfaceDescription": "수정 요청 메시지와 관련 메일 묶음이다. 요청 내용과 경위 확인이 필요하다.",
       "description": "브랜드 협찬 담당이 다솔에게 직접 보낸 광고 표기 수정 요청과, 요구 범위가 적힌 메일 원본이다.",
       "type": "chat",
       "reliability": "hard",
@@ -440,13 +518,39 @@
           "implication": "이 증거는 최다솔의 \"다솔의 직접 수정과 핀댓글 삭제\" 쟁점과 관련된다. 최다솔은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 수정 요청 연락을 직접 받은 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "상대 회신이 늦은 뒤 곧바로 대응한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "요청 문구보다 더 넓게 손봐도 된다고 본 근거를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
-      "name": "협업 노션 운영 규칙과 버전기록",
+      "name": "협업 규칙 문서와 버전기록",
       "surfaceName": "협업 노션 운영 규칙과 버전기록",
-      "surfaceDescription": "협업 노션 페이지의 운영 규칙과 버전 기록이다. 규칙 합의 시점과 변경 이력 확인이 필요하다.",
+      "surfaceDescription": "협업 규칙 문서와 버전 기록이다. 합의 시점과 변경 이력 확인이 필요하다.",
       "description": "최종 공개 전 상호 확인, 협찬 수정 요청은 공동 스레드에 공유한다는 규칙이 적힌 노션 문서와 버전기록이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -476,7 +580,33 @@
           "questionAngle": "최다솔에게: \"최종 확인과 공동 스레드 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 최다솔의 \"최종 확인과 공동 스레드 원칙의 쌍방 위반\" 쟁점과 관련된다. 최다솔은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 운영 규칙 문서와 버전기록을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "두 사람이 같은 날 확인 표시를 남긴 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공동 스레드 예외로 본 수정이 어디까지였는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -516,7 +646,33 @@
           "implication": "이 증거는 최다솔의 \"최종 확인과 공동 스레드 원칙의 쌍방 위반\" 쟁점과 관련된다. 최다솔은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 접근권 회수 로그가 발생한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공개 비난 직후 곧바로 권한을 끊은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "문제 화면 하나가 아닌 전체 채널을 막은 기준을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

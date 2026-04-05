@@ -345,8 +345,34 @@
         "question_acquisition": "입소 절차 관련 공문서라 제출 정당성은 높다."
       },
       "subjectParty": "b",
-      "surfaceName": "요양원 신청서와 입금 영수증",
-      "surfaceDescription": "요양 시설 대기등록 신청서와 입금 영수증이다. 신청 구분과 금액이 기재되어 있다."
+      "surfaceName": "대기 신청서와 입금 영수증",
+      "surfaceDescription": "대기 등록 관련 서류와 입금 영수증이다. 신청 구분과 금액이 적혀 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "대기등록 신청서와 입금 영수증 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "신청 명의와 입금 시각을 서둘러 정한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "입소 확정처럼 보이는 송금이 어떤 절차를 겨냥했는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -383,7 +409,33 @@
         }
       },
       "surfaceName": "가족 단톡과 통화 알림 로그",
-      "surfaceDescription": "가족 단체 채팅 내보내기와 부재중 통화·알림 기록이다. 연락 시도와 응답 시점이 남아 있다."
+      "surfaceDescription": "가족 단체 채팅 내보내기와 부재중 통화·알림 기록이다. 연락 시도와 응답 시점이 남아 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "가족 대화와 통화기록 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "부재중 전화 뒤 설명이 다음 날 아침으로 밀린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 밤 외부 상담엔 답하면서 가족 공유를 미룬 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -409,8 +461,34 @@
         "question_acquisition": "친척들이 포함된 대화라 사생활 침해 우려가 있어 목적 외 재사용은 제한돼야 한다."
       },
       "subjectParty": "a",
-      "surfaceName": "친척 단톡과 통화 메모",
-      "surfaceDescription": "친척 단체 채팅과 사촌과의 통화 메모다. 특정 사안에 대한 가족 간 소통 기록이 담겨 있다."
+      "surfaceName": "단체 대화와 통화 메모",
+      "surfaceDescription": "단체 대화 내역과 통화 직후 남긴 메모다. 같은 사건을 두고 어떤 말이 오갔는지 확인할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "친척방 메시지와 통화 메모 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "정식 설명보다 앞서 친척방에 알린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "사실확인보다 단정적 표현을 먼저 택한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -437,9 +515,35 @@
         "question_acquisition": "입소 절차 확인 자료여서 제출 정당성은 높다."
       },
       "subjectParty": "b",
-      "surfaceName": "시설 환불 규정 메일과 상담 녹취",
-      "surfaceDescription": "시설 담당자가 보낸 환불 규정 안내 메일과 상담 통화 원본이다. 비용의 법적 성격이 설명되어 있다.",
-      "requiredLieState": "S3"
+      "surfaceName": "환불 규정 메일과 상담 녹취",
+      "surfaceDescription": "환불 규정 안내 메일과 상담 통화 원본이다. 금액의 성격과 절차 설명이 담겨 있다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "환불 규정 메일과 상담 녹취 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입금 직후 받은 안내와 상담 표현을 어떻게 이해했는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "계좌 이체만 보고 영구 절차로 단정한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -475,7 +579,33 @@
         }
       },
       "surfaceName": "가족회의 노트 사진",
-      "surfaceDescription": "과거 가족 회의 때 작성된 노트의 사진이다. 일부 문장만 보이고 나머지는 잘려 있다."
+      "surfaceDescription": "과거 가족 회의 때 작성된 노트의 사진이다. 일부 문장만 보이고 나머지는 잘려 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "가족회의 노트 사진을 이렇게 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "회의 당일 사진을 최근 다시 잘라 저장한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "하단 조건과 서명란이 빠진 채 제시한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -514,8 +644,34 @@
         }
       },
       "surfaceName": "사례관리 기록과 돌봄 계획서",
-      "surfaceDescription": "전문 기관의 사례관리 기록과 서명된 돌봄 계획서다. 합의 사항과 후속 원칙이 적혀 있다.",
-      "requiredLieState": "S3"
+      "surfaceDescription": "이전 논의 기록과 서명된 계획서다. 당시 적어 둔 기준과 이후 정리 문구를 살필 수 있다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "사례관리 기록과 서명 계획서 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "가스 사고 직후 작성된 계획서에 모두 서명한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "사전 합의에 붙어 있던 같은 날 공유 조건을 왜 다르게 이해했습니까?",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

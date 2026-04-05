@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "캡처를 잘라 제출할 때, 바로 앞 대화에 본인이 제 몫 입금 시점을 재촉한 문장이 있다는 점을 알고 계셨습니까.",
+              "text": "최민아 씨, 캡처를 보여주기 전에 원본 대화 흐름을 어떻게 이해하고 계셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "중개사가 '네 몫 먼저 보냈다'고 한 직후 2,400만원이 본인 계좌로 들어옵니다. 그 돈이 단순 보관이었다면 왜 공동보관이 아닌 본인 계좌였습니까.",
+              "text": "최도윤 씨, 먼저 들어온 돈을 왜 개인 계좌에서 처리하셨습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "공식 시세 브리핑 하루 전 오후 2시 16분, 어머니를 법무사 사무실에 먼저 데려간 이유가 단순 문의였다면 왜 매매 관련 문구가 든 초안을 꺼냈습니까.",
+              "text": "최민아 씨, 부모 설명 전에 서류 준비를 앞당긴 이유가 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "2,400만원이 들어온 뒤 2시간 안에 장비리스와 카드대금이 결제됩니다. 이 흐름을 두고도 '잠깐 묶어 둔 돈'이라고만 답하시겠습니까.",
+              "text": "최도윤 씨, 들어온 돈을 바로 다른 용도로 돌린 이유가 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "중개사 수기 메모에 '민아/도윤 각 33'이 적혀 있습니다. 이 숫자가 단 한 번도 본인 몫으로 논의된 적 없었다고 말씀하시겠습니까.",
+              "text": "최민아 씨, 금액 분배 이야기가 오갈 때 본인 몫도 함께 논의됐다고 보십니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "음성메모에 형제 각 3,300만원을 잡아 두겠다는 말이 나옵니다. 재판관이 묻습니다. 그 분배 구조를 실무처럼 밀어붙인 본인이 맞습니까.",
+              "text": "최도윤 씨, 분배 구조를 실무처럼 밀어붙였다는 지적을 어떻게 설명하시겠습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",

@@ -344,7 +344,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "전달 로그와 단톡 원문",
-      "surfaceDescription": "여러 채널로 전송된 캡처와 메시지 원문 기록이다. 전달 시각과 표현이 남아 있다."
+      "surfaceDescription": "여러 채널로 전송된 캡처와 메시지 원문 기록이다. 전달 시각과 표현이 남아 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 전달 로그와 단톡 원문에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "확인 답 9분 전 세 채널로 보낸 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "세 채널 모두 같은 단정 표현을 쓴 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -370,8 +396,34 @@
         "question_acquisition": "세아 본인 계정의 클라우드 복원 로그이므로, 본인 제출 자료로서 취득 절차상 문제없다."
       },
       "subjectParty": "a",
-      "surfaceName": "백업 복원 로그와 삭제 메시지",
-      "surfaceDescription": "과거 백업에서 복원된 로그와 삭제 표시된 메시지 기록이다. 폴더 이동 이력이 함께 있다."
+      "surfaceName": "백업 복원 로그와 메시지 기록",
+      "surfaceDescription": "과거 백업에서 복원된 로그와 메시지 기록이다. 정리 과정의 이동 이력이 함께 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 복원 로그와 이동 기록의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "확산 2시간 뒤 일부 대화를 옮긴 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공유 파일에서 일부 대화를 제외한 기준을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -397,8 +449,34 @@
         "question_acquisition": "세아 명예를 훼손하는 SNS 캡처가 외부 채널로 유통됐고 재우가 추가 전파. 사생활·명예 침해 소지."
       },
       "subjectParty": "b",
-      "surfaceName": "익명 SNS 게시물과 옛 문자 이미지",
-      "surfaceDescription": "익명으로 올라온 SNS 게시물 캡처다. 여러 출처의 이미지가 합쳐져 있어 검증이 필요하다."
+      "surfaceName": "익명 게시물 캡처와 옛 이미지 묶음",
+      "surfaceDescription": "익명으로 올라온 게시물 캡처다. 서로 다른 이미지가 함께 묶여 있어 검증이 필요하다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 게시물 캡처 묶음을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계정 정보와 댓글 구간이 잘린 채 저장된 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "서로 다른 해상도 자료가 한 이미지에 묶인 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -425,9 +503,35 @@
         "question_acquisition": "세아 측의 플랫폼 신고 접수 후, 정식 조사 절차를 거쳐 포렌식 보고서가 발급됐다. 적법한 절차로 확보된 자료다."
       },
       "subjectParty": "b",
-      "surfaceName": "포렌식 보고서와 해시 대조표",
-      "surfaceDescription": "디지털 포렌식 분석 보고서와 이미지 레이어별 해시 대조표다. 합성 여부를 기술적으로 검증한 자료다.",
-      "requiredLieState": "S3"
+      "surfaceName": "분석 보고서와 대조표",
+      "surfaceDescription": "이미지 차이를 기술적으로 비교한 분석 보고서와 대조표다. 원본성을 검토한 흔적이 담겨 있다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 포렌식 보고서와 대조표에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "서로 다른 시기 템플릿이 함께 검출된 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "레이어 경계와 재압축 흔적이 함께 나온 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -453,8 +557,34 @@
         "question_acquisition": "행사장 입장 시 네트워크 이용 동의 고지가 이뤄졌고, 플랫폼 신고 절차에 따라 최소 필요 범위 내에서 계정·접속 기록이 제공됐다."
       },
       "subjectParty": "b",
-      "surfaceName": "복구 메일과 와이파이 접속 기록",
-      "surfaceDescription": "계정 복구 메일과 특정 장소의 와이파이 접속 기록이다. 계정 생성과 접속 시점이 남아 있다."
+      "surfaceName": "계정 관련 메일과 접속 기록",
+      "surfaceDescription": "계정 관련 메일과 행사장 접속 기록이다. 생성과 접속 시점을 대조할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 복구 기록과 접속 로그의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계정 생성과 게시 준비가 12시간 안에 몰린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "복구 수단과 현장 접속이 한쪽에 모인 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -481,7 +611,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "오래된 메일 묶음과 학교 메모",
-      "surfaceDescription": "과거에 주고받은 메일 원본과 학교 관련 메모다. 오래된 사건의 원본 기록이 보존되어 있다."
+      "surfaceDescription": "과거에 주고받은 메일 원본과 학교 관련 메모다. 오래된 사건의 원본 기록이 보존되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 옛 메일 묶음과 메모 사본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "두 기록 사이에 2주가량 간격이 벌어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "과거의 거친 표현과 익명 게시 주체를 묶은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

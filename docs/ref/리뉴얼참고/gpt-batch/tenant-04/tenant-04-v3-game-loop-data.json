@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "이다은 씨, 녹취에서 '가자는 방향' 뒤에 '서류 보고 정리하자'가 붙습니다. 그런데도 왜 이미 확정된 약속처럼 받아들이셨습니까?",
+              "text": "이다은 씨, 그 말을 확정으로만 들은 건 아닌지부터 돌아보셔야 하는 것 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "장성호 씨, 카카오톡 어디에도 협의 결렬 통지가 없는데도 예비 임차인 안내가 정당했다고 보십니까?",
+              "text": "장성호 씨, 협의가 끝났다면 그 의사를 먼저 분명히 남겼어야 하는 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "이다은 씨, 추가 보증금 송금 뒤 실제로 한 달치 월세가 빠진 건 맞지요? 표현이 아니라 행동 기준으로 답해 주십시오.",
+              "text": "이다은 씨, 그 뒤 실제 행동이 '아직 미정'이라는 쪽과는 달랐던 것 아닙니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "장성호 씨, 상환예상서를 전환 논의 초반에 받아 보셨다면 왜 그 비용과 공동명의 문제를 먼저 알리지 않았습니까?",
+              "text": "장성호 씨, 먼저 말했어야 할 조건이 있었다는 점부터 짚어야 하지 않습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -212,7 +212,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "이다은 씨, 결혼 일정이 급하다는 사정 때문에, 확인보다 확신을 택한 것 아닙니까? 그 심리부터 설명해 보십시오.",
+              "text": "이다은 씨, 그때는 확인보다 서둘러 믿고 싶은 마음이 더 컸던 것 아닙니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -251,7 +251,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "장성호 씨, 초안에 공동명의 서명란이 비어 있는데도, 그 공란 사유를 다은 씨에게 미리 설명하지 않은 이유가 무엇입니까?",
+              "text": "장성호 씨, 초안 단계에서 미리 풀어 줬어야 할 공백이 있지 않았습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

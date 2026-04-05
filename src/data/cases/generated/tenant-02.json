@@ -330,7 +330,7 @@
       "name": "임대차계약서와 출입 특약본",
       "description": "긴급 하자 시 연락 후 출입, 촬영자료 보관 시 별도 고지 의무가 적힌 임대차계약서와 부속 특약이다.",
       "surfaceName": "임대차계약서와 출입 특약본",
-      "surfaceDescription": "긴급 출입 조건과 촬영자료 고지 의무가 적힌 계약서와 특약이다.",
+      "surfaceDescription": "출입 조건과 고지 절차가 적힌 계약서와 특약이다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -359,7 +359,33 @@
           "questionAngle": "한규철에게: \"긴급출입 조항의 허용 범위\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 한규철의 \"긴급출입 조항의 허용 범위\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계약서와 출입 특약본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "특약 작성일과 갱신일이 보관대장과 맞는 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 조항이 긴급 확인과 촬영 보관을 구분하는 점을 인정하십니까?",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -385,14 +411,40 @@
         "check_edits": "스캔본 대조 결과 내용 변형은 없었다.",
         "question_acquisition": "건물 관리자료 제출이라 분쟁 해결 목적 범위에서 적법성이 높다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 관리 기록과 접수대장을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "점검 메모가 확산 직전 날짜에 남은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 기록만으로 환기 문제만을 원인으로 보기 어려운 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
-      "name": "세입자·집주인·수리기사 단톡 캡처",
+      "name": "단톡 캡처",
       "description": "규철이 '오늘은 급하니 잠깐 볼게요'라고 보낸 뒤, 민석이 이후 이틀간 방문을 전면 거부한 대화 일부 캡처다.",
       "surfaceName": "세입자·집주인·수리기사 단톡 캡처",
-      "surfaceDescription": "세입자, 집주인, 수리기사가 있는 대화방 일부 캡처다.",
+      "surfaceDescription": "관련 대화방 일부를 담은 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -423,14 +475,40 @@
           "questionAngle": "한규철에게: \"규철의 사전 동의 없는 출입\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 한규철의 \"규철의 사전 동의 없는 출입\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단톡 캡처를 증거로 낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문제의 통지가 합의일보다 이틀 앞선 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "거절 문장을 제외하고 뒤 대화만 남긴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "규철 제출 사진 원본·캡처본 비교",
       "description": "주방 천장과 거실 장비 주변을 찍은 사진 12장의 원본 파일과, 규철이 분쟁용으로 제출한 타임스탬프 표시 캡처본 비교 자료다.",
-      "surfaceName": "실내 사진 원본·캡처본 비교",
-      "surfaceDescription": "동일 공간 사진의 원본 파일과 제출용 캡처본 비교 자료다.",
+      "surfaceName": "실내 사진과 관련 화면 자료",
+      "surfaceDescription": "실내를 촬영한 사진과 관련 화면 자료를 함께 묶은 자료다.",
       "type": "photo",
       "reliability": "soft",
       "completeness": "original",
@@ -464,7 +542,33 @@
           "implication": "이 증거는 한규철의 \"규철의 사전 동의 없는 출입\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 사진과 제출 캡처본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "원본 촬영일이 합의일보다 앞선 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "촬영일과 제출본 표시 시각이 갈리는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -504,7 +608,33 @@
           "implication": "이 증거는 한규철의 \"긴급출입 조항의 허용 범위\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 진단서와 견적서를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "첫 진단 시각이 거부 해제 다음 날인 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "기사 소견이 생활 습관보다 설비 문제를 먼저 지목한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -544,7 +674,33 @@
           "implication": "이 증거는 한규철의 \"출입 사진 타임스탬프의 진위\" 쟁점과 관련된다. 한규철은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 입금 내역과 영수증을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "예약 접수가 사진 캡처 날짜보다 앞선 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "합의일 전부터 이 자료를 바탕으로 일정을 잡은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -354,7 +354,33 @@
         }
       },
       "surfaceName": "거래처 후속 이메일과 회의록",
-      "surfaceDescription": "거래처 관련 후속 이메일 스레드와 계정 회의 기록을 묶은 문서"
+      "surfaceDescription": "거래처 관련 후속 이메일 스레드와 계정 회의 기록을 묶은 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 후속 메일 체인과 회의록 흐름을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "미팅 직후 참조 제거가 먼저 이뤄진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "참조 제거 뒤 회의 발언까지 이어진 흐름을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -380,8 +406,34 @@
         "question_acquisition": "사적 단말 캡처 포함 — 수신자·화면 범위 최소 공개."
       },
       "subjectParty": "b",
-      "surfaceName": "에이전시 DM과 내부 화면 캡처",
-      "surfaceDescription": "에이전시 담당자와의 메신저 대화 캡처와 내부 시스템 화면 캡처"
+      "surfaceName": "외부 대화와 내부 화면 캡처",
+      "surfaceDescription": "외부와 주고받은 대화와 화면 캡처를 묶은 자료",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 DM과 화면 캡처를 보낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "참조 제거 직후 외부 파트너에게 문의한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "내부 책임 공방이 외부로 번진 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -417,7 +469,33 @@
         }
       },
       "surfaceName": "공유 문서 열람 로그 PDF 파일",
-      "surfaceDescription": "특정 공유 문서의 열람 기록이 시간순으로 정리된 PDF 파일"
+      "surfaceDescription": "공유 문서 열람 기록을 발췌해 정리한 PDF 파일",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 열람 로그 PDF를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문서 ID와 경로가 빠진 상태로 제시한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "제목만으로 같은 문서라고 단정한 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -454,9 +532,35 @@
           "implication": "이 증거는 유은채의 \"내부 준비자료 실제 유출 여부\" 쟁점과 관련된다. 유은채은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "협업 드라이브 링크 맵과 버전 이력",
-      "surfaceDescription": "협업 드라이브의 링크 구조도와 문서 버전 변경 이력 정리본",
-      "requiredLieState": "S3"
+      "surfaceName": "문서 링크 맵과 버전 이력",
+      "surfaceDescription": "문서 링크 구조와 버전 변화가 정리된 기록",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 링크 맵과 버전 이력을 확보한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 제목인데 접근 기록이 갈린 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "서로 다른 문서를 같은 사건으로 묶은 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -491,8 +595,34 @@
           "implication": "이 증거는 유은채의 \"내부 준비자료 실제 유출 여부\" 쟁점과 관련된다. 유은채은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "에이전시 후속 메일과 회의 요약본",
-      "surfaceDescription": "에이전시 담당자의 후속 이메일 회신과 거래처 회의 요약 문서"
+      "surfaceName": "외부 후속 메일과 회의 요약본",
+      "surfaceDescription": "외부 발신 메일과 회의 내용을 정리한 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 후속 메일과 회의요약의 작성 흐름을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "그 표현이 미팅 뒤 메일에 남게 된 과정을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "문서가 아닌 구두 설명이 퍼진 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -518,8 +648,34 @@
         "question_acquisition": "인사·영업 자료 — 분쟁 해결 목적 외 공개 제한."
       },
       "subjectParty": "a",
-      "surfaceName": "CRM 역할 변경 로그와 리스크 메모",
-      "surfaceDescription": "CRM 시스템의 역할 변경 기록과 리스크 관련 내부 메모"
+      "surfaceName": "역할 변경 로그와 리스크 메모",
+      "surfaceDescription": "역할 조정 기록과 내부 메모",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 역할 변경과 비공개 메모 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "확인 전에 권한 축소와 메모 입력이 선행된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "보호 조치보다 배제 판단이 먼저 작동한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

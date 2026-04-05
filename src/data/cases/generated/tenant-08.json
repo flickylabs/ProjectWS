@@ -349,7 +349,33 @@
         "check_edits": "기관 발급본과 문자 원본 모두 편집 흔적이 없다.",
         "question_acquisition": "본인 계좌와 당사자 문자라 제출 적법성은 충분하다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 자동이체 중단 내역과 독촉 문자에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "상세표를 받은 다음 날마다 자동이체를 멈춘 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다투지 않는 부분도 따로 내지 않은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -387,13 +413,39 @@
           "questionAngle": "임호준에게: \"호준이 보낸 관리비 상세표의 원본성\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 임호준의 \"호준이 보낸 관리비 상세표의 원본성\" 쟁점과 관련된다. 임호준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 상세 캡처와 PDF를 직접 다시 보낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "두 파일이 공식 고지 뒤 11분 간격으로 생성된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "합계와 도장 주변이 어색한 해당 파일을 보낸 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "전력회사 원시 계량 로그와 공용부 사용량 보고서",
       "description": "지현 세대와 공용부 계량기의 시간대별 전기사용 로그, 검침일, 공용부 누적 사용량 보고서다.",
-      "surfaceName": "전력회사 계량 로그와 사용량 보고서",
+      "surfaceName": "계량 로그와 사용량 보고서",
       "surfaceDescription": "세대별 시간대 전기사용 로그와 누적 사용량 보고서다.",
       "type": "record",
       "reliability": "hard",
@@ -424,7 +476,33 @@
           "questionAngle": "임호준에게: \"공실 상가·누수 점검비의 전가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 임호준의 \"공실 상가·누수 점검비의 전가\" 쟁점과 관련된다. 임호준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계량 로그와 공용부 보고서를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 기간 공용부와 빈 점포 사용량도 급증한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다른 구간 부담을 분리하지 않은 채 총액만 제시한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -450,14 +528,40 @@
         "check_edits": "CSV 연속값과 앱 내 스크린샷 시간이 자연스럽게 이어져 후편집 흔적이 없다.",
         "question_acquisition": "본인 기기 기록이라 적법하지만 생활 패턴 정보가 포함돼 공개 범위는 최소화돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 작업장비 전력 로그와 일정 캡처에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "장시간 렌더링 주간이 사용량 상승과 겹친 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "일부 사용 증가가 있었는데도 전액을 다툰 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "관리대행 원본 고지 양식과 파일 메타데이터 비교표",
       "description": "한미라가 보관한 원본 고지 양식과, 호준이 보낸 PDF의 글꼴·생성 프로그램·도장 이미지 경계를 비교한 표다.",
-      "surfaceName": "원본 고지 양식과 파일 비교표",
-      "surfaceDescription": "관리대행 원본 양식과 제출 PDF의 메타데이터 비교표다.",
+      "surfaceName": "고지 양식과 비교 자료",
+      "surfaceDescription": "고지 양식과 제출 문서를 비교한 자료다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -480,7 +584,33 @@
         "question_acquisition": "정식 관리대행 보관 문서라 제출 정당성은 높다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 양식과 해당 PDF를 대조하게 된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 PDF에 개인 엑셀 흔적이 남은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "도장 픽셀과 자간이 어긋난 채 보낸 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -520,7 +650,33 @@
           "implication": "이 증거는 임호준의 \"공실 상가·누수 점검비의 전가\" 쟁점과 관련된다. 임호준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회계장부와 외부 청구서를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 비용이 문제의 달 직전에 함께 발생한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "세대별 관리비에 넣기 어려운 항목을 섞은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

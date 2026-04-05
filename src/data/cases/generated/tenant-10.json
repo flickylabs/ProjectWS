@@ -359,14 +359,40 @@
           "questionAngle": "최상훈에게: \"반려동물 특약의 해석\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 최상훈의 \"반려동물 특약의 해석\" 쟁점과 관련된다. 최상훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계약서와 반려동물 특약 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "특약란이 계약 당일 한 번에 작성된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "특약에 협의 여지를 남긴 표현을 넣은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "브로커 단톡방 캡처와 반려견 사진 전송 기록",
       "description": "민주가 강아지 사진을 보내며 물어본 메시지와, 브로커가 집주인께 전달하겠다고 답한 단톡방 일부 캡처다.",
-      "surfaceName": "브로커 단톡방 캡처와 사진 전송",
-      "surfaceDescription": "브로커 대화방에서 사진과 문의가 오간 일부 캡처다.",
+      "surfaceName": "대화 캡처와 사진 전송 기록",
+      "surfaceDescription": "사진과 문의가 오간 일부 대화 캡처다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -385,7 +411,33 @@
         "check_edits": "본문 조작 흔적은 없지만 허락이 아직 없다는 문장을 잘라 낸 선택적 크롭이 확인됐다.",
         "question_acquisition": "사적 메신저 자료라 공개 범위는 분쟁 해결과 직접 관련된 부분으로 제한돼야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단톡 캡처와 사진 전송 기록을 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입주 이틀 전 밤 사진을 보내고 바로 전달한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "답변 전제 문장을 빼고 제출한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -411,14 +463,40 @@
         "check_edits": "기관 발행 문서라 후편집 흔적이 없다.",
         "question_acquisition": "반려견 관리 상태를 보여 주는 정식 자료라 제출 정당성은 충분하다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 등록증과 접종 기록, 수료증을 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입주 직전 갱신 기록과 훈련 수료 시점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "기본 관리 자료만으로 실제 생활 소음이 없다고 보는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "관리사무소 민원일지와 복도 확인 기록",
       "description": "택배 시간대 짧은 짖음 민원 두 건, 현관매트 세척 기록, 복도 오염 여부를 적은 관리사무소 일지다.",
-      "surfaceName": "관리사무소 민원일지와 확인 기록",
-      "surfaceDescription": "민원 접수 내역과 현장 확인이 적힌 관리사무소 일지다.",
+      "surfaceName": "민원일지와 확인 기록",
+      "surfaceDescription": "민원 접수 내역과 현장 확인이 적힌 기록이다.",
       "type": "record",
       "reliability": "hard",
       "completeness": "original",
@@ -448,7 +526,33 @@
           "questionAngle": "최상훈에게: \"전문 청소·바닥보수 선공제 필요성\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 최상훈의 \"전문 청소·바닥보수 선공제 필요성\" 쟁점과 관련된다. 최상훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 민원일지와 복도 확인 기록을 다시 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "민원이 첫 달 두 차례로 그친 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "짧은 소음 기록을 즉시 반출 사유로 본 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -488,7 +592,33 @@
           "implication": "이 증거는 최상훈의 \"반려동물 특약의 해석\" 쟁점과 관련된다. 최상훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 통화요약과 문자 회신 원문에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "사진 다음 날 답이 왔는데 이후 명확한 회신이 없던 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "관리만 잘 해 달라는 답을 허락으로도 읽히게 둔 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -515,7 +645,33 @@
         "check_edits": "사진과 견적서 모두 원본 출력본이라 후편집 흔적이 없다.",
         "question_acquisition": "손상 범위를 가리기 위한 통상 자료라 제출 절차상 문제는 낮다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 현장 사진과 청소 견적 비교서를 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "즉시 반출 통보 다음 날 점검을 진행한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "세탁 수준 상태에서 전문 보수까지 요구한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

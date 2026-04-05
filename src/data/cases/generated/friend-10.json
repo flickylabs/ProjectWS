@@ -325,7 +325,7 @@
       "id": "e-1",
       "name": "서아의 '그 주 비워볼게' 카톡 캡처",
       "surfaceName": "일정 조율 메시지 캡처",
-      "surfaceDescription": "특정 주간 일정 비움을 언급한 메시지 캡처다. 발신 맥락과 확정 여부 확인이 필요하다.",
+      "surfaceDescription": "그 주 일정과 관련된 메시지 캡처다. 발신 맥락과 확정 여부 확인이 필요하다.",
       "description": "서아가 그 주를 비워보겠고 노래 키를 보자는 말만 보이는 잘린 카카오톡 캡처다.",
       "type": "chat",
       "reliability": "soft",
@@ -356,7 +356,33 @@
           "questionAngle": "한서아에게: \"서아의 애매한 수락성 답장과 늦은 정정\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 한서아의 \"서아의 애매한 수락성 답장과 늦은 정정\" 쟁점과 관련된다. 한서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 잘린 대화 캡처를 저장하고 전달한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이름 전달 직후 드레스 피팅 전에 이 캡처를 남긴 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "상하단이 잘려 조건부 표현이 약해 보이게 된 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -397,13 +423,39 @@
           "implication": "이 증거는 한서아의 \"서아의 들러리 참여 자체도 전부 미확정이었는가\" 쟁점과 관련된다. 한서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공유 시트 원본과 상태 범례를 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "치수 입력 뒤 한 칸만 바뀌고 다른 칸은 그대로였던 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이름이 두 칸에 보여도 상태 범례를 따로 봐야 했던 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
-      "name": "유상우 반주자 DM과 가예약 메모",
+      "name": "유상우 대화 기록과 가예약 메모",
       "surfaceName": "반주자 DM과 가예약 메모",
-      "surfaceDescription": "반주자와의 DM 대화와 가예약 메모다. 예약 확정 여부와 합의 확인이 필요하다.",
+      "surfaceDescription": "관련 대화 기록과 가예약 메모다. 예약 단계와 합의 여부 확인이 필요하다.",
       "description": "유상우가 키를 먼저 확인해 보자고 했고, 축가 슬롯은 가예약 상태로만 잡혀 있었다는 DM과 메모다.",
       "type": "chat",
       "reliability": "hard",
@@ -434,7 +486,33 @@
           "questionAngle": "한서아에게: \"서아의 애매한 수락성 답장과 늦은 정정\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 한서아의 \"서아의 애매한 수락성 답장과 늦은 정정\" 쟁점과 관련된다. 한서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 반주자 대화와 가예약 메모를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "키 확인만 오가고 곡명과 리허설 확정이 없었던 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "당시 가능 여부를 마지막까지 열어 둔 사정을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -471,7 +549,33 @@
           "questionAngle": "한서아에게: \"이전 '확정 후 공지' 규칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 한서아의 \"이전 '확정 후 공지' 규칙의 쌍방 위반\" 쟁점과 관련된다. 한서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 라인업과 리허설표에 이름을 넣은 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "명시적 확정 전부터 여러 문서에 이름을 넣은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "내부 초안이라면서도 주변이 확정으로 받아들인 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -507,7 +611,33 @@
           "questionAngle": "한서아에게: \"이전 '확정 후 공지' 규칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 한서아의 \"이전 '확정 후 공지' 규칙의 쌍방 위반\" 쟁점과 관련된다. 한서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 과거 대화와 메모 캡처의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 규칙이 과거 역할 혼선 직후 정리된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이후 이름 공유 전 확인 신호를 따로 두자고 한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -537,7 +667,33 @@
         "question_acquisition": "목 상태와 일정 사유가 포함돼 있어 건강·업무 정보는 최소한만 다루는 것이 좋다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 치수표와 동선표, 음성메모를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "준비 자료는 먼저 보내고 다른 역할 답은 뒤늦게 정리한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "준비 참여와 별도 역할 판단을 왜 다르게 두었는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "유선아 씨, 최서정 이름만 보고 사적 송금으로 판단한 근거가 실제 문맥보다 강했다고 볼 여지는 없습니까?",
+              "text": "유선아 씨, 수취인 이름만으로 사적 송금이라 단정한 근거가 실제 문맥보다 강했던 건 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "강도현 씨, 21시 42분 이체 뒤 18분 만에 병원 주차정산이 찍힌 상황을 부인하십니까?",
+              "text": "강도현 씨, 그 송금 직후 병원 쪽 동선이 이어진 상황을 부인하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "보험금 지급결정서와 개인계좌 입금내역이 있는데도 '쓴 돈은 아니다'라고만 답하는 이유가 무엇입니까?",
+              "text": "유선아 씨, 이미 들어와 있던 큰돈의 흐름이 있는데도 '쓴 돈은 아니다'라고만 답하는 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "잘린 캡처만으로는 관계를 단정할 수 없는데, 왜 원무주임 직함이 빠진 대화를 즉시 정정하지 않았습니까?",
+              "text": "강도현 씨, 잘린 대화만으로는 관계를 단정하기 어려운데도 그 오해를 왜 바로 풀지 않았습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "보험금 입금 43분 뒤 오빠 계좌로 전액 이체한 사실을 부인하십니까?",
+              "text": "유선아 씨, 들어온 돈을 곧바로 가족 계좌 쪽으로 옮긴 사실을 부인하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "2022년 이후 같은 날 공유 원칙을 적어 두고도, 이번 390만원 송금을 먼저 알리지 않은 이유는 무엇입니까?",
+              "text": "강도현 씨, 예전 공유 약속이 있었는데도 이번 송금을 먼저 알리지 않은 이유는 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

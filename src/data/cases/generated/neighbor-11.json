@@ -322,8 +322,8 @@
     {
       "id": "e-1",
       "name": "라은이 돌린 31초 창고 침입 클립",
-      "surfaceName": "창고 침입 짧은 클립 영상",
-      "surfaceDescription": "창고 침입 장면을 촬영한 짧은 클립 영상이다. 촬영 시점과 편집 여부 확인이 필요하다.",
+      "surfaceName": "짧은 영상 클립",
+      "surfaceDescription": "한 구간만 담긴 짧은 영상이다. 생성 시점과 앞뒤 맥락 확인이 필요하다.",
       "description": "성재가 서비스도어를 통과하는 31초만 남긴 편집 영상. 문 상태를 누가 준비했는지, 창고 배열 변화 전후는 잘려 있다.",
       "type": "video",
       "reliability": "soft",
@@ -354,13 +354,39 @@
           "questionAngle": "김라은에게: \"편집 영상과 재고 손실 연출\" 관련 해명 요구 (방어 동기: 복수심)",
           "implication": "이 증거는 김라은의 \"편집 영상과 재고 손실 연출\" 쟁점과 관련된다. 김라은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 짧은 침입 전달본만 남긴 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "사건 다음 날 다시 저장된 시점에 대해 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "문 준비 과정과 배열 변화가 빠진 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "서비스도어 출입로그와 성재 휴대폰 NFC 복제앱 기록",
-      "surfaceName": "서비스도어 출입로그와 NFC 복제앱 기록",
-      "surfaceDescription": "서비스도어 출입 로그와 NFC 복제 앱 사용 기록이다. 출입 주체와 앱 사용 경위 확인이 필요하다.",
+      "surfaceName": "출입 기록과 기기 사용 기록",
+      "surfaceDescription": "출입 관련 기록과 휴대기기 사용 기록이다. 기록의 연결성과 사용 경위 확인이 필요하다.",
       "description": "출입통제 서버에 복제 태그 UID가 찍혔고, 성재 휴대폰 NFC 앱에 같은 UID 읽기 기록이 9분 차이로 남아 있다.",
       "type": "device_log",
       "reliability": "hard",
@@ -380,13 +406,39 @@
         "check_edits": "기관 추출본과 포렌식 스냅샷으로 조작 흔적 없음. 삭제 시도 후 복원된 기록까지 남아 있다.",
         "question_acquisition": "휴대폰 포렌식 자료이므로 NFC UID와 출입 시각 정보만 제한적으로 활용해야 한다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "출입로그와 휴대폰 태그 기록에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 태그 값이 짧은 간격으로 남은 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "정상 출입이라면 복제 서비스 태그 사용 경위를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
-      "name": "라은의 재고손실 사진과 직원 진술 초안",
+      "name": "라은의 현장 사진과 진술 초안",
       "surfaceName": "재고손실 사진과 직원 진술 초안",
-      "surfaceDescription": "재고 손실 현장 사진과 직원 진술 초안 문서다. 손실 규모와 진술 내용 확인이 필요하다.",
+      "surfaceDescription": "현장 사진과 진술 관련 초안 문서다. 촬영 경위와 문서 작성 맥락 확인이 필요하다.",
       "description": "라은이 제출한 재고 피해 사진과 직원 태블릿에 남은 '성재가 만진 것처럼 말해 달라'는 진술 유도 메모 초안. 사진은 같은 상자를 각도만 바꿔 반복 촬영했다.",
       "type": "document",
       "reliability": "hard",
@@ -406,13 +458,39 @@
         "check_edits": "합성은 없으나 같은 상자를 3~4개 각도로 반복 촬영해 피해 범위를 넓게 보이게 했다.",
         "question_acquisition": "직원 진술 유도 정황이 포함돼 있으므로 직원 이름·연락처는 마스킹 후 활용해야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "재고 사진 묶음과 메모 초안에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "사진보다 먼저 진술 방향 메모를 적은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "손실 범위를 넓게 보이게 한 배열 변경 경위를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
-      "name": "건물주 측 보수·임대료 감면안 초안 이메일",
+      "name": "건물주 측 내부 검토 메일",
       "surfaceName": "보수·임대료 감면안 초안 이메일",
-      "surfaceDescription": "건물주 측의 보수 및 임대료 감면안 초안 이메일이다. 제안 내용과 경위 확인이 필요하다.",
+      "surfaceDescription": "어떤 조치를 검토하는 내용이 담긴 내부 메일이다. 작성 시점과 전달 경위 확인이 필요하다.",
       "description": "사건 전날 밤 발송된 건물주 법무대리인의 내부 이메일. 덕트 보수 일정표와 한시 임대료 감면 초안이 첨부돼 있다.",
       "type": "institutional_note",
       "reliability": "hard",
@@ -442,13 +520,39 @@
           "questionAngle": "김라은에게: \"건물주의 보상안 검토 여부\" 관련 자신이 아는 바를 진술",
           "implication": "이 증거는 김라은이 직접적 당사자가 아닌 쟁점이다. 김라은이 이 상황에 대해 알고 있는 바를 확인한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 이메일 원본과 첨부 일정표에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 메일이 사건 전날 밤 발송된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "전날 조치 검토가 있었는데도 아무 대응이 없었다고 말한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "성재-라은 비밀 메신저 대화",
-      "surfaceName": "비밀 메신저 대화 기록",
-      "surfaceDescription": "당사자 간 비밀 메신저 대화 기록이다. 대화 내용과 맥락 확인이 필요하다.",
+      "surfaceName": "대화 기록",
+      "surfaceDescription": "당사자 사이 대화 기록이다. 시점과 맥락 확인이 필요하다.",
       "description": "'싸우는 그림이 나와야 건물주가 돈을 움직인다'는 메시지가 포함된 비밀 메신저 대화. 침입 시각 직전 '이제 들어가면 된다' 확인까지 남아 있다.",
       "type": "chat",
       "reliability": "hard",
@@ -479,13 +583,39 @@
           "questionAngle": "김라은에게: \"상·하층 분쟁 자체가 공모인가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 김라은의 \"상·하층 분쟁 자체가 공모인가\" 쟁점과 관련된다. 김라은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "양쪽 기기에서 같은 대화방이 나온 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "출입 직전 확인 메시지가 남은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다툼처럼 보일 흐름을 미리 조율한 정황을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "보상요구서 문서 메타데이터와 포렌식 비교표",
-      "surfaceName": "보상요구서 메타데이터와 포렌식 비교표",
-      "surfaceDescription": "보상요구서 문서 메타데이터와 포렌식 비교 분석표다. 문서 작성 경위와 무결성 확인이 필요하다.",
+      "surfaceName": "문서 정보표와 비교 자료",
+      "surfaceDescription": "문서 속성과 비교 내용을 정리한 자료다. 작성 경위와 문서 간 연결성 확인이 필요하다.",
       "description": "'각자 따로 썼다'는 보상요구서 두 건이 같은 노트북, 같은 계정, 같은 템플릿에서 14분 간격으로 생성됐다는 포렌식 비교표다.",
       "type": "forensic_report",
       "reliability": "hard",
@@ -519,7 +649,33 @@
           "implication": "이 증거는 김라은의 \"상·하층 분쟁 자체가 공모인가\" 쟁점과 관련된다. 김라은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 두 문서와 비교표 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "생성 간격이 짧고 작성 환경이 같은 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "서로 다른 입장서라면 같은 기기와 틀을 쓴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

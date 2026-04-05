@@ -1,5 +1,5 @@
 {
-  "caseId": "case-work-08",
+  "caseId": "case-work-07",
   "meta": {
     "relationshipType": "boss_employee",
     "conflictSeed": "CS-5",
@@ -355,7 +355,33 @@
         }
       },
       "surfaceName": "익명 게시글 보존본과 미팅 메모",
-      "surfaceDescription": "익명 게시판 글의 보존본과 관련 팀 미팅에서 작성된 메모 문서"
+      "surfaceDescription": "익명 게시판 글의 보존본과 관련 팀 미팅에서 작성된 메모 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 메일 스레드와 링크 문서 흐름에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "감사 표시 전 해당 회신이 먼저 남은 경위를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "보류 처리와 정리 시점 논의가 이어진 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -382,7 +408,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "제출된 메신저 스크린샷 묶음",
-      "surfaceDescription": "사내 메신저 대화를 캡처한 스크린샷 이미지 여러 장의 묶음"
+      "surfaceDescription": "사내 메신저 대화를 캡처한 스크린샷 이미지 여러 장의 묶음",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 재발급 영수증과 수정 요청 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "감사 공지 직후 새벽에 품목 축소를 요청한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "원본에서 빠진 품목이 어떤 기준으로 제외됐는지 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -409,9 +461,35 @@
         "question_acquisition": "업무 메신저 보존자료 — 조사 범위 내 적법 활용 가능."
       },
       "subjectParty": "b",
-      "surfaceName": "메신저 원본 export와 해시 비교표",
-      "surfaceDescription": "메신저 대화 원본 내보내기 파일과 메시지 해시 비교 문서",
-      "requiredLieState": "S3"
+      "surfaceName": "대화 원본과 비교표",
+      "surfaceDescription": "대화 원본 파일과 비교 기록을 함께 정리한 문서",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 승인내역 PDF를 발췌 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 날 메모 열과 보류 코드가 빠진 경위를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "그 절삭본이 한쪽 책임처럼 읽히는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -448,7 +526,33 @@
         }
       },
       "surfaceName": "과거 프로젝트 회의록과 후속 메일",
-      "surfaceDescription": "이전 프로젝트 회의 기록과 그에 따른 후속 이메일 스레드"
+      "surfaceDescription": "이전 프로젝트 회의 기록과 그에 따른 후속 이메일 스레드",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 백업본과 시트 이력이 남게 된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "결제 직후부터 같은 계정 입력이 이어진 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "클로징 시점부터 이어진 관리 흔적을 어떻게 설명하시겠습니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -474,8 +578,34 @@
         "question_acquisition": "인사·조사 자료 — 분쟁 해결 목적 외 공개 제한."
       },
       "subjectParty": "a",
-      "surfaceName": "윤리 조사 접수 기록과 인사 개입 로그",
-      "surfaceDescription": "윤리경영 조사 접수 문서와 인사 시스템 개입이 기록된 로그"
+      "surfaceName": "조사 접수 기록과 역할 변경 로그",
+      "surfaceDescription": "접수 문서와 역할 조정 흔적이 남은 기록",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 대응 초안과 평가 코멘트 작성 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "면담 전에 부정 코멘트가 먼저 입력된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "사실 정리 전 같은 판단이 먼저 굳어진 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -514,9 +644,35 @@
           "implication": "이 증거는 한세린의 \"캡처의 증거인멸 지시 진위\" 쟁점과 관련된다. 한세린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "디지털 포렌식 메모와 PC 로그",
-      "surfaceDescription": "디지털 포렌식 분석 결과 메모와 편집 PC의 접근 이력 로그",
-      "requiredLieState": "S3"
+      "surfaceName": "분석 메모와 기기 로그",
+      "surfaceDescription": "분석 정리 문서와 작업 기기의 접근 기록",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 회수 로그와 메모 원본 확보 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "보류 표식 입력 시각이 공지 전인 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "동시대 기록이 남아 있는데 사후 정리라고 보는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

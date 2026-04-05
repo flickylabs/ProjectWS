@@ -1,0 +1,117 @@
+{
+  "caseId": "case-work-04",
+  "anchorTruth": "마감 실패는 민석의 18시 승인 약속 불이행과 지우의 회귀 테스트 미완료 상태 초록불 표시가 겹친 공동 책임이다.",
+  "contextDescription": "클라이언트 데모 전날 밤, 0시 배포가 목표다. 승인 메일은 늦고, 카피 수정이 뒤늦게 추가되고, 체크리스트는 서둘러 초록으로 바뀌었다. 누가 먼저 약속을 깼는지보다 누가 뭘 끝냈는지가 더 중요한 상황.",
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "스탠드업 회의록과 task board 약속 코멘트",
+      "description": "민석의 \"18시 전 승인 체크\" 코멘트(16:12 입력)가 담긴 스탠드업 회의록과 task board.",
+      "investigationResults": {
+        "request_original": "회의록 최종본과 초안, 보드 코멘트 원문을 함께 확인해야 한다.",
+        "check_metadata": "민석의 '18시 전 승인 체크' 코멘트 입력 시각: 16:12.",
+        "restore_context": "같은 회의록에 QA=지우, 최종 승인=민석으로 역할이 분리 기재돼 있다.",
+        "verify_source": "캘린더 회의록과 board 아카이브의 내용이 일치한다.",
+        "check_edits": "버전 이력 보존. 사후 편집 흔적 없음.",
+        "question_acquisition": "업무 문서. 분쟁 해결 용도 적법."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "QA 체크리스트 내역과 테스트 실행 로그",
+      "description": "지우가 체크리스트를 초록으로 바꾼 시점 vs 실제 회귀 테스트 미완료 상태를 보여주는 QA 로그.",
+      "investigationResults": {
+        "request_original": "캡처가 아닌 QA 도구 원본 실행 로그와 결과 파일을 확인해야 한다.",
+        "check_metadata": "스모크 테스트만 종료 상태에서 체크박스가 초록으로 바뀌었다. 회귀 테스트 미완료.",
+        "restore_context": "파일 교체 반복으로 지우가 배포 가능 확인만 하고 회귀 테스트를 뒤로 미뤘다.",
+        "verify_source": "QA 도구 로그와 CI 서버 기록의 실행 순서가 일치한다.",
+        "check_edits": "자동 생성 로그. 사후 수정 흔적 없음.",
+        "question_acquisition": "업무 테스트 기록. 적법성 높음."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "막판 카피 수정 메신저 캡처",
+      "description": "\"카피 변경까지 묶어 올리자, 내가 최종 확인할게\"라는 민석 메신저(21:06). 단, 앞줄에 '회귀는 네가 끝내줘'가 있다.",
+      "investigationResults": {
+        "request_original": "한 장 캡처가 아닌 스레드 전체와 앞선 문장을 함께 확인해야 한다.",
+        "check_metadata": "캡처 시각 21:06. 앞 대화가 잘려 민석의 약속 범위가 과장돼 보일 수 있다.",
+        "restore_context": "앞줄에 '회귀는 네가 끝내줘'가 있어 QA 전체를 민석이 맡은 것은 아니다.",
+        "verify_source": "메신저 내보내기 원본과 지우 캡처 시간이 일치한다.",
+        "check_edits": "문장 변조는 없으나 의도적 크롭으로 해석이 넓어질 수 있다.",
+        "question_acquisition": "업무 대화이나 읽음 표시·이모지 반응 포함. 제한적으로 다뤄야 한다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "클라이언트 승인 이메일 체인",
+      "description": "클라이언트 최종 회신 20:07 도착. 17:22 PM 리마인드 이후 2시간 45분 동안 팀 공유 없음.",
+      "investigationResults": {
+        "request_original": "요약이 아닌 회신 전체 체인과 내부 전달 메일을 함께 확인해야 한다.",
+        "check_metadata": "PM 리마인드 17:22 발송, 클라이언트 최종 회신 20:07 도착. 2시간 45분 공백.",
+        "restore_context": "회신이 늦더라도 민석이 중간 상태를 팀에 공유했어야 하는 의무가 드러난다.",
+        "verify_source": "메일 서버 아카이브와 개인 받은편지함 순서 일치.",
+        "check_edits": "원본 이메일. 사후 편집 흔적 없음.",
+        "question_acquisition": "업무 메일. 적법하게 확인 가능."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "배포 파이프라인 실패 로그와 DevOps 사고 메모",
+      "description": "20:31 누락 파일 경고+테스트 미완료 알림이 동시에 뜬 파이프라인 로그. 두 사람 모두 열람 기록 있음.",
+      "investigationResults": {
+        "request_original": "요약본이 아닌 파이프라인 raw log와 DevOps 운영자 메모 원문을 확인해야 한다.",
+        "check_metadata": "20:31 누락 파일 경고+테스트 미완료 알림 동시 발생. 민석·지우 모두 열람 기록 있음.",
+        "restore_context": "승인 지연+QA 미완료+파일 교체가 겹친 연쇄 실패 구조가 확인된다.",
+        "verify_source": "DevOps 콘솔과 정해민 사고 메모가 동일 오류 코드를 가리킨다.",
+        "check_edits": "서버 추출본. 사후 수정 흔적 없음.",
+        "question_acquisition": "운영 로그. 업무 조사 범위 내 적법 열람 가능."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "task board 버전 이력과 scope 변경기록",
+      "description": "19:48 scope freeze 해제 후 카피 수정 항목 추가. 담당자 재배정 없이 메신저로만 요청한 기록.",
+      "investigationResults": {
+        "request_original": "현재 보드가 아닌 버전 이력과 라벨 변경 로그를 함께 추출해야 한다.",
+        "check_metadata": "19:48 scope freeze 해제, 새 하위 작업 추가. QA 담당 재배정은 없었다.",
+        "restore_context": "민석은 메신저로만 카피 수정을 요청하고 보드 책임 구조는 갱신하지 않았다.",
+        "verify_source": "보드 감사 로그와 윤소정 PM 변경 알림 메일이 일치한다.",
+        "check_edits": "버전 이력 기반. 사후 수정 흔적 없음.",
+        "question_acquisition": "프로젝트 운영 기록. 적법."
+      }
+    }
+  ],
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "민석의 18시 승인 약속 불이행",
+      "truth": true,
+      "truthDescription": "민석은 16:12에 \"18시까지 승인 체크\"라고 보드에 적었지만, 클라이언트 회신은 20:07에야 도착했고 중간 공유는 없었다."
+    },
+    {
+      "id": "d-2",
+      "name": "지우의 QA 완료 과장 보고",
+      "truth": true,
+      "truthDescription": "지우는 스모크 테스트만 끝난 상태에서 체크리스트를 초록으로 바꾸고 \"QA 끝났다\"라고 보고했다. 회귀 테스트는 미완료."
+    },
+    {
+      "id": "d-3",
+      "name": "마감 실패의 공동 책임 여부",
+      "truth": false,
+      "truthDescription": "승인 지연+QA 과장 보고+쌍방 미보고가 겹쳤다. 한 사람만의 실수가 아닌 연쇄 실패 구조다."
+    },
+    {
+      "id": "d-4",
+      "name": "민석의 scope freeze 해제와 미갱신",
+      "truth": true,
+      "truthDescription": "민석은 19:48에 scope freeze를 풀고 카피 수정을 추가했지만 보드 담당자 재배정은 하지 않았다."
+    },
+    {
+      "id": "d-5",
+      "name": "20시대 경고 후 쌍방 미보고",
+      "truth": true,
+      "truthDescription": "20:31 누락 파일 경고와 테스트 미완료 알림을 둘 다 열람했지만, 각자 상대가 처리할 거라 보고 에스컬레이션을 미뤘다."
+    }
+  ]
+}

@@ -1,0 +1,2463 @@
+{
+  "caseId": "partnership-05",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "선급금 실행 체인",
+      "description": "이체 원본과 세무사 메일을 함께 대조해 누가 무엇을 알고 움직였는지 겨누는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "최현우 씨, 공동 전자승인 토큰 없이 본인 노트북으로 2,400만원을 집행한 사실 자체는 부인하지 않으시겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-05:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "정소라도 같은 제안 메일의 수신자였다는 점에 기대해 사후 승인을 예상하고 먼저 보낸 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-05:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "선급금 구조와 계정명 완화 문구가 박태성 메일에서 먼저 제시됐다면, 배후 설계자를 정소라로 단정한 진술을 유지할 수 있습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "partnership-05:a:d-3:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "정소라 씨, 본인도 공동 수신자로 제안 메일을 받았다면 현우의 이체를 처음부터 순수한 개인 유용이라고만 몰 수는 없지 않습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-05:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "등기 캡처보다 원본 제안 메일이 선행한다면, 선급금 구조의 시작점을 현우 개인 설계로 단정한 근거가 약해지는 것 아닙니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-05:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "세무사 추천과 집행 속도가 한 방향으로 정렬된 흔적을 봤다면, 현우만 의심하고 세무사의 이해관계 가능성은 놓친 것 아닙니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-05:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "캡처와 드래프트의 간극",
+      "description": "함정 캡처와 공동 메일 드래프트를 붙여 프레임 고착과 지식 은폐를 드러내는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "최현우 씨, 동문 캡처가 크롭된 soft 자료라는 점을 알고도 소라의 의심을 전부 악의로만 해석한 것은 아닙니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-05:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "소라의 드래프트가 남아 있었다 해도, 당신의 문서화 누락이 그 프레임의 빌미를 준 사실까지 부정하실 수 있습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-05:a:d-2:unlock:s3:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "계정명 완화 논의가 메일 스레드에 이미 보인다면, 조사대응 비용 축소 설명이 일방 행동이 아니었다는 점을 인정하시겠습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-05:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "정소라 씨, 전체 대화가 아니라 크롭된 동문 캡처 두 장만으로 개인 비자금 의혹을 공식석상에서 키운 것 아닙니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-05:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "이체 52분 전에 저장된 본인 드래프트는 제안 내용을 읽었다는 정황인데, 그 사실을 왜 숨기셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-05:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "메일 스레드에 '자료만 우선 정리하자'는 취지의 검토 흔적이 남아 있다면, 비용 성격 축소에 본인도 관여한 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "partnership-05:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "공지 문구와 소개수수료",
+      "description": "내부 공지 초안과 이해충돌 약정서를 묶어 공동 은폐와 외부 조언의 사익 구조를 겨누는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "최현우 씨, 노지훈 회의 메모에 따르면 팀에는 일반 관리비로만 공유하자고 두 대표가 함께 정했는데, 그 축소 문구를 운영총괄인 당신이 더 밀어 넣은 것 아닙니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-05:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "소개수수료 약정이 제안 메일 사흘 전 체결돼 있었다면, 세무사 중립성을 검증하지 않은 본인 책임도 인정하셔야 하지 않습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-05:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "직원 불안을 막는다는 이유로 실제 목적 범주를 가린 뒤에도 원복 문서를 남기지 않았다면, 그 통제 실패를 끝까지 부정하실 수 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-05:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "정소라 씨, 팀 공지 초안의 최종 문구를 당신도 확인했다면, '현우만 숨겼다'는 말은 더 유지하기 어렵지 않습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "partnership-05:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "세무사의 소개수수료 약정을 본 뒤에도 현우 개인 비자금 프레임을 그대로 고수할 수 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "partnership-05:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "재무책임자인 당신이 경고 신호를 놓쳤다는 두려움 때문에 피해자 서사를 더 세게 밀었던 것 아닙니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "partnership-05:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "partnership-05:a:d-1:unlock:s2:0",
+            "factText": "최현우가 공동 전자승인 없이 2,400만원을 먼저 집행한 사실",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "24,000,000원",
+                "neutral": "그 금액",
+                "rounded": "2,400만원"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 선급",
+                "neutral": "그 선급 처리"
+              },
+              "time": {
+                "exact": "세무조사 통지 이틀 뒤",
+                "neutral": "그 시점",
+                "period": "조사 직전"
+              },
+              "approval": {
+                "exact": "공동 전자승인 토큰 미사용",
+                "neutral": "승인 절차"
+              },
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 전문가",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-05:a:d-1:unlock:s3:0",
+            "factText": "최현우가 정소라도 공동 수신자라는 점에 기대 사후 추인을 예상한 사실",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "24,000,000원",
+                "neutral": "그 금액",
+                "rounded": "2,400만원"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 선급",
+                "neutral": "그 선급 처리"
+              },
+              "time": {
+                "exact": "세무조사 통지 이틀 뒤",
+                "neutral": "그 시점",
+                "period": "조사 직전"
+              },
+              "approval": {
+                "exact": "공동 전자승인 토큰 미사용",
+                "neutral": "승인 절차"
+              },
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 전문가",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-05:a:d-1:unlock:s4:0",
+            "factText": "통제 실패 대표로 보일까 두려워 숫자 설명 뒤에 숨은 감정",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "24,000,000원",
+                "neutral": "그 금액",
+                "rounded": "2,400만원"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 선급",
+                "neutral": "그 선급 처리"
+              },
+              "time": {
+                "exact": "세무조사 통지 이틀 뒤",
+                "neutral": "그 시점",
+                "period": "조사 직전"
+              },
+              "approval": {
+                "exact": "공동 전자승인 토큰 미사용",
+                "neutral": "승인 절차"
+              },
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 전문가",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-05:a:d-1:unlock:s5:0",
+            "factText": "승인 누락과 적요 완화를 자신의 판단 오류로 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "24,000,000원",
+                "neutral": "그 금액",
+                "rounded": "2,400만원"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 선급",
+                "neutral": "그 선급 처리"
+              },
+              "time": {
+                "exact": "세무조사 통지 이틀 뒤",
+                "neutral": "그 시점",
+                "period": "조사 직전"
+              },
+              "approval": {
+                "exact": "공동 전자승인 토큰 미사용",
+                "neutral": "승인 절차"
+              },
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 전문가",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "partnership-05:a:d-2:unlock:s2:0",
+            "factText": "정소라가 공동 메일을 읽고도 개인 유용 프레임을 고수했다는 정황",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "최현우",
+                "neutral": "그 사람",
+                "fullName": "최현우",
+                "judgeRef": "상대 공동대표"
+              },
+              "frame": {
+                "exact": "개인 비자금 의혹",
+                "neutral": "개인 유용 프레임"
+              },
+              "forum": {
+                "exact": "해지 협상 테이블과 임원 회의",
+                "neutral": "공식 논의 자리"
+              },
+              "evidence": {
+                "exact": "공동 받은 메일 스레드와 드래프트",
+                "neutral": "공동 수신 자료"
+              },
+              "trap": {
+                "exact": "동문 단체방 캡처",
+                "neutral": "그 캡처"
+              },
+              "context": {
+                "exact": "조사대응 선급금 제안",
+                "neutral": "그 제안 맥락"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-05:a:d-2:unlock:s3:0",
+            "factText": "최현우 본인도 문서화 누락으로 그 프레임의 빌미를 제공한 사실",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "최현우",
+                "neutral": "그 사람",
+                "fullName": "최현우",
+                "judgeRef": "상대 공동대표"
+              },
+              "frame": {
+                "exact": "개인 비자금 의혹",
+                "neutral": "개인 유용 프레임"
+              },
+              "forum": {
+                "exact": "해지 협상 테이블과 임원 회의",
+                "neutral": "공식 논의 자리"
+              },
+              "evidence": {
+                "exact": "공동 받은 메일 스레드와 드래프트",
+                "neutral": "공동 수신 자료"
+              },
+              "trap": {
+                "exact": "동문 단체방 캡처",
+                "neutral": "그 캡처"
+              },
+              "context": {
+                "exact": "조사대응 선급금 제안",
+                "neutral": "그 제안 맥락"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-05:a:d-2:unlock:s4:0",
+            "factText": "횡령자로 불린 억울함 때문에 해명보다 결백 입증에 집착한 감정",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "최현우",
+                "neutral": "그 사람",
+                "fullName": "최현우",
+                "judgeRef": "상대 공동대표"
+              },
+              "frame": {
+                "exact": "개인 비자금 의혹",
+                "neutral": "개인 유용 프레임"
+              },
+              "forum": {
+                "exact": "해지 협상 테이블과 임원 회의",
+                "neutral": "공식 논의 자리"
+              },
+              "evidence": {
+                "exact": "공동 받은 메일 스레드와 드래프트",
+                "neutral": "공동 수신 자료"
+              },
+              "trap": {
+                "exact": "동문 단체방 캡처",
+                "neutral": "그 캡처"
+              },
+              "context": {
+                "exact": "조사대응 선급금 제안",
+                "neutral": "그 제안 맥락"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-05:a:d-2:unlock:s5:0",
+            "factText": "소라의 프레임 고착과 자신의 절차 위반이 함께 신뢰를 깼다고 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "최현우",
+                "neutral": "그 사람",
+                "fullName": "최현우",
+                "judgeRef": "상대 공동대표"
+              },
+              "frame": {
+                "exact": "개인 비자금 의혹",
+                "neutral": "개인 유용 프레임"
+              },
+              "forum": {
+                "exact": "해지 협상 테이블과 임원 회의",
+                "neutral": "공식 논의 자리"
+              },
+              "evidence": {
+                "exact": "공동 받은 메일 스레드와 드래프트",
+                "neutral": "공동 수신 자료"
+              },
+              "trap": {
+                "exact": "동문 단체방 캡처",
+                "neutral": "그 캡처"
+              },
+              "context": {
+                "exact": "조사대응 선급금 제안",
+                "neutral": "그 제안 맥락"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "partnership-05:a:d-3:unlock:s2:0",
+            "factText": "선급금 구조의 구체 문구가 박태성 메일에서 먼저 나온 사실",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "structure": {
+                "exact": "선급금 구조",
+                "neutral": "그 구조"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "추천 자문사"
+              },
+              "evidence": {
+                "exact": "조사대응 제안 메일",
+                "neutral": "제안 메일"
+              },
+              "label": {
+                "exact": "일반 관리비 계정",
+                "neutral": "완화된 계정명"
+              },
+              "trap": {
+                "exact": "등기부 캡처와 동문 스크린샷",
+                "neutral": "그 캡처 자료"
+              },
+              "person2": {
+                "exact": "정소라",
+                "neutral": "상대 공동대표",
+                "fullName": "정소라",
+                "judgeRef": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-05:a:d-3:unlock:s3:0",
+            "factText": "최현우가 책임 분산을 위해 정소라를 공동 설계자처럼 말한 사실",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "structure": {
+                "exact": "선급금 구조",
+                "neutral": "그 구조"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "추천 자문사"
+              },
+              "evidence": {
+                "exact": "조사대응 제안 메일",
+                "neutral": "제안 메일"
+              },
+              "label": {
+                "exact": "일반 관리비 계정",
+                "neutral": "완화된 계정명"
+              },
+              "trap": {
+                "exact": "등기부 캡처와 동문 스크린샷",
+                "neutral": "그 캡처 자료"
+              },
+              "person2": {
+                "exact": "정소라",
+                "neutral": "상대 공동대표",
+                "fullName": "정소라",
+                "judgeRef": "상대"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-05:a:d-3:unlock:s4:0",
+            "factText": "체면을 지키려 배후 제안자를 소라로 오도한 감정 동기",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "structure": {
+                "exact": "선급금 구조",
+                "neutral": "그 구조"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "추천 자문사"
+              },
+              "evidence": {
+                "exact": "조사대응 제안 메일",
+                "neutral": "제안 메일"
+              },
+              "label": {
+                "exact": "일반 관리비 계정",
+                "neutral": "완화된 계정명"
+              },
+              "trap": {
+                "exact": "등기부 캡처와 동문 스크린샷",
+                "neutral": "그 캡처 자료"
+              },
+              "person2": {
+                "exact": "정소라",
+                "neutral": "상대 공동대표",
+                "fullName": "정소라",
+                "judgeRef": "상대"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-05:a:d-3:unlock:s5:0",
+            "factText": "최초 제안자는 박태성 세무사였음을 명시적으로 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "structure": {
+                "exact": "선급금 구조",
+                "neutral": "그 구조"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "추천 자문사"
+              },
+              "evidence": {
+                "exact": "조사대응 제안 메일",
+                "neutral": "제안 메일"
+              },
+              "label": {
+                "exact": "일반 관리비 계정",
+                "neutral": "완화된 계정명"
+              },
+              "trap": {
+                "exact": "등기부 캡처와 동문 스크린샷",
+                "neutral": "그 캡처 자료"
+              },
+              "person2": {
+                "exact": "정소라",
+                "neutral": "상대 공동대표",
+                "fullName": "정소라",
+                "judgeRef": "상대"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "partnership-05:a:d-4:unlock:s2:0",
+            "factText": "두 대표가 비용 목적을 일반 관리비처럼 보이게 축소한 정황",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "label": {
+                "exact": "서버 이전·관리비 선급",
+                "neutral": "완화된 비용 설명"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 비용",
+                "neutral": "실제 비용 목적"
+              },
+              "audience": {
+                "exact": "직원과 일부 거래처",
+                "neutral": "내부와 외부 문의처"
+              },
+              "document": {
+                "exact": "회의 메모와 팀 공지 초안",
+                "neutral": "내부 문서"
+              },
+              "motive": {
+                "exact": "팀 불안과 조사 노출 방지",
+                "neutral": "불안 방지 이유"
+              },
+              "person": {
+                "exact": "노지훈 재무대리",
+                "neutral": "실무자",
+                "fullName": "노지훈",
+                "judgeRef": "재무대리"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-05:a:d-4:unlock:s3:0",
+            "factText": "최현우가 운영 혼선 방지를 이유로 완화 문구를 밀어 넣은 사실",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "label": {
+                "exact": "서버 이전·관리비 선급",
+                "neutral": "완화된 비용 설명"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 비용",
+                "neutral": "실제 비용 목적"
+              },
+              "audience": {
+                "exact": "직원과 일부 거래처",
+                "neutral": "내부와 외부 문의처"
+              },
+              "document": {
+                "exact": "회의 메모와 팀 공지 초안",
+                "neutral": "내부 문서"
+              },
+              "motive": {
+                "exact": "팀 불안과 조사 노출 방지",
+                "neutral": "불안 방지 이유"
+              },
+              "person": {
+                "exact": "노지훈 재무대리",
+                "neutral": "실무자",
+                "fullName": "노지훈",
+                "judgeRef": "재무대리"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-05:a:d-4:unlock:s4:0",
+            "factText": "직원 불안을 막겠다는 명분 뒤에 공포가 숨어 있었다는 감정",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "label": {
+                "exact": "서버 이전·관리비 선급",
+                "neutral": "완화된 비용 설명"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 비용",
+                "neutral": "실제 비용 목적"
+              },
+              "audience": {
+                "exact": "직원과 일부 거래처",
+                "neutral": "내부와 외부 문의처"
+              },
+              "document": {
+                "exact": "회의 메모와 팀 공지 초안",
+                "neutral": "내부 문서"
+              },
+              "motive": {
+                "exact": "팀 불안과 조사 노출 방지",
+                "neutral": "불안 방지 이유"
+              },
+              "person": {
+                "exact": "노지훈 재무대리",
+                "neutral": "실무자",
+                "fullName": "노지훈",
+                "judgeRef": "재무대리"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-05:a:d-4:unlock:s5:0",
+            "factText": "조사대응 비용 성격을 의도적으로 가렸음을 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "label": {
+                "exact": "서버 이전·관리비 선급",
+                "neutral": "완화된 비용 설명"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 비용",
+                "neutral": "실제 비용 목적"
+              },
+              "audience": {
+                "exact": "직원과 일부 거래처",
+                "neutral": "내부와 외부 문의처"
+              },
+              "document": {
+                "exact": "회의 메모와 팀 공지 초안",
+                "neutral": "내부 문서"
+              },
+              "motive": {
+                "exact": "팀 불안과 조사 노출 방지",
+                "neutral": "불안 방지 이유"
+              },
+              "person": {
+                "exact": "노지훈 재무대리",
+                "neutral": "실무자",
+                "fullName": "노지훈",
+                "judgeRef": "재무대리"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "partnership-05:a:d-5:unlock:s2:0",
+            "factText": "추천 속도와 문서 흐름이 비정상적으로 정렬돼 있었다는 인식",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "contract": {
+                "exact": "소개수수료 약정",
+                "neutral": "그 수수료 약정"
+              },
+              "time": {
+                "exact": "제안 메일 발송 3일 전",
+                "neutral": "그 이전 시점",
+                "period": "제안 직전"
+              },
+              "document": {
+                "exact": "회계메모와 송장 초안",
+                "neutral": "보조 문서"
+              },
+              "duty": {
+                "exact": "이해충돌 고지",
+                "neutral": "고지 의무"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-05:a:d-5:unlock:s3:0",
+            "factText": "박태성의 비고지와 자신의 검증 누락이 겹쳤다는 책임 인식",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "contract": {
+                "exact": "소개수수료 약정",
+                "neutral": "그 수수료 약정"
+              },
+              "time": {
+                "exact": "제안 메일 발송 3일 전",
+                "neutral": "그 이전 시점",
+                "period": "제안 직전"
+              },
+              "document": {
+                "exact": "회계메모와 송장 초안",
+                "neutral": "보조 문서"
+              },
+              "duty": {
+                "exact": "이해충돌 고지",
+                "neutral": "고지 의무"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-05:a:d-5:unlock:s4:0",
+            "factText": "외부 전문가에게 이용됐다는 분노와 무능감",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "contract": {
+                "exact": "소개수수료 약정",
+                "neutral": "그 수수료 약정"
+              },
+              "time": {
+                "exact": "제안 메일 발송 3일 전",
+                "neutral": "그 이전 시점",
+                "period": "제안 직전"
+              },
+              "document": {
+                "exact": "회계메모와 송장 초안",
+                "neutral": "보조 문서"
+              },
+              "duty": {
+                "exact": "이해충돌 고지",
+                "neutral": "고지 의무"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-05:a:d-5:unlock:s5:0",
+            "factText": "소개수수료 약정이 있었고 자신이 검증을 게을리했다는 인정",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "contract": {
+                "exact": "소개수수료 약정",
+                "neutral": "그 수수료 약정"
+              },
+              "time": {
+                "exact": "제안 메일 발송 3일 전",
+                "neutral": "그 이전 시점",
+                "period": "제안 직전"
+              },
+              "document": {
+                "exact": "회계메모와 송장 초안",
+                "neutral": "보조 문서"
+              },
+              "duty": {
+                "exact": "이해충돌 고지",
+                "neutral": "고지 의무"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "partnership-05:b:d-1:unlock:s2:0",
+            "factText": "정소라가 조사대응 선급금 제안 메일을 읽고도 몰랐다고 말한 사실",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "24,000,000원",
+                "neutral": "그 금액",
+                "rounded": "2,400만원"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 선급",
+                "neutral": "그 선급 처리"
+              },
+              "time": {
+                "exact": "세무조사 통지 이틀 뒤",
+                "neutral": "그 시점",
+                "period": "조사 직전"
+              },
+              "approval": {
+                "exact": "공동 전자승인 토큰 미사용",
+                "neutral": "승인 절차"
+              },
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 전문가",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-05:b:d-1:unlock:s3:0",
+            "factText": "무단 이체 사실에 개인 비자금 해석을 덧씌운 선택",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "24,000,000원",
+                "neutral": "그 금액",
+                "rounded": "2,400만원"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 선급",
+                "neutral": "그 선급 처리"
+              },
+              "time": {
+                "exact": "세무조사 통지 이틀 뒤",
+                "neutral": "그 시점",
+                "period": "조사 직전"
+              },
+              "approval": {
+                "exact": "공동 전자승인 토큰 미사용",
+                "neutral": "승인 절차"
+              },
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 전문가",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-05:b:d-1:unlock:s4:0",
+            "factText": "또 속을까 두려워 횡령 프레임부터 떠올린 감정",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "24,000,000원",
+                "neutral": "그 금액",
+                "rounded": "2,400만원"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 선급",
+                "neutral": "그 선급 처리"
+              },
+              "time": {
+                "exact": "세무조사 통지 이틀 뒤",
+                "neutral": "그 시점",
+                "period": "조사 직전"
+              },
+              "approval": {
+                "exact": "공동 전자승인 토큰 미사용",
+                "neutral": "승인 절차"
+              },
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 전문가",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-05:b:d-1:unlock:s5:0",
+            "factText": "무단 선급 이체와 개인 유용 의혹을 동일시한 과장을 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "24,000,000원",
+                "neutral": "그 금액",
+                "rounded": "2,400만원"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 선급",
+                "neutral": "그 선급 처리"
+              },
+              "time": {
+                "exact": "세무조사 통지 이틀 뒤",
+                "neutral": "그 시점",
+                "period": "조사 직전"
+              },
+              "approval": {
+                "exact": "공동 전자승인 토큰 미사용",
+                "neutral": "승인 절차"
+              },
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 전문가",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "partnership-05:b:d-2:unlock:s2:0",
+            "factText": "정소라가 공동 메일과 드래프트 존재를 숨긴 채 프레임을 유지한 사실",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "최현우",
+                "neutral": "그 사람",
+                "fullName": "최현우",
+                "judgeRef": "상대 공동대표"
+              },
+              "frame": {
+                "exact": "개인 비자금 의혹",
+                "neutral": "개인 유용 프레임"
+              },
+              "forum": {
+                "exact": "해지 협상 테이블과 임원 회의",
+                "neutral": "공식 논의 자리"
+              },
+              "evidence": {
+                "exact": "공동 받은 메일 스레드와 드래프트",
+                "neutral": "공동 수신 자료"
+              },
+              "trap": {
+                "exact": "동문 단체방 캡처",
+                "neutral": "그 캡처"
+              },
+              "context": {
+                "exact": "조사대응 선급금 제안",
+                "neutral": "그 제안 맥락"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-05:b:d-2:unlock:s3:0",
+            "factText": "해지 협상과 임원 회의에서 의혹 표현을 의도적으로 강화한 사실",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "최현우",
+                "neutral": "그 사람",
+                "fullName": "최현우",
+                "judgeRef": "상대 공동대표"
+              },
+              "frame": {
+                "exact": "개인 비자금 의혹",
+                "neutral": "개인 유용 프레임"
+              },
+              "forum": {
+                "exact": "해지 협상 테이블과 임원 회의",
+                "neutral": "공식 논의 자리"
+              },
+              "evidence": {
+                "exact": "공동 받은 메일 스레드와 드래프트",
+                "neutral": "공동 수신 자료"
+              },
+              "trap": {
+                "exact": "동문 단체방 캡처",
+                "neutral": "그 캡처"
+              },
+              "context": {
+                "exact": "조사대응 선급금 제안",
+                "neutral": "그 제안 맥락"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-05:b:d-2:unlock:s4:0",
+            "factText": "재무책임자로서 경고 신호를 놓쳤다는 수치심 때문에 피해자 서사를 택한 감정",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "최현우",
+                "neutral": "그 사람",
+                "fullName": "최현우",
+                "judgeRef": "상대 공동대표"
+              },
+              "frame": {
+                "exact": "개인 비자금 의혹",
+                "neutral": "개인 유용 프레임"
+              },
+              "forum": {
+                "exact": "해지 협상 테이블과 임원 회의",
+                "neutral": "공식 논의 자리"
+              },
+              "evidence": {
+                "exact": "공동 받은 메일 스레드와 드래프트",
+                "neutral": "공동 수신 자료"
+              },
+              "trap": {
+                "exact": "동문 단체방 캡처",
+                "neutral": "그 캡처"
+              },
+              "context": {
+                "exact": "조사대응 선급금 제안",
+                "neutral": "그 제안 맥락"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-05:b:d-2:unlock:s5:0",
+            "factText": "보복과 자기보호 때문에 개인 유용 프레임을 고착했다는 인정",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "최현우",
+                "neutral": "그 사람",
+                "fullName": "최현우",
+                "judgeRef": "상대 공동대표"
+              },
+              "frame": {
+                "exact": "개인 비자금 의혹",
+                "neutral": "개인 유용 프레임"
+              },
+              "forum": {
+                "exact": "해지 협상 테이블과 임원 회의",
+                "neutral": "공식 논의 자리"
+              },
+              "evidence": {
+                "exact": "공동 받은 메일 스레드와 드래프트",
+                "neutral": "공동 수신 자료"
+              },
+              "trap": {
+                "exact": "동문 단체방 캡처",
+                "neutral": "그 캡처"
+              },
+              "context": {
+                "exact": "조사대응 선급금 제안",
+                "neutral": "그 제안 맥락"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "partnership-05:b:d-3:unlock:s2:0",
+            "factText": "박태성 메일이 선급금 구조의 출발점이었다는 재인식",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "structure": {
+                "exact": "선급금 구조",
+                "neutral": "그 구조"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "추천 자문사"
+              },
+              "evidence": {
+                "exact": "조사대응 제안 메일",
+                "neutral": "제안 메일"
+              },
+              "label": {
+                "exact": "일반 관리비 계정",
+                "neutral": "완화된 계정명"
+              },
+              "trap": {
+                "exact": "등기부 캡처와 동문 스크린샷",
+                "neutral": "그 캡처 자료"
+              },
+              "person2": {
+                "exact": "최현우",
+                "neutral": "상대 공동대표",
+                "fullName": "최현우",
+                "judgeRef": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-05:b:d-3:unlock:s3:0",
+            "factText": "동문 캡처와 불신을 근거로 현우를 설계자로 오판한 사실",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "structure": {
+                "exact": "선급금 구조",
+                "neutral": "그 구조"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "추천 자문사"
+              },
+              "evidence": {
+                "exact": "조사대응 제안 메일",
+                "neutral": "제안 메일"
+              },
+              "label": {
+                "exact": "일반 관리비 계정",
+                "neutral": "완화된 계정명"
+              },
+              "trap": {
+                "exact": "등기부 캡처와 동문 스크린샷",
+                "neutral": "그 캡처 자료"
+              },
+              "person2": {
+                "exact": "최현우",
+                "neutral": "상대 공동대표",
+                "fullName": "최현우",
+                "judgeRef": "상대"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-05:b:d-3:unlock:s4:0",
+            "factText": "외부 세무사보다 현우를 범인으로 세우는 편이 심리적으로 쉬웠던 감정",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "structure": {
+                "exact": "선급금 구조",
+                "neutral": "그 구조"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "추천 자문사"
+              },
+              "evidence": {
+                "exact": "조사대응 제안 메일",
+                "neutral": "제안 메일"
+              },
+              "label": {
+                "exact": "일반 관리비 계정",
+                "neutral": "완화된 계정명"
+              },
+              "trap": {
+                "exact": "등기부 캡처와 동문 스크린샷",
+                "neutral": "그 캡처 자료"
+              },
+              "person2": {
+                "exact": "최현우",
+                "neutral": "상대 공동대표",
+                "fullName": "최현우",
+                "judgeRef": "상대"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-05:b:d-3:unlock:s5:0",
+            "factText": "배후 제안자는 현우가 아니라 박태성 세무사였다는 인정",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "structure": {
+                "exact": "선급금 구조",
+                "neutral": "그 구조"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "추천 자문사"
+              },
+              "evidence": {
+                "exact": "조사대응 제안 메일",
+                "neutral": "제안 메일"
+              },
+              "label": {
+                "exact": "일반 관리비 계정",
+                "neutral": "완화된 계정명"
+              },
+              "trap": {
+                "exact": "등기부 캡처와 동문 스크린샷",
+                "neutral": "그 캡처 자료"
+              },
+              "person2": {
+                "exact": "최현우",
+                "neutral": "상대 공동대표",
+                "fullName": "최현우",
+                "judgeRef": "상대"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "partnership-05:b:d-4:unlock:s2:0",
+            "factText": "정소라가 완화된 비용 문구를 확인하고도 통과시킨 사실",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "label": {
+                "exact": "서버 이전·관리비 선급",
+                "neutral": "완화된 비용 설명"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 비용",
+                "neutral": "실제 비용 목적"
+              },
+              "audience": {
+                "exact": "직원과 일부 거래처",
+                "neutral": "내부와 외부 문의처"
+              },
+              "document": {
+                "exact": "회의 메모와 팀 공지 초안",
+                "neutral": "내부 문서"
+              },
+              "motive": {
+                "exact": "팀 불안과 조사 노출 방지",
+                "neutral": "불안 방지 이유"
+              },
+              "person": {
+                "exact": "노지훈 재무대리",
+                "neutral": "실무자",
+                "fullName": "노지훈",
+                "judgeRef": "재무대리"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-05:b:d-4:unlock:s3:0",
+            "factText": "은폐성 공지가 공동 판단이었다는 인식",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "label": {
+                "exact": "서버 이전·관리비 선급",
+                "neutral": "완화된 비용 설명"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 비용",
+                "neutral": "실제 비용 목적"
+              },
+              "audience": {
+                "exact": "직원과 일부 거래처",
+                "neutral": "내부와 외부 문의처"
+              },
+              "document": {
+                "exact": "회의 메모와 팀 공지 초안",
+                "neutral": "내부 문서"
+              },
+              "motive": {
+                "exact": "팀 불안과 조사 노출 방지",
+                "neutral": "불안 방지 이유"
+              },
+              "person": {
+                "exact": "노지훈 재무대리",
+                "neutral": "실무자",
+                "fullName": "노지훈",
+                "judgeRef": "재무대리"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-05:b:d-4:unlock:s4:0",
+            "factText": "재무총괄임에도 목적을 흐린 문구를 방치한 수치심",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "label": {
+                "exact": "서버 이전·관리비 선급",
+                "neutral": "완화된 비용 설명"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 비용",
+                "neutral": "실제 비용 목적"
+              },
+              "audience": {
+                "exact": "직원과 일부 거래처",
+                "neutral": "내부와 외부 문의처"
+              },
+              "document": {
+                "exact": "회의 메모와 팀 공지 초안",
+                "neutral": "내부 문서"
+              },
+              "motive": {
+                "exact": "팀 불안과 조사 노출 방지",
+                "neutral": "불안 방지 이유"
+              },
+              "person": {
+                "exact": "노지훈 재무대리",
+                "neutral": "실무자",
+                "fullName": "노지훈",
+                "judgeRef": "재무대리"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-05:b:d-4:unlock:s5:0",
+            "factText": "조사대응 비용을 일반 관리비처럼 축소 설명한 책임 인정",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "label": {
+                "exact": "서버 이전·관리비 선급",
+                "neutral": "완화된 비용 설명"
+              },
+              "purpose": {
+                "exact": "조사대응 자문 비용",
+                "neutral": "실제 비용 목적"
+              },
+              "audience": {
+                "exact": "직원과 일부 거래처",
+                "neutral": "내부와 외부 문의처"
+              },
+              "document": {
+                "exact": "회의 메모와 팀 공지 초안",
+                "neutral": "내부 문서"
+              },
+              "motive": {
+                "exact": "팀 불안과 조사 노출 방지",
+                "neutral": "불안 방지 이유"
+              },
+              "person": {
+                "exact": "노지훈 재무대리",
+                "neutral": "실무자",
+                "fullName": "노지훈",
+                "judgeRef": "재무대리"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "partnership-05:b:d-5:unlock:s2:0",
+            "factText": "세무사의 중립성보다 현우 의심에 먼저 매달렸다는 깨달음",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "contract": {
+                "exact": "소개수수료 약정",
+                "neutral": "그 수수료 약정"
+              },
+              "time": {
+                "exact": "제안 메일 발송 3일 전",
+                "neutral": "그 이전 시점",
+                "period": "제안 직전"
+              },
+              "document": {
+                "exact": "회계메모와 송장 초안",
+                "neutral": "보조 문서"
+              },
+              "duty": {
+                "exact": "이해충돌 고지",
+                "neutral": "고지 의무"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "partnership-05:b:d-5:unlock:s3:0",
+            "factText": "이해충돌 고지를 요구하지 않고 사람부터 의심한 자신의 과실",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "contract": {
+                "exact": "소개수수료 약정",
+                "neutral": "그 수수료 약정"
+              },
+              "time": {
+                "exact": "제안 메일 발송 3일 전",
+                "neutral": "그 이전 시점",
+                "period": "제안 직전"
+              },
+              "document": {
+                "exact": "회계메모와 송장 초안",
+                "neutral": "보조 문서"
+              },
+              "duty": {
+                "exact": "이해충돌 고지",
+                "neutral": "고지 의무"
+              }
+            },
+            "stanceHints": [
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "partnership-05:b:d-5:unlock:s4:0",
+            "factText": "잘못된 대상에게 프레임을 씌웠다는 수치심과 미안함",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "contract": {
+                "exact": "소개수수료 약정",
+                "neutral": "그 수수료 약정"
+              },
+              "time": {
+                "exact": "제안 메일 발송 3일 전",
+                "neutral": "그 이전 시점",
+                "period": "제안 직전"
+              },
+              "document": {
+                "exact": "회계메모와 송장 초안",
+                "neutral": "보조 문서"
+              },
+              "duty": {
+                "exact": "이해충돌 고지",
+                "neutral": "고지 의무"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "partnership-05:b:d-5:unlock:s5:0",
+            "factText": "소개수수료 약정과 자신의 검증 실패를 함께 인정한 사실",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박태성 세무사",
+                "neutral": "외부 세무사",
+                "fullName": "박태성",
+                "judgeRef": "세무사"
+              },
+              "institution": {
+                "exact": "세움조세자문",
+                "neutral": "제휴 자문사"
+              },
+              "contract": {
+                "exact": "소개수수료 약정",
+                "neutral": "그 수수료 약정"
+              },
+              "time": {
+                "exact": "제안 메일 발송 3일 전",
+                "neutral": "그 이전 시점",
+                "period": "제안 직전"
+              },
+              "document": {
+                "exact": "회계메모와 송장 초안",
+                "neutral": "보조 문서"
+              },
+              "duty": {
+                "exact": "이해충돌 고지",
+                "neutral": "고지 의무"
+              }
+            },
+            "stanceHints": [
+              "confession"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "partnership-05:contradiction:0",
+        "targetParty": "a",
+        "trigger": "최현우가 단독 집행이나 승인 누락을 부인한 뒤 e-1이 제시될 때",
+        "text": "은행 원본과 ERP 전표에는 공동 전자승인 토큰이 빠진 채 최현우 단말에서 2,400만원이 집행된 흔적이 남습니다. '독단이 아니었다'는 말과 기록이 충돌합니다.",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "partnership-05:contradiction:1",
+        "targetParty": "b",
+        "trigger": "정소라가 제안 메일을 몰랐다고 주장한 뒤 e-4가 제시될 때",
+        "text": "공동 수신 메일 스레드와 드래프트 자동저장 기록에는 정소라가 선급금과 계정명 변경안을 읽고 검토한 정황이 남습니다. '처음 들었다'는 진술이 스스로 무너집니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      },
+      {
+        "id": "partnership-05:contradiction:2",
+        "targetParty": "a",
+        "trigger": "두 당사자 중 한쪽이 상대를 선급금 구조의 배후 설계자로 단정한 뒤 e-2와 e-6이 함께 맞춰질 때",
+        "text": "제안 메일의 문구와 소개수수료 약정 시점은 구조의 출발점이 공동대표가 아니라 박태성 세무사였음을 가리킵니다. 서로를 배후 설계자로 지목하는 말은 같은 외부 제안을 놓친 오인일 가능성이 큽니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-6"
+        ]
+      },
+      {
+        "id": "partnership-05:contradiction:3",
+        "targetParty": "b",
+        "trigger": "정소라가 비용 성격 축소를 현우 단독 판단으로 돌린 뒤 e-5가 제시될 때",
+        "text": "회의 메모와 팀 공지 초안에는 두 대표가 함께 일반 관리비성 문구를 확인한 흔적이 있습니다. '나는 몰랐다'는 말은 내부 문서와 맞지 않습니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "partnership-05:interjection:0",
+        "speaker": "a",
+        "trigger": "정소라가 '개인 비자금' 표현을 세 번 이상 반복할 때",
+        "text": "그 표현부터 정리합시다. 비자금이면 귀속 흔적이 있어야지, 지금 남아 있는 건 조사대응 선급 흐름 아닙니까.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "partnership-05:interjection:1",
+        "speaker": "b",
+        "trigger": "최현우가 전표 번호와 계정명만 길게 나열하며 감정 질문을 피할 때",
+        "text": "또 숫자부터요? 제가 왜 그걸 횡령처럼 느꼈는지는 끝까지 빼고 전표만 말씀하시겠다는 거죠.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "partnership-05:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 d-3에서 서로만 배후 설계자로 지목하며 세무사 역할을 누락할 때",
+        "text": "두 분 다 상대만 범인으로 말하고 있습니다. 그러나 지금 증거는 외부 세무사의 제안과 이해관계부터 확인하라고 요구합니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "partnership-05:outburst:a:0",
+        "party": "a",
+        "trigger": "최현우가 e-1 제시 뒤에도 횡령자 취급을 받는다고 느낄 때",
+        "text": "무단 이체 책임은 제가 집니다. 그런데 그걸 바로 사적 횡령으로 부르면, 제가 밤새 장부 막아 보려던 이유까지 다 지워집니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "partnership-05:outburst:a:1",
+        "party": "a",
+        "trigger": "e-6 제시로 세무사 이해충돌이 드러난 뒤 최현우가 자기 통제 실패를 자각할 때",
+        "text": "결국 저는 전문가 말 뒤에 숨은 셈이네요. 그 관계 하나 확인 못 하고 회사 돈부터 움직인 게 더 부끄럽습니다.",
+        "relatedDisputes": [
+          "d-5",
+          "d-1"
+        ]
+      },
+      {
+        "id": "partnership-05:outburst:b:0",
+        "party": "b",
+        "trigger": "정소라가 e-4 제시로 자신도 메일을 읽은 사실이 드러날 때",
+        "text": "네, 봤어요. 그런데 또 제가 경고 신호를 놓친 사람처럼 남을까 봐 너무 무서웠습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "partnership-05:outburst:b:1",
+        "party": "b",
+        "trigger": "e-6 제시 뒤에도 개인 비자금 프레임을 유지하기 어렵다는 걸 정소라가 깨달을 때",
+        "text": "제가 잘못 의심한 건 알아요. 하지만 그날은 누군가를 바로 지목하지 않으면 제가 또 바보가 되는 것 같았어요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "partnership-05:transition:a:d-1:s0_s1",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "audit_retainer_transfer_question",
+      "line": "개인 용도냐 아니냐보다 먼저 보셔야 할 게 있습니다. 그건 조사 대응 선급금이었고, 승인 흔적은 뒤늦게 정리될 거라 봤습니다.",
+      "behaviorHint": "서류 순서를 다시 맞추며 질문의 전제를 수정하려 든다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-1:s1_s2",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "네, e-1이면 제 쪽 실행 흔적은 숨길 수 없겠네요. 제가 먼저 보냈습니다.",
+      "behaviorHint": "전표를 한 번 보고 짧게 고개를 끄덕인다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-1:s2_s3",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "joint_approval_followup",
+      "line": "승인 누락 책임은 제 몫입니다. 다만 소라도 같은 제안 메일을 받았고 사후 추인을 기대한 건 사실입니다.",
+      "behaviorHint": "인정과 해명을 한 문장 안에 묶어 말한다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-1:s3_s5",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_or_responsibility_question",
+      "line": "메일까지 보면 더 미룰 수 없죠. 승인 없는 선집행과 적요 완화 모두 제 판단이었습니다.",
+      "behaviorHint": "어깨를 내리고 더는 숫자 뒤로 숨지 않는다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-3:s0_s1",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "who_started_structure_question",
+      "line": "제가 먼저 설계했다고 단정하긴 어렵습니다. 당시엔 소라도 그 방향을 사실상 막지 않는다고 읽었습니다.",
+      "behaviorHint": "상대 이름을 조심스럽게 끼워 넣으며 단정 수위를 낮춘다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-3:s1_s2",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "캡처만으론 부족하지만, 지금 보니 구체 문구는 세무사 쪽에서 왔네요.",
+      "behaviorHint": "문구의 출처를 인정하면서도 시선을 오래 맞추지 못한다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-3:s2_s4",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_tax_accountant_advice",
+      "line": "판단 없이 묻는다면 말하겠습니다. 저는 박태성 말을 너무 쉽게 믿었고, 그 체면을 지키려 소라를 더 앞에 세웠습니다.",
+      "behaviorHint": "말속도가 느려지고 체면이라는 단어에서 잠시 멈춘다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-3:s4_s5",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-2_or_e-6_presented",
+      "line": "메일과 약정서까지 이어지면 결론은 분명합니다. 시작은 소라가 아니라 박태성이었습니다.",
+      "behaviorHint": "이름을 또렷하게 말하며 오인을 거둔다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-4:s0_s1",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "internal_notice_question",
+      "line": "은폐보다는 임시 표현 정리에 가까웠습니다. 직원 불안을 먼저 막아야 했으니까요.",
+      "behaviorHint": "단어 선택을 바로잡으려는 듯 차갑게 말한다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-4:s1_s2",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "메모가 남아 있다면 표현 축소 자체는 인정하겠습니다. 우리 둘 다 그 문구를 통과시켰습니다.",
+      "behaviorHint": "부정을 접고 인정 범위를 좁혀 잡는다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-4:s2_s3",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "expense_label_followup",
+      "line": "네, 제가 '일반 관리비' 쪽으로 더 말끔하게 정리한 건 맞습니다. 다만 단독 판단은 아니었습니다.",
+      "behaviorHint": "손끝으로 공지 문구를 짚으며 책임을 절반쯤 나눈다."
+    },
+    {
+      "id": "partnership-05:transition:a:d-4:s3_s5",
+      "caseId": "partnership-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 조사대응 비용 성격을 가린 건 사실입니다. 제 몫의 은폐 책임을 인정하겠습니다.",
+      "behaviorHint": "한숨 뒤에 문장을 짧게 끝낸다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-2:s0_s1",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "personal_slush_fund_claim_question",
+      "line": "그렇게 보일 만한 자료가 겹쳤습니다. 저는 위험 신호를 말한 거지 프레임을 꾸민 게 아닙니다.",
+      "behaviorHint": "손가락으로 의심 근거를 하나씩 세며 방어한다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-2:s1_s2",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "캡처만으론 부족하다는 건 압니다. 그래도 저는 그때 현우를 믿지 못했고, 제안 메일을 봤다는 사실도 숨겼습니다.",
+      "behaviorHint": "캡처를 내려다보다가 마지막 문장에서 목소리가 꺼진다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-2:s2_s3",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "did_you_read_tax_mail_question",
+      "line": "네, 읽었습니다. 그래서 더 부끄러워서 그 사실을 빼고 의혹을 더 세게 밀었습니다.",
+      "behaviorHint": "짧게 눈을 감았다가 다시 뜬다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-2:s3_s5",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_or_e-5_presented",
+      "line": "드래프트와 회의 메모까지 나오면 끝이네요. 제가 개인 비자금 프레임을 고착한 건 사실입니다.",
+      "behaviorHint": "더는 되묻지 못하고 정면을 피한다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-3:s0_s1",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "who_designed_transfer_question",
+      "line": "제 눈엔 현우가 자기 식으로 짠 구조처럼 보였습니다. 너무 빨리 집행했으니까요.",
+      "behaviorHint": "단정하듯 말하지만 끝으로 갈수록 힘이 빠진다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-3:s1_s2",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "캡처만으로 배후를 단정한 건 과했네요. 그래도 그때는 현우 쪽으로 마음이 기울어 있었습니다.",
+      "behaviorHint": "증거보다 심리를 먼저 인정하며 시선을 피한다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-3:s2_s4",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_being_misled",
+      "line": "비난 없이 묻는다면 말하겠습니다. 저는 또 속은 사람이 되고 싶지 않아서, 세무사보다 현우를 범인으로 보는 쪽을 택했습니다.",
+      "behaviorHint": "목이 잠기고 마지막 문장을 낮게 내뱉는다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-3:s4_s5",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-2_or_e-6_presented",
+      "line": "메일과 수수료 약정이 나오면 인정할 수밖에 없죠. 출발점은 박태성이었고 제가 현우를 잘못 지목했습니다.",
+      "behaviorHint": "증거를 본 뒤 한 박자 늦게 말을 잇는다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-4:s0_s1",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "team_notice_question",
+      "line": "그때는 직원 불안부터 막아야 했습니다. 저는 임시 표현이라고 생각했습니다.",
+      "behaviorHint": "감정 호소를 섞어 문장의 날을 무디게 한다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-4:s1_s2",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "메모와 초안이 있으면 저도 문구를 확인한 건 인정합니다. 목적을 축소한 설명이었다는 것도요.",
+      "behaviorHint": "짧게 고개를 숙인 뒤 사실만 받아들인다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-4:s2_s3",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_hide_audit_cost_followup",
+      "line": "재무책임자인 제가 그 문구를 통과시킨 건 맞습니다. 들키면 제 판단 실패까지 드러날까 봐 부인으로 버텼습니다.",
+      "behaviorHint": "손끝을 모으며 수치심을 눌러 말한다."
+    },
+    {
+      "id": "partnership-05:transition:b:d-4:s3_s5",
+      "caseId": "partnership-05",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 우리 둘 다 조사대응 비용을 일반 관리비처럼 흐렸습니다. 제 책임도 피하지 않겠습니다.",
+      "behaviorHint": "말끝이 짧아지고 고개가 아래로 떨어진다."
+    }
+  ]
+}

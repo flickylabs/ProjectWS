@@ -1,0 +1,1771 @@
+{
+  "caseId": "friend-03",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "표면 기록 교차검증",
+      "description": "함정 캡처(e-1)와 공개 댓글·스토리 기록(e-2)을 같이 흔들어 초반 서사 충돌을 드러내는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "강나래 씨, 이 DM 이미지는 왜 단일 원본처럼 보이게 정리했습니까. 보기 쉽게 만든 것과 원문처럼 보이게 만든 것은 다르지 않습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.a.unlock.s2.one_frame_edit",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "오지후 씨 댓글이 먼저였다고 해도, 같은 협업 게시물 맥락만으로 저격성을 입증하려면 무엇이 강나래 씨를 특정하게 만들었는지 정확히 설명해 보시죠.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.a.unlock.s2.post_targeting",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "운영자와 문소희 씨에게 이 이미지를 넘긴 순간도 여전히 '확인 요청'이었다고 보십니까. 아니면 그때부터는 비공개 원칙을 스스로 굽힌 겁니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.a.unlock.s2.private_rule_bent",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "오지후 씨, 같은 협업 게시물 아래 '협찬 물건도 자기 서사로 바꿔 판다'는 취지의 문장을 올리면 누구를 떠올리게 되는지 정말 몰랐습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.b.unlock.s2.same_post_specificity",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "삭제하기 전까지 스토리를 유지한 이유가 경고라면, 왜 공개 댓글·스토리라는 가장 눈에 띄는 방식부터 택했습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.b.unlock.s2.public_hint_first",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "나래 씨 캡처가 이상하다고 느꼈다면, 왜 초반부터 원본 대조를 전면에 세우기보다 의도 설명으로만 버텼습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.b.unlock.s2.export_first",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "하드로그 압박 카드",
+      "description": "편집앱 프로젝트(e-3)와 협업사 물류 로그(e-4)로 말뿐인 해명과 실제 기록을 강하게 갈라내는 카드.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "편집앱 프로젝트에 서로 다른 날짜 소스와 레이어 이동 흔적이 남아 있는데도, 아직 '정리'라는 표현만으로 충분하다고 보십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.a.unlock.s3.cross_date_composite",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "시간 표시와 프로필 영역까지 손댄 건 단순 연결이 아니라 원본성 판단을 흔드는 선택 아닙니까. 그 선을 언제 넘었다고 자각했습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d2.a.unlock.s3.metadata_touch",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "협업사 로그가 실제 반납 완료를 보여 주는데도, 강나래 씨는 왜 절차 확인보다 먼저 더 설득력 있어 보이는 자료를 붙여야 한다고 느꼈습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.a.unlock.s4.need_stronger_proof",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "물류 확인서가 이미 반납 완료를 보이는데도, 왜 협찬품 유용 의혹을 공개 댓글로 먼저 던졌습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.b.unlock.s2.question_before_check",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "같은 게시물이라는 맥락을 알면서도, 실명만 없으면 특정성이 사라진다고 본 근거가 실제로 있었습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.b.unlock.s3.intent_vs_effect",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "협업사 로그보다 팔로워 반응과 화면상 인상을 먼저 믿은 이유는 사실 확인보다 책임 배분이 급했기 때문 아닙니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.b.unlock.s3.audience_reaction_bias",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "전달 사슬과 원본 대조",
+      "description": "신고·전달 기록(e-5)과 플랫폼 원본 DM 대조(e-6)를 묶어 유포 경로와 원문성 붕괴를 동시에 압박하는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "플랫폼 원본 export에 없는 문장 배열을 왜 '실질적 원문'처럼 단정해서 보냈습니까. 그 선택은 체면을 지키기 위한 것이었습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.a.unlock.s4.face_saving_need",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "운영자 신고 DM에서 '확인 부탁' 다음에 곧바로 오지후 씨라고 특정한 이유는 무엇입니까. 확인보다 유통 효과를 먼저 노린 것 아닙니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d2.a.unlock.s5.redistribution_admission",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "작년 비공개 약속을 기억하면서도 위조 캡처를 더 설득력 있는 자료로 밀어 넣은 건, 결국 되갚고 싶다는 마음이 있었기 때문입니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.a.unlock.s5.bigger_break_with_fake",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "원본 export가 문제 문장 전체를 부정해 주더라도, 그 사실이 초반 공개 댓글 책임까지 줄여 준다고 보십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.b.unlock.s5.composite_and_context",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "관계를 지키고 싶었다면 왜 팔로워가 먼저 보는 댓글과 스토리로 말을 꺼냈습니까. 관계 유지라는 설명이 책임 축소용은 아니었습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.b.unlock.s4.keep_relationship_mask",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "나래 씨 유용이 사실이 아니라는 하드 로그가 나온 뒤에도, 본인 공개 암시를 명확히 철회할 준비가 되어 있습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.b.unlock.s5.no_misuse_admission",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.a.unlock.s2.post_targeting",
+            "factText": "댓글과 스토리가 같은 협업 게시물에 붙어 있어 팔로워가 강나래를 특정하기 쉬웠다는 사실",
+            "tags": [
+              "context",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "피해 당사자"
+              },
+              "counterparty": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "상대방"
+              },
+              "channel": {
+                "exact": "같은 협업 게시물 댓글·스토리",
+                "neutral": "그 게시물"
+              }
+            },
+            "stanceHints": [
+              "contextualize",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.a.unlock.s3.counter_overheat",
+            "factText": "강나래도 그 선공 뒤에 맞대응 수위를 스스로 키우기 시작했다는 사실",
+            "tags": [
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "본인"
+              },
+              "time": {
+                "period": "공개 댓글 이후",
+                "neutral": "그 뒤"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit_minor"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.a.unlock.s4.reputation_panic",
+            "factText": "강나래가 협업사 앞 평판 추락 공포 때문에 절차보다 방어를 우선했다는 심리",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "institution": {
+                "fullName": "협업사",
+                "judgeRef": "협업사",
+                "neutral": "외부 파트너"
+              },
+              "person": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "hurt",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.a.unlock.s5.trigger_not_excuse",
+            "factText": "오지후의 선공성 비방이 위조 재게시의 계기였지만 면책 사유는 아니라는 인정",
+            "tags": [
+              "relationship",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "counterparty": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "상대방"
+              },
+              "artifact": {
+                "exact": "위조 재게시",
+                "neutral": "그 후속 대응"
+              }
+            },
+            "stanceHints": [
+              "balanced",
+              "accept_minor"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.a.unlock.s2.one_frame_edit",
+            "factText": "강나래가 여러 화면을 한 장처럼 이어 붙였다는 부분 인정",
+            "tags": [
+              "act",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "artifact": {
+                "exact": "문제 DM 캡처",
+                "neutral": "그 이미지"
+              },
+              "person": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "justify"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.a.unlock.s3.metadata_touch",
+            "factText": "시간 표시와 프로필 영역까지 손봐 원본성 판단을 흐렸다는 사실",
+            "tags": [
+              "evidence",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "artifact": {
+                "exact": "시간 표시·프로필 레이어",
+                "neutral": "화면 요소"
+              },
+              "evidence": {
+                "exact": "e-3",
+                "neutral": "편집앱 프로젝트"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.a.unlock.s4.need_stronger_proof",
+            "factText": "믿게 만들기 위해 더 확실해 보이는 형태를 의도했다는 심리",
+            "tags": [
+              "motive",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "artifact": {
+                "exact": "편집 캡처",
+                "neutral": "그 자료"
+              },
+              "person": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admit"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.a.unlock.s5.redistribution_admission",
+            "factText": "편집 캡처를 신고·전달 경로에 재게시한 책임을 전면 인정",
+            "tags": [
+              "admission",
+              "responsibility",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "route": {
+                "exact": "운영자 신고 DM·문소희 전달",
+                "neutral": "신고와 전달"
+              },
+              "thirdParty": {
+                "fullName": "문소희",
+                "judgeRef": "문씨",
+                "neutral": "공통 친구"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "accept"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.a.unlock.s2.not_single_original",
+            "factText": "문제 캡처가 단일 원본 한 장이 아니라는 부분 인정",
+            "tags": [
+              "admission",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "artifact": {
+                "exact": "문제 DM 캡처",
+                "neutral": "그 캡처"
+              },
+              "source": {
+                "exact": "원본 DM 단일 대화",
+                "neutral": "원본 한 장"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "justify"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.a.unlock.s3.cross_date_composite",
+            "factText": "서로 다른 날짜의 대화 조각과 새 레이어를 합친 구성이라는 사실",
+            "tags": [
+              "evidence",
+              "timeline",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "period": "서로 다른 날짜",
+                "neutral": "다른 시기"
+              },
+              "evidence": {
+                "exact": "e-3 / e-6",
+                "neutral": "프로젝트와 대조 리포트"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.a.unlock.s4.face_saving_need",
+            "factText": "원문이 아니란 걸 알면서도 체면과 설득을 위해 원문처럼 보이게 만들었다는 심리",
+            "tags": [
+              "motive",
+              "shame",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "본인"
+              },
+              "artifact": {
+                "exact": "원문처럼 보이는 합성 이미지",
+                "neutral": "그 이미지"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admit"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.a.unlock.s5.full_fabrication",
+            "factText": "플랫폼 원문에 없는 문장 배열을 합성 이미지로 꾸몄다는 전면 시인",
+            "tags": [
+              "admission",
+              "responsibility",
+              "evidence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "source": {
+                "exact": "플랫폼 원본 DM export",
+                "neutral": "원본"
+              },
+              "artifact": {
+                "exact": "합성 이미지",
+                "neutral": "편집본"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "accept"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.a.unlock.s2.display_delay_only",
+            "factText": "재고 이상처럼 보인 흔적이 공개 표기 반영 지연일 뿐이었다는 설명",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "institution": {
+                "fullName": "협업사 물류 백오피스",
+                "judgeRef": "협업사",
+                "neutral": "물류 시스템"
+              },
+              "time": {
+                "period": "공개 표기 반영 지연",
+                "neutral": "반영 지연"
+              }
+            },
+            "stanceHints": [
+              "contextualize",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.a.unlock.s3.log_not_shown_fast",
+            "factText": "강나래가 물류 로그를 곧바로 꺼내지 못해 의심이 커진 부분 인정",
+            "tags": [
+              "responsibility",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "evidence": {
+                "exact": "e-4",
+                "neutral": "물류 확인서"
+              },
+              "person": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "contextualize",
+              "admit_minor"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.a.unlock.s4.character_harm",
+            "factText": "유용 의혹이 금전 문제보다 인성 낙인으로 느껴졌다는 감정",
+            "tags": [
+              "emotion",
+              "harm",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "artifact": {
+                "exact": "협찬품 유용 의혹",
+                "neutral": "그 의혹"
+              },
+              "person": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "hurt",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.a.unlock.s5.no_diversion_fact",
+            "factText": "협찬품 개인 판매·보관 전환은 없었다는 최종 정리",
+            "tags": [
+              "act",
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "artifact": {
+                "exact": "협찬품",
+                "neutral": "그 물건"
+              },
+              "institution": {
+                "fullName": "협업사",
+                "judgeRef": "협업사",
+                "neutral": "기관"
+              }
+            },
+            "stanceHints": [
+              "balanced",
+              "accept_minor"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.a.unlock.s2.private_rule_bent",
+            "factText": "강나래가 운영자·친구 전달은 방어라며 비공개 원칙과 별개로 취급했다는 자기구분",
+            "tags": [
+              "rule",
+              "self_justification",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "협업 갈등 비공개 원칙",
+                "neutral": "그 약속"
+              },
+              "channels": {
+                "exact": "운영자 신고·문소희 전달",
+                "neutral": "제한 전달"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.a.unlock.s3.revenge_mixed",
+            "factText": "확인 요청 속에 되갚아 주고 싶은 복수심이 섞여 있었다는 부분 인정",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "본인"
+              },
+              "counterparty": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.a.unlock.s4.stronger_material_choice",
+            "factText": "비공개 원칙을 알면서도 일부러 더 설득력 있는 자료를 택했다는 심리",
+            "tags": [
+              "rule",
+              "motive",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "artifact": {
+                "exact": "위조 캡처",
+                "neutral": "더 강한 자료"
+              },
+              "rule": {
+                "exact": "비공개 원칙",
+                "neutral": "그 약속"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admit"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.a.unlock.s5.bigger_break_with_fake",
+            "factText": "쌍방 위반이지만 자신이 위조 자료까지 써 더 크게 약속을 깼다는 인정",
+            "tags": [
+              "admission",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "협업 갈등 비공개 원칙",
+                "neutral": "그 약속"
+              },
+              "artifact": {
+                "exact": "위조 자료",
+                "neutral": "그 자료"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "accept"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.b.unlock.s2.same_post_specificity",
+            "factText": "오지후가 같은 협업 게시물에 글을 남겨 특정 가능성을 스스로 높였다는 사실",
+            "tags": [
+              "identity",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "본인"
+              },
+              "channel": {
+                "exact": "같은 협업 게시물 댓글·스토리",
+                "neutral": "그 게시물"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "justify"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.b.unlock.s3.intent_vs_effect",
+            "factText": "오지후가 경고 의도만 강조하며 비방 효과를 축소했다는 자기합리화",
+            "tags": [
+              "motive",
+              "self_justification",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "경고였어",
+                "neutral": "그 의도 설명"
+              },
+              "person": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.b.unlock.s4.public_first_step",
+            "factText": "오지후가 공개로 먼저 문을 연 책임을 감정적으로 인식하기 시작한 상태",
+            "tags": [
+              "emotion",
+              "responsibility"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "channels": {
+                "exact": "댓글·스토리",
+                "neutral": "공개 글"
+              },
+              "person": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admit"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.b.unlock.s5.full_defamation_admission",
+            "factText": "오지후가 특정 가능 비방과 공개 저격 책임을 전면 인정한 상태",
+            "tags": [
+              "admission",
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "counterparty": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "상대방"
+              },
+              "channel": {
+                "exact": "같은 협업 게시물 댓글·스토리",
+                "neutral": "그 게시물"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "accept"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.b.unlock.s2.fragment_not_sequence",
+            "factText": "오지후 발화 조각 일부는 실재하지만 제출된 이미지의 연속성은 허위라는 구분",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "artifact": {
+                "exact": "문제 DM 캡처",
+                "neutral": "그 이미지"
+              },
+              "source": {
+                "exact": "실제 DM 조각",
+                "neutral": "실제 발화 일부"
+              }
+            },
+            "stanceHints": [
+              "contextualize",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.b.unlock.s3.before_explanation_label",
+            "factText": "캡처가 퍼진 뒤 오지후가 진위 설명 전에 가해자로 낙인찍혔다는 사실",
+            "tags": [
+              "harm",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "artifact": {
+                "exact": "편집 캡처 유포",
+                "neutral": "그 유포"
+              },
+              "person": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "contextualize",
+              "admit_minor"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.b.unlock.s4.breath_taken",
+            "factText": "오지후가 없는 원문을 해명해야 하는 모욕감 때문에 감정이 크게 흔들린 상태",
+            "tags": [
+              "emotion",
+              "shame",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "artifact": {
+                "exact": "없는 원문 해명",
+                "neutral": "그 해명 상황"
+              },
+              "person": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "hurt",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.b.unlock.s5.truth_with_self_fault",
+            "factText": "편집 재게시의 진실을 인정하면서도 자신의 선공 댓글 책임을 함께 말하는 상태",
+            "tags": [
+              "admission",
+              "relationship",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "counterparty": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "상대방"
+              },
+              "channel": {
+                "exact": "선공 댓글",
+                "neutral": "초기 공개 발언"
+              }
+            },
+            "stanceHints": [
+              "balanced",
+              "accept_minor"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.b.unlock.s2.export_first",
+            "factText": "오지후가 초기부터 캡처보다 원본 export 대조를 요구했다는 사실",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "source": {
+                "exact": "플랫폼 원본 DM export",
+                "neutral": "원본 export"
+              },
+              "person": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "contextualize",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.b.unlock.s3.render_mismatch",
+            "factText": "버블·문장 간격·시간표시가 실제 플랫폼 렌더링과 맞지 않는다는 기술적 포인트",
+            "tags": [
+              "evidence",
+              "quote",
+              "identity"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "artifact": {
+                "exact": "버블·문장 간격·시간표시",
+                "neutral": "렌더링 요소"
+              },
+              "source": {
+                "exact": "실제 플랫폼 화면",
+                "neutral": "원본 렌더링"
+              }
+            },
+            "stanceHints": [
+              "contextualize",
+              "admit_minor"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.b.unlock.s4.false_monster_label",
+            "factText": "합성 캡처 하나로 루머를 의도한 괴물처럼 낙인찍혔다는 상처",
+            "tags": [
+              "emotion",
+              "harm",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "artifact": {
+                "exact": "합성 캡처",
+                "neutral": "그 캡처"
+              },
+              "person": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "hurt",
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.b.unlock.s5.composite_and_context",
+            "factText": "합성 결론을 받아들이면서도 자신의 공개 댓글이 합성을 믿기 쉽게 만든 맥락까지 인정",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "artifact": {
+                "exact": "합성 결론",
+                "neutral": "그 결론"
+              },
+              "channel": {
+                "exact": "공개 댓글",
+                "neutral": "초기 공개 발언"
+              }
+            },
+            "stanceHints": [
+              "balanced",
+              "accept_minor"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.b.unlock.s2.question_before_check",
+            "factText": "반납 등록 지연을 확인하기 전에 공개 의혹을 먼저 던졌다는 부분 인정",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "반납 등록 지연",
+                "neutral": "물류 사정"
+              },
+              "channel": {
+                "exact": "공개 댓글",
+                "neutral": "그 댓글"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "justify"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.b.unlock.s3.audience_reaction_bias",
+            "factText": "오지후가 로그보다 팔로워 반응을 먼저 믿어 의혹을 키웠다는 사실",
+            "tags": [
+              "responsibility",
+              "context",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "audience": {
+                "exact": "팔로워 반응",
+                "neutral": "다른 사람 반응"
+              },
+              "evidence": {
+                "exact": "협업사 로그",
+                "neutral": "물류 로그"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.b.unlock.s4.attach_fault_fast",
+            "factText": "장사 압박 속에서 책임을 빨리 누군가에게 붙이고 싶었던 심리",
+            "tags": [
+              "motive",
+              "emotion",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "본인"
+              },
+              "context": {
+                "exact": "배송 문의와 장사 압박",
+                "neutral": "장사 압박"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admit"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.b.unlock.s5.no_misuse_admission",
+            "factText": "나래의 협찬품 유용이 확인되지 않았음을 전면 인정",
+            "tags": [
+              "admission",
+              "responsibility",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "counterparty": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "상대방"
+              },
+              "institution": {
+                "fullName": "협업사",
+                "judgeRef": "협업사",
+                "neutral": "기관"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "accept"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.b.unlock.s2.public_hint_first",
+            "factText": "오지후가 공개 댓글·스토리로 먼저 갈등 암시를 시작했다는 부분 인정",
+            "tags": [
+              "admission",
+              "rule",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "협업 갈등 비공개 원칙",
+                "neutral": "그 약속"
+              },
+              "channels": {
+                "exact": "공개 댓글·스토리",
+                "neutral": "공개 글"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.b.unlock.s3.hide_behind_scale",
+            "factText": "나래의 더 큰 위반 뒤에 숨어 자신의 선공을 축소했다는 사실",
+            "tags": [
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "counterparty": {
+                "fullName": "강나래",
+                "judgeRef": "강씨",
+                "neutral": "상대방"
+              },
+              "artifact": {
+                "exact": "더 큰 유포",
+                "neutral": "상대의 큰 위반"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.b.unlock.s4.keep_relationship_mask",
+            "factText": "관계를 남기고 싶다는 명분으로 책임을 반만 말해 왔다는 심리",
+            "tags": [
+              "motive",
+              "relationship",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "relationship": {
+                "exact": "친구 관계 유지",
+                "neutral": "관계 유지"
+              },
+              "person": {
+                "fullName": "오지후",
+                "judgeRef": "오씨",
+                "neutral": "본인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admit"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.b.unlock.s5.shared_rule_break_admission",
+            "factText": "비공개 약속 위반이 쌍방이며 자신의 공개 시작 책임도 분명하다는 인정",
+            "tags": [
+              "admission",
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "비공개 약속",
+                "neutral": "그 약속"
+              },
+              "channels": {
+                "exact": "공개 댓글·스토리",
+                "neutral": "공개 시작"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "accept"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "contr-1",
+        "trigger": "b_d1_specificity_denied_after_e2",
+        "text": "오지후는 실명이 없었다고 특정성을 부정하지만, 같은 협업 게시물·배송 지연·사은품 문맥이 겹치며 강나래 지목성이 살아난다.",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "severity": "high"
+      },
+      {
+        "id": "contr-2",
+        "trigger": "a_d2_or_d3_format_split_after_e3",
+        "text": "강나래는 '정리'였다고 말하지만, 편집앱 프로젝트와 레이어 기록은 서로 다른 날짜 조각을 한 장 원문처럼 조립한 과정을 드러낸다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ],
+        "severity": "high"
+      },
+      {
+        "id": "contr-3",
+        "trigger": "b_d4_suspicion_persist_after_e4",
+        "text": "협찬품 유용 의혹은 물류 등록 지연에서 생긴 착시였는데, 공개 댓글은 이미 완료된 반납보다 화면상 인상과 팔로워 반응을 더 믿고 있었다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "severity": "medium"
+      },
+      {
+        "id": "contr-4",
+        "trigger": "both_d5_rule_argument",
+        "text": "두 사람 모두 비공개 원칙을 기억한다고 말하지만, 한쪽은 공개 댓글·스토리로, 다른 한쪽은 위조 캡처 유포로 약속을 밖으로 끌고 나갔다.",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "severity": "high"
+      }
+    ],
+    "interjections": [
+      {
+        "id": "inter-1",
+        "by": "a",
+        "text": "그 '경고'라는 말만 빼면, 결국 같은 사진 아래 저를 걸어 놓은 문장이었잖아요.",
+        "trigger": "b_repeats_motive_cover",
+        "behaviorHint": "고개를 들지 않은 채 짧게 끊어 끼어든다."
+      },
+      {
+        "id": "inter-2",
+        "by": "b",
+        "text": "원문이면 왜 export를 피합니까. 한 장만 보여 주는 쪽이 더 이상하죠.",
+        "trigger": "a_repeats_format_split",
+        "behaviorHint": "상대 말 끝을 자르며 목이 잠긴 상태로 되묻는다."
+      },
+      {
+        "id": "inter-3",
+        "by": "a",
+        "text": "유용이 아니었다는 로그가 있는데도 아직 '의혹 수준'이라고만 하실 겁니까.",
+        "trigger": "b_hedges_on_d4_after_e4",
+        "behaviorHint": "자료를 들어 보이며 단어 하나씩 또렷하게 눌러 말한다."
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "emo-a-1",
+        "party": "a",
+        "stateThreshold": "S4",
+        "text": "전 물건 훔친 사람 취급받은 순간부터 이미 인간성으로 끝난 줄 알았어요. 그래서 멈추는 생각을 못 했습니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "behaviorHint": "눈을 감았다 뜨고, 목소리는 오히려 더 낮아진다."
+      },
+      {
+        "id": "emo-a-2",
+        "party": "a",
+        "stateThreshold": "S4",
+        "text": "그래요, 그 캡처 손댔어요. 그런데 먼저 절 공개로 몰아세운 건 저 사람이었어요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3",
+          "d-5"
+        ],
+        "behaviorHint": "짧은 시인 뒤 바로 상대를 보지 않고 한 문장 더 붙인다."
+      },
+      {
+        "id": "emo-b-1",
+        "party": "b",
+        "stateThreshold": "S4",
+        "text": "난 그런 문장 보낸 적 없다고요. 없는 원문까지 뒤집어쓰라는 건 너무하잖아요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ],
+        "behaviorHint": "말이 빨라지다 마지막에서 목이 잠긴다."
+      },
+      {
+        "id": "emo-b-2",
+        "party": "b",
+        "stateThreshold": "S4",
+        "text": "나도 잘못했어요. 근데 장사 망할까 봐 그때는 누군가 설명해야 한다고만 생각했어요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4",
+          "d-5"
+        ],
+        "behaviorHint": "억울한 표정이 남아 있는 채 어깨가 급하게 떨어진다."
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "friend03:transition:a:d-2:s0_s1",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "story_repost_question",
+      "line": "재게시 질문이 반복되면 강나래는 '정리'와 '위조'를 구분하며 형식 논리로 한 발 물러선다.",
+      "behaviorHint": "자료 종류를 구획하듯 손가락으로 허공을 나눈다."
+    },
+    {
+      "id": "friend03:transition:a:d-2:s1_s2",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "운영자 신고 DM과 전달 원본이 나오면 강나래는 한 장으로 이어 붙였다는 부분 인정까지는 밀린다.",
+      "behaviorHint": "입술을 다문 뒤 짧은 문장으로만 답한다.",
+      "revealAtomId": "d2.a.unlock.s2.one_frame_edit"
+    },
+    {
+      "id": "friend03:transition:a:d-2:s2_s3",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "file_creation_time_question",
+      "line": "파일 생성 시각과 프로젝트 흐름을 찌르면 강나래는 메타데이터를 손댄 부분까지 드러내며 방어 논리를 좁힌다.",
+      "behaviorHint": "시선이 화면에서 떨어지지 않고 단어 선택이 더 건조해진다.",
+      "revealAtomId": "d2.a.unlock.s3.metadata_touch"
+    },
+    {
+      "id": "friend03:transition:a:d-2:s3_s5",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-3_presented",
+      "line": "편집앱 프로젝트 파일이 제시되면 강나래는 제작과 재게시를 모두 자기 책임으로 수렴시킨다.",
+      "behaviorHint": "숨을 고른 뒤 한 문장씩 짧고 차갑게 시인한다.",
+      "revealAtomId": "d2.a.unlock.s5.redistribution_admission"
+    },
+    {
+      "id": "friend03:transition:a:d-3:s0_s1",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "screenshot_authenticity_question",
+      "line": "캡처 원문성을 직접 묻는 질문이 들어오면 강나래는 '취지의 진실'을 꺼내며 원본 판단을 흐린다.",
+      "behaviorHint": "질문 끝을 잘라 먹고 핵심 단어만 반복한다."
+    },
+    {
+      "id": "friend03:transition:a:d-3:s1_s2",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "함정 캡처 자체가 테이블 위에 오르면 강나래는 단일 원본이 아니라는 최소 인정선까지 내려온다.",
+      "behaviorHint": "표정 변화는 적지만 대답 사이의 공백이 길어진다.",
+      "revealAtomId": "d3.a.unlock.s2.not_single_original"
+    },
+    {
+      "id": "friend03:transition:a:d-3:s2_s3",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "layer_backup_question",
+      "line": "레이어 백업 질문이 이어지면 강나래는 서로 다른 날짜 조각이 섞였다는 기술적 사실을 더는 피하지 못한다.",
+      "behaviorHint": "손끝으로 책상 모서리를 만지며 시선을 피한다.",
+      "revealAtomId": "d3.a.unlock.s3.cross_date_composite"
+    },
+    {
+      "id": "friend03:transition:a:d-3:s3_s5",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_or_e-3_presented",
+      "line": "원본 export 대조와 프로젝트 파일이 겹쳐 제시되면 강나래는 합성 이미지였다는 결론으로 붕괴한다.",
+      "behaviorHint": "목소리를 낮춘 채 마지막 문장만 또렷하게 시인한다.",
+      "revealAtomId": "d3.a.unlock.s5.full_fabrication"
+    },
+    {
+      "id": "friend03:transition:a:d-5:s0_s1",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_rule_reminder",
+      "line": "작년 비공개 약속을 상기시키면 강나래는 공개와 제한 전달을 임의로 나누며 방어 논리를 세운다.",
+      "behaviorHint": "한숨을 삼키고 '그건 다른 단계'라고 선을 긋는다."
+    },
+    {
+      "id": "friend03:transition:a:d-5:s1_s2",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "오지후의 공개 댓글·스토리 기록이 먼저 제시되면 강나래는 자신의 약속 위반 일부를 인정하면서도 선공 책임을 붙든다.",
+      "behaviorHint": "상대 쪽을 보지 않은 채 '먼저'라는 단어를 낮게 반복한다.",
+      "revealAtomId": "d5.a.unlock.s2.private_rule_bent"
+    },
+    {
+      "id": "friend03:transition:a:d-5:s2_s4",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_why_she_needed_stronger_proof",
+      "line": "비판보다 이유를 묻는 질문이 들어오면 강나래는 복수심과 평판 공포를 섞어 털어놓기 시작한다.",
+      "behaviorHint": "한동안 침묵했다가 더 짧은 문장으로 속마음을 낸다.",
+      "revealAtomId": "d5.a.unlock.s4.stronger_material_choice"
+    },
+    {
+      "id": "friend03:transition:a:d-5:s4_s5",
+      "caseId": "friend-03",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "최종 책임 질문을 받으면 강나래는 쌍방 위반 속에서도 자신이 위조 자료로 더 크게 선을 넘었다고 인정한다.",
+      "behaviorHint": "등받이에 기대지 못한 채 몸을 세우고 시인을 마무리한다.",
+      "revealAtomId": "d5.a.unlock.s5.bigger_break_with_fake"
+    },
+    {
+      "id": "friend03:transition:b:d-1:s0_s1",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "public_comment_question",
+      "line": "공개 댓글 자체를 묻는 질문이 오면 오지후는 '경고'와 '상황 설명'을 앞세워 의미를 축소한다.",
+      "behaviorHint": "말머리를 길게 늘이고 끝을 되묻는 억양으로 올린다."
+    },
+    {
+      "id": "friend03:transition:b:d-1:s1_s2",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "댓글·스토리 보관본과 삭제 로그가 나오면 오지후는 같은 게시물 맥락이 경솔했다는 선까지는 밀린다.",
+      "behaviorHint": "어깨를 움츠리며 인정 문장 앞에 변명 서사를 덧붙인다.",
+      "revealAtomId": "d1.b.unlock.s2.same_post_specificity"
+    },
+    {
+      "id": "friend03:transition:b:d-1:s2_s3",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "same_post_target_question",
+      "line": "같은 게시물 타깃성을 정면으로 찌르면 오지후는 의도와 효과를 분리하는 자기합리화로 이동한다.",
+      "behaviorHint": "손을 접었다 펴며 '의도는'이라는 말을 반복한다.",
+      "revealAtomId": "d1.b.unlock.s3.intent_vs_effect"
+    },
+    {
+      "id": "friend03:transition:b:d-1:s3_s5",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "물류 로그까지 겹쳐 의혹 기반이 무너지면 오지후는 특정 가능 비방과 선공 책임을 전면 시인한다.",
+      "behaviorHint": "목이 잠긴 채 마지막 문장만 짧고 낮게 떨어진다.",
+      "revealAtomId": "d1.b.unlock.s5.full_defamation_admission"
+    },
+    {
+      "id": "friend03:transition:b:d-4:s0_s1",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "sponsor_goods_question",
+      "line": "협찬품 자체를 묻는 질문이 들어오면 오지후는 의혹 제기였을 뿐이라고 범위를 줄이려 든다.",
+      "behaviorHint": "본론 전에 장사 압박 서사를 먼저 꺼낸다."
+    },
+    {
+      "id": "friend03:transition:b:d-4:s1_s2",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "공개 댓글 보관본이 나오면 오지후는 확인 전 의혹 제기였다는 점까지는 인정한다.",
+      "behaviorHint": "시선이 흔들리며 '그땐 그렇게 보였다'는 말이 먼저 튀어나온다.",
+      "revealAtomId": "d4.b.unlock.s2.question_before_check"
+    },
+    {
+      "id": "friend03:transition:b:d-4:s2_s3",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "return_log_question",
+      "line": "반납 로그 질문이 이어지면 오지후는 로그보다 화면 인상과 팔로워 반응을 믿었다는 편향을 드러낸다.",
+      "behaviorHint": "다른 사람 반응을 세는 듯 손가락을 접었다 편다.",
+      "revealAtomId": "d4.b.unlock.s3.audience_reaction_bias"
+    },
+    {
+      "id": "friend03:transition:b:d-4:s3_s5",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "협업사 백오피스와 확인서가 제시되면 오지후는 유용 의혹이 근거 없었음을 받아들인다.",
+      "behaviorHint": "길게 내쉰 뒤 의혹과 책임을 한 문장으로 묶어 인정한다.",
+      "revealAtomId": "d4.b.unlock.s5.no_misuse_admission"
+    },
+    {
+      "id": "friend03:transition:b:d-5:s0_s1",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_rule_reminder",
+      "line": "예전 비공개 약속을 상기시키면 오지후는 자신의 공개 암시를 '폭로는 아니었다'며 급히 축소한다.",
+      "behaviorHint": "말을 길게 끌며 상대 위반과의 비교부터 꺼낸다."
+    },
+    {
+      "id": "friend03:transition:b:d-5:s1_s2",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_hurt",
+      "line": "상처를 인정해 주는 질문이 들어오면 오지후는 먼저 공개 댓글과 스토리로 암시를 시작했다는 사실을 조금 열어 준다.",
+      "behaviorHint": "억울하다는 표정은 남아 있지만 처음으로 짧은 인정 문장이 나온다.",
+      "revealAtomId": "d5.b.unlock.s2.public_hint_first"
+    },
+    {
+      "id": "friend03:transition:b:d-5:s2_s4",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_why_he_posted_publicly",
+      "line": "비난 없이 이유를 묻는 질문은 오지후를 관계 유지 욕구와 책임 축소 심리 쪽으로 곧장 밀어 넣는다.",
+      "behaviorHint": "시선이 객석 쪽으로 흔들리다 다시 아래로 떨어진다.",
+      "revealAtomId": "d5.b.unlock.s4.keep_relationship_mask"
+    },
+    {
+      "id": "friend03:transition:b:d-5:s4_s5",
+      "caseId": "friend-03",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-2_or_responsibility_question",
+      "line": "공개 기록이나 최종 책임 질문이 맞물리면 오지후는 자신이 공개로 먼저 문을 열었다는 점을 받아들인다.",
+      "behaviorHint": "목이 잠긴 채 비교 문장을 버리고 본인 책임만 남긴다.",
+      "revealAtomId": "d5.b.unlock.s5.shared_rule_break_admission"
+    }
+  ]
+}

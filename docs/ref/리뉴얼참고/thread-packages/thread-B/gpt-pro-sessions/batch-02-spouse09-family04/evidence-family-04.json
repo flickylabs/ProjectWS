@@ -1,0 +1,793 @@
+{
+  "caseId": "case-family-04",
+  "meta": {
+    "relationshipType": "family",
+    "conflictSeed": "CS-1",
+    "variableModules": [
+      "VM-C"
+    ],
+    "twistModule": "TW-6",
+    "difficulty": "medium",
+    "anchorTruth": "서하린과 서민규가 서로 '부모 돈을 빼돌렸다'고 몰아간 3,200만원 인출은 형제 중 누구의 횡령도 아니라, 부모가 장학재단에 기부한 돈을 공유폴더의 잘린 자료와 모호한 파일명 때문에 오해한 것이었다.",
+    "emotionalBait": "비어 있는 예금 잔액, '정리본' 폴더, 인감이 사라진 날이 겹치며 처음에는 가까이 사는 동생이나 서류를 맡은 누나가 상속 전 재산을 먼저 건드린 듯 보인다.",
+    "resolutionDilemma": "기부 사실이 밝혀져도 서로를 횡령범으로 몰아간 형제의 불신과, 원본 서류 반출·부분 캡처 공유 같은 실제 잘못을 어떻게 분리해 정리할지가 어렵다.",
+    "familyRelation": "siblings"
+  },
+  "duo": {
+    "partyA": {
+      "name": "서하린",
+      "age": 45,
+      "occupation": "세무사사무실 실장",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "파일명, 날짜, 계좌 메모를 차례로 꺼내며 감정 표현을 최대한 줄인다. 다만 확신이 서면 의심과 결론을 거의 같은 문장으로 말해 상대가 반론할 틈을 좁힌다.",
+      "pride": 7,
+      "fear": "부모 재산 정리에서 배제되거나 욕심 많은 딸로 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "cloud_document_sorter",
+      "dailyRoutine": "출근 전 부모에게서 받은 서류 사진을 정리하고, 퇴근 후에는 공동 폴더 파일명과 계좌 메모를 분류한다.",
+      "sensitivePoints": [
+        "동생의 과거 채무",
+        "부모 서류 통제",
+        "상속 준비 과정"
+      ],
+      "verbalTells": [
+        {
+          "type": "file_stack",
+          "trigger": "cornered",
+          "pattern": "밀리기 시작하면 캡처와 메모를 여러 장 연달아 제시해 질문의 속도를 서류 속도로 바꾼다."
+        },
+        {
+          "type": "narrowed_answer",
+          "trigger": "lying",
+          "pattern": "불리한 부분은 '그 시점만 보면' 같은 표현으로 범위를 좁혀 전체 맥락을 잘라낸다."
+        },
+        {
+          "type": "interpretive_lead",
+          "trigger": "emotional",
+          "pattern": "사실을 말하는 척하면서 끝부분에 '그러니까 네가 건드린 거지' 같은 해석을 붙인다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "민규야",
+        "toJudge": "제 동생",
+        "angry": "민규!"
+      }
+    },
+    "partyB": {
+      "name": "서민규",
+      "age": 41,
+      "occupation": "주방가구 시공업자",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "자신이 부모 집에서 해온 잔심부름과 병원 동행을 길게 나열하며 먼저 억울한 사람의 자리를 잡는다. 서류 질문을 받으면 사실보다 '왜 늘 나부터 의심하냐'는 감정으로 방향을 틀려 한다.",
+      "pride": 6,
+      "fear": "가까이 산다는 이유만으로 횡령범처럼 취급받고 상속 논의에서 제외되는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "photo_archive_phone",
+      "dailyRoutine": "현장 출근 전 부모 집에 들러 우편과 약봉투를 챙기고, 밤에는 휴대폰 사진첩에 서류와 영수증을 모아둔다.",
+      "sensitivePoints": [
+        "과거 사업 빚",
+        "부모 집 열쇠",
+        "누나의 문서 통제"
+      ],
+      "verbalTells": [
+        {
+          "type": "martyr_checklist",
+          "trigger": "lying",
+          "pattern": "불리한 반출 질문이 나오면 보일러 수리, 약 사다 준 일, 우편 찾은 일을 연속으로 말해 희생 서사로 덮는다."
+        },
+        {
+          "type": "indignation_echo",
+          "trigger": "cornered",
+          "pattern": "상대가 '네가 가져갔지'라고 하면 '내가? 내가?'처럼 되묻고 억울함을 크게 부풀린다."
+        },
+        {
+          "type": "injured_jump",
+          "trigger": "emotional",
+          "pattern": "작은 의심에도 바로 '역시 나만 도둑 취급이지'라는 결론으로 뛰어간다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "누나",
+        "toJudge": "제 누나",
+        "angry": "누나!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "지난봄 부모가 유언과 사전 정리를 준비하며, 하린과 민규가 예금·보험·부동산 서류를 함께 정리하기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "아버지가 예전에 '가까이 사는 민규가 집 열쇠는 챙겨라'라고 말했던 일을 두 사람은 서류 통제 신호인지 단순 심부름 지시인지 다르게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '왕래 편의를 말한 것이지 재산 관리권을 준 게 아니었다' / B: '아버지가 결국 나를 더 믿는다는 뜻이었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "민규가 2022년 작업대금이 막혔을 때 부모에게 1,000만원을 빌렸다가 아직 일부만 갚은 일이 상속 이야기만 나오면 조용히 떠오른다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "서영복 (아버지)",
+        "relationTo": "both",
+        "knowledgeScope": "장학재단 기부 의사와 일부 서류를 공동 폴더에 올리라고 말한 사실은 알지만, 파일명과 접근 로그 같은 디지털 세부는 흐리게 기억한다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 68,
+          "occupation": "은퇴",
+          "relationToA": "서하린을 업무상 알고 있음",
+          "relationToB": "서민규을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "자식 편을 들면서도 객관적으로 보이려 한다. 어른 특유의 훈계 톤이 섞인다.",
+          "addressJudge": "재판관님",
+          "addressA": "하린씨",
+          "addressB": "민규"
+        },
+        "addressA": "우리 하린",
+        "addressB": "우리 민규"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "임도윤 (향토장학재단 사무국장)",
+        "relationTo": "both",
+        "knowledgeScope": "기부 신청서, 입금 시각, 영수증 발급 기록을 통해 돈이 형제가 아닌 장학재단으로 갔음을 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 45,
+          "occupation": "향토장학재단 사무국장",
+          "relationToA": "서하린을 업무상 알고 있음",
+          "relationToB": "서민규을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "하린씨",
+          "addressB": "민규씨"
+        },
+        "addressA": "하린씨",
+        "addressB": "민규씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "오하늘 (유언공증 변호사)",
+        "relationTo": "both",
+        "knowledgeScope": "부모의 상속 준비 메모, 기부 의사 확인 기록, 문서 보관 원칙을 원본 기준으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 48,
+          "occupation": "유언공증 변호사",
+          "relationToA": "서하린을 업무상 알고 있음",
+          "relationToB": "서민규을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "서하린씨",
+          "addressB": "서민규씨"
+        },
+        "addressA": "서하린씨",
+        "addressB": "서민규씨"
+      }
+    ],
+    "relationshipType": "family"
+  },
+  "context": {
+    "contextType": "inheritance_preparation",
+    "description": "부모가 유언과 사전 정리를 준비하자 형제는 예금과 등기, 보험 서류를 공동 폴더에 모으기 시작했다. 그런데 한 저축계좌에서 3,200만원이 빠져나간 직후 폴더에는 잘린 잔액 캡처와 모호한 파일명이 남았고, 예전 민규의 차용금 기억과 하린의 문서 통제가 겹치며 서로가 먼저 손댔다고 의심하게 됐다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "상속 준비는 작은 서류 하나도 지분과 신뢰의 신호처럼 읽히기 때문에, 합법적 기부조차 몰래 빼돌린 돈처럼 보이게 만들었다.",
+    "caseNumber": "E-FM-N-0004",
+    "caseName": "예금 횡령 의혹"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "형제 중 누군가가 부모 예금 3,200만원을 빼돌렸는가",
+      "truth": false,
+      "truthDescription": "3,200만원 인출은 형제의 횡령이 아니라 부모가 함께 결정한 향토장학재단 기부였고, 형제는 잘린 자료와 공유폴더 오해 때문에 서로를 의심했다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "상속문서분리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "형제는 부모의 기부를 오해했다."
+    },
+    {
+      "id": "d-2",
+      "name": "하린의 부분 캡처 공유",
+      "truth": true,
+      "truthDescription": "하린은 원본 거래내역을 보고도 이체 메모 상단이 잘린 잔액 캡처만 민규에게 보내며 의심을 키웠다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "재산정보공유",
+      "legitimacyIssue": false,
+      "judgmentStatement": "하린은 잘린 잔액 캡처를 보냈다."
+    },
+    {
+      "id": "d-3",
+      "name": "민규의 인감·등기 원본 무단 반출",
+      "truth": true,
+      "truthDescription": "민규는 누나가 먼저 뭔가 할까 봐 부모 집 인감과 부동산 등기 원본을 사흘간 자신의 작업실 금고에 옮겨 두고도 즉시 알리지 않았다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "원본보관통제",
+      "legitimacyIssue": true,
+      "judgmentStatement": "민규는 인감과 등기 원본을 반출했다."
+    },
+    {
+      "id": "d-4",
+      "name": "공동 폴더 사용 원칙의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "형제는 원본 스캔과 명확한 파일명을 함께 올리기로 했지만, 하린은 잘린 캡처를 올렸고 민규는 기부 관련 파일명을 '정리본'처럼 모호하게 바꾸며 설명을 비워뒀다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "상속문서분리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "하린은 잘린 캡처를 올렸다."
+    },
+    {
+      "id": "d-5",
+      "name": "부모 앞에서의 횡령 단정과 외부 문의 선행",
+      "truth": true,
+      "truthDescription": "하린은 세무 지인에게 '가족 간 증여 회수'를 먼저 물었고, 민규는 부동산 중개 지인에게 누나가 선처분할 수 있는지 먼저 물으며 사실 확인보다 의심 확산을 앞세웠다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "가족대화복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "하린은 세무 지인에게 문의했다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "잘린 잔액 캡처와 공동폴더 '정리본' 화면",
+      "description": "하린이 민규에게 보낸 저축계좌 잔액 캡처와 공동폴더 화면으로, 이체 메모 상단과 파일 설명란이 잘려 있어 누가 돈을 가져간 것처럼 보인다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 스크린 녹화와 전체 스크린샷을 요구하자, 상단 메모란에 '향토장학기금' 문구가 일부 남아 있었다.",
+        "check_metadata": "캡처 생성 시각은 하린이 민규를 추궁하기 11분 전이며, 잘라 저장한 기록이 연속으로 찍혀 있다.",
+        "restore_context": "공유폴더 화면은 원래 기부 영수증과 은행 내역이 한 묶음으로 있었지만, 잘린 화면만 보면 누군가 임의 인출한 것처럼 보인다.",
+        "verify_source": "하린 휴대폰 앨범 원본과 클라우드 동기화 시각이 서로 맞아떨어진다.",
+        "check_edits": "텍스트 자체 조작은 없지만 메모란과 파일 설명이 보이지 않도록 크롭된 흔적이 분명하다.",
+        "question_acquisition": "부모 계좌 정보가 포함된 캡처라 제출 목적은 가능해도 공유 범위는 엄격히 제한돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "서하린에게: \"하린의 부분 캡처 공유\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 서하린의 \"하린의 부분 캡처 공유\" 쟁점과 관련된다. 서하린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서민규에게: \"공동 폴더 사용 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 서민규의 \"공동 폴더 사용 원칙의 쌍방 위반\" 쟁점과 관련된다. 서민규은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "잘린 잔액 캡처와 폴더 화면",
+      "surfaceDescription": "계좌 잔액 캡처와 공동 폴더 화면이다. 일부 정보가 잘려 있어 전체 맥락 파악이 필요하다."
+    },
+    {
+      "id": "e-2",
+      "name": "은행 원본 거래내역과 이체 메모 상세",
+      "description": "부모 저축계좌의 원본 거래내역과 상세 이체 메모로, 3,200만원 출금 상대가 개인계좌가 아닌 향토장학재단임을 확인할 수 있다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "은행 원본에는 상대 계좌명, 이체 메모, 신청 지점 정보가 모두 표시돼 있다.",
+        "check_metadata": "이체 승인에는 부모 공동 인증이 사용됐고, 하린이나 민규 개인 단말 로그인 흔적은 없다.",
+        "restore_context": "하린이 보낸 잘린 캡처와 달리 원본에는 기부 목적과 수취 기관명이 분명히 드러난다.",
+        "verify_source": "은행 발급번호와 원본 PDF 해시가 일치했다.",
+        "check_edits": "기관 발급 문서라 편집 흔적이 없다.",
+        "question_acquisition": "부모가 상속 준비를 위해 열람을 허락한 계좌 자료라 취득 정당성은 높다."
+      },
+      "subjectParty": "a",
+      "surfaceName": "은행 원본 거래내역과 이체 메모",
+      "surfaceDescription": "저축계좌의 은행 원본 거래내역과 상세 이체 메모다. 출금 상대와 용도를 확인할 수 있다.",
+      "requiredLieState": "S3"
+    },
+    {
+      "id": "e-3",
+      "name": "도어락 출입기록과 작업실 금고 사진",
+      "description": "민규가 부모 집에서 인감과 등기 원본이 들어 있는 서류봉투를 들고 나간 날의 도어락 출입기록과, 작업실 금고 안에 같은 봉투를 찍은 사진이다.",
+      "type": "device_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "도어락 로그와 사진 원본을 대조하자, 민규가 서류봉투를 가져간 시각과 금고에 넣은 시각이 하루 안에 이어졌다.",
+        "check_metadata": "사진 촬영 위치는 민규 작업실로 찍혀 있고, 같은 날 밤 부모 집 재출입 기록은 없다.",
+        "restore_context": "민규는 보관 목적이었다고 주장했지만, 사흘간 누구에게도 원본 반출 사실을 명확히 알리지 않았다.",
+        "verify_source": "도어락 관리자 기록과 사진 EXIF 정보가 일치했다.",
+        "check_edits": "사진은 원본이라 편집 흔적이 없고, 로그도 장치 추출본이다.",
+        "question_acquisition": "주거지 출입기록과 개인 작업실 사진이 포함돼 있어 사생활 침해 소지가 있다."
+      },
+      "subjectParty": "b",
+      "surfaceName": "도어락 출입기록과 금고 사진",
+      "surfaceDescription": "주택 도어락 출입 기록과 금고 내부를 촬영한 사진이다. 서류 반출 정황이 남아 있다."
+    },
+    {
+      "id": "e-4",
+      "name": "공동 클라우드 파일명 변경 이력과 알림 메일",
+      "description": "공동 폴더에서 파일명이 바뀐 이력과 자동 알림 메일로, 기부 관련 자료가 '정리본', '보낸 것' 같은 모호한 이름으로 바뀐 정황이 남아 있다.",
+      "type": "cloud_log",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "클라우드 관리 로그를 열람하자 원래 '장학재단 영수증' 파일이 '정리본-2'로 이름이 바뀐 기록이 보였다.",
+        "check_metadata": "파일명 변경은 민규 계정에서 이뤄졌고, 하린이 잘린 캡처를 올린 시각보다 2시간 먼저였다.",
+        "restore_context": "민규의 의도는 정리였을 수 있지만, 설명란 공백과 모호한 이름이 오해를 키운 건 분명하다.",
+        "verify_source": "플랫폼 원본 로그와 알림 메일 시간이 서로 일치한다.",
+        "check_edits": "플랫폼 로그라 별도 편집 흔적은 없다.",
+        "question_acquisition": "공동 폴더 자료라 제출 정당성은 높지만, 부모의 사적 메모가 함께 섞여 있어 목적 외 활용은 제한돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "서하린에게: \"공동 폴더 사용 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 서하린의 \"공동 폴더 사용 원칙의 쌍방 위반\" 쟁점과 관련된다. 서하린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서민규에게: \"공동 폴더 사용 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 서민규의 \"공동 폴더 사용 원칙의 쌍방 위반\" 쟁점과 관련된다. 서민규은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "클라우드 파일명 변경 이력",
+      "surfaceDescription": "공동 클라우드 폴더의 파일명 변경 이력과 알림 메일이다. 파일 정리 또는 수정 흔적이 보인다."
+    },
+    {
+      "id": "e-5",
+      "name": "향토장학재단 기부영수증과 유언공증 준비 메모",
+      "description": "부모 이름으로 발급된 기부영수증과 유언공증 변호사 메모로, 기부가 상속 재산 은닉이 아니라 부모의 자발적 결정이었음을 보여준다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "원본 영수증에는 수납 날짜, 금액, 부모 공동 성명이 모두 기재돼 있다.",
+        "check_metadata": "변호사 메모는 기부 다음 날 접수됐고, 부모가 '형제에게는 나중에 말하자'고 적어둔 확인이 있다.",
+        "restore_context": "돈의 흐름은 형제 계좌가 아니라 곧바로 장학재단으로 이어졌고, 상속 준비와 기부가 같은 주에 겹쳐 오해를 불렀다.",
+        "verify_source": "장학재단 발급번호와 변호사 사무실 접수번호가 모두 확인됐다.",
+        "check_edits": "기관 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "부모 동의 하에 제출된 적법한 자료지만, 기부 의사 자체는 가족 외 공개를 최소화해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "서하린에게: \"형제 중 누군가가 부모 예금 3,200만원을 빼돌렸는가\" 관련 자신이 아는 바를 진술",
+          "implication": "이 증거는 서하린이 직접적 당사자가 아닌 쟁점이다. 서하린이 이 상황에 대해 알고 있는 바를 확인한다."
+        },
+        "b": {
+          "questionAngle": "서민규에게: \"형제 중 누군가가 부모 예금 3,200만원을 빼돌렸는가\" 관련 자신이 아는 바를 진술",
+          "implication": "이 증거는 서민규이 직접적 당사자가 아닌 쟁점이다. 서민규이 이 상황에 대해 알고 있는 바를 확인한다."
+        }
+      },
+      "surfaceName": "기부 영수증과 공증 메모",
+      "surfaceDescription": "재단 기부 영수증과 변호사의 공증 준비 메모다. 자산 처분의 경위와 법적 절차가 기록되어 있다.",
+      "requiredLieState": "S3"
+    },
+    {
+      "id": "e-6",
+      "name": "형제 간 메시지와 세무·부동산 지인 문의 내역",
+      "description": "하린이 세무 지인에게 보낸 문의 메시지와 민규가 부동산 중개 지인에게 보낸 통화·문자 기록으로, 둘 다 사실 확인 전에 상대를 의심 근거로 외부 문의를 한 정황이다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "대화 원본과 통화내역을 확인하자 두 사람 모두 부모에게 확인하기 전에 외부 지인에게 먼저 물었다는 흐름이 드러났다.",
+        "check_metadata": "하린의 문의는 오전, 민규의 문의는 그날 오후로 기록돼 있어 사실상 같은 날 의심이 외부로 번졌다.",
+        "restore_context": "법률 검토나 시세 확인 자체는 가능하지만, 당시 메시지 문구는 '상대가 빼돌린 것 같다'는 단정을 포함하고 있었다.",
+        "verify_source": "메신저 원본과 통신사 발신기록이 일치했다.",
+        "check_edits": "대화 일부 가림은 있지만 핵심 문구와 시간 정보는 손상되지 않았다.",
+        "question_acquisition": "당사자가 제출한 본인 문의 내역이라 적법하나, 제3자 연락처는 비식별 처리돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "서하린에게: \"부모 앞에서의 횡령 단정과 외부 문의 선행\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 서하린의 \"부모 앞에서의 횡령 단정과 외부 문의 선행\" 쟁점과 관련된다. 서하린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "서민규에게: \"부모 앞에서의 횡령 단정과 외부 문의 선행\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 서민규의 \"부모 앞에서의 횡령 단정과 외부 문의 선행\" 쟁점과 관련된다. 서민규은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "surfaceName": "형제 간 메시지와 외부 문의 내역",
+      "surfaceDescription": "형제 간 메시지와 세무·부동산 지인에게 보낸 문의 기록이다. 각자의 외부 조사 흔적이 남아 있다.",
+      "requiredLieState": "S2"
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "3,200만원 인출은 형제의 횡령이 아니라 부모의 향토장학재단 기부였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-2",
+      "fact": "하린은 이체 메모가 잘린 잔액 캡처만 공유해 민규 의심을 키웠다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "민규는 인감과 등기 원본을 자신의 작업실 금고로 무단 반출했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "형제는 공동 폴더에 원본 스캔과 명확한 파일명을 올리기로 한 약속을 둘 다 어겼다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "형제는 부모에게 사실을 확인하기 전에 외부 지인에게 먼저 횡령 가능성을 물었다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "partial_screenshot_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "original_statement_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-2_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-2",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "shared_folder_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "crop_reason_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-5",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "accusation_before_parents_question"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_old_loan_fear"
+        },
+        {
+          "from": "S4",
+          "to": "S3",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "seal_document_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "workshop_safe_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "shared_folder_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "vague_filename_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "realtor_consult_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "suspicion_reason_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "상속문서분리": [
+      "공동 폴더에는 원본 스캔과 한 줄 설명만 올리고, 추정이나 해석은 별도 대화창에서만 하기로 분리한다.",
+      "예금·부동산·기부 자료를 각각 다른 폴더로 나누고 파일명에 날짜와 목적을 함께 적는다.",
+      "모호한 캡처나 파일명 변경이 다시 나오면 공동 폴더 권한을 중지하고 변호사 보관 체계로 즉시 전환한다."
+    ],
+    "재산정보공유": [
+      "부분 캡처 대신 계좌 원본 첫 페이지와 상세 메모를 함께 공유하는 규칙을 만든다.",
+      "의심이 생겨도 먼저 원본 요청을 하고, 결론 문장은 제3자 확인 뒤에만 말한다.",
+      "선택적 공개가 반복되면 한쪽의 단독 열람권을 줄이고 부모 동의 하의 공동 열람만 허용한다."
+    ],
+    "원본보관통제": [
+      "인감·등기 원본은 부모 집 또는 변호사 사무실 한 곳에만 보관하고 반출 시 즉시 기록한다.",
+      "긴급 보관이 필요하면 사진과 반출 사유, 반환 시점을 같은 날 공유한다.",
+      "무단 반출이 다시 발생하면 원본 접근권을 중단하고 공증 보관으로 강제 이관한다."
+    ],
+    "가족대화복구": [
+      "횡령·빼돌림 같은 단정 표현은 확인 전 금지하고, 의심은 질문 형태로만 꺼내기로 한다.",
+      "부모 앞 대화와 외부 지인 문의를 분리해, 먼저 부모와 변호사 확인 후에만 바깥 상담을 하도록 순서를 정한다.",
+      "다시 근거 없는 단정이 외부로 나가면 상속 준비 회의 참여 범위를 한시적으로 제한한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

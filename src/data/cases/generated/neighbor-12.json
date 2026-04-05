@@ -321,8 +321,8 @@
     {
       "id": "e-1",
       "name": "지연의 환불 요구 글과 자작 정산표 캡처",
-      "surfaceName": "환불 요구 글과 정산표 캡처",
-      "surfaceDescription": "환불을 요구하는 게시글과 자작 정산표 캡처 이미지다. 정산 근거와 요구 내용 확인이 필요하다.",
+      "surfaceName": "게시글 캡처와 표 이미지",
+      "surfaceDescription": "게시글 캡처와 정산표 이미지다. 작성 근거와 계산 방식 확인이 필요하다.",
       "description": "부모방·입주민방에 올린 '94만 원 은닉 의심' 글과 개인 스프레드시트 캡처. 작년 62만 원과 이번 32만 원을 한 칸에 합쳐 적어 전액이 이번 환불인 것처럼 보인다.",
       "type": "chat",
       "reliability": "soft",
@@ -353,13 +353,39 @@
           "questionAngle": "서도윤에게: \"'사라진 94만 원'의 실제 구성\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 서도윤의 \"'사라진 94만 원'의 실제 구성\" 쟁점과 관련된다. 서도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공개 글과 정산표 캡처를 함께 올린 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "직접 확인보다 공개 게시가 먼저 이뤄진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "가려진 수식 셀과 일부 행을 함께 숨긴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "도윤의 카드취소 알림과 지연에게 보낸 늦은 안내 메시지",
-      "surfaceName": "카드취소 알림과 늦은 안내 메시지",
-      "surfaceDescription": "카드 결제 취소 알림과 뒤늦게 보낸 안내 메시지다. 취소 시점과 안내 경위 확인이 필요하다.",
+      "surfaceName": "결제 취소 알림과 안내 메시지",
+      "surfaceDescription": "결제 취소 알림과 이후 안내 메시지다. 발생 시점과 전달 순서 확인이 필요하다.",
       "description": "도윤 카드 32만 원 취소 알림 스크린샷과 사흘 뒤 지연에게 보낸 해명 메시지. 알림 시각과 전달 시각 사이 3일 공백이 그대로 보인다.",
       "type": "chat",
       "reliability": "soft",
@@ -379,13 +405,39 @@
         "check_edits": "상하 크롭 외 합성 흔적 없음. 32만 원 금액과 취소 날짜는 원문과 동일하다.",
         "question_acquisition": "개인 카드 알림이므로 카드번호 전체와 잔액 표시는 마스킹 후 활용해야 한다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 취소 알림과 뒤늦은 안내 메시지에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "알림 수신 뒤 사흘 동안 전달하지 않은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확정 전까지 알리지 않는 방식이 어떤 오해를 부를지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "작년 공기청정기 공동구매 캐시백·반품차액 내역",
-      "surfaceName": "과거 공동구매 캐시백·반품차액 내역",
-      "surfaceDescription": "과거 공동구매의 캐시백과 반품 차액 정산 내역이다. 정산 기준과 처리 경위 확인이 필요하다.",
+      "surfaceName": "과거 정산 내역",
+      "surfaceDescription": "이전 라운드 정산 관련 내역이다. 처리 경위와 정산 기준 확인이 필요하다.",
       "description": "작년 수입사 → 지연 개인계좌 이체 내역: 캐시백 41만 원, 반품차액 21만 원. 참가자 환급 전표는 없고 개인계좌에 62만 원이 그대로 남아 있다.",
       "type": "financial_record",
       "reliability": "hard",
@@ -405,13 +457,39 @@
         "check_edits": "기관 이체 기록과 은행 원본으로 편집 흔적 없음. 메모장도 자동저장 이력으로 원본 확인된다.",
         "question_acquisition": "개인 금융 거래이므로 캐시백·반품차액 금액과 날짜 외 계좌 정보는 비공개 원칙이다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 입금기록과 메모장 캡처가 남은 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입금 직후 참가자 환급 전표가 남지 않은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "해당 금원이 이후에도 개인계좌에 머문 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "이번 참가금 계좌거래내역과 지연 개인계좌 이체 기록",
-      "surfaceName": "참가금 계좌거래내역과 개인계좌 이체 기록",
-      "surfaceDescription": "참가금 관련 계좌 거래내역과 개인계좌 이체 기록이다. 거래 당사자와 금액 확인이 필요하다.",
+      "surfaceName": "계좌거래내역과 이체 기록",
+      "surfaceDescription": "관련 계좌 거래내역과 이체 기록이다. 이동 경로와 사용 맥락 확인이 필요하다.",
       "description": "이번 참가금 계좌에서 지연 개인계좌로 분할 이체된 내역. 메모에 '지난번 정리'라는 표현이 남아 있어 작년 구멍 메우기가 확인된다.",
       "type": "financial_record",
       "reliability": "hard",
@@ -442,13 +520,39 @@
           "questionAngle": "서도윤에게: \"작년 정산 미마감과 계좌 재사용\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 서도윤의 \"작년 정산 미마감과 계좌 재사용\" 쟁점과 관련된다. 서도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계좌 원장과 개인계좌 이체 기록에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "최종 정산 전부터 분할 이체가 시작된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "같은 계좌에서 다른 정산을 함께 처리한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "수입사 최종 정산서와 국제배송료 재계산표",
-      "surfaceName": "수입사 정산서와 국제배송료 재계산표",
-      "surfaceDescription": "수입사 최종 정산서와 국제 배송료 재계산 자료다. 정산 내역과 계산 근거 확인이 필요하다.",
+      "surfaceName": "정산서와 재계산표",
+      "surfaceDescription": "정산 내용과 재계산 결과를 담은 자료다. 계산 기준과 확정 시점 확인이 필요하다.",
       "description": "공급사 원본 정산서. 이번 환급 가능 금액은 32만 원이며 나머지는 국제배송료 재계산과 부분취소 조정으로 상계됐다. 94만 원은 존재하지 않는 숫자다.",
       "type": "institutional_note",
       "reliability": "hard",
@@ -469,7 +573,33 @@
         "check_edits": "기관 발행 원본으로 편집 흔적 없음. 수정 이력도 별도 로그에 남아 있다.",
         "question_acquisition": "거래처 할인율과 배송 계약 단가가 포함돼 있어 금액 확인 외 목적의 외부 공개는 제한된다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 최종 정산서와 재계산표가 제출된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "최종 확정 시각이 알림 뒤였다는 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 자료에 없는 금액이 함께 논의된 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -505,7 +635,33 @@
           "questionAngle": "서도윤에게: \"작년 정산 미마감과 계좌 재사용\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 서도윤의 \"작년 정산 미마감과 계좌 재사용\" 쟁점과 관련된다. 서도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이전 정산 대화와 이번 시작 메시지에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "위험을 언급한 뒤에도 같은 구조를 유지한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "미정리 항목을 남긴 채 새 정산을 연 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

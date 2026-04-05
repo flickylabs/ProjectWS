@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "문세아 씨, 복원 로그상 별도 폴더로 옮긴 메시지 1건은 왜 재우 씨에게 보낸 압축파일에서 빠졌습니까?",
+              "text": "문세아 씨, 복원한 자료 가운데 재우 씨에게 보내지 않은 메시지가 따로 있었던 이유는 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "최재우 씨, 배우자에게 확인 문자를 보내기 전 9분 동안 무엇이 그렇게 급해 운영진 단톡으로 먼저 보냈습니까?",
+              "text": "최재우 씨, 배우자에게 확인하기도 전에 바깥으로 먼저 돌린 이유가 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "문세아 씨, 포렌식 보고서가 나오기 전에도 이 캡처가 이상하다고 느낀 대목이 있었다면 구체적으로 말씀해 주십시오.",
+              "text": "문세아 씨, 분석 결과가 나오기 전에도 이 캡처가 어딘가 이상하다고 느낀 대목이 있었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -125,7 +125,7 @@
             },
             {
               "id": "dossier-2.a.q2",
-              "text": "이 자료가 위조라고 해도, 왜 사람들에게는 그렇게 그럴듯하게 먹혔는지 본인 스스로 설명해 보시겠습니까?",
+              "text": "이 자료의 원본성이 흔들린다 해도, 왜 사람들에게는 그렇게 그럴듯하게 먹혔는지 본인 스스로 설명해 보시겠습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "최재우 씨, 원본 계정도 없고 댓글 흐름도 잘린 캡처를 왜 한유진 씨 지목의 근거로 삼았습니까?",
+              "text": "최재우 씨, 출처와 흐름이 다 보이지 않는 캡처를 왜 특정인 지목의 근거로 삼았습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -164,7 +164,7 @@
             },
             {
               "id": "dossier-2.b.q2",
-              "text": "포렌식 보고서가 '2026년 합성'이라고 짚은 뒤에도 바로 정정하지 못한 이유는 무엇입니까?",
+              "text": "분석 결과가 캡처의 원본성에 의문을 제기한 뒤에도 바로 정정하지 못한 이유는 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "문세아 씨, 지금 와서 보면 본인이 가장 끝까지 숨기고 싶었던 건 익명 계정 의혹입니까, 아니면 실제로 보낸 그 문장입니까?",
+              "text": "문세아 씨, 지금 돌아보면 가장 감추고 싶었던 건 익명 의혹이었습니까, 아니면 본인이 실제로 한 말이었습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -221,7 +221,7 @@
             },
             {
               "id": "dossier-3.a.q2",
-              "text": "한유진 씨에게 직접 상처를 준 사람이었다는 사실과 익명 소문 작성자가 아니었다는 사실을 한 문장으로 정리해 보십시오.",
+              "text": "한유진 씨에게 직접 상처를 준 일과 익명 글 의혹이 같은 층위가 아니라는 점을 한 문장으로 정리해 보십시오.",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "최재우 씨, 버너계정 복구 메일과 와이파이 기록이 박하린 씨를 가리키는데도 왜 한유진 씨를 붙들고 있었습니까?",
+              "text": "최재우 씨, 실제 접속 흔적이 다른 쪽으로 기우는데도 왜 한유진 씨를 계속 붙들고 있었습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",

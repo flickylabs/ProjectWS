@@ -355,8 +355,34 @@
           "implication": "이 증거는 임하준의 \"하준의 식별 가능한 가족 저격 게시물\" 쟁점과 관련된다. 임하준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "SNS 게시물 원본과 통계",
-      "surfaceDescription": "SNS에 올린 게시물 원본과 조회·저장 통계 데이터다. 실명은 없으나 추정 단서가 포함되어 있다."
+      "surfaceName": "게시물 원본과 반응 통계",
+      "surfaceDescription": "공개 게시물 원본과 조회·저장 반응 기록이다. 게시 시점과 반응 흐름을 확인할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "삭제 전 게시물 묶음과 스토리 기록에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 게시물 묶음에 장소표시와 사진 일부를 연달아 둔 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "실명 없이도 주변이 해당 가정을 짐작하게 된 흐름을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -393,8 +419,34 @@
           "implication": "이 증거는 임하준의 \"과거 기록 비무기화 약속의 파기\" 쟁점과 관련된다. 임하준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "협찬사 DM과 단톡 메시지",
-      "surfaceDescription": "협찬사에게 보낸 DM과 친척·소모임 단체 채팅 메시지다. 캡처 공유와 함께 의견이 적혀 있다."
+      "surfaceName": "외부 연락 메시지와 단체 대화",
+      "surfaceDescription": "여러 곳에 보낸 개인 메시지와 단체 대화 내역이다. 캡처 공유와 반응이 남아 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "협찬처와 지인방에 보낸 이 대화 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "익명 자료 도착 전 먼저 경고 메시지를 보낸 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "단순 상담이라면 반복된 평가 문구는 왜 넣었는지 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -430,8 +482,34 @@
           "implication": "이 증거는 임하준의 \"과거 가정사 문서 유출의 실제 배후\" 쟁점과 관련된다. 임하준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "커뮤니티 익명글과 첨부 파일",
-      "surfaceDescription": "온라인 커뮤니티에 올라온 익명글 캡처와 첨부된 PDF 파일이다. 작성자와 유포 경로가 불분명하다."
+      "surfaceName": "익명글 캡처와 첨부 파일",
+      "surfaceDescription": "온라인에 돌던 익명글 캡처와 첨부 문서 묶음이다. 작성자와 전달 경로는 바로 드러나지 않는다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "헤더가 보이지 않는 이 캡처 묶음을 어떻게 확보했는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "스캔형 파일명만으로 발신자를 단정한 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "작성자 단서가 잘린 상태로도 책임을 바로 돌린 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -460,7 +538,33 @@
       "subjectParty": "b",
       "surfaceName": "익명 메일 헤더와 접속 로그",
       "surfaceDescription": "익명 발신 메일의 원본 헤더와 게스트 계정 접속 로그다. 발신 경로와 접속 장소를 추적할 수 있다.",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "익명 발신 헤더와 접속기록 원본 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "게시 직후 전송 시각과 외부저장장치 연결이 겹친 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "발신 직전 해당 계정에 남은 자료 경로의 의미를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -500,7 +604,33 @@
       },
       "surfaceName": "오래된 서류 스캔과 USB 동기화 기록",
       "surfaceDescription": "과거 서류의 스캔 백업 파일과 최근 USB 동기화 기록이다. 파일 접근 시점이 남아 있다.",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "오래된 스캔 백업과 동기화 기록의 보관 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 폴더가 같은 계정에서 다시 열린 뒤 USB가 연결된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "최근 열람 흔적이 다른 단말보다 한쪽에 몰린 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -527,9 +657,35 @@
         "question_acquisition": "민간 기업의 내부 판단 자료이므로 분쟁 해결 목적 외 공개는 제한돼야 한다."
       },
       "subjectParty": "a",
-      "surfaceName": "협찬사 내부 메모와 상담 확인서",
-      "surfaceDescription": "협찬사의 내부 결정 메모와 상담센터 통화 확인서다. 중단 사유와 상담 내용이 적혀 있다.",
-      "requiredLieState": "S3"
+      "surfaceName": "내부 판단 메모와 상담 확인서",
+      "surfaceDescription": "내부 판단이 적힌 문서와 통화 확인 자료다. 결정 시점과 참고 내용이 남아 있다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "협업 중단 메모와 통화 확인서 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "중단 결정이 첫 게시 직후가 아니라 추가 연락 뒤 내려진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "브랜드가 공개 글보다 문서 확산 상황을 더 중하게 본 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

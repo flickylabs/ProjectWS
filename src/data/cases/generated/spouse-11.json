@@ -340,8 +340,34 @@
         "question_acquisition": "공동 주거공간 공사 계정의 감사로그로, 계약 당사자 요청에 의해 적법하게 확보됐다."
       },
       "subjectParty": "a",
-      "surfaceName": "관리 포털 접속 로그와 도어락 기록",
-      "surfaceDescription": "웹 포털 접속 감사 로그와 도어락 관리자 기록이다. 접속 계정과 시각이 남아 있다."
+      "surfaceName": "관리 시스템 접속 로그와 출입 기록",
+      "surfaceDescription": "시스템 접속 로그와 출입 기록이다. 접근 시각과 계정 정보가 남아 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 접속 로그와 관리자 기록의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 계정 접속이 다른 기기 흔적과 함께 남은 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 자료 확보가 단순 열람이 아니라 권한 행사로 이어진 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -368,7 +394,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "스마트플러그 로그와 업체 보고서",
-      "surfaceDescription": "IoT 기기 작동 로그와 업체 취소 기록, 권한 재설정 보고서다. 조치 시점과 내용이 기록되어 있다."
+      "surfaceDescription": "기기 작동 로그와 현장 보고서다. 여러 조치의 시점을 대조할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 전원 로그와 일정 변경 기록에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "전원을 끈 상태가 6시간 넘게 유지된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "전원 차단 뒤 권한 변경과 취소까지 이어진 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -403,8 +455,34 @@
           "implication": "이 증거는 백승호의 \"대규모 손상 — 시공 하자인가 지연인가\" 쟁점과 관련된다. 백승호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "심야 CCTV 캡처와 알람 이력",
-      "surfaceDescription": "심야 시간대 CCTV 캡처 이미지와 도어락 알람 기록이다. 출입 시각이 표시되어 있다."
+      "surfaceName": "심야 캡처 이미지와 알림 이력",
+      "surfaceDescription": "심야 시간대에 저장된 이미지와 출입 알림 기록이다. 시각을 대조할 수 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 영상과 캡처 자료를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "생성 직후 앞뒤 11초가 빠진 상태로 저장된 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "전체 흐름 대신 일부 장면만 남긴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -441,7 +519,33 @@
         }
       },
       "surfaceName": "삭제 복원 메신저와 예산 메모",
-      "surfaceDescription": "삭제 후 복원된 부부 메신저 대화와 클라우드 예산 메모다. 재정 관련 계획이 적혀 있다."
+      "surfaceDescription": "삭제 후 복원된 부부 메신저 대화와 클라우드 예산 메모다. 재정 관련 계획이 적혀 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 복원 대화와 메모 기록에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "비슷한 계산 대화가 두 시점에 반복된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 대화가 충동이 아니라 서로 계산을 보탠 흐름인 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -480,9 +584,35 @@
           "implication": "이 증거는 백승호의 \"대규모 손상 — 시공 하자인가 지연인가\" 쟁점과 관련된다. 백승호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "보험 청구서 초안과 센서 보고",
-      "surfaceDescription": "보험 청구서 초안 문서와 수분 센서 분석 보고서다. 수치 데이터와 시간 흐름이 기록되어 있다.",
-      "requiredLieState": "S3"
+      "surfaceName": "청구 문서 초안과 센서 보고",
+      "surfaceDescription": "청구 문서 초안과 센서 분석 보고서다. 수치 데이터와 시간 흐름을 함께 볼 수 있다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 청구 초안과 분석 자료를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "사진 순서 재배치와 센서 흐름이 어긋난 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "시간축상 단계적 변화인데 한 번의 사고처럼 적은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -519,9 +649,35 @@
           "implication": "이 증거는 백승호이 직접적 당사자가 아닌 쟁점이다. 백승호이 이 상황에 대해 알고 있는 바를 확인한다."
         }
       },
-      "surfaceName": "보험사 통지서와 업체 진술서",
-      "surfaceDescription": "보험사가 보낸 조사 관련 통지서와 복구업체의 진술서다. 보류 사유와 현장 소견이 담겨 있다.",
-      "requiredLieState": "S3"
+      "surfaceName": "조사 통지서와 업체 진술서",
+      "surfaceDescription": "조사 관련 통지서와 업체 진술서다. 보류 이유와 현장 소견이 담겨 있다.",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 보류 통지와 현장 진술서에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 결정이 외부 충돌 이틀 전 내려진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "보류 사유가 외부 신고와 별개로 적힌 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

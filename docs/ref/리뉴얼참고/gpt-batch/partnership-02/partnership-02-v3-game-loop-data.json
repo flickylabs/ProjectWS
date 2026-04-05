@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "박준오 씨, CRM 로그상 최초 리드와 초안은 당신이 맞습니다. 그런데 그 사실만으로 지금도 스스로를 '순수한 피해자'라고 단정하십니까?",
+              "text": "초기 영업 기여가 있었다는 점과 별개로, 본인 판단을 다시 볼 부분은 없다고 보십니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -31,7 +31,7 @@
             },
             {
               "id": "dossier-1.a.q2",
-              "text": "성과급 승인안에서 이름이 빠진 건 보입니다. 그렇다면 당신은 왜 자신의 다른 행동은 계속 뒤로 미뤘습니까?",
+              "text": "성과급 승인안에서 이름이 빠진 건 보입니다. 그렇다면 왜 다른 행동에 대한 설명은 계속 뒤로 미룠습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "서민경 씨, 최종 부속문서와 승인안에 당신만 주공로자로 남은 건 사실입니다. 이걸 아직도 단순 제출 책임 정리라고 보십니까?",
+              "text": "최종 문서에서 공로 정리가 한쪽으로 기운 이유부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "박준오 씨, 캡처본이 아니라 원본 메일과 첨부까지 나왔습니다. 시훈데이터랩 명의 파일럿 가능성을 실제로 물으신 거죠?",
+              "text": "공식 라인 밖에서 따로 타진한 내용이 있었는지부터 분명히 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "서민경 씨, 단일 창구 요청은 고객사 선요청이었습니까, 아니면 당신의 내부 정리 이후였습니까?",
+              "text": "단일 창구 정리가 어떻게 시작된지부터 순서대로 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -177,7 +177,7 @@
             },
             {
               "id": "dossier-2.b.q3",
-              "text": "계약이 흔들릴까 두려웠다는 이유가 있더라도, 그 공백이 결국 당신의 단독 통제에 유리하게 작동한 건 사실 아닙니까?",
+              "text": "계약이 흔들릴까 두려웠다는 이유가 있더라도, 그 공백이 결국 단독 통제에 유리하게 작동한 건 사실 아닙니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -211,7 +211,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "박준오 씨, 서명된 RACI 6대4 구조를 알고 있었으면서도 외부 라인을 우회한 점은 인정하십니까?",
+              "text": "기존에 합의한 역할 기준을 스스로 넘은 부분이 있었는지부터 답해 주시겠습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -221,7 +221,7 @@
             },
             {
               "id": "dossier-3.a.q2",
-              "text": "당신은 RACI를 공로 문제에서는 방패처럼 들었지만, 자기 우회 행동에는 같은 기준을 늦게 적용한 것 아닙니까?",
+              "text": "RACI를 공로 문제에서는 방패처럼 들었지만, 자기 우회 행동에는 같은 기준을 늦게 적용한 것 아닙니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -233,7 +233,7 @@
             },
             {
               "id": "dossier-3.a.q3",
-              "text": "결국 당신의 우회와 상대의 단독 구조 만들기가 같은 합의를 무너뜨렸다는 점까지 인정하십니까?",
+              "text": "결국 우회와 상대의 단독 구조 만들기가 같은 합의를 무너뜨렸다는 점까지 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -250,7 +250,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "서민경 씨, 고객사 검토 메모상 단일 창구의 직접 계기는 준오의 별도 제안과 첨부였습니다. 그 사실을 이제는 분명히 말씀하시겠습니까?",
+              "text": "단일 창구가 된 배경을 내부에 충분히 설명했는지부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

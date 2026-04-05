@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "서민석 씨, 회의록과 보드 코멘트에 18시 전 승인 체크를 직접 남기고도 그 약속이 확정이 아니었다고 보십니까?",
+              "text": "서민석 씨, 그날 승인 일정을 직접 챙기겠다고 해놓고 흐름을 놓친 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "배지우 씨, QA 도구 원본 로그상 스모크만 끝난 시점에 완료 표시가 먼저 바뀐 점은 인정하십니까?",
+              "text": "배지우 씨, 완료 표시를 조금 이르게 눌렀다고 볼 여지가 있는데, 그 판단 기준이 무엇이었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "서민석 씨, 20시 7분 승인 메일이 도착한 뒤 팀에 중간 상태를 바로 공유하지 않은 이유를 설명해 주시죠.",
+              "text": "서민석 씨, 늦게 답이 온 뒤에도 팀에 상황을 곧바로 공유하지 않은 이유가 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "배지우 씨, 잘린 캡처를 제출하면서 앞줄의 '회귀는 네가 끝내줘' 문장을 같이 제시하지 않은 이유는 무엇입니까?",
+              "text": "배지우 씨, 대화 전체보다 일부 장면을 먼저 꺼낸 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "서민석 씨, 20시대에 승인과 QA가 둘 다 안 끝났다는 신호를 받고도 왜 정식 에스컬레이션을 미루셨습니까?",
+              "text": "서민석 씨, 그 시간대에 여러 신호가 좋지 않다는 걸 알면서도 바로 올리지 않은 이유가 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "배지우 씨, DevOps 로그에 20시 31분 경고를 직접 열람한 기록이 있는데 왜 바로 보고하지 않으셨습니까?",
+              "text": "배지우 씨, 문제 신호를 보고도 곧바로 알리지 않은 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

@@ -1,0 +1,161 @@
+{
+  "case": "family-01",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "부모 관리계좌에서 개인계좌로 이체한 사실을 인정하십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 이체를 본인 휴대폰으로 직접 실행한 점에 대해 설명하십시오.",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "이체 당일 처리된 출금 항목의 우선순위에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "본인 휴대폰에 이 메모가 저장되어 있었다는 사실을 인정하십니까?",
+          "attackVector": "identity"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 메모의 생성 시각이 이체 직전으로 확인됩니다. 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "메모에 특정인의 방문 전까지라는 조건이 적힌 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 가족 단톡과 간병 스케줄표 기록에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "송금 약속과 실제 입금 사이에 상당한 차이가 있습니다. 이유를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "같은 기간 별도로 직접 결제한 항목이 있는데 이를 왜 언급하지 않았습니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 수첩 메모 사진을 증거로 제출한 경위에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 사진의 촬영 시점이 원본 작성 시점과 다릅니다. 이유가 있습니까?",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "사진에서 잘려 나간 부분에 어떤 내용이 있는지 알고 계십니까?",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 변호사 확인서와 수첩 전체 스캔본의 존재를 알고 계셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 상담이 분쟁 직후에 이루어진 점에 대해 어떻게 보십니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "정식 유언장이나 공증 이력이 없다는 사실을 알고 계셨습니까?",
+          "attackVector": "legality"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "퇴원 전 비용 경감 상담이 있었다는 사실을 알고 계셨습니까?",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "이 상담이 형제 간 첫 다툼 직전에 완료된 점을 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "경감 신청만 완료했다면 부담이 크게 달라졌을 텐데, 왜 진행하지 않았습니까?",
+          "attackVector": "legality"
+        }
+      }
+    ]
+  }
+}

@@ -20,7 +20,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "최복자 씨, 이 캡처 바깥에 '6개월만 먼저 해보자'는 문장이 있었다는 걸 알고도 일부만 돌리신 겁니까?",
+              "text": "최복자 씨, 그 캡처 앞에 더 이어지는 대화가 있었는데도 일부만 돌리신 겁니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -59,7 +59,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "박정우 씨, 원본 대화에선 6개월과 60만원이 함께 적혀 있습니다. 기간과 금액 약속 자체는 인정합니까?",
+              "text": "박정우 씨, 그 약속에 기간과 금액이 함께 있었던 점은 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -114,7 +114,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "복자 씨, 정우 씨 용돈이 들어온 같은 날 수빈 씨 계좌로 20만원과 25만원이 빠져나간 사실은 부인하지 않으시죠?",
+              "text": "최복자 씨, 정우 씨 돈이 들어온 날 다른 곳으로도 돈이 나간 사실은 부인하지 않으시죠?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -153,7 +153,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "박정우 씨, 이제는 어머니 설명만이 아니라 같은 날 수빈 씨 계좌로 돈이 이동한 기록도 확인됐습니다. 사용처가 분리되지 않았다는 점 보이십니까?",
+              "text": "박정우 씨, 어머니 설명과는 다른 자금 흐름이 함께 보인다는 점은 인정하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -163,7 +163,7 @@
             },
             {
               "id": "dossier-2.b.q2",
-              "text": "당신이 더 문제 삼는 건 누나 지원 자체보다 '전부 약값과 공과금'이라는 설명이 거짓이었다는 점, 맞습니까?",
+              "text": "박정우 씨, 더 문제 삼는 건 누나 지원 자체보다 '전부 약값과 공과금'이라는 설명이 거짓이었다는 점, 맞습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -207,7 +207,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "복자 씨, 직접 납부로 바꾸자는 합의 뒤에도 다시 현금을 요구하고 영수증 공유를 멈춘 적 있지요?",
+              "text": "최복자 씨, 직접 납부로 바꾸자는 말이 오간 뒤에도 다시 현금을 요구하고 공유를 끊은 적 있지요?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -246,7 +246,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "박정우 씨, 직접 납부로 바꾸자고 해 놓고 실제로는 한 차례만 납부한 것 맞습니까?",
+              "text": "박정우 씨, 직접 납부로 바꾸자고 해 놓고 실제 이행은 거의 하지 못한 것 맞습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

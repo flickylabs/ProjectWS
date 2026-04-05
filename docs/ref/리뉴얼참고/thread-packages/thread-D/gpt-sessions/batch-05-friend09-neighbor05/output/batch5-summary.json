@@ -1,0 +1,47 @@
+{
+  "totalCases": 8,
+  "totalCorrections": 99,
+  "passCases": [],
+  "cases": [
+    {
+      "caseId": "case-friend-09",
+      "case": "friend-09",
+      "correctionCount": 12
+    },
+    {
+      "caseId": "case-friend-10",
+      "case": "friend-10",
+      "correctionCount": 10
+    },
+    {
+      "caseId": "case-friend-11",
+      "case": "friend-11",
+      "correctionCount": 11
+    },
+    {
+      "caseId": "case-friend-12",
+      "case": "friend-12",
+      "correctionCount": 11
+    },
+    {
+      "caseId": "case-neighbor-02",
+      "case": "neighbor-02",
+      "correctionCount": 11
+    },
+    {
+      "caseId": "case-neighbor-03",
+      "case": "neighbor-03",
+      "correctionCount": 15
+    },
+    {
+      "caseId": "case-neighbor-04",
+      "case": "neighbor-04",
+      "correctionCount": 15
+    },
+    {
+      "caseId": "case-neighbor-05",
+      "case": "neighbor-05",
+      "correctionCount": 14
+    }
+  ]
+}

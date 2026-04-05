@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "배지연 씨, 이 캡처 기준으로는 원본 정산서를 직접 요구하기도 전에 공개 글이 먼저 올라갑니다. 확인보다 지목이 앞선 이유를 설명해 보시겠습니까?",
+              "text": "공개 글을 올리기 전에 어떤 확인을 했는지부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "서도윤 씨, 카드취소 32만 원 알림이 뜬 뒤 실제 안내까지 사흘 가까운 공백이 보입니다. 이 지연 자체는 인정하십니까?",
+              "text": "취소 사실을 알게 된 뒤 안내가 왜 바로 나가지 않았는지부터 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "배지연 씨, 작년 캐시백 41만 원과 반품차액 21만 원이 공식 정산 없이 개인계좌에 남아 있었다는 점부터 인정하십니까?",
+              "text": "작년 정산이 남은 부분이 있었는지부터 분명히 해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "서도윤 씨는 작년 라운드를 먼저 닫자고 말했지만, 실제로는 같은 계좌 구조가 다시 시작되도록 두었습니다. 그 소극적 허용은 사실입니까?",
+              "text": "작년 정산을 마무리하지 못한 책임이 전혀 없다고 보시는지부터 답해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -210,7 +210,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "배지연 씨, 새 공동구매를 열 때도 같은 개인계좌를 계속 쓰자고 직접 제안한 점은 이 대화로 확인됩니다. 그 제안부터 인정하시겠습니까?",
+              "text": "같은 계좌를 계속 쓰자는 이야기가 먼저 나온 경위부터 말씀해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -249,7 +249,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "서도윤 씨, 최종 정산서상 현재 라운드 환급분이 32만 원뿐이라는 점과, 94만 원이 그 금액 하나만을 뜻하지 않는다는 점을 명확히 설명해 주십시오.",
+              "text": "이번 환급 규모를 처음부터 충분히 설명했는지부터 짚어 보시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

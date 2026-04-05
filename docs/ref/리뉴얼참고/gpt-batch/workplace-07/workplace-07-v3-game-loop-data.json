@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "장태욱 씨, 익명 글이 올라온 지 두 시간도 안 돼 팀 미팅에서 특정 제보자를 암시하는 표현을 꺼낸 이유가 무엇입니까?",
+              "text": "장태욱 씨, 익명 글이 올라온 직후 팀 안에 작성자를 짐작하게 하는 말을 꺼낸 이유가 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "한세린 씨, 이 캡처 묶음을 익명 게시글 본문에 붙여 올린 본인이 맞습니까?",
+              "text": "한세린 씨, 그 게시글에 자료를 함께 올린 경위부터 설명해 주시겠습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -116,7 +116,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "장태욱 씨, 2년 전 회의록에 '외부 공포를 키우지 말자'며 등급 표현을 낮추자고 한 문구가 있는데, 그 제안을 직접 하신 게 맞습니까?",
+              "text": "장태욱 씨, 예전에도 문제 표현 수위를 낮추는 쪽으로 판단하신 적이 있습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -155,7 +155,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "한세린 씨, 메신저 원본 export와 해시 비교표상 이 문장은 올해가 아니라 2년 전 대화에서 나온 것으로 보입니다. 이 점 인정하십니까?",
+              "text": "한세린 씨, 그 문장의 시기를 이번 일과 같은 때로 보신 근거는 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -212,7 +212,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "장태욱 씨, 포렌식 결과 전인데도 세린 씨의 리뷰 참여 제외와 부정적 평가 코멘트를 먼저 입력하신 이유가 무엇입니까?",
+              "text": "장태욱 씨, 사실확인 전에 세린 씨 역할을 먼저 줄인 이유가 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -251,7 +251,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "한세린 씨, 편집 PC 로그에 과거 대화 이미지와 현재 채널 상단 바가 같은 세션에서 열린 기록이 남아 있습니다. 직접 합친 것이 맞습니까?",
+              "text": "한세린 씨, 그 이미지를 직접 손본 적이 있는지부터 답해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

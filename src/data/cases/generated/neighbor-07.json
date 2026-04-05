@@ -345,7 +345,33 @@
         "check_edits": "합성 흔적 없으나 전후 맥락 없이 필요한 부분만 촬영 — 선별적 제출.",
         "question_acquisition": "전 세입자 사적 인수인계 흔적이라 소지는 가능하나 공식 권한 증빙으로는 부적합."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 열쇠 봉투와 메모 사진을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "사진 시점과 메모 상태 차이가 큰 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "승인 주체와 사용 기간이 빠진 메모를 근거로 삼은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -382,13 +408,39 @@
           "questionAngle": "권성호에게: \"관리실 확인 우선 원칙의 쌍방 파기\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 권성호의 \"관리실 확인 우선 원칙의 쌍방 파기\" 쟁점과 관련된다. 권성호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 동선 영상과 요약본을 증거로 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "관리실 연락보다 사용이 먼저 시작된 경위를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "오디오 없는 영상만으로 당시 상황을 단정한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "임시사용 승인대장과 퇴거 반납 공지",
-      "surfaceName": "임시사용 승인대장과 반납 공지",
-      "surfaceDescription": "시설 임시사용 승인대장과 퇴거 반납 공지문이다. 승인 기간과 반납 조건 확인이 필요하다.",
+      "surfaceName": "시설 사용 기록과 안내문",
+      "surfaceDescription": "시설 사용 경위와 기간을 확인할 수 있는 자료다. 사용 조건과 시점 확인이 필요하다.",
       "description": "관리사무소 임시사용 승인대장과 퇴거 반납 공지. 사유는 실내 누수 공사 임시보관, 종료일은 퇴거 하루 전이다.",
       "type": "institutional_note",
       "reliability": "hard",
@@ -419,7 +471,33 @@
           "questionAngle": "권성호에게: \"8층 잠금함은 803호 전용이었는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 권성호의 \"8층 잠금함은 803호 전용이었는가\" 쟁점과 관련된다. 권성호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 승인대장과 반납 공지를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "종료일 이후 연장 기록이 없는 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "당시 허가가 상시 사용이 아니었던 배경을 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -445,13 +523,39 @@
         "check_edits": "크롭 외 편집 없음. 글씨 번짐 상태도 실물과 일치.",
         "question_acquisition": "당사자 직접 촬영이라 취득 문제는 적으나, 상대 물건·호수 정보 포함돼 재유포 주의."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 자물쇠 사진과 경고문을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공식 답변 전에 먼저 잠근 경위를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "규칙을 내세우면서도 직접 잠금 조치한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
-      "name": "이사 첫날 안내 문자와 단지앱 글·통화 순서표",
+      "name": "이사 첫날 안내 문자와 공개 글·통화 순서표",
       "surfaceName": "안내 문자와 단지앱 글·통화 순서표",
-      "surfaceDescription": "이사 첫날 안내 문자와 단지 앱 게시글, 통화 순서표다. 연락 경위와 시점 확인이 필요하다.",
+      "surfaceDescription": "안내 문자와 공개 글, 통화 순서를 묶은 자료다. 연락 경위와 시점 확인이 필요하다.",
       "description": "성호의 첫 안내 문자 → 나리 답장 → 단지앱 경고 글 → 관리실 통화 시간표. 경고 글이 관리실 첫 답변보다 11분 앞서 있다.",
       "type": "chat",
       "reliability": "hard",
@@ -482,13 +586,39 @@
           "questionAngle": "권성호에게: \"성호의 사적 재잠금과 공개 경고\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 권성호의 \"성호의 사적 재잠금과 공개 경고\" 쟁점과 관련된다. 권성호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 문자와 글, 통화 순서표를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "관리실 답변보다 공개 글이 앞선 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확인 우선 원칙을 알면서도 순서를 바꾼 배경을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "윤가영의 음성메시지",
       "surfaceName": "음성메시지 파일",
-      "surfaceDescription": "당사자가 남긴 음성메시지 파일이다. 녹음 시점과 내용 확인이 필요하다.",
+      "surfaceDescription": "당사자가 남긴 음성 파일이다. 녹음 시점과 내용 확인이 필요하다.",
       "description": "윤가영의 46초 음성메시지. '잠깐 쓰던 데라 열쇠를 못 돌려드렸고, 다음 분도 급하면 쓰실 줄 알았다' — 반납 의무를 기억 못 한 채 사적으로 넘긴 정황.",
       "type": "audio",
       "reliability": "soft",
@@ -508,7 +638,33 @@
         "check_edits": "분할·이어붙이기 흔적 없으나 전후 대화 미포함 — 단독 증거력은 제한적.",
         "question_acquisition": "제3자 개인 음성이라 동의 범위 안에서만 활용. 사건 외 사적 사정 확산 금지."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 음성메시지를 증거로 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "사건 다음 날 이 음성이 도착한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "사적으로 넘겨진 열쇠만으로 권한을 이어받았다고 본 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

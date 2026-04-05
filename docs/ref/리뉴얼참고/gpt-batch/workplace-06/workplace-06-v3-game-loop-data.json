@@ -22,7 +22,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "박준호 씨, 잘린 공지 캡처만 보고 자신에게 먼저 손볼 재량이 있다고 받아들이신 겁니까?",
+              "text": "박준호 씨, 공지를 보고 본인이 먼저 움직여도 된다고 판단하신 근거가 무엇이었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -61,7 +61,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "이서린 씨, 삭제돼야 할 레거시 관리자 권한이 남아 있다는 걸 알고 그 계정으로 규칙을 만지셨습니까?",
+              "text": "이서린 씨, 본인 권한 범위를 어디까지로 보고 그 규칙을 손보신 겁니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -117,7 +117,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "박준호 씨, e-4 로그와 e-3 규칙을 함께 보면 공동 승인 없는 재배정이 바로 보이는데, 그때도 자신에게 단독 재량이 있다고 생각하셨습니까?",
+              "text": "박준호 씨, 그 조치를 단독으로 해도 된다고 판단하신 근거는 무엇이었습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -156,7 +156,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "이서린 씨, RACI 문서에 'co-sign + PM log'가 적혀 있는데도 아직 공지를 예외 권한으로 읽으십니까?",
+              "text": "이서린 씨, 공지를 예외 권한으로 읽으신 근거를 다시 말씀해 주시겠습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -212,7 +212,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "박준호 씨, 역할 경계가 정리되기 전날 밤에 HR 초안에 이서린 씨 코멘트를 넣은 이유가 무엇입니까?",
+              "text": "박준호 씨, 사실관계가 정리되기 전에 사람 평가부터 남긴 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -251,7 +251,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "이서린 씨, 체크리스트를 열어 보고도 PM 핑을 늦춘 건 책임이 본인에게 쏠릴까 두려웠기 때문입니까?",
+              "text": "이서린 씨, 절차보다 대응을 먼저 택하신 이유가 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",

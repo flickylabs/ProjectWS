@@ -323,8 +323,8 @@
       "id": "e-1",
       "name": "공유 캘린더 아젠다 수정 이력",
       "description": "리드 투자사 미팅 초대장에 첨부된 런오브쇼 문서와 캘린더 수정 로그로, 도윤이 새벽 0시 47분 자신을 오프닝 발표자로 올린 기록이다.",
-      "surfaceName": "공유 캘린더 수정 이력",
-      "surfaceDescription": "캘린더 초대장과 아젠다 문서의 수정 로그가 남은 기록이다.",
+      "surfaceName": "일정 문서 수정 이력",
+      "surfaceDescription": "일정 문서와 관련 첨부안의 수정 흐름이 남은 기록이다. 변경 시점과 반영 내용 확인이 필요하다.",
       "type": "cloud_log",
       "reliability": "hard",
       "completeness": "original",
@@ -355,14 +355,40 @@
           "questionAngle": "나서린에게: \"전날 밤 10시 문서화 약속의 쌍방 위반\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
           "implication": "이 증거는 나서린의 \"전날 밤 10시 문서화 약속의 쌍방 위반\" 쟁점과 관련된다. 나서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 아젠다 수정 기록을 남긴 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "리허설 직후 발표자 표기가 바뀐 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "오프닝 담당과 전체 진행을 같은 뜻으로 본 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "디자인 툴 덱 출력 요청 로그",
       "description": "서린이 새벽에 디자이너에게 자신의 오프닝 스크립트가 포함된 발표자용 덱과 인쇄본을 먼저 뽑아달라고 남긴 코멘트 기록이다.",
-      "surfaceName": "디자인 툴 출력 요청 로그",
-      "surfaceDescription": "디자인 협업 툴에 남은 코멘트와 인쇄 요청 기록이다.",
+      "surfaceName": "디자인 협업 기록과 출력 요청",
+      "surfaceDescription": "디자인 관련 코멘트와 출력 요청 기록이다. 지시 순서와 반영 범위 확인이 필요하다.",
       "type": "platform_log",
       "reliability": "hard",
       "completeness": "original",
@@ -381,14 +407,40 @@
         "check_edits": "댓글 수정 흔적 없이 원문이 남아 있다.",
         "question_acquisition": "회사 디자인 협업 도구 기록이라 적법하다."
       },
-      "subjectParty": "b"
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 출력 요청 댓글과 덱 사본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "상대 수정 직후 자신의 버전을 먼저 지시한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다른 파트를 남겨둔 채 먼저 출력하려 한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
-      "name": "크롭된 메신저 캡처",
+      "name": "메신저 캡처 이미지",
       "description": "한밤중 대화 중 '처음은 내가 끊을게'라는 한 줄만 남은 캡처로, 누구의 발언인지와 앞뒤 맥락이 빠져 있다.",
       "surfaceName": "크롭된 메신저 캡처",
-      "surfaceDescription": "대화 한 줄만 남은 캡처로, 발신자와 전후 맥락이 빠져 있다.",
+      "surfaceDescription": "대화 일부가 담긴 캡처다. 앞뒤 맥락 확인이 필요하다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "cropped",
@@ -419,14 +471,40 @@
           "questionAngle": "나서린에게: \"서린의 단독 발표용 덱 출력 지시\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 나서린의 \"서린의 단독 발표용 덱 출력 지시\" 쟁점과 관련된다. 나서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화 캡처 한 장만 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "리허설 직후 캡처가 저장된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "누가 어디까지 맡는지 드러나는 앞뒤를 잘라낸 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
-      "name": "IR 컨설턴트 음성메모와 원본 단톡",
+      "name": "IR 음성메모와 대화 기록",
       "description": "오세진 컨설턴트가 '첫 10분은 한 명이 끊고 숫자랑 제품은 바로 넘기자'고 말한 음성메모와, 이를 두 사람이 서로 다르게 해석하는 원본 대화다.",
       "surfaceName": "컨설턴트 음성메모와 원본 단톡",
-      "surfaceDescription": "외부 컨설턴트 음성메모와 단체 대화방 내보내기 묶음이다.",
+      "surfaceDescription": "음성메모와 대화 기록이 함께 묶인 자료다. 발언 시점과 해석 맥락 확인이 필요하다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "original",
@@ -459,7 +537,33 @@
           "implication": "이 증거는 나서린의 \"상대가 일부러 약속을 깨고 발표권을 빼앗았는가\" 쟁점과 관련된다. 나서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 음성메모와 단톡 원문에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "답장이 짧은 간격으로 엇갈린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "한 지시를 서로 다른 범위로 받아들인 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -499,14 +603,40 @@
           "implication": "이 증거는 나서린의 \"서린의 단독 발표용 덱 출력 지시\" 쟁점과 관련된다. 나서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 체크리스트와 화이트보드 사진에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 밤 서로 다른 분량표가 남은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "상대 신호를 보고도 확정 절차를 다시 열지 않은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
       "name": "투자사 어소시에이트 확인 메일과 초대장 템플릿 설명",
       "description": "백지수가 보낸 확인 메일로, 투자자 측은 첫 4분 오프닝과 시간관리 담당만 한 명으로 정해달라고 했고 초대장 템플릿의 'lead presenter' 문구가 자동 삽입됐다는 설명이다.",
-      "surfaceName": "투자사 담당자 확인 메일",
-      "surfaceDescription": "투자사 측에서 보낸 확인 메일과 초대장 양식 설명이 첨부돼 있다.",
+      "surfaceName": "확인 메일과 첨부 설명",
+      "surfaceDescription": "확인 메일과 관련 설명 자료가 첨부된 문서다. 요청 범위와 전달 맥락 확인이 필요하다.",
       "type": "email",
       "reliability": "hard",
       "completeness": "original",
@@ -539,7 +669,33 @@
           "implication": "이 증거는 나서린의 \"상대가 일부러 약속을 깨고 발표권을 빼앗았는가\" 쟁점과 관련된다. 나서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 확인 메일과 템플릿 설명에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "자동 문구가 붙은 시각을 왜 다시 확인하지 않았습니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "요청 범위를 전체 진행으로 넓혀 이해한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

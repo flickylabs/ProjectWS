@@ -1,0 +1,161 @@
+{
+  "case": "case-work-12",
+  "evidenceStages": {
+    "e-1": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 재택근무 지침과 일일 확인 공지의 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "공식 지침보다 확인 범위가 넓어진 이유를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "정식 개정 전에 추가 확인이 관행처럼 굳어진 경위를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      }
+    ],
+    "e-2": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 유휴 로그와 장치 탐지 기록의 제출 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "입력 없이 미세 이동만 반복된 시간대를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "응답 공백과 연결 유지 흔적이 겹친 구간을 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      }
+    ],
+    "e-3": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 모니터링 요약 PDF를 제출한 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "정상 응답 구간과 예외 메모를 뺀 이유를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "같은 시간대의 다른 장면을 제외한 기준을 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-4": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 원본 추출본과 관리자 설정 로그를 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "캡처 주기와 호출 횟수가 기준을 넘은 이유를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "요약본에서 빠진 구간이 원본에는 남은 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ],
+    "e-5": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 상태 화면 캡처와 대화 기록에 대해 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "캡처 직전 일정 블록이 급히 바뀐 이유를 설명하십시오.",
+          "attackVector": "timeline"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "check_edits",
+        "question": {
+          "text": "보고 직전 화면에서 일부 항목만 손본 경위를 설명하십시오.",
+          "attackVector": "authenticity"
+        }
+      }
+    ],
+    "e-6": [
+      {
+        "stage": 0,
+        "revealKey": "request_original",
+        "question": {
+          "text": "이 코칭 메모와 응답 티켓 기록을 설명하십시오.",
+          "attackVector": "context"
+        }
+      },
+      {
+        "stage": 1,
+        "revealKey": "check_metadata",
+        "question": {
+          "text": "지연 누적 뒤에도 정식 조치가 늦어진 이유를 설명하십시오.",
+          "attackVector": "legality"
+        }
+      },
+      {
+        "stage": 2,
+        "revealKey": "restore_context",
+        "question": {
+          "text": "정식 절차 대신 비공식 대응이 굳어진 경위를 설명하십시오.",
+          "attackVector": "context"
+        }
+      }
+    ]
+  }
+}

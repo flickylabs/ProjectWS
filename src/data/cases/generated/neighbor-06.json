@@ -353,7 +353,33 @@
           "questionAngle": "조인호에게: \"계산서 확인 전 송금 압박·지급 거부\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 조인호의 \"계산서 확인 전 송금 압박·지급 거부\" 쟁점과 관련된다. 조인호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 송금 요청과 견적 캡처를 함께 보낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "보전 안내 뒤에도 견적 기준으로 요구한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "최종 정산 페이지를 제외한 채 요구액을 정한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -390,13 +416,39 @@
           "questionAngle": "조인호에게: \"인호의 문받침 사용과 공동 책임\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 조인호의 \"인호의 문받침 사용과 공동 책임\" 쟁점과 관련된다. 조인호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 CCTV 요약본을 증거로 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "양쪽 사용 장면이 비슷한 횟수로 남은 점을 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "한 사람 책임으로만 정리하기 어려운 흐름을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "최종 수리계산서와 관리사무소 보전금 전표",
-      "surfaceName": "수리계산서와 보전금 전표",
-      "surfaceDescription": "최종 수리 계산서와 관리사무소 보전금 전표다. 금액 내역과 처리 경위 확인이 필요하다.",
+      "surfaceName": "수리 정산 자료",
+      "surfaceDescription": "수리비 정산 내역을 정리한 자료다. 금액 구성과 처리 경위 확인이 필요하다.",
       "description": "관리사무소 공식 정산서. 수리비 18만원 - 보전금 6만원 = 주민 부담 12만원. 세영이 보낸 견적과 3만원 차이가 난다.",
       "type": "repair_record",
       "reliability": "hard",
@@ -417,13 +469,39 @@
         "check_edits": "기관 원본 출력물, 편집·금액 수정 이력 없음.",
         "question_acquisition": "공용시설 정산 자료라 정당성 높음. 개인 결제수단 정보만 마스킹 필요."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 최종 계산서와 전표를 함께 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공식 정산이 먼저 끝난 뒤에도 별도 요구가 나온 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "최종 부담 기준과 요구 기준이 달라진 경위를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
-      "name": "박영수 기사 점검보고서",
+      "name": "박영수 점검 보고서",
       "surfaceName": "기사 점검보고서",
-      "surfaceDescription": "수리 기사가 작성한 점검 보고서다. 점검 결과와 소견 확인이 필요하다.",
+      "surfaceDescription": "현장 점검 결과를 적은 보고서다. 점검 내용과 소견 확인이 필요하다.",
       "description": "수리기사 점검보고서. 도어클로저 암 휨과 오일 누유는 일회성 충격이 아닌 반복 문받침 압력으로 누적됐다고 기록돼 있다.",
       "type": "inspection_report",
       "reliability": "hard",
@@ -457,7 +535,33 @@
           "implication": "이 증거는 조인호의 \"인호의 문받침 사용과 공동 책임\" 쟁점과 관련된다. 조인호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 점검보고서를 증거로 제시한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "마지막 사용 직후 점검이 이뤄진 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "누적 손상 소견이 나온 이유를 어떻게 설명하시겠습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -493,7 +597,33 @@
           "questionAngle": "조인호에게: \"계산서 확인 전 송금 압박·지급 거부\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 조인호의 \"계산서 확인 전 송금 압박·지급 거부\" 쟁점과 관련된다. 조인호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 약속 대화와 통화 순서표를 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공식 공지 전 요구와 직후 거부가 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확인 절차를 알면서도 서로 먼저 움직인 배경을 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -530,7 +660,33 @@
           "questionAngle": "조인호에게: \"인호의 문받침 사용과 공동 책임\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 조인호의 \"인호의 문받침 사용과 공동 책임\" 쟁점과 관련된다. 조인호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 진술과 민원 메모를 함께 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "수리 전부터 같은 소음이 이어진 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "한 번의 사고로만 보기 어려운 흐름을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

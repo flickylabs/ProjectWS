@@ -354,8 +354,34 @@
           "implication": "이 증거는 이서린의 \"통합 공지의 단독 통제권 부여 여부\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "팀즈 통합 공지 캡처와 역할표",
-      "surfaceDescription": "사내 메신저 통합 공지 캡처본과 일부가 잘린 역할 배분표 문서"
+      "surfaceName": "공지 캡처와 역할표",
+      "surfaceDescription": "공지 캡처본과 역할표 일부를 함께 묶은 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 통합 공지 캡처와 역할표를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "조건 문장이 잘린 화면만 남긴 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "잘린 뒷부분이 보이면 단독 권한 해석이 달라지는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -391,8 +417,34 @@
           "implication": "이 증거는 이서린의 \"서린의 레거시 권한 사용과 라우팅 변경\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "레거시 권한 감사 로그와 변경 내역",
-      "surfaceDescription": "레거시 관리자 권한 감사 로그와 라우팅 규칙 변경 기록 내역"
+      "surfaceName": "권한 로그와 변경 내역",
+      "surfaceDescription": "권한 사용 기록과 규칙 변경이 함께 남은 로그",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 권한 감사 로그와 규칙 변경 내역을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "삭제 대상 권한으로 새벽 규칙을 바꾼 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "승인 없이 다른 큐를 건드린 근거가 무엇인지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -419,9 +471,35 @@
         "question_acquisition": "통합 운영 문서. 업무 확인 적법."
       },
       "subjectParty": "b",
-      "surfaceName": "공식 통합 RACI 문서와 해설 메모",
-      "surfaceDescription": "공식 역할 분담 RACI 문서와 임시 권한에 대한 해설 메모",
-      "requiredLieState": "S3"
+      "surfaceName": "역할 기준 문서와 설명 메모",
+      "surfaceDescription": "역할 기준과 보조 설명이 함께 담긴 문서",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 통합 문서와 해설 메모의 작성 취지를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계정 변경 옆 공동 승인 문구가 적힌 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "임시 운영 지침을 단독 재량처럼 해석한 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -457,8 +535,34 @@
           "implication": "이 증거는 이서린의 \"지연 경고 후 쌍방 독단 핫픽스\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "통합 큐 재배정과 편집 이력",
-      "surfaceDescription": "업무 큐 재배정 내역과 대시보드 편집 변경 이력이 담긴 로그"
+      "surfaceName": "운영 로그와 편집 이력",
+      "surfaceDescription": "업무 흐름 변화와 설정 수정이 함께 남은 기록",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 재배정 기록과 편집 이력을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "짧은 간격으로 재배정과 기준 수정을 연달아 한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "인수인계 전 상대 기준까지 손댄 근거가 무엇인지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -483,8 +587,34 @@
         "question_acquisition": "인사자료. 사용 목적은 분쟁 해결에 한정."
       },
       "subjectParty": "a",
-      "surfaceName": "캘리브레이션 초안과 코멘트 이력",
-      "surfaceDescription": "인사 캘리브레이션 초안 문서와 매니저가 남긴 코멘트 변경 이력"
+      "surfaceName": "평가 초안과 코멘트 이력",
+      "surfaceDescription": "초안 문서와 코멘트 변경 흐름이 보이는 기록",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 캘리브레이션 초안과 코멘트 기록을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "역할 정리 전날 밤 부정 코멘트를 먼저 남긴 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공식 정리 전 평가성 문구를 남긴 목적을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -522,9 +652,35 @@
           "implication": "이 증거는 이서린의 \"통합 공지의 단독 통제권 부여 여부\" 쟁점과 관련된다. 이서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "PM 회의록과 에스컬레이션 체크리스트",
-      "surfaceDescription": "부서 통합 PM 회의 기록과 에스컬레이션 절차 체크리스트",
-      "requiredLieState": "S3"
+      "surfaceName": "회의록과 절차 체크리스트",
+      "surfaceDescription": "회의 기록과 대응 절차가 함께 묶인 문서",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 PM 회의록과 체크리스트 제출 내역을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "둘 다 열람한 날 PM 기록이 늦게 남은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "즉시 올릴 절차가 있는데도 각자 처리로 남긴 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

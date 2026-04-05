@@ -1,0 +1,773 @@
+{
+  "caseId": "case-neighbor-09",
+  "meta": {
+    "relationshipType": "neighbor",
+    "conflictSeed": "CS-6",
+    "variableModules": [
+      "VM-A",
+      "VM-D"
+    ],
+    "twistModule": "TW-5",
+    "difficulty": "hard",
+    "anchorTruth": "관리사무소에서 반반 합의서에 서명까지 마친 지훈이, 시공 후 \"30만 원이면 충분하다\"고 뒤집었다. 단 연우도 천장 패치를 추가해 18만 원을 올렸다.",
+    "emotionalBait": "밤 11시 녹음 파일, 아이 발소리 62dB 측정표, 공사 끝난 날 도착한 '30만 원만 낸다' 메시지―세 장면이 겹치면 지훈이 처음부터 떠넘길 작정이었던 것처럼 보인다.",
+    "resolutionDilemma": "지훈의 반반 약속 번복이 가장 크지만, 연우도 18만 원짜리 천장 보강을 추가하고 관리실 공지 14분 전에 주민앱 공개 압박을 걸었다. 약속 위반과 추가 비용 책임을 함께 정리하지 않으면 같은 분쟁이 반복된다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "최연우",
+      "age": 36,
+      "occupation": "입시 영어 인강 녹음 프리랜서",
+      "incomeBracket": "mid",
+      "archetype": "micro_manager",
+      "speechStyle": "'11시 14분 62데시벨, 12시 03분 58데시벨' 식으로 숫자를 나열한 뒤 결론을 덧붙인다. 추가 요청이 지적되면 '제가 석 달간 녹음하고 관리실 다닌 건 빼시나요'로 수고 프레임을 먼저 깐다.",
+      "pride": 7,
+      "fear": "동대표 회의에서 '아래층이 방음공사 핑계로 돈 더 뜯으려 한다'는 말이 도는 장면 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "noise_log_and_spreadsheet",
+      "dailyRoutine": "오전과 밤에 집에서 녹음 작업을 해 충격음에 매우 민감하다. 소음이 들리면 즉시 시간과 위치를 기록하고 관리앱 공지를 스크린샷으로 남긴다.",
+      "sensitivePoints": [
+        "재택 녹음 방해",
+        "예민하다는 낙인",
+        "공사비 정산의 투명성"
+      ],
+      "verbalTells": [
+        {
+          "type": "measurement_stack",
+          "trigger": "lying",
+          "pattern": "'7월 8일 밤 11시 62dB, 7월 15일 자정 58dB…' 식으로 높은 수치만 골라 읽으며 전체가 이미 입증된 사실인 것처럼 분위기를 만든다."
+        },
+        {
+          "type": "effort_credit",
+          "trigger": "cornered",
+          "pattern": "천장 추가 요청이 나오면 '제가 관리실 열두 번 다니고 기사 기다리고 녹음도 접었는데요'로 수고를 먼저 쌓아 요청의 무게를 줄인다."
+        },
+        {
+          "type": "narrow_term",
+          "trigger": "avoiding",
+          "pattern": "18만 원짜리 천장 패치를 '마감 보완'이라 부르고, 공진 억제 자재 추가를 '미세 조정'으로 축소해 비용 증가를 작게 보이게 한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "지훈씨",
+        "toJudge": "옆집 분",
+        "angry": "남지훈 씨!"
+      }
+    },
+    "partyB": {
+      "name": "남지훈",
+      "age": 42,
+      "occupation": "생활물류 스타트업 운영팀장",
+      "incomeBracket": "mid",
+      "archetype": "stubborn_bargainer",
+      "speechStyle": "'매트 깔고 아이 뛰는 시간도 줄였다'를 먼저 꺼내 노력을 증명한 뒤 비용은 별개라고 선을 긋는다. 몰리면 '내 바닥 구간만 따로 계산하죠'를 짧게 반복하며 전체 합의를 조각낸다.",
+      "pride": 8,
+      "fear": "엘리베이터에서 이웃이 '윗집이 합의 깨고 30만 원만 던졌대' 수군거리는 장면 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "messenger_and_payment_app",
+      "dailyRoutine": "늦은 오후 출근 전 아이를 챙기고 집안 정리를 한다. 밤늦게 귀가한 뒤 생활소음 관련 메시지를 확인하고 금전 정산은 휴대폰 뱅킹으로 바로 처리하는 편이다.",
+      "sensitivePoints": [
+        "윗집 가해자 낙인",
+        "아이 생활패턴 지적",
+        "예상보다 커진 공사비"
+      ],
+      "verbalTells": [
+        {
+          "type": "cost_slice",
+          "trigger": "lying",
+          "pattern": "'내 바닥은 30만 원어치, 저쪽 천장은 연우 씨 몫이죠'―반반 합의를 무시하고 구간을 임의로 잘라 자기 부담만 줄인다."
+        },
+        {
+          "type": "short_offer",
+          "trigger": "cornered",
+          "pattern": "궁지에 몰리면 '그래서 30만 원은 바로 보냈잖아요'를 반복해 일부 지급 사실로 62만 원 미지급을 덮으려 한다."
+        },
+        {
+          "type": "promise_blur",
+          "trigger": "avoiding",
+          "pattern": "서명까지 한 합의서를 가리키면 '그건 검토하자는 취지였지 확정은 아니었다'며 동의를 흐린다. 음성 파일은 언급을 피한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "연우씨",
+        "toJudge": "옆집 분",
+        "angry": "최연우 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "여름 전 관리사무소 회의실에서 '보전 후 잔여비 200만 원 이하면 반반, 방학 전 완료' 합의서에 두 사람 모두 서명했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "봄에 지훈이 빌려준 체육관 매트를 연우는 '바닥 결함 인정 증거', 지훈은 '일시적 배려'로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '그때 이미 자기 집 바닥이 문제라는 걸 인정했다' / B: '잠깐 빌려준 호의를 책임 인정처럼 바꿔 말한다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "연우는 에어컨 배관 공사 후 천장 공진이 커졌다는 말을 넘겼고, 지훈은 놀이매트를 치운 뒤 소음이 커진 사실을 관리실에 말하지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "배수정 (같은 라인 1501호 주민)",
+        "relationTo": "both",
+        "knowledgeScope": "관리사무소 중재석과 시공 전 충격음 테스트 날, 두 사람이 '반반 부담' 이야기를 나누는 장면을 바로 옆에서 들었다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "같은 라인 1501호 주민",
+          "relationToA": "최연우을 업무상 알고 있음",
+          "relationToB": "남지훈을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "연우씨",
+          "addressB": "지훈씨"
+        },
+        "addressA": "최연우씨",
+        "addressB": "남지훈씨"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_2",
+        "name": "윤태성 (방음시공 소장)",
+        "relationTo": "both",
+        "knowledgeScope": "바닥 보강과 천장 패치를 묶은 이유, 연우의 추가 요청 항목, 18만 원 증액 사유를 현장 기록으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "방음시공 소장",
+          "relationToA": "최연우을 업무상 알고 있음",
+          "relationToB": "남지훈을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "연우씨",
+          "addressB": "지훈씨"
+        },
+        "addressA": "최연우씨",
+        "addressB": "남지훈씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "노가은 (관리사무소 생활지원 주임)",
+        "relationTo": "both",
+        "knowledgeScope": "합의서 서명 시각, 보전금 전표 2건, 예약금 선지급, 정산 공지 예약 시각을 원본 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 44,
+          "occupation": "관리사무소 생활지원 주임",
+          "relationToA": "최연우을 업무상 알고 있음",
+          "relationToB": "남지훈을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "최연우씨",
+          "addressB": "남지훈씨"
+        },
+        "addressA": "최연우씨",
+        "addressB": "남지훈씨"
+      }
+    ],
+    "relationshipType": "neighbor"
+  },
+  "context": {
+    "contextType": "interfloor_soundproofing",
+    "description": "석 달째 충격음 민원 끝에 관리사무소 중재로 윗집 바닥 보강 + 아랫집 천장 패치를 묶은 패키지 공사가 진행됐다. 그런데 정산서가 나오자 지훈이 반반 약속을 뒤집고 30만 원만 보냈고, 연우는 관리실 공지 전에 주민앱에 불만 글을 올리며 갈등이 재폭발했다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "석 달간 녹음하고 관리실 오가며 참아온 시간, 이미 끝나 되돌릴 수 없는 공사―그 위에 '30만 원이면 됐지'라는 한 줄이 떨어지자 인내 전부가 배신당한 것처럼 느껴졌다.",
+    "caseNumber": "E-NB-H-0009",
+    "caseName": "소음 갈등 재발"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "지훈의 반반 분담 번복",
+      "truth": true,
+      "truthDescription": "합의서에 서명하고 음성 확인까지 남긴 지훈이, 시공 완료 후 '내 바닥 구간만 계산하면 30만 원'이라며 92만 원 약속을 62만 원 깎았다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "비용정산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "지훈은 약속금액을 깎았다."
+    },
+    {
+      "id": "d-2",
+      "name": "연우의 천장 추가와 비용 증가",
+      "truth": true,
+      "truthDescription": "2차 측정 직후 연우가 침실 천장 공진 억제 패치 한 줄을 추가 요청했고, 자재비·인건비 18만 원이 최종 정산서에 그대로 올랐다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "공동책임정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "연우가 천장 패치를 추가 요청했다."
+    },
+    {
+      "id": "d-3",
+      "name": "소음 원인: 바닥인가 천장인가",
+      "truth": false,
+      "truthDescription": "측정표상 소음은 지훈 세대 바닥 충격과 연우 세대 천장 공진이 동시에 증폭시킨 구조적 합작이다. 어느 한쪽 단독 과실로 보기 어렵다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공동책임정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "소음 원인은 바닥과 천장이다."
+    },
+    {
+      "id": "d-4",
+      "name": "잔여 184만 원의 분담 계산",
+      "truth": true,
+      "truthDescription": "관리사무소 추가 보전금 36만 원 반영 후 잔여 공사비 184만 원, 사전 상한 200만 원 이내. 반반 적용 시 세대당 92만 원이 나온다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "비용정산",
+      "legitimacyIssue": false,
+      "judgmentStatement": "잔여 공사비는 세대당 92만 원이다."
+    },
+    {
+      "id": "d-5",
+      "name": "공지 전 공개 압박과 지급 거부",
+      "truth": true,
+      "truthDescription": "관리실 공지 후 송금하기로 했지만, 연우는 공지 14분 전에 주민앱에 불만 글을 올렸고 지훈은 공지 19분 전에 30만 원만 보내고 나머지를 거부했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "중재절차",
+      "legitimacyIssue": false,
+      "judgmentStatement": "연우는 공지 14분 전 불만 글을 올렸다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "관리사무소 중재 합의서와 음성 확인 파일",
+      "surfaceName": "중재 합의서와 음성 확인 파일",
+      "surfaceDescription": "관리사무소 중재 합의서와 음성 확인 녹음 파일이다. 합의 내용과 당사자 확인이 필요하다.",
+      "description": "'보전 후 잔액 1/2 분담, 200만 원 초과 시 재협의'가 적힌 서면 합의서와 7분 뒤 녹음된 58초 음성 확인 파일. 두 사람 서명이 모두 있다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "A4 합의서 원본 1매와 노가은 주임이 회의 직후 녹음한 58초짜리 음성 확인 파일이 한 세트로 제출됐다.",
+        "check_metadata": "합의서 서명 14:22, 음성 파일 생성 14:29―같은 날 7분 차이로 연속성이 확인된다.",
+        "restore_context": "'보전 후 잔액 1/2 분담, 200만 원 초과 시 재협의'라는 문구가 명확하여 단순 검토 단계로 보기 어렵다.",
+        "verify_source": "관리사무소 문서번호 N-2025-047과 녹음 파일 발신 계정이 같은 회의 일정을 가리킨다.",
+        "check_edits": "기관 보존 원본으로 수정 이력 없음. 음성 파일 파형에도 분할·이어붙이기 흔적이 없다.",
+        "question_acquisition": "공식 중재 자료로 적법하지만, 합의서 하단 전화번호와 계좌 메모는 마스킹이 필요하다."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-2",
+      "name": "시공 전후 충격음 측정표와 현장 사진",
+      "surfaceName": "충격음 측정표와 현장 사진",
+      "surfaceDescription": "시공 전후 충격음 측정 기록과 현장 사진이다. 측정 조건과 결과 확인이 필요하다.",
+      "description": "시공 전·바닥 보강 후·천장 패치 후 세 차례 측정한 충격음 데이터. 바닥 충격과 천장 공진이 동시에 소음을 키웠다는 구조가 드러난다.",
+      "type": "inspection_report",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "윤태성 소장이 작성한 3회분 측정표와 날짜별 현장 사진 원본이 세트로 제출됐다.",
+        "check_metadata": "1차: 공사 전, 2차: 바닥 보강 후, 3차: 천장 패치 전후. 세 시점이 날짜별로 분리 저장돼 있다.",
+        "restore_context": "바닥 충격만이 아니라 아랫집 침실 천장 특정 구간에서 공진이 크게 증폭되는 구조가 함께 드러난다.",
+        "verify_source": "측정기 일련번호, 사진 EXIF 날짜, 업체 접수번호 세 가지가 서로 일치한다.",
+        "check_edits": "출력물과 전자파일 대조 결과 조작 흔적 없음. 측정 시각이 연속적으로 기록돼 있다.",
+        "question_acquisition": "시공 검토용 자료로 적법하나, 세대 내부 사진은 공진 지점 촬영분만 제한 공유해야 한다."
+      },
+      "subjectParty": "a"
+    },
+    {
+      "id": "e-3",
+      "name": "최종 정산서와 추가 보전금 전표",
+      "surfaceName": "최종 정산서와 추가 보전금 전표",
+      "surfaceDescription": "최종 정산서와 추가 보전금 전표다. 금액 내역과 정산 경위 확인이 필요하다.",
+      "description": "시공 총액에서 관리사무소 보전금 2회를 차감한 최종 잔여 184만 원이 찍힌 정산서. 사전 상한 200만 원 이내라는 숫자가 바로 보인다.",
+      "type": "repair_record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "시공업체 최종 계산서, 관리사무소 보전금 전표 2매, 예약금 차감표가 한 묶음으로 제출됐다.",
+        "check_metadata": "추가 보전금 승인이 지훈 송금보다 2시간 앞서 있고, 정산표 출력 시각도 별도로 기록돼 있다.",
+        "restore_context": "잔여 184만 원은 사전 상한 200만 원 이내. 반반 적용 시 세대당 92만 원으로 재협의 없이 확정되는 구조다.",
+        "verify_source": "보전금 전표 번호, 카드 승인 번호, 업체 계산서 번호가 삼중으로 교차 확인된다.",
+        "check_edits": "기관 원본 출력으로 편집 흔적 없음. 금액란에 수정·덧쓰기 이력이 전혀 없다.",
+        "question_acquisition": "공용 중재 정산자료로 절차상 적법하나, 카드번호 뒷자리 등 개인 결제 정보는 마스킹 필요하다."
+      },
+      "subjectParty": "b"
+    },
+    {
+      "id": "e-4",
+      "name": "지훈의 부분 송금 내역과 메시지",
+      "surfaceName": "부분 송금 내역과 메시지",
+      "surfaceDescription": "부분 송금 거래 내역과 관련 메시지다. 송금 시점과 사유 확인이 필요하다.",
+      "description": "지훈이 30만 원을 보내며 '내 바닥 책임만 계산하면 이 정도'라고 쓴 메시지 캡처. 합의서 금액 92만 원과의 차이 62만 원이 그대로 보인다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "30만 원 계좌이체 완료 스크린샷과 직후 메신저 대화 '내 바닥 책임만 계산하면 이 정도' 원문이 함께 제출됐다.",
+        "check_metadata": "송금 시각이 관리사무소 공지 예약 시각보다 19분 빠르다. 공지를 기다리지 않고 먼저 보낸 셈이다.",
+        "restore_context": "공사 자체는 인정하면서 비용만 '내 바닥 구간'으로 임의 분할해 92만 원을 30만 원으로 줄이려 한 정황이 드러난다.",
+        "verify_source": "메신저 발신 계정과 은행 앱 스크린샷의 기기 시간이 분 단위까지 일치한다.",
+        "check_edits": "상하단 크롭이 있으나 '30만 원'과 '내 바닥 책임만' 핵심 문장은 원문과 동일하다.",
+        "question_acquisition": "사적 금전 자료이므로 계좌번호 전체와 잔액 표시는 마스킹 후 활용해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최연우에게: \"공지 전 공개 압박과 지급 거부\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 최연우의 \"공지 전 공개 압박과 지급 거부\" 쟁점과 관련된다. 최연우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "남지훈에게: \"지훈의 반반 분담 번복\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 남지훈의 \"지훈의 반반 분담 번복\" 쟁점과 관련된다. 남지훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "윤태성 소장의 변경요청 체크리스트",
+      "surfaceName": "변경요청 체크리스트",
+      "surfaceDescription": "시공 소장의 변경 요청 체크리스트 문서다. 요청 항목과 처리 상태 확인이 필요하다.",
+      "description": "연우의 서명이 들어간 천장 패치 추가 요청서. 자재비 11만 원 + 인건비 7만 원 = 18만 원 증액이 최종 계산서에 그대로 반영돼 있다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "현장 변경요청서 1매, 자재 추가내역(자재 11만 원 + 인건비 7만 원), 연우 확인 서명이 함께 제출됐다.",
+        "check_metadata": "2차 측정 직후 같은 날 오후 작성. 18만 원이 최종 계산서에 동일 금액으로 반영돼 있다.",
+        "restore_context": "바닥 보강만의 공사가 아니라 연우 요청에 따른 천장 패치 한 줄이 18만 원 추가됐음이 문서로 확인된다.",
+        "verify_source": "변경요청서 서명, 업체 작업일지, 자재 출고표 세 문서의 날짜와 항목이 일치한다.",
+        "check_edits": "종이문서 스캔본으로 합성 흔적 없음. 수정액·덧쓰기 흔적도 없다.",
+        "question_acquisition": "당사자 요청 문서로 사용 가능하나, 연우 서명 이미지는 확인 용도 외 비공개 처리해야 한다."
+      },
+      "subjectParty": "a",
+      "requiredLieState": "S3"
+    },
+    {
+      "id": "e-6",
+      "name": "주민앱 게시글과 관리실 공지 예약 로그",
+      "surfaceName": "주민앱 게시글과 공지 예약 로그",
+      "surfaceDescription": "주민앱 게시글과 관리실 공지 예약 로그다. 게시 시점과 공지 내용 확인이 필요하다.",
+      "description": "연우의 주민앱 불만 글 업로드 시각과 관리사무소 공지 예약 시각을 대조하면 연우가 14분 먼저 움직인 것이 보인다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "주민앱 내보내기 HTML 파일과 관리사무소 공지 예약 화면 캡처가 함께 제출됐다.",
+        "check_metadata": "연우 게시 시각이 관리실 공지 예약보다 14분 앞서며, 댓글 알림이 즉시 여러 세대에 퍼졌다.",
+        "restore_context": "관리실 공지가 14분 뒤 예약돼 있었는데 연우가 먼저 공개 압박을 걸었다는 타임라인이 드러난다.",
+        "verify_source": "앱 서버 관리자 로그 업로드 시각과 연우 휴대폰 캡처 시각이 초 단위까지 일치한다.",
+        "check_edits": "상하 크롭이 있으나 게시 시각과 불만 본문 핵심 문장은 원문과 동일하다.",
+        "question_acquisition": "주민앱 공개 자료이나, 제3자 댓글 작성자명과 세대 호수는 마스킹 후 활용해야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "최연우에게: \"공지 전 공개 압박과 지급 거부\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 최연우의 \"공지 전 공개 압박과 지급 거부\" 쟁점과 관련된다. 최연우은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "남지훈에게: \"공지 전 공개 압박과 지급 거부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 남지훈의 \"공지 전 공개 압박과 지급 거부\" 쟁점과 관련된다. 남지훈은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    },
+    {
+      "requires": [
+        "e-2",
+        "e-5"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "두 사람은 공사 전 관리사무소에서 보전 후 잔여 공사비를 반반 부담하기로 합의했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "지훈은 공사가 끝난 뒤 자신의 부담을 30만 원 수준으로 임의 축소해 약속을 뒤집었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "연우는 침실 천장 패치 추가를 요청해 최종 비용 증가에 일부 관여했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "소음과 방음공사는 윗집 바닥 문제만이 아니라 아랫집 천장 공진 구조까지 함께 다뤄야 하는 공동 보강 성격이었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-5",
+      "fact": "최종 잔여 공사비는 184만 원이었고 각 세대 부담액은 92만 원이었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "extra_patch_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "added_cost_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "sole_upstairs_fault_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "ceiling_resonance_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "management_notice_order_question"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_recording_deadline_stress"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L3",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "half_share_promise_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_only_300k_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "final_amount_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "cap_amount_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "management_notice_order_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "partial_payment_before_notice"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "비용정산": [
+      "사전 합의서와 최종 정산서를 기준으로 각 세대 부담액 92만 원을 확정하고 이미 보낸 금액은 차감해 정산한다.",
+      "추가 보강 항목의 성격과 포함 금액을 표로 분리해 향후 비슷한 시공에서는 합의 범위를 먼저 문서화한다.",
+      "약속 번복이 반복되면 관리사무소가 공사 예약금 선지급을 중단하고 예치금 방식으로만 시공을 진행한다."
+    ],
+    "공동책임정리": [
+      "윗집 바닥 보강과 아랫집 천장 공진 보강이 함께 필요한 구조였다는 점을 기록으로 남겨 일방 가해·일방 피해 프레임을 줄인다.",
+      "추가 요청이 생기면 현장 구두 합의로 넘기지 말고 어느 세대 요청인지와 금액을 즉시 서면으로 남긴다.",
+      "재발 시 생활패턴 조정과 구조 보강을 분리해 판단하고 비용 분담 비율도 항목별로 따로 정한다."
+    ],
+    "공사절차": [
+      "시공 전 합의서에는 상한선, 추가항목 승인 절차, 보전금 반영 순서를 명확히 적는다.",
+      "관리사무소는 예약금과 최종 공지를 같은 날 정리해 중간 공백 때문에 공개 압박이 생기지 않도록 한다.",
+      "소음 민원 해결 공사는 위층·아래층 모두의 구조 문제를 함께 점검하고 단일 원인처럼 설명하지 않는다."
+    ],
+    "중재절차": [
+      "정산 불만은 주민앱 공개 글보다 관리사무소 1차 공지와 당사자 확인을 먼저 거치게 한다.",
+      "부분 지급이나 지급 거부를 하려면 공식 계산서 근거를 함께 제출하도록 표준 절차를 만든다.",
+      "같은 조합의 소음 분쟁이 반복되면 관리사무소, 시공업체, 두 세대가 한 자리에서 타임라인과 금액표를 공동 작성한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

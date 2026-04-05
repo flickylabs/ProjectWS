@@ -1,0 +1,646 @@
+[
+  {
+    "case": "case-friend-07",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 한 장짜리 캡처와 전달본을 보관한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "파일 생성 시각과 저장 경로가 전송 흐름과 다른 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "말풍선 간격과 글자 경계 값이 일정하지 않은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 대화와 일정 맞바꿈 기록을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "캡처에 쓰인 문장 조각들의 전송 날짜가 서로 다른 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "부재 설명을 부탁하면서 알림 범위도 따로 거론한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 제한 공개 규칙 문서와 확인 기록의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "그 규칙이 소문 직후 작성되고 같은 밤 확인된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "예외 알림 외 추가 공유 금지 문구를 어떻게 이해했는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 선발 시트와 이해충돌 체크 로그에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "관련 접수 시각이 문제 확산 뒤에야 남은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "채점 배제와 별개로 신고가 사전에 정리되지 않은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단톡 전달 기록과 스토리 보관본을 남긴 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "첫 전달 뒤 짧은 시간 안에 여러 채널로 보낸 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확인 필요라고 적은 뒤 곧바로 의도를 단정한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 일정표와 이동 기록 묶음을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "소품 정리 시간과 외부 통화 이동이 겹친 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "자신의 부재를 다른 일정처럼 보이게 하려 한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "case-friend-08",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 카드뉴스와 포트폴리오 초기 화면을 올린 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "시상 직후 가장 이른 버전에 그 문구가 올라간 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "팀원 입력란과 수정 설명이 보이지 않게 잘라 둔 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 제출 원본과 수정 이력 자료를 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "대표 계정으로 제출하면서도 팀원 칸을 함께 입력한 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "바깥 화면이 한 사람 이름만 먼저 보이는데 역할란은 왜 비웠습니까?",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 커밋 로그와 드라이브 버전 기록의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "핵심 작업 뒤 최종 업로드가 발표 전날 밤까지 밀린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "병합 충돌과 누락 파일이 발표자료 정리에 준 영향을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회의록과 리허설 출석표 기록을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "역할 문구 미확정 상태에서 최종 리허설에 빠진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "발표 직전 설명 연습과 자료 점검이 한쪽에 몰린 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 심사 회신과 상장 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "심사 회신이 팀명 기준인데도 다른 인식이 퍼진 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "상장과 회신이 한 사람 작업으로만 읽히지 않는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 캡션 수정 기록과 게시물 이력을 보관한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문제 문구가 몇 시간 유지되다 항의 뒤 바뀐 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "가장 노출이 큰 시간대에 그 표현을 유지한 판단을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "case-friend-09",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 후기 비교 이미지와 재전달본을 보관한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "게시 직전 만든 이미지에 다른 날짜 캡처를 섞은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "말풍선 여백과 테두리 값이 일정하지 않은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 대화와 음성메모를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "게시 전날 밤부터 당일 오전까지 문구와 시점을 맞춘 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "계정 사용, 자료 정리, 외부 확산을 따로 나눠 맡은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 과거 공개 글과 후속 대화 기록을 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공개 지적 직후 주문 취소와 공지 변경이 이어진 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이번 행동이 그전 손실 경험과 어떤 관련이 있는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 가입 로그와 삭제 기록을 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 계정이 게시 두 시간 전에 만들어지고 곧 삭제 시도된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "계정 주체와 별도 준비 자료가 연결되는 경위를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 편집 프로젝트 파일과 원본 캡처 묶음에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "편집 프로젝트가 대화 직후 만들어지고 소스 날짜도 다른 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "자르기, 그림자, 강조 문구를 어떤 기준으로 배치했는지 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 소명 DM과 후속 대화를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문의 직후 삭제와 표현 수정을 먼저 상의한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "상대를 따로 지목하면서도 어떤 사정을 빼자고 맞춘 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "case-friend-10",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 잘린 대화 캡처를 저장하고 전달한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이름 전달 직후 드레스 피팅 전에 이 캡처를 남긴 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "상하단이 잘려 조건부 표현이 약해 보이게 된 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 공유 시트 원본과 상태 범례를 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "치수 입력 뒤 한 칸만 바뀌고 다른 칸은 그대로였던 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이름이 두 칸에 보여도 상태 범례를 따로 봐야 했던 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 반주자 대화와 가예약 메모를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "키 확인만 오가고 곡명과 리허설 확정이 없었던 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "당시 가능 여부를 마지막까지 열어 둔 사정을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 라인업과 리허설표에 이름을 넣은 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "명시적 확정 전부터 여러 문서에 이름을 넣은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "내부 초안이라면서도 주변이 확정으로 받아들인 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 과거 대화와 메모 캡처의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "이 규칙이 과거 역할 혼선 직후 정리된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이후 이름 공유 전 확인 신호를 따로 두자고 한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 치수표와 동선표, 음성메모를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "준비 자료는 먼저 보내고 다른 역할 답은 뒤늦게 정리한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "준비 참여와 별도 역할 판단을 왜 다르게 두었는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
+    }
+  }
+]

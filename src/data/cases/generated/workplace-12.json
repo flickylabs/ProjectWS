@@ -343,8 +343,34 @@
         "question_acquisition": "업무 지침·팀 공지 — 적법 열람."
       },
       "subjectParty": "a",
-      "surfaceName": "재택근무 지침과 웹캠 체크 공지",
-      "surfaceDescription": "재택근무 운영 지침서와 일일 웹캠 점검 공지가 포함된 문서"
+      "surfaceName": "재택근무 지침과 추가 확인 공지",
+      "surfaceDescription": "재택 운영 지침서와 별도 확인 공지가 함께 담긴 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 재택근무 지침과 일일 확인 공지의 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "공식 지침보다 확인 범위가 넓어진 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "정식 개정 전에 추가 확인이 관행처럼 굳어진 경위를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -370,8 +396,34 @@
         "question_acquisition": "회사 단말 로그 — 조사 범위 내 적법 활용."
       },
       "subjectParty": "b",
-      "surfaceName": "유휴 로그와 지글러 탐지 기록",
-      "surfaceDescription": "엔드포인트 유휴 상태 로그와 마우스 지글러 탐지 보고서"
+      "surfaceName": "유휴 로그와 입력 패턴 기록",
+      "surfaceDescription": "유휴 상태와 입력 움직임이 함께 남은 기록",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 유휴 로그와 장치 탐지 기록의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입력 없이 미세 이동만 반복된 시간대를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "응답 공백과 연결 유지 흔적이 겹친 구간을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -397,7 +449,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "모니터링 요약 제출 PDF",
-      "surfaceDescription": "모니터링 결과를 요약하여 인사팀에 제출된 형식의 PDF 문서"
+      "surfaceDescription": "모니터링 결과를 요약해 제출한 PDF 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 모니터링 요약 PDF를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "정상 응답 구간과 예외 메모를 뺀 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "같은 시간대의 다른 장면을 제외한 기준을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -425,9 +503,35 @@
         "question_acquisition": "시스템 설정 로그 — 조사 목적 적법 열람."
       },
       "subjectParty": "a",
-      "surfaceName": "모니터링 raw export와 설정 로그",
-      "surfaceDescription": "모니터링 도구의 원시 데이터 내보내기와 관리자 설정 로그",
-      "requiredLieState": "S3"
+      "surfaceName": "모니터링 원본 기록과 설정 로그",
+      "surfaceDescription": "원본 기록과 설정 변경이 함께 남은 로그",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 추출본과 관리자 설정 로그를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "캡처 주기와 호출 횟수가 기준을 넘은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "요약본에서 빠진 구간이 원본에는 남은 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -453,8 +557,34 @@
         "question_acquisition": "개인 단말·사적 대화 포함 — 필요 범위만 제한 사용."
       },
       "subjectParty": "b",
-      "surfaceName": "작업 편집 스크린샷과 동료 DM",
-      "surfaceDescription": "작업 편집 상태를 보여주는 스크린샷과 동료와의 메신저 대화"
+      "surfaceName": "상태 캡처와 동료 대화",
+      "surfaceDescription": "상태 화면 캡처와 동료와의 대화가 함께 담긴 자료",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 상태 화면 캡처와 대화 기록에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "캡처 직전 일정 블록이 급히 바뀐 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "보고 직전 화면에서 일부 항목만 손본 경위를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -491,9 +621,35 @@
           "implication": "이 증거는 오수민이 직접적 당사자가 아닌 쟁점이다. 오수민이 이 상황에 대해 알고 있는 바를 확인한다."
         }
       },
-      "surfaceName": "인사 코칭 메모와 SLA 티켓 기록",
-      "surfaceDescription": "인사 코칭 메모와 응답 시간 SLA 관련 티켓 처리 이력 기록",
-      "requiredLieState": "S3"
+      "surfaceName": "코칭 메모와 응답 기록",
+      "surfaceDescription": "코칭 기록과 응답 관련 티켓 이력",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 코칭 메모와 응답 티켓 기록을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "지연 누적 뒤에도 정식 조치가 늦어진 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "정식 절차 대신 비공식 대응이 굳어진 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -22,7 +22,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "서진아 씨, 이 한 장짜리 캡처 안에 서로 다른 날짜의 문장을 이어 붙인 부분이 어디인지 순서대로 설명하십시오.",
+              "text": "서진아 씨, 그 캡처가 한 번에 오간 대화 그대로라고 지금도 말씀하시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -32,7 +32,7 @@
             },
             {
               "id": "dossier-1.a.q2",
-              "text": "당신은 이 자료를 '편집'이 아니라 '정리'라고 부릅니다. 그 표현을 고른 이유가 성호의 의도를 더 나쁘게 보이게 하기 위한 방어선 아니었습니까?",
+              "text": "서진아 씨는 이 자료를 '편집'이 아니라 '정리'라고 부르는데, 그 표현을 고른 이유가 성호 씨 의도를 더 나쁘게 보이게 하기 위한 방어선 아니었습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -61,7 +61,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "박성호 씨, 원본 대화에 남은 '같이 있었다고만 해 달라'는 문구를 지금도 일정 설명일 뿐이라고 하실 겁니까?",
+              "text": "박성호 씨, 진아 씨에게 사실을 대신 둘러 말해 달라는 부탁을 한 적은 없습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -117,7 +117,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "서진아 씨, 이 노션 문구와 확인 이모지를 보면 합의 내용을 분명히 기억하고 있었습니다. 그런데도 왜 지정 경로를 쓰지 않았습니까?",
+              "text": "서진아 씨, 예전에 정한 비밀 고지 규칙을 그날도 기억하고 계셨습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -156,7 +156,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "박성호 씨, 합의 내용을 알고 확인 반응까지 남긴 사람이 왜 선발 전 지정 운영진 공동 고지를 하지 않았습니까?",
+              "text": "박성호 씨, 그 제한 고지 약속을 알고도 정해진 순서를 바로 밟지 않은 이유는 무엇입니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -213,7 +213,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "양소라에게 보낸 뒤 17분 안에 운영진, 동문 단톡, 친한친구 스토리까지 이어 간 이유를 순서대로 말하십시오.",
+              "text": "서진아 씨, 왜 한 사람 확인에서 멈추지 않고 여러 곳으로 말을 넓히셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -235,7 +235,7 @@
             },
             {
               "id": "dossier-3.a.q3",
-              "text": "결국 당신이 그 경로를 버린 건 또다시 비밀 보관자로 남고 싶지 않았기 때문입니까, 아니면 성호를 확실히 몰아붙이고 싶었기 때문입니까?",
+              "text": "결국 서진아 씨가 그 경로를 버린 건 또다시 비밀 보관자로 남고 싶지 않았기 때문입니까, 아니면 성호 씨를 확실히 몰아붙이고 싶었기 때문입니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -252,7 +252,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "진아 씨가 소품 정리를 맡는 동안 본인은 다른 동선과 통화를 하고 있었습니다. 그 부재를 왜 친구에게 메우게 했습니까?",
+              "text": "박성호 씨, 왜 그 빈자리를 진아 씨가 대신 메워 주길 바라셨습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -274,7 +274,7 @@
             },
             {
               "id": "dossier-3.b.q3",
-              "text": "지금 단계에서라도 분명히 답하십시오. 당신은 비밀 연애를 숨긴 채 진아 씨에게 사실상 알리바이를 부탁했습니까, 아니면 아닙니까?",
+              "text": "지금 단계에서라도 분명히 답하십시오. 박성호 씨는 비밀 연애를 숨긴 채 진아 씨에게 사실상 알리바이를 부탁했습니까, 아니면 아닙니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",

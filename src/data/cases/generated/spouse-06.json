@@ -360,7 +360,33 @@
         }
       },
       "surfaceName": "SNS 스토리 캡처",
-      "surfaceDescription": "누군가 저장한 SNS 스토리 캡처 이미지다. 사진과 짧은 문구가 있으나 직접적 이름은 없다."
+      "surfaceDescription": "누군가 저장한 SNS 스토리 캡처 이미지다. 사진과 짧은 문구가 있으나 직접적 이름은 없다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 스토리 캡처본을 따로 보관한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "게시 11분 뒤 상단 표시가 빠진 채 저장된 경위를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "상단 범위 표시와 하단 문구가 빠진 상태로 퍼진 점을 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -401,7 +427,33 @@
       },
       "surfaceName": "게시물 예약본과 메모앱 초안",
       "surfaceDescription": "SNS 게시 예약 데이터와 메모앱에 저장된 초안이다. 작성 시점과 내용 변화를 추적할 수 있다.",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 게시 예약본과 메모 초안을 함께 보관한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "초안 작성과 예약 저장 사이 시차가 이틀인 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "안내 문구가 화면 아래로 밀린 상태로 올린 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -439,7 +491,33 @@
         }
       },
       "surfaceName": "SNS 공개범위 목록과 조회 로그",
-      "surfaceDescription": "SNS 공개 설정 명단과 스토리 조회자 로그 데이터다. 누가 언제 열람했는지 기록되어 있다."
+      "surfaceDescription": "SNS 공개 설정 명단과 스토리 조회자 로그 데이터다. 누가 언제 열람했는지 기록되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 목록과 조회 기록을 함께 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 인물이 추가된 뒤 정리 없이 남아 있던 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공유용이라면서 성격 다른 인맥이 함께 섞인 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -466,7 +544,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "직장 동료 간 확인 메시지",
-      "surfaceDescription": "직장 동료 사이에 주고받은 메신저 대화와 캡처 전송 기록이다. 질문 형태의 대화가 포함되어 있다."
+      "surfaceDescription": "직장 동료 사이에 주고받은 메신저 대화와 캡처 전송 기록이다. 질문 형태의 대화가 포함되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 확인 메시지와 전송 기록을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "첫 전송이 해명문보다 먼저 이뤄진 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확인 목적이었다면 캡처까지 함께 보낸 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -494,7 +598,33 @@
       },
       "subjectParty": "b",
       "surfaceName": "팀채널 해명문과 HR 접수 내역",
-      "surfaceDescription": "팀 내부 채널에 올린 해명문과 인사부서 문의 접수 기록이다. 게시 시각이 함께 기록되어 있다."
+      "surfaceDescription": "팀 내부 채널에 올린 해명문과 인사부서 문의 접수 기록이다. 게시 시각이 함께 기록되어 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 해명문과 문의 기록을 직접 남긴 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "배우자 확인 전 다수 인원에게 먼저 알린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "해당 캡처 존재를 넓게 알릴 필요가 있었는지 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -531,7 +661,33 @@
         }
       },
       "surfaceName": "사진 메타데이터와 소품 관련 문자",
-      "surfaceDescription": "원본 사진의 EXIF 데이터와 소품 사용 관련 문자 메시지다. 촬영 정보와 사전 소통 내역이 담겨 있다."
+      "surfaceDescription": "원본 사진의 EXIF 데이터와 소품 사용 관련 문자 메시지다. 촬영 정보와 사전 소통 내역이 담겨 있다.",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 사진과 사용 허락 문자를 함께 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "촬영 하루 전 소품 사용만 묻고 게시 방식은 언급하지 않은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "허락 범위에 노출 수준까지 포함됐다고 본 근거를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

@@ -22,7 +22,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "강도윤 씨, 이 19초 클립에서 직접 나온 '라인 타고 들어온 HJ' 표현 자체는 부인하십니까?",
+              "text": "강도윤 씨, 그날 문제 된 표현을 아예 쓰지 않았다고 보십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -61,7 +61,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "최희주 씨, 오전 7시 42분부터 이어진 DM 전송을 보면 이미 단정 문장이 들어가 있는데도 확인 단계였다고 하시겠습니까?",
+              "text": "최희주 씨, 처음 보낸 메시지가 확인보다 단정에 가까워진 이유가 무엇입니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -117,7 +117,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "강도윤 씨, 회식 직전 대화가 외부 후보 한재균 이야기였다는 걸 알고도 왜 내부 인원을 떠올리게 하는 표현을 쓰셨습니까?",
+              "text": "강도윤 씨, 그 자리 맥락을 알면서도 오해를 부를 표현을 쓴 이유가 무엇입니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -156,7 +156,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "최희주 씨, 이 공유노트의 HJ 메모를 보면 외부 후보 한재균인데도 왜 직접 겨냥이라고 계속 단정하셨습니까?",
+              "text": "최희주 씨, 약어 메모를 다시 봤을 때도 왜 직접 겨냥이라고 계속 받아들이셨습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -213,7 +213,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "강도윤 씨, 희주 씨 면담 전날 밤 HR에 '평판 리스크' 메모를 먼저 입력하신 사실은 인정하십니까?",
+              "text": "강도윤 씨, 면담 전 불이익성 기록이 먼저 남은 이유를 설명해 주시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -252,7 +252,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "최희주 씨, 원본 메타데이터까지 보면 잘린 앞 8초에 외부 후보 HJ 맥락이 있는데도 직접 겨냥이라고 계속 보시겠습니까?",
+              "text": "최희주 씨, 잘린 앞부분까지 확인된 뒤에도 왜 같은 해석을 유지하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

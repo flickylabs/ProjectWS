@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "윤가은, 마지막으로 비밀을 상세히 들은 사람이 박민재뿐이었다는 판단은 어떤 범위의 비밀에 근거합니까?",
+              "text": "윤가은 씨, 처음 의심이 박민재 씨에게로 굳은 가장 큰 이유는 무엇이었습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "박민재, 조언 명목이었다면 왜 하필 박서후에게 원자료를 포워드했습니까?",
+              "text": "박민재 씨, 왜 그 비밀을 제3자에게 꺼내게 됐습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "context",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "윤가은, 화면을 본 것과 채팅 목록을 넘긴 것의 차이를 이 자리에서 어떻게 구분하시겠습니까?",
+              "text": "윤가은 씨, 그 기기를 본 행동이 단순 확인이었다고 지금도 보십니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "legality",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "박민재, 자동 로그인 상태로 둔 기기 관리 실패는 어디까지 본인 책임으로 인정합니까?",
+              "text": "박민재 씨, 기기를 열린 상태로 둔 책임이 전혀 없다고 보십니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -209,7 +209,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "윤가은, 운영자 로그가 나오면 민재 직접 작성 판단을 수정할 수 있습니까?",
+              "text": "윤가은 씨, 익명 글 작성자를 너무 빨리 단정한 건 아니었습니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",
@@ -248,7 +248,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "박민재, 편집 가능성을 느끼고도 박서후 이름을 숨긴 이유는 무엇입니까?",
+              "text": "박민재 씨, 이상하다고 느끼고도 제3자 개입 가능성을 바로 밝히지 않은 이유는 무엇입니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -258,7 +258,7 @@
             },
             {
               "id": "dossier-3.b.q2",
-              "text": "운영자 보존로그가 박서후 보조계정을 가리키면, 당신의 책임은 어떤 형태로 남습니까?",
+              "text": "운영자 보존로그가 박서후 보조계정을 가리키면, 박민재 씨 책임은 어떤 형태로 남습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",

@@ -1,0 +1,1478 @@
+{
+  "caseId": "friend-07",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "메신저 원본 대조 카드",
+      "description": "편집 캡처와 원본 export를 겹쳐 보며, 누가 어떤 문장을 어떻게 바꿔 읽히게 했는지 추궁하는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "서진아 씨, 이 한 장짜리 캡처 안에 서로 다른 날짜의 문장을 이어 붙인 부분이 어디인지 순서대로 설명하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.unlock.a.s2.splice_dates",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "당신은 이 자료를 '편집'이 아니라 '정리'라고 부릅니다. 그 표현을 고른 이유가 성호의 의도를 더 나쁘게 보이게 하기 위한 방어선 아니었습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d2.unlock.a.s4.punitive_intent",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "리더 선발 특혜 의심도 결국 이 편집 캡처와 선발 직전 타이밍에서 출발한 것 아닌지 답하십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.unlock.a.s2.capture_basis",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "박성호 씨, 원본 대화에 남은 '같이 있었다고만 해 달라'는 문구를 지금도 일정 설명일 뿐이라고 하실 겁니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.unlock.b.s2.direct_request",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "리더 선발 직전, 왜 지정 운영진이 아니라 진아 씨부터 찾았습니까. 친구를 방패로 세운 이유를 말하십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.unlock.b.s4.use_friend",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "작년 합의가 있었다면 먼저 밟았어야 할 경로는 지정 운영진 공동 고지였습니다. 그 전에 진아 씨를 커버로 세운 사실을 부인하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.b.s3.cover_before_route",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "합의 문서·선발 로그 카드",
+      "description": "작년 제한 공개 합의와 선발/신고 로그를 함께 제시해 절차 위반과 특혜 오해를 분리하는 카드.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "서진아 씨, 이 노션 문구와 확인 이모지를 보면 합의 내용을 분명히 기억하고 있었습니다. 그런데도 왜 지정 경로를 쓰지 않았습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.a.s2.rule_memory",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "부회장 채점 제외 로그를 확인한 뒤에도 특혜 의심을 바로 거두지 않은 이유는 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.a.s3.exclusion_known",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "결국 선발 자체가 연애 특혜였다는 점은 입증되지 않았습니다. 그 선을 언제 인정했는지 답하십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d3.unlock.a.s5.no_proof",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "박성호 씨, 합의 내용을 알고 확인 반응까지 남긴 사람이 왜 선발 전 지정 운영진 공동 고지를 하지 않았습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.b.s2.rule_known",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "선발 전에 이미 고지했다면, 왜 이 기록에는 사전 신고 흔적이 남지 않습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.unlock.b.s2.no_pre_record",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "타임스탬프상 신고 접수는 캡처 확산 뒤입니다. 그렇다면 '이미 알렸다'는 말은 사후 수습용 아니었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.unlock.b.s3.after_spread",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "확산 범위·이동 동선 카드",
+      "description": "확산 범위와 실제 이동 기록을 묶어 감정적 폭발과 알리바이 요청의 실질 피해를 드러내는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "양소라에게 보낸 뒤 17분 안에 운영진, 동문 단톡, 친한친구 스토리까지 이어 간 이유를 순서대로 말하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.unlock.a.s3.multi_channel",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "지정 운영진 한 명에게만 제한적으로 알릴 수 있었는데도 왜 양소라와 단톡을 먼저 택했습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.a.s3.route_skip",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "결국 당신이 그 경로를 버린 건 또다시 비밀 보관자로 남고 싶지 않았기 때문입니까, 아니면 성호를 확실히 몰아붙이고 싶었기 때문입니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d4.unlock.a.s4.shame_repeat",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "진아 씨가 소품 정리를 맡는 동안 본인은 다른 동선과 통화를 하고 있었습니다. 그 부재를 왜 친구에게 메우게 했습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.unlock.b.s3.false_cover",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "선발과 평판을 지키려 아직 안 한 고지를 이미 한 일처럼 말한 것 아닙니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d5.unlock.b.s4.image_preserve",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S2",
+              "lockedHint": "상대의 방어가 느슨해지면 열립니다"
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "지금 단계에서라도 분명히 답하십시오. 당신은 비밀 연애를 숨긴 채 진아 씨에게 사실상 알리바이를 부탁했습니까, 아니면 아닙니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d1.unlock.b.s5.alibi_confess",
+                "lieAdvance": true
+              },
+              "requiredLieState": "S3",
+              "lockedHint": "더 깊이 파고들면 결정적 질문이 열립니다"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.a.s2.splice_dates",
+            "factText": "서진아가 서로 다른 날짜의 문장을 잘라 한 장짜리 캡처로 이어 붙였다는 사실",
+            "tags": [
+              "context",
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "e-1 편집 캡처",
+                "neutral": "편집 캡처",
+                "judgeRef": "e-1"
+              },
+              "evidence2": {
+                "exact": "e-2 메신저 export",
+                "neutral": "메신저 원본",
+                "judgeRef": "e-2"
+              },
+              "quote": {
+                "exact": "임원 연애는 숨겨야 이득",
+                "neutral": "연애를 숨기면 유리하다는 취지",
+                "judgeRef": "문제의 문장"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "correct"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.a.s3.multi_channel",
+            "factText": "양소라 전달 뒤 17분 안에 운영진·동문 단톡·친한친구 스토리까지 연속 확산했다는 사실",
+            "tags": [
+              "act",
+              "timeline",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "channel": {
+                "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                "neutral": "여러 채널",
+                "judgeRef": "확산 경로"
+              },
+              "time": {
+                "dateExact": "양소라 1차 전달 뒤 17분 안",
+                "period": "같은 밤",
+                "neutral": "짧은 시간 안"
+              },
+              "evidence": {
+                "exact": "e-5 동문 단톡·스토리 기록",
+                "neutral": "확산 기록",
+                "judgeRef": "e-5"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.a.s4.punitive_intent",
+            "factText": "서진아가 사실 확인보다 성호의 의도를 더 악하게 보이게 만들고 싶어 편집 강도를 높였다는 감정",
+            "tags": [
+              "motive",
+              "emotion",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "박성호",
+                "judgeRef": "박성호 씨",
+                "neutral": "B"
+              },
+              "quote": {
+                "exact": "임원 연애는 숨겨야 이득",
+                "neutral": "연애를 숨기면 유리하다는 취지",
+                "judgeRef": "문제의 문장"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.a.s5.route_breach",
+            "factText": "서진아가 지정 운영진 1명 공동 고지 규칙을 알면서도 여론성 확산을 택했다는 최종 인정",
+            "tags": [
+              "rule",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "route": {
+                "exact": "이도현 운영진 1명에게 공동 고지",
+                "neutral": "지정 경로",
+                "judgeRef": "합의된 고지 경로"
+              },
+              "person": {
+                "fullName": "이도현",
+                "judgeRef": "이도현 운영진",
+                "neutral": "지정 운영진"
+              },
+              "evidence": {
+                "exact": "e-3 제한 공개 합의 노션",
+                "neutral": "합의 노션",
+                "judgeRef": "e-3"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "settle"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.a.s2.capture_basis",
+            "factText": "특혜 의심의 출발점이 원본 점수표가 아니라 편집 캡처와 선발 직전 타이밍이었다는 사실",
+            "tags": [
+              "context",
+              "evidence",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "e-1 편집 캡처",
+                "neutral": "편집 캡처",
+                "judgeRef": "e-1"
+              },
+              "time": {
+                "dateExact": "연합공연제 리더 선발 직전",
+                "period": "선발 즈음",
+                "neutral": "그 선발 때"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "correct"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.a.s3.exclusion_known",
+            "factText": "부회장 채점 제외 로그를 확인한 뒤에도 곧바로 특혜 의심을 정정하지 않았다는 사실",
+            "tags": [
+              "institution",
+              "responsibility",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "evidence": {
+                "exact": "e-4 점수표·이해충돌 로그",
+                "neutral": "선발/신고 원본",
+                "judgeRef": "e-4"
+              },
+              "person": {
+                "fullName": "동호회 부회장",
+                "judgeRef": "그 부회장",
+                "neutral": "연애 상대"
+              },
+              "scoring": {
+                "exact": "리더 선발 점수표와 부회장 채점 제외 로그",
+                "neutral": "선발 원본 기록",
+                "judgeRef": "채점 제외 로그"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.a.s4.revenge_core",
+            "factText": "서진아가 선발 특혜 의혹을 붙든 핵심 감정이 배신감과 복수심이었다는 사실",
+            "tags": [
+              "motive",
+              "emotion",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "박성호",
+                "judgeRef": "박성호 씨",
+                "neutral": "B"
+              },
+              "quote": {
+                "exact": "네가 연습실에 나랑 있었다고만 해줘",
+                "neutral": "같이 있었다고 말해 달라는 취지",
+                "judgeRef": "알리바이 부탁 문구"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.a.s5.no_proof",
+            "factText": "리더 선발 자체가 연애 특혜였다는 점은 끝내 입증되지 않았다는 최종 인정",
+            "tags": [
+              "institution",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "evidence": {
+                "exact": "e-4 점수표·이해충돌 로그",
+                "neutral": "선발/신고 원본",
+                "judgeRef": "e-4"
+              },
+              "person": {
+                "fullName": "정선우",
+                "judgeRef": "정선우 운영간사",
+                "neutral": "운영간사"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "settle"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.a.s2.rule_memory",
+            "factText": "서진아가 작년 제한 공개 합의 노션과 확인 이모지 기록을 정확히 기억하고 있었다는 사실",
+            "tags": [
+              "legacy_sentence",
+              "rule",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "e-3 제한 공개 합의 노션",
+                "neutral": "합의 노션",
+                "judgeRef": "e-3"
+              },
+              "time": {
+                "dateExact": "작년 겨울 소문 사태 직후 같은 밤",
+                "period": "작년 겨울",
+                "neutral": "그때"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "correct"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.a.s3.route_skip",
+            "factText": "서진아가 지정 운영진 경로 대신 양소라와 동문 단톡을 첫 확산 경로로 택했다는 사실",
+            "tags": [
+              "act",
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "route": {
+                "exact": "이도현 운영진 1명에게 공동 고지",
+                "neutral": "지정 경로",
+                "judgeRef": "합의된 고지 경로"
+              },
+              "channel": {
+                "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                "neutral": "여러 채널",
+                "judgeRef": "확산 경로"
+              },
+              "evidence": {
+                "exact": "e-5 동문 단톡·스토리 기록",
+                "neutral": "확산 기록",
+                "judgeRef": "e-5"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.a.s4.shame_repeat",
+            "factText": "서진아가 또다시 비밀 보관자처럼 남을까 봐 수치심 속에서 규칙을 버렸다는 감정",
+            "tags": [
+              "shame",
+              "fear",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "서진아",
+                "judgeRef": "서진아 씨",
+                "neutral": "A"
+              },
+              "person2": {
+                "fullName": "박성호",
+                "judgeRef": "박성호 씨",
+                "neutral": "B"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.a.s5.shared_breach",
+            "factText": "성호의 선제 위반과 별개로 자신도 합의를 함께 깼다는 최종 인정",
+            "tags": [
+              "responsibility",
+              "relationship",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person1": {
+                "fullName": "박성호",
+                "judgeRef": "박성호 씨",
+                "neutral": "B"
+              },
+              "person2": {
+                "fullName": "서진아",
+                "judgeRef": "서진아 씨",
+                "neutral": "A"
+              },
+              "evidence": {
+                "exact": "e-3 제한 공개 합의 노션",
+                "neutral": "합의 노션",
+                "judgeRef": "e-3"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "settle"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.b.s2.direct_request",
+            "factText": "박성호가 진아에게 '같이 있었다고만 해 달라'는 직접 문구를 보냈다는 사실",
+            "tags": [
+              "act",
+              "quote",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "네가 연습실에 나랑 있었다고만 해줘",
+                "neutral": "같이 있었다고 말해 달라는 취지",
+                "judgeRef": "알리바이 부탁 문구"
+              },
+              "evidence": {
+                "exact": "e-2 메신저 export",
+                "neutral": "메신저 원본",
+                "judgeRef": "e-2"
+              },
+              "time": {
+                "dateExact": "리더 선발 사전 인터뷰 전날 밤",
+                "period": "선발 직전",
+                "neutral": "그 전날"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "correct"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.b.s3.false_cover",
+            "factText": "진아가 소품 정리를 맡은 시간에 박성호는 연습실 외부 동선과 통화를 하고 있었다는 사실",
+            "tags": [
+              "timeline",
+              "evidence",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "evidence": {
+                "exact": "e-6 스케줄표·택시 영수증·통화기록",
+                "neutral": "이동/일정 기록",
+                "judgeRef": "e-6"
+              },
+              "time": {
+                "dateExact": "연습 스케줄 변경 당일 저녁",
+                "period": "그날 저녁",
+                "neutral": "그 시간대"
+              },
+              "person": {
+                "fullName": "서진아",
+                "judgeRef": "서진아 씨",
+                "neutral": "A"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.b.s4.use_friend",
+            "factText": "선발 직전 낙인을 피하려고 진아를 친구보다 방패로 썼다는 감정적 자각",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "서진아",
+                "judgeRef": "서진아 씨",
+                "neutral": "A"
+              },
+              "time": {
+                "dateExact": "연합공연제 리더 선발 직전",
+                "period": "선발 즈음",
+                "neutral": "그 선발 때"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.b.s5.alibi_confess",
+            "factText": "비밀 연애 은닉 상태에서 진아에게 사실상 알리바이를 부탁했다는 최종 인정",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person1": {
+                "fullName": "서진아",
+                "judgeRef": "서진아 씨",
+                "neutral": "A"
+              },
+              "person2": {
+                "fullName": "동호회 부회장",
+                "judgeRef": "그 부회장",
+                "neutral": "연애 상대"
+              },
+              "evidence": {
+                "exact": "e-2 메신저 export",
+                "neutral": "메신저 원본",
+                "judgeRef": "e-2"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "settle"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.b.s2.rule_known",
+            "factText": "박성호가 작년 제한 공개 합의 내용을 알고 있었고 직접 확인 반응도 남겼다는 사실",
+            "tags": [
+              "legacy_sentence",
+              "rule",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "e-3 제한 공개 합의 노션",
+                "neutral": "합의 노션",
+                "judgeRef": "e-3"
+              },
+              "time": {
+                "dateExact": "작년 겨울 소문 사태 직후 같은 밤",
+                "period": "작년 겨울",
+                "neutral": "그때"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "correct"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.b.s3.cover_before_route",
+            "factText": "박성호가 지정 운영진 공동 고지 전에 먼저 진아를 커버로 세웠다는 사실",
+            "tags": [
+              "act",
+              "rule",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "route": {
+                "exact": "이도현 운영진 1명에게 공동 고지",
+                "neutral": "지정 경로",
+                "judgeRef": "합의된 고지 경로"
+              },
+              "person": {
+                "fullName": "서진아",
+                "judgeRef": "서진아 씨",
+                "neutral": "A"
+              },
+              "evidence": {
+                "exact": "e-2 메신저 export",
+                "neutral": "메신저 원본",
+                "judgeRef": "e-2"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.b.s4.keep_everything",
+            "factText": "관계·자리·친구를 동시에 지키려다 규칙을 버린 욕심이 있었다는 감정",
+            "tags": [
+              "motive",
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person1": {
+                "fullName": "동호회 부회장",
+                "judgeRef": "그 부회장",
+                "neutral": "연애 상대"
+              },
+              "person2": {
+                "fullName": "서진아",
+                "judgeRef": "서진아 씨",
+                "neutral": "A"
+              },
+              "time": {
+                "dateExact": "연합공연제 리더 선발 직전",
+                "period": "선발 즈음",
+                "neutral": "그 선발 때"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.b.s5.first_breaker",
+            "factText": "합의를 먼저 깬 쪽이 자신이었다는 점과 이후 양측 파기를 함께 인정한다는 사실",
+            "tags": [
+              "responsibility",
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person1": {
+                "fullName": "박성호",
+                "judgeRef": "박성호 씨",
+                "neutral": "B"
+              },
+              "person2": {
+                "fullName": "서진아",
+                "judgeRef": "서진아 씨",
+                "neutral": "A"
+              },
+              "evidence": {
+                "exact": "e-3 제한 공개 합의 노션",
+                "neutral": "합의 노션",
+                "judgeRef": "e-3"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "settle"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.b.s2.no_pre_record",
+            "factText": "선발 전 지정 운영진 공동 고지나 정식 신고 기록이 없었다는 사실",
+            "tags": [
+              "institution",
+              "rule",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "route": {
+                "exact": "이도현 운영진 1명에게 공동 고지",
+                "neutral": "지정 경로",
+                "judgeRef": "합의된 고지 경로"
+              },
+              "record": {
+                "exact": "이해충돌 신고 접수 로그",
+                "neutral": "신고 기록",
+                "judgeRef": "신고 타임스탬프"
+              },
+              "evidence": {
+                "exact": "e-3 제한 공개 합의 노션",
+                "neutral": "합의 노션",
+                "judgeRef": "e-3"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "correct"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.b.s3.after_spread",
+            "factText": "이해충돌 신고 접수 시각이 진아의 캡처 확산 이후로 남아 있다는 사실",
+            "tags": [
+              "timeline",
+              "institution",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "record": {
+                "exact": "이해충돌 신고 접수 로그",
+                "neutral": "신고 기록",
+                "judgeRef": "신고 타임스탬프"
+              },
+              "time": {
+                "dateExact": "진아의 캡처 확산 이후",
+                "period": "사후 신고 시점",
+                "neutral": "그 뒤"
+              },
+              "evidence": {
+                "exact": "e-4 점수표·이해충돌 로그",
+                "neutral": "선발/신고 원본",
+                "judgeRef": "e-4"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.b.s4.image_preserve",
+            "factText": "선발과 이미지를 지키려고 아직 안 한 고지를 이미 된 일처럼 말했다는 감정적 고백",
+            "tags": [
+              "motive",
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "dateExact": "연합공연제 리더 선발 직전",
+                "period": "선발 즈음",
+                "neutral": "그 선발 때"
+              },
+              "person": {
+                "fullName": "박성호",
+                "judgeRef": "박성호 씨",
+                "neutral": "B"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.b.s5.retro_report",
+            "factText": "박성호가 실제로는 사후 신고를 해 놓고 사전 고지처럼 말한 거짓을 인정한다는 사실",
+            "tags": [
+              "admission",
+              "institution",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "record": {
+                "exact": "이해충돌 신고 접수 로그",
+                "neutral": "신고 기록",
+                "judgeRef": "신고 타임스탬프"
+              },
+              "evidence": {
+                "exact": "e-4 점수표·이해충돌 로그",
+                "neutral": "선발/신고 원본",
+                "judgeRef": "e-4"
+              },
+              "time": {
+                "dateExact": "진아의 캡처 확산 이후",
+                "period": "사후 신고 시점",
+                "neutral": "그 뒤"
+              }
+            },
+            "stanceHints": [
+              "confession",
+              "settle"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "contr-1",
+        "targetParty": "a",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ],
+        "trigger": [
+          "e-1",
+          "e-2"
+        ],
+        "text": "편집 캡처의 문제 문장들이 원본 export에서는 서로 다른 날짜에 흩어져 있는데, 진아는 이를 한 장짜리 흐름처럼 제시한다.",
+        "effect": "authenticity_shock"
+      },
+      {
+        "id": "contr-2",
+        "targetParty": "b",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "trigger": [
+          "e-2",
+          "e-6"
+        ],
+        "text": "성호는 '소품 정리 중이라 해 달라'고 말해 놓고 실제로는 진아가 그 시간을 메우는 동안 다른 동선과 통화를 하고 있다.",
+        "effect": "timeline_break"
+      },
+      {
+        "id": "contr-3",
+        "targetParty": "b",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "trigger": [
+          "e-3",
+          "e-4"
+        ],
+        "text": "성호는 이미 운영진에게 제한 고지했다고 주장하지만, 신고 접수와 관련 DM 시각은 진아의 캡처 확산 뒤에야 남아 있다.",
+        "effect": "institutional_reversal"
+      },
+      {
+        "id": "contr-4",
+        "targetParty": "a",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "trigger": [
+          "e-1",
+          "e-4"
+        ],
+        "text": "진아는 리더 선발 특혜를 사실처럼 몰아가지만, 점수표 원본에는 부회장 채점 제외 로그가 명확히 남아 있다.",
+        "effect": "misconception_collapse"
+      }
+    ],
+    "interjections": [
+      {
+        "id": "interj-1",
+        "speaker": "양소라",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ],
+        "trigger": [
+          "e-1",
+          "e-5"
+        ],
+        "text": "\"처음 받은 캡처도 앞뒤가 잘려 있어서 바로 믿기 무서웠어. 그런데 금방 다른 방에도 돌더라.\""
+      },
+      {
+        "id": "interj-2",
+        "speaker": "이도현",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ],
+        "trigger": [
+          "e-3",
+          "e-4"
+        ],
+        "text": "\"작년 합의의 예외는 지정 운영진 1명 공동 고지뿐이었고, 성호 씨 관련 실제 신고는 사후에 들어왔습니다.\""
+      },
+      {
+        "id": "interj-3",
+        "speaker": "정선우",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "trigger": [
+          "e-4"
+        ],
+        "text": "\"리더 선발 시트 기준으로 부회장은 성호 씨 채점에서 자동 제외였습니다. 공정성 문제와 신고 미이행은 구분해서 보셔야 합니다.\""
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "emo-a-1",
+        "party": "a",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "trigger": [
+          "d1.unlock.b.s4.use_friend",
+          "e-6"
+        ],
+        "text": "\"내가 또 네 비밀 덮는 사람으로 남아야 했어? 그게 제일 모욕적이었어.\"",
+        "behaviorHint": "목소리를 낮추고 문장을 짧게 끊는다."
+      },
+      {
+        "id": "emo-a-2",
+        "party": "a",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ],
+        "trigger": [
+          "d2.unlock.a.s4.punitive_intent",
+          "d3.unlock.a.s4.revenge_core"
+        ],
+        "text": "\"그래, 나도 과장했어. 그런데 그전까지 내가 얼마나 바보처럼 이용당했는지는 아무도 안 보잖아.\"",
+        "behaviorHint": "시선을 피하다가 끝 단어만 날카롭게 찍는다."
+      },
+      {
+        "id": "emo-b-1",
+        "party": "b",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "trigger": [
+          "d1.unlock.b.s4.use_friend",
+          "d5.unlock.b.s4.image_preserve"
+        ],
+        "text": "\"망치려던 게 아니었어. 그냥 한 번만, 그날만 넘기고 싶었어. 근데 그 말이 이렇게까지 될 줄은...\"",
+        "behaviorHint": "한숨을 길게 쉰 뒤 질문 끝마다 되묻는다."
+      },
+      {
+        "id": "emo-b-2",
+        "party": "b",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ],
+        "trigger": [
+          "contr-1",
+          "contr-4"
+        ],
+        "text": "\"내 잘못이 없는 건 아니지만, 연애로 자리 챙긴 사람처럼 낙인찍힌 건 진짜 억울했어.\"",
+        "behaviorHint": "목이 잠긴 채 손끝을 만지작거린다."
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "friend07:transition:a:d-2:s0_s1",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "screenshot_origin_question",
+      "line": "원본이 어디서 나왔는지 묻는 순간, 진아는 '조작' 대신 '정리'라는 말을 붙이며 한 발 물러선다.",
+      "behaviorHint": "단어 선택에 집착하며 말끝을 세운다."
+    },
+    {
+      "id": "friend07:transition:a:d-2:s1_s2",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "e-1의 편집 흔적이 제시되면 진아는 합성은 아니라고 버티다가 결국 서로 다른 시점 문장을 붙였다고 인정한다.",
+      "behaviorHint": "짧은 정적 뒤 턱을 당기고 인정한다."
+    },
+    {
+      "id": "friend07:transition:a:d-2:s2_s3",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "export_comparison_question",
+      "line": "원본 export와 비교 질문이 들어오면 진아는 편집 자체보다 왜 여러 사람에게 보냈는지 설명으로 논점을 옮긴다.",
+      "behaviorHint": "타임라인을 나열하며 확산의 이유를 먼저 든다."
+    },
+    {
+      "id": "friend07:transition:a:d-2:s3_s5",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_or_e-5_presented",
+      "line": "원본과 확산 기록이 함께 맞물리면 진아는 더 이상 '전달'로 숨지 못하고 편집·확산 책임을 함께 인정한다.",
+      "behaviorHint": "문장을 짧게 끊고 책임 표현을 직접 쓴다."
+    },
+    {
+      "id": "friend07:transition:a:d-3:s0_s1",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "selection_favoritism_question",
+      "line": "특혜를 단정하느냐는 질문이 들어오면 진아는 '확정'을 '정황상 의심'으로 낮추며 표현 수위를 조절한다.",
+      "behaviorHint": "‘정황상’이라는 단어를 반복한다."
+    },
+    {
+      "id": "friend07:transition:a:d-3:s1_s2",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "편집 캡처가 다시 제시되면 진아는 자신의 판단 출발점이 그 한 장의 인상이었다는 사실을 숨기지 못한다.",
+      "behaviorHint": "시선을 피한 채 문장 사이를 길게 쉰다."
+    },
+    {
+      "id": "friend07:transition:a:d-3:s2_s3",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "scoring_exclusion_question",
+      "line": "채점 제외 여부를 추궁받으면 진아는 점수표를 못 봤던 시점의 자신을 근거로 의심의 이유만 남기려 한다.",
+      "behaviorHint": "자료보다 감정의 정당성을 강조한다."
+    },
+    {
+      "id": "friend07:transition:a:d-3:s3_s5",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "부회장 제외 로그가 결정적으로 나오면 진아는 특혜 단정을 접고, 남는 건 자신의 과장 책임뿐이라고 정리한다.",
+      "behaviorHint": "마지막 문장을 낮게 누르고 더는 반박하지 않는다."
+    },
+    {
+      "id": "friend07:transition:a:d-4:s0_s1",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_agreement_reminder",
+      "line": "작년 합의가 상기되면 진아는 먼저 깬 쪽이 성호라는 논리로 자신의 위반을 예외처럼 포장한다.",
+      "behaviorHint": "합의 문구를 짚으면서도 책임어는 피한다."
+    },
+    {
+      "id": "friend07:transition:a:d-4:s1_s2",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "노션 원문과 확인 이모지가 제시되면 진아는 합의 내용을 정확히 기억한다고 인정한다.",
+      "behaviorHint": "잠깐 멈춘 뒤 건조하게 사실만 확인한다."
+    },
+    {
+      "id": "friend07:transition:a:d-4:s2_s4",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_why_she_skipped_designated_route",
+      "line": "비난 대신 이유를 묻는 질문에 진아는 또 비밀 보관자로 남을까 두려워 지정 경로를 버렸다고 감정을 드러낸다.",
+      "behaviorHint": "목소리가 낮아지고 어조가 갑자기 짧아진다."
+    },
+    {
+      "id": "friend07:transition:a:d-4:s4_s5",
+      "caseId": "friend-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "책임을 직접 묻는 순간 진아는 성호의 선제 위반과 별개로 자신도 합의를 깼다고 선명하게 인정한다.",
+      "behaviorHint": "불필요한 수식 없이 단정문으로 답한다."
+    },
+    {
+      "id": "friend07:transition:b:d-1:s0_s1",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "alibi_request_question",
+      "line": "알리바이 부탁이었냐는 정면 질문이 들어오면 성호는 '대신 설명'이라는 표현으로 후퇴한다.",
+      "behaviorHint": "말의 강도를 스스로 고쳐 말한다."
+    },
+    {
+      "id": "friend07:transition:b:d-1:s1_s2",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "원본 대화가 제시되면 성호는 직접 문구를 부인하지 못하고 그날만 넘기려 했다고 부분 인정한다.",
+      "behaviorHint": "한숨을 쉬고 고개를 작게 끄덕인다."
+    },
+    {
+      "id": "friend07:transition:b:d-1:s2_s3",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "schedule_swap_question",
+      "line": "스케줄 맞바꿈을 추궁받으면 성호는 실제 부재를 인정하되 의도는 아니었다며 책임을 흐린다.",
+      "behaviorHint": "압박 상황 설명을 길게 늘어놓는다."
+    },
+    {
+      "id": "friend07:transition:b:d-1:s3_s5",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "이동 기록과 통화 기록이 겹치면 성호는 더는 버티지 못하고 진아를 방패처럼 썼다고 털어놓는다.",
+      "behaviorHint": "목이 잠긴 채 마지막 단어를 삼킨다."
+    },
+    {
+      "id": "friend07:transition:b:d-4:s0_s1",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_rule_reminder",
+      "line": "옛 규칙이 소환되면 성호는 합의를 절대 규칙이 아니라 상황형 가이드였다고 축소한다.",
+      "behaviorHint": "손바닥을 펼쳐 '그런 취지'라는 표현을 반복한다."
+    },
+    {
+      "id": "friend07:transition:b:d-4:s1_s2",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_being_scared",
+      "line": "겁이 났느냐는 작은 인정 질문이 들어오면 성호는 선발 직전 공포를 핑계로 규칙 인지를 시인한다.",
+      "behaviorHint": "시선이 아래로 떨어지고 말이 느려진다."
+    },
+    {
+      "id": "friend07:transition:b:d-4:s2_s4",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_why_he_used_jina_as_cover",
+      "line": "왜 진아를 커버로 썼는지 비난 없이 묻자 성호는 관계, 자리, 친구를 다 잃기 싫었다는 속내를 내보인다.",
+      "behaviorHint": "호흡이 길어지고 문장 앞에 한숨이 붙는다."
+    },
+    {
+      "id": "friend07:transition:b:d-4:s4_s5",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-2_or_emotion_threshold",
+      "line": "원본 대화나 감정 임계치가 겹치면 성호는 자신이 합의를 먼저 깼다고 선명하게 인정한다.",
+      "behaviorHint": "어깨가 내려앉고 변명 문장이 사라진다."
+    },
+    {
+      "id": "friend07:transition:b:d-5:s0_s1",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "pre_disclosure_question",
+      "line": "사전 고지 여부를 묻는 순간 성호는 실제 신고가 아니라 '곧 말할 흐름'을 고지처럼 말하기 시작한다.",
+      "behaviorHint": "확정 표현을 흐릿한 진행형으로 바꾼다."
+    },
+    {
+      "id": "friend07:transition:b:d-5:s1_s2",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "합의 문서가 나오면 성호는 허용 경로를 알았다는 점은 인정하지만, 아직 끝내지 못했을 뿐이라고 버틴다.",
+      "behaviorHint": "문서 내용은 인정하면서 시점 표현만 흐린다."
+    },
+    {
+      "id": "friend07:transition:b:d-5:s2_s3",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "report_timestamp_question",
+      "line": "신고 시각을 추궁받자 성호는 사전 고지 주장에서 사후 수습 논리로 천천히 옮겨 간다.",
+      "behaviorHint": "‘이미’ 대신 ‘뒤늦게라도’라는 말을 사용한다."
+    },
+    {
+      "id": "friend07:transition:b:d-5:s3_s5",
+      "caseId": "friend-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "타임스탬프가 결정적으로 확인되면 성호는 실제 신고가 뒤였고 자신이 시간을 앞당겨 말했다고 인정한다.",
+      "behaviorHint": "입술을 깨물다 마지막엔 바로 시인한다."
+    }
+  ]
+}

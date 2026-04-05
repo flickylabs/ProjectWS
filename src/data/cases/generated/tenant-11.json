@@ -358,7 +358,33 @@
           "questionAngle": "오성필에게: \"초기 인테리어 허용 범위\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 오성필의 \"초기 인테리어 허용 범위\" 쟁점과 관련된다. 오성필은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계약 특약 원본의 문구에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계약 당일 확정된 특약인데 별도 승인 기록이 없는 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "되돌릴 수 있는 손보기와 고정 변경을 왜 같은 범위로 보셨습니까?",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -395,14 +421,40 @@
           "questionAngle": "오성필에게: \"480만원 원상복구비 전액의 정당성\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 오성필의 \"480만원 원상복구비 전액의 정당성\" 쟁점과 관련된다. 오성필은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 비교 사진이 같은 공간의 원본 묶음임을 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입주 당일과 점검 직전 같은 구도로 촬영한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "도배와 조명 외에 원래 고정된 부분이 달라진 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "시공비 계좌이체 내역과 품목 영수증",
       "description": "나래가 시공업체와 자재상에 송금한 내역, 자재 영수증, 그리고 총 430만원으로 정리된 개인 비용표다.",
       "surfaceName": "시공비 계좌이체 내역과 영수증",
-      "surfaceDescription": "시공업체 송금 내역과 자재 영수증이 묶인 비용 자료다.",
+      "surfaceDescription": "송금 내역과 자재 영수증이 묶인 비용 자료다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -422,14 +474,40 @@
         "check_edits": "기관 발급 문서와 카드 매출전표라 편집 흔적이 없다.",
         "question_acquisition": "비용 분쟁 해결을 위한 통상 자료라 적법성 문제는 낮다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 비용표와 이체 내역을 직접 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 주간 결제 안에 시공비와 다른 지출이 섞인 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "제출한 총액이 전부 현장에 남는 비용인지 다시 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
       "name": "시공업체 작업범위 톡과 원본 견적서",
       "description": "현장소장이 나래와 주고받은 작업범위 카카오톡, 고정 시공과 이동식 소품을 구분한 원본 견적서다.",
-      "surfaceName": "시공업체 작업범위 톡과 견적서",
-      "surfaceDescription": "시공 현장소장과 나눈 카카오톡과 원본 견적서 묶음이다.",
+      "surfaceName": "작업범위 대화와 견적서",
+      "surfaceDescription": "작업 범위를 주고받은 대화와 원본 견적서 묶음이다.",
       "type": "chat",
       "reliability": "soft",
       "completeness": "original",
@@ -451,13 +529,39 @@
         "question_acquisition": "사적 대화가 포함돼 공개 범위에는 주의가 필요하지만, 비용 항목의 성격을 가르는 데 직접 관련된다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 작업 대화와 견적서 원본을 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "고정 작업 뒤 별도 결제가 이어진 흐름을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "공간에 남지 않는 항목까지 한 묶음으로 본 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
       "name": "누수 보수 카톡과 새 임차인 모집 캡처",
       "description": "과거 누수·곰팡이 보수 요청 대화 일부와, 성필이 새 임차인 모집글에 개선된 내부 사진을 올린 캡처 묶음이다.",
-      "surfaceName": "설비 보수 카톡과 모집 캡처",
+      "surfaceName": "설비 보수 대화와 모집 캡처",
       "surfaceDescription": "과거 설비 보수 요청 대화와 임차인 모집 게시글 캡처다.",
       "type": "chat",
       "reliability": "soft",
@@ -488,7 +592,33 @@
           "questionAngle": "오성필에게: \"초기 인테리어 허용 범위\" 관련 해명 요구 (방어 동기: 체면 유지)",
           "implication": "이 증거는 오성필의 \"초기 인테리어 허용 범위\" 쟁점과 관련된다. 오성필은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화 캡처와 모집 화면을 증거로 낸 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "보수 대화 뒤 퇴거 직후 곧바로 게시가 이뤄진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "처음 캡처에서 빠진 단서 문장을 왜 함께 내지 않았습니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -517,7 +647,33 @@
         "question_acquisition": "원상복구 범위를 가리는 통상 자료라 제출 절차상 문제는 낮다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 두 복구 견적을 함께 받아 비교한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 날 작성된 두 견적의 범위 차이를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "일부 고정 부분 보수인데 전면 공사처럼 본 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

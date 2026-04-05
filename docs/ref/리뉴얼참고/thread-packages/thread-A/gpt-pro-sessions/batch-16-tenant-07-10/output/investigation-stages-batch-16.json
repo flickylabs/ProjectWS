@@ -1,0 +1,646 @@
+[
+  {
+    "case": "case-tenant-07",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 재계약 초안과 계약서 원본 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "합의 당일 저녁 생성된 초안이 서명란만 비어 있던 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "시작일 후보까지 적힌 초안을 단순 문의 자료로 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화방 캡처를 제출 자료로 삼은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "번복 통보 직후 캡처가 생성된 경위를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞뒤 몇 줄을 뺀 상태로 제출한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 과거 민원 종결 기록을 다시 꺼낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 민원이 오래전 한 차례로 끝난 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "종결된 단발 기록을 반복 문제처럼 연결한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 문의 문자와 문의표 원본을 확보한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 문의가 조건 번복 통보 두 시간 전 들어온 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "예약 표시 없는 문의를 확정 대안처럼 다룬 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 음성메모 요약과 일정표를 남긴 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "협의 직후 같은 저녁 연속으로 기록한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "서류만 맞추자는 취지의 요약을 남긴 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 서명본 발송 기록과 확인서를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "서명본 발송은 늦었는데 그 전후 예약금이 없던 점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "실제 선입금도 없는데 다른 진행이 임박했다고 한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "case-tenant-08",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 자동이체 중단 내역과 독촉 문자에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "상세표를 받은 다음 날마다 자동이체를 멈춘 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다투지 않는 부분도 따로 내지 않은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 상세 캡처와 PDF를 직접 다시 보낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "두 파일이 공식 고지 뒤 11분 간격으로 생성된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "합계와 도장 주변이 어색한 해당 파일을 보낸 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계량 로그와 공용부 보고서를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 기간 공용부와 빈 점포 사용량도 급증한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다른 구간 부담을 분리하지 않은 채 총액만 제시한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 작업장비 전력 로그와 일정 캡처에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "장시간 렌더링 주간이 사용량 상승과 겹친 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "일부 사용 증가가 있었는데도 전액을 다툰 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 양식과 해당 PDF를 대조하게 된 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 PDF에 개인 엑셀 흔적이 남은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "도장 픽셀과 자간이 어긋난 채 보낸 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회계장부와 외부 청구서를 함께 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해당 비용이 문제의 달 직전에 함께 발생한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "세대별 관리비에 넣기 어려운 항목을 섞은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "case-tenant-09",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계약서 원본과 초안 변경본 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "서명 직전 보증금 항목만 커진 최종본이 나온 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "다른 조항은 그대로인데 보증금 줄만 바뀐 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 분할 송금 내역과 수령증 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "같은 날 14분 차이 송금의 항목명이 다른 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "한쪽 수령액만 고정돼 있는데 전액 수령 주장한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화와 음성메모 원본을 추가 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "최종 스캔 직전 대화가 길게 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "앞뒤 문장을 덜어 대화 흐름을 바꾼 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회계전표와 세금계산서를 묶어 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "수납 당일 일반 수익 처리 뒤 다른 결제가 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "보관 계정이 아닌 일반 수익으로 처리한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 스캔 로그와 통화요약 메모를 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "통화 뒤 19분 만에 최종본이 올라간 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "통화 직후 올라간 파일이 정리된 수정본과 달랐던 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 정산표와 반환 지연 계좌기록을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "마지막 미납 정리와 반환이 모두 늦어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "원본 견적도 없이 일부 항목을 크게 적어 넣은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "case-tenant-10",
+    "evidenceStages": {
+      "e-1": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 계약서와 반려동물 특약 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "특약란이 계약 당일 한 번에 작성된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "특약에 협의 여지를 남긴 표현을 넣은 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-2": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단톡 캡처와 사진 전송 기록을 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입주 이틀 전 밤 사진을 보내고 바로 전달한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "답변 전제 문장을 빼고 제출한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-3": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 등록증과 접종 기록, 수료증을 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "입주 직전 갱신 기록과 훈련 수료 시점을 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "기본 관리 자료만으로 실제 생활 소음이 없다고 보는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "e-4": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 민원일지와 복도 확인 기록을 다시 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "민원이 첫 달 두 차례로 그친 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "짧은 소음 기록을 즉시 반출 사유로 본 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ],
+      "e-5": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 통화요약과 문자 회신 원문에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "사진 다음 날 답이 왔는데 이후 명확한 회신이 없던 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "관리만 잘 해 달라는 답을 허락으로도 읽히게 둔 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ],
+      "e-6": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 현장 사진과 청소 견적 비교서를 낸 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "즉시 반출 통보 다음 날 점검을 진행한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "세탁 수준 상태에서 전문 보수까지 요구한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
+    }
+  }
+]

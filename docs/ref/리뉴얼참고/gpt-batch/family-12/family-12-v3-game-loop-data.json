@@ -21,7 +21,7 @@
           "questions": [
             {
               "id": "dossier-1.a.q1",
-              "text": "재판관이 묻겠습니다. 가족방에 올린 문구가 현우 원문 한 줄입니까, 아니면 서로 다른 대화를 이어 붙인 것입니까?",
+              "text": "문지연 씨, 가족방에 올린 문구가 처음 대화 그대로라고 지금도 말하실 수 있습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -60,7 +60,7 @@
           "questions": [
             {
               "id": "dossier-1.b.q1",
-              "text": "사촌에게 남긴 원본에서 화환 수량과 식대 합계를 따진 사실을 지금도 부인합니까?",
+              "text": "문현우 씨, 장례 중 비용 이야기를 사적으로 꺼낸 사실 자체는 부인하십니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -70,7 +70,7 @@
             },
             {
               "id": "dossier-1.b.q2",
-              "text": "원본에 없는 '엄마 통장' 문구가 캡처에만 있는 점을 근거로, 당신 원문과 허위 문장을 어떻게 구분하겠습니까?",
+              "text": "원본에 없는 '엄마 통장' 문구가 캡처에만 있는 점을 보면, 문현우 씨가 실제로 보낸 말과 캡처 문구를 어떻게 가르겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "legality",
@@ -115,7 +115,7 @@
           "questions": [
             {
               "id": "dossier-2.a.q1",
-              "text": "PC 캐시와 자동저장 파일이 같은 방향을 가리키는데, 이 이미지는 '보기 좋게 정리한 것'입니까, 아니면 새 구성을 만든 것입니까?",
+              "text": "문지연 씨, 그 이미지를 만드는 과정에 손을 댄 적이 없다고 지금도 말씀하시겠습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -154,7 +154,7 @@
           "questions": [
             {
               "id": "dossier-2.b.q1",
-              "text": "포렌식 전에도 이상한 캡처라 느꼈다면, 어떤 지점이 원본과 달랐는지 구체적으로 설명하십시오.",
+              "text": "문현우 씨, 그 캡처가 처음부터 원문 그대로는 아니라고 느낀 지점이 있었습니까?",
               "attackVector": "authenticity",
               "onSuccess": {
                 "blockVector": "authenticity",
@@ -164,7 +164,7 @@
             },
             {
               "id": "dossier-2.b.q2",
-              "text": "사람들이 그 캡처를 믿은 배경에 당신 실제 원문 몇 줄이 섞여 있었다는 점도 인정합니까?",
+              "text": "사람들이 그 캡처를 믿은 배경에, 문현우 씨 실제 원문 몇 줄이 섞여 있었다는 점도 인정합니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "identity",
@@ -176,7 +176,7 @@
             },
             {
               "id": "dossier-2.b.q3",
-              "text": "정정을 요구하면서도, 당신 실제 원문이 왜 오해의 재료가 되었는지는 어디까지 인정하겠습니까?",
+              "text": "정정을 요구하면서도, 문현우 씨 실제 원문이 왜 오해의 재료가 되었는지는 어디까지 인정하겠습니까?",
               "attackVector": "legality",
               "onSuccess": {
                 "blockVector": "context",
@@ -209,7 +209,7 @@
           "questions": [
             {
               "id": "dossier-3.a.q1",
-              "text": "세 방 전달 로그와 정산규칙 메모를 함께 보면, 왜 제한된 채널 원칙을 스스로 예외 처리했습니까?",
+              "text": "문지연 씨, 왜 정산 문제를 정해 둔 범위 밖으로 꺼내셨습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -248,7 +248,7 @@
           "questions": [
             {
               "id": "dossier-3.b.q1",
-              "text": "공유 시트와 1대1로만 하자는 메모가 있는데, 왜 사촌 사이드채팅으로 돌아 나갔습니까?",
+              "text": "문현우 씨, 왜 정산 이야기를 정해 둔 통로 밖에서 먼저 꺼내셨습니까?",
               "attackVector": "context",
               "onSuccess": {
                 "blockVector": "context",
@@ -258,7 +258,7 @@
             },
             {
               "id": "dossier-3.b.q2",
-              "text": "공개방 전파가 부당하다는 주장과 별개로, 당신도 그 확산의 불씨를 만든 쪽이라는 점은 인정합니까?",
+              "text": "공개방 전파가 부당하다는 주장과 별개로, 문현우 씨도 그 확산의 불씨를 만든 쪽이라는 점은 인정합니까?",
               "attackVector": "identity",
               "onSuccess": {
                 "blockVector": "identity",

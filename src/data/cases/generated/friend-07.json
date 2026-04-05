@@ -325,8 +325,8 @@
     {
       "id": "e-1",
       "name": "진아가 양소라와 운영진에게 보낸 편집 캡처",
-      "surfaceName": "편집 캡처 이미지",
-      "surfaceDescription": "운영진에게 보낸 편집된 대화 캡처 이미지다. 편집 범위와 원본 여부 확인이 필요하다.",
+      "surfaceName": "대화 캡처 이미지",
+      "surfaceDescription": "전달된 대화 캡처 이미지다. 어떤 부분이 바뀌었는지와 원본 여부 확인이 필요하다.",
       "description": "성호가 '임원 연애는 숨겨야 이득'이라고 말한 것처럼 보이는 한 장짜리 메신저 캡처와 전달본이다.",
       "type": "chat",
       "reliability": "soft",
@@ -347,7 +347,33 @@
         "check_edits": "말풍선 간 간격과 글자 안티앨리어싱 값이 일정하지 않아 합성 편집 흔적이 확인된다.",
         "question_acquisition": "사적인 비밀 연애 대화를 제3자에게 전달한 자료라 사생활 침해 우려가 크다."
       },
-      "subjectParty": "a"
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 한 장짜리 캡처와 전달본을 보관한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "파일 생성 시각과 저장 경로가 전송 흐름과 다른 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "말풍선 간격과 글자 경계 값이 일정하지 않은 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -387,13 +413,39 @@
           "implication": "이 증거는 박성호의 \"성호의 비밀 연애 은닉과 진아에게 알리바이 요청\" 쟁점과 관련된다. 박성호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 원본 대화와 일정 맞바꿈 기록을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "캡처에 쓰인 문장 조각들의 전송 날짜가 서로 다른 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "부재 설명을 부탁하면서 알림 범위도 따로 거론한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
       "name": "작년 소문 사태 뒤 작성한 제한 공개 합의 노션",
-      "surfaceName": "제한 공개 합의 노션 문서",
-      "surfaceDescription": "과거 사태 이후 작성된 제한 공개 합의 문서다. 합의 내용과 당사자 확인이 필요하다.",
+      "surfaceName": "제한 공개 합의 문서",
+      "surfaceDescription": "과거 사태 뒤 작성된 제한 공개 합의 문서다. 어떤 기준을 함께 적었는지 확인이 필요하다.",
       "description": "운영 충돌이 있는 비밀 연애는 지정 운영진 한 명에게만 함께 알리고 스크린샷 확산은 금지한다는 문구가 담긴 노션 페이지와 확인 이모지 기록이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -424,13 +476,39 @@
           "questionAngle": "박성호에게: \"작년 비밀 유지 합의의 쌍방 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
           "implication": "이 증거는 박성호의 \"작년 비밀 유지 합의의 쌍방 파기\" 쟁점과 관련된다. 박성호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 제한 공개 규칙 문서와 확인 기록의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "그 규칙이 소문 직후 작성되고 같은 밤 확인된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "예외 알림 외 추가 공유 금지 문구를 어떻게 이해했는지 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
-      "name": "연합공연제 리더 선발 점수표와 이해충돌 제외 로그",
+      "name": "연합공연제 리더 선발 점수표와 제외 관련 기록",
       "surfaceName": "선발 점수표와 이해충돌 제외 로그",
-      "surfaceDescription": "공연제 리더 선발 점수표와 이해충돌 제외 기록이다. 평가 기준과 제외 사유 확인이 필요하다.",
+      "surfaceDescription": "선발 점수표와 제외 관련 기록이다. 평가 기준과 제외 사유 확인이 필요하다.",
       "description": "성호의 리더 선발 점수, 부회장의 채점 제외 여부, 실제 이해충돌 신고 접수 시각을 보여주는 원본 기록이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -464,7 +542,33 @@
           "implication": "이 증거는 박성호의 \"성호의 '이미 운영진에게 제한 고지했다' 주장\" 쟁점과 관련된다. 박성호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 선발 시트와 이해충돌 체크 로그에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "관련 접수 시각이 문제 확산 뒤에야 남은 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "채점 배제와 별개로 신고가 사전에 정리되지 않은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -504,7 +608,33 @@
           "implication": "이 증거는 박성호의 \"작년 비밀 유지 합의의 쌍방 파기\" 쟁점과 관련된다. 박성호은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S2"
+      "requiredLieState": "S2",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 단톡 전달 기록과 스토리 보관본을 남긴 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "첫 전달 뒤 짧은 시간 안에 여러 채널로 보낸 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "확인 필요라고 적은 뒤 곧바로 의도를 단정한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -533,7 +663,33 @@
         "question_acquisition": "이동 동선과 통화정보가 포함돼 있어 분쟁 해결 범위 밖의 세부 위치 정보는 가려야 한다."
       },
       "subjectParty": "b",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 일정표와 이동 기록 묶음을 제출한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "소품 정리 시간과 외부 통화 이동이 겹친 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "자신의 부재를 다른 일정처럼 보이게 하려 한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

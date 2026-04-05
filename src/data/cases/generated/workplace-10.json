@@ -355,8 +355,34 @@
           "implication": "이 증거는 장혜린의 \"구두 약속 위의 쌍방 의존\" 쟁점과 관련된다. 장혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "면담 메모와 메신저 약속 스레드",
-      "surfaceDescription": "1:1 면담 메모와 전환 약속이 담긴 메신저 대화 스레드 기록"
+      "surfaceName": "면담 메모와 대화 스레드",
+      "surfaceDescription": "면담 기록과 관련 대화가 이어진 스레드",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 1:1 문서와 메신저 스레드에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "출시 전후 같은 취지 문장이 반복된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "그 직후 추가 인수인계와 교육이 이어진 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -382,8 +408,34 @@
         "question_acquisition": "개인 고용계약 자료 — 공개 범위 최소 제한."
       },
       "subjectParty": "b",
-      "surfaceName": "타사 근로계약서와 온보딩 메일",
-      "surfaceDescription": "타사 근로계약서 사본과 온보딩 관련 이메일이 함께 묶인 문서"
+      "surfaceName": "근로계약서 사본과 안내 메일",
+      "surfaceDescription": "계약서 사본과 안내 메일이 함께 묶인 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 계약서 사본과 온보딩 메일에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "체결 시점이 기대 기간과 겹친 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "당시 고용상태를 명확히 밝히지 않은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -410,7 +462,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "헤드카운트 보류 화면 캡처",
-      "surfaceDescription": "인원 계획 보류 상태를 보여주는 시스템 화면의 캡처 이미지"
+      "surfaceDescription": "인원 계획 보류 상태를 보여주는 시스템 화면의 캡처 이미지",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 보류 캡처를 제시한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "추가 요청 가능 영역이 빠진 상태인 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "원천 불가처럼 보이게 한 제시 방식의 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -438,9 +516,35 @@
         "question_acquisition": "인사자료 — 공개 최소화, 분쟁 해결 목적 적법 열람."
       },
       "subjectParty": "a",
-      "surfaceName": "인사 전환 리뷰 트래커와 코멘트",
-      "surfaceDescription": "인사 전환 리뷰 추적 문서와 매니저 코멘트 변경 이력 기록",
-      "requiredLieState": "S3"
+      "surfaceName": "검토 기록과 코멘트 이력",
+      "surfaceDescription": "검토 상태와 코멘트 흐름이 남은 기록",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 전환 트래커와 코멘트 이력을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "최종 결정 전 부정 메모가 먼저 들어간 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "예산 외 판단 요소가 먼저 작동한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -476,8 +580,34 @@
           "implication": "이 증거는 장혜린의 \"구두 약속 위의 쌍방 의존\" 쟁점과 관련된다. 장혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "과거 계약 연장 메일과 잔류 요청",
-      "surfaceDescription": "과거 두 차례 계약 연장 이메일과 잔류 요청 관련 기록 문서"
+      "surfaceName": "이전 갱신 메일과 요청 기록",
+      "surfaceDescription": "이전 갱신 과정의 메일과 관련 요청 기록",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 연장 메일과 잔류 요청 기록을 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "연장 직전 같은 취지 요청이 반복된 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "반복된 잔류 유인이 기대를 키운 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -516,9 +646,35 @@
           "implication": "이 증거는 장혜린의 \"이중 계약과 근무시간 은폐\" 쟁점과 관련된다. 장혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "노무 컴플라이언스 메모와 접속 로그",
-      "surfaceDescription": "노무 컴플라이언스 검토 메모와 출입 및 VPN 접속 겹침 로그",
-      "requiredLieState": "S3"
+      "surfaceName": "검토 메모와 접속 로그",
+      "surfaceDescription": "검토 문서와 접속 기록이 함께 남은 자료",
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "해당 노무 메모와 접속 로그에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "계약 기간과 평일 접속 기록이 겹친 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "가용시간과 고용상태를 투명하게 밝히지 않은 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

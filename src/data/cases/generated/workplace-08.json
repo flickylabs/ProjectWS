@@ -1,5 +1,5 @@
 {
-  "caseId": "case-work-07",
+  "caseId": "case-work-08",
   "meta": {
     "relationshipType": "boss_employee",
     "conflictSeed": "CS-1",
@@ -352,8 +352,34 @@
           "implication": "이 증거는 김나래의 \"오프북 상계의 쌍방 가담\" 쟁점과 관련된다. 김나래은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "surfaceName": "월말 클로징 메일과 상계표 스레드",
-      "surfaceDescription": "월말 정산 관련 이메일과 상계표 링크가 포함된 메일 스레드"
+      "surfaceName": "마감 메일과 정리표 스레드",
+      "surfaceDescription": "마감 정산 관련 메일과 참고 문서 링크가 묶인 스레드",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 익명 글 보존본과 미팅 메모를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "게시 뒤 두 시간도 안 돼 작성자 추정을 언급한 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "실명 없이도 대상이 좁혀질 표현을 왜 회의에서 사용했는지 설명하십시오.",
+            "attackVector": "identity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
@@ -379,8 +405,34 @@
         "question_acquisition": "가맹점 협조 자료 — 적법하지만 개인 소비 품목 노출은 최소화 필요."
       },
       "subjectParty": "b",
-      "surfaceName": "재발급 영수증과 수정 요청 기록",
-      "surfaceDescription": "재발급된 영수증과 POS 품목 수정 요청이 담긴 메신저 기록"
+      "surfaceName": "영수증과 수정 요청 기록",
+      "surfaceDescription": "영수증 사본과 항목 수정 요청이 담긴 대화 기록",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 스크린샷 묶음과 원본 파일의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "본문과 헤더의 해상도가 다른 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "헤더와 시각 정보를 절삭한 상태로 한 장처럼 제시한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -416,7 +468,33 @@
         }
       },
       "surfaceName": "카드 승인 내역 캡처 PDF 문서",
-      "surfaceDescription": "카드 승인 내역을 캡처하여 정리한 PDF 형식의 제출 문서"
+      "surfaceDescription": "카드 승인 내역을 캡처하여 정리한 PDF 형식의 제출 문서",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대화 export와 해시 비교표의 제출 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문제 문장 ID가 다른 시기의 대화에 속한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "현재 대화 원문이 없는데 같은 취지로 제시한 근거를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -455,7 +533,33 @@
       },
       "surfaceName": "정산 폴더 백업본과 시트 편집 이력",
       "surfaceDescription": "정산 폴더의 자동 백업본과 로컬 스프레드시트 편집 히스토리",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 과거 회의록과 후속 메일을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "제기 직후 등급을 낮추는 지시가 이어진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "과거에도 공개를 누르는 방향이 반복된 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
@@ -482,7 +586,33 @@
       },
       "subjectParty": "a",
       "surfaceName": "감사 대응 초안과 비공식 코멘트",
-      "surfaceDescription": "감사 대응용 초안 문서와 비공식으로 남겨진 평가 코멘트"
+      "surfaceDescription": "감사 대응용 초안 문서와 비공식으로 남겨진 평가 코멘트",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 조사 접수기록과 인사 로그를 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "결론 전 역할 배제와 부정 입력을 먼저 한 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "보호 절차가 살아 있는 시점에 대상 배제를 병행한 이유를 설명하십시오.",
+            "attackVector": "legality"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -522,7 +652,33 @@
       },
       "surfaceName": "폴더 회수 로그와 메모필드 원본",
       "surfaceDescription": "공유 폴더 접근 회수 로그와 카드사 메모 필드 원본 기록",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 포렌식 메모와 작업 기록을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "게시 직전 같은 편집 세션에 두 이미지가 열린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "서로 다른 시기 이미지를 한 작업 흐름에서 결합한 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [

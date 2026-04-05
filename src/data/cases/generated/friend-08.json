@@ -355,13 +355,39 @@
           "questionAngle": "김준혁에게: \"공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가\" 관련 해명 요구 (방어 동기: 수치심 회피)",
           "implication": "이 증거는 김준혁의 \"공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가\" 쟁점과 관련된다. 김준혁은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 카드뉴스와 포트폴리오 초기 화면을 올린 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "시상 직후 가장 이른 버전에 그 문구가 올라간 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "팀원 입력란과 수정 설명이 보이지 않게 잘라 둔 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-2",
       "name": "공모전 제출 form export와 수정 이력",
-      "surfaceName": "공모전 제출 폼과 수정 이력",
-      "surfaceDescription": "공모전 제출 양식 내보내기와 수정 이력이다. 제출 시점과 변경 내용 확인이 필요하다.",
+      "surfaceName": "제출 문서와 수정 이력",
+      "surfaceDescription": "제출 문서 원본과 수정 기록이다. 제출 시점과 변경 흐름 확인이 필요하다.",
       "description": "대표자 필드는 은비로 입력됐지만 팀원 칸에는 준혁이 포함되어 있고, 역할 서술란은 비어 있었던 제출 원본이다.",
       "type": "platform_log",
       "reliability": "hard",
@@ -395,7 +421,33 @@
           "implication": "이 증거는 김준혁의 \"공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가\" 쟁점과 관련된다. 김준혁은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 제출 원본과 수정 이력 자료를 확인하셨습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "대표 계정으로 제출하면서도 팀원 칸을 함께 입력한 이유를 설명하십시오.",
+            "attackVector": "identity"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "바깥 화면이 한 사람 이름만 먼저 보이는데 역할란은 왜 비웠습니까?",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-3",
@@ -432,7 +484,33 @@
           "questionAngle": "김준혁에게: \"준혁의 마감 직전 자료 누락과 리허설 불참\" 관련 해명 요구 (방어 동기: 자기 보호)",
           "implication": "이 증거는 김준혁의 \"준혁의 마감 직전 자료 누락과 리허설 불참\" 쟁점과 관련된다. 김준혁은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
-      }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 커밋 로그와 드라이브 버전 기록의 존재를 인정하십니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "핵심 작업 뒤 최종 업로드가 발표 전날 밤까지 밀린 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "병합 충돌과 누락 파일이 발표자료 정리에 준 영향을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-4",
@@ -472,13 +550,39 @@
           "implication": "이 증거는 김준혁의 \"준혁의 마감 직전 자료 누락과 리허설 불참\" 쟁점과 관련된다. 김준혁은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 회의록과 리허설 출석표 기록을 제출한 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "역할 문구 미확정 상태에서 최종 리허설에 빠진 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "발표 직전 설명 연습과 자료 점검이 한쪽에 몰린 경위를 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     },
     {
       "id": "e-5",
-      "name": "심사위원 회신 메일과 상장 원본",
+      "name": "회신 메일과 증명 문서",
       "surfaceName": "심사위원 회신 메일과 상장 원본",
-      "surfaceDescription": "심사위원의 회신 메일과 상장 원본 이미지다. 심사 결과와 수상 내용 확인이 필요하다.",
+      "surfaceDescription": "관련 회신 메일과 증명 문서 이미지다. 수신 시점과 표기 내용 확인이 필요하다.",
       "description": "심사위원이 팀 전체 작업을 평가했다는 메일과 팀명으로 발급된 상장, 준혁 기여를 언급한 코멘트가 담긴 자료다.",
       "type": "document",
       "reliability": "hard",
@@ -512,7 +616,33 @@
           "implication": "이 증거는 김준혁의 \"공모전과 심사위원은 이 프로젝트를 은비 개인 작품으로 인식했는가\" 쟁점과 관련된다. 김준혁은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
         }
       },
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 심사 회신과 상장 원본에 대해 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "심사 회신이 팀명 기준인데도 다른 인식이 퍼진 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "상장과 회신이 한 사람 작업으로만 읽히지 않는 이유를 설명하십시오.",
+            "attackVector": "authenticity"
+          }
+        }
+      ]
     },
     {
       "id": "e-6",
@@ -541,7 +671,33 @@
         "question_acquisition": "개인 포트폴리오 초안이 포함돼 있어 공개 범위는 최소한으로 제한하는 것이 좋다."
       },
       "subjectParty": "a",
-      "requiredLieState": "S3"
+      "requiredLieState": "S3",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 캡션 수정 기록과 게시물 이력을 보관한 이유를 설명하십시오.",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문제 문구가 몇 시간 유지되다 항의 뒤 바뀐 이유를 설명하십시오.",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "가장 노출이 큰 시간대에 그 표현을 유지한 판단을 설명하십시오.",
+            "attackVector": "context"
+          }
+        }
+      ]
     }
   ],
   "evidenceCombinations": [
