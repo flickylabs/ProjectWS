@@ -1,13 +1,15 @@
 /**
- * DossierHint — 사건카드 자동 실행 플로팅 힌트
+ * DossierHint — 사건카드 자동 실행 배너
  * ─────────────────────────────────
- * 카드 질문이 가능할 때 ❗ 뱃지로 알림.
+ * 카드 질문이 가능할 때 배너로 알림.
  * 클릭 시 카드명 + 증거 정보만 표시 (질문 텍스트는 스포일러 방지로 숨김).
  * "자동 실행" 버튼으로 원클릭 발동.
+ *
+ * 위치: ActionPanel 탭 바 바로 위 (일반 flow 내 배치)
  */
 
 import { useState, useMemo } from 'react'
-import type { PartyId, LieState, DossierCard, DossierChallengeQuestion } from '../../types'
+import type { PartyId, LieState } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
 import {
   getDossierCards,
@@ -28,6 +30,11 @@ const usedCombinations = new Set<string>()
 
 export function resetDossierHintUsed() {
   usedCombinations.clear()
+}
+
+/** 외부에서 사용 완료 마킹 */
+export function markDossierCombinationUsed(cardId: string, questionId: string) {
+  usedCombinations.add(`${cardId}:${questionId}`)
 }
 
 export default function DossierHint({ target, caseKey, hasDossierCards, onAutoExecute, disabled }: Props) {
@@ -68,6 +75,7 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
     return null
   }, [target, hasDossierCards, caseKey, lieStates])
 
+  // 사용 가능한 카드+질문이 없으면 완전히 숨김
   if (!match || !target) return null
 
   const { card, question } = match
@@ -97,12 +105,12 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
   }
 
   return (
-    <div className="absolute right-2 -top-11 z-50">
-      {/* 플로팅 뱃지 */}
+    <div className="w-full">
+      {/* 배너 버튼 */}
       <button
         onClick={handleClick}
         disabled={disabled}
-        className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border transition-all ${
+        className={`w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border transition-all ${
           disabled
             ? 'border-gray-700/30 bg-gray-800/40 text-gray-600 cursor-not-allowed'
             : popupOpen
@@ -111,36 +119,38 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
         }`}
       >
         <Emoji char="❗" size={14} />
-        <span className="text-[10px] font-semibold whitespace-nowrap">결정적 질문 가능</span>
+        <span className="text-[11px] font-semibold whitespace-nowrap">결정적 질문 가능</span>
       </button>
 
-      {/* 팝업 */}
+      {/* 팝업 (배너 위로 표시) */}
       {popupOpen && !disabled && (
-        <div className="absolute right-0 bottom-full mb-1.5 w-56 rounded-xl border border-amber-500/30 bg-gray-900/95 backdrop-blur-sm shadow-xl shadow-black/40 animate-fade-in overflow-hidden">
-          <div className="p-3 space-y-2">
-            {/* 카드 이름 */}
-            <div className="flex items-start gap-2">
-              <Emoji char="📋" size={16} />
-              <div className="flex-1 min-w-0">
-                <div className="text-xs font-semibold text-amber-400">{card.name}</div>
-                <div className="text-[10px] text-gray-500 mt-0.5 line-clamp-2">{card.description}</div>
+        <div className="relative">
+          <div className="absolute left-0 right-0 bottom-full mb-1.5 rounded-xl border border-amber-500/30 bg-gray-900/95 backdrop-blur-sm shadow-xl shadow-black/40 animate-fade-in overflow-hidden z-50">
+            <div className="p-3 space-y-2">
+              {/* 카드 이름 */}
+              <div className="flex items-start gap-2">
+                <Emoji char="📋" size={16} />
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs font-semibold text-amber-400">{card.name}</div>
+                  <div className="text-[10px] text-gray-500 mt-0.5 line-clamp-2">{card.description}</div>
+                </div>
               </div>
-            </div>
 
-            {/* 증거 정보 */}
-            <div className="flex items-center gap-1.5 px-1">
-              <span className="text-[9px] text-gray-500">증거:</span>
-              <span className="text-[10px] text-amber-500/70 font-mono">{evidenceShort}</span>
-              <span className="text-[9px] text-gray-600 truncate">({evidenceLabel})</span>
-            </div>
+              {/* 증거 정보 */}
+              <div className="flex items-center gap-1.5 px-1">
+                <span className="text-[9px] text-gray-500">증거:</span>
+                <span className="text-[10px] text-amber-500/70 font-mono">{evidenceShort}</span>
+                <span className="text-[9px] text-gray-600 truncate">({evidenceLabel})</span>
+              </div>
 
-            {/* 자동 실행 버튼 */}
-            <button
-              onClick={handleExecute}
-              className="w-full text-xs py-2 rounded-lg bg-amber-600/90 text-gray-950 font-bold active:scale-95 transition-all hover:bg-amber-500"
-            >
-              자동 실행
-            </button>
+              {/* 자동 실행 버튼 */}
+              <button
+                onClick={handleExecute}
+                className="w-full text-xs py-2 rounded-lg bg-amber-600/90 text-gray-950 font-bold active:scale-95 transition-all hover:bg-amber-500"
+              >
+                자동 실행
+              </button>
+            </div>
           </div>
         </div>
       )}

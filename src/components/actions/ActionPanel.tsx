@@ -9,7 +9,7 @@ import { analyzeTestimony } from '../../engine/llmTestimonyAnalysis'
 import QuestionSelector from './QuestionSelector'
 import type { QuestionToggles } from './QuestionSelector'
 import EvidencePresenter from './EvidencePresenter'
-import DossierHint from './DossierHint'
+import DossierHint, { markDossierCombinationUsed } from './DossierHint'
 import { QuestionMeterHUD } from '../discovery/StateTransitionFeedback'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
 import { getDossierCards, getDossierCard, resolveDossierQuestion } from '../../engine/v3GameLoopLoader'
@@ -70,6 +70,10 @@ export default function ActionPanel() {
   const [evasionReadingOn, setEvasionReadingOn] = useState(false)
   // 사건카드 자동 실행 시퀀스
   const [autoSequenceActive, setAutoSequenceActive] = useState(false)
+  // 사건카드 해금 시 자동 시연(auto-showcase) 시퀀스
+  const [autoShowcaseActive, setAutoShowcaseActive] = useState(false)
+  const [showcaseStep, setShowcaseStep] = useState(0)
+  // 0: 대기, 1: 증거탭 하이라이트, 2: 증거품목 하이라이트, 3: 질문 하이라이트, 4: 완료 안내
 
   // 새 증거 뱃지: 유저가 증거 탭에서 확인한 증거 ID 추적
   const seenEvidenceRef = useRef<Set<string>>(new Set())
@@ -103,6 +107,34 @@ export default function ActionPanel() {
     }
   }, [disputeBoardAction])
 
+  // 자동 시연(auto-showcase) 시퀀스
+  useEffect(() => {
+    if (!autoShowcaseActive) {
+      setShowcaseStep(0)
+      return
+    }
+    const timers = [
+      setTimeout(() => setShowcaseStep(1), 500),   // 증거탭 하이라이트
+      setTimeout(() => {
+        setShowcaseStep(2)
+        // 증거 탭 자동 선택
+        setActiveTab('evidence')
+        markEvidenceSeen()
+      }, 1000),
+      setTimeout(() => setShowcaseStep(3), 1500),  // 질문 하이라이트
+      setTimeout(() => setShowcaseStep(4), 2000),  // 안내 메시지
+    ]
+    return () => timers.forEach(clearTimeout)
+  }, [autoShowcaseActive])
+
+  // 시연 중 아무 곳이나 터치하면 종료
+  const handleShowcaseDismiss = useCallback(() => {
+    if (autoShowcaseActive) {
+      setAutoShowcaseActive(false)
+      setShowcaseStep(0)
+    }
+  }, [autoShowcaseActive])
+
   if (!caseData) return null
   const disputes = caseData.disputes.map(d => ({ id: d.id, name: d.name }))
   const llm = isLLMMode()
@@ -129,9 +161,16 @@ export default function ActionPanel() {
     maxLieStateRank,
   })
   const dossierCardsExist = getDossierCards(caseKey).length > 0
+  const showcaseTriggeredRef = useRef(false)
   if (dossierUnlockResult.newlyUnlocked && dossierCardsExist) {
     dossierUnlockPrevRef.current = true
     showToast(dossierUnlockResult.label, 'success')
+    // 최초 해금 시 auto-showcase 트리거
+    if (!showcaseTriggeredRef.current) {
+      showcaseTriggeredRef.current = true
+      // setState를 렌더 중 직접 호출하지 않기 위해 setTimeout 사용
+      setTimeout(() => setAutoShowcaseActive(true), 100)
+    }
   }
   if (dossierUnlockResult.unlocked) dossierUnlockPrevRef.current = true
   const hasDossierCards = dossierCardsExist && dossierUnlockResult.unlocked
@@ -267,6 +306,8 @@ export default function ActionPanel() {
   const hDossierAutoExecute = (cardId: string, questionId: string, t: PartyId) => {
     setAutoSequenceActive(true)
     setActiveTab(null)
+    // 사용 완료 마킹 (DossierHint에서 소진 추적)
+    markDossierCombinationUsed(cardId, questionId)
 
     const s = useGameStore.getState()
     const card = getDossierCard(caseKey, cardId)
@@ -373,6 +414,7 @@ export default function ActionPanel() {
   }
 
   const handleTabClick = (tab: ActionTab) => {
+    if (autoShowcaseActive) return  // 시연 중 입력 차단
     if (tab === 'evidence' && evLocked) return
     if (tab === 'evidence' && activeTab !== 'evidence') markEvidenceSeen()
     setActiveTab(activeTab === tab ? null : tab)
@@ -384,6 +426,15 @@ export default function ActionPanel() {
 
   return (
     <div className="relative">
+      {/* 자동 시연 오버레이 (어두운 배경 + 클릭으로 해제) */}
+      {autoShowcaseActive && (
+        <div
+          className="fixed inset-0 bg-black/60 z-[55] cursor-pointer"
+          onClick={handleShowcaseDismiss}
+          onTouchStart={handleShowcaseDismiss}
+        />
+      )}
+
       {/* 슬라이드업 콘텐츠 패널 — 독 위에 앵커 */}
       {(hasToast || (hasAdvanceConfirm && !hasToast)) && (
         <div className="absolute bottom-full left-0 right-0 mb-0.5 z-[45]">
@@ -495,22 +546,30 @@ export default function ActionPanel() {
         </div>
       )}
 
-      {/* 사건카드 플로팅 힌트 */}
-      <div className="relative">
+      {/* 사건카드 배너 힌트 — 탭 바 바로 위 */}
+      <div className={`mt-1.5 ${showcaseStep >= 3 ? 'ring-2 ring-amber-400 rounded-xl relative z-[60]' : ''}`}>
         <DossierHint
           target={target}
           caseKey={caseKey}
           hasDossierCards={hasDossierCards}
           onAutoExecute={hDossierAutoExecute}
-          disabled={autoSequenceActive}
+          disabled={autoSequenceActive || autoShowcaseActive}
         />
       </div>
 
       {/* 자동 실행 오버레이 */}
       {autoSequenceActive && (
-        <div className="flex items-center justify-center gap-2 py-1.5 mb-1 rounded-lg bg-amber-950/40 border border-amber-500/30 animate-pulse">
+        <div className="flex items-center justify-center gap-2 py-1.5 mt-1 rounded-lg bg-amber-950/40 border border-amber-500/30 animate-pulse">
           <Emoji char="📋" size={14} />
           <span className="text-xs text-amber-400 font-semibold">증거 카드 발동 중...</span>
+        </div>
+      )}
+
+      {/* 시연 완료 안내 */}
+      {autoShowcaseActive && showcaseStep >= 4 && (
+        <div className="mt-1 px-3 py-2 rounded-xl border border-amber-500/40 bg-amber-950/50 text-center animate-fade-in">
+          <span className="text-[11px] text-amber-300 font-semibold">이 질문을 사용할 수 있습니다</span>
+          <div className="text-[10px] text-gray-500 mt-0.5">아무 곳이나 터치하면 시연이 종료됩니다</div>
         </div>
       )}
 
@@ -528,7 +587,9 @@ export default function ActionPanel() {
         </button>
         <button onClick={() => handleTabClick('evidence')}
           className={`flex-1 text-xs rounded-xl font-semibold relative transition-all ${
-            evLocked ? 'bg-gray-900/40 text-gray-600 cursor-not-allowed ring-1 ring-gray-800/30'
+            showcaseStep >= 1 && showcaseStep <= 2
+              ? 'bg-amber-500/25 text-amber-300 ring-2 ring-amber-400 glow-amber active:scale-95 z-[60]'
+              : evLocked ? 'bg-gray-900/40 text-gray-600 cursor-not-allowed ring-1 ring-gray-800/30'
               : activeTab === 'evidence'
                 ? 'bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25 glow-amber active:scale-95'
                 : beckon
