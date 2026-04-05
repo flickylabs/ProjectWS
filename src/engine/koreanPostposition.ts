@@ -93,5 +93,10 @@ export function fixPostpositions(text: string): string {
     return match
   })
 
+  // ── "만을" → "만" 교정 (번역체 이중 조사) ──
+  // "이름만을 보고" → "이름만 보고"
+  // 단, "만을" 뒤에 공백이 오는 경우만 (문맥 안전)
+  result = result.replace(/만을\s/g, '만 ')
+
   return result
 }
