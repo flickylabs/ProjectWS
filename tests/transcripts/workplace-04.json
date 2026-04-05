@@ -1,0 +1,398 @@
+{
+  "caseId": "workplace-04",
+  "category": "workplace",
+  "isMonetary": false,
+  "partyA": {
+    "name": "서민석",
+    "archetype": "avoidant",
+    "tell": "deadline_shield"
+  },
+  "partyB": {
+    "name": "배지우",
+    "archetype": "confrontational",
+    "tell": "quote_back"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "민석의 18시 승인 약속 불이행"
+    },
+    {
+      "id": "d-2",
+      "name": "지우의 QA 완료 과장 보고"
+    },
+    {
+      "id": "d-3",
+      "name": "마감 실패의 공동 책임 여부"
+    },
+    {
+      "id": "d-4",
+      "name": "민석의 scope freeze 해제와 미갱신"
+    },
+    {
+      "id": "d-5",
+      "name": "20시대 경고 후 쌍방 미보고"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "서민석 d-1 사실추궁",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서민석 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그 시각에 승인 업무를 진행한 건 사실입니다. 다만 제 팀원과 함께 정리하는 과정에서 미처 설명을 다 못한 부분이 있었습니다.",
+      "behaviorHint": "약간 긴장한 듯 미간을 찡그리며 손을 가볍게 꼼지락거린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "서민석 d-1 동기탐색",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "서민석 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "그 시각에 모두가 바쁘게 움직이던 상황이라 최종 결정을 서두를 수밖에 없었습니다. 미리 말씀드리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "약간 움츠리며 변명하듯 이야기한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "서민석 d-1 공감접근",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "서민석 씨, 당시 어떤 심정이셨습니까?",
+      "npcResponse": "사실은 그때 긴장이 많이 됐습니다. 뭐랄까, 제가 더 나서면 상황이 더 악화될 것 같은 불안감이 컸습니다.",
+      "behaviorHint": "어깨를 살짝 움츠리며 말을 조심스럽게 이어나간다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "배지우 d-2 사실추궁",
+      "party": "b",
+      "partyName": "배지우",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "배지우 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 제 매니저와 그 부분에 대해 논의한 건 맞습니다. 하지만 그 표현이 압박 상황에서 조금 과장되었을 뿐입니다.",
+      "behaviorHint": "약간의 긴장감을 안고 정면을 응시하며 진술한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "서민석 e-1 증거제시",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "서민석 씨, 이 스탠드업 회의록과 보드 코멘트를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 다만 18시 무렵엔 다들 급해서 제 코멘트가 전체 상황을 다 설명하진 못했습니다.",
+      "behaviorHint": "조심스럽게 자료를 바라보며, 당황하지 않고 말을 이어간다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "배지우 e-2 증거제시",
+      "party": "b",
+      "partyName": "배지우",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "배지우 씨, 이 QA 체크리스트와 테스트 로그를 보시고 설명해 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 하지만 그 내역서만으로 전체 테스트 완료 여부를 판단하긴 어렵습니다.",
+      "behaviorHint": "조금 긴장을 풀고, 표정을 침착하게 유지한다.",
+      "evidenceId": "e-2",
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"그 자료는 맞습니다.\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "서민석 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "서민석 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "그 시각에 제 팀원에게 그 승인 업무를 확인하겠다고 했습니다. 그 확인이 곧 확정 승인까지는 아니었던 점은 있습니다.",
+      "behaviorHint": "조금 당황한 표정으로, 진땀을 흘리며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "서민석 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "서민석 씨, 왜 그런 선택을 하셨습니까?",
+      "npcResponse": "그 승인 업무는 제가 18시 전에 보겠다고 했던 건 맞습니다만, 그때 상황이 좀 급해서 확정 승인까지는 미처 진행하지 못했습니다. 우선 급한 걸 처리하느라 우선순위 판단에 있어서 놓친 부분이 있었습니다.",
+      "behaviorHint": "조심스러운 표정으로 고개를 천천히 흔든다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "배지우 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "배지우",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "배지우 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 제가 완료처럼 보이게 적은 건 맞습니다. 하지만 그 표현 자체가 오해를 불러일으킬 줄은 몰랐습니다.",
+      "behaviorHint": "자신감 있게 고개를 들고 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "배지우 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "배지우",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "배지우 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히 말하자면, 계속 긴장 속에서 일하는 게 정말 힘들었습니다. 매니저님에게 미리 말하지 못한 게 저 자신에게도 부담이었습니다.",
+      "behaviorHint": "잠시 생각에 잠긴 듯한 표정, 눈을 살짝 내리깔며 감정적으로 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "서민석 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "서민석 씨, 이 막판 수정 대화 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "메신저 캡처 내용은 맞습니다. 그러나 제가 그때 맡은 건 회귀 부분이었고, 카피 변경은 제 담당이 아니었어요.",
+      "behaviorHint": "침착한 표정으로 캡처 내용을 가리키며 설명한다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "서민석 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "서민석 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "그날 18시 약속을 제가 가볍게 말한 책임은 있어요. 하지만 이후 팀 채널에 업데이트를 올리지 않은 부분은, 사정이 급했던 탓도 있습니다.",
+      "behaviorHint": "조심스럽게 손을 내리며 말을 이어간다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "서민석 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "서민석 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
+      "npcResponse": "그 시각에는 일정이 촉박해서 승인 업무를 우선 처리할 수밖에 없었습니다. 배지우 씨에게 미리 설명하지 못한 점은 제 불찰입니다.",
+      "behaviorHint": "조금 긴장한 표정으로 조심스럽게 말하며 손가락을 꼼지락거린다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A2",
+          "severity": "FAIL",
+          "detail": "번역체:불찰"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "배지우 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "배지우",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "배지우 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 그 표현은 제가 썼습니다. 하지만, 매니저님께서도 그 중요성을 알고 계셨을 겁니다.",
+      "behaviorHint": "조금 긴장된 표정으로 눈을 중간중간 피하며",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "배지우 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "배지우",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "배지우 씨, 마감 공동 책임 여부에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 제 매니저와 먼저 정리해야 할 일이 있었습니다.",
+      "behaviorHint": "눈을 피하며 신중하게 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "서민석 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "서민석 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 그 시점에서는 상당히 불안했습니다. 제가 말하면 상황이 더 복잡해질 것 같아서 걱정이 컸습니다.",
+      "behaviorHint": "심리적 부담을 드러내며 조심스럽게 눈길을 피함",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "서민석 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "서민석 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 제가 마감 당일 18시까지 클라이언트 확인과 최종 승인을 완료하지 못한 건 사실입니다. 마감 당일 20시 7분에 중간 상태를 공유하지 못한 것도 제 책임입니다. 그걸 숨긴 이유는 다른 사람들이 더 혼란스러워할까봐 두려웠기 때문입니다. 지금은 후회하고 있습니다.",
+      "behaviorHint": "조심스럽게 손을 모으고 고개를 숙인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "배지우 d-2 S5 고백",
+      "party": "b",
+      "partyName": "배지우",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "배지우 씨, 솔직하게 말씀해 주십시오.",
+      "npcResponse": "사실, 회귀 테스트가 남았는데 완료로 표시한 건 제 잘못입니다. 그 시점에서는 잘못된 판단이었습니다. 고백하기 무서웠습니다. 이제는 후회하고 있습니다.",
+      "behaviorHint": "고개를 약간 숙이며 진심을 담아 이야기한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "서민석 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "서민석",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서민석 씨, 20시대 경고 후 쌍방 미보고에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 시점에 서로 보고가 없었던 건 사실입니다. 하지만 저는 배지우 씨가 QA를 정리하면 바로 닫힐 줄 알았어요.",
+      "behaviorHint": "살짝 고개를 끄덕이며 재판관의 눈을 잠깐 피한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B2",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 실명 노출: 배지우"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "배지우 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "배지우",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "배지우 씨, 20시대 경고 후 쌍방 미보고에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 신호는 제가 직접 알지 못한 부분이었습니다. 그 시점에 상급 보고가 필요하다고 생각하지 않았습니다.",
+      "behaviorHint": "눈을 살짝 피하며 약간의 긴장감을 내비친다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-05T21:06:13.160Z",
+  "finishedAt": "2026-04-05T21:08:08.582Z",
+  "summary": {
+    "total": 20,
+    "passed": 15,
+    "warned": 5,
+    "errors": 0,
+    "skipped": 0
+  }
+}
