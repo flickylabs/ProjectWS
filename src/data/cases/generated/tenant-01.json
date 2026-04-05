@@ -541,7 +541,7 @@
           "stage": 1,
           "revealKey": "check_metadata",
           "question": {
-            "text": "두 견적이 같은 날 같은 벽 치수로 작성된 점을 알고 계셨습니까?",
+            "text": "두 견적이 같은 날 같은 벽 치수로 작성되었습니다. 이에 대해 설명해 보십시오.",
             "attackVector": "authenticity"
           }
         },

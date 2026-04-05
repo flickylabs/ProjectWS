@@ -467,7 +467,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "그 야간 시간대에 점검 기사가 출입한 사실을 알고 계셨습니까?",
+            "text": "해당 야간 시간대에 점검 기사가 출입한 기록이 있습니다. 이에 대해 설명해 보십시오.",
             "attackVector": "context"
           }
         },
@@ -629,7 +629,7 @@
         "restore_context": "앞뒤 문맥상 한결이 누수·소음을 한 문장에 묶어 '504호'를 직접 지목한 구조.",
         "verify_source": "단체방 내보내기 JSON과 참가자 2인의 개별 캡처가 시각·내용 모두 일치.",
         "check_edits": "상하 크롭이 있으나 핵심 문장 '504호에서 또 내려온다'는 원본과 동일.",
-        "question_acquisition": "공개 단체방 자료로 확보 적법. 단, 504호 특정 문구 재유포 시 명예훼손 소지."
+        "question_acquisition": "공개 단체방 자료로 확보 적법. 단, 504호 관련 문구 재유포 시 명예훼손 소지."
       },
       "subjectParty": "both",
       "partyContext": {

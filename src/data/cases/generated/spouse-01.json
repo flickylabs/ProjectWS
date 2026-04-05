@@ -492,7 +492,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 대화가 전체 원본이 아니라 일부 캡처인 점을 알고 계셨습니까?",
+            "text": "이 대화가 전체가 아닌 일부만 캡처된 것입니다. 나머지 내용에 대해 설명해 보십시오.",
             "attackVector": "authenticity"
           }
         },
@@ -652,7 +652,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 이체가 한 사람을 거쳐 이뤄진 사실을 알고 계셨습니까?",
+            "text": "이 이체가 중간에 한 사람을 거쳐 이뤄졌습니다. 그 경위를 설명해 보십시오.",
             "attackVector": "context"
           }
         },

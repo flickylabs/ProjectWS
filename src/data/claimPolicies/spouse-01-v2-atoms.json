@@ -423,7 +423,7 @@
             },
             {
               "id": "d1.prior_consult_missed",
-              "factText": "사전 상의 누락 일부 인정",
+              "factText": "미리 얘기 없이 쓴 것 일부 인정",
               "tags": [
                 "rule",
                 "responsibility",
@@ -439,8 +439,8 @@
                   "neutral": "해당 금액"
                 },
                 "rule": {
-                  "exact": "일정 금액 이상은 미리 상의",
-                  "shortName": "사전 상의 약속",
+                  "exact": "일정 금액 이상은 미리 얘기",
+                  "shortName": "미리 의논 약속",
                   "neutral": "그 약속"
                 }
               },
@@ -2381,7 +2381,7 @@
           "claimAtoms": [
             {
               "id": "d5a.rule_exists",
-              "factText": "고액 지출 사전 상의 기준 존재 확인",
+              "factText": "고액 지출 미리 의논 기준 존재 확인",
               "tags": [
                 "rule",
                 "threshold",
@@ -2391,8 +2391,8 @@
               "repeatPenalty": 30,
               "slots": {
                 "rule": {
-                  "exact": "일정 금액 이상은 미리 상의",
-                  "shortName": "사전 상의 약속",
+                  "exact": "일정 금액 이상은 미리 얘기",
+                  "shortName": "미리 의논 약속",
                   "neutral": "그 약속"
                 }
               },
@@ -2425,8 +2425,8 @@
                   "neutral": "해당 금액"
                 },
                 "rule": {
-                  "exact": "일정 금액 이상은 미리 상의",
-                  "shortName": "사전 상의 약속",
+                  "exact": "일정 금액 이상은 미리 얘기",
+                  "shortName": "미리 의논 약속",
                   "neutral": "그 약속"
                 }
               },
@@ -2455,8 +2455,8 @@
               "repeatPenalty": 35,
               "slots": {
                 "rule": {
-                  "exact": "일정 금액 이상은 미리 상의",
-                  "shortName": "사전 상의 약속",
+                  "exact": "일정 금액 이상은 미리 얘기",
+                  "shortName": "미리 의논 약속",
                   "neutral": "그 약속"
                 },
                 "relation": {
@@ -2514,8 +2514,8 @@
               "repeatPenalty": 45,
               "slots": {
                 "rule": {
-                  "exact": "일정 금액 이상은 미리 상의",
-                  "shortName": "사전 상의 약속",
+                  "exact": "일정 금액 이상은 미리 얘기",
+                  "shortName": "미리 의논 약속",
                   "neutral": "그 약속"
                 },
                 "action": {
@@ -5167,7 +5167,7 @@
           "claimAtoms": [
             {
               "id": "d5b.rule_exists",
-              "factText": "고액 지출 사전 상의 기준 존재 확인",
+              "factText": "고액 지출 미리 의논 기준 존재 확인",
               "tags": [
                 "rule",
                 "threshold",
@@ -5177,8 +5177,8 @@
               "repeatPenalty": 30,
               "slots": {
                 "rule": {
-                  "exact": "일정 금액 이상은 미리 상의",
-                  "shortName": "사전 상의 약속",
+                  "exact": "일정 금액 이상은 미리 얘기",
+                  "shortName": "미리 의논 약속",
                   "neutral": "그 약속"
                 }
               },
@@ -5206,8 +5206,8 @@
               "repeatPenalty": 35,
               "slots": {
                 "rule": {
-                  "exact": "일정 금액 이상은 미리 상의",
-                  "shortName": "사전 상의 약속",
+                  "exact": "일정 금액 이상은 미리 얘기",
+                  "shortName": "미리 의논 약속",
                   "neutral": "그 약속"
                 },
                 "relation": {
@@ -5243,8 +5243,8 @@
                   "neutral": "그 돈"
                 },
                 "rule": {
-                  "exact": "일정 금액 이상은 미리 상의",
-                  "shortName": "사전 상의 약속",
+                  "exact": "일정 금액 이상은 미리 얘기",
+                  "shortName": "미리 의논 약속",
                   "neutral": "그 약속"
                 }
               },

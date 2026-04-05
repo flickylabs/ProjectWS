@@ -466,7 +466,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "문서 서버의 감사 로그가 존재한다는 사실을 알고 계셨습니까?",
+            "text": "문서 서버에 감사 로그가 남아 있습니다. 이 로그의 내용에 대해 설명해 보십시오.",
             "attackVector": "context"
           }
         },

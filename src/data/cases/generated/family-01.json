@@ -636,7 +636,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "퇴원 전 비용 경감 상담이 있었다는 사실을 알고 계셨습니까?",
+            "text": "퇴원 전에 비용 경감 상담이 있었습니다. 그 자리에서 어떤 이야기가 오갔는지 설명해 보십시오.",
             "attackVector": "context"
           }
         },
