@@ -6,6 +6,7 @@ import { getAvailableWitnesses, getWitnessPreviewText, determineTestimonyDepth, 
 import { canAppraise, getUnlockedQuestions, getLockedQuestions } from '../../engine/evidenceEngine'
 import { playClick, playEvidenceUnlock } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
+import EvidenceVisual from '../common/EvidenceVisual'
 import { EvidenceAppraisalModal } from '../discovery'
 import { getDossierCards, getAvailableDossierQuestions, resolveDossierQuestion } from '../../engine/v3GameLoopLoader'
 
@@ -438,6 +439,7 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
       <button onClick={onToggle} className="w-full text-left px-3 py-2.5 flex items-center justify-between">
         <div className="flex items-center gap-2 min-w-0">
           <Emoji char={TYPE_ICON[ev.type] ?? '📄'} size={18} />
+          <EvidenceVisual type={ev.type} name={displayName} reliability={ev.reliability} completeness={ev.completeness} size="sm" />
           <div className="min-w-0">
             <div className="flex items-center gap-1.5">
               <span className={`text-sm truncate font-medium ${showSurface ? 'text-blue-200' : 'text-gray-200'}`}>{displayName}</span>
@@ -480,6 +482,14 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
       {/* 확장 */}
       {isExpanded && (
         <div className="px-3 pb-3 space-y-2 border-t border-gray-800">
+          {/* 증거 비주얼 미리보기 */}
+          <div className="flex justify-center pt-2">
+            <EvidenceVisual
+              type={ev.type} name={displayName} description={displayDescription}
+              reliability={ev.reliability} completeness={ev.completeness}
+              highlighted={isRecommended} size="md"
+            />
+          </div>
           {/* 심층 조사로 실체가 드러났을 때 알림 */}
           {hasSurfaceInfo && isDeepRevealed && (
             <div className={`bg-amber-900/30 border border-amber-700/40 rounded-lg px-2.5 py-1.5 text-xs text-amber-300 mt-2 animate-fade-in ${showRevealAnim ? 'animate-pulse' : ''}`}>

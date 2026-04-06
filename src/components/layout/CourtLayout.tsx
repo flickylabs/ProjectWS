@@ -20,6 +20,7 @@ import {
   DisputeEmergenceModal,
   EmotionalSlipModal,
 } from '../discovery'
+import CutsceneOverlay from '../discovery/CutsceneOverlay'
 
 interface Props {
   actionPanel?: ReactNode
@@ -59,6 +60,9 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
     <div
       className="h-[100dvh] flex flex-col bg-gray-950 text-gray-100 max-w-lg mx-auto court-bg"
     >
+      {/* 컷씬 오버레이 — 모든 모달 위에 z-index 최상위 */}
+      <CutsceneOverlay />
+
       {showTestimony && <TestimonyModal onClose={() => setShowTestimony(false)} />}
 
       {/* Discovery 모달들 */}

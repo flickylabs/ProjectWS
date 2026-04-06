@@ -296,3 +296,140 @@ html, body {
     min-height: 36px;
   }
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   컷씬 (CutsceneOverlay) 전용 애니메이션
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* 공통: 페이드인 */
+@keyframes cutscene-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-cutscene-fade-in {
+  animation: cutscene-fade-in 0.6s ease-out both;
+}
+
+/* 1. lie_collapse — 금이 가는 효과 */
+@keyframes cutscene-crack {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+.cutscene-crack {
+  background:
+    linear-gradient(135deg, transparent 46%, rgba(250,204,21,0.3) 47%, rgba(250,204,21,0.3) 48%, transparent 49%),
+    linear-gradient(-135deg, transparent 46%, rgba(250,204,21,0.15) 47%, rgba(250,204,21,0.15) 48%, transparent 49%),
+    linear-gradient(90deg, transparent 48%, rgba(250,204,21,0.1) 49%, rgba(250,204,21,0.1) 50%, transparent 51%);
+  animation: cutscene-crack 1.2s ease-out both;
+}
+
+@keyframes cutscene-crack-scale {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-cutscene-crack-scale {
+  animation: cutscene-crack-scale 0.8s ease-out both;
+}
+
+.cutscene-crack-path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: cutscene-crack-draw 1s ease-out 0.2s both;
+}
+@keyframes cutscene-crack-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* 2. contradiction_hit — 화면 흔들림 + 번개 */
+@keyframes cutscene-shake {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-6px); }
+  20% { transform: translateX(6px); }
+  30% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  50% { transform: translateX(-2px); }
+  60% { transform: translateX(2px); }
+  70% { transform: translateX(0); }
+}
+.animate-cutscene-shake {
+  animation: cutscene-shake 0.6s ease-out;
+}
+
+@keyframes cutscene-lightning {
+  0% { opacity: 0; }
+  5% { opacity: 0.7; }
+  10% { opacity: 0; }
+  15% { opacity: 0.4; }
+  20% { opacity: 0; }
+  100% { opacity: 0; }
+}
+.cutscene-lightning {
+  background: radial-gradient(ellipse at 50% 30%, rgba(250,204,21,0.2) 0%, transparent 60%);
+  animation: cutscene-lightning 0.8s ease-out;
+}
+
+/* 3. emotional_burst — 붉은 플래시 + 펄스 */
+@keyframes cutscene-red-flash {
+  0% { opacity: 0; }
+  15% { opacity: 0.4; }
+  40% { opacity: 0.1; }
+  60% { opacity: 0.25; }
+  100% { opacity: 0; }
+}
+.cutscene-red-flash {
+  animation: cutscene-red-flash 1.2s ease-out both;
+}
+
+@keyframes cutscene-pulse {
+  0% { transform: scale(0.95); opacity: 0; }
+  50% { transform: scale(1.02); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-cutscene-pulse {
+  animation: cutscene-pulse 0.7s ease-out both 0.3s;
+}
+
+/* 4. dispute_emergence — 퍼즐 조각 등장 */
+@keyframes cutscene-puzzle-in {
+  0% { transform: translateY(40px) rotate(-15deg) scale(0.5); opacity: 0; }
+  60% { transform: translateY(-5px) rotate(3deg) scale(1.05); opacity: 1; }
+  100% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+}
+.cutscene-puzzle-in {
+  animation: cutscene-puzzle-in 0.7s ease-out both;
+}
+
+/* 5. phase_transition — 시네마틱 페이드 + 스케일 */
+@keyframes cutscene-cinematic-fade {
+  0% { opacity: 0; }
+  30% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0.95; }
+}
+.cutscene-cinematic-fade {
+  animation: cutscene-cinematic-fade 1.5s ease-in-out both;
+}
+
+@keyframes cutscene-cinematic-scale {
+  0% { transform: scale(0.8); opacity: 0; }
+  40% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.cutscene-cinematic-scale {
+  animation: cutscene-cinematic-scale 1s ease-out both 0.3s;
+}
+
+/* 6. verdict_gavel — 망치 내려치기 */
+@keyframes cutscene-gavel-swing {
+  0% { transform: rotate(-30deg) translateY(-20px); opacity: 0; }
+  30% { transform: rotate(5deg) translateY(0); opacity: 1; }
+  45% { transform: rotate(-2deg); }
+  60% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+.cutscene-gavel-swing {
+  transform-origin: center bottom;
+  animation: cutscene-gavel-swing 0.8s ease-out both 0.2s;
+}
