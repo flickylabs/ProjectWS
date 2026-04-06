@@ -45,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "최정훈 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그날 송금은 제가 했습니다. 다만 개인 결제를 묵인한 것은 아니었습니다.",
-      "behaviorHint": "침착하게 손을 모으고 고개를 끄덕인다.",
+      "npcResponse": "아닙니다. 그건 저의 개인 결제를 묵인한 합의는 아니었습니다.",
+      "behaviorHint": "차분하게 고개를 약간 숙이고, 사실 관계를 명확히 하려는 태도",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -61,8 +61,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "최정훈 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "보류 항목에 대해 월말에 다시 보자는 얘기가 있었기 때문입니다. 제 잘못으로 그 시점까지 충분히 설명하지 못한 점은 인정합니다.",
-      "behaviorHint": "약간 방어적인 태도로 손을 살짝 드는 행동",
+      "npcResponse": "보류 항목을 월말에 다시 보자는 얘기는 있었습니다. 실행 시점과 취지에 대한 의사소통이 부족했던 점은 유감입니다.",
+      "behaviorHint": "침착하게 시선을 재판관에게 고정하고 결백을 주장하는 제스처.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -77,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "최정훈 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 그 시점엔 무서웠습니다. 그 탭이 문제가 될 줄 알았지만, 제가 말하면 일이 더 커질 것 같았거든요.",
-      "behaviorHint": "고개를 살짝 숙이며 한숨을 쉰다.",
+      "npcResponse": "솔직히 그 시점에서는 상당한 돈이 얽혀 있었기 때문에 무섭기도 했습니다. 제 입장을 더 복잡하게 만들까 봐 조심스러웠습니다.",
+      "behaviorHint": "잠시 눈을 내리깔고 잠깐 생각에 잠기는 듯한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -93,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "김나래 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 영수증 재발급한 건 사실입니다. 다만 그 시점에 분류를 정확히 맞춘다는 생각이었습니다.",
-      "behaviorHint": "눈을 피하며 짧은 한숨을 쉰다.",
+      "npcResponse": "네, 그 영수증은 제가 정리했습니다. 다만, 그게 문제가 될 거라고는 생각하지 못했습니다.",
+      "behaviorHint": "살짝 고개를 숙여 약간의 당혹감을 드러내며, 손을 가볍게 모아서 긴장을 나타낸다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -109,10 +109,16 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "최정훈 씨, 이 마감 메일과 정리표 스레드를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료들은 제 계획 일부였다는 점을 인정합니다. 하지만 이걸로 개인 결제를 묵인했다는 뜻은 아닙니다.",
-      "behaviorHint": "침착하게 자료를 쳐다보며 고개를 약간 끄덕인다.",
+      "npcResponse": "그 내역은 맞습니다. 그러나 김나래 씨와의 대화에서 개인 결제를 허락한 것이 아닙니다.",
+      "behaviorHint": "차분하게 손을 모으고 상대방을 바라본다.",
       "evidenceId": "e-1",
-      "issues": [],
+      "issues": [
+        {
+          "code": "B2",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 실명 노출: 김나래"
+        }
+      ],
       "error": null
     },
     {
@@ -125,8 +131,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "김나래 씨, 이 영수증과 수정 요청 기록을 보시고 설명해 주십시오.",
-      "npcResponse": "그 영수증은 맞습니다. 하지만, 당시 주류 항목은 다른 이유로 수정 요청한 것이지 숨기려던 건 아니었습니다.",
-      "behaviorHint": "증거를 보며 차분하게 설명하는 모습",
+      "npcResponse": "그 영수증은 맞습니다만, 주류나 개인물품 표기를 주목할 것까지는 없습니다. 품목을 숨기려던 건 아니었어요.",
+      "behaviorHint": "표정이 약간 굳어지며 자료를 손가락으로 가리킵니다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -141,8 +147,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "최정훈 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "아닙니다. 그건 사적 사용까지 허용한 건 아니었습니다. 제가 월말 정리 얘기를 한 건 사실입니다.",
-      "behaviorHint": "차분하게 책상 위에 놓인 서류를 정리하며 말한다.",
+      "npcResponse": "아닙니다. 그건 그 시점에선 일정상 그렇게 정리했습니다. 김나래 씨에게도 월말 전 정리를 얘기한 건 맞습니다.",
+      "behaviorHint": "고개를 약간 숙이며 눈을 마주치지 않고 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -157,16 +163,10 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "최정훈 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "그 시점에 집안 사정이 급해서 어쩔 수 없이 그 탭에서 사용했습니다. 미리 말씀드리지 못한 건 제 판단 착오였습니다.",
-      "behaviorHint": "손을 가볍게 들어 올려 사정을 설명하려는 듯한 제스처",
+      "npcResponse": "그 시점에서는 다른 방법이 없었습니다. 긴급 상황이었기에, 제 팀원의 판단에 따라 일을 진행할 수밖에 없었습니다.",
+      "behaviorHint": "조금 상기된 표정으로 시선을 아래로 떨굽니다.",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "A4",
-          "severity": "WARN",
-          "detail": "클리셰:미리말씀"
-        }
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -179,10 +179,16 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "김나래 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 제가 재발급 요청한 건 맞습니다. 다만 감사용 조작이 아니라 단순히 정리하려던 겁니다.",
-      "behaviorHint": "조금 긴장된 표정으로 단호하게 말한다.",
+      "npcResponse": "네, 제가 재발급 요청한 건 맞습니다. 다만 감사용 조작이 아니라 정리하려던 거예요.",
+      "behaviorHint": "이해를 구하는 듯한 표정으로, 손을 쓸어내리며 정리하는 듯한 제스처.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
       "error": null
     },
     {
@@ -195,8 +201,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "김나래 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 그때는 두려웠습니다. 문제가 생길까봐 제 실장이 알면 더 큰일 날 것 같아서.",
-      "behaviorHint": "고개를 약간 숙이고 눈을 피하며 말하다가, 마지막에는 상대를 향해 눈길을 던진다.",
+      "npcResponse": "솔직히, 그때는 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서.",
+      "behaviorHint": "눈을 잠시 피하고 마주보지 않으려 하며 고개를 살짝 숙인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -211,8 +217,8 @@
       "action": "evidence_present",
       "stance": "partial",
       "judgeQuestion": "최정훈 씨, 이 카드 승인 내역 캡처 PDF 문서를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 내역서는 맞습니다. 다만 감사 공지 이전에 계획했던 월말 정리 부분이 잘려 있어 오해를 부를 수 있습니다.",
-      "behaviorHint": "차분하게 앉아 서류를 바라보며 설명한다.",
+      "npcResponse": "그 내역서는 맞습니다. 다만 수취인이 누군지까지 그걸로 단정할 순 없습니다.",
+      "behaviorHint": "서류를 다 읽지 않고 적당히 넘긴다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -227,8 +233,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "최정훈 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 그 정리 방식은 제가 먼저 제안한 것이 맞습니다. 그러나 김나래 씨도 사적 항목을 숨기는 선택을 했습니다.",
-      "behaviorHint": "단호한 표정으로 상대를 쳐다보며 설명한다.",
+      "npcResponse": "아닙니다. 그 부분은 제가 보류 탭 정리를 언급한 것이 맞습니다. 다만 김나래 씨도 그 시점에 사적 항목을 숨긴 선택을 했습니다.",
+      "behaviorHint": "차갑게 테이블 위에서 손을 깍지 끼고 앉아 있다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -243,16 +249,10 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "최정훈 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "그 시점에서는 접대비 예산 코드 기준이 혼란스러웠기 때문입니다. 게다가 김나래 씨 쪽도 사적 항목을 숨기는 선택을 했다는 점을 말씀드리고 싶습니다.",
-      "behaviorHint": "약간 방어적인 자세로 상대 잘못을 언급하며, 냉정하게 설명한다.",
+      "npcResponse": "그 시점에서는 김나래 씨 쪽도 사적 항목을 숨기는 선택을 했습니다. 제 판단이 완벽하지는 않았지만, 상황 전체를 고려하면 불가피했습니다.",
+      "behaviorHint": "손가락으로 책상 위를 가볍게 두드리며 생각하는 듯한 제스처",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "D2",
-          "severity": "WARN",
-          "detail": "2턴 연속: \"사적 항목을 숨기는\""
-        }
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -265,8 +265,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "김나래 씨, 다시 정리해 주십시오.",
-      "npcResponse": "네, 제가 품목 일부를 줄여 달라고 한 건 맞습니다. 다만 그때 최정훈 씨 쪽도 눈에 덜 띄게 맞추라고 압박한 부분도 있었죠.",
-      "behaviorHint": "상대방을 살짝 비꼬는 듯한 미소",
+      "npcResponse": "네, 제가 품목 일부를 줄여 달라고 한 건 맞습니다. 그래도 최정훈 씨 쪽도 눈에 덜 띄게 맞추라고 압박했잖아요.",
+      "behaviorHint": "눈을 살짝 좁히며 상대방을 가리킨다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -281,8 +281,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "김나래 씨, 사후 조작 여부에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "사후 조작은 하지 않았습니다. 다만 누가 어디까지 자세히 본 건지는 조금 엇갈릴 수 있어요.",
-      "behaviorHint": "엄격하지만 진지한 표정으로 사실을 전달하는 모습.",
+      "npcResponse": "사후에 뭔가 추가된 건 아닙니다. 다만 누가 어디까지 자세히 본 건지는 조금 엇갈릴 수 있어요.",
+      "behaviorHint": "약간 긴장한 듯하지만 당당한 표정으로 고개를 약간 흔들며 부정",
       "evidenceId": null,
       "issues": [
         {
@@ -303,8 +303,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "최정훈 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히, 감사가 시작됐을 때 정말 무서웠습니다. 그 시점에 어떻게든 잘못된 인상을 피하려고 말을 줄일 수밖에 없었습니다.",
-      "behaviorHint": "속마음을 털어놓으며 약간 떨리는 목소리로 말한다.",
+      "npcResponse": "사실은 그때 무서웠습니다. 제가 말을 너무 많이 하면 더 큰일이 날 것 같아서 입을 다물었습니다.",
+      "behaviorHint": "첫째, 눈을 잠시 감고 심호흡하기. 둘째, 손을 조용히 테이블 위에 올려놓기.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -319,10 +319,15 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "최정훈 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 제가 김나래 씨와 합의해 월말 전에 개인분을 메우고 닫기로 했습니다. 그러나 감사 플래그 생성 이틀 전에 방치되고 있다가 들킨 건 저의 잘못입니다. 미리 말하지 못한 이유는 승진 심사와 비용통제에 부정적 영향을 줄까 두려웠기 때문입니다. 지금은 후회하고 있습니다.",
-      "behaviorHint": "차분하게 하지만 약간의 긴장감을 드러내며 손을 테이블 위에 올려놓는다.",
+      "npcResponse": "네, 제가 월말 전에 개인분을 메우고 닫자고 먼저 합의했습니다. 김나래 씨와 약속했지만 그걸 부인하게 되었습니다. 승진 심사와 비용통제 평판이 문제될까 두려웠습니다. 지금은 그 부인으로 인해 후회하고 있습니다.",
+      "behaviorHint": "즉각적인 수긍, 고개를 약간 숙이며 침착한 표정",
       "evidenceId": null,
       "issues": [
+        {
+          "code": "A2",
+          "severity": "FAIL",
+          "detail": "번역체:하게되었"
+        },
         {
           "code": "B4",
           "severity": "FAIL",
@@ -341,8 +346,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "김나래 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 말씀드리겠습니다. 감사 공지 다음 날, 새벽에 직접 주류·개인물품이 포함된 영수증에 대해 재발급을 요청한 것은 제 잘못입니다. 그때는 그것이 더 큰 문제로 번질까 두려워 숨겼습니다. 이번 일로 많이 후회하고 있습니다.",
-      "behaviorHint": "고개를 살짝 숙이며 솔직한 표정",
+      "npcResponse": "솔직히, 감사 공지 다음 날 새벽에 제가 주류와 개인물품 표기된 영수증을 재발급 요청했습니다. 그걸 정리라고 포장한 제 잘못이고, 사실은 품목 축소가 목적이었습니다. 그땐 제 행동이 큰일을 불러올까 봐 무서웠습니다. 지금은 후회스럽습니다.",
+      "behaviorHint": "고개를 약간 숙이며 솔직하게 털어놓는 모습",
       "evidenceId": null,
       "issues": [
         {
@@ -363,8 +368,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "최정훈 씨, 오프북 쌍방 가담에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 협의된 사항은 아니었습니다. 다만, 임시로 넘긴 적은 있었으나 본격적인 가담은 아닙니다.",
-      "behaviorHint": "최정훈은 손가락으로 옷깃을 정리하며 시선을 잠시 아래로 내린다.",
+      "npcResponse": "아닙니다. 그건 제 팀원이 상의해서 분리한 것입니다. 다만, 공식 정산 전 단계로 보고 넘어간 적은 있습니다.",
+      "behaviorHint": "차가운 표정으로, 손끝을 맞대고 정리하는 듯한 동작",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -379,15 +384,15 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "김나래 씨, 오프북 쌍방 가담에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 그 시점에 잠깐 정리한 수준일 뿐입니다.",
-      "behaviorHint": "살짝 눈을 치켜뜨며 단호하게 고개를 젓는다.",
+      "npcResponse": "아닙니다. 그 표는 월말 정리 때 잠깐 쓴 것에 불과합니다.",
+      "behaviorHint": "눈길을 피하며 태연하게 두 손을 모은다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T21:21:00.991Z",
-  "finishedAt": "2026-04-05T21:24:19.313Z",
+  "startedAt": "2026-04-05T23:41:00.050Z",
+  "finishedAt": "2026-04-05T23:43:48.413Z",
   "summary": {
     "total": 20,
     "passed": 15,

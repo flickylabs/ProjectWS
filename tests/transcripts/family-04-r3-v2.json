@@ -1,0 +1,395 @@
+{
+  "caseId": "family-04",
+  "category": "family",
+  "round": 3,
+  "variant": "empathy",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "서하린",
+    "archetype": "cold_logic",
+    "tell": "file_stack"
+  },
+  "partyB": {
+    "name": "서민규",
+    "archetype": "victim_cosplay",
+    "tell": "martyr_checklist"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "형제 중 누군가가 부모 예금 3,200만원을 빼돌렸는가"
+    },
+    {
+      "id": "d-2",
+      "name": "하린의 부분 캡처 공유"
+    },
+    {
+      "id": "d-3",
+      "name": "민규의 인감·등기 원본 무단 반출"
+    },
+    {
+      "id": "d-4",
+      "name": "공동 폴더 사용 원칙의 쌍방 위반"
+    },
+    {
+      "id": "d-5",
+      "name": "부모 앞에서의 횡령 단정과 외부 문의 선행"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "서하린 d-1 공감접근",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "서하린 씨, 당시 어떤 사정이 있었는지 말씀해 주시겠습니까?",
+      "npcResponse": "솔직히 빈칸으로 남겨진 부분들이 불안했습니다. 부모님 재산 정리에서 밀려날까봐 최악의 상황으로 해석하게 됐습니다.",
+      "behaviorHint": "손가락을 꼼지락거리며, 불안한 기색을 보인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "서하린 d-1 동기탐색",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "서하린 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "부모님 재산 정리에서 밀려날까 봐, 상황을 최악의 방향으로 해석할 수밖에 없었습니다. 그 시점만 보면, 제 동생 민규가 가장 의심스러웠습니다.",
+      "behaviorHint": "고개를 약간 숙이고 시선을 피하면서 말한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"부모님 재산 정리에서\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "서하린 d-1 사실추궁",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서하린 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 제 동생에게 할당된 부분이 아닙니다. 민규가 그 시점에서 가장 의심스러웠다는 점을 부정할 수는 없습니다.",
+      "behaviorHint": "눈을 한 번 깜빡이며 정리된 메모를 확인한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "서민규 d-2 사실추궁",
+      "party": "b",
+      "partyName": "서민규",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서민규 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그날 송금한 건 사실입니다. 다만 제 누나가 그 자료를 어떻게 사용했는지는 생각해볼 여지가 있습니다.",
+      "behaviorHint": "한숨을 쉬며 약간 피곤한 표정으로 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "서하린 e-1 증거제시",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "서하린 씨, 잔액 캡처와 폴더 화면에 대해 설명해 주십시오.",
+      "npcResponse": "그 자료는 불완전한 상태로 누락된 부분이 많습니다. 그 시점만 보면, 제 동생이 가장 의심스러웠을 상황이었습니다.",
+      "behaviorHint": "잔액 캡처 부분을 손가락으로 짚으며 당당한 태도를 보인다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "서민규 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "서민규",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "서민규 씨, 그때 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 그 상황에서는 제 감정이 너무 앞서서 판단이 흐려졌습니다. 누나가 일부러 뭔가 숨기고 있는 것 같아 무섭고 답답했습니다.",
+      "behaviorHint": "고개를 약간 숙이며 손을 비벼댄다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "서하린 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "서하린 씨, 왜 그런 선택을 하셨는지 아직 납득되지 않습니다.",
+      "npcResponse": "향토장학기금이라는 메모를 보고도 다른 가능성을 충분히 검토하지 않았던 건 맞습니다. 그리고 모호한 파일명 변경이 오해를 키웠던 것도 제 잘못입니다.",
+      "behaviorHint": "약간의 방어적 자세로 손을 주머니에 넣는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "서하린 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "서하린 씨, 조금 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 제가 기부 목적 메모를 보고도 충분히 검토하지 않은 점은 인정합니다. 대신, 모호한 파일명 변경이 오해를 일으켰다는 사실도 중간에 인정합니다.",
+      "behaviorHint": "시계를 확인하며 차분하게",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"모호한 파일명 변경이\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "서민규 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "서민규",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "서민규 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 원본 확인 결과 텍스트 위조는 아니었습니다. 다만 사진은 그 직전에 크롭된 것이 사실입니다.",
+      "behaviorHint": "한숨을 쉬며 억울한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "서민규 e-2 증거제시",
+      "party": "b",
+      "partyName": "서민규",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "서민규 씨, 은행 원본 거래내역과 이체 메모에 대해 설명해 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 다만 제 누나가 왜 그렇게 저를 불리한 방향으로 몰아가는지 이해할 수가 없습니다.",
+      "behaviorHint": "억울하고 지친 표정으로 고개를 살짝 흔든다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "서하린 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "서하린 씨, 도어락 출입기록과 금고 사진에 대해 설명해 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 그러나 제 동생이 그 봉투를 가져갔다는 것만으로 모든 걸 단정할 순 없습니다.",
+      "behaviorHint": "시선을 잠시 내리고 고개를 들어 차분히 재판관을 응시한다.",
+      "evidenceId": "e-3",
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"그 자료는 맞습니다.\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "서하린 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "서하린 씨, 왜 그런 판단을 내렸는지 여전히 납득되지 않습니다.",
+      "npcResponse": "예전 그 시기에 제 동생과 약간의 금전 문제가 있었기 때문입니다. 잘못 생각한 점은 인정하지만, 급작스러웠습니다.",
+      "behaviorHint": "시선을 살짝 아래로 내리며 머뭇거리는 듯한 제스처",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "서하린 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "서하린 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "적지 않은 돈이 처음엔 제 동생 계좌로 흘러간 걸로 보였습니다. 그러나, 이후 정확한 확인 없이 서사를 만들었습니다.",
+      "behaviorHint": "눈을 한 번 감았다가 뜨며 냉정하게 서류를 바라봅니다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "서민규 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "서민규",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "서민규 씨, 다시 정리해 주십시오.",
+      "npcResponse": "아닙니다. 그건 제 누나가 부분 캡처를 가지고 저를 무조건 범인으로 만들려던 것에서 비롯됐습니다. 큰돈이 움직인 건 맞지만, 왜 저부터 의심받아야 하는지 모르겠습니다.",
+      "behaviorHint": "억울한 표정으로 고개를 숙였다가 다시 들어올린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "서민규 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "서민규",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서민규 씨, 이 쟁점에 대해서도 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 밖에 따로 보관해 둔 게 있습니다. 금고에 넣어두는 게 더 안전하다고 생각했습니다.",
+      "behaviorHint": "조금 불편한 듯 자세를 바로잡으며 말함",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "서하린 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "서하린 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 당시 제가 부모님 앞에서 욕심 많은 딸로 보일까 걱정되었습니다. 그래서 의심과 결론을 거의 같은 문장으로 붙여 말해버렸습니다.",
+      "behaviorHint": "약간의 긴장된 표정을 지으면서 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "서하린 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "서하린 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 제가 그날 3,200만원을 서영복 부부가 아닌 향토장학재단으로 송금했습니다. 오해의 소지가 있었던 점, 인정합니다. 왜 말하지 않았냐면, 부모님의 기부를 좀 더 일찍 확인하지 못했기 때문입니다. 지금은 제 실수를 깊이 후회하고 있습니다.",
+      "behaviorHint": "서류를 정리하면서 고개를 약간 숙이고 진지하게 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "서민규 d-2 S5 고백",
+      "party": "b",
+      "partyName": "서민규",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "서민규 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 그때는 너무 혼란스러웠습니다. 제 누나가 보낸 부분 캡처를 보고, 저도 모르게 감정적으로 비약해서 큰 오해를 키웠습니다. 원본을 먼저 요구했으면 이런 일은 덜 망가졌을 거라고 생각해요. 지금은 정말 두렵고 후회스럽습니다.",
+      "behaviorHint": "고개를 약간 숙이고 한숨을 내쉰다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "서하린 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "서하린",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서하린 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 제가 단순히 가능성을 문의한 것이었습니다.",
+      "behaviorHint": "조용히 고개를 끄덕이며 상대방의 반응을 기다린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "서민규 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "서민규",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서민규 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 사실 확인을 위해 질문한 것이지, 고발하겠다는 건 아니었습니다.",
+      "behaviorHint": "고개를 약간 젓고 깊은 한숨을 내쉰다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T07:06:19.708Z",
+  "finishedAt": "2026-04-06T07:08:03.511Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "skipped": 0
+  }
+}

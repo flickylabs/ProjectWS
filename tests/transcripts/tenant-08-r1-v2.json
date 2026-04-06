@@ -1,0 +1,399 @@
+{
+  "caseId": "tenant-08",
+  "category": "tenant",
+  "round": 1,
+  "variant": "basic",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "서지현",
+    "archetype": "confrontational",
+    "tell": "cell_pointing"
+  },
+  "partyB": {
+    "name": "임호준",
+    "archetype": "cold_logic",
+    "tell": "template_defense"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "호준이 보낸 관리비 상세표의 원본성"
+    },
+    {
+      "id": "d-2",
+      "name": "지현 세대의 실제 전기사용 증가"
+    },
+    {
+      "id": "d-3",
+      "name": "공실 상가·누수 점검비의 전가"
+    },
+    {
+      "id": "d-4",
+      "name": "지현의 2개월 관리비 전액 보류"
+    },
+    {
+      "id": "d-5",
+      "name": "관리실 도장·파일 생성기록 위조"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "서지현 d-1 사실추궁",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서지현 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 파일이 도착한 건 사실입니다. 다만, 그게 재작성된 순서처럼 보여서 의심되는 점이 있었습니다.",
+      "behaviorHint": "짧고 단호하게 말하며 파일 순서를 강조한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "서지현 d-1 동기탐색",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "서지현 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "집안 사정이 급해서 그렇게 했습니다. 호준씨에게 먼저 말하지 않은 건 제 잘못이지만, 그 PDF는 순서가 이상했습니다.",
+      "behaviorHint": "살짝 고개를 숙이며 말끝을 흐림",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "서지현 d-1 공감접근",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "서지현 씨, 당시 어떤 사정이 있었는지 말씀해 주시겠습니까?",
+      "npcResponse": "솔직히, 그때는 너무 무섭고 불안했습니다. 제가 뭔가 말하면 더 큰 혼란이 올 것 같았거든요.",
+      "behaviorHint": "상대방의 눈을 피하며 솔직하게 말하는 듯한 표정",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "임호준 d-2 사실추궁",
+      "party": "b",
+      "partyName": "임호준",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "임호준 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 시점에 전력 사용량이 증가했습니다. 다만, 장비들 검침이 바뀐 시점과 맞물려 세입자분의 책임이 큽니다.",
+      "behaviorHint": "손가락으로 문서를 가리키며 차분히 설명",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "서지현 e-1 증거제시",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "서지현 씨, 관리비 자동이체 내역과 독촉 문자에 대해 설명해 주십시오.",
+      "npcResponse": "그 내역은 맞습니다. 그런데 그 문자가 PDF로 다시 전송된 순서는 뭔가 이상합니다.",
+      "behaviorHint": "문서를 가리키며 의혹을 제기하는 듯한 표정",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "임호준 e-2 증거제시",
+      "party": "b",
+      "partyName": "임호준",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "임호준 씨, 관리비 상세 캡처와 PDF에 대해 설명해 주십시오.",
+      "npcResponse": "그 자료는 제가 보낸 것이 맞습니다. 다만, 검침 증가 시점과 세대의 전력 사용 변화를 단순히 연결하는 건 아니라는 점을 강조하고 싶습니다.",
+      "behaviorHint": "침착하게 설명하며 문서의 해석을 흐린다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "서지현 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "서지현 씨, 조금 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "그 자료가 생성된 시점이 늦었던 건 맞습니다. 다만, 그게 원본 추출물이 아니라 재작성본이라는 의심을 했습니다.",
+      "behaviorHint": "짧고 단호한 톤으로 말하며, 고개를 약간 들고 재판관을 주시한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "서지현 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "서지현 씨, 왜 그런 선택을 하셨는지 아직 납득되지 않습니다.",
+      "npcResponse": "급하게 처리할 사안이 있어 그랬습니다. 미리 말씀드리지 못한 건 제 불찰입니다.",
+      "behaviorHint": "손으로 이마를 짚으며 잠시 눈을 감는다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A2",
+          "severity": "FAIL",
+          "detail": "번역체:불찰"
+        },
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "임호준 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "임호준",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "임호준 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 송금한 건 맞습니다. 다만 그 금액이 움직인 이유에 대해선 순서대로 설명이 필요합니다.",
+      "behaviorHint": "차분하게 상대방의 이해를 기다리는 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "임호준 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "임호준",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "임호준 씨, 그때 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "사실은 그때 큰돈이 오가면서 쩔쩔매는 제 모습을 보이는 게 두려웠습니다. 그래서 모든 걸 혼자 처리하려 했지만, 결과적으로 더 큰 문제가 생겼습니다.",
+      "behaviorHint": "고개를 약간 숙이고 손을 모아 쥔다",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "서지현 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "서지현 씨, 계량 로그와 사용량 보고서에 대해 설명해 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 하지만 사용자와 소비량을 제대로 연결하기엔 부족합니다.",
+      "behaviorHint": "문서의 한 부분을 짚으며 자신감 있게 말한다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "서지현 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "서지현 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "네, 제 설명이 부족했던 것 인정합니다. 하지만 그 자료를 구조 변경한 건 호준씨가 방해한 걸로 보입니다.",
+      "behaviorHint": "서지현은 차분하게 상대의 잘못을 지적하며, 확신에 찬 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "서지현 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "서지현 씨, 왜 그런 판단을 내렸는지 여전히 납득되지 않습니다.",
+      "npcResponse": "원본 양식을 보면, 합계 행 순서가 다릅니다. 보기 좋게 옮긴 게 아니라 구조를 바꾼 편집이라고 봤습니다.",
+      "behaviorHint": "서지현은 원본 양식을 들고 차이를 짚으며 억울하다는 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "임호준 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "임호준",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "임호준 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 그날 송금한 건 맞습니다. 다만 지현씨가 먼저 연락 없이 계좌를 확인한 게 문제의 시작입니다.",
+      "behaviorHint": "상대방을 잠시 바라보며 차분하게 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "임호준 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "임호준",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "임호준 씨, 이 쟁점에 대해서도 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 분담은 맞습니다. 다만, 세입자분 공동비로 포함된 부분이 있습니다.",
+      "behaviorHint": "테이블 위에 있는 서류를 한 번 바라보며 고개를 끄덕인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "서지현 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "서지현 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 그때는 너무 혼란스러웠습니다. 금액보다도 믿음이 무너진 느낌이었어요.",
+      "behaviorHint": "고개를 떨구며 감정이 담긴 눈빛으로 말함",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "서지현 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "서지현 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 제가 원본이 아닌 재작성된 문서를 보내고 도장을 찍었습니다. 날짜는 정확히 기억나지 않지만, 그 위에 덮어쓴 건 확실합니다. 왜 그렇게 했냐면, 당시에 그게 더 빠르다고 판단했기 때문입니다. 지금은 후회하고 있습니다.",
+      "behaviorHint": "고개를 살짝 숙이며 시선을 피한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "임호준 d-2 S5 고백",
+      "party": "b",
+      "partyName": "임호준",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "임호준 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "사실은, 그때 상황이 상당히 복잡했습니다. 공실과 누수 항목을 세입자분이 책임지도록 했던 건 제 결정이었습니다. 하지만 그걸 말씀드리지 못한 건, 저 자신이 상황을 다스리고 있지 못한 게 드러날까 두려웠기 때문입니다. 지금은 후회하고 있습니다.",
+      "behaviorHint": "담담한 표정으로 눈을 피하지 않고 진실을 말한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        },
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"때문입니다. 지금은 후회하고\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "서지현 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "서지현",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서지현 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 사실과 다른 부분입니다. 다만 도장의 경계와 글꼴 자간이 핵심이라 할 수 있으니, 그 흔적이 확실히 남아 있습니다.",
+      "behaviorHint": "도장을 찍으며 약간의 경계심을 보인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "임호준 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "임호준",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "임호준 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 기록은 저의 편집이 맞습니다. 다만, 메타데이터의 작성 방법과 내용의 진실성은 별개입니다.",
+      "behaviorHint": "차분하게 손을 가지런히 모으고 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T08:45:17.537Z",
+  "finishedAt": "2026-04-06T08:46:39.039Z",
+  "summary": {
+    "total": 20,
+    "passed": 17,
+    "warned": 3,
+    "errors": 0,
+    "skipped": 0
+  }
+}

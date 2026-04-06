@@ -1,0 +1,418 @@
+{
+  "caseId": "tenant-11",
+  "category": "tenant",
+  "round": 2,
+  "variant": "evidence",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "백나래",
+    "archetype": "victim_cosplay",
+    "tell": "before_after_push"
+  },
+  "partyB": {
+    "name": "오성필",
+    "archetype": "cold_logic",
+    "tell": "clause_reset"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "초기 인테리어 허용 범위"
+    },
+    {
+      "id": "d-2",
+      "name": "나래의 무단 구조 변경"
+    },
+    {
+      "id": "d-3",
+      "name": "개선비 430만원 전액의 실질성"
+    },
+    {
+      "id": "d-4",
+      "name": "성필의 인테리어 성과 가로채기"
+    },
+    {
+      "id": "d-5",
+      "name": "480만원 원상복구비 전액의 정당성"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "백나래 e-1 증거제시",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "백나래 씨, 이 임대차계약서와 인테리어 특약본을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "임대인 분이 '크게만 안 건드리면 된다'고 말했을 때, 저는 그 말을 꽤 넓게 이해했습니다. 그리고 집안의 낡은 상태를 같이 봤으니 그 정도 손보는 건 허용된다고 생각했어요.",
+      "behaviorHint": "살짝 당황한 표정을 지으며 말을 이어간다.",
+      "evidenceId": "e-1",
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "백나래 d-1 사실추궁",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "백나래 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그때 집주인분과 낡은 상태를 같이 봤으니, 그 정도 손보는 건 허용된다고 생각했습니다.",
+      "behaviorHint": "약간 긴장한 표정으로 손을 꼼지락거린다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"낡은 상태를 같이\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "오성필 d-2 사실추궁",
+      "party": "b",
+      "partyName": "오성필",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "오성필 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 구조 변경이 있었습니다. 다만, 그 시점에서 나래씨는 미리 설명하지 않았습니다.",
+      "behaviorHint": "차분하게 서류를 정리하며 고개를 약간 끄덕인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "백나래 d-1 동기탐색",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "백나래 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "집주인분 말씀을 듣고 저는 '크게만 안 건드리면 된다'고 생각했습니다. 그래서 낡은 상태를 보완하는 정도는 허용된다고 판단했죠.",
+      "behaviorHint": "약간 방어적인 자세로 고개를 약간 숙이며 손짓한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "백나래 d-1 공감접근",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "백나래 씨, 당시 어떤 심정이셨습니까?",
+      "npcResponse": "사실은 제가 큰일을 벌였다는 생각이 들었습니다. 그때는 고정 수납 부분을 손보면서 조금 두려웠습니다.",
+      "behaviorHint": "약간 움츠러들며 말한다",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "오성필 e-2 증거제시",
+      "party": "b",
+      "partyName": "오성필",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "오성필 씨, 이 입주·퇴거 전후 비교 사진 묶음을 보시고 설명해 주십시오.",
+      "npcResponse": "그 사진은 퇴거 직전의 모습을 담고 있습니다. 다만, 사진만으로는 세입자분이 어떤 작업을 했는지 전부 파악하기 어렵습니다.",
+      "behaviorHint": "사진을 차분히 살펴보며 설명한다",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "백나래 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "백나래 씨, 이 시공비 계좌이체 내역과 영수증을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 내역서에 적힌 금액은 맞습니다. 하지만, 집이 많이 좋아진 건 성필 씨도 알고 있었잖아요.",
+      "behaviorHint": "증거를 인정하면서도 개선된 상황을 강조하며 방어적으로 설명하는 태도",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "백나래 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "백나래 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그날 고정 수납 부분은 손봤습니다. 다만 그때 상황으로는 어두운 수납 공간이 너무 답답해서 조금이라도 밝게 만들고 싶었어요.",
+      "behaviorHint": "손으로 머리를 만지작거리며 살짝 난처한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "오성필 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "오성필",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "오성필 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 해당 구조 변경은 제가 허락한 범위를 넘었습니다. 세입자분의 상황도 이해하지만, 이 점은 분명히 해둬야 합니다.",
+      "behaviorHint": "약간의 고개 끄덕임, 손을 살짝 벌리며 명확히 설명",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "백나래 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "백나래 씨, 왜 그런 선택을 하셨습니까?",
+      "npcResponse": "문제가 될 수 있는 선이 있다는 건 알았지만, 누수 자국과 어두운 수납 때문에 그 정도 손은 봐야 한다고 생각했습니다. 성필 씨도 집이 좋아진 건 알고 있었잖아요.",
+      "behaviorHint": "조심스럽게 주변을 살피며 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "오성필 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "오성필",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "오성필 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 그 시점의 상황이 무서웠습니다. 제가 개입하면 일이 더 복잡해질 것 같아서 말을 못 했습니다.",
+      "behaviorHint": "약간 움츠러든 자세로 진심을 담아 이야기한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "백나래 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "백나래 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "허용 범위가 모호했던 건 사실이고, 말을 애매하게 한 쪽도 성필 씨예요. 저만 단독으로 밀어붙였다고 보기엔 처음 설명이 너무 느슨했어요.",
+      "behaviorHint": "한숨을 쉬며 억울하다는 듯 손을 펼친다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "오성필 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "오성필",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "오성필 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 세입자분이 한 것 맞습니다. 다만, 미리 말하지 않았다는 점에서 문제가 있습니다.",
+      "behaviorHint": "차분하게 상황을 설명하는 듯한 태도",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "오성필 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "오성필",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "오성필 씨, 개선비 해당 금액 전액의 실질성에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 부분에 여러 가지 지출이 섞여 있는 상태입니다.",
+      "behaviorHint": "재판관을 향해 차분하고 단호하게 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "백나래 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "백나래 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
+      "npcResponse": "그때 고정 수납 부분에 대한 설명이 너무 모호했습니다. 임대인 분이 말을 좀 더 명확히 했어야 했어요.",
+      "behaviorHint": "상대방이 애매하게 답한 순간을 되새기는 듯한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "백나래 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "백나래 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "사실은, 처음 집 상태가 너무 심해서 '이 정도는 괜찮겠지' 하고 넘긴 부분이 있었어요. 예쁘게 만들어 놓고 무단 개조한 세입자로만 남을까 봐 그 말이 너무 두려웠습니다.",
+      "behaviorHint": "안타까운 듯 고개를 살짝 숙인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "백나래 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "백나래 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 제가 붙박이장 문과 상부장을 뗀 건 인정합니다. 입주 초기에는 '예쁘게 하고 살아요, 크게만 안 건드리면 돼요'라고만 들었습니다. 그래서 탈착 가능한 수준까지만 허용됐다는 건 이제 알아요. 지금은 후회가 남습니다.",
+      "behaviorHint": "한숨을 쉬며 고개를 약간 숙인다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "오성필 d-2 S5 고백",
+      "party": "b",
+      "partyName": "오성필",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "오성필 씨, 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 말씀드리자면, 백나래 씨가 붙박이장 문과 화장대 상부장을 바꾸고 고정 선반 앵커와 전동 조명 배선을 설치한 건 사실입니다. 제가 집 상태 관리를 소홀히 했던 점도 있었습니다. 그 당시엔 미흡한 관리로 문제가 생길까 두려웠습니다. 지금은 후회가 남습니다.",
+      "behaviorHint": "살짝 고개를 숙이며 긴장된 표정.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        },
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"지금은 후회가 남습니다.\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "백나래 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "백나래",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "백나래 씨, 해당 금액 원상복구비 전액의 정당성에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 금액은 일부 고정 가구와 패널 쪽만 복구하면 되는 걸로 알고 있습니다.",
+      "behaviorHint": "고개를 약간 끄덕이며 억울한 표정",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "오성필 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "오성필",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "오성필 씨, 해당 금액 원상복구비 전액의 정당성에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 원상복구비로 지급한 건 사실입니다. 하지만 세입자분께서 부분복구로는 해결이 안 되는 문제를 남기셨습니다.",
+      "behaviorHint": "차가운 표정으로 바라보며 천천히 고개를 끄덕인다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B1",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 금액 노출"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T00:39:20.476Z",
+  "finishedAt": "2026-04-06T00:39:43.377Z",
+  "summary": {
+    "total": 20,
+    "passed": 13,
+    "warned": 7,
+    "errors": 0,
+    "passRate": 65
+  }
+}

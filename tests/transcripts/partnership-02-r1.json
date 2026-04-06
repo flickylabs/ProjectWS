@@ -1,0 +1,395 @@
+{
+  "caseId": "partnership-02",
+  "category": "partnership",
+  "round": 1,
+  "variant": "basic",
+  "model": "gpt-4o",
+  "isMonetary": false,
+  "partyA": {
+    "name": "박준오",
+    "archetype": "victim_cosplay",
+    "tell": "martyr_stack"
+  },
+  "partyB": {
+    "name": "서민경",
+    "archetype": "cold_logic",
+    "tell": "document_shield"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "준오의 별도 유지보수 제안"
+    },
+    {
+      "id": "d-2",
+      "name": "민경의 공로 축소와 성과급 독식 시도"
+    },
+    {
+      "id": "d-3",
+      "name": "준오는 순수한 피해자였는가"
+    },
+    {
+      "id": "d-4",
+      "name": "RACI 공로규칙과 외부 커뮤니케이션의 쌍방 위반"
+    },
+    {
+      "id": "d-5",
+      "name": "고객사가 민경을 단독 창구로 지정한 실제 원인"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "박준오 d-1 사실추궁",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "박준오 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그 시점에 제가 먼저 행동한 건 사실입니다. 다만, 그게 추가 범위에 대한 논의였던 점을 알아주셨으면 합니다.",
+      "behaviorHint": "고개를 살짝 숙이며 억울한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "박준오 d-1 동기탐색",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "박준오 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "그 시점에는 추가 범위를 타진할 필요가 있었습니다. 미리 말씀드리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "고개를 약간 숙이며 한숨을 쉰다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "박준오 d-1 공감접근",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "박준오 씨, 당시 어떤 심정이셨습니까?",
+      "npcResponse": "솔직히, 그 순간에는 정말 두려웠습니다. 제가 얘기하면 일이 더 복잡해질까봐 걱정됐습니다.",
+      "behaviorHint": "눈을 잠시 감고 깊게 한숨을 쉰다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "서민경 d-2 사실추궁",
+      "party": "b",
+      "partyName": "서민경",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서민경 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 제가 먼저 결정한 점이 있습니다. 다만 그 결정의 목적은 따로 있었습니다.",
+      "behaviorHint": "살짝 고개를 끄덕이며 눈을 피한다",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "박준오 e-1 증거제시",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "박준오 씨, 이 영업 이력과 문서 버전 로그를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 하지만 그걸 보면 오히려 본계약과는 별개로 후속 운영 옵션을 탐색한 것뿐입니다.",
+      "behaviorHint": "침착하게 반박하며 핵심을 흐림",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "서민경 e-2 증거제시",
+      "party": "b",
+      "partyName": "서민경",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "서민경 씨, 이 계약 부속합의서와 성과급 승인안을 보시고 설명해 주십시오.",
+      "npcResponse": "그 계약 문서는 맞습니다. 하지만 성과급 승인안은 제 동업자와 상의 없이 급하게 처리된 결과입니다.",
+      "behaviorHint": "서류를 앞에 두고 냉정하게 설명하며 고개를 약간 숙인다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "박준오 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "박준오 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그 가능성을 알아본 건 맞습니다. 다만, 그게 곧바로 실행에 옮기려던 건 아니었습니다.",
+      "behaviorHint": "손으로 자세를 잡으며 설명하는 듯한 제스처",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "박준오 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "박준오 씨, 왜 그런 선택을 하셨습니까?",
+      "npcResponse": "시훈데이터랩 명의로 유지보수 파일럿 가능성을 실제로 물어본 것은, 시장 반응을 빠르게 파악하기 위해서였습니다. 미리 말씀드리지 못한 건 제 잘못이지만, 상황이 긴박했습니다.",
+      "behaviorHint": "약간의 방어적인 손짓을 하며 설명한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "서민경 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "서민경",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "서민경 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 최종 문서와 승인안의 수혜자가 사실상 저로 집중된 건 맞습니다. 다만, 그 시점에서 그렇게 될 수밖에 없었던 상황이 있었습니다.",
+      "behaviorHint": "차분하게 상황을 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "서민경 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "서민경",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "서민경 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 당시에는 제가 결정한 것이 맞다고 믿었습니다. 그런데 시간이 지나면서 그 상황에 대해 저도 상당히 혼란스러웠던 것 같습니다.",
+      "behaviorHint": "약간 망설이는 듯하며, 솔직한 심정을 드러내려는 모습",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "박준오 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "박준오 씨, 이 태블릿 음성메모 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 음성메모 캡처는 맞습니다. 하지만 그건 시훈데이터랩에 별도 파일럿 가능성을 물어본 것일 뿐입니다.",
+      "behaviorHint": "침착하게 설명하며 상황을 해명하려는 표정",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "박준오 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "박준오 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "아닙니다. 그건 사촌 회사와 얽힌 내부 논의가 미뤄져 있었던 상황 때문입니다.",
+      "behaviorHint": "눈을 피하며 고개를 끄덕인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "박준오 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "박준오 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
+      "npcResponse": "사촌 회사와 얽힌 이해관계가 있었고, 그로 인해 내부 논의가 미뤄질 수밖에 없었습니다. 제 동업자 분께 미리 알리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "억울한 표정으로 고개를 약간 숙이며 손을 모아 쥔다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"사촌 회사와 얽힌\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "서민경 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "서민경",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "서민경 씨, 다시 정리해 주십시오.",
+      "npcResponse": "그날 저의 움직임이 있었습니다. 그러나 그 결과가 어떻게 되었는지는 명확히 나누어져야 합니다.",
+      "behaviorHint": "손가락으로 테이블을 두드리며 집중력을 유지한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "서민경 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "서민경",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서민경 씨, 준오는 순수한 피해자였는가에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 초기 공로를 인정하지만, 그 뒤 행동에 대해서는 따로 봐야 합니다.",
+      "behaviorHint": "시선을 피하며 차분하게 답변",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "박준오 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "박준오 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 그 순간에는 정말 혼란스럽고 무서웠습니다. 제가 뭔가 잘못하면 더 큰 문제가 생길 것 같은 불안감에 휩싸여 있었습니다.",
+      "behaviorHint": "고개를 숙이며 눈을 피한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "박준오 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "박준오 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "제가 민경씨와 상의 없이 시훈데이터랩의 사업자등록증을 첨부해 메일을 보냈습니다. 서명 8일 전의 일이었습니다. 사실 내부 참조자를 비워두면 반발이 적을 거라고 생각했습니다. 지금은 이런 판단이 얼마나 어리석었는지 후회하고 있습니다.",
+      "behaviorHint": "한숨을 쉬며 머리를 숙인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "서민경 d-2 S5 고백",
+      "party": "b",
+      "partyName": "서민경",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "서민경 씨, 솔직하게 말씀해 주십시오.",
+      "npcResponse": "사실은 제 동업자의 기여를 축소한 건 제가 맞습니다. 제가 단독에 가까운 성과급을 받으려 했다면 그건 사실입니다. 이런 결정을 내린 이유는 제 통제권을 확고히 하고 싶었기 때문입니다. 지금은 그때의 선택을 후회하고 있습니다.",
+      "behaviorHint": "고개를 약간 숙이며 후회하는 듯한 표정",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "박준오 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "박준오",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "박준오 씨, 고객사가 민경을 단독 창구로 지정한 실제 원인에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 다른 배경이 있었던 것 같습니다.",
+      "behaviorHint": "고개를 살짝 돌리며 한숨 섞인 목소리",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "서민경 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "서민경",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "서민경 씨, 고객사가 민경을 단독 창구로 지정한 실제 원인에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 다른 요인들도 있었습니다만, 접점 관리의 필요성 역시 무시할 수 없는 점이었습니다.",
+      "behaviorHint": "고개를 약간 숙이며 문서에 집중하는 척한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"아닙니다. 그건 다른\""
+        }
+      ],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-05T23:44:56.647Z",
+  "finishedAt": "2026-04-05T23:45:47.612Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "passRate": 80
+  }
+}

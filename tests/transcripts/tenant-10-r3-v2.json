@@ -1,0 +1,401 @@
+{
+  "caseId": "tenant-10",
+  "category": "tenant",
+  "round": 3,
+  "variant": "empathy",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "윤민주",
+    "archetype": "avoidant",
+    "tell": "broker_shield"
+  },
+  "partyB": {
+    "name": "최상훈",
+    "archetype": "cold_logic",
+    "tell": "clause_gate"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "반려동물 특약의 해석"
+    },
+    {
+      "id": "d-2",
+      "name": "민주의 사전 고지와 무응답 해석"
+    },
+    {
+      "id": "d-3",
+      "name": "상훈의 즉시 반려견 퇴거·예치금 요구"
+    },
+    {
+      "id": "d-4",
+      "name": "실제 소음과 공용부 불편 정도"
+    },
+    {
+      "id": "d-5",
+      "name": "전문 청소·바닥보수 선공제 필요성"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "윤민주 d-1 공감접근",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "윤민주 씨, 당시 어떤 사정이 있었는지 말씀해 주시겠습니까?",
+      "npcResponse": "그때는 솔직히 좀 혼란스러웠습니다. 계약 특약이 전면 금지 사항처럼 보이지 않았고, 사진을 보낸 후 별다른 반응이 없으니 괜찮다고 생각했어요.",
+      "behaviorHint": "약간 머리를 숙이며 말함",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "윤민주 d-1 동기탐색",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "윤민주 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "그 다음 날 아침에 보낸 사진에 대해 별도의 반대가 없으셨기 때문입니다. 관리 요청이 애매하게 와서 명확한 신호로 이해할 수밖에 없었습니다.",
+      "behaviorHint": "약간 주저하며, 조심스러운 태도로 손을 모으고 말함",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "윤민주 d-1 사실추궁",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "윤민주 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그날 특약은 봤습니다. 다만 그 다음 날 사진을 보내드리고 별다른 반응이 없어서 괜찮다고 생각했어요.",
+      "behaviorHint": "조심스럽게 손을 모으며 고개를 약간 숙인다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "최상훈 d-2 사실추궁",
+      "party": "b",
+      "partyName": "최상훈",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "최상훈 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 세입자분이 이사 날짜를 미리 연락 주신 건 알고 있었지만, 정식 승인 절차는 완료되지 않았습니다.",
+      "behaviorHint": "약간의 긴장감을 담아, 눈을 피하며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "윤민주 e-1 증거제시",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "윤민주 씨, 임대차계약서와 반려동물 특약에 대해 설명해 주십시오.",
+      "npcResponse": "그 계약서에는 반려동물 제한 문구와 함께 예외적인 상황을 고려할 수 있는 조항도 포함되어 있습니다. 그런 점에서, 그 부분이 전면 금지인 것처럼 해석할 여지는 없었어요.",
+      "behaviorHint": "조금 당황한 듯한 표정으로 천천히 설명한다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "최상훈 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "최상훈",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "최상훈 씨, 그때 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 그때는 승인 여부가 모호한 상태라 어떻게 결정해야 할지 막막했습니다. 그래서 입주 전 사진을 브로커에게 전송한 것이 마치 모든 게 해결된 것처럼 보일까 걱정되었습니다.",
+      "behaviorHint": "고민하는 표정으로 잠시 멈추고 재판관의 눈을 마주침",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "윤민주 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "윤민주 씨, 왜 그런 선택을 하셨는지 아직 납득되지 않습니다.",
+      "npcResponse": "관리 요청이 명확하지 않아서 그랬습니다. 미리 설명드리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "머리를 살짝 긁적이며 약간의 불안함을 보인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "윤민주 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "윤민주 씨, 조금 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그 관리 요청을 받은 건 맞습니다. 다만 그게 애매하게 답해서 그 다음 날 바로 시작하는 걸로 판단했습니다.",
+      "behaviorHint": "조심스럽게 손을 모으고 시선을 아래로 내린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "최상훈 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "최상훈",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "최상훈 씨, 다시 정리해 주십시오.",
+      "npcResponse": "입주 전 소형 반려견에 관한 사진을 세입자분에게 보내고, 브로커에게 전달한 건 맞습니다. 다만, 그것이 승인을 의미하지는 않습니다.",
+      "behaviorHint": "침착하고 냉정하게 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "최상훈 e-2 증거제시",
+      "party": "b",
+      "partyName": "최상훈",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "최상훈 씨, 대화 캡처와 사진 전송 기록에 대해 설명해 주십시오.",
+      "npcResponse": "그 자료는 민주씨가 확인 요청을 브로커에게 한 것뿐입니다. 승인 절차를 완료한 건 아닙니다.",
+      "behaviorHint": "서류를 정리하며 차분히 설명한다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "윤민주 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "윤민주 씨, 반려동물 등록증과 훈련 수료증에 대해 설명해 주십시오.",
+      "npcResponse": "그 서류들은 맞습니다. 다만, 사진 전송 다음 날 오전에 그 부분에 대해 제가 따로 말하지 않았던 점도 있긴 합니다.",
+      "behaviorHint": "조심스럽게 증거의 일부를 인정하며, 이후의 커뮤니케이션 부족을 떠올리며 잠시 멈칫한다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "윤민주 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "윤민주 씨, 왜 그런 판단을 내렸는지 여전히 납득되지 않습니다.",
+      "npcResponse": "그 무렵 입주 문제로 압박을 받고 있었기 때문입니다. 미리 말씀드리지 못한 점은 죄송하지만, 그 부분 때문에 더 유리하게 해석할 수밖에 없었습니다.",
+      "behaviorHint": "약간의 안타까움이 묻어나는 표정으로 설명하듯이 말한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "윤민주 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "윤민주 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "네, 그날 관리 요청이 모호하게 전달된 건 사실입니다. 다만 집주인분의 짧은 답변이 상황을 해결한 것처럼 보일 여지가 있었던 점도 이해해 주셨으면 합니다.",
+      "behaviorHint": "조심스럽게 그러나 단호하게 설명하며 정면을 바라본다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "최상훈 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "최상훈",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "최상훈 씨, 다시 정리해 주십시오.",
+      "npcResponse": "제가 답을 미룬 건 인정합니다. 그럼에도 세입자분이 최종 승인 확인 없이 입주한 책임은 남는다고 봅니다.",
+      "behaviorHint": "침착하고 차분한 자세를 유지하고, 손을 책상 위에 가지런히 올린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "최상훈 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "최상훈",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "최상훈 씨, 이 쟁점에 대해서도 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 조치한 것은 맞습니다. 다만 다른 세입자분들의 민원도 있었고 빠르게 대응해야 했다고 판단했습니다.",
+      "behaviorHint": "차분하게 서류를 정리하며, 시선은 재판관에게 고정한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "윤민주 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "윤민주 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 그때는 정말 불안했습니다. 반려견을 맡길 확실한 곳을 찾지 못해 마음이 초조했습니다.",
+      "behaviorHint": "손을 살짝 움켜쥐거나 긴장된 표정",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "윤민주 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "윤민주 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "제가 말티즈와 함께 입주한 것은 사실입니다. 그때 집주인분께서 '관리만 잘 해 달라'고만 하셔서, 어느 정도 허가가 된 줄 알았습니다. 그러나 미리 명확히 말하지 못한 건 제 잘못입니다. 지금은 오해를 더 키워서 두렵습니다.",
+      "behaviorHint": "고개를 약간 숙이며 말을 조심스럽게 이어간다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "최상훈 d-2 S5 고백",
+      "party": "b",
+      "partyName": "최상훈",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "최상훈 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 말씀드리자면, 그때는 무척이나 혼란스러웠습니다. 제가 d-2 통지를 확인했지만, 세입자분에게 명확히 거절하지 않은 점을 인정합니다. 당시 세입자분의 성급한 행동이 뒤늦게 판단을 흐리게 했던 것 같습니다. 하지만 이제는 모든 것을 인정하고 후회하고 있습니다.",
+      "behaviorHint": "약간의 후회와 체념이 묻어나는 표정",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "윤민주 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "윤민주",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "윤민주 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 아직 그 상태로 전문 청소 단계는 아닙니다. 현관매트 오염 정도만 확인된 상태입니다.",
+      "behaviorHint": "조심스럽게 두 손을 모아 쥐고 눈을 살짝 내리깐다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "최상훈 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "최상훈",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "최상훈 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 문제는 아직 확정되지 않았습니다. 다만 냄새가 퍼질 가능성을 염두에 두고 있습니다.",
+      "behaviorHint": "조금 긴장된 표정으로 담담하게 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T08:57:03.455Z",
+  "finishedAt": "2026-04-06T08:58:26.661Z",
+  "summary": {
+    "total": 20,
+    "passed": 15,
+    "warned": 5,
+    "errors": 0,
+    "skipped": 0
+  }
+}

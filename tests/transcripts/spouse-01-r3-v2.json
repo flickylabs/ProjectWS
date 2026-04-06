@@ -1,0 +1,395 @@
+{
+  "caseId": "spouse-01",
+  "category": "spouse",
+  "round": 3,
+  "variant": "empathy",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "한지석",
+    "archetype": "avoidant",
+    "tell": "over_precision"
+  },
+  "partyB": {
+    "name": "오세린",
+    "archetype": "confrontational",
+    "tell": "evidence_waving"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "지석의 비밀 송금 280만원"
+    },
+    {
+      "id": "d-2",
+      "name": "세린의 새벽 휴대폰 열람"
+    },
+    {
+      "id": "d-3",
+      "name": "최민정은 외도 상대인가"
+    },
+    {
+      "id": "d-4",
+      "name": "세린의 우회 송금 150만원"
+    },
+    {
+      "id": "d-5",
+      "name": "100만원 사전 상의 약속 위반"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "한지석 d-1 공감접근",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "한지석 씨, 당시 어떤 사정이 있었는지 말씀해 주시겠습니까?",
+      "npcResponse": "솔직히 말씀드리면, 그날 그 송금을 하는 게 무서웠습니다. 9월 21일 저녁 8시 15분쯤, 제가 혼자 결정한 건 제 역할 때문이라고 생각했어요.",
+      "behaviorHint": "긴장이 역력한 얼굴로 시선을 조금 피한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "한지석 d-1 동기탐색",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "한지석 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "집안에 급히 처리할 일이 있었습니다. 그 일과 관련해 바로 행동에 옮기느라 미리 말씀드리지 못한 점은 제 잘못입니다.",
+      "behaviorHint": "고개를 약간 숙이며 눈을 피한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "한지석 d-1 사실추궁",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "한지석 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그날 적지 않은 돈이 송금된 건 맞습니다. 다만, 그 돈의 사용 목적은 조금 다른 성격입니다.",
+      "behaviorHint": "살짝 긴장한 듯한 표정으로 말을 하고, 손가락으로 날짜를 세듯 움직인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "오세린 d-2 사실추궁",
+      "party": "b",
+      "partyName": "오세린",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "오세린 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 새벽에 휴대폰을 열어봤습니다. 그 메시지에서 불안감을 느껴 확인한 겁니다.",
+      "behaviorHint": "단호하게 재판관을 바라보며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "한지석 e-1 증거제시",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "한지석 씨, 은행 이체 내역서에 대해 설명해 주십시오.",
+      "npcResponse": "공동계좌에서 적지 않은 금액이 이동한 건 사실입니다. 하지만 그 이름만으로 다른 결론을 내리기는 어렵습니다.",
+      "behaviorHint": "차분하게 증거의 의미를 흐리는 듯한 태도로 말하고 있다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "오세린 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "오세린",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "오세린 씨, 그때 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 그 메시지를 보고 나서 불안이 엄청 커졌습니다. 제가 그 돈이 어떻게 쓰였는지 알지 못한다는 게 무섭기도 했고요.",
+      "behaviorHint": "손을 움켜쥐며 불안한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "한지석 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "한지석 씨, 왜 그런 선택을 하셨는지 아직 납득되지 않습니다.",
+      "npcResponse": "가족 어른과 관련된 급한 일이 생겼기 때문입니다. 먼저 행동하고 나중에 설명 드린 건 제 책임입니다.",
+      "behaviorHint": "조심스럽고 우회적으로 말하면서도 살짝 고개를 숙인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "한지석 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "한지석 씨, 조금 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "그날 송금한 건 맞습니다. 다만, 그 금액은 집안 일로 급히 필요했던 부분이라 미리 알리지 못했습니다.",
+      "behaviorHint": "말할 때 시선을 잠시 피하며 어색하게 웃는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "오세린 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "오세린",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "오세린 씨, 다시 정리해 주십시오.",
+      "npcResponse": "새벽에 제 남편의 휴대폰을 확인한 건 맞습니다. 그 행동이 잘못일 수 있지만, 당시엔 정황상 그렇게 할 수밖에 없었습니다.",
+      "behaviorHint": "단호한 톤으로 짧게 말하며, 손으로 휴대폰을 가리키는 제스처",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "오세린 e-2 증거제시",
+      "party": "b",
+      "partyName": "오세린",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "오세린 씨, 예약 확인 문서에 대해 설명해 주십시오.",
+      "npcResponse": "문서는 분명히 접수되었습니다. 다만, 그 문서만 보고 모든 걸 단정짓는 건 이릅니다.",
+      "behaviorHint": "문서를 손으로 가리키며 단정짓지 말라는 듯 고개를 좌우로 흔듭니다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "한지석 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "한지석 씨, 메신저 대화 캡처에 대해 설명해 주십시오.",
+      "npcResponse": "그 자료를 보면 '지난번처럼 조용한 데서 보죠'라는 문장은 맞습니다. 다만, 그게 업무상 연결된 가족 어른 문제로 급하게 쓴 것이라 오해하지 않으셨으면 합니다.",
+      "behaviorHint": "휴대폰을 내려다보며 조심스럽게 설명한다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "한지석 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "한지석 씨, 왜 그런 판단을 내렸는지 여전히 납득되지 않습니다.",
+      "npcResponse": "그날 오전에 장모님 쪽에 급한 일이 있어서, 큰돈을 급히 보낼 수밖에 없었습니다. 미리 알리지 못한 건 제 잘못이지만, 제 아내가 제 폰을 열어본 것 또한 신뢰를 무너뜨리는 행동이었습니다.",
+      "behaviorHint": "주변을 둘러보며 조심스레 말을 덧붙인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "한지석 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "한지석 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "네, 그날 송금한 건 맞습니다. 다만 제 아내의 오해가 발생한 부분은 그 뒤에 있습니다.",
+      "behaviorHint": "조심스럽게 손을 모으며 시선을 피한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "오세린 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "오세린",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "오세린 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 새벽에 제 남편의 휴대폰을 열람한 건 사실입니다. 그런데 그 새벽에 제가 왜 그런 선택을 했는지는 더 중요한 문제라고 봅니다.",
+      "behaviorHint": "단호한 톤으로 상대방의 반응을 관찰하며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "오세린 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "오세린",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "오세린 씨, 이 쟁점에 대해서도 사실 여부를 확인하겠습니다.",
+      "npcResponse": "여러 사정이 있었습니다. 다만 지금은 정리가 필요합니다.",
+      "behaviorHint": "atoms_empty_fallback",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "F1",
+          "severity": "WARN",
+          "detail": "atoms_empty_fallback"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "한지석 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "한지석 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 그때는 가족 쪽에 급한 일이 생겨서 어쩔 수 없었습니다. 큰돈이었기에 미리 설명하지 못한 점은 제 잘못입니다.",
+      "behaviorHint": "약간 움츠린 자세로 고개를 끄덕이며 인정하는 모습",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "한지석 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "한지석 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "제가 9월 20일에 공동계좌에서 280만원을 송금했습니다. 그 돈은 재가돌봄센터 상담팀장 최민정에게 보낸 장모님 추석 연휴 간병 예약금입니다. 아내에게 미리 말하지 못한 이유는 처가 쪽 지원 문제 앞에서 무능하게 보일까 두려웠기 때문입니다. 지금은 솔직하지 못했던 제 자신이 많이 후회스럽습니다.",
+      "behaviorHint": "손으로 얼굴을 살짝 만지작거리며 머뭇거린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "오세린 d-2 S5 고백",
+      "party": "b",
+      "partyName": "오세린",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "오세린 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 그때는 제가 너무 겁이 났습니다. 제 남편이 거짓말을 하고 있을지도 모른다는 생각에 잠을 뒤척였죠. 그 캡처 하나만으로 결론을 내렸다는 것도 후회하고 있습니다. 바보 같은 아내가 될까봐 두려웠습니다.",
+      "behaviorHint": "캡처 이미지를 잠시 쳐다보며 손으로 쓸어내린다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "한지석 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "한지석",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "한지석 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 큰돈을 사용한 건 제가 맞습니다. 하지만 제 아내도 그 약속을 어긴 점이 있습니다.",
+      "behaviorHint": "약간 긴장된 얼굴로 살짝 머뭇거리며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "오세린 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "오세린",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "오세린 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 저와는 관련 없는 일입니다. 더 정확히 말하면, 제 남편의 사적인 결정이었다고 생각합니다.",
+      "behaviorHint": "단호한 표정으로 재판관을 응시하며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T08:03:51.001Z",
+  "finishedAt": "2026-04-06T08:05:12.944Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "skipped": 0
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "caseId": "tenant-03",
+  "category": "tenant",
+  "isMonetary": true,
+  "partyA": {
+    "name": "강서윤",
+    "archetype": "cold_logic",
+    "tell": "source_lock"
+  },
+  "partyB": {
+    "name": "문태수",
+    "archetype": "victim_cosplay",
+    "tell": "suffering_preface"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "태수의 선순위 채무 축소 고지"
+    },
+    {
+      "id": "d-2",
+      "name": "보증보험 가능 확답의 실제 출처"
+    },
+    {
+      "id": "d-3",
+      "name": "중개보수 외 180만원의 실제 수령자"
+    },
+    {
+      "id": "d-4",
+      "name": "서윤의 잔금 보류와 전입 지연"
+    },
+    {
+      "id": "d-5",
+      "name": "당일 확인 원칙의 쌍방 붕괴"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "강서윤 d-1 사실추궁",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "강서윤 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그날 송금한 건 사실입니다. 다만 그 후 집주인분 쪽 설명이 비어 있었던 점이 있었습니다.",
+      "behaviorHint": "강서윤이 진지하고 차분한 태도로 답변하고 있다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "강서윤 d-1 동기탐색",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "강서윤 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "제가 직접 들은 건 예전 말소 예정 설명밖에 없었고 최신 잔액 설명은 누락되어 있었습니다. 그 시점에서 누가 업데이트를 막았는지는 명확하지 않았지만 집주인분 쪽 설명이 부족했습니다.",
+      "behaviorHint": "눈을 살짝 내리깔며 고개를 끄덕인다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"집주인분 쪽 설명이\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "강서윤 d-1 공감접근",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "강서윤 씨, 당시 어떤 심정이셨습니까?",
+      "npcResponse": "솔직히 그때는 무척 혼란스러웠습니다. 무슨 일이 벌어지고 있는지 알 수가 없었고, 제 행동이 더 큰 문제를 초래할까 두려웠습니다.",
+      "behaviorHint": "살짝 고개를 떨구며 눈을 피한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "문태수 d-2 사실추궁",
+      "party": "b",
+      "partyName": "문태수",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "문태수 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그날 그 표현을 쓴 적은 있습니다. 그러나 대화라는 게 상황에 따라 해석이 달라질 수 있지 않습니까.",
+      "behaviorHint": "고개를 약간 숙이며 긴장된 표정",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "강서윤 e-1 증거제시",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "강서윤 씨, 이 임대차계약서 원본과 특약란을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 임대차계약서와 특약의 원본입니다만, 집주인분의 업데이트 설명이 비어 있는 상황이었습니다. 제가 직접 들은 것은 이전의 말소 예정 설명이었고, 최신 잔액 관련 내용은 없었습니다.",
+      "behaviorHint": "서류를 한 번 쓱 훑어본 뒤 상대의 눈을 피한다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "문태수 e-2 증거제시",
+      "party": "b",
+      "partyName": "문태수",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "문태수 씨, 이 3자 단톡 캡처를 보시고 설명해 주십시오.",
+      "npcResponse": "그 캡처는 맞습니다. 다만, 누가 먼저 그런 이야기를 꺼냈는지 대화가 섞여 있어서 의도를 단정하기 어렵습니다.",
+      "behaviorHint": "머리를 긁적이며 당황한 듯한 표정을 짓는다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "강서윤 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "강서윤 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그 시점에 이자 대출을 했습니다. 다만, 집주인분이 추가 브리지대출을 다시 직접 설명해야 했습니다.",
+      "behaviorHint": "차분하게 서류를 정리하는 듯한 제스처",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "강서윤 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "강서윤 씨, 왜 그런 선택을 하셨습니까?",
+      "npcResponse": "최신 채무 구조를 명확히 파악하지 못한 건 그 시점에 중개사 설명에 의존했기 때문이었습니다. 그래도 집주인분이 직접 추가 브리지대출에 대해 다시 설명했어야 했습니다.",
+      "behaviorHint": "차분하고 논리적으로 이유를 설명하며, 중개사 설명에 의존한 점을 강조한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "문태수 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "문태수",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "문태수 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그 자리에 있으면서도 그 말을 제대로 정정하지 않았습니다. 계약이 급하다는 생각에 한별 씨가 확정적으로 한 말에 안심했던 것 같습니다.",
+      "behaviorHint": "고개를 약간 숙이며 억울한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "문태수 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "문태수",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "문태수 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 그 당시에는 중개사 한별씨의 말을 믿고 싶었습니다. 상황이 급해서 너무 무서웠고, 제가 나서면 일이 더 복잡해질 것 같았습니다.",
+      "behaviorHint": "무거운 한숨을 쉬며 고개를 살짝 숙인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "강서윤 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "강서윤 씨, 이 추가 송금 내역과 잔금 계좌기록을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 계좌 기록은 맞습니다. 하지만 송금한 금액은 계약과 직접적인 관련이 없는 용도로 보낸 것입니다.",
+      "behaviorHint": "침착하게 서류를 바라보며 손가락으로 송금 날짜를 짚는다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "강서윤 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "강서윤 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "아닙니다. 그건 제가 집주인분 뜻과 같다고 받아들였던 설명입니다. 한별이 만든 문구에 대한 최신 채무 구조 확인은 태수 씨에게 있었습니다.",
+      "behaviorHint": "강조하며 상대방에게 책임을 돌리는 태도로, 차분하지만 단호하게 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "강서윤 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "강서윤 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
+      "npcResponse": "한별 씨가 앞단에서 문구를 만들었더라도, 최신 채무 구조를 직접 확인시킬 책임은 태수 씨에게 있었습니다. 저는 그 설명이 집주인 뜻과 같다고 받아들였습니다.",
+      "behaviorHint": "상대방을 바라보지 않고 서류를 정리하는 듯한 태도",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"태수 씨에게 있었습니다.\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "문태수 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "문태수",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "문태수 씨, 다시 정리해 주십시오.",
+      "npcResponse": "아닙니다. 그건 중개사 한별이 시작했지만, 그걸 제가 끊지 않아 서윤 씨에게 제 책임도 붙었습니다. 저는 그 오해를 이용해 계약을 밀었습니다.",
+      "behaviorHint": "조금 긴장한 표정으로 설명하려 한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "문태수 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "문태수",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "문태수 씨, 중개보수 외 해당 실제 수령자에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그 돈이 중개사 사무실로 들어간 건 맞습니다. 실제로 누가 수령했는지는 제가 직접 확인한 게 아닙니다.",
+      "behaviorHint": "한숨을 쉬며 피곤한 표정을 보인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "강서윤 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "강서윤 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 그때는 공포가 컸습니다. 태수 씨가 숨긴다고 느껴서 더 불안했습니다.",
+      "behaviorHint": "잠시 침묵 후, 조심스럽게 말하기",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "강서윤 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "강서윤 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "제가 계획적 전세사기로 단정한 제 판단은 앞섰습니다. 하지만 태수 씨가 최신 채무와 말소 순서를 직접 다시 설명하지 않은 책임은 분명합니다. 등기부등본과 브리지대출 상환예정 확인서를 참고했을 뿐, 집주인 설명 의무가 사라지는 건 아닙니다. 지금은 상황이 이렇게 된 것을 후회하고 있습니다.",
+      "behaviorHint": "차갑고 사무적인 태도로 서류와 관련된 구체적 정보를 제시한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "문태수 d-2 S5 고백",
+      "party": "b",
+      "partyName": "문태수",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "문태수 씨, 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 그때는 잔금 전날이라 마음이 급했습니다. 제가 '보험은 거의 된다'는 말을 바로잡지 않고 넘어갔던 건 사실입니다. 그 당시 느꼈던 압박 때문에 설명보다는 계약 성사를 우선시했죠. 지금 돌이켜보면 후회가 큽니다.",
+      "behaviorHint": "고개를 살짝 숙이며 후회의 감정을 드러낸다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "강서윤 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "강서윤",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "강서윤 씨, 당일 확인 쌍방 붕괴에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 제가 최신 서류를 받지 못한 상황에서 중단한 것입니다. 원칙을 무시한 것이 아니라 오히려 지키려는 과정에서 멈췄습니다.",
+      "behaviorHint": "차분한 표정으로 서류를 들어 보이며 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "문태수 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "문태수",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "문태수 씨, 당일 확인 쌍방 붕괴에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "확인 서류는 그날 준비돼 있었습니다. 다만, 진행이 멈춘 건 세입자분 쪽에서였습니다.",
+      "behaviorHint": "한숨을 쉬며 말을 꺼낸다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-05T22:53:39.511Z",
+  "finishedAt": "2026-04-05T22:56:28.630Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "skipped": 0
+  }
+}

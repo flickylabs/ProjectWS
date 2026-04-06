@@ -1,0 +1,395 @@
+{
+  "caseId": "tenant-05",
+  "category": "tenant",
+  "round": 3,
+  "variant": "empathy",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "배선우",
+    "archetype": "confrontational",
+    "tell": "quote_repeat"
+  },
+  "partyB": {
+    "name": "조민재",
+    "archetype": "victim_cosplay",
+    "tell": "community_shield"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "민재의 전 세입자 비방 발언"
+    },
+    {
+      "id": "d-2",
+      "name": "장롱문과 현관 걸레받이 손상의 실제 발생 시점"
+    },
+    {
+      "id": "d-3",
+      "name": "선우의 출입카드·소액 정산 누락"
+    },
+    {
+      "id": "d-4",
+      "name": "과거 옥상 민원의 현재 해석"
+    },
+    {
+      "id": "d-5",
+      "name": "보증금 공제 통보의 정당성"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "배선우 d-1 공감접근",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "배선우 씨, 당시 어떤 사정이 있었는지 말씀해 주시겠습니까?",
+      "npcResponse": "솔직히, 새 집에서 낙인찍힐까 두려웠습니다. 그 순간 큰 모욕감을 느꼈습니다.",
+      "behaviorHint": "살짝 떨리는 목소리로 감정을 드러내며 눈을 피함",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "배선우 d-1 동기탐색",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "배선우 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "예전 그때 지인이 방문했을 때 딱 한 번 그런 일이 있었습니다. 그 일을 다시 끌어들여 낙인 찍히는 게 두려웠습니다.",
+      "behaviorHint": "약간 짜증 섞인 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "배선우 d-1 사실추궁",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "배선우 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 사람의 그런 식의 평가에 대해 동의할 수 없습니다. 예전 그때의 민원은 한번 경고로 끝난 일이었습니다.",
+      "behaviorHint": "한 손으로 살짝 머리를 쓸어 올리고, 진지한 표정으로 재판관을 바라봄",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "조민재 d-2 사실추궁",
+      "party": "b",
+      "partyName": "조민재",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "조민재 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 그 손상이 이미 선우씨 퇴거 전부터 있었을 수도 있다고 말한 겁니다.",
+      "behaviorHint": "조용히 숨을 내쉬며 눈을 피하는 듯한 모습",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "배선우 e-1 증거제시",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "배선우 씨, 임대차계약서와 퇴거 점검표에 대해 설명해 주십시오.",
+      "npcResponse": "그 점검표에 적힌 내용은 맞습니다. 그런데 민재씨가 다르게 말한 건 또 다른 문제입니다.",
+      "behaviorHint": "고개를 살짝 들어올려 자신감 있게 말하며, 상대의 발언에 대한 불만을 느낀다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "조민재 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "조민재",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "조민재 씨, 그때 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 그때는 정말 막막했습니다. 예정보다 이른 때에 세입자분을 맞이하려다 보니 준비가 부족했어요.",
+      "behaviorHint": "손을 가슴에 얹으며 한숨을 쉰다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "배선우 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "배선우 씨, 왜 그런 선택을 하셨는지 아직 납득되지 않습니다.",
+      "npcResponse": "급하게 집안 사정이 있었기 때문이었습니다. 먼저 알리지 않은 건 제 잘못입니다만, 그 말과는 별개의 문제입니다.",
+      "behaviorHint": "조금 긴장된 표정으로 손을 살짝 깁니다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "배선우 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "배선우 씨, 조금 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그 사람의 평가가 그보다 앞선 시점부터 흔들렸습니다. 건물 대화방에서 이미 문제 세입자처럼 말한 사실이 있습니다.",
+      "behaviorHint": "진지하게 기록을 살펴보며 설명하는 모습",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "조민재 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "조민재",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "조민재 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 제가 세입자분께 미리 말씀드리지 못한 점은 인정합니다. 그 장비들을 가지고 가족 한 사람과 함께 들어갔던 것은 맞습니다.",
+      "behaviorHint": "한숨을 내쉬면서 피로한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "조민재 e-2 증거제시",
+      "party": "b",
+      "partyName": "조민재",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "조민재 씨, 입주 예정자·건물 대화방 캡처에 대해 설명해 주십시오.",
+      "npcResponse": "제가 입주 예정자에게 보낸 메시지는, 선우씨가 퇴거하기 전 이미 손상이 있었다고 설명한 것입니다. 그걸 문자 그대로 받아들이지 마시고, 상황을 종합적으로 봐 주십시오.",
+      "behaviorHint": "상황을 종합해달라고 당부하며 나무라듯이 손을 내젓는다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "배선우 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "배선우 씨, 관리비 고지서와 카드 재발급 영수증에 대해 설명해 주십시오.",
+      "npcResponse": "그 관리비 고지서는 맞습니다. 다만 카드 재발급은 지인 방문 당시 사건 때문입니다.",
+      "behaviorHint": "침착하게 설명하며 손을 가볍게 들어 올린다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "배선우 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "배선우 씨, 왜 그런 판단을 내렸는지 여전히 납득되지 않습니다.",
+      "npcResponse": "그 항의는 집주인분의 그 말과 별개의 문제였습니다. 그 낙인이 지금의 생활권에서 남을까 두려워 모욕감을 느낄 수밖에 없었습니다.",
+      "behaviorHint": "고개를 약간 들며 자신감 있는 표정",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "배선우 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "배선우 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "아닙니다. 그건 집주인분이 새 입주 예정자와 그 대화방에서 문제 세입자처럼 저를 단정해 말한 점이 분명합니다. 그 기록들이 비방 표현의 시점과 과장을 함께 보여줍니다.",
+      "behaviorHint": "상대가 잘못한 점을 단호하게 지적하며, 상대의 행동을 강조하는 몸짓을 한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "조민재 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "조민재",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "조민재 씨, 다시 정리해 주십시오.",
+      "npcResponse": "아닙니다. 그건 세입자분이 퇴거하시기 전부터 손상이 있었을 가능성이 있습니다. 억울함이 큽니다만, 제가 열심히 책임지고 있습니다.",
+      "behaviorHint": "한숨을 쉬며 손으로 이마를 짚는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "조민재 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "조민재",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "조민재 씨, 이 쟁점에 대해서도 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 출입카드 한 장과 음식물 처리비는 미리 알리지 않았습니다. 계약상 반납과 미납 공용비 정산 조항이 있었던 것도 사실입니다.",
+      "behaviorHint": "조금 조심스러운 태도로 고개를 끄덕이며 답변한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "배선우 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "배선우 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 문제 세입자로 낙인찍힐까 두려웠습니다. 그 낙인이 지금의 생활권에서 제 자리를 잃게 만들까 겁났습니다.",
+      "behaviorHint": "무겁게 눈을 내리깔며 솔직한 심정을 드러낸다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "배선우 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "배선우 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 제가 옥상 문제를 이유로 과격하게 반응했던 점은 인정합니다. 조민재 씨가 입주 예정자와 건물 대화방에서 저를 문제 세입자라고 단정해 말한 것을 보고 화가 났습니다. 제가 민원을 제기한 것만 부각됐지만, 제 입장에선 불리한 상황이었습니다. 지금은 제 행동에 대해 약간의 후회를 느끼고 있습니다.",
+      "behaviorHint": "고개를 약간 끄덕이며 진지하게 이야기한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "조민재 d-2 S5 고백",
+      "party": "b",
+      "partyName": "조민재",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "조민재 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 그때는 정말 무서울 정도였습니다. 제가 모든 수리비를 떠안고 새 세입자 계약까지 문제가 생길까봐 걱정이 컸습니다. 그래서 미리 충분히 설명드리지 못한 점, 그건 제 잘못입니다. 지금은 후회가 많이 됩니다.",
+      "behaviorHint": "고개를 숙이고 한숨을 내쉬며 진지하게 말한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "배선우 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "배선우",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "배선우 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 계약 조항이 있었습니다. 다만, 그 큰 공제 항목은 인정하기 어렵습니다.",
+      "behaviorHint": "고개를 살짝 숙이며 눈을 피한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "조민재 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "조민재",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "조민재 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 일부 손상은 있었습니다. 그러나 그보다 앞서 준비를 먼저 하면서 구분이 흐려진 점이 있습니다.",
+      "behaviorHint": "고개를 약간 숙여 고뇌하는 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T08:35:06.874Z",
+  "finishedAt": "2026-04-06T08:36:29.955Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "skipped": 0
+  }
+}

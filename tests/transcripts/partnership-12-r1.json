@@ -1,0 +1,395 @@
+{
+  "caseId": "partnership-12",
+  "category": "partnership",
+  "round": 1,
+  "variant": "basic",
+  "model": "gpt-4o",
+  "isMonetary": false,
+  "partyA": {
+    "name": "류선우",
+    "archetype": "cold_logic",
+    "tell": "schedule_recital"
+  },
+  "partyB": {
+    "name": "장수진",
+    "archetype": "confrontational",
+    "tell": "betrayal_headline"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "선우의 외부 프리랜서 상대 불만 유출"
+    },
+    {
+      "id": "d-2",
+      "name": "수진의 외부 인력 상대 맞불 불만"
+    },
+    {
+      "id": "d-3",
+      "name": "상대가 거래처에 직접 험담했는가"
+    },
+    {
+      "id": "d-4",
+      "name": "상호 비방 금지 원칙의 쌍방 위반"
+    },
+    {
+      "id": "d-5",
+      "name": "문제의 소문은 프리랜서의 buyer recap에서 시작됐다"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "류선우 d-1 사실추궁",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "류선우 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그때 프리랜서 채널에서 그 문제를 언급했습니다. 그러나 험담은 아니었습니다.",
+      "behaviorHint": "눈을 지긋이 감고 잠시 숨을 고르며 차분하게 답변",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "류선우 d-1 동기탐색",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "류선우 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "실무적인 상황이긴 했습니다만, 당시에는 급박하게 처리할 필요가 있었습니다. 미리 말하지 못한 건 제 잘못입니다.",
+      "behaviorHint": "눈을 잠시 내리깔고 고개를 약간 끄덕인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "류선우 d-1 공감접근",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "류선우 씨, 당시 어떤 심정이셨습니까?",
+      "npcResponse": "솔직히 그 순간 정말 불안했습니다. 그 문제를 얘기하는 게 옳은 일인지 확신이 없었습니다.",
+      "behaviorHint": "고개를 약간 숙이며 잠시 생각에 잠긴 듯한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "장수진 d-2 사실추궁",
+      "party": "b",
+      "partyName": "장수진",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "장수진 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 과장된 겁니다.",
+      "behaviorHint": "짧고 단호하게 고개를 저으며 부정한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "류선우 e-1 증거제시",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "류선우 씨, 이 카톡과 음성메모를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 제가 맞습니다. 다만, 그 내용이 수진씨를 직접 험담한 건 아닙니다.",
+      "behaviorHint": "차분하게 설명하며 고개를 끄덕인다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "장수진 e-2 증거제시",
+      "party": "b",
+      "partyName": "장수진",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "장수진 씨, 이 대화 기록 묶음을 보시고 설명해 주십시오.",
+      "npcResponse": "그 대화는 맞습니다. 그러나 그걸 보면, 오히려 제가 불만을 제기했던 이유가 더 분명해집니다.",
+      "behaviorHint": "차분하게 자료를 쳐다보며, 약간의 미소를 지으며 자신감 있는 태도.",
+      "evidenceId": "e-2",
+      "issues": [
+        {
+          "code": "C2",
+          "severity": "WARN",
+          "detail": "이중 조사: 만을"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "류선우 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "류선우 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 외부 프리랜서 채널에서 제 동업자에 대해 말했습니다. 다만, 직접 바이어가 아니라는 점을 고려해 주십시오.",
+      "behaviorHint": "약간의 긴장감을 드러내며 시선을 살짝 피한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "류선우 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "류선우 씨, 왜 그런 선택을 하셨습니까?",
+      "npcResponse": "외부 프리랜서 채널에서는 그 규칙에 대한 명확한 가이드가 없었습니다. 그 때문에 그 문제에 대해 이야기할 수밖에 없었습니다.",
+      "behaviorHint": "조금 불안한 기색을 드러내며, 상황을 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "장수진 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "장수진",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "장수진 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그 문제는 제가 언급했습니다. 다만, 직접적인 바이어가 아닌 외부 인력 채널이었습니다.",
+      "behaviorHint": "고개를 살짝 끄덕이며 저위험을 인정하는 태도로.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "장수진 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "장수진",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "장수진 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 그 시점에서는 제 말을 어떻게 받아들일지 무서웠습니다. 외부 인력 채널에서 그 문제를 말했을 때, 일이 더 커질까 걱정이었습니다.",
+      "behaviorHint": "말하면서 잠시 시선을 아래로 향하며 눈빛이 흔들린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "류선우 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "류선우 씨, 이 크롭된 음성전사 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 다만, 그 발언은 바이어에게 직접 한 것이 아니라 외부 인력 채널에서 나온 것입니다.",
+      "behaviorHint": "차분하게 손을 모으고 상황을 설명한다.",
+      "evidenceId": "e-3",
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"외부 인력 채널에서\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "류선우 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "류선우 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "아닙니다. 그건 제 동업자의 납기 약속 문제로 시작되었습니다. 외부 채널에서 점점 압박이 커졌습니다.",
+      "behaviorHint": "단호하게 고개를 끄덕이며 방어적 자세를 유지한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "류선우 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "류선우 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
+      "npcResponse": "행사 중 그 시점에서는 제 동업자가 납기 약속을 너무 쉽게 하는 상황이 반복되는 것처럼 느껴졌습니다. 외부 프리랜서 채널로 언급하게 된 건, 그 압박감 때문이었습니다.",
+      "behaviorHint": "손으로 책상 위를 한 번 쓸어내리는 동작을 합니다, 약간의 방어적인 표정.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "장수진 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "장수진",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "장수진 씨, 다시 정리해 주십시오.",
+      "npcResponse": "아닙니다. 그건 제 동업자 승인 지연과 출고 문제에서 시작됐습니다. 외부 인력 채널에서 그런 얘기를 한 건 실제 상황에 대한 압박 때문이었습니다.",
+      "behaviorHint": "단호하게 상대의 잘못을 지적하며 상황을 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "장수진 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "장수진",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "장수진 씨, 상대가 거래처에 직접 험담했는가에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 완전한 발신 원문이 없었습니다. 하지만 그 자료가 그 무렵의 상황을 설명하지 못한다고는 할 수 없습니다.",
+      "behaviorHint": "단호하게 눈을 마주치며, 어깨를 펴고 당당한 자세를 유지한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "류선우 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "류선우 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 그 순간 너무 겁이 났습니다. 입을 열면 상황이 더 악화될 것 같아서요.",
+      "behaviorHint": "눈을 피하며 불안한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "류선우 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "류선우 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 제가 홍세진 씨의 개인 카톡과 짧은 음성메모를 통해 제 동업자 장수진 씨에 대한 불만을 말했습니다. 바이어 2차 미팅 직후였고, 납기 일정이 너무 쉽게 잡힌다는 점이 걱정되어 그랬습니다. 제가 그러한 사실을 숨긴 건 외부로 확산될까 두려웠기 때문입니다. 지금은 평판 문제를 일으킨 점에서 후회하고 있습니다.",
+      "behaviorHint": "고개를 숙이며 무겁게 말한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C2",
+          "severity": "WARN",
+          "detail": "이중 조사: 만을"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "장수진 d-2 S5 고백",
+      "party": "b",
+      "partyName": "장수진",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "장수진 씨, 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 말씀드리겠습니다. 제가 홍세진과 보조 스태프에게 제 동업자 류선우의 승인 지연과 출고 불안정에 대한 불만을 흘렸습니다. 당시 바이어 상담 직전이라 곤란한 상황이었고, 순간적인 감정에 휩싸였습니다. 지금은 그것이 와전되어 평판에 영향을 미친 점을 후회하고 있습니다.",
+      "behaviorHint": "다소 긴장된 표정으로 진지하게 재판관을 바라보며 말한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C2",
+          "severity": "WARN",
+          "detail": "이중 조사: 만을"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "류선우 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "류선우",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "류선우 씨, 문제의 소문은 프리랜서의 buyer recap에서 시작됐다에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 후속 요약에서 처음 언급되었습니다. 다만 그 문장은 행사 직후 퍼진 것 같습니다.",
+      "behaviorHint": "차분하게 손을 모으고 시선을 고정시킵니다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "장수진 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "장수진",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "장수진 씨, 문제의 소문은 프리랜서의 buyer recap에서 시작됐다에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 뒤에 나온 요약에서 시작된 것입니다.",
+      "behaviorHint": "짧게 대답하며 약간 긴장된 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-05T23:56:24.424Z",
+  "finishedAt": "2026-04-05T23:56:47.548Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "passRate": 80
+  }
+}

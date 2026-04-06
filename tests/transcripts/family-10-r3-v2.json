@@ -1,0 +1,395 @@
+{
+  "caseId": "family-10",
+  "category": "family",
+  "round": 3,
+  "variant": "empathy",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "유다은",
+    "archetype": "victim_cosplay",
+    "tell": "labor_rollcall"
+  },
+  "partyB": {
+    "name": "유민재",
+    "archetype": "avoidant",
+    "tell": "delay_buffer"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "민재의 금요일 밤 도착 약속"
+    },
+    {
+      "id": "d-2",
+      "name": "민재의 늦은 일정 변경 통보"
+    },
+    {
+      "id": "d-3",
+      "name": "다은의 장보기·메뉴 확대 미공유"
+    },
+    {
+      "id": "d-4",
+      "name": "민재의 20만원 송금은 재료비 분담이었는가"
+    },
+    {
+      "id": "d-5",
+      "name": "명절 분담 원칙의 공동 실패"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "유다은 d-1 공감접근",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "유다은 씨, 당시 어떤 사정이 있었는지 말씀해 주시겠습니까?",
+      "npcResponse": "솔직히, 그때는 모든 걸 제가 다 해결해야 한다는 압박감이 컸습니다. 사실은 그 메시지를 금요일 밤 도착으로 받아들일 수밖에 없었어요.",
+      "behaviorHint": "눈을 살짝 감았다가 다시 뜨며 이야기한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "유다은 d-1 동기탐색",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "유다은 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "그 시점에서 그 메시지를 보고금요일 밤 도착으로 이해할 수밖에 없었습니다. 제 동생이 그 부분에 대해 미리 말해주지 않은 건 제 잘못이 아니었습니다.",
+      "behaviorHint": "억울하다는 듯이 한숨을 쉬며 살짝 고개를 숙인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "유다은 d-1 사실추궁",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "유다은 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 이야기를 했던 건 맞습니다. 다만 그 시점에서는 금요일 밤으로 이해할 수밖에 없었어요.",
+      "behaviorHint": "살짝 고개를 끄덕이며 답변한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "유민재 d-2 사실추궁",
+      "party": "b",
+      "partyName": "유민재",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "유민재 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 그날 저녁에 정리된 뒤 바로 알려드린 기억입니다. 다만, 교통 상황까지 고려하다 보니 확답이 늦어진 건 사실입니다.",
+      "behaviorHint": "조심스럽게 손을 모으고 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "유다은 e-1 증거제시",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "유다은 씨, 잘린 가족 단톡 캡처에 대해 설명해 주십시오.",
+      "npcResponse": "그 캡처에서 제가 본 건 제 동생이 금요일 밤에 온다는 부분이었습니다. 앞뒤 문장은 잘려 있어서 다른 의미를 놓쳤다고 할 수밖에 없네요.",
+      "behaviorHint": "약간 당황한 듯한 표정으로 고개를 갸웃거린다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "유민재 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "유민재",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "유민재 씨, 그때 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "사실 그날 저녁은 정말 혼란스러웠습니다. 끝까지 밤 출발 가능성을 보느라 당장 알리지 못한 점이 가장 힘들었습니다.",
+      "behaviorHint": "손끝을 만지작거리는 긴장된 모습",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "유다은 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "유다은 씨, 왜 그런 선택을 하셨는지 아직 납득되지 않습니다.",
+      "npcResponse": "제 동생이 그 시점에서 금요일 밤에 올 것처럼 말했기 때문입니다. 제가 미리 알리지 못한 건 분명 제 잘못입니다.",
+      "behaviorHint": "약간 고개를 숙이며 손을 맞잡는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "유다은 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "유다은 씨, 조금 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "그 시점에 조건이 있었던 건 맞습니다. 그래도 금요일 밤으로 기대하게 한 건 제 동생이 보낸 그 메시지 때문이었습니다.",
+      "behaviorHint": "고개를 살짝 끄덕이며 인정하는 듯한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "유민재 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "유민재",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "유민재 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 오후 늦게 아침 출발 쪽으로 기운 건 맞습니다. 그래도 끝까지 밤 출발 가능성을 보느라 바로 못 보냈습니다.",
+      "behaviorHint": "조심스럽게 말하며 약간의 변명을 하는 듯한 표정",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"건 맞습니다. 그래도\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "유민재 e-2 증거제시",
+      "party": "b",
+      "partyName": "유민재",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "유민재 씨, 단톡 원본과 일정·통행 기록에 대해 설명해 주십시오.",
+      "npcResponse": "가족 단톡방에서 이야기를 나누던 시점에는 좀 더 교통 상황을 봐야 해서, 즉각적 답변이 불가능했습니다. 그날 저녁이 되어야 상황이 정리되었고, 그때서야 말씀드린 편입니다.",
+      "behaviorHint": "조심스럽게 고개를 끄덕인다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "유다은 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "유다은 씨, 식재료 예약표와 추가 주문 영수증에 대해 설명해 주십시오.",
+      "npcResponse": "그 자료가 맞습니다. 다만, 금요일 밤에 가족들이 올 거라는 기대 때문에 추가 주문을 했던 겁니다.",
+      "behaviorHint": "억울한 표정으로 고개를 끄덕이며 설명한다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "유다은 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "유다은 씨, 왜 그런 판단을 내렸는지 여전히 납득되지 않습니다.",
+      "npcResponse": "그 시점에선 제 동생이 모호하게 말하고 바로잡지 않아서 그렇게 생각할 수밖에 없었습니다. 확정 약속으로 단정했던 건 제 표현이 과했을 수 있습니다.",
+      "behaviorHint": "조금 철회하는 듯한 손 제스처를 하며 설명",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "유다은 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "유다은 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "아닙니다. 그 시점에서는 확정적인 약속으로 표현한 제 말이 과했을 수 있습니다. 다만, 제 동생이 애매한 말을 해 놓고 바로잡지 않은 책임도 있다고 봅니다.",
+      "behaviorHint": "억울한 표정을 짓고, 손을 가슴에 올리며 강조한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"과했을 수 있습니다.\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "유민재 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "유민재",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "유민재 씨, 다시 정리해 주십시오.",
+      "npcResponse": "18시 08분에 일정이 끝난 건 맞습니다. 그런데 그날 저녁에 차 막힘이랑 거래처 정리가 남아 있어서 통보가 늦어진 겁니다.",
+      "behaviorHint": "침착하게 고개를 끄덕이며 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "유민재 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "유민재",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "유민재 씨, 이 쟁점에 대해서도 사실 여부를 확인하겠습니다.",
+      "npcResponse": "늘어난 메뉴에 대해선 추가 주문 전에 확인이 필요했었습니다. 이를 당연한 분담으로 삼으려 하시면 곤란합니다.",
+      "behaviorHint": "조심스러운 표정으로 시선을 피하면서 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "유다은 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "유다은 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 그 시점에는 제가 약속을 어긴 것처럼 느껴졌습니다. 밤새 전 부치고 아침 준비까지 다 한 제 입장에선 그 메시지가 그냥 약속처럼 들렸거든요.",
+      "behaviorHint": "한숨을 쉬며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "유다은 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "유다은 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 그날 불가피하게 금요일 밤이라는 말을 제 동생에게 했습니다. 이런 말이 오해를 불러일으킬 줄은 몰랐고, 당시 제 해석이 겹쳐 상황이 이렇게 된 것 같습니다. 미리 충분히 설명하지 못해 제 잘못이라고 인정합니다. 지금 후회스럽고, 앞으로는 더 신중히 하겠습니다.",
+      "behaviorHint": "고개를 약간 숙이며 진지한 표정",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "유민재 d-2 S5 고백",
+      "party": "b",
+      "partyName": "유민재",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "유민재 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 말씀드리자면, 그날 저녁에 아침 출발 가능성을 알고도 22시 41분까지 알리지 않았던 건 제 잘못입니다. 그 지연 때문에 제 누나가 부담을 더 짊어질 걸 알면서도, 무책임한 동생이란 이미지가 겁나서 판단을 미뤘습니다. 사실은 상황이 이미 어렵다는 걸 알고도 제가 말하지 않은 이유는 두려웠습니다. 지금은 그런 두려움과 후회가 뒤섞여 있습니다.",
+      "behaviorHint": "긴장된 표정으로 어깨를 움츠린다",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "유다은 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "유다은",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "유다은 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 확실히 잘못 전달된 것 같습니다. 문제의 시작은 제 동생이 시간을 못 박지 않은 데 있었습니다.",
+      "behaviorHint": "약간의 혼란스러움을 표정에 드러내며 손을 가볍게 들어 올린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "유민재 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "유민재",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "유민재 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "올해 역할표를 다시 적진 못했어도 큰 틀은 알고 움직였습니다. 서로 현장에서 맞춘 부분도 있었어요.",
+      "behaviorHint": "손가락으로 자료나 기록을 가리키며 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T07:24:43.515Z",
+  "finishedAt": "2026-04-06T07:26:03.696Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "skipped": 0
+  }
+}

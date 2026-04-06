@@ -1,0 +1,406 @@
+{
+  "caseId": "partnership-10",
+  "category": "partnership",
+  "round": 1,
+  "variant": "basic",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "오준서",
+    "archetype": "cold_logic",
+    "tell": "schedule_recital"
+  },
+  "partyB": {
+    "name": "박혜린",
+    "archetype": "confrontational",
+    "tell": "betrayal_headline"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "준서의 최종 승인 없는 오퍼 발송"
+    },
+    {
+      "id": "d-2",
+      "name": "혜린의 일방적 보류 통보와 내부 확산"
+    },
+    {
+      "id": "d-3",
+      "name": "준서가 의도적으로 동업자를 속여 독단 채용했는가"
+    },
+    {
+      "id": "d-4",
+      "name": "공동 채용 프로토콜의 쌍방 위반"
+    },
+    {
+      "id": "d-5",
+      "name": "온보딩 캘린더의 자동 발송 오해"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "오준서 d-1 사실추궁",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "오준서 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 최종 승인으로 받아들이지 않았습니다. 혜린 씨의 말을 체험 시작 신호로 이해했을 뿐입니다.",
+      "behaviorHint": "차분한 표정으로 고개를 살짝 끄덕이며 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "오준서 d-1 동기탐색",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "오준서 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "혜린 씨의 말을 체험 시작 신호로 이해했을 뿐 최종 승인을 확정적으로 인식하지는 않았습니다. 혼동이 있었던 것 같습니다.",
+      "behaviorHint": "살짝 눈을 피하며 설명한다",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"체험 시작 신호로\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "오준서 d-1 공감접근",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "오준서 씨, 당시 어떤 심정이셨습니까?",
+      "npcResponse": "솔직히, 혜린 씨의 말을 체험 시작 신호로 읽었을 뿐, 최종 승인이라고 확신하지는 않았습니다. 그때는 제가 말하면 더 큰일이 날 것 같아서 무섭기도 했습니다.",
+      "behaviorHint": "가볍게 한숨을 쉬며 눈을 잠시 내리깐다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"체험 시작 신호로\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "박혜린 d-2 사실추궁",
+      "party": "b",
+      "partyName": "박혜린",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "박혜린 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 보류 통보는 제가 보냈습니다. 다만 그건 수습을 위한 긴급 조치였습니다.",
+      "behaviorHint": "박혜린은 잠시 고개를 끄덕이며 재판관의 눈을 마주친다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "오준서 e-1 증거제시",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "오준서 씨, 이 오퍼 메일과 온보딩 문서를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "해당 자료는 사실입니다. 다만, 혜린 씨의 '이번 주부터 한번 같이 돌아보자'는 말을 체험 시작 신호로 해석했을 뿐 최종 승인은 아니었습니다.",
+      "behaviorHint": "표정은 차분하지만, 눈은 약간 피하며 상대방의 반응을 살핀다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "박혜린 e-2 증거제시",
+      "party": "b",
+      "partyName": "박혜린",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "박혜린 씨, 이 메시지와 내부 대화를 보시고 설명해 주십시오.",
+      "npcResponse": "그 메시지는 오퍼 메일을 보낸 지 1시간 뒤에 보낸 겁니다. 민서씨 합류를 조정하는 건 긴급 조치였죠.",
+      "behaviorHint": "약간의 긴장감과 함께, 증거를 받아치는 듯한 손짓을 합니다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "오준서 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "오준서 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 저희가 정식 오퍼 형식의 메일과 서류를 보낸 것은 사실입니다. 다만, 그 모든 발송은 체험근무용 임시 세팅으로 준비한 것이었습니다.",
+      "behaviorHint": "냉정하고 사무적인 태도로 한 걸음 뒤에서 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "오준서 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "오준서 씨, 왜 그런 선택을 하셨습니까?",
+      "npcResponse": "그 발송은 최종 채용이 아니라 체험근무용 임시 세팅 때문이었습니다. 미리 말하지 않은 것은 저의 실수입니다.",
+      "behaviorHint": "살짝 긴장한 표정으로 답변하며 손을 주머니에 넣습니다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"체험근무용 임시 세팅\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "박혜린 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "박혜린",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "박혜린 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 지원자와 직원들에게 먼저 알린 건 사실입니다. 하지만 그때 이미 준서 씨 오퍼는 나가 있었어요.",
+      "behaviorHint": "눈을 마주치며 단호하게 말함",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "박혜린 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "박혜린",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "박혜린 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "사실은 상황이 너무 복잡해서 제 말이 더 큰 소리를 내면 어떻게 될지 겁이 났습니다. 그 오해를 풀어내기엔 제가 너무 작아 보였거든요.",
+      "behaviorHint": "살짝 움츠리는 몸짓, 시선을 약간 아래로 내림",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "오준서 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "오준서 씨, 이 크롭된 단톡 캡처를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 캡처는 맞습니다. 다만 정식 오퍼 서류와 메일이 이미 발송된 점을 고려해야 합니다.",
+      "behaviorHint": "차분하게 캡처를 바라보며 설명",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "오준서 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "오준서 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "네, 급여 시트와 공동 final message가 비어 있었는데도 먼저 움직인 책임 부분 인정합니다. 다만, 제 동업자가 상의 없이 먼저 조치를 취한 것도 사실입니다.",
+      "behaviorHint": "차분한 표정으로 재판관을 똑바로 바라본다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "오준서 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "오준서 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
+      "npcResponse": "혜린 씨의 모호한 승인 표현이 마치 최종 승인처럼 들렸기 때문입니다. 확실한 확인이 늦어져서 혼란을 일으킨 점 죄송합니다.",
+      "behaviorHint": "살짝 당황하면서도 차분한 표정을 유지하며 설명",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "박혜린 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "박혜린",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "박혜린 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 보류 통보와 내부 공지를 먼저 돌린 건 인정합니다. 다만 품질 걱정과는 별개로 과장된 취지도 실렸습니다.",
+      "behaviorHint": "강한 톤으로 단호하게 말하며, 자신의 책임을 인정하지만 동시에 상대방의 과장된 행동에 주의를 환기시킨다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "박혜린 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "박혜린",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "박혜린 씨, 준서가 의도적으로 동업자를 속여 독단 채용했는가에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 맞습니다. 준서 씨는 채용 과정을 혼자서 진행했습니다. 하지만 오퍼 메일이나 온보딩 문서, 스케줄표에서 새로운 이름이 발견되었을 때도 이미 늦었죠.",
+      "behaviorHint": "두 손을 책상 위에 놓고 약간 몸을 앞으로 기울인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "오준서 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "오준서 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 그 당시 저는 운영 공백에 대한 두려움이 컸습니다. 문을 닫을 수도 있다는 생각에 승인을 건너뛴 것이 사실입니다.",
+      "behaviorHint": "잠시 눈을 감고 깊은 한숨을 쉰다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "오준서 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "오준서 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 최종 공동 승인 없이 정식 오퍼와 온보딩 서류를 먼저 보낸 제 잘못을 시인합니다. 민서와 혜린 모두에게 같은 혼선을 줬다는 사실도 인정합니다. 이로 인해 생긴 문제들을 미리 적절히 설명하지 못한 점이 후회스럽습니다. 지금은 책임을 지고 개선 방안을 찾고자 합니다.",
+      "behaviorHint": "눈을 감고 고개를 끄덕이며 천천히 말한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "박혜린 d-2 S5 고백",
+      "party": "b",
+      "partyName": "박혜린",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "박혜린 씨, 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 말하면, 제가 재확인 없이 보류 통보를 한 것 그리고 오준서에게 한민서의 의도를 확산시킨 점은 제 잘못이었습니다. 품질 우려가 있었다고 해도, 이런 식으로 절차를 무시한 건 변명할 여지가 없습니다. 당시에는 결과에 대한 두려움 때문에 숨겼지만, 지금 너무 후회됩니다.",
+      "behaviorHint": "진심 어린 표정으로 고개를 살짝 숙인다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 문장 부족(3/4)"
+        },
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "오준서 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "오준서",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "오준서 씨, 온보딩 캘린더의 자동 발송 오해에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 최종 합류가 아니라 체험 일정으로 착각한 것입니다.",
+      "behaviorHint": "재판관을 바라보며 고개를 약간 끄덕입니다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "박혜린 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "박혜린",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "박혜린 씨, 온보딩 캘린더의 자동 발송 오해에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그 문제는 제가 착각을 했습니다. 다만, 일정 제목이 확정처럼 보였던 점은 이해됩니다.",
+      "behaviorHint": "눈을 잠시 내리깔고, 약간의 한숨을 쉰다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-05T23:54:59.337Z",
+  "finishedAt": "2026-04-05T23:55:52.128Z",
+  "summary": {
+    "total": 20,
+    "passed": 15,
+    "warned": 5,
+    "errors": 0,
+    "passRate": 75
+  }
+}

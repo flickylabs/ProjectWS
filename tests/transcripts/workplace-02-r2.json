@@ -1,0 +1,395 @@
+{
+  "caseId": "workplace-02",
+  "category": "workplace",
+  "round": 2,
+  "variant": "evidence",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "한규원",
+    "archetype": "avoidant",
+    "tell": "delay_frame"
+  },
+  "partyB": {
+    "name": "조민아",
+    "archetype": "cold_logic",
+    "tell": "log_recital"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "규원의 선제 낙인과 권한 회수"
+    },
+    {
+      "id": "d-2",
+      "name": "민아의 무단 복사·외부 상담"
+    },
+    {
+      "id": "d-3",
+      "name": "실제 유출 경로의 진위"
+    },
+    {
+      "id": "d-4",
+      "name": "규원의 입막음 지시와 HR 메모"
+    },
+    {
+      "id": "d-5",
+      "name": "조사 전 소문전의 쌍방 가담"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "한규원 e-1 증거제시",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "한규원 씨, 이 접근권 회수 메일과 팀 공지를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 다만, 접근을 즉시 회수한 건 잠시 상황을 점검하기 위한 조치였습니다.",
+      "behaviorHint": "고개를 살짝 끄덕이며 침착하게 설명한다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "한규원 d-1 사실추궁",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "한규원 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "네, 그 공지를 통해 접근을 잠시 묶은 건 맞습니다. 다만 그 직원만을 지목한 것은 아니었습니다.",
+      "behaviorHint": "조심스러운 표정으로 고개를 약간 숙인다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C2",
+          "severity": "WARN",
+          "detail": "이중 조사: 만을"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "조민아 d-2 사실추궁",
+      "party": "b",
+      "partyName": "조민아",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "조민아 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 제가 저장한 것이었습니다. 이후 사용 여부에 대해서는 다른 이유가 있었습니다.",
+      "behaviorHint": "차갑고 사무적인 태도로 재판관을 주시한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "한규원 d-1 동기탐색",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "한규원 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "그 부분은 팀의 불안이 먼저 커지고 있어서 빠른 조치가 필요했습니다. 먼저 설명하지 못한 건 제 잘못입니다.",
+      "behaviorHint": "조심스럽게 손을 모으고 고개를 살짝 숙인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "한규원 d-1 공감접근",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "한규원 씨, 당시 어떤 심정이셨습니까?",
+      "npcResponse": "솔직히 그때는 무서웠습니다. 제가 말하면 더 큰일이 날 것 같아서 조심스러웠습니다.",
+      "behaviorHint": "눈을 피하며 손을 맞잡고 주먹 쥔다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "조민아 e-2 증거제시",
+      "party": "b",
+      "partyName": "조민아",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "조민아 씨, 이 개인 드라이브 업로드 이력과 DM를 보시고 설명해 주십시오.",
+      "npcResponse": "첫째, 개인 드라이브 업로드는 보호용이었습니다. 둘째, 동료에게 보낸 DM은 법무 시각을 확인하려고 물어본 것입니다.",
+      "behaviorHint": "약간의 긴장감을 드러내며 차분하게 설명한다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "한규원 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "한규원 씨, 이 접속 로그와 다운로드 기록을 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "로그를 보면 민아씨 업로드 이전에 제 팀원의 노트북에서 접근이 있었다는 건 사실입니다. 하지만 공식 절차 우선 조정이 필요했던 상황이라, 미리 말씀드리지 못했던 점은 제 잘못입니다.",
+      "behaviorHint": "침착하게 로그 내용을 설명하며 고개를 끄덕인다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "한규원 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "한규원 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "적용은 미리 시작했습니다. 접근권에 대한 조정이 필요했기 때문입니다.",
+      "behaviorHint": "고개를 약간 숙인 채로 조심스럽게 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "조민아 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "조민아",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "조민아 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그 드라이브에 감사 초안 일부를 올렸습니다. 하지만 이는 늦어진 다운로드 때문이었습니다.",
+      "behaviorHint": "조금 긴장한 얼굴로 자료를 확인하며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "한규원 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "한규원 씨, 왜 그런 선택을 하셨습니까?",
+      "npcResponse": "그 시점에서는 확산을 막는 것이 가장 중요하다고 판단했습니다. 미리 말씀드리지 못한 건 제 잘못이지만, 급하게 조치를 취할 수밖에 없었습니다.",
+      "behaviorHint": "조심스레 손을 모으고 약간 긴장된 표정으로",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "조민아 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "조민아",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "조민아 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "사실은 어떻게 말해야 할지 모르겠다는 막막함이었습니다. 실장님에게 무슨 일이 일어날지 걱정되어 침묵을 택했습니다.",
+      "behaviorHint": "살짝 떨리는 손을 올려 조용히 염려하는 표정을 지음",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "한규원 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "한규원 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "네, 제가 제 팀원을 먼저 의심한 부분은 사실입니다. 그러나 그때는 다른 정황들도 있었습니다.",
+      "behaviorHint": "고개를 약간 숙이며 조심스럽게 설명한다",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "조민아 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "조민아",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "조민아 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 그 외부 대화에서 일부 문장을 실제로 전송했습니다. 다만, 실장님이 그걸 어떻게 해석했는지는 순서상 먼저 확인이 필요합니다.",
+      "behaviorHint": "눈을 마주치며 냉정하게 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "조민아 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "조민아",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "조민아 씨, 실제 유출 경로의 진위에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "원본 반출 시점과 개인 보관 흔적이 일치하지 않는다는 주장입니다. 저장공간에서 기록된 시점은 그보다 앞선 시점입니다.",
+      "behaviorHint": "냉정하게 데이터 간 시간 차이를 설명하며 손으로 테이블을 가볍게 두드린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "한규원 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "한규원 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
+      "npcResponse": "그 시점에 제 팀원과의 대화 기록을 토대로 판단할 수밖에 없었습니다. 미리 말하지 못한 건 제 잘못이지만, 다들 아시다시피 외부 대화가 겹치면서 의심을 피하기 어려웠습니다.",
+      "behaviorHint": "조심스러워 보이는 표정으로 설명하다가 약간 무거운 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "한규원 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "한규원 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "사실 그때는 굉장히 불안했습니다. 제가 조금만 잘못 말해도 팀의 신뢰가 무너질 것 같아서 두려웠습니다.",
+      "behaviorHint": "눈을 아래로 떨어뜨리며 긴장된 표정",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "한규원 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "한규원 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 조민아 씨에 대한 팀원 접근권을 제재한 건 맞습니다. 확정된 증거가 없었음에도 불구하고, 보안 리스크 인원으로 공지한 건 역시 사실입니다. 미리 말하지 못한 이유는 조직의 안정을 우선시했기 때문입니다. 지금은 좀 더 신중했어야 했다고 후회하고 있습니다.",
+      "behaviorHint": "차분하지만 약간 긴장된 얼굴로, 손을 한번 움켜쥐었다가 놓음",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "조민아 d-2 S5 고백",
+      "party": "b",
+      "partyName": "조민아",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "조민아 씨, 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 제가 개인 드라이브에 정보를 저장했던 것은 제 실수입니다. 당시 제 전 직장 동료 DM이 접근할 수 있는 상태였습니다. 왜냐하면 정보를 안전하게 옮기기 전에 급한 업무가 많아 놓쳤기 때문입니다. 지금은 그때의 불찰을 깊이 후회하고 있습니다.",
+      "behaviorHint": "조금 머뭇거리며 솔직한 표정으로 고백한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "한규원 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "한규원",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "한규원 씨, 조사 전 소문전의 쌍방 가담에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 제가 특정 개인을 지목하지 않았던 익명 공지였습니다.",
+      "behaviorHint": "조심스럽게 시선을 피하며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "조민아 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "조민아",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "조민아 씨, 조사 전 소문전의 쌍방 가담에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 상사와의 대화는 하소연에 불과했습니다.",
+      "behaviorHint": "차분하게 손을 모으고, 시선을 재판관에게 고정한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T00:40:26.263Z",
+  "finishedAt": "2026-04-06T00:40:51.074Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "passRate": 80
+  }
+}

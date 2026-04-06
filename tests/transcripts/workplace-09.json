@@ -45,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "송준석 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그 부분은 제가 팀원들 참조에서 제외하는 조치를 했습니다만, 그게 바로 무슨 의도를 가진 건 아닙니다.",
-      "behaviorHint": "살짝 움켜쥔 손을 테이블 위에 올려두고 있다.",
+      "npcResponse": "네, 그 후속 메일에서 제 팀원을 빠뜨린 건 맞습니다. 다만 그 당시에는 상황이 좀 복잡해서 그렇게 판단했습니다.",
+      "behaviorHint": "조심스럽게 눈을 피하며 말함",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -61,16 +61,10 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "송준석 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "그 계정이 재계약 직전이라 작은 의심도 무시할 수가 없었습니다. 운영상 위험을 피하려 했던 것이고, 미리 말씀드리지 못한 건 제 부족함입니다.",
-      "behaviorHint": "조금 긴장한 듯 목소리를 낮추며 설명한다.",
+      "npcResponse": "그 계정은 재계약을 앞두고 있어서 작은 의심도 매출 리스크로 이어질 수 있었습니다. 그래서 운영상 필요로 그때 즉시 움직일 수밖에 없었습니다.",
+      "behaviorHint": "조심스럽게 말을 꺼내며 손을 약간 올리며 설명한다.",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "A4",
-          "severity": "WARN",
-          "detail": "클리셰:미리말씀"
-        }
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -83,8 +77,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "송준석 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "솔직히 그때 매우 조심스러웠습니다. 계정이 멈추지 않도록 하는 게 첫 번째 목표였거든요.",
-      "behaviorHint": "고개를 약간 숙이며 조심스럽게 말한다.",
+      "npcResponse": "솔직히, 그때는 좀 두려웠습니다. 작은 의심만으로도 큰 매출 리스크가 될 수 있다고 생각했거든요.",
+      "behaviorHint": "고개를 약간 떨구고, 손으로 목을 한 번 만진다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -99,8 +93,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "유은채 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 제가 행동한 건 맞습니다. 하지만 그 표현이 대외 전달로 의미가 확정된 것은 아닙니다.",
-      "behaviorHint": "입술을 굳게 다물고 차분하게 말한다.",
+      "npcResponse": "네, 제가 한 것은 맞습니다. 그러나 그것의 의미는 제 의도와는 다릅니다.",
+      "behaviorHint": "조금 긴장된 표정으로 고개를 끄덕인다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -115,8 +109,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "송준석 씨, 이 거래처 후속 이메일과 회의록을 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 자료를 보면, 제 팀원에게 메일을 포함시키지 않은 건 사실입니다. 다만, 그게 곧바로 어떤 의도를 단정 짓는 것은 어려운 부분입니다.",
-      "behaviorHint": "조심스럽게 자료를 바라보며 손끝으로 책상을 두드린다.",
+      "npcResponse": "그 자료는 맞습니다. 하지만 참조에서 제 팀원을 뺀 건, 당시 상황에서 급하게 결정한 조치라 구체적인 의도가 없었다고 말씀드릴 수 있습니다.",
+      "behaviorHint": "침착하게 손을 모으며 설명한다.",
       "evidenceId": "e-1",
       "issues": [],
       "error": null
@@ -131,8 +125,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "유은채 씨, 이 외부 대화와 내부 화면 캡처를 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 제가 결백을 입증받고자 한 확인 요청이었습니다. 오히려 그걸 보면 제 의도가 외부 공유가 아니라는 점이 명백합니다.",
-      "behaviorHint": "침착하게 고개를 끄덕이며 설명.",
+      "npcResponse": "그 대화는 확인 요청을 위해 보낸 것입니다. 내부 화면 캡처는 여러 상황을 정리하던 과정에서 사용한 자료일 뿐입니다.",
+      "behaviorHint": "약간의 긴장감을 띄며 천천히 말한다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -147,8 +141,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "송준석 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그날 유은채 씨를 후속 메일 참조에서 뺐습니다. 미팅 종료 두 시간 안에 그런 조치가 이루어졌던 건 맞습니다.",
-      "behaviorHint": "조심스럽게 고개를 끄덕이며 설명한다.",
+      "npcResponse": "회의 후 두 시간 안에 은채씨를 참조에서 뺀 건 맞습니다. 그때는 계정 안정화가 필요하다고 판단했습니다.",
+      "behaviorHint": "조금 긴장한 듯 손가락을 꼼지락거린다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -163,16 +157,10 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "송준석 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "운영의 연속성을 유지하기 위해 급히 판단할 수밖에 없었습니다. 미리 말씀드리지 못한 점은 제 잘못입니다.",
-      "behaviorHint": "조심스럽게 손을 모으고, 부드럽게 고개를 끄덕인다.",
+      "npcResponse": "급한 상황에서 계정을 멈추지 않게 하려는 의도로 판단했습니다. 미리 말씀드리지 않은 점은 제 잘못입니다.",
+      "behaviorHint": "조심스럽고 방어적인 태도로 고개를 약간 숙인다.",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "A4",
-          "severity": "WARN",
-          "detail": "클리셰:미리말씀"
-        }
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -185,8 +173,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "유은채 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "강소라 씨에게 내부 화면을 보낸 건 사실입니다. 다만, 그 목적은 대외 전달이 아니라 확인 요청이었습니다.",
-      "behaviorHint": "살짝 주먹을 쥐었다가 바로 풀며 침착함을 유지한다.",
+      "npcResponse": "네, 강소라 씨에게 내부 화면 일부를 보냈습니다. 다만 확인 요청 차원에서 한 것이지, 대외 전달 의도는 아니었습니다.",
+      "behaviorHint": "살짝 긴장한 듯 손을 모은다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,8 +189,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "유은채 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "솔직히, 제가 책임질 수 없는 상황에 마주한 것이 가장 두려웠습니다. 제가 무슨 말을 해도 더 큰 문제가 생길까봐 걱정했습니다.",
-      "behaviorHint": "표정에서 살짝 긴장함이 드러난다. 손을 가볍게 만지작거린다.",
+      "npcResponse": "솔직히, 제가 말하면 더 큰일이 날 것 같다는 두려움이 있었습니다. 제 팀장에게 신뢰를 잃을까 봐 입을 다물 수밖에 없었습니다.",
+      "behaviorHint": "긴장된 표정으로 잠시 멈칫하고 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -217,8 +205,8 @@
       "action": "evidence_present",
       "stance": "partial",
       "judgeQuestion": "송준석 씨, 이 공유 문서 열람 로그 PDF 파일을 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 로그 파일은 제가 제출한 게 맞습니다. 다만 그 문서가 어떻게 열람됐는지에 대해서는 확실한 정보가 부족해 보입니다.",
-      "behaviorHint": "살짝 긴장한 표정으로 서류를 검토하며 답변한다.",
+      "npcResponse": "그 자료는 맞지만 문서의 ID와 경로가 잘려 있어서 직접적인 유출 증거가 되진 않습니다. 미팅 종료 두 시간 안에 참조 제거와 회의 발언이 이어진 순서였기 때문에 신속하게 대응한 것입니다.",
+      "behaviorHint": "조심스럽고 침착하게 설명하며 손으로 자료를 가리킨다.",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -233,8 +221,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "송준석 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "네, 그날 미팅 직후에 조치가 있었습니다. 다만, 그런 과정에서 제 팀원의 평판이 훼손된 점은 유감입니다.",
-      "behaviorHint": "차분히 설명하며 손짓으로 상황을 정리하는 듯한 제스처를 취한다.",
+      "npcResponse": "아닙니다. 그것은 제가 그날 미팅 종료 직후에 조치한 것입니다. 다만, 그 과정에서 제 팀원의 발언이 중요한 역할을 했다는 점은 강조하고 싶습니다.",
+      "behaviorHint": "조용히 손을 모으고 차분하게 설명한다",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -249,8 +237,8 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "송준석 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "재계약을 코앞에 둔 계정이라 매출 리스크를 최소화해야 했습니다. 설명이 부족했던 건 제 잘못입니다.",
-      "behaviorHint": "상대의 반응을 살피며 조심스러운 표정으로 말한다.",
+      "npcResponse": "그 계정이 재계약을 앞두고 있었습니다. 작은 의심도 매출 리스크로 보고 그랬습니다.",
+      "behaviorHint": "조심스럽게 손을 모으며 설명하다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -265,8 +253,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "유은채 씨, 다시 정리해 주십시오.",
-      "npcResponse": "강소라 씨에게 내부 화면을 보낸 것은 사실입니다. 하지만, 그 내용이 외부로 퍼지게 된 건 저로서도 예상치 못한 부분이었습니다.",
-      "behaviorHint": "차분하게 설명하며, 예상치 못한 상황임을 강조한다.",
+      "npcResponse": "네, 내부 화면을 강소라 씨에게 보낸 것은 맞습니다. 하지만 그 상황에서는 당사자 간의 갈등을 해결하기 위한 조치였습니다.",
+      "behaviorHint": "냉정하게 차분한 모습으로, 손을 아래로 내리며 이야기한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -281,8 +269,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "유은채 씨, 내부 준비자료 실제 유출 여부에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 문서는 제가 외부에 보냈습니다. 하지만 그 제목과 발신 시각만 보고 판단하는 것은 무리가 있습니다.",
-      "behaviorHint": "상대의 말을 차분하게 받아들이며, 눈을 살짝 감고 고개를 끄덕인다.",
+      "npcResponse": "네, 자료 발신은 했습니다. 다만, 그 시점에서 잘못 이해된 부분이 있습니다.",
+      "behaviorHint": "단호하게 의자에 앉아 상대방을 주시한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -297,8 +285,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "송준석 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 말해, 그때는 정말 불안했습니다. 거래처 앞에서 실수로 위험을 줄까 봐 조심스러웠습니다.",
-      "behaviorHint": "고개를 잠시 숙였다가 재판관을 다시 본다.",
+      "npcResponse": "사실 그때는 무서웠습니다. 작은 실수도 큰 매출 리스크로 이어질까 두려워서 숨을 죽이고 있었습니다.",
+      "behaviorHint": "머리를 약간 숙이고, 조용한 톤으로 말하기",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -313,8 +301,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "송준석 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "네, 사실 그 거래처 후속 메일 참조에서 제가 유은채 씨를 뺐던 것은 맞습니다. 당시에는 사실 확인이 채 이루어지지 않은 상태였고, 그로 인해 낙인이 찍힌 점은 인정합니다. 숨긴 이유는 혹시나 팀 전체에 미칠 위험을 최소화하려 했기 때문입니다. 지금은 그 판단이 잘못되었음을 깨닫고 후회하고 있습니다.",
-      "behaviorHint": "고개를 약간 숙이며 조심스럽게 설명",
+      "npcResponse": "네, 그날 거래처 후속 메일 참조에서 제 팀원 유은채 씨를 제외했습니다. 사실 확인 전에 먼저 배제한 것은 이번 사안에서 정말 잘못된 결정이었습니다. 그럼에도 불구하고, 당시에 급한 상황이라고 생각해서 그렇게 했던 것 같습니다. 지금은 그 결정으로 인해 발생한 상처와 낙인을 후회하고 있습니다.",
+      "behaviorHint": "조심스럽게 고개를 숙이며 후회의 표정을 짓는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -329,8 +317,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "유은채 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "첫째, 제가 강소라 AE에게 내부 슬랙 화면 일부와 책임 추정 메시지를 보냈습니다. 둘째, 외부 파트너가 내부 갈등을 보게 된 것은 제 잘못입니다. 솔직히, 그때는 상황이 너무 급박해서 그런 결정을 했습니다. 지금은 후회하고 있습니다.",
-      "behaviorHint": "눈을 피하지 않고 재판관을 바라보며 진솔한 표정으로 말한다.",
+      "npcResponse": "솔직히 말씀드리면, 제가 내부 슬랙 화면 일부와 책임 추정 메시지를 강소라 AE에게 보냈습니다. 외부 파트너에게 내부 갈등을 노출한 순간, 제가 선을 넘었다는 것을 부인할 수 없습니다. 그때는 모든 것이 너무 급박했고, 어떻게 수습해야 할지 몰랐습니다. 지금은 그때의 행동이 정말 후회됩니다.",
+      "behaviorHint": "감정을 억제하며 솔직함을 드러내는 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -345,16 +333,10 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "송준석 씨, 제3자 통한 쌍방 추측전에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 외부 분위기를 먼저 살피려 했던 건 사실입니다. 그 과정에서 미리 말씀드리지 못한 점은 유감입니다.",
-      "behaviorHint": "고개를 살짝 숙이고 조심스럽게 말한다.",
+      "npcResponse": "그 점은 사실과 다릅니다. 제가 직접 확인하기 전에는 외부 분위기를 먼저 살폈던 부분이 있긴 합니다.",
+      "behaviorHint": "시선을 살짝 피하고, 손끝을 만지작거림",
       "evidenceId": null,
-      "issues": [
-        {
-          "code": "A4",
-          "severity": "WARN",
-          "detail": "클리셰:미리말씀"
-        }
-      ],
+      "issues": [],
       "error": null
     },
     {
@@ -367,19 +349,25 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "유은채 씨, 제3자 통한 쌍방 추측전에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 제가 그렇게 진행하지 않았습니다.",
-      "behaviorHint": "시선을 피하며 고개를 살짝 젓는다.",
+      "npcResponse": "아닙니다. 그건 제가 강소라 씨에게 직접 문의한 일이었습니다. 그 직후 외부 채널로 진행했습니다.",
+      "behaviorHint": "살짝 주저하다가 단호하게 말하며 고개를 살짝 끄덕인다.",
       "evidenceId": null,
-      "issues": [],
+      "issues": [
+        {
+          "code": "B2",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 실명 노출: 강소라"
+        }
+      ],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T21:24:24.321Z",
-  "finishedAt": "2026-04-05T21:27:46.105Z",
+  "startedAt": "2026-04-05T23:43:53.425Z",
+  "finishedAt": "2026-04-05T23:47:14.062Z",
   "summary": {
     "total": 20,
-    "passed": 17,
-    "warned": 3,
+    "passed": 19,
+    "warned": 1,
     "errors": 0,
     "skipped": 0
   }

@@ -1,0 +1,395 @@
+{
+  "caseId": "workplace-06",
+  "category": "workplace",
+  "round": 2,
+  "variant": "evidence",
+  "model": "gpt-4o",
+  "isMonetary": false,
+  "partyA": {
+    "name": "박준호",
+    "archetype": "avoidant",
+    "tell": "chaos_cover"
+  },
+  "partyB": {
+    "name": "이서린",
+    "archetype": "confrontational",
+    "tell": "quote_and_point"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "준호의 일괄 재배정과 대시보드 수정"
+    },
+    {
+      "id": "d-2",
+      "name": "서린의 레거시 권한 사용과 라우팅 변경"
+    },
+    {
+      "id": "d-3",
+      "name": "통합 공지의 단독 통제권 부여 여부"
+    },
+    {
+      "id": "d-4",
+      "name": "준호의 선행 캘리브레이션 메모"
+    },
+    {
+      "id": "d-5",
+      "name": "지연 경고 후 쌍방 독단 핫픽스"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "박준호 e-1 증거제시",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "박준호 씨, 이 공지 캡처와 역할표를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 일부 내용이 잘린 것 같습니다. 통합 초기 2주 동안은 공동 승인이 있었고, 권하늘 PM에게도 기록해야 했습니다.",
+      "behaviorHint": "침착한 표정을 유지하면서 캡처를 살펴본다.",
+      "evidenceId": "e-1",
+      "issues": [
+        {
+          "code": "B2",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 실명 노출: 권하늘"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "박준호 d-1 사실추궁",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "박준호 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "계정 오너와 기준을 변경한 건 사실입니다. 그 절차가 다소 복잡해서 권하늘 PM에게 기록한 시점이 늦어진 것 같습니다.",
+      "behaviorHint": "짧은 한숨을 내쉬며 조심스럽게 말을 고른다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B2",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 실명 노출: 권하늘"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "이서린 d-2 사실추궁",
+      "party": "b",
+      "partyName": "이서린",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "이서린 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그 시간대에 수정한 건 맞습니다. 하지만 왜 그렇게 된 건지에 대한 배경이 있습니다.",
+      "behaviorHint": "차분하지만 단호한 표정으로 상대방을 응시한다",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "박준호 d-1 동기탐색",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "박준호 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "그 시기에 통합 운영 압박이 커서 상황을 빠르게 해결할 수밖에 없었습니다. 미리 말씀드리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "조심스럽게 고개를 끄덕이며 말함.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "박준호 d-1 공감접근",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "박준호 씨, 당시 어떤 심정이셨습니까?",
+      "npcResponse": "솔직히, 그 시기에는 압박이 엄청났습니다. 제가 말을 꺼내면 상황이 더 복잡해질까 두려웠습니다.",
+      "behaviorHint": "말을 마치며 잠시 고개를 숙여 내색한다",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "이서린 e-2 증거제시",
+      "party": "b",
+      "partyName": "이서린",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "이서린 씨, 이 권한 로그와 변경 내역을 보시고 설명해 주십시오.",
+      "npcResponse": "그 로그가 제 권한 기록은 맞습니다. 하지만 라우팅 규칙이나 벤더 태그의 변경은 단독 결정을 한 게 아닙니다.",
+      "behaviorHint": "침착한 표정으로 손을 책상 위에 얹는다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "박준호 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "박준호 씨, 이 역할 기준 문서와 설명 메모를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 문서와 메모는 맞습니다. 다만, 그때는 급한 상황이었고, 제 팀원과 충분히 소통하지 못한 점은 인정합니다.",
+      "behaviorHint": "조심스럽게 문서를 보며 머리를 짧게 긁적입니다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "박준호 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "박준호 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "그 시기 제 팀원이 없었기에 제가 조치를 취했습니다. 그 절차상 미리 말하지 못한 점은 제 잘못입니다.",
+      "behaviorHint": "책임을 감수하며 솔직한 표정으로 고개를 살짝 숙인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "이서린 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "이서린",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "이서린 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "박준호 씨와 소통은 부족했습니다. 급한 일이었지만, 그건 제 잘못입니다.",
+      "behaviorHint": "고개를 약간 숙이며 눈을 피한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "박준호 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "박준호 씨, 왜 그런 선택을 하셨습니까?",
+      "npcResponse": "그 시기에는 시스템과 절차가 많이 혼동스러운 상황이었습니다. 팀이 멈추지 않도록 대처해야 했던 점은 이해 부탁드립니다.",
+      "behaviorHint": "살짝 긴장한 듯 손을 모으고 자세를 고쳐 앉는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "이서린 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "이서린",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "이서린 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 그때는 급박했습니다. 정당한 절차가 있음에도 제가 앞서 나설 수밖에 없었어요.",
+      "behaviorHint": "고개를 약간 숙이며 솔직한 표정을 지음.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "박준호 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "박준호 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "그 부분은 제가 주도적으로 변경한 것은 아닙니다. 이서린 씨가 그 시기 고객 상태를 관리하고 있었으니까요.",
+      "behaviorHint": "조심스럽게 상대의 책임을 암시하며 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "이서린 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "이서린",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "이서린 씨, 다시 정리해 주십시오.",
+      "npcResponse": "PM 기록이 없었다는 건 사실입니다. 하지만 그날 팀장님이 통합 큐를 먼저 변경했습니다.",
+      "behaviorHint": "재판관을 직시하면서 단호하게 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "이서린 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "이서린",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "이서린 씨, 통합 공지의 단독 통제권 부여 여부에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 문구가 오해를 일으켰을 뿐입니다.",
+      "behaviorHint": "차분한 표정으로 고개를 약간 숙인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "박준호 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "박준호 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
+      "npcResponse": "그 시기에는 이서린 씨가 고객 상태 관리를 맡고 있었습니다. 미리 말씀드리지 못한 건 제 잘못이지만, 급한 상황이 발생해서 어쩔 수 없었습니다.",
+      "behaviorHint": "고개를 살짝 숙이며 말을 이어간다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "박준호 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "박준호 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 그 시기에는 정말 혼란스러웠습니다. 제가 어떤 결정을 내리든 더 큰 문제를 일으킬까 두려웠습니다.",
+      "behaviorHint": "말을 하면서 약간 주저하고 머뭇거리는 듯한 모습을 보인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "박준호 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "박준호 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "네, 제가 공식 인수인계 전에 고객 계정을 대거 재배정했고 헬스 점수 대시보드 기준도 직접 수정했습니다. 이것은 통합 첫 2주 동안 이루어진 일이었습니다. 제가 이런 일을 미리 말하지 못했던 이유는 제 체면 때문이었습니다. 지금은 두려운 마음입니다.",
+      "behaviorHint": "고개를 약간 숙이고 눈을 피하며 돌아보는 모습",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "이서린 d-2 S5 고백",
+      "party": "b",
+      "partyName": "이서린",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "이서린 씨, 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히 말하겠습니다. 통합 첫 2주 동안 제가 레거시 관리자 권한으로 라우팅 규칙과 벤더 태그를 수정했습니다. 그때는 제 영역을 지키지 못한 사람으로 보일까 두려웠습니다. 지금은 그때의 판단을 후회하고 있습니다.",
+      "behaviorHint": "고개를 약간 숙이며 솔직한 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "박준호 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "박준호",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "박준호 씨, 지연 경고 후 쌍방 독단 핫픽스에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "그 시점에서 핫픽스를 진행한 건 맞습니다. 다만, 공동 승인과 PM 기록을 먼저 남기는 절차를 따르지 못한 점이 있습니다.",
+      "behaviorHint": "박준호가 다소 긴장한 표정으로 말을 끌며 변명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "이서린 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "이서린",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "이서린 씨, 지연 경고 후 쌍방 독단 핫픽스에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 사실과 다릅니다. 그 시점엔 공동 승인이 필요했습니다.",
+      "behaviorHint": "차분하게 앉은 자세에서 재판관을 바라본다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T00:41:58.157Z",
+  "finishedAt": "2026-04-06T00:42:20.614Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "passRate": 80
+  }
+}

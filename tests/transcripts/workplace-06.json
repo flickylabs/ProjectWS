@@ -45,8 +45,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "박준호 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "그 시기에 몇 가지 큰 변경을 하긴 했습니다. 하지만 그 절차에 따라 공동 승인 후 권하늘 PM에게 기록하도록 되어 있었습니다.",
-      "behaviorHint": "작은 한숨을 내쉬며 천천히 고개를 끄덕인다.",
+      "npcResponse": "그 시기에 계정 오너 변경과 기준 수정에 있어 제가 역할을 했던 건 맞습니다. 다만, 그 절차에 따라 권하늘 PM에게 기록도 했어야 해서, 그 부분은 나중에 설명드리겠습니다.",
+      "behaviorHint": "상황을 설명하며 조심스럽게 고개를 끄덕인다.",
       "evidenceId": null,
       "issues": [
         {
@@ -67,8 +67,8 @@
       "action": "motive_search",
       "stance": "hedge",
       "judgeQuestion": "박준호 씨, 그렇게 하신 이유가 무엇입니까?",
-      "npcResponse": "그 시기는 통합이 막 시작된 때라 운영 압박이 컸습니다. 그래서 조금 서둘러 조치를 취할 수밖에 없었습니다.",
-      "behaviorHint": "약간 긴장된 표정으로, 손을 가볍게 모은다.",
+      "npcResponse": "그 시기에는 통합 초기라서 운영 압박이 정말 심했습니다. 빠르게 대응하지 않으면 시스템 전체가 흔들릴 수밖에 없었습니다.",
+      "behaviorHint": "조심스럽게 설명하며 손을 모읍니다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -83,8 +83,8 @@
       "action": "empathy_approach",
       "stance": "hedge",
       "judgeQuestion": "박준호 씨, 당시 어떤 심정이셨습니까?",
-      "npcResponse": "그 시기에는 상당히 큰 압박을 느꼈습니다. 솔직히, 무언가 잘못되면 저와 제 팀 모두에게 큰 영향을 미칠까 두려웠습니다.",
-      "behaviorHint": "표정이 약간 굳어지고, 손을 꼼지락거릴 수 있다.",
+      "npcResponse": "솔직히 그 시기에는 제 팀원들이 걱정되었습니다. 그 절차에 대해 혼란스러움을 느꼈고, 어떤 결정을 내려야 할지 두려운 순간이었습니다.",
+      "behaviorHint": "조금 불안한 표정으로 얘기하며 손을 가볍게 움켜쥔다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -99,8 +99,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이서린 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "제가 수정을 건드린 건 사실입니다. 하지만 그 시기에 왜 그렇게 했는지는 절차의 문제가 있었습니다.",
-      "behaviorHint": "눈을 마주치며 단호하게 말한다.",
+      "npcResponse": "그 시기에 제가 직접 수정한 건 아닙니다. 다만, 어떻게 된 일인지 보는 데 중요한 절차가 있었습니다.",
+      "behaviorHint": "고개를 살짝 기울이며 눈을 마주친다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -115,10 +115,16 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "박준호 씨, 이 공지 캡처와 역할표를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 캡처는 원본과 다소 차이가 있습니다. 조건이 명확히 설명되지 않은 상태에서 독립 권한처럼 보일 수 있는 부분이 있습니다.",
-      "behaviorHint": "캡처를 들여다보며 고개를 살짝 갸웃한다.",
+      "npcResponse": "그 캡처는 일부 내용이 잘려 있어서 전체 맥락을 반영하지 못합니다. 계정 오너 변경과 기준 수정은 당시 공동으로 결정된 것이고, 권하늘 PM에게 따로 기록했습니다.",
+      "behaviorHint": "조심스럽게 말을 꺼내며, 손으로 문서를 잘 살펴보는 모습",
       "evidenceId": "e-1",
-      "issues": [],
+      "issues": [
+        {
+          "code": "B2",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 실명 노출: 권하늘"
+        }
+      ],
       "error": null
     },
     {
@@ -131,8 +137,8 @@
       "action": "evidence_present",
       "stance": "hedge",
       "judgeQuestion": "이서린 씨, 이 권한 로그와 변경 내역을 보시고 설명해 주십시오.",
-      "npcResponse": "그 자료는 제가 했다는 걸 보여주지만, 의미는 다른 겁니다. 규칙상 타팀 큐 수정은 공동 승인과 기록이 필요했죠.",
-      "behaviorHint": "약간 미소 지으며, 의도적으로 자세를 바로잡는다.",
+      "npcResponse": "그 기록은 맞습니다, 하지만 단순한 기록 이상을 의미하지 않습니다. 라우팅과 벤더 태그 변경은 여러 절차를 거치는 것이 원칙입니다.",
+      "behaviorHint": "잠시 시선을 피하며 한숨을 내쉰다.",
       "evidenceId": "e-2",
       "issues": [],
       "error": null
@@ -147,8 +153,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "박준호 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 그 시기에 계정 배정은 제가 진행했습니다. 다만 그 절차에 대해선 나중에 충분히 설명드리겠습니다.",
-      "behaviorHint": "조심스러운 표정으로 손을 가볍게 맞잡고 차분히 대답한다.",
+      "npcResponse": "그 시기에는 제 팀원들과의 긴밀한 협력이 필요했습니다. 다만, 급하게 결정된 부분이 있어 이후 설명이 늦어졌습니다.",
+      "behaviorHint": "살짝 고개를 끄덕이며 이해를 구하는 표정",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -163,8 +169,8 @@
       "action": "motive_search",
       "stance": "partial",
       "judgeQuestion": "박준호 씨, 왜 그런 선택을 하셨습니까?",
-      "npcResponse": "그 시기엔 상황이 급박해서 그 계정을 재배정할 수밖에 없었습니다. 미리 말씀드리지 못한 건 제 판단 미숙이었습니다.",
-      "behaviorHint": "약간 긴장된 표정으로 손을 무릎 위에 얹습니다.",
+      "npcResponse": "그 시기에는 상황이 급박하게 돌아가서 판단이 빨랐습니다. 미리 말씀드리지 못한 건 제 잘못입니다만, 그 기준에 맞춰 조정할 수밖에 없었습니다.",
+      "behaviorHint": "약간 당황한 듯한 표정을 짓는다.",
       "evidenceId": null,
       "issues": [
         {
@@ -185,8 +191,8 @@
       "action": "fact_pursuit",
       "stance": "partial",
       "judgeQuestion": "이서린 씨, 좀 더 구체적으로 말씀해 주십시오.",
-      "npcResponse": "네, 제가 그 일을 한 건 사실입니다. 그런데 그 시기에는 팀장님의 지시가 급하게 내려왔습니다.",
-      "behaviorHint": "살짝 미소를 띠며 상대방을 응시",
+      "npcResponse": "네, 제가 그때 라우팅 규칙과 벤더 태그를 수정했습니다. 다만, 그 권한을 사용한 건 그 시기의 긴급 상황 때문이었습니다.",
+      "behaviorHint": "약간 긴장된 표정으로 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -201,8 +207,8 @@
       "action": "empathy_approach",
       "stance": "partial",
       "judgeQuestion": "이서린 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
-      "npcResponse": "그때는 정말 답답했습니다. 제가 잘못한 게 드러나면 일이 커질까봐 무서웠습니다.",
-      "behaviorHint": "살짝 긴장된 표정으로, 눈을 내리깔며.",
+      "npcResponse": "솔직히 그때는 두려웠습니다. 제가 알리면 상황이 더 복잡해질 것 같았어요.",
+      "behaviorHint": "잠시 눈을 내리깔며 고백하듯이 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -217,8 +223,8 @@
       "action": "evidence_present",
       "stance": "partial",
       "judgeQuestion": "박준호 씨, 이 역할 기준 문서와 설명 메모를 보시고 입장을 밝혀 주십시오.",
-      "npcResponse": "그 문서와 메모에 명시된 규칙은 알고 있습니다. 하지만, 통합 첫 2주 동안 급한 상황이 많아서 정해진 절차를 지키지 못한 경우가 있었습니다.",
-      "behaviorHint": "약간의 당황을 숨기며 침착하게 설명하려는 태도",
+      "npcResponse": "그 자료는 제가 담당했던 시기에 맞습니다. 다만, 그 기준들이 모두 상황에 따라 유연하게 적용될 필요가 있었던 것도 사실입니다.",
+      "behaviorHint": "약간 머뭇거리며 설명하다가 점점 확신을 가지는 모습",
       "evidenceId": "e-3",
       "issues": [],
       "error": null
@@ -233,8 +239,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "박준호 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
-      "npcResponse": "아닙니다. 그건 계정 관리와 기준 수정 절차 상의 일이었습니다. 그 시기에 이서린 씨가 고객 상태와 설정을 지속적으로 관리하고 있었습니다.",
-      "behaviorHint": "조심스럽고 우회적으로 설명하며 손을 약간 드는 제스처를 취한다.",
+      "npcResponse": "계정 오너 변경과 기준 수정은 공동 승인 후 권하늘 PM에게 기록해야 했습니다. 이서린 씨가 그 시기에 고객 상태와 레거시 설정을 계속 관리하고 있었습니다.",
+      "behaviorHint": "조심스럽게 손을 모으며 설명한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -249,14 +255,14 @@
       "action": "motive_search",
       "stance": "blame",
       "judgeQuestion": "박준호 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
-      "npcResponse": "그 시기에는 여러 일이 겹쳐 있었기 때문입니다. 먼저 조치를 취한 건 제 불찰이지만, 상황이 급박했습니다.",
-      "behaviorHint": "조심스럽게 손을 모으고 자세를 낮춘다.",
+      "npcResponse": "그 시기에는 이서린 씨가 고객 상태와 레거시 설정을 계속 관리하고 있었습니다. 그래서 상황이 급박하다고 판단했습니다.",
+      "behaviorHint": "약간의 방어적 자세로, 고개를 살짝 끄덕이며 말한다.",
       "evidenceId": null,
       "issues": [
         {
-          "code": "A2",
-          "severity": "FAIL",
-          "detail": "번역체:불찰"
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"고객 상태와 레거시\""
         }
       ],
       "error": null
@@ -271,8 +277,8 @@
       "action": "fact_pursuit",
       "stance": "blame",
       "judgeQuestion": "이서린 씨, 다시 정리해 주십시오.",
-      "npcResponse": "아닙니다. 그건 제가 아니었습니다. 이미 박준호 씨가 통합 큐와 계정 오너십을 먼저 흔들었습니다.",
-      "behaviorHint": "단호한 표정으로 고개를 약간 들어 상대를 쳐다본다.",
+      "npcResponse": "네, 그 시기에 저는 수정하지 않았습니다. 다만 제 팀장이 이미 계정 오너십을 먼저 손댔습니다.",
+      "behaviorHint": "침착한 태도로 재판관을 바라보며 말한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -287,8 +293,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이서린 씨, 통합 단독 통제권 부여 여부에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "아닙니다. 그건 아마 잘못된 정보일 겁니다.",
-      "behaviorHint": "단호한 표정으로 상대를 똑바로 바라본다.",
+      "npcResponse": "아닙니다. 통합 단독 통제권은 처음부터 제 권한이 아니었습니다.",
+      "behaviorHint": "살짝 고개를 끄덕이며 확고한 눈빛으로 바라본다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -303,8 +309,8 @@
       "action": "empathy_approach",
       "stance": "emotional",
       "judgeQuestion": "박준호 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
-      "npcResponse": "사실, 그 시기엔 정말 혼란스러웠습니다. 모든 게 동시에 흔들리고 있어서, 제가 말하면 더 큰일이 날 것 같았어요.",
-      "behaviorHint": "눈을 잠깐 피하면서 조심스럽게 말한다.",
+      "npcResponse": "솔직히 그 시기에는 너무 무서웠습니다. 제 선택이 팀의 안정성을 더 위협할까봐 두려웠습니다.",
+      "behaviorHint": "약간 움츠린 자세로, 손을 다리 위에 얹고 천천히 눈을 마주친다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -319,8 +325,8 @@
       "action": "fact_pursuit",
       "stance": "confess",
       "judgeQuestion": "박준호 씨, 이제 사실대로 말씀해 주십시오.",
-      "npcResponse": "제가 통합 첫 2주 동안 고객 계정 오너십을 대거 재배정하고, 헬스 점수 대시보드 기준까지 직접 수정했습니다. 권하늘 PM에게 미리 알리지는 못했고, 공식 인수인계 전이라 순서도 무시했습니다. 숨긴 이유는 통합 리더십을 잃은 관리자로 보일까 두려웠기 때문입니다. 지금은 그때의 판단을 후회합니다.",
-      "behaviorHint": "박준호가 고개를 약간 숙이며 자신의 실수를 인정하는 모습",
+      "npcResponse": "네, 제가 통합 첫 2주 동안 고객 계정 오너십을 대거 재배정하고 헬스 점수 대시보드 기준을 직접 수정했습니다. 이런 변경은 사실 공동 승인이 필요하고 권하늘 PM에게 기록해야 했지만, 그러지 못했습니다. 솔직히 통합 리더십을 잃고 싶지 않아서 그렇게 했던 것 같습니다. 지금은 그때의 선택을 후회하고 있습니다.",
+      "behaviorHint": "고개를 숙이며 손을 맞잡는다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -335,8 +341,8 @@
       "action": "empathy_approach",
       "stance": "confess",
       "judgeQuestion": "이서린 씨, 솔직하게 말씀해 주십시오.",
-      "npcResponse": "솔직히 인정합니다. 통합 첫 2주 동안 제가 레거시 관리자 권한으로 라우팅 규칙과 벤더 태그를 수정했습니다. 공동 승인과 PM 기록이 필요하다는 걸 알았지만, 제 영역을 지키지 못할까 두려웠습니다. 지금은 후회하고 있습니다.",
-      "behaviorHint": "고개를 살짝 숙이며 솔직하게 말한다.",
+      "npcResponse": "솔직히 이번 건 제가 레거시 관리자 권한으로 라우팅 규칙과 벤더 태그를 수정한 게 맞습니다. 통합 첫 2주 동안이었고, 타팀 큐 수정에는 공동 승인과 PM 기록이 필요했어요. 그런데 이 사실을 말하지 못한 건 제가 제 영역을 지키지 못한 사람으로 보일까 두려웠기 때문입니다. 지금은 후회하고 있습니다.",
+      "behaviorHint": "고개를 살짝 숙이며 말을 이어간다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -351,8 +357,8 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "박준호 씨, 지연 경고 후 쌍방 독단 핫픽스에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "네, 그 시점에 핫픽스를 진행한 건 맞습니다. 하지만 절차상으로는 PM 기록을 먼저 남겼어야 했습니다.",
-      "behaviorHint": "조심스럽게 말하며 기록의 중요성을 강조하는 표정",
+      "npcResponse": "그날 제 팀원이 먼저 조치를 취했지만, 그 과정이 완벽하지 못했습니다. 절차에 따라 진행하지 못한 부분은 아쉽습니다.",
+      "behaviorHint": "살짝 고개를 끄덕이며 미안함을 표현한다.",
       "evidenceId": null,
       "issues": [],
       "error": null
@@ -367,19 +373,19 @@
       "action": "fact_pursuit",
       "stance": "hedge",
       "judgeQuestion": "이서린 씨, 지연 경고 후 쌍방 독단 핫픽스에 대해 사실 여부를 확인하겠습니다.",
-      "npcResponse": "독단적 핫픽스는 하지 않았습니다. 다만 그 시점에 급하게 움직인 건 맞습니다.",
-      "behaviorHint": "짧고 단호하게 말하며 시선을 유지한다.",
+      "npcResponse": "네, 그 시점에 제가 조치를 했습니다. 그러니 다른 부분도 함께 보셔야 합니다.",
+      "behaviorHint": "다소 긴장한 표정으로, 손끝을 가볍게 맞댄다.",
       "evidenceId": null,
       "issues": [],
       "error": null
     }
   ],
-  "startedAt": "2026-04-05T21:12:40.449Z",
-  "finishedAt": "2026-04-05T21:17:30.931Z",
+  "startedAt": "2026-04-05T23:36:11.511Z",
+  "finishedAt": "2026-04-05T23:39:00.379Z",
   "summary": {
     "total": 20,
-    "passed": 17,
-    "warned": 3,
+    "passed": 16,
+    "warned": 4,
     "errors": 0,
     "skipped": 0
   }

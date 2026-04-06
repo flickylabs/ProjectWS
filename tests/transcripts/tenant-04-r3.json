@@ -1,0 +1,395 @@
+{
+  "caseId": "tenant-04",
+  "category": "tenant",
+  "round": 3,
+  "variant": "empathy",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "이다은",
+    "archetype": "avoidant",
+    "tell": "memory_softener"
+  },
+  "partyB": {
+    "name": "장성호",
+    "archetype": "cold_logic",
+    "tell": "document_gate"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "월세→전세 전환이 이미 확정됐는가"
+    },
+    {
+      "id": "d-2",
+      "name": "성호의 공동명의 동의와 대출 비용 비공개"
+    },
+    {
+      "id": "d-3",
+      "name": "다은의 월세 중단"
+    },
+    {
+      "id": "d-4",
+      "name": "성호의 예비 임차인 안내 통지"
+    },
+    {
+      "id": "d-5",
+      "name": "추가 보증금 2천만원의 정산 기준"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "이다은 d-1 공감접근",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "이다은 씨, 당시 어떤 심정이셨습니까?",
+      "npcResponse": "솔직히 말씀드리면, 그때는 무서웠습니다. 제가 뭔가를 말하면 더 큰일이 날 것 같아서 참았던 것 같습니다.",
+      "behaviorHint": "어려운 심정을 토로하며 약간 불안해하는 표정",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "이다은 d-1 동기탐색",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "이다은 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "그 무렵 서류 전 단계가 거의 완료된 상태라고 믿고 있었기 때문입니다. 미리 말씀드리지 못한 건 제 잘못이지만, 서면 완성 전이었어도 정리됐다고 생각했습니다.",
+      "behaviorHint": "조심스럽게 눈을 내리깔고 손끝을 만지작거린다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "A4",
+          "severity": "WARN",
+          "detail": "클리셰:미리말씀"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "이다은 d-1 사실추궁",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "이다은 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "서류가 완성되기 전이었지만, 그 무렵에는 거의 정리됐다고 믿고 움직였습니다. 그래서 미리 알리지 못한 것이 아쉽습니다.",
+      "behaviorHint": "신중하게 고개를 끄덕이며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "장성호 d-2 사실추궁",
+      "party": "b",
+      "partyName": "장성호",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "장성호 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다, 그런 설명을 주지 않았습니다. 처음 논의 때 언급한 건 서류 조건입니다.",
+      "behaviorHint": "조용히 손을 모으고 고개를 살짝 든다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "이다은 e-1 증거제시",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "이다은 씨, 이 전환 논의 음성메모와 통화 녹취를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 자료는 맞습니다. 다만, 결혼 준비와 대출 상담을 정리하기에 바빴고, 그때 바로 확정된 건 아니었습니다.",
+      "behaviorHint": "조심스럽게 설명하며 눈빛을 약간 피한다.",
+      "evidenceId": "e-1",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "장성호 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "장성호",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "장성호 씨, 당시 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 기관 문서에서 공동명의와 예상 비용 조건을 명확히 설명하지 않은 점이 가장 힘들었습니다. 상황이 복잡해서 바로 정리하기 어려웠습니다.",
+      "behaviorHint": "약간 움츠린 자세로 손을 무릎 위에 얹는다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "이다은 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "이다은 씨, 왜 그런 선택을 하셨습니까?",
+      "npcResponse": "그 부분은 미완성 초안 때문에 일부 오해가 있었던 것 같습니다. 그 직후 상황이 급해서 미리 말씀드리지 못했습니다.",
+      "behaviorHint": "조심스럽게 고개를 숙이며 변명하는 태도",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "이다은 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "이다은 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 그 부분은 제가 미리 충분히 설명하지 못한 점이 있습니다. 당시에는 급히 결정할 수밖에 없었지만, 이번 상황을 오해하게 만든 건 제 책임입니다.",
+      "behaviorHint": "고개를 약간 숙이며 어깨를 움츠린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "장성호 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "장성호",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "장성호 씨, 좀 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 공동명의와 비용 조건에 대해서 초반에 명확하게 설명하지 않은 점은 인정합니다. 다만, 그로 인해 발생한 오해는 사실과 다릅니다.",
+      "behaviorHint": "차가운 표정으로 문서를 바라보며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "장성호 e-2 증거제시",
+      "party": "b",
+      "partyName": "장성호",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "장성호 씨, 이 3자 대화 캡처를 보시고 설명해 주십시오.",
+      "npcResponse": "그 메시지를 보면, 초기 전환 논의 시점에 다은씨가 질문을 하셨습니다. 당시 구체적 조건은 문서 단계에서 다루기로 했던 상황입니다.",
+      "behaviorHint": "차분하게 설명하며 캡처된 대화 내용을 가리킨다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "이다은 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "이다은 씨, 이 추가 보증금 송금 내역과 영수 메모를 보시고 입장을 밝혀 주십시오.",
+      "npcResponse": "그 내역과 메모에 적지 않은 돈이 오간 것은 사실입니다. 다만, 그걸로 전환이 완전히 확정된 건 아니라는 점에서 복잡한 부분이 있었습니다.",
+      "behaviorHint": "조심스럽게 손을 만지작거리며 서류를 들여다본다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "이다은 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "이다은 씨, 왜 그런 판단을 내리셨는지 아직 납득이 되지 않습니다.",
+      "npcResponse": "집주인분이 핵심 조건을 끝까지 공개하지 않은 부분이 있었습니다. 그래서 확정된 줄 알고 어쩔 수 없이 그 방향으로 결정할 수밖에 없었습니다.",
+      "behaviorHint": "약간 흔들리는 눈빛으로 정면을 바라본다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "이다은 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "이다은 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "아닙니다. 그건 확정된 게 아니었습니다. 집주인분이 핵심 조건을 공개하지 않아 오해를 했던 것 같습니다.",
+      "behaviorHint": "조금 당혹스러워하며 고개를 살짝 숙인다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "D2",
+          "severity": "WARN",
+          "detail": "2턴 연속: \"집주인분이 핵심 조건을\""
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "장성호 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "장성호",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "장성호 씨, 다시 정리해 주십시오.",
+      "npcResponse": "아닙니다. 그건 제 설명이 늦었습니다. 다만 세입자분도 추가 서류가 필요할 수 있다는 점은 짐작했어야 합니다.",
+      "behaviorHint": "차분한 표정으로 상대방을 바라본다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "장성호 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "장성호",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "장성호 씨, 다은의 월세 중단에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 문장은 카톡에서 최종 결정을 위한 초안일 뿐이었습니다.",
+      "behaviorHint": "차갑게 눈을 마주치며 천천히 고개를 끄덕인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "이다은 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "이다은 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "사실 그 일정 때문에 너무 불안했습니다. 결혼 준비와 주거 불안으로 약속이 깨질까 봐 너무 두려웠습니다.",
+      "behaviorHint": "조심스럽게 손을 비비며 눈을 마주친다",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "이다은 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "이다은 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "제가 집주인분께 2천만원을 송금했습니다. 거의 됐다는 말을 듣고 확정된 거라 착각했어요. 빈칸이랑 서명을 보고도 말리지 못한 게 제 잘못입니다. 후회가 많이 남습니다.",
+      "behaviorHint": "머리를 숙이며 작게 한숨을 쉰다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "장성호 d-2 S5 고백",
+      "party": "b",
+      "partyName": "장성호",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "장성호 씨, 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 공동명의 서명과 중도상환수수료에 대해 충분히 투명하지 못했습니다. 상환예상서와 전환 초안에서 명확하게 드러냈어야 했습니다. 당시에는 상황이 복잡해질까 두려워했었습니다. 지금은 그로 인해 오해를 불러일으켜 후회하고 있습니다.",
+      "behaviorHint": "약간 긴장된 표정으로 고개를 살짝 숙이며 말한다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "이다은 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "이다은",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "이다은 씨, 추가 보증금 2천만원의 정산 기준에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 위약금이 아니라, 큰돈을 전환 준비로 맡긴 걸로 이해했습니다.",
+      "behaviorHint": "조심스럽게 손을 모으고 시선을 잠시 피한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "장성호 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "장성호",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "장성호 씨, 추가 보증금 2천만원의 정산 기준에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 전액 반환은 아닙니다. 일부는 세입자분의 손해 보전과 미납분에 사용됩니다.",
+      "behaviorHint": "침착하면서 냉정하게 고개를 끄덕이며 설명한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T01:09:11.106Z",
+  "finishedAt": "2026-04-06T01:09:31.903Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "passRate": 80
+  }
+}

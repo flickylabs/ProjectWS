@@ -1,0 +1,395 @@
+{
+  "caseId": "workplace-08",
+  "category": "workplace",
+  "round": 2,
+  "variant": "evidence",
+  "model": "gpt-4o",
+  "isMonetary": true,
+  "partyA": {
+    "name": "최정훈",
+    "archetype": "cold_logic",
+    "tell": "policy_detour"
+  },
+  "partyB": {
+    "name": "김나래",
+    "archetype": "confrontational",
+    "tell": "line_item_barrage"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "합의 번복과 책임 전가"
+    },
+    {
+      "id": "d-2",
+      "name": "영수증 세탁과 품목 축소"
+    },
+    {
+      "id": "d-3",
+      "name": "상계표의 사후 조작 여부"
+    },
+    {
+      "id": "d-4",
+      "name": "선행 감사 메모와 평가 개입"
+    },
+    {
+      "id": "d-5",
+      "name": "오프북 상계의 쌍방 가담"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "최정훈 e-1 증거제시",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "최정훈 씨, 마감 메일과 정리표 스레드에 대해 설명해 주십시오.",
+      "npcResponse": "그 자료는 맞습니다만, 월말 전에 개인분을 정리하기 위한 계획이었습니다. 김나래 씨와의 대화는 그저 진행 상황을 조율하기 위한 것이었습니다.",
+      "behaviorHint": "침착하게 서류를 정리하며, 재판관을 똑바로 쳐다본다.",
+      "evidenceId": "e-1",
+      "issues": [
+        {
+          "code": "B2",
+          "severity": "CRITICAL",
+          "detail": "S0-S1 실명 노출: 김나래"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 2,
+      "label": "최정훈 d-1 사실추궁",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "최정훈 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 개인 결제를 허락한 이야기가 아니었습니다.",
+      "behaviorHint": "고개를 약간 돌리며 시선을 피한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 3,
+      "label": "김나래 d-2 사실추궁",
+      "party": "b",
+      "partyName": "김나래",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "김나래 씨, 이 건에 대해 사실 여부를 확인하겠습니다.",
+      "npcResponse": "안 했다고 할 수는 없습니다. 다만 그 시점에서 분류를 보정한 것일 뿐입니다.",
+      "behaviorHint": "조금 긴장한 듯이 짧게 대답하며 시선을 피함",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 4,
+      "label": "최정훈 d-1 동기탐색",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "motive_search",
+      "stance": "hedge",
+      "judgeQuestion": "최정훈 씨, 그렇게 하신 이유가 무엇입니까?",
+      "npcResponse": "그 시점에서는 보류 항목을 월말에 다시 검토하자는 의견이 있었습니다. 판단의 배경은 제 팀원의 업무 부담을 고려한 것이었습니다.",
+      "behaviorHint": "차가운 표정으로 당당하게 대답",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 5,
+      "label": "최정훈 d-1 공감접근",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S1",
+      "action": "empathy_approach",
+      "stance": "hedge",
+      "judgeQuestion": "최정훈 씨, 당시 어떤 사정이 있었는지 말씀해 주시겠습니까?",
+      "npcResponse": "솔직히, 그 시점에서는 엄청난 압박감이 있었습니다. 제 팀원의 개인 결제를 몰랐던 건 아니지만, 나중에 정리할 수 있다는 생각이 지배적이었습니다.",
+      "behaviorHint": "살짝 고개를 숙이며 손끝을 가볍게 만지작거린다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 6,
+      "label": "김나래 e-2 증거제시",
+      "party": "b",
+      "partyName": "김나래",
+      "dispute": "d-2",
+      "lieState": "S1",
+      "action": "evidence_present",
+      "stance": "hedge",
+      "judgeQuestion": "김나래 씨, 영수증과 수정 요청 기록에 대해 설명해 주십시오.",
+      "npcResponse": "그 내역서는 맞습니다. 다만 수취인이 누군지까지 그걸로 단정할 순 없습니다.",
+      "behaviorHint": "살짝 미소를 띠며 여유롭게 대응한다.",
+      "evidenceId": "e-2",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 7,
+      "label": "최정훈 e-3 증거제시 S2",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "evidence_present",
+      "stance": "partial",
+      "judgeQuestion": "최정훈 씨, 카드 승인 내역 캡처 PDF 문서에 대해 설명해 주십시오.",
+      "npcResponse": "그 내역은 제가 보낸 것이 맞습니다. 다만 PDF에 보류 탭과 상환 메모가 잘려 있어 오해하게 만든 부분이 있습니다.",
+      "behaviorHint": "서류를 손으로 가리키며 차분하게 설명한다.",
+      "evidenceId": "e-3",
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 8,
+      "label": "최정훈 d-1 S2 사실추궁",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "최정훈 씨, 조금 더 구체적으로 말씀해 주십시오.",
+      "npcResponse": "네, 월말에 정리하자고 한 건 맞습니다. 다만 그걸 개인 사용까지 허용한 건 아니었습니다.",
+      "behaviorHint": "차분하게 손을 책상 위에 올려놓고 시선을 재판관에게 고정한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 9,
+      "label": "김나래 d-2 S2 사실추궁",
+      "party": "b",
+      "partyName": "김나래",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "fact_pursuit",
+      "stance": "partial",
+      "judgeQuestion": "김나래 씨, 다시 정리해 주십시오.",
+      "npcResponse": "네, 재발급 요청한 건 맞습니다. 하지만 감사용 조작이 아니라 그저 정리하려던 거였습니다.",
+      "behaviorHint": "조용하지만 단호하게, 상대방을 쏘아보며",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 10,
+      "label": "최정훈 d-1 S2 동기탐색",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S2",
+      "action": "motive_search",
+      "stance": "partial",
+      "judgeQuestion": "최정훈 씨, 왜 그런 선택을 하셨는지 아직 납득되지 않습니다.",
+      "npcResponse": "그 탭은 업무와 관련된 부분을 정리하기 위함이었습니다. 다만 사적 사용분까지 허용한 건 아니었습니다.",
+      "behaviorHint": "살짝 고개를 숙이며 신중하게 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 11,
+      "label": "김나래 d-2 S2 공감접근",
+      "party": "b",
+      "partyName": "김나래",
+      "dispute": "d-2",
+      "lieState": "S2",
+      "action": "empathy_approach",
+      "stance": "partial",
+      "judgeQuestion": "김나래 씨, 그때 가장 어려웠던 부분이 무엇이었습니까?",
+      "npcResponse": "솔직히, 최정훈 씨의 압박이 무서웠습니다. 제가 움직이면 더 큰 일이 닥칠 것 같았거든요.",
+      "behaviorHint": "잠시 눈을 내리깔며 감정을 드러낸다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 12,
+      "label": "최정훈 d-1 S3 사실추궁",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "최정훈 씨, 사실관계가 분명하지 않습니다. 다시 설명해 주십시오.",
+      "npcResponse": "아닙니다. 그건 제가 보류 탭 정리를 말한 건 맞습니다. 다만, 제 팀원 쪽에서도 사적인 항목을 숨기는 선택을 했습니다.",
+      "behaviorHint": "차가운 표정으로 상대방의 책임을 지적한다",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 13,
+      "label": "김나래 d-2 S3 사실추궁",
+      "party": "b",
+      "partyName": "김나래",
+      "dispute": "d-2",
+      "lieState": "S3",
+      "action": "fact_pursuit",
+      "stance": "blame",
+      "judgeQuestion": "김나래 씨, 다시 정리해 주십시오.",
+      "npcResponse": "그 영수증에서 문제 품목을 줄여 달라고 요청한 건 사실입니다. 하지만 제 실장도 덜 보이게 맞추라고 압박했잖아요.",
+      "behaviorHint": "단호한 눈빛으로 재판관을 바라보며 말한다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 14,
+      "label": "김나래 d-3 S1 사실추궁",
+      "party": "b",
+      "partyName": "김나래",
+      "dispute": "d-3",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "김나래 씨, 이 쟁점에 대해서도 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그 백업본이 있었던 건 맞지만, 누가 어디까지 자세히 본 건지는 조금 엇갈릴 수 있어요.",
+      "behaviorHint": "한 손으로 눈썹을 살짝 만지며 약간 긴장된 표정",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "C4",
+          "severity": "FAIL",
+          "detail": "해요체 잔존"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 15,
+      "label": "최정훈 d-1 S3 동기탐색",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S3",
+      "action": "motive_search",
+      "stance": "blame",
+      "judgeQuestion": "최정훈 씨, 왜 그런 판단을 내렸는지 여전히 납득되지 않습니다.",
+      "npcResponse": "그 시점에서는 김나래 씨도 사적인 항목을 숨기는 선택을 했습니다. 그래서 저도 큰 금액을 먼저 처리할 수밖에 없었습니다.",
+      "behaviorHint": "조금의 방어적 자세로 자세를 바로잡으며",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 16,
+      "label": "최정훈 d-1 S4 공감접근",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S4",
+      "action": "empathy_approach",
+      "stance": "emotional",
+      "judgeQuestion": "최정훈 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 제가 감사가 시작되자 말을 아낀 건 사실입니다. 승진 심사 평판이 걸려 있어서 합의를 축소했습니다.",
+      "behaviorHint": "고개를 약간 숙이며 솔직하게 털어놓는 듯한 표정",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 17,
+      "label": "최정훈 d-1 S5 사실추궁",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-1",
+      "lieState": "S5",
+      "action": "fact_pursuit",
+      "stance": "confess",
+      "judgeQuestion": "최정훈 씨, 이제 사실대로 말씀해 주십시오.",
+      "npcResponse": "제가 개인분 메우고 닫자는 제안을 먼저 했습니다. 감사 플래그가 생성되기 이틀 전의 일이었습니다. 사실을 털어놓지 못한 건 제 평판 때문이었습니다. 지금은 이 모든 것이 저의 후회로 남아 있습니다.",
+      "behaviorHint": "고개를 약간 숙이며 진심으로 후회하는 표정을 짓는다.",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 18,
+      "label": "김나래 d-2 S5 고백",
+      "party": "b",
+      "partyName": "김나래",
+      "dispute": "d-2",
+      "lieState": "S5",
+      "action": "empathy_approach",
+      "stance": "confess",
+      "judgeQuestion": "김나래 씨, 당시 심정을 충분히 듣겠습니다. 솔직하게 말씀해 주십시오.",
+      "npcResponse": "솔직히, 그때는 두려웠습니다. 감사 공지 다음 날 새벽에 주류와 개인물품이 표기된 재발급 영수증을 제가 요청했습니다. 문제를 덜 보이게 하려던 제 잘못이자 책임입니다. 지금은 후회하고 있습니다.",
+      "behaviorHint": "담담하게 말하면서도 약간의 후회를 드러내는 표정",
+      "evidenceId": null,
+      "issues": [
+        {
+          "code": "B4",
+          "severity": "FAIL",
+          "detail": "S5 구체적 금액 미포함"
+        }
+      ],
+      "error": null
+    },
+    {
+      "turn": 19,
+      "label": "최정훈 d-5 S1 사실추궁",
+      "party": "a",
+      "partyName": "최정훈",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "최정훈 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "아닙니다. 그건 제가 상환 전 단계로 임시로 정리한 것입니다.",
+      "behaviorHint": "차가운 표정을 유지하며 고개를 약간 끄덕인다.",
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    },
+    {
+      "turn": 20,
+      "label": "김나래 d-5 S1 사실추궁",
+      "party": "b",
+      "partyName": "김나래",
+      "dispute": "d-5",
+      "lieState": "S1",
+      "action": "fact_pursuit",
+      "stance": "hedge",
+      "judgeQuestion": "김나래 씨, 마지막 쟁점의 사실 여부를 확인하겠습니다.",
+      "npcResponse": "죄송하지만 어떤 \"마지막 쟁점\"을 말씀하시는지 정확히 알려주시면 감사하겠습니다.",
+      "behaviorHint": null,
+      "evidenceId": null,
+      "issues": [],
+      "error": null
+    }
+  ],
+  "startedAt": "2026-04-06T09:20:15.775Z",
+  "finishedAt": "2026-04-06T09:21:38.176Z",
+  "summary": {
+    "total": 20,
+    "passed": 16,
+    "warned": 4,
+    "errors": 0,
+    "skipped": 0
+  }
+}
