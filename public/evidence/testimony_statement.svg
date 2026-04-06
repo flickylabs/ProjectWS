@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <rect width="200" height="150" rx="8" fill="#150a1f"/>
+  <!-- 진술서 용지 -->
+  <rect x="25" y="8" width="150" height="134" rx="3" fill="#1a0f28" stroke="#2a1a4a" stroke-width="0.5"/>
+  <!-- 헤더 -->
+  <text x="100" y="24" font-family="sans-serif" font-size="10" fill="#7a5aaa" text-anchor="middle" font-weight="bold">진 술 서</text>
+  <line x1="35" y1="28" x2="165" y2="28" stroke="#2a1a4a" stroke-width="0.8"/>
+  <!-- 인적사항 박스 -->
+  <rect x="35" y="34" width="130" height="32" rx="2" fill="#1f1430" stroke="#2a1a4a" stroke-width="0.5"/>
+  <text x="42" y="45" font-family="sans-serif" font-size="5.5" fill="#6a4a9a">성 명:</text>
+  <rect x="62" y="40" width="50" height="6" rx="1" fill="#150a20" opacity="0.7"/>
+  <text x="42" y="57" font-family="sans-serif" font-size="5.5" fill="#6a4a9a">생년월일:</text>
+  <rect x="72" y="52" width="40" height="6" rx="1" fill="#150a20" opacity="0.7"/>
+  <text x="120" y="45" font-family="sans-serif" font-size="5.5" fill="#6a4a9a">연락처:</text>
+  <rect x="143" y="40" width="16" height="6" rx="1" fill="#150a20" opacity="0.7"/>
+  <text x="120" y="57" font-family="sans-serif" font-size="5.5" fill="#6a4a9a">주 소:</text>
+  <rect x="138" y="52" width="22" height="6" rx="1" fill="#150a20" opacity="0.7"/>
+  <!-- 본문 영역 -->
+  <text x="38" y="78" font-family="sans-serif" font-size="5" fill="#5a3a8a">위 사실을 아래와 같이 진술합니다.</text>
+  <line x1="35" y1="82" x2="165" y2="82" stroke="#2a1a4a" stroke-width="0.3"/>
+  <!-- 본문 줄 -->
+  <rect x="38" y="86" width="124" height="4" rx="1" fill="#1f1430" opacity="0.7"/>
+  <rect x="38" y="94" width="120" height="4" rx="1" fill="#1f1430" opacity="0.6"/>
+  <rect x="38" y="102" width="126" height="4" rx="1" fill="#1f1430" opacity="0.7"/>
+  <rect x="38" y="110" width="100" height="4" rx="1" fill="#1f1430" opacity="0.5"/>
+  <!-- 하단 서명 -->
+  <line x1="35" y1="122" x2="165" y2="122" stroke="#2a1a4a" stroke-width="0.5"/>
+  <text x="42" y="133" font-family="sans-serif" font-size="5.5" fill="#6a4a9a">진술인:</text>
+  <line x1="67" y1="134" x2="110" y2="134" stroke="#3a2a5a" stroke-width="0.5"/>
+  <text x="140" y="133" font-family="sans-serif" font-size="5" fill="#5a3a7a">(인)</text>
+</svg>

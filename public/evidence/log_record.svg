@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <rect width="200" height="150" rx="8" fill="#1f150a"/>
+  <!-- 표 영역 -->
+  <rect x="20" y="14" width="160" height="122" rx="3" fill="#241a0f" stroke="#3a2a15" stroke-width="0.5"/>
+  <!-- 제목 -->
+  <text x="100" y="28" font-family="sans-serif" font-size="8" fill="#aa8a4a" text-anchor="middle" font-weight="bold">출입 기록부</text>
+  <line x1="28" y1="33" x2="172" y2="33" stroke="#3a2a15" stroke-width="0.5"/>
+  <!-- 헤더 행 -->
+  <rect x="28" y="36" width="144" height="14" rx="1" fill="#2a2010"/>
+  <text x="52" y="46" font-family="sans-serif" font-size="6" fill="#aa8a4a" text-anchor="middle" font-weight="bold">날짜</text>
+  <text x="96" y="46" font-family="sans-serif" font-size="6" fill="#aa8a4a" text-anchor="middle" font-weight="bold">시간</text>
+  <text x="144" y="46" font-family="sans-serif" font-size="6" fill="#aa8a4a" text-anchor="middle" font-weight="bold">내용</text>
+  <!-- 열 구분선 -->
+  <line x1="74" y1="36" x2="74" y2="128" stroke="#3a2a15" stroke-width="0.5"/>
+  <line x1="118" y1="36" x2="118" y2="128" stroke="#3a2a15" stroke-width="0.5"/>
+  <!-- 행 1 -->
+  <rect x="28" y="50" width="144" height="16" fill="#221a0e"/>
+  <rect x="40" y="58" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <rect x="84" y="58" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <rect x="132" y="58" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <!-- 행 2 -->
+  <rect x="28" y="66" width="144" height="16" fill="#241a0f"/>
+  <rect x="40" y="74" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <rect x="84" y="74" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <rect x="132" y="74" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <!-- 행 3 -->
+  <rect x="28" y="82" width="144" height="16" fill="#221a0e"/>
+  <rect x="40" y="90" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <rect x="84" y="90" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <rect x="132" y="90" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <!-- 행 4 -->
+  <rect x="28" y="98" width="144" height="16" fill="#241a0f"/>
+  <rect x="40" y="106" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <rect x="84" y="106" width="22" height="3" rx="1.5" fill="#aa4a2a" opacity="0.3"/>
+  <rect x="132" y="106" width="22" height="3" rx="1.5" fill="#aa4a2a" opacity="0.3"/>
+  <!-- 행 5 -->
+  <rect x="28" y="114" width="144" height="14" fill="#221a0e"/>
+  <rect x="40" y="121" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <rect x="84" y="121" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+  <rect x="132" y="121" width="22" height="3" rx="1.5" fill="#aa8a4a" opacity="0.3"/>
+</svg>

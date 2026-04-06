@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <rect width="200" height="150" rx="8" fill="#1f0a15"/>
+  <!-- SNS 카드 -->
+  <rect x="25" y="12" width="150" height="126" rx="6" fill="#281020" stroke="#4a1a3a" stroke-width="0.5"/>
+  <!-- 프로필 영역 -->
+  <circle cx="42" cy="30" r="9" fill="#3a1a2a" stroke="#5a2a4a" stroke-width="0.5"/>
+  <circle cx="42" cy="28" r="3" fill="#5a3a4a"/>
+  <path d="M36 35 Q42 32 48 35" fill="#5a3a4a"/>
+  <rect x="58" y="23" width="35" height="3" rx="1.5" fill="#aa5a8a" opacity="0.3"/>
+  <rect x="58" y="32" width="22" height="2.5" rx="1.25" fill="#6a3a5a" opacity="0.3"/>
+  <!-- 더보기 아이콘 -->
+  <circle cx="160" cy="28" r="1" fill="#5a3a4a"/>
+  <circle cx="165" cy="28" r="1" fill="#5a3a4a"/>
+  <circle cx="155" cy="28" r="1" fill="#5a3a4a"/>
+  <!-- 본문 영역 -->
+  <rect x="35" y="44" width="130" height="4" rx="1" fill="#3a1a2a" opacity="0.8"/>
+  <rect x="35" y="52" width="120" height="4" rx="1" fill="#3a1a2a" opacity="0.7"/>
+  <rect x="35" y="60" width="100" height="4" rx="1" fill="#3a1a2a" opacity="0.6"/>
+  <!-- 이미지 영역 -->
+  <rect x="35" y="70" width="130" height="40" rx="3" fill="#2a1020" stroke="#3a1a2a" stroke-width="0.3"/>
+  <path d="M70 100 L85 82 L100 95 L110 85 L140 105" stroke="#4a2a3a" stroke-width="0.5" fill="none"/>
+  <circle cx="55" cy="82" r="5" fill="#3a1a2a"/>
+  <!-- 하단 인터랙션 -->
+  <line x1="35" y1="116" x2="165" y2="116" stroke="#3a1a2a" stroke-width="0.3"/>
+  <!-- 좋아요 (하트) -->
+  <path d="M42 125 C42 122 38 120 38 123 C38 126 42 129 42 129 C42 129 46 126 46 123 C46 120 42 122 42 125" fill="#aa3a5a" opacity="0.8"/>
+  <rect x="50" y="125" width="8" height="2" rx="1" fill="#7a4a6a" opacity="0.3"/>
+  <!-- 댓글 아이콘 -->
+  <rect x="70" y="121" width="10" height="8" rx="3" fill="none" stroke="#7a4a6a" stroke-width="0.7"/>
+  <polygon points="72,129 70,132 76,129" fill="#7a4a6a"/>
+  <rect x="83" y="125" width="6" height="2" rx="1" fill="#7a4a6a" opacity="0.3"/>
+  <!-- 공유 아이콘 -->
+  <path d="M108 122 L115 126 L108 130 Z" fill="none" stroke="#7a4a6a" stroke-width="0.7"/>
+  <line x1="100" y1="126" x2="112" y2="126" stroke="#7a4a6a" stroke-width="0.7"/>
+</svg>
