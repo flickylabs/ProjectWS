@@ -46,7 +46,12 @@ export function buildBlueprintSystemPromptV2(
     .join('\n')
 
   // slot에서 추출한 이번 턴 표현 재료
-  const slotMaterial = formatSlotMaterial(atomPlan.slotSelections)
+  // S0-S1에서는 금액/인물 슬롯을 프롬프트에서 제외 (Truth Throttle 충돌 방지)
+  const isEarlyState = ['S0', 'S1'].includes(lieState)
+  const filteredSlots = isEarlyState
+    ? atomPlan.slotSelections.filter(s => !['amount', 'time', 'person', 'beneficiary'].includes(s.family))
+    : atomPlan.slotSelections
+  const slotMaterial = formatSlotMaterial(filteredSlots)
 
   // 금지 atom 라벨
   const forbiddenLabels = atomPlan.forbiddenAtomIds

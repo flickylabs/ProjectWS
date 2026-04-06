@@ -920,10 +920,11 @@ function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string
 
     if (!text || text.length < 3) return fallback
 
-    // 후처리: 재판관에게 반말 → 존댓말 강제 변환 + 호칭 오용 수정
+    // 후처리: 공통 파이프라인
     const storeCaseData = useGameStore.getState().caseData
     const partyNames = { nameA: storeCaseData?.duo?.partyA?.name ?? 'A', nameB: storeCaseData?.duo?.partyB?.name ?? 'B' }
-    const polished = fixPostpositions(enforceHonorifics(fixMisdirectedAddress(text, partyNames)))
+    // parseLLMResponse에서는 lieState/monetary 컨텍스트가 제한적이므로 기본 후처리만 적용
+    const polished = postProcessNpcText(text, { partyNames })
 
     return {
       npcNode: {
@@ -1121,6 +1122,165 @@ export function enforceHonorifics(text: string): string {
   // "사실이다" → "사실이입니다" 같은 잔여 버그 방지
   .replace(/이입니다/g, '입니다')
   .replace(/이습니다/g, '습니다')
+}
+
+/* ── NPC 텍스트 공통 후처리 파이프라인 ── */
+
+export interface PostProcessContext {
+  /** 현재 lieState (S0~S5) — Truth Throttle 검증에 사용 */
+  lieState?: string
+  /** 사건에 금전 쟁점이 있는지 */
+  hasMonetaryDispute?: boolean
+  /** 당사자 이름 목록 (호칭 교정 + 실명 치환) */
+  partyNames?: { nameA: string; nameB: string }
+  /** 제3자 이름 목록 (실명 치환) */
+  thirdPartyNames?: string[]
+  /** callTerms — 재판관에게 상대 언급 시 사용할 호칭 */
+  toJudgeA?: string
+  toJudgeB?: string
+  /** 현재 화자 ('a' | 'b') */
+  speaker?: 'a' | 'b'
+}
+
+/**
+ * NPC 대사 공통 후처리 파이프라인.
+ * parseLLMResponse + Blueprint V2 경로 모두 이 함수를 거친다.
+ *
+ * 순서:
+ * 1. fixMisdirectedAddress (호칭 오용)
+ * 2. enforceHonorifics (반말→존댓말)
+ * 3. fixPostpositions (조사 교정 + "만을" 교정)
+ * 4. enforceTruthThrottle (S0-S1 금액/실명 치환)
+ * 5. enforceMonetaryGuard (비금전 사건 금전 표현 치환)
+ * 6. enforceClicheFilter (클리셰/번역체/특정X 필터)
+ * 7. enforceHaeyoMidSentence (문장 중간 해요체)
+ * 8. S5 금액 검증 경고 로그
+ */
+export function postProcessNpcText(rawText: string, ctx: PostProcessContext = {}): string {
+  let text = rawText
+
+  // 1. 기존 후처리
+  text = fixMisdirectedAddress(text, ctx.partyNames)
+  text = enforceHonorifics(text)
+  text = fixPostpositions(text)
+
+  // 2. Truth Throttle (S0-S1 금액/실명 누출 차단)
+  if (ctx.lieState && ['S0', 'S1'].includes(ctx.lieState)) {
+    text = enforceTruthThrottle(text, ctx)
+  }
+
+  // 3. 비금전 사건 금전 표현 차단
+  if (ctx.hasMonetaryDispute === false) {
+    text = enforceMonetaryGuard(text)
+  }
+
+  // 4. 클리셰/번역체/특정X 필터
+  text = enforceClicheFilter(text)
+
+  // 5. 문장 중간 해요체 캐치
+  text = enforceHaeyoMidSentence(text)
+
+  // 6. S5 금액 검증 경고 로그
+  if (ctx.lieState === 'S5' && ctx.hasMonetaryDispute !== false) {
+    const hasConcreteAmount = /\d+만?원/.test(text)
+    if (!hasConcreteAmount) {
+      console.warn(`[S5Guard] S5 응답에 구체적 금액 없음 — speaker=${ctx.speaker}`)
+    }
+  }
+
+  return text
+}
+
+/** S0-S1 진실 차단: 금액, 실명 누출 치환 */
+function enforceTruthThrottle(text: string, ctx: PostProcessContext): string {
+  let result = text
+
+  // 금액 치환: "280만원" → "해당 금액"
+  result = result.replace(/\d{1,3}[,.]?\d*만?\s*원/g, '해당 금액')
+
+  // 당사자 실명 치환 (길이 내림차순으로 치환 — 부분 매칭 방지)
+  const allNames: { name: string; replacement: string }[] = []
+  if (ctx.partyNames) {
+    if (ctx.speaker === 'a' && ctx.toJudgeA) {
+      // A가 화자일 때 B 이름을 toJudgeA(재판관에게 상대 언급)로 치환
+      allNames.push({ name: ctx.partyNames.nameB, replacement: ctx.toJudgeA })
+    } else if (ctx.speaker === 'b' && ctx.toJudgeB) {
+      allNames.push({ name: ctx.partyNames.nameA, replacement: ctx.toJudgeB })
+    }
+  }
+  // 제3자 이름 치환
+  if (ctx.thirdPartyNames) {
+    for (const name of ctx.thirdPartyNames) {
+      allNames.push({ name, replacement: '그분' })
+    }
+  }
+  // 길이 내림차순 정렬
+  allNames.sort((a, b) => b.name.length - a.name.length)
+  for (const { name, replacement } of allNames) {
+    if (!name || name.length < 2) continue
+    // 이름 + 씨/님 변형 포함
+    const namePattern = new RegExp(`${name}(?:씨|님)?`, 'g')
+    result = result.replace(namePattern, replacement)
+  }
+
+  return result
+}
+
+/** 비금전 사건에서 금전 표현 치환 */
+function enforceMonetaryGuard(text: string): string {
+  let result = text
+  // 구체적 금액 제거
+  result = result.replace(/\d{1,3}[,.]?\d*만?\s*원/g, '')
+  // 금전 키워드 치환
+  result = result.replace(/송금|이체/g, '그런 일')
+  result = result.replace(/계좌/g, '그곳')
+  result = result.replace(/(?:보증금|월세|수당|급여|정산|환급|예치|납부)/g, '그 비용')
+  result = result.replace(/(?:금전적|재정적|경제적)\s?(?:손실|피해|문제|부담)?/g, '')
+  result = result.replace(/(?:돈|금액|비용)(?=[을를이가은는도만의]|\s|$)/g, '')
+  // 빈 공백 정리
+  result = result.replace(/\s{2,}/g, ' ').trim()
+  return result
+}
+
+/** 클리셰/번역체/특정X 필터 */
+function enforceClicheFilter(text: string): string {
+  let result = text
+  // A4: "미리 말씀드리지 못한" 클리셰 치환
+  result = result.replace(/미리\s?말씀(?:을\s)?드리지\s?못한/g, '알리지 못한')
+  result = result.replace(/미리\s?말씀드리지\s?못했/g, '알리지 못했')
+  result = result.replace(/미리\s?말씀(?:을\s)?드렸/g, '알렸')
+
+  // A2: 번역체 "불찰" 치환
+  result = result.replace(/불찰/g, '제 잘못')
+
+  // A5: "특정 X" 패턴 치환
+  result = result.replace(/특정\s+(금액|사람|것|일|경우|상황|장소|시점|사건|인물)/g, '그 $1')
+
+  return result
+}
+
+/** 문장 중간 해요체 캐치 (enforceHonorifics는 문장 끝만 처리) */
+function enforceHaeyoMidSentence(text: string): string {
+  // 쉼표 앞의 해요체를 합니다체로 변환
+  let result = text
+  result = result.replace(/했어요,/g, '했습니다,')
+  result = result.replace(/없어요,/g, '없습니다,')
+  result = result.replace(/있어요,/g, '있습니다,')
+  result = result.replace(/같아요,/g, '같습니다,')
+  result = result.replace(/해요,/g, '합니다,')
+  result = result.replace(/에요,/g, '입니다,')
+  result = result.replace(/이에요,/g, '입니다,')
+  result = result.replace(/거예요,/g, '겁니다,')
+  result = result.replace(/줄게요,/g, '주겠습니다,')
+  result = result.replace(/할게요,/g, '하겠습니다,')
+  result = result.replace(/겠어요,/g, '겠습니다,')
+  result = result.replace(/왔어요,/g, '왔습니다,')
+  result = result.replace(/됐어요,/g, '됐습니다,')
+  result = result.replace(/봤어요,/g, '봤습니다,')
+
+  // 접속어미 "~는데요" 중간 (해요체 종결이 아닌 연결)
+  // 이건 의도적 완곡 표현이므로 유지 — 변환하지 않음
+  return result
 }
 
 /* ── 재판관 질문 생성 (엔진 우선 — 템플릿 기반) ── */
@@ -1575,9 +1735,20 @@ async function tryBlueprintPath(
     const parsed = JSON.parse(jsonMatch[0])
     const rawText = (parsed.npcResponse ?? '').replace(/[（(][^)）]+[)）]/g, '').trim()
     if (!rawText || rawText.length < 5) throw new Error('Blueprint response too short')
-    // 호칭 post-process (재판관 앞 애칭 → judgeRef 치환 + 이름 호칭 교정)
+    // 호칭 post-process + 품질 가드 (공통 파이프라인)
     const bpPartyNames = { nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name }
-    const text = fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawText, bpPartyNames)))
+    const monetaryKw = /송금|이체|금액|원\b|돈|비용|계좌|환급|보증금|월세|정산|예치|납부|수당|급여/
+    const bpHasMonetary = caseData.disputes.some(d => monetaryKw.test(d.name) || monetaryKw.test(d.truthDescription ?? ''))
+    const thirdPartyNames = caseData.duo.socialGraph?.map(tp => tp.name).filter(Boolean) ?? []
+    const text = postProcessNpcText(rawText, {
+      lieState: lieEntry.currentState,
+      hasMonetaryDispute: bpHasMonetary,
+      partyNames: bpPartyNames,
+      thirdPartyNames,
+      toJudgeA: caseData.duo.partyA.callTerms?.toJudge,
+      toJudgeB: caseData.duo.partyB.callTerms?.toJudge,
+      speaker: target,
+    })
 
     // 재판관 질문 추가
     const { shouldSkipJudgeQuestion } = await import('../hooks/useActionDispatch')

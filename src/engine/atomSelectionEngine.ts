@@ -145,6 +145,27 @@ export function buildAtomPlan(input: AtomSelectionInput): BlueprintAtomPlan {
   scored.sort((a, b) => b.score - a.score)
   const selectedAtoms = scored.slice(0, rule.coreAtomCount)
 
+  // 3.5. S5 exact-slot rescue: confess인데 금액/인물 slot이 없으면 보강 atom 1개 주입
+  if (stance === 'confess' && input.currentLieState === 'S5') {
+    const EXACT_FAMILIES: string[] = ['amount', 'person', 'beneficiary', 'evidence']
+    const hasExactSlot = selectedAtoms.some(sel => {
+      const atom = allAtoms.find(a => a.id === sel.atomId)
+      if (!atom?.slots) return false
+      return Object.keys(atom.slots).some(f => EXACT_FAMILIES.includes(f))
+    })
+    if (!hasExactSlot) {
+      // 전체 atom 중 exact-support slot이 있는 것을 찾아 1개 보강
+      const rescueCandidate = allAtoms
+        .filter(a => !blockedAtomIds.includes(a.id) && !selectedAtoms.some(s => s.atomId === a.id))
+        .filter(a => a.slots && Object.keys(a.slots).some(f => EXACT_FAMILIES.includes(f)))
+        .sort((a, b) => (b.stanceHints?.includes('confess') ? 30 : 0) - (a.stanceHints?.includes('confess') ? 30 : 0))
+      if (rescueCandidate.length > 0) {
+        selectedAtoms.push({ atomId: rescueCandidate[0].id, score: -1, selectedTags: [] })
+        console.log(`[AtomEngine] S5 exact-slot rescue: ${rescueCandidate[0].id} 보강`)
+      }
+    }
+  }
+
   // 4. 금지 atom 목록
   const suppressionAtomIds = policy.claimAtoms
     .filter(a => a.tags.includes('denial') && stance !== 'deny')
@@ -158,6 +179,7 @@ export function buildAtomPlan(input: AtomSelectionInput): BlueprintAtomPlan {
     mustUseTell,
     input.isJudgeAudience ?? true,
     stance,
+    input.currentLieState,
   )
 
   return {
@@ -178,6 +200,7 @@ function resolveSlotSelections(
   mustUseTell?: string,
   isJudgeAudience: boolean = true,
   stance?: Stance,
+  currentLieState?: string,
 ): SlotSelection[] {
   const selections: SlotSelection[] = []
 
@@ -210,6 +233,13 @@ function resolveSlotSelections(
       // tell 승격: over_precision이면 amount/time을 exact로
       if (tellPromotesExact && (family === 'amount' || family === 'time')) {
         mode = family === 'amount' ? 'exact' : 'dateExact'
+      }
+
+      // S0-S1 강제 neutral: lieState와 무관하게 금액/시각/인물이 구체화되는 것을 차단
+      const isEarlyState = currentLieState && ['S0', 'S1'].includes(currentLieState)
+      if (isEarlyState && !confessPromotesExact) {
+        if (family === 'amount' || family === 'time') mode = 'neutral'
+        if (family === 'person' || family === 'beneficiary') mode = 'judgeRef'
       }
 
       // tell 비활성 시: amount/time은 neutral 강제 (단, confess에서는 강제하지 않음)
