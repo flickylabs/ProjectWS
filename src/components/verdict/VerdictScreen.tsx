@@ -7,6 +7,7 @@ import { recordHistory } from '../layout/HistoryPanel'
 import { completeStage } from '../../data/campaign'
 import { playGavel } from '../../engine/soundEngine'
 import { checkAndGrantRewards } from '../../engine/rewardEngine'
+import { deriveCaseProfile } from '../../engine/judgeProfileEngine'
 import FactChecklist from './FactChecklist'
 import ResponsibilitySlider from './ResponsibilitySlider'
 import SolutionPicker from './SolutionPicker'
@@ -98,6 +99,17 @@ export default function VerdictScreen() {
     const disputeNames: Record<string, string> = {}
     caseData.disputes.forEach(d => { disputeNames[d.id] = d.name })
 
+    // 재판관 성향 telemetry 계산
+    const caseTelemetry = deriveCaseProfile(
+      verdictInput,
+      processMetrics,
+      caseData.disputes.map(d => ({
+        id: d.id,
+        ambiguity: (d as any).ambiguity,
+        truth: (d as any).truth ?? true,
+      })),
+    )
+
     recordHistory({
       caseId: caseData.caseId, score: score.total,
       insight: score.insight, authority: score.authority, wisdom: score.wisdom,
@@ -109,6 +121,7 @@ export default function VerdictScreen() {
         selectedSolutions: [...verdictInput.selectedSolutions],
         disputeNames,
       },
+      caseTelemetry,
     })
     // 캠페인 Stage 진행 (관계 유형으로 매칭)
     const stageMap: Record<string, number> = {

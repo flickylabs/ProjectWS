@@ -22,6 +22,7 @@ export function recordHistory(entry: {
     disputeNames: Record<string, string>
     aftermath?: string
   }
+  caseTelemetry?: { inquiry: number; judgment: number; resolution: number }
 }) {
   const profile = ensureProfile()
   const season = getCurrentSeason()
@@ -40,6 +41,7 @@ export function recordHistory(entry: {
     playerName: profile.playerName,
     titles: entry.titles ?? [],
     verdictDetail: entry.verdictDetail,
+    caseTelemetry: entry.caseTelemetry,
   })
 }
 

@@ -55,4 +55,11 @@ export interface ProcessMetrics {
   immediateAnswerUsed: number    // 즉답요구로 S5 달성 횟수
   trustActionsUsed: number       // 신뢰 행동 사용 횟수
   interjectionAllowed: number    // 끼어들기 허용 횟수 (권위 -3/회)
+  // v3: 재판관 성향 추적용
+  effectiveFactCount: number       // fact_pursuit로 전이 발생 횟수
+  effectiveEmpathyCount: number    // empathy_approach로 전이 발생 횟수
+  factQuestionsAsked: number       // fact_pursuit 질문 횟수
+  motiveQuestionsAsked: number     // motive_search 질문 횟수
+  empathyQuestionsAsked: number    // empathy_approach 질문 횟수
+  collapseViaTrustOrEmpathy: number  // 신뢰/공감 경로로 S5 도달
 }

@@ -119,6 +119,10 @@ const EMPTY_METRICS: ProcessMetrics = {
   affinityHits: 0, affinityMisses: 0, requiredPathsCovered: 0, bonusPathsCovered: 0,
   deepTruthsUnlocked: 0, sameActionRepeats: 0, unsupportedCollapses: 0, immediateAnswerUsed: 0, trustActionsUsed: 0,
   interjectionAllowed: 0,
+  // v3: 재판관 성향 추적
+  effectiveFactCount: 0, effectiveEmpathyCount: 0,
+  factQuestionsAsked: 0, motiveQuestionsAsked: 0, empathyQuestionsAsked: 0,
+  collapseViaTrustOrEmpathy: 0,
 }
 
 export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & DiscoverySlice & {

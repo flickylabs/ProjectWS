@@ -41,8 +41,10 @@ export interface GameEventTrigger {
   severity: 'minor' | 'major' | 'critical'
   /** 이벤트 설명 (GPT 텍스트가 없을 때의 기본 설명) */
   description: string
-  /** 이벤트에 따른 게임 효과 */
+  /** 이벤트에 따른 게임 효과 (트리거 시 즉시 적용) */
   effects: TriggerEffect[]
+  /** 플레이어 선택에 따라 지연 적용되는 효과 (모달 선택 시 적용) */
+  deferredEffects?: TriggerEffect[]
   /** GPT V3 데이터 슬롯 (나중에 채워짐) */
   scriptSlot?: { textId: string; fallbackText: string }
 }
@@ -190,14 +192,18 @@ function checkContradiction(snapshot: TurnSnapshot): GameEventTrigger | null {
   const severity = snapshot.meters[party].contradictionTokens >= 5 ? 'critical'
     : snapshot.meters[party].contradictionTokens >= 4 ? 'major' : 'minor'
 
-  const effects: TriggerEffect[] = [
+  // 모순 효과는 플레이어 선택(지적/넘어간다)에 따라 지연 적용
+  const deferredEffects: TriggerEffect[] = [
     { type: 'lie_advance', party, disputeId: snapshot.focusDisputeId, steps: severity === 'critical' ? 2 : 1 },
     { type: 'emotion_spike', party, delta: severity === 'critical' ? 15 : 8 },
   ]
 
   if (severity === 'critical') {
-    effects.push({ type: 'block_defense', party, mode: 'flat_denial' })
+    deferredEffects.push({ type: 'block_defense', party, mode: 'flat_denial' })
   }
+
+  // 즉시 적용 효과는 없음 — 트리거는 "기회 감지"만
+  const effects: TriggerEffect[] = []
 
   // V3 텍스트 조회
   const events = getEventTexts(snapshot.caseId)
@@ -217,6 +223,7 @@ function checkContradiction(snapshot: TurnSnapshot): GameEventTrigger | null {
         ? '결정적 모순이 발각되었습니다. 더 이상 부인할 수 없습니다.'
         : '진술의 모순점이 지적되었습니다.',
     effects,
+    deferredEffects,
     scriptSlot: v3Event
       ? { textId: v3Event.id, fallbackText: v3Event.npcReaction }
       : { textId: `contradiction_${severity}`, fallbackText: '' },

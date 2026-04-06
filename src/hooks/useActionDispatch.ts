@@ -596,6 +596,10 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
 
   // 메트릭 추적
   state.trackMetric('questionsAsked')
+  // 질문 유형별 카운트 (재판관 성향 추적용)
+  if (action.questionType === 'fact_pursuit') state.trackMetric('factQuestionsAsked')
+  else if (action.questionType === 'motive_search') state.trackMetric('motiveQuestionsAsked')
+  else if (action.questionType === 'empathy_approach') state.trackMetric('empathyQuestionsAsked')
   // bothSidesQuestioned: A와 B 모두 질문한 적 있는지 체크
   if (!state.processMetrics.bothSidesQuestioned) {
     const otherTarget = action.target === 'a' ? 'b' : 'a'
@@ -627,11 +631,18 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         notifyLieTransition(action.target, action.disputeId)
         didTransition = true
         state.trackMetric('lieTransitions')
+        // 질문 유형별 유효 전이 카운트 (재판관 성향 추적용)
+        if (action.questionType === 'fact_pursuit') state.trackMetric('effectiveFactCount')
+        if (action.questionType === 'empathy_approach') state.trackMetric('effectiveEmpathyCount')
         // S5 도달 체크
         const freshAgent = action.target === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
         const qNewState = freshAgent.lieStateMap[action.disputeId]?.currentState
         if (qNewState === 'S5') {
           state.trackMetric('liesCollapsed')
+          // 신뢰/공감 경로 S5 도달 추적 (재판관 성향용)
+          if (action.questionType === 'empathy_approach' || triggers.includes('empathy_question')) {
+            state.trackMetric('collapseViaTrustOrEmpathy')
+          }
           // unsupportedCollapses: 질문만으로 S5 도달 (hard_evidence/trust 아님)
           // empathy_approach, empathy_question, motive_question 제외
           const isEmpathyOrMotive = action.questionType === 'empathy_approach'

@@ -91,7 +91,27 @@ function ContradictionModal({ event, caseKey, partyName }: { event: GameEventTri
     : null
 
   const handlePointOut = () => {
-    // 모순 지적 → 효과는 이미 Store에서 적용됨
+    const s = useGameStore.getState()
+
+    // 지연된 효과 적용 — 플레이어가 "지적한다"를 선택했을 때만
+    for (const eff of event.deferredEffects ?? []) {
+      switch (eff.type) {
+        case 'lie_advance':
+          // steps만큼 반복 전이 시도
+          for (let i = 0; i < eff.steps; i++) {
+            s.transitionLie(eff.party, eff.disputeId, 'event_contradiction_pointout')
+          }
+          break
+        case 'emotion_spike':
+          s.changeEmotion(eff.party, eff.delta)
+          break
+        case 'block_defense':
+          // block_defense는 기존 effects 자동 적용 경로와 동일하게 처리 (로그만)
+          break
+      }
+    }
+
+    // 모순 지적 대사
     addDialogue({
       speaker: 'judge',
       text: v3Event
@@ -108,10 +128,26 @@ function ContradictionModal({ event, caseKey, partyName }: { event: GameEventTri
         turn: turnCount,
       })
     }
+    // 피드백 시스템 메시지
+    addDialogue({
+      speaker: 'system',
+      text: event.severity === 'critical'
+        ? '결정적 모순을 지적했습니다! 방어가 크게 흔들립니다.'
+        : '모순을 지적했습니다! 방어가 흔들립니다.',
+      relatedDisputes: [event.disputeId],
+      turn: turnCount,
+    })
     dismiss(null)
   }
 
   const handleLetGo = () => {
+    // deferredEffects 적용하지 않고 dismiss
+    addDialogue({
+      speaker: 'system',
+      text: '모순을 넘겼습니다. 모순 토큰은 유지됩니다.',
+      relatedDisputes: [event.disputeId],
+      turn: turnCount,
+    })
     dismiss(null)
   }
 
@@ -228,6 +264,7 @@ function EmotionalBurstModal({ event, caseKey, partyName }: { event: GameEventTr
   const outburstText = v3Event?.outburstLine ?? event.description
 
   const handlePress = () => {
+    const s = useGameStore.getState()
     addDialogue({
       speaker: event.party,
       text: outburstText,
@@ -242,10 +279,27 @@ function EmotionalBurstModal({ event, caseKey, partyName }: { event: GameEventTr
     })
     // 더 압박: 감정 상승 + 누설 위험 증가
     changeEmotion(event.party, 8)
+    // 누설 미터 보너스: 압박으로 인한 누설 위험 증가
+    const meters = s.questionMeters
+    const partyMeter = meters[event.party]
+    useGameStore.setState({
+      questionMeters: {
+        ...meters,
+        [event.party]: { ...partyMeter, leakMeter: Math.min(partyMeter.leakMeter + 10, 100) },
+      },
+    })
+    // 후속 행동 추천
+    addDialogue({
+      speaker: 'system',
+      text: '사실 추궁이나 동기 탐색이 효과적입니다.',
+      relatedDisputes: [event.disputeId],
+      turn: turnCount,
+    })
     dismiss(null)
   }
 
   const handleCalm = () => {
+    const s = useGameStore.getState()
     addDialogue({
       speaker: event.party,
       text: outburstText,
@@ -261,6 +315,22 @@ function EmotionalBurstModal({ event, caseKey, partyName }: { event: GameEventTr
     // 진정: 신뢰 상승 + 감정 하락
     changeTrust(event.party, 'trustTowardJudge', 12)
     changeEmotion(event.party, -10)
+    // 신뢰 창구 보너스: 진정시키면 신뢰 창구 열림
+    const meters = s.questionMeters
+    const partyMeter = meters[event.party]
+    useGameStore.setState({
+      questionMeters: {
+        ...meters,
+        [event.party]: { ...partyMeter, trustWindow: Math.min(partyMeter.trustWindow + 15, 100) },
+      },
+    })
+    // 후속 행동 추천
+    addDialogue({
+      speaker: 'system',
+      text: '공감 접근이 효과적입니다.',
+      relatedDisputes: [event.disputeId],
+      turn: turnCount,
+    })
     dismiss(null)
   }
 

@@ -20,6 +20,7 @@ export interface ExtendedHistoryEntry {
     disputeNames: Record<string, string>
     aftermath?: string
   }
+  caseTelemetry?: { inquiry: number; judgment: number; resolution: number }
 }
 
 export interface Season {

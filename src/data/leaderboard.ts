@@ -1,5 +1,7 @@
 import type { ExtendedHistoryEntry, HallOfFameEntry, SortCategory, LocalPlayerProfile } from '../types'
 import { getSeasonForDate, getCurrentSeason } from './seasons'
+import { deriveJudgeProfile } from '../engine/judgeProfileEngine'
+import type { JudgeProfile, JudgeCaseTelemetryLite } from '../engine/judgeProfileEngine'
 
 const HISTORY_KEY = 'solomon-history'
 const PROFILE_KEY = 'solomon-profile'
@@ -179,6 +181,22 @@ export function getPlayerStats(seasonId?: string): PlayerStats {
     weakestCategory: categories[categories.length - 1].key,
     byRelationship,
   }
+}
+
+// ── 재판관 성향 프로필 ──
+
+export function getJudgeProfile(): JudgeProfile {
+  const history = loadExtendedHistory()
+  const telemetryEntries: JudgeCaseTelemetryLite[] = history
+    .filter(e => e.caseTelemetry != null)
+    .map(e => ({
+      caseId: e.caseId,
+      inquiry: e.caseTelemetry!.inquiry,
+      judgment: e.caseTelemetry!.judgment,
+      resolution: e.caseTelemetry!.resolution,
+      date: e.date,
+    }))
+  return deriveJudgeProfile(telemetryEntries)
 }
 
 // ── 명예의 전당 ──
