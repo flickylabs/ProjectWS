@@ -104,10 +104,14 @@ export function getAvailablePerks(
   })
 }
 
-/** 축 값(-100~+100)을 레벨(-10~+10)로 변환 */
+/** 축 값(-100~+100)을 레벨(-3~+3)로 변환 */
 export function axisToLevel(axisValue: number): number {
   const sign = axisValue >= 0 ? 1 : -1
-  return sign * Math.floor(Math.abs(axisValue) / 10)
+  const abs = Math.abs(axisValue)
+  if (abs >= 100) return sign * 3
+  if (abs >= 50) return sign * 2
+  if (abs >= 20) return sign * 1
+  return 0
 }
 
 /** ID로 퍼크 정의 조회 */

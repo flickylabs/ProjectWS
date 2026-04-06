@@ -34,6 +34,8 @@ import { generateJudgeQuestion } from './judgeQuestionEngine'
 import type { QuestionType, EmotionTier } from '../types'
 import { getTransitionBeat, getFallbackBeat } from './v3GameLoopLoader'
 import { emitStateTransitionEvent } from './stateTransitionHelper'
+// ── ScriptedText 우선 경로 (LLM 호출 없이 사전 생성 대사 사용) ──
+import { getScriptedInterrogation, getScriptedEvidencePresent } from './scriptedTextLoader'
 
 export async function resolveLLMDialogue(
   action: PlayerAction,
@@ -47,6 +49,10 @@ export async function resolveLLMDialogue(
   }
 
   const store = useGameStore.getState()
+
+  // ── ScriptedText 우선 경로: 사전 생성 대사가 있으면 LLM 호출 안 함 ──
+  const scriptedResult = tryScriptedDialoguePath(action, agentA, agentB, caseData, store)
+  if (scriptedResult !== null) return scriptedResult
 
   // ── Blueprint 경로 분기: ClaimPolicy가 있는 사건은 새 경로 ──
   const blueprintResult = await tryBlueprintPath(action, agentA, agentB, evidenceStates, caseData, store)
@@ -1778,6 +1784,92 @@ function getTruthIds(
   const anchorTruthIds = dispute ? [`t-${parseInt(disputeId.split('-')[1])}`] : []
   const fallback = getFallbackPolicy(allTruthIds, anchorTruthIds, stateKey)
   return fallback[field]
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// ScriptedText 우선 경로
+// 사전 생성 대사 번들이 있으면 LLM 호출 없이 즉시 응답.
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+function tryScriptedDialoguePath(
+  action: PlayerAction,
+  agentA: AgentState,
+  agentB: AgentState,
+  caseData: CaseData,
+  store: ReturnType<typeof useGameStore.getState>,
+): ResolvedDialogue | null {
+  // question, evidence_present만 스크립트 경로 지원
+  if (action.type !== 'question' && action.type !== 'evidence_present') return null
+
+  const target: PartyId = 'target' in action ? action.target : 'a'
+  const agent = target === 'a' ? agentA : agentB
+  let disputeId = 'disputeId' in action ? (action as { disputeId?: string }).disputeId : undefined
+
+  // evidence_present: 증거에서 쟁점 추출
+  if (action.type === 'evidence_present' && !disputeId) {
+    const ev = caseData.evidence.find(e => e.id === action.evidenceId)
+    if (ev?.proves.length) disputeId = ev.proves[0]
+  }
+
+  if (!disputeId) return null
+
+  const lieEntry = agent.lieStateMap[disputeId]
+  if (!lieEntry) return null
+
+  const caseId = normalizeCaseKey(caseData.caseId)
+
+  let scripted: { text: string; behaviorHint: string } | null = null
+
+  if (action.type === 'question' && 'questionType' in action) {
+    scripted = getScriptedInterrogation(
+      caseId, target, disputeId, lieEntry.currentState, action.questionType,
+    )
+  } else if (action.type === 'evidence_present' && 'evidenceId' in action) {
+    const ev = caseData.evidence.find(e => e.id === action.evidenceId)
+    const subjectRole = ev?.subjectParty === target ? 'self'
+      : ev?.subjectParty === 'both' ? 'both'
+      : 'other'
+    scripted = getScriptedEvidencePresent(
+      caseId, target, action.evidenceId, lieEntry.currentState, subjectRole,
+    )
+  }
+
+  if (!scripted) return null
+
+  // 후처리 파이프라인 경유 (기존과 동일한 품질 가드)
+  const bpPartyNames = { nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name }
+  const monetaryKw = /송금|이체|금액|원\b|돈|비용|계좌|환급|보증금|월세|정산|예치|납부|수당|급여/
+  const bpHasMonetary = caseData.disputes.some(d => monetaryKw.test(d.name) || monetaryKw.test(d.truthDescription ?? ''))
+  const thirdPartyNames = caseData.duo.socialGraph?.map(tp => tp.name).filter(Boolean) ?? []
+
+  const processedText = postProcessNpcText(scripted.text, {
+    lieState: lieEntry.currentState,
+    hasMonetaryDispute: bpHasMonetary,
+    partyNames: bpPartyNames,
+    thirdPartyNames,
+    toJudgeA: caseData.duo.partyA.callTerms?.toJudge,
+    toJudgeB: caseData.duo.partyB.callTerms?.toJudge,
+    speaker: target,
+  })
+
+  console.log(`[Scripted] ${caseId}/${target}/${disputeId}/${lieEntry.currentState} — 스크립트 응답 사용`)
+
+  return {
+    node: {
+      id: `scripted-${Date.now()}`,
+      conditions: { disputeId },
+      speaker: target,
+      text: processedText,
+      behaviorHint: scripted.behaviorHint,
+      effects: {},
+    },
+    target,
+    stance: 'hedge',
+    responseMode: 'answer_then_counter',
+    answerStyle: 'factual',
+    mentionedTruthIds: [],
+    requestedFollowup: '',
+  }
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

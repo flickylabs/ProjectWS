@@ -1,54 +1,90 @@
 import { useMemo, useState, useCallback } from 'react'
-import { loadExtendedHistory, loadJudgePerks, saveJudgePerks } from '../../data/leaderboard'
-import { deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_LABELS } from '../../engine/judgeProfileEngine'
-import type { JudgeCaseTelemetryLite, JudgeProfile } from '../../engine/judgeProfileEngine'
+import { loadDriftState, loadJudgePerks, saveJudgePerks } from '../../data/leaderboard'
+import { deriveJudgeProfile, getThreshold, TITLE_LABELS, AXIS_LABELS, TIER_LABELS, LEVEL_LABELS } from '../../engine/judgeProfileEngine'
+import type { AxisLevelState, JudgeProfile } from '../../engine/judgeProfileEngine'
 import { getAvailablePerks, axisToLevel } from '../../engine/judgePerks'
 import type { PerkId, PerkDefinition } from '../../engine/judgePerks'
 import JudgeProfileCard from './JudgeProfileCard'
 
-/** 3축 바 컴포넌트: 중앙 0, 좌 -100, 우 +100 */
-function AxisBar({ label, value, negLabel, posLabel }: {
+/** 7단계 레벨 바: -3 ~ +3, progress 표시 포함 */
+function LevelBar({ label, axisState, negLabel, posLabel }: {
   label: string
-  value: number
+  axisState: AxisLevelState
   negLabel: string
   posLabel: string
 }) {
-  // value -100~+100 -> position 0~100%
-  const pct = (value + 100) / 2
+  const { level, progress } = axisState
+  const absLevel = Math.abs(level)
+  const threshold = absLevel < 3 ? getThreshold(absLevel) : getThreshold(2)
+  const progressPct = absLevel >= 3 ? 100 : (progress / threshold) * 100
+
+  // 레벨 위치: -3~+3 → 0~6 → 0%~100%
+  const levelPct = ((level + 3) / 6) * 100
+
+  const dirLabel = level !== 0
+    ? (level < 0 ? negLabel : posLabel)
+    : '균형'
+  const levelText = LEVEL_LABELS[level] ?? '균형'
+  const displayText = level === 0 ? '균형' : `${dirLabel} ${levelText}`
+
   return (
     <div className="mb-4">
       <div className="flex justify-between text-xs text-gray-400 mb-1">
         <span>{label}</span>
-        <span className={value < 0 ? 'text-blue-400' : value > 0 ? 'text-amber-400' : 'text-gray-400'}>
-          {value > 0 ? '+' : ''}{value}
+        <span className={level < 0 ? 'text-blue-400' : level > 0 ? 'text-amber-400' : 'text-gray-400'}>
+          Lv{level > 0 ? '+' : ''}{level} ({displayText})
         </span>
       </div>
+      {/* 7단계 레벨 바 */}
       <div className="relative h-3 bg-gray-800 rounded-full overflow-hidden">
-        {/* 중앙선 */}
-        <div className="absolute left-1/2 top-0 h-full w-px bg-gray-600 z-10" />
-        {/* 값 바 */}
-        {value < 0 && (
+        {/* 단계 구분선 */}
+        {[1, 2, 3, 4, 5].map(i => (
           <div
-            className="absolute top-0 h-full bg-blue-500/60 rounded-r-full"
-            style={{ left: `${pct}%`, width: `${50 - pct}%` }}
+            key={i}
+            className="absolute top-0 h-full w-px bg-gray-700 z-10"
+            style={{ left: `${(i / 6) * 100}%` }}
+          />
+        ))}
+        {/* 중앙선 (Lv0) */}
+        <div className="absolute left-1/2 top-0 h-full w-px bg-gray-500 z-10" />
+        {/* 레벨 채움 */}
+        {level < 0 && (
+          <div
+            className="absolute top-0 h-full bg-blue-500/60"
+            style={{ left: `${levelPct}%`, width: `${50 - levelPct}%` }}
           />
         )}
-        {value > 0 && (
+        {level > 0 && (
           <div
-            className="absolute top-0 h-full bg-amber-500/60 rounded-l-full"
-            style={{ left: '50%', width: `${pct - 50}%` }}
+            className="absolute top-0 h-full bg-amber-500/60"
+            style={{ left: '50%', width: `${levelPct - 50}%` }}
           />
         )}
-        {/* 마커 */}
+        {/* 현재 위치 마커 */}
         <div
           className="absolute top-0 h-full w-1.5 bg-white rounded-full z-20 shadow"
-          style={{ left: `calc(${pct}% - 3px)` }}
+          style={{ left: `calc(${levelPct}% - 3px)` }}
         />
       </div>
       <div className="flex justify-between text-[10px] text-gray-500 mt-0.5">
-        <span>{negLabel}</span>
-        <span>{posLabel}</span>
+        <span>-3 {negLabel}</span>
+        <span>{posLabel} +3</span>
       </div>
+      {/* progress 바 (Lv3 미만일 때만) */}
+      {absLevel < 3 && (
+        <div className="mt-1">
+          <div className="flex justify-between text-[10px] text-gray-600 mb-0.5">
+            <span>다음 단계까지</span>
+            <span>{progress}/{threshold}</span>
+          </div>
+          <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
+            <div
+              className={`h-full rounded-full transition-all ${level < 0 ? 'bg-blue-400/40' : level > 0 ? 'bg-amber-400/40' : 'bg-gray-500/40'}`}
+              style={{ width: `${progressPct}%` }}
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -105,23 +141,20 @@ function PerkSelector({ tier, profile, currentPerkId, onSelect }: {
 export default function JudgeProfileReport() {
   const [showCard, setShowCard] = useState(false)
 
-  const { profile, currentTelemetry, totalGames, savedPerks } = useMemo(() => {
-    const history = loadExtendedHistory()
-    const withTelemetry = history.filter(e => e.caseTelemetry != null)
-    const telemetryEntries: JudgeCaseTelemetryLite[] = withTelemetry.map(e => ({
-      caseId: e.caseId,
-      inquiry: e.caseTelemetry!.inquiry,
-      judgment: e.caseTelemetry!.judgment,
-      resolution: e.caseTelemetry!.resolution,
-      date: e.date,
-    }))
+  const { profile, driftState, totalGames, savedPerks } = useMemo(() => {
+    const drift = loadDriftState()
     const perks = loadJudgePerks()
-    const prof = deriveJudgeProfile(telemetryEntries, {
+    const prof = deriveJudgeProfile(drift, undefined, {
       major: perks.major as PerkId | null,
       minor: perks.minor as PerkId | null,
     })
-    const current = withTelemetry.length > 0 ? withTelemetry[0].caseTelemetry : null
-    return { profile: prof, currentTelemetry: current, totalGames: withTelemetry.length, savedPerks: perks }
+
+    return {
+      profile: prof,
+      driftState: drift,
+      totalGames: drift.casesProcessed,
+      savedPerks: perks,
+    }
   }, [])
 
   const [majorPerk, setMajorPerk] = useState<PerkId | null>(savedPerks.major as PerkId | null)
@@ -169,57 +202,30 @@ export default function JudgeProfileReport() {
         </span>
       </div>
 
-      {/* 3축 게이지 */}
+      {/* 3축 레벨 게이지 */}
       <div className="bg-gray-800/50 rounded-xl p-4">
         <div className="text-xs text-gray-400 mb-3 font-semibold">
           {totalGames > 1 ? `누적 성향 (${totalGames}건)` : '성향 분석'}
         </div>
-        <AxisBar
+        <LevelBar
           label={AXIS_LABELS.inquiry.label}
-          value={profile.inquiryAxis}
+          axisState={driftState.inquiry}
           negLabel={AXIS_LABELS.inquiry.negative}
           posLabel={AXIS_LABELS.inquiry.positive}
         />
-        <AxisBar
+        <LevelBar
           label={AXIS_LABELS.judgment.label}
-          value={profile.judgmentAxis}
+          axisState={driftState.judgment}
           negLabel={AXIS_LABELS.judgment.negative}
           posLabel={AXIS_LABELS.judgment.positive}
         />
-        <AxisBar
+        <LevelBar
           label={AXIS_LABELS.resolution.label}
-          value={profile.resolutionAxis}
+          axisState={driftState.resolution}
           negLabel={AXIS_LABELS.resolution.negative}
           posLabel={AXIS_LABELS.resolution.positive}
         />
       </div>
-
-      {/* 이번 사건 vs 누적 비교 (2건 이상일 때만) */}
-      {currentTelemetry && totalGames > 1 && (
-        <div className="bg-gray-800/50 rounded-xl p-4">
-          <div className="text-xs text-gray-400 mb-2 font-semibold">이번 사건</div>
-          <div className="grid grid-cols-3 gap-2 text-center text-xs">
-            {(['inquiry', 'judgment', 'resolution'] as const).map(axis => {
-              const current = currentTelemetry[axis]
-              const cumulative = axis === 'inquiry' ? profile.inquiryAxis
-                : axis === 'judgment' ? profile.judgmentAxis
-                : profile.resolutionAxis
-              const diff = current - cumulative
-              return (
-                <div key={axis} className="bg-gray-900/50 rounded-lg p-2">
-                  <div className="text-gray-500 mb-1">{AXIS_LABELS[axis].label}</div>
-                  <div className={current < 0 ? 'text-blue-400 font-bold' : current > 0 ? 'text-amber-400 font-bold' : 'text-gray-300 font-bold'}>
-                    {current > 0 ? '+' : ''}{current}
-                  </div>
-                  <div className={`text-[10px] mt-0.5 ${diff > 0 ? 'text-amber-500' : diff < 0 ? 'text-blue-500' : 'text-gray-600'}`}>
-                    {diff > 0 ? `+${diff}` : diff < 0 ? `${diff}` : '='} vs 누적
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      )}
 
       {/* 퍼크 선택 */}
       {(canSelectMinor || canSelectMajor) && (
