@@ -1,0 +1,109 @@
+// ── 재판관 퍼크 시스템 ──
+
+export type PerkId =
+  | 'evidence_preview'      // 논리형 메이저: 증거 1단계 미리보기
+  | 'free_summary'          // 직관형 메이저: 요약 1회 무료
+  | 'burst_early_warning'   // 엄격형 메이저: 폭발 예고 조기 감지
+  | 'penalty_buffer'        // 관용형 메이저: authority 패널티 50% 완화
+  | 'extra_invest_token'    // 원칙형 메이저: 조사 토큰 +1
+  | 'skill_refund'          // 화해형 메이저: 첫 사건 스킬 조건부 환급
+  | 'contradiction_start'   // 논리형 마이너: 모순 토큰 +1 시작
+  | 'leak_boost'            // 직관형 마이너: 누설 미터 +5%
+  | 'fatigue_extend'        // 엄격형 마이너: fact_pursuit 교착 임계 +1
+  | 'trust_start'           // 관용형 마이너: 신뢰 창구 +10
+  | 'legality_hint'         // 원칙형 마이너: 위법 증거 감지 힌트
+  | 'interjection_upgrade'  // 화해형 마이너: 끼어들기 정보 레벨 +1
+
+export interface PerkDefinition {
+  id: PerkId
+  name: string
+  description: string
+  tier: 'major' | 'minor'
+  requiredAxis: 'inquiry' | 'judgment' | 'resolution'
+  requiredDirection: 'negative' | 'positive'  // negative=논리/엄격/원칙, positive=직관/관용/화해
+  /** 수치 효과 */
+  effect: Record<string, number>
+}
+
+export const PERK_TABLE: PerkDefinition[] = [
+  // ── 메이저 퍼크 ──
+  {
+    id: 'evidence_preview', name: '증거 미리보기', description: '증거 1단계를 턴 소비 없이 확인',
+    tier: 'major', requiredAxis: 'inquiry', requiredDirection: 'negative',
+    effect: { evidencePreviewCount: 1 },
+  },
+  {
+    id: 'free_summary', name: '무료 요약', description: '요약 1회 무료',
+    tier: 'major', requiredAxis: 'inquiry', requiredDirection: 'positive',
+    effect: { freeSummaryCount: 1 },
+  },
+  {
+    id: 'burst_early_warning', name: '폭발 예고', description: '감정 폭발 1턴 전 경고',
+    tier: 'major', requiredAxis: 'judgment', requiredDirection: 'negative',
+    effect: { burstWarningTurns: 1 },
+  },
+  {
+    id: 'penalty_buffer', name: '판결 완충', description: '잘못된 증거 제시 시 권위 패널티 50% 완화',
+    tier: 'major', requiredAxis: 'judgment', requiredDirection: 'positive',
+    effect: { authorityPenaltyReduction: 0.5 },
+  },
+  {
+    id: 'extra_invest_token', name: '추가 조사', description: '조사 토큰 +1로 시작',
+    tier: 'major', requiredAxis: 'resolution', requiredDirection: 'negative',
+    effect: { extraInvestTokens: 1 },
+  },
+  {
+    id: 'skill_refund', name: '스킬 환급', description: '첫 스킬 사용 시 포인트 환급',
+    tier: 'major', requiredAxis: 'resolution', requiredDirection: 'positive',
+    effect: { skillRefundCount: 1 },
+  },
+  // ── 마이너 퍼크 ──
+  {
+    id: 'contradiction_start', name: '모순 감각', description: '모순 토큰 +1로 시작',
+    tier: 'minor', requiredAxis: 'inquiry', requiredDirection: 'negative',
+    effect: { startContradictionTokens: 1 },
+  },
+  {
+    id: 'leak_boost', name: '누설 감지', description: '누설 미터 초기값 +5%',
+    tier: 'minor', requiredAxis: 'inquiry', requiredDirection: 'positive',
+    effect: { startLeakBoost: 5 },
+  },
+  {
+    id: 'fatigue_extend', name: '집요한 추궁', description: '사실추궁 교착 임계 +1',
+    tier: 'minor', requiredAxis: 'judgment', requiredDirection: 'negative',
+    effect: { factPursuitFatigueExtend: 1 },
+  },
+  {
+    id: 'trust_start', name: '신뢰의 기반', description: '신뢰 창구 초기값 +10',
+    tier: 'minor', requiredAxis: 'judgment', requiredDirection: 'positive',
+    effect: { startTrustBoost: 10 },
+  },
+  {
+    id: 'legality_hint', name: '법의 눈', description: '위법 증거에 힌트 표시',
+    tier: 'minor', requiredAxis: 'resolution', requiredDirection: 'negative',
+    effect: { legalityHintEnabled: 1 },
+  },
+  {
+    id: 'interjection_upgrade', name: '경청의 힘', description: '끼어들기 정보 레벨 +1',
+    tier: 'minor', requiredAxis: 'resolution', requiredDirection: 'positive',
+    effect: { interjectionLevelBoost: 1 },
+  },
+]
+
+/** 현재 프로필에서 선택 가능한 퍼크 목록 */
+export function getAvailablePerks(
+  profile: { inquiryAxis: number; judgmentAxis: number; resolutionAxis: number },
+  tier: 'major' | 'minor',
+): PerkDefinition[] {
+  return PERK_TABLE.filter(p => {
+    if (p.tier !== tier) return false
+    const axisKey = `${p.requiredAxis}Axis` as keyof typeof profile
+    const axisValue = profile[axisKey]
+    return p.requiredDirection === 'negative' ? axisValue <= -20 : axisValue >= 20
+  })
+}
+
+/** ID로 퍼크 정의 조회 */
+export function getPerkById(id: PerkId): PerkDefinition | undefined {
+  return PERK_TABLE.find(p => p.id === id)
+}

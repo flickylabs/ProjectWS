@@ -6,6 +6,7 @@ import type { JudgeProfile, JudgeCaseTelemetryLite } from '../engine/judgeProfil
 const HISTORY_KEY = 'solomon-history'
 const PROFILE_KEY = 'solomon-profile'
 const HOF_KEY = 'solomon-hall-of-fame'
+const JUDGE_PERKS_KEY = 'solomon-judge-perks'
 const MAX_HISTORY = 100
 
 // ── 프로필 ──
@@ -183,6 +184,23 @@ export function getPlayerStats(seasonId?: string): PlayerStats {
   }
 }
 
+// ── 재판관 퍼크 저장/로드 ──
+
+export function saveJudgePerks(major: string | null, minor: string | null): void {
+  localStorage.setItem(JUDGE_PERKS_KEY, JSON.stringify({ major, minor }))
+}
+
+export function loadJudgePerks(): { major: string | null; minor: string | null } {
+  try {
+    const raw = localStorage.getItem(JUDGE_PERKS_KEY)
+    if (raw) {
+      const parsed = JSON.parse(raw)
+      return { major: parsed.major ?? null, minor: parsed.minor ?? null }
+    }
+  } catch { /* ignore */ }
+  return { major: null, minor: null }
+}
+
 // ── 재판관 성향 프로필 ──
 
 export function getJudgeProfile(): JudgeProfile {
@@ -196,7 +214,11 @@ export function getJudgeProfile(): JudgeProfile {
       resolution: e.caseTelemetry!.resolution,
       date: e.date,
     }))
-  return deriveJudgeProfile(telemetryEntries)
+  const savedPerks = loadJudgePerks()
+  return deriveJudgeProfile(telemetryEntries, {
+    major: savedPerks.major as any,
+    minor: savedPerks.minor as any,
+  })
 }
 
 // ── 명예의 전당 ──

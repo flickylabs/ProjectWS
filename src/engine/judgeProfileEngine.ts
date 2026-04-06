@@ -1,6 +1,9 @@
 import type { VerdictInput, ProcessMetrics } from '../types'
+import type { PerkId } from './judgePerks'
 
 // ── 타입 ──
+
+export type JudgeTier = 'apprentice' | 'regular' | 'veteran' | 'senior' | 'legendary'
 
 export interface JudgeProfile {
   inquiryAxis: number      // -100(논리) ~ +100(직관)
@@ -8,6 +11,12 @@ export interface JudgeProfile {
   resolutionAxis: number    // -100(원칙) ~ +100(화해)
   titleId: string
   subtags: string[]
+  // 성장 시스템
+  casesCompleted: number
+  tier: JudgeTier
+  majorPerk: PerkId | null
+  minorPerk: PerkId | null
+  isStabilized: boolean    // 성향 안정화 여부
 }
 
 export interface JudgeCaseTelemetryLite {
@@ -74,9 +83,15 @@ export function deriveCaseProfile(
 
 export function deriveJudgeProfile(
   history: JudgeCaseTelemetryLite[],
+  savedPerks?: { major: PerkId | null; minor: PerkId | null },
 ): JudgeProfile {
   if (history.length === 0) {
-    return { inquiryAxis: 0, judgmentAxis: 0, resolutionAxis: 0, titleId: 'neutral_observer', subtags: [] }
+    return {
+      inquiryAxis: 0, judgmentAxis: 0, resolutionAxis: 0,
+      titleId: 'neutral_observer', subtags: [],
+      casesCompleted: 0, tier: 'apprentice',
+      majorPerk: null, minorPerk: null, isStabilized: false,
+    }
   }
 
   // 최근 8건 70% + 전체 30%
@@ -93,7 +108,46 @@ export function deriveJudgeProfile(
   const titleId = resolveTitle(inquiryAxis, judgmentAxis, resolutionAxis)
   const subtags = resolveSubtags(inquiryAxis, judgmentAxis, resolutionAxis)
 
-  return { inquiryAxis, judgmentAxis, resolutionAxis, titleId, subtags }
+  // 성장 시스템
+  const casesCompleted = history.length
+  const isStabilized = computeStabilization(recent, inquiryAxis, judgmentAxis, resolutionAxis)
+  const tier = computeTier(casesCompleted, isStabilized)
+
+  return {
+    inquiryAxis, judgmentAxis, resolutionAxis, titleId, subtags,
+    casesCompleted, tier,
+    majorPerk: savedPerks?.major ?? null,
+    minorPerk: savedPerks?.minor ?? null,
+    isStabilized,
+  }
+}
+
+/** 안정화 판정: 최근 8건 표준편차 < 12 && |축| >= 20 */
+function computeStabilization(
+  recent: JudgeCaseTelemetryLite[],
+  inqAxis: number, judAxis: number, resAxis: number,
+): boolean {
+  if (recent.length < 4) return false // 최소 4건은 있어야 판정
+  const stdDev = (arr: number[]) => {
+    const mean = arr.reduce((s, v) => s + v, 0) / arr.length
+    const variance = arr.reduce((s, v) => s + (v - mean) ** 2, 0) / arr.length
+    return Math.sqrt(variance)
+  }
+  const inqStd = stdDev(recent.map(h => h.inquiry))
+  const judStd = stdDev(recent.map(h => h.judgment))
+  const resStd = stdDev(recent.map(h => h.resolution))
+  const allLowVariance = inqStd < 12 && judStd < 12 && resStd < 12
+  const hasStrongAxis = Math.abs(inqAxis) >= 20 || Math.abs(judAxis) >= 20 || Math.abs(resAxis) >= 20
+  return allLowVariance && hasStrongAxis
+}
+
+/** tier 결정 */
+function computeTier(casesCompleted: number, isStabilized: boolean): JudgeTier {
+  if (casesCompleted >= 30) return 'legendary'
+  if (casesCompleted >= 20) return 'senior'
+  if (casesCompleted >= 10) return 'veteran'
+  if (casesCompleted >= 5 && isStabilized) return 'regular'
+  return 'apprentice'
 }
 
 // ── 칭호 결정 ──
@@ -144,6 +198,16 @@ export const TITLE_LABELS: Record<string, { name: string; subtitle: string }> = 
   gentle_guardian: { name: '온화한 수호자', subtitle: '원칙의 품격' },
   warm_mediator: { name: '따뜻한 중재자', subtitle: '화해의 길잡이' },
   neutral_observer: { name: '중립의 관찰자', subtitle: '균형의 눈' },
+}
+
+// ── 등급 라벨 ──
+
+export const TIER_LABELS: Record<JudgeTier, { name: string; emoji: string }> = {
+  apprentice: { name: '견습 재판관', emoji: '📜' },
+  regular: { name: '정식 재판관', emoji: '⚖️' },
+  veteran: { name: '숙련 재판관', emoji: '🏛️' },
+  senior: { name: '수석 재판관', emoji: '🦉' },
+  legendary: { name: '전설의 재판관', emoji: '🌟' },
 }
 
 // ── 축 라벨 ──

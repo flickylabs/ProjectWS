@@ -1,7 +1,10 @@
-import { useMemo } from 'react'
-import { loadExtendedHistory } from '../../data/leaderboard'
-import { deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS } from '../../engine/judgeProfileEngine'
-import type { JudgeCaseTelemetryLite } from '../../engine/judgeProfileEngine'
+import { useMemo, useState, useCallback } from 'react'
+import { loadExtendedHistory, loadJudgePerks, saveJudgePerks } from '../../data/leaderboard'
+import { deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_LABELS } from '../../engine/judgeProfileEngine'
+import type { JudgeCaseTelemetryLite, JudgeProfile } from '../../engine/judgeProfileEngine'
+import { getAvailablePerks } from '../../engine/judgePerks'
+import type { PerkId, PerkDefinition } from '../../engine/judgePerks'
+import JudgeProfileCard from './JudgeProfileCard'
 
 /** 3축 바 컴포넌트: 중앙 0, 좌 -100, 우 +100 */
 function AxisBar({ label, value, negLabel, posLabel }: {
@@ -50,8 +53,53 @@ function AxisBar({ label, value, negLabel, posLabel }: {
   )
 }
 
+/** 퍼크 선택 카드 */
+function PerkSelector({ tier, profile, currentPerkId, onSelect }: {
+  tier: 'major' | 'minor'
+  profile: JudgeProfile
+  currentPerkId: PerkId | null
+  onSelect: (perkId: PerkId | null) => void
+}) {
+  const available = useMemo(
+    () => getAvailablePerks(profile, tier),
+    [profile, tier],
+  )
+
+  if (available.length === 0) {
+    return (
+      <div className="text-xs text-gray-600 text-center py-2">
+        {tier === 'major' ? '메이저' : '마이너'} 퍼크 해금 조건 미달 (축 |20| 이상 필요)
+      </div>
+    )
+  }
+
+  return (
+    <div className="space-y-1.5">
+      {available.map((perk: PerkDefinition) => {
+        const isActive = currentPerkId === perk.id
+        return (
+          <button
+            key={perk.id}
+            onClick={() => onSelect(isActive ? null : perk.id)}
+            className={`w-full text-left px-3 py-2 rounded-lg border transition-colors text-xs ${
+              isActive
+                ? 'border-amber-500/60 bg-amber-500/10 text-amber-300'
+                : 'border-gray-700 bg-gray-800/50 text-gray-400 hover:border-gray-600 hover:text-gray-300'
+            }`}
+          >
+            <div className="font-semibold">{perk.name}</div>
+            <div className="text-[10px] mt-0.5 opacity-80">{perk.description}</div>
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
 export default function JudgeProfileReport() {
-  const { profile, currentTelemetry, totalGames } = useMemo(() => {
+  const [showCard, setShowCard] = useState(false)
+
+  const { profile, currentTelemetry, totalGames, savedPerks } = useMemo(() => {
     const history = loadExtendedHistory()
     const withTelemetry = history.filter(e => e.caseTelemetry != null)
     const telemetryEntries: JudgeCaseTelemetryLite[] = withTelemetry.map(e => ({
@@ -61,13 +109,34 @@ export default function JudgeProfileReport() {
       resolution: e.caseTelemetry!.resolution,
       date: e.date,
     }))
-    const prof = deriveJudgeProfile(telemetryEntries)
-    // 가장 최근 항목의 telemetry (현재 사건)
+    const perks = loadJudgePerks()
+    const prof = deriveJudgeProfile(telemetryEntries, {
+      major: perks.major as PerkId | null,
+      minor: perks.minor as PerkId | null,
+    })
     const current = withTelemetry.length > 0 ? withTelemetry[0].caseTelemetry : null
-    return { profile: prof, currentTelemetry: current, totalGames: withTelemetry.length }
+    return { profile: prof, currentTelemetry: current, totalGames: withTelemetry.length, savedPerks: perks }
   }, [])
 
+  const [majorPerk, setMajorPerk] = useState<PerkId | null>(savedPerks.major as PerkId | null)
+  const [minorPerk, setMinorPerk] = useState<PerkId | null>(savedPerks.minor as PerkId | null)
+
+  const handleMajorSelect = useCallback((id: PerkId | null) => {
+    setMajorPerk(id)
+    saveJudgePerks(id, minorPerk)
+  }, [minorPerk])
+
+  const handleMinorSelect = useCallback((id: PerkId | null) => {
+    setMinorPerk(id)
+    saveJudgePerks(majorPerk, id)
+  }, [majorPerk])
+
   const titleInfo = TITLE_LABELS[profile.titleId] ?? TITLE_LABELS.neutral_observer
+  const tierInfo = TIER_LABELS[profile.tier]
+
+  // 퍼크 해금 조건
+  const canSelectMinor = profile.tier === 'regular' || profile.tier === 'veteran' || profile.tier === 'senior' || profile.tier === 'legendary'
+  const canSelectMajor = profile.tier === 'veteran' || profile.tier === 'senior' || profile.tier === 'legendary'
 
   return (
     <div className="space-y-5">
@@ -84,6 +153,14 @@ export default function JudgeProfileReport() {
             ))}
           </div>
         )}
+      </div>
+
+      {/* 등급 표시 */}
+      <div className="text-center">
+        <span className="text-xs px-3 py-1 rounded-full bg-gray-800 text-gray-300 border border-gray-700">
+          {tierInfo.emoji} {tierInfo.name} ({profile.casesCompleted}건)
+          {profile.isStabilized && <span className="ml-1 text-green-400">안정</span>}
+        </span>
       </div>
 
       {/* 3축 게이지 */}
@@ -137,6 +214,68 @@ export default function JudgeProfileReport() {
           </div>
         </div>
       )}
+
+      {/* 퍼크 선택 */}
+      {(canSelectMinor || canSelectMajor) && (
+        <div className="bg-gray-800/50 rounded-xl p-4">
+          <div className="text-xs text-gray-400 mb-3 font-semibold">재판관 퍼크</div>
+
+          {canSelectMajor && (
+            <div className="mb-3">
+              <div className="text-[10px] text-amber-400 mb-1.5 font-semibold">메이저 퍼크</div>
+              <PerkSelector
+                tier="major"
+                profile={profile}
+                currentPerkId={majorPerk}
+                onSelect={handleMajorSelect}
+              />
+            </div>
+          )}
+
+          {canSelectMinor && (
+            <div>
+              <div className="text-[10px] text-blue-400 mb-1.5 font-semibold">마이너 퍼크</div>
+              <PerkSelector
+                tier="minor"
+                profile={profile}
+                currentPerkId={minorPerk}
+                onSelect={handleMinorSelect}
+              />
+            </div>
+          )}
+
+          {!canSelectMajor && canSelectMinor && (
+            <div className="text-[10px] text-gray-600 mt-2 text-center">
+              메이저 퍼크는 숙련 등급(10건) 이상에서 해금
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* 아직 퍼크 미해금 */}
+      {!canSelectMinor && !canSelectMajor && totalGames > 0 && (
+        <div className="bg-gray-800/50 rounded-xl p-3 text-center">
+          <div className="text-xs text-gray-500">
+            퍼크는 정식 등급(5건 + 성향 안정화) 이상에서 해금됩니다
+          </div>
+          <div className="text-[10px] text-gray-600 mt-1">
+            현재 {profile.casesCompleted}건 완료
+            {profile.casesCompleted >= 5 && !profile.isStabilized && ' | 성향 안정화 필요'}
+          </div>
+        </div>
+      )}
+
+      {/* 프로필 카드 토글 */}
+      <div className="text-center">
+        <button
+          onClick={() => setShowCard(v => !v)}
+          className="text-xs px-4 py-1.5 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
+        >
+          {showCard ? '카드 접기' : '프로필 카드 보기'}
+        </button>
+      </div>
+
+      {showCard && <JudgeProfileCard profile={{ ...profile, majorPerk: majorPerk, minorPerk: minorPerk }} />}
 
       {/* 설명 */}
       <div className="text-xs text-gray-500 text-center leading-relaxed">

@@ -100,6 +100,9 @@ import { aggregateReadiness } from '../engine/readinessEngine'
 import { resetTellTracker } from '../engine/tellValidator'
 import { getReadinessSets } from '../engine/evidenceChallengeEngine'
 import { createInitialMeterState, resolveQuestionEffect, getMeterEffects, type QuestionMeterState, type QuestionEffectResult } from '../engine/questionEffectEngine'
+import { loadJudgePerks } from '../data/leaderboard'
+import { getPerkById } from '../engine/judgePerks'
+import type { PerkId } from '../engine/judgePerks'
 import { evaluateEventTriggers, resetEventTriggerState, type GameEventTrigger, type TurnSnapshot } from '../engine/gameEventTriggerEngine'
 import { resetV3State } from '../engine/v3GameLoopLoader'
 import { resetV2State } from '../engine/v2DataLoader'
@@ -123,6 +126,65 @@ const EMPTY_METRICS: ProcessMetrics = {
   effectiveFactCount: 0, effectiveEmpathyCount: 0,
   factQuestionsAsked: 0, motiveQuestionsAsked: 0, empathyQuestionsAsked: 0,
   collapseViaTrustOrEmpathy: 0,
+}
+
+/** 퍼크 효과를 게임 초기 상태에 반영 */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function applyPerks(set: (partial: any) => void): void {
+  const saved = loadJudgePerks()
+  const perkIds = [saved.major, saved.minor].filter(Boolean) as PerkId[]
+  if (perkIds.length === 0) return
+
+  const state = useGameStore.getState()
+  const perksState: GameStore['activePerks'] = {
+    majorPerk: (saved.major as PerkId) ?? null,
+    minorPerk: (saved.minor as PerkId) ?? null,
+    freeSummaryRemaining: 0, evidencePreviewRemaining: 0, skillRefundRemaining: 0,
+    burstWarningEnabled: false, authorityPenaltyReduction: 0,
+    legalityHintEnabled: false, interjectionLevelBoost: 0, fatiguePursuitExtend: 0,
+  }
+
+  // 미터 수정 (contradiction, leak, trust)
+  let meterA = { ...state.questionMeters.a }
+  let meterB = { ...state.questionMeters.b }
+
+  for (const pid of perkIds) {
+    const perk = getPerkById(pid)
+    if (!perk) continue
+    const eff = perk.effect
+
+    // 즉시 적용: 조사 토큰
+    if (eff.extraInvestTokens) {
+      set({ globalInvestTokens: state.globalInvestTokens + eff.extraInvestTokens })
+    }
+    // 미터 초기값 수정
+    if (eff.startContradictionTokens) {
+      meterA.contradictionTokens += eff.startContradictionTokens
+      meterB.contradictionTokens += eff.startContradictionTokens
+    }
+    if (eff.startLeakBoost) {
+      meterA.leakMeter += eff.startLeakBoost
+      meterB.leakMeter += eff.startLeakBoost
+    }
+    if (eff.startTrustBoost) {
+      meterA.trustWindow += eff.startTrustBoost
+      meterB.trustWindow += eff.startTrustBoost
+    }
+    // 세션 플래그
+    if (eff.freeSummaryCount) perksState.freeSummaryRemaining = eff.freeSummaryCount
+    if (eff.evidencePreviewCount) perksState.evidencePreviewRemaining = eff.evidencePreviewCount
+    if (eff.skillRefundCount) perksState.skillRefundRemaining = eff.skillRefundCount
+    if (eff.burstWarningTurns) perksState.burstWarningEnabled = true
+    if (eff.authorityPenaltyReduction) perksState.authorityPenaltyReduction = eff.authorityPenaltyReduction
+    if (eff.legalityHintEnabled) perksState.legalityHintEnabled = true
+    if (eff.interjectionLevelBoost) perksState.interjectionLevelBoost = eff.interjectionLevelBoost
+    if (eff.factPursuitFatigueExtend) perksState.fatiguePursuitExtend = eff.factPursuitFatigueExtend
+  }
+
+  set({
+    questionMeters: { a: meterA, b: meterB },
+    activePerks: perksState,
+  })
 }
 
 export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & DiscoverySlice & {
@@ -208,6 +270,19 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** 최근 집중한 쟁점 ID (심문/증거 제시 시 갱신) */
   lastFocusedDisputeId: string | null
   setLastFocusedDisputeId: (id: string | null) => void
+  /** 퍼크 시스템: 현재 세션에 적용된 퍼크 효과 */
+  activePerks: {
+    majorPerk: PerkId | null
+    minorPerk: PerkId | null
+    freeSummaryRemaining: number
+    evidencePreviewRemaining: number
+    skillRefundRemaining: number
+    burstWarningEnabled: boolean
+    authorityPenaltyReduction: number
+    legalityHintEnabled: boolean
+    interjectionLevelBoost: number
+    fatiguePursuitExtend: number
+  }
 }
 
 export interface GameEvent {
@@ -389,6 +464,12 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     setDisputeBoardAction: (a: GameStore['disputeBoardAction']) => set({ disputeBoardAction: a }),
     lastFocusedDisputeId: null,
     setLastFocusedDisputeId: (id: string | null) => set({ lastFocusedDisputeId: id }),
+    activePerks: {
+      majorPerk: null, minorPerk: null,
+      freeSummaryRemaining: 0, evidencePreviewRemaining: 0, skillRefundRemaining: 0,
+      burstWarningEnabled: false, authorityPenaltyReduction: 0,
+      legalityHintEnabled: false, interjectionLevelBoost: 0, fatiguePursuitExtend: 0,
+    },
 
     evaluateTurnEvents: (questionType: QuestionType, focusDisputeId: string, transitionsThisTurn: { party: 'a' | 'b'; disputeId: string; from: import('../types').LieState; to: import('../types').LieState }[]) => {
       const s = useGameStore.getState()
@@ -535,6 +616,9 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       store.initEvidence(caseData.evidence, caseData.evidenceCombinations)
       store.clearDialogue()
       store.resetVerdict()
+
+      // 퍼크 적용
+      applyPerks(set)
       store.initDiscovery(caseData)
 
       // 리뉴얼 데이터 등록 (ClaimPolicy/Bridge/EvidenceChallenge/V3)
