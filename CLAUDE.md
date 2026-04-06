@@ -31,11 +31,11 @@ npx tsc --noEmit     # 타입 체크만
 
 ```
 src/
-├── engine/           46개 룰 엔진 (게임 로직의 핵심)
+├── engine/           48개 룰 엔진 (게임 로직의 핵심)
 ├── store/            Zustand 8슬라이스 (상태 관리)
 ├── hooks/            useActionDispatch (97KB, 액션 디스패치 메인)
 ├── components/       16개 UI 모듈
-├── data/             84건 사건 데이터 + 대사
+├── data/             84건 사건 데이터 + 대사 + 솔루션 태그
 ├── types/            TypeScript 타입 (GDD v2.0 기반)
 └── utils/            상수 및 유틸
 
@@ -133,6 +133,12 @@ S0: 완전 부정 → S1: 일부 인정 → S2: 핑계 → S3: 책임 전가 →
 | `koreanPostposition.ts` | 한국어 조사 헬퍼 (이/가, 을/를, 은/는, 과/와) + 후처리 |
 | `meterStagingV2.ts` | DossierCard 해금 조건 판정 |
 | `verdictEngine.ts` | 최종 점수 계산 (통찰/권위/지혜) |
+| `judgeProfileEngine.ts` | 재판관 성향 프로필 (3축 드리프트: inquiry/judgment/resolution, 레벨+포인트) |
+| `judgePerks.ts` | 재판관 퍼크 테이블 (메이저 6종 + 마이너 6종, 성향축별 해금) |
+| `questionEffectEngine.ts` | 심문 3종 효과 판정 (computeEffectiveness) + 교착 피드백 |
+| `questionFatigueEngine.ts` | 심문 피로도 (streak/교착 3단계 + dossier 리셋) |
+| `stateTransitionHelper.ts` | 상태 전이 라벨 (S4='opening' 분리 + 행동 추천) |
+| `gameEventTriggerEngine.ts` | 이벤트 트리거 (모순 지연실행 + 감정 폭발 선택 강화) |
 
 ---
 
@@ -160,6 +166,40 @@ src/data/dialogues/phase2/{case}.json  (84건)
 ```
 src/data/claimPolicies/{case}-structure-v2.json  (84건)
 ```
+
+### 솔루션 태그 (재판관 성향 축 연동)
+```
+src/data/solutionOrientations.ts  (963개 태그: principle/reconcile/hybrid)
+```
+
+### 재판관 성향 저장
+```
+localStorage 'solomon-judge-drift'   (드리프트 상태: 3축 레벨+포인트)
+localStorage 'solomon-judge-perks'   (선택된 퍼크: major + minor)
+localStorage 'solomon-history'       (caseTelemetry 포함, max 100건)
+```
+
+---
+
+## 재판관 성향 시스템
+
+### 3축 드리프트 (레벨+포인트)
+```
+강논리(-3) ← 논리(-2) ← 약논리(-1) ← 균형(0) → 약직관(+1) → 직관(+2) → 강직관(+3)
+```
+- 승급: Lv0→1: 3p, Lv1→2: 4p, Lv2→3: 5p
+- 강등: progress 먼저 감소, 바닥나면 레벨 하강
+- 사건당: |caseAxis| <15→0, 15~44→±1, 45+→±2
+- 신뢰도 게이트: 탐구(질문 3회+), 해결(솔루션 1개+)
+
+### 퍼크 (12종)
+- 해금: Lv2→minor, Lv3→major
+- 메이저 1 + 마이너 1 상한
+- 자격 상실 시 비활성화 (회수 아님)
+
+### 성장 5단계
+- apprentice(1~4건) → regular(5건+안정화) → veteran(10건) → senior(20건) → legendary(30건)
+- 퍼크 해금은 건수+안정화, 프로필 카드는 40건+평균 75점+
 
 ---
 
