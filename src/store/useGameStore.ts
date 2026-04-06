@@ -158,9 +158,8 @@ function applyPerks(set: (partial: any) => void): void {
       set({ globalInvestTokens: state.globalInvestTokens + eff.extraInvestTokens })
     }
     // 미터 초기값 수정
-    if (eff.startContradictionTokens) {
-      meterA.contradictionTokens += eff.startContradictionTokens
-      meterB.contradictionTokens += eff.startContradictionTokens
+    if (eff.firstTargetContradictionBonus) {
+      perksState.firstTargetContradictionBonus = eff.firstTargetContradictionBonus
     }
     if (eff.startLeakBoost) {
       meterA.leakMeter += eff.startLeakBoost
@@ -176,6 +175,7 @@ function applyPerks(set: (partial: any) => void): void {
     if (eff.skillRefundCount) perksState.skillRefundRemaining = eff.skillRefundCount
     if (eff.burstWarningTurns) perksState.burstWarningEnabled = true
     if (eff.authorityPenaltyReduction) perksState.authorityPenaltyReduction = eff.authorityPenaltyReduction
+    if (eff.penaltyBufferUses) perksState.penaltyBufferUsesRemaining = eff.penaltyBufferUses
     if (eff.legalityHintEnabled) perksState.legalityHintEnabled = true
     if (eff.interjectionLevelBoost) perksState.interjectionLevelBoost = eff.interjectionLevelBoost
     if (eff.factPursuitFatigueExtend) perksState.fatiguePursuitExtend = eff.factPursuitFatigueExtend
@@ -279,6 +279,8 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
     skillRefundRemaining: number
     burstWarningEnabled: boolean
     authorityPenaltyReduction: number
+    penaltyBufferUsesRemaining: number
+    firstTargetContradictionBonus: number
     legalityHintEnabled: boolean
     interjectionLevelBoost: number
     fatiguePursuitExtend: number
@@ -467,7 +469,8 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     activePerks: {
       majorPerk: null, minorPerk: null,
       freeSummaryRemaining: 0, evidencePreviewRemaining: 0, skillRefundRemaining: 0,
-      burstWarningEnabled: false, authorityPenaltyReduction: 0,
+      burstWarningEnabled: false, authorityPenaltyReduction: 0, penaltyBufferUsesRemaining: 0,
+      firstTargetContradictionBonus: 0,
       legalityHintEnabled: false, interjectionLevelBoost: 0, fatiguePursuitExtend: 0,
     },
 

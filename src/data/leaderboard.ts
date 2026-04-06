@@ -1,12 +1,13 @@
 import type { ExtendedHistoryEntry, HallOfFameEntry, SortCategory, LocalPlayerProfile } from '../types'
 import { getSeasonForDate, getCurrentSeason } from './seasons'
-import { deriveJudgeProfile } from '../engine/judgeProfileEngine'
-import type { JudgeProfile, JudgeCaseTelemetryLite } from '../engine/judgeProfileEngine'
+import { deriveJudgeProfile, createDefaultDriftState } from '../engine/judgeProfileEngine'
+import type { JudgeProfile, JudgeDriftState } from '../engine/judgeProfileEngine'
 
 const HISTORY_KEY = 'solomon-history'
 const PROFILE_KEY = 'solomon-profile'
 const HOF_KEY = 'solomon-hall-of-fame'
 const JUDGE_PERKS_KEY = 'solomon-judge-perks'
+const JUDGE_DRIFT_KEY = 'solomon-judge-drift'
 const MAX_HISTORY = 100
 
 // ── 프로필 ──
@@ -201,21 +202,40 @@ export function loadJudgePerks(): { major: string | null; minor: string | null }
   return { major: null, minor: null }
 }
 
+// ── 드리프트 상태 저장/로드 ──
+
+export function saveDriftState(state: JudgeDriftState): void {
+  localStorage.setItem(JUDGE_DRIFT_KEY, JSON.stringify(state))
+}
+
+export function loadDriftState(): JudgeDriftState {
+  try {
+    const raw = localStorage.getItem(JUDGE_DRIFT_KEY)
+    if (raw) {
+      const parsed = JSON.parse(raw)
+      if (parsed.schemaVersion === 2) return parsed as JudgeDriftState
+    }
+  } catch { /* ignore */ }
+  return createDefaultDriftState()
+}
+
 // ── 재판관 성향 프로필 ──
 
 export function getJudgeProfile(): JudgeProfile {
-  const history = loadExtendedHistory()
-  const telemetryEntries: JudgeCaseTelemetryLite[] = history
-    .filter(e => e.caseTelemetry != null)
-    .map(e => ({
-      caseId: e.caseId,
-      inquiry: e.caseTelemetry!.inquiry,
-      judgment: e.caseTelemetry!.judgment,
-      resolution: e.caseTelemetry!.resolution,
-      date: e.date,
-    }))
+  const driftState = loadDriftState()
   const savedPerks = loadJudgePerks()
-  return deriveJudgeProfile(telemetryEntries, {
+  // 최근 5건 칭호 이력 수집 (titleId가 있는 히스토리에서)
+  const history = loadExtendedHistory()
+  const recentTitles = history
+    .slice(0, 5)
+    .filter(e => e.caseTelemetry != null)
+    .map(e => {
+      // caseTelemetry에서 개별 titleId를 역산할 수 없으므로 생략
+      // 칭호 이력은 별도 관리 필요 — 현재는 축값 기반으로 결정
+      return undefined
+    })
+    .filter((t): t is string => t != null)
+  return deriveJudgeProfile(driftState, recentTitles.length > 0 ? recentTitles : undefined, {
     major: savedPerks.major as any,
     minor: savedPerks.minor as any,
   })

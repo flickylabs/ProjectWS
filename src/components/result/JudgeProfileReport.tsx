@@ -2,7 +2,7 @@ import { useMemo, useState, useCallback } from 'react'
 import { loadExtendedHistory, loadJudgePerks, saveJudgePerks } from '../../data/leaderboard'
 import { deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_LABELS } from '../../engine/judgeProfileEngine'
 import type { JudgeCaseTelemetryLite, JudgeProfile } from '../../engine/judgeProfileEngine'
-import { getAvailablePerks } from '../../engine/judgePerks'
+import { getAvailablePerks, axisToLevel } from '../../engine/judgePerks'
 import type { PerkId, PerkDefinition } from '../../engine/judgePerks'
 import JudgeProfileCard from './JudgeProfileCard'
 
@@ -60,15 +60,21 @@ function PerkSelector({ tier, profile, currentPerkId, onSelect }: {
   currentPerkId: PerkId | null
   onSelect: (perkId: PerkId | null) => void
 }) {
+  const levels = useMemo(() => ({
+    inquiry: axisToLevel(profile.inquiryAxis),
+    judgment: axisToLevel(profile.judgmentAxis),
+    resolution: axisToLevel(profile.resolutionAxis),
+  }), [profile.inquiryAxis, profile.judgmentAxis, profile.resolutionAxis])
+
   const available = useMemo(
-    () => getAvailablePerks(profile, tier),
-    [profile, tier],
+    () => getAvailablePerks(levels, tier),
+    [levels, tier],
   )
 
   if (available.length === 0) {
     return (
       <div className="text-xs text-gray-600 text-center py-2">
-        {tier === 'major' ? '메이저' : '마이너'} 퍼크 해금 조건 미달 (축 |20| 이상 필요)
+        {tier === 'major' ? '메이저' : '마이너'} 퍼크 해금 조건 미달 (축 Lv{tier === 'major' ? 3 : 2} 이상 필요)
       </div>
     )
   }

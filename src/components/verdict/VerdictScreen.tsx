@@ -7,7 +7,8 @@ import { recordHistory } from '../layout/HistoryPanel'
 import { completeStage } from '../../data/campaign'
 import { playGavel } from '../../engine/soundEngine'
 import { checkAndGrantRewards } from '../../engine/rewardEngine'
-import { deriveCaseProfile } from '../../engine/judgeProfileEngine'
+import { deriveCaseProfile, applyDriftUpdate } from '../../engine/judgeProfileEngine'
+import { loadDriftState, saveDriftState } from '../../data/leaderboard'
 import FactChecklist from './FactChecklist'
 import ResponsibilitySlider from './ResponsibilitySlider'
 import SolutionPicker from './SolutionPicker'
@@ -111,6 +112,16 @@ export default function VerdictScreen() {
       caseData.caseId,
       caseData.solutions,
     )
+
+    // 드리프트 상태 업데이트
+    const currentDrift = loadDriftState()
+    const newDrift = applyDriftUpdate(
+      currentDrift,
+      caseTelemetry,
+      processMetrics,
+      verdictInput.selectedSolutions.length,
+    )
+    saveDriftState(newDrift)
 
     recordHistory({
       caseId: caseData.caseId, score: score.total,

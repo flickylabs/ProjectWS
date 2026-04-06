@@ -10,7 +10,7 @@ export type PerkId =
   | 'contradiction_start'   // 논리형 마이너: 모순 토큰 +1 시작
   | 'leak_boost'            // 직관형 마이너: 누설 미터 +5%
   | 'fatigue_extend'        // 엄격형 마이너: fact_pursuit 교착 임계 +1
-  | 'trust_start'           // 관용형 마이너: 신뢰 창구 +10
+  | 'trust_start'           // 관용형 마이너: 신뢰 창구 +8
   | 'legality_hint'         // 원칙형 마이너: 위법 증거 감지 힌트
   | 'interjection_upgrade'  // 화해형 마이너: 끼어들기 정보 레벨 +1
 
@@ -43,9 +43,9 @@ export const PERK_TABLE: PerkDefinition[] = [
     effect: { burstWarningTurns: 1 },
   },
   {
-    id: 'penalty_buffer', name: '판결 완충', description: '잘못된 증거 제시 시 권위 패널티 50% 완화',
+    id: 'penalty_buffer', name: '판결 완충', description: '잘못된 증거 제시 시 첫 1회 권위 패널티 35% 완화',
     tier: 'major', requiredAxis: 'judgment', requiredDirection: 'positive',
-    effect: { authorityPenaltyReduction: 0.5 },
+    effect: { authorityPenaltyReduction: 0.35, penaltyBufferUses: 1 },
   },
   {
     id: 'extra_invest_token', name: '추가 조사', description: '조사 토큰 +1로 시작',
@@ -61,7 +61,7 @@ export const PERK_TABLE: PerkDefinition[] = [
   {
     id: 'contradiction_start', name: '모순 감각', description: '모순 토큰 +1로 시작',
     tier: 'minor', requiredAxis: 'inquiry', requiredDirection: 'negative',
-    effect: { startContradictionTokens: 1 },
+    effect: { firstTargetContradictionBonus: 1 },
   },
   {
     id: 'leak_boost', name: '누설 감지', description: '누설 미터 초기값 +5%',
@@ -74,9 +74,9 @@ export const PERK_TABLE: PerkDefinition[] = [
     effect: { factPursuitFatigueExtend: 1 },
   },
   {
-    id: 'trust_start', name: '신뢰의 기반', description: '신뢰 창구 초기값 +10',
+    id: 'trust_start', name: '신뢰의 기반', description: '신뢰 창구 초기값 +8',
     tier: 'minor', requiredAxis: 'judgment', requiredDirection: 'positive',
-    effect: { startTrustBoost: 10 },
+    effect: { startTrustBoost: 8 },
   },
   {
     id: 'legality_hint', name: '법의 눈', description: '위법 증거에 힌트 표시',
@@ -90,17 +90,24 @@ export const PERK_TABLE: PerkDefinition[] = [
   },
 ]
 
-/** 현재 프로필에서 선택 가능한 퍼크 목록 */
+/** 현재 프로필에서 선택 가능한 퍼크 목록 (minor: Lv2+, major: Lv3+) */
 export function getAvailablePerks(
-  profile: { inquiryAxis: number; judgmentAxis: number; resolutionAxis: number },
+  levels: { inquiry: number; judgment: number; resolution: number },
   tier: 'major' | 'minor',
 ): PerkDefinition[] {
+  const threshold = tier === 'minor' ? 2 : 3
   return PERK_TABLE.filter(p => {
     if (p.tier !== tier) return false
-    const axisKey = `${p.requiredAxis}Axis` as keyof typeof profile
-    const axisValue = profile[axisKey]
-    return p.requiredDirection === 'negative' ? axisValue <= -20 : axisValue >= 20
+    const level = levels[p.requiredAxis]
+    if (Math.abs(level) < threshold) return false
+    return p.requiredDirection === 'negative' ? level < 0 : level > 0
   })
+}
+
+/** 축 값(-100~+100)을 레벨(-10~+10)로 변환 */
+export function axisToLevel(axisValue: number): number {
+  const sign = axisValue >= 0 ? 1 : -1
+  return sign * Math.floor(Math.abs(axisValue) / 10)
 }
 
 /** ID로 퍼크 정의 조회 */
