@@ -1,5 +1,6 @@
 import type { VerdictInput, ProcessMetrics } from '../types'
 import type { PerkId } from './judgePerks'
+import { getSolutionOrientationByText } from '../data/solutionOrientations'
 
 // ── 타입 ──
 
@@ -33,6 +34,8 @@ export function deriveCaseProfile(
   input: VerdictInput,
   metrics: ProcessMetrics,
   disputes: { id: string; ambiguity?: string; truth: boolean }[],
+  caseId?: string,
+  solutions?: Record<string, string[]>,
 ): { inquiry: number; judgment: number; resolution: number } {
   // 축 1: 탐구 (논리 성공률 vs 직관 성공률)
   const factTotal = metrics.factQuestionsAsked || 1
@@ -65,12 +68,28 @@ export function deriveCaseProfile(
     (metrics.interjectionAllowed * 10),  // 끼어들기 허용 -> 관용
   )
 
-  // 축 3: 해결 (원칙 <-> 화해)
-  const solutionCount = input.selectedSolutions.length
-  const resolution = Math.round(
-    (solutionCount * 15) +
-    (metrics.bothSidesQuestioned ? 10 : -10),
-  )
+  // 축 3: 해결 (원칙 <-> 화해) — solution orientation tag 기반
+  let resolution = 0
+  if (caseId && solutions && input.selectedSolutions.length > 0) {
+    let principleCount = 0
+    let reconcileCount = 0
+    for (const sel of input.selectedSolutions) {
+      const [category, ...optionParts] = sel.split('::')
+      const optionText = optionParts.join('::')
+      const tag = getSolutionOrientationByText(caseId, category, optionText, solutions)
+      if (tag === 'principle') principleCount++
+      else if (tag === 'reconcile') reconcileCount++
+      // hybrid는 중립 — 어느 쪽에도 가산하지 않음
+    }
+    const total = principleCount + reconcileCount || 1
+    // reconcile 비율이 높으면 양수(화해형), principle 비율이 높으면 음수(원칙형)
+    resolution = Math.round(((reconcileCount - principleCount) / total) * 60)
+  } else {
+    // 태그 없으면 length 기반 폴백
+    resolution = Math.round(input.selectedSolutions.length * 15)
+  }
+  // bothSidesQuestioned = 축 신뢰도 보정 (Codex 합의)
+  resolution += metrics.bothSidesQuestioned ? 5 : -5
 
   return {
     inquiry: clamp(inquiry, -100, 100),

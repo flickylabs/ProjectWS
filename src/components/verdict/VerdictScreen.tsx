@@ -108,6 +108,8 @@ export default function VerdictScreen() {
         ambiguity: (d as any).ambiguity,
         truth: (d as any).truth ?? true,
       })),
+      caseData.caseId,
+      caseData.solutions,
     )
 
     recordHistory({
