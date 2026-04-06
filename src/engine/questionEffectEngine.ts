@@ -405,3 +405,50 @@ function applyMeterUpdate(
 const STATE_RANK: Record<LieState, number> = {
   S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5,
 }
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 질문 유형별 유효도 판정 (UI 칩 표시용)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+export type EffectivenessLevel = 'strong' | 'normal' | 'weak'
+
+export interface EffectivenessResult {
+  level: EffectivenessLevel
+  hint: string
+}
+
+/** 질문 유형의 현재 상황에서의 유효도 판정 */
+export function computeEffectiveness(
+  questionType: 'fact_pursuit' | 'motive_search' | 'empathy_approach',
+  lieState: string,
+  emotionTier: 'calm' | 'agitated' | 'explosive' | 'shutdown',
+  archetype?: string,
+  contradictionTokens?: number,
+  trustWindow?: number,
+): EffectivenessResult {
+  // Codex 합의 반영: fact_pursuit는 S0-S1만 strong, S2는 normal
+  if (questionType === 'fact_pursuit') {
+    if (['S0', 'S1'].includes(lieState)) return { level: 'strong', hint: '부정 상태에 효과적' }
+    if (emotionTier === 'explosive' || emotionTier === 'shutdown') return { level: 'weak', hint: '감정적 상태 — 비효율적' }
+    return { level: 'normal', hint: '' }
+  }
+
+  if (questionType === 'motive_search') {
+    if (['S2', 'S3'].includes(lieState)) return { level: 'strong', hint: '부분 인정 상태에 효과적' }
+    if ((trustWindow ?? 50) < 20) return { level: 'weak', hint: '신뢰 부족 — 역공 위험' }
+    return { level: 'normal', hint: '' }
+  }
+
+  if (questionType === 'empathy_approach') {
+    // Codex 합의: S4만 strong, S3은 conditional
+    if (lieState === 'S4') return { level: 'strong', hint: '방어가 무너진 상태에 효과적' }
+    if (lieState === 'S3') return { level: 'normal', hint: '전가 중 — 조건부 효과' }
+    // Codex 합의: cold_logic weak는 S0-S2 && contradictionTokens < 2로 좁힘
+    if (archetype === 'cold_logic' && ['S0', 'S1', 'S2'].includes(lieState) && (contradictionTokens ?? 0) < 2) {
+      return { level: 'weak', hint: '냉정한 상대 — 증거 필요' }
+    }
+    return { level: 'normal', hint: '' }
+  }
+
+  return { level: 'normal', hint: '' }
+}

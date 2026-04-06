@@ -29,6 +29,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
   const resources = useGameStore((s) => s.resources)
   const globalInvest = useGameStore((s) => s.globalInvestTokens)
   const discovery = useGameStore((s) => s.discovery)
+  const recommendedEvidenceIds = useGameStore((s) => s.recommendedEvidenceIds)
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [appraisalTarget, setAppraisalTarget] = useState<string | null>(null)
   const dispatch = useActionDispatch()
@@ -103,6 +104,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
               llmMode={llmMode}
               isNew={newEvidenceIds?.has(ev.id)}
               target={target}
+              isRecommended={recommendedEvidenceIds.includes(ev.id)}
             />
           ))}
         </>
@@ -120,6 +122,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
               canPresent={false} canInvestigate={globalInvest >= 1}
               appraisal={discovery.appraisals[ev.id]}
               canAppraise={canAppraise(evidenceStates[ev.id])}
+              isRecommended={recommendedEvidenceIds.includes(ev.id)}
             />
           ))}
         </>
@@ -307,12 +310,12 @@ function generateSuggestions(ev: any, state: any, target?: PartyId | null): { te
   return suggestions.slice(0, 3)
 }
 
-function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, onAppraise, canPresent, canInvestigate, appraisal, canAppraise: canDoAppraise, llmMode, isNew, target }: {
+function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, onAppraise, canPresent, canInvestigate, appraisal, canAppraise: canDoAppraise, llmMode, isNew, target, isRecommended }: {
   ev: any; state: any; isExpanded: boolean
   onToggle: () => void; onPresent?: () => void; onConfront?: (text: string) => void
   onInvestigate: () => void; onAppraise?: () => void; canPresent: boolean; canInvestigate: boolean
   appraisal?: any; canAppraise?: boolean; llmMode?: boolean
-  isNew?: boolean; target?: PartyId | null
+  isNew?: boolean; target?: PartyId | null; isRecommended?: boolean
 }) {
   const [showPresent, setShowPresent] = useState(false)
   const [confrontText, setConfrontText] = useState('')
@@ -359,6 +362,7 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
             <div className="flex items-center gap-1.5">
               <span className={`text-sm truncate font-medium ${showSurface ? 'text-blue-200' : 'text-gray-200'}`}>{displayName}</span>
               {showSurface && <span className="bg-blue-600 text-blue-100 text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">조사 필요</span>}
+              {isRecommended && <span className="bg-amber-600 text-amber-100 text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">추천</span>}
               {isNew && <span className="bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shrink-0">N</span>}
               {state?.presented && <span className="text-emerald-500 text-xs"><Emoji char="✓" size={10} />제시</span>}
               {legWarning && <Emoji char="⚠" size={12} />}

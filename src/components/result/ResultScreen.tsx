@@ -84,7 +84,8 @@ export default function ResultScreen() {
   ]
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+    <div className="w-full max-w-md max-h-[90vh] flex flex-col bg-gray-900 rounded-2xl shadow-2xl border border-gray-700/50 overflow-hidden animate-scale-in">
       {/* 히어로 헤더 — 애니메이션 */}
       <div className="text-center pt-8 pb-4 px-4 bg-gradient-to-b from-amber-950/20 to-transparent">
         <div className="text-5xl mb-3 animate-scale-in"><Emoji char="⚖️" size={48} /></div>
@@ -152,6 +153,7 @@ export default function ResultScreen() {
           <Emoji char="🔄" size={12} /> 다시 판결하기
         </button>
       </div>
+    </div>
     </div>
   )
 }

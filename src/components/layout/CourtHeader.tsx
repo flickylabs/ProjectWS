@@ -131,7 +131,7 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
 
   const handleUnlockSummary = () => {
     const s = useGameStore.getState()
-    if (s.resources.skillPoints >= 3) {
+    if (s.globalSkillPoints >= 3) {
       s.spend('skillPoints', 3)
       setSummaryUnlocked(true)
       setShowSummaryLock(false)

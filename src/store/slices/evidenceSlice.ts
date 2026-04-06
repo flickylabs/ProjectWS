@@ -19,6 +19,9 @@ export interface EvidenceSlice {
   presentEvidence: (evidenceId: string, target: 'a' | 'b') => string[]
   investigateEvidence: (evidenceId: string, subAction: string) => string | null
   markEvidenceConfidential: (evidenceId: string) => void
+  recommendedEvidenceIds: string[]
+  setRecommendedEvidence: (ids: string[]) => void
+  clearRecommendedEvidence: () => void
   isUnlocked: (evidenceId: string) => boolean
   isPresented: (evidenceId: string) => boolean
   getUnlockedEvidence: () => EvidenceNode[]
@@ -29,6 +32,7 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
   evidenceDefinitions: [],
   evidenceCombinations: [],
   triggeredCombinations: [],
+  recommendedEvidenceIds: [],
 
   initEvidence: (evidence, combinations) => {
     set({
@@ -104,6 +108,14 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
 
     const def = evidenceDefinitions.find((e) => e.id === evidenceId)
     return def?.investigationResults[subAction] ?? null
+  },
+
+  setRecommendedEvidence: (ids) => {
+    set({ recommendedEvidenceIds: ids })
+  },
+
+  clearRecommendedEvidence: () => {
+    set({ recommendedEvidenceIds: [] })
   },
 
   markEvidenceConfidential: (evidenceId) => {

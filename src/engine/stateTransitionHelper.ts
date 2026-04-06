@@ -31,10 +31,27 @@ export function getTransitionLabel(from: LieState, to: LieState): TransitionLabe
   if (fromRank >= toRank) return null
 
   if (toRank === 5) return 'confessed'
+  if (toRank === 4) return 'opening'
   if (toRank >= 3) return 'cornered'
   if (toRank >= 1) return 'cracked'
 
   return null
+}
+
+/** 상태 전이 후 플레이어 행동 추천 */
+export function getPostTransitionRecommendation(label: TransitionLabel): { action: string; message: string } | null {
+  switch (label) {
+    case 'cracked':
+      return { action: 'motive_search', message: '균열이 생겼습니다. 동기를 탐색해보세요.' }
+    case 'cornered':
+      return { action: 'fact_pursuit', message: '궁지에 몰렸습니다. 사실을 추궁하세요.' }
+    case 'opening':
+      return { action: 'empathy_approach', message: '마음이 열리고 있습니다. 공감으로 접근해보세요.' }
+    case 'confessed':
+      return null
+    default:
+      return null
+  }
 }
 
 /** lieState 전이 시 Store에 이벤트를 푸시하는 헬퍼 */

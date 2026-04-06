@@ -36,7 +36,7 @@ export interface QuestionFatigueInput {
   disputeId: string
   questionType: QuestionType
   angleTag: AngleTag
-  resetReason?: 'none' | 'new_evidence' | 'layer_unlock' | 'target_switch' | 'interjection_allow'
+  resetReason?: 'none' | 'new_evidence' | 'layer_unlock' | 'target_switch' | 'interjection_allow' | 'dossier_execute'
 }
 
 export interface QuestionFatigueAssessment {
@@ -252,4 +252,38 @@ function toFatigueLevel(multiplier: number): FatigueLevel {
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value))
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 교착 상태 조회 + Dossier 리셋
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/** 특정 party+disputeId에 대한 교착 상태 조회 */
+export function getStalemateStatus(
+  fatigueState: QuestionFatigueState,
+  party: string,
+  disputeId: string,
+): { level: 'normal' | 'warning' | 'stalemate'; maxStreak: number } {
+  const prefix = `${party}:${disputeId}:`
+  let maxStreak = 0
+  for (const [key, entry] of Object.entries(fatigueState.local)) {
+    if (key.startsWith(prefix) && entry.streak > maxStreak) {
+      maxStreak = entry.streak
+    }
+  }
+  if (maxStreak >= 3) return { level: 'stalemate', maxStreak }
+  if (maxStreak >= 2) return { level: 'warning', maxStreak }
+  return { level: 'normal', maxStreak }
+}
+
+/** Dossier 실행 후 해당 쟁점의 피로도 리셋 */
+export function resetFatigueForDossier(party: string, disputeId: string): void {
+  const current = getSessionFatigueState()
+  const prefix = `${party}:${disputeId}:`
+  for (const key of Object.keys(current.local)) {
+    if (key.startsWith(prefix)) {
+      current.local[key].streak = 0
+    }
+  }
+  setSessionFatigueState({ ...current })
 }

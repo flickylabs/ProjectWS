@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import type { QuestionType, PartyId } from '../../types'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
 import { useValidActions } from '../../hooks/useValidActions'
+import { useGameStore } from '../../store/useGameStore'
+import { computeEffectiveness } from '../../engine/questionEffectEngine'
+import { getStalemateStatus, getSessionFatigueState } from '../../engine/questionFatigueEngine'
+import { getEmotionTier } from '../../engine/discoveryEngine'
 import FreeQuestionInput from './FreeQuestionInput'
 import Emoji from '../common/Emoji'
 
@@ -46,6 +50,37 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
   const { questions } = useValidActions(target)
   const [selectedCard, setSelectedCard] = useState<CardType | null>(null)
 
+  // ── 효과 칩 + 교착 경고용 상태 ──
+  const agentA = useGameStore((s) => s.agentA)
+  const agentB = useGameStore((s) => s.agentB)
+  const archetypeA = useGameStore((s) => s.archetypeA)
+  const archetypeB = useGameStore((s) => s.archetypeB)
+  const questionMeters = useGameStore((s) => s.questionMeters)
+
+  // target의 가장 방어적인 dispute 기준으로 보수적 추정
+  const effectivenessMap = useMemo(() => {
+    if (!target) return {} as Record<string, ReturnType<typeof computeEffectiveness>>
+    const agent = target === 'a' ? agentA : agentB
+    const archetype = target === 'a' ? archetypeA : archetypeB
+    const meters = questionMeters[target]
+    const emotionTier = getEmotionTier(agent.emotionalState.internalValue).tier
+
+    // 가장 방어적인(= 가장 낮은) lieState를 찾아 보수적 추정
+    let worstLieState = 'S5'
+    for (const entry of Object.values(agent.lieStateMap)) {
+      const rank = parseInt(entry.currentState.replace('S', ''), 10)
+      const worstRank = parseInt(worstLieState.replace('S', ''), 10)
+      if (rank < worstRank) worstLieState = entry.currentState
+    }
+
+    const types = ['fact_pursuit', 'motive_search', 'empathy_approach'] as const
+    const map: Record<string, ReturnType<typeof computeEffectiveness>> = {}
+    for (const t of types) {
+      map[t] = computeEffectiveness(t, worstLieState, emotionTier, archetype, meters.contradictionTokens, meters.trustWindow)
+    }
+    return map
+  }, [target, agentA, agentB, archetypeA, archetypeB, questionMeters])
+
   if (!target) return null
 
   // 자유 질문 카드 선택 시
@@ -76,7 +111,9 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
           <Emoji char={q.icon} size={14} /> <span className="font-semibold">{q.label}</span> — 어떤 쟁점에 대해?
         </div>
         <div className="grid grid-cols-1 gap-1.5">
-          {q.disputes.map((d) => (
+          {q.disputes.map((d) => {
+            const stalemateStatus = target ? getStalemateStatus(getSessionFatigueState(), target, d.id) : { level: 'normal' as const, maxStreak: 0 }
+            return (
             <button key={d.id}
               onClick={() => { if (d.enabled) { onSelect(q.type, d.id) ; setSelectedCard(null) } }}
               disabled={!d.enabled}
@@ -88,8 +125,15 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
             >
               <span className="text-sm">{d.name}</span>
               {!d.enabled && d.reason && <span className="text-xs text-gray-700 block mt-0.5">{d.reason}</span>}
+              {d.enabled && stalemateStatus.level === 'warning' && (
+                <span className="text-[10px] text-yellow-500 block mt-0.5">{'\u26A0'} 답변이 짧아지고 있습니다</span>
+              )}
+              {d.enabled && stalemateStatus.level === 'stalemate' && (
+                <span className="text-[10px] text-red-400 block mt-0.5">{'\uD83D\uDEAB'} 교착 — 다른 접근을 시도하세요</span>
+              )}
             </button>
-          ))}
+            )
+          })}
         </div>
       </div>
     )
@@ -156,6 +200,12 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
                 <div className={`text-[9px] mt-1 font-semibold ${CARD_METER_HINTS[q.type].color}`}>
                   {CARD_METER_HINTS[q.type].meter}
                 </div>
+              )}
+              {q.anyEnabled && effectivenessMap[q.type]?.level === 'strong' && (
+                <span className="text-[10px] text-emerald-400 mt-1 block">{'\u25B2'} {effectivenessMap[q.type].hint}</span>
+              )}
+              {q.anyEnabled && effectivenessMap[q.type]?.level === 'weak' && (
+                <span className="text-[10px] text-red-400 mt-1 block">{'\u25BC'} {effectivenessMap[q.type].hint}</span>
               )}
             </button>
           )

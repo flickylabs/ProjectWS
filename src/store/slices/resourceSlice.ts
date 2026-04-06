@@ -23,11 +23,18 @@ export const createResourceSlice: StateCreator<ResourceSlice, [], [], ResourceSl
   },
 
   spend: (resource, amount) => {
-    // investigationTokens는 글로벌 토큰에서 직접 차감 (이중 관리 제거)
+    // investigationTokens → 글로벌 돋보기에서 차감
     if (resource === 'investigationTokens') {
       const globalTokens = (get() as any).globalInvestTokens ?? 0
       if (globalTokens < amount) return false
       set({ globalInvestTokens: globalTokens - amount } as any)
+      return true
+    }
+    // skillPoints → 글로벌 번개에서 차감
+    if (resource === 'skillPoints') {
+      const globalSkill = (get() as any).globalSkillPoints ?? 0
+      if (globalSkill < amount) return false
+      set({ globalSkillPoints: globalSkill - amount } as any)
       return true
     }
     const { resources } = get()
@@ -42,6 +49,11 @@ export const createResourceSlice: StateCreator<ResourceSlice, [], [], ResourceSl
       set({ globalInvestTokens: globalTokens + amount } as any)
       return
     }
+    if (resource === 'skillPoints') {
+      const globalSkill = (get() as any).globalSkillPoints ?? 0
+      set({ globalSkillPoints: globalSkill + amount } as any)
+      return
+    }
     const { resources } = get()
     set({ resources: { ...resources, [resource]: resources[resource] + amount } })
   },
@@ -49,6 +61,9 @@ export const createResourceSlice: StateCreator<ResourceSlice, [], [], ResourceSl
   canAfford: (resource, amount) => {
     if (resource === 'investigationTokens') {
       return ((get() as any).globalInvestTokens ?? 0) >= amount
+    }
+    if (resource === 'skillPoints') {
+      return ((get() as any).globalSkillPoints ?? 0) >= amount
     }
     return get().resources[resource] >= amount
   },

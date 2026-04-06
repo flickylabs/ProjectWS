@@ -151,6 +151,10 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** V2 끼어들기 대기 — GameEventModal에서 allow/block 선택 */
   pendingInterjectionV2: import('../engine/interjectionV2').InterjectionOpportunityV2 | null
   setPendingInterjectionV2: (v: GameStore['pendingInterjectionV2']) => void
+  /** 최근 사용된 atom ID (반복 방지, party별 최근 N개) */
+  recentAtomIds: Record<string, string[]>
+  trackUsedAtoms: (party: 'a' | 'b', atomIds: string[]) => void
+  getRecentAtomIds: (party: 'a' | 'b') => string[]
   /** 심문 이력: party → disputeId → 질문 기록 */
   interrogationHistory: Record<string, Record<string, { questionTypes: string[]; turns: number[]; revealed: boolean }>>
   trackInterrogation: (party: 'a' | 'b', disputeId: string, questionType: string, turn: number) => void
@@ -240,6 +244,15 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     setPendingMinigame: (mg) => set({ pendingMinigame: mg }),
     pendingInterjectionV2: null,
     setPendingInterjectionV2: (v) => set({ pendingInterjectionV2: v }),
+
+    recentAtomIds: { a: [], b: [] },
+    trackUsedAtoms: (party, atomIds) => set((prev) => {
+      const current = prev.recentAtomIds[party] ?? []
+      // 최근 20개만 유지 (약 5턴 × 4 atoms)
+      const updated = [...current, ...atomIds].slice(-20)
+      return { recentAtomIds: { ...prev.recentAtomIds, [party]: updated } }
+    }),
+    getRecentAtomIds: (party) => useGameStore.getState().recentAtomIds[party] ?? [],
 
     interrogationHistory: { a: {}, b: {} },
     trackInterrogation: (party, disputeId, questionType, turn) => set((prev) => {
@@ -485,6 +498,7 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
         testimonyAnalysis: null,
         calledWitnesses: [],
         interrogationHistory: { a: {}, b: {} },
+        recentAtomIds: { a: [], b: [] },
         pendingMinigame: null,
         questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
         gameEventLog: [],

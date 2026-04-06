@@ -25,8 +25,15 @@ interface LLMConfig {
   modelId: string
 }
 
+function getRuntimeEnv(name: string): string | undefined {
+  const viteEnv = (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env?.[name]
+  if (viteEnv) return viteEnv
+  if (typeof process !== 'undefined') return process.env?.[name]
+  return undefined
+}
+
 function getConfig(): LLMConfig {
-  const apiKey = import.meta.env.VITE_OPENAI_API_KEY as string | undefined
+  const apiKey = getRuntimeEnv('VITE_OPENAI_API_KEY')
 
   if (apiKey) {
     return {

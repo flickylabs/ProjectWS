@@ -346,15 +346,8 @@ export default function ActionPanel() {
     const result = resolveDossierQuestion(caseKey, questionId)
     if (!result) { setAutoSequenceActive(false); return }
 
-    // 2.5. 카드 자동 실행 시: 관련 증거 조사 단계 자동 완료
-    for (const evId of card.evidenceIds) {
-      const ev = s.evidenceDefinitions.find(e => e.id === evId)
-      if (ev?.investigationStages) {
-        for (const stage of ev.investigationStages) {
-          s.investigateEvidence(evId, stage.revealKey)
-        }
-      }
-    }
+    // 2.5. 카드 관련 증거를 추천 표시
+    s.setRecommendedEvidence(card.evidenceIds)
 
     // 3. EvidenceChallenge 벡터 봉쇄
     for (const evId of card.evidenceIds) {

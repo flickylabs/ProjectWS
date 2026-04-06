@@ -76,13 +76,14 @@ const beatRuntimeState: Map<string, {
 export function registerStructureV2(data: StructureV2Data): void {
   structureRegistry.set(data.caseId, data)
 
-  // misconception 쟁점 자동 등록
-  const { registerMisconceptionDispute } = require('./misconceptionEngine') as typeof import('./misconceptionEngine')
+  // misconception 쟁점 자동 등록 (동적 import로 순환 참조 방지)
+  import('./misconceptionEngine').then(({ registerMisconceptionDispute }) => {
   for (const dispute of data.disputes) {
     if (dispute.misconception && (dispute.disputeKind === 'red_herring' || dispute.disputeKind === 'shared_misconception')) {
       registerMisconceptionDispute(dispute.id, dispute.misconception)
     }
   }
+  }).catch(() => { /* misconceptionEngine 미사용 환경에서는 무시 */ })
 }
 
 export function registerBeatsV2(data: BeatsV2Data): void {

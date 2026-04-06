@@ -29,6 +29,7 @@ import { buildAtomPlan, normalizeClaimPolicy } from './atomSelectionEngine'
 import { buildBlueprintSystemPromptV2, buildBlueprintUserPromptV2 } from './blueprintPromptBuilderV2'
 import { getDisputeBlockedCount } from './evidenceChallengeEngine'
 import { getBridgeEntry } from './bridgeEngine'
+import { consumeDossierQuestionOverride, shouldSkipJudgeQuestion } from './dialogueRuntimeFlags'
 import { generateJudgeQuestion } from './judgeQuestionEngine'
 import type { QuestionType, EmotionTier } from '../types'
 import { getTransitionBeat, getFallbackBeat } from './v3GameLoopLoader'
@@ -164,7 +165,6 @@ export async function resolveLLMDialogue(
   let userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode, target, caseData, interrogationDepth, lastOpponentLine, mentionedTruthIds)
 
   // 사건카드 질문 오버라이드: 재판관 질문이 이미 정해져 있으면 LLM에 직접 전달
-  const { consumeDossierQuestionOverride } = await import('../hooks/useActionDispatch')
   const dossierRaw = consumeDossierQuestionOverride()
   if (dossierRaw) {
     const myName = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
@@ -215,7 +215,28 @@ export async function resolveLLMDialogue(
 
     if (!response.trim()) throw new Error('Empty response')
 
-    const parsed = parseLLMResponse(response, target, disputeId)
+    // B1/B2 해소: parseLLMResponse에 풍부한 컨텍스트 전달
+    const hasMonetary = hasMonetaryDisputeDetail(dispute)
+    const requireConcreteAmount = requiresConcreteAmountDetail(dispute)
+    const thirdPartyNames = caseData.duo.socialGraph?.map(tp => tp.name).filter(Boolean) ?? []
+    const parsed = parseLLMResponse(response, target, disputeId, {
+      lieState: lieEntry?.currentState,
+      hasMonetaryDispute: hasMonetary,
+      thirdPartyNames,
+      toJudgeA: caseData.duo.partyA.callTerms?.toJudge,
+      toJudgeB: caseData.duo.partyB.callTerms?.toJudge,
+      speaker: target,
+      previousNpcResponse: getPreviousNpcResponseText(store.dialogueLog),
+      requireConcreteAmount,
+      amountHint: extractConcreteAmountHint(dispute?.truthDescription, dispute?.name),
+    })
+    parsed.npcNode.text = ensureS5MinimumStructure(parsed.npcNode.text, {
+      lieState: lieEntry?.currentState,
+      previousNpcResponse: getPreviousNpcResponseText(store.dialogueLog),
+      requireConcreteAmount,
+      amountHint: extractConcreteAmountHint(dispute?.truthDescription, dispute?.name),
+    })
+    parsed.npcNode.text = diversifyAgainstPreviousResponse(parsed.npcNode.text, getPreviousNpcResponseText(store.dialogueLog))
 
     // NPC 응답이 너무 짧으면 폴백으로 전환
     if (!parsed.npcNode.text || parsed.npcNode.text.length < 5) {
@@ -255,7 +276,6 @@ export async function resolveLLMDialogue(
 
     // 재판관 질문: AI 생성 우선, 없으면 폴백 템플릿
     // 모순 추궁 등에서 이미 재판관 질문을 직접 추가한 경우 스킵
-    const { shouldSkipJudgeQuestion } = await import('../hooks/useActionDispatch')
     if (!shouldSkipJudgeQuestion()) {
       let finalJudgeQuestion = parsed.judgeQuestion || fallbackJudgeQuestion
       // 방어: LLM이 NPC 화법으로 생성한 경우 보정
@@ -890,13 +910,19 @@ interface ParsedLLMResponse {
 
 const VALID_STANCES: NpcStance[] = ['deny', 'hedge', 'partial_admit', 'admit', 'reframe']
 
-function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string): ParsedLLMResponse {
+function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string, extraCtx?: PostProcessContext): ParsedLLMResponse {
+  const storeCaseData = useGameStore.getState().caseData
+  const partyNames = { nameA: storeCaseData?.duo?.partyA?.name ?? 'A', nameB: storeCaseData?.duo?.partyB?.name ?? 'B' }
+  const polishText = (text: string) => postProcessNpcText(text, {
+    partyNames,
+    ...extraCtx,
+  })
   const fallback: ParsedLLMResponse = {
     npcNode: {
       id: `llm-${Date.now()}`,
       conditions: disputeId ? { disputeId } : {},
       speaker,
-      text: response.replace(/[（(][^)）]+[)）]/g, '').trim().slice(0, 300) || '...',
+      text: polishText(response.replace(/[（(][^)）]+[)）]/g, '').trim().slice(0, 300) || '...'),
       behaviorHint: response.match(/[（(]([^)）]+)[)）]/)?.[1],
       effects: {},
     },
@@ -920,11 +946,8 @@ function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string
 
     if (!text || text.length < 3) return fallback
 
-    // 후처리: 공통 파이프라인
-    const storeCaseData = useGameStore.getState().caseData
-    const partyNames = { nameA: storeCaseData?.duo?.partyA?.name ?? 'A', nameB: storeCaseData?.duo?.partyB?.name ?? 'B' }
-    // parseLLMResponse에서는 lieState/monetary 컨텍스트가 제한적이므로 기본 후처리만 적용
-    const polished = postProcessNpcText(text, { partyNames })
+    // 후처리: 공통 파이프라인 — 풍부한 컨텍스트 전달 (B1/B2 해소)
+    const polished = polishText(text)
 
     return {
       npcNode: {
@@ -1126,6 +1149,32 @@ export function enforceHonorifics(text: string): string {
 
 /* ── NPC 텍스트 공통 후처리 파이프라인 ── */
 
+const MONETARY_DISPUTE_RE = /송금|이체|금액|원\b|만원|돈|비용|계좌|환급|보증금|월세|정산|예치|납부|수당|급여|계약금|위약금|배상금|합의금|채무|대출|융자|임대료/
+const KOREAN_AMOUNT_RE = /(?:\d[\d,.]*\s*(?:천|백|십)?만?\s*원|[일이삼사오육칠팔구십백천]+만?\s*원)/
+
+function hasMonetaryDisputeDetail(dispute?: CaseData['disputes'][number] | null): boolean {
+  if (!dispute) return false
+  const haystack = [dispute.name, dispute.truthDescription].filter(Boolean).join(' ')
+  return (
+    KOREAN_AMOUNT_RE.test(haystack) ||
+    MONETARY_DISPUTE_RE.test(dispute.name || '') ||
+    MONETARY_DISPUTE_RE.test(dispute.truthDescription || '')
+  )
+}
+
+function requiresConcreteAmountDetail(dispute?: CaseData['disputes'][number] | null): boolean {
+  if (!dispute) return false
+  return KOREAN_AMOUNT_RE.test([dispute.name, dispute.truthDescription].filter(Boolean).join(' '))
+}
+
+function getPreviousNpcResponseText(dialogues: { speaker: string; text: string }[]): string {
+  for (let i = dialogues.length - 1; i >= 0; i -= 1) {
+    const entry = dialogues[i]
+    if (entry.speaker === 'a' || entry.speaker === 'b') return entry.text ?? ''
+  }
+  return ''
+}
+
 export interface PostProcessContext {
   /** 현재 lieState (S0~S5) — Truth Throttle 검증에 사용 */
   lieState?: string
@@ -1140,6 +1189,103 @@ export interface PostProcessContext {
   toJudgeB?: string
   /** 현재 화자 ('a' | 'b') */
   speaker?: 'a' | 'b'
+  previousNpcResponse?: string
+  requireConcreteAmount?: boolean
+  amountHint?: string
+}
+
+function countLooseSentences(text: string): number {
+  return text
+    .split(/(?<=[.!?…])\s+|\n+/)
+    .map(part => part.trim())
+    .filter(part => part.length >= 4)
+    .length
+}
+
+function pickS5Tail(text: string, ctx: PostProcessContext): string {
+  const options = [
+    '그 판단이 지금도 마음에 남습니다.',
+    '돌이켜 보면 그때 더 솔직했어야 했습니다.',
+    '그 점만큼은 제가 너무 경솔했습니다.',
+    '결국 그 부분을 숨긴 건 제 두려움 때문이었습니다.',
+  ]
+  if (ctx.requireConcreteAmount) {
+    options.unshift('그 숫자를 입에 올리는 것 자체가 많이 두려웠습니다.')
+  }
+  const seed = Math.abs(Array.from(text).reduce((acc, char) => ((acc * 31) + char.charCodeAt(0)) | 0, 7))
+  return options[seed % options.length]
+}
+
+function extractConcreteAmountHint(...sources: Array<string | undefined>): string | undefined {
+  for (const source of sources) {
+    if (!source) continue
+    const match = source.match(KOREAN_AMOUNT_RE)
+    if (match) return match[0]
+  }
+  return undefined
+}
+
+function ensureConcreteAmount(text: string, ctx: PostProcessContext): string {
+  if (ctx.lieState !== 'S5' || !ctx.requireConcreteAmount || !ctx.amountHint || KOREAN_AMOUNT_RE.test(text)) return text
+  return `${ctx.amountHint}이라는 숫자를 바로 꺼내지 못한 건 제 잘못입니다. ${text}`.trim()
+}
+
+function ensureS5MinimumStructure(text: string, ctx: PostProcessContext): string {
+  if (ctx.lieState !== 'S5') return text
+
+  let result = text.trim()
+  while (countLooseSentences(result) < 3) {
+    const extra = pickS5Tail(result, ctx)
+    if (result.includes(extra)) break
+    const needsSeparator = result.length > 0 && !/[.!?…]$/.test(result)
+    result += `${needsSeparator ? '. ' : ' '}${extra}`
+  }
+  return result
+}
+
+function findRepeatedTrigram(currentText: string, previousText: string): string | null {
+  if (!currentText || !previousText) return null
+  const words = currentText.split(/\s+/).filter(Boolean)
+  for (let i = 0; i <= words.length - 3; i += 1) {
+    const trigram = words.slice(i, i + 3).join(' ')
+    if (trigram.length > 8 && previousText.includes(trigram)) return trigram
+  }
+  return null
+}
+
+function diversifyAgainstPreviousResponse(text: string, previousText?: string): string {
+  if (!previousText) return text
+
+  let result = text.trim()
+  if (previousText.startsWith('재판관님,') && result.startsWith('재판관님,')) {
+    result = result.replace(/^재판관님,\s*/, '')
+  }
+
+  const rewritePairs: Array<[RegExp, string]> = [
+    [/\b제 친구의\b/g, '상대의'],
+    [/\b제 친구가\b/g, '상대가'],
+    [/친구가 직접 수정한/g, '상대가 손댄'],
+    [/있다는 인상을 주었습니다/g, '처럼 읽혔습니다'],
+    [/했던 것 같습니다/g, '그렇게 느꼈습니다'],
+    [/표에 빈칸이 있었던/g, '정산표가 비어 보였던'],
+    [/일이라 밖으로 이야기하는/g, '문제라 외부에 꺼내는'],
+    [/프로젝트의 방향성을 명확하게/g, '프로젝트 방향을 분명하게'],
+    [/제 팀원의 기여를/g, '동료의 기여를'],
+  ]
+
+  for (const [pattern, replacement] of rewritePairs) {
+    const candidate = result.replace(pattern, replacement)
+    if (candidate !== result) {
+      result = candidate
+      if (!findRepeatedTrigram(result, previousText)) return result
+    }
+  }
+
+  if (findRepeatedTrigram(result, previousText) && result.startsWith('재판관님,')) {
+    return result.replace(/^재판관님,\s*/, '솔직히 말씀드리면, ')
+  }
+
+  return result
 }
 
 /**
@@ -1179,10 +1325,15 @@ export function postProcessNpcText(rawText: string, ctx: PostProcessContext = {}
 
   // 5. 문장 중간 해요체 캐치
   text = enforceHaeyoMidSentence(text)
+  text = ensureConcreteAmount(text, ctx)
+  text = ensureS5MinimumStructure(text, ctx)
+  text = diversifyAgainstPreviousResponse(text, ctx.previousNpcResponse)
 
   // 6. S5 금액 검증 경고 로그
-  if (ctx.lieState === 'S5' && ctx.hasMonetaryDispute !== false) {
-    const hasConcreteAmount = /\d+만?원/.test(text)
+  if (ctx.lieState === 'S5' && ctx.requireConcreteAmount) {
+    // 한국어 수량 표현 포함: "280만원", "1천8백만원", "삼백만원", "60만원", "1,800만원" 등
+    const KOREAN_AMOUNT_RE = /(?:\d[\d,.]*\s*(?:천|백|십)?만?\s*원|[일이삼사오육칠팔구십백천]+만?\s*원)/
+    const hasConcreteAmount = KOREAN_AMOUNT_RE.test(text)
     if (!hasConcreteAmount) {
       console.warn(`[S5Guard] S5 응답에 구체적 금액 없음 — speaker=${ctx.speaker}`)
     }
@@ -1201,11 +1352,18 @@ function enforceTruthThrottle(text: string, ctx: PostProcessContext): string {
   // 당사자 실명 치환 (길이 내림차순으로 치환 — 부분 매칭 방지)
   const allNames: { name: string; replacement: string }[] = []
   if (ctx.partyNames) {
-    if (ctx.speaker === 'a' && ctx.toJudgeA) {
-      // A가 화자일 때 B 이름을 toJudgeA(재판관에게 상대 언급)로 치환
-      allNames.push({ name: ctx.partyNames.nameB, replacement: ctx.toJudgeA })
-    } else if (ctx.speaker === 'b' && ctx.toJudgeB) {
-      allNames.push({ name: ctx.partyNames.nameA, replacement: ctx.toJudgeB })
+    if (ctx.speaker === 'a') {
+      // A가 화자일 때: B 이름을 toJudge 호칭으로 치환
+      if (ctx.toJudgeA) allNames.push({ name: ctx.partyNames.nameB, replacement: ctx.toJudgeA })
+      else allNames.push({ name: ctx.partyNames.nameB, replacement: '그 사람' })
+    } else if (ctx.speaker === 'b') {
+      if (ctx.toJudgeB) allNames.push({ name: ctx.partyNames.nameA, replacement: ctx.toJudgeB })
+      else allNames.push({ name: ctx.partyNames.nameA, replacement: '그 사람' })
+    }
+    // speaker가 불명인 경우에도 양쪽 이름 모두 치환 (B1/B2 안전망)
+    if (!ctx.speaker) {
+      allNames.push({ name: ctx.partyNames.nameA, replacement: '그분' })
+      allNames.push({ name: ctx.partyNames.nameB, replacement: '그분' })
     }
   }
   // 제3자 이름 치환
@@ -1229,12 +1387,14 @@ function enforceTruthThrottle(text: string, ctx: PostProcessContext): string {
 /** 비금전 사건에서 금전 표현 치환 */
 function enforceMonetaryGuard(text: string): string {
   let result = text
-  // 구체적 금액 제거
-  result = result.replace(/\d{1,3}[,.]?\d*만?\s*원/g, '')
+  // 구체적 금액 제거 (한국어 수량 포함)
+  result = result.replace(/\d[\d,.]*\s*(?:천|백|십)?만?\s*원/g, '')
+  result = result.replace(/[일이삼사오육칠팔구십백천]+만?\s*원/g, '')
   // 금전 키워드 치환
   result = result.replace(/송금|이체/g, '그런 일')
   result = result.replace(/계좌/g, '그곳')
-  result = result.replace(/(?:보증금|월세|수당|급여|정산|환급|예치|납부)/g, '그 비용')
+  result = result.replace(/(?:보증금|월세|수당|급여|정산|환급|예치|납부|계약금|위약금|배상금|합의금|채무|대출|융자|임대료)/g, '그 비용')
+  result = result.replace(/(?:임대인|임차인|채권자|채무자)/g, '그분')
   result = result.replace(/(?:금전적|재정적|경제적)\s?(?:손실|피해|문제|부담)?/g, '')
   result = result.replace(/(?:돈|금액|비용)(?=[을를이가은는도만의]|\s|$)/g, '')
   // 빈 공백 정리
@@ -1256,27 +1416,56 @@ function enforceClicheFilter(text: string): string {
   // A5: "특정 X" 패턴 치환
   result = result.replace(/특정\s+(금액|사람|것|일|경우|상황|장소|시점|사건|인물)/g, '그 $1')
 
+  // 번역체 9패턴 추가 필터
+  result = result.replace(/~?된\s?것으로\s?생각됩니다/g, '그렇습니다')
+  result = result.replace(/~?인\s?측면이/g, '그런 면이')
+  result = result.replace(/부득이하게/g, '어쩔 수 없이')
+  result = result.replace(/인지하고\s?있습니다/g, '알고 있습니다')
+  result = result.replace(/~?에\s?기인(?:하여|합니다|한)/g, (m) => m.endsWith('하여') ? '때문에' : m.endsWith('합니다') ? '때문입니다' : '때문인')
+  result = result.replace(/해당\s?건에\s?대해서는/g, '그 일은')
+  result = result.replace(/~?하는\s?바입니다/g, '합니다')
+  result = result.replace(/관련\s?사항을\s?간과/g, '놓친')
+  result = result.replace(/여러\s?가지\s?상황이\s?얽혀/g, '이것저것이 겹쳐')
+
+  // 추가 클리셰: "사전 상의/협의" (S0-S2 금지이지만 후처리에서 일괄 필터)
+  result = result.replace(/사전\s?(?:상의|협의)(?:가\s?(?:없었|부족했|누락됐))?/g, '미리 얘기')
+
   return result
 }
 
 /** 문장 중간 해요체 캐치 (enforceHonorifics는 문장 끝만 처리) */
 function enforceHaeyoMidSentence(text: string): string {
-  // 쉼표 앞의 해요체를 합니다체로 변환
+  // 쉼표 또는 마침표/종결 앞의 해요체를 합니다체로 변환
+  // 패턴: 해요체 어미 + (쉼표 | 마침표 | 문장끝)
   let result = text
-  result = result.replace(/했어요,/g, '했습니다,')
-  result = result.replace(/없어요,/g, '없습니다,')
-  result = result.replace(/있어요,/g, '있습니다,')
-  result = result.replace(/같아요,/g, '같습니다,')
-  result = result.replace(/해요,/g, '합니다,')
-  result = result.replace(/에요,/g, '입니다,')
-  result = result.replace(/이에요,/g, '입니다,')
-  result = result.replace(/거예요,/g, '겁니다,')
-  result = result.replace(/줄게요,/g, '주겠습니다,')
-  result = result.replace(/할게요,/g, '하겠습니다,')
-  result = result.replace(/겠어요,/g, '겠습니다,')
-  result = result.replace(/왔어요,/g, '왔습니다,')
-  result = result.replace(/됐어요,/g, '됐습니다,')
-  result = result.replace(/봤어요,/g, '봤습니다,')
+  const SUFFIX = /(?=[,.]|\s|$)/
+  const pairs: [RegExp, string][] = [
+    [/했어요/g, '했습니다'],
+    [/없어요/g, '없습니다'],
+    [/있어요/g, '있습니다'],
+    [/같아요/g, '같습니다'],
+    [/해요/g, '합니다'],
+    [/에요/g, '입니다'],
+    [/이에요/g, '입니다'],
+    [/거예요/g, '겁니다'],
+    [/줄게요/g, '주겠습니다'],
+    [/할게요/g, '하겠습니다'],
+    [/겠어요/g, '겠습니다'],
+    [/왔어요/g, '왔습니다'],
+    [/됐어요/g, '됐습니다'],
+    [/봤어요/g, '봤습니다'],
+    // sentinel에서 발견된 추가 패턴
+    [/났어요/g, '났습니다'],
+    [/갔어요/g, '갔습니다'],
+    [/줬어요/g, '줬습니다'],
+    [/셨어요/g, '셨습니다'],
+    [/드려요/g, '드립니다'],
+    [/알아요/g, '압니다'],
+    [/몰라요/g, '모릅니다'],
+  ]
+  for (const [pattern, replacement] of pairs) {
+    result = result.replace(pattern, replacement)
+  }
 
   // 접속어미 "~는데요" 중간 (해요체 종결이 아닌 연결)
   // 이건 의도적 완곡 표현이므로 유지 — 변환하지 않음
@@ -1681,6 +1870,7 @@ async function tryBlueprintPath(
   const normalizedPolicy = normalizeClaimPolicy(claimPolicy)
   let systemPrompt: string
   let userPrompt: string
+  let blueprintAmountHint: string | undefined
 
   if (normalizedPolicy.compatMode === 'v2') {
     const atomPlan = buildAtomPlan({
@@ -1688,17 +1878,23 @@ async function tryBlueprintPath(
       subAction: questionType,
       stance: blueprint.stance,
       mustUseTell: blueprint.mustUseTell,
-      recentlyUsedAtomIds: [], // TODO: 턴별 추적
+      recentlyUsedAtomIds: store.getRecentAtomIds(target),
       evidenceId: action.type === 'evidence_present' ? action.evidenceId : undefined,
       isJudgeAudience: true,
       caseId: caseKey,
       party: target,
       currentLieState: lieEntry.currentState,
+      preferAmountSlotAtS5: requiresConcreteAmountDetail(dispute),
     })
+    blueprintAmountHint = atomPlan.slotSelections.find((selection) => selection.family === 'amount')?.value
     systemPrompt = buildBlueprintSystemPromptV2(
-      blueprint, normalizedPolicy, atomPlan, caseData, target, recentDialogues, lieEntry.currentState,
+      blueprint, normalizedPolicy, atomPlan, caseData, target, recentDialogues, lieEntry.currentState, hasMonetaryDisputeDetail(dispute),
     )
-    userPrompt = buildBlueprintUserPromptV2(blueprint, judgeQuestion)
+    // 직전 NPC 응답 추출 (반복 방지용)
+    const lastNpcEntry = [...recentDialogues].reverse().find(d => d.speaker === target)
+    userPrompt = buildBlueprintUserPromptV2(blueprint, judgeQuestion, lastNpcEntry?.text)
+    // 사용된 atom ID 기록 (반복 방지)
+    store.trackUsedAtoms(target, atomPlan.selectedAtoms.map(a => a.atomId))
     console.log(`[Blueprint V2] atom 경로: ${atomPlan.selectedAtoms.map(a => a.atomId).join(', ')}`)
     console.log(`[Blueprint V2] slots: ${atomPlan.slotSelections.map(s => `${s.family}=${s.value}`).join(', ')}`)
     console.log(`[Blueprint V2] system prompt (처음 200자):`, systemPrompt.slice(0, 200))
@@ -1737,10 +1933,12 @@ async function tryBlueprintPath(
     if (!rawText || rawText.length < 5) throw new Error('Blueprint response too short')
     // 호칭 post-process + 품질 가드 (공통 파이프라인)
     const bpPartyNames = { nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name }
-    const monetaryKw = /송금|이체|금액|원\b|돈|비용|계좌|환급|보증금|월세|정산|예치|납부|수당|급여/
-    const bpHasMonetary = caseData.disputes.some(d => monetaryKw.test(d.name) || monetaryKw.test(d.truthDescription ?? ''))
+    const bpHasMonetary = hasMonetaryDisputeDetail(dispute)
+    const requireConcreteAmount = requiresConcreteAmountDetail(dispute)
+    const amountHint = blueprintAmountHint
+      ?? extractConcreteAmountHint(dispute?.truthDescription, dispute?.name)
     const thirdPartyNames = caseData.duo.socialGraph?.map(tp => tp.name).filter(Boolean) ?? []
-    const text = postProcessNpcText(rawText, {
+    let text = postProcessNpcText(rawText, {
       lieState: lieEntry.currentState,
       hasMonetaryDispute: bpHasMonetary,
       partyNames: bpPartyNames,
@@ -1748,10 +1946,19 @@ async function tryBlueprintPath(
       toJudgeA: caseData.duo.partyA.callTerms?.toJudge,
       toJudgeB: caseData.duo.partyB.callTerms?.toJudge,
       speaker: target,
+      previousNpcResponse: getPreviousNpcResponseText(store.dialogueLog),
+      requireConcreteAmount,
+      amountHint,
     })
+    text = ensureS5MinimumStructure(text, {
+      lieState: lieEntry.currentState,
+      previousNpcResponse: getPreviousNpcResponseText(store.dialogueLog),
+      requireConcreteAmount,
+      amountHint,
+    })
+    text = diversifyAgainstPreviousResponse(text, getPreviousNpcResponseText(store.dialogueLog))
 
     // 재판관 질문 추가
-    const { shouldSkipJudgeQuestion } = await import('../hooks/useActionDispatch')
     if (!shouldSkipJudgeQuestion() && judgeQuestion) {
       store.addDialogue({
         speaker: 'judge',

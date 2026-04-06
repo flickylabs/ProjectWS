@@ -13,6 +13,18 @@ import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { detectStatementChange } from '../engine/contradictionEngine'
 import { runDiscoveryChecks, updateCascadeTargets } from './useDiscoveryIntegration'
+import {
+  clearNextConfidential,
+  clearNextEvasionReading,
+  consumeDossierQuestionOverride,
+  getNextConfidential,
+  getNextEvasionReading,
+  setDossierQuestionOverride,
+  setNextConfidential,
+  setNextEvasionReading,
+  setSkipNextJudgeQuestion,
+  shouldSkipJudgeQuestion,
+} from '../engine/dialogueRuntimeFlags'
 import { emitStateTransitionEvent } from '../engine/stateTransitionHelper'
 // ── V2 스크립트 전환 엔진 ──
 import { hasV2Data, hasStructureV2, getBeatLibrary, getBeatRuntimeState, recordBeatUsed, getActiveLayer, getDisputeRole, getDisputeV2 } from '../engine/v2DataLoader'
@@ -41,22 +53,13 @@ export function setLLMMode(_enabled: boolean) { /* AI 필수 — 항상 활성 *
 export function isLLMMode() { return true }
 
 /** 다음 질문에 적용할 토글 모디파이어 */
-let _nextConfidential = false
-let _nextEvasionTarget: { target: PartyId; disputeId: string } | null = null
 /** 다음 resolveAndApply 호출에서 재판관 질문 생성을 스킵 (모순 추궁 등 이미 직접 추가한 경우) */
-let _skipNextJudgeQuestion = false
-export function setSkipNextJudgeQuestion(skip: boolean) { _skipNextJudgeQuestion = skip }
-export function shouldSkipJudgeQuestion(): boolean { const v = _skipNextJudgeQuestion; _skipNextJudgeQuestion = false; return v }
+export { setSkipNextJudgeQuestion, shouldSkipJudgeQuestion }
 
 /** 사건카드 질문 텍스트 — LLM에 직접 전달하여 맥락 유지 */
-let _dossierQuestionOverride: string | null = null
-export function setDossierQuestionOverride(text: string | null) { _dossierQuestionOverride = text }
-export function consumeDossierQuestionOverride(): string | null { const v = _dossierQuestionOverride; _dossierQuestionOverride = null; return v }
+export { setDossierQuestionOverride, consumeDossierQuestionOverride }
 
-export function setNextConfidential(on: boolean) { _nextConfidential = on }
-export function setNextEvasionReading(target: PartyId, disputeId: string) {
-  _nextEvasionTarget = { target, disputeId }
-}
+export { setNextConfidential, setNextEvasionReading }
 
 let globalDispatchLock = false
 
@@ -547,10 +550,10 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   const state = useGameStore.getState()
 
   // ── 토글 모디파이어 소비 ──
-  const isConfidential = _nextConfidential
-  _nextConfidential = false
-  const evasionTarget = _nextEvasionTarget
-  _nextEvasionTarget = null
+  const isConfidential = getNextConfidential()
+  clearNextConfidential()
+  const evasionTarget = getNextEvasionReading()
+  clearNextEvasionReading()
 
   if (isConfidential) {
     state.changeTrust(action.target, 'trustTowardJudge', 20)

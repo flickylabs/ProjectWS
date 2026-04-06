@@ -1,0 +1,1251 @@
+{
+  "caseId": "neighbor-12",
+  "stage": "quick",
+  "runIndex": 1,
+  "casePath": "E:\\GameProject\\ProjectWS\\src\\data\\cases\\generated\\neighbor-12.json",
+  "isMonetary": true,
+  "startedAt": "2026-04-06T15:13:12.310Z",
+  "turns": [
+    {
+      "turn": 1,
+      "label": "a-d1-s1-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "배지연 씨, 공개 지목: 주장에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "기준으로 삼은 그 표에 빈칸이 있었던 건 사실입니다. 다만, 정확한 정보를 모두 파악하는 건 복잡한 일이었습니다.",
+      "behaviorHint": "약간 당황한 표정으로 고개를 살짝 옆으로 돌리며 말한다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:a:tell:number_blur"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:evidence:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:uncertainty:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-1:evidence:0, neighbor12:a:d-1:uncertainty:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: evidence=그 표, time=그때, evidence=그 표, time=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아 ... (총 4523자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 공개 지목: 주장에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 2,
+      "label": "a-d1-s1-motive",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "motive_search",
+      "evidenceId": null,
+      "judgeQuestion": "배지연 씨, 공개 지목: 주장에 대한 이유가 계속 바뀌고 있습니다. 그 선택 외에 다른 길이 정말 없었습니까? 설명이 부족합니다.",
+      "npcResponse": "그 표에 빈칸이 계속 보였기 때문입니다. 아쉽지만 그 상황 속에서 모든 걸 꼼꼼히 살피기가 힘들었습니다.",
+      "behaviorHint": "답하는 동안 얼굴에 살짝 피로감이 드러난다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=motive_search, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:a:tell:pressure_stack"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:evidence:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:uncertainty:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-1:evidence:0, neighbor12:a:d-1:uncertainty:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: evidence=그 표, time=그때, evidence=그 표, time=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아 ... (총 4680자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 공개 지목: 주장에 대한 이유가 계속 바뀌고 있습니다. 그 선택 외에 다른 길이 정말 없었습니까? 설명이 부족합니다.\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 3,
+      "label": "a-d1-s1-empathy",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "배지연 씨, 공개 지목: 주장에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?",
+      "npcResponse": "솔직히 이 상황이 이렇게까지 번질 줄 몰랐습니다. 그 표상의 문제가 생각보다 복잡하게 작용그렇게 느꼈습니다.",
+      "behaviorHint": "표를 떠올리며 애매한 미소를 지으며 고개를 숙인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:a:tell:number_blur"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:evidence:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:uncertainty:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-1:evidence:0, neighbor12:a:d-1:uncertainty:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: evidence=그 표, time=그때, evidence=그 표, time=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아 ... (총 4853자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 공개 지목: 주장에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 4,
+      "label": "b-d2-s1-fact",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "서도윤 씨, 취소 늦은 고지에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "처리가 늦어진 건 그 재계산이 끝나야 가능했습니다. 몇 가지 절차가 겹쳤던 것뿐입니다.",
+      "behaviorHint": "살짝 미간을 찌푸리며 말한다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/b/d-2/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:b:tell:statement_wall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:evidence:1/time: mode=neutral, value=그 지연, neutral=그 지연"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:uncertainty:0/time: mode=neutral, value=그 지연, neutral=그 지연"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:b:d-2:evidence:1, neighbor12:b:d-2:uncertainty:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: time=그 지연, institution=그 재계산, time=그 지연, institution=그 재계산"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 공급사 정산 PDF와 32만 원 카드취소 화면을 먼저 보여주며 감정을 뺀다. 궁지에 몰리면 '지연 씨 숫자가 틀렸다'만 반복하고 작년 정산을 서면으로 닫지 않은 자기 책임은 한 줄로 줄인다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연 ... (총 4505자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 서도윤 씨, 취소 늦은 고지에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 5,
+      "label": "a-d1-s1-evidence",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "evidence_present",
+      "questionType": "evidence_present",
+      "evidenceId": "e-1",
+      "judgeQuestion": "배지연 씨, 이 자료 앞에서 설명이 계속 달라지고 있습니다. 돌리지 마시고 이 기록이 남은 이유를 바로 말씀해 주십시오.",
+      "npcResponse": "그 표엔 제 실수로 제대로 확인하지 못한 부분들이 있어서 지금의 상황이 나온 겁니다.",
+      "behaviorHint": "고개를 약간 돌려 눈을 맞추지 않으며 당황한 기색",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=evidence_present, rule.allowExactAmount=true, preferredAmount=exact, mustUseTell=neighbor12:a:tell:pressure_stack"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:evidence:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:uncertainty:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-1:evidence:0, neighbor12:a:d-1:uncertainty:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: evidence=그 표, time=그때, evidence=그 표, time=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아 ... (총 4812자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 이 자료 앞에서 설명이 계속 달라지고 있습니다. 돌리지 마시고 이 기록이 남은 이유를 바로 말씀해 주십시오.\n\n지시서: deny / 사실 자체를 부정하라\n1문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 6,
+      "label": "b-d2-s1-evidence",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S1",
+      "actionType": "evidence_present",
+      "questionType": "evidence_present",
+      "evidenceId": "e-2",
+      "judgeQuestion": "서도윤 씨, 이 자료 앞에서 설명이 계속 달라지고 있습니다. 돌리지 마시고 이 기록이 남은 이유를 바로 말씀해 주십시오.",
+      "npcResponse": "그 기록은 참고 자료일 뿐, 전체 상황을 명확히 보여주는 것은 아닙니다.",
+      "behaviorHint": "차분하고 시선을 문서에 고정한다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/b/d-2/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=evidence_present, rule.allowExactAmount=true, preferredAmount=exact, mustUseTell=neighbor12:b:tell:statement_wall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:evidence:1/time: mode=neutral, value=그 지연, neutral=그 지연"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:uncertainty:0/time: mode=neutral, value=그 지연, neutral=그 지연"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:b:d-2:evidence:1, neighbor12:b:d-2:uncertainty:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: time=그 지연, institution=그 재계산, time=그 지연, institution=그 재계산"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 공급사 정산 PDF와 32만 원 카드취소 화면을 먼저 보여주며 감정을 뺀다. 궁지에 몰리면 '지연 씨 숫자가 틀렸다'만 반복하고 작년 정산을 서면으로 닫지 않은 자기 책임은 한 줄로 줄인다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연 ... (총 4729자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 서도윤 씨, 이 자료 앞에서 설명이 계속 달라지고 있습니다. 돌리지 마시고 이 기록이 남은 이유를 바로 말씀해 주십시오.\n\n지시서: deny / 사실 자체를 부정하라\n1문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 7,
+      "label": "a-d1-s2-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "배지연 씨, 공개 지목: 주장에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?",
+      "npcResponse": "네, 그때 제가 급하게 공개 글을 올린 건 맞습니다. 그때 카드취소분이 복잡하게 얽혀 있었던 점이 있어서, 그 부분에 대해 고지하는 데 시간이 더 필요했습니다.",
+      "behaviorHint": "어깨를 잠시 움츠리며 살짝 고개를 숙인다",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-1/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:a:tell:pressure_stack"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:unlock:s2:0/time: mode=neutral, value=그 시차, neutral=그 시차"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:admission:0/amount: mode=neutral, value=카드취소분, neutral=카드취소분"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:admission:0/time: mode=neutral, value=그 시점, neutral=그 시점"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-1:unlock:s2:0, neighbor12:a:d-1:admission:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: time=그 시차, evidence=그 게시 기록, amount=카드취소분, time=그 시점"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아 ... (총 4719자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 공개 지목: 주장에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 8,
+      "label": "a-d1-s2-motive",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "motive_search",
+      "evidenceId": null,
+      "judgeQuestion": "배지연 씨, 공개 지목: 주장에 대해 선택의 이유가 바뀌어 들립니다. 무엇이 실제 판단 기준이었는지 지금 정리해 주십시오.",
+      "npcResponse": "그때 저는 카드취소분이 바로 안 와서 의심이 깊어졌던 상태였습니다. 그래서 급하게 올린 글이 있었을 뿐인데, 저도 이럴 줄은 몰랐습니다.",
+      "behaviorHint": "한숨을 내쉬며 고개를 살짝 숙인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-1/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=motive_search, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:admission:0/amount: mode=neutral, value=카드취소분, neutral=카드취소분"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:admission:0/time: mode=neutral, value=그 시점, neutral=그 시점"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:timeline:1/amount: mode=neutral, value=카드취소분, neutral=카드취소분"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:timeline:1/time: mode=neutral, value=그 시점, neutral=그 시점"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-1:admission:0, neighbor12:a:d-1:timeline:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=카드취소분, time=그 시점, amount=카드취소분, time=그 시점"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n\n## 이번 턴 지시서\n- 태도: 감정 호소 — 논리보다 심정으로 답하라\n-  ... (총 4771자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 공개 지목: 주장에 대해 선택의 이유가 바뀌어 들립니다. 무엇이 실제 판단 기준이었는지 지금 정리해 주십시오.\n\n지시서: emotional / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 9,
+      "label": "b-d2-s2-fact",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "서도윤 씨, 취소 늦은 고지에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?",
+      "npcResponse": "네, 그 취소분을 고지하는 게 늦어진 건 사실입니다. 그 공백 동안 적절히 정산하려고 했던 건데 결국 지금 와서는 핑계로 들릴 수 있겠군요.",
+      "behaviorHint": "카드취소 화면을 손으로 가리키며 긴장하는 표정",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/b/d-2/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:b:tell:statement_wall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:unlock:s2:0/amount: mode=neutral, value=카드취소분, neutral=카드취소분"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:unlock:s2:0/time: mode=neutral, value=그 공백, neutral=그 공백"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:admission:0/amount: mode=neutral, value=그 취소분, neutral=그 취소분"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:b:d-2:unlock:s2:0, neighbor12:b:d-2:admission:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=카드취소분, time=그 공백, amount=그 취소분, institution=최종 정산"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 공급사 정산 PDF와 32만 원 카드취소 화면을 먼저 보여주며 감정을 뺀다. 궁지에 몰리면 '지연 씨 숫자가 틀렸다'만 반복하고 작년 정산을 서면으로 닫지 않은 자기 책임은 한 줄로 줄인다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연 ... (총 4676자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 서도윤 씨, 취소 늦은 고지에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 10,
+      "label": "b-d2-s2-empathy",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "서도윤 씨, 취소 늦은 고지에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?",
+      "npcResponse": "솔직히 그 취소분에 대해 사전에 적극적으로 알리지 못한 점을 인정합니다. 다만, 최종 정산을 명확히 하기 위해 모든 것을 한 번에 설명하려는 의도도 있었습니다.",
+      "behaviorHint": "약간의 고개 숙임",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/b/d-2/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:b:tell:statement_wall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:admission:0/amount: mode=neutral, value=그 취소분, neutral=그 취소분"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:timeline:1/amount: mode=neutral, value=그 취소분, neutral=그 취소분"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:b:d-2:admission:0, neighbor12:b:d-2:timeline:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 취소분, institution=최종 정산, amount=그 취소분, institution=최종 정산"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 공급사 정산 PDF와 32만 원 카드취소 화면을 먼저 보여주며 감정을 뺀다. 궁지에 몰리면 '지연 씨 숫자가 틀렸다'만 반복하고 작년 정산을 서면으로 닫지 않은 자기 책임은 한 줄로 줄인다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연 ... (총 4872자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 서도윤 씨, 취소 늦은 고지에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 11,
+      "label": "a-d1-s2-evidence",
+      "target": "a",
+      "disputeId": "d-3",
+      "state": "S2",
+      "actionType": "evidence_present",
+      "questionType": "evidence_present",
+      "evidenceId": "e-3",
+      "judgeQuestion": "배지연 씨, 방금 자료를 보고도 설명이 충분하지 않았습니다. 어느 부분이 맞고 어느 부분이 다른지 나누어 말씀해 주십시오.",
+      "npcResponse": "그 내역서는 어느 정도 맞습니다. 하지만 그 작업은 당시에 여러 모로 복잡했던 일이라 모든 것이 그 문서 하나로 설명되진 않습니다.",
+      "behaviorHint": "서류를 잠깐 쳐다보다 고개를 돌려 난처한 표정을 짓는다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-3/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=evidence_present, rule.allowExactAmount=true, preferredAmount=exact, mustUseTell=neighbor12:a:tell:old_effort_shield"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-3:unlock:s2:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount1=캐시백 금액, amount2=반품차액, amount_total=작년 미정산 총액"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-3, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아 ... (총 4577자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 방금 자료를 보고도 설명이 충분하지 않았습니다. 어느 부분이 맞고 어느 부분이 다른지 나누어 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 12,
+      "label": "a-d1-s3-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S3",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "배지연 씨, 공개 지목: 주장에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.",
+      "npcResponse": "네, 제가 그 글을 게시한 건 맞습니다. 다만, 옆집 분의 처리가 더디고 분명하지 않아 그 시차 동안 큰 혼란이 있었던 것 아닙니까?",
+      "behaviorHint": "깊은 한숨을 쉬며 무거운 책임감과 억울함이 겹친 표정을 짓는다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-1/S3 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:unlock:s2:0/time: mode=neutral, value=그 시차, neutral=그 시차"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:unlock:s3:0/time: mode=neutral, value=그 공백, neutral=그 공백"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-1:unlock:s2:0, neighbor12:a:d-1:unlock:s3:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: time=그 시차, evidence=그 게시 기록, time=그 공백, person=서도윤 씨"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n\n## 이번 턴 지시서\n- 태도: 전가/반격 — 상대의 잘못을 재판관에게 호소 ... (총 4470자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 공개 지목: 주장에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.\n\n지시서: blame / 상대의 잘못을 역공하라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 13,
+      "label": "a-d1-s3-motive",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S3",
+      "actionType": "question",
+      "questionType": "motive_search",
+      "evidenceId": null,
+      "judgeQuestion": "배지연 씨, 공개 지목: 주장에 대해 사정 설명은 충분히 들었습니다. 결국 왜 그 방법밖에 없었는지, 핵심만 답해 주십시오.",
+      "npcResponse": "솔직히 그때 옆집 분의 반응이 너무 늦었습니다. 그 공백 동안 압박을 느껴서, 어쩔 수 없이 그렇게 했습니다.",
+      "behaviorHint": "억울함과 지침이 섞인 표정으로 약간 아쉬운 듯한 제스처",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-1/S3 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=motive_search, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:a:tell:pressure_stack"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:counter:0/time: mode=neutral, value=그 공백, neutral=그 공백"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:relationship:1/time: mode=neutral, value=그 공백, neutral=그 공백"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-1:counter:0, neighbor12:a:d-1:relationship:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: time=그 공백, person=서도윤 씨, time=그 공백, person=서도윤 씨"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아 ... (총 4649자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 공개 지목: 주장에 대해 사정 설명은 충분히 들었습니다. 결국 왜 그 방법밖에 없었는지, 핵심만 답해 주십시오.\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 14,
+      "label": "b-d2-s3-fact",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S3",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "서도윤 씨, 취소 늦은 고지에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.",
+      "npcResponse": "그 공백 동안 알리지 못한 건 인정합니다. 그러나 그 지연과 관련해 옆집 분이 먼저 문의를 주셨던 기억이 없는데, 그 부분이 더 문제 아닐까요?",
+      "behaviorHint": "상대방의 무관심이나 대응 부족을 강조하며 제시자료를 비꼬듯 건넨다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/b/d-2/S3 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:b:tell:statement_wall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:unlock:s2:0/amount: mode=neutral, value=카드취소분, neutral=카드취소분"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:unlock:s2:0/time: mode=neutral, value=그 공백, neutral=그 공백"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:unlock:s3:0/time: mode=neutral, value=그 지연, neutral=그 지연"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:b:d-2:unlock:s2:0, neighbor12:b:d-2:unlock:s3:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=카드취소분, time=그 공백, time=그 지연, institution=그 재계산"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 공급사 정산 PDF와 32만 원 카드취소 화면을 먼저 보여주며 감정을 뺀다. 궁지에 몰리면 '지연 씨 숫자가 틀렸다'만 반복하고 작년 정산을 서면으로 닫지 않은 자기 책임은 한 줄로 줄인다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연 ... (총 4534자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 서도윤 씨, 취소 늦은 고지에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.\n\n지시서: blame / 상대의 잘못을 역공하라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 15,
+      "label": "b-d3-s1-fact",
+      "target": "b",
+      "disputeId": "d-3",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "서도윤 씨, 재정 의 실제 출발점에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 그 성과금을 제가 취급했습니다. 하지만 그 금액이 작년 미정산 총액에 얽혀 상황이 복잡해졌습니다.",
+      "behaviorHint": "공급사 정산 PDF와 작년 미정산 자료를 잠시 살펴보며 자료에 의존하는 모습을 보인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/b/d-3/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:b:tell:statement_wall"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:b:d-3:evidence:0, neighbor12:b:d-3:uncertainty:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount1=캐시백 금액, amount2=반품차액, amount_total=작년 미정산 총액, amount1=캐시백 금액, amount2=반품차액, amount_total=작년 미정산 총액"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-3, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 공급사 정산 PDF와 32만 원 카드취소 화면을 먼저 보여주며 감정을 뺀다. 궁지에 몰리면 '지연 씨 숫자가 틀렸다'만 반복하고 작년 정산을 서면으로 닫지 않은 자기 책임은 한 줄로 줄인다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연 ... (총 4706자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 서도윤 씨, 재정 의 실제 출발점에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 16,
+      "label": "a-d1-s4-empathy",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S4",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "배지연 씨, 공개 지목: 주장에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.",
+      "npcResponse": "사실 그때는 그 공개 채널에서 제가 지목한 것이 진실인지에 대한 두려움이 컸습니다. 그 압박 때문에, 차마 제대로 말할 용기가 없었습니다.",
+      "behaviorHint": "머리를 감싸쥐며 한숨을 쉰다",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-1/S4 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:a:tell:pressure_stack"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-1:shame:0, neighbor12:a:d-1:fear:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: emotion=그 압박, relationship=그 공개 채널, emotion=그 압박, relationship=그 공개 채널"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아 ... (총 5423자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 공개 지목: 주장에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.\n\n지시서: emotional / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 17,
+      "label": "a-d1-s5-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S5",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "배지연 씨, 공개 지목: 주장에 대해 충분히 기회를 드렸습니다. 빠뜨리신 사실이 있다면 지금 말씀하십시오. 더는 기회가 없을 수 있습니다.",
+      "npcResponse": "네, 그 94만 원에 대한 것은 사실입니다. 그 돈은 옆집 분의 환급 32만 원과 작년에 닫지 못한 62만 원이 포함된 금액입니다. 차마 그 시점에서 바로 알아차리지 못한 것이 두렵고, 정말 부끄럽습니다.",
+      "behaviorHint": "길게 숨을 내쉬며 고개를 숙인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-1/S5 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:unlock:s2:0/time: mode=dateExact, value=원본 요구 11분 전, neutral=그 시차"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-1:unlock:s5:0/amount: mode=rounded, value=94만원, neutral=그 금액"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-1:unlock:s2:0, neighbor12:a:d-1:unlock:s5:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: time=원본 요구 11분 전, evidence=그 게시 기록, amount=94만원, person=서도윤"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n\n## 이번 턴 지시서\n- 태도: 고백 — 핵심을 인정하되 자기 사정을 덧붙여 ... (총 5207자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 공개 지목: 주장에 대해 충분히 기회를 드렸습니다. 빠뜨리신 사실이 있다면 지금 말씀하십시오. 더는 기회가 없을 수 있습니다.\n\n지시서: confess / 인정 쪽으로 기울어라\n3문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 18,
+      "label": "b-d2-s5-empathy",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S5",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "서도윤 씨, 취소 늦은 고지에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.",
+      "npcResponse": "32만원 취소가 늦어진 건 사실입니다. 솔직히 말해서, 그 반응이 두려웠습니다. 그 공백 동안 미리 알렸어야 했습니다.",
+      "behaviorHint": "길게 숨을 내쉬며 고개를 숙인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/b/d-2/S5 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:b:tell:scope_shrink"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:harm:1/amount: mode=rounded, value=32만원, neutral=카드취소분"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:b:d-2:harm:1/time: mode=dateExact, value=그 공백, neutral=그 공백"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:b:d-2:unlock:s4:0, neighbor12:b:d-2:harm:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: relationship=그 반응, person=배지연, amount=32만원, time=그 공백"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 공급사 정산 PDF와 32만 원 카드취소 화면을 먼저 보여주며 감정을 뺀다. 궁지에 몰리면 '지연 씨 숫자가 틀렸다'만 반복하고 작년 정산을 서면으로 닫지 않은 자기 책임은 한 줄로 줄인다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연 ... (총 5229자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 서도윤 씨, 취소 늦은 고지에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.\n\n지시서: confess / 인정 쪽으로 기울어라\n3문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 19,
+      "label": "a-last-s1-fact",
+      "target": "a",
+      "disputeId": "d-5",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "배지연 씨, 작년 정산 미마감과 계좌 재사용에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 작년 정산 건이 부족했던 건 사실입니다. 다만, 다들 바쁘고 경황이 없어서 계좌 재사용이 불가피했을 때도 있었습니다.",
+      "behaviorHint": "조금 긴장된 표정으로 손을 비비며 말하다가 시선을 바닥으로 돌린다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/a/d-5/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:a:tell:old_effort_shield"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-5:uncertainty:1/time: mode=neutral, value=그 시점, neutral=그 시점"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] neighbor12:a:d-5:self_justification:0/time: mode=neutral, value=그 시점, neutral=그 시점"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:a:d-5:uncertainty:1, neighbor12:a:d-5:self_justification:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: time=그 시점, person=그 계좌 구조, time=그 시점, person=그 계좌 구조"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-5, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"배지연\"이다. 38세, 홈베이킹 클래스 운영자.\n상대방: 서도윤 (44세, 세무법인 경리팀장)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '참가자분들이 매일 독촉하시는데 제가 얼마나 난처한지요'로 피해자 자리를 먼저 깐다. 작년 62만 원을 묻는 질문이 나오면 '제가 몇 번째 공구를 혼자 돌린 건데요'로 수고를 쌓아 장부 빈칸을 흐린다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아 ... (총 4496자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 배지연 씨, 작년 정산 미마감과 계좌 재사용에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 20,
+      "label": "b-last-s1-fact",
+      "target": "b",
+      "disputeId": "d-5",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "서도윤 씨, 작년 정산 미마감과 계좌 재사용에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 그 제안에 따른 움직임은 있었습니다. 다만 거기서 만들어진 정산 데이터는 옆집 분이 다시 맞추자고 한 것이었습니다.",
+      "behaviorHint": "공급사 정산 PDF와 32만 원 카드취소 화면을 먼저 보여주며 감정을 뺀다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] neighbor-12/b/d-5/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=neighbor12:b:tell:past_cutoff"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: neighbor12:b:d-5:uncertainty:0, neighbor12:b:d-5:evidence:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: person=배지연 씨, quote=그 제안, person=배지연 씨, quote=그 제안"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 "
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-5, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"서도윤\"이다. 44세, 세무법인 경리팀장.\n상대방: 배지연 (38세, 홈베이킹 클래스 운영자)\n\n## 사건 배경\n같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 공급사 정산 PDF와 32만 원 카드취소 화면을 먼저 보여주며 감정을 뺀다. 궁지에 몰리면 '지연 씨 숫자가 틀렸다'만 반복하고 작년 정산을 서면으로 닫지 않은 자기 책임은 한 줄로 줄인다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연 ... (총 4639자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 서도윤 씨, 작년 정산 미마감과 계좌 재사용에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    }
+  ],
+  "notes": [
+    "paths=blueprint-v2"
+  ],
+  "finishedAt": "2026-04-06T15:14:18.146Z",
+  "summary": {
+    "caseStatus": "PASS",
+    "passTurns": 20,
+    "warnTurns": 0,
+    "failTurns": 0,
+    "criticalTurns": 0,
+    "errorTurns": 0,
+    "issueCounts": {}
+  }
+}

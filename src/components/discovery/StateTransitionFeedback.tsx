@@ -16,6 +16,7 @@ import { useGameStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 import type { LieState } from '../../types'
 import { getMeterHudModel, type MeterDisplayMode } from '../../engine/meterStagingV2'
+import { getPostTransitionRecommendation } from '../../engine/stateTransitionHelper'
 
 type TransitionLabel = 'cracked' | 'cornered' | 'opening' | 'confessed' | null
 
@@ -51,10 +52,10 @@ const LABEL_CONFIG: Record<NonNullable<TransitionLabel>, {
   },
   opening: {
     text: '개방',
-    icon: '💡',
-    bgClass: 'bg-blue-950/80',
-    textClass: 'text-blue-400',
-    borderClass: 'border-blue-500/50',
+    icon: '🌅',
+    bgClass: 'bg-emerald-950/80',
+    textClass: 'text-emerald-400',
+    borderClass: 'border-emerald-800/50',
   },
   confessed: {
     text: '시인',
@@ -121,10 +122,20 @@ export function StateTransitionToast() {
               backdrop-blur-sm shadow-lg animate-slide-down pointer-events-auto cursor-pointer`}
             onClick={() => dismiss(event.id)}
           >
-            <div className="flex items-center gap-2">
-              <Emoji char={config.icon} size={18} />
-              <span className={`text-xs font-bold ${config.textClass}`}>{config.text}</span>
-              <span className="text-[11px] text-gray-400">{event.message}</span>
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center gap-2">
+                <Emoji char={config.icon} size={18} />
+                <span className={`text-xs font-bold ${config.textClass}`}>{config.text}</span>
+                <span className="text-[11px] text-gray-400">{event.message}</span>
+              </div>
+              {(() => {
+                const rec = getPostTransitionRecommendation(event.label)
+                return rec ? (
+                  <div className="text-[11px] text-amber-400/80 pl-6">
+                    <Emoji char="💡" size={12} /> {rec.message}
+                  </div>
+                ) : null
+              })()}
             </div>
           </div>
         )

@@ -51,6 +51,7 @@ export interface AtomSelectionInput {
   party?: PartyId
   /** V3: 현재 lieState (unlock atom 병합용) */
   currentLieState?: string
+  preferAmountSlotAtS5?: boolean
 }
 
 /**
@@ -148,20 +149,35 @@ export function buildAtomPlan(input: AtomSelectionInput): BlueprintAtomPlan {
   // 3.5. S5 exact-slot rescue: confess인데 금액/인물 slot이 없으면 보강 atom 1개 주입
   if (stance === 'confess' && input.currentLieState === 'S5') {
     const EXACT_FAMILIES: string[] = ['amount', 'person', 'beneficiary', 'evidence']
+    const needsAmountSlot = input.preferAmountSlotAtS5 === true
+    const hasAmountSlot = selectedAtoms.some(sel => {
+      const atom = allAtoms.find(a => a.id === sel.atomId)
+      return Boolean(atom?.slots && 'amount' in atom.slots)
+    })
     const hasExactSlot = selectedAtoms.some(sel => {
       const atom = allAtoms.find(a => a.id === sel.atomId)
       if (!atom?.slots) return false
       return Object.keys(atom.slots).some(f => EXACT_FAMILIES.includes(f))
     })
-    if (!hasExactSlot) {
+    const shouldRescue = needsAmountSlot ? !hasAmountSlot : !hasExactSlot
+    if (shouldRescue) {
       // 전체 atom 중 exact-support slot이 있는 것을 찾아 1개 보강
+      // amount 슬롯이 있는 atom을 최우선 선택 (B4 대응)
       const rescueCandidate = allAtoms
         .filter(a => !blockedAtomIds.includes(a.id) && !selectedAtoms.some(s => s.atomId === a.id))
-        .filter(a => a.slots && Object.keys(a.slots).some(f => EXACT_FAMILIES.includes(f)))
-        .sort((a, b) => (b.stanceHints?.includes('confess') ? 30 : 0) - (a.stanceHints?.includes('confess') ? 30 : 0))
+        .filter(a => a.slots && Object.keys(a.slots).some(f => needsAmountSlot ? f === 'amount' : EXACT_FAMILIES.includes(f)))
+        .sort((a, b) => {
+          // 1순위: amount 슬롯 보유 (+50)
+          const aHasAmount = a.slots && 'amount' in a.slots ? 50 : 0
+          const bHasAmount = b.slots && 'amount' in b.slots ? 50 : 0
+          // 2순위: confess stanceHint (+30)
+          const aConfess = a.stanceHints?.includes('confess') ? 30 : 0
+          const bConfess = b.stanceHints?.includes('confess') ? 30 : 0
+          return (bHasAmount + bConfess) - (aHasAmount + aConfess)
+        })
       if (rescueCandidate.length > 0) {
         selectedAtoms.push({ atomId: rescueCandidate[0].id, score: -1, selectedTags: [] })
-        console.log(`[AtomEngine] S5 exact-slot rescue: ${rescueCandidate[0].id} 보강`)
+        console.log(`[AtomEngine] S5 exact-slot rescue: ${rescueCandidate[0].id} 보강 (hasAmount=${rescueCandidate[0].slots && 'amount' in rescueCandidate[0].slots})`)
       }
     }
   }

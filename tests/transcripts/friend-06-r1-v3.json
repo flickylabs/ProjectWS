@@ -1,0 +1,1233 @@
+{
+  "caseId": "friend-06",
+  "stage": "quick",
+  "runIndex": 1,
+  "casePath": "E:\\GameProject\\ProjectWS\\src\\data\\cases\\generated\\friend-06.json",
+  "isMonetary": false,
+  "startedAt": "2026-04-06T15:36:43.795Z",
+  "turns": [
+    {
+      "turn": 1,
+      "label": "a-d1-s1-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤해온 씨, 직접 수정과 핀댓글 삭제에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 직접 수정했습니다. 다만 핀댓글 삭제까지는 모든 상황을 고려한 것이 아닙니다.",
+      "behaviorHint": "재판관을 향해 직접적으로 말하며, 선을 긋고 핵심을 흐리려는 태도를 보입니다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:a:tell:tab_pointing"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s1:act:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s1:context:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-1:s1:act:1, friend06:a:d-1:s1:context:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문, counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 4869자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 직접 수정과 핀댓글 삭제에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 2,
+      "label": "a-d1-s1-motive",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "motive_search",
+      "evidenceId": null,
+      "judgeQuestion": "윤해온 씨, 직접 수정과 핀댓글 삭제에 대한 이유가 계속 바뀌고 있습니다. 그 선택 외에 다른 길이 정말 없었습니까? 설명이 부족합니다.",
+      "npcResponse": "상대방으로부터 플랫폼 요소와 관련한 요구가 급했습니다. 그래서 그 상황에서 즉각적인 대응이 필요하다고 생각했던 것입니다.",
+      "behaviorHint": "약간 방어적인 자세를 취하며, 손으로 책상을 가볍게 두드린다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=motive_search, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:a:tell:tab_pointing"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s1:context:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-1:s1:context:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 4939자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 직접 수정과 핀댓글 삭제에 대한 이유가 계속 바뀌고 있습니다. 그 선택 외에 다른 길이 정말 없었습니까? 설명이 부족합니다.\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★★ 직전 응답: \"네, 직접 수정했습니다. 다만 핀댓글 삭제까지는 모든 상황을 고려한 것이 아닙니다.\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 3,
+      "label": "a-d1-s1-empathy",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?",
+      "npcResponse": "솔직히, 그 당시 나는 정말 많은 압박을 느꼈습니다. 다만, 상대방도 그 안에서 본인의 판단대로 행동했을 것이라 생각합니다.",
+      "behaviorHint": "눈을 잠시 감고 천천히 고개를 끄덕인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:a:tell:tab_pointing"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s1:context:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s1:act:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-1:s1:context:0, friend06:a:d-1:s1:act:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문, counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 5187자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★★ 직전 응답: \"상대방으로부터 플랫폼 요소와 관련한 요구가 급했습니다. 그래서 그 상황에서 즉각적인 대응이 필요하다고 생각했던 것입니다.\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 4,
+      "label": "b-d2-s1-fact",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "최다솔 씨, 공개 비난과 일방적 접근 차단에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 제 친구가 업계 단체대화방에 게시한 건 맞습니다. 다만, 그 상황에서 낙인과 차단처럼 보일 수 있다는 걸 이해합니다.",
+      "behaviorHint": "조금 불안한 듯 서류를 만지작거린다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/b/d-2/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:b:tell:rescue_stack"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-2:s1:act:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-2:s1:context:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:b:d-2:s1:act:1, friend06:b:d-2:s1:context:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, audience=업계 단체대화방, time=그때, impact=낙인과 차단, evidence=단톡 메시지와 회수 로그, counterparty=상대방, audience=업계 단체대화방, time=그때, impact=낙인과 차단, evidence=단톡 메시지와 회수 로그"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: 자신이 급한 뒷수습을 해온 시간과 압박을 먼저 길게 말하며 구조자 위치를 잡는다. 불리해지면 '안 그러면 광고가 내려갈 뻔했다'는 식으로 결과를 앞세워 절차 위반을 희석한다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 4860자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 최다솔 씨, 공개 비난과 일방적 접근 차단에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 5,
+      "label": "a-d1-s1-evidence",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "evidence_present",
+      "questionType": "evidence_present",
+      "evidenceId": "e-1",
+      "judgeQuestion": "윤해온 씨, 이 자료 앞에서 설명이 계속 달라지고 있습니다. 돌리지 마시고 이 기록이 남은 이유를 바로 말씀해 주십시오.",
+      "npcResponse": "그 기록 자체는 제 친구의 개인 판단에 의해 조정된 부분입니다.",
+      "behaviorHint": "눈을 피하며 차분히 말한다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=evidence_present, rule.allowExactAmount=true, preferredAmount=exact, mustUseTell=friend06:a:tell:tab_pointing"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s1:act:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-1:s1:act:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 5100자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 이 자료 앞에서 설명이 계속 달라지고 있습니다. 돌리지 마시고 이 기록이 남은 이유를 바로 말씀해 주십시오.\n\n지시서: deny / 사실 자체를 부정하라\n1문장으로 연기하라.\n★★ 직전 응답: \"솔직히, 그 당시 나는 정말 많은 압박을 느꼈습니다. 다만, 상대방도 그 안에서 본인의 판단대로 행동했을 것이라 생각합니다.\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 6,
+      "label": "b-d2-s1-evidence",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S1",
+      "actionType": "evidence_present",
+      "questionType": "evidence_present",
+      "evidenceId": "e-2",
+      "judgeQuestion": "최다솔 씨, 이 자료 앞에서 설명이 계속 달라지고 있습니다. 돌리지 마시고 이 기록이 남은 이유를 바로 말씀해 주십시오.",
+      "npcResponse": "그걸 보면 오히려 상대방이 먼저 급하게 대응한 게 문제입니다.",
+      "behaviorHint": "차분하게 고개를 흔들며 자료를 쳐다본다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/b/d-2/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=evidence_present, rule.allowExactAmount=true, preferredAmount=exact, mustUseTell=friend06:b:tell:rescue_stack"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-2:s1:act:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:b:d-2:s1:act:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, audience=업계 단체대화방, time=그때, impact=낙인과 차단, evidence=단톡 메시지와 회수 로그"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: 자신이 급한 뒷수습을 해온 시간과 압박을 먼저 길게 말하며 구조자 위치를 잡는다. 불리해지면 '안 그러면 광고가 내려갈 뻔했다'는 식으로 결과를 앞세워 절차 위반을 희석한다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 5020자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 최다솔 씨, 이 자료 앞에서 설명이 계속 달라지고 있습니다. 돌리지 마시고 이 기록이 남은 이유를 바로 말씀해 주십시오.\n\n지시서: deny / 사실 자체를 부정하라\n1문장으로 연기하라.\n★★ 직전 응답: \"네, 제 친구가 업계 단체대화방에 게시한 건 맞습니다. 다만, 그 상황에서 낙인과 차단처럼 보일 수 있다는 걸 이해합니다.\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 7,
+      "label": "a-d1-s2-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤해온 씨, 직접 수정과 핀댓글 삭제에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?",
+      "npcResponse": "네, 그 게시물의 주요 요소들은 바뀌었습니다. 다만, 그 시점에 저희 블로그에 변경 사항을 알리고 최종 확인을 받은 절차는 놓치지 말았어야 했습니다.",
+      "behaviorHint": "목을 가볍게 가다듬고, 손가락으로 탁자를 두드리며 말한다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-1/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:a:tell:tab_pointing"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s2:rule:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-1:s2:rule:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 4967자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 직접 수정과 핀댓글 삭제에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★★ 직전 응답: \"그 기록 자체는 제 친구의 개인 판단에 의해 조정된 부분입니다.\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 8,
+      "label": "a-d1-s2-motive",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "motive_search",
+      "evidenceId": null,
+      "judgeQuestion": "윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 선택의 이유가 바뀌어 들립니다. 무엇이 실제 판단 기준이었는지 지금 정리해 주십시오.",
+      "npcResponse": "그때 제 친구가 빠르게 대처해야 했다는 건 인정합니다. 그러나 플랫폼의 주요 요소 변경에 대한 알림은 뒤늦게나마 저한테 전해졌어야 했습니다.",
+      "behaviorHint": "속상한 표정을 지으며 고개를 약간 숙인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-1/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=motive_search, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s2:context:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-1:s2:context:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n\n## 이번 턴 지시서\n- 태도:  ... (총 4983자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 선택의 이유가 바뀌어 들립니다. 무엇이 실제 판단 기준이었는지 지금 정리해 주십시오.\n\n지시서: emotional / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★★ 직전 응답: \"네, 그 게시물의 주요 요소들은 바뀌었습니다. 다만, 그 시점에 저희 블로그에 변경 사항을 알리고 최종 확인을 받은 절차는 놓치지 말았어야 했습\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 9,
+      "label": "b-d2-s2-fact",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "최다솔 씨, 공개 비난과 일방적 접근 차단에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?",
+      "npcResponse": "네, 수정했습니다. 다만 그때 갑자기 증거로 단톡 메시지와 회수 로그를 쓰며 저를 낙인과 차단하는 조치는 좀 과했다는 생각입니다.",
+      "behaviorHint": "얌전하지만 억울한 표정",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/b/d-2/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:b:tell:intent_shield"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-2:s2:rule:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:b:d-2:s2:rule:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, audience=업계 단체대화방, time=그때, impact=낙인과 차단, evidence=단톡 메시지와 회수 로그"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: 자신이 급한 뒷수습을 해온 시간과 압박을 먼저 길게 말하며 구조자 위치를 잡는다. 불리해지면 '안 그러면 광고가 내려갈 뻔했다'는 식으로 결과를 앞세워 절차 위반을 희석한다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 4954자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 최다솔 씨, 공개 비난과 일방적 접근 차단에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★★ 직전 응답: \"그걸 보면 오히려 상대방이 먼저 급하게 대응한 게 문제입니다.\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 10,
+      "label": "b-d2-s2-empathy",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "최다솔 씨, 공개 비난과 일방적 접근 차단에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?",
+      "npcResponse": "솔직히 그때는 심적으로 굉장히 힘들었습니다. 제 행동이 성급했었다는 점은 인정하지만, 제 친구의 대응이 너무 급작스러워서 상처받았습니다.",
+      "behaviorHint": "살짝 흔들리며 억울한 표정을 짓는다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/b/d-2/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-2:s2:context:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:b:d-2:s2:context:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, audience=업계 단체대화방, time=그때, impact=낙인과 차단, evidence=단톡 메시지와 회수 로그"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: 자신이 급한 뒷수습을 해온 시간과 압박을 먼저 길게 말하며 구조자 위치를 잡는다. 불리해지면 '안 그러면 광고가 내려갈 뻔했다'는 식으로 결과를 앞세워 절차 위반을 희석한다.\n\n\n## 이번 턴 지시서\n- 태도:  ... (총 5012자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 최다솔 씨, 공개 비난과 일방적 접근 차단에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★★ 직전 응답: \"네, 수정했습니다. 다만 그때 갑자기 증거로 단톡 메시지와 회수 로그를 쓰며 저를 낙인과 차단하는 조치는 좀 과했다는 생각입니다.\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 11,
+      "label": "a-d1-s2-evidence",
+      "target": "a",
+      "disputeId": "d-3",
+      "state": "S2",
+      "actionType": "evidence_present",
+      "questionType": "evidence_present",
+      "evidenceId": "e-3",
+      "judgeQuestion": "윤해온 씨, 방금 자료를 보고도 설명이 충분하지 않았습니다. 어느 부분이 맞고 어느 부분이 다른지 나누어 말씀해 주십시오.",
+      "npcResponse": "초대 로그와 요청 스레드가 확실히 있었습니다. 그런데 그걸로 전후 맥락까지 판단할 수 없은 부분이 존재합니다.",
+      "behaviorHint": "침착하게 어깨를 으쓱하며 말한다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-3/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=evidence_present, rule.allowExactAmount=true, preferredAmount=exact, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d3.a.unlock.s2.granted_roles_exist/time: mode=dateExact, value=이미, neutral=이미"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-3:s2:admission:0/time: mode=dateExact, value=이미, neutral=이미"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d3.a.unlock.s2.granted_roles_exist, friend06:a:d-3:s2:admission:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, roleBlog=블로그 권한, roleYoutube=채널 역할, time=이미, evidence=초대 로그와 요청 스레드, counterparty=상대방, roleBlog=블로그 권한, roleYoutube=채널 역할, time=이미, coordinator=플랫폼 담당자, evidence=초대 로그와 요청 스레드"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-3, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n\n## 이번 턴 지시서\n- 태도:  ... (총 4878자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 방금 자료를 보고도 설명이 충분하지 않았습니다. 어느 부분이 맞고 어느 부분이 다른지 나누어 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 12,
+      "label": "a-d1-s3-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S3",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.",
+      "npcResponse": "네, 제가 플랫폼의 주요 요소에 손을 대지 않았습니다. 제 친구가 무리하게 변경한 것부터 확인해야 하지 않겠습니까?",
+      "behaviorHint": "단호하고 억울함을 드러내며 상대의 잘못을 지적한다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-1/S3 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:a:tell:scope_freeze"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s3:rule:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-1:s3:rule:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 4896자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.\n\n지시서: blame / 상대의 잘못을 역공하라\n2문장으로 연기하라.\n★★ 직전 응답: \"그때 제 친구가 빠르게 대처해야 했다는 건 인정합니다. 그러나 플랫폼의 주요 요소 변경에 대한 알림은 뒤늦게나마 저한테 전해졌어야 했습니다.\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 13,
+      "label": "a-d1-s3-motive",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S3",
+      "actionType": "question",
+      "questionType": "motive_search",
+      "evidenceId": null,
+      "judgeQuestion": "윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 사정 설명은 충분히 들었습니다. 결국 왜 그 방법밖에 없었는지, 핵심만 답해 주십시오.",
+      "npcResponse": "제 친구가 다수의 플랫폼 요소들을 동시에 수정함으로써, 채널 전체가 영향을 받은 것처럼 보였습니다. 그때의 결정을 통해 채널의 통제력을 유지할 필요가 있었습니다.",
+      "behaviorHint": "조금 변명하는 듯한 표정을 짓는다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-1/S3 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=motive_search, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s3:harm:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-1:s3:harm:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n\n## 이번 턴 지시서\n- 태도:  ... (총 4842자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 사정 설명은 충분히 들었습니다. 결국 왜 그 방법밖에 없었는지, 핵심만 답해 주십시오.\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★★ 직전 응답: \"네, 제가 플랫폼의 주요 요소에 손을 대지 않았습니다. 제 친구가 무리하게 변경한 것부터 확인해야 하지 않겠습니까?\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 14,
+      "label": "b-d2-s3-fact",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S3",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "최다솔 씨, 공개 비난과 일방적 접근 차단에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.",
+      "npcResponse": "네, 수정을 했습니다. 다만 제 친구 쪽에서 업계 단체대화방에 비교 캡처를 올리고 모든 접근을 차단한 게 이 사건에 오히려 큰 낙인과 차단의 impact를 줬던 것 아닙니까?",
+      "behaviorHint": "짧고 단호하게 말하며 상대방의 잘못을 강조한다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/b/d-2/S3 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:b:tell:wounded_laugh"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-2:s3:rule:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:b:d-2:s3:rule:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, audience=업계 단체대화방, time=그때, impact=낙인과 차단, evidence=단톡 메시지와 회수 로그"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: 자신이 급한 뒷수습을 해온 시간과 압박을 먼저 길게 말하며 구조자 위치를 잡는다. 불리해지면 '안 그러면 광고가 내려갈 뻔했다'는 식으로 결과를 앞세워 절차 위반을 희석한다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 4879자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 최다솔 씨, 공개 비난과 일방적 접근 차단에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.\n\n지시서: blame / 상대의 잘못을 역공하라\n2문장으로 연기하라.\n★★ 직전 응답: \"솔직히 그때는 심적으로 굉장히 힘들었습니다. 제 행동이 성급했었다는 점은 인정하지만, 제 친구의 대응이 너무 급작스러워서 상처받았습니다.\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 15,
+      "label": "b-d3-s1-fact",
+      "target": "b",
+      "disputeId": "d-3",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "최다솔 씨, 다솔은 원래 수정 권한이 없었는데 무단 침입한 것인가에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 제가 수정했습니다. 그런데 그 역할이 얼마만큼 규정된 것인지는 명확히 알지 못했습니다.",
+      "behaviorHint": "약간 초조한 기색을 보이며 손을 모은다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/b/d-3/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:b:tell:rescue_stack"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-3:s1:admission:1/time: mode=neutral, value=이전부터, neutral=이전부터"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-3:s1:uncertainty:0/time: mode=neutral, value=이전부터, neutral=이전부터"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:b:d-3:s1:admission:1, friend06:b:d-3:s1:uncertainty:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, roleBlog=블로그 권한, roleYoutube=채널 역할, time=이전부터, coordinator=브랜드 담당자, evidence=초대 로그와 요청 스레드, counterparty=상대방, roleBlog=블로그 권한, roleYoutube=채널 역할, time=이전부터, coordinator=브랜드 담당자, evidence=초대 로그와 요청 스레드"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-3, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: 자신이 급한 뒷수습을 해온 시간과 압박을 먼저 길게 말하며 구조자 위치를 잡는다. 불리해지면 '안 그러면 광고가 내려갈 뻔했다'는 식으로 결과를 앞세워 절차 위반을 희석한다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 5049자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 최다솔 씨, 다솔은 원래 수정 권한이 없었는데 무단 침입한 것인가에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 16,
+      "label": "a-d1-s4-empathy",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S4",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.",
+      "npcResponse": "솔직히 그 순간 핀댓글이 사라진 화면을 봤을 때, 누군이 제 채널 중심을 밀어낸 것처럼 느꼈습니다. 예전에도 라이브 링크 수정 때 경계를 말로 못 박지 않은 것이 여기까지 번진 것 같아서 더 불안했습니다.",
+      "behaviorHint": "눈치를 살피며 한숨을 내쉰다",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-1/S4 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:a:tell:low_tempo"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s4:emotion:0/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s4:fear:1/time: mode=neutral, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-1:s4:emotion:0, friend06:a:d-1:s4:fear:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문, counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 5749자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.\n\n지시서: emotional / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★★ 직전 응답: \"제 친구가 다수의 플랫폼 요소들을 동시에 수정함으로써, 채널 전체가 영향을 받은 것처럼 보였습니다. 그때의 결정을 통해 채널의 통제력을 유지할 \"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 17,
+      "label": "a-d1-s5-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S5",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 충분히 기회를 드렸습니다. 빠뜨리신 사실이 있다면 지금 말씀하십시오. 더는 기회가 없을 수 있습니다.",
+      "npcResponse": "네, 그날 핀댓글을 삭제한 것이 사실입니다. 다만 광고 수정 요청을 받고, 급하게 표시를 바로 잡아야 하는 압박감 때문에 그렇게 했습니다. 그런 방법밖에 떠오르지 않았던 게 지금도 크게 후회됩니다.",
+      "behaviorHint": "길게 숨을 내쉬고 고개를 숙인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-1/S5 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s5:resolution:1/time: mode=dateExact, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-1:s5:admission:0/time: mode=dateExact, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-1:s5:resolution:1, friend06:a:d-1:s5:admission:0"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문, counterparty=상대방, time=그때, platform=게시물 주요 요소, evidence=변경 로그와 요청 원문"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n\n## 이번 턴 지시서\n- 태도:  ... (총 5538자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 직접 수정과 핀댓글 삭제에 대해 충분히 기회를 드렸습니다. 빠뜨리신 사실이 있다면 지금 말씀하십시오. 더는 기회가 없을 수 있습니다.\n\n지시서: confess / 인정 쪽으로 기울어라\n3문장으로 연기하라.\n★★ 직전 응답: \"솔직히 그 순간 핀댓글이 사라진 화면을 봤을 때, 누군이 제 채널 중심을 밀어낸 것처럼 느꼈습니다. 예전에도 라이브 링크 수정 때 경계를 말로 \"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 18,
+      "label": "b-d2-s5-empathy",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S5",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "최다솔 씨, 공개 비난과 일방적 접근 차단에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.",
+      "npcResponse": "솔직히 말씀드리면, 그때 많이 무서웠습니다. 제 친구도 제 입장이 됐다면 이해했을지 모르지만, 단톡 메시지와 회수 로그가 공개된 순간 낙인이 찍힐까 걱정됐습니다. 지금이라도 솔직히 털어놔야겠다는 생각으로 진심을 다해 말씀드립니다.",
+      "behaviorHint": "길게 숨을 내쉬며 고개를 숙인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/b/d-2/S5 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-2:s5:admission:0/time: mode=dateExact, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-2:s5:resolution:1/time: mode=dateExact, value=그때, neutral=그때"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:b:d-2:s5:admission:0, friend06:b:d-2:s5:resolution:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, audience=업계 단체대화방, time=그때, impact=낙인과 차단, evidence=단톡 메시지와 회수 로그, counterparty=상대방, audience=업계 단체대화방, time=그때, impact=낙인과 차단, evidence=단톡 메시지와 회수 로그"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: 자신이 급한 뒷수습을 해온 시간과 압박을 먼저 길게 말하며 구조자 위치를 잡는다. 불리해지면 '안 그러면 광고가 내려갈 뻔했다'는 식으로 결과를 앞세워 절차 위반을 희석한다.\n\n\n## 이번 턴 지시서\n- 태도:  ... (총 5477자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 최다솔 씨, 공개 비난과 일방적 접근 차단에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.\n\n지시서: confess / 인정 쪽으로 기울어라\n3문장으로 연기하라.\n★★ 직전 응답: \"네, 수정을 했습니다. 다만 제 친구 쪽에서 업계 단체대화방에 비교 캡처를 올리고 모든 접근을 차단한 게 이 사건에 오히려 큰 낙인과 차단의 i\"\n→ 위 문장의 단어·구조·시작어를 절대 재사용하지 마라. 완전히 다른 표현으로 답하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 19,
+      "label": "a-last-s1-fact",
+      "target": "a",
+      "disputeId": "d-5",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤해온 씨, 최종 확인과 공동 스레드 원칙의 쌍방 위반에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 공동 스레드 원칙을 따르지 않은 건 맞습니다. 다만 상황이 훨씬 급박했고, 문제를 일단 멈추는 게 중요하다고 판단했습니다.",
+      "behaviorHint": "살짝 주춤거리며 시선을 피한다",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/a/d-5/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:a:tell:tab_pointing"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-5:s1:uncertainty:0/time: mode=neutral, value=평소, neutral=평소"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:a:d-5:s1:technical:1/time: mode=neutral, value=평소, neutral=평소"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:a:d-5:s1:uncertainty:0, friend06:a:d-5:s1:technical:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, ruleDoc=공동 규칙 문서, rule=공동 스레드 원칙, time=평소, evidence=노션 규칙과 회수 로그, counterparty=상대방, ruleDoc=공동 규칙 문서, rule=공동 스레드 원칙, time=평소, evidence=노션 규칙과 회수 로그"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-5, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤해온\"이다. 29세, 여행 브이로거.\n상대방: 최다솔 (30세, SEO 콘텐츠 에디터)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 작업 로그와 문구를 하나씩 비교하며 말하고, 확인된 사실과 추정을 구분하려 애쓴다. 그러나 자신의 통제권이 침범됐다고 느끼면 설명보다 접근권 회수부터 먼저 실행해 버린다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 4920자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤해온 씨, 최종 확인과 공동 스레드 원칙의 쌍방 위반에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 20,
+      "label": "b-last-s1-fact",
+      "target": "b",
+      "disputeId": "d-5",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "최다솔 씨, 최종 확인과 공동 스레드 원칙의 쌍방 위반에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 공동 스레드 원칙을 따르지 않았습니다. 그동안의 긴급한 상황에서 바로 조치하는 게 중요하다는 생각이 들었습니다.",
+      "behaviorHint": "어깨를 살짝 으쓱한다",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] friend-06/b/d-5/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=friend06:b:tell:rescue_stack"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-5:s1:uncertainty:0/time: mode=neutral, value=평소, neutral=평소"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] friend06:b:d-5:s1:technical:1/time: mode=neutral, value=평소, neutral=평소"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: friend06:b:d-5:s1:uncertainty:0, friend06:b:d-5:s1:technical:1"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: counterparty=상대방, ruleDoc=공동 규칙 문서, rule=공동 스레드 원칙, time=평소, evidence=노션 규칙과 회수 로그, counterparty=상대방, ruleDoc=공동 규칙 문서, rule=공동 스레드 원칙, time=평소, evidence=노션 규칙과 회수 로그"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-5, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"최다솔\"이다. 30세, SEO 콘텐츠 에디터.\n상대방: 윤해온 (29세, 여행 브이로거)\n\n## 사건 배경\n공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: 자신이 급한 뒷수습을 해온 시간과 압박을 먼저 길게 말하며 구조자 위치를 잡는다. 불리해지면 '안 그러면 광고가 내려갈 뻔했다'는 식으로 결과를 앞세워 절차 위반을 희석한다.\n\n## 말버릇 (3~4턴에 1회만.  ... (총 5048자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 최다솔 씨, 최종 확인과 공동 스레드 원칙의 쌍방 위반에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: hedge / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": [
+        {
+          "severity": "WARN",
+          "code": "D2",
+          "detail": "2턴 연속 동일 표현: \"네, 공동 스레드\"",
+          "turn": 20,
+          "response": "네, 공동 스레드 원칙을 따르지 않았습니다. 그동안의 긴급한 상황에서 바로 조치하는 게 중요하다는 생각이 들었습니다."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "paths=blueprint-v2"
+  ],
+  "finishedAt": "2026-04-06T15:37:53.034Z",
+  "summary": {
+    "caseStatus": "WARN",
+    "passTurns": 19,
+    "warnTurns": 1,
+    "failTurns": 0,
+    "criticalTurns": 0,
+    "errorTurns": 0,
+    "issueCounts": {
+      "WARN:D2": 1
+    }
+  }
+}

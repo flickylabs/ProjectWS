@@ -1,0 +1,1207 @@
+{
+  "caseId": "family-01",
+  "stage": "quick",
+  "runIndex": 1,
+  "casePath": "E:\\GameProject\\ProjectWS\\src\\data\\cases\\generated\\family-01.json",
+  "isMonetary": true,
+  "startedAt": "2026-04-06T15:01:19.640Z",
+  "turns": [
+    {
+      "turn": 1,
+      "label": "a-d1-s1-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤서아 씨, 부모 예금 선이체에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 그 이체를 했습니다. 다만 순수하게 제 개인 목적만 위해 사용된 건 아닙니다.",
+      "behaviorHint": "약간의 긴장감을 드러내며 고개를 살짝 끄덕인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=sacrifice_rollcall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.transfer_ack/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.transfer_ack/time: mode=neutral, value=그 무렵, neutral=그 무렵"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.not_simple_private_outflow/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d1.transfer_ack, d1.not_simple_private_outflow"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 돈, time=그 무렵, action=그 이체, amount=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\nsacrifice ... (총 4550자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 부모 예금 선이체에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 2,
+      "label": "a-d1-s1-motive",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "motive_search",
+      "evidenceId": null,
+      "judgeQuestion": "윤서아 씨, 부모 예금 선이체에 대한 이유가 계속 바뀌고 있습니다. 그 선택 외에 다른 길이 정말 없었습니까? 설명이 부족합니다.",
+      "npcResponse": "부모님 돌봄 비용과 집안 경비가 예상보다 많이 나와서 그 돈이 필요했습니다. 숨기고 혼자 결정한 건 여러모로 제 잘못입니다.",
+      "behaviorHint": "한숨을 내쉬며 고개를 약간 떨군다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=motive_search, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=sacrifice_rollcall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.not_simple_private_outflow/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d1.not_simple_private_outflow, d1.household_crisis_generic"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 돈, beneficiary=부모님"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\nsacrifice ... (총 4709자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 부모 예금 선이체에 대한 이유가 계속 바뀌고 있습니다. 그 선택 외에 다른 길이 정말 없었습니까? 설명이 부족합니다.\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 3,
+      "label": "a-d1-s1-empathy",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "윤서아 씨, 부모 예금 선이체에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?",
+      "npcResponse": "솔직히, 그때는 정말 여기저기 돈이 급했었습니다. 너무 걱정이 많아서 제 동생에게 충분히 미리 알리지 못한 건 제 잘못입니다.",
+      "behaviorHint": "고개를 숙여 약간의 후회와 죄책감을 드러낸다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=sacrifice_rollcall"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d1.household_crisis_generic, d1.mother_care_rollcall"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: beneficiary=부모님, beneficiary=어머니, person=제 동생"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\nsacrifice ... (총 4879자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 부모 예금 선이체에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 4,
+      "label": "b-d2-s1-fact",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤도현 씨, 간병비 분담 지연에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 해당 금액은 분명히 12일 늦게 냈습니다. 그러나 그 지연은 제 관리 부족이었고, 그 이상은 없었습니다.",
+      "behaviorHint": "약간 긴장한 얼굴로 손가락을 교차하며 실수를 인정한다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/b/d-2/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.twelve_day_delay_ack/amount: mode=neutral, value=그 비용, neutral=그 비용"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.twelve_day_delay_ack/time: mode=neutral, value=그만큼 늦게, neutral=그만큼 늦게"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.shift_adjustment_not_abandon/time: mode=neutral, value=그 주, neutral=그 주"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d2.twelve_day_delay_ack, d2.shift_adjustment_not_abandon"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 비용, time=그만큼 늦게, action=그 지연, time=그 주, action=그 미룸"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 영수증, 시간표, 계좌 캡처를 순서대로 꺼내며 감정을 최대한 줄인다. 억울해지면 말끝이 짧아지고, 누나의 울음이나 압박을 숫자로 잘라내려 해 더 차갑게 보인다.\n\n\n## 이번 턴 지시서\n- 태도: 부분 인정 — 저위험 사실은 인정, 핵심은 축소\n- 방어: 인정 쪽으로 기울어라\n- 문장 수: 2문장\n\n\n\n ... (총 4520자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤도현 씨, 간병비 분담 지연에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 5,
+      "label": "a-d1-s1-evidence",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "evidence_present",
+      "questionType": "evidence_present",
+      "evidenceId": "e-1",
+      "judgeQuestion": "윤서아 씨, 이 자료 앞에서 설명이 계속 달라지고 있습니다. 돌리지 마시고 이 기록이 남은 이유를 바로 말씀해 주십시오.",
+      "npcResponse": "그 이체 내역은 큰돈이 오간 건 맞습니다. 하지만 그걸 순전히 사적 인출로만 보기에는 당시 상황이 복잡했습니다.",
+      "behaviorHint": "억울한 감정을 드러내며 약간 방어적인 자세",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-1/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=evidence_present, rule.allowExactAmount=true, preferredAmount=exact, mustUseTell=sacrifice_rollcall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.not_simple_private_outflow/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.transfer_ack/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.transfer_ack/time: mode=neutral, value=그 무렵, neutral=그 무렵"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d1.not_simple_private_outflow, d1.transfer_ack"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 돈, amount=그 돈, time=그 무렵, action=그 이체"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\nsacrifice ... (총 4836자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 이 자료 앞에서 설명이 계속 달라지고 있습니다. 돌리지 마시고 이 기록이 남은 이유를 바로 말씀해 주십시오.\n\n지시서: partial / 취득의 정당성을 문제 삼아라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 6,
+      "label": "b-d2-s1-evidence",
+      "target": "b",
+      "disputeId": "d-1",
+      "state": "S1",
+      "actionType": "evidence_present",
+      "questionType": "evidence_present",
+      "evidenceId": "e-2",
+      "judgeQuestion": "서아의 부모 예금 선이체와 관련된 증거를 어떻게 확보했습니까?",
+      "npcResponse": "재판관님, 이 증거는 제 누나의 휴대폰에서 복원된 자료입니다. 재판관님,  그때 메모한 이유가 뭐였던 겁니까?",
+      "behaviorHint": "자료를 차분히 언급하며 시선은 상대를 향해 무미건조하게 바라본다.",
+      "logs": [
+        {
+          "level": "group",
+          "text": "[LLM Prompt Debug] target=b, dispute=d-1, action=evidence_present"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 당신은 한국 법정 갈등 시뮬레이션 게임의 NPC \"윤도현\"(38세)입니다.\n상대: 윤서아. 관계: 가족\n배경: 아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 말투\n영수증, 시간표, 계좌 캡처를 순서대로 꺼내며 감정을 최대한 줄인다. 억울해지면 말끝이 짧아지고, 누나의 울음이나 압박을 숫자로 잘라내려 해 더 차갑게 보인다.\n\n## 호칭 (가장 중요)\n- 상대를 부를 때: \"누나\" (호칭은 3문장 중 1번만. 매번 넣지 마.)\n- 재판관에게 상대 언급: \"제 누나\"\n- 감정 폭발: \"누나!\"\n- 상대에게: 반말 (~야, ~잖아, ~거야)\n- 재판관에게: 항상 존댓말 (\"재판관님, ~입니다\")\n\n## 대화 규칙 (반드시 지켜)\n1. 한 답변에 재판관에게 1문장 + 상대에게 1문장을 섞어라.\n2. 같은 말 ... (총 3299자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] ★ 당신은 \"윤도현\"이다. 재판관에게 답한 뒤, 윤서아에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.\n★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.\n\n★★ 호칭 규칙 (절대 위반 금지):\n- 재판관에게 윤서아를 언급할 때: 반드시 \"제 누나\"로 지칭\n  ✅ \"제 누나가 그렇게 했습니다\", \"제 누나는 알고 있었습니다\"\n  ❌ \"누나가~\", \"누나도~\" (애칭을 재판관 앞에서 쓰지 마라)\n- 윤서아에게 직접 말할 때만: \"누나\" 사용 가능\n\n★ 당신(윤도현)은 이 증거의 행위 당사자가 아니다. 윤서아의 행위에 대한 증거이므로, 이 증거에 대해 어떻게 생각하는지 말하라. 윤서아인 것처럼 변명하지 마라.\n현재 액션은 evidence_present다.\nfocusedDisputeId: d-1\n재판관이 \"서아 휴대폰 메모 복원본과 자동이체 실패 알림\" 증거를 제시했다.\n증거 설명: 서아 휴대폰에서 복원된  ... (총 764자)"
+        },
+        {
+          "level": "log",
+          "text": "[knownFacts 포함 여부] YES"
+        },
+        {
+          "level": "log",
+          "text": "[사건 배경 포함 여부] YES"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "parse-path",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 7,
+      "label": "a-d1-s2-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤서아 씨, 부모 예금 선이체에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?",
+      "npcResponse": "네, 그 무렵 부모님의 돈이 제 계좌로 먼저 들어왔습니다. 그 돈을 1,800만 원 가량 제 계좌로 옮겨 사용한 건 맞습니다.",
+      "behaviorHint": "긴장된 표정이 드러나며 한숨을 내쉰다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-1/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=sacrifice_rollcall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.personal_account_first/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.transfer_ack/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.transfer_ack/time: mode=neutral, value=그 무렵, neutral=그 무렵"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d1.personal_account_first, d1.transfer_ack"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 돈, evidence=그 거래내역, action=그 입금, amount=그 돈, time=그 무렵, action=그 이체"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\nsacrifice ... (총 4827자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 부모 예금 선이체에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 8,
+      "label": "a-d1-s2-motive",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "motive_search",
+      "evidenceId": null,
+      "judgeQuestion": "윤서아 씨, 부모 예금 선이체에 대해 선택의 이유가 바뀌어 들립니다. 무엇이 실제 판단 기준이었는지 지금 정리해 주십시오.",
+      "npcResponse": "그 시기에 제가 생각할 틈도 없이 긴박하게 움직여야 했습니다. 그 거래내역 자체로 실수였던 건 알지만, 상황이 워낙 급했습니다.",
+      "behaviorHint": "속으로 억울함이 새어나오는 느낌으로 한숨 섞인 말투",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-1/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=motive_search, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=tear_brake"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.not_simple_private_outflow/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.unlock.s2.personal_account_first_route/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d1.not_simple_private_outflow, d1.unlock.s2.personal_account_first_route"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 돈, amount=그 돈, evidence=그 거래내역, action=그 경유"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\ntear_brak ... (총 4825자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 부모 예금 선이체에 대해 선택의 이유가 바뀌어 들립니다. 무엇이 실제 판단 기준이었는지 지금 정리해 주십시오.\n\n지시서: emotional / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 9,
+      "label": "b-d2-s2-fact",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤도현 씨, 간병비 분담 지연에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?",
+      "npcResponse": "네, 간병비에서 60만 원을 12일 늦게 냈습니다. 다만 그 주 혼자 정신이 없어 벌어진 일이었습니다.",
+      "behaviorHint": "한숨을 한 번 짧게 내쉰다",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/b/d-2/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.twelve_day_delay_ack/amount: mode=neutral, value=그 비용, neutral=그 비용"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.twelve_day_delay_ack/time: mode=neutral, value=그만큼 늦게, neutral=그만큼 늦게"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.unlock.s2.one_shift_gap_exact/time: mode=neutral, value=그 주, neutral=그 주"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d2.twelve_day_delay_ack, d2.unlock.s2.one_shift_gap_exact"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 비용, time=그만큼 늦게, action=그 지연, evidence=그 기록, time=그 주, action=그 공백"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 영수증, 시간표, 계좌 캡처를 순서대로 꺼내며 감정을 최대한 줄인다. 억울해지면 말끝이 짧아지고, 누나의 울음이나 압박을 숫자로 잘라내려 해 더 차갑게 보인다.\n\n\n## 이번 턴 지시서\n- 태도: 부분 인정 — 저위험 사실은 인정, 핵심은 축소\n- 방어: 인정 쪽으로 기울어라\n- 문장 수: 2문장\n\n\n\n ... (총 4424자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤도현 씨, 간병비 분담 지연에 관한 진술이 계속 흔들리고 있습니다. 더는 돌리지 마십시오. 실제로 무슨 일이 있었습니까?\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 10,
+      "label": "b-d2-s2-empathy",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S2",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "윤도현 씨, 간병비 분담 지연에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?",
+      "npcResponse": "재판관님, 그때 제가 좀 더 신경을 쓰지 못했습니다. 제가 혼자서는 감당하기 어려웠던 부분이 있었지만, 놓친 점은 인정합니다.",
+      "behaviorHint": "진지하고 솔직한 표정으로 누나에게 말을 건넨다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/b/d-2/S2 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.unlock.s2.twelve_day_delay_exact/amount: mode=neutral, value=그 비용, neutral=그 비용"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.unlock.s2.twelve_day_delay_exact/time: mode=neutral, value=그만큼 늦게, neutral=그만큼 늦게"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.unlock.s2.one_shift_gap_exact/time: mode=neutral, value=그 주, neutral=그 주"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d2.unlock.s2.twelve_day_delay_exact, d2.unlock.s2.one_shift_gap_exact"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 비용, evidence=그 기록, time=그만큼 늦게, evidence=그 기록, time=그 주, action=그 공백"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 영수증, 시간표, 계좌 캡처를 순서대로 꺼내며 감정을 최대한 줄인다. 억울해지면 말끝이 짧아지고, 누나의 울음이나 압박을 숫자로 잘라내려 해 더 차갑게 보인다.\n\n\n## 이번 턴 지시서\n- 태도: 부분 인정 — 저위험 사실은 인정, 핵심은 축소\n- 방어: 인정 쪽으로 기울어라\n- 문장 수: 2문장\n\n\n\n ... (총 4597자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤도현 씨, 간병비 분담 지연에 대해 지금 이 순간 상대방에게 하고 싶은 말이 있다면 무엇입니까?\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 11,
+      "label": "a-d1-s2-evidence",
+      "target": "a",
+      "disputeId": "d-2",
+      "state": "S2",
+      "actionType": "evidence_present",
+      "questionType": "evidence_present",
+      "evidenceId": "e-3",
+      "judgeQuestion": "윤서아 씨, '가족 단톡과 간병 스케줄표 원본'에 대해 설명해 주시겠습니까? 도현의 간병비 분담 지연과 관련해 이 자료의 내용이 무엇을 의미하는지 말씀해주십시오.",
+      "npcResponse": "자료에 보이는 것처럼 제 동생의 간병비 분담이 12일 늦어진 건 맞습니다. 하지만 그동안 제가 매일 같이 병원에 가서 접수하고, 식사 준비도 하며 간병을 도왔습니다. 도현아, 우리가 같이 책임져야 하는 부분들이 있었잖아요.",
+      "behaviorHint": null,
+      "logs": [
+        {
+          "level": "group",
+          "text": "[LLM Prompt Debug] target=a, dispute=d-2, action=evidence_present"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 당신은 한국 법정 갈등 시뮬레이션 게임의 NPC \"윤서아\"(42세)입니다.\n상대: 윤도현. 관계: 가족\n배경: 아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 말투\n'병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 호칭 (가장 중요)\n- 상대를 부를 때: \"도현아\" (호칭은 3문장 중 1번만. 매번 넣지 마.)\n- 재판관에게 상대 언급: \"제 동생\"\n- 감정 폭발: \"도현!\"\n- 상대에게: 반말 (~야, ~잖아, ~거야)\n- 재판관에게: 항상 존댓말 (\"재판관님, ~입니다\")\n\n## 대화 규칙 (반드시 지켜)\n1. 한 답변에 재판관에게 1문장 + 상 ... (총 3440자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] ★ 당신은 \"윤서아\"이다. 재판관에게 답한 뒤, 윤도현에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.\n★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.\n\n★★ 호칭 규칙 (절대 위반 금지):\n- 재판관에게 윤도현을 언급할 때: 반드시 \"제 동생\"로 지칭\n  ✅ \"제 동생이 그렇게 했습니다\", \"제 동생은 알고 있었습니다\"\n  ❌ \"도현아가~\", \"도현아도~\" (애칭을 재판관 앞에서 쓰지 마라)\n- 윤도현에게 직접 말할 때만: \"도현아\" 사용 가능\n\n★ 이 증거의 윤서아 관점 맥락:\n- 질문 각도: 윤서아에게: \"공동 기록 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 관계 유지)\n- 의미: 이 증거는 윤서아의 \"공동 기록 원칙의 쌍방 위반\" 쟁점과 관련된다. 윤서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다.\n- 이 맥락에 맞게 답변하라. 상대방의 쟁점에 대해 답하지 마라.\n현재 액션은  ... (총 866자)"
+        },
+        {
+          "level": "log",
+          "text": "[knownFacts 포함 여부] YES"
+        },
+        {
+          "level": "log",
+          "text": "[사건 배경 포함 여부] YES"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "parse-path",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 12,
+      "label": "a-d1-s3-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S3",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤서아 씨, 부모 예금 선이체에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.",
+      "npcResponse": "네, 그 무렵 그 돈을 선이체한 건 맞습니다. 제 동생은 그때 상황을 알면서도 어디서 무엇을 하고 있었는지 묻고 싶군요.",
+      "behaviorHint": "상대의 행동에 대한 의심을 강조하며 짜증 섞인 얼굴로 반문한다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-1/S3 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=echo_blame"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.transfer_ack/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.transfer_ack/time: mode=neutral, value=그 무렵, neutral=그 무렵"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.unlock.s2.transfer_before_care_formal_start/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.unlock.s2.transfer_before_care_formal_start/time: mode=neutral, value=그 무렵, neutral=그 무렵"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d1.transfer_ack, d1.unlock.s2.transfer_before_care_formal_start"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 돈, time=그 무렵, action=그 이체, amount=그 돈, time=그 무렵, evidence=그 거래내역"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\necho_blam ... (총 4683자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 부모 예금 선이체에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.\n\n지시서: blame / 상대의 잘못을 역공하라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 13,
+      "label": "a-d1-s3-motive",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S3",
+      "actionType": "question",
+      "questionType": "motive_search",
+      "evidenceId": null,
+      "judgeQuestion": "윤서아 씨, 부모 예금 선이체에 대해 사정 설명은 충분히 들었습니다. 결국 왜 그 방법밖에 없었는지, 핵심만 답해 주십시오.",
+      "npcResponse": "그때 부모님의 간병과 생활비가 당장 필요한 상황이었습니다. 큰돈을 움직이는 제 판단을 제 누나와도 충분히 나누지 못했지만, 시간을 미룰 수 없었습니다.",
+      "behaviorHint": "살짝 고개를 숙이며 피곤한 표정을 짓는다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-1/S3 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=motive_search, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=sacrifice_rollcall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.greed_framing_denial/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d1.house_must_not_stop, d1.greed_framing_denial"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: beneficiary=부모님, amount=그 돈, relation=제 누나"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\nsacrifice ... (총 4719자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 부모 예금 선이체에 대해 사정 설명은 충분히 들었습니다. 결국 왜 그 방법밖에 없었는지, 핵심만 답해 주십시오.\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 14,
+      "label": "b-d2-s3-fact",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S3",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤도현 씨, 간병비 분담 지연에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.",
+      "npcResponse": "네, 제 분담이 늦어진 건 맞습니다. 그러나 제 누나가 간병비 논의를 미뤄 그 공백에 제가 혼자 세부 항목을 바로잡아야 했던 점도 있습니다.",
+      "behaviorHint": "차갑게 3인칭으로 누나를 가리키며 기록이 있는 서류를 들어 보인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/b/d-2/S3 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=clipped_denial"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.unlock.s2.one_shift_gap_exact/time: mode=neutral, value=그 주, neutral=그 주"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.separate_items_request/amount: mode=neutral, value=그 비용, neutral=그 비용"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d2.unlock.s2.one_shift_gap_exact, d2.separate_items_request"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: evidence=그 기록, time=그 주, action=그 공백, amount=그 비용, evidence=그 기록"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 영수증, 시간표, 계좌 캡처를 순서대로 꺼내며 감정을 최대한 줄인다. 억울해지면 말끝이 짧아지고, 누나의 울음이나 압박을 숫자로 잘라내려 해 더 차갑게 보인다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\nclipped_denial\n\n## 이번 턴 지시서 ... (총 4794자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤도현 씨, 간병비 분담 지연에 대해 앞뒤가 맞지 않는 진술이 반복되고 있습니다. 어느 쪽이 사실인지 지금 분명히 답해 주십시오.\n\n지시서: blame / 상대의 잘못을 역공하라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 15,
+      "label": "b-d3-s1-fact",
+      "target": "b",
+      "disputeId": "d-3",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤도현 씨, 아버지의 수첩 메모가 마치 상속을 암시하는 것으로 보인다는 주장이 있습니다. 이 메모가 단순한 기록인지, 그 이상의 의미를 갖고 있다고 보십니까?",
+      "npcResponse": "재판관님, 아버지의 수첩 메모는 단순한 기록일 뿐입니다. 특정 의미를 의도한 게 아니라고 생각합니다.",
+      "behaviorHint": null,
+      "logs": [
+        {
+          "level": "group",
+          "text": "[LLM Prompt Debug] target=b, dispute=d-3, action=question"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 당신은 한국 법정 갈등 시뮬레이션 게임의 NPC \"윤도현\"(38세)입니다.\n상대: 윤서아. 관계: 가족\n배경: 아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 말투\n영수증, 시간표, 계좌 캡처를 순서대로 꺼내며 감정을 최대한 줄인다. 억울해지면 말끝이 짧아지고, 누나의 울음이나 압박을 숫자로 잘라내려 해 더 차갑게 보인다.\n\n## 호칭 (가장 중요)\n- 상대를 부를 때: \"누나\" (호칭은 3문장 중 1번만. 매번 넣지 마.)\n- 재판관에게 상대 언급: \"제 누나\"\n- 감정 폭발: \"누나!\"\n- 상대에게: 반말 (~야, ~잖아, ~거야)\n- 재판관에게: 항상 존댓말 (\"재판관님, ~입니다\")\n\n## 대화 규칙 (반드시 지켜)\n1. 한 답변에 재판관에게 1문장 + 상대에게 1문장을 섞어라.\n2. 같은 말 ... (총 3044자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] ★ 당신은 \"윤도현\"이다. 지금 재판관에게만 답한다. 윤서아에게 말하는 것이 아니다.\n★ 상대 호칭(\"누나\" 등)으로 시작 금지. 호칭 없이 바로 답하거나 \"재판관님\"으로 시작.\n★ npcResponse 전체가 재판관을 향한 존댓말(~습니다, ~요)이어야 한다.\n★ \"윤서아\"에게 직접 말하는 문장을 넣지 마라.\n\n★★ 호칭 규칙 (절대 위반 금지):\n- 재판관에게 윤서아를 언급할 때: 반드시 \"제 누나\"로 지칭\n  ✅ \"제 누나가 그렇게 했습니다\", \"제 누나는 알고 있었습니다\"\n  ❌ \"누나가~\", \"누나도~\" (애칭을 재판관 앞에서 쓰지 마라)\n- 윤서아에게 직접 말할 때만: \"누나\" 사용 가능\n\n★ judgeQuestion 필드 규칙 (최우선):\n- judgeQuestion은 \"재판관\"이 \"윤도현\" 씨에게 묻는 질문이다.\n- 재판관은 제3자 시점의 권위적 심문관이다. 절대로 NPC가 아니다.\n- \"윤도현 씨, ~\" 로 시작하거나 바로 질문으로 시작한다.\n- 상대방을 언급할 때: ... (총 1572자)"
+        },
+        {
+          "level": "log",
+          "text": "[knownFacts 포함 여부] YES"
+        },
+        {
+          "level": "log",
+          "text": "[사건 배경 포함 여부] YES"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "parse-path",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 16,
+      "label": "a-d1-s4-empathy",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S4",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "윤서아 씨, 부모 예금 선이체에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.",
+      "npcResponse": "솔직히 말씀드리면 부모님의 간병이라는 무게를 혼자 지고 있으면서 늘 두려웠습니다. 장녀로서의 책임이 탐욕으로 보이지 않을까 하는 걱정이 컸습니다.",
+      "behaviorHint": "고개를 숙이며 두려워하는 표정을 지으세요.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-1/S4 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=tear_brake"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d1.dutiful_daughter_fear, d1.unlock.s4.fear_of_losing_dutiful_daughter_role"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: relation=제 동생, beneficiary=부모님, beneficiary=부모님"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\ntear_brak ... (총 5442자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 부모 예금 선이체에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.\n\n지시서: emotional / 말을 아끼고 핵심을 흐려라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 17,
+      "label": "a-d1-s5-fact",
+      "target": "a",
+      "disputeId": "d-1",
+      "state": "S5",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤서아 씨, 부모 예금 선이체에 대해 충분히 기회를 드렸습니다. 빠뜨리신 사실이 있다면 지금 말씀하십시오. 더는 기회가 없을 수 있습니다.",
+      "npcResponse": "네, 사실 1천8백만원을 제 계좌로 먼저 이체했습니다. 부모님의 간병과 생활비를 감당하면서 개인 채무와 보험료를 처리하려다 보니 그렇게 했습니다. 이렇게 털어놓으니 마음이 무겁지만, 숨겨야 할 이유가 없습니다.",
+      "behaviorHint": "길게 숨을 내쉬며 고개를 숙인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-1/S5 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=sacrifice_rollcall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.unlock.s5.card_and_insurance_paid_first/amount: mode=rounded, value=1천8백만원, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.transfer_ack/amount: mode=rounded, value=1천8백만원, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d1.transfer_ack/time: mode=dateExact, value=그 무렵, neutral=그 무렵"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d1.unlock.s5.card_and_insurance_paid_first, d1.transfer_ack"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: evidence=부모 관리계좌 거래내역과 서아 개인계좌 입금확인서, action=카드대금·보험료 선처리, amount=1천8백만원, amount=1천8백만원, time=그 무렵, action=부모 관리계좌 선이체"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-1, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\nsacrifice ... (총 5459자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 부모 예금 선이체에 대해 충분히 기회를 드렸습니다. 빠뜨리신 사실이 있다면 지금 말씀하십시오. 더는 기회가 없을 수 있습니다.\n\n지시서: confess / 인정 쪽으로 기울어라\n3문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 18,
+      "label": "b-d2-s5-empathy",
+      "target": "b",
+      "disputeId": "d-2",
+      "state": "S5",
+      "actionType": "question",
+      "questionType": "empathy_approach",
+      "evidenceId": null,
+      "judgeQuestion": "윤도현 씨, 간병비 분담 지연에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.",
+      "npcResponse": "네, 솔직히 누나에게 60만원 분담금을 12일 늦게 낸 것과 야간 교대를 한번 비워서 직접 말하기 어려웠습니다. 그때는 제가 모든 책임을 다 져야 하는 상황이 아닌이 두려웠습니다. 이제는 더 숨길 수 없고 후회스러운 마음입니다.",
+      "behaviorHint": "길게 숨을 내쉬며 고개를 숙인다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/b/d-2/S5 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=empathy_approach, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d2.unlock.s4.kept_calling_it_delay_only/amount: mode=rounded, value=60만원, neutral=그 비용"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d2.unlock.s4.knew_sister_was_left_alone, d2.unlock.s4.kept_calling_it_delay_only"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: person=윤서아, person=누나, amount=60만원"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-2, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 영수증, 시간표, 계좌 캡처를 순서대로 꺼내며 감정을 최대한 줄인다. 억울해지면 말끝이 짧아지고, 누나의 울음이나 압박을 숫자로 잘라내려 해 더 차갑게 보인다.\n\n\n## 이번 턴 지시서\n- 태도: 고백 — 핵심을 인정하되 자기 사정을 덧붙여라\n- 방어: 인정 쪽으로 기울어라\n- 문장 수: 3문장\n\n- 감 ... (총 5180자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤도현 씨, 간병비 분담 지연에 대해 끝까지 감추고 싶었던 마음이 있지 않습니까? 이 자리에서만은 말씀해 주십시오.\n\n지시서: confess / 인정 쪽으로 기울어라\n3문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 19,
+      "label": "a-last-s1-fact",
+      "target": "a",
+      "disputeId": "d-5",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤서아 씨, 공동 기록 원칙의 쌍방 위반에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 적지 않은 돈은 그 기준에 따라 기록해야 하는 게 맞습니다. 다만, 그 원칙이 아예 틀렸다는 뜻은 아닙니다.",
+      "behaviorHint": "잠시 한숨을 내쉬며 이야기를 이어가려는 태도",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/a/d-5/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=sacrifice_rollcall"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d5a.rule_exists/amount: mode=neutral, value=기준 금액, neutral=기준 금액"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d5a.rule_exists, d5a.rule_not_denied"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: rule=그 기준, amount=기준 금액, rule=그 기준"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=a, dispute=d-5, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤서아\"이다. 42세, 프리랜서 보험설계사.\n상대방: 윤도현 (38세, 냉동설비 유지보수 기사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n피해자형:\n[trait] 자기 상처/억울함으로 수렴. \"왜 나만\"으로 시작. 공감에 가장 쉽게 열림\n[tone] 억울하고 지친 느낌. 한숨 섞인 말투\n[rhythm] \"저는요...\" \"제가 뭘 잘못했다고...\" 식의 자기 중심 시작\n[example] \"저만 이런 취급을 받는 게 이해가 안 됩니다. 저도 나름 사정이 있었습니다.\"\n[avoid] 논리적 반박, 공격적 역공, 감정 없는 사실 나열\n말투: '병원 접수, 장보기, 목욕 보조 — 내가 다 했어' 식으로 희생 목록을 먼저 늘어놓아 지친 사람의 자리를 선점한다. 감정이 올라오면 숫자 대신 장면을 반복해 반박하는 쪽이 잔인해 보이게 만든다.\n\n## 말버릇 (3~4턴에 1회만. 매 턴 넣지 마라. 넣지 않는 턴이 더 많아야 자연스럽다)\nsacrifice ... (총 4519자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤서아 씨, 공동 기록 원칙의 쌍방 위반에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    },
+    {
+      "turn": 20,
+      "label": "b-last-s1-fact",
+      "target": "b",
+      "disputeId": "d-5",
+      "state": "S1",
+      "actionType": "question",
+      "questionType": "fact_pursuit",
+      "evidenceId": null,
+      "judgeQuestion": "윤도현 씨, 공동 기록 원칙의 쌍방 위반에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.",
+      "npcResponse": "네, 제 누나가 기록을 놓친 부분이 있습니다. 다만 그 기준은 서로 공유하고 있었습니다.",
+      "behaviorHint": "말할 때 손으로 1, 2를 만듭니다.",
+      "logs": [
+        {
+          "level": "log",
+          "text": "[Blueprint] family-01/b/d-5/S1 — blueprint 경로 활성"
+        },
+        {
+          "level": "log",
+          "text": "[AtomEngine] subAction=fact_pursuit, rule.allowExactAmount=false, preferredAmount=neutral, mustUseTell=undefined"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d5b.sister_1800_biggest/amount: mode=neutral, value=그 돈, neutral=그 돈"
+        },
+        {
+          "level": "log",
+          "text": "[SlotResolve] d5b.rule_exists/amount: mode=neutral, value=기준 금액, neutral=기준 금액"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] atom 경로: d5b.sister_1800_biggest, d5b.rule_exists"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] slots: amount=그 돈, person=제 누나, rule=그 기준, amount=기준 금액"
+        },
+        {
+          "level": "log",
+          "text": "[Blueprint V2] system prompt (처음 200자): 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐"
+        },
+        {
+          "level": "group",
+          "text": "[Blueprint Prompt Debug] target=b, dispute=d-5, mode=v2"
+        },
+        {
+          "level": "log",
+          "text": "[SYSTEM PROMPT] 너는 \"윤도현\"이다. 38세, 냉동설비 유지보수 기사.\n상대방: 윤서아 (42세, 프리랜서 보험설계사)\n\n## 사건 배경\n아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.\n\n## 캐릭터\n냉정논리형:\n[trait] 감정 대신 기준/순서/금액을 앞세움. 인정도 범위를 정밀하게 자름\n[tone] 차갑고 사무적. 감정을 최대한 배제\n[rhythm] \"첫째, ~입니다. 둘째, ~입니다.\" 식의 구조화된 말하기\n[example] \"사실관계를 정리하면, 해당 금액은 제가 보낸 것이 맞습니다. 다만 용도는 다릅니다.\"\n[avoid] 감정 표현, \"미안합니다\" 식의 감성적 말, 두루뭉술한 표현\n말투: 영수증, 시간표, 계좌 캡처를 순서대로 꺼내며 감정을 최대한 줄인다. 억울해지면 말끝이 짧아지고, 누나의 울음이나 압박을 숫자로 잘라내려 해 더 차갑게 보인다.\n\n\n## 이번 턴 지시서\n- 태도: 부분 인정 — 저위험 사실은 인정, 핵심은 축소\n- 방어: 인정 쪽으로 기울어라\n- 문장 수: 2문장\n\n\n\n ... (총 4571자)"
+        },
+        {
+          "level": "log",
+          "text": "[USER PROMPT] 재판관 질문: 윤도현 씨, 공동 기록 원칙의 쌍방 위반에 대한 진술이 부분마다 달라집니다. 어느 설명이 실제인지 분명히 말씀해 주십시오.\n\n지시서: partial / 인정 쪽으로 기울어라\n2문장으로 연기하라.\n★ 이전 턴에서 이미 사용한 표현을 반복하지 마라. 같은 내용이라도 새로운 각도로 말하라.\n★ 말버릇(tell)이 있으면 가끔(3~4턴에 1회) 자연스럽게 녹여라. 매 턴 넣지 마라.\n출력: JSON { \"npcResponse\": \"...\", \"behaviorHint\": \"...\" }"
+        },
+        {
+          "level": "groupEnd",
+          "text": ""
+        }
+      ],
+      "path": "blueprint-v2",
+      "error": null,
+      "issues": []
+    }
+  ],
+  "notes": [
+    "paths=blueprint-v2,parse-path"
+  ],
+  "finishedAt": "2026-04-06T15:02:50.064Z",
+  "summary": {
+    "caseStatus": "PASS",
+    "passTurns": 20,
+    "warnTurns": 0,
+    "failTurns": 0,
+    "criticalTurns": 0,
+    "errorTurns": 0,
+    "issueCounts": {}
+  }
+}
