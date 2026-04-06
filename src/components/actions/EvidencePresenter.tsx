@@ -19,6 +19,35 @@ interface Props {
   newEvidenceIds?: Set<string>
 }
 
+/** 증거 우선순위 점수 계산 — 현재 쟁점 관련성, 신규 여부, 조사 진행도 반영 */
+function computeEvidenceScore(
+  ev: any,
+  state: any,
+  focusDisputeId: string | null,
+  isNew: boolean,
+): number {
+  let score = 0
+  if (focusDisputeId && ev.proves?.includes(focusDisputeId)) score += 100
+  if (isNew) score += 40
+  if (!state?.presented) score += 30
+  if (ev.reliability === 'hard') score += 20
+  if ((state?.investigatedActions?.length ?? 0) >= 2) score += 10
+  if (state?.presented) score -= 40
+  return score
+}
+
+/** 추천 사유 텍스트 생성 */
+function getRecommendationReason(
+  ev: any,
+  state: any,
+  focusDisputeId: string | null,
+): string {
+  if (focusDisputeId && ev.proves?.includes(focusDisputeId)) return '현재 쟁점과 직접 연결됩니다'
+  if (!state?.presented && ev.reliability === 'hard') return '아직 제시하지 않은 핵심 증거입니다'
+  if ((state?.investigatedActions?.length ?? 0) >= 2 && !state?.presented) return '조사가 충분히 진행되어 바로 사용 가능합니다'
+  return '관련성 높은 증거입니다'
+}
+
 /** investigationResults에서 핵심 3개를 순서대로 추출 */
 const KEY_ORDER = ['request_original', 'restore_context', 'check_edits'] as const
 
@@ -30,8 +59,10 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
   const globalInvest = useGameStore((s) => s.globalInvestTokens)
   const discovery = useGameStore((s) => s.discovery)
   const recommendedEvidenceIds = useGameStore((s) => s.recommendedEvidenceIds)
+  const lastFocusedDisputeId = useGameStore((s) => s.lastFocusedDisputeId)
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [appraisalTarget, setAppraisalTarget] = useState<string | null>(null)
+  const [showOther, setShowOther] = useState(false)
   const dispatch = useActionDispatch()
 
   // 방어 코드: evidenceDefinitions가 비어있지만 caseData.evidence는 있을 때 자동 복구
@@ -86,29 +117,78 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
         <EvidenceAppraisalModal evidenceId={appraisalTarget} onClose={() => setAppraisalTarget(null)} />
       )}
 
-      {available.length > 0 && (
-        <>
-          <div className="text-xs text-gray-400">제시 가능 ({available.length})</div>
-          {available.map((ev) => (
-            <EvidenceCard
-              key={ev.id} ev={ev} state={evidenceStates[ev.id]}
-              isExpanded={expandedId === ev.id}
-              onToggle={() => setExpandedId(expandedId === ev.id ? null : ev.id)}
-              onPresent={() => onPresent(ev.id)}
-              onConfront={onConfront ? (text) => onConfront(ev.id, text) : undefined}
-              onInvestigate={() => handleInvestigate(ev.id)}
-              onAppraise={() => setAppraisalTarget(ev.id)}
-              canPresent canInvestigate={globalInvest >= 1}
-              appraisal={discovery.appraisals[ev.id]}
-              canAppraise={canAppraise(evidenceStates[ev.id])}
-              llmMode={llmMode}
-              isNew={newEvidenceIds?.has(ev.id)}
-              target={target}
-              isRecommended={recommendedEvidenceIds.includes(ev.id)}
-            />
-          ))}
-        </>
-      )}
+      {available.length > 0 && (() => {
+        // 점수 기반 정렬
+        const scored = available.map(ev => ({
+          ev,
+          score: computeEvidenceScore(ev, evidenceStates[ev.id], lastFocusedDisputeId, !!newEvidenceIds?.has(ev.id)),
+        })).sort((a, b) => b.score - a.score)
+
+        const topItem = scored[0]
+        const rest = scored.slice(1)
+        const relevant = rest.filter(s => s.score > 0)
+        const other = rest.filter(s => s.score <= 0)
+
+        const topRecommended = topItem ? (recommendedEvidenceIds.includes(topItem.ev.id) || true) : false
+        const recommendationReason = topItem ? getRecommendationReason(topItem.ev, evidenceStates[topItem.ev.id], lastFocusedDisputeId) : ''
+
+        const renderCard = (ev: any, isTop = false) => (
+          <EvidenceCard
+            key={ev.id} ev={ev} state={evidenceStates[ev.id]}
+            isExpanded={expandedId === ev.id}
+            onToggle={() => setExpandedId(expandedId === ev.id ? null : ev.id)}
+            onPresent={() => onPresent(ev.id)}
+            onConfront={onConfront ? (text: string) => onConfront(ev.id, text) : undefined}
+            onInvestigate={() => handleInvestigate(ev.id)}
+            onAppraise={() => setAppraisalTarget(ev.id)}
+            canPresent canInvestigate={globalInvest >= 1}
+            appraisal={discovery.appraisals[ev.id]}
+            canAppraise={canAppraise(evidenceStates[ev.id])}
+            llmMode={llmMode}
+            isNew={newEvidenceIds?.has(ev.id)}
+            target={target}
+            isRecommended={recommendedEvidenceIds.includes(ev.id) || isTop}
+          />
+        )
+
+        return (
+          <>
+            <div className="text-xs text-gray-400">제시 가능 ({available.length})</div>
+
+            {/* 추천 증거 */}
+            {topItem && (
+              <div className="mb-3 p-2 rounded-xl border border-amber-600/30 bg-amber-950/20">
+                <div className="flex items-center gap-1.5 mb-1.5">
+                  <Emoji char="⭐" size={14} />
+                  <span className="text-xs font-bold text-amber-400">추천 증거</span>
+                  <span className="text-[10px] text-amber-400/60 ml-auto">{recommendationReason}</span>
+                </div>
+                {renderCard(topItem.ev, true)}
+              </div>
+            )}
+
+            {/* 관련 증거 */}
+            {relevant.length > 0 && (
+              <>
+                {relevant.map(s => renderCard(s.ev))}
+              </>
+            )}
+
+            {/* 기타 증거 (접힘) */}
+            {other.length > 0 && (
+              <div className="mt-1">
+                <button
+                  onClick={() => setShowOther(!showOther)}
+                  className="w-full text-left text-xs text-gray-500 hover:text-gray-400 px-1 py-1 transition-colors"
+                >
+                  {showOther ? '▼' : '▶'} 기타 증거 ({other.length}건)
+                </button>
+                {showOther && other.map(s => renderCard(s.ev))}
+              </div>
+            )}
+          </>
+        )
+      })()}
       {presented.length > 0 && (
         <>
           <div className="text-xs text-gray-500 mt-1">제시 완료 ({presented.length})</div>

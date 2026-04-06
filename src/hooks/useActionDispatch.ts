@@ -213,6 +213,11 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   const evDef = state.evidenceDefinitions.find((e) => e.id === action.evidenceId)
   if (!evDef) { evidencePresentLock = false; return }
 
+  // 증거가 입증하는 첫 번째 쟁점을 포커스로 기록
+  if (evDef.proves?.length > 0) {
+    state.setLastFocusedDisputeId(evDef.proves[0])
+  }
+
   // 조합 발동 전 스냅샷 (새로 발동된 것만 표시하기 위해)
   const prevTriggeredCount = state.triggeredCombinations.length
 
@@ -548,6 +553,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   questionLock = true
   try {
   const state = useGameStore.getState()
+  state.setLastFocusedDisputeId(action.disputeId)
 
   // ── 토글 모디파이어 소비 ──
   const isConfidential = getNextConfidential()

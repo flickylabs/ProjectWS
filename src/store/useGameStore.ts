@@ -201,6 +201,9 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** V3: DisputeBoard → ActionPanel 라우팅 */
   disputeBoardAction: { disputeId: string; party: 'a' | 'b' } | null
   setDisputeBoardAction: (a: GameStore['disputeBoardAction']) => void
+  /** 최근 집중한 쟁점 ID (심문/증거 제시 시 갱신) */
+  lastFocusedDisputeId: string | null
+  setLastFocusedDisputeId: (id: string | null) => void
 }
 
 export interface GameEvent {
@@ -380,6 +383,8 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     setPendingEvidenceResult: (r: GameStore['pendingEvidenceResult']) => set({ pendingEvidenceResult: r }),
     disputeBoardAction: null,
     setDisputeBoardAction: (a: GameStore['disputeBoardAction']) => set({ disputeBoardAction: a }),
+    lastFocusedDisputeId: null,
+    setLastFocusedDisputeId: (id: string | null) => set({ lastFocusedDisputeId: id }),
 
     evaluateTurnEvents: (questionType: QuestionType, focusDisputeId: string, transitionsThisTurn: { party: 'a' | 'b'; disputeId: string; from: import('../types').LieState; to: import('../types').LieState }[]) => {
       const s = useGameStore.getState()
@@ -503,6 +508,7 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
         questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
         gameEventLog: [],
         pendingGameEvent: null,
+        lastFocusedDisputeId: null,
         // 턴/Phase 완전 초기화
         turnCount: 0,
         phaseTurnCount: 0,
