@@ -3,7 +3,7 @@ import type { PartyId } from '../../types'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import { getAvailableWitnesses, getWitnessPreviewText, determineTestimonyDepth, getDepthSystemMessage } from '../../engine/witnessEngine'
-import { canAppraise, getUnlockedQuestions, getLockedQuestions } from '../../engine/evidenceEngine'
+import { canAppraise, getUnlockedQuestions, getLockedQuestions, computeSurfacedEvidence } from '../../engine/evidenceEngine'
 import { playClick, playEvidenceUnlock } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
 import EvidenceVisual from '../common/EvidenceVisual'
@@ -61,6 +61,10 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
   const discovery = useStore((s) => s.discovery)
   const recommendedEvidenceIds = useStore((s) => s.recommendedEvidenceIds)
   const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
+  const storeSurfacedIds = useStore((s) => s.surfacedEvidenceIds)
+  const storeDimmedIds = useStore((s) => s.dimmedEvidenceIds)
+  const storeReinforcements = useStore((s) => s.evidenceReinforcements)
+  const setSurfacedEvidence = useStore((s) => s.setSurfacedEvidence)
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [appraisalTarget, setAppraisalTarget] = useState<string | null>(null)
   const [showOther, setShowOther] = useState(false)
@@ -74,16 +78,40 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
     }
   }, [evidenceDefinitions.length, caseData])
 
-  const { available, presented, locked } = useMemo(() => {
+  // 증거 표면화 계산 — 스토어 값이 비어있으면 computeSurfacedEvidence로 계산하여 스토어에 저장
+  const surfaceResult = useMemo(() => {
+    if (storeSurfacedIds.length > 0 || storeDimmedIds.length > 0) {
+      return { surfacedIds: storeSurfacedIds, dimmedIds: storeDimmedIds, reinforcements: storeReinforcements }
+    }
+    // baseEvidenceIds: 처음 3개 해금된 증거 ID를 기본값으로 사용
+    const unlockedIds = evidenceDefinitions
+      .filter(e => evidenceStates[e.id]?.unlocked)
+      .map(e => e.id)
+    const baseEvidenceIds = unlockedIds.slice(0, 3)
+    return computeSurfacedEvidence(evidenceStates, evidenceDefinitions, lastFocusedDisputeId, baseEvidenceIds)
+  }, [evidenceStates, evidenceDefinitions, lastFocusedDisputeId, storeSurfacedIds, storeDimmedIds, storeReinforcements])
+
+  // 표면화 결과가 로컬에서 계산되었으면 스토어에 동기화
+  useEffect(() => {
+    if (storeSurfacedIds.length === 0 && storeDimmedIds.length === 0 && surfaceResult.surfacedIds.length > 0) {
+      setSurfacedEvidence(surfaceResult)
+    }
+  }, [surfaceResult, storeSurfacedIds.length, storeDimmedIds.length, setSurfacedEvidence])
+
+  const surfacedSet = useMemo(() => new Set(surfaceResult.surfacedIds), [surfaceResult.surfacedIds])
+  const dimmedSet = useMemo(() => new Set(surfaceResult.dimmedIds), [surfaceResult.dimmedIds])
+
+  const { available, presented, locked, dimmed } = useMemo(() => {
     // 대상 캐릭터와 관련된 증거만 필터링 (subjectParty 기준)
     const isRelevant = (e: any) => !e.subjectParty || e.subjectParty === 'both' || e.subjectParty === target
     // 이 캐릭터에게 이미 제시했는지 확인 (presentedTo에 target 포함 여부)
     const isPresentedToTarget = (e: any) => (target && evidenceStates[e.id]?.presentedTo?.includes(target)) ?? false
-    const avail = evidenceDefinitions.filter((e) => isRelevant(e) && evidenceStates[e.id]?.unlocked && !isPresentedToTarget(e))
+    const avail = evidenceDefinitions.filter((e) => isRelevant(e) && evidenceStates[e.id]?.unlocked && !isPresentedToTarget(e) && surfacedSet.has(e.id))
+    const dim = evidenceDefinitions.filter((e) => isRelevant(e) && evidenceStates[e.id]?.unlocked && !isPresentedToTarget(e) && dimmedSet.has(e.id))
     const pres = evidenceDefinitions.filter((e) => isRelevant(e) && isPresentedToTarget(e))
     const lock = evidenceDefinitions.filter((e) => isRelevant(e) && !evidenceStates[e.id]?.unlocked)
-    return { available: avail, presented: pres, locked: lock }
-  }, [evidenceDefinitions, evidenceStates, target])
+    return { available: avail, presented: pres, locked: lock, dimmed: dim }
+  }, [evidenceDefinitions, evidenceStates, target, surfacedSet, dimmedSet])
 
   const handleInvestigate = (evidenceId: string) => {
     const state = evidenceStates[evidenceId]
@@ -133,24 +161,28 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
         const topRecommended = topItem ? (recommendedEvidenceIds.includes(topItem.ev.id) || true) : false
         const recommendationReason = topItem ? getRecommendationReason(topItem.ev, evidenceStates[topItem.ev.id], lastFocusedDisputeId) : ''
 
-        const renderCard = (ev: any, isTop = false) => (
-          <EvidenceCard
-            key={ev.id} ev={ev} state={evidenceStates[ev.id]}
-            isExpanded={expandedId === ev.id}
-            onToggle={() => setExpandedId(expandedId === ev.id ? null : ev.id)}
-            onPresent={() => onPresent(ev.id)}
-            onConfront={onConfront ? (text: string) => onConfront(ev.id, text) : undefined}
-            onInvestigate={() => handleInvestigate(ev.id)}
-            onAppraise={() => setAppraisalTarget(ev.id)}
-            canPresent canInvestigate={globalInvest >= 1}
-            appraisal={discovery.appraisals[ev.id]}
-            canAppraise={canAppraise(evidenceStates[ev.id])}
-            llmMode={llmMode}
-            isNew={newEvidenceIds?.has(ev.id)}
-            target={target}
-            isRecommended={recommendedEvidenceIds.includes(ev.id) || isTop}
-          />
-        )
+        const renderCard = (ev: any, isTop = false) => {
+          const reinforcementCount = surfaceResult.reinforcements[ev.id]?.length ?? 0
+          return (
+            <EvidenceCard
+              key={ev.id} ev={ev} state={evidenceStates[ev.id]}
+              isExpanded={expandedId === ev.id}
+              onToggle={() => setExpandedId(expandedId === ev.id ? null : ev.id)}
+              onPresent={() => onPresent(ev.id)}
+              onConfront={onConfront ? (text: string) => onConfront(ev.id, text) : undefined}
+              onInvestigate={() => handleInvestigate(ev.id)}
+              onAppraise={() => setAppraisalTarget(ev.id)}
+              canPresent canInvestigate={globalInvest >= 1}
+              appraisal={discovery.appraisals[ev.id]}
+              canAppraise={canAppraise(evidenceStates[ev.id])}
+              llmMode={llmMode}
+              isNew={newEvidenceIds?.has(ev.id)}
+              target={target}
+              isRecommended={recommendedEvidenceIds.includes(ev.id) || isTop}
+              reinforcementCount={reinforcementCount}
+            />
+          )
+        }
 
         return (
           <>
@@ -205,6 +237,15 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
               canAppraise={canAppraise(evidenceStates[ev.id])}
               isRecommended={recommendedEvidenceIds.includes(ev.id)}
             />
+          ))}
+        </>
+      )}
+      {/* 희미한 증거 (해금되었지만 표면화되지 않음) */}
+      {dimmed.length > 0 && (
+        <>
+          <div className="text-xs text-gray-500 mt-1">잠재 증거 ({dimmed.length})</div>
+          {dimmed.map((ev) => (
+            <DimmedEvidenceCard key={ev.id} ev={ev} />
           ))}
         </>
       )}
@@ -323,6 +364,28 @@ function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) 
   )
 }
 
+/** 희미한(dimmed) 증거 카드 — 해금되었지만 표면화되지 않은 증거 */
+function DimmedEvidenceCard({ ev }: { ev: any }) {
+  const displayName = ev.surfaceName ?? ev.name
+  const typeIcon = ({ bank: '🏦', chat: '💬', cctv: '📹', contract: '📑', testimony: '🗣️', log: '📋', device: '📱', sns: '📲' } as Record<string, string>)[ev.type] ?? '📄'
+  return (
+    <div
+      className="relative border border-gray-800 rounded-xl bg-gray-900/30 px-3 py-2.5 pointer-events-auto cursor-default"
+      style={{ opacity: 0.4 }}
+      title="해금 조건: 쟁점 진전 필요"
+    >
+      {/* 잠금 오버레이 */}
+      <div className="absolute inset-0 flex items-center justify-center rounded-xl pointer-events-none">
+        <Emoji char="🔒" size={24} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Emoji char={typeIcon} size={18} />
+        <span className="text-sm text-gray-400 truncate">{displayName}</span>
+      </div>
+    </div>
+  )
+}
+
 const TYPE_ICON: Record<string, string> = {
   bank: '🏦', chat: '💬', cctv: '📹', contract: '📑',
   testimony: '🗣️', log: '📋', device: '📱', sns: '📲',
@@ -391,12 +454,13 @@ function generateSuggestions(ev: any, state: any, target?: PartyId | null): { te
   return suggestions.slice(0, 3)
 }
 
-function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, onAppraise, canPresent, canInvestigate, appraisal, canAppraise: canDoAppraise, llmMode, isNew, target, isRecommended }: {
+function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, onAppraise, canPresent, canInvestigate, appraisal, canAppraise: canDoAppraise, llmMode, isNew, target, isRecommended, reinforcementCount }: {
   ev: any; state: any; isExpanded: boolean
   onToggle: () => void; onPresent?: () => void; onConfront?: (text: string) => void
   onInvestigate: () => void; onAppraise?: () => void; canPresent: boolean; canInvestigate: boolean
   appraisal?: any; canAppraise?: boolean; llmMode?: boolean
   isNew?: boolean; target?: PartyId | null; isRecommended?: boolean
+  reinforcementCount?: number
 }) {
   const [showPresent, setShowPresent] = useState(false)
   const [confrontText, setConfrontText] = useState('')
@@ -445,6 +509,12 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
               <span className={`text-sm truncate font-medium ${showSurface ? 'text-blue-200' : 'text-gray-200'}`}>{displayName}</span>
               {showSurface && <span className="bg-blue-600 text-blue-100 text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">조사 필요</span>}
               {isRecommended && <span className="bg-amber-600 text-amber-100 text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">추천</span>}
+              {(reinforcementCount ?? 0) > 0 && (
+                <span
+                  className="bg-yellow-600 text-yellow-100 text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0"
+                  title={`보강 증거 ${reinforcementCount}건 — 추궁 질문이 강화됩니다`}
+                >+{reinforcementCount}</span>
+              )}
               {isNew && <span className="bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shrink-0">N</span>}
               {state?.presented && <span className="text-emerald-500 text-xs"><Emoji char="✓" size={10} />제시</span>}
               {legWarning && <Emoji char="⚠" size={12} />}

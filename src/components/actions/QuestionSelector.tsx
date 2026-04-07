@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import type { QuestionType, PartyId } from '../../types'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
 import { useValidActions } from '../../hooks/useValidActions'
-import { useStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { computeEffectiveness } from '../../engine/questionEffectEngine'
 import { getStalemateStatus, getSessionFatigueState } from '../../engine/questionFatigueEngine'
 import { getEmotionTier } from '../../engine/discoveryEngine'
@@ -27,6 +27,7 @@ const CARD_COLORS: Record<string, { bg: string; border: string; glow: string }> 
   fact_pursuit: { bg: 'from-blue-950/60 to-blue-900/20', border: 'border-blue-700/40', glow: 'shadow-blue-500/10' },
   motive_search: { bg: 'from-purple-950/60 to-purple-900/20', border: 'border-purple-700/40', glow: 'shadow-purple-500/10' },
   empathy_approach: { bg: 'from-pink-950/60 to-pink-900/20', border: 'border-pink-700/40', glow: 'shadow-pink-500/10' },
+  relation_buffer: { bg: 'from-teal-950/60 to-teal-900/20', border: 'border-teal-700/40', glow: 'shadow-teal-500/10' },
   free_question: { bg: 'from-amber-950/60 to-amber-900/20', border: 'border-amber-700/40', glow: 'shadow-amber-500/10' },
 }
 
@@ -34,6 +35,7 @@ const CARD_EFFECTS: Record<string, string> = {
   fact_pursuit: '사실을 직접 추궁합니다',
   motive_search: '행동의 진짜 이유를 탐색합니다',
   empathy_approach: '공감으로 신뢰를 얻습니다',
+  relation_buffer: '관계 완충 질문으로 신뢰를 선확보합니다',
   free_question: '자유롭게 질문합니다',
 }
 
@@ -41,14 +43,16 @@ const CARD_METER_HINTS: Record<string, { meter: string; color: string }> = {
   fact_pursuit: { meter: '모순 토큰 ↑', color: 'text-yellow-500/60' },
   motive_search: { meter: '누설 미터 ↑', color: 'text-orange-500/60' },
   empathy_approach: { meter: '신뢰 창구 ↑', color: 'text-blue-400/60' },
+  relation_buffer: { meter: '신뢰 창구 ↑↑', color: 'text-teal-400/60' },
   free_question: { meter: '', color: '' },
 }
 
-type CardType = QuestionType | 'free_question'
+type CardType = QuestionType | 'free_question' | 'relation_buffer'
 
 export default function QuestionSelector({ target, onSelect, llmMode, onFreeResult, toggles, onToggle }: Props) {
   const { questions } = useValidActions(target)
   const [selectedCard, setSelectedCard] = useState<CardType | null>(null)
+  const relationBufferAvailable = useStore(s => s.activePerks.relationBufferQuestionAvailable > 0)
 
   // ── 효과 칩 + 교착 경고용 상태 ──
   const agentA = useStore((s) => s.agentA)
@@ -82,6 +86,67 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
   }, [target, agentA, agentB, archetypeA, archetypeB, questionMeters])
 
   if (!target) return null
+
+  // 관계 완충 카드 선택 시 — empathy_approach로 매핑하되 퍼크 사용 처리
+  if (selectedCard === 'relation_buffer') {
+    const empathyQ = questions.find(q => q.type === 'empathy_approach')
+    if (!empathyQ) { setSelectedCard(null); return null }
+
+    const handleRelationBuffer = (disputeId: string) => {
+      // 퍼크 사용 차감
+      const store = useGameStore.getState()
+      store.consumePerkUse('relationBufferQuestionAvailable')
+
+      // 선제 신뢰 보너스 적용
+      store.changeTrust(target!, 'trustTowardJudge', 15)
+      const meters = store.questionMeters
+      const partyMeter = meters[target!]
+      useGameStore.setState({
+        questionMeters: {
+          ...meters,
+          [target!]: { ...partyMeter, trustWindow: Math.min(partyMeter.trustWindow + 20, 100) },
+        },
+      })
+      store.addDialogue({
+        speaker: 'system',
+        text: '[신뢰의 기반] 관계 완충 질문으로 선제적 신뢰를 확보했습니다.',
+        relatedDisputes: [disputeId],
+        turn: store.turnCount,
+      })
+
+      // empathy_approach로 실행
+      onSelect('empathy_approach', disputeId)
+      setSelectedCard(null)
+    }
+
+    return (
+      <div className="space-y-2 animate-fade-in">
+        <button onClick={() => setSelectedCard(null)}
+          className="text-xs text-gray-500 hover:text-gray-300 flex items-center gap-1">
+          ← 다른 질문 선택
+        </button>
+        <div className="text-xs text-gray-400 mb-1">
+          <Emoji char="&#x1F91D;" size={14} /> <span className="font-semibold">관계 완충</span> — 어떤 쟁점에 대해?
+        </div>
+        <div className="grid grid-cols-1 gap-1.5">
+          {empathyQ.disputes.map((d) => (
+            <button key={d.id}
+              onClick={() => { if (d.enabled) handleRelationBuffer(d.id) }}
+              disabled={!d.enabled}
+              className={`text-left px-3 py-2.5 rounded-xl border transition-all active:scale-95 ${
+                d.enabled
+                  ? 'border-teal-600 bg-teal-950/30 hover:border-teal-500 hover:bg-teal-900/40 text-gray-200'
+                  : 'border-gray-800/30 bg-gray-900/20 text-gray-700 cursor-not-allowed'
+              }`}
+            >
+              <span className="text-sm">{d.name}</span>
+              {!d.enabled && d.reason && <span className="text-xs text-gray-700 block mt-0.5">{d.reason}</span>}
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
 
   // 자유 질문 카드 선택 시
   if (selectedCard === 'free_question' && onFreeResult) {
@@ -210,6 +275,21 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
             </button>
           )
         })}
+        {/* 관계 완충 카드 — trust_start 퍼크 활성 시 1회 한정 */}
+        {relationBufferAvailable && (
+          <button
+            onClick={() => setSelectedCard('relation_buffer')}
+            className={`text-left rounded-xl border p-3 bg-gradient-to-br transition-all active:scale-95 ${CARD_COLORS.relation_buffer.border} ${CARD_COLORS.relation_buffer.bg} hover:shadow-lg ${CARD_COLORS.relation_buffer.glow} hover:scale-[1.02] ring-1 ring-teal-500/20`}
+          >
+            <div className="text-xl mb-1"><Emoji char="&#x1F91D;" size={20} /></div>
+            <div className="text-xs font-bold text-teal-200">관계 완충</div>
+            <div className="text-xs text-gray-500 mt-0.5 leading-snug">{CARD_EFFECTS.relation_buffer}</div>
+            <div className={`text-[9px] mt-1 font-semibold ${CARD_METER_HINTS.relation_buffer.color}`}>
+              {CARD_METER_HINTS.relation_buffer.meter}
+            </div>
+            <span className="text-[10px] text-teal-400 mt-1 block">퍼크 1회</span>
+          </button>
+        )}
         {/* 자유 질문 카드 — V3 게임 루프에서는 비활성 (Blueprint 우회 방지) */}
         {false && llmMode && onFreeResult && (
           <button

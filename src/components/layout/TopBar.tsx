@@ -11,6 +11,8 @@ import { MAX_TURNS } from '../../utils/constants'
 const DisputeBoard = lazy(() => import('../discovery/DisputeBoard'))
 const StateTransitionToast = lazy(() => import('../discovery/StateTransitionFeedback').then(m => ({ default: m.StateTransitionToast })))
 const GameEventModal = lazy(() => import('../discovery/GameEventModal'))
+const PerkChoiceModal = lazy(() => import('../discovery/PerkChoiceModal'))
+const TransitionChoiceModal = lazy(() => import('../discovery/TransitionChoiceModal'))
 const EvidenceResultToast = lazy(() => import('../discovery/EvidenceResultToast'))
 const ForcedVerdictBanner = lazy(() => import('../discovery/ForcedVerdictBanner'))
 
@@ -199,6 +201,16 @@ export default function TopBar() {
       {isInterrogation && (
         <Suspense fallback={null}>
           <GameEventModal />
+        </Suspense>
+      )}
+      {isInterrogation && (
+        <Suspense fallback={null}>
+          <PerkChoiceModal />
+        </Suspense>
+      )}
+      {isInterrogation && (
+        <Suspense fallback={null}>
+          <TransitionChoiceModal />
         </Suspense>
       )}
 

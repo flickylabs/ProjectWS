@@ -98,6 +98,7 @@ import { registerTenant11Data } from '../data/claimPolicies/tenant-11'
 import { registerTenant12Data } from '../data/claimPolicies/tenant-12'
 import { aggregateReadiness } from '../engine/readinessEngine'
 import { resetTellTracker } from '../engine/tellValidator'
+import { resetHintTracker } from '../engine/archetypeHintEngine'
 import { getReadinessSets } from '../engine/evidenceChallengeEngine'
 import { createInitialMeterState, resolveQuestionEffect, getMeterEffects, type QuestionMeterState, type QuestionEffectResult } from '../engine/questionEffectEngine'
 import { loadJudgePerks } from '../data/leaderboard'
@@ -285,6 +286,28 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
     legalityHintEnabled: boolean
     interjectionLevelBoost: number
   }
+  /** 퍼크 선택 모달 대기 상태 */
+  pendingPerkChoice: {
+    type: 'penalty_buffer'
+    evidenceId: string
+    target: import('../types').PartyId
+  } | {
+    type: 'fatigue_extend'
+    party: import('../types').PartyId
+    disputeId: string
+  } | null
+  setPendingPerkChoice: (choice: GameStore['pendingPerkChoice']) => void
+  /** 퍼크 사용 횟수 차감 */
+  consumePerkUse: (key: 'penaltyBufferUsesRemaining' | 'relationBufferQuestionAvailable' | 'angleSwitchOpportunity') => void
+  /** 상태 전이 후 전략 선택 모달 대기 */
+  pendingTransitionChoice: {
+    label: 'cracked' | 'cornered' | 'opening'
+    party: import('../types').PartyId
+    disputeId: string
+    from: import('../types').LieState
+    to: import('../types').LieState
+  } | null
+  setPendingTransitionChoice: (choice: GameStore['pendingTransitionChoice']) => void
 }
 
 export interface GameEvent {
@@ -432,6 +455,64 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
           case 'lie_transition_bonus':
             // 보너스는 다음 전이 시 참조 (미터에 축적)
             break
+
+          // ── 신규 5종 효과 ──
+          case 'timeline_lock':
+            // 사실 추궁: 부정 시점 고정 → 대화 로그에 시스템 메시지
+            state.addDialogue({
+              speaker: 'system',
+              text: '📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다',
+              relatedDisputes: [effect.disputeId],
+              turn: state.turnCount,
+            })
+            break
+          case 'hidden_dispute_hook':
+            // 동기 탐색: 숨겨진 쟁점 연결고리 → 이벤트 로그(토스트)
+            set((prev) => ({
+              gameEventLog: [...prev.gameEventLog, {
+                id: prev.gameEventLog.length + 1,
+                turn: prev.turnCount,
+                type: 'question_effect' as const,
+                message: '🔗 숨겨진 연결고리가 감지되었습니다 — 새로운 쟁점이 곧 드러날 수 있습니다',
+                timestamp: Date.now(),
+              }],
+            }))
+            break
+          case 'blame_text_exposed':
+            // 동기 탐색: 책임 회피 문구 노출 → 대화 로그에 시스템 노트
+            state.addDialogue({
+              speaker: 'system',
+              text: '📋 책임 회피 문구가 기록되었습니다',
+              relatedDisputes: [disputeId],
+              turn: state.turnCount,
+            })
+            break
+          case 'trust_window_open':
+            // 공감: 비공개 자백 경로 개방 → 이벤트 로그(토스트)
+            set((prev) => ({
+              gameEventLog: [...prev.gameEventLog, {
+                id: prev.gameEventLog.length + 1,
+                turn: prev.turnCount,
+                type: 'question_effect' as const,
+                message: effect.privatePath
+                  ? '💛 비공개 확인 경로가 열렸습니다 — 공감 접근으로 자백을 이끌어낼 수 있습니다'
+                  : '💛 비공개 확인 경로가 열렸습니다',
+                timestamp: Date.now(),
+              }],
+            }))
+            break
+          case 'counterattack_suppressed':
+            // 공감: 반격 억제 → 이벤트 로그(토스트)
+            set((prev) => ({
+              gameEventLog: [...prev.gameEventLog, {
+                id: prev.gameEventLog.length + 1,
+                turn: prev.turnCount,
+                type: 'question_effect' as const,
+                message: `🛡 상대의 반격 의지가 ${effect.turns}턴간 약화됩니다`,
+                timestamp: Date.now(),
+              }],
+            }))
+            break
         }
       }
 
@@ -477,6 +558,13 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       relationBufferQuestionAvailable: 0, angleSwitchOpportunity: 0,
       legalityHintEnabled: false, interjectionLevelBoost: 0,
     },
+    pendingPerkChoice: null,
+    setPendingPerkChoice: (choice) => set({ pendingPerkChoice: choice }),
+    consumePerkUse: (key) => set((prev) => ({
+      activePerks: { ...prev.activePerks, [key]: Math.max(0, prev.activePerks[key] - 1) },
+    })),
+    pendingTransitionChoice: null,
+    setPendingTransitionChoice: (choice) => set({ pendingTransitionChoice: choice }),
 
     evaluateTurnEvents: (questionType: QuestionType, focusDisputeId: string, transitionsThisTurn: { party: 'a' | 'b'; disputeId: string; from: import('../types').LieState; to: import('../types').LieState }[]) => {
       const s = useGameStore.getState()
@@ -600,6 +688,8 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
         gameEventLog: [],
         pendingGameEvent: null,
+        pendingPerkChoice: null,
+        pendingTransitionChoice: null,
         lastFocusedDisputeId: null,
         // 턴/Phase 완전 초기화
         turnCount: 0,
@@ -632,6 +722,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       // try-catch로 감싸서 등록 실패가 게임 진행을 막지 않도록 함
       try {
       resetTellTracker()
+      resetHintTracker()
       resetEventTriggerState()
       const caseKey2 = caseData.caseId?.replace(/^case-/, '') ?? ''
       if (caseKey2) {

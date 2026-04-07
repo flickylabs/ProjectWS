@@ -10,6 +10,8 @@ import { MAX_TURNS } from '../../utils/constants'
 
 const StateTransitionToast = lazy(() => import('../discovery/StateTransitionFeedback').then(m => ({ default: m.StateTransitionToast })))
 const GameEventModal = lazy(() => import('../discovery/GameEventModal'))
+const PerkChoiceModal = lazy(() => import('../discovery/PerkChoiceModal'))
+const TransitionChoiceModal = lazy(() => import('../discovery/TransitionChoiceModal'))
 const EvidenceResultToast = lazy(() => import('../discovery/EvidenceResultToast'))
 const ForcedVerdictBanner = lazy(() => import('../discovery/ForcedVerdictBanner'))
 
@@ -415,6 +417,8 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
       {/* 상태 전이/이벤트/증거/경고 토스트 */}
       {isInterrogation && <Suspense fallback={null}><StateTransitionToast /></Suspense>}
       {isInterrogation && <Suspense fallback={null}><GameEventModal /></Suspense>}
+      {isInterrogation && <Suspense fallback={null}><PerkChoiceModal /></Suspense>}
+      {isInterrogation && <Suspense fallback={null}><TransitionChoiceModal /></Suspense>}
       {pendingEvidenceResult && (
         <Suspense fallback={null}>
           <EvidenceResultToast result={pendingEvidenceResult.type} evidenceName={pendingEvidenceResult.evidenceName}

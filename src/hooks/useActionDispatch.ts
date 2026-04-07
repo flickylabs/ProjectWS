@@ -25,7 +25,7 @@ import {
   setSkipNextJudgeQuestion,
   shouldSkipJudgeQuestion,
 } from '../engine/dialogueRuntimeFlags'
-import { emitStateTransitionEvent } from '../engine/stateTransitionHelper'
+import { emitStateTransitionEvent, getTransitionLabel } from '../engine/stateTransitionHelper'
 // ── V2 스크립트 전환 엔진 ──
 import { hasV2Data, hasStructureV2, getBeatLibrary, getBeatRuntimeState, recordBeatUsed, getActiveLayer, getDisputeRole, getDisputeV2 } from '../engine/v2DataLoader'
 import { evaluateQuestionFatigue, commitQuestionFatigue, getSessionFatigueState, setSessionFatigueState } from '../engine/questionFatigueEngine'
@@ -46,6 +46,7 @@ import { evaluateLinkEdges } from '../engine/linkEdgeEngine'
 import type { BeatScriptV2 } from '../types'
 import { toTrustWindowBand } from '../types'
 import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
+import { selectHint, markHintShown } from '../engine/archetypeHintEngine'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -62,6 +63,28 @@ export { setDossierQuestionOverride, consumeDossierQuestionOverride }
 export { setNextConfidential, setNextEvasionReading }
 
 let globalDispatchLock = false
+
+// ── Archetype 힌트: NPC 응답 후 재판관의 관찰을 system 메시지로 추가 ──
+function maybeShowArchetypeHint(target: PartyId, turnNumber: number): void {
+  const state = useGameStore.getState()
+  const caseData = state.caseData
+  if (!caseData) return
+
+  const party = target === 'a' ? caseData.duo.partyA : caseData.duo.partyB
+  const archetype = party.archetype ?? 'avoidant'
+  const tell = party.verbalTells?.[0]?.type ?? ''
+
+  const hint = selectHint(archetype, tell, turnNumber, target)
+  if (!hint) return
+
+  markHintShown(target)
+  state.addDialogue({
+    speaker: 'system',
+    text: `💡 재판관의 관찰: ${hint.text}`,
+    relatedDisputes: [],
+    turn: state.turnCount,
+  })
+}
 
 // V2 피로도 상태는 questionFatigueEngine.ts의 세션 상태에서 관리
 
@@ -292,6 +315,15 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     const resultType = !evDidTransition ? 'hold'
       : evDef.reliability === 'hard' ? 'collapse' : 'crack'
     toastState.setPendingEvidenceResult({ type: resultType, evidenceName: evDef.name })
+
+    // penalty_buffer 퍼크: hold(증거 무효) 시 철회/재프레이밍 선택지
+    if (resultType === 'hold' && toastState.activePerks.penaltyBufferUsesRemaining > 0) {
+      toastState.setPendingPerkChoice({
+        type: 'penalty_buffer',
+        evidenceId: action.evidenceId,
+        target: action.target,
+      })
+    }
   }
 
   changeEmotionWithPhaseTracking(action.target, evDef.reliability === 'hard' ? 15 : 8)
@@ -347,6 +379,18 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
         transitions.push({ party: action.target, disputeId: dId, from: prev, to: cur })
         const pName = action.target === 'a' ? v3State.caseData?.duo.partyA.name : v3State.caseData?.duo.partyB.name
         emitStateTransitionEvent(action.target, dId, prev, cur, v3State.turnCount, pName ?? '')
+
+        // 상태 전이 후 전략 선택 모달 (증거 제시 경유)
+        const transLabel = getTransitionLabel(prev, cur)
+        if (transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') {
+          v3State.setPendingTransitionChoice({
+            label: transLabel,
+            party: action.target,
+            disputeId: dId,
+            from: prev,
+            to: cur,
+          })
+        }
       }
     }
     v3State.evaluateTurnEvents('evidence_present', evDef.proves[0], transitions)
@@ -713,6 +757,15 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         resetReason: 'none',
       }, getSessionFatigueState())
 
+      // fatigue_extend 퍼크: 교착 시 각도 전환 기회 제공
+      if (fatigueAssessment.shouldTriggerFatigueBeat && state.activePerks.angleSwitchOpportunity > 0) {
+        state.setPendingPerkChoice({
+          type: 'fatigue_extend',
+          party: action.target,
+          disputeId: action.disputeId,
+        })
+      }
+
       // 4. NPC 확률 반응 (E) — blueprint stance를 순응/저항/역공으로 흔든다
       const actionQuality = deriveActionQuality({
         affinityGrade: affinityGrade as any,
@@ -859,6 +912,9 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
             behaviorHint: beatHint,
           })
 
+          // Archetype 힌트: NPC 응답 직후 재판관의 관찰 표시
+          maybeShowArchetypeHint(action.target, state.turnCount)
+
           if ('id' in beat && 'schemaVersion' in beat) {
             recordBeatUsed(v2CaseId, beat as BeatScriptV2, state.turnCount)
             const v2Beat = beat as BeatScriptV2
@@ -962,6 +1018,8 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   if (!v2BeatUsed) {
     // 기존 LLM 경로
     await resolveAndApply(action, action.target, isConfidential)
+    // Archetype 힌트: NPC 응답 직후 재판관의 관찰 표시
+    maybeShowArchetypeHint(action.target, state.turnCount)
   }
 
   // 증거 발견: NPC 응답 이후 — 진술 내용에서 단서가 포착된 것처럼 연출
@@ -1116,10 +1174,22 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       : []
     v3State.evaluateTurnEvents(action.questionType, action.disputeId, transitions)
 
-    // ── V3: lieState 전이 시각 피드백 ──
+    // ── V3: lieState 전이 시각 피드백 + 전략 선택 모달 ──
     if (prevState !== newState) {
       const pName = action.target === 'a' ? v3State.caseData?.duo.partyA.name : v3State.caseData?.duo.partyB.name
       emitStateTransitionEvent(action.target, action.disputeId, prevState, newState, v3State.turnCount, pName ?? '')
+
+      // 상태 전이 후 전략 선택 모달 (cracked/cornered/opening만)
+      const transLabel = getTransitionLabel(prevState, newState)
+      if (transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') {
+        v3State.setPendingTransitionChoice({
+          label: transLabel,
+          party: action.target,
+          disputeId: action.disputeId,
+          from: prevState,
+          to: newState,
+        })
+      }
     }
   }
 

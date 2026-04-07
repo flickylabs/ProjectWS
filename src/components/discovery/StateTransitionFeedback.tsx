@@ -18,7 +18,8 @@ import type { LieState } from '../../types'
 import { getMeterHudModel, type MeterDisplayMode } from '../../engine/meterStagingV2'
 import { getPostTransitionRecommendation } from '../../engine/stateTransitionHelper'
 
-type TransitionLabel = 'cracked' | 'cornered' | 'opening' | 'confessed' | null
+type TransitionLabel = 'cracked' | 'cornered' | 'opening' | 'confessed'
+  | 'dispute_hook' | 'trust_window' | 'counterattack_suppressed' | null
 
 interface TransitionEvent {
   id: number
@@ -64,6 +65,27 @@ const LABEL_CONFIG: Record<NonNullable<TransitionLabel>, {
     textClass: 'text-emerald-400',
     borderClass: 'border-emerald-500/50',
   },
+  dispute_hook: {
+    text: '연결고리',
+    icon: '🔗',
+    bgClass: 'bg-amber-950/80',
+    textClass: 'text-amber-400',
+    borderClass: 'border-amber-600/50',
+  },
+  trust_window: {
+    text: '비공개 경로',
+    icon: '💛',
+    bgClass: 'bg-blue-950/80',
+    textClass: 'text-blue-300',
+    borderClass: 'border-blue-500/50',
+  },
+  counterattack_suppressed: {
+    text: '반격 억제',
+    icon: '🛡',
+    bgClass: 'bg-slate-900/80',
+    textClass: 'text-slate-300',
+    borderClass: 'border-slate-500/50',
+  },
 }
 
 /** 상태 전이 시 보여주는 토스트 */
@@ -78,7 +100,8 @@ export function StateTransitionToast() {
   useEffect(() => {
     if (events.length === 0) return
     const latest = events[events.length - 1]
-    const timer = setTimeout(() => dismiss(latest.id), 2500)
+    const isEffectToast = latest.label === 'dispute_hook' || latest.label === 'trust_window' || latest.label === 'counterattack_suppressed'
+    const timer = setTimeout(() => dismiss(latest.id), isEffectToast ? 3500 : 2500)
     return () => clearTimeout(timer)
   }, [events, dismiss])
 
@@ -87,14 +110,21 @@ export function StateTransitionToast() {
   useEffect(() => {
     if (gameEventLog.length === 0) return
     const latest = gameEventLog[gameEventLog.length - 1]
-    if (latest.type !== 'state_transition') return
 
-    // 메시지에서 라벨 추론
     let label: TransitionLabel = null
-    if (latest.message.includes('균열')) label = 'cracked'
-    else if (latest.message.includes('궁지')) label = 'cornered'
-    else if (latest.message.includes('개방')) label = 'opening'
-    else if (latest.message.includes('시인')) label = 'confessed'
+
+    if (latest.type === 'state_transition') {
+      // 메시지에서 라벨 추론
+      if (latest.message.includes('균열')) label = 'cracked'
+      else if (latest.message.includes('궁지')) label = 'cornered'
+      else if (latest.message.includes('개방')) label = 'opening'
+      else if (latest.message.includes('시인')) label = 'confessed'
+    } else if (latest.type === 'question_effect') {
+      // 신규 심문 효과 토스트
+      if (latest.message.includes('🔗')) label = 'dispute_hook'
+      else if (latest.message.includes('💛')) label = 'trust_window'
+      else if (latest.message.includes('🛡')) label = 'counterattack_suppressed'
+    }
 
     if (!label) return
 
@@ -129,7 +159,7 @@ export function StateTransitionToast() {
                 <span className="text-[11px] text-gray-400">{event.message}</span>
               </div>
               {(() => {
-                const rec = getPostTransitionRecommendation(event.label)
+                const rec = getPostTransitionRecommendation(event.label as Parameters<typeof getPostTransitionRecommendation>[0])
                 return rec ? (
                   <div className="text-[11px] text-amber-400/80 pl-6">
                     <Emoji char="💡" size={12} /> {rec.message}
