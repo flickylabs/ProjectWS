@@ -146,4 +146,8 @@ export interface CaseData {
   solutions: Record<string, string[]>
   activeLedgerEntries: string[]
   activeThirdParties: string[]
+  /** 증거 표면화 기본 3장 — PC에서 처음 보이는 증거 */
+  baseEvidenceIds?: [string, string, string]
+  /** 금전 관련 쟁점 IDs — 비금전 사건 금전 오염 방지 */
+  monetaryDisputeIds?: string[]
 }

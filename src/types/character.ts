@@ -2,7 +2,7 @@ import type { PartyId } from './game'
 import type { TruthLevel } from './renewal'
 
 export type Archetype = 'avoidant' | 'confrontational' | 'victim_cosplay' | 'cold_logic' | 'affect_flattening' | 'premature_summary'
-export type DigitalHabit = 'sns_active' | 'messenger_main' | 'minimal'
+export type DigitalHabit = 'sns_active' | 'messenger_main' | 'minimal' | 'banking_app_heavy'
 
 export interface VerbalTell {
   type: string
