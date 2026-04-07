@@ -28,6 +28,7 @@ const CARD_COLORS: Record<string, { bg: string; border: string; glow: string }> 
   motive_search: { bg: 'from-purple-950/60 to-purple-900/20', border: 'border-purple-700/40', glow: 'shadow-purple-500/10' },
   empathy_approach: { bg: 'from-pink-950/60 to-pink-900/20', border: 'border-pink-700/40', glow: 'shadow-pink-500/10' },
   relation_buffer: { bg: 'from-teal-950/60 to-teal-900/20', border: 'border-teal-700/40', glow: 'shadow-teal-500/10' },
+  private_check: { bg: 'from-emerald-950/60 to-emerald-900/20', border: 'border-emerald-700/40', glow: 'shadow-emerald-500/10' },
   free_question: { bg: 'from-amber-950/60 to-amber-900/20', border: 'border-amber-700/40', glow: 'shadow-amber-500/10' },
 }
 
@@ -36,6 +37,7 @@ const CARD_EFFECTS: Record<string, string> = {
   motive_search: '행동의 진짜 이유를 탐색합니다',
   empathy_approach: '공감으로 신뢰를 얻습니다',
   relation_buffer: '관계 완충 질문으로 신뢰를 선확보합니다',
+  private_check: '비공개로 사실을 확인합니다 (방어 반응 없음)',
   free_question: '자유롭게 질문합니다',
 }
 
@@ -44,15 +46,17 @@ const CARD_METER_HINTS: Record<string, { meter: string; color: string }> = {
   motive_search: { meter: '누설 미터 ↑', color: 'text-orange-500/60' },
   empathy_approach: { meter: '신뢰 창구 ↑', color: 'text-blue-400/60' },
   relation_buffer: { meter: '신뢰 창구 ↑↑', color: 'text-teal-400/60' },
+  private_check: { meter: '솔직한 답변 (상태 변화 없음)', color: 'text-emerald-400/60' },
   free_question: { meter: '', color: '' },
 }
 
-type CardType = QuestionType | 'free_question' | 'relation_buffer'
+type CardType = QuestionType | 'free_question' | 'relation_buffer' | 'private_check'
 
 export default function QuestionSelector({ target, onSelect, llmMode, onFreeResult, toggles, onToggle }: Props) {
   const { questions } = useValidActions(target)
   const [selectedCard, setSelectedCard] = useState<CardType | null>(null)
   const relationBufferAvailable = useStore(s => s.activePerks.relationBufferQuestionAvailable > 0)
+  const privateCheckAvailable = useStore(s => s.activePerks.privateCheckAvailable > 0)
 
   // ── 효과 칩 + 교착 경고용 상태 ──
   const agentA = useStore((s) => s.agentA)
@@ -136,6 +140,56 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
               className={`text-left px-3 py-2.5 rounded-xl border transition-all active:scale-95 ${
                 d.enabled
                   ? 'border-teal-600 bg-teal-950/30 hover:border-teal-500 hover:bg-teal-900/40 text-gray-200'
+                  : 'border-gray-800/30 bg-gray-900/20 text-gray-700 cursor-not-allowed'
+              }`}
+            >
+              <span className="text-sm">{d.name}</span>
+              {!d.enabled && d.reason && <span className="text-xs text-gray-700 block mt-0.5">{d.reason}</span>}
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  // 비공개 확인권 카드 선택 시 — fact_pursuit로 매핑하되 lie state 변화 없음
+  if (selectedCard === 'private_check') {
+    const factQ = questions.find(q => q.type === 'fact_pursuit')
+    if (!factQ) { setSelectedCard(null); return null }
+
+    const handlePrivateCheck = (disputeId: string) => {
+      const store = useGameStore.getState()
+      store.consumePerkUse('privateCheckAvailable')
+
+      store.addDialogue({
+        speaker: 'system',
+        text: '[비공개 확인권] 재판관 전용 확인 질문 — 솔직한 답변을 받되, 거짓말 상태에 영향을 주지 않습니다.',
+        relatedDisputes: [disputeId],
+        turn: store.turnCount,
+      })
+
+      // fact_pursuit로 실행 (useActionDispatch에서 privateCheck 플래그로 lie state 변화 억제)
+      onSelect('fact_pursuit', disputeId)
+      setSelectedCard(null)
+    }
+
+    return (
+      <div className="space-y-2 animate-fade-in">
+        <button onClick={() => setSelectedCard(null)}
+          className="text-xs text-gray-500 hover:text-gray-300 flex items-center gap-1">
+          ← 다른 질문 선택
+        </button>
+        <div className="text-xs text-gray-400 mb-1">
+          <Emoji char="&#x1F50F;" size={14} /> <span className="font-semibold">비공개 확인</span> — 어떤 쟁점에 대해?
+        </div>
+        <div className="grid grid-cols-1 gap-1.5">
+          {factQ.disputes.map((d) => (
+            <button key={d.id}
+              onClick={() => { if (d.enabled) handlePrivateCheck(d.id) }}
+              disabled={!d.enabled}
+              className={`text-left px-3 py-2.5 rounded-xl border transition-all active:scale-95 ${
+                d.enabled
+                  ? 'border-emerald-600 bg-emerald-950/30 hover:border-emerald-500 hover:bg-emerald-900/40 text-gray-200'
                   : 'border-gray-800/30 bg-gray-900/20 text-gray-700 cursor-not-allowed'
               }`}
             >
@@ -288,6 +342,21 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
               {CARD_METER_HINTS.relation_buffer.meter}
             </div>
             <span className="text-[10px] text-teal-400 mt-1 block">퍼크 1회</span>
+          </button>
+        )}
+        {/* 비공개 확인권 카드 — private_check 퍼크 활성 시 1회 한정 */}
+        {privateCheckAvailable && (
+          <button
+            onClick={() => setSelectedCard('private_check')}
+            className={`text-left rounded-xl border p-3 bg-gradient-to-br transition-all active:scale-95 ${CARD_COLORS.private_check.border} ${CARD_COLORS.private_check.bg} hover:shadow-lg ${CARD_COLORS.private_check.glow} hover:scale-[1.02] ring-1 ring-emerald-500/20`}
+          >
+            <div className="text-xl mb-1"><Emoji char="&#x1F50F;" size={20} /></div>
+            <div className="text-xs font-bold text-emerald-200">비공개 확인</div>
+            <div className="text-xs text-gray-500 mt-0.5 leading-snug">{CARD_EFFECTS.private_check}</div>
+            <div className={`text-[9px] mt-1 font-semibold ${CARD_METER_HINTS.private_check.color}`}>
+              {CARD_METER_HINTS.private_check.meter}
+            </div>
+            <span className="text-[10px] text-emerald-400 mt-1 block">퍼크 1회</span>
           </button>
         )}
         {/* 자유 질문 카드 — V3 게임 루프에서는 비활성 (Blueprint 우회 방지) */}

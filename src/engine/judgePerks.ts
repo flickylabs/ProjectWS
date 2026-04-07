@@ -7,11 +7,15 @@ export type PerkId =
   | 'penalty_buffer'        // 관용형 메이저: 잘못된 증거 제시 시 철회/재프레이밍 선택지
   | 'extra_invest_token'    // 원칙형 메이저: 조사 토큰 +1
   | 'skill_refund'          // 화해형 메이저: 첫 사건 스킬 조건부 환급
+  | 'private_check'         // 화해형 메이저: 사건당 1회 비공개 확인 질문
   | 'contradiction_start'   // 논리형 마이너: 모순 토큰 +1 시작
+  | 'compare_locker'        // 논리형 마이너: 노트 2개 비교 슬롯 고정
   | 'leak_boost'            // 직관형 마이너: 누설 미터 +5%
   | 'fatigue_extend'        // 엄격형 마이너: 같은 쟁점에서 질문 각도 전환 기회 1회
+  | 'precedent_sense'       // 엄격형 마이너: 유사 패턴 힌트 1회
   | 'trust_start'           // 관용형 마이너: 시작 시 1회 한정 관계 완충 질문 개방
   | 'legality_hint'         // 원칙형 마이너: 위법 증거 감지 힌트
+  | 'reorganize_declare'    // 원칙형 마이너: 쟁점 현재 요약 자동 정리
   | 'interjection_upgrade'  // 화해형 마이너: 끼어들기 정보 레벨 +1
 
 export interface PerkDefinition {
@@ -57,11 +61,21 @@ export const PERK_TABLE: PerkDefinition[] = [
     tier: 'major', requiredAxis: 'resolution', requiredDirection: 'positive',
     effect: { skillRefundCount: 1 },
   },
+  {
+    id: 'private_check', name: '비공개 확인권', description: '사건당 1회 공개 추궁 대신 재판관 전용 확인 질문',
+    tier: 'major', requiredAxis: 'resolution', requiredDirection: 'positive',
+    effect: { privateCheckAvailable: 1 },
+  },
   // ── 마이너 퍼크 ──
   {
     id: 'contradiction_start', name: '모순 감각', description: '모순 토큰 +1로 시작',
     tier: 'minor', requiredAxis: 'inquiry', requiredDirection: 'negative',
     effect: { firstTargetContradictionBonus: 1 },
+  },
+  {
+    id: 'compare_locker', name: '비교 보관함', description: '노트 2개를 즉시 비교 슬롯에 고정',
+    tier: 'minor', requiredAxis: 'inquiry', requiredDirection: 'negative',
+    effect: { compareLockerAvailable: 1 },
   },
   {
     id: 'leak_boost', name: '누설 감지', description: '누설 미터 초기값 +5%',
@@ -74,6 +88,11 @@ export const PERK_TABLE: PerkDefinition[] = [
     effect: { angleSwitchOpportunity: 1 },
   },
   {
+    id: 'precedent_sense', name: '선례 감각', description: '유사 패턴 힌트 1회 제공',
+    tier: 'minor', requiredAxis: 'judgment', requiredDirection: 'negative',
+    effect: { precedentHintAvailable: 1 },
+  },
+  {
     id: 'trust_start', name: '신뢰의 기반', description: '시작 시 1회 한정 관계 완충 질문 개방',
     tier: 'minor', requiredAxis: 'judgment', requiredDirection: 'positive',
     effect: { relationBufferQuestionAvailable: 1 },
@@ -82,6 +101,11 @@ export const PERK_TABLE: PerkDefinition[] = [
     id: 'legality_hint', name: '법의 눈', description: '위법 증거에 힌트 표시',
     tier: 'minor', requiredAxis: 'resolution', requiredDirection: 'negative',
     effect: { legalityHintEnabled: 1 },
+  },
+  {
+    id: 'reorganize_declare', name: '재정리 선언', description: '한 쟁점의 현재 요약을 자동 정리',
+    tier: 'minor', requiredAxis: 'resolution', requiredDirection: 'negative',
+    effect: { reorganizeDeclareAvailable: 1 },
   },
   {
     id: 'interjection_upgrade', name: '경청의 힘', description: '끼어들기 정보 레벨 +1',

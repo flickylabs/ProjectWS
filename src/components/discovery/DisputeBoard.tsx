@@ -10,7 +10,7 @@
  */
 
 import { useState } from 'react'
-import { useStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import type { CaseData, PartyId } from '../../types'
 import type { LieState } from '../../types'
 import type { DisputeDepthLayer } from '../../types'
@@ -41,17 +41,65 @@ export default function DisputeBoard({ onClose, onSelectDispute }: {
   onSelectDispute?: (disputeId: string, party: PartyId) => void
 }) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [compareSlots, setCompareSlots] = useState<[string | null, string | null]>([null, null])
 
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
   const readinessState = useStore((s) => s.readinessState)
   const separationTarget = useStore((s) => s.separationTarget)
+  const compareLockerAvailable = useStore(s => s.activePerks.compareLockerAvailable > 0)
 
   if (!caseData) return null
 
   const cards = buildCards(caseData, agentA.lieStateMap, agentB.lieStateMap)
   const activeParty: PartyId = separationTarget ?? 'a'
+
+  // 비교 보관함: 쟁점 핀 토글
+  const handleComparePin = (disputeId: string) => {
+    setCompareSlots(prev => {
+      if (prev[0] === disputeId) return [prev[1], null]
+      if (prev[1] === disputeId) return [prev[0], null]
+      if (!prev[0]) return [disputeId, prev[1]]
+      if (!prev[1]) return [prev[0], disputeId]
+      return [disputeId, prev[1]]  // 꽉 찬 경우 첫 번째 교체
+    })
+  }
+
+  // 비교 확정 시 퍼크 소비 + 시스템 메시지
+  const handleCompareConfirm = () => {
+    if (!compareSlots[0] || !compareSlots[1]) return
+    const store = useGameStore.getState()
+    store.consumePerkUse('compareLockerAvailable')
+
+    const card0 = cards.find(c => c.disputeId === compareSlots[0])
+    const card1 = cards.find(c => c.disputeId === compareSlots[1])
+
+    const stateLabels: Record<string, string> = { S0: '완전 부정', S1: '일부 인정', S2: '핑계', S3: '책임 전가', S4: '감정적', S5: '자백' }
+
+    const lines = [
+      `[비교 보관함] 쟁점 비교:`,
+      ``,
+      `■ ${card0?.name ?? compareSlots[0]}`,
+      `  A 측: ${card0?.aState ? stateLabels[card0.aState] ?? card0.aState : '?'} / B 측: ${card0?.bState ? stateLabels[card0.bState] ?? card0.bState : '?'}`,
+      `  A 주장: ${card0?.aClaim ?? '-'}`,
+      `  B 주장: ${card0?.bClaim ?? '-'}`,
+      ``,
+      `■ ${card1?.name ?? compareSlots[1]}`,
+      `  A 측: ${card1?.aState ? stateLabels[card1.aState] ?? card1.aState : '?'} / B 측: ${card1?.bState ? stateLabels[card1.bState] ?? card1.bState : '?'}`,
+      `  A 주장: ${card1?.aClaim ?? '-'}`,
+      `  B 주장: ${card1?.bClaim ?? '-'}`,
+    ]
+
+    store.addDialogue({
+      speaker: 'system',
+      text: lines.join('\n'),
+      relatedDisputes: [compareSlots[0], compareSlots[1]],
+      turn: store.turnCount,
+    })
+
+    setCompareSlots([null, null])
+  }
 
   return (
     <div className="fixed inset-0 z-40 bg-gray-950/85 flex flex-col" onClick={onClose}>
@@ -80,6 +128,34 @@ export default function DisputeBoard({ onClose, onSelectDispute }: {
           </div>
         </div>
 
+        {/* 비교 보관함 — compare_locker 퍼크 활성 시 */}
+        {compareLockerAvailable && (
+          <div className="mb-2 px-2 py-1.5 bg-violet-950/30 border border-violet-700/40 rounded-lg">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[10px] text-violet-300 font-semibold">비교 보관함 (퍼크 1회)</span>
+              <button
+                onClick={handleCompareConfirm}
+                disabled={!compareSlots[0] || !compareSlots[1]}
+                className={`text-[10px] px-2 py-0.5 rounded font-semibold transition-all ${
+                  compareSlots[0] && compareSlots[1]
+                    ? 'bg-violet-600 text-white hover:bg-violet-500 active:scale-95'
+                    : 'bg-gray-800 text-gray-600 cursor-not-allowed'
+                }`}
+              >
+                비교 확정
+              </button>
+            </div>
+            <div className="flex gap-2">
+              <div className={`flex-1 text-[10px] px-2 py-1 rounded border ${compareSlots[0] ? 'border-violet-500/50 bg-violet-900/20 text-violet-200' : 'border-gray-700/30 bg-gray-900/30 text-gray-600'}`}>
+                {compareSlots[0] ? cards.find(c => c.disputeId === compareSlots[0])?.name ?? '슬롯 1' : '쟁점 클릭하여 고정'}
+              </div>
+              <div className={`flex-1 text-[10px] px-2 py-1 rounded border ${compareSlots[1] ? 'border-violet-500/50 bg-violet-900/20 text-violet-200' : 'border-gray-700/30 bg-gray-900/30 text-gray-600'}`}>
+                {compareSlots[1] ? cards.find(c => c.disputeId === compareSlots[1])?.name ?? '슬롯 2' : '쟁점 클릭하여 고정'}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* 쟁점 카드 목록 */}
         <div className="flex-1 overflow-y-auto scrollbar-hide space-y-2">
           {cards.map(card => (
@@ -90,6 +166,9 @@ export default function DisputeBoard({ onClose, onSelectDispute }: {
               onToggle={() => setExpandedId(expandedId === card.disputeId ? null : card.disputeId)}
               caseData={caseData}
               onSelectDispute={onSelectDispute}
+              compareLockerActive={compareLockerAvailable}
+              isPinned={compareSlots[0] === card.disputeId || compareSlots[1] === card.disputeId}
+              onComparePin={handleComparePin}
             />
           ))}
         </div>
@@ -101,12 +180,16 @@ export default function DisputeBoard({ onClose, onSelectDispute }: {
 /** 개별 쟁점 카드 */
 function DisputeCard({
   card, isExpanded, onToggle, caseData, onSelectDispute,
+  compareLockerActive, isPinned, onComparePin,
 }: {
   card: DisputeCardData
   isExpanded: boolean
   onToggle: () => void
   caseData: CaseData
   onSelectDispute?: (disputeId: string, party: PartyId) => void
+  compareLockerActive?: boolean
+  isPinned?: boolean
+  onComparePin?: (disputeId: string) => void
 }) {
   if (card.isHidden) {
     return (
@@ -151,6 +234,18 @@ function DisputeCard({
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold text-gray-200">{card.name}</span>
             {card.isNew && <span className="text-[9px] px-1 py-0.5 bg-red-600 text-white rounded font-bold">NEW</span>}
+            {compareLockerActive && (
+              <button
+                onClick={(e) => { e.stopPropagation(); onComparePin?.(card.disputeId) }}
+                className={`text-[9px] px-1.5 py-0.5 rounded font-semibold transition-all ${
+                  isPinned
+                    ? 'bg-violet-600 text-white ring-1 ring-violet-400'
+                    : 'bg-gray-800/60 text-gray-500 hover:bg-violet-900/40 hover:text-violet-300'
+                }`}
+              >
+                {isPinned ? '고정됨' : '비교'}
+              </button>
+            )}
           </div>
           <span className={`text-[10px] px-1.5 py-0.5 rounded font-semibold ${statusColors[card.status]}`}>
             {statusLabels[card.status]}

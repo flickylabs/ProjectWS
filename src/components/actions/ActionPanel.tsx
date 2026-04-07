@@ -699,6 +699,11 @@ function SkillPanel({ target, disputes, resources, canUseSkill, onObj, onSkill, 
         </div>)
       })}
 
+      {/* 퍼크: 선례 감각 — precedent_sense */}
+      <PrecedentSenseButton target={target} />
+      {/* 퍼크: 재정리 선언 — reorganize_declare */}
+      <ReorganizeDeclareButton target={target} />
+
       {/* Phase 5 전용: AI 진술 분석 */}
       {isPhase5 && llm && (
         <button
@@ -719,5 +724,119 @@ function SkillPanel({ target, disputes, resources, canUseSkill, onObj, onSkill, 
         </button>
       )}
     </div>
+  )
+}
+
+/* ── 퍼크 유틸리티 버튼: 선례 감각 ── */
+function PrecedentSenseButton({ target }: { target: PartyId }) {
+  const available = useStore(s => s.activePerks.precedentHintAvailable > 0)
+  if (!available) return null
+
+  const handleClick = () => {
+    const store = useGameStore.getState()
+    store.consumePerkUse('precedentHintAvailable')
+
+    // 현재 사건의 카테고리에서 유사 패턴 힌트 생성
+    const caseId = store.caseData?.caseId ?? ''
+    const category = caseId.replace(/^case-/, '').replace(/-\d+$/, '')
+    const lieStates = target === 'a' ? store.agentA.lieStateMap : store.agentB.lieStateMap
+    const lowestState = Object.values(lieStates).reduce((min, e) => {
+      const rank = parseInt(e.currentState.replace('S', ''), 10)
+      const minRank = parseInt(min.replace('S', ''), 10)
+      return rank < minRank ? e.currentState : min
+    }, 'S5')
+
+    const hints: Record<string, string> = {
+      spouse: '이전 부부 사건에서 비슷한 금전 은폐 패턴이 있었습니다. 공동 지출 내역을 추궁하면 모순이 드러날 수 있습니다.',
+      family: '가족 분쟁에서 감정적 호소로 사실을 흐리는 패턴이 반복됩니다. 구체적 날짜와 금액을 물어보세요.',
+      friend: '친구 간 분쟁에서는 구두 약속의 해석 차이가 핵심입니다. 제3자 증언이 결정적일 수 있습니다.',
+      neighbor: '이웃 분쟁에서는 시간대별 사건 정리가 돌파구입니다. 타임라인을 꼼꼼히 추궁하세요.',
+      partnership: '동업 분쟁에서는 계약서 vs 실제 운영의 괴리가 핵심입니다. 서면 기록을 집중 조사하세요.',
+      tenant: '임대 분쟁에서는 원상복구/보증금 쟁점이 타 사건과 유사 패턴을 보입니다. 사진 증거가 결정적입니다.',
+      workplace: '직장 분쟁에서는 지시의 구두/서면 여부가 핵심입니다. 메신저 기록을 확인하세요.',
+    }
+
+    const hint = hints[category] ?? '유사 사건 데이터가 충분하지 않습니다. 다양한 각도로 심문을 시도하세요.'
+    const stateNote = parseInt(lowestState.replace('S', ''), 10) <= 1
+      ? ' 현재 상대방이 강하게 부정 중이므로, 감정보다 증거 기반 추궁이 효과적입니다.'
+      : ''
+
+    store.addDialogue({
+      speaker: 'system',
+      text: `[선례 감각] ${hint}${stateNote}`,
+      relatedDisputes: [],
+      turn: store.turnCount,
+    })
+
+    showToast('선례 감각 힌트가 제공되었습니다', 'info')
+  }
+
+  return (
+    <button onClick={handleClick}
+      className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg border border-indigo-700/40 bg-indigo-950/20 hover:border-indigo-500 text-indigo-300 transition-all active:scale-95">
+      <Emoji char="&#x1F4DA;" size={18} />
+      <div className="flex-1">
+        <div className="text-xs font-semibold">선례 감각</div>
+        <div className="text-xs text-gray-500">유사 패턴 힌트 제공</div>
+      </div>
+      <span className="text-[10px] text-indigo-400 font-semibold">퍼크 1회</span>
+    </button>
+  )
+}
+
+/* ── 퍼크 유틸리티 버튼: 재정리 선언 ── */
+function ReorganizeDeclareButton({ target }: { target: PartyId }) {
+  const available = useStore(s => s.activePerks.reorganizeDeclareAvailable > 0)
+  if (!available) return null
+
+  const handleClick = () => {
+    const store = useGameStore.getState()
+    store.consumePerkUse('reorganizeDeclareAvailable')
+
+    const agent = target === 'a' ? store.agentA : store.agentB
+    const partyName = target === 'a' ? store.caseData?.duo.partyA.name : store.caseData?.duo.partyB.name
+    const lieStates = agent.lieStateMap
+
+    // 각 쟁점의 현재 상태 요약 생성
+    const lines: string[] = [`[재정리 선언] ${partyName ?? '당사자'} 측 쟁점 현황:`]
+    const stateLabels: Record<string, string> = {
+      S0: '완전 부정', S1: '일부 인정', S2: '핑계/변명', S3: '책임 전가', S4: '감정적', S5: '자백',
+    }
+
+    for (const [disputeId, entry] of Object.entries(lieStates)) {
+      const state = entry.currentState
+      const label = stateLabels[state] ?? state
+      // 쟁점 이름 찾기
+      const dispute = store.caseData?.disputes.find(d => d.id === disputeId)
+      const disputeName = dispute?.name ?? disputeId
+      lines.push(`  - ${disputeName}: ${label} (${state})`)
+    }
+
+    // 미터 상태
+    const meters = store.questionMeters[target]
+    if (meters.contradictionTokens > 0) lines.push(`  모순 토큰: ${meters.contradictionTokens}개`)
+    if (meters.leakMeter > 0) lines.push(`  누설 미터: ${meters.leakMeter}%`)
+    if (meters.trustWindow > 0) lines.push(`  신뢰 창구: ${meters.trustWindow}%`)
+
+    store.addDialogue({
+      speaker: 'system',
+      text: lines.join('\n'),
+      relatedDisputes: Object.keys(lieStates),
+      turn: store.turnCount,
+    })
+
+    showToast('쟁점 현황이 정리되었습니다', 'info')
+  }
+
+  return (
+    <button onClick={handleClick}
+      className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg border border-cyan-700/40 bg-cyan-950/20 hover:border-cyan-500 text-cyan-300 transition-all active:scale-95">
+      <Emoji char="&#x1F4CB;" size={18} />
+      <div className="flex-1">
+        <div className="text-xs font-semibold">재정리 선언</div>
+        <div className="text-xs text-gray-500">쟁점 현황 자동 정리</div>
+      </div>
+      <span className="text-[10px] text-cyan-400 font-semibold">퍼크 1회</span>
+    </button>
   )
 }

@@ -9,10 +9,11 @@ import Aftermath, { resetAftermathCache } from './Aftermath'
 import TitleReveal from './TitleReveal'
 import ShareResult from './ShareResult'
 import JudgeProfileReport from './JudgeProfileReport'
+import VerdictSummaryTab from './VerdictSummaryTab'
 import Emoji from '../common/Emoji'
 import { resetPrefetch } from '../phase/Phase0_CaseIntro'
 
-type ResultTab = 'score' | 'truth' | 'titles' | 'aftermath' | 'profile' | 'share'
+type ResultTab = 'score' | 'truth' | 'titles' | 'aftermath' | 'verdict_summary' | 'profile' | 'share'
 
 export default function ResultScreen() {
   const verdictScore = useStore((s) => s.verdictScore)
@@ -81,6 +82,7 @@ export default function ResultScreen() {
     { id: 'truth', label: '진실' },
     { id: 'titles', label: '칭호' },
     { id: 'aftermath', label: '후일담' },
+    { id: 'verdict_summary', label: '판결문' },
     { id: 'profile', label: '성향' },
     { id: 'share', label: '공유' },
   ]
@@ -118,6 +120,7 @@ export default function ResultScreen() {
         {tab === 'titles' && <TitleReveal />}
         {/* Aftermath는 항상 마운트 — 결과 진입 시 미리 생성, 탭 아닐 때 숨김 */}
         <div className={tab === 'aftermath' ? '' : 'hidden'}><Aftermath /></div>
+        {tab === 'verdict_summary' && <VerdictSummaryTab />}
         {tab === 'profile' && <JudgeProfileReport />}
         {tab === 'share' && <ShareResult />}
       </div>

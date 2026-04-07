@@ -145,6 +145,8 @@ function applyPerks(set: (partial: any) => void): void {
     penaltyBufferUsesRemaining: 0, firstTargetContradictionBonus: 0,
     relationBufferQuestionAvailable: 0, angleSwitchOpportunity: 0,
     legalityHintEnabled: false, interjectionLevelBoost: 0,
+    compareLockerAvailable: 0, privateCheckAvailable: 0,
+    precedentHintAvailable: 0, reorganizeDeclareAvailable: 0,
   }
 
   // 미터 수정 (contradiction, leak, trust)
@@ -180,6 +182,10 @@ function applyPerks(set: (partial: any) => void): void {
     if (eff.legalityHintEnabled) perksState.legalityHintEnabled = true
     if (eff.interjectionLevelBoost) perksState.interjectionLevelBoost = eff.interjectionLevelBoost
     if (eff.angleSwitchOpportunity) perksState.angleSwitchOpportunity = eff.angleSwitchOpportunity
+    if (eff.compareLockerAvailable) perksState.compareLockerAvailable = eff.compareLockerAvailable
+    if (eff.privateCheckAvailable) perksState.privateCheckAvailable = eff.privateCheckAvailable
+    if (eff.precedentHintAvailable) perksState.precedentHintAvailable = eff.precedentHintAvailable
+    if (eff.reorganizeDeclareAvailable) perksState.reorganizeDeclareAvailable = eff.reorganizeDeclareAvailable
   }
 
   set({
@@ -285,6 +291,10 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
     angleSwitchOpportunity: number
     legalityHintEnabled: boolean
     interjectionLevelBoost: number
+    compareLockerAvailable: number
+    privateCheckAvailable: number
+    precedentHintAvailable: number
+    reorganizeDeclareAvailable: number
   }
   /** 퍼크 선택 모달 대기 상태 */
   pendingPerkChoice: {
@@ -298,7 +308,7 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   } | null
   setPendingPerkChoice: (choice: GameStore['pendingPerkChoice']) => void
   /** 퍼크 사용 횟수 차감 */
-  consumePerkUse: (key: 'penaltyBufferUsesRemaining' | 'relationBufferQuestionAvailable' | 'angleSwitchOpportunity') => void
+  consumePerkUse: (key: 'penaltyBufferUsesRemaining' | 'relationBufferQuestionAvailable' | 'angleSwitchOpportunity' | 'compareLockerAvailable' | 'privateCheckAvailable' | 'precedentHintAvailable' | 'reorganizeDeclareAvailable') => void
   /** 상태 전이 후 전략 선택 모달 대기 */
   pendingTransitionChoice: {
     label: 'cracked' | 'cornered' | 'opening'
@@ -557,6 +567,8 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       firstTargetContradictionBonus: 0,
       relationBufferQuestionAvailable: 0, angleSwitchOpportunity: 0,
       legalityHintEnabled: false, interjectionLevelBoost: 0,
+      compareLockerAvailable: 0, privateCheckAvailable: 0,
+      precedentHintAvailable: 0, reorganizeDeclareAvailable: 0,
     },
     pendingPerkChoice: null,
     setPendingPerkChoice: (choice) => set({ pendingPerkChoice: choice }),

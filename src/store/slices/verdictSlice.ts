@@ -1,9 +1,11 @@
 import type { StateCreator } from 'zustand'
 import type { VerdictInput, VerdictScore } from '../../types'
+import type { VerdictSummary } from '../../engine/verdictSummaryEngine'
 
 export interface VerdictSlice {
   verdictInput: VerdictInput
   verdictScore: VerdictScore | null
+  verdictSummary: VerdictSummary | null
 
   setFactFinding: (disputeId: string, value: 'true' | 'false' | 'pending') => void
   setResponsibility: (disputeId: string, a: number, b: number) => void
@@ -11,6 +13,7 @@ export interface VerdictSlice {
   removeSolution: (solution: string) => void
   setEvidenceLegality: (evidenceId: string, allowed: boolean) => void
   setVerdictScore: (score: VerdictScore) => void
+  setVerdictSummary: (summary: VerdictSummary | null) => void
   resetVerdict: () => void
 }
 
@@ -24,6 +27,7 @@ const emptyVerdictInput: VerdictInput = {
 export const createVerdictSlice: StateCreator<VerdictSlice, [], [], VerdictSlice> = (set, get) => ({
   verdictInput: { ...emptyVerdictInput },
   verdictScore: null,
+  verdictSummary: null,
 
   setFactFinding: (disputeId, value) => {
     set((state) => ({
@@ -77,7 +81,11 @@ export const createVerdictSlice: StateCreator<VerdictSlice, [], [], VerdictSlice
     set({ verdictScore: score })
   },
 
+  setVerdictSummary: (summary) => {
+    set({ verdictSummary: summary })
+  },
+
   resetVerdict: () => {
-    set({ verdictInput: { ...emptyVerdictInput }, verdictScore: null })
+    set({ verdictInput: { ...emptyVerdictInput }, verdictScore: null, verdictSummary: null })
   },
 })

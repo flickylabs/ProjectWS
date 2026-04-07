@@ -14,3 +14,17 @@ export {
 export { resolveDialogue, resolveEvidenceReaction } from './dialogueResolver'
 export { detectContradictions, detectStatementChange } from './contradictionEngine'
 export { calculateVerdict } from './verdictEngine'
+export { generateVerdictSummary, type VerdictSummary, type VerdictSummaryInput } from './verdictSummaryEngine'
+export {
+  generateWeeklyChallenge,
+  getCurrentWeeklyChallenge,
+  computeChallengeResult,
+  saveChallengeResult,
+  loadChallengeResults,
+  getChallengeResult,
+  type WeeklyChallenge,
+  type ChallengeConstraint,
+  type ChallengeResult,
+  type ChallengeMetrics,
+  type ChallengeTier,
+} from './challengeEngine'

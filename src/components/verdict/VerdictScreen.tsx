@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import { calculateVerdict } from '../../engine/verdictEngine'
+import { generateVerdictSummary } from '../../engine/verdictSummaryEngine'
 import { recordGameComplete } from '../../hooks/useLocalStorage'
 import { recordHistory } from '../layout/HistoryPanel'
 import { completeStage } from '../../data/campaign'
@@ -32,6 +33,7 @@ export default function VerdictScreen() {
   const caseData = useStore((s) => s.caseData)
   const verdictInput = useStore((s) => s.verdictInput)
   const setVerdictScore = useStore((s) => s.setVerdictScore)
+  const setVerdictSummary = useStore((s) => s.setVerdictSummary)
   const advancePhase = useStore((s) => s.advancePhase)
   const evidenceStates = useStore((s) => s.evidenceStates)
   const turnCount = useStore((s) => s.turnCount)
@@ -95,6 +97,62 @@ export default function VerdictScreen() {
       processMetrics,
     })
     setVerdictScore(score)
+
+    // 판결문 자동 초안 생성
+    {
+      // 결정적 증거: presented 상태인 증거 이름
+      const keyEvidenceNames = caseData.evidence
+        .filter(e => evidenceStates[e.id]?.presented)
+        .map(e => e.name)
+
+      // 결정적 순간: lieState 전이가 가장 많이 일어난 파티 기준
+      const agentA = useGameStore.getState().agentA
+      const agentB = useGameStore.getState().agentB
+      let keyTransition: { party: string; from: string; to: string } | null = null
+      // A/B 중 S5에 도달한 쟁점이 있으면 그것을 결정적 순간으로
+      for (const [, v] of Object.entries(agentA.lieStateMap)) {
+        const ls = v as { currentState: string }
+        if (ls.currentState === 'S5') {
+          keyTransition = { party: caseData.duo.partyA.name, from: 'S4', to: 'S5' }
+          break
+        }
+      }
+      if (!keyTransition) {
+        for (const [, v] of Object.entries(agentB.lieStateMap)) {
+          const ls = v as { currentState: string }
+          if (ls.currentState === 'S5') {
+            keyTransition = { party: caseData.duo.partyB.name, from: 'S4', to: 'S5' }
+            break
+          }
+        }
+      }
+
+      // 평균 책임 배분 계산
+      const respEntries = Object.values(verdictInput.responsibility) as { a: number; b: number }[]
+      const avgPercentA = respEntries.length > 0
+        ? Math.round(respEntries.reduce((sum, r) => sum + r.a, 0) / respEntries.length)
+        : 50
+
+      const judgeTitle = score.total >= 90 ? '전설적인 재판관'
+        : score.total >= 75 ? '현명한 재판관'
+        : score.total >= 60 ? '유능한 재판관'
+        : score.total >= 40 ? '보통의 재판관' : '미숙한 재판관'
+
+      const summary = generateVerdictSummary({
+        caseName: caseData.context.description || caseData.caseId,
+        partyAName: caseData.duo.partyA.name,
+        partyBName: caseData.duo.partyB.name,
+        percentA: avgPercentA,
+        selectedSolution: verdictInput.selectedSolutions.join(', ') || '미선택',
+        keyEvidenceNames,
+        keyTransition,
+        judgeTitle,
+        totalTurns: turnCount,
+        contradictionsFound: processMetrics.lieTransitions,
+      })
+      setVerdictSummary(summary)
+    }
+
     recordGameComplete(caseData.caseId, score.total)
     // 쟁점명 맵 생성
     const disputeNames: Record<string, string> = {}
