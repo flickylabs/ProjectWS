@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { chatCompletion } from '../../engine/llmClient'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import { updateLatestAftermath } from '../../data/leaderboard'
@@ -27,9 +27,9 @@ let cachedAftermath: string | null = null
 export function resetAftermathCache() { cachedAftermath = null }
 
 export default function Aftermath() {
-  const caseData = useGameStore((s) => s.caseData)
-  const verdictInput = useGameStore((s) => s.verdictInput)
-  const verdictScore = useGameStore((s) => s.verdictScore)
+  const caseData = useStore((s) => s.caseData)
+  const verdictInput = useStore((s) => s.verdictInput)
+  const verdictScore = useStore((s) => s.verdictScore)
   const [aftermath, setAftermath] = useState<string | null>(cachedAftermath)
   const [loading, setLoading] = useState(false)
   const aftermathCanvasRef = useRef<HTMLCanvasElement>(null)

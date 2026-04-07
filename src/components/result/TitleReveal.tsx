@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import { evaluateTitles, saveUnlockedTitles, loadUnlockedTitles, type Title } from '../../data/titles'
 import Emoji from '../common/Emoji'
 
 export default function TitleReveal() {
-  const verdictScore = useGameStore((s) => s.verdictScore)
-  const verdictInput = useGameStore((s) => s.verdictInput)
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
-  const turnCount = useGameStore((s) => s.turnCount)
-  const evidenceStates = useGameStore((s) => s.evidenceStates)
-  const skillUseCounts = useGameStore((s) => s.skillUseCounts)
-  const caseData = useGameStore((s) => s.caseData)
+  const verdictScore = useStore((s) => s.verdictScore)
+  const verdictInput = useStore((s) => s.verdictInput)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
+  const turnCount = useStore((s) => s.turnCount)
+  const evidenceStates = useStore((s) => s.evidenceStates)
+  const skillUseCounts = useStore((s) => s.skillUseCounts)
+  const caseData = useStore((s) => s.caseData)
 
-  const processMetrics = useGameStore((s) => s.processMetrics)
+  const processMetrics = useStore((s) => s.processMetrics)
   const [titles, setTitles] = useState<Title[]>([])
   const [newTitles, setNewTitles] = useState<Set<string>>(new Set())
 

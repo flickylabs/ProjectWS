@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import type { EvidenceNode } from '../../types'
 import Emoji from '../common/Emoji'
@@ -15,9 +15,9 @@ const SUB_ACTIONS: { key: string; label: string; icon: string }[] = [
 ]
 
 export default function EvidenceBoard() {
-  const evidenceStates = useGameStore((s) => s.evidenceStates)
-  const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
-  const caseData = useGameStore((s) => s.caseData)
+  const evidenceStates = useStore((s) => s.evidenceStates)
+  const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
+  const caseData = useStore((s) => s.caseData)
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const dispatch = useActionDispatch()
 

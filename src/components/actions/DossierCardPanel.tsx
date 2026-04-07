@@ -6,7 +6,7 @@
  */
 
 import { useState } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import type { PartyId } from '../../types'
 import type { DossierCard, DossierChallengeQuestion } from '../../types'
 import {
@@ -28,9 +28,9 @@ interface Props {
 export default function DossierCardPanel({ target, onQuestionAsked, onDispatchDossier }: Props) {
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
 
-  const caseData = useGameStore(s => s.caseData)
-  const lieConfigA = useGameStore(s => s.lieConfigsA)
-  const lieConfigB = useGameStore(s => s.lieConfigsB)
+  const caseData = useStore(s => s.caseData)
+  const lieConfigA = useStore(s => s.lieConfigsA)
+  const lieConfigB = useStore(s => s.lieConfigsB)
   if (!caseData) return null
 
   const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''

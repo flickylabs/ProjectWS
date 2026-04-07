@@ -10,11 +10,12 @@
 npm install
 npm run dev          # http://localhost:5173
 npm run build        # tsc + vite build (Vercel 배포용)
-npx tsc --noEmit     # 타입 체크만
+npx tsc -b --force   # 타입 체크만 (tsconfig.app.json 경유)
 ```
 
 - Vercel 배포: `vercel.json` 설정 있음
-- 빌드 에러 발생 시 `npx tsc --noEmit` 먼저 확인
+- 빌드 에러 발생 시 `npx tsc -b --force` 먼저 확인
+- ⚠️ `npx tsc --noEmit`은 루트 tsconfig이 `"files": []`라 체크 안 됨 — 반드시 `-b` 플래그 사용
 
 ---
 

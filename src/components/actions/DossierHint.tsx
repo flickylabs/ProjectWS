@@ -10,7 +10,7 @@
 
 import { useState, useMemo } from 'react'
 import type { PartyId, LieState } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import {
   getDossierCards,
   getAvailableDossierQuestions,
@@ -45,8 +45,8 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
   const [popupOpen, setPopupOpen] = useState(false)
 
   // lie state 맵 구성
-  const lieConfigA = useGameStore(s => s.lieConfigsA)
-  const lieConfigB = useGameStore(s => s.lieConfigsB)
+  const lieConfigA = useStore(s => s.lieConfigsA)
+  const lieConfigB = useStore(s => s.lieConfigsB)
 
   const lieStates: Record<string, LieState> = useMemo(() => {
     const config = target === 'a' ? lieConfigA : target === 'b' ? lieConfigB : null
@@ -60,7 +60,7 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
   }, [target, lieConfigA, lieConfigB])
 
   // 증거 정의 (카드별 증거 이름 표시용)
-  const evidenceDefs = useGameStore(s => s.evidenceDefinitions)
+  const evidenceDefs = useStore(s => s.evidenceDefinitions)
 
   // 현재 타겟에 대해 사용 가능한 첫 번째 카드+질문 찾기
   const match = useMemo(() => {

@@ -1,4 +1,4 @@
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import type { LieState } from '../../types'
 import type { TruthJudgment } from '../../types/discovery'
 
@@ -19,10 +19,10 @@ const JUDGMENT_ICONS: Record<TruthJudgment, string> = {
 }
 
 export default function DisputeChecklist() {
-  const caseData = useGameStore((s) => s.caseData)
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
-  const discovery = useGameStore((s) => s.discovery)
+  const caseData = useStore((s) => s.caseData)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
+  const discovery = useStore((s) => s.discovery)
 
   if (!caseData) return null
 

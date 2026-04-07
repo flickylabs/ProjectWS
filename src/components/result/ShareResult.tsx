@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
 export default function ShareResult() {
-  const verdictScore = useGameStore((s) => s.verdictScore)
-  const caseData = useGameStore((s) => s.caseData)
+  const verdictScore = useStore((s) => s.verdictScore)
+  const caseData = useStore((s) => s.caseData)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [imageUrl, setImageUrl] = useState<string | null>(null)
 

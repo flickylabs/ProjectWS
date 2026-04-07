@@ -7,7 +7,7 @@
  * pendingGameEvent가 Store에 있으면 자동 표시.
  */
 
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 import type { GameEventTrigger } from '../../engine/gameEventTriggerEngine'
 import {
@@ -18,9 +18,9 @@ import {
 import { resolveInterjectionV2 } from '../../hooks/useActionDispatch'
 
 export default function GameEventModal() {
-  const pendingEvent = useGameStore(s => s.pendingGameEvent)
-  const pendingV2 = useGameStore(s => s.pendingInterjectionV2)
-  const caseData = useGameStore(s => s.caseData)
+  const pendingEvent = useStore(s => s.pendingGameEvent)
+  const pendingV2 = useStore(s => s.pendingInterjectionV2)
+  const caseData = useStore(s => s.caseData)
 
   // V2 끼어들기 선택지 (우선)
   if (pendingV2 && caseData) {
@@ -82,9 +82,9 @@ export default function GameEventModal() {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 function ContradictionModal({ event, caseKey, partyName }: { event: GameEventTrigger; caseKey: string; partyName: string }) {
-  const dismiss = useGameStore(s => s.setPendingGameEvent)
-  const addDialogue = useGameStore(s => s.addDialogue)
-  const turnCount = useGameStore(s => s.turnCount)
+  const dismiss = useStore(s => s.setPendingGameEvent)
+  const addDialogue = useStore(s => s.addDialogue)
+  const turnCount = useStore(s => s.turnCount)
 
   const v3Event = event.scriptSlot?.textId
     ? getContradictionEvent(caseKey, event.scriptSlot.textId)
@@ -183,11 +183,11 @@ function ContradictionModal({ event, caseKey, partyName }: { event: GameEventTri
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 function InterjectionModal({ event, caseKey, partyName }: { event: GameEventTrigger; caseKey: string; partyName: string }) {
-  const dismiss = useGameStore(s => s.setPendingGameEvent)
-  const addDialogue = useGameStore(s => s.addDialogue)
-  const changeTrust = useGameStore(s => s.changeTrust)
-  const turnCount = useGameStore(s => s.turnCount)
-  const trackMetric = useGameStore(s => s.trackMetric)
+  const dismiss = useStore(s => s.setPendingGameEvent)
+  const addDialogue = useStore(s => s.addDialogue)
+  const changeTrust = useStore(s => s.changeTrust)
+  const turnCount = useStore(s => s.turnCount)
+  const trackMetric = useStore(s => s.trackMetric)
 
   const v3Event = event.scriptSlot?.textId
     ? getInterjectionEvent(caseKey, event.scriptSlot.textId)
@@ -251,11 +251,11 @@ function InterjectionModal({ event, caseKey, partyName }: { event: GameEventTrig
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 function EmotionalBurstModal({ event, caseKey, partyName }: { event: GameEventTrigger; caseKey: string; partyName: string }) {
-  const dismiss = useGameStore(s => s.setPendingGameEvent)
-  const addDialogue = useGameStore(s => s.addDialogue)
-  const changeTrust = useGameStore(s => s.changeTrust)
-  const changeEmotion = useGameStore(s => s.changeEmotion)
-  const turnCount = useGameStore(s => s.turnCount)
+  const dismiss = useStore(s => s.setPendingGameEvent)
+  const addDialogue = useStore(s => s.addDialogue)
+  const changeTrust = useStore(s => s.changeTrust)
+  const changeEmotion = useStore(s => s.changeEmotion)
+  const turnCount = useStore(s => s.turnCount)
 
   const v3Event = event.scriptSlot?.textId
     ? getOutburstEvent(caseKey, event.scriptSlot.textId)

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import { loadGeneratedCases } from '../../data/cases/caseLoader'
 import { saveCaseProgress } from '../phase/CaseMap'
@@ -15,9 +15,9 @@ import { resetPrefetch } from '../phase/Phase0_CaseIntro'
 type ResultTab = 'score' | 'truth' | 'titles' | 'aftermath' | 'profile' | 'share'
 
 export default function ResultScreen() {
-  const verdictScore = useGameStore((s) => s.verdictScore)
-  const caseData = useGameStore((s) => s.caseData)
-  const initializeCase = useGameStore((s) => s.initializeCase)
+  const verdictScore = useStore((s) => s.verdictScore)
+  const caseData = useStore((s) => s.caseData)
+  const initializeCase = useStore((s) => s.initializeCase)
   const [tab, setTab] = useState<ResultTab>('score')
 
   // 클리어 시 진행도 저장

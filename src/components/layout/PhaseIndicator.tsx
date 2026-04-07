@@ -1,5 +1,5 @@
 import { GamePhase } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 
 const PHASE_LABELS: Record<GamePhase, string> = {
   [GamePhase.Phase0_CaseIntro]: '개요',
@@ -25,7 +25,7 @@ const DISPLAY_ORDER: GamePhase[] = [
 ]
 
 export default function PhaseIndicator({ compact }: { compact?: boolean } = {}) {
-  const currentPhase = useGameStore((s) => s.currentPhase)
+  const currentPhase = useStore((s) => s.currentPhase)
 
   // Phase4/5는 Phase3과 같은 '심문'으로 매핑
   const displayPhase =

@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import type { QuestionType, PartyId } from '../../types'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
 import { useValidActions } from '../../hooks/useValidActions'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import { computeEffectiveness } from '../../engine/questionEffectEngine'
 import { getStalemateStatus, getSessionFatigueState } from '../../engine/questionFatigueEngine'
 import { getEmotionTier } from '../../engine/discoveryEngine'
@@ -51,11 +51,11 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
   const [selectedCard, setSelectedCard] = useState<CardType | null>(null)
 
   // ── 효과 칩 + 교착 경고용 상태 ──
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
-  const archetypeA = useGameStore((s) => s.archetypeA)
-  const archetypeB = useGameStore((s) => s.archetypeB)
-  const questionMeters = useGameStore((s) => s.questionMeters)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
+  const archetypeA = useStore((s) => s.archetypeA)
+  const archetypeB = useStore((s) => s.archetypeB)
+  const questionMeters = useStore((s) => s.questionMeters)
 
   // target의 가장 방어적인 dispute 기준으로 보수적 추정
   const effectivenessMap = useMemo(() => {

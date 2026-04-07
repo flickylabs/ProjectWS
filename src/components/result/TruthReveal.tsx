@@ -1,9 +1,9 @@
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
 export default function TruthReveal() {
-  const caseData = useGameStore((s) => s.caseData)
-  const verdictInput = useGameStore((s) => s.verdictInput)
+  const caseData = useStore((s) => s.caseData)
+  const verdictInput = useStore((s) => s.verdictInput)
 
   if (!caseData) return null
 

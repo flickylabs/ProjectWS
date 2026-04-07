@@ -1,4 +1,4 @@
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
 interface Props {
@@ -6,8 +6,8 @@ interface Props {
 }
 
 export default function TestimonyModal({ onClose }: Props) {
-  const analysis = useGameStore((s) => s.testimonyAnalysis)
-  const caseData = useGameStore((s) => s.caseData)
+  const analysis = useStore((s) => s.testimonyAnalysis)
+  const caseData = useStore((s) => s.caseData)
 
   if (!analysis || !caseData) return null
 

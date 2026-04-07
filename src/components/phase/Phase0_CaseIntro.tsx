@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import type { DialogueEntry } from '../../types'
 import { isLLMMode } from '../../hooks/useActionDispatch'
@@ -35,8 +35,8 @@ export function resetPrefetch() {
 }
 
 export default function Phase0_CaseIntro() {
-  const caseData = useGameStore((s) => s.caseData)
-  const advancePhase = useGameStore((s) => s.advancePhase)
+  const caseData = useStore((s) => s.caseData)
+  const advancePhase = useStore((s) => s.advancePhase)
   const [step, setStep] = useState<Step>('parties')
   const [aiReady, setAiReady] = useState(false)
 

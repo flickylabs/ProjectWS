@@ -3,7 +3,7 @@
  * 기존 액션 흐름(질문/증거/증인) 후에 호출되어
  * 진실공방/증거감별/숨겨진쟁점/감정전략을 처리한다.
  */
-import { useGameStore } from '../store/useGameStore'
+import { useGameStore, useStore } from '../store/useGameStore'
 import {
   checkTruthConfrontation,
   checkEmergence,
@@ -14,6 +14,7 @@ import {
   getEmotionTier,
 } from '../engine/discoveryEngine'
 import type { PartyId } from '../types'
+import type { DisputeVisibilityEntry, EmotionalSlipEvent } from '../types/discovery'
 
 /**
  * 질문/증거/증인 액션 후 discovery 체크를 실행.
@@ -52,7 +53,7 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
   }
 
   // ── 3. 진실 공방 트리거 체크 ──
-  const visibleDisputeIds = Object.values(discovery.disputeVisibility)
+  const visibleDisputeIds = (Object.values(discovery.disputeVisibility) as DisputeVisibilityEntry[])
     .filter((v) => v.visibility !== 'hidden')
     .map((v) => v.disputeId)
 
@@ -67,22 +68,22 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
 
   // ── 4. 숨겨진 쟁점 발현 체크 ──
   const presentedEvidenceIds = Object.entries(state.evidenceStates)
-    .filter(([_, s]) => s.presented)
-    .map(([id]) => id)
+    .filter(([_, s]: [string, { presented: boolean }]) => s.presented)
+    .map(([id]: [string, unknown]) => id)
 
   const judgedDisputeIds = Object.keys(discovery.judgments)
 
   const collapsedDisputes: Record<string, PartyId> = {}
-  for (const [dId, entry] of Object.entries(agentA.lieStateMap)) {
+  for (const [dId, entry] of Object.entries(agentA.lieStateMap) as [string, { currentState: string }][]) {
     if (entry.currentState === 'S5') collapsedDisputes[dId] = 'a'
   }
-  for (const [dId, entry] of Object.entries(agentB.lieStateMap)) {
+  for (const [dId, entry] of Object.entries(agentB.lieStateMap) as [string, { currentState: string }][]) {
     if (entry.currentState === 'S5') collapsedDisputes[dId] = 'b'
   }
 
-  const emotionalSlipDisputes = discovery.emotionalSlips.map((s) => s.sourceDisputeId)
+  const emotionalSlipDisputes = (discovery.emotionalSlips as EmotionalSlipEvent[]).map((s) => s.sourceDisputeId)
 
-  for (const entry of Object.values(discovery.disputeVisibility)) {
+  for (const entry of Object.values(discovery.disputeVisibility) as DisputeVisibilityEntry[]) {
     if (entry.visibility !== 'hidden') continue
 
     const via = checkEmergence(entry, {
@@ -94,7 +95,7 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
     })
 
     if (via) {
-      const dispute = caseData.disputes.find((d) => d.id === entry.disputeId)
+      const dispute = caseData.disputes.find((d: import('../types').Dispute) => d.id === entry.disputeId)
       const description = dispute?.truthDescription ?? dispute?.name ?? entry.disputeId
       state.emergeDispute(entry.disputeId, via, turnCount, description)
       break  // 한 턴에 하나만 발현

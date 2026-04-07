@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import Emoji from '../common/Emoji'
 import { loadGeneratedCases } from '../../data/cases/caseLoader'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 
 interface Props {
   onSelectSession: (sessionType: string) => void
@@ -40,8 +40,8 @@ function getSessionProgress(type: string, allCases: any[], progress: Record<stri
 }
 
 function ResourceBadge() {
-  const invest = useGameStore((s) => s.globalInvestTokens)
-  const skill = useGameStore((s) => s.globalSkillPoints)
+  const invest = useStore((s) => s.globalInvestTokens)
+  const skill = useStore((s) => s.globalSkillPoints)
   return (
     <div className="flex items-center gap-2 text-xs">
       <span><Emoji char="🔍" size={11} /> <span className="text-amber-400 font-bold">{invest}</span></span>

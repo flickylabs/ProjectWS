@@ -1,8 +1,6 @@
 import { useMemo } from 'react'
-import { useGameStore } from '../store/useGameStore'
-import type { PartyId, QuestionType, Dispute, CaseData, AgentState } from '../types'
-import type { EvidenceRuntimeState } from '../engine/evidenceEngine'
-import type { DiscoveryState } from '../types/discovery'
+import { useStore } from '../store/useGameStore'
+import type { PartyId, QuestionType, Dispute } from '../types'
 
 interface ValidDispute {
   id: string
@@ -24,11 +22,11 @@ interface ValidQuestion {
  * 무의미한 조합은 disabled + 이유 표시.
  */
 export function useValidActions(target: PartyId | null) {
-  const caseData = useGameStore((s: { caseData: CaseData | null }) => s.caseData)
-  const agentA = useGameStore((s: { agentA: AgentState }) => s.agentA)
-  const agentB = useGameStore((s: { agentB: AgentState }) => s.agentB)
-  const evidenceStates = useGameStore((s: { evidenceStates: Record<string, EvidenceRuntimeState> }) => s.evidenceStates)
-  const discovery = useGameStore((s: { discovery: DiscoveryState }) => s.discovery)
+  const caseData = useStore((s) => s.caseData)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
+  const evidenceStates = useStore((s) => s.evidenceStates)
+  const discovery = useStore((s) => s.discovery)
 
   return useMemo(() => {
     if (!caseData || !target) return { questions: [], validDisputeIds: [] }

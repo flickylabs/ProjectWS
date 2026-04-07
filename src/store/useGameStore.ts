@@ -141,6 +141,7 @@ function applyPerks(set: (partial: any) => void): void {
     minorPerk: (saved.minor as PerkId) ?? null,
     freeSummaryRemaining: 0, evidencePreviewRemaining: 0, skillRefundRemaining: 0,
     burstWarningEnabled: false, authorityPenaltyReduction: 0,
+    penaltyBufferUsesRemaining: 0, firstTargetContradictionBonus: 0,
     legalityHintEnabled: false, interjectionLevelBoost: 0, fatiguePursuitExtend: 0,
   }
 
@@ -298,7 +299,10 @@ export interface GameEvent {
 
 const SAVE_KEY = 'solomon-game-save'
 
-export const useGameStore = create<GameStore>()(persist((...args) => {
+/** Typed selector hook — use this in components instead of useGameStore() */
+export const useStore = <T>(selector: (state: GameStore) => T): T => useGameStore(selector)
+
+export const useGameStore: import('zustand').UseBoundStore<import('zustand').StoreApi<GameStore>> = create<GameStore>()(persist((...args) => {
   const [set] = args
 
   return {
@@ -336,10 +340,10 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       const updated = [...current, ...atomIds].slice(-20)
       return { recentAtomIds: { ...prev.recentAtomIds, [party]: updated } }
     }),
-    getRecentAtomIds: (party) => useGameStore.getState().recentAtomIds[party] ?? [],
+    getRecentAtomIds: (party): string[] => useGameStore.getState().recentAtomIds[party] ?? [],
 
     interrogationHistory: { a: {}, b: {} },
-    trackInterrogation: (party, disputeId, questionType, turn) => set((prev) => {
+    trackInterrogation: (party: 'a' | 'b', disputeId: string, questionType: string, turn: number) => set((prev) => {
       const h = { ...prev.interrogationHistory }
       const ph = { ...h[party] }
       const entry = ph[disputeId] ?? { questionTypes: [], turns: [], revealed: false }
@@ -351,7 +355,7 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       h[party] = ph
       return { interrogationHistory: h }
     }),
-    markRevealed: (party, disputeId) => set((prev) => {
+    markRevealed: (party: 'a' | 'b', disputeId: string) => set((prev) => {
       const h = { ...prev.interrogationHistory }
       const ph = { ...h[party] }
       const entry = ph[disputeId] ?? { questionTypes: [], turns: [], revealed: false }
@@ -371,11 +375,11 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
         otherPartyRevealed: !!otherHistory?.revealed,
       }
     },
-    trackMetric: (key, delta = 1) => {
+    trackMetric: (key: keyof ProcessMetrics, delta = 1) => {
       set((prev) => {
         const m = { ...prev.processMetrics }
-        if (typeof m[key] === 'boolean') { (m as any)[key] = true }
-        else { (m as any)[key] = (m[key] as number) + delta }
+        if (typeof m[key] === 'boolean') { (m as Record<string, number | boolean>)[key] = true }
+        else { (m as Record<string, number | boolean>)[key] = (m[key] as number) + delta }
         return { processMetrics: m }
       })
     },
@@ -395,14 +399,14 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
 
     readinessState: null,
     phase3Flags: { useBeatSelectorV2: true, useQuestionFatigueV2: true },
-    setPhase3Flags: (flags) => set((s) => ({ phase3Flags: { ...s.phase3Flags, ...flags } })),
+    setPhase3Flags: (flags: Partial<GameStore['phase3Flags']>) => set((s) => ({ phase3Flags: { ...s.phase3Flags, ...flags } })),
     phase3PromptBridge: null,
-    setPhase3PromptBridge: (bridge) => set({ phase3PromptBridge: bridge }),
+    setPhase3PromptBridge: (bridge: GameStore['phase3PromptBridge']) => set({ phase3PromptBridge: bridge }),
     _v2Context: null,
     questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
     gameEventLog: [],
 
-    applyQuestionEffect: (questionType, party, disputeId, stance, emotionTier, options) => {
+    applyQuestionEffect: (questionType: QuestionType, party: 'a' | 'b', disputeId: string, stance: Stance, emotionTier: EmotionTier, options?: import('../engine/questionEffectEngine').ResolveQuestionEffectOptions) => {
       const state = useGameStore.getState()
       const lieState = state.getLieState(party, disputeId)
       if (!lieState) return null

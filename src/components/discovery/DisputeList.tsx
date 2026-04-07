@@ -2,7 +2,7 @@
  * 쟁점 리스트 — 캐릭터별 필터링 + 숨김/발현/(N) 뱃지 + 비활성화
  * 기존 QuestionSelector의 쟁점 선택을 대체/확장하는 컴포넌트
  */
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 import type { PartyId } from '../../types'
 import type { DisputeVisibility, TruthJudgment } from '../../types/discovery'
@@ -30,7 +30,7 @@ const VISIBILITY_STYLE: Record<DisputeVisibility, { opacity: string; badge?: str
 }
 
 export default function DisputeList({ target, selectedDisputeId, onSelect, readOnly }: Props) {
-  const { caseData, discovery, agentA, agentB } = useGameStore()
+  const { caseData, discovery, agentA, agentB } = useStore((s) => s)
 
   if (!caseData || !target) return null
 

@@ -1,7 +1,7 @@
 /**
  * 판단 충돌 모달 — 기존 판단과 새 정보가 충돌할 때 수정 여부 결정
  */
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import type { TruthJudgment } from '../../types/discovery'
 
 const JUDGMENT_LABELS: Record<TruthJudgment, string> = {
@@ -19,7 +19,7 @@ const SOURCE_LABELS: Record<string, string> = {
 }
 
 export default function JudgmentConflictModal() {
-  const { discovery, setPendingConflict, reviseJudgment, turnCount, caseData } = useGameStore()
+  const { discovery, setPendingConflict, reviseJudgment, turnCount, caseData } = useStore((s) => s)
   const event = discovery.pendingConflict
 
   if (!event || !caseData) return null

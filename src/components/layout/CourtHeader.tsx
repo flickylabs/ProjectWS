@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
@@ -65,24 +65,24 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
   const [showPartyPopup, setShowPartyPopup] = useState<{ party: 'a' | 'b'; tab: 'info' | 'emotion' } | null>(null)
   const [summaryUnlocked, setSummaryUnlocked] = useState(false)
 
-  const caseData = useGameStore((s) => s.caseData)
-  const currentPhase = useGameStore((s) => s.currentPhase)
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
-  const separationTarget = useGameStore((s) => s.separationTarget)
-  const tickRecharge = useGameStore((s) => s.tickInvestRecharge)
-  const turnCount = useGameStore((s) => s.turnCount)
-  const globalInvest = useGameStore((s) => s.globalInvestTokens)
-  const globalSkill = useGameStore((s) => s.globalSkillPoints)
-  const adCountInvest = useGameStore((s) => s.adWatchCountInvest)
-  const adCountSkill = useGameStore((s) => s.adWatchCountSkill)
-  const watchAdInvest = useGameStore((s) => s.watchAdForInvest)
-  const watchAdSkill = useGameStore((s) => s.watchAdForSkill)
-  const getCountdown = useGameStore((s) => s.getNextRechargeCountdown)
-  const processMetrics = useGameStore((s) => s.processMetrics)
-  const pendingEvidenceResult = useGameStore((s) => s.pendingEvidenceResult)
-  const setPendingEvidenceResult = useGameStore((s) => s.setPendingEvidenceResult)
-  const verdictMode = useGameStore((s) => s.verdictMode)
+  const caseData = useStore((s) => s.caseData)
+  const currentPhase = useStore((s) => s.currentPhase)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
+  const separationTarget = useStore((s) => s.separationTarget)
+  const tickRecharge = useStore((s) => s.tickInvestRecharge)
+  const turnCount = useStore((s) => s.turnCount)
+  const globalInvest = useStore((s) => s.globalInvestTokens)
+  const globalSkill = useStore((s) => s.globalSkillPoints)
+  const adCountInvest = useStore((s) => s.adWatchCountInvest)
+  const adCountSkill = useStore((s) => s.adWatchCountSkill)
+  const watchAdInvest = useStore((s) => s.watchAdForInvest)
+  const watchAdSkill = useStore((s) => s.watchAdForSkill)
+  const getCountdown = useStore((s) => s.getNextRechargeCountdown)
+  const processMetrics = useStore((s) => s.processMetrics)
+  const pendingEvidenceResult = useStore((s) => s.pendingEvidenceResult)
+  const setPendingEvidenceResult = useStore((s) => s.setPendingEvidenceResult)
+  const verdictMode = useStore((s) => s.verdictMode)
 
   openResourcePopupFn = setShowResource
 
@@ -455,9 +455,9 @@ function ScoreRow({ icon, label, value, weight }: { icon: string; label: string;
 
 /* ── 캐릭터 팝업 브릿지 — PartyStatusBar의 PartyDetailPopup을 lazy import ── */
 function PartyPopupBridge({ party, initialTab, onClose }: { party: 'a' | 'b'; initialTab: 'info' | 'emotion'; onClose: () => void }) {
-  const caseData = useGameStore((s) => s.caseData)
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
+  const caseData = useStore((s) => s.caseData)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
   if (!caseData) return null
 
   // PartyStatusBar의 PartyDetailPopup은 내부 컴포넌트이므로 직접 렌더링할 수 없음

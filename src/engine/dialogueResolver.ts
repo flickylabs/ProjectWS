@@ -179,9 +179,9 @@ export function generateDynamicFallback(
 
   // 중복 방지: 직전 대사와 동일하면 다른 감정 변형을 시도
   const recentTexts = useGameStore.getState().dialogueLog
-    .filter(d => d.speaker === target)
+    .filter((d: import('../types').DialogueEntry) => d.speaker === target)
     .slice(-3)
-    .map(d => d.text)
+    .map((d: import('../types').DialogueEntry) => d.text)
   if (recentTexts.includes(text)) {
     const alternatives = Object.values(stateResponses).filter(t => t !== text && !recentTexts.includes(t))
     if (alternatives.length > 0) {

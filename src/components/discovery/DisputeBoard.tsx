@@ -10,7 +10,7 @@
  */
 
 import { useState } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import type { CaseData, PartyId } from '../../types'
 import type { LieState } from '../../types'
 import type { DisputeDepthLayer } from '../../types'
@@ -42,11 +42,11 @@ export default function DisputeBoard({ onClose, onSelectDispute }: {
 }) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
 
-  const caseData = useGameStore((s) => s.caseData)
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
-  const readinessState = useGameStore((s) => s.readinessState)
-  const separationTarget = useGameStore((s) => s.separationTarget)
+  const caseData = useStore((s) => s.caseData)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
+  const readinessState = useStore((s) => s.readinessState)
+  const separationTarget = useStore((s) => s.separationTarget)
 
   if (!caseData) return null
 

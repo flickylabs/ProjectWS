@@ -1,5 +1,5 @@
 import type { TrustActionType, PartyId } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
 interface Props {
@@ -25,8 +25,8 @@ const TRUST_ACTIONS: { type: TrustActionType; label: string; icon: string; desc:
 ]
 
 export default function TrustActionPanel({ target, onAction }: Props) {
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
 
   if (!target) {
     return <div className="text-gray-500 text-sm">먼저 대상을 선택하세요.</div>

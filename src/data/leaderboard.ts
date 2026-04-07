@@ -229,7 +229,7 @@ export function getJudgeProfile(): JudgeProfile {
   const recentTitles = history
     .slice(0, 5)
     .filter(e => e.caseTelemetry != null)
-    .map(e => {
+    .map((e): string | undefined => {
       // caseTelemetry에서 개별 titleId를 역산할 수 없으므로 생략
       // 칭호 이력은 별도 관리 필요 — 현재는 축값 기반으로 결정
       return undefined

@@ -7,7 +7,7 @@
  */
 import { useState, useEffect } from 'react'
 import Emoji from '../common/Emoji'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 
 interface Props {
   type: 'invest' | 'skill'
@@ -22,7 +22,7 @@ interface Props {
 
 export default function ResourcePopup({ type, current: _current, countdown, adRemaining, onWatchAd, onClose }: Props) {
   // 실시간 수량 반영 — store에서 직접 읽기
-  const current = useGameStore((s) => type === 'invest' ? s.globalInvestTokens : s.globalSkillPoints)
+  const current = useStore((s) => type === 'invest' ? s.globalInvestTokens : s.globalSkillPoints)
   const [countdownSec, setCountdownSec] = useState(countdown ?? 0)
   const [adResult, setAdResult] = useState<string | null>(null)
 

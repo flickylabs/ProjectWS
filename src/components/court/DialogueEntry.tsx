@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import type { DialogueEntry as DialogueEntryType } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji, { replaceEmojisInText } from '../common/Emoji'
 
 interface Props {
@@ -30,9 +30,9 @@ function getEmotionEmoji(speaker: string, emotionPhase?: string): string {
 }
 
 export default function DialogueEntry({ entry, animate = false, onTestimonyClick, onContradictionClick }: Props) {
-  const caseData = useGameStore((s) => s.caseData)
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
+  const caseData = useStore((s) => s.caseData)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
   const nameA = caseData?.duo.partyA.name ?? 'A'
   const nameB = caseData?.duo.partyB.name ?? 'B'
   const [displayText, setDisplayText] = useState(animate ? '' : entry.text)

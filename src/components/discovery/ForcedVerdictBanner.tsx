@@ -4,14 +4,14 @@
  * - 일반 readiness 힌트 (숫자 숨김, 텍스트만)
  */
 
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import { getReadinessHint } from '../../engine/meterStagingV2'
 import Emoji from '../common/Emoji'
 
 export default function ForcedVerdictBanner() {
-  const verdictMode = useGameStore((s) => s.verdictMode)
-  const turnCount = useGameStore((s) => s.turnCount)
-  const readinessState = useGameStore((s) => s.readinessState)
+  const verdictMode = useStore((s) => s.verdictMode)
+  const turnCount = useStore((s) => s.turnCount)
+  const readinessState = useStore((s) => s.readinessState)
 
   // 강제 판결 경고 (최우선)
   if (verdictMode === 'forced_incomplete') {

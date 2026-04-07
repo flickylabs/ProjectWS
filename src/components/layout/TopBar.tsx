@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
@@ -33,22 +33,22 @@ export default function TopBar() {
   const [showResource, setShowResource] = useState<'invest' | 'skill' | null>(null)
   const [showDisputeBoard, setShowDisputeBoard] = useState(false)
 
-  const globalInvest = useGameStore((s) => s.globalInvestTokens)
-  const globalSkill = useGameStore((s) => s.globalSkillPoints)
-  const adCountInvest = useGameStore((s) => s.adWatchCountInvest)
-  const adCountSkill = useGameStore((s) => s.adWatchCountSkill)
-  const tickRecharge = useGameStore((s) => s.tickInvestRecharge)
-  const getCountdown = useGameStore((s) => s.getNextRechargeCountdown)
-  const watchAdInvest = useGameStore((s) => s.watchAdForInvest)
-  const watchAdSkill = useGameStore((s) => s.watchAdForSkill)
+  const globalInvest = useStore((s) => s.globalInvestTokens)
+  const globalSkill = useStore((s) => s.globalSkillPoints)
+  const adCountInvest = useStore((s) => s.adWatchCountInvest)
+  const adCountSkill = useStore((s) => s.adWatchCountSkill)
+  const tickRecharge = useStore((s) => s.tickInvestRecharge)
+  const getCountdown = useStore((s) => s.getNextRechargeCountdown)
+  const watchAdInvest = useStore((s) => s.watchAdForInvest)
+  const watchAdSkill = useStore((s) => s.watchAdForSkill)
 
-  const currentPhase = useGameStore((s) => s.currentPhase)
-  const turnCount = useGameStore((s) => s.turnCount)
-  const processMetrics = useGameStore((s) => s.processMetrics)
-  const readinessState = useGameStore((s) => s.readinessState)
-  const verdictMode = useGameStore((s) => s.verdictMode)
-  const pendingEvidenceResult = useGameStore((s) => s.pendingEvidenceResult)
-  const setPendingEvidenceResult = useGameStore((s) => s.setPendingEvidenceResult)
+  const currentPhase = useStore((s) => s.currentPhase)
+  const turnCount = useStore((s) => s.turnCount)
+  const processMetrics = useStore((s) => s.processMetrics)
+  const readinessState = useStore((s) => s.readinessState)
+  const verdictMode = useStore((s) => s.verdictMode)
+  const pendingEvidenceResult = useStore((s) => s.pendingEvidenceResult)
+  const setPendingEvidenceResult = useStore((s) => s.setPendingEvidenceResult)
 
   // Phase3 이후 단계 여부
   const LATE_PHASES = [

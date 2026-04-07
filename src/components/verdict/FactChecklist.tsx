@@ -1,4 +1,4 @@
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import { playClick } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
 
@@ -8,11 +8,11 @@ interface Props {
 }
 
 export default function FactChecklist({ currentIdx, onChangeIdx }: Props) {
-  const caseData = useGameStore((s) => s.caseData)
-  const verdictInput = useGameStore((s) => s.verdictInput)
-  const setFactFinding = useGameStore((s) => s.setFactFinding)
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
+  const caseData = useStore((s) => s.caseData)
+  const verdictInput = useStore((s) => s.verdictInput)
+  const setFactFinding = useStore((s) => s.setFactFinding)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
 
   if (!caseData) return null
 

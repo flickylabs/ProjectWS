@@ -12,7 +12,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 import type { LieState } from '../../types'
 import { getMeterHudModel, type MeterDisplayMode } from '../../engine/meterStagingV2'
@@ -83,7 +83,7 @@ export function StateTransitionToast() {
   }, [events, dismiss])
 
   // Store의 gameEventLog 구독
-  const gameEventLog = useGameStore(s => s.gameEventLog)
+  const gameEventLog = useStore(s => s.gameEventLog)
   useEffect(() => {
     if (gameEventLog.length === 0) return
     const latest = gameEventLog[gameEventLog.length - 1]
@@ -152,8 +152,8 @@ const METER_INFO: Record<string, { icon: string; title: string; desc: string }> 
 }
 
 export function QuestionMeterHUD({ party }: { party: 'a' | 'b' }) {
-  const meters = useGameStore(s => s.questionMeters[party])
-  const hardcoreMode = useGameStore(s => s.phase3Flags?.useBeatSelectorV2 === false)
+  const meters = useStore(s => s.questionMeters[party])
+  const hardcoreMode = useStore(s => s.phase3Flags?.useBeatSelectorV2 === false)
   const mode: MeterDisplayMode = hardcoreMode ? 'exact' : 'staged'
   const hud = getMeterHudModel(meters, mode)
   const [showInfo, setShowInfo] = useState<string | null>(null)

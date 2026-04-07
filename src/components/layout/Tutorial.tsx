@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { GamePhase } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
 interface TutorialStep {
@@ -81,7 +81,7 @@ function markSeen(stepKey: string) {
 }
 
 export default function Tutorial() {
-  const currentPhase = useGameStore((s) => s.currentPhase)
+  const currentPhase = useStore((s) => s.currentPhase)
   const [visible, setVisible] = useState(false)
   const [currentStep, setCurrentStep] = useState<TutorialStep | null>(null)
 

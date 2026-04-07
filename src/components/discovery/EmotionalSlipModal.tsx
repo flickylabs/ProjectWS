@@ -1,10 +1,10 @@
 /**
  * 감정 실수 모달 — 격앙 상태에서 NPC가 실수로 자백했을 때
  */
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 
 export default function EmotionalSlipModal() {
-  const { discovery, addEmotionalSlip, setPendingSlip, caseData } = useGameStore()
+  const { discovery, addEmotionalSlip, setPendingSlip, caseData } = useStore((s) => s)
   const slip = discovery.pendingSlip
 
   if (!slip || !caseData) return null

@@ -1,11 +1,11 @@
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
 export default function EvidenceLegality() {
-  const caseData = useGameStore((s) => s.caseData)
-  const evidenceStates = useGameStore((s) => s.evidenceStates)
-  const verdictInput = useGameStore((s) => s.verdictInput)
-  const setEvidenceLegality = useGameStore((s) => s.setEvidenceLegality)
+  const caseData = useStore((s) => s.caseData)
+  const evidenceStates = useStore((s) => s.evidenceStates)
+  const verdictInput = useStore((s) => s.verdictInput)
+  const setEvidenceLegality = useStore((s) => s.setEvidenceLegality)
 
   if (!caseData) return null
 

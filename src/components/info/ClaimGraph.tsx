@@ -1,4 +1,4 @@
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import type { ClaimStatus } from '../../types'
 import Emoji from '../common/Emoji'
 
@@ -11,8 +11,8 @@ const STATUS_STYLE: Record<ClaimStatus, { border: string; icon: string }> = {
 }
 
 export default function ClaimGraph() {
-  const claimGraph = useGameStore((s) => s.claimGraph)
-  const caseData = useGameStore((s) => s.caseData)
+  const claimGraph = useStore((s) => s.claimGraph)
+  const caseData = useStore((s) => s.caseData)
 
   if (!caseData) return null
 

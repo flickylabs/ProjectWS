@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import CourtHeader from './CourtHeader'
 import DialogueLog from '../court/DialogueLog'
 import TestimonyModal from '../court/TestimonyModal'
@@ -36,7 +36,7 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
   const [showTestimony, setShowTestimony] = useState(false)
   const [dockOpen, setDockOpen] = useState(true)
   const chatRef = useRef<HTMLDivElement>(null)
-  const dialogueLog = useGameStore((s) => s.dialogueLog)
+  const dialogueLog = useStore((s) => s.dialogueLog)
 
   // 대화 Phase가 아닐 때 독 자동 열림
   useEffect(() => {
@@ -160,7 +160,7 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
 
 /** Discovery 모달 오버레이 — pendingXxx 상태에 따라 적절한 모달 표시 */
 function DiscoveryOverlay() {
-  const discovery = useGameStore((s) => s.discovery)
+  const discovery = useStore((s) => s.discovery)
 
   // 우선순위: 감정실수 > 쟁점발현 > 진실공방 > 판단충돌
   if (discovery.pendingSlip) return <EmotionalSlipModal />
@@ -172,7 +172,7 @@ function DiscoveryOverlay() {
 }
 
 function PhaseOverlay() {
-  const currentPhase = useGameStore((s) => s.currentPhase)
+  const currentPhase = useStore((s) => s.currentPhase)
   const [show, setShow] = useState(false)
   const [label, setLabel] = useState('')
   const prevRef = useRef(currentPhase)
@@ -214,11 +214,11 @@ function splitToWords(text: string): string[] {
 }
 
 function MinigameOverlay() {
-  const mg = useGameStore((s) => s.pendingMinigame)
-  const clearMg = useGameStore((s) => s.setPendingMinigame)
-  const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
-  const evidenceStates = useGameStore((s) => s.evidenceStates)
-  const caseData = useGameStore((s) => s.caseData)
+  const mg = useStore((s) => s.pendingMinigame)
+  const clearMg = useStore((s) => s.setPendingMinigame)
+  const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
+  const evidenceStates = useStore((s) => s.evidenceStates)
+  const caseData = useStore((s) => s.caseData)
   const [chosenMethod, setChosenMethod] = useState<'minigame' | null>(null)
 
   // 광고 카운트다운 상태: null이면 비활성, 함수이면 완료 시 실행할 성공 콜백

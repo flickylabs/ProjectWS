@@ -1,4 +1,4 @@
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 
 interface Props {
   currentIdx: number
@@ -6,10 +6,10 @@ interface Props {
 }
 
 export default function SolutionPicker({ currentIdx, onChangeIdx }: Props) {
-  const caseData = useGameStore((s) => s.caseData)
-  const verdictInput = useGameStore((s) => s.verdictInput)
-  const selectSolution = useGameStore((s) => s.selectSolution)
-  const removeSolution = useGameStore((s) => s.removeSolution)
+  const caseData = useStore((s) => s.caseData)
+  const verdictInput = useStore((s) => s.verdictInput)
+  const selectSolution = useStore((s) => s.selectSolution)
+  const removeSolution = useStore((s) => s.removeSolution)
 
   if (!caseData) return null
 

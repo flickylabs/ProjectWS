@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react'
 import { GamePhase } from '../types'
-import { useGameStore } from '../store/useGameStore'
+import { useGameStore, useStore } from '../store/useGameStore'
 import { checkConnection, getProviderName } from '../engine/llmClient'
 import { setLLMMode, isLLMMode } from '../hooks/useActionDispatch'
 import { getRandomCase, getCaseCount, getCaseCountByType } from '../data/cases'
@@ -57,8 +57,8 @@ if (typeof window !== 'undefined') {
 import { triggerDialogueTap } from '../components/phase/AutoDialoguePhase'
 
 export default function App() {
-  const currentPhase = useGameStore((s) => s.currentPhase)
-  const caseData = useGameStore((s) => s.caseData)
+  const currentPhase = useStore((s) => s.currentPhase)
+  const caseData = useStore((s) => s.caseData)
   const [sessionReady, setSessionReady] = useState(false)
 
   // 세션 복원 시 프롬프트/에이전트 재로드
@@ -133,15 +133,15 @@ function TitleScreen() {
   const [serverConnected, setServerConnected] = useState(false)
   const [showResourcePopup, setShowResourcePopup] = useState<'invest' | 'skill' | null>(null)
   const [bgmOn, setBgmOn] = useState(isBgmEnabled())
-  const initializeCase = useGameStore((s) => s.initializeCase)
-  const globalInvest = useGameStore((s) => s.globalInvestTokens)
-  const globalSkill = useGameStore((s) => s.globalSkillPoints)
-  const getCountdown = useGameStore((s) => s.getNextRechargeCountdown)
-  const tickRecharge = useGameStore((s) => s.tickInvestRecharge)
-  const adCountInvest = useGameStore((s) => s.adWatchCountInvest)
-  const adCountSkill = useGameStore((s) => s.adWatchCountSkill)
-  const watchAdInvest = useGameStore((s) => s.watchAdForInvest)
-  const watchAdSkill = useGameStore((s) => s.watchAdForSkill)
+  const initializeCase = useStore((s) => s.initializeCase)
+  const globalInvest = useStore((s) => s.globalInvestTokens)
+  const globalSkill = useStore((s) => s.globalSkillPoints)
+  const getCountdown = useStore((s) => s.getNextRechargeCountdown)
+  const tickRecharge = useStore((s) => s.tickInvestRecharge)
+  const adCountInvest = useStore((s) => s.adWatchCountInvest)
+  const adCountSkill = useStore((s) => s.adWatchCountSkill)
+  const watchAdInvest = useStore((s) => s.watchAdForInvest)
+  const watchAdSkill = useStore((s) => s.watchAdForSkill)
   const [investCountdown, setInvestCountdown] = useState(0)
 
   // 충전 타이머

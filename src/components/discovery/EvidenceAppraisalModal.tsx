@@ -2,7 +2,7 @@
  * 증거 감별 모달 — 증거의 신뢰도를 플레이어가 직접 판단
  */
 import { useState } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 import type { AppraisalVerdict, PartialTrustDetail } from '../../types/discovery'
 import type { EvidenceNode } from '../../types'
@@ -28,7 +28,7 @@ const SUB_ACTION_LABELS: Record<string, string> = {
 }
 
 export default function EvidenceAppraisalModal({ evidenceId, onClose }: Props) {
-  const { caseData, evidenceStates, submitAppraisal, turnCount } = useGameStore()
+  const { caseData, evidenceStates, submitAppraisal, turnCount } = useStore((s) => s)
   const [verdict, setVerdict] = useState<AppraisalVerdict | null>(null)
   const [partialChecks, setPartialChecks] = useState<Record<string, boolean>>({})
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import { calculateVerdict } from '../../engine/verdictEngine'
 import { recordGameComplete } from '../../hooks/useLocalStorage'
@@ -29,13 +29,13 @@ type FlatItem = { step: VerdictStep; subIdx: number }
 
 export default function VerdictScreen() {
   const [globalIdx, setGlobalIdx] = useState(0)
-  const caseData = useGameStore((s) => s.caseData)
-  const verdictInput = useGameStore((s) => s.verdictInput)
-  const setVerdictScore = useGameStore((s) => s.setVerdictScore)
-  const advancePhase = useGameStore((s) => s.advancePhase)
-  const evidenceStates = useGameStore((s) => s.evidenceStates)
-  const turnCount = useGameStore((s) => s.turnCount)
-  const resources = useGameStore((s) => s.resources)
+  const caseData = useStore((s) => s.caseData)
+  const verdictInput = useStore((s) => s.verdictInput)
+  const setVerdictScore = useStore((s) => s.setVerdictScore)
+  const advancePhase = useStore((s) => s.advancePhase)
+  const evidenceStates = useStore((s) => s.evidenceStates)
+  const turnCount = useStore((s) => s.turnCount)
+  const resources = useStore((s) => s.resources)
 
   if (!caseData) return null
 

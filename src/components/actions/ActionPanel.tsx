@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
 import type { PartyId, QuestionType, TrustActionType, SkillType } from '../../types'
 import { GamePhase } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { useActionDispatch, isLLMMode, setNextConfidential, setNextEvasionReading, setSkipNextJudgeQuestion, setDossierQuestionOverride } from '../../hooks/useActionDispatch'
 import { processFreeQuestion } from '../../engine/llmFreeQuestion'
 import { analyzeTestimony } from '../../engine/llmTestimonyAnalysis'
@@ -79,7 +79,7 @@ export default function ActionPanel() {
 
   // 새 증거 뱃지: 유저가 증거 탭에서 확인한 증거 ID 추적
   const seenEvidenceRef = useRef<Set<string>>(new Set())
-  const evidenceStates = useGameStore((s) => s.evidenceStates)
+  const evidenceStates = useStore((s) => s.evidenceStates)
   const unlockedIds = Object.keys(evidenceStates).filter(id => evidenceStates[id]?.unlocked)
   const newEvidenceCount = unlockedIds.filter(id => !seenEvidenceRef.current.has(id)).length
 
@@ -89,16 +89,16 @@ export default function ActionPanel() {
   }, [unlockedIds])
 
   const dispatch = useActionDispatch()
-  const caseData = useGameStore((s) => s.caseData)
-  const currentPhase = useGameStore((s) => s.currentPhase)
-  const canAdvance = useGameStore((s) => s.canAdvancePhase())
-  const advancePhase = useGameStore((s) => s.advancePhase)
-  const useSkill = useGameStore((s) => s.useSkill)
-  const canUseSkill = useGameStore((s) => s.canUseSkill)
-  const resources = useGameStore((s) => s.resources)
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
-  const disputeBoardAction = useGameStore((s) => s.disputeBoardAction)
+  const caseData = useStore((s) => s.caseData)
+  const currentPhase = useStore((s) => s.currentPhase)
+  const canAdvance = useStore((s) => s.canAdvancePhase())
+  const advancePhase = useStore((s) => s.advancePhase)
+  const useSkill = useStore((s) => s.useSkill)
+  const canUseSkill = useStore((s) => s.canUseSkill)
+  const resources = useStore((s) => s.resources)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
+  const disputeBoardAction = useStore((s) => s.disputeBoardAction)
 
   // DisputeBoard에서 "~에게 질문" 선택 시 자동 라우팅
   useEffect(() => {
@@ -152,13 +152,13 @@ export default function ActionPanel() {
   const llm = isLLMMode()
   const evLocked = isEvidenceLocked(currentPhase)
   const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
-  const turnCount = useGameStore((s) => s.turnCount)
+  const turnCount = useStore((s) => s.turnCount)
 
   // 사건카드 조건 해금 (meterStagingV2 엔진 기반)
-  const metersA = useGameStore((s) => s.questionMeters.a)
-  const metersB = useGameStore((s) => s.questionMeters.b)
+  const metersA = useStore((s) => s.questionMeters.a)
+  const metersB = useStore((s) => s.questionMeters.b)
   const LIE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
-  const maxLieStateRank = useGameStore((s) => {
+  const maxLieStateRank = useStore((s) => {
     const rankOf = (agent: { lieStateMap: Record<string, { currentState: string }> }) =>
       Math.max(0, ...Object.values(agent.lieStateMap).map(e => LIE_RANK[e.currentState] ?? 0))
     return Math.max(rankOf(s.agentA), rankOf(s.agentB))

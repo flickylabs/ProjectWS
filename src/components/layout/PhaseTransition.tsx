@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { GamePhase } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import { playPhaseTransition, playBgm, stopBgm } from '../../engine/soundEngine'
 
 /** Phase별 BGM 매핑 */
@@ -29,8 +29,8 @@ const PHASE_INFO: Record<GamePhase, { title: string; subtitle: string; icon: str
 }
 
 export default function PhaseTransition() {
-  const currentPhase = useGameStore((s) => s.currentPhase)
-  const caseData = useGameStore((s) => s.caseData)
+  const currentPhase = useStore((s) => s.currentPhase)
+  const caseData = useStore((s) => s.caseData)
   const [visible, setVisible] = useState(false)
   const [lastPhase, setLastPhase] = useState<GamePhase | null>(null)
 

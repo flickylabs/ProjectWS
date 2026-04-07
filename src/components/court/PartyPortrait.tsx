@@ -1,5 +1,5 @@
 import type { PartyId } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
 interface Props {
@@ -7,8 +7,8 @@ interface Props {
 }
 
 export default function PartyPortrait({ party }: Props) {
-  const caseData = useGameStore((s) => s.caseData)
-  const agent = useGameStore((s) => (party === 'a' ? s.agentA : s.agentB))
+  const caseData = useStore((s) => s.caseData)
+  const agent = useStore((s) => (party === 'a' ? s.agentA : s.agentB))
 
   if (!caseData) return null
 

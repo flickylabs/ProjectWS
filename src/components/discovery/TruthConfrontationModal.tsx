@@ -2,7 +2,7 @@
  * 진실 공방 모달 — 양측 상반된 주장에 대해 플레이어가 판단
  */
 import { useState } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 import type { TruthJudgment } from '../../types/discovery'
 
@@ -14,7 +14,7 @@ const JUDGMENT_OPTIONS: { value: TruthJudgment; label: string; icon: string; des
 ]
 
 export default function TruthConfrontationModal() {
-  const { discovery, submitJudgment, setPendingConfrontation, turnCount, caseData } = useGameStore()
+  const { discovery, submitJudgment, setPendingConfrontation, turnCount, caseData } = useStore((s) => s)
   const event = discovery.pendingConfrontation
   const [selected, setSelected] = useState<TruthJudgment | null>(null)
 

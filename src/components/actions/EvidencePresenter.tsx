@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { PartyId } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import { getAvailableWitnesses, getWitnessPreviewText, determineTestimonyDepth, getDepthSystemMessage } from '../../engine/witnessEngine'
 import { canAppraise, getUnlockedQuestions, getLockedQuestions } from '../../engine/evidenceEngine'
@@ -53,14 +53,14 @@ function getRecommendationReason(
 const KEY_ORDER = ['request_original', 'restore_context', 'check_edits'] as const
 
 export default function EvidencePresenter({ target, onPresent, onConfront, onWitnessCalled, llmMode, newEvidenceIds }: Props) {
-  const evidenceStates = useGameStore((s) => s.evidenceStates)
-  const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
-  const caseData = useGameStore((s) => s.caseData)
-  const resources = useGameStore((s) => s.resources)
-  const globalInvest = useGameStore((s) => s.globalInvestTokens)
-  const discovery = useGameStore((s) => s.discovery)
-  const recommendedEvidenceIds = useGameStore((s) => s.recommendedEvidenceIds)
-  const lastFocusedDisputeId = useGameStore((s) => s.lastFocusedDisputeId)
+  const evidenceStates = useStore((s) => s.evidenceStates)
+  const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
+  const caseData = useStore((s) => s.caseData)
+  const resources = useStore((s) => s.resources)
+  const globalInvest = useStore((s) => s.globalInvestTokens)
+  const discovery = useStore((s) => s.discovery)
+  const recommendedEvidenceIds = useStore((s) => s.recommendedEvidenceIds)
+  const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [appraisalTarget, setAppraisalTarget] = useState<string | null>(null)
   const [showOther, setShowOther] = useState(false)
@@ -223,9 +223,9 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
 /** 증인 소환 섹션 — 증거 탭 하단에 표시 */
 function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) => void; resources: any; onCalled?: () => void }) {
   const [expanded, setExpanded] = useState(false)
-  const caseData = useGameStore((s) => s.caseData)
-  const calledWitnesses = useGameStore((s) => s.calledWitnesses)
-  const witGlobalInvest = useGameStore((s) => s.globalInvestTokens)
+  const caseData = useStore((s) => s.caseData)
+  const calledWitnesses = useStore((s) => s.calledWitnesses)
+  const witGlobalInvest = useStore((s) => s.globalInvestTokens)
 
   const available = useMemo(() => {
     if (!caseData) return []

@@ -1,5 +1,5 @@
 import type { PartyId } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
 interface Props {
@@ -18,9 +18,9 @@ function getEmotionEmoji(phase?: string): string {
 }
 
 export default function TargetSelector({ selected, onSelect }: Props) {
-  const caseData = useGameStore((s) => s.caseData)
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
+  const caseData = useStore((s) => s.caseData)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
   if (!caseData) return null
 
   const emoA = getEmotionEmoji(agentA?.emotionalState?.phase)

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { getSettings, updateSettings, loadSave } from '../../hooks/useLocalStorage'
 import { checkConnection, getProviderName } from '../../engine/llmClient'
 import { isSoundEnabled, setSoundEnabled, isBgmEnabled, setBgmEnabled } from '../../engine/soundEngine'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
 interface Props {
@@ -150,9 +150,9 @@ function Stat({ label, value }: { label: string; value: string }) {
 
 /** DEV 전용 — 출시 시 제거 */
 function CheatSection() {
-  const resources = useGameStore((s) => s.resources)
-  const gain = useGameStore((s) => s.gain)
-  const caseData = useGameStore((s) => s.caseData)
+  const resources = useStore((s) => s.resources)
+  const gain = useStore((s) => s.gain)
+  const caseData = useStore((s) => s.caseData)
 
   // 대기 중인 변경사항 (확인 누르기 전까지 적용 안 됨)
   const [pending, setPending] = useState<{ invest: number; skill: number }>({ invest: 0, skill: 0 })

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { consumePrefetchedPhase1, consumePrefetchedPhase2 } from './Phase0_CaseIntro'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { playPhaseTransition } from '../../engine/soundEngine'
 import type { DialogueEntry } from '../../types'
 import type { GamePhase } from '../../types'
@@ -18,7 +18,7 @@ interface Props {
 }
 
 export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, nextLabel, phaseKey }: Props) {
-  const advancePhase = useGameStore((s) => s.advancePhase)
+  const advancePhase = useStore((s) => s.advancePhase)
   const [allDone, setAllDone] = useState(false)
   const [displayCount, setDisplayCount] = useState(0)
   const [loading, setLoading] = useState(false)

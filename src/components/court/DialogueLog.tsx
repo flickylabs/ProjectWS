@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import DialogueEntry from './DialogueEntry'
 import type { DialogueEntry as DialogueEntryType } from '../../types'
 import { handleContradictionPursue } from '../../hooks/useActionDispatch'
@@ -10,10 +10,10 @@ interface Props {
 }
 
 export default function DialogueLog({ onTestimonyClick }: Props) {
-  const dialogueLog = useGameStore((s) => s.dialogueLog)
-  const isLLMLoading = useGameStore((s) => s.isLLMLoading)
-  const llmTarget = useGameStore((s) => s.llmLoadingTarget)
-  const caseData = useGameStore((s) => s.caseData)
+  const dialogueLog = useStore((s) => s.dialogueLog)
+  const isLLMLoading = useStore((s) => s.isLLMLoading)
+  const llmTarget = useStore((s) => s.llmLoadingTarget)
+  const caseData = useStore((s) => s.caseData)
   const [pendingContradiction, setPendingContradiction] = useState<NonNullable<DialogueEntryType['contradictionMeta']> | null>(null)
 
   const handleContradictionClick = (meta: NonNullable<DialogueEntryType['contradictionMeta']>) => {

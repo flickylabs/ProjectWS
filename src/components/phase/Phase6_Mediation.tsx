@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { GamePhase } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { resolveLLMDialogue } from '../../engine/llmDialogueResolver'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import { buildBridgeFromStore } from '../../engine/phase6ResultPromptV2'
@@ -13,10 +13,10 @@ type MediationPath = 'immediate' | 'conditional' | 'postpone' | 'fact_first'
 export default function Phase6_Mediation() {
   const [selectedPath, setSelectedPath] = useState<MediationPath | null>(null)
   const [loading, setLoading] = useState(false)
-  const advancePhase = useGameStore((s) => s.advancePhase)
-  const caseData = useGameStore((s) => s.caseData)
-  const addDialogue = useGameStore((s) => s.addDialogue)
-  const turnCount = useGameStore((s) => s.turnCount)
+  const advancePhase = useStore((s) => s.advancePhase)
+  const caseData = useStore((s) => s.caseData)
+  const addDialogue = useStore((s) => s.addDialogue)
+  const turnCount = useStore((s) => s.turnCount)
 
   // V2 bridge 빌드 (Phase 6 진입 시 1회)
   useEffect(() => {

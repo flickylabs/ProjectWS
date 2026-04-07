@@ -78,7 +78,7 @@ export async function resolveLLMDialogue(
   // trust_action: disputeId가 없으면 가장 최근 심문한 쟁점을 자동 추론
   if (!disputeId && action.type === 'trust_action') {
     const recentJudgeEntries = store.dialogueLog
-      .filter(d => d.speaker === 'judge' && d.relatedDisputes.length > 0)
+      .filter((d: import('../types').DialogueEntry) => d.speaker === 'judge' && d.relatedDisputes.length > 0)
     if (recentJudgeEntries.length > 0) {
       disputeId = recentJudgeEntries[recentJudgeEntries.length - 1].relatedDisputes[0]
     }
@@ -91,7 +91,7 @@ export async function resolveLLMDialogue(
   // 최근 대화: 현재 쟁점 관련 + 최근 것만 (불필요한 다른 쟁점 대화 제외)
   const allRecent = store.dialogueLog.slice(-12)
   const recentDialogues = disputeId
-    ? allRecent.filter(d =>
+    ? allRecent.filter((d: import('../types').DialogueEntry) =>
         d.relatedDisputes.length === 0 ||  // 시스템 일반 대화 (쟁점 무관)
         d.relatedDisputes.includes(disputeId!),  // 현재 쟁점 관련만
       ).slice(-8)
@@ -142,7 +142,7 @@ export async function resolveLLMDialogue(
   // ── 상대방 최근 발언 (직전 상대 NPC 발언) ──
   const opponentSpeaker: PartyId = target === 'a' ? 'b' : 'a'
   const lastOpponentLine = store.dialogueLog
-    .filter(d => d.speaker === opponentSpeaker && (d.relatedDisputes.length === 0 || (disputeId ? d.relatedDisputes.includes(disputeId) : true)))
+    .filter((d: import('../types').DialogueEntry) => d.speaker === opponentSpeaker && (d.relatedDisputes.length === 0 || (disputeId ? d.relatedDisputes.includes(disputeId) : true)))
     .slice(-1)[0]?.text ?? ''
 
   // ── 이 쟁점에서 드러난 truth id 목록 ──
@@ -590,8 +590,8 @@ function buildSystemPrompt(
     // 다른 쟁점에서 이미 밝혀진 사실
     const allHistory = storeRef.interrogationHistory[party] ?? {}
     const revealedDisputes = Object.entries(allHistory)
-      .filter(([dId, h]) => h.revealed && dId !== (dispute?.id ?? ''))
-      .map(([dId]) => caseData.disputes.find(d => d.id === dId)?.name)
+      .filter(([dId, h]: [string, { questionTypes: string[]; turns: number[]; revealed: boolean }]) => h.revealed && dId !== (dispute?.id ?? ''))
+      .map(([dId]: [string, unknown]) => caseData.disputes.find((d: import('../types').Dispute) => d.id === dId)?.name)
       .filter(Boolean)
     if (revealedDisputes.length > 0) {
       historyContext += `\n\n이미 인정한 다른 쟁점: ${revealedDisputes.join(', ')}`
@@ -615,12 +615,12 @@ function buildSystemPrompt(
       }
       // Phase 1/2 대화만 필터 (turn이 Phase 3 이전인 것들)
       const phase12Dialogues = storeRef.dialogueLog.filter(
-        d => d.speaker !== 'system' && d.turn === 0, // Phase 1/2 대사는 turn=0으로 기록됨
+        (d: import('../types').DialogueEntry) => d.speaker !== 'system' && d.turn === 0, // Phase 1/2 대사는 turn=0으로 기록됨
       )
       if (phase12Dialogues.length > 0) {
         phaseTranscript = phase12Dialogues
           .slice(0, 12)  // 최대 12개
-          .map(d => `${speakerNames[d.speaker] ?? d.speaker}: ${d.text.slice(0, 80)}`)
+          .map((d: import('../types').DialogueEntry) => `${speakerNames[d.speaker] ?? d.speaker}: ${d.text.slice(0, 80)}`)
           .join('\n')
       }
     } catch { /* 접근 실패 시 빈 문자열 */ }
@@ -1816,7 +1816,7 @@ function tryScriptedDialoguePath(
   const lieEntry = agent.lieStateMap[disputeId]
   if (!lieEntry) return null
 
-  const caseId = normalizeCaseKey(caseData.caseId)
+  const caseId = normalizeCaseKey(caseData)
 
   let scripted: { text: string; behaviorHint: string } | null = null
 
@@ -1947,12 +1947,12 @@ async function tryBlueprintPath(
   )
 
   // 최근 대화
-  const recentDialogues = store.dialogueLog.slice(-8).filter(d =>
+  const recentDialogues = store.dialogueLog.slice(-8).filter((d: import('../types').DialogueEntry) =>
     d.relatedDisputes.length === 0 || d.relatedDisputes.includes(disputeId!),
   ).slice(-5)
 
   // 프롬프트 조립
-  const dispute = caseData.disputes.find(d => d.id === disputeId)
+  const dispute = caseData.disputes.find((d: import('../types').Dispute) => d.id === disputeId)
   const interrogationDepth = disputeId
     ? (store.interrogationHistory[target]?.[disputeId]?.questionTypes.length ?? 0) + 1
     : 1

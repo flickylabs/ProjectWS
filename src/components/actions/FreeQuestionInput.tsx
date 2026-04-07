@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { PartyId } from '../../types'
-import { useGameStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import { processFreeQuestion } from '../../engine/llmFreeQuestion'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
@@ -19,8 +19,8 @@ interface Props {
 export default function FreeQuestionInput({ target, onResult }: Props) {
   const [text, setText] = useState('')
   const [loading, setLoading] = useState(false)
-  const resources = useGameStore((s) => s.resources)
-  const caseData = useGameStore((s) => s.caseData)
+  const resources = useStore((s) => s.resources)
+  const caseData = useStore((s) => s.caseData)
 
   const llmAvailable = isLLMMode()
   const hasTokens = resources.investigationTokens >= 1

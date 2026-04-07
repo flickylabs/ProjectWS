@@ -1,7 +1,7 @@
 /**
  * 숨겨진 쟁점 발현 모달 — 새로운 쟁점이 드러났을 때
  */
-import { useGameStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
 const ROUTE_LABELS: Record<string, { icon: string; label: string }> = {
@@ -13,7 +13,7 @@ const ROUTE_LABELS: Record<string, { icon: string; label: string }> = {
 }
 
 export default function DisputeEmergenceModal() {
-  const { discovery, acknowledgeEmergence, caseData } = useGameStore()
+  const { discovery, acknowledgeEmergence, caseData } = useStore((s) => s)
   const event = discovery.pendingEmergence
 
   if (!event || !caseData) return null
