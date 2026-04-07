@@ -35,6 +35,11 @@ export type QuestionGameEffect =
   | { type: 'emotion_shift'; party: string; delta: number }
   | { type: 'defense_weaken'; party: string; blockedMode: string }
   | { type: 'confession_window'; party: string; turns: number }
+  | { type: 'timeline_lock'; party: string; disputeId: string; lockedClaim: string }           // fact: 시점 고정
+  | { type: 'hidden_dispute_hook'; party: string; hintDisputeId: string }                      // motive: 숨은 쟁점 연결고리
+  | { type: 'blame_text_exposed'; party: string; exposedText: string }                         // motive: 책임 회피 문구 노출
+  | { type: 'trust_window_open'; party: string; privatePath: boolean }                         // empathy: 비공개 자백 경로
+  | { type: 'counterattack_suppressed'; party: string; turns: number }                         // empathy: 반격 억제
 
 /** 질문 효과 누적 상태 (파티별) */
 export interface QuestionMeterState {
@@ -227,6 +232,17 @@ function resolveFactPursuit(
 
   const newTokens = Math.min(meter.contradictionTokens + tokenGain, CONTRADICTION_MAX)
 
+  // ── 확정적 기본 효과: deny + S0-S2 → 시점 고정 ──
+  const stateRank = STATE_RANK[lieState]
+  if (stance === 'deny' && stateRank <= 2) {
+    effects.push({
+      type: 'timeline_lock',
+      party,
+      disputeId,
+      lockedClaim: `deny@${lieState}`,
+    })
+  }
+
   // 토큰이 2개 이상이면 전이 보너스 효과
   if (newTokens >= 2) {
     effects.push({
@@ -234,6 +250,15 @@ function resolveFactPursuit(
       party,
       disputeId,
       bonus: newTokens * CONTRADICTION_TO_TRANSITION_BONUS,
+    })
+  }
+
+  // 토큰 3개 이상이면 timeline_padding 봉쇄
+  if (newTokens >= 3) {
+    effects.push({
+      type: 'defense_weaken',
+      party,
+      blockedMode: 'timeline_padding',
     })
   }
 
@@ -248,9 +273,13 @@ function resolveFactPursuit(
 
   const feedback = newTokens >= 4
     ? `모순 ${newTokens}개 축적 — 완전 부정이 더 이상 통하지 않습니다`
-    : newTokens >= 2
-      ? `모순 ${newTokens}개 축적 — 진술 균열 감지`
-      : `모순 토큰 +${tokenGain}`
+    : newTokens >= 3
+      ? `모순 토큰 +${tokenGain} — 시간대 변명이 봉쇄되었습니다`
+      : newTokens >= 2
+        ? `모순 ${newTokens}개 축적 — 진술 균열 감지`
+        : stance === 'deny' && stateRank <= 2
+          ? `모순 토큰 +${tokenGain} — 부정 진술이 시점 고정되었습니다`
+          : `모순 토큰 +${tokenGain}`
 
   return { meter: 'contradiction', delta: tokenGain, effects, feedback }
 }
@@ -274,7 +303,7 @@ function resolveMotiveSearch(
 
   // lieState가 높을수록 누설 압박 증가
   const stateRank = STATE_RANK[lieState]
-  if (stateRank >= 3) leak += 10
+  if (stateRank >= 3) leak += 15  // 기존 10 + 추가 5
   if (stateRank >= 4) leak += 10
 
   const newMeter = Math.min(meter.leakMeter + leak, 100)
@@ -302,11 +331,31 @@ function resolveMotiveSearch(
     })
   }
 
+  // ── 확정적 효과: S2+ & leak 40%+ → 숨은 쟁점 연결고리 ──
+  if (stateRank >= 2 && newMeter >= 40) {
+    effects.push({
+      type: 'hidden_dispute_hook',
+      party,
+      hintDisputeId: disputeId,
+    })
+  }
+
+  // ── 확정적 효과: S3(전가 상태) → 책임 회피 문구 노출 ──
+  if (stateRank === 3) {
+    effects.push({
+      type: 'blame_text_exposed',
+      party,
+      exposedText: `blame@${lieState}`,
+    })
+  }
+
   const feedback = newMeter >= LEAK_THRESHOLD_EXPLOSION
     ? `누설미터 ${newMeter}% — 감정적 방어선 붕괴 직전`
     : newMeter >= LEAK_THRESHOLD_SUPPRESSION
-      ? `누설미터 ${newMeter}% — 숨기던 동기가 흘러나오기 시작합니다`
-      : `누설미터 +${leak}% (${newMeter}%)`
+      ? `누설 +${leak}% — 숨기던 동기가 흘러나오기 시작합니다`
+      : newMeter >= 40 && stateRank >= 2
+        ? `누설 +${leak}% — 숨겨진 연결고리가 감지되었습니다`
+        : `누설미터 +${leak}% (${newMeter}%)`
 
   return { meter: 'leak', delta: leak, effects, feedback }
 }
@@ -332,12 +381,17 @@ function resolveEmpathyApproach(
   if (emotionTier === 'agitated' || emotionTier === 'explosive') {
     trust += 5
   }
+  // 폭발 직전 공감 = 매우 효과적 (추가 보너스)
+  if (emotionTier === 'explosive') {
+    trust += 8
+  }
   // shutdown 상태에서는 효과 감소
   if (emotionTier === 'shutdown') {
     trust = Math.round(trust * 0.5)
   }
 
   const newTrust = Math.min(meter.trustWindow + trust, 100)
+  const stateRank = STATE_RANK[lieState]
 
   // 신뢰 효과 항상 적용
   effects.push({
@@ -345,6 +399,24 @@ function resolveEmpathyApproach(
     party,
     amount: Math.round(trust * 0.5), // 실제 trustTowardJudge에 반영할 양
   })
+
+  // ── 확정적 효과: 신뢰 40%+ → 반격 억제 ──
+  if (newTrust >= 40) {
+    effects.push({
+      type: 'counterattack_suppressed',
+      party,
+      turns: 2,
+    })
+  }
+
+  // ── 확정적 효과: S3+ & 신뢰 50%+ → 비공개 자백 경로 ──
+  if (stateRank >= 3 && newTrust >= 50) {
+    effects.push({
+      type: 'trust_window_open',
+      party,
+      privatePath: true,
+    })
+  }
 
   // 자백 창구 개방 임계
   if (newTrust >= TRUST_WINDOW_THRESHOLD && meter.trustWindow < TRUST_WINDOW_THRESHOLD) {
@@ -355,9 +427,13 @@ function resolveEmpathyApproach(
     })
   }
 
-  const feedback = newTrust >= TRUST_WINDOW_THRESHOLD
-    ? `신뢰창구 개방 — 자발적 시인 가능성이 높아졌습니다`
-    : `신뢰 +${trust} (${newTrust}%)`
+  const feedback = stateRank >= 3 && newTrust >= 50
+    ? `신뢰 +${trust} — 비공개 확인 경로가 열리고 있습니다`
+    : newTrust >= TRUST_WINDOW_THRESHOLD
+      ? `신뢰창구 개방 — 자발적 시인 가능성이 높아졌습니다`
+      : newTrust >= 40
+        ? `신뢰 +${trust} — 상대의 반격 의지가 약해지고 있습니다`
+        : `신뢰 +${trust} (${newTrust}%)`
 
   return { meter: 'trust', delta: trust, effects, feedback }
 }

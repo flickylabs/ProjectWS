@@ -175,6 +175,75 @@ export function createAppraisal(
   }
 }
 
+// ─────────────────────────────────────────
+// 증거 표면화 (Evidence Surfacing)
+// ─────────────────────────────────────────
+
+export interface SurfaceResult {
+  /** 표면화된 증거 IDs (최대 4: base 3 + contextual 1) */
+  surfacedIds: string[]
+  /** 잠김 상태로 보이는 증거 IDs (해금되었지만 표면화 안 됨) */
+  dimmedIds: string[]
+  /** 보강 슬롯이 열린 증거 (key: 메인 증거 ID, value: 보강 증거 ID[]) */
+  reinforcements: Record<string, string[]>
+}
+
+/**
+ * 표면화 증거 선별 — 기본 3장 + 현재 쟁점 관련 1장
+ * @param evidenceStates 현재 증거 런타임 상태
+ * @param evidence 전체 증거 노드 배열
+ * @param currentDisputeId 현재 집중 쟁점 (있으면 관련 증거 1장 추가)
+ * @param baseEvidenceIds 기본 3장 고정 증거 IDs (사건 데이터에서 제공)
+ */
+export function computeSurfacedEvidence(
+  evidenceStates: Record<string, EvidenceRuntimeState>,
+  evidence: EvidenceNode[],
+  currentDisputeId: string | null,
+  baseEvidenceIds: string[],
+): SurfaceResult {
+  const surfacedIds: string[] = []
+  const dimmedIds: string[] = []
+  const reinforcements: Record<string, string[]> = {}
+
+  // 1. 기본 3장: 해금 여부와 무관하게 항상 표면
+  for (const id of baseEvidenceIds.slice(0, 3)) {
+    surfacedIds.push(id)
+  }
+
+  // 2. 현재 쟁점 관련 1장: proves에 currentDisputeId가 포함된 해금된 증거 중
+  //    아직 surfaced가 아닌 첫 번째
+  if (currentDisputeId) {
+    const contextual = evidence.find(e =>
+      !surfacedIds.includes(e.id) &&
+      evidenceStates[e.id]?.unlocked &&
+      e.proves?.includes(currentDisputeId)
+    )
+    if (contextual) surfacedIds.push(contextual.id)
+  }
+
+  // 3. 나머지 해금된 증거는 dimmed
+  for (const e of evidence) {
+    if (!surfacedIds.includes(e.id) && evidenceStates[e.id]?.unlocked) {
+      dimmedIds.push(e.id)
+    }
+  }
+
+  // 4. 보강 슬롯: surfaced 증거에 대해, 같은 proves를 가진 dimmed 증거를 보강으로 연결
+  for (const sid of surfacedIds) {
+    const surfNode = evidence.find(e => e.id === sid)
+    if (!surfNode?.proves) continue
+    const reinforcing = dimmedIds.filter(did => {
+      const dNode = evidence.find(e => e.id === did)
+      return dNode?.proves?.some(p => surfNode.proves!.includes(p))
+    })
+    if (reinforcing.length > 0) {
+      reinforcements[sid] = reinforcing
+    }
+  }
+
+  return { surfacedIds, dimmedIds, reinforcements }
+}
+
 /** 부분 신뢰 시 신뢰하는 조사 항목만 추출 */
 export function getTrustedInvestigationResults(
   evidence: EvidenceNode,

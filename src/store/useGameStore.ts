@@ -140,9 +140,10 @@ function applyPerks(set: (partial: any) => void): void {
     majorPerk: (saved.major as PerkId) ?? null,
     minorPerk: (saved.minor as PerkId) ?? null,
     freeSummaryRemaining: 0, evidencePreviewRemaining: 0, skillRefundRemaining: 0,
-    burstWarningEnabled: false, authorityPenaltyReduction: 0,
+    burstWarningEnabled: false,
     penaltyBufferUsesRemaining: 0, firstTargetContradictionBonus: 0,
-    legalityHintEnabled: false, interjectionLevelBoost: 0, fatiguePursuitExtend: 0,
+    relationBufferQuestionAvailable: 0, angleSwitchOpportunity: 0,
+    legalityHintEnabled: false, interjectionLevelBoost: 0,
   }
 
   // 미터 수정 (contradiction, leak, trust)
@@ -166,20 +167,18 @@ function applyPerks(set: (partial: any) => void): void {
       meterA.leakMeter += eff.startLeakBoost
       meterB.leakMeter += eff.startLeakBoost
     }
-    if (eff.startTrustBoost) {
-      meterA.trustWindow += eff.startTrustBoost
-      meterB.trustWindow += eff.startTrustBoost
+    if (eff.relationBufferQuestionAvailable) {
+      perksState.relationBufferQuestionAvailable = eff.relationBufferQuestionAvailable
     }
     // 세션 플래그
     if (eff.freeSummaryCount) perksState.freeSummaryRemaining = eff.freeSummaryCount
     if (eff.evidencePreviewCount) perksState.evidencePreviewRemaining = eff.evidencePreviewCount
     if (eff.skillRefundCount) perksState.skillRefundRemaining = eff.skillRefundCount
     if (eff.burstWarningTurns) perksState.burstWarningEnabled = true
-    if (eff.authorityPenaltyReduction) perksState.authorityPenaltyReduction = eff.authorityPenaltyReduction
-    if (eff.penaltyBufferUses) perksState.penaltyBufferUsesRemaining = eff.penaltyBufferUses
+    if (eff.penaltyBufferUsesRemaining) perksState.penaltyBufferUsesRemaining = eff.penaltyBufferUsesRemaining
     if (eff.legalityHintEnabled) perksState.legalityHintEnabled = true
     if (eff.interjectionLevelBoost) perksState.interjectionLevelBoost = eff.interjectionLevelBoost
-    if (eff.factPursuitFatigueExtend) perksState.fatiguePursuitExtend = eff.factPursuitFatigueExtend
+    if (eff.angleSwitchOpportunity) perksState.angleSwitchOpportunity = eff.angleSwitchOpportunity
   }
 
   set({
@@ -279,12 +278,12 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
     evidencePreviewRemaining: number
     skillRefundRemaining: number
     burstWarningEnabled: boolean
-    authorityPenaltyReduction: number
     penaltyBufferUsesRemaining: number
     firstTargetContradictionBonus: number
+    relationBufferQuestionAvailable: number
+    angleSwitchOpportunity: number
     legalityHintEnabled: boolean
     interjectionLevelBoost: number
-    fatiguePursuitExtend: number
   }
 }
 
@@ -473,9 +472,10 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     activePerks: {
       majorPerk: null, minorPerk: null,
       freeSummaryRemaining: 0, evidencePreviewRemaining: 0, skillRefundRemaining: 0,
-      burstWarningEnabled: false, authorityPenaltyReduction: 0, penaltyBufferUsesRemaining: 0,
+      burstWarningEnabled: false, penaltyBufferUsesRemaining: 0,
       firstTargetContradictionBonus: 0,
-      legalityHintEnabled: false, interjectionLevelBoost: 0, fatiguePursuitExtend: 0,
+      relationBufferQuestionAvailable: 0, angleSwitchOpportunity: 0,
+      legalityHintEnabled: false, interjectionLevelBoost: 0,
     },
 
     evaluateTurnEvents: (questionType: QuestionType, focusDisputeId: string, transitionsThisTurn: { party: 'a' | 'b'; disputeId: string; from: import('../types').LieState; to: import('../types').LieState }[]) => {

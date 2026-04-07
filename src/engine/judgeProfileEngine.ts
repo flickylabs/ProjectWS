@@ -97,8 +97,17 @@ export function deriveCaseProfile(
     (metrics.interjectionAllowed * 10),  // 끼어들기 허용 -> 관용
   )
 
-  // 축 3: 해결 (원칙 <-> 화해) — solution orientation tag 기반 (Codex 제안 공식)
+  // 축 3: 해결 (원칙 <-> 화해) — 과정 60~70% + 솔루션 30~40%
   let resolution = 0
+
+  // 과정 기반 (60~70%)
+  const interjectionFactor = metrics.interjectionAllowed * 12  // 끼어들기 허용 → 화해
+  const bothSidesFactor = metrics.bothSidesQuestioned ? 15 : -8  // 양측 심문 → 화해
+  const empathyRatio = metrics.questionsAsked > 0
+    ? (metrics.empathyQuestionsAsked || 0) / metrics.questionsAsked : 0
+  const empathyFactor = Math.round(empathyRatio * 30)  // 공감 비율 → 화해
+  const processScore = interjectionFactor + bothSidesFactor + empathyFactor
+
   if (caseId && solutions) {
     const mapped = input.selectedSolutions.map((entry) => {
       const sep = entry.indexOf('::')
@@ -111,15 +120,16 @@ export function deriveCaseProfile(
     const principle = mapped.filter(v => v === 'principle').length
     const reconcile = mapped.filter(v => v === 'reconcile').length
     const orientationMean = total > 0 ? (reconcile - principle) / total : 0
+    // 솔루션 기반 (30~40%)
     resolution = Math.round(
-      orientationMean * 80 +
-      (metrics.bothSidesQuestioned ? 8 : -4) +
-      (total > 0 ? 6 : -6),
+      processScore +                    // 과정 기여 (~60-70%)
+      orientationMean * 35 +            // 솔루션 기여 (35% 가중, was 80)
+      (total > 0 ? 4 : -4),
     )
   } else {
     resolution = Math.round(
-      (input.selectedSolutions.length > 0 ? 6 : -6) +
-      (metrics.bothSidesQuestioned ? 8 : -4),
+      processScore +
+      (input.selectedSolutions.length > 0 ? 4 : -4),
     )
   }
 

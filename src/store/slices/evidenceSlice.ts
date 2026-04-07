@@ -7,6 +7,7 @@ import {
   presentEvidence as presentEv,
   investigateEvidence as investigateEv,
   type EvidenceRuntimeState,
+  type SurfaceResult,
 } from '../../engine/evidenceEngine'
 
 export interface EvidenceSlice {
@@ -22,6 +23,10 @@ export interface EvidenceSlice {
   recommendedEvidenceIds: string[]
   setRecommendedEvidence: (ids: string[]) => void
   clearRecommendedEvidence: () => void
+  surfacedEvidenceIds: string[]
+  dimmedEvidenceIds: string[]
+  evidenceReinforcements: Record<string, string[]>
+  setSurfacedEvidence: (result: { surfacedIds: string[]; dimmedIds: string[]; reinforcements: Record<string, string[]> }) => void
   isUnlocked: (evidenceId: string) => boolean
   isPresented: (evidenceId: string) => boolean
   getUnlockedEvidence: () => EvidenceNode[]
@@ -33,6 +38,9 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
   evidenceCombinations: [],
   triggeredCombinations: [],
   recommendedEvidenceIds: [],
+  surfacedEvidenceIds: [],
+  dimmedEvidenceIds: [],
+  evidenceReinforcements: {},
 
   initEvidence: (evidence, combinations) => {
     set({
@@ -116,6 +124,14 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
 
   clearRecommendedEvidence: () => {
     set({ recommendedEvidenceIds: [] })
+  },
+
+  setSurfacedEvidence: (result) => {
+    set({
+      surfacedEvidenceIds: result.surfacedIds,
+      dimmedEvidenceIds: result.dimmedIds,
+      evidenceReinforcements: result.reinforcements,
+    })
   },
 
   markEvidenceConfidential: (evidenceId) => {
