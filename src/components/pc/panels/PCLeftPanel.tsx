@@ -218,6 +218,7 @@ function EvidenceSection() {
           return (
             <EvidenceCard
               key={id}
+              id={id}
               name={state?.deepInvestigated ? node.name : (node.surfaceName ?? node.name)}
               type={node.type}
               isRecommended={isRecommended}
@@ -237,6 +238,7 @@ function EvidenceSection() {
           return (
             <EvidenceCard
               key={id}
+              id={id}
               name={node.surfaceName ?? node.name}
               type={node.type}
               isRecommended={false}
@@ -251,7 +253,8 @@ function EvidenceSection() {
   )
 }
 
-function EvidenceCard({ name, type, isRecommended, reinforcementCount, dimmed, presented }: {
+function EvidenceCard({ id, name, type, isRecommended, reinforcementCount, dimmed, presented }: {
+  id: string
   name: string
   type: string
   isRecommended: boolean
@@ -259,9 +262,12 @@ function EvidenceCard({ name, type, isRecommended, reinforcementCount, dimmed, p
   dimmed: boolean
   presented: boolean
 }) {
+  const setPendingEvidenceView = useStore((s) => s.setPendingEvidenceView)
+
   return (
     <div
       className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg transition-all duration-200 cursor-pointer"
+      onDoubleClick={() => { if (!dimmed) setPendingEvidenceView(id) }}
       style={{
         background: dimmed ? 'rgba(255,255,255,0.015)' : 'rgba(255,255,255,0.03)',
         border: isRecommended

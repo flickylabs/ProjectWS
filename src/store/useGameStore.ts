@@ -277,6 +277,9 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** 최근 집중한 쟁점 ID (심문/증거 제시 시 갱신) */
   lastFocusedDisputeId: string | null
   setLastFocusedDisputeId: (id: string | null) => void
+  /** PC 증거 상세 뷰어: 열려있는 증거 ID */
+  pendingEvidenceView: string | null
+  setPendingEvidenceView: (id: string | null) => void
   /** 퍼크 시스템: 현재 세션에 적용된 퍼크 효과 */
   activePerks: {
     majorPerk: PerkId | null
@@ -560,6 +563,8 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     setDisputeBoardAction: (a: GameStore['disputeBoardAction']) => set({ disputeBoardAction: a }),
     lastFocusedDisputeId: null,
     setLastFocusedDisputeId: (id: string | null) => set({ lastFocusedDisputeId: id }),
+    pendingEvidenceView: null,
+    setPendingEvidenceView: (id: string | null) => set({ pendingEvidenceView: id }),
     activePerks: {
       majorPerk: null, minorPerk: null,
       freeSummaryRemaining: 0, evidencePreviewRemaining: 0, skillRefundRemaining: 0,
@@ -703,6 +708,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         pendingPerkChoice: null,
         pendingTransitionChoice: null,
         lastFocusedDisputeId: null,
+        pendingEvidenceView: null,
         // 턴/Phase 완전 초기화
         turnCount: 0,
         phaseTurnCount: 0,

@@ -6,6 +6,7 @@ import Emoji from '../../common/Emoji'
 import PCLeftPanel from '../panels/PCLeftPanel'
 import PCRightPanel from '../panels/PCRightPanel'
 import PCBottomDock from '../hotbar/PCBottomDock'
+import PCEvidenceViewer from '../evidence/PCEvidenceViewer'
 
 interface Props {
   actionPanel?: ReactNode
@@ -125,6 +126,9 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
 
       {/* ── Bottom Dock (Hotbar) ── */}
       <PCBottomDock />
+
+      {/* ── Evidence Detail Viewer Overlay ── */}
+      <PCEvidenceViewer />
     </div>
   )
 }
