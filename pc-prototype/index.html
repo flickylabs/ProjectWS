@@ -829,6 +829,408 @@ header nav{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:1
 .chat-choice-card.chosen .choice-btn{opacity:.4;border-color:var(--p5);color:var(--t3);background:transparent}
 .chat-choice-card.chosen .choice-btn.selected{opacity:1;color:var(--green);border-color:rgba(92,201,122,.3);background:rgba(92,201,122,.06)}
 .chat-choice-card.chosen .choice-btn.selected::before{content:'✓ ';font-weight:700}
+
+/* ═══ Verdict 2-Step ═══ */
+.verdict-step-1,.verdict-step-2{
+  display:flex;flex-direction:column;align-items:center;gap:36px;
+  width:100%;max-width:860px;transition:opacity .25s ease;
+}
+.verdict-step-2{display:none}
+.verdict-step-1.hidden{display:none}
+.verdict-step-2.active{display:flex;animation:msgIn .3s ease}
+.verdict-next-btn,.verdict-back-btn{
+  padding:12px 36px;border-radius:12px;
+  font-size:16px;font-weight:700;cursor:pointer;
+  font-family:var(--font);transition:all .2s;
+  display:flex;align-items:center;gap:8px;
+}
+.verdict-next-btn{
+  align-self:flex-end;
+  background:rgba(212,162,78,.12);border:2px solid var(--gold-bdr);color:var(--gold-l);
+}
+.verdict-next-btn:hover{
+  background:rgba(212,162,78,.25);border-color:var(--gold);
+  box-shadow:0 0 20px rgba(212,162,78,.2);color:var(--gold);
+}
+.verdict-back-btn{
+  align-self:flex-start;
+  background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.08);color:var(--t2);
+}
+.verdict-back-btn:hover{
+  background:rgba(255,255,255,.08);color:var(--t1);border-color:rgba(255,255,255,.14);
+}
+.verdict-step2-summary{
+  font-size:18px;font-weight:600;color:var(--t2);
+  padding:10px 28px;border-radius:12px;
+  background:rgba(212,162,78,.06);border:1px solid var(--gold-bdr);
+  letter-spacing:.02em;
+}
+.verdict-step2-summary b{color:var(--blue);font-weight:700}
+.verdict-step2-summary b.red{color:var(--red)}
+
+/* ═══ Locked Slots ═══ */
+.slot.slot-locked{
+  opacity:.35;
+  cursor:not-allowed;
+  position:relative;
+}
+.slot.slot-locked::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:repeating-linear-gradient(45deg,transparent,transparent 3px,rgba(0,0,0,.15) 3px,rgba(0,0,0,.15) 6px);
+}
+.slot.slot-locked:hover{
+  transform:none;
+  box-shadow:none;
+  background:linear-gradient(180deg,var(--p3),var(--p4));
+  border-color:rgba(255,255,255,.05);
+}
+.slot-lock-icon{
+  position:absolute;
+  bottom:4px;
+  right:6px;
+  font-size:10px;
+  color:var(--t3);
+}
+
+/* ═══ Feature: Evidence Detail Viewer ═══ */
+.ev-viewer-backdrop{
+  position:fixed;inset:0;z-index:84;
+  background:rgba(0,0,0,.65);backdrop-filter:blur(8px);
+  opacity:0;pointer-events:none;transition:opacity .25s ease;
+}
+.ev-viewer-backdrop.open{opacity:1;pointer-events:auto}
+
+.ev-viewer{
+  position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+  z-index:85;width:100%;max-width:700px;max-height:80vh;
+  background:var(--p2);border:1px solid rgba(212,162,78,.15);
+  border-radius:16px;overflow:hidden;
+  display:none;flex-direction:column;
+  box-shadow:0 24px 80px rgba(0,0,0,.6);
+  animation:evIn .25s ease;
+}
+.ev-viewer.open{display:flex}
+@keyframes evIn{from{opacity:0;transform:translate(-50%,-50%) scale(.96)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+
+.ev-viewer-header{
+  display:flex;align-items:center;gap:12px;
+  padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.04);
+  flex-shrink:0;
+}
+.ev-viewer-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(212,162,78,.1);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.ev-viewer-icon svg{width:18px;height:18px}
+.ev-viewer-name{font-size:18px;font-weight:700;color:var(--t1);flex:1}
+.ev-viewer-tags{display:flex;gap:6px;flex-wrap:wrap}
+.ev-tag{
+  font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px;
+  white-space:nowrap;
+}
+.ev-tag-trust-high{background:rgba(92,201,122,.12);color:var(--green);border:1px solid rgba(92,201,122,.2)}
+.ev-tag-trust-mid{background:rgba(212,162,78,.1);color:var(--gold-l);border:1px solid var(--gold-bdr)}
+.ev-tag-trust-low{background:rgba(224,96,96,.1);color:var(--red);border:1px solid var(--red-bdr)}
+.ev-tag-source-a{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-bdr)}
+.ev-tag-source-b{background:var(--red-bg);color:var(--red);border:1px solid var(--red-bdr)}
+.ev-tag-source-org{background:rgba(155,123,232,.1);color:#b9a0f0;border:1px solid rgba(155,123,232,.15)}
+.ev-tag-source-third{background:rgba(255,255,255,.05);color:var(--t2);border:1px solid rgba(255,255,255,.08)}
+.ev-tag-legal-ok{background:rgba(92,201,122,.08);color:var(--green);border:1px solid rgba(92,201,122,.15)}
+.ev-tag-legal-sus{background:rgba(224,96,96,.08);color:var(--red);border:1px solid rgba(224,96,96,.15)}
+.ev-tag-stage{background:rgba(91,141,239,.08);color:var(--blue);border:1px solid var(--blue-bdr)}
+
+.ev-viewer-close{
+  position:absolute;top:14px;right:16px;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  color:var(--t2);font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font);transition:all .15s;z-index:2;
+}
+.ev-viewer-close:hover{background:rgba(255,255,255,.1);color:var(--t1)}
+
+.ev-viewer-body{
+  flex:1;overflow-y:auto;padding:20px 24px 28px;
+  scrollbar-width:thin;scrollbar-color:var(--p5) transparent;
+}
+.ev-viewer-body::-webkit-scrollbar{width:4px}
+.ev-viewer-body::-webkit-scrollbar-thumb{background:var(--p5);border-radius:2px}
+
+/* --- Bank type --- */
+.ev-bank-table{width:100%;border-collapse:collapse;font-size:14px}
+.ev-bank-table th{
+  text-align:left;padding:10px 12px;font-size:12px;font-weight:600;
+  color:var(--t3);border-bottom:1px solid rgba(255,255,255,.06);
+  letter-spacing:.04em;
+}
+.ev-bank-table td{
+  padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.03);
+  color:var(--t2);font-variant-numeric:tabular-nums;
+}
+.ev-bank-table tr.suspicious{background:rgba(224,96,96,.06)}
+.ev-bank-table tr.suspicious td{color:var(--t1)}
+.ev-bank-table .amt-neg{color:var(--red);font-weight:600}
+.ev-bank-table .amt-pos{color:var(--green);font-weight:600}
+.ev-bank-table tr.suspicious{cursor:pointer;position:relative;transition:background .15s}
+.ev-bank-table tr.suspicious:hover{background:rgba(224,96,96,.12)}
+.ev-bank-tooltip{
+  position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:var(--p3);border:1px solid var(--gold-bdr);border-radius:8px;
+  padding:8px 14px;font-size:13px;color:var(--gold-l);white-space:nowrap;
+  box-shadow:0 8px 24px rgba(0,0,0,.5);pointer-events:none;
+  opacity:0;transition:opacity .15s;z-index:5;
+}
+.ev-bank-table tr.suspicious:hover .ev-bank-tooltip{opacity:1}
+
+/* --- Chat type --- */
+.ev-chat-header{
+  font-size:13px;color:var(--t3);text-align:center;
+  padding:8px 0 16px;border-bottom:1px solid rgba(255,255,255,.04);margin-bottom:16px;
+}
+.ev-chat-log{display:flex;flex-direction:column;gap:8px}
+.ev-chat-bubble{
+  max-width:75%;padding:10px 16px;border-radius:14px;
+  font-size:15px;line-height:1.6;position:relative;
+}
+.ev-chat-left{
+  align-self:flex-start;
+  background:var(--blue-bg);border:1px solid var(--blue-bdr);
+  border-top-left-radius:4px;color:var(--t1);
+}
+.ev-chat-right{
+  align-self:flex-end;
+  background:var(--red-bg);border:1px solid var(--red-bdr);
+  border-top-right-radius:4px;color:var(--t1);
+}
+.ev-chat-sender{font-size:12px;font-weight:600;margin-bottom:3px}
+.ev-chat-left .ev-chat-sender{color:var(--blue)}
+.ev-chat-right .ev-chat-sender{color:var(--red)}
+.ev-chat-deleted{
+  align-self:center;
+  padding:8px 20px;border-radius:10px;
+  border:1.5px dashed rgba(255,255,255,.08);
+  color:var(--t3);font-size:13px;font-style:italic;
+  background:rgba(255,255,255,.015);
+}
+.ev-chat-read{
+  align-self:flex-start;
+  font-size:12px;color:var(--t3);padding:4px 0 4px 8px;
+  display:flex;align-items:center;gap:6px;
+}
+
+/* --- Contract/Ledger type --- */
+.ev-doc-paper{
+  background:rgba(212,162,78,.03);border:1px solid rgba(212,162,78,.1);
+  border-radius:12px;padding:24px 28px;
+  font-family:'Noto Sans KR',serif;
+}
+.ev-doc-title{
+  text-align:center;font-size:20px;font-weight:700;color:var(--t1);
+  letter-spacing:.2em;margin-bottom:4px;
+}
+.ev-doc-subtitle{text-align:center;font-size:14px;color:var(--t3);margin-bottom:20px}
+.ev-doc-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 12px;border-bottom:1px solid rgba(212,162,78,.06);
+  font-size:14px;color:var(--t2);
+}
+.ev-doc-row.missing{background:rgba(212,162,78,.08);border-radius:6px;border-bottom:none;margin:4px 0}
+.ev-doc-row.missing .ev-doc-content{color:var(--gold-l);font-weight:600}
+.ev-doc-date{color:var(--t3);min-width:60px;font-variant-numeric:tabular-nums}
+.ev-doc-content{flex:1;margin:0 16px}
+.ev-doc-amount{font-variant-numeric:tabular-nums;min-width:80px;text-align:right}
+.ev-doc-signature{
+  margin-top:24px;padding-top:16px;
+  border-top:1px solid rgba(212,162,78,.1);
+  text-align:center;font-size:13px;color:var(--t3);
+  letter-spacing:.1em;
+}
+
+/* --- Testimony type --- */
+.ev-witness-info{
+  font-size:14px;color:var(--t2);margin-bottom:20px;
+  padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.04);
+}
+.ev-witness-info strong{color:var(--t1);font-weight:600}
+.ev-witness-quote{
+  font-size:18px;line-height:1.8;color:var(--t1);
+  padding:20px 24px;margin:0 0 24px;
+  border-left:3px solid var(--gold);
+  background:rgba(212,162,78,.03);border-radius:0 8px 8px 0;
+}
+.ev-witness-quote::before{content:open-quote;font-size:32px;color:var(--gold);line-height:0;vertical-align:-8px;margin-right:4px}
+.ev-witness-quote::after{content:close-quote;font-size:32px;color:var(--gold);line-height:0;vertical-align:-8px;margin-left:4px}
+.ev-witness-tags{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.ev-witness-tag{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:10px 20px;border-radius:10px;
+  background:var(--p3);border:1px solid rgba(255,255,255,.05);
+  min-width:90px;
+}
+.ev-witness-tag-label{font-size:11px;color:var(--t3);font-weight:500}
+.ev-witness-tag-value{font-size:14px;font-weight:700}
+.ev-witness-tag-high{color:var(--green)}
+.ev-witness-tag-mid{color:var(--gold-l)}
+.ev-witness-tag-low{color:var(--red)}
+.ev-witness-tag-neutral{color:var(--blue)}
+.ev-witness-tag-no{color:var(--t3)}
+.ev-witness-related{
+  font-size:13px;color:var(--t3);display:flex;align-items:center;gap:8px;
+  padding:10px 14px;border-radius:8px;background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.04);cursor:pointer;transition:all .15s;
+}
+.ev-witness-related:hover{background:rgba(212,162,78,.06);border-color:var(--gold-bdr);color:var(--gold-l)}
+
+/* --- CCTV type --- */
+.ev-cctv-frame{
+  background:#0a0a12;border:2px solid rgba(255,255,255,.06);border-radius:10px;
+  padding:28px 24px;text-align:center;margin-bottom:20px;min-height:160px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  position:relative;overflow:hidden;
+}
+.ev-cctv-frame::before{
+  content:'REC';position:absolute;top:12px;left:14px;
+  font-size:11px;font-weight:700;color:var(--red);letter-spacing:.1em;
+  animation:pls 2.5s ease-in-out infinite;
+}
+.ev-cctv-frame::after{
+  content:'';position:absolute;top:12px;left:42px;width:8px;height:8px;
+  border-radius:50%;background:var(--red);animation:pls 2.5s ease-in-out infinite;
+}
+.ev-cctv-time{position:absolute;top:12px;right:14px;font-size:12px;color:var(--t3);font-variant-numeric:tabular-nums;font-weight:600}
+.ev-cctv-icon{color:var(--t3);margin-bottom:4px}
+.ev-cctv-icon svg{width:48px;height:48px}
+.ev-cctv-desc{font-size:16px;color:var(--t1);line-height:1.6}
+.ev-cctv-desc.suspicious{color:var(--gold-l);font-weight:600}
+.ev-cctv-timeline{position:relative;margin:8px 0 16px;padding:0 8px}
+.ev-cctv-track{width:100%;height:6px;background:var(--p4);border-radius:3px;position:relative;cursor:pointer}
+.ev-cctv-fill{position:absolute;top:0;left:0;height:100%;background:var(--gold-d);border-radius:3px;transition:width .2s}
+.ev-cctv-markers{position:absolute;top:0;left:0;right:0;height:100%;pointer-events:none}
+.ev-cctv-marker{
+  position:absolute;top:50%;transform:translate(-50%,-50%);
+  width:12px;height:12px;border-radius:50%;background:var(--gold);
+  border:2px solid var(--gold-d);cursor:pointer;pointer-events:auto;
+  transition:transform .15s,box-shadow .15s;z-index:2;
+}
+.ev-cctv-marker:hover,.ev-cctv-marker.active{transform:translate(-50%,-50%) scale(1.3);box-shadow:0 0 10px rgba(212,162,78,.5)}
+.ev-cctv-labels{display:flex;justify-content:space-between;margin-top:10px;font-size:12px;color:var(--t3);font-weight:500}
+.ev-cctv-label.active{color:var(--gold-l);font-weight:700}
+.ev-cctv-btns{display:flex;justify-content:center;gap:16px}
+.ev-cctv-btn{
+  padding:8px 20px;border-radius:8px;font-size:14px;font-weight:600;
+  background:var(--p3);border:1px solid rgba(255,255,255,.06);color:var(--t2);
+  cursor:pointer;font-family:var(--font);transition:all .15s;
+}
+.ev-cctv-btn:hover{background:var(--p4);color:var(--t1);border-color:rgba(255,255,255,.1)}
+
+/* --- Log type --- */
+.ev-log-filters{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.ev-log-filter{
+  padding:6px 14px;border-radius:16px;font-size:13px;font-weight:600;
+  background:var(--p3);border:1px solid rgba(255,255,255,.05);color:var(--t3);
+  cursor:pointer;font-family:var(--font);transition:all .15s;
+}
+.ev-log-filter:hover{color:var(--t2);border-color:rgba(255,255,255,.08)}
+.ev-log-filter.active{background:rgba(212,162,78,.1);border-color:var(--gold-bdr);color:var(--gold-l)}
+.ev-log-table{width:100%;border-collapse:collapse;font-size:14px}
+.ev-log-table th{
+  text-align:left;padding:10px 10px;font-size:12px;font-weight:600;
+  color:var(--t3);border-bottom:1px solid rgba(255,255,255,.06);letter-spacing:.04em;
+}
+.ev-log-table td{
+  padding:10px 10px;border-bottom:1px solid rgba(255,255,255,.03);
+  color:var(--t2);font-variant-numeric:tabular-nums;
+}
+.ev-log-table tr.suspicious{background:rgba(212,162,78,.06)}
+.ev-log-table tr.suspicious td{color:var(--gold-l)}
+.ev-log-type{font-size:12px;font-weight:600;padding:2px 8px;border-radius:10px;white-space:nowrap}
+.ev-log-type-out{background:rgba(91,141,239,.1);color:var(--blue)}
+.ev-log-type-in{background:rgba(92,201,122,.1);color:var(--green)}
+.ev-log-type-miss{background:rgba(224,96,96,.1);color:var(--red)}
+.ev-log-note{margin-top:16px;padding:12px 16px;border-radius:8px;background:rgba(212,162,78,.06);border:1px solid var(--gold-bdr);font-size:14px;color:var(--gold-l);line-height:1.6}
+
+/* --- Device type --- */
+.ev-device-shell{
+  width:280px;margin:0 auto;
+  background:#08080e;border:2px solid rgba(255,255,255,.08);
+  border-radius:28px;padding:0;overflow:hidden;
+  box-shadow:0 8px 40px rgba(0,0,0,.5);
+}
+.ev-device-notch{
+  width:80px;height:6px;background:rgba(255,255,255,.08);
+  border-radius:0 0 4px 4px;margin:0 auto;
+}
+.ev-device-top{
+  display:flex;align-items:center;gap:8px;padding:10px 16px 8px;
+  font-size:13px;font-weight:600;color:var(--t2);border-bottom:1px solid rgba(255,255,255,.04);
+}
+.ev-device-top svg{width:14px;height:14px;color:var(--t3)}
+.ev-device-content{padding:8px 0 16px;max-height:380px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--p5) transparent}
+.ev-device-content::-webkit-scrollbar{width:3px}.ev-device-content::-webkit-scrollbar-thumb{background:var(--p5);border-radius:2px}
+.ev-device-section{margin:0 12px}
+.ev-device-section-header{
+  display:flex;align-items:center;gap:8px;padding:10px 8px;
+  font-size:13px;font-weight:700;color:var(--t3);cursor:pointer;
+  border-bottom:1px solid rgba(255,255,255,.03);transition:color .15s;
+  user-select:none;
+}
+.ev-device-section-header:hover{color:var(--t2)}
+.ev-device-section-header .arrow{font-size:10px;transition:transform .2s}
+.ev-device-section-header.collapsed .arrow{transform:rotate(-90deg)}
+.ev-device-section-body{overflow:hidden;transition:max-height .25s ease,opacity .25s;max-height:300px;opacity:1}
+.ev-device-section-body.collapsed{max-height:0;opacity:0}
+.ev-device-item{
+  padding:7px 12px;font-size:13px;color:var(--t2);line-height:1.5;
+  border-left:3px solid transparent;transition:all .15s;
+}
+.ev-device-item.suspicious{border-left-color:var(--gold);background:rgba(212,162,78,.04);color:var(--gold-l);font-weight:500}
+.ev-device-home{
+  width:40px;height:5px;background:rgba(255,255,255,.1);
+  border-radius:3px;margin:10px auto 12px;
+}
+
+/* --- SNS type --- */
+.ev-sns-post{
+  background:var(--p3);border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;padding:18px 20px;margin-bottom:16px;
+}
+.ev-sns-profile{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.ev-sns-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--blue-bg);border:1.5px solid var(--blue-bdr);
+  display:flex;align-items:center;justify-content:center;color:var(--blue);
+}
+.ev-sns-avatar svg{width:18px;height:18px}
+.ev-sns-username{font-size:14px;font-weight:700;color:var(--t1)}
+.ev-sns-handle{font-size:13px;color:var(--t3);font-weight:400}
+.ev-sns-date{font-size:12px;color:var(--t3);margin-left:auto}
+.ev-sns-scope{font-size:12px;color:var(--t3);margin-bottom:12px;padding-left:46px}
+.ev-sns-text{
+  font-size:16px;color:var(--t1);line-height:1.8;padding:12px 0;
+  border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);
+}
+.ev-sns-text .hashtag{color:var(--blue);font-weight:500}
+.ev-sns-engage{display:flex;gap:24px;padding:10px 0 0;font-size:14px;color:var(--t3)}
+.ev-sns-engage span{display:flex;align-items:center;gap:6px}
+.ev-sns-comments{margin-bottom:16px}
+.ev-sns-comment-header{font-size:14px;font-weight:700;color:var(--t2);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.ev-sns-comment{
+  display:flex;gap:10px;padding:8px 0;font-size:14px;color:var(--t2);line-height:1.5;
+  border-bottom:1px solid rgba(255,255,255,.03);
+}
+.ev-sns-comment:last-child{border-bottom:none}
+.ev-sns-comment-name{font-weight:700;color:var(--t1);white-space:nowrap;min-width:48px}
+.ev-sns-warnings{display:flex;flex-direction:column;gap:8px}
+.ev-sns-warning{
+  display:flex;align-items:flex-start;gap:8px;padding:10px 14px;
+  border-radius:8px;background:rgba(224,160,60,.06);
+  border:1px solid rgba(224,160,60,.15);font-size:13px;color:#e0a03c;line-height:1.5;
+}
+.ev-sns-warning svg{width:16px;height:16px;flex-shrink:0;margin-top:1px}
 </style>
 </head>
 <body>
@@ -874,6 +1276,10 @@ header nav{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:1
   <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="10" y1="18" x2="14" y2="18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
   <!-- Pin -->
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M16 4L8 12l-1 5 5-1 8-8zM14 6l4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <!-- SNS / Share -->
+  <symbol id="i-sns" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.6 13.5l6.8 4M8.6 10.5l6.8-4" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <!-- Smartphone (device) -->
+  <symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="6" y="1" width="12" height="22" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="10" y1="19" x2="14" y2="19" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M10 4h4" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".4"/></symbol>
   <!-- Send -->
   <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
   <!-- Droplet (leak) -->
@@ -1058,6 +1464,8 @@ header nav{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:1
   <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2c0 0-6 6-6 12a6 6 0 0012 0c0-6-6-12-6-12zM12 18a2 2 0 01-2-2c0-2 2-4 2-4s2 2 2 4a2 2 0 01-2 2z" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
   <!-- Plus -->
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <!-- Lock -->
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></symbol>
   <!-- Gear -->
   <symbol id="i-gear" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
@@ -1101,13 +1509,15 @@ header nav{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:1
       <div class="dispute" data-dispute="05"><span class="d-num">05</span><span class="d-name">제3자 개입</span><span class="d-pill dp-0">S0</span></div>
     </div>
     <div class="sec">
-      <div class="sec-h"><svg><use href="#i-doc"/></svg>증거<span class="cnt">6</span><span class="sub">드래그 &rarr; 핫바</span></div>
+      <div class="sec-h"><svg><use href="#i-doc"/></svg>증거<span class="cnt">8</span><span class="sub">드래그 &rarr; 핫바</span></div>
       <div class="ev-card rec" draggable="true" data-id="ev-bank" data-evidence="ev-bank" data-icon="i-doc" data-name="계좌 이체 내역"><div class="ev-ico"><svg><use href="#i-doc"/></svg></div><span class="ev-nm">계좌 이체 내역</span><span class="ev-badge badge-rec">추천</span></div>
       <div class="ev-card" draggable="true" data-id="ev-chat" data-evidence="ev-chat" data-icon="i-chat" data-name="카카오톡 대화"><div class="ev-ico"><svg><use href="#i-chat"/></svg></div><span class="ev-nm">카카오톡 대화</span><span class="ev-badge badge-new">NEW</span></div>
       <div class="ev-card" draggable="true" data-id="ev-book" data-evidence="ev-book" data-icon="i-ledger" data-name="가계부 사본"><div class="ev-ico"><svg><use href="#i-ledger"/></svg></div><span class="ev-nm">가계부 사본</span></div>
       <div class="ev-card" draggable="true" data-id="ev-cctv" data-evidence="ev-cctv" data-icon="i-cam" data-name="CCTV 캡처"><div class="ev-ico"><svg><use href="#i-cam"/></svg></div><span class="ev-nm">CCTV 캡처</span></div>
       <div class="ev-card" draggable="true" data-id="ev-witness" data-evidence="ev-witness" data-icon="i-person" data-name="동료 증언"><div class="ev-ico"><svg><use href="#i-person"/></svg></div><span class="ev-nm">동료 증언</span></div>
       <div class="ev-card" draggable="true" data-id="ev-phone" data-evidence="ev-phone" data-icon="i-phone" data-name="통화 기록"><div class="ev-ico"><svg><use href="#i-phone"/></svg></div><span class="ev-nm">통화 기록</span></div>
+      <div class="ev-card" draggable="true" data-id="ev-device" data-evidence="ev-device" data-icon="i-smartphone" data-name="최민준 휴대폰"><div class="ev-ico"><svg><use href="#i-smartphone"/></svg></div><span class="ev-nm">최민준 휴대폰</span><span class="ev-badge badge-new">NEW</span></div>
+      <div class="ev-card" draggable="true" data-id="ev-sns" data-evidence="ev-sns" data-icon="i-sns" data-name="SNS 게시글"><div class="ev-ico"><svg><use href="#i-sns"/></svg></div><span class="ev-nm">SNS 게시글</span><span class="ev-badge badge-new">NEW</span></div>
     </div>
     <div class="sec">
       <div class="sec-h"><svg><use href="#i-flame"/></svg>미터</div>
@@ -1212,11 +1622,11 @@ header nav{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:1
           <!-- Page 3: 특수 -->
           <div class="hotbar hb-page" data-page="3" style="display:none">
             <div class="slot" data-slot="1" data-skill="sk-appraise"><span class="slot-key">1</span><span class="slot-ico"><svg><use href="#i-shield"/></svg></span><span class="slot-nm">증거 감별</span></div>
-            <div class="slot empty" data-slot="2"><span class="slot-key">2</span><span class="slot-ico" style="color:var(--t3)"><svg><use href="#i-plus"/></svg></span><span class="slot-nm" style="color:var(--t3)">빈 슬롯</span></div>
-            <div class="slot empty" data-slot="3"><span class="slot-key">3</span><span class="slot-ico" style="color:var(--t3)"><svg><use href="#i-plus"/></svg></span><span class="slot-nm" style="color:var(--t3)">빈 슬롯</span></div>
-            <div class="slot empty" data-slot="4"><span class="slot-key">4</span><span class="slot-ico" style="color:var(--t3)"><svg><use href="#i-plus"/></svg></span><span class="slot-nm" style="color:var(--t3)">빈 슬롯</span></div>
-            <div class="slot empty" data-slot="5"><span class="slot-key">5</span><span class="slot-ico" style="color:var(--t3)"><svg><use href="#i-plus"/></svg></span><span class="slot-nm" style="color:var(--t3)">빈 슬롯</span></div>
-            <div class="slot empty" data-slot="6"><span class="slot-key">6</span><span class="slot-ico" style="color:var(--t3)"><svg><use href="#i-plus"/></svg></span><span class="slot-nm" style="color:var(--t3)">빈 슬롯</span></div>
+            <div class="slot slot-locked" data-slot="2"><span class="slot-key">2</span><span class="slot-ico" style="color:var(--t3)"><svg><use href="#i-lock"/></svg></span><span class="slot-nm" style="color:var(--t3)">해금 필요</span><span class="slot-lock-icon">&#x1F512;</span></div>
+            <div class="slot slot-locked" data-slot="3"><span class="slot-key">3</span><span class="slot-ico" style="color:var(--t3)"><svg><use href="#i-lock"/></svg></span><span class="slot-nm" style="color:var(--t3)">해금 필요</span><span class="slot-lock-icon">&#x1F512;</span></div>
+            <div class="slot slot-locked" data-slot="4"><span class="slot-key">4</span><span class="slot-ico" style="color:var(--t3)"><svg><use href="#i-lock"/></svg></span><span class="slot-nm" style="color:var(--t3)">해금 필요</span><span class="slot-lock-icon">&#x1F512;</span></div>
+            <div class="slot slot-locked" data-slot="5"><span class="slot-key">5</span><span class="slot-ico" style="color:var(--t3)"><svg><use href="#i-lock"/></svg></span><span class="slot-nm" style="color:var(--t3)">해금 필요</span><span class="slot-lock-icon">&#x1F512;</span></div>
+            <div class="slot slot-locked" data-slot="6"><span class="slot-key">6</span><span class="slot-ico" style="color:var(--t3)"><svg><use href="#i-lock"/></svg></span><span class="slot-nm" style="color:var(--t3)">해금 필요</span><span class="slot-lock-icon">&#x1F512;</span></div>
           </div>
         </div>
         <div class="char char-b spk">
@@ -1342,69 +1752,79 @@ header nav{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:1
 </div>
 
 <div class="objection" id="obj"><div style="text-align:center"><div class="obj-main">모순 발견!</div><div class="obj-sub">이전 진술과 증거가 일치하지 않습니다</div><div class="obj-ev"><svg><use href="#i-doc"/></svg>계좌 이체 내역 vs "업무상 지출" 진술</div></div></div>
+
+<!-- ═══ Evidence Detail Viewer Overlay ═══ -->
+<div class="ev-viewer-backdrop" id="ev-backdrop"></div>
+<div class="ev-viewer" id="ev-viewer">
+  <button class="ev-viewer-close" id="ev-viewer-close">&times;</button>
+  <div class="ev-viewer-header" id="ev-viewer-header"></div>
+  <div class="ev-viewer-body" id="ev-viewer-body"></div>
+</div>
+
 <div class="phase-transition" id="pt"><div class="pt-bg"></div><div class="pt-number">Phase 3</div><div class="pt-subtitle">심문 — 진실을 추궁하라</div></div>
 <!-- ═══ Verdict Screen Overlay ═══ -->
 <div class="verdict-overlay" id="verdict">
   <button class="verdict-close" id="verdict-close">&times;</button>
   <div class="verdict-content">
-    <!-- Section 1: Responsibility Balance -->
-    <div class="verdict-balance">
-      <div class="verdict-faces">
-        <div class="verdict-party">
-          <div class="verdict-face verdict-face-a" id="verdict-face-a"><svg viewBox="0 0 48 48"><use href="#i-man-confident"/></svg></div>
-          <div class="verdict-name">최민준</div>
-          <div class="verdict-pct verdict-pct-a" id="verdict-pct-a">60%</div>
+    <!-- Step 1: 책임 배분 -->
+    <div class="verdict-step-1" id="verdict-step-1">
+      <div class="verdict-balance">
+        <div class="verdict-faces">
+          <div class="verdict-party">
+            <div class="verdict-face verdict-face-a" id="verdict-face-a"><svg viewBox="0 0 48 48"><use href="#i-man-confident"/></svg></div>
+            <div class="verdict-name">최민준</div>
+            <div class="verdict-pct verdict-pct-a" id="verdict-pct-a">60%</div>
+          </div>
+          <div class="verdict-scale-wrap">
+            <svg class="verdict-scale-svg" viewBox="0 0 180 120">
+              <polygon points="90,55 80,75 100,75" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity=".6"/>
+              <g id="verdict-beam" class="verdict-beam">
+                <rect x="20" y="37" width="140" height="6" rx="3" fill="var(--p4)" stroke="var(--gold-bdr)" stroke-width=".5"/>
+                <line x1="35" y1="43" x2="35" y2="60" stroke="var(--t3)" stroke-width="1"/>
+                <path d="M20 60 Q27.5 72 35 60 Q42.5 72 50 60" fill="none" stroke="var(--blue)" stroke-width="1.5" opacity=".6"/>
+                <line x1="145" y1="43" x2="145" y2="60" stroke="var(--t3)" stroke-width="1"/>
+                <path d="M130 60 Q137.5 72 145 60 Q152.5 72 160 60" fill="none" stroke="var(--red)" stroke-width="1.5" opacity=".6"/>
+              </g>
+              <rect x="75" y="75" width="30" height="4" rx="2" fill="var(--p4)"/>
+            </svg>
+          </div>
+          <div class="verdict-party">
+            <div class="verdict-face verdict-face-b" id="verdict-face-b"><svg viewBox="0 0 48 48"><use href="#i-woman-shaken"/></svg></div>
+            <div class="verdict-name">박서연</div>
+            <div class="verdict-pct verdict-pct-b" id="verdict-pct-b">40%</div>
+          </div>
         </div>
-        <div class="verdict-scale-wrap">
-          <svg class="verdict-scale-svg" viewBox="0 0 180 120">
-            <!-- Fulcrum triangle -->
-            <polygon points="90,55 80,75 100,75" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity=".6"/>
-            <!-- Beam group (rotates) -->
-            <g id="verdict-beam" class="verdict-beam">
-              <!-- Beam -->
-              <rect x="20" y="37" width="140" height="6" rx="3" fill="var(--p4)" stroke="var(--gold-bdr)" stroke-width=".5"/>
-              <!-- Left pan -->
-              <line x1="35" y1="43" x2="35" y2="60" stroke="var(--t3)" stroke-width="1"/>
-              <path d="M20 60 Q27.5 72 35 60 Q42.5 72 50 60" fill="none" stroke="var(--blue)" stroke-width="1.5" opacity=".6"/>
-              <!-- Right pan -->
-              <line x1="145" y1="43" x2="145" y2="60" stroke="var(--t3)" stroke-width="1"/>
-              <path d="M130 60 Q137.5 72 145 60 Q152.5 72 160 60" fill="none" stroke="var(--red)" stroke-width="1.5" opacity=".6"/>
-            </g>
-            <!-- Fulcrum base -->
-            <rect x="75" y="75" width="30" height="4" rx="2" fill="var(--p4)"/>
-          </svg>
-        </div>
-        <div class="verdict-party">
-          <div class="verdict-face verdict-face-b" id="verdict-face-b"><svg viewBox="0 0 48 48"><use href="#i-woman-shaken"/></svg></div>
-          <div class="verdict-name">박서연</div>
-          <div class="verdict-pct verdict-pct-b" id="verdict-pct-b">40%</div>
+        <div class="verdict-slider-wrap">
+          <input type="range" class="verdict-slider" id="verdict-slider" min="0" max="100" value="60" step="1">
+          <div class="verdict-slider-label">책임 비율 조정</div>
         </div>
       </div>
-      <div class="verdict-slider-wrap">
-        <input type="range" class="verdict-slider" id="verdict-slider" min="0" max="100" value="60" step="1">
-        <div class="verdict-slider-label">책임 비율 조정</div>
-      </div>
+      <button class="verdict-next-btn" id="verdict-next-btn">다음 <span style="font-size:14px">&rarr;</span></button>
     </div>
-    <!-- Section 2: Solution Cards -->
-    <div class="verdict-solutions">
-      <div class="verdict-card" data-solution="reconcile">
-        <svg class="verdict-card-icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>
-        <div class="verdict-card-title">화해 중심 해결</div>
-        <div class="verdict-card-summary">양측이 합의점을 찾고 관계를 회복합니다</div>
-        <button class="verdict-card-btn">선택</button>
+    <!-- Step 2: 해결안 선택 -->
+    <div class="verdict-step-2" id="verdict-step-2">
+      <div class="verdict-step2-summary" id="verdict-step2-summary">책임 배분: <b>최민준 60%</b> · <b class="red">박서연 40%</b></div>
+      <div class="verdict-solutions">
+        <div class="verdict-card" data-solution="reconcile">
+          <svg class="verdict-card-icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+          <div class="verdict-card-title">화해 중심 해결</div>
+          <div class="verdict-card-summary">양측이 합의점을 찾고 관계를 회복합니다</div>
+          <button class="verdict-card-btn">선택</button>
+        </div>
+        <div class="verdict-card" data-solution="principle">
+          <svg class="verdict-card-icon" viewBox="0 0 24 24"><use href="#i-scale"/></svg>
+          <div class="verdict-card-title">원칙 기반 판결</div>
+          <div class="verdict-card-summary">법적 기준에 따라 책임을 명확히 합니다</div>
+          <button class="verdict-card-btn">선택</button>
+        </div>
+        <div class="verdict-card" data-solution="strict">
+          <svg class="verdict-card-icon" viewBox="0 0 24 24"><use href="#i-sword"/></svg>
+          <div class="verdict-card-title">강경 대응</div>
+          <div class="verdict-card-summary">위반 행위에 대해 엄격한 처분을 내립니다</div>
+          <button class="verdict-card-btn">선택</button>
+        </div>
       </div>
-      <div class="verdict-card" data-solution="principle">
-        <svg class="verdict-card-icon" viewBox="0 0 24 24"><use href="#i-scale"/></svg>
-        <div class="verdict-card-title">원칙 기반 판결</div>
-        <div class="verdict-card-summary">법적 기준에 따라 책임을 명확히 합니다</div>
-        <button class="verdict-card-btn">선택</button>
-      </div>
-      <div class="verdict-card" data-solution="strict">
-        <svg class="verdict-card-icon" viewBox="0 0 24 24"><use href="#i-sword"/></svg>
-        <div class="verdict-card-title">강경 대응</div>
-        <div class="verdict-card-summary">위반 행위에 대해 엄격한 처분을 내립니다</div>
-        <button class="verdict-card-btn">선택</button>
-      </div>
+      <button class="verdict-back-btn" id="verdict-back-btn"><span style="font-size:14px">&larr;</span> 이전</button>
     </div>
   </div>
 </div>
@@ -1496,7 +1916,7 @@ function toggleFreeQ(slotEl){
   if(isFree){row.classList.toggle('open');if(row.classList.contains('open'))row.querySelector('input').focus()}
   else{row.classList.remove('open')}
 }
-$$('.slot').forEach(s=>{s.addEventListener('click',()=>{if(!s.classList.contains('empty'))toggleFreeQ(s)})});
+$$('.slot').forEach(s=>{s.addEventListener('click',()=>{if(!s.classList.contains('empty')&&!s.classList.contains('slot-locked'))toggleFreeQ(s)})});
 
 // ── Keyboard ──
 document.addEventListener('keydown',e=>{
@@ -1507,7 +1927,7 @@ document.addEventListener('keydown',e=>{
   if(n>=1&&n<=6){
     const pg=$(`.hb-page.active`);
     const s=pg&&pg.querySelector(`.slot[data-slot="${n}"]`);
-    if(s&&!s.classList.contains('empty')){s.classList.add('act');setTimeout(()=>s.classList.remove('act'),300);toggleFreeQ(s)}
+    if(s&&!s.classList.contains('empty')&&!s.classList.contains('slot-locked')){s.classList.add('act');setTimeout(()=>s.classList.remove('act'),300);toggleFreeQ(s)}
   }
   if(e.key==='Tab'){e.preventDefault();$('#pal').classList.toggle('open')}
   if(e.key==='o'||e.key==='O'){$('#obj').classList.add('show');setTimeout(()=>$('#obj').classList.remove('show'),3000)}
@@ -1519,10 +1939,10 @@ let dd=null;
 $$('.pal-i').forEach(i=>{i.addEventListener('dragstart',()=>{dd={id:i.dataset.id,icon:i.dataset.icon,name:i.dataset.name};i.style.opacity='.4'});i.addEventListener('dragend',()=>{i.style.opacity=''})});
 $$('.ev-card').forEach(c=>{c.addEventListener('dragstart',()=>{dd={id:c.dataset.id,icon:c.dataset.icon,name:c.dataset.name};c.style.opacity='.4'});c.addEventListener('dragend',()=>{c.style.opacity=''})});
 $$('.slot').forEach(s=>{
-  s.addEventListener('dragover',e=>{e.preventDefault();s.classList.add('dov')});
+  s.addEventListener('dragover',e=>{if(s.classList.contains('slot-locked'))return;e.preventDefault();s.classList.add('dov')});
   s.addEventListener('dragleave',()=>s.classList.remove('dov'));
   s.addEventListener('drop',e=>{
-    e.preventDefault();s.classList.remove('dov');if(!dd)return;
+    e.preventDefault();s.classList.remove('dov');if(!dd||s.classList.contains('slot-locked'))return;
     s.dataset.skill=dd.id;s.classList.remove('empty');
     s.querySelector('.slot-ico').innerHTML=`<svg><use href="#${dd.icon}"/></svg>`;
     s.querySelector('.slot-ico').style.color='';
@@ -1642,7 +2062,9 @@ const evToDispute={
   'ev-book':['02','04'],
   'ev-cctv':['01'],
   'ev-witness':['03','05'],
-  'ev-phone':['05']
+  'ev-phone':['05'],
+  'ev-device':['01','02'],
+  'ev-sns':['03','05']
 };
 // Build reverse map: dispute -> evidence
 const disputeToEv={};
@@ -1933,21 +2355,41 @@ document.addEventListener('fullscreenchange',()=>{
   }
 });
 
-// ═══ Feature 11: Verdict Screen ═══
+// ═══ Feature 11: Verdict Screen (2-Step) ═══
+function verdictResetToStep1(){
+  $('#verdict-step-1').classList.remove('hidden');
+  $('#verdict-step-2').classList.remove('active');
+}
 function openVerdict(){
   const v=$('#verdict');
   if(v.classList.contains('show'))return;
   v.classList.remove('fadeout');
+  verdictResetToStep1();
   v.classList.add('show');
   updateVerdictSlider();
 }
 function closeVerdict(){
   const v=$('#verdict');
   v.classList.add('fadeout');
-  setTimeout(()=>v.classList.remove('show','fadeout'),300);
+  setTimeout(()=>{v.classList.remove('show','fadeout');verdictResetToStep1()},300);
 }
 
 $('#verdict-close').addEventListener('click',closeVerdict);
+
+// Step navigation
+$('#verdict-next-btn').addEventListener('click',function(){
+  // Update step 2 summary with current slider values
+  const val=parseInt($('#verdict-slider').value,10);
+  const bVal=100-val;
+  $('#verdict-step2-summary').innerHTML='책임 배분: <b>최민준 '+val+'%</b> · <b class="red">박서연 '+bVal+'%</b>';
+  // Transition
+  $('#verdict-step-1').classList.add('hidden');
+  $('#verdict-step-2').classList.add('active');
+});
+$('#verdict-back-btn').addEventListener('click',function(){
+  $('#verdict-step-2').classList.remove('active');
+  $('#verdict-step-1').classList.remove('hidden');
+});
 
 // Slider logic
 function updateVerdictSlider(){
@@ -2404,6 +2846,418 @@ document.addEventListener('keydown',e=>{
     insertChoiceCard('쟁점 d-3이 새로 발현되었습니다',['집중 조사','나중에']);
   }
 });
+
+/* ═══ Feature: Evidence Detail Viewer ═══ */
+(function(){
+  const backdrop=$('#ev-backdrop'), viewer=$('#ev-viewer'),
+        header=$('#ev-viewer-header'), body=$('#ev-viewer-body'),
+        closeBtn=$('#ev-viewer-close');
+
+  /* --- Type mapping --- */
+  const typeMap={
+    'ev-bank':'bank','ev-chat':'chat','ev-book':'contract','ev-witness':'testimony',
+    'ev-cctv':'cctv','ev-phone':'log','ev-device':'device','ev-sns':'sns'
+  };
+
+  /* --- Meta data per evidence --- */
+  const evidenceMeta={
+    'ev-bank':{name:'계좌 이체 내역',icon:'i-doc',trust:'high',trustLabel:'높음',source:'org',sourceLabel:'기관',legal:'ok',legalLabel:'적법',stage:2},
+    'ev-chat':{name:'카카오톡 대화',icon:'i-chat',trust:'mid',trustLabel:'보통',source:'a',sourceLabel:'A측',legal:'sus',legalLabel:'의심',stage:1},
+    'ev-book':{name:'가계부 사본',icon:'i-ledger',trust:'mid',trustLabel:'보통',source:'a',sourceLabel:'A측',legal:'ok',legalLabel:'적법',stage:2},
+    'ev-witness':{name:'동료 증언',icon:'i-person',trust:'mid',trustLabel:'보통',source:'third',sourceLabel:'제3자',legal:'ok',legalLabel:'적법',stage:1},
+    'ev-cctv':{name:'CCTV 캡처',icon:'i-cam',trust:'high',trustLabel:'높음',source:'org',sourceLabel:'기관',legal:'ok',legalLabel:'적법',stage:1},
+    'ev-phone':{name:'통화 기록',icon:'i-phone',trust:'high',trustLabel:'높음',source:'org',sourceLabel:'기관',legal:'ok',legalLabel:'적법',stage:2},
+    'ev-device':{name:'최민준 휴대폰',icon:'i-smartphone',trust:'high',trustLabel:'높음',source:'a',sourceLabel:'A측',legal:'ok',legalLabel:'적법',stage:2},
+    'ev-sns':{name:'SNS 게시글',icon:'i-sns',trust:'low',trustLabel:'낮음',source:'third',sourceLabel:'제3자',legal:'sus',legalLabel:'의심',stage:1}
+  };
+
+  function openEvidenceViewer(evId){
+    const type=typeMap[evId];
+    if(!type)return;
+    const meta=evidenceMeta[evId];
+    if(!meta)return;
+
+    /* Build header */
+    header.innerHTML=`
+      <div class="ev-viewer-icon"><svg><use href="#${meta.icon}"/></svg></div>
+      <span class="ev-viewer-name">${meta.name}</span>
+      <div class="ev-viewer-tags">
+        <span class="ev-tag ev-tag-trust-${meta.trust}">신뢰도: ${meta.trustLabel}</span>
+        <span class="ev-tag ev-tag-source-${meta.source}">출처: ${meta.sourceLabel}</span>
+        <span class="ev-tag ev-tag-legal-${meta.legal}">적법성: ${meta.legalLabel}</span>
+        <span class="ev-tag ev-tag-stage">공개단계: stage ${meta.stage}</span>
+      </div>`;
+
+    /* Build body by type */
+    const builders={bank:buildBank,chat:buildChat,contract:buildContract,testimony:buildTestimony,cctv:buildCCTV,log:buildLog,device:buildDevice,sns:buildSNS};
+    body.innerHTML='';
+    builders[type](body);
+
+    backdrop.classList.add('open');
+    viewer.classList.add('open');
+  }
+
+  function closeEvidenceViewer(){
+    backdrop.classList.remove('open');
+    viewer.classList.remove('open');
+  }
+
+  closeBtn.addEventListener('click',closeEvidenceViewer);
+  backdrop.addEventListener('click',closeEvidenceViewer);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeEvidenceViewer()});
+
+  /* Double-click on ev-cards */
+  $$('.ev-card').forEach(card=>{
+    card.addEventListener('dblclick',e=>{
+      e.preventDefault();
+      openEvidenceViewer(card.dataset.id);
+    });
+  });
+
+  /* ────── Bank ────── */
+  function buildBank(container){
+    const rows=[
+      {date:'2025.09.01',desc:'급여 입금',amount:'+350만원',balance:'470만',suspicious:false},
+      {date:'2025.09.05',desc:'A\u2192? 이체',amount:'-280만원',balance:'190만',suspicious:true},
+      {date:'2025.09.08',desc:'카드 결제 (식비)',amount:'-12만원',balance:'178만',suspicious:false},
+      {date:'2025.09.12',desc:'A\u2192? 이체',amount:'-150만원',balance:'28만',suspicious:true},
+      {date:'2025.09.15',desc:'관리비 자동이체',amount:'-15만원',balance:'13만',suspicious:false},
+      {date:'2025.09.20',desc:'급여 입금',amount:'+350만원',balance:'363만',suspicious:false},
+      {date:'2025.09.25',desc:'A\u2192? 이체',amount:'-200만원',balance:'163만',suspicious:true},
+      {date:'2025.09.28',desc:'카드 결제 (교육비)',amount:'-30만원',balance:'133만',suspicious:false},
+    ];
+    let html=`<table class="ev-bank-table"><thead><tr><th>날짜</th><th>내용</th><th>금액</th><th>잔액</th></tr></thead><tbody>`;
+    rows.forEach(r=>{
+      const cls=r.suspicious?' class="suspicious"':'';
+      const neg=r.amount.startsWith('-');
+      const amtCls=neg?'amt-neg':'amt-pos';
+      const tooltip=r.suspicious?'<span class="ev-bank-tooltip">이 거래를 추궁하시겠습니까?</span>':'';
+      html+=`<tr${cls}><td>${r.date}</td><td>${r.desc}${tooltip}</td><td class="${amtCls}">${r.amount}</td><td>${r.balance}</td></tr>`;
+    });
+    html+=`</tbody></table>`;
+    container.innerHTML=html;
+  }
+
+  /* ────── Chat ────── */
+  function buildChat(container){
+    const msgs=[
+      {side:'left',sender:'최민준',text:'이번 달 좀 빠듯해'},
+      {side:'right',sender:'박서연',text:'또? 지난달도 그랬잖아'},
+      {side:'left',sender:'최민준',text:'경조사가 좀 있었어'},
+      {side:'right',sender:'박서연',text:'누구 경조사인데?'},
+      {side:'left',sender:'최민준',text:'회사 선배... 결혼이랑 장례식'},
+      {type:'deleted',text:'삭제된 메시지 3건'},
+      {side:'right',sender:'박서연',text:'가계부 좀 보여줘'},
+      {type:'read',text:'최민준 \u2014 읽음'},
+      {side:'right',sender:'박서연',text:'왜 답이 없어?'},
+      {side:'left',sender:'최민준',text:'지금 바빠 나중에 얘기하자'},
+      {side:'right',sender:'박서연',text:'맨날 나중에래'},
+    ];
+    let html=`<div class="ev-chat-header">카카오톡 대화 기록 \u2014 2025.09.10~09.25</div><div class="ev-chat-log">`;
+    msgs.forEach(m=>{
+      if(m.type==='deleted'){
+        html+=`<div class="ev-chat-deleted">\u00B7\u00B7\u00B7 [${m.text}] \u00B7\u00B7\u00B7</div>`;
+      }else if(m.type==='read'){
+        html+=`<div class="ev-chat-read"><svg style="width:14px;height:14px;color:var(--t3)"><use href="#i-eye"/></svg>${m.text}</div>`;
+      }else{
+        const cls=m.side==='left'?'ev-chat-left':'ev-chat-right';
+        html+=`<div class="ev-chat-bubble ${cls}"><div class="ev-chat-sender">${m.sender}</div>${m.text}</div>`;
+      }
+    });
+    html+=`</div>`;
+    container.innerHTML=html;
+  }
+
+  /* ────── Contract / Ledger ────── */
+  function buildContract(container){
+    const rows=[
+      {date:'09/01',content:'식비',amount:'-45만원',missing:false},
+      {date:'09/05',content:'[기재 없음]',amount:'',missing:true},
+      {date:'09/08',content:'교통비',amount:'-8만원',missing:false},
+      {date:'09/10',content:'관리비',amount:'-12만원',missing:false},
+      {date:'09/12',content:'[기재 없음]',amount:'',missing:true},
+      {date:'09/15',content:'교육비',amount:'-30만원',missing:false},
+      {date:'09/18',content:'보험료',amount:'-15만원',missing:false},
+      {date:'09/20',content:'식비',amount:'-38만원',missing:false},
+      {date:'09/25',content:'[기재 없음]',amount:'',missing:true},
+      {date:'09/28',content:'의류',amount:'-7만원',missing:false},
+    ];
+    let html=`<div class="ev-doc-paper">
+      <div class="ev-doc-title">가 계 부</div>
+      <div class="ev-doc-subtitle">2025년 9월</div>`;
+    rows.forEach(r=>{
+      const cls=r.missing?' missing':'';
+      html+=`<div class="ev-doc-row${cls}">
+        <span class="ev-doc-date">${r.date}</span>
+        <span class="ev-doc-content">${r.content}</span>
+        <span class="ev-doc-amount">${r.amount}</span>
+      </div>`;
+    });
+    html+=`<div class="ev-doc-signature">\u2500\u2500\u2500 서명: 최민준 \u2500\u2500\u2500 날짜: 2025.09.30 \u2500\u2500\u2500</div></div>`;
+    container.innerHTML=html;
+  }
+
+  /* ────── Testimony ────── */
+  function buildTestimony(container){
+    container.innerHTML=`
+      <div class="ev-witness-info"><strong>증인: 김태호</strong> (직장 동료, 5년 근무)</div>
+      <div class="ev-witness-quote">최민준 씨가 9월에 급하게 돈이 필요하다고 했습니다. 경조사라고 했는데, 구체적으로 누구 경조사인지는 말하지 않았습니다. 평소와 달리 좀 초조해 보였고, 점심시간에 자주 전화를 받으러 나갔습니다.</div>
+      <div class="ev-witness-tags">
+        <div class="ev-witness-tag">
+          <span class="ev-witness-tag-label">확신도</span>
+          <span class="ev-witness-tag-value ev-witness-tag-high">높음</span>
+        </div>
+        <div class="ev-witness-tag">
+          <span class="ev-witness-tag-label">편향도</span>
+          <span class="ev-witness-tag-value ev-witness-tag-neutral">중립</span>
+        </div>
+        <div class="ev-witness-tag">
+          <span class="ev-witness-tag-label">직접 목격</span>
+          <span class="ev-witness-tag-value ev-witness-tag-no">아니오</span>
+        </div>
+      </div>
+      <div class="ev-witness-related" id="ev-witness-link">
+        <svg style="width:14px;height:14px"><use href="#i-pin"/></svg>
+        관련 발언: T7 "경조사비 + 영수증"
+      </div>`;
+    /* Click on related link: close viewer and highlight note T7 */
+    const link=$('#ev-witness-link');
+    if(link){
+      link.addEventListener('click',()=>{
+        closeEvidenceViewer();
+        const notes=$$('.note .n-t');
+        notes.forEach(n=>{
+          if(n.textContent.trim()==='T7'){
+            const note=n.closest('.note');
+            if(note){
+              note.scrollIntoView({behavior:'smooth',block:'center'});
+              note.style.outline='2px solid var(--gold)';
+              note.style.boxShadow='0 0 16px rgba(212,162,78,.2)';
+              setTimeout(()=>{note.style.outline='';note.style.boxShadow=''},2500);
+            }
+          }
+        });
+      });
+    }
+  }
+
+  /* ────── CCTV ────── */
+  function buildCCTV(container){
+    const events=[
+      {time:'22:10',pct:0,  label:'입장',  desc:'최민준이 은행에 입장합니다',icon:'i-person',suspicious:false},
+      {time:'22:15',pct:33, label:'ATM 접근',desc:'ATM 기기 앞에 서있습니다',icon:'i-search',suspicious:true},
+      {time:'22:18',pct:53, label:'출금',  desc:'현금을 인출합니다. 금액: 200만원',icon:'i-doc',suspicious:true},
+      {time:'22:20',pct:67, label:'퇴장',  desc:'은행을 떠납니다',icon:'i-person',suspicious:false},
+    ];
+    let cur=0;
+
+    function render(){
+      const ev=events[cur];
+      const suspCls=ev.suspicious?' suspicious':'';
+      let markersHtml='';
+      let labelsHtml='';
+      events.forEach((e,i)=>{
+        const actCls=i===cur?' active':'';
+        markersHtml+=`<div class="ev-cctv-marker${actCls}" data-idx="${i}" style="left:${e.pct}%"></div>`;
+        labelsHtml+=`<span class="ev-cctv-label${actCls}" data-idx="${i}">${e.label}</span>`;
+      });
+      container.innerHTML=`
+        <div class="ev-cctv-frame">
+          <span class="ev-cctv-time">${ev.time}</span>
+          <div class="ev-cctv-icon"><svg><use href="#${ev.icon}"/></svg></div>
+          <div class="ev-cctv-desc${suspCls}">${ev.desc}</div>
+        </div>
+        <div class="ev-cctv-timeline">
+          <div class="ev-cctv-track">
+            <div class="ev-cctv-fill" style="width:${ev.pct}%"></div>
+            <div class="ev-cctv-markers">${markersHtml}</div>
+          </div>
+          <div class="ev-cctv-labels">${labelsHtml}</div>
+        </div>
+        <div class="ev-cctv-btns">
+          <button class="ev-cctv-btn" id="cctv-prev">\u2190 이전 프레임</button>
+          <button class="ev-cctv-btn" id="cctv-next">다음 프레임 \u2192</button>
+        </div>`;
+
+      /* Bind events */
+      container.querySelector('#cctv-prev').addEventListener('click',()=>{if(cur>0){cur--;render()}});
+      container.querySelector('#cctv-next').addEventListener('click',()=>{if(cur<events.length-1){cur++;render()}});
+      container.querySelectorAll('.ev-cctv-marker').forEach(m=>{
+        m.addEventListener('click',()=>{cur=parseInt(m.dataset.idx);render()});
+      });
+      container.querySelectorAll('.ev-cctv-label').forEach(l=>{
+        l.addEventListener('click',()=>{cur=parseInt(l.dataset.idx);render()});
+        l.style.cursor='pointer';
+      });
+      /* Click on track to scrub */
+      container.querySelector('.ev-cctv-track').addEventListener('click',function(e){
+        const rect=this.getBoundingClientRect();
+        const pct=((e.clientX-rect.left)/rect.width)*100;
+        let closest=0,minDist=Infinity;
+        events.forEach((ev,i)=>{const d=Math.abs(ev.pct-pct);if(d<minDist){minDist=d;closest=i}});
+        cur=closest;render();
+      });
+    }
+    render();
+  }
+
+  /* ────── Log (통화 기록) ────── */
+  function buildLog(container){
+    const rows=[
+      {date:'09.05 14:32',type:'out',typeLabel:'발신',target:'010-****-7821',duration:'3분 12초',suspicious:true},
+      {date:'09.05 14:40',type:'in', typeLabel:'수신',target:'010-****-7821',duration:'1분 05초',suspicious:false},
+      {date:'09.10 09:15',type:'out',typeLabel:'발신',target:'02-***-4560',  duration:'0분 42초',suspicious:false},
+      {date:'09.12 22:08',type:'out',typeLabel:'발신',target:'010-****-7821',duration:'8분 33초',suspicious:true},
+      {date:'09.12 22:30',type:'miss',typeLabel:'부재중',target:'박서연',     duration:'\u2014',  suspicious:false},
+      {date:'09.15 11:00',type:'in', typeLabel:'수신',target:'02-***-4560',  duration:'2분 10초',suspicious:false},
+      {date:'09.18 19:45',type:'out',typeLabel:'발신',target:'010-****-7821',duration:'5분 18초',suspicious:false},
+      {date:'09.25 13:20',type:'out',typeLabel:'발신',target:'010-****-7821',duration:'11분 02초',suspicious:true},
+    ];
+    const filters=['all','out','in','miss'];
+    const filterLabels={'all':'전체','out':'발신','in':'수신','miss':'부재중'};
+    let activeFilter='all';
+
+    function render(){
+      let filtersHtml=filters.map(f=>{
+        const actCls=f===activeFilter?' active':'';
+        return `<button class="ev-log-filter${actCls}" data-filter="${f}">${filterLabels[f]}</button>`;
+      }).join('');
+
+      let tableHtml=`<table class="ev-log-table"><thead><tr><th>시각</th><th>유형</th><th>상대</th><th>통화시간</th></tr></thead><tbody>`;
+      rows.forEach(r=>{
+        const hidden=activeFilter!=='all'&&r.type!==activeFilter?' style="display:none"':'';
+        const susCls=r.suspicious?' class="suspicious"':'';
+        const typeCls='ev-log-type-'+(r.type==='miss'?'miss':r.type==='in'?'in':'out');
+        tableHtml+=`<tr${susCls}${hidden}><td>${r.date}</td><td><span class="ev-log-type ${typeCls}">${r.typeLabel}</span></td><td>${r.target}</td><td>${r.duration}</td></tr>`;
+      });
+      tableHtml+=`</tbody></table>`;
+
+      container.innerHTML=`
+        <div class="ev-log-filters">${filtersHtml}</div>
+        ${tableHtml}
+        <div class="ev-log-note">특이사항: 09.05, 09.12, 09.25 송금일에 동일번호(7821) 집중 통화</div>`;
+
+      container.querySelectorAll('.ev-log-filter').forEach(btn=>{
+        btn.addEventListener('click',()=>{activeFilter=btn.dataset.filter;render()});
+      });
+    }
+    render();
+  }
+
+  /* ────── Device (휴대폰) ────── */
+  function buildDevice(container){
+    const sections=[
+      {title:'최근 알림',id:'notif',items:[
+        {text:'뱅킹앱: 이체 완료 (200만원)',suspicious:true},
+        {text:'메신저: 새 메시지 1건',suspicious:false},
+        {text:'뱅킹앱: 잔액 부족 알림',suspicious:true},
+      ]},
+      {title:'앱 사용 기록',id:'apps',items:[
+        {text:'22:14 뱅킹앱 실행',suspicious:true},
+        {text:'22:19 뱅킹앱 종료',suspicious:false},
+        {text:'22:20 메신저 실행',suspicious:false},
+        {text:'22:35 갤러리 실행',suspicious:false},
+        {text:'22:48 메신저 종료',suspicious:false},
+      ]},
+      {title:'접속 기록',id:'conn',items:[
+        {text:'Wi-Fi: 자택 (iptime_choi)',suspicious:false},
+        {text:'22:10 LTE 전환',suspicious:true},
+        {text:'22:25 Wi-Fi 복귀 (자택)',suspicious:false},
+        {text:'23:05 LTE 전환',suspicious:false},
+      ]},
+    ];
+    const collapsed={};
+
+    function render(){
+      let sectionsHtml=sections.map(s=>{
+        const isCol=collapsed[s.id];
+        const arrowCls=isCol?' collapsed':'';
+        const bodyCls=isCol?' collapsed':'';
+        let itemsHtml=s.items.map(it=>{
+          const susCls=it.suspicious?' suspicious':'';
+          return `<div class="ev-device-item${susCls}">${it.text}</div>`;
+        }).join('');
+        return `<div class="ev-device-section">
+          <div class="ev-device-section-header${arrowCls}" data-section="${s.id}">
+            <span class="arrow">\u25BC</span> ${s.title}
+          </div>
+          <div class="ev-device-section-body${bodyCls}">${itemsHtml}</div>
+        </div>`;
+      }).join('');
+
+      container.innerHTML=`
+        <div class="ev-device-shell">
+          <div class="ev-device-notch"></div>
+          <div class="ev-device-top">
+            <svg><use href="#i-smartphone"/></svg>
+            최민준의 휴대폰
+          </div>
+          <div class="ev-device-content">${sectionsHtml}</div>
+          <div class="ev-device-home"></div>
+        </div>`;
+
+      container.querySelectorAll('.ev-device-section-header').forEach(hdr=>{
+        hdr.addEventListener('click',()=>{
+          const sid=hdr.dataset.section;
+          collapsed[sid]=!collapsed[sid];
+          hdr.classList.toggle('collapsed');
+          hdr.nextElementSibling.classList.toggle('collapsed');
+        });
+      });
+    }
+    render();
+  }
+
+  /* ────── SNS ────── */
+  function buildSNS(container){
+    container.innerHTML=`
+      <div class="ev-sns-post">
+        <div class="ev-sns-profile">
+          <div class="ev-sns-avatar"><svg><use href="#i-person"/></svg></div>
+          <div>
+            <span class="ev-sns-username">최민준</span>
+            <span class="ev-sns-handle"> @minjun_choi</span>
+          </div>
+          <span class="ev-sns-date">2025.09.06</span>
+        </div>
+        <div class="ev-sns-scope">\uD83D\uDD12 공개범위: 친구만</div>
+        <div class="ev-sns-text">"오늘 좀 큰 결심을 했다. 후회 없이 살자. <span class="hashtag">#새출발</span>"</div>
+        <div class="ev-sns-engage">
+          <span>\u2661 12</span>
+          <span>\uD83D\uDCAC 3</span>
+          <span>\u2197 0</span>
+        </div>
+      </div>
+
+      <div class="ev-sns-comments">
+        <div class="ev-sns-comment-header">\uD83D\uDCAC 댓글</div>
+        <div class="ev-sns-comment">
+          <span class="ev-sns-comment-name">김태호</span>
+          <span>무슨 결심? \u314B\u314B</span>
+        </div>
+        <div class="ev-sns-comment">
+          <span class="ev-sns-comment-name">최민준</span>
+          <span>비밀 \u314E\u314E</span>
+        </div>
+        <div class="ev-sns-comment">
+          <span class="ev-sns-comment-name">이수빈</span>
+          <span>응원해!</span>
+        </div>
+      </div>
+
+      <div class="ev-sns-warnings">
+        <div class="ev-sns-warning">
+          <svg><use href="#i-shield"/></svg>
+          캡처 범위: 원본 삭제됨, B(박서연)가 캡처 제출
+        </div>
+        <div class="ev-sns-warning">
+          <svg><use href="#i-search"/></svg>
+          누락 문맥: 이전/이후 게시글 미확보
+        </div>
+      </div>`;
+  }
+
+})();
 </script>
 </body>
 </html>
