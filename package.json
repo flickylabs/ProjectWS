@@ -8,6 +8,8 @@
     "build": "tsc -b --force && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "dev:pc": "vite --config vite.config.pc.ts",
+    "build:pc": "tsc -b --force && vite build --config vite.config.pc.ts",
     "server": "cd server && node index.js",
     "server:dev": "cd server && node --watch index.js",
     "server:seed": "cd server && node db/seed.js"

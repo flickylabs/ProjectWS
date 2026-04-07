@@ -1,0 +1,44 @@
+/* PC-specific overrides */
+:root {
+  --pc-gold: #d4a24e;
+  --pc-gold-light: #e8c172;
+  --pc-gold-dim: #8b6914;
+  --pc-bg: #07070c;
+  --pc-p1: #0c0c14;
+  --pc-p2: #111119;
+  --pc-p3: #18181f;
+  --pc-p4: #1f1f28;
+  --pc-blue: #5b8def;
+  --pc-red: #e06060;
+  --pc-green: #5cc97a;
+  --pc-purple: #9b7be8;
+}
+
+body.pc-mode {
+  background: var(--pc-bg);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* PC scrollbar — thinner, darker */
+body.pc-mode ::-webkit-scrollbar {
+  width: 5px;
+}
+body.pc-mode ::-webkit-scrollbar-track {
+  background: transparent;
+}
+body.pc-mode ::-webkit-scrollbar-thumb {
+  background: var(--pc-p4);
+  border-radius: 3px;
+}
+body.pc-mode ::-webkit-scrollbar-thumb:hover {
+  background: #282832;
+}
+
+/* PC panel borders — subtle glow lines */
+body.pc-mode .pc-panel-border-r {
+  border-right: 1px solid rgba(255, 255, 255, 0.03);
+}
+body.pc-mode .pc-panel-border-l {
+  border-left: 1px solid rgba(255, 255, 255, 0.03);
+}
