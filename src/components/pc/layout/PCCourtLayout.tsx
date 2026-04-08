@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useStore } from '../../../store/useGameStore'
-import DialogueLog from '../../court/DialogueLog'
+import PCDialogueLog from './PCDialogueLog'
 import Emoji from '../../common/Emoji'
 import PCLeftPanel from '../panels/PCLeftPanel'
 import PCRightPanel from '../panels/PCRightPanel'
@@ -9,12 +9,11 @@ import PCBottomDock from '../hotbar/PCBottomDock'
 import PCEvidenceViewer from '../evidence/PCEvidenceViewer'
 
 interface Props {
-  actionPanel?: ReactNode
   onDialogueTap?: () => void
   isDialoguePhase?: boolean
 }
 
-export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePhase }: Props) {
+export default function PCCourtLayout({ onDialogueTap, isDialoguePhase }: Props) {
   const chatRef = useRef<HTMLDivElement>(null)
   const dialogueLog = useStore((s) => s.dialogueLog)
   const caseData = useStore((s) => s.caseData)
@@ -91,28 +90,32 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
           <PCLeftPanel />
         </aside>
 
-        {/* Center: 대화 + 액션 */}
-        <main className="flex-1 min-w-0 flex flex-col" style={{ background: 'var(--pc-bg)' }}>
-          {/* 대화 영역 */}
+        {/* Center: 대화 */}
+        <main className="flex-1 min-w-0 flex flex-col relative" style={{ background: 'var(--pc-bg)' }}>
+          {/* Ambient glows (matching prototype) */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 20% 60%, rgba(91,141,239,0.02), transparent 50%)' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 80% 60%, rgba(224,96,96,0.02), transparent 50%)' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 0%, rgba(212,162,78,0.015), transparent 50%)' }} />
+          </div>
+
+          {/* Chat area */}
           <div className="flex-1 min-h-0 relative">
             <div
               ref={chatRef}
-              className="absolute inset-0 overflow-y-auto px-6 py-4"
+              className="absolute inset-0 overflow-y-auto"
+              style={{ padding: '28px 40px 16px', scrollbarWidth: 'thin', scrollbarColor: '#282832 transparent' }}
               onClick={handleChatClick}
             >
-              <DialogueLog onTestimonyClick={() => {}} />
+              <PCDialogueLog />
             </div>
           </div>
 
-          {/* 하단 액션 독 */}
-          {actionPanel && (
-            <div
-              className="shrink-0 px-6 py-3"
-              style={{ background: 'var(--pc-p1)', borderTop: '1px solid rgba(212,162,78,0.15)' }}
-            >
-              {actionPanel}
-            </div>
-          )}
+          {/* Bottom gradient fade into dock */}
+          <div
+            className="absolute bottom-0 left-0 right-0 pointer-events-none"
+            style={{ height: 60, background: 'linear-gradient(180deg, transparent 0%, var(--pc-p1) 100%)', zIndex: 1 }}
+          />
         </main>
 
         {/* Right Panel: 대상 / 노트 / 타임라인 */}

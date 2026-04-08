@@ -89,7 +89,6 @@ export default function PCApp() {
     <>
       <PhaseTransition />
       <PCCourtLayout
-        actionPanel={getActionPanel(currentPhase)}
         onDialogueTap={triggerDialogueTap}
         isDialoguePhase={currentPhase === GamePhase.Phase1_InitialStatement || currentPhase === GamePhase.Phase2_Rebuttal}
       />
