@@ -1,8 +1,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
-import { useStore } from '../../../store/useGameStore'
-import type { GameStore } from '../../../store/useGameStore'
+import { useStore, useGameStore } from '../../../store/useGameStore'
 import Emoji from '../../common/Emoji'
-import type { EmotionalPhase, LieState, PartyId } from '../../../types'
+import type { EmotionalPhase, LieState, PartyId, QuestionType } from '../../../types'
 import { computeEffectiveness } from '../../../engine/questionEffectEngine'
 
 // ── Constants ──
@@ -32,7 +31,7 @@ function buildInterrogationSlots(
   emotionPhase: EmotionalPhase,
   archetype: string,
   meters: { contradictionTokens: number; trustWindow: number },
-  dispatch: GameStore['applyQuestionEffect'] | null,
+  onQuestionType: (qt: QuestionType) => void,
   onFreeQuestion: () => void,
 ): HotbarSlot[] {
   const emotionTier = emotionPhaseToTier(emotionPhase)
@@ -42,9 +41,9 @@ function buildInterrogationSlots(
   const empathyEff = computeEffectiveness('empathy_approach', lieState, emotionTier, archetype, meters.contradictionTokens, meters.trustWindow)
 
   return [
-    { key: 1, icon: '🔍', name: '사실 추궁', locked: false, effectiveness: factEff.level, action: null },
-    { key: 2, icon: '💡', name: '동기 탐색', locked: false, effectiveness: motiveEff.level, action: null },
-    { key: 3, icon: '🤝', name: '공감 접근', locked: false, effectiveness: empathyEff.level, action: null },
+    { key: 1, icon: '🔍', name: '사실 추궁', locked: false, effectiveness: factEff.level, action: () => onQuestionType('fact_pursuit') },
+    { key: 2, icon: '💡', name: '동기 탐색', locked: false, effectiveness: motiveEff.level, action: () => onQuestionType('motive_search') },
+    { key: 3, icon: '🤝', name: '공감 접근', locked: false, effectiveness: empathyEff.level, action: () => onQuestionType('empathy_approach') },
     { key: 4, icon: '💬', name: '자유질문', locked: false, action: onFreeQuestion },
     { key: 5, icon: '🔒', name: '—', locked: true, action: null },
     { key: 6, icon: '🔒', name: '—', locked: true, action: null },
@@ -82,8 +81,6 @@ export default function PCBottomDock() {
   const archetypeA = useStore((s) => s.archetypeA)
   const archetypeB = useStore((s) => s.archetypeB)
   const questionMeters = useStore((s) => s.questionMeters)
-  const applyQuestionEffect = useStore((s) => s.applyQuestionEffect)
-
   const [activePage, setActivePage] = useState<HotbarPage>('interrogation')
   const [targetParty, setTargetParty] = useState<PartyId>('a')
   const [freeQuestionOpen, setFreeQuestionOpen] = useState(false)
@@ -107,13 +104,25 @@ export default function PCBottomDock() {
     return (LIE_STATES.indexOf(overallLieState) / (LIE_STATES.length - 1)) * 100
   }, [overallLieState])
 
+  // Handler: dispatch a question type using the first available dispute
+  // Opens ActionPanel's question tab for the target party.
+  // The specific question type (qt) is shown as effectiveness hints on the hotbar;
+  // the actual question type + dispute selection happens in ActionPanel's QuestionSelector.
+  const handleQuestionType = useCallback((_qt: QuestionType) => {
+    if (!caseData) return
+    const disputes = caseData.disputes
+    if (disputes.length === 0) return
+    // Route through ActionPanel via disputeBoardAction signal
+    useGameStore.getState().setDisputeBoardAction({ disputeId: disputes[0].id, party: targetParty })
+  }, [caseData, targetParty])
+
   // Build slots
   const slots = useMemo(() => {
     switch (activePage) {
       case 'interrogation':
         return buildInterrogationSlots(
           targetParty, overallLieState, targetAgent.emotionalState.phase,
-          targetArchetype, targetMeters, applyQuestionEffect,
+          targetArchetype, targetMeters, handleQuestionType,
           () => setFreeQuestionOpen(true),
         )
       case 'evidence':
@@ -121,7 +130,7 @@ export default function PCBottomDock() {
       case 'special':
         return buildSpecialSlots()
     }
-  }, [activePage, targetParty, overallLieState, targetAgent.emotionalState.phase, targetArchetype, targetMeters, applyQuestionEffect])
+  }, [activePage, targetParty, overallLieState, targetAgent.emotionalState.phase, targetArchetype, targetMeters, handleQuestionType])
 
   // Keyboard handling
   useEffect(() => {
@@ -164,12 +173,18 @@ export default function PCBottomDock() {
     return () => window.removeEventListener('keydown', handler)
   }, [slots])
 
-  const handleFreeQuestionSend = useCallback(() => {
-    if (!freeQuestionText.trim()) return
-    // TODO: dispatch free question through existing game actions
+  const handleFreeQuestionSend = useCallback(async () => {
+    if (!freeQuestionText.trim() || !caseData) return
+    const text = freeQuestionText.trim()
     setFreeQuestionText('')
     setFreeQuestionOpen(false)
-  }, [freeQuestionText])
+    // Route through ActionPanel by signaling the disputeBoardAction
+    // This opens the question tab where the player can use free question
+    useGameStore.getState().setDisputeBoardAction({
+      disputeId: caseData.disputes[0]?.id ?? '',
+      party: targetParty,
+    })
+  }, [freeQuestionText, caseData, targetParty])
 
   if (!caseData) return null
 

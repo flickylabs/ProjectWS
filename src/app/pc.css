@@ -42,3 +42,401 @@ body.pc-mode .pc-panel-border-r {
 body.pc-mode .pc-panel-border-l {
   border-left: 1px solid rgba(255, 255, 255, 0.03);
 }
+
+/* ═══════════════════════════════════════════════════
+   Task 1: DialogueLog / DialogueEntry — PC theme
+   ═══════════════════════════════════════════════════ */
+
+/* Transparent background — center column already provides --pc-bg */
+body.pc-mode .px-3.py-2 {
+  background: transparent;
+}
+
+/* Primary text color in dialogue bubbles */
+body.pc-mode .text-gray-200 {
+  color: #dcdce0 !important;
+}
+
+/* Secondary text (behavior hints, subtext) */
+body.pc-mode .text-gray-500\/60,
+body.pc-mode .text-gray-500 {
+  color: #8b8b9a !important;
+}
+
+/* Party A bubbles — blue tint */
+body.pc-mode .bg-blue-950\/50 {
+  background: rgba(91, 141, 239, 0.08) !important;
+}
+body.pc-mode .bg-blue-950\/70 {
+  background: rgba(91, 141, 239, 0.14) !important;
+}
+body.pc-mode .border-blue-800\/30 {
+  border-color: rgba(91, 141, 239, 0.2) !important;
+}
+body.pc-mode .border-blue-600\/50 {
+  border-color: rgba(91, 141, 239, 0.35) !important;
+}
+
+/* Party B bubbles — red tint */
+body.pc-mode .bg-rose-950\/50 {
+  background: rgba(224, 96, 96, 0.08) !important;
+}
+body.pc-mode .bg-rose-950\/70 {
+  background: rgba(224, 96, 96, 0.14) !important;
+}
+body.pc-mode .border-rose-800\/30 {
+  border-color: rgba(224, 96, 96, 0.2) !important;
+}
+body.pc-mode .border-rose-600\/50 {
+  border-color: rgba(224, 96, 96, 0.35) !important;
+}
+
+/* Speaker names: A = blue, B = red */
+body.pc-mode .text-blue-400 {
+  color: var(--pc-blue) !important;
+}
+body.pc-mode .text-rose-400 {
+  color: var(--pc-red) !important;
+}
+
+/* Judge bubbles — gold tint */
+body.pc-mode .bg-amber-950\/40 {
+  background: rgba(212, 162, 78, 0.08) !important;
+}
+body.pc-mode .border-amber-800\/30 {
+  border-color: rgba(212, 162, 78, 0.2) !important;
+}
+
+/* System messages — gold pill style */
+body.pc-mode .bg-gray-950\/60 {
+  background: rgba(212, 162, 78, 0.06) !important;
+  border: 1px solid rgba(212, 162, 78, 0.15) !important;
+  border-radius: 999px !important;
+}
+body.pc-mode .bg-gray-950\/60 .text-gray-500 {
+  color: var(--pc-gold-dim) !important;
+}
+body.pc-mode .bg-gray-950\/80 {
+  background: rgba(212, 162, 78, 0.08) !important;
+  border: 1px solid rgba(212, 162, 78, 0.18) !important;
+  border-radius: 999px !important;
+}
+
+/* Loading indicator */
+body.pc-mode .text-gray-500 {
+  color: #8b8b9a !important;
+}
+
+/* Empty state text */
+body.pc-mode .text-gray-600 {
+  color: #4e4e5c !important;
+}
+
+/* Witness bubbles — emerald tint preserved but darkened */
+body.pc-mode .bg-emerald-950\/40 {
+  background: rgba(92, 201, 122, 0.06) !important;
+}
+body.pc-mode .border-emerald-800\/30 {
+  border-color: rgba(92, 201, 122, 0.18) !important;
+}
+body.pc-mode .text-emerald-400 {
+  color: var(--pc-green) !important;
+}
+
+/* Confidential bubble */
+body.pc-mode .bg-purple-950\/40 {
+  background: rgba(155, 123, 232, 0.06) !important;
+}
+body.pc-mode .border-purple-700\/50 {
+  border-color: rgba(155, 123, 232, 0.2) !important;
+}
+
+/* Contradiction popup — gold accents */
+body.pc-mode .bg-amber-950\/30 {
+  background: rgba(212, 162, 78, 0.06) !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   Task 2: ActionPanel — PC theme overrides
+   ═══════════════════════════════════════════════════ */
+
+/* Glass surface panels */
+body.pc-mode .glass-surface {
+  background: var(--pc-p2) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Tab buttons — active state gold accent */
+body.pc-mode .glow-amber {
+  box-shadow: 0 0 8px rgba(212, 162, 78, 0.15) !important;
+}
+body.pc-mode .glow-emerald {
+  box-shadow: 0 0 8px rgba(92, 201, 122, 0.15) !important;
+}
+
+/* ActionPanel tab beckon animation — gold tint */
+body.pc-mode .action-tab-beckon {
+  background: rgba(212, 162, 78, 0.04) !important;
+  border-color: rgba(212, 162, 78, 0.12) !important;
+}
+
+/* Active question tab */
+body.pc-mode .bg-amber-500\/15 {
+  background: rgba(212, 162, 78, 0.12) !important;
+}
+body.pc-mode .text-amber-400 {
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .text-amber-300 {
+  color: var(--pc-gold) !important;
+}
+
+/* Party A selection button */
+body.pc-mode .bg-blue-600 {
+  background: rgba(91, 141, 239, 0.8) !important;
+}
+body.pc-mode .border-blue-400\/60 {
+  border-color: rgba(91, 141, 239, 0.4) !important;
+}
+body.pc-mode .bg-blue-950\/30 {
+  background: rgba(91, 141, 239, 0.06) !important;
+}
+
+/* Party B selection button */
+body.pc-mode .bg-rose-600 {
+  background: rgba(224, 96, 96, 0.8) !important;
+}
+body.pc-mode .border-rose-400\/60 {
+  border-color: rgba(224, 96, 96, 0.4) !important;
+}
+body.pc-mode .bg-rose-950\/30 {
+  background: rgba(224, 96, 96, 0.06) !important;
+}
+
+/* Advance phase button */
+body.pc-mode .bg-emerald-500\/10 {
+  background: rgba(92, 201, 122, 0.08) !important;
+}
+body.pc-mode .text-emerald-400 {
+  color: var(--pc-green) !important;
+}
+
+/* Skill tab — purple accent */
+body.pc-mode .bg-purple-500\/15 {
+  background: rgba(155, 123, 232, 0.1) !important;
+}
+body.pc-mode .text-purple-400 {
+  color: var(--pc-purple) !important;
+}
+
+/* Idle/unselected buttons */
+body.pc-mode .bg-white\/\[0\.03\] {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* QuestionSelector / EvidencePresenter / SkillPanel inner items */
+body.pc-mode .bg-gray-700 {
+  background: var(--pc-p4) !important;
+}
+body.pc-mode .bg-gray-800 {
+  background: var(--pc-p3) !important;
+}
+body.pc-mode .bg-gray-900 {
+  background: var(--pc-p2) !important;
+}
+body.pc-mode .text-gray-300 {
+  color: #b0b0ba !important;
+}
+body.pc-mode .text-gray-400 {
+  color: #8b8b9a !important;
+}
+body.pc-mode .border-gray-700\/30,
+body.pc-mode .border-gray-700\/60 {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+body.pc-mode .border-gray-800 {
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+body.pc-mode .border-gray-800\/50 {
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   Task 4: Overlay / Modal — PC theme overrides
+   ═══════════════════════════════════════════════════ */
+
+/* Dark backdrop for all modals */
+body.pc-mode .bg-gray-950\/85 {
+  background: rgba(7, 7, 12, 0.9) !important;
+}
+
+/* Modal card container */
+body.pc-mode .fixed.inset-0.z-50 > .bg-gray-900 {
+  background: var(--pc-p2) !important;
+  border-color: rgba(212, 162, 78, 0.15) !important;
+  max-width: 480px !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 12px rgba(212, 162, 78, 0.08) !important;
+}
+
+/* Modal gradient headers — gold tint */
+body.pc-mode .bg-gradient-to-b.from-amber-900\/40 {
+  background: linear-gradient(to bottom, rgba(212, 162, 78, 0.1), var(--pc-p2)) !important;
+}
+body.pc-mode .bg-gradient-to-b.from-red-900\/40 {
+  background: linear-gradient(to bottom, rgba(224, 96, 96, 0.08), var(--pc-p2)) !important;
+}
+
+/* Modal header borders — subtle gold */
+body.pc-mode .border-amber-600\/30 {
+  border-color: rgba(212, 162, 78, 0.15) !important;
+}
+body.pc-mode .border-red-600\/30 {
+  border-color: rgba(224, 96, 96, 0.12) !important;
+}
+
+/* PerkChoiceModal / TransitionChoiceModal title text */
+body.pc-mode .text-sm.font-bold.text-amber-400 {
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .text-sm.font-bold.text-red-400 {
+  color: var(--pc-red) !important;
+}
+
+/* Modal primary action buttons — gold */
+body.pc-mode .bg-amber-700,
+body.pc-mode .bg-amber-600 {
+  background: rgba(212, 162, 78, 0.7) !important;
+  color: #07070c !important;
+}
+body.pc-mode .bg-amber-700:hover,
+body.pc-mode .bg-amber-600:hover {
+  background: rgba(212, 162, 78, 0.85) !important;
+}
+
+/* Modal secondary buttons */
+body.pc-mode .fixed.inset-0.z-50 .bg-gray-800 {
+  background: var(--pc-p3) !important;
+  color: #8b8b9a !important;
+}
+body.pc-mode .fixed.inset-0.z-50 .bg-gray-800:hover {
+  background: var(--pc-p4) !important;
+}
+
+/* GameEventModal specific buttons */
+body.pc-mode .bg-yellow-700 {
+  background: rgba(212, 162, 78, 0.6) !important;
+  color: #07070c !important;
+}
+body.pc-mode .bg-yellow-700:hover {
+  background: rgba(212, 162, 78, 0.75) !important;
+}
+body.pc-mode .bg-orange-700 {
+  background: rgba(232, 160, 60, 0.6) !important;
+  color: #07070c !important;
+}
+body.pc-mode .bg-orange-700:hover {
+  background: rgba(232, 160, 60, 0.75) !important;
+}
+
+/* TransitionChoiceModal option buttons */
+body.pc-mode .bg-blue-600\/20 {
+  background: rgba(91, 141, 239, 0.08) !important;
+}
+body.pc-mode .border-blue-500\/40 {
+  border-color: rgba(91, 141, 239, 0.2) !important;
+}
+body.pc-mode .text-blue-300 {
+  color: var(--pc-blue) !important;
+}
+body.pc-mode .bg-red-600\/20 {
+  background: rgba(224, 96, 96, 0.08) !important;
+}
+body.pc-mode .border-red-500\/40 {
+  border-color: rgba(224, 96, 96, 0.2) !important;
+}
+body.pc-mode .text-red-300 {
+  color: var(--pc-red) !important;
+}
+
+/* Perk badge pills */
+body.pc-mode .bg-amber-600\/30 {
+  background: rgba(212, 162, 78, 0.15) !important;
+}
+body.pc-mode .bg-cyan-600\/30 {
+  background: rgba(92, 201, 122, 0.12) !important;
+}
+body.pc-mode .text-cyan-400 {
+  color: var(--pc-green) !important;
+}
+body.pc-mode .bg-cyan-700 {
+  background: rgba(92, 201, 122, 0.5) !important;
+  color: #07070c !important;
+}
+body.pc-mode .bg-cyan-700:hover {
+  background: rgba(92, 201, 122, 0.65) !important;
+}
+
+/* Red-tinted inner boxes in modals */
+body.pc-mode .bg-red-950\/30 {
+  background: rgba(224, 96, 96, 0.06) !important;
+}
+body.pc-mode .border-red-800\/30 {
+  border-color: rgba(224, 96, 96, 0.15) !important;
+}
+body.pc-mode .text-red-200 {
+  color: #e8a0a0 !important;
+}
+
+/* Gray inner boxes in modals */
+body.pc-mode .bg-gray-800\/60 {
+  background: var(--pc-p3) !important;
+}
+
+/* PC modal text sizing — slightly larger for desktop */
+body.pc-mode .fixed.inset-0.z-50 .text-xs {
+  font-size: 0.8125rem !important;
+  line-height: 1.35 !important;
+}
+body.pc-mode .fixed.inset-0.z-50 .text-\[10px\] {
+  font-size: 0.6875rem !important;
+}
+body.pc-mode .fixed.inset-0.z-50 .text-\[11px\] {
+  font-size: 0.75rem !important;
+}
+
+/* Modal buttons — taller for PC */
+body.pc-mode .fixed.inset-0.z-50 .py-2\.5 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+body.pc-mode .fixed.inset-0.z-50 .rounded-xl {
+  border-radius: 0.875rem !important;
+}
+
+/* StateTransitionFeedback — ensure it floats properly */
+body.pc-mode .fixed.z-50 {
+  /* full-screen centering already handled by fixed inset-0 */
+}
+
+/* Contradiction pursuit modal — consistent with other modals */
+body.pc-mode .bg-gray-900.border.border-amber-700\/50 {
+  background: var(--pc-p2) !important;
+  border-color: rgba(212, 162, 78, 0.2) !important;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 12px rgba(212, 162, 78, 0.08) !important;
+}
+
+/* Testimony analysis button — gold tint */
+body.pc-mode .bg-cyan-950\/40 {
+  background: rgba(212, 162, 78, 0.06) !important;
+  border-color: rgba(212, 162, 78, 0.2) !important;
+}
+body.pc-mode .text-cyan-300 {
+  color: var(--pc-gold-light) !important;
+}
+
+/* Contradiction detect button */
+body.pc-mode .bg-amber-950\/50 {
+  background: rgba(212, 162, 78, 0.1) !important;
+}
